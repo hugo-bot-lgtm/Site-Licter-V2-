@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Social data diagnostic — Licter</title>
+<meta name="description" content="An independent diagnostic of your social data setup: audit, maturity scoring on six dimensions, quick wins and a prioritised roadmap in two to three weeks." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<a class="banner" href="guide.html">
+  The guide — <span>the 12 questions social data answers better than a survey</span> →
+</a>
+
+<canvas id="carto" aria-hidden="true"></canvas>
+<div id="carto-tip" class="carto-tip" aria-hidden="true">
+  <span class="carto-tip__icon"></span><span class="carto-tip__name"></span>
+</div>
+
+<div class="site-head">
+  <header class="hero__top shell" data-reveal>
+      <a class="logo" href="index.html" aria-label="Licter — home" data-dim>
+        <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+        <img class="logo__img" src="assets/img/logo-navy.png" alt="Licter" width="44" height="48" />
+      </a>
+      <nav class="nav" aria-label="Main" id="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="use-cases"
+                    aria-expanded="false" aria-controls="menu-use-cases">
+              USE CASES<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="offers"
+                    aria-expanded="false" aria-controls="menu-offers">
+              OFFERS<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item"><a href="why-licter.html">WHY LICTER</a></li>
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="tech"
+                    aria-expanded="false" aria-controls="menu-tech">
+              TECH &amp; TOOLS<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item"><a href="clients.html">CLIENTS</a></li>
+          <li class="nav__item"><a href="blog.html">BLOG</a></li>
+        </ul>
+        <!-- dropdown panels are built by js/ui.js -->
+      </nav>
+  </header>
+</div>
+
+<main>
+  <section class="page">
+    <div class="shell">
+      <div class="page__head">
+        <p class="page__eyebrow" data-dim data-reveal><span class="rule" aria-hidden="true"></span>DIAGNOSTIC</p>
+        <h1 class="page__title" data-dim data-reveal>YOUR SOCIAL DATA<br>DIAGNOSTIC.</h1>
+        <p class="page__lead" data-dim data-reveal>Most organisations already pay for listening tools and read almost nothing from them. Two to three weeks to know exactly where you stand, and what to fix first.</p>
+        <div class="page__actions" data-reveal>
+          <a class="btn btn--primary" href="book-a-meeting.html">Book a meeting <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="offers.html">See the offers</a>
+        </div>
+      </div>
+
+      <section class="block" id="how">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">HOW IT RUNS</p>
+          <h2 class="block__title">Four steps, two to three weeks.</h2>
+          <p class="block__lead">An independent diagnostic. At the end you own the roadmap, whether or not you
+             run it with us.</p>
+        </div>
+        <div class="steps" data-dim data-reveal>
+          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
+            <h3>Scoping call — 30 minutes</h3>
+            <p>Your objectives, your markets, the decisions currently made without data.</p>
+          </div></div>
+          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
+            <h3>Audit of what you already run</h3>
+            <p>Tools and licences, taxonomies, sources and languages covered, alerting thresholds, who reads
+               what and how often.</p>
+          </div></div>
+          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
+            <h3>Maturity scoring, six dimensions</h3>
+            <p>Sources, taxonomy, alerting, analysis, activation, organisation — scored and benchmarked
+               against your sector.</p>
+          </div></div>
+          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
+            <h3>Readout — quick wins and roadmap</h3>
+            <p>What can be fixed in a fortnight, what needs a project, and what it costs in effort. Presented
+               to your team, documented.</p>
+          </div></div>
+        </div>
+      </section>
+
+      <section class="block" id="deliverables">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">WHAT YOU LEAVE WITH</p>
+          <h2 class="block__title">A document, not an impression.</h2>
+        </div>
+        <div class="grid">
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">01</span>
+          <h3 class="card__title">A map of your current setup</h3>
+          <p class="card__text">Sources, tools, taxonomies and coverage gaps, market by market and language by language.</p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">02</span>
+          <h3 class="card__title">A maturity score per dimension</h3>
+          <p class="card__text">Six dimensions, scored, with the sector benchmark next to each one.</p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">03</span>
+          <h3 class="card__title">Quick wins you can run yourself</h3>
+          <p class="card__text">Typically five, achievable immediately, that create value before any project starts.</p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">04</span>
+          <h3 class="card__title">A prioritised roadmap</h3>
+          <p class="card__text">Each item with effort, cost and expected impact — so arbitration is possible.</p>
+        </article>
+        </div>
+      </section>
+
+      <section class="block" id="request">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">REQUEST IT</p>
+          <h2 class="block__title">Tell us where you stand.</h2>
+          <p class="block__lead">The more precise the context, the more precise the first call.</p>
+        </div>
+        <form data-dim class="form" id="diag-form" novalidate data-reveal>
+          <div class="form__row">
+            <div class="form__field">
+              <label for="d-name">NAME</label>
+              <input id="d-name" name="d-name" type="text" placeholder="Camille Bernard" required />
+            </div>
+            <div class="form__field">
+              <label for="d-company">COMPANY</label>
+              <input id="d-company" name="d-company" type="text" placeholder="Company" required />
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field">
+              <label for="d-email">WORK EMAIL</label>
+              <input id="d-email" name="d-email" type="email" placeholder="camille@company.com" required />
+            </div>
+            <div class="form__field">
+              <label for="d-phone">PHONE</label>
+              <input id="d-phone" name="d-phone" type="tel" placeholder="+33 6 12 34 56 78" />
+            </div>
+          </div>
+            <div class="form__field">
+              <label for="d-context">YOUR CONTEXT</label>
+              <textarea id="d-context" name="d-context" placeholder="What you already run, what is not working, what you need to decide." required></textarea>
+            </div>
+          <button class="form__submit" type="submit">Request my diagnostic →</button>
+          <p class="form__reassure">No commitment · Reply within 24 hours · Independent of any follow-up project</p>
+          <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>Request received. A consultant comes back to you within 24 hours to book the scoping call.</span></p>
+        </form>
+      </section>
+
+      <section class="cta" data-reveal>
+        <h2 class="cta__title">Not sure a diagnostic is what you need?</h2>
+        <p class="cta__text">Send us the question you are trying to answer. If a single study is enough, we will say so.</p>
+        <form class="signup" novalidate>
+          <label class="visually-hidden" for="email-dg">Your work email</label>
+          <input class="signup__input" id="email-dg" name="email" type="email"
+                 placeholder="Your work email..." autocomplete="email" required />
+          <button class="signup__btn" type="submit">BOOK A MEETING</button>
+        </form>
+        <p class="signup__note" role="status">
+          <span class="signup__check" aria-hidden="true">✓</span>
+          NOTED - WE GET BACK TO YOU WITHIN 24 HOURS
+        </p>
+        <p class="cta__text" style="margin-top:18px">
+          Already running social listening?
+          <a href="diagnostic.html" style="color:var(--amber-ink);border-bottom:1px solid rgba(var(--amber-rgb),.6)">Request a diagnostic instead →</a>
+        </p>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="site-foot__in shell">
+    <div class="site-foot__brand">
+      <a class="logo" href="index.html" aria-label="Licter — home">
+        <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+        <img class="logo__img" src="assets/img/logo-navy.png" alt="Licter" width="44" height="48" />
+      </a>
+      <p>The Social Data Intelligence consultancy. We turn data from the world's
+         largest panel — social media, search, generative AI — into decisions.</p>
+    </div>
+    <div>
+      <h4>OFFERS</h4>
+      <ul>
+        <li><a href="offers.html#social-insights">Social Insights</a></li>
+        <li><a href="offers.html#vigie">Vigie 360 — 24/7 monitoring</a></li>
+        <li><a href="offers.html#slaas">Social Listening as a Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>USE CASES</h4>
+      <ul>
+        <li><a href="use-cases.html#communication">Communication</a></li>
+        <li><a href="use-cases.html#brand-health">Brand health</a></li>
+        <li><a href="use-cases.html#audiences">Audiences</a></li>
+        <li><a href="use-cases.html#trends">Trends &amp; innovation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>GET STARTED</h4>
+      <ul>
+        <li><a href="guide.html">The free guide</a></li>
+        <li><a href="diagnostic.html">Request a diagnostic</a></li>
+        <li><a href="book-a-meeting.html">Book a meeting</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>COMPANY</h4>
+      <ul>
+        <li><a href="why-licter.html">Why Licter</a></li>
+        <li><a href="tech-tools.html">Tech &amp; tools</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-foot__legal shell">
+    <span>© 2026 Licter — Social Data Intelligence</span>
+    <span>50+ clients · 160+ projects · Top 50 worldwide, SI Lab 2024</span>
+  </div>
+</footer>
+
+<script src="js/cartography.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>

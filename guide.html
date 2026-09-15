@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The 12 questions social data answers — Licter</title>
+<meta name="description" content="A free guide: the twelve questions social data answers better than a survey, the data each one needs and what it cannot tell you." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<a class="banner" href="guide.html">
+  The guide — <span>the 12 questions social data answers better than a survey</span> →
+</a>
+
+<canvas id="carto" aria-hidden="true"></canvas>
+<div id="carto-tip" class="carto-tip" aria-hidden="true">
+  <span class="carto-tip__icon"></span><span class="carto-tip__name"></span>
+</div>
+
+<div class="site-head">
+  <header class="hero__top shell" data-reveal>
+      <a class="logo" href="index.html" aria-label="Licter — home" data-dim>
+        <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+        <img class="logo__img" src="assets/img/logo-navy.png" alt="Licter" width="44" height="48" />
+      </a>
+      <nav class="nav" aria-label="Main" id="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="use-cases"
+                    aria-expanded="false" aria-controls="menu-use-cases">
+              USE CASES<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="offers"
+                    aria-expanded="false" aria-controls="menu-offers">
+              OFFERS<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item"><a href="why-licter.html">WHY LICTER</a></li>
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="tech"
+                    aria-expanded="false" aria-controls="menu-tech">
+              TECH &amp; TOOLS<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item"><a href="clients.html">CLIENTS</a></li>
+          <li class="nav__item"><a href="blog.html">BLOG</a></li>
+        </ul>
+        <!-- dropdown panels are built by js/ui.js -->
+      </nav>
+  </header>
+</div>
+
+<main>
+  <section class="page">
+    <div class="shell">
+      <div class="page__head">
+        <p class="page__eyebrow" data-dim data-reveal><span class="rule" aria-hidden="true"></span>FREE GUIDE</p>
+        <h1 class="page__title" data-dim data-reveal>THE 12 QUESTIONS<br>SOCIAL DATA ANSWERS<br>BETTER THAN A SURVEY.</h1>
+        <p class="page__lead" data-dim data-reveal>Most brand questions are still answered by asking a thousand people what they think. Twelve of them are better answered by watching what three billion people already do.</p>
+        <div class="page__actions" data-reveal>
+          <a class="btn btn--primary" href="book-a-meeting.html">Book a meeting <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="use-cases.html">See the use cases</a>
+        </div>
+      </div>
+
+      <section class="block" id="inside">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">WHAT IS INSIDE</p>
+          <h2 class="block__title">Twelve questions, twelve methods.</h2>
+          <p class="block__lead">For each one: the data it needs, what it can tell you, what it cannot, and
+             how long a first read takes. Written by the consultants who run them.</p>
+        </div>
+        <ol class="chapters" data-dim data-reveal>
+          <li><span>01</span>Analyze the impact of an event or campaign</li>
+          <li><span>02</span>Optimize your leader advocacy strategy</li>
+          <li><span>03</span>Identify the right ambassadors</li>
+          <li><span>04</span>Monitor your brand image and reputation</li>
+          <li><span>05</span>Develop your brand messaging</li>
+          <li><span>06</span>Identify and mitigate brand risks</li>
+          <li><span>07</span>Segment your target profiles</li>
+          <li><span>08</span>Rejuvenate your audiences</li>
+          <li><span>09</span>Understand expectations at every touchpoint</li>
+          <li><span>10</span>Test and evaluate your products</li>
+          <li><span>11</span>Analyze markets and identify opportunities</li>
+          <li><span>12</span>Map out your stakeholders and future trends</li>
+        </ol>
+      </section>
+
+      <section class="block" id="get">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">SEND IT TO ME</p>
+          <h2 class="block__title">Free, and actually useful.</h2>
+        </div>
+        <form data-dim class="form" id="guide-form" novalidate data-reveal>
+          <div class="form__row">
+            <div class="form__field">
+              <label for="g-first">FIRST NAME</label>
+              <input id="g-first" name="g-first" type="text" placeholder="Camille" required />
+            </div>
+            <div class="form__field">
+              <label for="g-last">LAST NAME</label>
+              <input id="g-last" name="g-last" type="text" placeholder="Bernard" required />
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field">
+              <label for="g-email">WORK EMAIL</label>
+              <input id="g-email" name="g-email" type="email" placeholder="camille@company.com" required />
+            </div>
+            <div class="form__field">
+              <label for="g-phone">PHONE</label>
+              <input id="g-phone" name="g-phone" type="tel" placeholder="+33 6 12 34 56 78" />
+            </div>
+          </div>
+          <button class="form__submit" type="submit">Get the free guide →</button>
+          <p class="form__reassure">100% free · sent by email immediately · no sequence afterwards</p>
+          <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>Guide sent. Check your inbox — and your spam folder, it happens.</span></p>
+        </form>
+      </section>
+
+      <section class="cta" data-reveal>
+        <h2 class="cta__title">Rather talk it through?</h2>
+        <p class="cta__text">If your question is already precise, skip the guide — thirty minutes with a consultant will get you further.</p>
+        <form class="signup" novalidate>
+          <label class="visually-hidden" for="email-gu">Your work email</label>
+          <input class="signup__input" id="email-gu" name="email" type="email"
+                 placeholder="Your work email..." autocomplete="email" required />
+          <button class="signup__btn" type="submit">BOOK A MEETING</button>
+        </form>
+        <p class="signup__note" role="status">
+          <span class="signup__check" aria-hidden="true">✓</span>
+          NOTED - WE GET BACK TO YOU WITHIN 24 HOURS
+        </p>
+        <p class="cta__text" style="margin-top:18px">
+          Already running social listening?
+          <a href="diagnostic.html" style="color:var(--amber-ink);border-bottom:1px solid rgba(var(--amber-rgb),.6)">Request a diagnostic instead →</a>
+        </p>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="site-foot__in shell">
+    <div class="site-foot__brand">
+      <a class="logo" href="index.html" aria-label="Licter — home">
+        <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+        <img class="logo__img" src="assets/img/logo-navy.png" alt="Licter" width="44" height="48" />
+      </a>
+      <p>The Social Data Intelligence consultancy. We turn data from the world's
+         largest panel — social media, search, generative AI — into decisions.</p>
+    </div>
+    <div>
+      <h4>OFFERS</h4>
+      <ul>
+        <li><a href="offers.html#social-insights">Social Insights</a></li>
+        <li><a href="offers.html#vigie">Vigie 360 — 24/7 monitoring</a></li>
+        <li><a href="offers.html#slaas">Social Listening as a Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>USE CASES</h4>
+      <ul>
+        <li><a href="use-cases.html#communication">Communication</a></li>
+        <li><a href="use-cases.html#brand-health">Brand health</a></li>
+        <li><a href="use-cases.html#audiences">Audiences</a></li>
+        <li><a href="use-cases.html#trends">Trends &amp; innovation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>GET STARTED</h4>
+      <ul>
+        <li><a href="guide.html">The free guide</a></li>
+        <li><a href="diagnostic.html">Request a diagnostic</a></li>
+        <li><a href="book-a-meeting.html">Book a meeting</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>COMPANY</h4>
+      <ul>
+        <li><a href="why-licter.html">Why Licter</a></li>
+        <li><a href="tech-tools.html">Tech &amp; tools</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-foot__legal shell">
+    <span>© 2026 Licter — Social Data Intelligence</span>
+    <span>50+ clients · 160+ projects · Top 50 worldwide, SI Lab 2024</span>
+  </div>
+</footer>
+
+<script src="js/cartography.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>

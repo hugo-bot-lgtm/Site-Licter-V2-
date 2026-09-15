@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Offers — Licter</title>
+<meta name="description" content="Social Insights, Vigie 360 monitoring and Social Listening as a Service: fixed fee, unlimited studies, no commitment." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<a class="banner" href="guide.html">
+  The guide — <span>the 12 questions social data answers better than a survey</span> →
+</a>
+
+<canvas id="carto" aria-hidden="true"></canvas>
+<div id="carto-tip" class="carto-tip" aria-hidden="true">
+  <span class="carto-tip__icon"></span><span class="carto-tip__name"></span>
+</div>
+
+<div class="site-head">
+  <header class="hero__top shell" data-reveal>
+      <a class="logo" href="index.html" aria-label="Licter — home" data-dim>
+        <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+        <img class="logo__img" src="assets/img/logo-navy.png" alt="Licter" width="44" height="48" />
+      </a>
+      <nav class="nav" aria-label="Main" id="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="use-cases"
+                    aria-expanded="false" aria-controls="menu-use-cases">
+              USE CASES<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="offers"
+                    aria-expanded="false" aria-controls="menu-offers">
+              OFFERS<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item"><a href="why-licter.html">WHY LICTER</a></li>
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="tech"
+                    aria-expanded="false" aria-controls="menu-tech">
+              TECH &amp; TOOLS<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item"><a href="clients.html">CLIENTS</a></li>
+          <li class="nav__item"><a href="blog.html">BLOG</a></li>
+        </ul>
+        <!-- dropdown panels are built by js/ui.js -->
+      </nav>
+  </header>
+</div>
+
+<main>
+  <section class="page">
+    <div class="shell">
+      <div class="page__head">
+        <p class="page__eyebrow" data-dim data-reveal><span class="rule" aria-hidden="true"></span>OFFERS</p>
+        <h1 class="page__title" data-dim data-reveal>BUY ANSWERS,<br>NOT LICENCES.</h1>
+        <p class="page__lead" data-dim data-reveal>Fixed fee, unlimited studies, no commitment. Consultants frame, configure and produce — you get the decision, not a platform to staff.</p>
+        <div class="page__actions" data-reveal>
+          <a class="btn btn--primary" href="book-a-meeting.html">Book a meeting <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="use-cases.html">See the use cases</a>
+        </div>
+      </div>
+
+      <section class="block" id="offers">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">THREE WAYS TO WORK WITH US</p>
+          <h2 class="block__title">Pick the model, not the project.</h2>
+          <p class="block__lead">Most social data budgets are spent on tools and consumed by set-up. Our three
+             offers all start from the same principle: you buy answers, at a predictable price.</p>
+        </div>
+        <div class="grid grid--two">
+        <article class="card card--hover" id="social-insights" data-reveal>
+          <span class="card__num">01 — SOCIAL INSIGHTS</span>
+          <h3 class="card__title">Your social data analyses deserve experts.</h3>
+          <p class="card__text">A fixed fee, unlimited studies, no commitment. Our consultants frame the
+             question, configure the collection and produce the analysis — you get the answer, not a tool
+             licence and a training plan.</p>
+          <p class="card__meta"><b>Model:</b> fixed monthly fee · unlimited studies · no lock-in</p>
+        </article>
+        <article class="card card--hover" id="vigie" data-reveal>
+          <span class="card__num">02 — VIGIE 360</span>
+          <h3 class="card__title">We alert you in 15 minutes, 24/7.</h3>
+          <p class="card__text">Continuous monitoring of your brand, your executives and your markets, in more
+             than twenty languages. A human reads the signal before it reaches you, so an alert means
+             something happened — not that a keyword fired.</p>
+          <p class="card__meta"><b>In place for:</b> 25+ client organisations · 20+ languages</p>
+        </article>
+        <article class="card card--hover" id="slaas" data-reveal>
+          <span class="card__num">03 — SOCIAL LISTENING AS A SERVICE</span>
+          <h3 class="card__title">We increase the adoption and impact of your social listening.</h3>
+          <p class="card__text">You already own a platform and it is under-used. We take over the taxonomy, the
+             dashboards and the recurring analyses, and train your teams to read them — so the licence you
+             pay for produces decisions.</p>
+          <p class="card__meta"><b>Typical start:</b> audit of the existing setup, then recurring delivery</p>
+        </article>
+        </div>
+      </section>
+
+      <section class="block" id="method">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">HOW AN ENGAGEMENT RUNS</p>
+          <h2 class="block__title">Four steps, no black box.</h2>
+        </div>
+        <div class="steps" data-dim data-reveal>
+          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
+            <h3>Framing</h3>
+            <p>We start from the business decision, not the keyword list. What will change depending on the answer?</p>
+          </div></div>
+          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
+            <h3>Collection</h3>
+            <p>Social listening, audience intelligence, digital panel and search listening — combined, and filtered
+               by consultants rather than by a dashboard default.</p>
+          </div></div>
+          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
+            <h3>Analysis</h3>
+            <p>Proprietary algorithms profile the audiences; analysts read them against your market, in the
+               language the market speaks.</p>
+          </div></div>
+          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
+            <h3>Decision</h3>
+            <p>A readout your teams can act on, recurring monitoring where it matters, and alerts when something
+               moves.</p>
+          </div></div>
+        </div>
+      </section>
+
+      <section class="cta" data-reveal>
+        <h2 class="cta__title">Tell us what you need to decide this quarter.</h2>
+        <p class="cta__text">Thirty minutes is usually enough to tell you whether social data answers your question, and which of the three models fits.</p>
+        <form class="signup" novalidate>
+          <label class="visually-hidden" for="email-of">Your work email</label>
+          <input class="signup__input" id="email-of" name="email" type="email"
+                 placeholder="Your work email..." autocomplete="email" required />
+          <button class="signup__btn" type="submit">BOOK A MEETING</button>
+        </form>
+        <p class="signup__note" role="status">
+          <span class="signup__check" aria-hidden="true">✓</span>
+          NOTED - WE GET BACK TO YOU WITHIN 24 HOURS
+        </p>
+        <p class="cta__text" style="margin-top:18px">
+          Already running social listening?
+          <a href="diagnostic.html" style="color:var(--amber-ink);border-bottom:1px solid rgba(var(--amber-rgb),.6)">Request a diagnostic instead →</a>
+        </p>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="site-foot__in shell">
+    <div class="site-foot__brand">
+      <a class="logo" href="index.html" aria-label="Licter — home">
+        <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+        <img class="logo__img" src="assets/img/logo-navy.png" alt="Licter" width="44" height="48" />
+      </a>
+      <p>The Social Data Intelligence consultancy. We turn data from the world's
+         largest panel — social media, search, generative AI — into decisions.</p>
+    </div>
+    <div>
+      <h4>OFFERS</h4>
+      <ul>
+        <li><a href="offers.html#social-insights">Social Insights</a></li>
+        <li><a href="offers.html#vigie">Vigie 360 — 24/7 monitoring</a></li>
+        <li><a href="offers.html#slaas">Social Listening as a Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>USE CASES</h4>
+      <ul>
+        <li><a href="use-cases.html#communication">Communication</a></li>
+        <li><a href="use-cases.html#brand-health">Brand health</a></li>
+        <li><a href="use-cases.html#audiences">Audiences</a></li>
+        <li><a href="use-cases.html#trends">Trends &amp; innovation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>GET STARTED</h4>
+      <ul>
+        <li><a href="guide.html">The free guide</a></li>
+        <li><a href="diagnostic.html">Request a diagnostic</a></li>
+        <li><a href="book-a-meeting.html">Book a meeting</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>COMPANY</h4>
+      <ul>
+        <li><a href="why-licter.html">Why Licter</a></li>
+        <li><a href="tech-tools.html">Tech &amp; tools</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-foot__legal shell">
+    <span>© 2026 Licter — Social Data Intelligence</span>
+    <span>50+ clients · 160+ projects · Top 50 worldwide, SI Lab 2024</span>
+  </div>
+</footer>
+
+<script src="js/cartography.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
