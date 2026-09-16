@@ -674,14 +674,17 @@
      falloff. Done on the composite so travellers are dimmed too. */
   function applyDim() {
     if (!dimZones.length) return;
-    var steps = 5, feather = 26;
+    /* On the cream ground a dark line reads through text far more than a pale
+       line did on navy: the punch-out has to take most of the map out, not
+       half of it. */
+    var steps = 6, feather = 34, strength = 0.86;
     ctx.save();
     ctx.globalCompositeOperation = "destination-out";
     for (var i = 0; i < dimZones.length; i++) {
       var r = dimZones[i];
       for (var s = 0; s < steps; s++) {
         var grow = feather * (1 - s / steps);
-        ctx.fillStyle = "rgba(0,0,0," + (0.5 / steps) + ")";
+        ctx.fillStyle = "rgba(0,0,0," + (strength / steps) + ")";
         roundRect(ctx, r.left - 14 - grow, r.top - 10 - grow,
                        r.width + 28 + grow * 2, r.height + 20 + grow * 2, 18 + grow);
         ctx.fill();

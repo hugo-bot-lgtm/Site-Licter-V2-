@@ -762,6 +762,33 @@
     window.addEventListener("scroll", function () { if (openKey) close(); }, { passive: true });
   })();
 
+  /* ------------------------------------------------------------- veil
+     The cartography is the hero's subject; below it, it is a texture behind
+     text. A cream veil fades in as soon as the reading content starts, and
+     pages without a hero start already veiled. */
+  (function veil() {
+    var hero = document.querySelector(".hero");
+    var body = document.body;
+
+    if (!hero) { body.style.setProperty("--veil", "0.52"); return; }
+
+    var raf = null, last = -1;
+    function apply() {
+      raf = null;
+      var h = window.innerHeight;
+      var v = Math.max(0, Math.min(1, (window.scrollY - h * 0.25) / (h * 0.5))) * 0.52;
+      v = Math.round(v * 100) / 100;
+      if (v === last) return;
+      last = v;
+      body.style.setProperty("--veil", v);
+    }
+    window.addEventListener("scroll", function () {
+      if (!raf) raf = requestAnimationFrame(apply);
+    }, { passive: true });
+    window.addEventListener("resize", apply);
+    apply();
+  })();
+
   /* ---------------------------------------------------------- reveals
      Hero blocks play on load, the rest as they scroll in. The hiding rule
      lives behind `html.reveal`, added here: if this script never runs, or

@@ -373,6 +373,19 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     de la propale font les 12 chapitres), mais il faut produire le PDF et
     brancher l'envoi avant d'activer le bandeau en production.
 
+17. **Lisibilité du texte sur la carto (thème clair).** Deux réglages, parce
+    qu'un seul ne suffisait pas :
+
+    - **Le masque de lisibilité passe de 50 % à 86 %** de retrait, avec un
+      dégradé élargi de 26 à 34 px. La valeur de 50 % venait du brief, écrite
+      pour un fond navy : un trait clair sur sombre se lit à travers le texte
+      bien moins qu'un trait sombre sur crème.
+    - **Un voile crème** (`--veil`) recouvre la carto dès qu'on quitte le
+      hero : 0 dans le hero, jusqu'à 0.52 une fois dans le contenu, piloté au
+      scroll en `requestAnimationFrame`. Les pages internes, qui n'ont pas de
+      hero, démarrent directement voilées. La carto reste le sujet du hero et
+      redevient une texture partout ailleurs.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

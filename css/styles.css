@@ -50,6 +50,9 @@
   --card-bg:     var(--white);
 
   --gutter: clamp(20px, 5.83vw, 64px);
+  /* opacity of the cream veil laid over the cartography — 0 in the hero,
+     raised by js/ui.js as soon as the reading content starts */
+  --veil: 0;
   /* The mock is 1097 px wide, gutters included. That width is the floor, not
      a ceiling: past it the column keeps growing, but slower than the screen,
      so a wide display fills up without the copy stretching edge to edge. */
@@ -143,8 +146,10 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background:
+    linear-gradient(rgba(252, 246, 239, var(--veil)), rgba(252, 246, 239, var(--veil))),
     radial-gradient(120% 95% at 50% 38%, rgba(255, 255, 255, .5), transparent 58%),
     radial-gradient(130% 100% at 50% 42%, transparent 55%, rgba(19, 22, 45, .07) 100%);
+  transition: background .25s linear;
 }
 
 main { position: relative; z-index: 1; }
