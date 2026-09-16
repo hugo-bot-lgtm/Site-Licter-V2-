@@ -677,7 +677,9 @@
     /* On the cream ground a dark line reads through text far more than a pale
        line did on navy: the punch-out has to take most of the map out, not
        half of it. */
-    var steps = 6, feather = 34, strength = 0.86;
+    /* The sheets and the veil now carry most of the legibility work, so the
+       punch-out can be lighter and let the communities read through. */
+    var steps = 6, feather = 34, strength = 0.52;
     ctx.save();
     ctx.globalCompositeOperation = "destination-out";
     for (var i = 0; i < dimZones.length; i++) {
