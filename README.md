@@ -183,9 +183,16 @@ l'indicateur `+23%`, le lien final et les survols de menu.
    colonne.
 
    **Fond du bloc : généré, pas photographique** (`.field` dans
-   `css/styles.css`). Là où topo.io met une photo de ciel, on a une nappe
-   navy deux tons plus clairs + trois accents radiaux (ambre, ambre foncé,
-   gris) + un grain fin en SVG `feTurbulence` à 5 %. Aucun fichier à livrer,
+   `css/styles.css`). Là où topo.io met une photo de ciel, on a une **nappe
+   de lumière chaude** — deux halos ambrés, un halo blanc, et un voile blanc
+   vertical — plus un **quadrillage de points** (26 px, navy à 12 %, masqué
+   en fondu) qui évoque le papier millimétré plutôt qu'une texture décorative.
+
+   *Version précédente abandonnée* : un lavis gris de la charte, qui servait à
+   détacher la console blanche. Une fois le voile crème ajouté par-dessus la
+   carto (arbitrage 17), ces deux gris se superposaient et le bloc lisait
+   comme une ombre sale. La console se détache maintenant sur sa seule ombre
+   portée, et la nappe n'a plus qu'à porter la chaleur. Aucun fichier à livrer,
    net à tous les DPI, insensible au recadrage, et une dérive très lente
    (64 s, `transform` uniquement, coupée sous `prefers-reduced-motion`).
    Le dégradé de masque en haut et en bas évite la bande horizontale qui
