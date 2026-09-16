@@ -1067,7 +1067,11 @@ main { position: relative; z-index: 1; }
   position: relative;
   padding: clamp(96px, 13vh, 150px) 0 clamp(64px, 8vh, 96px);
 }
-.page__head { max-width: 820px; }
+/* The sheet is drawn on this box, so it has to span the whole column like a
+   section does — otherwise the two sheets end at different x and the join
+   reads as a staircase. The text is constrained on the children instead. */
+.page__head { max-width: none; }
+.page__title { max-width: 880px; }
 .page__eyebrow {
   display: flex;
   align-items: center;

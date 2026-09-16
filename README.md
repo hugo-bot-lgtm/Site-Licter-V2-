@@ -411,8 +411,12 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     sections se suivent sans marge. Le débord vertical est passé à zéro : les
     blocs portent déjà 48 à 84 px de padding, ce qui donne son air au texte,
     et la feuille du titre de page s'arrête net à son bord bas. Deux feuilles
-    se touchent, aucune ne croise l'autre. Sous 640 px, le débord latéral se
-    resserre.
+    se touchent, aucune ne croise l'autre. Enfin, la feuille du titre de page
+    se dessinant sur un bloc de 820 px alors que celle des sections suit la
+    colonne entière, leurs bords droits ne tombaient pas au même endroit et la
+    jonction lisait comme un escalier : `.page__head` occupe désormais toute
+    la colonne et c'est le **titre** qui porte sa largeur maximale. Sous
+    640 px, le débord latéral se resserre.
 
 19. **Rythme des blocs et variantes d'animation.** Toutes les sections des
     pages internes suivaient le même gabarit — titre en haut, trois cartes
