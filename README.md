@@ -393,6 +393,19 @@ l'indicateur `+23%`, le lien final et les survols de menu.
       hero, démarrent directement voilées. La carto reste le sujet du hero et
       redevient une texture partout ailleurs.
 
+18. **Une feuille de lumière sous chaque bloc de texte.** Le masque de
+    l'arbitrage 17 amincit la carto derrière le texte, mais sur des lignes
+    pleine largeur (les étapes, la FAQ, les chiffres) le réseau passait encore
+    entre les lignes. Ces blocs reposent désormais sur une **vraie surface** :
+    un pseudo-élément blanc, sans bordure ni coin visible, débordant de
+    22 × 30 px et **dissous en dégradé** — il lit comme de la lumière, pas
+    comme une carte de plus.
+
+    Deux variantes : les blocs de texte étroits et alignés à gauche (titres de
+    section, questions, formulaires, chapitres) voient leur feuille s'éteindre
+    avant la marge droite ; les rangées pleine largeur (étapes, FAQ, chiffres)
+    la gardent jusqu'au bord. Sous 640 px, le débord se resserre.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

@@ -1522,3 +1522,80 @@ a.card:hover, .card--hover:hover {
   letter-spacing: 1px;
   color: var(--amber-ink);
 }
+
+/* =========================================================
+   Paper — a light sheet under every text block
+
+   The punch-out mask thins the map behind text, but on full-width rows it
+   still runs between the lines. These blocks now sit on an actual surface:
+   a white sheet with no border and no corner of its own, dissolving at the
+   edges so it reads as light rather than as a card.
+   ========================================================= */
+
+.page__head,
+.block__head,
+.steps,
+.faq,
+.chapters,
+.stats,
+.questions,
+.form,
+.paths { position: relative; }
+
+.page__head::before,
+.block__head::before,
+.steps::before,
+.faq::before,
+.chapters::before,
+.stats::before,
+.questions::before,
+.form::before {
+  content: "";
+  position: absolute;
+  inset: -22px -30px;
+  z-index: -1;
+  border-radius: 20px;
+  backdrop-filter: blur(3px);
+  pointer-events: none;
+}
+
+/* narrow, left-aligned text: the sheet dissolves before the right margin */
+.page__head::before,
+.block__head::before,
+.chapters::before,
+.questions::before,
+.form::before {
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, .94) 0%,
+    rgba(255, 255, 255, .9) 46%,
+    rgba(255, 255, 255, .6) 76%,
+    rgba(255, 255, 255, 0) 100%);
+}
+
+/* full-width rows: the sheet runs the whole way and only fades at the edge */
+.steps::before,
+.faq::before,
+.stats::before {
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, .92) 0%,
+    rgba(255, 255, 255, .9) 82%,
+    rgba(255, 255, 255, .5) 94%,
+    rgba(255, 255, 255, 0) 100%);
+}
+
+@media (max-width: 640px) {
+  .page__head::before,
+  .block__head::before,
+  .steps::before,
+  .faq::before,
+  .chapters::before,
+  .stats::before,
+  .questions::before,
+  .form::before {
+    inset: -16px -18px;
+    background: linear-gradient(90deg,
+      rgba(255, 255, 255, .94) 0%,
+      rgba(255, 255, 255, .92) 86%,
+      rgba(255, 255, 255, 0) 100%);
+  }
+}
