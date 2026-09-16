@@ -393,7 +393,7 @@ l'indicateur `+23%`, le lien final et les survols de menu.
       hero, démarrent directement voilées. La carto reste le sujet du hero et
       redevient une texture partout ailleurs.
 
-18. **Une feuille de lumière sous chaque bloc de texte.** Le masque de
+18. **Une feuille de lumière par section.** Le masque de
     l'arbitrage 17 amincit la carto derrière le texte, mais sur des lignes
     pleine largeur (les étapes, la FAQ, les chiffres) le réseau passait encore
     entre les lignes. Ces blocs reposent désormais sur une **vraie surface** :
@@ -401,10 +401,12 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     22 × 30 px et **dissous en dégradé** — il lit comme de la lumière, pas
     comme une carte de plus.
 
-    Deux variantes : les blocs de texte étroits et alignés à gauche (titres de
-    section, questions, formulaires, chapitres) voient leur feuille s'éteindre
-    avant la marge droite ; les rangées pleine largeur (étapes, FAQ, chiffres)
-    la gardent jusqu'au bord. Sous 640 px, le débord se resserre.
+    **Première tentative corrigée** : une feuille par *élément* (titre, liste,
+    formulaire…). Une section avec un titre et une liste se retrouvait avec
+    deux feuilles superposées, de largeurs différentes, et la couture se
+    voyait. Il n'y en a plus qu'**une par section**, à **72 % d'opacité** avec
+    un flou d'arrière-plan : la carto reste perceptible au travers, le texte
+    reste net. Sous 640 px, le débord se resserre.
 
 19. **Rythme des blocs et variantes d'animation.** Toutes les sections des
     pages internes suivaient le même gabarit — titre en haut, trois cartes
