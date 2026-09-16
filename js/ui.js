@@ -590,16 +590,16 @@
     },
 
     tech: {
-      label: "FOUR LAYERS OF SIGNAL",
+      label: "THE PLATFORMS WE RUN",
       items: [
-        { icon: "layers", name: "Social listening", href: "tech-tools.html#layers",
-          desc: "What is being said, by whom, and how it travels." },
-        { icon: "audiences", name: "Audience intelligence", href: "tech-tools.html#layers",
-          desc: "Who is behind the accounts: interests, affinities, media diet." },
-        { icon: "panel", name: "Digital panel", href: "tech-tools.html#layers",
-          desc: "Three billion consumer profiles, nobody had to recruit." },
-        { icon: "search", name: "Search listening", href: "tech-tools.html#layers",
-          desc: "What people ask when nobody is watching." }
+        { letter: "T", name: "Talkwalker", href: "tech-tools.html#tools",
+          desc: "Broad listening and analytics, across markets and languages." },
+        { letter: "V", name: "Visibrain", href: "tech-tools.html#tools",
+          desc: "Real-time monitoring, and the media conversation as it breaks." },
+        { letter: "Y", name: "YouScan", href: "tech-tools.html#tools",
+          desc: "Visual listening: what appears in the image, not only in the text." },
+        { letter: "S", name: "SoPrism", href: "tech-tools.html#tools",
+          desc: "Audience intelligence: who the communities are, in detail." }
       ],
       aside: {
         label: "WHERE THE DATA COMES FROM",
@@ -620,6 +620,8 @@
 
   function menuIcon(item) {
     if (item.platform) return window.LicterIcons[item.platform] || "";
+    /* tools have no glyph we are entitled to reproduce: a monogram instead */
+    if (item.letter) return '<span class="menu__mono">' + item.letter + "</span>";
     return ICONS[item.icon] || "";
   }
 

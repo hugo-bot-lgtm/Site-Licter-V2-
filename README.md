@@ -345,6 +345,13 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     (« 15-minute alerts », « unlimited studies »). Les chiffres sont ceux
     revendiqués publiquement par Licter : à revalider avant mise en ligne.
 
+    **Outils** : le panneau « TECH & TOOLS » et une section de `tech-tools.html`
+    listent les quatre plateformes réellement utilisées — **Talkwalker,
+    Visibrain, YouScan, SoPrism**. Les descriptions d'une ligne sont de moi et
+    décrivent ce pour quoi chaque outil est connu ; à relire par Licter. Les
+    logos ne sont pas reproduits (marques tierces) : un monogramme tient la
+    place, à remplacer par les vrais si les licences le permettent.
+
     **Restent des placeholders** : les logos clients (wordmarks texte), les
     glyphes de plateformes, les chiffres de la console de la home, et le blog
     — quatre thèmes réels mais aucun article, à brancher sur le vrai blog.

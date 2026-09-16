@@ -1659,3 +1659,15 @@ a.card:hover::before, .card--hover:hover::before { transform: scaleY(1); }
 @media (prefers-reduced-motion: reduce) {
   .card::before { transition: none; }
 }
+
+/* monogram chip for the tools, which have no glyph of ours to show */
+.menu__mono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font: 700 13px/1 var(--body-font);
+  letter-spacing: .5px;
+  color: var(--amber-ink);
+}
