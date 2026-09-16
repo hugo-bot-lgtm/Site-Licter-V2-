@@ -1559,28 +1559,27 @@ a.card:hover, .card--hover:hover {
   pointer-events: none;
 }
 
-/* narrow, left-aligned text: the sheet dissolves before the right margin */
+/* The sheet is masked on every side, not just the right: a hard edge on the
+   left or the bottom turned it into a floating slab. */
 .page__head::before,
 .block__head::before,
 .chapters::before,
 .questions::before,
-.form::before {
-  background: linear-gradient(90deg,
-    rgba(255, 255, 255, .94) 0%,
-    rgba(255, 255, 255, .9) 46%,
-    rgba(255, 255, 255, .6) 76%,
-    rgba(255, 255, 255, 0) 100%);
-}
-
-/* full-width rows: the sheet runs the whole way and only fades at the edge */
+.form::before,
 .steps::before,
 .faq::before,
 .stats::before {
-  background: linear-gradient(90deg,
-    rgba(255, 255, 255, .92) 0%,
-    rgba(255, 255, 255, .9) 82%,
-    rgba(255, 255, 255, .5) 94%,
-    rgba(255, 255, 255, 0) 100%);
+  background: rgba(255, 255, 255, .92);
+  -webkit-mask-image: radial-gradient(125% 130% at 22% 50%, #000 42%, transparent 100%);
+          mask-image: radial-gradient(125% 130% at 22% 50%, #000 42%, transparent 100%);
+}
+
+/* full-width rows keep their sheet further to the right */
+.steps::before,
+.faq::before,
+.stats::before {
+  -webkit-mask-image: radial-gradient(150% 135% at 45% 50%, #000 55%, transparent 100%);
+          mask-image: radial-gradient(150% 135% at 45% 50%, #000 55%, transparent 100%);
 }
 
 @media (max-width: 640px) {
@@ -1591,11 +1590,93 @@ a.card:hover, .card--hover:hover {
   .chapters::before,
   .stats::before,
   .questions::before,
-  .form::before {
-    inset: -16px -18px;
-    background: linear-gradient(90deg,
-      rgba(255, 255, 255, .94) 0%,
-      rgba(255, 255, 255, .92) 86%,
-      rgba(255, 255, 255, 0) 100%);
+  .form::before { inset: -16px -20px; }
+}
+
+/* =========================================================
+   Block rhythm — alternating layouts on the inner pages
+
+   Every section used the same gabarit (head on top, three identical cards).
+   Odd sections keep that, with the first card promoted; even sections put a
+   sticky head on the left and the cards on the right. The page stops reading
+   like a list of the same thing.
+   ========================================================= */
+
+@media (min-width: 900px) {
+  .page .block:nth-of-type(even) {
+    display: grid;
+    grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
+    gap: clamp(30px, 3.4vw, 60px);
+    align-items: start;
   }
+  .page .block:nth-of-type(even) .block__head {
+    position: sticky;
+    top: 96px;
+    margin-bottom: 0;
+  }
+  /* the head sits in a narrow column: the title has to come down a size */
+  .page .block:nth-of-type(even) .block__title { font-size: clamp(23px, 2.1vw, 30px); }
+  .page .block:nth-of-type(even) .block__lead { font-size: 14px; }
+  .page .block:nth-of-type(even) .grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .page .block:nth-of-type(even) .steps,
+  .page .block:nth-of-type(even) .faq,
+  .page .block:nth-of-type(even) .chapters,
+  .page .block:nth-of-type(even) .form { margin-top: 4px; }
+
+  /* odd sections: the first card carries the section */
+  .page .block:nth-of-type(odd) .grid:not(.grid--two) > .card:first-child {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4px clamp(20px, 2.4vw, 34px);
+    align-content: start;
+    background: rgba(255, 255, 255, .92);
+  }
+  .page .block:nth-of-type(odd) .grid:not(.grid--two) > .card:first-child .card__num { grid-column: 1 / -1; }
+  .page .block:nth-of-type(odd) .grid:not(.grid--two) > .card:first-child .card__title {
+    font-size: clamp(19px, 1.7vw, 24px);
+    align-self: start;
+  }
+  .page .block:nth-of-type(odd) .grid:not(.grid--two) > .card:first-child .card__text { margin-top: 0; }
+  .page .block:nth-of-type(odd) .grid:not(.grid--two) > .card:first-child .card__meta {
+    grid-column: 1 / -1;
+  }
+}
+
+/* a mark that appears on hover, instead of the flat lift everywhere */
+.card { overflow: hidden; }
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: var(--amber);
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition: transform .28s cubic-bezier(.16, .84, .34, 1);
+}
+.card { position: relative; }
+a.card:hover::before, .card--hover:hover::before { transform: scaleY(1); }
+
+/* =========================================================
+   Reveal variants — the movement follows the layout
+   ========================================================= */
+
+.reveal .page .block:nth-of-type(even) [data-reveal],
+.reveal .page .block:nth-of-type(even).is-in .block__head { --shift: -22px; }
+
+.reveal [data-reveal] { transform: translate3d(var(--shift, 0px), 16px, 0); }
+.reveal .page .block:nth-of-type(even) [data-reveal] { transform: translate3d(-22px, 10px, 0); }
+.reveal .page .block:nth-of-type(odd) .grid > .card:first-child { transform: translate3d(0, 26px, 0) scale(.985); }
+.reveal .page .block:nth-of-type(odd) .grid > .card:first-child.is-in { transform: none; }
+
+/* cards in a row arrive one after the other */
+.reveal .grid > .card:nth-child(2) { transition-delay: .07s; }
+.reveal .grid > .card:nth-child(3) { transition-delay: .14s; }
+.reveal .grid > .card:nth-child(4) { transition-delay: .21s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card::before { transition: none; }
 }

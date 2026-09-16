@@ -406,6 +406,30 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     avant la marge droite ; les rangées pleine largeur (étapes, FAQ, chiffres)
     la gardent jusqu'au bord. Sous 640 px, le débord se resserre.
 
+19. **Rythme des blocs et variantes d'animation.** Toutes les sections des
+    pages internes suivaient le même gabarit — titre en haut, trois cartes
+    identiques dessous — et la page se lisait comme une liste de la même
+    chose. Deux gabarits alternent maintenant (au-delà de 900 px, en
+    `:nth-of-type`, donc sans toucher au HTML des dix pages) :
+
+    - **Sections impaires** : titre pleine largeur, et la **première carte est
+      promue** — elle occupe deux colonnes, passe en deux colonnes internes
+      (titre à gauche, texte à droite) et monte d'un cran en taille. Elle
+      porte la section au lieu d'être un item parmi trois.
+    - **Sections paires** : le titre passe dans une **colonne de gauche
+      collante** (`position: sticky`) qui accompagne le défilement des cartes.
+
+    L'animation suit le gabarit : les blocs pairs entrent par la gauche, les
+    impairs par le bas, la carte promue arrive avec une légère mise à
+    l'échelle, et les cartes d'une même rangée s'échelonnent de 70 ms. Au
+    survol, un filet ambre se déploie verticalement sur le bord gauche de la
+    carte — la même information que l'élévation, mais lisible.
+
+    **Au passage** : les feuilles de lumière de l'arbitrage 18 avaient un
+    bord franc à gauche et en bas, ce qui les faisait lire comme des dalles
+    blanches flottantes. Elles sont désormais **masquées sur tous les côtés**
+    par un dégradé radial.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
