@@ -770,13 +770,13 @@
     var hero = document.querySelector(".hero");
     var body = document.body;
 
-    if (!hero) { body.style.setProperty("--veil", "0.34"); return; }
+    if (!hero) { body.style.setProperty("--veil", "0.28"); return; }
 
     var raf = null, last = -1;
     function apply() {
       raf = null;
       var h = window.innerHeight;
-      var v = Math.max(0, Math.min(1, (window.scrollY - h * 0.25) / (h * 0.5))) * 0.36;
+      var v = Math.max(0, Math.min(1, (window.scrollY - h * 0.25) / (h * 0.5))) * 0.3;
       v = Math.round(v * 100) / 100;
       if (v === last) return;
       last = v;

@@ -384,13 +384,13 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     qu'un seul ne suffisait pas :
 
     - **Le masque de lisibilité** est passé de 50 % à 86 % de retrait, puis
-      redescendu à **52 %** une fois les feuilles de l'arbitrage 18 en place :
+      redescendu à **42 %** une fois les feuilles de l'arbitrage 18 en place :
       à trois couches (masque + voile + feuille), 86 % effaçait complètement
       le réseau derrière le texte. Dégradé élargi de 26 à 34 px. La valeur de 50 % venait du brief, écrite
       pour un fond navy : un trait clair sur sombre se lit à travers le texte
       bien moins qu'un trait sombre sur crème.
     - **Un voile crème** (`--veil`) recouvre la carto dès qu'on quitte le
-      hero : 0 dans le hero, jusqu'à 0.36 une fois dans le contenu, piloté au
+      hero : 0 dans le hero, jusqu'à 0.30 une fois dans le contenu, piloté au
       scroll en `requestAnimationFrame`. Les pages internes, qui n'ont pas de
       hero, démarrent directement voilées. La carto reste le sujet du hero et
       redevient une texture partout ailleurs.
@@ -406,8 +406,8 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     **Deux corrections successives.** D'abord, une feuille par *élément* (titre, liste,
     formulaire…). Une section avec un titre et une liste se retrouvait avec
     deux feuilles superposées, de largeurs différentes, et la couture se
-    voyait. Il n'y en a plus qu'**une par section**, à **58 % d'opacité** avec
-    un flou d'arrière-plan de 3 px : les pôles de communauté se lisent au
+    voyait. Il n'y en a plus qu'**une par section**, à **48 % d'opacité** avec
+    un flou d'arrière-plan de 2.5 px : les pôles de communauté se lisent au
     travers, le texte reste net. Ensuite, ces feuilles débordaient verticalement (`inset:
     -14px`) et **se chevauchaient entre sections voisines**, puisque les
     sections se suivent sans marge. Le débord vertical est passé à zéro : les
