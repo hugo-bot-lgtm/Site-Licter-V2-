@@ -1541,7 +1541,10 @@ a.card:hover, .card--hover:hover {
 .cases__asks::before {
   content: "";
   position: absolute;
-  inset: -14px -30px;
+  /* No vertical bleed: sections sit directly on top of each other, so a
+     negative inset made two sheets cross. The blocks already carry 48-84 px
+     of vertical padding, which gives the text its air. */
+  inset: 0 -30px;
   z-index: -1;
   border-radius: 26px;
   background: rgba(255, 255, 255, .72);
@@ -1551,13 +1554,18 @@ a.card:hover, .card--hover:hover {
   pointer-events: none;
 }
 
+/* the page head has a block right underneath: its sheet stops at its own
+   bottom edge, and the two meet without crossing */
+.page__head::before { inset: -22px -30px 0; }
+.cases__asks::before { inset: -18px -26px; }
+
 /* the hero's own blocks keep the canvas mask, no sheet */
 .hero .block::before { display: none; }
 
 @media (max-width: 640px) {
   .block::before,
-  .page__head::before,
-  .cases__asks::before { inset: -10px -18px; border-radius: 20px; }
+  .cases__asks::before { inset: 0 -18px; border-radius: 20px; }
+  .page__head::before { inset: -14px -18px 0; border-radius: 20px; }
 }
 
 /* =========================================================

@@ -401,12 +401,18 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     22 × 30 px et **dissous en dégradé** — il lit comme de la lumière, pas
     comme une carte de plus.
 
-    **Première tentative corrigée** : une feuille par *élément* (titre, liste,
+    **Deux corrections successives.** D'abord, une feuille par *élément* (titre, liste,
     formulaire…). Une section avec un titre et une liste se retrouvait avec
     deux feuilles superposées, de largeurs différentes, et la couture se
     voyait. Il n'y en a plus qu'**une par section**, à **72 % d'opacité** avec
     un flou d'arrière-plan : la carto reste perceptible au travers, le texte
-    reste net. Sous 640 px, le débord se resserre.
+    reste net. Ensuite, ces feuilles débordaient verticalement (`inset:
+    -14px`) et **se chevauchaient entre sections voisines**, puisque les
+    sections se suivent sans marge. Le débord vertical est passé à zéro : les
+    blocs portent déjà 48 à 84 px de padding, ce qui donne son air au texte,
+    et la feuille du titre de page s'arrête net à son bord bas. Deux feuilles
+    se touchent, aucune ne croise l'autre. Sous 640 px, le débord latéral se
+    resserre.
 
 19. **Rythme des blocs et variantes d'animation.** Toutes les sections des
     pages internes suivaient le même gabarit — titre en haut, trois cartes
