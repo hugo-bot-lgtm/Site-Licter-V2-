@@ -29,8 +29,13 @@ brancher (`js/ui.js`, commentaire `wire to the real endpoint here`).
 Lancer en local :
 
 ```bash
-python3 -m http.server 8765
+python3 serve.py 8765
 ```
+
+`serve.py` est un `http.server` qui ajoute `Cache-Control: no-store`. Sans ça,
+le navigateur garde CSS et JS en cache, répond 304 et **les modifications
+semblent ne pas avoir eu lieu** — piège qui a coûté deux allers-retours. Les
+liens vers les assets portent aussi un `?v=` à bumper à chaque livraison.
 
 (un vrai serveur est nécessaire : en `file://`, le détourage du logo est
 bloqué par le canvas tainting et retombe sur l'image brute.)
