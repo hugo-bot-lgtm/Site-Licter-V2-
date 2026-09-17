@@ -592,13 +592,13 @@
     tech: {
       label: "THE PLATFORMS WE RUN",
       items: [
-        { letter: "T", name: "Talkwalker", href: "tech-tools.html#tools",
+        { letter: "T", logo: "assets/img/tools/talkwalker.png", name: "Talkwalker", href: "tech-tools.html#tools",
           desc: "Broad listening and analytics, across markets and languages." },
-        { letter: "V", name: "Visibrain", href: "tech-tools.html#tools",
+        { letter: "V", logo: "assets/img/tools/visibrain.png", name: "Visibrain", href: "tech-tools.html#tools",
           desc: "Real-time monitoring, and the media conversation as it breaks." },
-        { letter: "Y", name: "YouScan", href: "tech-tools.html#tools",
+        { letter: "Y", logo: "assets/img/tools/youscan.png", name: "YouScan", href: "tech-tools.html#tools",
           desc: "Visual listening: what appears in the image, not only in the text." },
-        { letter: "S", name: "SoPrism", href: "tech-tools.html#tools",
+        { letter: "S", logo: "assets/img/tools/soprism.png", name: "SoPrism", href: "tech-tools.html#tools",
           desc: "Audience intelligence: who the communities are, in detail." }
       ],
       aside: {
@@ -620,7 +620,14 @@
 
   function menuIcon(item) {
     if (item.platform) return window.LicterIcons[item.platform] || "";
-    /* tools have no glyph we are entitled to reproduce: a monogram instead */
+    /* Third-party tool logos: dropped in assets/img/tools/. If a file is
+       missing the monogram takes over, so the menu never shows a broken
+       image. */
+    if (item.logo) {
+      return '<img class="menu__logo" src="' + item.logo + '" alt="' + item.name +
+             '" loading="lazy" onerror="this.parentNode.innerHTML=&quot;' +
+             '<span class=\\&quot;menu__mono\\&quot;>' + item.letter + '</span>&quot;" />';
+    }
     if (item.letter) return '<span class="menu__mono">' + item.letter + "</span>";
     return ICONS[item.icon] || "";
   }

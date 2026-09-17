@@ -1671,3 +1671,26 @@ a.card:hover::before, .card--hover:hover::before { transform: scaleY(1); }
   letter-spacing: .5px;
   color: var(--amber-ink);
 }
+
+/* third-party tool logos keep their own colours: white chip, contain fit */
+.menu__item .menu__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.menu__icon:has(.menu__logo) {
+  background: #fff;
+  border-color: rgba(var(--ink-rgb), .12);
+  padding: 3px;
+}
+
+/* tool logo on the cards of tech-tools.html; the element removes itself if
+   the file is not there yet */
+.tool-logo {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  margin-bottom: 4px;
+}
+.tool-logo img { max-height: 34px; max-width: 150px; object-fit: contain; }
