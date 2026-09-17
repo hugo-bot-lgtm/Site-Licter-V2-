@@ -796,6 +796,10 @@
     }
 
     function open() {
+      /* Hard guard: any path that re-schedules (a visibility change, a failed
+         attempt) could otherwise open a second card over the live one. */
+      if (layer.children.length) return schedule();
+
       var r = hero.getBoundingClientRect();
       if (r.bottom < 120) return schedule();   /* hero scrolled away */
 

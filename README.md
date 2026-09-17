@@ -487,8 +487,10 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     la navbar et au-dessus du bandeau clients — « s'ouvre » en carte **16:9**
     (en-tête plateforme, celle du voyageur et pas une au hasard, barre de
     progression, emplacement média, légende), tient 5,2 s, puis se referme.
-    **Une seule carte à la fois** : la suivante n'est programmée qu'une fois
-    la précédente retirée du DOM, après une pause de 3,6 à 7,2 s.
+    **Une seule carte à la fois**, garanti par deux verrous : la suivante
+    n'est programmée qu'une fois la précédente retirée du DOM, *et* `open()`
+    refuse d'ouvrir si une carte est encore présente — un retour d'onglet en
+    avant-plan reprogrammait sinon une ouverture par-dessus la carte vivante.
 
     La carte est **ancrée sur la position réelle du point** au moment de
     l'ouverture, reliée à lui par un fil et une pastille de la couleur de sa
@@ -513,6 +515,12 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     colonnes**, toutes les deux en accordéon : les étapes gardent leur
     numérotation dans l'en-tête dépliable (`.faq__n`) et leur description
     devient le contenu. Sous 900 px, les deux colonnes s'empilent.
+
+23. **Chiffres de preuve remontés juste après les logos clients.** Ils
+    arrivaient après le bloc use cases ; ils ouvrent maintenant la page, dans
+    l'ordre de Flowt : accroche → logos → chiffres → contenu. La preuve
+    sociale et la preuve chiffrée se suivent au lieu d'être séparées par une
+    section entière.
 
 ## Reste à faire
 
