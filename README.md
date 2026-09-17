@@ -103,7 +103,7 @@ l'indicateur `+23%`, le lien final et les survols de menu.
   Josefin Sans via Google Fonts.
 - Hero : logo détouré à la volée, pilule de nav blanche à 62 % / bordure
   navy 12 %, accroche, titre, description, formulaire, bandeau clients en
-  plein débord, footer `EXPLORE`.
+  plein débord.
 - Navbar : deux entrées portent un panneau déroulant (`USE CASES` et
   `TECH & TOOLS`), sur le principe de la capture Browserbase — colonnes
   d'entrées icône + titre + description, colonne annexe séparée d'un filet,
@@ -236,8 +236,9 @@ l'indicateur `+23%`, le lien final et les survols de menu.
    plus petit des deux axes, donc un écran large mais court ne fait pas
    déborder le hero. En dessous de 1248 px, rien ne change : la maquette
    reste la référence exacte. Le hero est plafonné à 900 px de haut, ce qui
-   laisse apparaître le haut de l'écran 2 — l'appel au scroll que promet le
-   libellé `EXPLORE`.
+   laisse apparaître le haut de l'écran 2, qui sert d'appel au scroll (le
+   libellé `EXPLORE` du brief a été retiré : le bloc suivant qui dépasse fait
+   le même travail).
 9. **Colonne centrée, élastique.** Toute la page vit dans une colonne
    centrée (`--maxw`, classe `.shell`) : 1097 px — la largeur de la maquette,
    gutters compris — comme plancher, puis 88 vw jusqu'à 1420 px. Au-delà de

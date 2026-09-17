@@ -526,13 +526,6 @@ main { position: relative; z-index: 1; }
 }
 .client-logo svg { display: block; width: 100%; height: 100%; }
 
-.hero__footer {
-  margin: 10px 0 0;
-  text-align: center;
-  font: 600 10px/1 var(--body-font);
-  letter-spacing: 3px;
-  color: var(--text-4);
-}
 
 /* =========================================================
    Screen 2 — Use cases
@@ -975,7 +968,6 @@ main { position: relative; z-index: 1; }
 
   .clients__label { font-size: clamp(10px, .75vw, 12px); }
   .marquee { height: clamp(48px, 4vw, 62px); }
-  .hero__footer { font-size: clamp(10px, .75vw, 12px); }
 
   .cases__eyebrow { font-size: clamp(11px, .82vw, 13px); }
   .cases__title { font-size: clamp(44px, min(3.6vw, 6.4vh), 58px); }
