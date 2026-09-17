@@ -592,13 +592,13 @@
     tech: {
       label: "THE PLATFORMS WE RUN",
       items: [
-        { letter: "T", logo: "assets/img/tools/talkwalker.png", name: "Talkwalker", href: "tech-tools.html#tools",
+        { letter: "T", logo: "assets/img/tools/talkwalker.png", name: "Talkwalker", href: "tech-talkwalker.html",
           desc: "Broad listening and analytics, across markets and languages." },
-        { letter: "V", logo: "assets/img/tools/visibrain.png", name: "Visibrain", href: "tech-tools.html#tools",
+        { letter: "V", logo: "assets/img/tools/visibrain.png", name: "Visibrain", href: "tech-visibrain.html",
           desc: "Real-time monitoring, and the media conversation as it breaks." },
-        { letter: "Y", logo: "assets/img/tools/youscan.png", name: "YouScan", href: "tech-tools.html#tools",
+        { letter: "Y", logo: "assets/img/tools/youscan.png", name: "YouScan", href: "tech-youscan.html",
           desc: "Visual listening: what appears in the image, not only in the text." },
-        { letter: "S", logo: "assets/img/tools/soprism.png", name: "SoPrism", href: "tech-tools.html#tools",
+        { letter: "S", logo: "assets/img/tools/soprism.png", name: "SoPrism", href: "tech-soprism.html",
           desc: "Audience intelligence: who the communities are, in detail." }
       ],
       aside: {

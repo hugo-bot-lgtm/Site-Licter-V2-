@@ -11,6 +11,10 @@ why-licter.html     ← origine, chiffres, différenciateurs
 tech-tools.html     ← les 4 couches de signal, sources, stack
 clients.html        ← mur de clients, 4 questions récurrentes
 blog.html           ← 4 fils éditoriaux (à brancher sur le vrai blog)
+tech-talkwalker.html ┐
+tech-visibrain.html  │ une page par plateforme, structure Flowt
+tech-youscan.html    │
+tech-soprism.html    ┘
 guide.html          ← aimant à leads : le guide des 12 questions
 diagnostic.html     ← diagnostic social data (milieu de funnel)
 book-a-meeting.html ← prise de rendez-vous (bas de funnel)
@@ -524,6 +528,26 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     chiffrée et la proposition commerciale se suivent, et le détail (les douze
     cas d'usage) vient après.
 
+24. **Une page par plateforme, sur la structure Flowt.** Relevé sur
+    `flowt.fr/technologies/agence-google-cloud-bigquery/` : hero → logos
+    clients → pourquoi cette techno → approche en 3 étapes → atouts (4 cartes)
+    → ce qu'on en fait → chiffres → cas clients → articles liés → FAQ →
+    double CTA. Les quatre outils ont chacun leur page sur ce plan.
+
+    **Deux écarts assumés** :
+    - **Pas de « cas clients »** : Licter n'a pas d'études de cas publiables.
+      Le bloc est remplacé par « Questions this platform answers », qui renvoie
+      vers les cas d'usage correspondants — même fonction (montrer à quoi ça
+      sert), sans inventer de références.
+    - **« Articles liés » pointe vers les quatre fils du blog**, pas vers des
+      articles : ils n'existent pas encore.
+
+    Les chiffres affichés sont ceux de **Licter** (50+ clients, 20+ langues,
+    15 min d'alerte, 3 Md de profils), jamais des chiffres attribués aux
+    éditeurs. Les descriptions de ce que fait chaque outil sont de moi et
+    **doivent être relues** : c'est le contenu le plus exposé à l'erreur
+    factuelle de tout le site.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
@@ -531,6 +555,8 @@ l'indicateur `+23%`, le lien final et les survols de menu.
   du funnel).
 - Produire le PDF du guide et brancher son envoi automatique.
 - Fournir les clips des stories du hero (`renderMedia()` dans `js/ui.js`).
+- Relire les quatre pages plateformes : ce que fait réellement chaque outil
+  chez Licter, et ce qu'on a le droit d'en dire publiquement.
 - Blog : les quatre fils existent, les articles non — à brancher sur le vrai
   blog Licter.
 - Pages légales (mentions, confidentialité) : absentes, le pied de page les

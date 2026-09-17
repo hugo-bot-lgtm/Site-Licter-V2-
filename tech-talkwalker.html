@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Talkwalker — Licter</title>
+<meta name="description" content="The broadest listening suite on the market, operated by consultants: coverage across markets and languages, and an analysis that arrives as an answer rathe" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css?v=20260917b" />
+</head>
+<body>
+
+<a class="banner" href="guide.html">
+  The guide — <span>the 12 questions social data answers better than a survey</span> →
+</a>
+
+<canvas id="carto" aria-hidden="true"></canvas>
+<div id="carto-tip" class="carto-tip" aria-hidden="true">
+  <span class="carto-tip__icon"></span><span class="carto-tip__name"></span>
+</div>
+
+<div class="site-head">
+  <header class="hero__top shell" data-reveal>
+      <a class="logo" href="index.html" aria-label="Licter — home" data-dim>
+        <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+        <img class="logo__img" src="assets/img/logo-navy.png" alt="Licter" width="44" height="48" />
+      </a>
+      <nav class="nav" aria-label="Main" id="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="use-cases"
+                    aria-expanded="false" aria-controls="menu-use-cases">
+              USE CASES<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="offers"
+                    aria-expanded="false" aria-controls="menu-offers">
+              OFFERS<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item"><a href="why-licter.html">WHY LICTER</a></li>
+          <li class="nav__item">
+            <button class="nav__link" type="button" data-menu="tech"
+                    aria-expanded="false" aria-controls="menu-tech">
+              TECH &amp; TOOLS<span class="nav__caret" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li class="nav__item"><a href="clients.html">CLIENTS</a></li>
+          <li class="nav__item"><a href="blog.html">BLOG</a></li>
+        </ul>
+        <!-- dropdown panels are built by js/ui.js -->
+      </nav>
+  </header>
+</div>
+
+<main>
+  <section class="page">
+    <div class="shell">
+      <div class="page__head">
+        <p class="page__eyebrow" data-dim data-reveal><span class="rule" aria-hidden="true"></span><span class="tool-mark"><img src="assets/img/tools/talkwalker.png" alt="Talkwalker" onerror="this.parentNode.remove()" /></span>TECH &amp; TOOLS</p>
+        <h1 class="page__title" data-dim data-reveal>TALKWALKER,<br>READ BY ANALYSTS.</h1>
+        <p class="page__lead" data-dim data-reveal>The broadest listening suite on the market, operated by consultants: coverage across markets and languages, and an analysis that arrives as an answer rather than as a dashboard.</p>
+        <div class="page__actions" data-reveal>
+          <a class="btn btn--primary" href="index.html#signup">Book a meeting <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="tech-tools.html">See the four layers</a>
+        </div>
+      </div>
+
+      <section class="block" id="trust">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">THEY TRUST US</p>
+          <h2 class="block__title">The platform is theirs. The reading is ours.</h2>
+          <p class="block__lead">The same four platforms serve fifty-odd organisations here — what changes from one to the next is the question, and who reads the output.</p>
+        </div>
+        <ul class="logo-wall" data-reveal>
+          <li>HP</li>
+          <li>Decathlon</li>
+          <li>UNESCO</li>
+          <li>L'Oréal</li>
+          <li>Danone</li>
+          <li>Société Générale</li>
+          <li>Galeries Lafayette</li>
+          <li>Celio</li>
+          <li>La Poste</li>
+          <li>Sisley</li>
+          <li>Bouygues Telecom</li>
+          <li>Studi</li>
+          <li>TV5 Monde</li>
+          <li>PMU</li>
+          <li>La Marine Recrute</li>
+          <li>Bioparc de Doué La Fontaine</li>
+        </ul>
+      </section>
+
+      <section class="block" id="why">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">WHY TALKWALKER</p>
+          <h2 class="block__title">Why we run Talkwalker.</h2>
+          <p class="block__lead">It is the platform we reach for when a question spans several markets, several languages and a long period — the range is its strength, and range is exactly what most brand questions need.</p>
+        </div>
+        <div class="grid grid--two">
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">BREADTH</span>
+          <h3 class="card__title">Sources beyond social</h3>
+          <p class="card__text">Social networks, but also news, blogs, forums and reviews — the conversation rarely stays on one platform.</p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">DEPTH</span>
+          <h3 class="card__title">Long time windows</h3>
+          <p class="card__text">Historical depth makes before / after reads possible: a campaign, a crisis, a repositioning, measured against what came before.</p>
+        </article>
+        </div>
+      </section>
+
+      <section class="block" id="approach">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">OUR APPROACH IN THREE STEPS</p>
+          <h2 class="block__title">How we put it to work.</h2>
+        </div>
+        <div class="grid">
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">01</span>
+          <h3 class="card__title">Framing</h3>
+          <p class="card__text">We start from the decision, not the keyword list — the perimeter follows the question.</p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">02</span>
+          <h3 class="card__title">Setup</h3>
+          <p class="card__text">Queries, taxonomy, languages and alert thresholds, configured by consultants who will read the output themselves.</p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">03</span>
+          <h3 class="card__title">Reading</h3>
+          <p class="card__text">Recurring analysis, benchmarks and readouts your teams can act on — not a dashboard login.</p>
+        </article>
+        </div>
+      </section>
+
+      <section class="block" id="strengths">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">TALKWALKER — THE STRENGTHS</p>
+          <h2 class="block__title">What it does better than the rest.</h2>
+        </div>
+        <div class="grid">
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">01</span>
+          <h3 class="card__title">Multi-market coverage</h3>
+          <p class="card__text">One perimeter, several countries, without rebuilding the query for each — the comparison stays valid.</p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">02</span>
+          <h3 class="card__title">Image recognition</h3>
+          <p class="card__text">Logos and products detected in visuals, not only in captions.</p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">03</span>
+          <h3 class="card__title">Alerting that scales</h3>
+          <p class="card__text">Thresholds per topic and per market, so a spike in one country does not drown the rest.</p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">04</span>
+          <h3 class="card__title">Dashboards we operate</h3>
+          <p class="card__text">You receive the read; the licence, the configuration and the maintenance stay on our side.</p>
+        </article>
+        </div>
+      </section>
+
+      <section class="block" id="uses">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">WHAT WE RUN ON IT</p>
+          <h2 class="block__title">Questions this platform answers.</h2>
+          <p class="block__lead">Each one links to the use case it belongs to — the method does not change with the tool.</p>
+        </div>
+        <div class="grid">
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">01</span>
+          <h3 class="card__title">Analyze the impact of a campaign</h3>
+          <p class="card__text">Volume, reach, tone and the audiences that shifted — before and after.</p>
+          <p class="card__meta"><a href="use-cases.html#communication">Communication →</a></p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">02</span>
+          <h3 class="card__title">Monitor image and reputation</h3>
+          <p class="card__text">Continuous tracking of the subjects attached to your name, market by market.</p>
+          <p class="card__meta"><a href="use-cases.html#brand-health">Brand health →</a></p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">03</span>
+          <h3 class="card__title">Analyze a market</h3>
+          <p class="card__text">Size the conversation of a category and find the unclaimed whitespace.</p>
+          <p class="card__meta"><a href="use-cases.html#trends">Trends &amp; innovation →</a></p>
+        </article>
+        <article class="card card--hover" data-reveal>
+          <span class="card__num">04</span>
+          <h3 class="card__title">Follow emerging topics</h3>
+          <p class="card__text">Velocity of the subjects breaking out, before they reach the trade press.</p>
+          <p class="card__meta"><a href="use-cases.html#trends">Trends &amp; innovation →</a></p>
+        </article>
+        </div>
+      </section>
+
+      <section class="block" id="figures">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">THE NUMBERS BEHIND IT</p>
+          <h2 class="block__title">What the setup delivers.</h2>
+        </div>
+        <div class="stats" data-dim data-reveal>
+          <div class="stat"><span class="stat__n">20+</span><span class="stat__t">languages covered in monitoring</span></div>
+          <div class="stat"><span class="stat__n">50+</span><span class="stat__t">client organisations served</span></div>
+          <div class="stat"><span class="stat__n">160+</span><span class="stat__t">projects delivered since 2022</span></div>
+        </div>
+      </section>
+
+      <section class="block" id="reading">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">RELATED READING</p>
+          <h2 class="block__title">What we write about it.</h2>
+          <p class="block__lead">Our four editorial threads, on the blog.</p>
+        </div>
+        <div class="grid">
+          <a class="card" href="blog.html"><span class="card__num">01</span>
+            <h3 class="card__title">Social data &amp; foresight</h3>
+            <p class="card__text">Reading weak signals before they become trends.</p></a>
+          <a class="card" href="blog.html"><span class="card__num">02</span>
+            <h3 class="card__title">Monitoring &amp; social listening</h3>
+            <p class="card__text">How the practice is changing, and what a platform cannot do alone.</p></a>
+          <a class="card" href="blog.html"><span class="card__num">03</span>
+            <h3 class="card__title">Consumer insights</h3>
+            <p class="card__text">Behaviour against declaration, and which one turned out right.</p></a>
+          <a class="card" href="blog.html"><span class="card__num">04</span>
+            <h3 class="card__title">Influence</h3>
+            <p class="card__text">Identifying the voices that carry an audience, not a follower count.</p></a>
+        </div>
+      </section>
+
+      <section class="block" id="faq">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">FAQ</p>
+          <h2 class="block__title">What clients ask about Talkwalker.</h2>
+        </div>
+        <div class="faq" data-dim data-reveal>
+          <details>
+            <summary>Do we need our own Talkwalker licence?</summary>
+            <p>No. The licence is ours. You buy the analysis, not a seat — and nobody on your side has to learn the interface.</p>
+          </details>
+          <details>
+            <summary>How is this different from buying the tool directly?</summary>
+            <p>A platform gives you a query box. What costs time is the taxonomy, the noise filtering and the reading. That is the part we do.</p>
+          </details>
+          <details>
+            <summary>Can it cover markets outside Europe?</summary>
+            <p>Yes, and that is one of the reasons we run it. Our consultants work in Mandarin, English, Spanish, Hindi, Cantonese and Arabic — a market read through machine translation is a market read half-wrong.</p>
+          </details>
+          <details>
+            <summary>How far back can we look?</summary>
+            <p>Historical depth depends on the perimeter and the sources. We tell you what is reachable before the project starts, not after.</p>
+          </details>
+          <details>
+            <summary>Can we combine it with another platform?</summary>
+            <p>That is usually what happens. We run four; most questions are answered by two of them together.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="block" id="start">
+        <div class="block__head" data-dim data-reveal>
+          <p class="block__kicker">START</p>
+          <h2 class="block__title">Put Talkwalker to work on your question.</h2>
+        </div>
+        <div class="page__actions" data-reveal>
+          <a class="btn btn--primary" href="diagnostic.html">Request a diagnostic <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="book-a-meeting.html">Talk to an expert <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="cta" data-reveal>
+        <h2 class="cta__title">Not sure Talkwalker is the right instrument?</h2>
+        <p class="cta__text">Send us the question. If another platform answers it better, we will tell you — we run four.</p>
+        <form class="signup" novalidate>
+          <label class="visually-hidden" for="email-ta">Your work email</label>
+          <input class="signup__input" id="email-ta" name="email" type="email"
+                 placeholder="Your work email..." autocomplete="email" required />
+          <button class="signup__btn" type="submit">BOOK A MEETING</button>
+        </form>
+        <p class="signup__note" role="status">
+          <span class="signup__check" aria-hidden="true">✓</span>
+          NOTED - WE GET BACK TO YOU WITHIN 24 HOURS
+        </p>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="site-foot__in shell">
+    <div class="site-foot__brand">
+      <a class="logo" href="index.html" aria-label="Licter — home">
+        <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+        <img class="logo__img" src="assets/img/logo-navy.png" alt="Licter" width="44" height="48" />
+      </a>
+      <p>The Social Data Intelligence consultancy. We turn data from the world's
+         largest panel — social media, search, generative AI — into decisions.</p>
+    </div>
+    <div>
+      <h4>OFFERS</h4>
+      <ul>
+        <li><a href="offers.html#social-insights">Social Insights</a></li>
+        <li><a href="offers.html#vigie">Vigie 360 — 24/7 monitoring</a></li>
+        <li><a href="offers.html#slaas">Social Listening as a Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>USE CASES</h4>
+      <ul>
+        <li><a href="use-cases.html#communication">Communication</a></li>
+        <li><a href="use-cases.html#brand-health">Brand health</a></li>
+        <li><a href="use-cases.html#audiences">Audiences</a></li>
+        <li><a href="use-cases.html#trends">Trends &amp; innovation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>COMPANY</h4>
+      <ul>
+        <li><a href="why-licter.html">Why Licter</a></li>
+        <li><a href="tech-tools.html">Tech &amp; tools</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-foot__legal shell">
+    <span>© 2026 Licter — Social Data Intelligence</span>
+    <span>50+ clients · 160+ projects · Top 50 worldwide, SI Lab 2024</span>
+  </div>
+</footer>
+
+<script src="js/cartography.js?v=20260917b"></script>
+<script src="js/ui.js?v=20260917b"></script>
+</body>
+</html>
