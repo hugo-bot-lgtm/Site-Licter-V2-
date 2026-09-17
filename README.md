@@ -517,11 +517,12 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     numérotation dans l'en-tête dépliable (`.faq__n`) et leur description
     devient le contenu. Sous 900 px, les deux colonnes s'empilent.
 
-23. **Chiffres de preuve remontés juste après les logos clients.** Ils
-    arrivaient après le bloc use cases ; ils ouvrent maintenant la page, dans
-    l'ordre de Flowt : accroche → logos → chiffres → contenu. La preuve
-    sociale et la preuve chiffrée se suivent au lieu d'être séparées par une
-    section entière.
+23. **Ordre de la home revu.** Les chiffres de preuve puis les offres
+    remontent juste après le bandeau de logos. L'ordre est désormais :
+    accroche → logos clients → **chiffres** → **offres** → use cases →
+    méthode & FAQ → trois portes d'entrée. La preuve sociale, la preuve
+    chiffrée et la proposition commerciale se suivent, et le détail (les douze
+    cas d'usage) vient après.
 
 ## Reste à faire
 
