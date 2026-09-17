@@ -20,6 +20,8 @@ diagnostic.html     ← diagnostic social data (milieu de funnel)
 book-a-meeting.html ← prise de rendez-vous (bas de funnel)
 css/styles.css
 js/cartography.js   ← la carto animée (canvas)
+js/i18n.js          ← bascule EN / FR
+js/fr.js            ← dictionnaire français
 js/ui.js            ← logo, bandeau, onglets, console, menus, formulaires
 assets/fonts/       ← AiglonProWide Demi + Thin (charte)
 assets/img/         ← logo navy (pages claires) + logo blanc (réserve)
@@ -548,6 +550,30 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     **doivent être relues** : c'est le contenu le plus exposé à l'erreur
     factuelle de tout le site.
 
+25. **Bascule EN / FR.** Un sélecteur `EN | FR` dans l'en-tête, sur toutes
+    les pages. Le choix est mémorisé (`localStorage`) et suit la navigation.
+
+    **Le mécanisme, et pourquoi celui-là** : plutôt qu'un second jeu de
+    fichiers HTML à maintenir en parallèle (14 pages × 2), la traduction est
+    appliquée à l'exécution. `js/fr.js` est un dictionnaire **indexé sur la
+    chaîne anglaise**, `js/i18n.js` parcourt les nœuds de texte et remplace ce
+    qu'il trouve. Conséquences assumées :
+
+    - toute chaîne **absente du dictionnaire reste en anglais** — la
+      dégradation est partielle, jamais cassée ;
+    - un `MutationObserver` retraduit ce que `js/ui.js` rend après coup
+      (menus, console, questions, cartes story) ;
+    - le retour à l'anglais **recharge la page** : le HTML d'origine est la
+      source de vérité, aucun dictionnaire inverse à maintenir ;
+    - le français étant plus long, `html[lang="fr"]` élargit le bouton du
+      formulaire (159 → 212 px) et réduit d'un cran le H1 du hero.
+
+    **Couverture actuelle** : bandeau, navigation et ses trois panneaux, pied
+    de page, formulaires, boutons, **toute la home**, et les titres /
+    accroches / CTA des dix autres pages. **Le corps de texte des pages
+    internes reste en anglais** — il suffit d'ajouter les entrées à
+    `js/fr.js`, sans toucher au HTML.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
@@ -555,6 +581,8 @@ l'indicateur `+23%`, le lien final et les survols de menu.
   du funnel).
 - Produire le PDF du guide et brancher son envoi automatique.
 - Fournir les clips des stories du hero (`renderMedia()` dans `js/ui.js`).
+- Compléter `js/fr.js` avec le corps de texte des pages internes (cas
+  d'usage, offres, pourquoi, techno, clients, blog, guide, diagnostic, RDV).
 - Relire les quatre pages plateformes : ce que fait réellement chaque outil
   chez Licter, et ce qu'on a le droit d'en dire publiquement.
 - Blog : les quatre fils existent, les articles non — à brancher sur le vrai

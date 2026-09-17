@@ -1862,3 +1862,37 @@ a.card:hover::before, .card--hover:hover::before { transform: scaleY(1); }
   margin-right: 4px;
 }
 .tool-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+/* EN / FR switch, next to the navigation */
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  padding: 0 4px;
+}
+.lang__sep { width: 1px; height: 12px; background: var(--line); }
+.lang__btn {
+  border: 0;
+  background: none;
+  padding: 4px 2px;
+  font: 600 11px/1 var(--body-font);
+  letter-spacing: 1.2px;
+  color: rgba(var(--ink-rgb), .45);
+  cursor: pointer;
+  transition: color .15s ease;
+}
+.lang__btn:hover { color: var(--ink); }
+.lang__btn.is-on { color: var(--amber-ink); }
+
+@media (max-width: 860px) { .lang { order: 3; margin-left: auto; } }
+
+/* French runs longer than English: the fixed widths of the hero need room */
+html[lang="fr"] {
+  --btn-w: clamp(212px, 17vw, 248px);
+}
+html[lang="fr"] .signup__btn { font-size: 11.5px; white-space: nowrap; }
+html[lang="fr"] .hero__title { font-size: clamp(32px, min(4.2vw, 7.4vh), 68px); }
+html[lang="fr"] .signup__btn { letter-spacing: .9px; }
+html[lang="fr"] .nav__list a,
+html[lang="fr"] .nav__link { letter-spacing: 1.1px; }
