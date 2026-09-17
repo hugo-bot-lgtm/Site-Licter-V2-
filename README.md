@@ -506,6 +506,14 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     Désactivé sous 900 px et sous `prefers-reduced-motion` ; en pause quand
     l'onglet passe en arrière-plan.
 
+22. **Méthode et FAQ côte à côte, en accordéon.** Les quatre étapes de la
+    méthode étaient une liste déroulée, la FAQ un accordéon, et les deux
+    occupaient chacune une section pleine largeur — beaucoup de hauteur pour
+    peu de densité. Elles sont désormais **dans un même bloc, en deux
+    colonnes**, toutes les deux en accordéon : les étapes gardent leur
+    numérotation dans l'en-tête dépliable (`.faq__n`) et leur description
+    devient le contenu. Sous 900 px, les deux colonnes s'empilent.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

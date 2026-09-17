@@ -1823,3 +1823,31 @@ a.card:hover::before, .card--hover:hover::before { transform: scaleY(1); }
 
 @media (max-width: 900px) { .stories { display: none; } }
 @media (prefers-reduced-motion: reduce) { .stories { display: none; } }
+
+/* two accordions side by side: the method and the FAQ */
+.duo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 66px);
+  align-items: start;
+}
+.duo__col { min-width: 0; }
+.duo .block__head { margin-bottom: clamp(18px, 2.4vh, 26px); }
+.duo .block__title { font-size: clamp(22px, 2vw, 28px); }
+.duo .faq summary { font-size: 15px; padding: 15px 2px; gap: 14px; }
+.duo .faq p { font-size: 13.5px; }
+
+/* the step number inside its summary */
+.faq__n {
+  flex: 0 0 auto;
+  margin-right: 12px;
+  font: 700 12px/1 var(--body-font);
+  letter-spacing: .6px;
+  color: var(--amber-ink);
+}
+.faq summary { justify-content: flex-start; }
+.faq summary::after { margin-left: auto; }
+
+@media (max-width: 900px) {
+  .duo { grid-template-columns: minmax(0, 1fr); gap: clamp(30px, 5vh, 48px); }
+}
