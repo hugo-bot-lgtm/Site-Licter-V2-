@@ -800,9 +800,11 @@
       if (r.bottom < 120) return schedule();   /* hero scrolled away */
 
       var api = window.LicterCarto;
+      /* the zone Licter marked out: right-hand side, from just under the
+         navbar down to just above the clients band */
       var point = api && api.pickTraveller(
-        r.left + r.width * 0.56, r.left + r.width * 0.92,
-        r.top + r.height * 0.14, r.top + r.height * 0.74);
+        r.left + r.width * 0.53, r.left + r.width * 0.97,
+        r.top + r.height * 0.11, r.top + r.height * 0.77);
       if (!point) return schedule();
 
       var platform = point.platform || "INSTAGRAM";
@@ -819,18 +821,22 @@
           CAPTIONS[(Math.random() * CAPTIONS.length) | 0] + "</figcaption>";
 
       /* anchored beside the point, flipped when it would leave the hero */
+      var W = 216, H = 190;
       var x = point.x - r.left + 34;
       var y = point.y - r.top;
-      if (x + 150 > r.width) { x = point.x - r.left - 34 - 132; card.classList.add("story--left"); }
-      card.style.left = Math.round(x) + "px";
-      card.style.top = Math.round(Math.max(10, Math.min(r.height - 250, y - 110))) + "px";
+      if (x + W + 12 > r.width) {
+        x = point.x - r.left - 34 - W;
+        card.classList.add("story--left");
+      }
+      card.style.left = Math.round(Math.max(12, x)) + "px";
+      card.style.top = Math.round(Math.max(10, Math.min(r.height - H - 10, y - H / 2))) + "px";
 
       layer.appendChild(card);
+      /* one card at a time: the next one is scheduled once this one is gone */
       setTimeout(function () {
         card.classList.add("is-out");
-        setTimeout(function () { card.remove(); }, 420);
+        setTimeout(function () { card.remove(); schedule(); }, 420);
       }, HOLD);
-      schedule();
     }
 
     var timer = null;

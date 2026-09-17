@@ -1712,7 +1712,7 @@ a.card:hover::before, .card--hover:hover::before { transform: scaleY(1); }
 
 .story {
   position: absolute;
-  width: 132px;
+  width: 216px;
   margin: 0;
   padding: 7px;
   border-radius: 16px;
@@ -1783,10 +1783,10 @@ a.card:hover::before, .card--hover:hover::before { transform: scaleY(1); }
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 16 / 9;
   border-radius: 10px;
   background:
-    radial-gradient(70% 50% at 50% 30%, rgba(var(--amber-rgb), .22), transparent 70%),
+    radial-gradient(60% 70% at 50% 40%, rgba(var(--amber-rgb), .22), transparent 70%),
     linear-gradient(160deg, rgba(var(--ink-rgb), .09), rgba(var(--ink-rgb), .03));
   overflow: hidden;
 }
