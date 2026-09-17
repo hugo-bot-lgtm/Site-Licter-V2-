@@ -189,15 +189,20 @@ l'indicateur `+23%`, le lien final et les survols de menu.
 
    **Fond du bloc : généré, pas photographique** (`.field` dans
    `css/styles.css`). Là où topo.io met une photo de ciel, on a une **nappe
-   de lumière chaude** — deux halos ambrés, un halo blanc, et un voile blanc
-   vertical — plus un **quadrillage de points** (26 px, navy à 12 %, masqué
+   de lumière chaude** — un halo ambré large et bas, un accent en haut à
+   droite, un halo blanc, et un voile blanc vertical — plus un **quadrillage de points** (26 px, navy à 12 %, masqué
    en fondu) qui évoque le papier millimétré plutôt qu'une texture décorative.
 
    *Version précédente abandonnée* : un lavis gris de la charte, qui servait à
    détacher la console blanche. Une fois le voile crème ajouté par-dessus la
    carto (arbitrage 17), ces deux gris se superposaient et le bloc lisait
    comme une ombre sale. La console se détache maintenant sur sa seule ombre
-   portée, et la nappe n'a plus qu'à porter la chaleur. Aucun fichier à livrer,
+   portée, et la nappe n'a plus qu'à porter la chaleur.
+
+   *Second réglage* : l'accent ambré était centré à `50% 14%`, c'est-à-dire
+   exactement derrière la barre d'onglets — il lisait comme un halo jaune collé
+   à la pilule. Il est descendu à `50% 62%`, élargi et affaibli (.26 → .13), et
+   la pilule est passée à 86 % de blanc pour reposer sur son propre fond. Aucun fichier à livrer,
    net à tous les DPI, insensible au recadrage, et une dérive très lente
    (64 s, `transform` uniquement, coupée sous `prefers-reduced-motion`).
    Le dégradé de masque en haut et en bas évite la bande horizontale qui

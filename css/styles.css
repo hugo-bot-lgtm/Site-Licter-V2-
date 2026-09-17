@@ -569,8 +569,11 @@ main { position: relative; z-index: 1; }
      grey read as a smudge. The console now detaches on its own shadow, so the
      band only has to carry warmth. */
   background:
-    radial-gradient(44% 32% at 50% 14%, rgba(var(--amber-rgb), .26), transparent 70%),
-    radial-gradient(36% 30% at 84% 60%, rgba(var(--amber-rgb), .12), transparent 72%),
+    /* The warm accent used to sit at 50% 14% — exactly behind the tab bar,
+       which turned it into a yellow halo stuck to the pill. Moved down and
+       spread wide, it lights the block without haloing anything. */
+    radial-gradient(70% 55% at 50% 62%, rgba(var(--amber-rgb), .13), transparent 78%),
+    radial-gradient(40% 34% at 86% 26%, rgba(var(--amber-rgb), .08), transparent 74%),
     radial-gradient(34% 28% at 14% 66%, rgba(255, 255, 255, .6), transparent 74%),
     linear-gradient(180deg,
       rgba(255, 255, 255, 0) 0%,
@@ -627,9 +630,9 @@ main { position: relative; z-index: 1; }
   margin: 0 auto 22px;
   padding: 6px;
   border-radius: 30px;
-  background: rgba(255, 255, 255, .72);
+  background: rgba(255, 255, 255, .86);
   border: 1px solid var(--line);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
 }
 .tab {
   display: flex;
