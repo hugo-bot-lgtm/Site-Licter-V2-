@@ -799,13 +799,9 @@ main { position: relative; z-index: 1; }
 .viz.is-out { animation: viz-out .22s cubic-bezier(.4, 0, 1, 1) forwards; }
 .viz.is-in  { animation: viz-in .44s cubic-bezier(.16, .84, .34, 1) backwards; }
 /* warm halo behind the card, so it reads as lit rather than pasted on */
-.console::before {
-  content: "";
-  position: absolute;
-  inset: -60px -40px -30px;
-  background: radial-gradient(58% 62% at 50% 0%, rgba(var(--amber-rgb), .18), transparent 72%);
-  pointer-events: none;
-}
+/* The console used to carry its own amber halo anchored on its top edge,
+   which bled 60 px upwards — right around the tab bar. Removed: the field
+   carries the warmth and the deck carries its own shadow. */
 
 .viz {
   position: relative;

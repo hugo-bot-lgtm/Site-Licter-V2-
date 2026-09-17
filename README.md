@@ -199,10 +199,13 @@ l'indicateur `+23%`, le lien final et les survols de menu.
    comme une ombre sale. La console se détache maintenant sur sa seule ombre
    portée, et la nappe n'a plus qu'à porter la chaleur.
 
-   *Second réglage* : l'accent ambré était centré à `50% 14%`, c'est-à-dire
-   exactement derrière la barre d'onglets — il lisait comme un halo jaune collé
-   à la pilule. Il est descendu à `50% 62%`, élargi et affaibli (.26 → .13), et
-   la pilule est passée à 86 % de blanc pour reposer sur son propre fond. Aucun fichier à livrer,
+   *Second réglage* : **deux** halos ambrés se trouvaient derrière la barre
+   d'onglets, ce qui lui donnait une auréole jaune. Celui de la nappe, centré
+   à `50% 14%`, est descendu à `50% 62%`, élargi et affaibli (.26 → .13) ;
+   celui de la console — ancré sur son bord haut et débordant de 60 px vers le
+   haut, donc pile autour de la pilule — a été **supprimé**, la console se
+   détachant déjà sur son ombre portée. La pilule est passée à 86 % de blanc
+   pour reposer sur son propre fond. Aucun fichier à livrer,
    net à tous les DPI, insensible au recadrage, et une dérive très lente
    (64 s, `transform` uniquement, coupée sous `prefers-reduced-motion`).
    Le dégradé de masque en haut et en bas évite la bande horizontale qui
