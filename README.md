@@ -464,6 +464,23 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     blanches flottantes. Elles sont désormais **masquées sur tous les côtés**
     par un dégradé radial.
 
+20. **Moins d'amas, plus denses.** Demande de Licter, appliquée aux deux
+    couches de la carto :
+
+    - **Communautés principales** : 5 → **4** (steel supprimé), et les quatre
+      restantes gonflées d'environ 45 % (core passe de 140 à 204 points).
+    - **Satellites** : 5 → **2** (sage et ochre, les plus éloignés l'un de
+      l'autre), chacun doublé et élargi.
+    - **Ponts** : moins de paires de communautés, donc chaque paire porte plus
+      de liens (6-7 → 9-12) — sans quoi le graphe se serait délité.
+    - **Réseau d'arrière-plan** : la grille passe de 7 × 4 à **5 × 3** cellules
+      de base (plafond 12 × 7 → 8 × 5), mais chaque communauté passe de 9-18 à
+      **18-32 points**, avec un rayon de maillage porté de 46 à 54 px et un
+      degré maximal de 4 à 5.
+
+    Le nombre total de points bouge à peine — c'est la **répartition** qui
+    change : quelques pôles francs au lieu d'un semis régulier.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

@@ -29,20 +29,20 @@
   var PLATFORMS = ["TIKTOK", "INSTAGRAM", "X", "LINKEDIN", "YOUTUBE", "FACEBOOK"];
 
   /* Design-space clusters (600 x 500). Two passes each: wide, then dense. */
+  /* Four communities instead of five, each markedly denser: a small number of
+     big poles reads as a network, where many small ones read as scatter.
+     Point counts are up ~45 % on what remains. */
   var CLUSTERS = [
-    { key: "core",   color: C.amber,      cx: 320, cy: 200, rx: 68, ry: 60, nWide: 64, nDense: 76 },
-    { key: "amber",  color: C.amberDeep,  cx: 358, cy: 298, rx: 56, ry: 62, nWide: 54, nDense: 66 },
-    { key: "violet", color: C.grey, cx: 236, cy: 268, rx: 50, ry: 44, nWide: 38, nDense: 44 },
-    { key: "cream",  color: C.cream,     cx: 332, cy: 112, rx: 44, ry: 38, nWide: 30, nDense: 36 },
-    { key: "steel",  color: C.greyDark,   cx: 412, cy: 214, rx: 44, ry: 40, nWide: 32, nDense: 38 }
+    { key: "core",   color: C.amber,     cx: 320, cy: 200, rx: 70, ry: 62, nWide: 92, nDense: 112 },
+    { key: "amber",  color: C.amberDeep, cx: 362, cy: 300, rx: 58, ry: 64, nWide: 78, nDense: 96 },
+    { key: "violet", color: C.grey,      cx: 232, cy: 270, rx: 52, ry: 46, nWide: 56, nDense: 66 },
+    { key: "cream",  color: C.cream,     cx: 336, cy: 110, rx: 46, ry: 40, nWide: 44, nDense: 54 }
   ];
 
+  /* Two satellites instead of five, kept far apart and twice the size. */
   var SATELLITES = [
-    { key: "sage",  color: C.greyLight,  cx: 478, cy: 300, rx: 32, ry: 28, n: 34 },
-    { key: "ochre", color: C.amberDeep,  cx: 262, cy: 150, rx: 30, ry: 26, n: 30 },
-    { key: "dusk",  color: C.grey, cx: 300, cy: 360, rx: 30, ry: 26, n: 28 },
-    { key: "azure", color: C.grey, cx: 470, cy:  92, rx: 32, ry: 26, n: 34 },
-    { key: "crest", color: C.amber,      cx: 442, cy: 146, rx: 28, ry: 24, n: 28 }
+    { key: "sage",  color: C.greyLight, cx: 472, cy: 288, rx: 40, ry: 36, n: 66 },
+    { key: "ochre", color: C.amberDeep, cx: 256, cy: 140, rx: 38, ry: 32, n: 58 }
   ];
 
   /* Fixed hubs, plus one per satellite (added at build time). */
@@ -50,17 +50,16 @@
     { key: "cream",  x: 341, y:  62 },
     { key: "violet", x: 196, y: 300 },
     { key: "amber",  x: 352, y: 372 },
-    { key: "steel",  x: 452, y: 188 },
     { key: "core",   x: 286, y: 152 },
     { key: "amber2", x: 432, y: 286, cluster: "amber" }
   ];
 
   /* Which communities are bridged to which. */
+  /* Fewer communities means fewer pairs, so each pair carries more links. */
   var BRIDGES = [
-    ["core", "amber"], ["core", "violet"], ["core", "cream"], ["core", "steel"],
-    ["amber", "violet"], ["amber", "steel"], ["amber", "dusk"], ["violet", "dusk"],
-    ["steel", "sage"], ["steel", "azure"], ["core", "crest"], ["cream", "ochre"],
-    ["violet", "chain"], ["ochre", "cream"], ["azure", "crest"], ["sage", "amber"]
+    ["core", "amber"], ["core", "violet"], ["core", "cream"], ["core", "sage"],
+    ["core", "ochre"], ["amber", "violet"], ["amber", "sage"], ["cream", "ochre"],
+    ["violet", "chain"], ["violet", "ochre"], ["amber", "chain"]
   ];
 
   var CHAIN = { key: "chain", color: C.amber, x1: 52, y1: 448, x2: 210, y2: 336, n: 34 };
@@ -244,7 +243,7 @@
     for (k = 0; k < BRIDGES.length; k++) {
       var A = pointsOf(BRIDGES[k][0]), B = pointsOf(BRIDGES[k][1]);
       if (!A.length || !B.length) continue;
-      var links = 6 + ((rnd() * 2) | 0);
+      var links = 9 + ((rnd() * 4) | 0);
       for (i = 0; i < links; i++) {
         var a = A[(rnd() * A.length) | 0], b = B[(rnd() * B.length) | 0];
         edges.push({ ax: a.x, ay: a.y, bx: b.x, by: b.y,
@@ -268,8 +267,8 @@
     /* The grid and the dust follow the actual surface: on a wide screen the
        bands either side of the column stay populated instead of going bare. */
     var area = (w * h) / (1097 * 1020);
-    var cols = Math.max(7, Math.min(12, Math.round(7 * w / 1097)));
-    var rows = Math.max(4, Math.min(7, Math.round(4 * h / 1020)));
+    var cols = Math.max(4, Math.min(8, Math.round(5 * w / 1097)));
+    var rows = Math.max(3, Math.min(5, Math.round(3 * h / 1020)));
     var cw = w / cols, ch = h / rows;
     var groups = [];
     var i, j, k, m;
@@ -287,8 +286,8 @@
       for (j = 0; j < rows; j++) {
         var cx = cw * (i + 0.5) + rr(-cw * 0.24, cw * 0.24);
         var cy = ch * (j + 0.5) + rr(-ch * 0.24, ch * 0.24);
-        var n = Math.round((9 + rnd() * 9) * Math.min(1, view.density + 0.25));
-        var rad = rr(34, 72);
+        var n = Math.round((18 + rnd() * 14) * Math.min(1, view.density + 0.25));
+        var rad = rr(46, 88);
         var squash = rr(0.62, 1);
         var nodes = [];
         for (k = 0; k < n; k++) {
@@ -360,14 +359,14 @@
     for (m = 0; m < groups.length; m++) {
       var grp = groups[m];
       var degree = {};
-      var reach = 46;
+      var reach = 54;
       for (k = 0; k < grp.nodes.length; k++) {
         for (i = k + 1; i < grp.nodes.length; i++) {
           var ddx = grp.nodes[k].x - grp.nodes[i].x;
           var ddy = grp.nodes[k].y - grp.nodes[i].y;
           if (ddx * ddx + ddy * ddy > reach * reach) continue;
-          if ((degree[k] || 0) >= 4 || (degree[i] || 0) >= 4) continue;
-          if (rnd() > 0.62) continue;
+          if ((degree[k] || 0) >= 5 || (degree[i] || 0) >= 5) continue;
+          if (rnd() > 0.7) continue;
           degree[k] = (degree[k] || 0) + 1;
           degree[i] = (degree[i] || 0) + 1;
           sctx.beginPath();
