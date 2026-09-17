@@ -873,6 +873,25 @@
   build();
   start();
 
+  /* Lets the UI anchor a story card on a point that is actually moving:
+     returns a live traveller in the right-hand half of the viewport, in
+     viewport coordinates, or null if none is available right now. */
+  window.LicterCarto = {
+    pickTraveller: function (minX, maxX, minY, maxY) {
+      var candidates = [];
+      for (var i = 0; i < travellers.length; i++) {
+        var t = travellers[i];
+        if (t.alpha < 0.4) continue;
+        var y = t.y - shift;
+        if (t.x < minX || t.x > maxX || y < minY || y > maxY) continue;
+        candidates.push({ x: Math.round(t.x), y: Math.round(y),
+                          platform: t.platform, color: t.color });
+      }
+      if (!candidates.length) return null;
+      return candidates[(Math.random() * candidates.length) | 0];
+    }
+  };
+
 
   var resizeTimer = null;
   window.addEventListener("resize", function () {

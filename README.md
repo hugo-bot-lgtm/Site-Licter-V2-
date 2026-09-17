@@ -481,12 +481,35 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     Le nombre total de points bouge à peine — c'est la **répartition** qui
     change : quelques pôles francs au lieu d'un semis régulier.
 
+21. **Stories sur la moitié droite du hero.** Un point qui circule *est* une
+    story : toutes les 3,6 à 7,2 s, un voyageur vivant situé dans la moitié
+    droite du hero « s'ouvre » en carte 9:16 — en-tête plateforme (celle du
+    voyageur, pas une au hasard), barre de progression, emplacement média,
+    légende — puis se referme au bout de 5,2 s.
+
+    La carte est **ancrée sur la position réelle du point** au moment de
+    l'ouverture, reliée à lui par un fil et une pastille de la couleur de sa
+    communauté, et bascule à gauche du point si elle devait sortir du cadre.
+    `js/cartography.js` expose pour ça `window.LicterCarto.pickTraveller()`,
+    qui rend un voyageur vivant dans une zone donnée, en coordonnées écran.
+
+    **Pour brancher les vraies vidéos** : la fonction `renderMedia()` dans
+    `js/ui.js` ne renvoie aujourd'hui qu'un bouton lecture. Y retourner
+    `<video src="…" autoplay muted loop playsinline></video>` suffit — le
+    conteneur `.story__media` est déjà au format 9:16 avec `object-fit:
+    cover`. Les légendes (« Story · 2 h », « Reel · 14 min ») sont des
+    placeholders.
+
+    Désactivé sous 900 px et sous `prefers-reduced-motion` ; en pause quand
+    l'onglet passe en arrière-plan.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
   commentaires `wire to the real endpoint here` : capture email et formulaires
   du funnel).
 - Produire le PDF du guide et brancher son envoi automatique.
+- Fournir les clips des stories du hero (`renderMedia()` dans `js/ui.js`).
 - Blog : les quatre fils existent, les articles non — à brancher sur le vrai
   blog Licter.
 - Pages légales (mentions, confidentialité) : absentes, le pied de page les

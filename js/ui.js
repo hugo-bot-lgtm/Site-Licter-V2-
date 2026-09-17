@@ -771,6 +771,80 @@
     window.addEventListener("scroll", function () { if (openKey) close(); }, { passive: true });
   })();
 
+  /* ---------------------------------------------------------- stories
+     A traveller on the right-hand side of the hero occasionally opens into a
+     story card: the moving point IS the story. The media slot is empty for
+     now — drop a <video> in `renderMedia` when the clips are ready. */
+  (function stories() {
+    if (reduced.matches) return;
+    var hero = document.querySelector(".hero");
+    if (!hero || !window.matchMedia("(min-width: 901px)").matches) return;
+
+    var layer = document.createElement("div");
+    layer.className = "stories";
+    layer.setAttribute("aria-hidden", "true");
+    hero.appendChild(layer);
+
+    var CAPTIONS = ["Story · 2 h", "Reel · 14 min", "Story · 47 min",
+                    "Reel · 1 h", "Post · 3 h", "Story · 22 min"];
+    var HOLD = 5200;        /* how long a card stays */
+    var GAP = [3600, 7200]; /* pause between two cards */
+
+    function renderMedia() {
+      /* the slot: replace the inner span with <video …> when clips exist */
+      return '<span class="story__play" aria-hidden="true">▶</span>';
+    }
+
+    function open() {
+      var r = hero.getBoundingClientRect();
+      if (r.bottom < 120) return schedule();   /* hero scrolled away */
+
+      var api = window.LicterCarto;
+      var point = api && api.pickTraveller(
+        r.left + r.width * 0.56, r.left + r.width * 0.92,
+        r.top + r.height * 0.14, r.top + r.height * 0.74);
+      if (!point) return schedule();
+
+      var platform = point.platform || "INSTAGRAM";
+      var card = document.createElement("figure");
+      card.className = "story";
+      card.style.setProperty("--hold", HOLD + "ms");
+      card.style.setProperty("--story-color", point.color || "");
+      card.innerHTML =
+        '<span class="story__bar"><i></i></span>' +
+        '<span class="story__head">' + (window.LicterIcons[platform] || "") +
+          platform + "</span>" +
+        '<span class="story__media">' + renderMedia() + "</span>" +
+        '<figcaption class="story__cap">' +
+          CAPTIONS[(Math.random() * CAPTIONS.length) | 0] + "</figcaption>";
+
+      /* anchored beside the point, flipped when it would leave the hero */
+      var x = point.x - r.left + 34;
+      var y = point.y - r.top;
+      if (x + 150 > r.width) { x = point.x - r.left - 34 - 132; card.classList.add("story--left"); }
+      card.style.left = Math.round(x) + "px";
+      card.style.top = Math.round(Math.max(10, Math.min(r.height - 250, y - 110))) + "px";
+
+      layer.appendChild(card);
+      setTimeout(function () {
+        card.classList.add("is-out");
+        setTimeout(function () { card.remove(); }, 420);
+      }, HOLD);
+      schedule();
+    }
+
+    var timer = null;
+    function schedule() {
+      clearTimeout(timer);
+      timer = setTimeout(open, GAP[0] + Math.random() * (GAP[1] - GAP[0]));
+    }
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) clearTimeout(timer); else schedule();
+    });
+    setTimeout(open, 2600);
+  })();
+
   /* ------------------------------------------------------------- veil
      The cartography is the hero's subject; below it, it is a texture behind
      text. A cream veil fades in as soon as the reading content starts, and
