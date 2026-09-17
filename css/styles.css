@@ -1843,3 +1843,7 @@ a.card:hover::before, .card--hover:hover::before { transform: scaleY(1); }
 @media (max-width: 900px) {
   .duo { grid-template-columns: minmax(0, 1fr); gap: clamp(30px, 5vh, 48px); }
 }
+
+/* the proof band follows the marquee directly: it needs air above the sheet,
+   not inside it — padding would have grown the white sheet towards the logos */
+#proof { margin-top: clamp(34px, 6vh, 72px); }
