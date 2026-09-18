@@ -131,9 +131,11 @@ l'indicateur `+23%`, le lien final et les survols de menu.
   mêmes règles, plus petits, plus lents (`largeur / 20`), à 80 % d'opacité,
   et dont les points de départ sont tirés en priorité dans la moitié gauche
   de la page.
-- Survol : distance testée à chaque frame sur tous les points **et** les
-  voyageurs (rayon 17 px), anneau or de 26 px, carte 150 × 34 qui bascule à
-  gauche près du bord droit, `cursor: pointer`.
+- ~~Survol des points~~ : l'infobulle du brief (logo + nom de la plateforme au
+  survol d'un nœud) a été **retirée** — les cartes story de l'arbitrage 21
+  font la même démonstration, en mieux, sans demander au visiteur de viser le
+  bon pixel. Avec elle sont partis la grille de hachage de détection, le test
+  de collision à chaque frame et les écouteurs de souris.
 - Lisibilité : masque `destination-out` appliqué sur le composite (donc
   voyageurs compris) sous chaque bloc marqué `data-dim`, atténuation 50 %
   avec dégradé de 26 px. Le masque suit le scroll — un test par élément
