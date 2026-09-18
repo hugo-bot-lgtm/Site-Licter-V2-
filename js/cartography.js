@@ -109,10 +109,7 @@
   var hubs = [];        /* design space */
   var edges = [];       /* design space, for the traveller graph */
   var travellers = [];
-  var grid = null;      /* screen-space hash grid for hover */
   var dimZones = [];
-  var hovered = null;
-  var pointer = { x: -1e4, y: -1e4, inside: false };
   var shift = 0;        /* current parallax offset */
   var running = false;
   var startedAt = 0;
@@ -608,55 +605,6 @@
     t.alpha = Math.max(0, Math.min(inFade, outFade));
   }
 
-  /* --------------------------------------------------------------- hover */
-
-  var CELL = 40;
-
-  function buildGrid() {
-    grid = new Map();
-    for (var i = 0; i < points.length; i++) {
-      var sx = X(points[i].x), sy = Y(points[i].y);
-      var key = ((sx / CELL) | 0) + ":" + ((sy / CELL) | 0);
-      if (!grid.has(key)) grid.set(key, []);
-      grid.get(key).push({ x: sx, y: sy, p: points[i] });
-    }
-  }
-
-  function hitTest(mx, my) {
-    var y = my + shift; /* pointer is in viewport space, map in layer space */
-    var best = null, bd = HOVER_RADIUS * HOVER_RADIUS;
-
-    /* travellers first — they sit on top */
-    for (var i = 0; i < travellers.length; i++) {
-      var t = travellers[i];
-      if (t.alpha < 0.25) continue;
-      var dx = t.x - mx, dy = t.y - y, d = dx * dx + dy * dy;
-      if (d < bd) { bd = d; best = { x: t.x, y: t.y, color: t.color, platform: t.platform }; }
-    }
-
-    /* hubs */
-    for (i = 0; i < hubs.length; i++) {
-      var hx = X(hubs[i].x), hy = Y(hubs[i].y);
-      var hdx = hx - mx, hdy = hy - y, hd = hdx * hdx + hdy * hdy;
-      if (hd < bd) { bd = hd; best = { x: hx, y: hy, color: hubs[i].color, platform: hubs[i].platform }; }
-    }
-
-    /* static points, via the hash grid */
-    var gx = (mx / CELL) | 0, gy = (y / CELL) | 0;
-    for (var ix = gx - 1; ix <= gx + 1; ix++) {
-      for (var iy = gy - 1; iy <= gy + 1; iy++) {
-        var cell = grid && grid.get(ix + ":" + iy);
-        if (!cell) continue;
-        for (i = 0; i < cell.length; i++) {
-          var pdx = cell[i].x - mx, pdy = cell[i].y - y, pd = pdx * pdx + pdy * pdy;
-          if (pd < bd) { bd = pd; best = { x: cell[i].x, y: cell[i].y,
-                                           color: cell[i].p.color, platform: cell[i].p.platform }; }
-        }
-      }
-    }
-    return best;
-  }
-
   /* --------------------------------------------------- text legibility mask */
 
   function collectDimZones() {
@@ -771,50 +719,8 @@
       ctx.fill();
     }
 
-    /* hover ring */
-    if (pointer.inside) {
-      var hit = hitTest(pointer.x, pointer.y);
-      setHover(hit);
-      if (hit) {
-        ctx.strokeStyle = hexToRgba("#9A6F08", 0.9);
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.arc(hit.x, hit.y, 13, 0, Math.PI * 2);
-        ctx.stroke();
-      }
-    }
-
     ctx.restore();
     applyDim();
-  }
-
-  /* ------------------------------------------------------------- tooltip */
-
-  var tip = document.getElementById("carto-tip");
-  var tipName = tip && tip.querySelector(".carto-tip__name");
-  var tipIcon = tip && tip.querySelector(".carto-tip__icon");
-
-  function setHover(hit) {
-    var same = hovered && hit && hovered.platform === hit.platform;
-    hovered = hit;
-    if (!tip) return;
-
-    if (!hit) {
-      tip.classList.remove("is-visible");
-      document.body.classList.remove("is-hot");
-      canvas.classList.remove("is-hot");
-      return;
-    }
-    document.body.classList.add("is-hot");
-    if (!same) {
-      tipName.textContent = hit.platform;
-      tipIcon.innerHTML = (window.LicterIcons && window.LicterIcons[hit.platform]) || "";
-    }
-    var px = hit.x + 18, py = hit.y - shift - 17;
-    if (px + 150 > view.w - 8) px = hit.x - 150 - 18; /* flip left near the edge */
-    tip.style.left = Math.round(px) + "px";
-    tip.style.top = Math.round(Math.max(6, Math.min(view.h - 40, py))) + "px";
-    tip.classList.add("is-visible");
   }
 
   /* ---------------------------------------------------------------- setup */
@@ -858,7 +764,6 @@
        adjacency maps are built after it, not before */
     renderStatic();
     buildAdjacency();
-    buildGrid();
     buildTravellers();
     collectDimZones();
   }
@@ -900,12 +805,6 @@
   });
 
   window.addEventListener("scroll", collectDimZones, { passive: true });
-  window.addEventListener("mousemove", function (e) {
-    pointer.x = e.clientX; pointer.y = e.clientY; pointer.inside = true;
-  }, { passive: true });
-  window.addEventListener("mouseleave", function () {
-    pointer.inside = false; setHover(null);
-  });
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) { running = false; }
     else { start(); }
