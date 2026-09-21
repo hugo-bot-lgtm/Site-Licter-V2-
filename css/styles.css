@@ -1445,6 +1445,9 @@ a.card:hover, .card--hover:hover {
 .site-foot {
   position: relative;
   z-index: 1;
+  /* the last section ended flush against the footer rule: the page needs to
+     finish before the footer starts */
+  margin-top: clamp(52px, 7vh, 96px);
   border-top: 1px solid var(--line);
   background: rgba(255, 255, 255, .6);
   backdrop-filter: blur(6px);
