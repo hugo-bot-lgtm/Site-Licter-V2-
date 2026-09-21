@@ -2,6 +2,18 @@
 window.LicterFR = {
 
   /* ---- bandeau, navigation, pied de page ---- */
+
+  /* ---- cartes plateformes (tech-tools) ---- */
+  "Listening suite": "Suite d'écoute", "Real time": "Temps réel",
+  "Visual AI": "IA visuelle", "See the platform": "Voir la plateforme",
+  "The broadest coverage on the market — volume, topics and sentiment across languages, read over long periods.":
+    "La couverture la plus large du marché — volumes, sujets et sentiment, toutes langues, sur longue période.",
+  "The live conversation and the media sphere, with an alert that reaches you in fifteen minutes, around the clock.":
+    "La conversation en direct et la sphère média, avec une alerte qui vous parvient en quinze minutes, 24/7.",
+  "Reads what appears in the image, not only in the caption: logos, products and contexts nobody writes down.":
+    "Lit ce qui apparaît dans l'image, pas seulement dans la légende : logos, produits et contextes que personne n'écrit.",
+  "Who the communities actually are — interests, affinities and overlaps, at the detail a persona needs.":
+    "Qui sont vraiment les communautés — intérêts, affinités et recoupements, au niveau de détail qu'exige un persona.",
   "The guide —": "Le guide —",
   "the 12 questions social data answers better than a survey": "les 12 questions auxquelles la social data répond mieux qu'une étude",
   "USE CASES": "CAS D'USAGE", "OFFERS": "OFFRES", "WHY LICTER": "POURQUOI LICTER",

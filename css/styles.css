@@ -1565,6 +1565,12 @@ a.card:hover, .card--hover:hover {
   .page .block:nth-of-type(even) .chapters,
   .page .block:nth-of-type(even) .form { margin-top: 4px; }
 
+  /* a section can opt out of the split when its content needs the full column */
+  .page .block.block--wide { display: block; }
+  .page .block.block--wide .block__head { position: static; margin-bottom: clamp(26px, 4vh, 42px); }
+  .page .block.block--wide .block__title { font-size: clamp(27px, 3vw, 42px); }
+  .page .block.block--wide .block__lead { font-size: 15px; }
+
   /* odd sections: the first card carries the section */
   .page .block:nth-of-type(odd) .grid:not(.grid--two) > .card:first-child {
     grid-column: span 2;
@@ -2050,3 +2056,141 @@ html[lang="fr"] .nav__link { letter-spacing: 1.1px; }
 .band__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .btn--solid { background: var(--ink); color: var(--cream); }
 .btn--solid:hover { filter: brightness(1.2); }
+
+/* ==========================================================================
+   Gradient cards — the platform router on tech-tools.html
+   Four tints, all taken from the charter (amber, deep ochre, slate, cream).
+   The corner artwork is a miniature of the background cartography.
+   ========================================================================== */
+
+.gcards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 1.6vw, 24px);
+}
+
+.gcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 268px;
+  padding: clamp(22px, 2vw, 30px);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  isolation: isolate;
+  text-decoration: none;
+  background:
+    radial-gradient(90% 80% at 88% 8%, rgba(var(--amber-rgb), .34), transparent 70%),
+    linear-gradient(145deg, rgba(var(--amber-rgb), .2), rgba(255, 255, 255, .62));
+  transition: transform .28s cubic-bezier(.16, .84, .34, 1), box-shadow .28s ease;
+}
+.gcard:hover,
+.gcard[data-reveal].is-in:hover {
+  transform: translateY(-4px) scale(1.012);
+  box-shadow: 0 30px 56px -30px rgba(var(--ink-rgb), .45);
+  /* the reveal rule owns transform/transition once the card is in — take it back */
+  transition: transform .28s cubic-bezier(.16, .84, .34, 1), box-shadow .28s ease;
+}
+
+.gcard--ochre {
+  background:
+    radial-gradient(90% 80% at 88% 8%, rgba(192, 140, 14, .3), transparent 70%),
+    linear-gradient(145deg, rgba(192, 140, 14, .16), rgba(255, 255, 255, .62));
+}
+.gcard--slate {
+  background:
+    radial-gradient(90% 80% at 88% 8%, rgba(var(--ink-rgb), .34), transparent 70%),
+    linear-gradient(145deg, rgba(var(--ink-rgb), .17), rgba(255, 255, 255, .55));
+}
+.gcard--cream {
+  background:
+    radial-gradient(90% 80% at 88% 8%, rgba(132, 145, 154, .2), transparent 70%),
+    linear-gradient(145deg, rgba(132, 145, 154, .09), rgba(255, 255, 255, .72));
+}
+
+/* corner artwork — a small community, same vocabulary as the canvas behind */
+.gcard__art {
+  position: absolute;
+  right: -34px;
+  bottom: -38px;
+  width: 62%;
+  max-width: 260px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .55;
+  transform-origin: 70% 70%;
+  transition: transform .5s cubic-bezier(.16, .84, .34, 1), opacity .3s ease;
+}
+.gcard:hover .gcard__art { transform: scale(1.12) rotate(3deg); opacity: .75; }
+.gcard__art .l { stroke: var(--amber-deep); stroke-width: 1; fill: none; opacity: .5; }
+.gcard__art .n { fill: var(--amber-deep); }
+.gcard__art .h { fill: var(--ink); }
+.gcard--slate .gcard__art .l,
+.gcard--cream .gcard__art .l { stroke: var(--grey); }
+.gcard--slate .gcard__art .n,
+.gcard--cream .gcard__art .n { fill: var(--grey); }
+
+.gcard__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-bottom: 20px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .62);
+  backdrop-filter: blur(4px);
+  font: 600 10px/1 var(--body-font);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.gcard__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); }
+.gcard--ochre .gcard__dot { background: var(--amber-deep); }
+.gcard--slate .gcard__dot { background: var(--ink); }
+.gcard--cream .gcard__dot { background: var(--grey); }
+
+.gcard__title {
+  margin: 0 0 10px;
+  font-family: var(--title-font);
+  font-weight: 800;
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.04;
+  letter-spacing: -.6px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.gcard__text {
+  margin: 0;
+  max-width: 30ch;
+  font: 400 14px/1.6 var(--body-font);
+  color: var(--text-2);
+}
+.gcard__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 22px;
+  font: 700 11px/1 var(--body-font);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.gcard__cta i { font-style: normal; transition: transform .28s ease; }
+.gcard:hover .gcard__cta { color: var(--amber-ink); }
+.gcard:hover .gcard__cta i { transform: translateX(5px); }
+
+@media (max-width: 760px) {
+  .gcards { grid-template-columns: minmax(0, 1fr); }
+  .gcard { min-height: 0; }
+  .gcard__text { max-width: 28ch; }
+  /* the copy runs full width here, so the artwork has to step back */
+  .gcard__art { width: 54%; opacity: .34; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gcard, .gcard__art, .gcard__cta i { transition: none; }
+  .gcard:hover, .gcard[data-reveal].is-in:hover { transform: none; }
+  .gcard:hover .gcard__art { transform: none; }
+}

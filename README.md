@@ -605,6 +605,46 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     hero pointe désormais sur `book-a-meeting.html` plutôt que sur le
     formulaire de la home, pour ne pas renvoyer l'utilisateur en arrière.
 
+27. **Cartes à dégradé sur `tech-tools.html`.** Reprise d'un composant
+    shadcn/framer-motion fourni par Licter (badge + titre + texte + CTA +
+    visuel d'angle, survol qui soulève la carte). Les quatre plateformes
+    remplacent la grille de cartes plates : c'est le seul endroit du site où
+    il y a exactement quatre entités de même rang, chacune avec sa page.
+
+    **Ce qui a été transposé, et pourquoi** :
+    - **Pas de React.** Le site n'a pas de build step : `cva` devient quatre
+      classes modificatrices (`.gcard--ochre / --slate / --cream`) et
+      `framer-motion` devient deux transitions CSS. Le survol soulève de 4 px
+      et agrandit de 1,2 % — assez pour répondre, pas assez pour flotter.
+    - **Les quatre dégradés restent dans la charte.** L'original propose
+      orange / gris / violet / vert ; la charte n'a que navy, ambre, crème et
+      gris. Les quatre teintes sont donc ambre, ocre profond (`#C08C0E`),
+      navy dilué et gris neutre — deux chaudes, deux froides, ce qui sépare
+      les cartes deux à deux sans rien inventer.
+    - **Le visuel d'angle est un mini-amas**, généré en SVG avec le même
+      vocabulaire que la cartographie de fond (un hub, deux satellites, des
+      liens locaux et des ponts). Chaque carte a le sien, déterministe, tiré
+      du nom de la plateforme. Il pivote de 3° et grossit au survol. Aucun
+      asset à fournir, et il occupe la place que les logos éditeurs n'ont
+      jamais remplie : les quatre 404 de `assets/img/tools/` ont disparu de
+      cette page.
+    - **La section sort du rythme alterné** (`.block--wide`) : elle prenait
+      la colonne étroite de droite, où un titre de 32 px ne tient pas. Le
+      modificateur est générique, réutilisable pour toute section dont le
+      contenu a besoin de la pleine largeur.
+    - **Spécificité** : `.reveal [data-reveal].is-in` impose
+      `transform: none` avec une priorité supérieure à `.gcard:hover` — le
+      survol était mort une fois la carte révélée. D'où la règle
+      `.gcard[data-reveal].is-in:hover`, qui reprend aussi la transition
+      (0,28 s au lieu des 0,6 s du reveal).
+    - Les huit chaînes nouvelles sont dans `js/fr.js` : le bloc bascule en
+      français comme le reste.
+
+    Reste ouvert : si Licter fournit les logos éditeurs, ils peuvent prendre
+    la place du mini-amas sur ces quatre cartes — mais le mini-amas est plus
+    cohérent avec le reste du site, et ne pose aucune question de droit
+    d'usage des marques.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
@@ -612,6 +652,9 @@ l'indicateur `+23%`, le lien final et les survols de menu.
   du funnel).
 - Produire le PDF du guide et brancher son envoi automatique.
 - Fournir les clips des stories du hero (`renderMedia()` dans `js/ui.js`).
+- Logos des quatre éditeurs (`assets/img/tools/*.png`) : encore attendus
+  par le dropdown « Tech & Tools », qui retombe sur un monogramme. La page
+  `tech-tools.html` ne les demande plus (voir l'arbitrage 27).
 - Compléter `js/fr.js` avec le corps de texte des pages internes (cas
   d'usage, offres, pourquoi, techno, clients, blog, guide, diagnostic, RDV).
 - Relire les quatre pages plateformes : ce que fait réellement chaque outil
