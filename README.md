@@ -824,6 +824,49 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     Les trois cartes écrites en dur dans `clients.html` restent les plus
     fortes : c'est ce que voit un visiteur sans JavaScript.
 
+32. **Neuf articles de blog, en contenu de remplissage.** Demande de Licter :
+    peupler la partie blog. Ce sont des **textes d'attente écrits par moi**,
+    pas de l'expertise Licter relue. Chaque page porte un commentaire HTML en
+    tête qui le dit.
+
+    **Ce que j'ai refusé de fabriquer** : aucun résultat client, aucun chiffre
+    présenté comme une étude, aucune citation attribuée à une personne réelle,
+    aucun nom d'auteur inventé — la signature est « Licter analysis team ».
+    Les articles tiennent par le raisonnement, pas par des données que
+    personne n'a produites. C'est la seule façon d'écrire du faux contenu qui
+    ne devienne pas un problème s'il part en ligne par accident.
+
+    **Répartition** sur les quatre fils qui existaient déjà : 2 en
+    *foresight*, 3 en *monitoring & social listening*, 3 en *consumer
+    insights*, 1 en *influence*.
+
+    **Structure d'une page article** : sur-titre du fil, titre en casse
+    normale (`.page__title--article` — les autres pages crient leur titre en
+    capitales, un article non), chapô, signature (date · temps de lecture ·
+    équipe), puis le corps en `.prose` avec une citation détachée après la
+    première section et un encadré « what to take away » en fin. Ensuite trois
+    cartes « keep reading » et le formulaire de capture.
+
+    **Trois décisions de mise en page** :
+    - La largeur de lecture est plafonnée en **caractères** (`68ch`), pas en
+      pixels : elle tient quelle que soit la taille de police du lecteur.
+    - `.prose` a reçu **la feuille de lumière** des autres blocs. Sans elle,
+      le corps de texte reposait directement sur la cartographie — exactement
+      le défaut de lisibilité corrigé deux fois ailleurs.
+    - L'index et les blocs « keep reading » utilisent `.block--wide` : neuf
+      cartes n'ont rien à faire dans la colonne étroite du rythme alterné.
+
+    **Les pages technologies sont enfin branchées.** Leurs quatre cartes
+    « related reading » portaient depuis le début les titres de pièces qui
+    n'existaient pas et pointaient toutes sur `blog.html`. J'ai écrit les
+    articles sous ces titres exacts, et les seize cartes (quatre pages × quatre
+    cartes) pointent maintenant sur la bonne page — le libellé passe de
+    « Read the thread » à « Read the piece ».
+
+    **Non traduit** : le corps des articles reste en anglais, comme le reste
+    du corps de texte des pages internes. Traduire neuf articles n'est pas un
+    travail de dictionnaire.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
@@ -843,8 +886,9 @@ l'indicateur `+23%`, le lien final et les survols de menu.
   KPI, volumes, parts, variations et signaux des quatre familles.
 - Relire les quatre pages plateformes : ce que fait réellement chaque outil
   chez Licter, et ce qu'on a le droit d'en dire publiquement.
-- Blog : les quatre fils existent, les articles non — à brancher sur le vrai
-  blog Licter.
+- Blog : les neuf articles sont des textes d'attente (arbitrage 32). Les
+  remplacer par les vrais articles Licter, ou les faire relire avant toute
+  mise en ligne.
 - Pages légales (mentions, confidentialité) : absentes, le pied de page les
   attend.
 - Accessibilité : sur la crème, le texte courant `#56606A` passe l'AA (5.4:1)
