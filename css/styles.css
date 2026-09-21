@@ -817,49 +817,174 @@ main { position: relative; z-index: 1; }
   max-width: 200px;
 }
 
-.viz__body {
-  display: grid;
-  grid-template-columns: minmax(200px, 250px) minmax(0, 1fr);
+/* ---------- the console, as a dashboard ---------- */
+
+.viz__range { display: flex; gap: 6px; }
+.viz__chip {
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font: 600 9px/1 var(--body-font);
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  background: rgba(var(--ink-rgb), .02);
+}
+.viz__chip.is-on {
+  color: var(--ink);
+  border-color: rgba(var(--ink-rgb), .22);
+  background: rgba(var(--amber-rgb), .16);
 }
 
-.rail {
-  padding: 22px 24px;
-  border-right: 1px solid var(--line);
+/* hairline grid: the cells are white, the 1px gaps are the rules between them */
+.viz__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
 }
-.rail__title {
-  margin: 0 0 16px;
+.viz__cell { min-width: 0; padding: 15px 17px; background: #fff; }
+.viz__cell--hero { grid-column: span 2; }
+.viz__cell--wide { grid-column: span 3; }
+.viz__cell--side { grid-column: span 2; }
+
+.viz__cellTitle {
+  margin: 0;
   font: 600 9px/1.4 var(--body-font);
   letter-spacing: 1.6px;
+  text-transform: uppercase;
   color: var(--text-4);
 }
-.rail__list { margin: 0; padding: 0; list-style: none; }
-.rail__row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: baseline;
-  gap: 4px 10px;
-  padding: 9px 0;
+.viz__cellNote { margin: 4px 0 0; font: 400 10.5px/1.4 var(--body-font); color: var(--text-3); }
+.viz__total {
+  margin: 8px 0 0;
+  font-family: var(--title-font);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -.8px;
+  color: var(--ink);
 }
-.rail__row + .rail__row { border-top: 1px solid rgba(var(--ink-rgb), .07); }
-.rail__name { font: 400 13px/1 var(--body-font); color: var(--ink); }
-.rail__value { font: 600 12px/1 var(--body-font); color: var(--text-2); }
-.rail__bar {
-  grid-column: 1 / -1;
+
+/* the three stat cells */
+.stat__label {
+  margin: 0;
+  font: 600 9px/1.4 var(--body-font);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+.stat__row { display: flex; align-items: flex-end; justify-content: space-between; gap: 8px; }
+.stat__value {
+  margin: 9px 0 0;
+  font-family: var(--title-font);
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -.8px;
+  color: var(--ink);
+}
+.stat__spark { display: block; flex: 0 0 58px; width: 58px; margin-top: 9px; }
+.stat__spark.is-up { color: var(--amber-deep); }
+.stat__spark.is-down { color: var(--grey); }
+.spark { display: block; width: 100%; height: auto; overflow: visible; }
+.stat__delta, .tbl__delta {
+  margin: 8px 0 0;
+  font: 600 10.5px/1 var(--body-font);
+  color: var(--text-3);
+}
+.stat__delta.is-up, .tbl__delta.is-up { color: var(--amber-ink); }
+.stat__delta.is-down, .tbl__delta.is-down { color: var(--text-2); }
+.stat__delta.is-up::before, .tbl__delta.is-up::before { content: "\2191 "; }
+.stat__delta.is-down::before, .tbl__delta.is-down::before { content: "\2193 "; }
+
+/* the headline figure keeps the place it had. Namespaced: `.hero` is already
+   the page's own hero section, and sharing the name made this cell 900px tall. */
+.vizhero { display: flex; flex-direction: column; justify-content: center; }
+.vizhero__metric {
+  margin: 6px 0 0;
+  font-family: var(--title-font);
+  font-weight: 800;
+  font-size: clamp(30px, 3vw, 40px);
+  line-height: 1;
+  letter-spacing: -1.2px;
+  color: var(--amber-ink);
+}
+.vizhero__trend { margin: 7px 0 0; font: 400 11px/1.4 var(--body-font); color: var(--text-3); max-width: 30ch; }
+
+.viz__chart { margin: 4px -6px -6px; }
+.chart { display: block; width: 100%; height: auto; }
+
+/* volume by month, owned against earned */
+.viz__legend { display: flex; gap: 14px; margin: 10px 0 2px; }
+.key { font: 600 9px/1 var(--body-font); letter-spacing: 1.1px; text-transform: uppercase; color: var(--text-3); }
+.key::before {
+  content: "";
+  display: inline-block;
+  width: 7px; height: 7px;
+  margin-right: 6px;
+  border-radius: 2px;
+  vertical-align: -1px;
+}
+.key--owned::before { background: var(--amber); }
+.key--earned::before { background: rgba(var(--ink-rgb), .38); }
+.bars { display: block; width: 100%; height: auto; }
+.bars__b--owned { fill: var(--amber); }
+.bars__b--earned { fill: rgba(var(--ink-rgb), .38); }
+
+/* the sources, as a table */
+.tbl { width: 100%; margin-top: 12px; border-collapse: collapse; }
+.tbl th {
+  padding: 0 0 8px;
+  font: 600 9px/1 var(--body-font);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-4);
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+}
+.tbl th:first-child, .tbl td:first-child { text-align: left; }
+.tbl td { padding: 9px 0; text-align: right; vertical-align: middle; }
+.tbl tbody tr + tr td { border-top: 1px solid rgba(var(--ink-rgb), .07); }
+.tbl__name { font: 400 13px/1 var(--body-font); color: var(--ink); }
+.tbl__share { width: 42%; }
+.tbl__share b { display: block; font: 600 11px/1 var(--body-font); color: var(--text-2); }
+.tbl__bar {
   display: block;
   height: 2px;
-  margin-top: 7px;
+  margin-top: 6px;
   background: rgba(var(--ink-rgb), .08);
   border-radius: 2px;
   overflow: hidden;
 }
-.rail__bar i {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, var(--amber-deep), var(--amber));
-}
+.tbl__bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--amber-deep), var(--amber)); }
+.tbl__num { font: 400 12px/1 var(--body-font); color: var(--text-2); }
+.tbl__delta { margin: 0; }
 
-.viz__chart { padding: 18px 22px 10px; }
-.chart { display: block; width: 100%; height: auto; }
+/* the watchlist */
+.sigs { margin: 12px 0 0; padding: 0; list-style: none; }
+.sig {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+}
+.sig + .sig { border-top: 1px solid rgba(var(--ink-rgb), .07); }
+.sig__mark {
+  display: grid;
+  place-items: center;
+  width: 20px; height: 20px;
+  border-radius: 6px;
+  font-size: 11px;
+  background: rgba(var(--ink-rgb), .05);
+  color: var(--text-2);
+}
+.sig__mark.is-up { background: rgba(var(--amber-rgb), .2); color: var(--amber-ink); }
+.sig__text { min-width: 0; }
+.sig__text b { display: block; font: 600 12px/1.2 var(--body-font); color: var(--ink); }
+.sig__text em { display: block; font: 400 10.5px/1.3 var(--body-font); font-style: normal; color: var(--text-3); }
+.sig__v { font: 600 12px/1 var(--body-font); color: var(--text-2); }
 
 /* the curve draws itself, the surface fades in under it, the points pop */
 .chart__line {
@@ -883,12 +1008,27 @@ main { position: relative; z-index: 1; }
   to   { opacity: 1; transform: scale(1); }
 }
 
-/* rail bars grow to their value */
-.rail__bar i {
+/* every bar in the console grows to its value */
+[data-grow] {
   width: 0;
   transition: width .9s cubic-bezier(.22, .61, .36, 1) calc(.2s + var(--i, 0) * .08s);
 }
-.rail__bar i.is-grown { width: var(--w, 0%); }
+[data-grow].is-grown { width: var(--w, 0%); }
+
+/* the columns rise out of the axis, one month after the other */
+.bars__b {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: bar-rise .5s cubic-bezier(.16, .84, .34, 1) calc(.25s + var(--i, 0) * .045s) backwards;
+}
+@keyframes bar-rise { from { transform: scaleY(0); opacity: .2; } }
+
+/* the small curves draw themselves like the big one */
+.spark__line {
+  stroke-dasharray: var(--len, 200);
+  stroke-dashoffset: var(--len, 200);
+  animation: chart-draw .8s cubic-bezier(.22, .61, .36, 1) .25s forwards;
+}
 
 .viz__foot {
   padding: 14px 26px 18px;
@@ -946,10 +1086,11 @@ main { position: relative; z-index: 1; }
   .tabs { width: min(700px, 100%); }
   .tab { font-size: 13px; height: 44px; }
   .question { font-size: clamp(16px, 1.15vw, 19px); padding: 20px 2px; }
-  .viz__metric { font-size: clamp(34px, 2.6vw, 42px); }
   .viz__label { font-size: clamp(10px, .75vw, 12px); }
-  .viz__trend { font-size: clamp(11px, .8vw, 13px); max-width: 240px; }
-  .rail__name { font-size: clamp(13px, .95vw, 15px); }
+  .vizhero__trend { font-size: clamp(11px, .8vw, 13px); max-width: 30ch; }
+  .stat__value { font-size: clamp(24px, 1.8vw, 29px); }
+  .viz__total { font-size: clamp(26px, 2vw, 32px); }
+  .tbl__name { font-size: clamp(13px, .95vw, 15px); }
   .viz__foot { font-size: clamp(12px, .88vw, 14px); }
 }
 
@@ -979,16 +1120,29 @@ main { position: relative; z-index: 1; }
   .signup { margin-top: 44px; }
   .clients { padding-top: 48px; }
   .cases__panel { grid-template-columns: minmax(0, 1fr); align-items: stretch; }
-  .viz__body { grid-template-columns: minmax(0, 1fr); }
-  .rail { border-right: 0; border-bottom: 1px solid var(--line); }
+  .viz__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .viz__cell--hero, .viz__cell--wide, .viz__cell--side { grid-column: span 2; }
   .cases__lead { margin-top: 52px; }
 }
 
 @media (max-width: 640px) {
   .viz__head { flex-direction: column; align-items: flex-start; gap: 10px; padding: 18px 18px 14px; }
-  .viz__figure { flex-direction: column; align-items: flex-start; gap: 4px; }
-  .viz__trend { max-width: none; }
-  .rail, .viz__chart { padding-inline: 18px; }
+  .vizhero__trend { max-width: none; }
+  .viz__range { display: none; }
+  /* a phone gets the read, not the whole dashboard: three stats, the headline,
+     the trend and the sources. Stacked in full it ran to 1400px. */
+  .viz__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .viz__cell { padding: 12px 10px; }
+  .viz__cell--hero, .viz__cell--wide { grid-column: span 3; }
+  .viz__cell--side { display: none; }
+  .viz__cell--hero { padding: 14px 16px; }
+  .viz__cell--wide { padding: 14px 16px; }
+  .stat__label { font-size: 8px; letter-spacing: 1px; }
+  .stat__spark { display: none; }
+  .stat__value { font-size: 19px; }
+  .stat__delta { font-size: 9.5px; }
+  .tbl__num { display: none; }
+  .tbl th:nth-child(3) { display: none; }
   .viz__foot { padding: 12px 18px 16px; }
   .tabs { flex-wrap: wrap; border-radius: 22px; }
   .tab { flex: 1 1 calc(50% - 6px); }
@@ -1014,7 +1168,8 @@ main { position: relative; z-index: 1; }
   .chart__area, .chart__dot, .chart__cursor, .menu__list li, .menu__foot {
     opacity: 1; animation: none; transform: none;
   }
-  .rail__bar i { transition: none; }
+  [data-grow] { transition: none; }
+  .bars__b, .spark__line { animation: none; }
   .field::before { animation: none; }
 }
 

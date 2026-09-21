@@ -674,6 +674,48 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     section cible sous le bandeau. `scroll-margin-top: 58px` sur toute section
     portant un `id` corrige toutes les ancres du site.
 
+29. **La console devient un tableau de bord.** Licter a fourni une capture
+    d'un kit admin (Shadcnblocks) : la version précédente — un chiffre, une
+    courbe et cinq barres horizontales — était jugée trop pauvre en données.
+    Le contenu du panneau est refait sur ce modèle, dans la charte, **sans
+    toucher aux animations** déjà en place.
+
+    **La structure**, reprise de la capture : une barre de tête avec trois
+    puces (90 days / 12 months / Export, décoratives), puis trois cellules de
+    KPI avec chiffre, variation et micro-courbe, la figure de tête à côté ;
+    en dessous la courbe de tendance en large et un histogramme *owned /
+    earned* par mois ; en bas un tableau des sources (part, volume, variation
+    à 30 jours) et une liste de signaux à surveiller. Huit cellules, séparées
+    par des filets d'1 px : la grille a un `gap: 1px` sur fond `--line`, donc
+    les rainures *sont* les traits — pas de bordure à gérer.
+
+    **Les animations existantes couvrent tout le nouveau contenu**, en
+    généralisant leurs sélecteurs plutôt qu'en les dupliquant : `[data-draw]`
+    pour tout tracé qui se dessine (la grande courbe et les trois
+    micro-courbes), `[data-grow]` pour toute barre qui pousse (le tableau),
+    `[data-count]` pour tout chiffre qui monte (les trois KPI, la figure de
+    tête, le total). Les colonnes de l'histogramme ont leur propre montée
+    depuis l'axe, décalée mois par mois. Le deck, la distribution de carte au
+    changement d'onglet et l'inclinaison au scroll sont inchangés.
+
+    **Deux pièges rencontrés** :
+    - La cellule de la figure de tête s'appelait `.hero`. C'est déjà le nom de
+      la section d'en-tête de la page : la cellule héritait de ses règles et
+      faisait **900 px de haut**. Renommée `.vizhero`. Un composant injecté en
+      JS dans une feuille de style unique doit préfixer ses classes.
+    - Le canevas de la cartographie se dimensionnait sur `window.innerWidth`,
+      qui **inclut la barre de défilement** : il dépassait de 18 px sur mobile.
+      Corrigé sur `clientWidth`, avec un recalcul différé, parce que
+      l'apparition d'une barre de défilement ne déclenche pas de `resize`.
+
+    **Sur mobile**, le tableau de bord complet montait à 1 400 px. Sous 640 px
+    il ne garde que les trois KPI sur une ligne, la figure de tête, la courbe
+    et le tableau des sources — 712 px, lisible d'un coup d'œil.
+
+    **Tous les chiffres restent illustratifs** et doivent être remplacés par
+    Licter avant mise en ligne. Ils sont désormais bien plus nombreux : c'est
+    autant de matière à relire.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
@@ -686,6 +728,8 @@ l'indicateur `+23%`, le lien final et les survols de menu.
   `tech-tools.html` ne les demande plus (voir l'arbitrage 27).
 - Compléter `js/fr.js` avec le corps de texte des pages internes (cas
   d'usage, offres, pourquoi, techno, clients, blog, guide, diagnostic, RDV).
+- Relire **tous les chiffres de la console** de la home (arbitrage 29) :
+  KPI, volumes, parts, variations et signaux des quatre familles.
 - Relire les quatre pages plateformes : ce que fait réellement chaque outil
   chez Licter, et ce qu'on a le droit d'en dire publiquement.
 - Blog : les quatre fils existent, les articles non — à brancher sur le vrai

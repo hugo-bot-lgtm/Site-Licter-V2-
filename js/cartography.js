@@ -726,7 +726,9 @@
   /* ---------------------------------------------------------------- setup */
 
   function measure() {
-    view.w = Math.max(1, window.innerWidth);
+    /* innerWidth includes the scrollbar: sizing to it pushed the fixed canvas
+       past the viewport and gave the page a horizontal scroll on narrow screens */
+    view.w = Math.max(1, document.documentElement.clientWidth || window.innerWidth);
     view.h = Math.max(1, window.innerHeight);
     view.sh = Math.round(view.h * STATIC_OVERSCAN);
     view.dpr = Math.min(2, window.devicePixelRatio || 1);
@@ -803,6 +805,17 @@
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () { build(); }, 180);
   });
+
+  /* A scrollbar appearing narrows the page without firing a resize. The canvas
+     would keep the wider size and hand the document a horizontal scroll, so
+     check the width again once the page has settled. */
+  function refit() {
+    var w = document.documentElement.clientWidth || window.innerWidth;
+    if (Math.abs(w - view.w) > 1) build();
+  }
+  window.addEventListener("load", function () { setTimeout(refit, 60); });
+  setTimeout(refit, 400);
+  setTimeout(refit, 1400);
 
   window.addEventListener("scroll", collectDimZones, { passive: true });
   document.addEventListener("visibilitychange", function () {

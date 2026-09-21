@@ -154,6 +154,8 @@
 
   /* ------------------------------------------------------------ use cases */
 
+  /* Every figure in this console is illustrative — a plausible read, not a
+     client result. Licter has to replace them before this goes live. */
   var CASES = {
     communication: {
       label: "CAMPAIGN IMPACT — SHARE OF VOICE",
@@ -161,10 +163,29 @@
       trend: "vs. category benchmark, rolling 90 days",
       caption: "Creator-driven reach over the last 90 days, measured against the category benchmark.",
       series: [18, 22, 20, 28, 34, 31, 42, 47, 45, 58, 63, 71],
+      seed: 7,
+      kpis: [
+        { label: "Share of voice", value: "23.4%", delta: "+15.5%", dir: "up", spark: [12, 15, 14, 18, 17, 21, 23] },
+        { label: "Creator reach", value: "4.1M", delta: "+40.2%", dir: "up", spark: [1.8, 2.1, 2.0, 2.8, 3.2, 3.6, 4.1] },
+        { label: "Paid share", value: "12.8%", delta: "-6.4%", dir: "down", spark: [21, 20, 18, 17, 15, 14, 13] }
+      ],
+      barsTitle: "VOLUME BY MONTH",
+      barsTotal: "48.2k",
+      barsNote: "posts collected, owned and earned",
       railTitle: "WHERE THE VOICE COMES FROM",
       rail: [
-        { name: "TikTok", v: 34 }, { name: "Instagram", v: 27 },
-        { name: "YouTube", v: 21 }, { name: "X", v: 11 }, { name: "LinkedIn", v: 7 }
+        { name: "TikTok", v: 34, posts: "12.4k", d: "+18%", dir: "up" },
+        { name: "Instagram", v: 27, posts: "9.8k", d: "+11%", dir: "up" },
+        { name: "YouTube", v: 21, posts: "3.2k", d: "+6%", dir: "up" },
+        { name: "X", v: 11, posts: "5.1k", d: "-4%", dir: "down" },
+        { name: "LinkedIn", v: 7, posts: "1.4k", d: "+2%", dir: "up" }
+      ],
+      signalsTitle: "SIGNALS TO WATCH",
+      signals: [
+        { name: "Short-form formats", note: "carrying the reach", state: "up", v: "62%" },
+        { name: "Earned over owned", note: "share still climbing", state: "up", v: "41%" },
+        { name: "Brand mentions", note: "steady, no spike", state: "flat", v: "18%" },
+        { name: "Paid amplification", note: "losing ground", state: "down", v: "9%" }
       ],
       anchor: "use-cases.html#communication",
       questions: [
@@ -179,10 +200,29 @@
       trend: "net positive, owned and earned conversations",
       caption: "Net positive sentiment on owned and earned conversations, panel-weighted.",
       series: [30, 34, 31, 36, 41, 39, 44, 48, 52, 50, 57, 62],
+      seed: 23,
+      kpis: [
+        { label: "Net sentiment", value: "17.2", delta: "+9.4 pts", dir: "up", spark: [8, 9, 11, 10, 13, 15, 17] },
+        { label: "Negative share", value: "8.6%", delta: "-3.1 pts", dir: "down", spark: [13, 12, 12, 11, 10, 9, 9] },
+        { label: "Risk alerts", value: "4", delta: "-2 vs. Q3", dir: "down", spark: [9, 8, 7, 6, 6, 5, 4] }
+      ],
+      barsTitle: "VOLUME BY MONTH",
+      barsTotal: "36.9k",
+      barsNote: "conversations classified, owned and earned",
       railTitle: "WHAT DRIVES THE SENTIMENT",
       rail: [
-        { name: "Product", v: 38 }, { name: "Service", v: 24 },
-        { name: "Pricing", v: 18 }, { name: "Campaigns", v: 12 }, { name: "Corporate", v: 8 }
+        { name: "Product", v: 38, posts: "8.9k", d: "+12%", dir: "up" },
+        { name: "Service", v: 24, posts: "6.2k", d: "+21%", dir: "up" },
+        { name: "Pricing", v: 18, posts: "4.4k", d: "+9%", dir: "up" },
+        { name: "Campaigns", v: 12, posts: "2.8k", d: "-5%", dir: "down" },
+        { name: "Corporate", v: 8, posts: "1.1k", d: "-2%", dir: "down" }
+      ],
+      signalsTitle: "SIGNALS TO WATCH",
+      signals: [
+        { name: "Service backlog", note: "the fastest riser", state: "up", v: "21%" },
+        { name: "Pricing chatter", note: "spreading past the core", state: "up", v: "14%" },
+        { name: "Product quality", note: "stable quarter on quarter", state: "flat", v: "38%" },
+        { name: "Corporate news", note: "fading from the feed", state: "down", v: "8%" }
       ],
       anchor: "use-cases.html#brand-health",
       questions: [
@@ -193,14 +233,34 @@
     },
     audiences: {
       label: "CORE TARGET — QUALIFIED REACH",
-      metric: "×2.4",
+      metric: "2.4",
+      metricPrefix: "\u00d7",
       trend: "qualified reach, look-alike communities folded in",
       caption: "Qualified reach inside the core target once look-alike communities are folded in.",
       series: [12, 16, 24, 21, 33, 38, 36, 49, 55, 61, 58, 74],
+      seed: 41,
+      kpis: [
+        { label: "Core target share", value: "41%", delta: "+7 pts", dir: "up", spark: [28, 30, 31, 34, 36, 39, 41] },
+        { label: "Look-alike overlap", value: "26%", delta: "+12 pts", dir: "up", spark: [12, 14, 17, 19, 21, 24, 26] },
+        { label: "Out of target", value: "17%", delta: "-8 pts", dir: "down", spark: [26, 25, 23, 21, 20, 18, 17] }
+      ],
+      barsTitle: "PROFILES BY MONTH",
+      barsTotal: "1.9M",
+      barsNote: "profiles qualified, core and look-alike",
       railTitle: "WHO THE COMMUNITIES ARE",
       rail: [
-        { name: "Core target", v: 41 }, { name: "Look-alikes", v: 26 },
-        { name: "Prescribers", v: 16 }, { name: "Detractors", v: 10 }, { name: "Undecided", v: 7 }
+        { name: "Core target", v: 41, posts: "780k", d: "+7%", dir: "up" },
+        { name: "Look-alikes", v: 26, posts: "495k", d: "+31%", dir: "up" },
+        { name: "Prescribers", v: 16, posts: "304k", d: "+5%", dir: "up" },
+        { name: "Detractors", v: 10, posts: "190k", d: "-3%", dir: "down" },
+        { name: "Undecided", v: 7, posts: "133k", d: "-1%", dir: "down" }
+      ],
+      signalsTitle: "SIGNALS TO WATCH",
+      signals: [
+        { name: "Look-alike pool", note: "the reach upside", state: "up", v: "31%" },
+        { name: "Under-25 share", note: "growing on two platforms", state: "up", v: "23%" },
+        { name: "Prescribers", note: "size holding", state: "flat", v: "16%" },
+        { name: "Detractor cluster", note: "shrinking slowly", state: "down", v: "10%" }
       ],
       anchor: "use-cases.html#audiences",
       questions: [
@@ -215,10 +275,29 @@
       trend: "velocity of topics breaking out of the category",
       caption: "Velocity of the topics breaking out of the category over the last four weeks.",
       series: [8, 11, 14, 13, 22, 29, 27, 38, 46, 52, 66, 79],
+      seed: 59,
+      kpis: [
+        { label: "Topics tracked", value: "128", delta: "+12 new", dir: "up", spark: [96, 101, 104, 112, 118, 123, 128] },
+        { label: "Breakout rate", value: "9.4%", delta: "+3.2 pts", dir: "up", spark: [4, 5, 5, 7, 8, 9, 9] },
+        { label: "Median lead time", value: "6", delta: "weeks ahead", dir: "up", spark: [3, 4, 4, 5, 5, 6, 6] }
+      ],
+      barsTitle: "MENTIONS BY MONTH",
+      barsTotal: "22.7k",
+      barsNote: "mentions on the tracked topics",
       railTitle: "WHAT IS BREAKING OUT",
       rail: [
-        { name: "Refill formats", v: 31 }, { name: "Dupe culture", v: 25 },
-        { name: "AI try-on", v: 20 }, { name: "Resale", v: 14 }, { name: "Longevity", v: 10 }
+        { name: "Refill formats", v: 31, posts: "7.0k", d: "+64%", dir: "up" },
+        { name: "Dupe culture", v: 25, posts: "5.7k", d: "+48%", dir: "up" },
+        { name: "AI try-on", v: 20, posts: "4.5k", d: "+37%", dir: "up" },
+        { name: "Resale", v: 14, posts: "3.2k", d: "+9%", dir: "up" },
+        { name: "Longevity", v: 10, posts: "2.3k", d: "-2%", dir: "down" }
+      ],
+      signalsTitle: "SIGNALS TO WATCH",
+      signals: [
+        { name: "Refill formats", note: "out of the niche", state: "up", v: "64%" },
+        { name: "Dupe culture", note: "crossing into press", state: "up", v: "48%" },
+        { name: "Resale", note: "plateau after two quarters", state: "flat", v: "14%" },
+        { name: "Longevity claims", note: "cooling off", state: "down", v: "10%" }
       ],
       anchor: "use-cases.html#trends",
       questions: [
@@ -280,21 +359,93 @@
       '<path class="chart__area" d="' + area + '" fill="url(#vizFill)"/>' +
       '<line class="chart__cursor" x1="' + lastX.toFixed(1) + '" y1="' + padT + '" x2="' + lastX.toFixed(1) +
         '" y2="' + (h - padB) + '" stroke="rgba(154,111,8,.35)" stroke-width="1" stroke-dasharray="3 4"/>' +
-      '<path class="chart__line" d="' + line + '" fill="none" stroke="#C08C0E" stroke-width="2.4" ' +
+      '<path class="chart__line" data-draw d="' + line + '" fill="none" stroke="#C08C0E" stroke-width="2.4" ' +
         'stroke-linejoin="round" stroke-linecap="round"/>' +
       '<circle class="chart__cursor" cx="' + lastX.toFixed(1) + '" cy="' + lastY.toFixed(1) + '" r="20" fill="url(#vizDot)"/>' +
       dots + labels + "</svg>";
   }
 
-  function railRows(rows) {
+  /* the tiny curve in the corner of a stat cell — same draw-on as the big one */
+  function spark(series) {
+    var w = 104, h = 30, p = 3;
+    var max = Math.max.apply(null, series), min = Math.min.apply(null, series);
+    var span = Math.max(0.001, max - min);
+    var d = series.map(function (v, i) {
+      var x = p + (w - p * 2) * (i / (series.length - 1));
+      var y = h - p - (h - p * 2) * ((v - min) / span);
+      return (i ? "L" : "M") + x.toFixed(1) + " " + y.toFixed(1);
+    }).join(" ");
+    return '<svg class="spark" viewBox="0 0 ' + w + " " + h + '" aria-hidden="true">' +
+      '<path class="spark__line" data-draw d="' + d + '" fill="none" stroke="currentColor" ' +
+      'stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg>';
+  }
+
+  /* owned / earned split, derived from the series so the two charts agree */
+  function split(series, seed) {
+    var s = (seed || 1) >>> 0;
+    function rnd() { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }
+    return series.map(function (v) {
+      var owned = Math.max(3, Math.round(v * (0.3 + rnd() * 0.2)));
+      return [owned, Math.max(2, v - owned)];
+    });
+  }
+
+  function barsChart(pairs) {
+    var w = 430, h = 168, padB = 20, padT = 8;
+    var max = Math.max.apply(null, pairs.map(function (p) { return Math.max(p[0], p[1]); }));
+    var slot = w / pairs.length, bw = Math.min(8, slot * 0.3), gap = 3;
+    var usable = h - padB - padT;
+
+    return '<svg class="bars" viewBox="0 0 ' + w + " " + h + '" aria-hidden="true">' +
+      pairs.map(function (p, i) {
+        var cx = slot * (i + 0.5);
+        return p.map(function (v, k) {
+          var bh = Math.max(3, usable * (v / max));
+          var x = cx - bw - gap / 2 + k * (bw + gap);
+          return '<rect class="bars__b bars__b--' + (k ? "earned" : "owned") + '" style="--i:' + i +
+                 '" x="' + x.toFixed(1) + '" y="' + (h - padB - bh).toFixed(1) +
+                 '" width="' + bw.toFixed(1) + '" height="' + bh.toFixed(1) + '" rx="2"/>';
+        }).join("");
+      }).join("") +
+      pairs.map(function (p, i) {
+        return '<text x="' + (slot * (i + 0.5)).toFixed(1) + '" y="' + (h - 6) +
+               '" fill="#8C959C" font-family="Josefin Sans, sans-serif" font-size="9" ' +
+               'letter-spacing="1" text-anchor="middle">' + MONTHS[i % 12] + "</text>";
+      }).join("") + "</svg>";
+  }
+
+  function tableRows(rows) {
     var top = Math.max.apply(null, rows.map(function (r) { return r.v; }));
     return rows.map(function (r, i) {
-      return '<li class="rail__row">' +
-        '<span class="rail__name">' + r.name + "</span>" +
-        '<span class="rail__value">' + r.v + "%</span>" +
-        '<span class="rail__bar"><i style="--w:' + Math.round((r.v / top) * 100) +
-          "%;--i:" + i + '"></i></span>' +
-        "</li>";
+      return '<tr>' +
+        '<td class="tbl__name">' + r.name + "</td>" +
+        '<td class="tbl__share"><b>' + r.v + "%</b>" +
+          '<span class="tbl__bar"><i data-grow style="--w:' + Math.round((r.v / top) * 100) +
+          "%;--i:" + i + '"></i></span></td>' +
+        '<td class="tbl__num">' + r.posts + "</td>" +
+        '<td class="tbl__delta is-' + r.dir + '">' + r.d + "</td>" +
+        "</tr>";
+    }).join("");
+  }
+
+  function signalRows(rows) {
+    var arrow = { up: "↗", flat: "→", down: "↘" };
+    return rows.map(function (r, i) {
+      return '<li class="sig" style="--i:' + i + '">' +
+        '<span class="sig__mark is-' + r.state + '" aria-hidden="true">' + arrow[r.state] + "</span>" +
+        '<span class="sig__text"><b>' + r.name + "</b><em>" + r.note + "</em></span>" +
+        '<span class="sig__v">' + r.v + "</span></li>";
+    }).join("");
+  }
+
+  function statCells(kpis) {
+    return kpis.map(function (k, i) {
+      return '<div class="viz__cell stat" style="--i:' + i + '">' +
+        '<p class="stat__label">' + k.label + "</p>" +
+        '<div class="stat__row"><p class="stat__value" data-count>' + k.value + "</p>" +
+          '<span class="stat__spark is-' + k.dir + '">' + spark(k.spark) + "</span></div>" +
+        '<p class="stat__delta is-' + k.dir + '">' + k.delta + "</p>" +
+        "</div>";
     }).join("");
   }
 
@@ -320,45 +471,79 @@
   function renderViz(key) {
     if (!viz) return;
     var d = CASES[key];
+    var pairs = split(d.series, d.seed);
+
     viz.innerHTML =
       '<div class="viz__head">' +
         '<div class="viz__id"><span class="viz__dot" aria-hidden="true"></span>' +
           '<span class="viz__label">' + d.label + "</span></div>" +
-        '<div class="viz__figure"><span class="viz__metric">' + d.metric + "</span>" +
-          '<span class="viz__trend">' + d.trend + "</span></div>" +
+        '<div class="viz__range" aria-hidden="true">' +
+          '<span class="viz__chip is-on">90 days</span>' +
+          '<span class="viz__chip">12 months</span>' +
+          '<span class="viz__chip">Export</span>' +
+        "</div>" +
       "</div>" +
-      '<div class="viz__body">' +
-        '<div class="rail"><p class="rail__title">' + d.railTitle + "</p>" +
-          '<ul class="rail__list">' + railRows(d.rail) + "</ul></div>" +
-        '<div class="viz__chart">' + chart(d.series) + "</div>" +
+
+      '<div class="viz__grid">' +
+        statCells(d.kpis) +
+        '<div class="viz__cell viz__cell--hero vizhero">' +
+          '<p class="stat__label">' + d.label.split(" — ")[0] + "</p>" +
+          '<p class="vizhero__metric" data-count>' + (d.metricPrefix || "") + d.metric + "</p>" +
+          '<p class="vizhero__trend">' + d.trend + "</p>" +
+        "</div>" +
+
+        '<div class="viz__cell viz__cell--wide">' +
+          '<p class="viz__cellTitle">Trend — rolling 12 months</p>' +
+          '<p class="viz__cellNote">Indexed against the category benchmark.</p>' +
+          '<div class="viz__chart">' + chart(d.series) + "</div>" +
+        "</div>" +
+        '<div class="viz__cell viz__cell--side">' +
+          '<p class="viz__cellTitle">' + d.barsTitle + "</p>" +
+          '<p class="viz__total" data-count>' + d.barsTotal + "</p>" +
+          '<p class="viz__cellNote">' + d.barsNote + "</p>" +
+          '<div class="viz__legend"><span class="key key--owned">Owned</span>' +
+            '<span class="key key--earned">Earned</span></div>' +
+          barsChart(pairs) +
+        "</div>" +
+
+        '<div class="viz__cell viz__cell--wide">' +
+          '<p class="viz__cellTitle">' + d.railTitle + "</p>" +
+          '<table class="tbl"><thead><tr><th>Source</th><th>Share</th>' +
+            "<th>Posts</th><th>30 d</th></tr></thead>" +
+            "<tbody>" + tableRows(d.rail) + "</tbody></table>" +
+        "</div>" +
+        '<div class="viz__cell viz__cell--side">' +
+          '<p class="viz__cellTitle">' + d.signalsTitle + "</p>" +
+          '<ul class="sigs">' + signalRows(d.signals) + "</ul>" +
+        "</div>" +
       "</div>" +
+
       '<figcaption class="viz__foot">' + d.caption + "</figcaption>";
 
     animateViz();
   }
 
-  /* The panel is a data visual, so the data is what moves: the curve draws
-     itself, the bars grow to their value, the headline figure counts up. */
+  /* The panel is a data visual, so the data is what moves: the curves draw
+     themselves, the bars grow to their value, every figure counts up. */
   function animateViz() {
     if (reduced.matches) {
-      viz.querySelectorAll(".rail__bar i").forEach(function (bar) {
+      viz.querySelectorAll("[data-grow]").forEach(function (bar) {
         bar.style.width = bar.style.getPropertyValue("--w");
       });
       return;
     }
 
-    var line = viz.querySelector(".chart__line");
-    if (line && line.getTotalLength) {
-      line.style.setProperty("--len", Math.ceil(line.getTotalLength()));
-    }
+    viz.querySelectorAll("[data-draw]").forEach(function (path) {
+      if (path.getTotalLength) path.style.setProperty("--len", Math.ceil(path.getTotalLength()));
+    });
 
     requestAnimationFrame(function () {
-      viz.querySelectorAll(".rail__bar i").forEach(function (bar) {
+      viz.querySelectorAll("[data-grow]").forEach(function (bar) {
         bar.classList.add("is-grown");
       });
     });
 
-    countUp(viz.querySelector(".viz__metric"));
+    viz.querySelectorAll("[data-count]").forEach(function (el) { countUp(el); });
   }
 
   function countUp(el) {
