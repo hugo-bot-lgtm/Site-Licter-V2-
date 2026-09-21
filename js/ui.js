@@ -986,3 +986,136 @@
     });
   });
 })();
+
+/* =========================================================================
+   Floating source icons (tech-tools, "where the data comes from")
+   One pointer listener and one rAF loop for the whole field: the springs of
+   the original component become a damped lerp, which is enough at this size.
+   ========================================================================= */
+(function () {
+  var field = document.querySelector("[data-field]");
+  if (!field) return;
+
+  var nodes = Array.prototype.slice.call(field.querySelectorAll(".field__i"));
+  if (!nodes.length) return;
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var RADIUS = 150, PUSH = 46;
+
+  var items = nodes.map(function (el) {
+    return {
+      el: el,
+      scale: parseFloat(getComputedStyle(el).getPropertyValue("--s")) || 1,
+      x: 0, y: 0, tx: 0, ty: 0,
+      cx: 0, cy: 0,                       /* centre, relative to the field */
+      near: false,
+      phase: Math.random() * Math.PI * 2,
+      speed: 0.22 + Math.random() * 0.2,
+      ax: 5 + Math.random() * 5,
+      ay: 5 + Math.random() * 5,
+      spin: (Math.random() * 2 - 1) * 5
+    };
+  });
+
+  /* the coordinates are percentages: read them back in pixels, once per layout */
+  function measure() {
+    var box = field.getBoundingClientRect();
+    items.forEach(function (it) {
+      var r = it.el.getBoundingClientRect();
+      it.cx = r.left + r.width / 2 - box.left - it.x;
+      it.cy = r.top + r.height / 2 - box.top - it.y;
+    });
+  }
+
+  var px = -1e4, py = -1e4, running = false, visible = false, t0 = 0;
+
+  function frame(now) {
+    if (!t0) t0 = now;
+    var t = (now - t0) / 1000;
+    var box = field.getBoundingClientRect();
+    var moving = false;
+
+    items.forEach(function (it) {
+      /* the slow drift it keeps whatever the cursor does */
+      var dx = Math.sin(t * it.speed + it.phase) * it.ax;
+      var dy = Math.cos(t * it.speed * 0.8 + it.phase) * it.ay;
+      var rot = Math.sin(t * it.speed * 0.6 + it.phase) * it.spin;
+
+      /* and the step aside */
+      var ox = px - (box.left + it.cx);
+      var oy = py - (box.top + it.cy);
+      var dist = Math.sqrt(ox * ox + oy * oy);
+      var force = dist < RADIUS ? (1 - dist / RADIUS) * PUSH : 0;
+      if (force > 0 && dist > 0.001) {
+        var a = Math.atan2(oy, ox);
+        it.tx = -Math.cos(a) * force;
+        it.ty = -Math.sin(a) * force;
+      } else {
+        it.tx = 0;
+        it.ty = 0;
+      }
+
+      it.x += (it.tx - it.x) * 0.14;
+      it.y += (it.ty - it.y) * 0.14;
+      if (Math.abs(it.tx - it.x) > 0.1 || Math.abs(it.ty - it.y) > 0.1) moving = true;
+
+      var near = force > PUSH * 0.12;
+      if (near !== it.near) {
+        it.near = near;
+        it.el.classList.toggle("is-near", near);
+      }
+
+      it.el.style.transform =
+        "translate3d(" + (it.x + dx).toFixed(2) + "px," + (it.y + dy).toFixed(2) + "px,0)" +
+        " rotate(" + rot.toFixed(2) + "deg) scale(" + it.scale + ")";
+    });
+
+    if (visible || moving) requestAnimationFrame(frame);
+    else running = false;
+  }
+
+  function start() {
+    if (running || reduced.matches) return;
+    running = true;
+    t0 = 0;
+    requestAnimationFrame(frame);
+  }
+
+  window.addEventListener("pointermove", function (e) {
+    px = e.clientX;
+    py = e.clientY;
+    if (visible) start();
+  }, { passive: true });
+
+  /* a finger has no hover: leave the drift alone and never push */
+  window.addEventListener("pointerdown", function (e) {
+    if (e.pointerType !== "mouse") { px = -1e4; py = -1e4; }
+  }, { passive: true });
+
+  var reflow = 0;
+  window.addEventListener("resize", function () {
+    clearTimeout(reflow);
+    reflow = setTimeout(measure, 150);
+  });
+
+  function enter() {
+    field.classList.add("is-in");
+    measure();
+    start();
+  }
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        visible = entry.isIntersecting;
+        if (visible) enter();
+      });
+    }, { threshold: 0.05 }).observe(field);
+  } else {
+    visible = true;
+    enter();
+  }
+
+  /* the fallback the rest of the site uses: never leave content hidden */
+  setTimeout(function () { if (!field.classList.contains("is-in")) enter(); }, 1800);
+})();

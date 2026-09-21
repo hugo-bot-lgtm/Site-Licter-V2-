@@ -645,6 +645,43 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     cohérent avec le reste du site, et ne pose aucune question de droit
     d'usage des marques.
 
+28. **Champ d'icônes flottantes sur « Where the data comes from ».**
+    Second composant fourni par Licter (hero plein écran, icônes qui fuient
+    le curseur). Il n'a pas été posé en hero : la cartographie animée occupe
+    déjà le fond de toutes les pages, et deux systèmes flottants dans le même
+    écran font du bruit. Il est donc devenu un **champ délimité** dans la
+    section des sources, la seule du site où des logos tiers ont une raison
+    d'être — ce sont littéralement les sources de la donnée.
+
+    **Ce qui a été transposé** :
+    - **Neuf glyphes monochromes** dessinés à la main (TikTok, Instagram, X,
+      LinkedIn, YouTube, Facebook, Google, Amazon, et une étincelle pour les
+      assistants). L'original est en couleurs de marque : neuf palettes
+      étrangères dans une charte qui n'a que navy, ambre, crème et gris,
+      c'était non. Navy à 50 %, **ambre au moment où le glyphe est repoussé**.
+    - **Une écoute `pointermove` et une boucle `rAF` pour tout le champ**, au
+      lieu d'un `useSpring` et d'un listener par icône. Le ressort devient un
+      lerp amorti (0,14) : à cette taille, la différence ne se voit pas. La
+      boucle ne tourne que quand la section est à l'écran
+      (`IntersectionObserver`) et s'arrête d'elle-même quand tout est au
+      repos.
+    - **Les positions sont mesurées, pas devinées** : la section réserve une
+      bande libre au-dessus du titre (`padding-top`), et les neuf glyphes
+      occupent cette bande plus la zone à droite du titre, qui s'arrête à
+      64 % de la largeur. Rien ne passe derrière le texte.
+    - **Dégradations** : sous 900 px il ne reste que quatre glyphes, plus
+      petits, plus discrets, décalés sous le bandeau ; un `pointerdown` qui
+      n'est pas une souris coupe la répulsion (un doigt n'a pas de survol) ;
+      `prefers-reduced-motion` fige tout.
+
+    **Point à trancher côté Licter, pas côté code** : les logos de réseaux
+    sociaux employés pour désigner des sources de données relèvent de l'usage
+    nominatif, ce qui passe en général, et le traitement monochrome réduit
+    encore le risque — mais c'est une décision de marque. Les **logos
+    clients**, eux, demandent l'accord de chacun : c'est sans doute pourquoi
+    le marquee affiche des noms en texte et non des logos, et je ne l'ai pas
+    changé.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

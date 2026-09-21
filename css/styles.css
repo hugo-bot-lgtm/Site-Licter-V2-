@@ -2194,3 +2194,61 @@ html[lang="fr"] .nav__link { letter-spacing: 1.1px; }
   .gcard:hover, .gcard[data-reveal].is-in:hover { transform: none; }
   .gcard:hover .gcard__art { transform: none; }
 }
+
+/* ==========================================================================
+   Floating source icons — the "where the data comes from" field
+   The glyphs drift on their own and step aside when the cursor comes close.
+   Monochrome navy, amber while they are being pushed: the charter has no
+   room for nine brand palettes.
+   ========================================================================== */
+
+.block--field { padding-top: clamp(84px, 13vh, 152px); }
+.block--field > .block__head,
+.block--field > .grid { position: relative; z-index: 1; }
+
+.field__icons {
+  position: absolute;
+  inset: 0 -2%;
+  z-index: 0;
+  pointer-events: none;
+}
+.field__i {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;         /* the coordinates address the centre */
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .5);
+  backdrop-filter: blur(3px);
+  color: var(--ink);
+  opacity: .5;
+  transform: scale(var(--s, 1));
+  transition: color .3s ease, opacity .3s ease, border-color .3s ease;
+  will-change: transform;
+}
+.field__i svg { width: 24px; height: 24px; display: block; }
+.field__i.is-near { color: var(--amber-deep); opacity: .92; border-color: rgba(var(--amber-rgb), .55); }
+
+/* the field builds itself in once, then the drift takes over */
+.reveal .field__i { opacity: 0; }
+.reveal [data-field].is-in .field__i {
+  opacity: .5;
+  transition: opacity .7s ease var(--d, 0s), color .3s ease, border-color .3s ease;
+}
+.reveal [data-field].is-in .field__i.is-near { opacity: .92; }
+
+@media (max-width: 900px) {
+  /* no cursor to escape from, and no room to drift: keep four, keep them quiet */
+  .block--field { padding-top: clamp(96px, 15vh, 150px); }
+  .field__icons { transform: translateY(28px); }   /* clear of the sticky banner */
+  .field__i { width: 42px; height: 42px; margin: -21px 0 0 -21px; border-radius: 13px; opacity: .34; }
+  .field__i svg { width: 19px; height: 19px; }
+  .field__i:nth-child(n+5) { display: none; }
+  .reveal [data-field].is-in .field__i { opacity: .34; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .field__i { transition: none; }
+}
