@@ -2196,63 +2196,109 @@ html[lang="fr"] .nav__link { letter-spacing: 1.1px; }
 }
 
 /* ==========================================================================
-   Floating source icons — the "where the data comes from" field
-   The glyphs drift on their own and step aside when the cursor comes close.
-   Monochrome navy, amber while they are being pushed: the charter has no
-   room for nine brand palettes.
+   The sources, as a community of the map
+   No chips, no cards: the glyphs are nodes, wired to two hubs with the same
+   hairlines as the cartography behind them. Push one and its wires stretch.
    ========================================================================== */
 
 /* the banner is sticky and 38px tall: an anchor jump has to clear it, or the
    top of the targeted section lands underneath it */
 section[id], .block[id] { scroll-margin-top: 58px; }
 
-.block--field { padding-top: clamp(84px, 13vh, 152px); }
 .block--field > .block__head,
 .block--field > .grid { position: relative; z-index: 1; }
 
 .field__icons {
-  position: absolute;
-  inset: 0 -2%;
-  z-index: 0;
+  position: relative;
+  min-height: 300px;
+  margin-top: clamp(20px, 3vh, 34px);
   pointer-events: none;
 }
+
+/* the field and the copy side by side: the amas needs two dimensions, not a strip */
+@media (min-width: 1000px) {
+  .block--field {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 40%);
+    column-gap: clamp(28px, 3.4vw, 64px);
+    align-items: start;
+  }
+  .block--field > .block__head { grid-column: 1; grid-row: 1; }
+  /* two columns in the narrower half, so the promoted first card still works */
+  .block--field > .grid {
+    grid-column: 1;
+    grid-row: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .block--field > .field__icons {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;                  /* stretched over the whole column it goes sparse */
+    height: clamp(380px, 48vh, 540px);
+    margin-top: 0;
+  }
+}
+
+.field__wires {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.field__w {
+  stroke: var(--grey);
+  stroke-width: 1;
+  opacity: .42;
+  transition: stroke .3s ease, opacity .3s ease;
+}
+.field__w--mesh { opacity: .26; }
+.field__w--bridge { stroke: var(--amber-deep); opacity: .34; stroke-dasharray: 3 4; }
+.field__w.is-live { stroke: var(--amber-deep); opacity: .8; }
+
+.field__hub {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  margin: -3.5px 0 0 -3.5px;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: .55;
+}
+
 .field__i {
   position: absolute;
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  margin: -26px 0 0 -26px;         /* the coordinates address the centre */
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, .5);
-  backdrop-filter: blur(3px);
+  display: block;
+  width: var(--w, 28px);
+  height: var(--w, 28px);
+  margin: calc(var(--w, 28px) / -2) 0 0 calc(var(--w, 28px) / -2);
   color: var(--ink);
-  opacity: .62;
-  transform: scale(var(--s, 1));
-  transition: color .3s ease, opacity .3s ease, border-color .3s ease;
+  opacity: .38;
+  transition: color .3s ease, opacity .3s ease;
   will-change: transform;
 }
-.field__i svg { width: 24px; height: 24px; display: block; }
-.field__i.is-near { color: var(--amber-deep); opacity: .92; border-color: rgba(var(--amber-rgb), .55); }
+.field__i svg { width: 100%; height: 100%; display: block; }
+.field__i.is-near { color: var(--amber-deep); opacity: .95; }
 
-/* the field builds itself in once, then the drift takes over */
-.reveal .field__i { opacity: 0; }
+/* it builds in node by node, then the drift takes over */
+.reveal .field__i, .reveal .field__hub, .reveal .field__w { opacity: 0; }
 .reveal [data-field].is-in .field__i {
-  opacity: .62;
-  transition: opacity .7s ease var(--d, 0s), color .3s ease, border-color .3s ease;
+  opacity: .38;
+  transition: opacity .7s ease var(--d, 0s), color .3s ease;
 }
-.reveal [data-field].is-in .field__i.is-near { opacity: .92; }
+.reveal [data-field].is-in .field__i.is-near { opacity: .95; }
+.reveal [data-field].is-in .field__hub { opacity: .55; transition: opacity .7s ease; }
+.reveal [data-field].is-in .field__w { opacity: .42; transition: opacity .9s ease .2s; }
+.reveal [data-field].is-in .field__w--mesh { opacity: .26; }
+.reveal [data-field].is-in .field__w--bridge { opacity: .34; }
+.reveal [data-field].is-in .field__w.is-live { opacity: .8; }
 
-@media (max-width: 900px) {
-  /* no cursor to escape from, and no room to drift: keep four, keep them quiet */
-  .block--field { padding-top: clamp(96px, 15vh, 150px); }
-  .field__icons { transform: translateY(28px); }   /* clear of the sticky banner */
-  .field__i { width: 42px; height: 42px; margin: -21px 0 0 -21px; border-radius: 13px; opacity: .34; }
-  .field__i svg { width: 19px; height: 19px; }
-  .field__i:nth-child(n+5) { display: none; }
-  .reveal [data-field].is-in .field__i { opacity: .34; }
+@media (max-width: 999px) {
+  /* no cursor to escape from: the amas becomes a quiet signature under the copy */
+  .field__icons { min-height: 210px; max-width: 460px; }
+  .field__i { opacity: .3; }
+  .reveal [data-field].is-in .field__i { opacity: .3; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .field__i { transition: none; }
+  .field__i, .field__w { transition: none; }
 }

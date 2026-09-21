@@ -988,62 +988,67 @@
 })();
 
 /* =========================================================================
-   Floating source icons (tech-tools, "where the data comes from")
+   The sources, as a community of the map (tech-tools)
    One pointer listener and one rAF loop for the whole field: the springs of
-   the original component become a damped lerp, which is enough at this size.
+   the original component become a damped lerp. The nodes are wired to two
+   hubs, and the wires follow whatever the cursor pushes away.
    ========================================================================= */
 (function () {
   var field = document.querySelector("[data-field]");
   if (!field) return;
 
+  var layer = field.querySelector(".field__icons");
   var nodes = Array.prototype.slice.call(field.querySelectorAll(".field__i"));
-  if (!nodes.length) return;
+  if (!layer || !nodes.length) return;
 
+  var wires = Array.prototype.slice.call(field.querySelectorAll(".field__w"));
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var RADIUS = 150, PUSH = 46;
+  var RADIUS = 150, PUSH = 40;
 
   var items = nodes.map(function (el) {
     return {
       el: el,
-      scale: parseFloat(getComputedStyle(el).getPropertyValue("--s")) || 1,
+      bx: parseFloat(el.style.left),      /* base position, in percent */
+      by: parseFloat(el.style.top),
       x: 0, y: 0, tx: 0, ty: 0,
-      cx: 0, cy: 0,                       /* centre, relative to the field */
       near: false,
       phase: Math.random() * Math.PI * 2,
-      speed: 0.22 + Math.random() * 0.2,
-      ax: 5 + Math.random() * 5,
-      ay: 5 + Math.random() * 5,
-      spin: (Math.random() * 2 - 1) * 5
+      speed: 0.18 + Math.random() * 0.16,
+      ax: 4 + Math.random() * 4,
+      ay: 4 + Math.random() * 4
     };
   });
 
-  /* the coordinates are percentages: read them back in pixels, once per layout */
-  function measure() {
-    var box = field.getBoundingClientRect();
-    items.forEach(function (it) {
-      var r = it.el.getBoundingClientRect();
-      it.cx = r.left + r.width / 2 - box.left - it.x;
-      it.cy = r.top + r.height / 2 - box.top - it.y;
-    });
-  }
+  /* each wire remembers which node it is tied to at each end */
+  var ties = wires.map(function (w) {
+    var a = w.getAttribute("data-a"), b = w.getAttribute("data-b");
+    return {
+      el: w,
+      a: a === null ? null : items[+a],
+      b: b === null ? null : items[+b],
+      x1: parseFloat(w.getAttribute("x1")), y1: parseFloat(w.getAttribute("y1")),
+      x2: parseFloat(w.getAttribute("x2")), y2: parseFloat(w.getAttribute("y2")),
+      live: false
+    };
+  });
 
   var px = -1e4, py = -1e4, running = false, visible = false, t0 = 0;
 
   function frame(now) {
     if (!t0) t0 = now;
     var t = (now - t0) / 1000;
-    var box = field.getBoundingClientRect();
+    var box = layer.getBoundingClientRect();
+    if (!box.width || !box.height) { running = false; return; }
     var moving = false;
 
     items.forEach(function (it) {
       /* the slow drift it keeps whatever the cursor does */
-      var dx = Math.sin(t * it.speed + it.phase) * it.ax;
-      var dy = Math.cos(t * it.speed * 0.8 + it.phase) * it.ay;
-      var rot = Math.sin(t * it.speed * 0.6 + it.phase) * it.spin;
+      it.dx = Math.sin(t * it.speed + it.phase) * it.ax;
+      it.dy = Math.cos(t * it.speed * 0.8 + it.phase) * it.ay;
 
       /* and the step aside */
-      var ox = px - (box.left + it.cx);
-      var oy = py - (box.top + it.cy);
+      var ox = px - (box.left + box.width * it.bx / 100);
+      var oy = py - (box.top + box.height * it.by / 100);
       var dist = Math.sqrt(ox * ox + oy * oy);
       var force = dist < RADIUS ? (1 - dist / RADIUS) * PUSH : 0;
       if (force > 0 && dist > 0.001) {
@@ -1066,8 +1071,25 @@
       }
 
       it.el.style.transform =
-        "translate3d(" + (it.x + dx).toFixed(2) + "px," + (it.y + dy).toFixed(2) + "px,0)" +
-        " rotate(" + rot.toFixed(2) + "deg) scale(" + it.scale + ")";
+        "translate3d(" + (it.x + it.dx).toFixed(2) + "px," + (it.y + it.dy).toFixed(2) + "px,0)";
+    });
+
+    /* the wires are drawn in a 0-100 box, so a pixel offset is a percentage */
+    var kx = 100 / box.width, ky = 100 / box.height;
+    ties.forEach(function (tie) {
+      if (tie.a) {
+        tie.el.setAttribute("x1", (tie.x1 + (tie.a.x + tie.a.dx) * kx).toFixed(2));
+        tie.el.setAttribute("y1", (tie.y1 + (tie.a.y + tie.a.dy) * ky).toFixed(2));
+      }
+      if (tie.b) {
+        tie.el.setAttribute("x2", (tie.x2 + (tie.b.x + tie.b.dx) * kx).toFixed(2));
+        tie.el.setAttribute("y2", (tie.y2 + (tie.b.y + tie.b.dy) * ky).toFixed(2));
+      }
+      var live = (tie.a && tie.a.near) || (tie.b && tie.b.near);
+      if (live !== tie.live) {
+        tie.live = live;
+        tie.el.classList.toggle("is-live", !!live);
+      }
     });
 
     if (visible || moving) requestAnimationFrame(frame);
@@ -1092,15 +1114,8 @@
     if (e.pointerType !== "mouse") { px = -1e4; py = -1e4; }
   }, { passive: true });
 
-  var reflow = 0;
-  window.addEventListener("resize", function () {
-    clearTimeout(reflow);
-    reflow = setTimeout(measure, 150);
-  });
-
   function enter() {
     field.classList.add("is-in");
-    measure();
     start();
   }
 

@@ -645,41 +645,52 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     cohérent avec le reste du site, et ne pose aucune question de droit
     d'usage des marques.
 
-28. **Champ d'icônes flottantes sur « Where the data comes from ».**
-    Second composant fourni par Licter (hero plein écran, icônes qui fuient
-    le curseur). Il n'a pas été posé en hero : la cartographie animée occupe
-    déjà le fond de toutes les pages, et deux systèmes flottants dans le même
-    écran font du bruit. Il est donc devenu un **champ délimité** dans la
+28. **Les sources, en amas du réseau.** Second composant fourni par Licter
+    (hero plein écran, icônes qui fuient le curseur). Il n'a pas été posé en
+    hero : la cartographie animée occupe déjà le fond de toutes les pages, et
+    deux systèmes flottants dans le même écran font du bruit. Il vit dans la
     section des sources, la seule du site où des logos tiers ont une raison
     d'être — ce sont littéralement les sources de la donnée.
 
-    **Ce qui a été transposé** :
-    - **Neuf glyphes monochromes** dessinés à la main (TikTok, Instagram, X,
-      LinkedIn, YouTube, Facebook, Google, Amazon, et une étincelle pour les
-      assistants). L'original est en couleurs de marque : neuf palettes
-      étrangères dans une charte qui n'a que navy, ambre, crème et gris,
-      c'était non. Navy à 50 %, **ambre au moment où le glyphe est repoussé**.
-    - **Une écoute `pointermove` et une boucle `rAF` pour tout le champ**, au
-      lieu d'un `useSpring` et d'un listener par icône. Le ressort devient un
-      lerp amorti (0,14) : à cette taille, la différence ne se voit pas. La
-      boucle ne tourne que quand la section est à l'écran
-      (`IntersectionObserver`) et s'arrête d'elle-même quand tout est au
-      repos.
-    - **Les positions sont mesurées, pas devinées** : la section réserve une
-      bande libre au-dessus du titre (`padding-top`), et les neuf glyphes
-      occupent cette bande plus la zone à droite du titre, qui s'arrête à
-      64 % de la largeur. Rien ne passe derrière le texte.
-    - **Dégradations** : sous 900 px il ne reste que quatre glyphes, plus
-      petits, plus discrets, décalés sous le bandeau ; un `pointerdown` qui
-      n'est pas une souris coupe la répulsion (un doigt n'a pas de survol) ;
-      `prefers-reduced-motion` fige tout.
+    **Premier jet, raté, et pourquoi.** Les neuf glyphes étaient posés dans
+    des pastilles blanches bordées, alignées en bande au-dessus du titre.
+    Retour de Licter, juste : « on dirait que c'est juste posé là ». Deux
+    fautes. La pastille est un vocabulaire d'interface — une puce — et le
+    site n'en a aucun : il est fait de hairlines, de feuilles translucides et
+    d'un réseau de points. Et l'alignement quasi horizontal en faisait une
+    barre de logos ayant perdu son libellé. Une bande libre au-dessus d'un
+    titre ne laisse qu'une dimension, donc forcément une rangée.
+
+    **Ce qui le remplace.** Les glyphes sont devenus des **nœuds du réseau** :
+    plus de pastille, plus de bordure, plus de fond. Ils sont câblés à deux
+    hubs — les plateformes, les requêtes — par les mêmes hairlines que la
+    cartographie, avec quelques liens locaux pour que ça lise comme un maillage
+    et non comme deux étoiles, et un pont ambré pointillé entre les deux
+    communautés. **Quand un nœud est repoussé, ses fils s'étirent avec lui**
+    et passent à l'ambre : c'est ce qui fait que l'élément appartient au site
+    au lieu d'y être collé.
+
+    Pour que l'amas ait deux dimensions, la section passe en deux colonnes :
+    le titre et les trois cartes à gauche (la première promue sur toute la
+    largeur, comme ailleurs), le champ à droite sur toute la hauteur. Sous
+    1000 px il redevient une signature compacte au-dessus du titre.
+
+    **Le reste de la transposition** : neuf glyphes monochromes dessinés à la
+    main, navy à 38 %, ambre au moment où ils sont repoussés — l'original est
+    en couleurs de marque, soit neuf palettes étrangères dans une charte qui
+    en a quatre. Une écoute `pointermove` et une boucle `rAF` pour tout le
+    champ au lieu d'un `useSpring` par icône ; le ressort devient un lerp
+    amorti. La boucle ne tourne que quand la section est à l'écran et s'arrête
+    d'elle-même au repos. Les fils sont tracés dans un `viewBox` 0–100 avec
+    `preserveAspectRatio="none"` et `vector-effect="non-scaling-stroke"` : les
+    coordonnées sont donc des pourcentages, et l'épaisseur du trait ne se
+    déforme pas. Un `pointerdown` qui n'est pas une souris coupe la répulsion
+    (un doigt n'a pas de survol), et `prefers-reduced-motion` fige tout.
 
     **Défaut trouvé en le testant** : le bandeau du haut est `sticky` et fait
-    38 px, et aucune section n'avait de `scroll-margin-top`. Toute arrivée
-    par une ancre — dont le lien « Where the data comes from » du menu
-    déroulant — déposait donc le haut de la section sous le bandeau, ce qui
-    mangeait exactement la bande où vivent les glyphes : on arrivait sur le
-    titre et les cartes, sans rien voir du champ. `scroll-margin-top: 58px`
+    38 px, et aucune section n'avait de `scroll-margin-top`. Toute arrivée par
+    une ancre — dont le lien « Where the data comes from » du menu déroulant —
+    déposait le haut de la section sous le bandeau. `scroll-margin-top: 58px`
     sur toute section portant un `id` corrige le champ **et** toutes les
     autres ancres du site, qui avaient le même défaut sans que ça se voie.
 
