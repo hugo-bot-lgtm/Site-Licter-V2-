@@ -733,6 +733,41 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     Licter avant mise en ligne. Ils sont désormais bien plus nombreux : c'est
     autant de matière à relire.
 
+30. **Les interviews clients, reprises de l'ancien site.** Bloc « Ils le
+    racontent mieux que nous. En vidéo. » sur `clients.html`, entre les quatre
+    questions et le CTA de fin.
+
+    **Les vidéos sont les vraies.** Elles ont été retrouvées sur la chaîne
+    **Audience First by Licter** (`youtube.com/@audience_first`, 427 vidéos) :
+
+    | Marque | Invité·e | Durée | ID |
+    |---|---|---|---|
+    | Groupe SEB | Hélène Classine | 1:03:49 | `1PXRd4_JgEc` |
+    | Dassault Systèmes | Jean-Stéphane Bou | 1:00:32 | `cnwA-t0Vqk4` |
+    | Paris 2024 | C. Legall | 55:08 | `l-OevQ4q8js` |
+
+    Les trois durées correspondent exactement à celles de l'ancienne maquette,
+    ce qui confirme que ce sont bien ces épisodes-là.
+
+    **Choix techniques** :
+    - **Pas de lecteur embarqué.** La vignette vient de
+      `i.ytimg.com/vi/<id>/maxresdefault.jpg` (repli sur `hqdefault`) et le clic
+      part sur YouTube dans un nouvel onglet. Un `iframe` YouTube dépose des
+      cookies tiers sur tout visiteur qui n'a rien demandé ; une image, non.
+      C'est aussi beaucoup plus léger.
+    - **La citation sort de la vignette.** Les miniatures portent déjà leur
+      citation incrustée en français : un calque par-dessus faisait double
+      emploi. La version anglaise est passée sous l'image, où elle sert de
+      titre de carte, avec `MARQUE · Invité·e` en dessous.
+    - **Le sur-titre n'est pas « NOS CLIENTS »**, conformément à la note de
+      Licter sur l'ancienne maquette (« ils nous font confiance » plutôt que
+      « nos clients »). Ce n'est pas non plus « THEY TRUST US » : la page
+      ouvre déjà là-dessus pour le mur de logos. C'est **« IN THEIR OWN
+      WORDS »** — même prudence, sans répétition.
+    - **Capture email en pied de bloc**, comme demandé sur la note : « Get the
+      next one », branchée sur le même gestionnaire que les autres
+      formulaires du site (donc toujours sans endpoint réel).
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

@@ -3,6 +3,21 @@ window.LicterFR = {
 
   /* ---- bandeau, navigation, pied de page ---- */
 
+  /* ---- les interviews clients (clients.html) ---- */
+  "IN THEIR OWN WORDS": "DANS LEURS MOTS",
+  "They tell it better than we do.": "Ils le racontent mieux que nous.",
+  "On video.": "En vidéo.",
+  "Full conversations with the people who run listening inside their organisation — what they were trying to decide, and what the data changed. In French, on our channel, uncut.":
+    "Des conversations entières avec celles et ceux qui pilotent l'écoute dans leur organisation : ce qu'ils avaient à décider, et ce que la donnée a changé. En français, sur notre chaîne, sans coupe.",
+  "It is not a study if there is no action plan.": "Ce n'est pas une étude s'il n'y a pas de plan d'action.",
+  "Social media helps us build better products.": "Les réseaux sociaux aident à créer de meilleurs produits.",
+  "Millions of tweets to handle, live.": "Des millions de tweets à gérer, en direct.",
+  "Every episode of": "Chaque épisode d'", "is on the channel — one conversation a week with the people who read the conversation.":
+    "est sur la chaîne — une conversation par semaine avec celles et ceux qui lisent la conversation.",
+  "Get the next one": "Recevoir le prochain",
+  "NOTED - THE NEXT EPISODE LANDS IN YOUR INBOX": "C'EST NOTÉ - LE PROCHAIN ÉPISODE ARRIVE DANS VOTRE BOÎTE",
+  "One email when it is out. No sequence.": "Un email à sa sortie. Pas de séquence.",
+
   /* ---- cartes plateformes (tech-tools) ---- */
   "Listening suite": "Suite d'écoute", "Real time": "Temps réel",
   "Visual AI": "IA visuelle", "See the platform": "Voir la plateforme",
