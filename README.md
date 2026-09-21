@@ -940,6 +940,51 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     puis un commit. Tout tient dans la feuille de style, aucun HTML n'a été
     touché par cette passe.
 
+35. **La traduction française, terminée et réparée.** Retour de Licter :
+    certaines pages passaient mal en français. Mesure avant correction, en
+    comparant chaque nœud de texte au dictionnaire :
+
+    | Page | Couverture |
+    |---|---|
+    | Accueil | 69 % |
+    | Offres · Guide · RDV | 60–67 % |
+    | Cas d'usage · Clients · Pourquoi · Techno | 45–49 % |
+    | Blog | 34 % |
+    | Les quatre pages plateformes | **19 %** |
+
+    Ce n'était donc pas « mal traduit » mais **à moitié traduit** : le
+    dictionnaire couvrait la navigation, le pied de page, les titres et les
+    CTA, et laissait tout le corps de texte en anglais. 586 chaînes
+    manquaient. Elles sont traduites, une par une. Le dictionnaire passe de
+    173 à 864 entrées, et les quatorze pages principales sont à **100 %**.
+
+    **Deux vrais bugs trouvés au passage**, tous deux dans `js/i18n.js` :
+
+    - **Le `MutationObserver` jetait des lots de mutations.** Le gardien
+      `if (pending) return;` ignorait purement et simplement tout lot arrivant
+      pendant qu'un autre attendait — le second rendu d'une même frame était
+      perdu. Et il attendait sur `requestAnimationFrame`, **qui ne se
+      déclenche jamais dans un onglet en arrière-plan** : la file se bloquait
+      définitivement. C'est ce qui laissait toute la console de la home en
+      anglais. Les enregistrements sont maintenant mis en file au lieu d'être
+      jetés, et vidés sur un `setTimeout`.
+    - **`SKIP[p.nodeName]` ne filtrait pas les SVG.** `nodeName` vaut `"svg"`
+      en minuscules pour un élément SVG, jamais `"SVG"` : les libellés de mois
+      du graphique étaient parcourus. Comparaison en majuscules.
+
+    **Les 112 chaînes de la console** (rendues par `js/ui.js`, quatre familles)
+    sont dans le dictionnaire : le `MutationObserver` réparé les traduit à
+    chaque changement d'onglet.
+
+    **Les neuf pages articles restent en anglais**, volontairement : c'est du
+    contenu de remplissage (arbitrage 32) et traduire 4 500 mots qui seront
+    remplacés n'a pas de sens. Plutôt que de servir une page à moitié
+    française, chacune porte un encart visible uniquement en français — « Cet
+    article n'est disponible qu'en anglais » — avec son propre fond, parce
+    qu'il se place au-dessus de `.prose` et n'est donc pas couvert par la
+    feuille de lumière de la colonne de lecture. Si Licter veut les traduire,
+    c'est une demi-journée.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
@@ -950,8 +995,8 @@ l'indicateur `+23%`, le lien final et les survols de menu.
 - Logos des quatre éditeurs (`assets/img/tools/*.png`) : encore attendus
   par le dropdown « Tech & Tools », qui retombe sur un monogramme. La page
   `tech-tools.html` ne les demande plus (voir l'arbitrage 27).
-- Compléter `js/fr.js` avec le corps de texte des pages internes (cas
-  d'usage, offres, pourquoi, techno, clients, blog, guide, diagnostic, RDV).
+- Traduire le corps des neuf articles de blog si Licter les garde
+  (arbitrage 35) ; le reste du site est couvert à 100 %.
 - Rafraîchir `js/voices.js` quand de nouvelles interviews sortent
   (`tools/harvest-voices.md`), ou trancher pour une fonction serverless si le
   temps réel est jugé nécessaire.

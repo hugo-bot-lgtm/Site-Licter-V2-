@@ -27,7 +27,9 @@
       acceptNode: function (node) {
         if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
         var p = node.parentNode;
-        if (!p || SKIP[p.nodeName]) return NodeFilter.FILTER_REJECT;
+        /* nodeName is "svg" in lower case for SVG elements, so match on the
+           upper-cased form or the chart's month labels get walked too */
+        if (!p || SKIP[p.nodeName.toUpperCase()]) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
     });
@@ -77,21 +79,35 @@
 
   function watch() {
     if (observer || !window.MutationObserver) return;
-    var pending = false;
-    observer = new MutationObserver(function (records) {
-      if (pending) return;
-      pending = true;
-      requestAnimationFrame(function () {
-        pending = false;
-        records.forEach(function (r) {
-          Array.prototype.forEach.call(r.addedNodes, function (n) {
-            if (n.nodeType === 1) translateTree(n, FR);
-            else if (n.nodeType === 3 && FR[(n.nodeValue || "").trim()]) {
-              n.nodeValue = FR[n.nodeValue.trim()];
-            }
-          });
-        });
+
+    /* Two things went wrong here before. The handler dropped any batch that
+       arrived while one was pending, so a second render in the same frame was
+       lost outright — and it waited on requestAnimationFrame, which never
+       fires in a background tab, so the queue jammed for good. Records are
+       now queued rather than discarded, and flushed on a timeout. */
+    var queue = [], scheduled = false;
+
+    function flush() {
+      scheduled = false;
+      var batch = queue;
+      queue = [];
+      batch.forEach(function (n) {
+        if (n.nodeType === 1) {
+          translateTree(n, FR);
+        } else if (n.nodeType === 3) {
+          var k = (n.nodeValue || "").replace(/\s+/g, " ").trim();
+          if (FR[k]) n.nodeValue = FR[k];
+        }
       });
+    }
+
+    observer = new MutationObserver(function (records) {
+      records.forEach(function (r) {
+        Array.prototype.forEach.call(r.addedNodes, function (n) { queue.push(n); });
+      });
+      if (scheduled || !queue.length) return;
+      scheduled = true;
+      setTimeout(flush, 0);
     });
     observer.observe(document.body, { childList: true, subtree: true });
   }

@@ -2753,3 +2753,25 @@ section[id], .block[id] { scroll-margin-top: 58px; }
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* The nine blog pieces are placeholder editorial and are not translated. Rather
+   than serve a half-French page, the switch says so — visible only in French.
+   It carries its own backing: it sits above .prose, so it is not covered by the
+   reading column's light sheet and would otherwise be read over the map. */
+.lang-note { display: none; }
+html[lang="fr"] .lang-note {
+  display: block;
+  max-width: 68ch;
+  margin: clamp(26px, 4vh, 40px) 0 0;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--amber);
+  border-radius: 0 10px 10px 0;
+  font: 400 13px/1.5 var(--body-font);
+  color: var(--text-2);
+  background:
+    linear-gradient(rgba(var(--amber-rgb), .1), rgba(var(--amber-rgb), .1)),
+    rgba(255, 255, 255, .8);
+  backdrop-filter: blur(4px);
+}
+html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }

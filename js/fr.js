@@ -160,5 +160,963 @@ window.LicterFR = {
   "Story · 47 min": "Story · 47 min", "Reel · 1 h": "Reel · 1 h",
   "Post · 3 h": "Post · 3 h", "Story · 22 min": "Story · 22 min",
   "Already running social listening?": "Vous faites déjà du social listening ?",
-  "Request a diagnostic instead →": "Demandez plutôt un diagnostic →"
+  "Request a diagnostic instead →": "Demandez plutôt un diagnostic →",
+
+  /* ---- corps de texte des pages internes ----
+     Ajouté d'un bloc : le dictionnaire couvrait la navigation, le pied de
+     page et les titres, donc une page passait en français à moitié. Les
+     clés sont les chaînes anglaises telles que le DOM les rend, espaces
+     multiples réduits à un seul. */
+  "FAQ": "FAQ",
+  "DEPTH": "PROFONDEUR",
+  "MEDIA": "MÉDIAS",
+  "SPEED": "VITESSE",
+  "Setup": "Paramétrage",
+  "LATEST": "DERNIERS ARTICLES",
+  "Model:": "Modèle :",
+  "SEARCH": "SEARCH",
+  "SOCIAL": "SOCIAL",
+  "Top 50": "Top 50",
+  "VISUAL": "VISUEL",
+  "BOOK IT": "RÉSERVER",
+  "BREADTH": "ÉTENDUE",
+  "CONTEXT": "CONTEXTE",
+  "Reading": "Lecture",
+  "NOT SAID": "PAS DIT",
+  "PROFILES": "PROFILS",
+  "SOPRISM,": "SOPRISM,",
+  "YOUSCAN,": "YOUSCAN,",
+  "in mind?": "en tête ?",
+  "// TRENDS": "// TENDANCES",
+  "FORESIGHT": "PROSPECTIVE",
+  "HOW IT IS": "CE QUI EST",
+  "INFLUENCE": "INFLUENCE",
+  "Influence": "Influence",
+  "THE STACK": "LA STACK",
+  "BELONGS TO": "APPARTIENT",
+  "COMPARISON": "COMPARAISON",
+  "MONITORING": "VEILLE",
+  "OF SIGNAL.": "DE SIGNAL.",
+  "REQUEST IT": "LE DEMANDER",
+  "THE GAP TO": "L'ÉCART AVEC",
+  "VISIBRAIN,": "VISIBRAIN,",
+  "WITH DATA.": "PAR LA DONNÉE.",
+  "// INSIGHTS": "// INSIGHTS",
+  "DECLARATION": "LE DÉCLARATIF",
+  "DIAGNOSTIC.": "DIAGNOSTIC.",
+  "FOUR LAYERS": "QUATRE CALQUES",
+  "HOW IT RUNS": "COMMENT ÇA SE PASSE",
+  "PERSONAS ON": "DES PERSONAS SUR",
+  "SHOWING YOU": "QUI VOUS MONTRENT",
+  "TALKWALKER,": "TALKWALKER,",
+  "THE VERDICT": "LE VERDICT",
+  "TIME TO ACT": "PASSONS À L'ACTION",
+  "WHAT WE SEE": "CE QUE NOUS VOYONS",
+  "WHY SOPRISM": "POURQUOI SOPRISM",
+  "WHY YOUSCAN": "POURQUOI YOUSCAN",
+  "// AUDIENCES": "// AUDIENCES",
+  "// INFLUENCE": "// INFLUENCE",
+  "// LISTENING": "// ÉCOUTE",
+  "BUY ANSWERS,": "ACHETEZ DES RÉPONSES,",
+  "CATCH TOPICS": "SAISIR LES SUJETS",
+  "IN THE DATA.": "DANS LA DONNÉE.",
+  "MEASURE WHAT": "MESURER CE QU'UNE",
+  "MISUSE, SEEN": "LES USAGES DÉTOURNÉS, VUS",
+  "NOBODY TYPED": "QUE PERSONNE N'ÉCRIT",
+  "OVERLAP, NOT": "LE RECOUVREMENT, PAS",
+  "WEAK SIGNALS": "LES SIGNAUX FAIBLES",
+  "ACTUALLY USED": "VRAIMENT UTILISÉ",
+  "AS IT UNFOLDS": "PENDANT QU'IL SE DÉROULE",
+  "AUDIENCE, NOT": "L'AUDIENCE, PAS",
+  "Digital panel": "Panel digital",
+  "GENERATIVE AI": "IA GÉNÉRATIVE",
+  "In place for:": "En place pour :",
+  "NOT LICENCES.": "PAS DES LICENCES.",
+  "ON THE WAY UP": "QUI MONTENT",
+  "ONE QUESTION.": "UNE QUESTION.",
+  "SEND IT TO ME": "ME L'ENVOYER",
+  "Usage context": "Contexte d'usage",
+  "WHY VISIBRAIN": "POURQUOI VISIBRAIN",
+  "// SOCIAL DATA": "// SOCIAL DATA",
+  "02 — VIGIE 360": "02 — VIGIE 360",
+  "03 — AUDIENCES": "03 — AUDIENCES",
+  "A question for": "Une question pour",
+  "CATCH A SIGNAL": "SAISIR UN SIGNAL",
+  "Crisis support": "Accompagnement de crise",
+  "FOLLOWER COUNT": "LE NOMBRE D'ABONNÉS",
+  "Typical start:": "Départ type :",
+  "WHAT IS INSIDE": "CE QU'IL Y A DEDANS",
+  "WHO A CATEGORY": "À QUI UNE CATÉGORIE",
+  "WHY TALKWALKER": "POURQUOI TALKWALKER",
+  "// BRAND HEALTH": "// SANTÉ DE MARQUE",
+  "24/7 monitoring": "Veille 24h/24",
+  "ALREADY LISTEN.": "ÉCOUTENT DÉJÀ.",
+  "Analyze markets": "Analyser des marchés",
+  "CANNOT DO ALONE": "NE FAIT PAS SEUL",
+  "FOLLOW AN EVENT": "SUIVRE UN ÉVÉNEMENT",
+  "Live dashboards": "Tableaux de bord en direct",
+  "RELATED READING": "À LIRE AUSSI",
+  "SIZE A CATEGORY": "DIMENSIONNER UNE CATÉGORIE",
+  "THIRTY MINUTES,": "TRENTE MINUTES,",
+  "Untapped volume": "Volume non exploité",
+  "WHAT A PLATFORM": "CE QU'UN OUTIL",
+  "// COMMUNICATION": "// COMMUNICATION",
+  "A CAMPAIGN MOVED": "CAMPAGNE A DÉPLACÉ",
+  "Affinity ranking": "Classement par affinité",
+  "Analyze a market": "Analyser un marché",
+  "CREATORS ALREADY": "LES CRÉATEURS QUI",
+  "MARKET BY MARKET": "MARCHÉ PAR MARCHÉ",
+  "Persona building": "Construction de personas",
+  "Read the piece →": "Lire l'article →",
+  "Search listening": "Search listening",
+  "Social listening": "Social listening",
+  "THE 12 QUESTIONS": "LES 12 QUESTIONS",
+  "TRACK THE IMAGE,": "SUIVRE L'IMAGE,",
+  "WHO WE WORK WITH": "AVEC QUI NOUS TRAVAILLONS",
+  "YOUR SOCIAL DATA": "VOTRE SOCIAL DATA",
+  "02 — BRAND HEALTH": "02 — SANTÉ DE MARQUE",
+  "BEFORE THEY TREND": "AVANT QU'ILS NE DEVIENNENT DES TENDANCES",
+  "BEHAVIOUR AGAINST": "LE COMPORTEMENT CONTRE",
+  "CONSUMER INSIGHTS": "CONSUMER INSIGHTS",
+  "Consumer insights": "Consumer insights",
+  "Crisis perimeters": "Périmètres de crise",
+  "HEAR YOUR LEADERS": "ENTENDRE VOS DIRIGEANTS",
+  "Image recognition": "Reconnaissance d'images",
+  "Long time windows": "Fenêtres temporelles longues",
+  "READ BY ANALYSTS.": "LU PAR DES ANALYSTES.",
+  "REPLACE INTUITION": "REMPLACEZ L'INTUITION",
+  "SOPRISM SOLUTIONS": "CE QUE NOUS FAISONS AVEC SOPRISM",
+  "Visual benchmarks": "Benchmarks visuels",
+  "WATCH THE SECTOR,": "OBSERVER LE SECTEUR,",
+  "WHAT WE RUN ON IT": "CE QU'ON EN FAIT",
+  "WHILE IT IS SMALL": "TANT QU'IL EST FAIBLE",
+  "YOUSCAN SOLUTIONS": "CE QUE NOUS FAISONS AVEC YOUSCAN",
+  "languages covered": "langues couvertes",
+  "01 — COMMUNICATION": "01 — COMMUNICATION",
+  "Activation support": "Accompagnement à l'activation",
+  "BEFORE ENTERING IT": "AVANT D'Y ENTRER",
+  "Beyond the message": "Au-delà du message",
+  "Monitor a category": "Surveiller une catégorie",
+  "NOT ONLY THE BRAND": "PAS SEULEMENT LA MARQUE",
+  "OBSERVED BEHAVIOUR": "LE COMPORTEMENT OBSERVÉ",
+  "See the use case →": "Voir le cas d'usage →",
+  "WHERE WE COME FROM": "D'OÙ NOUS VENONS",
+  "What does it cost?": "Combien ça coûte ?",
+  "NEXT TO THEIR PEERS": "FACE À LEURS PAIRS",
+  "SOCIAL DATA ANSWERS": "AUXQUELLES LA SOCIAL DATA RÉPOND",
+  "See the four layers": "Voir les quatre calques",
+  "THE NEXT GENERATION": "LA GÉNÉRATION SUIVANTE",
+  "TRENDS & INNOVATION": "TENDANCES & INNOVATION",
+  "VISIBRAIN SOLUTIONS": "CE QUE NOUS FAISONS AVEC VISIBRAIN",
+  "WHAT THEY COME WITH": "AVEC QUOI ILS ARRIVENT",
+  "WHAT WE WRITE ABOUT": "CE SUR QUOI NOUS ÉCRIVONS",
+  "WHAT YOU LEAVE WITH": "CE QUE VOUS REPARTEZ AVEC",
+  "WHEN MINUTES COUNT.": "QUAND LES MINUTES COMPTENT.",
+  "Why we run SoPrism.": "Pourquoi nous opérons SoPrism.",
+  "Why we run YouScan.": "Pourquoi nous opérons YouScan.",
+  "// CONSUMER INSIGHTS": "// CONSUMER INSIGHTS",
+  "01 — SOCIAL INSIGHTS": "01 — SOCIAL INSIGHTS",
+  "A price you can plan": "Un prix que vous pouvez budgéter",
+  "Alerting that scales": "Une alerte qui passe à l'échelle",
+  "Audience use cases →": "Cas d'usage audiences →",
+  "Media sphere mapping": "Cartographie de la sphère média",
+  "TALKWALKER SOLUTIONS": "CE QUE NOUS FAISONS AVEC TALKWALKER",
+  "The journalist layer": "Le calque journalistes",
+  "WHAT THE IMAGE SAYS.": "CE QUE DIT L'IMAGE.",
+  "A prioritised roadmap": "Une feuille de route priorisée",
+  "Audience intelligence": "Audience intelligence",
+  "BETTER THAN A SURVEY.": "MIEUX QU'UNE ÉTUDE.",
+  "Dashboards we operate": "Des tableaux de bord que nous opérons",
+  "FOUR LAYERS OF SIGNAL": "QUATRE CALQUES DE SIGNAL",
+  "Four running threads.": "Quatre fils en cours.",
+  "Measure an event live": "Mesurer un événement en direct",
+  "Multi-market coverage": "Couverture multi-marchés",
+  "Prefer to read first?": "Vous préférez lire d'abord ?",
+  "Sources beyond social": "Des sources au-delà du social",
+  "THE NUMBERS BEHIND IT": "LES CHIFFRES DERRIÈRE",
+  "Visual brand tracking": "Suivi visuel de la marque",
+  "Why we run Visibrain.": "Pourquoi nous opérons Visibrain.",
+  "Alerting in 15 minutes": "Alerte en 15 minutes",
+  "Creator identification": "Identification des créateurs",
+  "Follow emerging topics": "Suivre les sujets émergents",
+  "How we put it to work.": "Comment nous le mettons au travail.",
+  "Innovation use cases →": "Cas d'usage innovation →",
+  "Logos without captions": "Des logos sans légende",
+  "WHO THEY ACTUALLY ARE.": "QUI ILS SONT VRAIMENT.",
+  "Why we run Talkwalker.": "Pourquoi nous opérons Talkwalker.",
+  "Built for the live feed": "Conçu pour le flux en direct",
+  "Is this a survey panel?": "Est-ce un panel déclaratif ?",
+  "Rather talk it through?": "Vous préférez en parler ?",
+  "SOPRISM — THE STRENGTHS": "SOPRISM — LES ATOUTS",
+  "Social data & foresight": "Social data & prospective",
+  "What we write about it.": "Ce que nous écrivons dessus.",
+  "YOUSCAN — THE STRENGTHS": "YOUSCAN — LES ATOUTS",
+  "04 — TRENDS & INNOVATION": "04 — TENDANCES & INNOVATION",
+  "Brand health use cases →": "Cas d'usage santé de marque →",
+  "Campaign and event reads": "Lectures de campagnes et d'événements",
+  "Start with one question.": "Commencez par une question.",
+  "Tell us where you stand.": "Dites-nous où vous en êtes.",
+  "Three teams, one source.": "Trois équipes, une seule source.",
+  "Track executive exposure": "Suivre l'exposition des dirigeants",
+  "WHAT HAPPENS IN THE CALL": "CE QU'IL SE PASSE PENDANT L'ÉCHANGE",
+  "What counts as an alert?": "Qu'est-ce qui déclenche une alerte ?",
+  "What the setup delivers.": "Ce que le dispositif produit.",
+  "Who receives the alerts?": "Qui reçoit les alertes ?",
+  "15 JULY 2026 · 2 MIN READ": "15 JUILLET 2026 · 2 MIN DE LECTURE",
+  "30 JULY 2026 · 2 MIN READ": "30 JUILLET 2026 · 2 MIN DE LECTURE",
+  "Communication use cases →": "Cas d'usage communication →",
+  "Continuous brand tracking": "Suivi continu de la marque",
+  "Google and Amazon queries": "Les requêtes Google et Amazon",
+  "How far back can we look?": "Jusqu'où peut-on remonter ?",
+  "Logo and object detection": "Détection de logos et d'objets",
+  "Product and usage studies": "Études produits et usages",
+  "Scoping call — 30 minutes": "Échange de cadrage — 30 minutes",
+  "Shortlist with risk flags": "Liste courte avec signaux de risque",
+  "VISIBRAIN — THE STRENGTHS": "VISIBRAIN — LES ATOUTS",
+  "WHAT MAKES THE DIFFERENCE": "CE QUI FAIT LA DIFFÉRENCE",
+  "You describe the decision": "Vous décrivez la décision",
+  "You get a straight answer": "Vous obtenez une réponse franche",
+  "// SOCIAL DATA & FORESIGHT": "// SOCIAL DATA & PROSPECTIVE",
+  "6 AUGUST 2026 · 2 MIN READ": "6 AOÛT 2026 · 2 MIN DE LECTURE",
+  "Add your name to the list.": "Ajoutez votre nom à la liste.",
+  "Free, and actually useful.": "Gratuit, et réellement utile.",
+  "Marketing & Communications": "Marketing & Communication",
+  "Nine pieces, four threads.": "Neuf articles, quatre fils.",
+  "Sector and executive watch": "Veille secteur et dirigeants",
+  "Segments ready to activate": "Des segments prêts à activer",
+  "TALKWALKER — THE STRENGTHS": "TALKWALKER — LES ATOUTS",
+  "03 — LISTENING AS A SERVICE": "03 — LISTENING AS A SERVICE",
+  "19 AUGUST 2026 · 2 MIN READ": "19 AOÛT 2026 · 2 MIN DE LECTURE",
+  "27 AUGUST 2026 · 2 MIN READ": "27 AOÛT 2026 · 2 MIN DE LECTURE",
+  "A map of your current setup": "Une cartographie de votre dispositif actuel",
+  "Competitor audience mapping": "Cartographie des audiences concurrentes",
+  "Is the data GDPR-compliant?": "Les données sont-elles conformes au RGPD ?",
+  "Market and category studies": "Études de marché et de catégorie",
+  "OUR APPROACH IN THREE STEPS": "NOTRE APPROCHE EN TROIS ÉTAPES",
+  "We say what the data can do": "Nous disons ce que la donnée peut faire",
+  "client organisations served": "organisations clientes accompagnées",
+  "Consultants, not dashboards.": "Des consultants, pas des tableaux de bord.",
+  "Messaging angles per segment": "Des angles de discours par segment",
+  "Monitor image and reputation": "Surveiller l'image et la réputation",
+  "THE TREND YOU ALREADY MISSED": "LA TENDANCE QUE VOUS AVEZ DÉJÀ MANQUÉE",
+  "The scene around the product": "La scène autour du produit",
+  "Your audience against theirs": "Votre audience face à la leur",
+  "“What should we build next?”": "« Que devons-nous construire ensuite ? »",
+  "2 SEPTEMBER 2026 · 2 MIN READ": "2 SEPTEMBRE 2026 · 2 MIN DE LECTURE",
+  "4 SEPTEMBER 2026 · 2 MIN READ": "4 SEPTEMBRE 2026 · 2 MIN DE LECTURE",
+  "A panel nobody has to recruit": "Un panel que personne n'a à recruter",
+  "Audit of what you already run": "Audit de ce que vous opérez déjà",
+  "BEHAVIOUR AGAINST DECLARATION": "LE COMPORTEMENT CONTRE LE DÉCLARATIF",
+  "Competitive audience analysis": "Analyse des audiences concurrentes",
+  "Monitoring & social listening": "Veille & social listening",
+  "Which platforms does it read?": "Quelles plateformes lit-il ?",
+  "11 SEPTEMBER 2026 · 2 MIN READ": "11 SEPTEMBRE 2026 · 2 MIN DE LECTURE",
+  "16 SEPTEMBER 2026 · 2 MIN READ": "16 SEPTEMBRE 2026 · 2 MIN DE LECTURE",
+  "A document, not an impression.": "Un document, pas une impression.",
+  "A maturity score per dimension": "Un score de maturité par dimension",
+  "Four questions, over and over.": "Quatre questions, encore et encore.",
+  "How precise can a persona get?": "Jusqu'où un persona peut-il être précis ?",
+  "Is this the same as Vigie 360?": "Est-ce la même chose que Vigie 360 ?",
+  "Personas on observed behaviour": "Des personas fondés sur le comportement observé",
+  "THE PERSONA WORKSHOP, REPLACED": "L'ATELIER PERSONA, REMPLACÉ",
+  "THE VOICES THAT ACTUALLY CARRY": "LES VOIX QUI PORTENT VRAIMENT",
+  "The voices that actually carry": "Les voix qui portent vraiment",
+  "What do we do with the output?": "Qu'est-ce qu'on fait du résultat ?",
+  "Does it replace text listening?": "Remplace-t-il l'écoute textuelle ?",
+  "Four steps, two to three weeks.": "Quatre étapes, deux à trois semaines.",
+  "Quick wins you can run yourself": "Des gains rapides que vous pouvez mener seuls",
+  "WEAK SIGNALS, BEFORE THEY TREND": "LES SIGNAUX FAIBLES, AVANT LA TENDANCE",
+  "Weekly digest, ready to forward": "Une synthèse hebdomadaire, prête à transférer",
+  "What clients ask about SoPrism.": "Ce que les clients demandent sur SoPrism.",
+  "What clients ask about YouScan.": "Ce que les clients demandent sur YouScan.",
+  "What they reach that you do not": "Ce qu'ils touchent et que vous ne touchez pas",
+  "What we actually deliver on it.": "Ce que nous livrons concrètement.",
+  "languages covered in monitoring": "langues couvertes en veille",
+  "// MONITORING & SOCIAL LISTENING": "// VEILLE & SOCIAL LISTENING",
+  "A persona a committee can act on": "Un persona sur lequel un comité peut décider",
+  "Get the next read in your inbox.": "Recevez la prochaine lecture par email.",
+  "Maturity scoring, six dimensions": "Score de maturité, six dimensions",
+  "Pick the model, not the project.": "Choisissez le modèle, pas le projet.",
+  "Product Innovation & Development": "Innovation & Développement produit",
+  "Questions this platform answers.": "Les questions auxquelles cet outil répond.",
+  "Readout — quick wins and roadmap": "Restitution — gains rapides et feuille de route",
+  "“Who are our audiences, really?”": "« Qui sont vraiment nos audiences ? »",
+  "Twelve questions, twelve methods.": "Douze questions, douze méthodes.",
+  "WHERE PANELS AND SURVEYS DISAGREE": "LÀ OÙ LE PANEL ET L'ÉTUDE SE CONTREDISENT",
+  "We alert you in 15 minutes, 24/7.": "Nous vous alertons en 15 minutes, 24h/24.",
+  "What clients ask about Visibrain.": "Ce que les clients demandent sur Visibrain.",
+  "Where panels and surveys disagree": "Là où le panel et l'étude se contredisent",
+  "03 — SOCIAL LISTENING AS A SERVICE": "03 — SOCIAL LISTENING AS A SERVICE",
+  "Emerging topics ranked by velocity": "Sujets émergents classés par vélocité",
+  "How do you handle false positives?": "Comment gérez-vous les faux positifs ?",
+  "Unmet needs and whitespace mapping": "Besoins non couverts et espaces libres",
+  "What clients ask about Talkwalker.": "Ce que les clients demandent sur Talkwalker.",
+  "What it does better than the rest.": "Ce qu'il fait mieux que les autres.",
+  "Where the two bases are converging": "Là où les deux bases se rejoignent",
+  "“Did that campaign actually work?”": "« Est-ce que cette campagne a vraiment marché ? »",
+  "Consumer Insights & Market Research": "Consumer Insights & Études de marché",
+  "Verdict on your range and on theirs": "Le verdict sur votre gamme et sur la leur",
+  "platforms we run, this one included": "outils que nous opérons, celui-ci compris",
+  "Can it cover markets outside Europe?": "Peut-il couvrir des marchés hors d'Europe ?",
+  "Is it useful outside consumer goods?": "Est-ce utile en dehors de la grande consommation ?",
+  "LANGUAGE COVERAGE IS NOT TRANSLATION": "COUVRIR UNE LANGUE N'EST PAS LA COMPRENDRE",
+  "Media plan implications, spelled out": "Les conséquences sur le plan média, explicitées",
+  "Occasions and settings of actual use": "Occasions et contextes d'usage réels",
+  "WHAT A PLATFORM CANNOT DO ON ITS OWN": "CE QU'UN OUTIL NE FAIT PAS TOUT SEUL",
+  "What is shown alongside your product": "Ce qui est montré à côté de votre produit",
+  "Who is relaying, and with what reach": "Qui relaie, et avec quelle portée",
+  "Analysis in the market's own language": "Une analyse dans la langue du marché",
+  "Answers: what is the unspoken intent?": "Répond à : quelle est l'intention non exprimée ?",
+  "Breakdown by audience and by platform": "Répartition par audience et par plateforme",
+  "Can we start with a single perimeter?": "Peut-on démarrer sur un seul périmètre ?",
+  "client organisations under monitoring": "organisations clientes sous veille",
+  "criteria available to build a persona": "critères disponibles pour bâtir un persona",
+  "“Millions of tweets to handle, live.”": "« Des millions de tweets à gérer, en direct. »",
+  "Competitor presence in the same images": "La présence des concurrents dans les mêmes images",
+  "Do we need our own Talkwalker licence?": "Faut-il notre propre licence Talkwalker ?",
+  "Does it cover press as well as social?": "Couvre-t-il la presse autant que le social ?",
+  "How assistants answer about your brand": "Ce que les assistants répondent sur votre marque",
+  "One question, four ways of hearing it.": "Une question, quatre façons de l'entendre.",
+  "Thirty minutes, one question, no deck.": "Trente minutes, une question, aucun slide.",
+  "consumer profiles in the panel we read": "profils consommateurs dans le panel que nous lisons",
+  "from signal to alert, around the clock": "du signal à l'alerte, 24h/24",
+  "Conversation sizing on a whole category":
+    "Dimensionnement de la conversation sur toute une catégorie",
+  "How long until the first usable answer?": "Combien de temps avant la première réponse utile ?",
+  "Media diet and brand affinities, ranked": "Régime média et affinités de marque, classés",
+  "Media sphere mapped around each subject":
+    "La sphère média cartographiée autour de chaque sujet",
+  "Monthly readout with what moved and why": "Restitution mensuelle : ce qui a bougé et pourquoi",
+  "Not sure a diagnostic is what you need?":
+    "Pas certain que le diagnostic soit ce qu'il vous faut ?",
+  "Which of these twelve is your question?": "Laquelle de ces douze est votre question ?",
+  "25+ client organisations · 20+ languages": "25+ organisations clientes · 20+ langues",
+  "Can we combine it with another platform?": "Peut-on le combiner avec un autre outil ?",
+  "Overlap between your audience and theirs": "Le recouvrement entre votre audience et la leur",
+  "The model that makes teams actually ask.":
+    "Le modèle qui pousse vraiment les équipes à demander.",
+  "“What is being said about us right now?”": "« Qu'est-ce qu'on dit de nous en ce moment ? »",
+  "Acquisition angles the comparison reveals":
+    "Les angles d'acquisition que la comparaison révèle",
+  "Debrief once it is over, with what to fix":
+    "Débrief une fois terminé, avec ce qu'il faut corriger",
+  "Live tracking while the subject is moving": "Suivi en direct tant que le sujet bouge",
+  "Not sure SoPrism is the right instrument?": "Pas certain que SoPrism soit le bon instrument ?",
+  "Not sure YouScan is the right instrument?": "Pas certain que YouScan soit le bon instrument ?",
+  "Volume invisible to a text-only perimeter":
+    "Du volume invisible pour un périmètre purement textuel",
+  "Which markets and languages do you cover?": "Quels marchés et quelles langues couvrez-vous ?",
+  "Perimeters per brand, executive and market": "Des périmètres par marque, dirigeant et marché",
+  "Post-mortem delivered inside the fortnight": "Post-mortem livré sous quinze jours",
+  "We licence the tools, you get the answers.":
+    "Nous payons les licences, vous récupérez les réponses.",
+  "Your social data analyses deserve experts.": "Vos analyses social data méritent des experts.",
+  "ALERTING THRESHOLDS ARE AN EDITORIAL CHOICE": "LES SEUILS D'ALERTE SONT UN CHOIX ÉDITORIAL",
+  "Category benchmark against your competitors": "Benchmark de catégorie face à vos concurrents",
+  "Not sure Visibrain is the right instrument?":
+    "Pas certain que Visibrain soit le bon instrument ?",
+  "Observed behaviour, not declared intention.":
+    "Le comportement observé, pas l'intention déclarée.",
+  "Proprietary algorithms, best-in-class tools":
+    "Algorithmes propriétaires, meilleurs outils du marché",
+  "Segments translated into targeting criteria": "Des segments traduits en critères de ciblage",
+  "Share of voice per spokesperson, day by day": "Part de voix par porte-parole, jour après jour",
+  "Visual style and register of each candidate": "Style visuel et registre de chaque candidat",
+  "Alert qualified by a human before it is sent": "Alerte qualifiée par un humain avant l'envoi",
+  "Answers: what do they actually do, at scale?":
+    "Répond à : que font-ils réellement, à grande échelle ?",
+  "Audience overlap checked before any contract":
+    "Le recouvrement d'audience vérifié avant tout contrat",
+  "Creators already showing the product, unpaid":
+    "Les créateurs qui montrent déjà le produit, sans contrat",
+  "Creators matched on genuine audience overlap":
+    "Des créateurs choisis sur un vrai recouvrement d'audience",
+  "Is this social listening, or something else?": "Est-ce du social listening, ou autre chose ?",
+  "Misuse and counterfeit flagged as it appears":
+    "Détournements et contrefaçons signalés dès leur apparition",
+  "Not sure Talkwalker is the right instrument?":
+    "Pas certain que Talkwalker soit le bon instrument ?",
+  "Perimeter per brand, product line and market":
+    "Un périmètre par marque, ligne de produits et marché",
+  "The platform is theirs. The reading is ours.": "L'outil est le leur. La lecture est la nôtre.",
+  "Do we need to own a listening platform first?": "Faut-il déjà posséder un outil d'écoute ?",
+  "Logo and packaging detection across platforms":
+    "Détection du logo et du packaging sur les plateformes",
+  "Sentiment and topics, tracked week after week":
+    "Sentiment et sujets, suivis semaine après semaine",
+  "Tell us what you need to decide this quarter.":
+    "Dites-nous ce que vous devez décider ce trimestre.",
+  "Daily situation points for as long as it lasts":
+    "Un point de situation quotidien tant que ça dure",
+  "Earned reach separated from paid amplification":
+    "La portée gagnée séparée de l'amplification payante",
+  "Multi-market comparison, in the local language":
+    "Comparaison multi-marchés, dans la langue locale",
+  "Proprietary algorithms on top of market tools.":
+    "Des algorithmes propriétaires au-dessus des outils du marché.",
+  "Six platforms, plus what happens off-platform.":
+    "Six plateformes, plus ce qui se passe en dehors.",
+  "You talk to a consultant, not to a sales team.":
+    "Vous parlez à un consultant, pas à un commercial.",
+  "“Social media helps us build better products.”":
+    "« Les réseaux sociaux aident à créer de meilleurs produits. »",
+  "Before / after comparison on the same perimeter":
+    "Comparaison avant / après sur le même périmètre",
+  "Can it detect our packaging, not just our logo?":
+    "Peut-il détecter notre packaging, et pas seulement notre logo ?",
+  "Can we compare ourselves to a named competitor?":
+    "Peut-on se comparer à un concurrent nommé ?",
+  "Identifying them, and measuring what they move.":
+    "Les identifier, et mesurer ce qu'elles déplacent.",
+  "Thresholds agreed with you, not vendor defaults":
+    "Des seuils convenus avec vous, pas les réglages de l'éditeur",
+  "Want to know which layer answers your question?":
+    "Envie de savoir quel calque répond à votre question ?",
+  "“It is not a study if there is no action plan.”":
+    "« Ce n'est pas une étude s'il n'y a pas de plan d'action. »",
+  "Consumer groups, retailers, institutions, media.":
+    "Groupes de grande consommation, distributeurs, institutions, médias.",
+  "Share of voice per spokesperson, topic by topic.":
+    "Part de voix par porte-parole, sujet par sujet.",
+  "Who they reach that you do not, and the reverse.":
+    "Ce qu'ils touchent et que vous ne touchez pas, et l'inverse.",
+  "Creators whose audience genuinely overlaps yours.":
+    "Des créateurs dont l'audience recoupe vraiment la vôtre.",
+  "Decide what to build on evidence, not conviction.":
+    "Décidez quoi construire sur des preuves, pas sur des convictions.",
+  "Escalation path defined before anything goes live":
+    "Un circuit d'escalade défini avant toute mise en service",
+  "TikTok, Instagram, X, LinkedIn, YouTube, Facebook":
+    "TikTok, Instagram, X, LinkedIn, YouTube, Facebook",
+  "Tool-agnostic: we pick what answers the question.":
+    "Agnostiques sur l'outil : nous prenons celui qui répond à la question.",
+  "Answers: who are these people, beyond the message?":
+    "Répond à : qui sont ces gens, au-delà du message ?",
+  "Irritants visible in the image, not in the caption":
+    "Des irritants visibles dans l'image, pas dans la légende",
+  "Usage as it happens, not as the brief imagined it.":
+    "L'usage tel qu'il se produit, pas tel que le brief l'imaginait.",
+  "fixed monthly fee · unlimited studies · no lock-in":
+    "forfait mensuel fixe · études illimitées · sans engagement",
+  "users profiled daily on interactions and behaviour":
+    "utilisateurs profilés chaque jour sur leurs interactions et leur comportement",
+  "How is this different from buying the tool directly?":
+    "En quoi est-ce différent d'acheter l'outil directement ?",
+  "audit of the existing setup, then recurring delivery":
+    "audit du dispositif existant, puis livraison récurrente",
+  "Multi-market by construction, not by vendor coverage.":
+    "Multi-marchés par construction, pas par couverture éditeur.",
+  "Regulation, competitors and activism in your category":
+    "Réglementation, concurrents et militantisme dans votre catégorie",
+  "Replace the persona workshop with observed behaviour.":
+    "Remplacez l'atelier persona par le comportement observé.",
+  "Weak signals caught while they are still containable.":
+    "Des signaux faibles saisis tant qu'ils restent maîtrisables.",
+  "Precise personas on thousands of behavioural criteria.":
+    "Des personas précis sur des milliers de critères comportementaux.",
+  "Thousands of criteria, narrowed to the ten that matter":
+    "Des milliers de critères, ramenés aux dix qui comptent",
+  "Velocity of the subjects breaking out of the category.":
+    "La vélocité des sujets qui sortent de la catégorie.",
+  "Visual misuse, counterfeits and unwanted associations.":
+    "Détournements visuels, contrefaçons et associations non désirées.",
+  "Built by the team that read the country's conversation.":
+    "Bâti par l'équipe qui lisait la conversation du pays.",
+  "How your presence in images compares with the category.":
+    "Comment votre présence en images se compare à la catégorie.",
+  "Make every campaign, event and spokesperson measurable.":
+    "Rendez mesurables chaque campagne, chaque événement, chaque porte-parole.",
+  "Sociodemographics and interests of your actual audience":
+    "Sociodémographie et centres d'intérêt de votre audience réelle",
+  "Creators holding the product before any contract exists.":
+    "Des créateurs qui tiennent le produit avant tout contrat.",
+  "Regulation, competitors and activism around your market.":
+    "Réglementation, concurrents et militantisme autour de votre marché.",
+  "Who a category actually belongs to, before you enter it.":
+    "À qui appartient vraiment une catégorie, avant d'y entrer.",
+  "client organisations, from CAC 40 groups to institutions":
+    "organisations clientes, de groupes du CAC 40 à des institutions",
+  "Answers: what is the market saying, and who is saying it?":
+    "Répond à : que dit le marché, et qui le dit ?",
+  "And which of the two turned out to be right, case by case.":
+    "Et lequel des deux avait raison, cas par cas.",
+  "Continuous tracking of the subjects attached to your name.":
+    "Suivi continu des sujets attachés à votre nom.",
+  "Conversation sizing and the whitespace nobody has claimed.":
+    "Dimensionnement de la conversation et espaces que personne n'a pris.",
+  "Findings that translate into targeting, not only into slides.":
+    "Des conclusions qui se traduisent en ciblage, pas seulement en slides.",
+  "Logos and products detected in visuals, not only in captions.":
+    "Logos et produits détectés dans les visuels, pas seulement dans les légendes.",
+  "We increase the adoption and impact of your social listening.":
+    "Nous augmentons l'adoption et l'impact de votre social listening.",
+  "You get: the stakeholder map and the topics gaining velocity.":
+    "Vous obtenez : la carte des parties prenantes et les sujets qui accélèrent.",
+  "You get: the vocabulary your market uses, ranked by traction.":
+    "Vous obtenez : le vocabulaire de votre marché, classé par traction.",
+  "The more precise the context, the more precise the first call.":
+    "Plus le contexte est précis, plus le premier échange l'est.",
+  "A launch, a keynote, a sponsorship — measured while it happens.":
+    "Un lancement, une prise de parole, un sponsoring — mesurés pendant qu'ils ont lieu.",
+  "Brands, media and creators your audience is genuinely close to.":
+    "Marques, médias et créateurs dont votre audience est réellement proche.",
+  "You get: precise personas built on 5,000+ behavioural criteria.":
+    "Vous obtenez : des personas précis bâtis sur plus de 5 000 critères comportementaux.",
+  "You get: strengths and irritants per product, yours and theirs.":
+    "Vous obtenez : forces et irritants par produit, les vôtres et les leurs.",
+  "Mentions invisible to a text-only perimeter, added to the count.":
+    "Des mentions invisibles pour un périmètre textuel, ajoutées au compte.",
+  "The distance between the audience you have and the one you want.":
+    "L'écart entre l'audience que vous avez et celle que vous visez.",
+  "Built on what people follow and do, not on what a panel declared.":
+    "Bâti sur ce que les gens suivent et font, pas sur ce qu'un panel a déclaré.",
+  "Know what the market says about you, before it becomes a problem.":
+    "Sachez ce que le marché dit de vous, avant que ça ne devienne un problème.",
+  "What actually predicts a shift, and what only looks like it does.":
+    "Ce qui annonce vraiment un basculement, et ce qui en a seulement l'air.",
+  "Journalists, outlets and relays around a subject, ranked by reach.":
+    "Journalistes, médias et relais autour d'un sujet, classés par portée.",
+  "Your brand recognised in visuals, and your competitors' alongside.":
+    "Votre marque reconnue dans les visuels, et celles de vos concurrents à côté.",
+  "Occasions, settings and companions of use, as they actually appear.":
+    "Occasions, contextes et compagnons d'usage, tels qu'ils apparaissent vraiment.",
+  "Six dimensions, scored, with the sector benchmark next to each one.":
+    "Six dimensions, notées, avec le benchmark du secteur en regard de chacune.",
+  "The unfiltered verdict, including what people show rather than say.":
+    "Le verdict non filtré, y compris ce que les gens montrent au lieu de le dire.",
+  "— one conversation a week with the people who read the conversation.":
+    "— une conversation par semaine avec celles et ceux qui lisent la conversation.",
+  "Volume, reach, tone and the audiences that shifted — before and after.":
+    "Volume, portée, tonalité et les audiences qui ont bougé — avant et après.",
+  "You get: 15-minute alerts, 20+ languages, with an escalation protocol.":
+    "Vous obtenez : des alertes en 15 minutes, 20+ langues, avec un protocole d'escalade.",
+  "Yes — and the crossing between the two is often the signal that matters.":
+    "Oui — et le croisement des deux est souvent le signal qui compte.",
+  "You get: a gap analysis between your audience today and the one you want.":
+    "Vous obtenez : l'analyse de l'écart entre votre audience actuelle et celle que vous visez.",
+  "Your objectives, your markets, the decisions currently made without data.":
+    "Vos objectifs, vos marchés, les décisions prises aujourd'hui sans données.",
+  "Alerting thresholds, language coverage, and the part software will not do.":
+    "Seuils d'alerte, couverture linguistique, et la part que le logiciel ne fera pas.",
+  "Methods that held up, methods that did not, and the occasional correction.":
+    "Des méthodes qui ont tenu, d'autres non, et de temps en temps une correction.",
+  "You get: a live read of your reputation, with 24/7 alerting on the breaks.":
+    "Vous obtenez : une lecture en direct de votre réputation, avec alerte 24h/24 sur les ruptures.",
+  "You get: a map of demand, with the gaps your competitors are not covering.":
+    "Vous obtenez : une carte de la demande, avec les manques que vos concurrents ne couvrent pas.",
+  "You get: a ranked shortlist with audience overlap, affinity and risk flags.":
+    "Vous obtenez : une liste courte classée, avec recouvrement d'audience, affinité et signaux de risque.",
+  "Detection of your marks in images, including posts that never type your name.":
+    "La détection de vos marques dans les images, y compris les publications qui n'écrivent jamais votre nom.",
+  "Each item with effort, cost and expected impact — so arbitration is possible.":
+    "Chaque point avec son effort, son coût et son impact attendu — pour que l'arbitrage soit possible.",
+  "Product verdicts, market opportunities, stakeholder maps and emerging trends.":
+    "Verdicts produits, opportunités de marché, cartes des parties prenantes et tendances émergentes.",
+  "You get: expectations and friction points, ordered by how often they surface.":
+    "Vous obtenez : attentes et points de friction, classés par fréquence d'apparition.",
+  "You get: share of voice per spokesperson, topic by topic, against a peer set.":
+    "Vous obtenez : la part de voix par porte-parole, sujet par sujet, face à un panel de pairs.",
+  "No client cases published yet — each card points to the use case it belongs to.":
+    "Pas encore de cas clients publiés — chaque carte renvoie au cas d'usage correspondant.",
+  "Not your tooling — the decision you have to make and what currently informs it.":
+    "Pas votre outillage — la décision que vous devez prendre et ce qui l'éclaire aujourd'hui.",
+  "The state of the conversation at any moment, without waiting for a weekly export.":
+    "L'état de la conversation à tout moment, sans attendre un export hebdomadaire.",
+  "Which of the four layers answers it, how precisely, and what it will not tell you.":
+    "Quel calque y répond, avec quelle précision, et ce qu'il ne vous dira pas.",
+  "One email when we publish something worth your time. No sequence, no drip campaign.":
+    "Un email quand nous publions quelque chose qui mérite votre temps. Pas de séquence, pas de campagne.",
+  "Behavioural segmentation, rejuvenation strategies, expectations at every touchpoint.":
+    "Segmentation comportementale, stratégies de rajeunissement, attentes à chaque point de contact.",
+  "Typically five, achievable immediately, that create value before any project starts.":
+    "Cinq en général, réalisables tout de suite, qui créent de la valeur avant tout projet.",
+  "A human reads the signal before it reaches you, so an alert means something happened.":
+    "Un humain lit le signal avant qu'il ne vous parvienne : une alerte signifie qu'il s'est passé quelque chose.",
+  "Overlaps and gaps with competitors, which is where acquisition strategies are decided.":
+    "Recouvrements et écarts avec les concurrents, là où se décident les stratégies d'acquisition.",
+  "Thresholds per topic and per market, so a spike in one country does not drown the rest.":
+    "Des seuils par sujet et par marché, pour qu'un pic dans un pays ne noie pas les autres.",
+  "Sources, tools, taxonomies and coverage gaps, market by market and language by language.":
+    "Sources, outils, taxonomies et trous de couverture, marché par marché et langue par langue.",
+  "You get: a before / after read of the conversation, broken down by audience and platform.":
+    "Vous obtenez : une lecture avant / après de la conversation, ventilée par audience et par plateforme.",
+  "The fastest way to judge us is to hand us a decision you are currently making on instinct.":
+    "Le moyen le plus rapide de nous juger est de nous confier une décision que vous prenez aujourd'hui à l'instinct.",
+  "You receive the read; the licence, the configuration and the maintenance stay on our side.":
+    "Vous recevez la lecture ; la licence, la configuration et la maintenance restent chez nous.",
+  "Product verdicts, unmet needs, competitive whitespace and the trends that decide a roadmap.":
+    "Verdicts produits, besoins non couverts, espaces libres et les tendances qui décident d'une feuille de route.",
+  "Send us the question you are trying to answer. If a single study is enough, we will say so.":
+    "Envoyez-nous la question que vous cherchez à résoudre. Si une seule étude suffit, nous vous le dirons.",
+  "Sociodemographics, interests, brand affinities and media relationships behind the accounts.":
+    "Sociodémographie, centres d'intérêt, affinités de marque et rapports aux médias derrière les comptes.",
+  "What surrounds it, who is holding it, in which setting — context a text query cannot reach.":
+    "Ce qui l'entoure, qui le tient, dans quel décor — un contexte qu'une requête textuelle n'atteint pas.",
+  "Send us the question. If another platform answers it better, we will tell you — we run four.":
+    "Envoyez-nous la question. Si un autre outil y répond mieux, nous vous le dirons — nous en opérons quatre.",
+  "The guide covers the twelve questions we answer most often, with the method behind each one.":
+    "Le guide couvre les douze questions auxquelles nous répondons le plus souvent, avec la méthode derrière chacune.",
+  "An independent diagnostic. At the end you own the roadmap, whether or not you run it with us.":
+    "Un diagnostic indépendant. À la fin, la feuille de route est à vous, que vous la meniez avec nous ou non.",
+  "Yes, that comparison is the most common request — and usually the most uncomfortable reading.":
+    "Oui, c'est la demande la plus fréquente — et en général la lecture la plus inconfortable.",
+  "That is usually what happens. We run four; most questions are answered by two of them together.":
+    "C'est généralement ce qui arrive. Nous en opérons quatre ; la plupart des questions se règlent avec deux d'entre eux.",
+  "Track image, sentiment and the subjects attached to your name, continuously and across markets.":
+    "Suivez l'image, le sentiment et les sujets attachés à votre nom, en continu et sur tous les marchés.",
+  "Map what people expect before, during and after purchase — and where the experience breaks down.":
+    "Cartographiez les attentes avant, pendant et après l'achat — et là où l'expérience se casse.",
+  "Reputation tracking and early risk detection, with alerting when a weak signal starts to travel.":
+    "Suivi de réputation et détection précoce des risques, avec alerte dès qu'un signal faible se met à circuler.",
+  "Send us the question. We will tell you which sources we would use, and what they cannot tell you.":
+    "Envoyez-nous la question. Nous vous dirons quelles sources nous utiliserions, et ce qu'elles ne peuvent pas dire.",
+  "Watch lists per brand, executive and market, escalated according to a protocol agreed in advance.":
+    "Des listes de surveillance par marque, dirigeant et marché, escaladées selon un protocole convenu à l'avance.",
+  "Size the conversation of a market, spot the unmet needs and the whitespace nobody has claimed yet.":
+    "Dimensionnez la conversation d'un marché, repérez les besoins non couverts et les espaces que personne n'a pris.",
+  "We start from the business decision, not the keyword list. What will change depending on the answer?":
+    "Nous partons de la décision business, pas de la liste de mots-clés. Qu'est-ce qui changera selon la réponse ?",
+  "Impact of an event, a launch or a spokesperson — measured on the conversation, not on the media plan.":
+    "L'impact d'un événement, d'un lancement ou d'un porte-parole — mesuré sur la conversation, pas sur le plan média.",
+  "One perimeter, several countries, without rebuilding the query for each — the comparison stays valid.":
+    "Un périmètre, plusieurs pays, sans reconstruire la requête à chaque fois — la comparaison reste valable.",
+  "A first read, a diagnostic or nothing at all — we will tell you if social data is the wrong instrument.":
+    "Une première lecture, un diagnostic ou rien du tout — nous vous dirons si la social data est le mauvais instrument.",
+  "Behaviour against declaration: where panels and surveys disagree, and which one turned out to be right.":
+    "Le comportement contre le déclaratif : là où panel et étude divergent, et lequel des deux avait raison.",
+  "A readout your teams can act on, recurring monitoring where it matters, and alerts when something moves.":
+    "Une restitution actionnable par vos équipes, une veille récurrente là où elle compte, et des alertes quand quelque chose bouge.",
+  "Campaign impact, spokesperson strategy, ambassador selection, and the reputation signal that comes back.":
+    "Impact des campagnes, stratégie de prise de parole, choix des ambassadeurs, et le signal de réputation qui revient.",
+  "Recurring analysis, benchmarks and readouts your teams can act on — not a dashboard login and good luck.":
+    "Analyses récurrentes, benchmarks et restitutions actionnables par vos équipes — pas un accès à un tableau de bord et bon courage.",
+  "Identifying the voices that carry an audience rather than a follower count, and measuring what they move.":
+    "Identifier les voix qui portent une audience plutôt qu'un nombre d'abonnés, et mesurer ce qu'elles déplacent.",
+  "Whoever you decide, on the channel you decide, with an escalation path defined before anything goes live.":
+    "Qui vous voulez, sur le canal que vous voulez, avec un circuit d'escalade défini avant toute mise en service.",
+  "Social networks, but also news, blogs, forums and reviews — the conversation rarely stays on one platform.":
+    "Les réseaux sociaux, mais aussi l'actualité, les blogs, les forums et les avis — la conversation reste rarement sur une seule plateforme.",
+  "Who is behind the accounts: interests, passions, societal concerns, brand affinities, media relationships.":
+    "Qui se cache derrière les comptes : centres d'intérêt, passions, préoccupations sociétales, affinités de marque, rapports aux médias.",
+  "Follow the communities, experts and institutions that shape a category — and the trends breaking out of it.":
+    "Suivez les communautés, les experts et les institutions qui façonnent une catégorie — et les tendances qui en sortent.",
+  "See which words, claims and proofs your audiences actually repeat — and which ones never leave your slides.":
+    "Voyez quels mots, promesses et preuves vos audiences reprennent vraiment — et lesquels ne quittent jamais vos slides.",
+  "That is the usual starting point: one brand or one executive, extended once the protocol has proved itself.":
+    "C'est le point de départ habituel : une marque ou un dirigeant, étendu une fois le protocole éprouvé.",
+  "Detection in minutes, not in the next morning's report — the only useful speed when a subject is travelling.":
+    "Une détection en minutes, pas dans le rapport du lendemain — la seule vitesse utile quand un sujet circule.",
+  "If your question is already precise, skip the guide — thirty minutes with a consultant will get you further.":
+    "Si votre question est déjà précise, passez le guide — trente minutes avec un consultant vous mèneront plus loin.",
+  "Every product decision is a bet on what people will want. The conversation of a market usually says it first.":
+    "Toute décision produit est un pari sur ce que les gens voudront. La conversation d'un marché le dit généralement en premier.",
+  "Personas, segmentation, market studies and trend reads, built on behaviour rather than on a recruited sample.":
+    "Personas, segmentation, études de marché et lectures de tendances, bâtis sur le comportement plutôt que sur un échantillon recruté.",
+  "Sources, taxonomy, alerting, analysis, activation, organisation — scored and benchmarked against your sector.":
+    "Sources, taxonomie, alerte, analyse, activation, organisation — notées et comparées à votre secteur.",
+  "What people ask when nobody is watching: Google and Amazon queries, before the purchase and after the problem.":
+    "Ce que les gens demandent quand personne ne regarde : les requêtes Google et Amazon, avant l'achat et après le problème.",
+  "Catch weak signals early — a rumour, a boycott call, a supplier controversy — while they are still containable.":
+    "Saisissez les signaux faibles tôt — une rumeur, un appel au boycott, une controverse fournisseur — tant qu'ils restent maîtrisables.",
+  "How the practice is changing: alerting thresholds, language coverage, and what a platform cannot do on its own.":
+    "Comment la pratique évolue : seuils d'alerte, couverture linguistique, et ce qu'un outil ne fait pas tout seul.",
+  "No. The licence is ours. You buy the analysis, not a seat — and nobody on your side has to learn the interface.":
+    "Non. La licence est la nôtre. Vous achetez l'analyse, pas un accès — et personne chez vous n'a à apprendre l'interface.",
+  "Understand what the next generation of your category cares about, and how far that sits from your current base.":
+    "Comprenez ce qui compte pour la génération suivante de votre catégorie, et à quelle distance cela se situe de votre base actuelle.",
+  "Intent that is never posted publicly — the comparison, the doubt, the problem people type instead of publishing.":
+    "Une intention qui n'est jamais publiée — la comparaison, le doute, le problème que les gens tapent au lieu de le poster.",
+  "Tools and licences, taxonomies, sources and languages covered, alerting thresholds, who reads what and how often.":
+    "Outils et licences, taxonomies, sources et langues couvertes, seuils d'alerte, qui lit quoi et à quelle fréquence.",
+  "We start from the decision, not the keyword list — the perimeter follows the question, never the other way round.":
+    "Nous partons de la décision, pas de la liste de mots-clés — le périmètre suit la question, jamais l'inverse.",
+  "What is being said: volumes, topics, sentiment, interactions, and how a conversation travels between communities.":
+    "Ce qui se dit : volumes, sujets, sentiment, interactions, et la façon dont une conversation circule entre communautés.",
+  "Profile who actually buys, visits and talks about you: sociodemographics, interests, media diet, brand affinities.":
+    "Profilez qui achète, visite et parle réellement de vous : sociodémographie, centres d'intérêt, régime média, affinités de marque.",
+  "Read the unfiltered verdict on your products and your competitors': what gets praised, returned, or worked around.":
+    "Lisez le verdict non filtré sur vos produits et ceux de vos concurrents : ce qui est loué, retourné, ou contourné.",
+  "Reading weak signals before they become trends — what actually predicts a shift, and what only looks like it does.":
+    "Lire les signaux faibles avant qu'ils ne deviennent des tendances — ce qui annonce vraiment un basculement, et ce qui en a seulement l'air.",
+  "A threshold you agree with us, plus a human read. Keyword volume alone produces false alarms at three in the morning.":
+    "Un seuil convenu avec nous, plus une lecture humaine. Le volume de mots-clés seul produit des fausses alertes à trois heures du matin.",
+  "Queries, taxonomy, languages and alert thresholds, configured by the consultants who will read the output themselves.":
+    "Requêtes, taxonomie, langues et seuils d'alerte, configurés par les consultants qui liront eux-mêmes les résultats.",
+  "Proprietary algorithms profile the audiences; analysts read them against your market, in the language the market speaks.":
+    "Des algorithmes propriétaires profilent les audiences ; des analystes les lisent face à votre marché, dans la langue que ce marché parle.",
+  "What can be fixed in a fortnight, what needs a project, and what it costs in effort. Presented to your team, documented.":
+    "Ce qui se corrige en quinze jours, ce qui demande un projet, et ce que cela coûte en effort. Présenté à votre équipe, documenté.",
+  "The same panel answers three very different mandates — which is usually how a first project turns into a shared resource.":
+    "Le même panel répond à trois mandats très différents — c'est généralement ainsi qu'un premier projet devient une ressource partagée.",
+  "Find the creators and public voices whose audience genuinely overlaps yours — not the ones with the largest follower count.":
+    "Trouvez les créateurs et les voix publiques dont l'audience recoupe vraiment la vôtre — pas ceux qui ont le plus d'abonnés.",
+  "Thirty minutes is usually enough to tell you whether social data answers your question, and which of the three models fits.":
+    "Trente minutes suffisent généralement à savoir si la social data répond à votre question, et lequel des trois modèles convient.",
+  "Methods, market reads and the occasional correction. Written by the consultants who ran the analysis, not by a content team.":
+    "Méthodes, lectures de marché et, de temps en temps, une correction. Écrit par les consultants qui ont mené l'analyse, pas par une équipe de contenu.",
+  "Tell us the decision you have to make. We come back with the read we would run, the sources we would use, and what it takes.":
+    "Dites-nous la décision que vous devez prendre. Nous revenons avec la lecture que nous mènerions, les sources que nous utiliserions, et ce qu'il faut pour cela.",
+  "Behavioural data on roughly three billion consumers — the largest panel in the world, and nobody had to be recruited into it.":
+    "Des données comportementales sur environ trois milliards de consommateurs — le plus grand panel du monde, et personne n'a eu à y être recruté.",
+  "Brand health is not a quarterly survey. It is a continuous signal, and it is already public — the work is to read it in time.":
+    "La santé de marque n'est pas une étude trimestrielle. C'est un signal continu, et il est déjà public — le travail consiste à le lire à temps.",
+  "Object and scene detection go beyond the mark itself. The perimeter is defined with you, with samples, before the first read.":
+    "La détection d'objets et de scènes va au-delà de la marque elle-même. Le périmètre est défini avec vous, sur échantillons, avant la première lecture.",
+  "Targeting, creator selection, messaging and media planning. If a finding cannot be acted on, we do not put it in the readout.":
+    "Ciblage, sélection de créateurs, discours et planification média. Si une conclusion n'est pas actionnable, elle ne va pas dans la restitution.",
+  "The platform works on aggregated audience data, not on individual profiles. The contractual detail is part of the diagnostic.":
+    "L'outil travaille sur des données d'audience agrégées, pas sur des profils individuels. Le détail contractuel fait partie du diagnostic.",
+  "Thousands of criteria are available; the useful question is which ten of them change your decision. That is the framing work.":
+    "Des milliers de critères sont disponibles ; la vraie question est lesquels, parmi dix, changent votre décision. C'est le travail de cadrage.",
+  "Fixed fee, unlimited studies, no commitment. Nobody has to arbitrate between two questions because the budget only covers one.":
+    "Forfait fixe, études illimitées, sans engagement. Personne n'a à arbitrer entre deux questions parce que le budget n'en couvre qu'une.",
+  "Follower count measures how many people could see something. It says almost nothing about whether anything moves when they do.":
+    "Le nombre d'abonnés mesure combien de personnes pourraient voir quelque chose. Il ne dit presque rien de ce qui bouge quand elles le voient.",
+  "Historical depth depends on the perimeter and the sources. We tell you what is reachable before the project starts, not after.":
+    "La profondeur d'historique dépend du périmètre et des sources. Nous vous disons ce qui est atteignable avant le début du projet, pas après.",
+  "See how your executives are heard next to their peers, on which subjects their voice earns attention, and where it adds noise.":
+    "Voyez comment vos dirigeants sont entendus face à leurs pairs, sur quels sujets leur voix retient l'attention, et où elle ajoute du bruit.",
+  "We will show you the read we ran for an organisation that looks like yours — sector, size, and the question they arrived with.":
+    "Nous vous montrerons la lecture menée pour une organisation qui vous ressemble — secteur, taille, et la question avec laquelle elle est arrivée.",
+  "A platform gives you a query box. What costs time is the taxonomy, the noise filtering and the reading. That is the part we do.":
+    "Un outil vous donne un champ de requête. Ce qui coûte du temps, c'est la taxonomie, le filtrage du bruit et la lecture. C'est cette part que nous prenons.",
+  "Historical depth makes before / after reads possible: a campaign, a crisis, a repositioning, measured against what came before.":
+    "La profondeur d'historique rend possible la lecture avant / après : une campagne, une crise, un repositionnement, mesurés face à ce qui précédait.",
+  "We combine our own profiling algorithms with the leading platforms on the market — we are not selling you a seat on one of them.":
+    "Nous combinons nos propres algorithmes de profilage avec les meilleurs outils du marché — nous ne vous vendons pas un accès à l'un d'eux.",
+  "Who relays what, and how a subject crosses from social to press — the crossing point is usually where a story becomes a problem.":
+    "Qui relaie quoi, et comment un sujet passe du social à la presse — c'est au moment du passage qu'une histoire devient généralement un problème.",
+  "Read what a launch, a sponsorship or a keynote actually shifted: volume, reach, tone, and which audiences changed their position.":
+    "Lisez ce qu'un lancement, un sponsoring ou une prise de parole a réellement déplacé : volume, portée, tonalité, et quelles audiences ont changé de position.",
+  "Proprietary algorithms profile the audiences; analysts read them against your market, in the language that market actually speaks.":
+    "Des algorithmes propriétaires profilent les audiences ; des analystes les lisent face à votre marché, dans la langue que ce marché parle réellement.",
+  "Consumer groups, retailers, banks, institutions and media. Different mandates, one source — the behaviour of three billion consumers.":
+    "Groupes de grande consommation, distributeurs, banques, institutions et médias. Des mandats différents, une seule source — le comportement de trois milliards de consommateurs.",
+  "A sample is reviewed by hand at setup, and the perimeter is tightened until precision is acceptable. No model is right out of the box.":
+    "Un échantillon est relu à la main au paramétrage, et le périmètre est resserré jusqu'à ce que la précision soit acceptable. Aucun modèle n'est juste dès la sortie de la boîte.",
+  "Fixed fee, unlimited studies, no commitment. Consultants frame, configure and produce — you get the decision, not a platform to staff.":
+    "Forfait fixe, études illimitées, sans engagement. Les consultants cadrent, configurent et produisent — vous obtenez la décision, pas un outil à faire tourner.",
+  "Vigie 360 is our monitoring offer; Visibrain is one of the platforms behind it. You buy the service and the protocol, not the software.":
+    "Vigie 360 est notre offre de veille ; Visibrain est l'un des outils derrière. Vous achetez le service et le protocole, pas le logiciel.",
+  "We start from the business decision, not the keyword list. What will change depending on the answer, and who has to be convinced by it?":
+    "Nous partons de la décision business, pas de la liste de mots-clés. Qu'est-ce qui changera selon la réponse, et qui doit en être convaincu ?",
+  "Bring the decision you are currently making on instinct. You will leave knowing whether the data can settle it, and what that would take.":
+    "Apportez la décision que vous prenez aujourd'hui à l'instinct. Vous repartirez en sachant si la donnée peut la trancher, et ce que cela demanderait.",
+  "The same four platforms serve fifty-odd organisations here — what changes from one to the next is the question, and who reads the output.":
+    "Les mêmes quatre outils servent une cinquantaine d'organisations ici — ce qui change d'une à l'autre, c'est la question, et qui en lit le résultat.",
+  "You already know what you published. The question is what it moved, in whose mind, and whether the voices carrying it were the right ones.":
+    "Vous savez déjà ce que vous avez publié. La question est ce que cela a déplacé, dans quel esprit, et si les voix qui l'ont portée étaient les bonnes.",
+  "Four families of questions, twelve concrete use cases, one source: the behaviour of three billion consumers, observed rather than declared.":
+    "Quatre familles de questions, douze cas d'usage concrets, une seule source : le comportement de trois milliards de consommateurs, observé plutôt que déclaré.",
+  "A growing share of brand discovery now happens inside an assistant's answer. What it says about you is measurable, and increasingly decisive.":
+    "Une part croissante de la découverte de marque se joue désormais dans la réponse d'un assistant. Ce qu'il dit de vous est mesurable, et de plus en plus décisif.",
+  "No. It reads behaviour that already exists — nobody is recruited, nobody answers a questionnaire, and there is no declaration bias to correct.":
+    "Non. Il lit un comportement qui existe déjà — personne n'est recruté, personne ne remplit de questionnaire, et il n'y a pas de biais déclaratif à corriger.",
+  "Personas built in a room describe the people in the room. Built from observed affinities, they describe an audience — and they can be checked.":
+    "Des personas bâtis dans une salle décrivent les gens présents dans la salle. Bâtis sur des affinités observées, ils décrivent une audience — et ils sont vérifiables.",
+  "What we publish comes out of client work: the methods that held up, the ones that did not, and what the data showed before the market noticed.":
+    "Ce que nous publions sort du travail client : les méthodes qui ont tenu, celles qui n'ont pas tenu, et ce que la donnée montrait avant que le marché ne le remarque.",
+  "A shared panel serves very different mandates — which is why the client list runs from luxury and FMCG to public institutions and broadcasters.":
+    "Un panel partagé sert des mandats très différents — d'où une liste de clients qui va du luxe et de la grande consommation aux institutions publiques et aux chaînes.",
+  "No, it completes it. Run alone, a visual perimeter misses the debate; run alongside, it usually adds a third of the volume nobody was counting.":
+    "Non, il le complète. Seul, un périmètre visuel rate le débat ; en parallèle, il ajoute généralement un tiers du volume que personne ne comptait.",
+  "Our consultants work in Mandarin, English, Spanish, Hindi, Cantonese and Arabic. A market read through translation is a market read half-wrong.":
+    "Nos consultants travaillent en mandarin, anglais, espagnol, hindi, cantonais et arabe. Un marché lu à travers une traduction est un marché lu à moitié de travers.",
+  "For each one: the data it needs, what it can tell you, what it cannot, and how long a first read takes. Written by the consultants who run them.":
+    "Pour chacune : la donnée qu'elle demande, ce qu'elle peut dire, ce qu'elle ne peut pas, et le délai d'une première lecture. Écrit par les consultants qui les mènent.",
+  "No platform covers everything, and none of them reads itself. We run four, pick the one that fits the question, and add our own profiling on top.":
+    "Aucun outil ne couvre tout, et aucun ne se lit lui-même. Nous en opérons quatre, prenons celui qui correspond à la question, et ajoutons notre propre profilage par-dessus.",
+  "Declared preferences and actual behaviour rarely match. The panel shows what people do, follow, buy and say when no one is asking them a question.":
+    "Les préférences déclarées et le comportement réel coïncident rarement. Le panel montre ce que les gens font, suivent, achètent et disent quand personne ne leur pose de question.",
+  "The visual-first ones are where it earns its place — Instagram, TikTok, Pinterest — but it is the combination with text listening that we deliver.":
+    "C'est sur les plateformes visuelles qu'il gagne sa place — Instagram, TikTok, Pinterest — mais c'est la combinaison avec l'écoute textuelle que nous livrons.",
+  "Each layer answers something the others cannot. Used alone, any one of them gives a confident and partial answer — which is the most expensive kind.":
+    "Chaque calque répond à quelque chose que les autres ne peuvent pas. Utilisé seul, chacun donne une réponse assurée et partielle — la plus coûteuse qui soit.",
+  "Social listening, audience intelligence, digital panel and search listening — combined, and filtered by consultants rather than by a dashboard default.":
+    "Social listening, audience intelligence, panel digital et search listening — combinés, et filtrés par des consultants plutôt que par un réglage d'usine.",
+  "Listening tells you what is said. It does not tell you who is saying it, what else they follow, or how far they sit from the audience you think you have.":
+    "L'écoute vous dit ce qui se dit. Elle ne dit pas qui le dit, ce que ces gens suivent par ailleurs, ni à quelle distance ils se trouvent de l'audience que vous croyez avoir.",
+  "Four layers of signal, four platforms to collect them — Talkwalker, Visibrain, YouScan, SoPrism — and consultants who know which one answers your question.":
+    "Quatre calques de signal, quatre outils pour les collecter — Talkwalker, Visibrain, YouScan, SoPrism — et des consultants qui savent lequel répond à votre question.",
+  "Crisis and news move faster than any reporting cycle. Visibrain is built for the live feed — it is what sits behind Vigie 360 and its fifteen-minute alerts.":
+    "La crise et l'actualité vont plus vite que n'importe quel cycle de reporting. Visibrain est conçu pour le flux en direct — c'est lui qui se trouve derrière Vigie 360 et ses alertes en quinze minutes.",
+  "Keyword listening misses everything that is shown rather than written — and on TikTok, Instagram or Pinterest, that is the majority of what concerns a brand.":
+    "L'écoute par mots-clés rate tout ce qui est montré plutôt qu'écrit — et sur TikTok, Instagram ou Pinterest, c'est la majorité de ce qui concerne une marque.",
+  "By the time a trend is legible enough to put in a deck, the decision it should have informed has usually been taken. That gap is organisational, not technical.":
+    "Quand une tendance devient assez lisible pour figurer dans un deck, la décision qu'elle aurait dû éclairer a généralement déjà été prise. Cet écart est organisationnel, pas technique.",
+  "Three billion people already publish what they like, follow, buy and reject. We profile that behaviour daily instead of asking a thousand people to declare it.":
+    "Trois milliards de personnes publient déjà ce qu'elles aiment, suivent, achètent et rejettent. Nous profilons ce comportement chaque jour au lieu de demander à mille personnes de le déclarer.",
+  "It is strongest where the product is shown — retail, FMCG, luxury, food. For a B2B service, the other three platforms usually answer better, and we will say so.":
+    "Il est le plus fort là où le produit est montré — retail, grande consommation, luxe, alimentaire. Pour un service B2B, les trois autres outils répondent généralement mieux, et nous le dirons.",
+  "Most organisations already pay for listening tools and read almost nothing from them. Two to three weeks to know exactly where you stand, and what to fix first.":
+    "La plupart des organisations paient déjà des outils d'écoute et n'en lisent presque rien. Deux à trois semaines pour savoir exactement où vous en êtes, et quoi corriger en premier.",
+  "Most social data budgets are spent on tools and consumed by set-up. Our three offers all start from the same principle: you buy answers, at a predictable price.":
+    "La plupart des budgets social data passent dans les outils et sont absorbés par le paramétrage. Nos trois offres partent du même principe : vous achetez des réponses, à un prix prévisible.",
+  "A tool that reports twenty languages is telling you about collection, not about understanding. The gap between the two is where most multi-market reads go wrong.":
+    "Un outil qui annonce vingt langues vous parle de collecte, pas de compréhension. C'est dans l'écart entre les deux que la plupart des lectures multi-marchés se trompent.",
+  "Most of what gets called a weak signal is just a small number. Here is the difference between a conversation that predicts a shift and one that only looks like it does.":
+    "L'essentiel de ce qu'on appelle signal faible n'est qu'un petit nombre. Voici la différence entre une conversation qui annonce un basculement et une qui en a seulement l'air.",
+  "Listening suites are very good at three things and structurally bad at two others. Knowing which is which is most of what separates a useful setup from an expensive one.":
+    "Les suites d'écoute sont très bonnes sur trois choses et structurellement mauvaises sur deux autres. Savoir lesquelles fait l'essentiel de la différence entre un dispositif utile et un dispositif coûteux.",
+  "Most brand questions are still answered by asking a thousand people what they think. Twelve of them are better answered by watching what three billion people already do.":
+    "La plupart des questions de marque trouvent encore leur réponse en demandant à mille personnes ce qu'elles pensent. Douze d'entre elles trouvent une meilleure réponse en regardant ce que trois milliards de personnes font déjà.",
+  "The strongest consumer insight is usually the one where somebody’s stated preference and their observable behaviour come apart. Finding those gaps is a method, not luck.":
+    "Le meilleur insight consommateur est généralement celui où la préférence déclarée et le comportement observable se séparent. Trouver ces écarts relève d'une méthode, pas de la chance.",
+  "Each platform carries a different register of the same market: short-form culture, community reaction, public debate, professional discourse, long-form review, local groups.":
+    "Chaque plateforme porte un registre différent du même marché : culture du format court, réaction communautaire, débat public, discours professionnel, avis long, groupes locaux.",
+  "We profile three billion users daily on their interactions, behaviour and content consumption. The platforms collect; our algorithms qualify; consultants decide what is signal.":
+    "Nous profilons trois milliards d'utilisateurs chaque jour sur leurs interactions, leur comportement et leur consommation de contenu. Les outils collectent ; nos algorithmes qualifient ; les consultants décident de ce qui est du signal.",
+  "That sentence is our founders'. It is also the whole method: the largest consumer panel in the world already exists, it publishes every day, and almost nobody reads it properly.":
+    "Cette phrase est celle de nos fondateurs. C'est aussi toute la méthode : le plus grand panel consommateur du monde existe déjà, il publie chaque jour, et presque personne ne le lit correctement.",
+  "The broadest listening suite on the market, operated by consultants: coverage across markets and languages, and an analysis that arrives as an answer rather than as a dashboard.":
+    "La suite d'écoute la plus large du marché, opérée par des consultants : une couverture sur tous les marchés et toutes les langues, et une analyse qui arrive comme une réponse plutôt que comme un tableau de bord.",
+  "When observed behaviour and declared intention point in opposite directions, the useful move is not to pick a winner. It is to work out which question each one actually answered.":
+    "Quand le comportement observé et l'intention déclarée pointent dans des directions opposées, le bon réflexe n'est pas de désigner un gagnant. C'est de comprendre à quelle question chacun a réellement répondu.",
+  "Real-time monitoring of the live conversation and of the media sphere. The platform we run when the question is not “what happened last quarter” but “what is happening right now”.":
+    "Veille en temps réel de la conversation en direct et de la sphère média. L'outil que nous opérons quand la question n'est pas « que s'est-il passé le trimestre dernier » mais « que se passe-t-il maintenant ».",
+  "A threshold looks like a technical setting. It is really a statement about what your organisation considers worth waking someone up for — and it should be argued about in those terms.":
+    "Un seuil ressemble à un réglage technique. C'est en réalité une déclaration sur ce que votre organisation juge digne de réveiller quelqu'un — et c'est en ces termes qu'il faut en débattre.",
+  "It is the platform we reach for when a question spans several markets, several languages and a long period — the range is its strength, and range is exactly what most brand questions need.":
+    "C'est l'outil que nous prenons quand une question couvre plusieurs marchés, plusieurs langues et une longue période — l'étendue est sa force, et l'étendue est exactement ce dont la plupart des questions de marque ont besoin.",
+  "A fixed fee, unlimited studies, no commitment. Our consultants frame the question, configure the collection and produce the analysis — you get the answer, not a tool licence and a training plan.":
+    "Un forfait fixe, des études illimitées, sans engagement. Nos consultants cadrent la question, configurent la collecte et produisent l'analyse — vous obtenez la réponse, pas une licence et un plan de formation.",
+  "Most brand mentions carry no text at all: a product on a table, a logo on a shirt, a packshot in a story. YouScan reads the picture, which is where a growing share of the conversation now lives.":
+    "La plupart des mentions de marque ne portent aucun texte : un produit sur une table, un logo sur un t-shirt, un packshot dans une story. YouScan lit l'image, là où vit désormais une part croissante de la conversation.",
+  "A focused read is a matter of days rather than weeks. A full diagnostic of an existing setup takes two to three weeks. Continuous monitoring starts alerting as soon as the perimeter is configured.":
+    "Une lecture ciblée se compte en jours plutôt qu'en semaines. Le diagnostic complet d'un dispositif existant prend deux à trois semaines. La veille continue commence à alerter dès que le périmètre est configuré.",
+  "Yes, and that is one of the reasons we run it. Our consultants work in Mandarin, English, Spanish, Hindi, Cantonese and Arabic — a market read through machine translation is a market read half-wrong.":
+    "Oui, et c'est l'une des raisons pour lesquelles nous l'opérons. Nos consultants travaillent en mandarin, anglais, espagnol, hindi, cantonais et arabe — un marché lu via une traduction automatique est un marché lu à moitié de travers.",
+  "Audience intelligence built on behavioural data: interests, affinities, media diet and overlaps with your competitors' audiences — the level of detail a persona needs to survive a marketing committee.":
+    "De l'audience intelligence bâtie sur des données comportementales : centres d'intérêt, affinités, régime média et recoupements avec les audiences de vos concurrents — le niveau de détail dont un persona a besoin pour survivre à un comité marketing.",
+  "You already own a platform and it is under-used. We take over the taxonomy, the dashboards and the recurring analyses, and train your teams to read them — so the licence you pay for produces decisions.":
+    "Vous possédez déjà un outil et il est sous-exploité. Nous reprenons la taxonomie, les tableaux de bord et les analyses récurrentes, et formons vos équipes à les lire — pour que la licence que vous payez produise des décisions.",
+  "Monitoring runs in more than twenty languages, and our consultants work in Mandarin, English, Spanish, Hindi, Cantonese and Arabic. A market read through machine translation is a market read half-wrong.":
+    "La veille tourne dans plus de vingt langues, et nos consultants travaillent en mandarin, anglais, espagnol, hindi, cantonais et arabe. Un marché lu via une traduction automatique est un marché lu à moitié de travers.",
+  "A fixed monthly fee, with unlimited studies inside it, and no commitment. The exact level depends on the perimeter — markets, languages, monitoring. Thirty minutes is usually enough to give you a number.":
+    "Un forfait mensuel fixe, avec des études illimitées à l'intérieur, et sans engagement. Le niveau exact dépend du périmètre — marchés, langues, veille. Trente minutes suffisent généralement pour vous donner un chiffre.",
+  "Continuous monitoring of your brand, your executives and your markets, in more than twenty languages. A human reads the signal before it reaches you, so an alert means something happened — not that a keyword fired.":
+    "Veille continue de votre marque, de vos dirigeants et de vos marchés, dans plus de vingt langues. Un humain lit le signal avant qu'il ne vous parvienne : une alerte signifie qu'il s'est passé quelque chose — pas qu'un mot-clé s'est déclenché.",
+  "No. We work with the leading platforms and our own algorithms; the licence is ours, not a prerequisite for you. If you already pay for one and under-use it, that is exactly what Social Listening as a Service is for.":
+    "Non. Nous travaillons avec les meilleurs outils du marché et nos propres algorithmes ; la licence est la nôtre, pas un prérequis pour vous. Si vous en payez déjà une et la sous-exploitez, c'est exactement à cela que sert le Social Listening as a Service.",
+  "Social listening is one of four layers. On its own it tells you what is being said. We add audience intelligence (who is behind the accounts), a behavioural panel of about three billion consumers, and search listening. Most questions need at least two.":
+    "Le social listening est l'un des quatre calques. Seul, il vous dit ce qui se dit. Nous y ajoutons l'audience intelligence (qui se trouve derrière les comptes), un panel comportemental d'environ trois milliards de consommateurs, et le search listening. La plupart des questions en demandent au moins deux.",
+  "Licter was founded in 2022 by Antoine Khaitrine and Adrien Krebs, who led the Data & Digital Analysis cell at the Élysée. They left with a conviction: French organisations were several years behind their American and British counterparts on audience intelligence, monitoring and social listening — and the gap was a method gap, not a data gap.":
+    "Licter a été fondé en 2022 par Antoine Khaitrine et Adrien Krebs, qui dirigeaient la cellule Data & Analyse digitale de l'Élysée. Ils en sont partis avec une conviction : les organisations françaises avaient plusieurs années de retard sur leurs homologues américaines et britanniques en audience intelligence, veille et social listening — et ce retard tenait à la méthode, pas à la donnée.",
+
+  /* ---- corps de texte des pages internes ----
+     Ajouté d'un bloc : le dictionnaire couvrait la navigation, le pied de
+     page et les titres, donc une page passait en français à moitié. Les
+     clés sont les chaînes anglaises telles que le DOM les rend, espaces
+     multiples réduits à un seul. */
+  "30 d": "30 j",
+  "-6.4%": "-6,4 %",
+  "Owned": "Owned",
+  "Posts": "Publications",
+  "Share": "Part",
+  "+15.5%": "+15,5 %",
+  "+40.2%": "+40,2 %",
+  "+7 pts": "+7 pts",
+  "-8 pts": "-8 pts",
+  "Earned": "Earned",
+  "Export": "Exporter",
+  "Resale": "Seconde main",
+  "Source": "Source",
+  "+12 new": "+12 nouveaux",
+  "+12 pts": "+12 pts",
+  "90 days": "90 jours",
+  "Pricing": "Prix",
+  "Product": "Produit",
+  "Service": "Service",
+  "+3.2 pts": "+3,2 pts",
+  "+9.4 pts": "+9,4 pts",
+  "-3.1 pts": "-3,1 pts",
+  "-2 vs. Q3": "-2 vs. T3",
+  "12 months": "12 mois",
+  "AI try-on": "Essayage par IA",
+  "Campaigns": "Campagnes",
+  "Corporate": "Corporate",
+  "Longevity": "Longévité",
+  "Undecided": "Indécis",
+  "Detractors": "Détracteurs",
+  "Paid share": "Part payante",
+  "CORE TARGET": "CŒUR DE CIBLE",
+  "Core target": "Cœur de cible",
+  "Look-alikes": "Audiences similaires",
+  "Prescribers": "Prescripteurs",
+  "Risk alerts": "Alertes risque",
+  "cooling off": "retombe",
+  "weeks ahead": "semaines d'avance",
+  "Dupe culture": "Culture du dupe",
+  "size holding": "taille stable",
+  "Breakout rate": "Taux de percée",
+  "Creator reach": "Portée créateurs",
+  "Net sentiment": "Sentiment net",
+  "Out of target": "Hors cible",
+  "losing ground": "en recul",
+  "Brand mentions": "Mentions de marque",
+  "Corporate news": "Actualité corporate",
+  "Negative share": "Part négative",
+  "Refill formats": "Formats rechargeables",
+  "Share of voice": "Part de voix",
+  "Topics tracked": "Sujets suivis",
+  "Under-25 share": "Part des moins de 25 ans",
+  "CAMPAIGN IMPACT": "IMPACT DE CAMPAGNE",
+  "EMERGING TOPICS": "SUJETS ÉMERGENTS",
+  "Look-alike pool": "Vivier d'audiences similaires",
+  "Pricing chatter": "Discussions sur les prix",
+  "Product quality": "Qualité produit",
+  "Service backlog": "File du service client",
+  "VOLUME BY MONTH": "VOLUME PAR MOIS",
+  "Longevity claims": "Promesses de longévité",
+  "Median lead time": "Délai d'avance médian",
+  "SIGNALS TO WATCH": "SIGNAUX À SURVEILLER",
+  "out of the niche": "sort de la niche",
+  "shrinking slowly": "se réduit lentement",
+  "steady, no spike": "stable, sans pic",
+  "the reach upside": "le potentiel de portée",
+  "Core target share": "Part du cœur de cible",
+  "Detractor cluster": "Noyau de détracteurs",
+  "Earned over owned": "Earned devant owned",
+  "MENTIONS BY MONTH": "MENTIONS PAR MOIS",
+  "PROFILES BY MONTH": "PROFILS PAR MOIS",
+  "the fastest riser": "la plus forte hausse",
+  "Look-alike overlap": "Recouvrement des similaires",
+  "Paid amplification": "Amplification payante",
+  "Short-form formats": "Formats courts",
+  "carrying the reach": "portent la portée",
+  "crossing into press": "passe dans la presse",
+  "WHAT IS BREAKING OUT": "CE QUI PERCE",
+  "fading from the feed": "s'efface du fil",
+  "share still climbing": "part toujours en hausse",
+  "WHO THE COMMUNITIES ARE": "QUI SONT CES COMMUNAUTÉS",
+  "spreading past the core": "déborde du noyau",
+  "growing on two platforms": "en hausse sur deux plateformes",
+  "Trend — rolling 12 months": "Tendance — 12 mois glissants",
+  "WHAT DRIVES THE SENTIMENT": "CE QUI FAIT LE SENTIMENT",
+  "stable quarter on quarter": "stable d'un trimestre à l'autre",
+  "EMERGING TOPICS — VELOCITY": "SUJETS ÉMERGENTS — VÉLOCITÉ",
+  "WHERE THE VOICE COMES FROM": "D'OÙ VIENT LA VOIX",
+  "plateau after two quarters": "plateau après deux trimestres",
+  "BRAND HEALTH — NET SENTIMENT": "SANTÉ DE MARQUE — SENTIMENT NET",
+  "CORE TARGET — QUALIFIED REACH": "CŒUR DE CIBLE — PORTÉE QUALIFIÉE",
+  "mentions on the tracked topics": "mentions sur les sujets suivis",
+  "CAMPAIGN IMPACT — SHARE OF VOICE": "IMPACT DE CAMPAGNE — PART DE VOIX",
+  "posts collected, owned and earned": "publications collectées, owned et earned",
+  "Indexed against the category benchmark.": "Indexé sur le benchmark de la catégorie.",
+  "profiles qualified, core and look-alike": "profils qualifiés, cœur de cible et similaires",
+  "vs. category benchmark, rolling 90 days": "vs. benchmark de la catégorie, 90 jours glissants",
+  "conversations classified, owned and earned": "conversations classées, owned et earned",
+  "net positive, owned and earned conversations": "positif net, conversations owned et earned",
+  "velocity of topics breaking out of the category":
+    "vélocité des sujets qui sortent de la catégorie",
+  "qualified reach, look-alike communities folded in":
+    "portée qualifiée, communautés similaires incluses",
+  "Net positive sentiment on owned and earned conversations, panel-weighted.":
+    "Sentiment positif net sur les conversations owned et earned, pondéré par le panel.",
+  "Velocity of the topics breaking out of the category over the last four weeks.":
+    "Vélocité des sujets qui sortent de la catégorie sur les quatre dernières semaines.",
+  "Qualified reach inside the core target once look-alike communities are folded in.":
+    "Portée qualifiée dans le cœur de cible une fois les communautés similaires intégrées.",
+  "Creator-driven reach over the last 90 days, measured against the category benchmark.":
+    "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
 };
