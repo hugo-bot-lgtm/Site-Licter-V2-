@@ -772,6 +772,58 @@ l'indicateur `+23%`, le lien final et les survols de menu.
       dans le bloc lui-même. C'était le seul lien sortant du site ; jusque-là
       on parlait de la chaîne sans jamais y mener.
 
+31. **Le mur d'interviews tourne tout seul.** Demande de Licter : que les
+    vidéos changent de temps en temps plutôt que d'être figées sur trois.
+
+    **Le vivier, d'abord.** La chaîne annonce 427 vidéos, mais l'onglet
+    *Videos* n'en contient que **45** : les ~380 autres sont des Shorts, dans
+    leur propre onglet. Sur ces 45, beaucoup sont des webinars, des
+    masterclasses, des bandes-annonces de podcast ou des entretiens
+    politiques. Un bloc titré « ils le racontent mieux que nous » ne peut pas
+    tirer au sort un short sur le Rafale ni une interview d'ancien ministre.
+    Le vivier retenu est donc **douze interviews de marques et
+    d'institutions**, vérifiées une à une : SEB, Dassault Systèmes, Paris
+    2024, SNCF, Orange, L'Oréal, AXA, Kantar, LVMH, Ville de Paris, Transat
+    Café l'Or, France Digitale.
+
+    **Pourquoi une liste en dur et pas un flux.** Trois options :
+    l'API YouTube Data mettrait une clé dans du JavaScript public pour une
+    liste qui bouge une fois par semaine ; le flux RSS de la chaîne n'envoie
+    pas d'en-tête CORS, donc le navigateur ne peut pas le lire ; une fonction
+    serverless marcherait mais ajouterait un back-end à un site qui n'en a
+    aucun. La liste est donc figée dans `js/voices.js`, et
+    `tools/harvest-voices.md` explique comment la régénérer en une minute.
+    Si Licter veut du vraiment temps réel, la fonction Vercel est la voie —
+    c'est une demi-journée et une clé d'API à créer.
+
+    **Le comportement** : une seule carte change à la fois, toutes les 7 s, en
+    tourniquet gauche → milieu → droite, avec fondu. La rotation s'arrête
+    quand le bloc sort de l'écran, quand l'onglet passe en arrière-plan, et
+    **quand le curseur ou le clavier est sur les cartes** — on ne change pas
+    une carte que quelqu'un est en train de lire ou de cliquer. La miniature
+    suivante est préchargée avant l'échange, avec un délai de secours de 1,2 s
+    pour ne jamais attendre une image lente.
+
+    **Sous 860 px et en `prefers-reduced-motion`, la rotation est coupée** :
+    les cartes y sont empilées, une seule est visible, et la faire changer
+    sous le pouce du lecteur serait hostile. À la place, un tirage différent à
+    chaque visite — la variété sans le mouvement.
+
+    **Deux pièges** :
+    - **La grille YouTube recycle ses nœuds** : lire la page une fois après
+      avoir scrollé ne rend que 45 cartes au maximum, jamais l'historique. Il
+      faut accumuler pendant le défilement. C'est ce que fait le script de
+      `tools/harvest-voices.md`.
+    - **`maxresdefault.jpg` n'existe pas pour toutes les vidéos** (ici :
+      L'Oréal), et YouTube répond alors une image grise de 120×90 **avec un
+      statut 200** — donc `onerror` ne se déclenche jamais et la carte affiche
+      un placeholder. Les cartes partent donc sur `hqdefault.jpg`, qui existe
+      toujours et se recadre exactement sur le 16:9, et ne montent en maxres
+      qu'une fois celle-ci prouvée réelle.
+
+    Les trois cartes écrites en dur dans `clients.html` restent les plus
+    fortes : c'est ce que voit un visiteur sans JavaScript.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
@@ -784,6 +836,9 @@ l'indicateur `+23%`, le lien final et les survols de menu.
   `tech-tools.html` ne les demande plus (voir l'arbitrage 27).
 - Compléter `js/fr.js` avec le corps de texte des pages internes (cas
   d'usage, offres, pourquoi, techno, clients, blog, guide, diagnostic, RDV).
+- Rafraîchir `js/voices.js` quand de nouvelles interviews sortent
+  (`tools/harvest-voices.md`), ou trancher pour une fonction serverless si le
+  temps réel est jugé nécessaire.
 - Relire **tous les chiffres de la console** de la home (arbitrage 29) :
   KPI, volumes, parts, variations et signaux des quatre familles.
 - Relire les quatre pages plateformes : ce que fait réellement chaque outil

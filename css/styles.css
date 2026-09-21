@@ -2526,3 +2526,12 @@ section[id], .block[id] { scroll-margin-top: 58px; }
 /* the one outbound link in the block: the channel itself */
 .reels__note a { color: var(--ink); border-bottom: 1px solid rgba(var(--amber-rgb), .7); }
 .reels__note a:hover { color: var(--amber-ink); }
+
+/* one card at a time steps aside for the next episode */
+.reel.is-swapping .reel__shot,
+.reel.is-swapping .reel__quote,
+.reel.is-swapping .reel__meta { opacity: 0; transform: translateY(6px); }
+.reel__shot, .reel__quote, .reel__meta {
+  transition: opacity .26s ease, transform .26s cubic-bezier(.16, .84, .34, 1),
+              box-shadow .25s ease, color .15s ease;
+}
