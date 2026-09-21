@@ -645,76 +645,34 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     cohérent avec le reste du site, et ne pose aucune question de droit
     d'usage des marques.
 
-28. **Les sources, en amas du réseau.** Second composant fourni par Licter
-    (hero plein écran, icônes qui fuient le curseur). Il n'a pas été posé en
-    hero : la cartographie animée occupe déjà le fond de toutes les pages, et
-    deux systèmes flottants dans le même écran font du bruit. Il vit dans la
-    section des sources, la seule du site où des logos tiers ont une raison
-    d'être — ce sont littéralement les sources de la donnée.
+28. **Icônes flottantes : essayé, retiré.** Licter avait fourni un second
+    composant (hero plein écran, icônes qui fuient le curseur) à placer sur le
+    site. Il a été installé dans la section des sources de `tech-tools.html`,
+    en deux versions, puis **supprimé à la demande de Licter** — l'élément ne
+    convenait pas esthétiquement. Le code est parti avec : markup, styles et
+    boucle d'animation. Ce qui reste consigné, parce que ça vaut pour la
+    suite :
 
-    **Premier jet, raté, et pourquoi.** Les neuf glyphes étaient posés dans
-    des pastilles blanches bordées, alignées en bande au-dessus du titre.
-    Retour de Licter, juste : « on dirait que c'est juste posé là ». Deux
-    fautes. La pastille est un vocabulaire d'interface — une puce — et le
-    site n'en a aucun : il est fait de hairlines, de feuilles translucides et
-    d'un réseau de points. Et l'alignement quasi horizontal en faisait une
-    barre de logos ayant perdu son libellé. Une bande libre au-dessus d'un
-    titre ne laisse qu'une dimension, donc forcément une rangée.
+    - **Ne pas le poser en hero.** La cartographie animée occupe déjà le fond
+      de toutes les pages. Deux systèmes flottants dans le même écran font du
+      bruit, quelle que soit la qualité du second.
+    - **Le premier jet mettait les glyphes dans des pastilles blanches
+      bordées, alignées en bande au-dessus du titre.** Retour : « on dirait
+      que c'est juste posé là ». Juste : la pastille est un vocabulaire
+      d'interface que ce site n'a nulle part, et une bande libre au-dessus
+      d'un titre n'offre qu'une dimension, donc forcément une rangée.
+    - **Le second jet en faisait des nœuds câblés au réseau**, positions
+      générées sur des anneaux pour qu'aucun trait ne se croise, avec des
+      points anonymes pour que les plateformes ne soient que quelques nœuds
+      parmi d'autres. Techniquement propre, toujours pas retenu. Conclusion
+      utile : sur ce site, **le fond est déjà l'élément graphique** ; tout ce
+      qu'on ajoute à côté entre en concurrence avec lui.
 
-    **Ce qui le remplace.** Les glyphes sont devenus des **nœuds du réseau** :
-    plus de pastille, plus de bordure, plus de fond. Ils sont câblés à deux
-    hubs — les plateformes, les requêtes — par les mêmes hairlines que la
-    cartographie, avec quelques liens locaux pour que ça lise comme un maillage
-    et non comme deux étoiles, et un pont ambré pointillé entre les deux
-    communautés. **Quand un nœud est repoussé, ses fils s'étirent avec lui**
-    et passent à l'ambre : c'est ce qui fait que l'élément appartient au site
-    au lieu d'y être collé.
-
-    **Deuxième correction, sur la géométrie.** Le premier câblage plaçait les
-    nœuds à la main : un hub tirait six longues branches de longueurs toutes
-    différentes, le pont traversait l'ensemble en diagonale, et ça lisait
-    comme un schéma. Les positions sont maintenant **générées** : chaque
-    communauté pose ses nœuds sur un anneau autour de son hub, à rayon
-    comparable avec un peu de bruit. Deux conséquences utiles — des rayons
-    issus d'un même hub ne se croisent jamais, et les liens de maillage ne
-    relient que des voisins angulaires, donc aucune corde ne traverse l'amas.
-    Le secteur qui pointe vers l'autre communauté est laissé vide, pour que
-    le pont sorte par un trou au lieu de couper l'anneau. Enfin, onze
-    **points anonymes** sont accrochés aux hubs et aux nœuds : sans eux, neuf
-    logos reliés à deux centres restent un diagramme ; avec eux, les
-    plateformes ne sont que quelques nœuds d'un réseau, ce qui est le propos.
-
-    Pour que l'amas ait deux dimensions, la section passe en deux colonnes :
-    le titre et les trois cartes à gauche (la première promue sur toute la
-    largeur, comme ailleurs), le champ à droite sur toute la hauteur. Sous
-    1000 px il redevient une signature compacte au-dessus du titre.
-
-    **Le reste de la transposition** : neuf glyphes monochromes dessinés à la
-    main, navy à 38 %, ambre au moment où ils sont repoussés — l'original est
-    en couleurs de marque, soit neuf palettes étrangères dans une charte qui
-    en a quatre. Une écoute `pointermove` et une boucle `rAF` pour tout le
-    champ au lieu d'un `useSpring` par icône ; le ressort devient un lerp
-    amorti. La boucle ne tourne que quand la section est à l'écran et s'arrête
-    d'elle-même au repos. Les fils sont tracés dans un `viewBox` 0–100 avec
-    `preserveAspectRatio="none"` et `vector-effect="non-scaling-stroke"` : les
-    coordonnées sont donc des pourcentages, et l'épaisseur du trait ne se
-    déforme pas. Un `pointerdown` qui n'est pas une souris coupe la répulsion
-    (un doigt n'a pas de survol), et `prefers-reduced-motion` fige tout.
-
-    **Défaut trouvé en le testant** : le bandeau du haut est `sticky` et fait
-    38 px, et aucune section n'avait de `scroll-margin-top`. Toute arrivée par
-    une ancre — dont le lien « Where the data comes from » du menu déroulant —
-    déposait le haut de la section sous le bandeau. `scroll-margin-top: 58px`
-    sur toute section portant un `id` corrige le champ **et** toutes les
-    autres ancres du site, qui avaient le même défaut sans que ça se voie.
-
-    **Point à trancher côté Licter, pas côté code** : les logos de réseaux
-    sociaux employés pour désigner des sources de données relèvent de l'usage
-    nominatif, ce qui passe en général, et le traitement monochrome réduit
-    encore le risque — mais c'est une décision de marque. Les **logos
-    clients**, eux, demandent l'accord de chacun : c'est sans doute pourquoi
-    le marquee affiche des noms en texte et non des logos, et je ne l'ai pas
-    changé.
+    Un défaut trouvé en le testant a en revanche été **gardé** : le bandeau du
+    haut est `sticky` et fait 38 px, et aucune section n'avait de
+    `scroll-margin-top`. Toute arrivée par une ancre déposait le haut de la
+    section cible sous le bandeau. `scroll-margin-top: 58px` sur toute section
+    portant un `id` corrige toutes les ancres du site.
 
 ## Reste à faire
 
