@@ -2202,6 +2202,10 @@ html[lang="fr"] .nav__link { letter-spacing: 1.1px; }
    room for nine brand palettes.
    ========================================================================== */
 
+/* the banner is sticky and 38px tall: an anchor jump has to clear it, or the
+   top of the targeted section lands underneath it */
+section[id], .block[id] { scroll-margin-top: 58px; }
+
 .block--field { padding-top: clamp(84px, 13vh, 152px); }
 .block--field > .block__head,
 .block--field > .grid { position: relative; z-index: 1; }
@@ -2224,7 +2228,7 @@ html[lang="fr"] .nav__link { letter-spacing: 1.1px; }
   background: rgba(255, 255, 255, .5);
   backdrop-filter: blur(3px);
   color: var(--ink);
-  opacity: .5;
+  opacity: .62;
   transform: scale(var(--s, 1));
   transition: color .3s ease, opacity .3s ease, border-color .3s ease;
   will-change: transform;
@@ -2235,7 +2239,7 @@ html[lang="fr"] .nav__link { letter-spacing: 1.1px; }
 /* the field builds itself in once, then the drift takes over */
 .reveal .field__i { opacity: 0; }
 .reveal [data-field].is-in .field__i {
-  opacity: .5;
+  opacity: .62;
   transition: opacity .7s ease var(--d, 0s), color .3s ease, border-color .3s ease;
 }
 .reveal [data-field].is-in .field__i.is-near { opacity: .92; }

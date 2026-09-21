@@ -674,6 +674,15 @@ l'indicateur `+23%`, le lien final et les survols de menu.
       n'est pas une souris coupe la répulsion (un doigt n'a pas de survol) ;
       `prefers-reduced-motion` fige tout.
 
+    **Défaut trouvé en le testant** : le bandeau du haut est `sticky` et fait
+    38 px, et aucune section n'avait de `scroll-margin-top`. Toute arrivée
+    par une ancre — dont le lien « Where the data comes from » du menu
+    déroulant — déposait donc le haut de la section sous le bandeau, ce qui
+    mangeait exactement la bande où vivent les glyphes : on arrivait sur le
+    titre et les cartes, sans rien voir du champ. `scroll-margin-top: 58px`
+    sur toute section portant un `id` corrige le champ **et** toutes les
+    autres ancres du site, qui avaient le même défaut sans que ça se voie.
+
     **Point à trancher côté Licter, pas côté code** : les logos de réseaux
     sociaux employés pour désigner des sources de données relèvent de l'usage
     nominatif, ce qui passe en général, et le traitement monochrome réduit
