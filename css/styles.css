@@ -914,29 +914,34 @@ main { position: relative; z-index: 1; }
 }
 
 /* the three stat cells */
+.viz__cell.stat { padding: 16px 17px 13px; }
 .stat__label {
+  /* two lines of room, so the three figures sit on the same line whatever the
+     label does */
+  min-height: 25px;
   margin: 0;
   font: 600 9px/1.4 var(--body-font);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   color: var(--text-4);
 }
-.stat__row { display: flex; align-items: flex-end; justify-content: space-between; gap: 8px; }
 .stat__value {
-  margin: 9px 0 0;
+  margin: 5px 0 0;
   font-family: var(--title-font);
   font-weight: 800;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1;
   letter-spacing: -.8px;
   color: var(--ink);
 }
-.stat__spark { display: block; flex: 0 0 58px; width: 58px; margin-top: 9px; }
+/* the curve runs the full width under the figure: side by side, a 91px number
+   and a 58px curve did not fit in 108px of content */
+.stat__spark { display: block; width: 100%; margin-top: 11px; }
 .stat__spark.is-up { color: var(--amber-deep); }
 .stat__spark.is-down { color: var(--grey); }
 .spark { display: block; width: 100%; height: auto; overflow: visible; }
 .stat__delta, .tbl__delta {
-  margin: 8px 0 0;
+  margin: 7px 0 0;
   font: 600 10.5px/1 var(--body-font);
   color: var(--text-3);
 }

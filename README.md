@@ -712,6 +712,14 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     il ne garde que les trois KPI sur une ligne, la figure de tête, la courbe
     et le tableau des sources — 712 px, lisible d'un coup d'œil.
 
+    **Les cellules de KPI, corrigées après coup.** La micro-courbe était posée
+    à droite du chiffre : dans une cellule de 142 px, soit 108 px de contenu,
+    un chiffre de 91 px et une courbe de 58 px ne tiennent pas côte à côte —
+    ils se chevauchaient. La courbe passe donc **sous** le chiffre, sur toute
+    la largeur, et le libellé a une hauteur minimale de deux lignes pour que
+    les trois chiffres restent alignés quelle que soit la longueur du libellé.
+    Sur mobile la courbe disparaît : les trois KPI y tiennent sur une ligne.
+
     **La colonne de gauche suit.** Une fois la console densifiée, la liste de
     questions à côté paraissait vide. Elle emprunte la même grammaire sans
     devenir un second tableau de bord : une tête avec la puce ambre, le nom de

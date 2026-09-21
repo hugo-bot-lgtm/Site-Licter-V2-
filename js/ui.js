@@ -371,7 +371,7 @@
 
   /* the tiny curve in the corner of a stat cell — same draw-on as the big one */
   function spark(series) {
-    var w = 104, h = 30, p = 3;
+    var w = 104, h = 22, p = 3;
     var max = Math.max.apply(null, series), min = Math.min.apply(null, series);
     var span = Math.max(0.001, max - min);
     var d = series.map(function (v, i) {
@@ -446,9 +446,9 @@
     return kpis.map(function (k, i) {
       return '<div class="viz__cell stat" style="--i:' + i + '">' +
         '<p class="stat__label">' + k.label + "</p>" +
-        '<div class="stat__row"><p class="stat__value" data-count>' + k.value + "</p>" +
-          '<span class="stat__spark is-' + k.dir + '">' + spark(k.spark) + "</span></div>" +
+        '<p class="stat__value" data-count>' + k.value + "</p>" +
         '<p class="stat__delta is-' + k.dir + '">' + k.delta + "</p>" +
+        '<span class="stat__spark is-' + k.dir + '">' + spark(k.spark) + "</span>" +
         "</div>";
     }).join("");
   }
