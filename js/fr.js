@@ -12,8 +12,10 @@ window.LicterFR = {
   "It is not a study if there is no action plan.": "Ce n'est pas une étude s'il n'y a pas de plan d'action.",
   "Social media helps us build better products.": "Les réseaux sociaux aident à créer de meilleurs produits.",
   "Millions of tweets to handle, live.": "Des millions de tweets à gérer, en direct.",
-  "Every episode of": "Chaque épisode d'", "is on the channel — one conversation a week with the people who read the conversation.":
-    "est sur la chaîne — une conversation par semaine avec celles et ceux qui lisent la conversation.",
+  "Every episode of": "Chaque épisode d'", "is on": "est sur",
+  "one conversation a week with the people who read the conversation.":
+    "une conversation par semaine avec celles et ceux qui lisent la conversation.",
+  "the channel": "la cha\u00eene", "Audience First": "Audience First",
   "Get the next one": "Recevoir le prochain",
   "NOTED - THE NEXT EPISODE LANDS IN YOUR INBOX": "C'EST NOTÉ - LE PROCHAIN ÉPISODE ARRIVE DANS VOTRE BOÎTE",
   "One email when it is out. No sequence.": "Un email à sa sortie. Pas de séquence.",

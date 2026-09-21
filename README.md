@@ -767,6 +767,10 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     - **Capture email en pied de bloc**, comme demandé sur la note : « Get the
       next one », branchée sur le même gestionnaire que les autres
       formulaires du site (donc toujours sans endpoint réel).
+    - **La chaîne est atteignable de partout** : « Audience First ↗ » dans la
+      colonne COMPANY du pied de page des quatorze pages, et « the channel ↗ »
+      dans le bloc lui-même. C'était le seul lien sortant du site ; jusque-là
+      on parlait de la chaîne sans jamais y mener.
 
 ## Reste à faire
 

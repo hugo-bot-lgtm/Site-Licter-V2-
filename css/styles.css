@@ -2522,3 +2522,7 @@ section[id], .block[id] { scroll-margin-top: 58px; }
   .signup--inline { grid-row: auto; grid-column: 1; margin-top: 16px; }
   .reels__foot .signup__note, .reels__terms { grid-column: 1; margin-top: 8px; }
 }
+
+/* the one outbound link in the block: the channel itself */
+.reels__note a { color: var(--ink); border-bottom: 1px solid rgba(var(--amber-rgb), .7); }
+.reels__note a:hover { color: var(--amber-ink); }
