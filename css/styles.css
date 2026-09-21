@@ -2253,18 +2253,19 @@ section[id], .block[id] { scroll-margin-top: 58px; }
   transition: stroke .3s ease, opacity .3s ease;
 }
 .field__w--mesh { opacity: .26; }
+.field__w--dust { opacity: .2; }
 .field__w--bridge { stroke: var(--amber-deep); opacity: .34; stroke-dasharray: 3 4; }
 .field__w.is-live { stroke: var(--amber-deep); opacity: .8; }
 
-.field__hub {
+.field__hub,
+.field__dot {
   position: absolute;
-  width: 7px;
-  height: 7px;
-  margin: -3.5px 0 0 -3.5px;
   border-radius: 50%;
   background: var(--ink);
-  opacity: .55;
 }
+.field__hub { width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px; opacity: .55; }
+/* the anonymous points of the map: the platforms are only some of the nodes */
+.field__dot { width: 3.5px; height: 3.5px; margin: -1.75px 0 0 -1.75px; opacity: .3; }
 
 .field__i {
   position: absolute;
@@ -2281,21 +2282,23 @@ section[id], .block[id] { scroll-margin-top: 58px; }
 .field__i.is-near { color: var(--amber-deep); opacity: .95; }
 
 /* it builds in node by node, then the drift takes over */
-.reveal .field__i, .reveal .field__hub, .reveal .field__w { opacity: 0; }
+.reveal .field__i, .reveal .field__hub, .reveal .field__dot, .reveal .field__w { opacity: 0; }
 .reveal [data-field].is-in .field__i {
   opacity: .38;
   transition: opacity .7s ease var(--d, 0s), color .3s ease;
 }
 .reveal [data-field].is-in .field__i.is-near { opacity: .95; }
 .reveal [data-field].is-in .field__hub { opacity: .55; transition: opacity .7s ease; }
+.reveal [data-field].is-in .field__dot { opacity: .3; transition: opacity .7s ease .15s; }
 .reveal [data-field].is-in .field__w { opacity: .42; transition: opacity .9s ease .2s; }
 .reveal [data-field].is-in .field__w--mesh { opacity: .26; }
+.reveal [data-field].is-in .field__w--dust { opacity: .2; }
 .reveal [data-field].is-in .field__w--bridge { opacity: .34; }
 .reveal [data-field].is-in .field__w.is-live { opacity: .8; }
 
 @media (max-width: 999px) {
   /* no cursor to escape from: the amas becomes a quiet signature under the copy */
-  .field__icons { min-height: 210px; max-width: 460px; }
+  .field__icons { min-height: 280px; max-width: 430px; margin-inline: auto; }
   .field__i { opacity: .3; }
   .reveal [data-field].is-in .field__i { opacity: .3; }
 }

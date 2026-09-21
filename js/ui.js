@@ -1003,7 +1003,7 @@
 
   var wires = Array.prototype.slice.call(field.querySelectorAll(".field__w"));
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var RADIUS = 150, PUSH = 40;
+  var RADIUS = 118, PUSH = 34;
 
   var items = nodes.map(function (el) {
     return {

@@ -670,6 +670,20 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     et passent à l'ambre : c'est ce qui fait que l'élément appartient au site
     au lieu d'y être collé.
 
+    **Deuxième correction, sur la géométrie.** Le premier câblage plaçait les
+    nœuds à la main : un hub tirait six longues branches de longueurs toutes
+    différentes, le pont traversait l'ensemble en diagonale, et ça lisait
+    comme un schéma. Les positions sont maintenant **générées** : chaque
+    communauté pose ses nœuds sur un anneau autour de son hub, à rayon
+    comparable avec un peu de bruit. Deux conséquences utiles — des rayons
+    issus d'un même hub ne se croisent jamais, et les liens de maillage ne
+    relient que des voisins angulaires, donc aucune corde ne traverse l'amas.
+    Le secteur qui pointe vers l'autre communauté est laissé vide, pour que
+    le pont sorte par un trou au lieu de couper l'anneau. Enfin, onze
+    **points anonymes** sont accrochés aux hubs et aux nœuds : sans eux, neuf
+    logos reliés à deux centres restent un diagramme ; avec eux, les
+    plateformes ne sont que quelques nœuds d'un réseau, ce qui est le propos.
+
     Pour que l'amas ait deux dimensions, la section passe en deux colonnes :
     le titre et les trois cartes à gauche (la première promue sur toute la
     largeur, comme ailleurs), le champ à droite sur toute la hauteur. Sous
