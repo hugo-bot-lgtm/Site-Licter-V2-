@@ -1452,9 +1452,92 @@ a.card:hover, .card--hover:hover {
   background: rgba(255, 255, 255, .6);
   backdrop-filter: blur(6px);
 }
+
+/* ---------- the newsletter band that opens the footer ----------
+   Structure taken from a reference Licter supplied: copy and form on the left,
+   a visual on the right sitting on a second card behind it. The reference used
+   a photograph; this site has none, so the card carries the map motif — the
+   same vocabulary as the background, and nothing to commission. */
+
+.nl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 380px);
+  align-items: center;
+  gap: clamp(28px, 4vw, 72px);
+  padding-block: clamp(44px, 6.5vh, 80px);
+  border-bottom: 1px solid var(--line);
+}
+.nl__title {
+  margin: 0;
+  font-family: var(--title-font);
+  font-weight: 800;
+  font-size: clamp(26px, 2.8vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -1px;
+  color: var(--ink);
+}
+.nl__text {
+  margin: 14px 0 0;
+  max-width: 52ch;
+  font: 400 14.5px/1.65 var(--body-font);
+  color: var(--text-2);
+}
+.nl__form { margin-top: clamp(20px, 3vh, 28px); }
+.nl .signup__note { margin-top: 12px; }
+
+.nl__visual { position: relative; display: block; aspect-ratio: 4 / 3; }
+.nl__card {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(84% 76% at 84% 10%, rgba(var(--amber-rgb), .3), transparent 68%),
+    linear-gradient(150deg, rgba(var(--amber-rgb), .16), rgba(255, 255, 255, .78));
+  box-shadow: 0 26px 52px -32px rgba(var(--ink-rgb), .5);
+  transform: rotate(-1.6deg);
+}
+/* the card peeking out behind, as in the reference */
+.nl__card--back {
+  background: rgba(var(--ink-rgb), .06);
+  box-shadow: none;
+  transform: rotate(3.4deg) translate(10px, 8px);
+}
+.nl__art { width: 82%; height: auto; display: block; opacity: .62; }
+.nl__art .l { stroke: var(--amber-deep); stroke-width: 1; fill: none; opacity: .5; }
+.nl__art .n { fill: var(--amber-deep); }
+.nl__art .h { fill: var(--ink); opacity: .55; }
+
+/* ---------- social row ---------- */
+
+.site-foot .social { display: flex; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
+.site-foot .social a {
+  display: grid;
+  place-items: center;
+  width: 36px; height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text-2);
+  background: rgba(255, 255, 255, .5);
+  transition: color .18s ease, border-color .18s ease, transform .18s ease;
+}
+.site-foot .social a:hover {
+  color: var(--amber-ink);
+  border-color: rgba(var(--amber-rgb), .6);
+  transform: translateY(-2px);
+}
+.site-foot .social svg { width: 17px; height: 17px; display: block; }
+
+@media (max-width: 860px) {
+  .nl { grid-template-columns: minmax(0, 1fr); gap: clamp(24px, 4vh, 36px); }
+  .nl__visual { max-width: 340px; aspect-ratio: 16 / 11; }
+}
 .site-foot__in {
   display: grid;
-  grid-template-columns: minmax(220px, 1.2fr) repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(210px, 1.15fr) repeat(4, minmax(0, 1fr));
   gap: clamp(24px, 3vw, 48px);
   padding-block: clamp(40px, 5vh, 60px);
 }

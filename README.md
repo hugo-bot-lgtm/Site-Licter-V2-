@@ -985,6 +985,40 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     feuille de lumière de la colonne de lecture. Si Licter veut les traduire,
     c'est une demi-journée.
 
+36. **Nouveau pied de page, sur une référence fournie par Licter.** La
+    structure est reprise telle quelle : une bande newsletter en tête — titre,
+    accroche, champ email et bouton à gauche, un visuel à droite posé sur une
+    seconde carte en biais — puis la marque avec sa description et ses réseaux,
+    les colonnes de liens, et la ligne légale.
+
+    **Trois adaptations** :
+    - **La référence est sombre, le pied de page reste clair.** L'instruction
+      « la couleur claire domine l'ensemble » est globale, et inverser le seul
+      pied de page en navy en ferait l'élément le plus lourd de la page. La
+      bascule est d'une règle si Licter préfère le contraire.
+    - **Le visuel de la référence est une photographie.** Ce site n'en a
+      aucune. La carte porte donc le motif de la cartographie — trois amas
+      reliés, générés dans le même vocabulaire que le fond — sur le dégradé
+      ambre de la charte. Rien à commander, et c'est cohérent avec le reste.
+    - **Les réseaux sont ceux qui existent vraiment**, vérifiés :
+      `linkedin.com/company/licter`, `instagram.com/licter_listening`,
+      `youtube.com/@audience_first`. Pas de X ni de Facebook : je n'ai pas pu
+      confirmer de compte, et une icône qui mène à une 404 coûte plus qu'elle
+      ne rapporte. L'icône YouTube remplace le lien « Audience First » qui
+      était dans la colonne COMPANY.
+
+    **Deux défauts corrigés au passage**, tous deux présents dans l'ancien
+    pied de page :
+    - **La grille avait quatre pistes pour cinq enfants**, donc la colonne
+      COMPANY passait à la ligne sous la marque. Cinq pistes.
+    - **`.site-foot ul` (0,1,1) battait `.social` (0,1,0)**, donc les icônes
+      héritaient du `display: grid` des listes de liens et s'empilaient à la
+      verticale. Sélecteur préfixé.
+
+    Le formulaire est branché sur le même gestionnaire que les autres (donc
+    toujours sans endpoint), avec un `id` unique par page, et les trois
+    chaînes nouvelles sont traduites.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

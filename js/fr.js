@@ -3,6 +3,12 @@ window.LicterFR = {
 
   /* ---- bandeau, navigation, pied de page ---- */
 
+  /* ---- bande newsletter du pied de page ---- */
+  "Stay ahead of your market.": "Gardez une longueur d'avance sur votre march\u00e9.",
+  "One email when we publish something worth your time: a method, a market read, or a correction. No sequence, no drip campaign.":
+    "Un email quand nous publions quelque chose qui m\u00e9rite votre temps : une m\u00e9thode, une lecture de march\u00e9, ou une correction. Pas de s\u00e9quence, pas de campagne.",
+  "SUBSCRIBE": "S'ABONNER",
+
   /* ---- les interviews clients (clients.html) ---- */
   "IN THEIR OWN WORDS": "DANS LEURS MOTS",
   "They tell it better than we do.": "Ils le racontent mieux que nous.",

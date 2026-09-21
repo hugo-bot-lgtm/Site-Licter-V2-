@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=20261011" />
+<link rel="stylesheet" href="css/styles.css?v=20261013" />
 </head>
 <body>
 
@@ -396,6 +396,30 @@
 </main>
 
 <footer class="site-foot">
+
+  <!-- newsletter band -->
+  <div class="nl shell">
+    <div class="nl__copy">
+      <h2 class="nl__title">Stay ahead of your market.</h2>
+      <p class="nl__text">One email when we publish something worth your time: a method, a market
+         read, or a correction. No sequence, no drip campaign.</p>
+      <form class="signup nl__form" novalidate>
+        <label class="visually-hidden" for="email-nl-tech-soprism">Your work email</label>
+        <input class="signup__input" id="email-nl-tech-soprism" name="email" type="email"
+               placeholder="Your work email..." autocomplete="email" required />
+        <button class="signup__btn" type="submit">SUBSCRIBE</button>
+      </form>
+      <p class="signup__note" role="status">
+        <span class="signup__check" aria-hidden="true">&#10003;</span>
+        NOTED - WE GET BACK TO YOU WITHIN 24 HOURS
+      </p>
+    </div>
+    <div class="nl__visual" aria-hidden="true">
+      <span class="nl__card nl__card--back"></span>
+      <span class="nl__card"><svg class="nl__art" viewBox="0 0 200 150" aria-hidden="true"><path class="l" d="M70 62L42.4 60.9 M70 62L100.7 49.9 M70 62L92.6 73.3 M70 62L56.5 29.7 M70 62L78.0 73.8 M70 62L35.4 88.2 M70 62L36.7 49.9 M70 62L87.0 26.6 M70 62L71.1 28.7 M70 62L43.8 44.8 M70 62L101.0 82.2 M78.0 73.8L100.7 49.9 M87.0 26.6L43.8 44.8 M35.4 88.2L87.0 26.6 M150 40L162.7 68.9 M150 40L156.2 54.7 M150 40L147.6 58.7 M150 40L164.0 55.9 M150 40L152.1 55.3 M150 40L132.4 66.0 M150 40L167.4 42.6 M167.4 42.6L164.0 55.9 M147.6 58.7L167.4 42.6 M124 116L109.8 120.6 M124 116L129.1 106.2 M124 116L112.8 99.4 M124 116L107.8 126.1 M124 116L109.8 105.7 M124 116L140.2 99.3 M109.8 120.6L129.1 106.2 M109.8 105.7L107.8 126.1 M42.4 60.9L162.7 68.9 M156.2 54.7L109.8 105.7"/><circle class="h" cx="70" cy="62" r="3.2"/><circle class="h" cx="150" cy="40" r="3.2"/><circle class="h" cx="124" cy="116" r="3.2"/><circle class="n" cx="42.4" cy="60.9" r="2.0"/><circle class="n" cx="100.7" cy="49.9" r="2.3"/><circle class="n" cx="92.6" cy="73.3" r="2.0"/><circle class="n" cx="56.5" cy="29.7" r="1.2"/><circle class="n" cx="78.0" cy="73.8" r="2.2"/><circle class="n" cx="35.4" cy="88.2" r="2.0"/><circle class="n" cx="36.7" cy="49.9" r="1.5"/><circle class="n" cx="87.0" cy="26.6" r="2.1"/><circle class="n" cx="71.1" cy="28.7" r="1.9"/><circle class="n" cx="43.8" cy="44.8" r="1.6"/><circle class="n" cx="101.0" cy="82.2" r="1.5"/><circle class="n" cx="162.7" cy="68.9" r="1.6"/><circle class="n" cx="156.2" cy="54.7" r="2.0"/><circle class="n" cx="147.6" cy="58.7" r="2.3"/><circle class="n" cx="164.0" cy="55.9" r="1.7"/><circle class="n" cx="152.1" cy="55.3" r="1.9"/><circle class="n" cx="132.4" cy="66.0" r="1.5"/><circle class="n" cx="167.4" cy="42.6" r="1.9"/><circle class="n" cx="109.8" cy="120.6" r="1.5"/><circle class="n" cx="129.1" cy="106.2" r="1.5"/><circle class="n" cx="112.8" cy="99.4" r="1.5"/><circle class="n" cx="107.8" cy="126.1" r="1.2"/><circle class="n" cx="109.8" cy="105.7" r="1.5"/><circle class="n" cx="140.2" cy="99.3" r="2.1"/></svg></span>
+    </div>
+  </div>
+
   <div class="site-foot__in shell">
     <div class="site-foot__brand">
       <a class="logo" href="index.html" aria-label="Licter — home">
@@ -404,6 +428,11 @@
       </a>
       <p>The Social Data Intelligence consultancy. We turn data from the world's
          largest panel — social media, search, generative AI — into decisions.</p>
+      <ul class="social">
+        <li><a href="https://www.linkedin.com/company/licter/" target="_blank" rel="noopener" aria-label="Licter on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.3 9.5h3.83v1.57h.06c.53-.95 1.84-1.95 3.79-1.95 4.05 0 4.8 2.42 4.8 5.57V21h-4v-5.5c0-1.31-.03-3-1.9-3-1.9 0-2.19 1.42-2.19 2.9V21h-4z"/></svg></a></li>
+        <li><a href="https://www.instagram.com/licter_listening/" target="_blank" rel="noopener" aria-label="Licter on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.1" cy="6.9" r="1.25" fill="currentColor" stroke="none"/></svg></a></li>
+        <li><a href="https://www.youtube.com/@audience_first" target="_blank" rel="noopener" aria-label="Audience First on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M21.6 7.44c-.23-.88-.91-1.57-1.78-1.8C18.24 5.2 12 5.2 12 5.2s-6.24 0-7.82.44c-.87.23-1.55.92-1.78 1.8C2 9.04 2 12 2 12s0 2.96.4 4.56c.23.88.91 1.57 1.78 1.8 1.58.44 7.82.44 7.82.44s6.24 0 7.82-.44c.87-.23 1.55-.92 1.78-1.8.4-1.6.4-4.56.4-4.56s0-2.96-.4-4.56zM10.1 15.4V8.6l5.9 3.4z"/></svg></a></li>
+      </ul>
     </div>
     <div>
       <h4>OFFERS</h4>
@@ -423,25 +452,33 @@
       </ul>
     </div>
     <div>
+      <h4>GET STARTED</h4>
+      <ul>
+        <li><a href="guide.html">The free guide</a></li>
+        <li><a href="diagnostic.html">Request a diagnostic</a></li>
+        <li><a href="book-a-meeting.html">Book a meeting</a></li>
+      </ul>
+    </div>
+    <div>
       <h4>COMPANY</h4>
       <ul>
         <li><a href="why-licter.html">Why Licter</a></li>
         <li><a href="tech-tools.html">Tech &amp; tools</a></li>
         <li><a href="clients.html">Clients</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="https://www.youtube.com/@audience_first" target="_blank" rel="noopener">Audience First <span aria-hidden="true">&#8599;</span></a></li>
       </ul>
     </div>
   </div>
+
   <div class="site-foot__legal shell">
     <span>© 2026 Licter — Social Data Intelligence</span>
     <span>50+ clients · 160+ projects · Top 50 worldwide, SI Lab 2024</span>
   </div>
 </footer>
 
-<script src="js/fr.js?v=20261011"></script>
-<script src="js/i18n.js?v=20261011"></script>
-<script src="js/cartography.js?v=20261011"></script>
-<script src="js/ui.js?v=20261011"></script>
+<script src="js/fr.js?v=20261013"></script>
+<script src="js/i18n.js?v=20261013"></script>
+<script src="js/cartography.js?v=20261013"></script>
+<script src="js/ui.js?v=20261013"></script>
 </body>
 </html>
