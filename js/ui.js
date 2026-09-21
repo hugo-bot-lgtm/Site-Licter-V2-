@@ -158,6 +158,7 @@
      client result. Licter has to replace them before this goes live. */
   var CASES = {
     communication: {
+      family: "COMMUNICATION",
       label: "CAMPAIGN IMPACT — SHARE OF VOICE",
       metric: "+23%",
       trend: "vs. category benchmark, rolling 90 days",
@@ -195,6 +196,7 @@
       ]
     },
     brand: {
+      family: "BRAND HEALTH",
       label: "BRAND HEALTH — NET SENTIMENT",
       metric: "+17%",
       trend: "net positive, owned and earned conversations",
@@ -232,6 +234,7 @@
       ]
     },
     audiences: {
+      family: "AUDIENCES",
       label: "CORE TARGET — QUALIFIED REACH",
       metric: "2.4",
       metricPrefix: "\u00d7",
@@ -270,6 +273,7 @@
       ]
     },
     trends: {
+      family: "INNOVATION",
       label: "EMERGING TOPICS — VELOCITY",
       metric: "+41%",
       trend: "velocity of topics breaking out of the category",
@@ -455,14 +459,25 @@
 
   var questions = document.getElementById("questions");
 
-  /* The three questions of the selected family, straight from the deck. */
+  /* The three questions of the selected family, straight from the deck. The
+     column answers the console: same head, same numbering, same foot line. */
+  var asksLabel = document.getElementById("asks-label");
+  var asksCount = document.getElementById("asks-count");
+
   function renderQuestions(key) {
     if (!questions) return;
     var d = CASES[key];
+
+    if (asksLabel) asksLabel.textContent = d.family;
+    if (asksCount) asksCount.textContent = "0" + d.questions.length + " / 12";
+
     questions.innerHTML = d.questions.map(function (q, i) {
-      return '<li style="--i:' + i + '"><a class="question" href="' + d.anchor + '">' + q +
-             '<span class="question__arrow" aria-hidden="true">→</span></a></li>';
+      return '<li style="--i:' + i + '"><a class="question" href="' + d.anchor + '">' +
+        '<span class="question__n">0' + (i + 1) + "</span>" +
+        '<span class="question__text">' + q + "</span>" +
+        '<span class="question__arrow" aria-hidden="true">\u2192</span></a></li>';
     }).join("");
+
     questions.classList.remove("is-swap");
     void questions.offsetWidth;
     questions.classList.add("is-swap");

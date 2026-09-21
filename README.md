@@ -712,6 +712,15 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     il ne garde que les trois KPI sur une ligne, la figure de tête, la courbe
     et le tableau des sources — 712 px, lisible d'un coup d'œil.
 
+    **La colonne de gauche suit.** Une fois la console densifiée, la liste de
+    questions à côté paraissait vide. Elle emprunte la même grammaire sans
+    devenir un second tableau de bord : une tête avec la puce ambre, le nom de
+    la famille (qui change avec l'onglet) et un compteur `03 / 12` dans la
+    même puce que les `90 days` de la console ; des lignes **numérotées**
+    `01 / 02 / 03` sur filets ; une ligne de pied qui répond à la légende de
+    la console. Les deux moitiés se lisent comme un seul instrument, et la
+    gauche reste plus légère — c'est la voix éditoriale, pas la donnée.
+
     **Tous les chiffres restent illustratifs** et doivent être remplacés par
     Licter avant mise en ligne. Ils sont désormais bien plus nombreux : c'est
     autant de matière à relire.

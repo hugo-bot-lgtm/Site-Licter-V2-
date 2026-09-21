@@ -85,6 +85,8 @@ window.LicterFR = {
   "EVERY BUSINESS QUESTION": "CHAQUE QUESTION BUSINESS", "HAS A DATA ANSWER.": "A UNE RÉPONSE DANS LA DATA.",
   "We help brands tap into the data of the world's largest panel.": "Nous aidons les marques à exploiter la donnée du plus grand panel du monde.",
   "COMMUNICATION": "COMMUNICATION", "BRAND HEALTH": "SANTÉ DE MARQUE", "AUDIENCES": "AUDIENCES", "INNOVATION": "INNOVATION",
+  "Three of the twelve questions social data answers better than a survey.":
+    "Trois des douze questions auxquelles la social data répond mieux qu'une étude.",
   "Analyze the impact of an event or campaign": "Mesurer l'impact d'un événement ou d'une campagne",
   "Optimize your leader advocacy strategy": "Optimiser la prise de parole de vos dirigeants",
   "Identify the right ambassadors": "Identifier les bons ambassadeurs",

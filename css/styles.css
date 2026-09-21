@@ -650,7 +650,41 @@ main { position: relative; z-index: 1; }
 }
 .cases__live { min-width: 0; }
 
-/* ---------- the four questions ---------- */
+/* ---------- the questions, answering the console ----------
+   The panel on the right is a dashboard: head with a dot and a label, numbered
+   rows on hairlines, a foot note. This column borrows that grammar so the two
+   halves read as one instrument, and stays lighter so it does not compete. */
+
+.asks__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+}
+.asks__id { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.asks__dot {
+  flex: 0 0 auto;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 0 4px rgba(var(--amber-rgb), .28);
+}
+.asks__label {
+  font: 600 10px/1 var(--body-font);
+  letter-spacing: 1.6px;
+  color: var(--text-3);
+}
+.asks__count {
+  flex: 0 0 auto;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font: 600 9px/1 var(--body-font);
+  letter-spacing: 1.1px;
+  color: var(--text-3);
+  background: rgba(var(--ink-rgb), .02);
+}
 
 .questions {
   margin: 0;
@@ -660,12 +694,12 @@ main { position: relative; z-index: 1; }
 }
 .questions li { border-bottom: 1px solid var(--line); }
 .question {
-  display: flex;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 14px;
   width: 100%;
-  padding: 17px 2px;
+  padding: 16px 2px;
   background: none;
   border: 0;
   text-align: left;
@@ -674,8 +708,21 @@ main { position: relative; z-index: 1; }
   cursor: pointer;
   transition: color .15s ease, padding-left .15s ease;
 }
+.question__n {
+  font: 600 9px/1 var(--body-font);
+  letter-spacing: 1.2px;
+  color: var(--text-4);
+  transition: color .15s ease;
+}
 .question:hover, .question:focus-visible { color: var(--amber-ink); padding-left: 8px; }
+.question:hover .question__n, .question:focus-visible .question__n { color: var(--amber-deep); }
 .question__arrow { color: var(--amber-deep); font-size: 15px; flex: 0 0 auto; }
+
+.asks__foot {
+  margin: 14px 0 0;
+  font: 400 12px/1.5 var(--body-font);
+  color: var(--text-3);
+}
 
 /* ---------- category console ---------- */
 
@@ -1213,6 +1260,7 @@ main { position: relative; z-index: 1; }
   color: var(--text-2);
 }
 .page__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.cases__asks .page__actions { margin-top: 24px; }
 
 .btn {
   display: inline-flex;
