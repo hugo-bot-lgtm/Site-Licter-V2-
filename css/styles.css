@@ -44,7 +44,7 @@
   --text-2:      #56606A;
   --text-3:      #6F7A82;
   --text-4:      var(--grey);
-  --line:        rgba(19, 22, 45, .12);
+  --line:        rgba(19, 22, 45, .105);
   --field-bg:    var(--white);
   --field-br:    rgba(19, 22, 45, .16);
   --card-bg:     var(--white);
@@ -56,7 +56,7 @@
   /* The mock is 1097 px wide, gutters included. That width is the floor, not
      a ceiling: past it the column keeps growing, but slower than the screen,
      so a wide display fills up without the copy stretching edge to edge. */
-  --maxw: clamp(1097px, 88vw, 1420px);
+  --maxw: clamp(1097px, 86vw, 1340px);
   /* form geometry, bumped on large screens (see the >= 1248px block) */
   --field-h: 48px;
   --field-w: 460px;
@@ -1290,10 +1290,10 @@ main { position: relative; z-index: 1; }
 
 /* ---------- sections ---------- */
 
-.block { position: relative; padding: clamp(48px, 7vh, 84px) 0; }
+.block { position: relative; padding: clamp(62px, 9vh, 108px) 0; }
 .block + .block { border-top: 1px solid var(--line); }
 
-.block__head { max-width: 720px; margin-bottom: clamp(26px, 4vh, 42px); }
+.block__head { max-width: 680px; margin-bottom: clamp(32px, 5vh, 58px); }
 .block__kicker {
   display: flex;
   align-items: center;
@@ -1329,20 +1329,20 @@ main { position: relative; z-index: 1; }
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: clamp(16px, 1.6vw, 22px);
+  gap: clamp(18px, 1.9vw, 28px);
 }
 .grid--two { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
 
 .card {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: clamp(20px, 2vw, 28px);
+  gap: 11px;
+  padding: clamp(22px, 2.1vw, 30px);
   border-radius: 14px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, .8);
+  background: rgba(255, 255, 255, .72);
   backdrop-filter: blur(6px);
-  box-shadow: 0 18px 38px -28px rgba(var(--ink-rgb), .3);
+  box-shadow: 0 14px 32px -28px rgba(var(--ink-rgb), .24);
   transition: transform .2s cubic-bezier(.16, .84, .34, 1), box-shadow .2s ease;
 }
 a.card:hover, .card--hover:hover {
@@ -1359,7 +1359,7 @@ a.card:hover, .card--hover:hover {
   font: 600 clamp(16px, 1.3vw, 19px)/1.3 var(--body-font);
   color: var(--ink);
 }
-.card__text { margin: 0; font: 400 14px/1.6 var(--body-font); color: var(--text-2); }
+.card__text { margin: 0; font: 400 14px/1.7 var(--body-font); color: var(--text-2); }
 .card__meta {
   margin: 4px 0 0;
   padding-top: 12px;
@@ -1774,6 +1774,25 @@ a.card:hover, .card--hover:hover {
   .page .block:nth-of-type(even) .chapters,
   .page .block:nth-of-type(even) .form { margin-top: 4px; }
 
+  /* A sticky title on the left only earns its keep when the right column is
+     tall enough to scroll past it. A row or two of cards is not: it leaves a
+     hole under the title and, often, one beside the last card. So the split
+     is for long lists — steps, FAQs, forms — and for card containers only
+     from six items up. Everything shorter reads better full width. */
+  .page .block:nth-of-type(even):is(:has(.grid), :has(.covers)):not(:has(.grid > :nth-child(6))):not(:has(.covers > :nth-child(6))) {
+    display: block;
+  }
+  .page .block:nth-of-type(even):is(:has(.grid), :has(.covers)):not(:has(.grid > :nth-child(6))):not(:has(.covers > :nth-child(6))) .block__head {
+    position: static;
+    margin-bottom: clamp(32px, 5vh, 58px);
+  }
+  .page .block:nth-of-type(even):is(:has(.grid), :has(.covers)):not(:has(.grid > :nth-child(6))):not(:has(.covers > :nth-child(6))) .block__title {
+    font-size: clamp(27px, 3vw, 42px);
+  }
+  .page .block:nth-of-type(even):is(:has(.grid), :has(.covers)):not(:has(.grid > :nth-child(6))):not(:has(.covers > :nth-child(6))) .block__lead {
+    font-size: 15px;
+  }
+
   /* a section can opt out of the split when its content needs the full column */
   .page .block.block--wide { display: block; }
   .page .block.block--wide .block__head { position: static; margin-bottom: clamp(26px, 4vh, 42px); }
@@ -1798,6 +1817,19 @@ a.card:hover, .card--hover:hover {
   .page .block:nth-of-type(odd) .grid:not(.grid--two) > .card:first-child .card__meta {
     grid-column: 1 / -1;
   }
+
+  /* Odd sections: the first card carries the section. On a three-column grid
+     a card spanning two of them leaves the last card alone on its own row, so
+     the count decides the split. Six tracks divide cleanly by two and three. */
+  .page .block:nth-of-type(odd) .grid:not(.grid--two):has(> :nth-child(3)):not(:has(> :nth-child(5))) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  /* three cards: one wide, then a pair */
+  .page .block:nth-of-type(odd) .grid:not(.grid--two):has(> :nth-child(3)):not(:has(> :nth-child(4))) > :first-child { grid-column: span 6; }
+  .page .block:nth-of-type(odd) .grid:not(.grid--two):has(> :nth-child(3)):not(:has(> :nth-child(4))) > :nth-child(n+2) { grid-column: span 3; }
+  /* four cards: one wide, then a row of three */
+  .page .block:nth-of-type(odd) .grid:not(.grid--two):has(> :nth-child(4)):not(:has(> :nth-child(5))) > :first-child { grid-column: span 6; }
+  .page .block:nth-of-type(odd) .grid:not(.grid--two):has(> :nth-child(4)):not(:has(> :nth-child(5))) > :nth-child(n+2) { grid-column: span 2; }
 }
 
 /* a mark that appears on hover, instead of the flat lift everywhere */
@@ -2707,3 +2739,17 @@ section[id], .block[id] { scroll-margin-top: 58px; }
 /* the article's sheet wraps the reading column with a little more air than a
    section needs, because the text runs edge to edge inside it */
 .prose::before { inset: -26px -34px -10px; border-radius: 22px; }
+
+/* A row that ends one card short is the most visible way for a page to look
+   unfinished. Four cover cards in an auto-fit grid land on three columns at
+   the shell's width, so the fourth drops alone. Pinned to two, then to four in
+   odd sections only: the page alternates a square and a row instead of
+   stacking three identical rows of four. */
+.covers:has(> :nth-child(4)):not(:has(> :nth-child(5))) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (min-width: 1200px) {
+  .page .block:nth-of-type(odd) .covers:has(> :nth-child(4)):not(:has(> :nth-child(5))) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

@@ -898,6 +898,48 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     lien s'arrête avant les bords — un trait qui ne touche pas les bords pèse
     visuellement moins qu'un trait pleine largeur.
 
+34. **Passe esthétique d'ensemble : épurer, aérer, replacer.** Carte blanche
+    de Licter, avec un point de retour posé avant de commencer
+    (`git tag avant-polish`). Trois familles de corrections.
+
+    **Le positionnement, d'abord — c'est là qu'était le vrai problème.**
+    Le rythme alterné faisait descendre un titre collant à gauche et les
+    cartes à droite une section sur deux. Avec trois cartes, ça produisait
+    **deux trous** : un sous le titre, un à droite de la troisième carte. Et
+    les sections impaires promouvaient leur première carte sur deux colonnes
+    d'une grille qui en comptait trois, ce qui laissait la dernière carte
+    seule sur sa ligne. Le bloc « Related reading » que Licter avait signalé
+    n'était pas un cas isolé : c'était la règle qui produisait le défaut.
+
+    - **Le split est désormais réservé aux listes longues** — étapes, FAQ,
+      formulaires — et aux conteneurs de cartes à partir de six. Un titre
+      collant ne gagne sa place que si la colonne d'en face est assez haute
+      pour défiler devant lui. En dessous, pleine largeur.
+    - **La grille des sections impaires passe à six pistes**, qui se divisent
+      proprement par deux et par trois : trois cartes donnent une carte large
+      puis une paire, quatre donnent une carte large puis une rangée de trois.
+      Plus de ligne qui finit court.
+    - **Quatre cartes à couverture** sont épinglées à deux colonnes, et à
+      quatre dans les sections impaires au-delà de 1200 px : la page alterne
+      un carré et une rangée au lieu d'empiler trois rangées identiques.
+
+    Vérifié par mesure sur toutes les pages : plus aucune grille dont la
+    dernière ligne s'arrête avant le bord.
+
+    **L'air.** Padding des sections 48–84 → 62–108 px, écart entre un
+    sur-titre et ce qu'il introduit 26–42 → 32–58 px, gouttière des grilles
+    16–22 → 18–28 px, interlignage du corps des cartes 1,6 → 1,7.
+
+    **Le dépouillement.** Les filets passent de 12 % à 10,5 % d'opacité, le
+    fond des cartes de 80 % à 72 % de blanc et leur ombre est deux fois plus
+    discrète : la page compte moins de surfaces et laisse mieux voir la
+    cartographie. Enfin la colonne plafonne à 1340 px au lieu de 1420 — au
+    delà, le texte s'étirait sans que la page y gagne.
+
+    **Pour revenir en arrière** : `git checkout avant-polish -- css/styles.css`
+    puis un commit. Tout tient dans la feuille de style, aucun HTML n'a été
+    touché par cette passe.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
