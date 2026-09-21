@@ -576,6 +576,35 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     internes reste en anglais** — il suffit d'ajouter les entrées à
     `js/fr.js`, sans toucher au HTML.
 
+26. **Le traitement visuel des blocs Flowt, pas seulement leur ordre.**
+    L'arbitrage 24 reprenait l'enchaînement des sections ; celui-ci reprend la
+    *forme* de quatre d'entre elles, relevée sur les captures de
+    `flowt.fr/technologies/…`, et l'applique aux quatre pages plateformes :
+
+    - **Approche en 3 étapes** (`.numbered`) : le numéro dans un carré bordé
+      d'ambre, le titre en petites capitales espacées, le texte dessous —
+      trois colonnes sans carte ni fond, séparées par le seul rythme.
+    - **Ce qu'on en fait** (`.solutions`) : trois cartes à bandeau supérieur
+      (`.solution__band`, dégradé ambre → transparent) dont le contenu est
+      une liste à puces ambre, et non plus un paragraphe. C'est le bloc qui
+      porte le concret : il fallait qu'il se lise en diagonale.
+    - **Questions / Articles** (`.covers`, `.cover-card`) : chaque carte
+      s'ouvre sur une zone de couverture teintée (`.cover`) portant un
+      sur-titre et un titre en capitales, façon vignette d'article. Faute
+      d'images, la couverture est un dégradé — ambre pour les cartes
+      « questions », gris-bleu pour les cartes « lecture » —, ce qui
+      distingue les deux familles sans légende.
+    - **Bande de rappel** (`.band`) : un cadre bordé, fond transparent, où le
+      nom de la plateforme est surligné d'ambre (`.band__title em`), suivi
+      des deux CTA — dont un bouton plein navy (`.btn--solid`), le seul du
+      site, réservé à cette bande pour qu'il reste un point d'appui unique.
+
+    **Écarts** : les sur-titres des sections passent en `//` + libellé
+    (`.block__kicker--slash`) comme chez Flowt ; les couvertures restent des
+    dégradés tant que Licter n'a pas fourni de visuels ; le CTA principal du
+    hero pointe désormais sur `book-a-meeting.html` plutôt que sur le
+    formulaire de la home, pour ne pas renvoyer l'utilisateur en arrière.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
