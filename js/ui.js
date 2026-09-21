@@ -1186,3 +1186,75 @@
     });
   });
 })();
+
+/* =========================================================================
+   Cover artwork
+   A cover with nothing in it reads as an image that failed to load. Each one
+   gets a small community drawn in the vocabulary of the map behind the page:
+   a hub, a ring of nodes at comparable radius so no two spokes cross, and a
+   few anonymous points. The seed is the card's own title, so a given card
+   always draws the same cluster.
+   ========================================================================= */
+(function () {
+  var covers = document.querySelectorAll(".cover");
+  if (!covers.length) return;
+
+  function seeded(str) {
+    var h = 2166136261;
+    for (var i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = (h * 16777619) >>> 0;
+    }
+    return function () {
+      h = (h * 1664525 + 1013904223) >>> 0;
+      return h / 4294967296;
+    };
+  }
+
+  function cluster(seed) {
+    var rnd = seeded(seed);
+    var cx = 50, cy = 50, r = 27;
+    var n = 5 + ((rnd() * 3) | 0);
+    var start = rnd() * 360;
+    var pts = [], lines = [], dots = [];
+
+    for (var i = 0; i < n; i++) {
+      var a = (start + (360 / n) * i + (rnd() * 26 - 13)) * Math.PI / 180;
+      var d = r * (0.84 + rnd() * 0.32);
+      pts.push([cx + Math.cos(a) * d, cy + Math.sin(a) * d]);
+    }
+    pts.forEach(function (p) { lines.push([cx, cy, p[0], p[1]]); });
+    for (var k = 0; k < n - 1; k++) {
+      if (rnd() < 0.55) lines.push([pts[k][0], pts[k][1], pts[k + 1][0], pts[k + 1][1]]);
+    }
+    for (var j = 0; j < 4; j++) {
+      var aa = (start + rnd() * 360) * Math.PI / 180;
+      var dd = r * (0.45 + rnd() * 0.95);
+      var dx = cx + Math.cos(aa) * dd, dy = cy + Math.sin(aa) * dd;
+      dots.push([dx, dy]);
+      lines.push([cx, cy, dx, dy]);
+    }
+
+    var f = function (v) { return Math.round(v * 10) / 10; };
+    var d = lines.map(function (l) {
+      return "M" + f(l[0]) + " " + f(l[1]) + "L" + f(l[2]) + " " + f(l[3]);
+    }).join(" ");
+
+    var out = '<svg class="cover__art" viewBox="0 0 100 100" aria-hidden="true" focusable="false">';
+    out += '<path class="l" d="' + d + '"/>';
+    out += '<circle class="h" cx="' + cx + '" cy="' + cy + '" r="2.6"/>';
+    pts.forEach(function (p) {
+      out += '<circle class="n" cx="' + f(p[0]) + '" cy="' + f(p[1]) + '" r="' + f(1 + rnd() * .9) + '"/>';
+    });
+    dots.forEach(function (p) {
+      out += '<circle class="n" cx="' + f(p[0]) + '" cy="' + f(p[1]) + '" r=".8" opacity=".6"/>';
+    });
+    return out + "</svg>";
+  }
+
+  Array.prototype.forEach.call(covers, function (cover) {
+    if (cover.querySelector(".cover__art")) return;
+    var title = cover.querySelector(".cover__title");
+    cover.insertAdjacentHTML("afterbegin", cluster(title ? title.textContent : cover.textContent));
+  });
+})();

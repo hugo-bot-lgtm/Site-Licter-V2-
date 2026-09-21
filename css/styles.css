@@ -2168,71 +2168,135 @@ html[lang="fr"] .nav__link { letter-spacing: 1.1px; }
   background: var(--amber-deep);
 }
 
-/* ---------- 3 / cards with a generated cover ---------- */
+/* ---------- 3 / cards with a generated cover ----------
+   The cover used to be a flat tinted rectangle, which reads as the place an
+   image failed to load. It now carries a faint node cluster — the same motif
+   as the map behind the page — drawn by js/ui.js, and fades into the body
+   instead of being cut off it by a hard rule. Tints follow the subject, not
+   the position in the row. */
 
-.covers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(16px, 1.8vw, 24px); }
+.covers { display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: clamp(16px, 1.8vw, 24px); }
+
 .cover-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, .9);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .74);
+  backdrop-filter: blur(6px);
   overflow: hidden;
-  transition: transform .2s cubic-bezier(.16, .84, .34, 1), box-shadow .2s ease;
+  isolation: isolate;
+  text-decoration: none;
+  transition: transform .26s cubic-bezier(.16, .84, .34, 1),
+              box-shadow .26s ease, border-color .26s ease;
 }
-.cover-card:hover { transform: translateY(-3px); box-shadow: 0 24px 46px -28px rgba(var(--ink-rgb), .4); }
+.cover-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--ink-rgb), .18);
+  box-shadow: 0 28px 52px -30px rgba(var(--ink-rgb), .5);
+}
 
 .cover {
-  display: block;
-  padding: 20px 18px 24px;
-  background:
-    radial-gradient(80% 70% at 85% 10%, rgba(var(--amber-rgb), .3), transparent 70%),
-    linear-gradient(140deg, rgba(var(--amber-rgb), .18), rgba(255, 255, 255, .5));
-  border-bottom: 1px solid var(--line);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;   /* titles sit on one line across the row */
+  gap: 10px;
+  min-height: 136px;
+  padding: 18px 20px 20px;
+  overflow: hidden;
 }
-.cover-card:nth-child(2) .cover {
+/* the tint stops before the body, so there is no seam to see */
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
   background:
-    radial-gradient(80% 70% at 85% 10%, rgba(132, 145, 154, .34), transparent 70%),
-    linear-gradient(140deg, rgba(132, 145, 154, .2), rgba(255, 255, 255, .5));
+    radial-gradient(86% 78% at 86% 6%, rgba(var(--amber-rgb), .38), transparent 68%),
+    linear-gradient(168deg, rgba(var(--amber-rgb), .22), rgba(var(--amber-rgb), 0) 92%);
 }
-.cover-card:nth-child(3) .cover {
+.cover-card--ochre .cover::before {
   background:
-    radial-gradient(80% 70% at 85% 10%, rgba(var(--ink-rgb), .2), transparent 70%),
-    linear-gradient(140deg, rgba(var(--ink-rgb), .1), rgba(255, 255, 255, .5));
+    radial-gradient(86% 78% at 86% 6%, rgba(192, 140, 14, .3), transparent 68%),
+    linear-gradient(168deg, rgba(192, 140, 14, .17), rgba(192, 140, 14, 0) 92%);
 }
-.cover-card:nth-child(4) .cover {
+.cover-card--slate .cover::before {
   background:
-    radial-gradient(80% 70% at 85% 10%, rgba(192, 140, 14, .28), transparent 70%),
-    linear-gradient(140deg, rgba(192, 140, 14, .16), rgba(255, 255, 255, .5));
+    radial-gradient(86% 78% at 86% 6%, rgba(var(--ink-rgb), .26), transparent 68%),
+    linear-gradient(168deg, rgba(var(--ink-rgb), .13), rgba(var(--ink-rgb), 0) 92%);
 }
+.cover-card--mute .cover::before {
+  background:
+    radial-gradient(86% 78% at 86% 6%, rgba(132, 145, 154, .3), transparent 68%),
+    linear-gradient(168deg, rgba(132, 145, 154, .15), rgba(132, 145, 154, 0) 92%);
+}
+
+/* the cluster: same vocabulary as the cartography, drawn per card by ui.js */
+.cover__art {
+  position: absolute;
+  right: -20%;
+  top: -34%;
+  width: 58%;
+  z-index: -1;
+  opacity: .42;                 /* it sits behind a title: seen, never read */
+  transform-origin: 70% 30%;
+  transition: transform .5s cubic-bezier(.16, .84, .34, 1), opacity .3s ease;
+}
+.cover-card:hover .cover__art { transform: scale(1.09) rotate(3deg); opacity: .62; }
+.cover__art .l { stroke: var(--amber-deep); stroke-width: 1; fill: none; opacity: .55; }
+.cover__art .n { fill: var(--amber-deep); }
+.cover__art .h { fill: var(--ink); opacity: .5; }
+.cover-card--slate .cover__art .l, .cover-card--mute .cover__art .l { stroke: var(--grey); }
+.cover-card--slate .cover__art .n, .cover-card--mute .cover__art .n { fill: var(--grey); }
+
 .cover__kicker {
   display: block;
-  margin-bottom: 10px;
   font: 700 9px/1 var(--body-font);
-  letter-spacing: 1.6px;
+  letter-spacing: 1.5px;
   color: var(--amber-ink);
 }
+.cover-card--slate .cover__kicker, .cover-card--mute .cover__kicker { color: var(--text-2); }
 .cover__title {
   display: block;
   font-family: var(--title-font);
   font-weight: 800;
-  font-size: clamp(16px, 1.3vw, 19px);
-  line-height: 1.15;
-  letter-spacing: -.3px;
+  font-size: clamp(15px, 1.22vw, 18px);
+  line-height: 1.16;
+  letter-spacing: -.2px;
   color: var(--ink);
   text-transform: uppercase;
 }
-.cover-card__body { display: flex; flex-direction: column; gap: 10px; padding: 18px; flex: 1 1 auto; }
+
+.cover-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 16px 20px 18px;
+  flex: 1 1 auto;
+}
 .cover-card__label { font: 600 9px/1 var(--body-font); letter-spacing: 1.5px; color: var(--text-3); }
-.cover-card__title { margin: 0; font: 600 15px/1.35 var(--body-font); color: var(--ink); }
-.cover-card__text { margin: 0; font: 400 13.5px/1.6 var(--body-font); color: var(--text-2); }
+.cover-card__title { margin: 0; font: 600 14.5px/1.35 var(--body-font); color: var(--ink); }
+.cover-card__text { margin: 0; font: 400 13.5px/1.62 var(--body-font); color: var(--text-2); }
 .cover-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   margin-top: auto;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
+  padding-top: 15px;
   font: 700 10px/1 var(--body-font);
   letter-spacing: 1.4px;
   color: var(--ink);
+}
+/* a hairline that stops short of the edges reads lighter than a full rule */
+.cover-card__link::before {
+  content: "";
+  position: absolute;
+  left: 20px; right: 20px;
+  margin-top: -15px;
+  height: 1px;
+  background: var(--line);
 }
 .cover-card:hover .cover-card__link { color: var(--amber-ink); }
 

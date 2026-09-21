@@ -867,6 +867,37 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     du corps de texte des pages internes. Traduire neuf articles n'est pas un
     travail de dictionnaire.
 
+33. **Les cartes à couverture, reprises.** Retour de Licter : elles faisaient
+    pauvre à côté du reste. Le composant est utilisé à **soixante-huit
+    endroits** (les quatre pages plateformes, l'index du blog, les neuf pages
+    articles), donc le diagnostic valait d'être fait avant de toucher quoi que
+    ce soit. Quatre défauts, quatre corrections :
+
+    - **La couverture était un aplat teinté vide**, ce qui la fait lire comme
+      l'emplacement d'une image qui n'a pas chargé. Elle porte maintenant un
+      **petit amas de nœuds**, dessiné dans le vocabulaire de la cartographie
+      de fond. Il est généré par `js/ui.js` à partir du titre de la carte
+      comme graine : une carte donnée dessine toujours le même amas, et aucun
+      fichier HTML n'a eu à être touché. Sans JavaScript, il reste le dégradé
+      — soit exactement ce qu'on avait avant.
+    - **Les couvertures n'avaient pas la même hauteur.** Un titre sur trois
+      lignes poussait son corps plus bas que celui d'à côté, et la rangée
+      partait en escalier. Hauteur minimale fixe et titre **calé en bas** :
+      les titres s'alignent quel que soit le nombre de lignes.
+    - **Une couture nette séparait la couverture du corps** (`border-bottom`),
+      ce qui donnait deux boîtes empilées plutôt qu'une carte. Le dégradé
+      s'éteint maintenant avant le corps, il n'y a plus de trait à voir.
+    - **Les teintes alternaient par position** (`nth-child`), d'où un « SOCIAL
+      DATA » ambre suivi d'un « INSIGHTS » gris sans logique lisible. Elles
+      suivent maintenant **le sujet** : ambre pour social data et
+      communication, ardoise pour l'écoute et la santé de marque, ocre pour
+      les insights et les tendances, gris pour l'influence et les audiences.
+
+    Au passage : rayon 12 → 18 px, fond translucide avec flou comme les autres
+    feuilles du site, ombre de survol plus douce, et le filet au-dessus du
+    lien s'arrête avant les bords — un trait qui ne touche pas les bords pèse
+    visuellement moins qu'un trait pleine largeur.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
