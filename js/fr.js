@@ -3,6 +3,10 @@ window.LicterFR = {
 
   /* ---- bandeau, navigation, pied de page ---- */
 
+  /* ---- l\u00e9gende du mur de logos ---- */
+  "Trusted by 50+ organisations": "La confiance de 50+ organisations",
+  ", from CAC 40 groups to institutions": ", de groupes du CAC 40 \u00e0 des institutions",
+
   /* ---- bande newsletter du pied de page ---- */
   "Stay ahead of your market.": "Gardez une longueur d'avance sur votre march\u00e9.",
   "One email when we publish something worth your time: a method, a market read, or a correction. No sequence, no drip campaign.":

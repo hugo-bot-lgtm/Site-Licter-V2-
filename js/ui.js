@@ -1258,3 +1258,77 @@
     cover.insertAdjacentHTML("afterbegin", cluster(title ? title.textContent : cover.textContent));
   });
 })();
+
+/* =========================================================================
+   Client wall — the caption wave, driven by the beam's own clock
+   The beam is a CSS animation, so rather than keeping a second timer in step
+   we read its currentTime straight off the Web Animations object. The wave
+   then sweeps the words exactly while the beam is behind them.
+   ========================================================================= */
+(function () {
+  var wall = document.getElementById("wall");
+  var beam = document.getElementById("wall-beam");
+  var wave = document.getElementById("wall-wave");
+  if (!wall || !beam || !wave) return;
+
+  /* offset-path is what carries the beam; without it there is nothing to sync */
+  var rides = window.CSS && CSS.supports && CSS.supports("offset-path", "rect(0 100% 100% 0)");
+  if (!rides) { wall.classList.add("no-beam"); return; }
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reduced.matches) return;
+
+  var caption = wave.parentNode;
+  var anim = null, visible = false, running = false;
+
+  function clock() {
+    if (anim && anim.currentTime !== null) return anim.currentTime;
+    var list = beam.getAnimations ? beam.getAnimations() : [];
+    anim = list[0] || null;
+    return anim && anim.currentTime !== null ? anim.currentTime : 0;
+  }
+
+  function frame() {
+    if (!visible) { running = false; return; }
+
+    var dur = (anim && anim.effect && anim.effect.getTiming().duration) || 8000;
+    var offset = ((clock() % dur) / dur) * 100;          /* 0–100 of the perimeter */
+
+    var card = wall.getBoundingClientRect();
+    var text = caption.getBoundingClientRect();
+    var perimeter = 2 * (card.width + card.height);
+    if (!perimeter) { requestAnimationFrame(frame); return; }
+
+    /* the caption sits on the top edge, so its span maps straight onto the
+       first stretch of the perimeter */
+    var start = (Math.max(0, text.left - card.left) / perimeter) * 100;
+    var end = (Math.min(card.width, text.right - card.left) / perimeter) * 100;
+
+    var pos;
+    if (offset >= start && offset <= end) {
+      var t = (offset - start) / (end - start || 1);
+      pos = 95 - t * 90;                                  /* 95% → 5% */
+    } else {
+      pos = offset < start ? 0 : 100;                     /* parked, plain colour */
+    }
+    wave.style.backgroundPosition = pos + "% center";
+
+    requestAnimationFrame(frame);
+  }
+
+  function start() {
+    if (running || !visible) return;
+    running = true;
+    requestAnimationFrame(frame);
+  }
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { visible = e.isIntersecting; });
+      start();
+    }, { threshold: 0.1 }).observe(wall);
+  } else {
+    visible = true;
+    start();
+  }
+})();

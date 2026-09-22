@@ -1019,6 +1019,40 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     toujours sans endpoint), avec un `id` unique par page, et les trois
     chaînes nouvelles sont traduites.
 
+37. **Le mur de logos passe en carte à faisceau.** Composant fourni par
+    Licter : une carte bordée, un faisceau qui parcourt son périmètre, et une
+    légende à cheval sur la bordure haute dont le texte est balayé par une
+    vague de couleur **au moment exact où le faisceau passe derrière elle**.
+
+    **La synchronisation, qui est tout l'intérêt du composant.** La référence
+    tient deux horloges en parallèle — une pour le faisceau, une pour la vague
+    — et compte sur elles pour rester en phase. Ici le faisceau est une
+    animation CSS, donc plutôt que de doubler le compteur en JavaScript, la
+    boucle lit `currentTime` directement sur l'objet Web Animations du
+    faisceau. Une seule horloge, aucune dérive possible. Mesuré : quand la
+    vague démarre, le faisceau est à 193 px et la légende commence à 178 ;
+    quand elle finit, 624 contre 617. L'écart est la demi-largeur du faisceau.
+
+    **Les adaptations** :
+    - **Le faisceau est ambre**, pas orange-violet. Il monte sur un
+      `offset-path: rect()`, ce qui lui fait suivre les coins arrondis.
+    - **La vague reprend le même principe** que la référence : elle vit dans la
+      bande 47–53 % d'un dégradé large de 250 %, garée à 0 % ou 100 % le reste
+      du temps — positions où l'élément ne voit que de la couleur unie, donc
+      aucun clignotement à l'entrée ni à la sortie.
+    - **La légende remplace le sur-titre « THEY TRUST US »** et porte un
+      chiffre vérifiable : « Trusted by 50+ organisations, from CAC 40 groups
+      to institutions », reprise d'une formule déjà employée ailleurs sur le
+      site. La queue de phrase disparaît sous 720 px.
+    - **Dégradation** : si `offset-path` n'est pas supporté, le faisceau est
+      masqué plutôt que garé dans un coin, et la vague ne démarre pas. En
+      `prefers-reduced-motion`, ni l'un ni l'autre.
+
+    **Un piège de `background-clip: text`** : mettre `color: transparent` sur
+    l'élément rend invisible tout ce que le dégradé peint en `currentColor`,
+    c'est-à-dire tout le texte sauf la vague. La couleur doit rester réelle ;
+    seul `-webkit-text-fill-color` passe à `transparent`.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

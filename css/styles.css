@@ -455,13 +455,6 @@ main { position: relative; z-index: 1; }
   margin-inline: auto;
   padding-top: clamp(30px, 5vh, 58px);
 }
-.clients__label {
-  margin: 0 0 24px var(--gutter);
-  font: 600 10px/1 var(--body-font);
-  letter-spacing: 1.6px;
-  color: var(--text-3);
-}
-
 .marquee {
   position: relative;
   overflow: hidden;
@@ -1129,7 +1122,6 @@ main { position: relative; z-index: 1; }
   .signup__btn { font-size: clamp(12px, .88vw, 14px); }
   .signup__note { font-size: clamp(11px, .8vw, 13px); }
 
-  .clients__label { font-size: clamp(10px, .75vw, 12px); }
   .marquee { height: clamp(48px, 4vw, 62px); }
 
   .cases__eyebrow { font-size: clamp(11px, .82vw, 13px); }
@@ -2861,3 +2853,96 @@ html[lang="fr"] .lang-note {
   backdrop-filter: blur(4px);
 }
 html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
+
+/* ==========================================================================
+   The client wall — a bordered card with a beam running its perimeter
+   Structure from a reference Licter supplied. The beam rides an offset-path
+   around the card; the caption sits astride the top border and its gradient
+   wave is driven from the beam's own animation clock, so the sweep happens
+   exactly as the beam passes behind the words. Charter colours: the
+   reference's orange/purple pair becomes amber over deep amber.
+   ========================================================================== */
+
+.wall {
+  position: relative;
+  margin-inline: var(--gutter);
+  padding: 34px 0 26px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .5);
+  backdrop-filter: blur(6px);
+}
+
+/* the travelling beam */
+.wall__beam {
+  position: absolute;
+  top: 0; left: 0;
+  width: 108px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg,
+              rgba(var(--amber-rgb), 0),
+              var(--amber-deep) 38%,
+              var(--amber) 55%,
+              rgba(var(--amber-rgb), 0));
+  filter: drop-shadow(0 0 5px rgba(var(--amber-rgb), .7));
+  offset-path: rect(0 100% 100% 0 round 18px);
+  offset-distance: 0%;
+  offset-rotate: auto;
+  animation: wall-beam 8s linear infinite;
+}
+@keyframes wall-beam { to { offset-distance: 100%; } }
+
+/* nothing to ride on: hide it rather than park a bar in the corner */
+.wall.no-beam .wall__beam { display: none; }
+
+.wall__caption {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  margin: 0;
+  padding: 0 clamp(12px, 2vw, 22px);
+  transform: translate(-50%, -50%);
+  max-width: calc(100% - 64px);
+  background: var(--cream);
+  font: 600 13px/1.4 var(--body-font);
+  letter-spacing: .2px;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--text-2);
+}
+.wall__wave {
+  /* The wave lives in the 47–53% band of a gradient twice the element's width.
+     Parked at 0% or 100% the element only ever sees plain colour, so there is
+     no flash when the beam enters or leaves. */
+  background-image: linear-gradient(90deg,
+    currentColor 0%, currentColor 45%,
+    var(--amber-deep) 47%, var(--amber) 50%, var(--amber-deep) 53%,
+    currentColor 55%, currentColor 100%);
+  background-size: 250% 100%;
+  background-repeat: no-repeat;
+  background-position: 0% center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* `color` has to stay real: it is what `currentColor` resolves to inside the
+     gradient, and that is what paints every part of the caption the wave is not
+     crossing. Only the glyph fill is made transparent, so the background shows
+     through the letters. */
+  color: var(--text-2);
+  -webkit-text-fill-color: transparent;
+}
+
+.wall .marquee { mask-image: linear-gradient(90deg, transparent 0, #000 72px, #000 calc(100% - 72px), transparent 100%);
+                 -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 72px, #000 calc(100% - 72px), transparent 100%); }
+
+@media (max-width: 720px) {
+  .wall { margin-inline: 0; border-radius: 14px; }
+  .wall__beam { offset-path: rect(0 100% 100% 0 round 14px); }
+  .wall__caption { font-size: 11.5px; white-space: normal; max-width: calc(100% - 36px); }
+  .wall__tail { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wall__beam { display: none; }
+  .wall__wave { background-image: none; -webkit-text-fill-color: var(--text-2); }
+}
