@@ -1099,6 +1099,31 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     Les deux composants remplacés ont été supprimés de la feuille de style, ce
     qui retire une cinquantaine de lignes.
 
+39. **Page clients : le mur de logos et le trou de la grille.**
+
+    **Le mur** affichait seize noms en texte brut, tous au même poids, dans
+    une grille bordée — un tableur. Et avec seize noms sur six colonnes, la
+    dernière ligne laissait **deux cases vides encadrées**. Il est refait en
+    **quatre colonnes**, qui divisent seize exactement, sur une feuille réglée
+    (filets intérieurs seulement, plus de cadre autour du tout), et chaque nom
+    reprend **le poids, l'espacement et l'opacité que le marquee lui donne
+    déjà** : les marques gardent leur caractère sans devenir un alphabet de
+    tailles au hasard.
+
+    **Ce que je n'ai pas réutilisé** : le SVG du marquee. Ses boîtes sont
+    dimensionnées marque par marque, ce qui convient à un défilement mais
+    rend, dans une grille, « HP » à 10 px à côté de « DANONE » à 21 px.
+    Une seule taille de police avec le poids par marque garde l'identité et
+    l'homogénéité — hauteur de caractère mesurée : 18 px pour les seize.
+
+    **Le trou de la grille.** La passe de l'arbitrage 34 n'avait traité que
+    les sections impaires : quatre cartes y deviennent une carte large plus
+    une rangée de trois. Les sections **paires** gardaient un `auto-fit` qui
+    tombe sur trois colonnes à la largeur de la colonne, d'où une quatrième
+    carte seule sur sa ligne — visible sur clients, why-licter et diagnostic.
+    Elles prennent maintenant un **2 × 2**. Balayage refait sur toutes les
+    pages : plus aucune grille dont la dernière ligne s'arrête avant le bord.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

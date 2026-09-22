@@ -1552,35 +1552,55 @@ a.card:hover, .card--hover:hover {
 .site-head { position: relative; z-index: 3; padding-top: 38px; }
 
 /* client wall */
+/* The wall used to be plain names in a boxed grid: every cell the same weight,
+   a visible border round the lot, and — with sixteen names in six columns —
+   two empty boxes trailing the last row. It is now a ruled sheet of four
+   columns, which divides sixteen exactly, carrying the same wordmarks as the
+   marquee so each brand keeps its own typographic weight. */
+
 .logo-wall {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0;
   padding: 0;
   list-style: none;
-  /* the gap shows the divider colour; the ground has to match the cells so a
-     half-filled last row does not read as an empty grey block */
-  background: rgba(255, 255, 255, .8);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  border-radius: 2px;
 }
-.logo-wall li { box-shadow: 0 0 0 1px var(--line); }
-.logo-wall li {
+.logo-wall > li {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 92px;
-  padding: 18px 14px;
-  background: rgba(255, 255, 255, .8);
+  min-height: clamp(96px, 11vh, 124px);
+  padding: 20px 18px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   text-align: center;
+  /* the fallback, before js/ui.js swaps in the wordmarks */
   font: 600 14px/1.3 var(--body-font);
   letter-spacing: .4px;
-  color: var(--ink);
-  transition: background-color .18s ease, color .18s ease;
+  color: var(--text-2);
+  transition: background-color .2s ease, color .2s ease;
 }
-.logo-wall li:hover { background: #fff; color: var(--amber-ink); }
+.logo-wall > li:hover { background: rgba(255, 255, 255, .55); color: var(--ink); }
+
+.wordmark {
+  font: 600 clamp(14px, 1.15vw, 17px)/1.25 var(--body-font);
+  text-transform: uppercase;
+  color: var(--ink);
+  filter: saturate(0);
+  transition: opacity .2s ease;
+}
+.logo-wall > li { opacity: .66; transition: opacity .2s ease, background-color .2s ease; }
+.logo-wall > li:hover { opacity: 1; }
+.wordmark abbr { text-decoration: none; border: 0; }
+
+@media (max-width: 900px) { .logo-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) {
+  .logo-wall > li { min-height: 84px; padding: 16px 12px; }
+  .wordmark { font-size: 13px; }
+}
 
 /* the question list re-staggers when the family changes */
 .questions.is-swap li {
@@ -1850,6 +1870,13 @@ a.card:hover, .card--hover:hover {
   }
   .page .block:nth-of-type(even):is(:has(.grid), :has(.covers)):not(:has(.grid > :nth-child(6))):not(:has(.covers > :nth-child(6))) .block__lead {
     font-size: 15px;
+  }
+
+  /* Four cards fall on three columns at the shell's width, stranding the
+     fourth. Odd sections already regroup them as a wide card plus a row of
+     three; even sections take a clean 2 x 2. Either way, no short row. */
+  .page .block:nth-of-type(even) .grid:not(.grid--two):has(> :nth-child(4)):not(:has(> :nth-child(5))) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* a section can opt out of the split when its content needs the full column */

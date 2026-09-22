@@ -86,15 +86,7 @@
   ];
   var GAP = 44;
 
-  function buildMarquee() {
-    var track = document.getElementById("marquee-track");
-    if (!track) return;
-
-    /* same scale-up as the rest of the hero past the reference width */
-    var k = Math.min(1.28, Math.max(1, window.innerWidth / 1247));
-    var gap = Math.round(GAP * k);
-
-    function svgFor(c) {
+  function svgFor(c) {
       var vw = 200, vh = Math.round(200 * c.h / c.w);
       var size = Math.min(vh * 0.86, (vw * 1.35) / Math.max(4, c.name.length));
       return '<svg viewBox="0 0 ' + vw + ' ' + vh + '" role="img" aria-label="' +
@@ -104,7 +96,15 @@
         'font-family="Josefin Sans, system-ui, sans-serif" font-weight="' + c.weight + '" ' +
         'letter-spacing="' + c.tracking + '" font-size="' + size.toFixed(1) + '">' +
         c.name + "</text></svg>";
-    }
+  }
+
+  function buildMarquee() {
+    var track = document.getElementById("marquee-track");
+    if (!track) return;
+
+    /* same scale-up as the rest of the hero past the reference width */
+    var k = Math.min(1.28, Math.max(1, window.innerWidth / 1247));
+    var gap = Math.round(GAP * k);
 
     var setWidth = 0;
     CLIENTS.forEach(function (c) { setWidth += Math.round(c.w * k) + gap; });
@@ -129,6 +129,26 @@
   }
 
   buildMarquee();
+
+  /* The wall on clients.html held the same sixteen names as plain text, all at
+     one weight, in a boxed grid — a spreadsheet. It now takes the weight,
+     tracking and opacity the marquee gives each brand, so they keep their own
+     character. It does NOT reuse the marquee's SVG: those boxes are sized per
+     brand, which in a grid renders HP at 10px next to DANONE at 21px. A single
+     font size with the per-brand weight keeps the identity and the evenness.
+     The static markup stays as the no-JS fallback. */
+  (function () {
+    var wall = document.getElementById("logo-wall");
+    if (!wall) return;
+    wall.innerHTML = CLIENTS.map(function (c) {
+      return '<li><span class="wordmark" style="font-weight:' + c.weight +
+             ";letter-spacing:" + (c.tracking * 0.06).toFixed(2) + "em;opacity:" + c.opacity +
+             '">' + (c.label ? '<abbr title="' + c.label + '">' + c.name + "</abbr>" : c.name) +
+             "</span></li>";
+    }).join("");
+    wall.classList.add("is-built");
+  })();
+
   (function () {
     var t = null, w = window.innerWidth;
     window.addEventListener("resize", function () {
