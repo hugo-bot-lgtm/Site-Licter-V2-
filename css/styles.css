@@ -2988,7 +2988,14 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
        the whole lower half of the column empty */
     align-items: center;
   }
-  .page .block.block--flow .block__head { margin-bottom: 0; max-width: none; }
+  /* Indented on purpose: the head is aligned on the same vertical as every
+     other title on the page, but inside a two-column composition that puts it
+     hard against the edge with nothing to its left. It steps in instead. */
+  .page .block.block--flow .block__head {
+    margin-bottom: 0;
+    max-width: 34ch;
+    padding-inline-start: clamp(14px, 2.6vw, 48px);
+  }
   .page .block.block--flow .block__title { font-size: clamp(24px, 2.3vw, 33px); }
   .page .block.block--flow .block__lead { font-size: 14.5px; margin-top: 16px; }
 }

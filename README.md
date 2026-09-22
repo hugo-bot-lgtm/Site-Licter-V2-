@@ -1074,6 +1074,16 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     vide face à quatre étapes — retour de Licter, justifié. La référence, elle,
     centre sa colonne de texte : c'est ce que je n'avais pas repris.
 
+    **Le texte est ensuite rentré depuis le bord.** Mesuré, la tête de la
+    frise était alignée sur la même verticale que tous les autres titres de la
+    page — 91 px à 1150, 210 px à 1600, exactement comme le titre de page et
+    les autres sur-titres. Mais dans une composition à deux colonnes, la
+    colonne de gauche n'a rien à sa gauche, et la même valeur qui convient
+    ailleurs colle ici au bord. La tête rentre donc de 14 à 48 px selon la
+    largeur (37 px à 1440), et sa mesure est plafonnée à 34 caractères. Elle
+    n'est plus alignée sur les autres titres de la page : c'est assumé, c'est
+    un encart à deux colonnes, pas une section pleine largeur.
+
     **Et la colonne a maintenant quelque chose à dire.** La référence remplit
     la sienne avec trois éléments — sur-titre, titre, chapô — alors que cinq
     des six blocs Licter n'en avaient que deux. Un chapô a donc été écrit pour
