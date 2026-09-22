@@ -1068,10 +1068,18 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     couleur du fond, pour qu'elle paraisse posée sur la règle et non traversée
     par elle.
 
-    **La section garde sa tête à gauche** (`.block--flow`). C'est cohérent
-    avec la règle posée à l'arbitrage 34 : un titre collant ne gagne sa place
-    que si la colonne d'en face est assez haute pour défiler devant lui — une
-    suite de quatre étapes l'est.
+    **La section garde sa tête à gauche** (`.block--flow`), mais **centrée
+    verticalement**, pas collée en haut. Premier jet : tête collante alignée
+    en haut, d'où un titre de deux lignes flottant au-dessus de 400 px de
+    vide face à quatre étapes — retour de Licter, justifié. La référence, elle,
+    centre sa colonne de texte : c'est ce que je n'avais pas repris.
+
+    **Et la colonne a maintenant quelque chose à dire.** La référence remplit
+    la sienne avec trois éléments — sur-titre, titre, chapô — alors que cinq
+    des six blocs Licter n'en avaient que deux. Un chapô a donc été écrit pour
+    chacun, qui reformule ce que les étapes établissent déjà en dessous :
+    aucune affirmation ni chiffre nouveau. La colonne passe de 89 à 174 px de
+    contenu utile.
 
     **Ce que je n'ai pas converti** : le bloc « Four steps, no black box. » de
     la home. Il décrit bien des étapes, mais il est en accordéon, en colonne

@@ -4,6 +4,12 @@ window.LicterFR = {
   /* ---- bandeau, navigation, pied de page ---- */
 
   /* ---- l\u00e9gende du mur de logos ---- */
+  /* ---- chapos des frises d'etapes ---- */
+  "The same sequence on every engagement, whichever model you pick. You see what is being collected, on what perimeter, and who reads it.":
+    "La m\u00eame s\u00e9quence sur chaque mission, quel que soit le mod\u00e8le choisi. Vous voyez ce qui est collect\u00e9, sur quel p\u00e9rim\u00e8tre, et qui le lit.",
+  "Three steps between your question and a readout you can act on \u2014 the same three, whichever platform answers it.":
+    "Trois \u00e9tapes entre votre question et une restitution actionnable \u2014 les m\u00eames trois, quel que soit l'outil qui r\u00e9pond.",
+
   "Trusted by 50+ organisations": "La confiance de 50+ organisations",
   ", from CAC 40 groups to institutions": ", de groupes du CAC 40 \u00e0 des institutions",
 

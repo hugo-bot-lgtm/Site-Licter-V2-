@@ -2982,13 +2982,15 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
 @media (min-width: 1000px) {
   .page .block.block--flow {
     display: grid;
-    grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
-    gap: clamp(30px, 3.4vw, 60px);
-    align-items: start;
+    grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+    gap: clamp(34px, 4vw, 72px);
+    /* centred, not stuck to the top: a two-line title against four steps left
+       the whole lower half of the column empty */
+    align-items: center;
   }
-  .page .block.block--flow .block__head { position: sticky; top: 96px; margin-bottom: 0; max-width: none; }
-  .page .block.block--flow .block__title { font-size: clamp(23px, 2.1vw, 30px); }
-  .page .block.block--flow .block__lead { font-size: 14px; }
+  .page .block.block--flow .block__head { margin-bottom: 0; max-width: none; }
+  .page .block.block--flow .block__title { font-size: clamp(24px, 2.3vw, 33px); }
+  .page .block.block--flow .block__lead { font-size: 14.5px; margin-top: 16px; }
 }
 
 @media (max-width: 520px) {
