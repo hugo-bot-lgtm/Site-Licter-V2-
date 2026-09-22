@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=20261016" />
+<link rel="stylesheet" href="css/styles.css?v=20261018" />
 </head>
 <body>
 
@@ -66,34 +66,43 @@
         </div>
       </div>
 
-      <section class="block" id="how">
+      <section class="block block--flow" id="how">
         <div class="block__head" data-dim data-reveal>
           <p class="block__kicker">HOW IT RUNS</p>
           <h2 class="block__title">Four steps, two to three weeks.</h2>
           <p class="block__lead">An independent diagnostic. At the end you own the roadmap, whether or not you
              run it with us.</p>
         </div>
-        <div class="steps" data-dim data-reveal>
-          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
-            <h3>Scoping call — 30 minutes</h3>
-            <p>Your objectives, your markets, the decisions currently made without data.</p>
-          </div></div>
-          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
-            <h3>Audit of what you already run</h3>
-            <p>Tools and licences, taxonomies, sources and languages covered, alerting thresholds, who reads
-               what and how often.</p>
-          </div></div>
-          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
-            <h3>Maturity scoring, six dimensions</h3>
-            <p>Sources, taxonomy, alerting, analysis, activation, organisation — scored and benchmarked
-               against your sector.</p>
-          </div></div>
-          <div class="step"><span class="step__n" aria-hidden="true"></span><div class="step__b">
-            <h3>Readout — quick wins and roadmap</h3>
-            <p>What can be fixed in a fortnight, what needs a project, and what it costs in effort. Presented
-               to your team, documented.</p>
-          </div></div>
-        </div>
+        <ol class="flow">
+          <li class="flow__item" data-reveal style="--d:0ms">
+            <span class="flow__n" aria-hidden="true">1</span>
+            <div class="flow__card">
+              <h3 class="flow__title"><span class="flow__tick" aria-hidden="true"></span>Scoping call — 30 minutes</h3>
+              <p class="flow__text">Your objectives, your markets, the decisions currently made without data.</p>
+            </div>
+          </li>
+          <li class="flow__item" data-reveal style="--d:90ms">
+            <span class="flow__n" aria-hidden="true">2</span>
+            <div class="flow__card">
+              <h3 class="flow__title"><span class="flow__tick" aria-hidden="true"></span>Audit of what you already run</h3>
+              <p class="flow__text">Tools and licences, taxonomies, sources and languages covered, alerting thresholds, who reads what and how often.</p>
+            </div>
+          </li>
+          <li class="flow__item" data-reveal style="--d:180ms">
+            <span class="flow__n" aria-hidden="true">3</span>
+            <div class="flow__card">
+              <h3 class="flow__title"><span class="flow__tick" aria-hidden="true"></span>Maturity scoring, six dimensions</h3>
+              <p class="flow__text">Sources, taxonomy, alerting, analysis, activation, organisation — scored and benchmarked against your sector.</p>
+            </div>
+          </li>
+          <li class="flow__item" data-reveal style="--d:270ms">
+            <span class="flow__n" aria-hidden="true">4</span>
+            <div class="flow__card">
+              <h3 class="flow__title"><span class="flow__tick" aria-hidden="true"></span>Readout — quick wins and roadmap</h3>
+              <p class="flow__text">What can be fixed in a fortnight, what needs a project, and what it costs in effort. Presented to your team, documented.</p>
+            </div>
+          </li>
+        </ol>
       </section>
 
       <section class="block" id="deliverables">
@@ -265,9 +274,9 @@
   </div>
 </footer>
 
-<script src="js/fr.js?v=20261016"></script>
-<script src="js/i18n.js?v=20261016"></script>
-<script src="js/cartography.js?v=20261016"></script>
-<script src="js/ui.js?v=20261016"></script>
+<script src="js/fr.js?v=20261018"></script>
+<script src="js/i18n.js?v=20261018"></script>
+<script src="js/cartography.js?v=20261018"></script>
+<script src="js/ui.js?v=20261018"></script>
 </body>
 </html>

@@ -1053,6 +1053,34 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     c'est-à-dire tout le texte sauf la vague. La couleur doit rester réelle ;
     seul `-webkit-text-fill-color` passe à `transparent`.
 
+38. **Un seul motif pour toutes les étapes.** Composant fourni par Licter :
+    des repères numérotés sur une règle verticale, une carte par étape, et le
+    titre de la section à côté. Il remplace **deux formes différentes qui
+    faisaient le même travail** — `.steps` sur les pages offres et diagnostic
+    (des lignes séparées par des filets, avec un gros chiffre ambre) et
+    `.numbered` sur les quatre pages plateformes (trois colonnes). Une étape
+    se lit désormais pareil partout : 16 étapes converties sur 6 sections.
+
+    **Adaptations** : le duo turquoise-magenta de la référence devient navy et
+    ambre — pastille navy à texte crème, coche ambre. La coche est dessinée en
+    CSS plutôt qu'importée. La règle verticale est un dégradé qui s'éteint à
+    ses deux extrémités, et chaque pastille porte un halo de 5 px de la
+    couleur du fond, pour qu'elle paraisse posée sur la règle et non traversée
+    par elle.
+
+    **La section garde sa tête à gauche** (`.block--flow`). C'est cohérent
+    avec la règle posée à l'arbitrage 34 : un titre collant ne gagne sa place
+    que si la colonne d'en face est assez haute pour défiler devant lui — une
+    suite de quatre étapes l'est.
+
+    **Ce que je n'ai pas converti** : le bloc « Four steps, no black box. » de
+    la home. Il décrit bien des étapes, mais il est en accordéon, en colonne
+    étroite, appairé avec la FAQ (arbitrage 22). Y mettre une frise casserait
+    le couple. À trancher si Licter préfère l'uniformité à cet endroit.
+
+    Les deux composants remplacés ont été supprimés de la feuille de style, ce
+    qui retire une cinquantaine de lignes.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

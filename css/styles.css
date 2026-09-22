@@ -1387,25 +1387,6 @@ a.card:hover, .card--hover:hover {
 
 /* ---------- steps ---------- */
 
-.steps { counter-reset: step; display: grid; gap: 2px; }
-.step {
-  display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
-  gap: 18px;
-  padding: 20px 0;
-  border-top: 1px solid var(--line);
-}
-.step:last-child { border-bottom: 1px solid var(--line); }
-.step__n {
-  counter-increment: step;
-  font-family: var(--title-font);
-  font-weight: 800;
-  font-size: 22px;
-  color: var(--amber-ink);
-}
-.step__n::before { content: "0" counter(step); }
-.step__b h3 { margin: 0 0 6px; font: 600 16px/1.3 var(--body-font); color: var(--ink); }
-.step__b p { margin: 0; font: 400 14px/1.6 var(--body-font); color: var(--text-2); }
 
 /* ---------- closing call to action ---------- */
 
@@ -2201,41 +2182,6 @@ html[lang="fr"] .nav__link { letter-spacing: 1.1px; }
 .block__kicker--slash { color: var(--amber-ink); }
 .block__kicker--slash i { font-style: normal; color: var(--amber); margin-right: 6px; }
 
-/* ---------- 1 / numbered approach, no cards ---------- */
-
-.numbered {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: clamp(24px, 3vw, 46px);
-}
-.numbered__item { min-width: 0; }
-.numbered__n {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  margin-bottom: 18px;
-  border: 1.5px solid var(--ink);
-  border-radius: 8px;
-  font-family: var(--title-font);
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 1;
-  color: var(--amber-ink);
-  background: rgba(255, 255, 255, .7);
-}
-.numbered__item:nth-child(2) .numbered__n { color: var(--amber-deep); }
-.numbered__item:nth-child(3) .numbered__n { color: var(--grey); }
-.numbered__item h3 {
-  margin: 0 0 8px;
-  font: 600 16px/1.3 var(--body-font);
-  letter-spacing: .4px;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.numbered__item p { margin: 0; font: 400 14px/1.65 var(--body-font); color: var(--text-2); }
-
 /* ---------- 2 / solution cards, banded top + bullets ---------- */
 
 .solutions { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: clamp(16px, 1.8vw, 24px); }
@@ -2945,4 +2891,108 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
 @media (prefers-reduced-motion: reduce) {
   .wall__beam { display: none; }
   .wall__wave { background-image: none; -webkit-text-fill-color: var(--text-2); }
+}
+
+/* ==========================================================================
+   Step flows — the timeline every "how it runs" block now uses
+   Structure from a reference Licter supplied: numbered markers on a rule, a
+   card per step, the section's head beside them. It replaces two different
+   shapes that were doing the same job (.steps on the offer and diagnostic
+   pages, .numbered on the four platform pages), so a step reads the same
+   everywhere. The reference's teal-and-magenta pair becomes navy and amber.
+   ========================================================================== */
+
+.flow { position: relative; margin: 0; padding: 0; list-style: none; }
+/* the rule the markers sit on, drawn behind them */
+.flow::before {
+  content: "";
+  position: absolute;
+  top: 16px; bottom: 16px;
+  left: 17px;
+  width: 1px;
+  background: linear-gradient(var(--line), rgba(var(--ink-rgb), .2), var(--line));
+}
+
+.flow__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(14px, 1.6vw, 22px);
+}
+.flow__item + .flow__item { margin-top: clamp(12px, 1.5vh, 18px); }
+
+.flow__n {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 36px; height: 36px;
+  margin-top: 13px;                 /* lines the marker up with the step title */
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--cream);
+  font: 700 13px/1 var(--body-font);
+  box-shadow: 0 0 0 5px var(--cream);
+}
+
+.flow__card {
+  padding: 16px 20px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .62);
+  backdrop-filter: blur(5px);
+  transition: border-color .2s ease, background-color .2s ease;
+}
+.flow__item:hover .flow__card { border-color: rgba(var(--amber-rgb), .5); background: rgba(255, 255, 255, .78); }
+
+.flow__title {
+  display: flex;
+  /* a two-line title would otherwise centre the tick between its lines */
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0 0 6px;
+  font: 600 clamp(15px, 1.2vw, 17px)/1.3 var(--body-font);
+  color: var(--ink);
+}
+/* the tick of the reference, drawn rather than shipped as an icon */
+.flow__tick {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  display: grid;
+  place-items: center;
+  width: 17px; height: 17px;
+  border: 1.4px solid var(--amber-deep);
+  border-radius: 50%;
+}
+.flow__tick::before {
+  content: "";
+  width: 6px; height: 3px;
+  margin-top: -2px;
+  border: 1.4px solid var(--amber-deep);
+  border-top: 0;
+  border-right: 0;
+  transform: rotate(-45deg);
+}
+.flow__text { margin: 0; font: 400 14px/1.65 var(--body-font); color: var(--text-2); }
+
+/* a section whose content is a flow keeps its head beside it: the column is
+   tall enough to scroll past, which is exactly when a sticky head earns its
+   place (see the rule in the alternating-rhythm block) */
+@media (min-width: 1000px) {
+  .page .block.block--flow {
+    display: grid;
+    grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
+    gap: clamp(30px, 3.4vw, 60px);
+    align-items: start;
+  }
+  .page .block.block--flow .block__head { position: sticky; top: 96px; margin-bottom: 0; max-width: none; }
+  .page .block.block--flow .block__title { font-size: clamp(23px, 2.1vw, 30px); }
+  .page .block.block--flow .block__lead { font-size: 14px; }
+}
+
+@media (max-width: 520px) {
+  .flow__item { grid-template-columns: 30px minmax(0, 1fr); gap: 12px; }
+  .flow__n { width: 30px; height: 30px; font-size: 12px; margin-top: 11px; }
+  .flow::before { left: 14px; }
 }
