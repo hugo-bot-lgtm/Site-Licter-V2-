@@ -3027,3 +3027,36 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
   .flow__n { width: 30px; height: 30px; font-size: 12px; margin-top: 11px; }
   .flow::before { left: 14px; }
 }
+
+/* The hero eyebrow is the SI Lab ranking rather than a line about what Licter
+   is: it keeps the stat card's shape — amber rule, figure, caption — at a size
+   that sits above the headline instead of competing with it. */
+.kicker--rank {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  padding-left: 16px;
+  border-left: 2px solid var(--amber);
+  letter-spacing: 0;
+}
+.kicker--rank b {
+  font-family: var(--title-font);
+  font-weight: 800;
+  font-size: clamp(21px, 2vw, 27px);
+  line-height: 1;
+  letter-spacing: -.8px;
+  color: var(--ink);
+}
+.kicker--rank span {
+  font: 400 13px/1.45 var(--body-font);
+  letter-spacing: 0;
+  color: var(--text-2);
+  max-width: 46ch;
+}
+.kicker--rank + .hero__title { margin-top: 22px; }
+
+@media (max-width: 560px) {
+  .kicker--rank { gap: 6px; padding-left: 13px; }
+  .kicker--rank span { font-size: 12.5px; }
+}

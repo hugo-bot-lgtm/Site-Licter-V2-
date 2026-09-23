@@ -1159,6 +1159,22 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     `document.querySelector(".hero")` seul : les 22 autres pages passeraient
     alors sur fond crème uni de haut en bas.
 
+41. **Le classement SI Lab remplace le sur-titre du hero.** « // AI & DATA
+    AGENCY FOR ENTERPRISES » disait ce que Licter est ; « Top 50 des acteurs
+    mondiaux de la social intelligence, SI Lab 2024 » dit ce que le marché en
+    pense. C'est un meilleur premier argument, et c'est vérifiable.
+
+    L'élément garde **la forme de la carte de chiffre** dont il vient — filet
+    ambre à gauche, chiffre dans la police de titre, légende en dessous — mais
+    à une taille qui se place **au-dessus** du titre au lieu de lui disputer
+    l'attention : 27 px contre 56. Alignement sur la ligne de base, pour que
+    le chiffre et sa légende se tiennent.
+
+    **Il est retiré de la bande de preuve** juste en dessous : le garder aux
+    deux endroits, à un écran d'intervalle, aurait affaibli les deux. La bande
+    passe à trois chiffres, ce qui tombe juste sur trois colonnes — pas de
+    ligne courte.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
