@@ -1136,8 +1136,8 @@ window.LicterFR = {
   /* ---- chapos ajoutes avec les photos ---- */
   "You talk to the consultant who would run the read, not to someone passing you on afterwards.":
     "Vous parlez au consultant qui ferait la lecture, pas \u00e0 quelqu'un qui vous passera la main ensuite.",
-  "The difference is not the volume of data. It is who reads it, and what they are asked to conclude from it.":
-    "La diff\u00e9rence ne tient pas au volume de donn\u00e9es. Elle tient \u00e0 qui les lit, et \u00e0 ce qu'on lui demande d'en conclure.",
+  "The difference is not the volume of data. It is who reads it, and what they are asked to conclude from it. Four things separate a read from a dashboard: a panel nobody has to recruit, a market analysed in its own language, our algorithms on top of the platforms rather than instead of them, and a price that never forces a team to arbitrate between two questions.":
+    "La diff\u00e9rence ne tient pas au volume de donn\u00e9es. Elle tient \u00e0 qui les lit, et \u00e0 ce qu'on lui demande d'en conclure. Quatre choses s\u00e9parent une lecture d'un tableau de bord : un panel que personne n'a \u00e0 recruter, un march\u00e9 analys\u00e9 dans sa propre langue, nos algorithmes par-dessus les plateformes plut\u00f4t qu'\u00e0 leur place, et un prix qui n'oblige jamais une \u00e9quipe \u00e0 arbitrer entre deux questions.",
 
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",

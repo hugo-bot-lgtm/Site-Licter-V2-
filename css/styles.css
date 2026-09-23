@@ -3139,7 +3139,12 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
 /* a portrait set beside a section head */
 .withshot { display: grid; gap: clamp(24px, 3vw, 52px); align-items: center; }
 @media (min-width: 900px) {
-  .withshot { grid-template-columns: minmax(0, 1fr) minmax(220px, 300px); }
+  /* one photo column for every section head. At 300px a portrait frame ran
+     400px tall and towered over the two or three lines beside it */
+  .withshot { grid-template-columns: minmax(0, 1fr) minmax(200px, 240px); }
+  /* three figures side by side leave the column too short for the photo, so
+     the numbers stack and the pair reads as two columns of equal weight */
+  .withshot > .stats { grid-template-columns: 1fr; }
 }
 /* stacked, a full-width square portrait dwarfs the text it belongs to */
 @media (max-width: 899px) { .withshot__figure { max-width: 260px; } }
@@ -3159,7 +3164,9 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
   filter: saturate(.92);
 }
 /* portrait frame: the event shots are posters and banners, a square crop eats
-   the half that carries the text */
+   the half that carries the text. It sits next to a section head rather than
+   next to another photo, so the column narrows with it — at 300px the frame
+   ran 400px tall and towered over the two or three lines beside it */
 .withshot__figure--tall { aspect-ratio: 3 / 4; }
 .withshot__figure--tall img { object-position: 50% 50%; }
 

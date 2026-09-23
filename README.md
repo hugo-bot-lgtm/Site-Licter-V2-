@@ -1262,6 +1262,16 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     sortait du cadre, redevient partiellement visible — cohérent avec la
     décision prise sur les photos d'événement.
 
+    **Le cadre des portraits est passé de 300 à 240 px.** Même retour, appliqué
+    aux photos posées à côté d'un texte : à 300 px un cadre portrait faisait
+    400 px de haut contre 130 à 190 px de titre, soit trois fois son voisin.
+    Une seule colonne photo pour toutes les sections (`minmax(200px, 240px)`)
+    ramène le rapport entre 1,4 et 2. Deux corrections l'accompagnent — le
+    chapô de « Consultants, not dashboards » résume les quatre cartes au lieu
+    de tenir sur deux lignes, et les trois chiffres de `index.html#proof` se
+    superposent au lieu de s'aligner, parce qu'une rangée de trois ne faisait
+    que 84 px de haut à côté d'une photo de 320.
+
     **En mobile, la paire passe côte à côte sous 720 px** : pleine largeur,
     une photo seule laissait un trou sur sa ligne, et le recadrage qu'il
     aurait fallu pour tenir la largeur coupait les visages.
