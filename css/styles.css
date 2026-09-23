@@ -3151,9 +3151,6 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
   /* one photo column for every section head. At 300px a portrait frame ran
      400px tall and towered over the two or three lines beside it */
   .withshot { grid-template-columns: minmax(0, 1fr) minmax(200px, 240px); }
-  /* three figures side by side leave the column too short for the photo, so
-     the numbers stack and the pair reads as two columns of equal weight */
-  .withshot > .stats { grid-template-columns: 1fr; }
   /* the head caps itself at 680px, which left a void between the text and the
      photo — two columns that never meet read as a photo dropped in by accident */
   .withshot > .block__head { max-width: none; }

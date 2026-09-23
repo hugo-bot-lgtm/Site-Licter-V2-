@@ -1234,9 +1234,12 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     et, pour l'une, le nom d'une personne qui n'est pas de la maison.
 
     - `event-award.jpg` (« Ose ! Le Cercle Business », diplôme de lauréate) →
-      `index.html#proof`, à côté des chiffres. C'est la seule photo du site
-      qui puisse se lire comme une revendication : posée contre « 50+ /
-      160+ / 3 bn », elle suggère que le prix est celui du cabinet.
+      **posée puis retirée.** Essayée contre les chiffres de `index.html#proof`,
+      refusée par Licter, et la section est revenue exactement à son état
+      d'avant. Le fichier reste dans `assets/img/people/`, sans emploi. Elle
+      était de toute façon la seule photo du site qui se lisait comme une
+      revendication : contre « 50+ / 160+ / 3 bn », elle suggérait que le prix
+      était celui du cabinet.
     - `event-conference.jpg` (fond « Les Rencontres Économiques
       d'Aix-en-Provence ») → `clients.html#wall`, juste au-dessus du mur de
       logos, où la section parle déjà d'institutions.
@@ -1277,8 +1280,8 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     imposait la rangée. `portrait-outdoor.jpg` quitte les signatures d'articles
     pour l'accompagner, où elle ne servait qu'en 26 px.
 
-    **Les trois photos restées à côté d'un titre** (`index.html#proof`,
-    `clients.html#wall`, `book-a-meeting.html#what`) gardent le motif mais plus
+    **Les deux photos restées à côté d'un titre** (`clients.html#wall`,
+    `book-a-meeting.html#what`) gardent le motif mais plus
     le vide : le chapeau occupe toute sa colonne, et c'est la paire, pas le
     titre, qui porte la marge vers le bloc suivant.
 
@@ -1286,11 +1289,10 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     aux photos posées à côté d'un texte : à 300 px un cadre portrait faisait
     400 px de haut contre 130 à 190 px de titre, soit trois fois son voisin.
     Une seule colonne photo pour toutes les sections (`minmax(200px, 240px)`)
-    ramène le rapport entre 1,4 et 2. Deux corrections l'accompagnent — le
-    chapô de « Consultants, not dashboards » résume les quatre cartes au lieu
-    de tenir sur deux lignes, et les trois chiffres de `index.html#proof` se
-    superposent au lieu de s'aligner, parce qu'une rangée de trois ne faisait
-    que 84 px de haut à côté d'une photo de 320.
+    ramène le rapport entre 1,4 et 2. La rangée de chiffres de la home avait
+    été empilée pour la même raison — 84 px de haut, aucune photo ne pouvait
+    tenir à côté — elle est revenue à trois colonnes avec le retrait de la
+    photo.
 
     **En mobile, la paire passe côte à côte sous 720 px** : pleine largeur,
     une photo seule laissait un trou sur sa ligne, et le recadrage qu'il
