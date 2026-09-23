@@ -1303,6 +1303,35 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     la série définitive devra varier, sans quoi le site aura l'air de
     n'employer qu'une personne.
 
+44. **Une trame remplace la cartographie sous le hero.** La carte s'arrête au
+    hero depuis l'arbitrage 40, et les sections en dessous étaient une longue
+    feuille de crème nue. Composant fourni par Licter (grille CSS animée,
+    React) transposé en vanilla et ramené à la charte : maille de 44 px, une
+    majeure tous les quatre carreaux, filets navy `rgba(19,22,45,.075)` et
+    majeures ambre `rgba(192,140,14,.19)`. Dérive d'une cellule majeure en
+    60 secondes — un mouvement qui se sent sans se regarder.
+
+    **Elle ne partage pas le pseudo-élément du sol.** Le sol (`::before`) doit
+    rester un plancher plat d'un bord à l'autre ; la trame (`::after`) est
+    masquée pour s'éteindre avant la fin de la section. Ce masque fait aussi
+    le travail que le composant d'origine ne demandait pas : chaque section
+    carrèle depuis son propre haut, et sans lui chaque frontière montrerait le
+    trait dur d'un rythme qui repart.
+
+    **Ce qui a été changé au composant** : la dérive passe par
+    `background-position` et non par une translation — la couche est découpée
+    à sa section, et un `transform` traînerait ses bords dans la suivante. La
+    maille et sa majeure vivent dans deux variables, pour que les écrans
+    étroits resserrent la trame (30/120) sans que la boucle perde sa couture.
+    Le halo ambré pulsé du composant n'a pas été repris : le README note déjà
+    (arbitrage 42) qu'un fond ambre faisait « un jaune de trop », et un halo
+    par section l'aurait fait quatre fois par page. Et `will-change` a sauté :
+    le composant l'accroche à un hero, ici il aurait porté sur toutes les
+    sections de toutes les pages.
+
+    **Le corps des articles reste nu**, volontairement : une trame derrière
+    3 000 signes de lecture, c'est du bruit sous le texte.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

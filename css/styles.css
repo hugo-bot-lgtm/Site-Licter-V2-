@@ -1312,6 +1312,67 @@ main { position: relative; z-index: 1; }
 /* two cream sections in a row still need a line between them */
 .block:nth-of-type(odd) + .block:nth-of-type(odd)::before { border-top: 1px solid var(--line); }
 
+/* ---------- the weave behind the floors ----------
+   The cartography now stops at the hero, and the sections below it were bare
+   cream. This puts the texture back without competing with the map: a two-layer
+   grid, a fine one and a 4x major whose lines take a little amber, drifting a
+   whole major cell over a minute so the movement is felt rather than seen.
+
+   It rides on its own pseudo-element, not on the ground: the ground has to stay
+   a flat floor edge to edge, while the grid is masked to fade out before the
+   section ends. That mask is also what hides the seam — every section tiles
+   from its own top, and without it each boundary would show a hard line where
+   the rhythm restarts.
+
+   Painted inside main, so the centre wash of body::after passes under it and
+   the lines keep their contrast. background-position rather than a transform:
+   the layer is clipped to its section, and a transform would drag its edges
+   into the next one. */
+.block::after,
+.cases::after {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(19, 22, 45, .075) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(19, 22, 45, .075) 1px, transparent 1px),
+    linear-gradient(to right, rgba(192, 140, 14, .19) 1.2px, transparent 1.2px),
+    linear-gradient(to bottom, rgba(192, 140, 14, .19) 1.2px, transparent 1.2px);
+  /* the cell and its 4x major live in variables: the drift translates exactly
+     one major cell, so a narrower screen can tighten the weave without the
+     loop losing its seam */
+  --weave: 44px;
+  --weave-major: 176px;
+  background-size: var(--weave) var(--weave), var(--weave) var(--weave),
+                   var(--weave-major) var(--weave-major), var(--weave-major) var(--weave-major);
+  -webkit-mask-image: radial-gradient(ellipse 94% 78% at 50% 50%, #000 46%, transparent 92%);
+          mask-image: radial-gradient(ellipse 94% 78% at 50% 50%, #000 46%, transparent 92%);
+  animation: weave-drift 60s linear infinite;
+  /* no will-change here: the source component hints one hero layer, while this
+     runs on every section of every page, which is the case the hint is meant
+     to be kept away from. Off-screen sections do not repaint anyway. */
+}
+@keyframes weave-drift {
+  from { background-position: 0 0, 0 0, 0 0, 0 0; }
+  to   { background-position:
+           var(--weave-major) var(--weave-major), var(--weave-major) var(--weave-major),
+           var(--weave-major) var(--weave-major), var(--weave-major) var(--weave-major); }
+}
+/* a 44px cell on a 375px screen reads as graph paper rather than as texture */
+@media (max-width: 720px) {
+  .block::after, .cases::after { --weave: 30px; --weave-major: 120px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .block::after, .cases::after { animation: none; }
+}
+/* forced colours drop the gradients that draw it and the mask that shapes it;
+   a decorative backdrop is better absent than half-rendered */
+@media (forced-colors: active) {
+  .block::after, .cases::after { display: none; }
+}
+
 .block__head { max-width: 680px; margin-bottom: clamp(32px, 5vh, 58px); }
 .block__kicker {
   display: flex;
