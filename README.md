@@ -1175,6 +1175,34 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     passe à trois chiffres, ce qui tombe juste sur trois colonnes — pas de
     ligne courte.
 
+42. **Marquer les sections : un sol par sujet.** Retour de Licter : les
+    sections se mélangent, on ne sent pas qu'on passe d'un sujet à un autre.
+    Diagnostic : depuis le retrait de la cartographie (arbitrage 40), les
+    feuilles de lumière ont disparu avec elle, et la page est devenue **une
+    seule grande feuille crème**. Il ne restait qu'un filet d'1 px et du
+    padding pour séparer deux sujets — ce n'est pas un signal, c'est une
+    respiration.
+
+    **Une section sur deux pose son propre sol, d'un bord à l'autre de
+    l'écran.** Le contenu reste dans la colonne centrée ; seul le fond déborde
+    (`inset: 0 calc(50% - 50vw)`). Changer de sujet, c'est changer de sol.
+
+    **Pourquoi une bande chaude et pas blanche.** Premier essai en blanc : les
+    cartes sont blanches à 72 %, elles disparaissaient purement et simplement
+    sur le sol blanc. Un sol ambre à 7 % règle les deux problèmes d'un coup —
+    les cartes gardent leur relief sur les deux types de section, et une seule
+    règle change.
+
+    **La parité se compte sur toutes les sections, pas seulement sur les
+    blocs.** Sur la home, la console est une `<section class="cases">` posée
+    entre deux `.block` : la compter hors parité laissait **trois sections
+    crème d'affilée**. Vérifié sur les dix pages : aucune ne présente deux
+    sols identiques qui se suivent.
+
+    **Le sur-titre devient l'étiquette du chapitre** : 700 au lieu de 600,
+    interlettrage 2 px, couleur ambre au lieu du gris, et le tiret passe de
+    1 à 2 px. C'est lui que l'œil attrape en arrivant sur un nouveau sol.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

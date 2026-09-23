@@ -1280,23 +1280,52 @@ main { position: relative; z-index: 1; }
 /* ---------- sections ---------- */
 
 .block { position: relative; padding: clamp(62px, 9vh, 108px) 0; }
-.block + .block { border-top: 1px solid var(--line); }
+
+/* ---------- telling one section from the next ----------
+   With the map gone the page became one long cream sheet, and the sections
+   ran into each other: a hairline and some air is not enough to say "new
+   subject". Every other section now lays its own ground, edge to edge, so the
+   change of subject is a change of floor. The content stays in the column;
+   only the ground bleeds. */
+.block::before,
+.cases::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  pointer-events: none;
+}
+/* A warm band rather than a white one: the cards are white at 72%, so on a
+   white ground they vanished. Against a tinted floor they keep their lift on
+   both kinds of section, and only one rule changes. */
+/* The parity is counted over every section, not only the blocks: on the home
+   the console sits between two blocks, and skipping it left three plain
+   sections in a row. */
+.block:nth-of-type(even)::before,
+.cases:nth-of-type(even)::before {
+  background: rgba(var(--amber-rgb), .07);
+  border-block: 1px solid rgba(var(--amber-rgb), .3);
+}
+/* two cream sections in a row still need a line between them */
+.block:nth-of-type(odd) + .block:nth-of-type(odd)::before { border-top: 1px solid var(--line); }
 
 .block__head { max-width: 680px; margin-bottom: clamp(32px, 5vh, 58px); }
 .block__kicker {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0 0 14px;
-  font: 600 10px/1 var(--body-font);
-  letter-spacing: 1.8px;
-  color: var(--text-3);
+  margin: 0 0 15px;
+  font: 700 10.5px/1 var(--body-font);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber-ink);
 }
 .block__kicker::before {
   content: "";
-  width: 20px;
-  height: 1px;
-  background: var(--amber-deep);
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--amber);
 }
 .block__title {
   margin: 0;
