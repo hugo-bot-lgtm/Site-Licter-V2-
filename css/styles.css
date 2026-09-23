@@ -3154,6 +3154,11 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
   object-position: 50% 28%;
   filter: saturate(.92);
 }
+/* portrait frame: the event shots are posters and banners, a square crop eats
+   the half that carries the text */
+.withshot__figure--tall { aspect-ratio: 3 / 4; }
+.withshot__figure--tall img { object-position: 50% 50%; }
+
 
 /* the article byline gets the face of whoever wrote it */
 .byline__avatar {

@@ -1210,7 +1210,7 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     interlettrage 2 px, couleur ambre au lieu du gris, et le tiret passe de
     1 à 2 px. C'est lui que l'œil attrape en arrivant sur un nouveau sol.
 
-43. **Photos : six placements, trois photos écartées.** Demande de Licter :
+43. **Photos : les neuf fichiers d'attente sont placés.** Demande de Licter :
     rendre le site plus « humain » avec des photos d'attente, les définitives
     n'étant pas prêtes. Neuf fichiers fournis, copiés dans
     `assets/img/people/` sous des noms parlants pour que le remplacement se
@@ -1229,15 +1229,27 @@ l'indicateur `+23%`, le lien final et les survols de menu.
       le titre pour que la colonne de texte tienne la hauteur du portrait.
     - Les neuf articles de blog : vignette de 26 px dans la signature.
 
-    **Trois photos sont volontairement laissées de côté** :
-    `event-award.jpg` (« Ose ! Le Cercle Business »), `event-conference.jpg`
-    (« Les Rencontres Économiques d'Aix-en-Provence ») et `event-talk.jpg`
-    (affiche KEDGE nommant « Anaïs BREMAND, Fondatrice de Quartz Agency »).
-    Elles portent la marque d'organisations tierces et, pour la dernière, le
-    nom d'une personne qui n'est pas Licter. Publier ça sur le site du
-    cabinet est le genre de chose qui passe inaperçu jusqu'au jour où elle ne
-    passe plus. Les fichiers sont dans le dépôt, prêts si Licter confirme
-    qu'elle en a les droits.
+    **Les trois photos d'événement sont placées à la demande de Licter**, en
+    connaissance de cause : elles portent la marque d'organisations tierces
+    et, pour l'une, le nom d'une personne qui n'est pas de la maison.
+
+    - `event-award.jpg` (« Ose ! Le Cercle Business », diplôme de lauréate) →
+      `index.html#proof`, à côté des chiffres. C'est la seule photo du site
+      qui puisse se lire comme une revendication : posée contre « 50+ /
+      160+ / 3 bn », elle suggère que le prix est celui du cabinet.
+    - `event-conference.jpg` (fond « Les Rencontres Économiques
+      d'Aix-en-Provence ») → `clients.html#wall`, juste au-dessus du mur de
+      logos, où la section parle déjà d'institutions.
+    - `event-talk.jpg` (affiche KEDGE, « Anaïs BREMAND, Fondatrice de Quartz
+      Agency ») → `why-licter.html#difference`, « Consultants, not
+      dashboards » : un consultant au micro plutôt qu'un écran. Le cadre est
+      en 3/4 (`.withshot__figure--tall`) pour que l'affiche se lise en
+      entier — un carré mangeait la moitié qui porte le texte. Le fichier
+      fait 375 × 533, il ne supportera pas un cadre plus grand.
+
+    **L'arbitrage est assumé, pas oublié** : ces trois images n'ont pas
+    vocation à survivre à la série définitive, et si le site passe en public
+    avant, ce sont les trois premières à retirer.
 
     **Le logo d'une autre société apparaît aussi sur le mur derrière
     `team.jpg`.** Le recadrage (`.shot--crop-low`, `scale(1.5)` depuis le bas)
@@ -1247,7 +1259,7 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     qui fonctionne et évite le trou qu'une photo seule laissait sur sa ligne.
 
     **Toutes les photos montrent la même personne**, sauf la photo de groupe.
-    Six placements sur un seul visage, c'est ce que les fichiers permettent —
+    Neuf placements sur un seul visage, c'est ce que les fichiers permettent —
     la série définitive devra varier, sans quoi le site aura l'air de
     n'employer qu'une personne.
 
@@ -1275,8 +1287,10 @@ l'indicateur `+23%`, le lien final et les survols de menu.
   mise en ligne.
 - Remplacer les photos d'attente de `assets/img/people/` par la série
   définitive (arbitrage 43) — mêmes noms de fichiers, aucun HTML à toucher.
-  Trancher au passage sur les trois photos écartées pour cause de marques
-  tierces, et sur `team.jpg` dont le mur porte le logo d'une autre société.
+  Retirer en priorité les trois photos d'événement (« Ose ! », « Rencontres
+  Économiques », affiche KEDGE nommant une tierce personne) si le site passe
+  en public avant la série définitive, et trancher sur `team.jpg` dont le mur
+  porte le logo d'une autre société.
 
 - Pages légales (mentions, confidentialité) : absentes, le pied de page les
   attend.

@@ -1133,6 +1133,12 @@ window.LicterFR = {
     "Vélocité des sujets qui sortent de la catégorie sur les quatre dernières semaines.",
   "Qualified reach inside the core target once look-alike communities are folded in.":
     "Portée qualifiée dans le cœur de cible une fois les communautés similaires intégrées.",
+  /* ---- chapos ajoutes avec les photos ---- */
+  "You talk to the consultant who would run the read, not to someone passing you on afterwards.":
+    "Vous parlez au consultant qui ferait la lecture, pas \u00e0 quelqu'un qui vous passera la main ensuite.",
+  "The difference is not the volume of data. It is who reads it, and what they are asked to conclude from it.":
+    "La diff\u00e9rence ne tient pas au volume de donn\u00e9es. Elle tient \u00e0 qui les lit, et \u00e0 ce qu'on lui demande d'en conclure.",
+
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
 };
