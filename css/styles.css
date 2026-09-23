@@ -24,6 +24,8 @@
   --navy:        #13162D;
   --amber:       #FDBA11;
   --cream:       #FCF6EF;
+  /* the alternating section ground: the same warm family, one step deeper */
+  --band:        #F6EFE4;
   --grey:        #84919A;
   --white:       #FFFFFF;
   --black:       #000000;
@@ -1295,17 +1297,18 @@ main { position: relative; z-index: 1; }
   z-index: -1;
   pointer-events: none;
 }
-/* A warm band rather than a white one: the cards are white at 72%, so on a
-   white ground they vanished. Against a tinted floor they keep their lift on
-   both kinds of section, and only one rule changes. */
-/* The parity is counted over every section, not only the blocks: on the home
+/* A step in value, not in colour. An amber ground read as one more yellow
+   thing on a page that already has an amber banner, amber buttons, amber
+   kickers and amber card accents — the alternation was legible but the page
+   was busy. A deeper shade of the same cream separates just as clearly and
+   adds nothing. No rule on the edges either: a clean tone step is its own
+   line, and a hairline on top of it only added to the stack of horizontals.
+
+   The parity is counted over every section, not only the blocks: on the home
    the console sits between two blocks, and skipping it left three plain
    sections in a row. */
 .block:nth-of-type(even)::before,
-.cases:nth-of-type(even)::before {
-  background: rgba(var(--amber-rgb), .07);
-  border-block: 1px solid rgba(var(--amber-rgb), .3);
-}
+.cases:nth-of-type(even)::before { background: var(--band); }
 /* two cream sections in a row still need a line between them */
 .block:nth-of-type(odd) + .block:nth-of-type(odd)::before { border-top: 1px solid var(--line); }
 

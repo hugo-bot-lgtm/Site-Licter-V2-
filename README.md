@@ -1187,11 +1187,18 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     l'écran.** Le contenu reste dans la colonne centrée ; seul le fond déborde
     (`inset: 0 calc(50% - 50vw)`). Changer de sujet, c'est changer de sol.
 
-    **Pourquoi une bande chaude et pas blanche.** Premier essai en blanc : les
-    cartes sont blanches à 72 %, elles disparaissaient purement et simplement
-    sur le sol blanc. Un sol ambre à 7 % règle les deux problèmes d'un coup —
-    les cartes gardent leur relief sur les deux types de section, et une seule
-    règle change.
+    **Le sol a changé deux fois avant d'être juste.** Premier essai en blanc :
+    les cartes sont blanches à 72 %, elles disparaissaient purement et
+    simplement. Deuxième essai en ambre à 7 % avec filets ambrés : lisible,
+    mais retour de Licter — « trop brouillon ». Juste : la page a déjà un
+    bandeau ambre, des boutons ambre, des sur-titres ambre et des accents
+    ambre sur les cartes ; une bande ambre de plus en faisait une couleur de
+    trop, et les deux filets s'ajoutaient à la pile d'horizontales.
+
+    **La version retenue est un pas de valeur, pas de couleur** : `--band`,
+    la même crème une nuance plus profonde (`#F6EFE4` contre `#FCF6EF`), sans
+    aucun filet. Un changement de ton net se suffit comme ligne, et
+    l'alternance n'ajoute plus une seule couleur à la page.
 
     **La parité se compte sur toutes les sections, pas seulement sur les
     blocs.** Sur la home, la console est une `<section class="cases">` posée
