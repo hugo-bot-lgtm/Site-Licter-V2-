@@ -50,9 +50,6 @@
   --card-bg:     var(--white);
 
   --gutter: clamp(20px, 5.83vw, 64px);
-  /* opacity of the cream veil laid over the cartography — 0 in the hero,
-     raised by js/ui.js as soon as the reading content starts */
-  --veil: 0;
   /* The mock is 1097 px wide, gutters included. That width is the floor, not
      a ceiling: past it the column keeps growing, but slower than the screen,
      so a wide display fills up without the copy stretching edge to edge. */
@@ -127,6 +124,9 @@ a { color: inherit; text-decoration: none; }
 /* ---------- cartography canvas ---------- */
 
 #carto {
+  /* faded by js/ui.js: the map lives in the hero and nowhere else. No
+     transition — the value is already recomputed on every scroll frame, and a
+     transition on top of that only makes it lag behind the scroll. */
   position: fixed;
   inset: 0;
   width: 100%;
@@ -145,7 +145,6 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(rgba(252, 246, 239, var(--veil)), rgba(252, 246, 239, var(--veil))),
     radial-gradient(120% 95% at 50% 38%, rgba(255, 255, 255, .5), transparent 58%),
     radial-gradient(130% 100% at 50% 42%, transparent 55%, rgba(19, 22, 45, .07) 100%);
   transition: background .25s linear;
@@ -520,10 +519,9 @@ main { position: relative; z-index: 1; }
   content: "";
   position: absolute;
   inset: -12% -14%;
-  /* A pool of warm light, not a grey wash. The previous version borrowed the
-     grey of the charter to detach the block; with the veil over the map, that
-     grey read as a smudge. The console now detaches on its own shadow, so the
-     band only has to carry warmth. */
+  /* A pool of warm light, not a grey wash. An earlier version borrowed the
+     grey of the charter to detach the block, which read as a smudge. The
+     console detaches on its own shadow, so the band only carries warmth. */
   background:
     /* The warm accent used to sit at 50% 14% — exactly behind the tab bar,
        which turned it into a yellow halo stuck to the pill. Moved down and
@@ -1787,10 +1785,11 @@ a.card:hover, .card--hover:hover {
 .page__head,
 .cases__asks { position: relative; }
 
-.block::before,
-.page__head::before,
-.cases__asks::before,
-.prose::before {
+/* Only the page head still has the map behind it, so it is the only one that
+   still needs a sheet to read against. Below it the ground is plain cream and
+   the others were a white panel over nothing, with a backdrop blur that had
+   nothing to blur. */
+.page__head::before {
   content: "";
   position: absolute;
   /* No vertical bleed: sections sit directly on top of each other, so a
@@ -1809,14 +1808,8 @@ a.card:hover, .card--hover:hover {
 /* the page head has a block right underneath: its sheet stops at its own
    bottom edge, and the two meet without crossing */
 .page__head::before { inset: -22px -30px 0; }
-.cases__asks::before { inset: -18px -26px; }
-
-/* the hero's own blocks keep the canvas mask, no sheet */
-.hero .block::before { display: none; }
 
 @media (max-width: 640px) {
-  .block::before,
-  .cases__asks::before { inset: 0 -18px; border-radius: 20px; }
   .page__head::before { inset: -14px -18px 0; border-radius: 20px; }
 }
 
@@ -2788,7 +2781,6 @@ section[id], .block[id] { scroll-margin-top: 58px; }
 
 /* the article's sheet wraps the reading column with a little more air than a
    section needs, because the text runs edge to edge inside it */
-.prose::before { inset: -26px -34px -10px; border-radius: 22px; }
 
 /* A row that ends one card short is the most visible way for a page to look
    unfinished. Four cover cards in an auto-fit grid land on three columns at

@@ -784,6 +784,13 @@
      returns a live traveller in the right-hand half of the viewport, in
      viewport coordinates, or null if none is available right now. */
   window.LicterCarto = {
+    /* The map belongs to the hero. Once it has scrolled out of sight there is
+       nothing to draw, so the loop stops rather than painting an invisible
+       canvas sixty times a second. */
+    setActive: function (on) {
+      if (on) start();
+      else running = false;
+    },
     pickTraveller: function (minX, maxX, minY, maxY) {
       var candidates = [];
       for (var i = 0; i < travellers.length; i++) {

@@ -1124,6 +1124,41 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     Elles prennent maintenant un **2 × 2**. Balayage refait sur toutes les
     pages : plus aucune grille dont la dernière ligne s'arrête avant le bord.
 
+40. **La cartographie se limite au hero.** Demande de Licter : retirer les
+    communautés animées du fond du site, les garder uniquement sur le hero.
+
+    **Le mécanisme remplacé.** Le canevas était `fixed` derrière toute la
+    page, avec un voile crème que `js/ui.js` montait de 0 à 30 % dès le début
+    du contenu. La carte restait donc derrière chaque paragraphe du site,
+    simplement atténuée. Le voile est supprimé ; c'est le canevas lui-même qui
+    s'efface, et la boucle d'animation s'arrête avec lui — plus rien à
+    dessiner, plus rien à calculer.
+
+    **Où elle reste** : derrière le hero sur la home, derrière le bandeau de
+    tête sur les autres pages. Le fondu se termine au bas de cette zone, **ou
+    à la fin du premier écran si elle est plus courte** — sans ça, le bandeau
+    court des pages articles faisait pâlir la carte avant même que le lecteur
+    n'ait défilé. Mesuré sur la home en 900 px de haut : 1 jusqu'à 400 px de
+    défilement, 0,28 à 800, 0 à partir de 1200.
+
+    **Conséquence traitée, pas subie.** Les feuilles de lumière
+    (`.block::before`, `.prose::before`, `.cases__asks::before`) n'existaient
+    que pour rendre le texte lisible par-dessus la carte. Sans carte, elles
+    n'étaient plus qu'un panneau blanc posé sur la crème, avec un
+    `backdrop-filter` qui ne floutait rien. Elles sont supprimées. **Celle du
+    bandeau de tête reste** : c'est la seule zone où la carte est encore là,
+    et c'est précisément le défaut de lisibilité corrigé aux arbitrages 17
+    et 18.
+
+    Pas de transition CSS sur l'opacité : elle est déjà recalculée à chaque
+    frame de défilement, et une transition par-dessus ne ferait que la mettre
+    en retard sur le scroll.
+
+    **Si Licter voulait dire « uniquement sur la home »** et pas « sur le hero
+    de chaque page », il suffit de remplacer le sélecteur de zone par
+    `document.querySelector(".hero")` seul : les 22 autres pages passeraient
+    alors sur fond crème uni de haut en bas.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

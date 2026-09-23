@@ -1078,26 +1078,42 @@
     setTimeout(open, 2600);
   })();
 
-  /* ------------------------------------------------------------- veil
-     The cartography is the hero's subject; below it, it is a texture behind
-     text. A cream veil fades in as soon as the reading content starts, and
-     pages without a hero start already veiled. */
-  (function veil() {
-    var hero = document.querySelector(".hero");
-    var body = document.body;
+  /* --------------------------------------------------- the map's reach
+     The cartography is the hero's subject, not the page's wallpaper. It is
+     painted only while the top zone is on screen — the hero on the home, the
+     page head elsewhere — and fades out as that zone leaves. Below it the
+     ground is plain cream, and the loop stops: nothing to draw.
 
-    if (!hero) { body.style.setProperty("--veil", "0.28"); return; }
+     This replaced a cream veil laid over the map, which dimmed it to 30% but
+     kept it behind every paragraph of the site. */
+  (function mapReach() {
+    var canvas = document.getElementById("carto");
+    if (!canvas) return;
+
+    var zone = document.querySelector(".hero") || document.querySelector(".page__head");
+    if (!zone) { canvas.style.opacity = "0"; return; }
 
     var raf = null, last = -1;
+
     function apply() {
       raf = null;
       var h = window.innerHeight;
-      var v = Math.max(0, Math.min(1, (window.scrollY - h * 0.25) / (h * 0.5))) * 0.3;
-      v = Math.round(v * 100) / 100;
-      if (v === last) return;
-      last = v;
-      body.style.setProperty("--veil", v);
+      /* The fade ends at the bottom of the top zone, or at the end of the
+         first screen if that zone is shorter — otherwise a short page head,
+         as on the article pages, would start dimming the map before the
+         reader has scrolled at all. */
+      var end = Math.max(zone.offsetTop + zone.offsetHeight, h);
+      var start = end - h * 0.55;
+      var o = 1 - Math.max(0, Math.min(1, (window.scrollY - start) / (end - start)));
+      o = Math.round(o * 100) / 100;
+      if (o === last) return;
+      last = o;
+      canvas.style.opacity = o;
+      if (window.LicterCarto && window.LicterCarto.setActive) {
+        window.LicterCarto.setActive(o > 0);
+      }
     }
+
     window.addEventListener("scroll", function () {
       if (!raf) raf = requestAnimationFrame(apply);
     }, { passive: true });
