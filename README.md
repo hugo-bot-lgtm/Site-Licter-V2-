@@ -1210,6 +1210,47 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     interlettrage 2 px, couleur ambre au lieu du gris, et le tiret passe de
     1 à 2 px. C'est lui que l'œil attrape en arrivant sur un nouveau sol.
 
+43. **Photos : six placements, trois photos écartées.** Demande de Licter :
+    rendre le site plus « humain » avec des photos d'attente, les définitives
+    n'étant pas prêtes. Neuf fichiers fournis, copiés dans
+    `assets/img/people/` sous des noms parlants pour que le remplacement se
+    fasse fichier par fichier, sans toucher au HTML.
+
+    **Les placements retenus** — là où la page parle déjà de personnes :
+
+    - `why-licter.html#origin`, mosaïque de deux photos au-dessus des
+      chiffres : la section raconte d'où vient le cabinet, les visages y
+      précèdent les statistiques plutôt que de les illustrer.
+    - `why-licter.html#who`, mosaïque de deux photos en tête de la section
+      « qui nous sommes ».
+    - `book-a-meeting.html#what`, portrait à côté du titre : la page promet
+      qu'on parle au consultant qui fera la lecture, un visage tient cette
+      promesse mieux qu'une phrase de plus. Une accroche a été ajoutée sous
+      le titre pour que la colonne de texte tienne la hauteur du portrait.
+    - Les neuf articles de blog : vignette de 26 px dans la signature.
+
+    **Trois photos sont volontairement laissées de côté** :
+    `event-award.jpg` (« Ose ! Le Cercle Business »), `event-conference.jpg`
+    (« Les Rencontres Économiques d'Aix-en-Provence ») et `event-talk.jpg`
+    (affiche KEDGE nommant « Anaïs BREMAND, Fondatrice de Quartz Agency »).
+    Elles portent la marque d'organisations tierces et, pour la dernière, le
+    nom d'une personne qui n'est pas Licter. Publier ça sur le site du
+    cabinet est le genre de chose qui passe inaperçu jusqu'au jour où elle ne
+    passe plus. Les fichiers sont dans le dépôt, prêts si Licter confirme
+    qu'elle en a les droits.
+
+    **Le logo d'une autre société apparaît aussi sur le mur derrière
+    `team.jpg`.** Le recadrage (`.shot--crop-low`, `scale(1.5)` depuis le bas)
+    le sort du cadre en desktop. En mobile, une photo pleine largeur le
+    laissait revenir, et recadrer plus coupait les visages : **la paire passe
+    donc à deux photos côte à côte sous 720 px**, ce qui conserve le cadrage
+    qui fonctionne et évite le trou qu'une photo seule laissait sur sa ligne.
+
+    **Toutes les photos montrent la même personne**, sauf la photo de groupe.
+    Six placements sur un seul visage, c'est ce que les fichiers permettent —
+    la série définitive devra varier, sans quoi le site aura l'air de
+    n'employer qu'une personne.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux
@@ -1232,6 +1273,11 @@ l'indicateur `+23%`, le lien final et les survols de menu.
 - Blog : les neuf articles sont des textes d'attente (arbitrage 32). Les
   remplacer par les vrais articles Licter, ou les faire relire avant toute
   mise en ligne.
+- Remplacer les photos d'attente de `assets/img/people/` par la série
+  définitive (arbitrage 43) — mêmes noms de fichiers, aucun HTML à toucher.
+  Trancher au passage sur les trois photos écartées pour cause de marques
+  tierces, et sur `team.jpg` dont le mur porte le logo d'une autre société.
+
 - Pages légales (mentions, confidentialité) : absentes, le pied de page les
   attend.
 - Accessibilité : sur la crème, le texte courant `#56606A` passe l'AA (5.4:1)

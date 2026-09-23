@@ -3092,3 +3092,89 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
   .kicker--rank { gap: 6px; padding-left: 13px; }
   .kicker--rank span { font-size: 12.5px; }
 }
+
+/* ==========================================================================
+   Photographs
+   The site was entirely typographic. These give it faces, on the pages where
+   a face means something: who Licter is, and who you meet when you book.
+   Placeholders — see the note in the README before anything goes live.
+   ========================================================================== */
+
+.shots + .stats, .shots + .grid { margin-top: clamp(30px, 4.4vh, 52px); }
+.shots {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 20px);
+  margin-top: clamp(30px, 4.4vh, 52px);
+}
+.shot {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--band);
+}
+.shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* the frames are portrait and the faces sit high: bias the crop upward */
+  object-position: 50% 32%;
+  filter: saturate(.92);
+}
+/* the team shot has another company's logo on the wall behind it: zoom past it
+   rather than ship someone else's branding, even on a placeholder */
+.shot--crop-low img { transform: scale(1.5); transform-origin: 50% 88%; }
+
+.shot--wide { grid-column: span 4; aspect-ratio: 16 / 10; }
+.shot--tall { grid-column: span 2; aspect-ratio: 3 / 4; }
+.shot--half { grid-column: span 3; aspect-ratio: 4 / 3; }
+
+/* a portrait set beside a section head */
+.withshot { display: grid; gap: clamp(24px, 3vw, 52px); align-items: center; }
+@media (min-width: 900px) {
+  .withshot { grid-template-columns: minmax(0, 1fr) minmax(220px, 300px); }
+}
+/* stacked, a full-width square portrait dwarfs the text it belongs to */
+@media (max-width: 899px) { .withshot__figure { max-width: 260px; } }
+.withshot__figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  aspect-ratio: 1 / 1;
+  background: var(--band);
+}
+.withshot__figure img {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 50% 28%;
+  filter: saturate(.92);
+}
+
+/* the article byline gets the face of whoever wrote it */
+.byline__avatar {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 26%;
+  border: 1px solid var(--line);
+  margin-right: 2px;
+}
+.byline { align-items: center; }
+.byline span:has(.byline__avatar) { display: inline-flex; align-items: center; gap: 8px; }
+.byline span:has(.byline__avatar)::before { content: none; padding-left: 0; }
+
+@media (max-width: 720px) {
+  .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shot--wide { grid-column: span 2; aspect-ratio: 16 / 10; }
+  .shot--tall, .shot--half { grid-column: span 1; aspect-ratio: 3 / 4; }
+  /* a pair would fall to one photo per row and leave a hole beside the second,
+     so the pair shares a row here and both keep their desktop crop */
+  .shots:has(> .shot:nth-child(2):last-child) > .shot--wide {
+    grid-column: span 1; aspect-ratio: 3 / 4;
+  }
+}
