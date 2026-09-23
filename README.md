@@ -1242,10 +1242,7 @@ l'indicateur `+23%`, le lien final et les survols de menu.
       logos, où la section parle déjà d'institutions.
     - `event-talk.jpg` (affiche KEDGE, « Anaïs BREMAND, Fondatrice de Quartz
       Agency ») → `why-licter.html#difference`, « Consultants, not
-      dashboards » : un consultant au micro plutôt qu'un écran. Le cadre est
-      en 3/4 (`.withshot__figure--tall`) pour que l'affiche se lise en
-      entier — un carré mangeait la moitié qui porte le texte. Le fichier
-      fait 375 × 533, il ne supportera pas un cadre plus grand.
+      dashboards » : un consultant au micro plutôt qu'un écran.
 
     **L'arbitrage est assumé, pas oublié** : ces trois images n'ont pas
     vocation à survivre à la série définitive, et si le site passe en public
@@ -1261,6 +1258,29 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     logo d'une autre société sur le mur du fond, que le recadrage serré
     sortait du cadre, redevient partiellement visible — cohérent avec la
     décision prise sur les photos d'événement.
+
+    **Une photo seule à côté d'un titre ne tient pas.** Retour de Licter sur
+    `#difference` : « on dirait que la photo s'est retrouvée là par hasard ».
+    Le diagnostic n'était pas la taille — c'était qu'elle ne partageait aucune
+    ligne avec le reste. Trois causes cumulées : `.block__head` se plafonne à
+    680 px, ce qui creusait un vide de 200 px entre le texte et la photo ; la
+    photo, plus haute que le titre, mangeait la marge qui sépare un chapeau du
+    bloc suivant et venait frôler les cartes à 5 px ; et son cadre ne
+    s'alignait sur rien.
+
+    **`#difference` bascule donc sur le motif que la page utilise déjà** : une
+    bande de deux photos entre le titre et les cartes, exactement comme
+    `#origin`, aux bords alignés sur la grille (60 → 964). L'affiche y garde
+    son ratio d'origine à 1/1000 près — un document se lit entier ou pas du
+    tout — et la photo à côté abandonne le sien pour épouser sa hauteur. C'est
+    elle dont l'image sort du flux : laissée dedans, sa hauteur intrinsèque
+    imposait la rangée. `portrait-outdoor.jpg` quitte les signatures d'articles
+    pour l'accompagner, où elle ne servait qu'en 26 px.
+
+    **Les trois photos restées à côté d'un titre** (`index.html#proof`,
+    `clients.html#wall`, `book-a-meeting.html#what`) gardent le motif mais plus
+    le vide : le chapeau occupe toute sa colonne, et c'est la paire, pas le
+    titre, qui porte la marge vers le bloc suivant.
 
     **Le cadre des portraits est passé de 300 à 240 px.** Même retour, appliqué
     aux photos posées à côté d'un texte : à 300 px un cadre portrait faisait
