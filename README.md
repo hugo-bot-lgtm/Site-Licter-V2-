@@ -1251,12 +1251,20 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     vocation à survivre à la série définitive, et si le site passe en public
     avant, ce sont les trois premières à retirer.
 
-    **Le logo d'une autre société apparaît aussi sur le mur derrière
-    `team.jpg`.** Le recadrage (`.shot--crop-low`, `scale(1.5)` depuis le bas)
-    le sort du cadre en desktop. En mobile, une photo pleine largeur le
-    laissait revenir, et recadrer plus coupait les visages : **la paire passe
-    donc à deux photos côte à côte sous 720 px**, ce qui conserve le cadrage
-    qui fonctionne et évite le trou qu'une photo seule laissait sur sa ligne.
+    **Les deux photos de `#origin` sont calées l'une sur l'autre.** Retour de
+    Licter : la seconde n'était pas proportionnée à la première. Deux causes,
+    corrigées ensemble — les cadres finissaient sur deux lignes différentes
+    (374 px contre 389, chacun tenant son propre ratio), et le recadrage
+    `scale(1.5)` grossissait les personnes bien plus qu'à gauche. La photo
+    haute abandonne donc son ratio au profit de la hauteur de la rangée
+    (`.shots:has(> .shot--wide) > .shot--tall`), et le zoom tombe à 1,22. Le
+    logo d'une autre société sur le mur du fond, que le recadrage serré
+    sortait du cadre, redevient partiellement visible — cohérent avec la
+    décision prise sur les photos d'événement.
+
+    **En mobile, la paire passe côte à côte sous 720 px** : pleine largeur,
+    une photo seule laissait un trou sur sa ligne, et le recadrage qu'il
+    aurait fallu pour tenir la largeur coupait les visages.
 
     **Toutes les photos montrent la même personne**, sauf la photo de groupe.
     Neuf placements sur un seul visage, c'est ce que les fichiers permettent —

@@ -3126,11 +3126,15 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
 }
 /* the team shot has another company's logo on the wall behind it: zoom past it
    rather than ship someone else's branding, even on a placeholder */
-.shot--crop-low img { transform: scale(1.5); transform-origin: 50% 88%; }
+.shot--crop-low img { transform: scale(1.22); transform-origin: 50% 82%; }
 
 .shot--wide { grid-column: span 4; aspect-ratio: 16 / 10; }
 .shot--tall { grid-column: span 2; aspect-ratio: 3 / 4; }
 .shot--half { grid-column: span 3; aspect-ratio: 4 / 3; }
+/* paired with a wide shot, the tall one takes the row's height rather than its
+   own ratio: two frames ending on different lines read as a mistake, and the
+   ratio it gives up was never load-bearing */
+.shots:has(> .shot--wide) > .shot--tall { aspect-ratio: auto; align-self: stretch; }
 
 /* a portrait set beside a section head */
 .withshot { display: grid; gap: clamp(24px, 3vw, 52px); align-items: center; }
