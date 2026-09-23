@@ -85,6 +85,9 @@
                                     w: 108, h: 26, opacity: 1,    weight: 600, tracking: 2 }
   ];
   var GAP = 44;
+  /* px per second the logo band travels. It ran at 126, which reads as a
+     ticker rather than a wall of names you have time to recognise. */
+  var MARQUEE_SPEED = 45;
 
   function svgFor(c) {
       var vw = 200, vh = Math.round(200 * c.h / c.w);
@@ -125,7 +128,7 @@
     track.style.gap = gap + "px";
     track.style.paddingLeft = gap + "px";
     track.style.setProperty("--marquee-shift", -setWidth + "px");
-    track.style.setProperty("--marquee-duration", (setWidth / (126 * k)).toFixed(2) + "s");
+    track.style.setProperty("--marquee-duration", (setWidth / (MARQUEE_SPEED * k)).toFixed(2) + "s");
   }
 
   buildMarquee();
