@@ -1337,6 +1337,11 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     - **Les trajets s'éteignent avant d'arriver** (dégradé vers l'alpha 0) et
       les points aussi : quarante lignes pleines qui finissent sur le même
       pixel dessinent une étoile sombre au milieu de la page.
+    - **Les points sont descendus à .38 d'alpha.** Retour de Licter : ils
+      passaient par-dessus le reste du site. Ils sont pourtant derrière tout
+      le contenu — `main` porte un z-index supérieur — mais l'ambre est la
+      marque la plus claire d'une page pâle et porte bien plus loin que sa
+      taille. Le contraste était le seul levier.
     - **Le clic qui repousse les particules n'est pas repris** : sur un site
       où l'on clique des liens et des boutons, un fond qui tressaille à chaque
       clic ressemble à un bug.

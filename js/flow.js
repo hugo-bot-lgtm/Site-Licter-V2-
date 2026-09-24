@@ -134,8 +134,11 @@
       /* in at the edge, out before the centre: the point is read and gone,
          and forty of them never pile up on the same pixel */
       var alpha = Math.min(1, p.t / 0.08) * Math.min(1, (1 - p.t) / 0.36);
-      ctx.fillStyle = "rgba(" + DOT + ", " + (alpha * 0.95).toFixed(3) + ")";
-      ctx.fillRect(pos.x - 1.75, pos.y - 1.75, 3.5, 3.5);
+      /* the point is the brightest mark on a pale page, so it carries much
+         further than its size suggests: at .95 it read as sitting on top of
+         the site rather than behind it */
+      ctx.fillStyle = "rgba(" + DOT + ", " + (alpha * 0.38).toFixed(3) + ")";
+      ctx.fillRect(pos.x - 1.5, pos.y - 1.5, 3, 3);
     }
 
     raf = requestAnimationFrame(frame);
