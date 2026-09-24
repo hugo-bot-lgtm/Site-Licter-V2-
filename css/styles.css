@@ -138,6 +138,25 @@ a { color: inherit; text-decoration: none; }
   display: block;
 }
 
+/* The flow takes the map's place under the hero: paths entering from both
+   edges and bending into one point at the centre of the screen. Driven by
+   js/ui.js in counterpoint to #carto — one fades in as the other fades out.
+
+   z-index 1, not 0 like the map: at 0 it would sit under body::after, whose
+   white wash is strongest at 50% / 38% — exactly where the paths converge,
+   which took half of the effect away. Above the wash and still under main,
+   so it never crosses a line of text. */
+#flow {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+  opacity: 0;
+}
+
 /* Pulls the eye back to the centre and gives the outer bands a reason to be
    darker than the middle. */
 body::after {
@@ -1307,8 +1326,13 @@ main { position: relative; z-index: 1; }
    The parity is counted over every section, not only the blocks: on the home
    the console sits between two blocks, and skipping it left three plain
    sections in a row. */
+/* Translucent, not --band: main carries a stacking context of its own, so an
+   opaque floor hides any backdrop behind it and the flow would have shown on
+   one section out of two. rgba(202, 188, 147, .12) over the cream composites
+   to #F6EFE4 exactly — the same floor, with the paths still reading through
+   it one notch fainter. */
 .block:nth-of-type(even)::before,
-.cases:nth-of-type(even)::before { background: var(--band); }
+.cases:nth-of-type(even)::before { background: rgba(202, 188, 147, .12); }
 /* two cream sections in a row still need a line between them */
 .block:nth-of-type(odd) + .block:nth-of-type(odd)::before { border-top: 1px solid var(--line); }
 

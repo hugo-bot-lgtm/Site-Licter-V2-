@@ -1303,6 +1303,50 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     la série définitive devra varier, sans quoi le site aura l'air de
     n'employer qu'une personne.
 
+44. **Un flux convergent prend le relais de la cartographie.** La carte
+    s'arrête au hero depuis l'arbitrage 40 ; en dessous, la page était nue.
+    Composant fourni par Licter (canvas de béziers convergents, enveloppé dans
+    une iframe React) ramené à un fichier vanilla, `js/flow.js`, et à la
+    charte : trajets navy pointillés entrant par les deux bords et se pliant
+    vers un point unique au centre de l'écran, un signal ambre les parcourant.
+
+    **Les deux canvas se croisent, ils ne se superposent jamais.** `js/ui.js`
+    pilote déjà l'opacité de la carte au scroll ; la même valeur inversée pilote
+    le flux, et chacun coupe sa boucle `requestAnimationFrame` quand il sort de
+    vue. À aucun moment deux canvas ne peignent.
+
+    **Les sols alternés deviennent translucides.** `main` porte son propre
+    contexte d'empilement, donc un sol opaque masque tout fond posé derrière
+    lui : le flux serait apparu sur une section sur deux.
+    `rgba(202, 188, 147, .12)` sur la crème recompose exactement `#F6EFE4` —
+    même plancher, mêmes frontières de section, les trajets se lisant au
+    travers un cran plus faible.
+
+    **Ce qui a été changé au composant** :
+
+    - **z-index 1, pas 0 comme la carte.** À 0 la couche passait sous
+      `body::after`, dont le voile blanc est le plus fort à 50 % / 38 % —
+      exactement où les trajets convergent. La moitié de l'effet y passait.
+    - **Les trajets sont peints une fois dans un canvas hors écran** et
+      re-blittés à chaque image ; seuls les points voyageurs sont redessinés.
+      Le composant re-trace quatre-vingts béziers pointillés par image, ce qui
+      est beaucoup de peinture pour un fond que personne n'est censé regarder.
+    - **Quarante trajets au lieu de quatre-vingts**, et le compte suit la
+      largeur : une douzaine sur un téléphone. Quatre-vingts traits blancs sur
+      du noir font un faisceau ; sur la crème ils font une hachure.
+    - **Les trajets s'éteignent avant d'arriver** (dégradé vers l'alpha 0) et
+      les points aussi : quarante lignes pleines qui finissent sur le même
+      pixel dessinent une étoile sombre au milieu de la page.
+    - **Le clic qui repousse les particules n'est pas repris** : sur un site
+      où l'on clique des liens et des boutons, un fond qui tressaille à chaque
+      clic ressemble à un bug.
+    - `setTransform` au lieu de `scale` pour le DPR : `scale()` multiplie la
+      transformation en place, donc chaque redimensionnement la cumulait.
+
+    **Le corps des articles reçoit le flux comme le reste.** C'est le seul
+    endroit où il passe derrière de la lecture longue ; si Licter le trouve
+    gênant, l'opacité s'y baisse en une ligne.
+
 ## Reste à faire
 
 - Brancher les formulaires sur un vrai endpoint (`js/ui.js`, deux

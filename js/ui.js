@@ -1090,8 +1090,17 @@
     var canvas = document.getElementById("carto");
     if (!canvas) return;
 
+    var flow = document.getElementById("flow");
+
     var zone = document.querySelector(".hero") || document.querySelector(".page__head");
-    if (!zone) { canvas.style.opacity = "0"; return; }
+    if (!zone) {
+      canvas.style.opacity = "0";
+      if (flow) {
+        flow.style.opacity = "1";
+        if (window.LicterFlow && window.LicterFlow.setActive) window.LicterFlow.setActive(true);
+      }
+      return;
+    }
 
     var raf = null, last = -1;
 
@@ -1111,6 +1120,15 @@
       canvas.style.opacity = o;
       if (window.LicterCarto && window.LicterCarto.setActive) {
         window.LicterCarto.setActive(o > 0);
+      }
+      /* The flow takes over exactly what the map gives up: the two are the
+         same reading of the page, so one opacity drives both and there is
+         never a moment with two canvases painting. */
+      if (flow) {
+        flow.style.opacity = 1 - o;
+        if (window.LicterFlow && window.LicterFlow.setActive) {
+          window.LicterFlow.setActive(o < 1);
+        }
       }
     }
 
