@@ -13,7 +13,18 @@
 (function () {
   "use strict";
 
-  var FR = window.LicterFR || {};
+  var FR = window.LicterFR || null;
+  /* The dictionary is 100 KB: it loads only when French is asked for. Its URL
+     is this script's own, with the file name swapped. */
+  var SELF = document.currentScript && document.currentScript.src;
+  function loadFR(done) {
+    if (FR) { done(); return; }
+    var tag = document.createElement("script");
+    tag.src = SELF ? SELF.replace(/i18n\.js/, "fr.js") : "js/fr.js";
+    tag.onload = function () { FR = window.LicterFR || {}; done(); };
+    tag.onerror = function () { FR = {}; done(); };
+    document.head.appendChild(tag);
+  }
   var STORE = "licter-lang";
   var current = "en";
   var observer = null;
@@ -62,6 +73,7 @@
 
   function apply(lang) {
     if (lang === "fr" && current !== "fr") {
+      if (!FR) { loadFR(function () { apply("fr"); }); return; }
       translateTree(document.body, FR);
       document.documentElement.lang = "fr";
       current = "fr";

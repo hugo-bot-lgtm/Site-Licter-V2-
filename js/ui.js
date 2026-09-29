@@ -1434,7 +1434,8 @@
   var KEY = "licter-guide-bar";
   try { if (sessionStorage.getItem(KEY) === "closed") return; } catch (e) {}
 
-  var trigger = document.getElementById("use-cases");
+  /* after the first proof, not over the use cases the visitor is reading */
+  var trigger = document.getElementById("case") || document.getElementById("use-cases");
   var foot = document.querySelector(".site-foot");
   var reached = false, atFoot = false, closed = false;
 
@@ -1462,5 +1463,39 @@
     closed = true;
     render();
     try { sessionStorage.setItem(KEY, "closed"); } catch (e) {}
+  });
+})();
+
+/* =========================================================================
+   Mobile menu
+   Under 860px the nav folds behind one button, so the first screen of every
+   page shows the page, not two rows of links.
+   ========================================================================= */
+(function () {
+  var top = document.querySelector(".hero__top");
+  var nav = document.getElementById("nav");
+  if (!top || !nav) return;
+
+  var btn = document.createElement("button");
+  btn.className = "nav__toggle";
+  btn.type = "button";
+  btn.setAttribute("aria-controls", "nav");
+  btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute("aria-label", "Menu");
+  btn.innerHTML = '<span class="nav__bars" aria-hidden="true"><i></i><i></i></span>';
+  top.insertBefore(btn, nav);
+
+  function set(open) {
+    top.classList.toggle("is-nav-open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  btn.addEventListener("click", function () { set(!top.classList.contains("is-nav-open")); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && top.classList.contains("is-nav-open")) { set(false); btn.focus(); }
+  });
+  /* a link inside the page (#book, #diagnostic) closes the menu on its way */
+  nav.addEventListener("click", function (e) {
+    var a = e.target.closest("a[href]");
+    if (a && a.getAttribute("href").indexOf("#") !== -1) set(false);
   });
 })();

@@ -84,14 +84,9 @@ window.LicterVoices = [
      crops to exactly the 16:9 frame) and upgrade only once maxres proves real */
   function thumb(id) { return "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg"; }
 
-  function setThumb(img, id) {
-    img.src = thumb(id);
-    var probe = new Image();
-    probe.onload = function () {
-      if (probe.naturalWidth > 320 && img.dataset.id === id) img.src = probe.src;
-    };
-    probe.src = "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg";
-  }
+  /* hqdefault (480 wide) already covers a card at 2x on most screens;
+     maxres was 1280 wide for a 350px frame */
+  function setThumb(img, id) { img.src = thumb(id); }
 
   function paint(card, v) {
     card.setAttribute("href", "https://www.youtube.com/watch?v=" + v.id);

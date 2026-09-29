@@ -123,8 +123,13 @@
     var step = 0, sent = false;
     function L(pair) { return fr() ? pair[1] : pair[0]; }
 
+    var dims = document.querySelectorAll("#quiz-dims li");
     function progress() {
       if (bar) bar.style.transform = "scaleX(" + Math.min(step, QUIZ.length) / QUIZ.length + ")";
+      Array.prototype.forEach.call(dims, function (li, i) {
+        li.classList.toggle("is-done", i < step);
+        li.classList.toggle("is-now", i === step);
+      });
     }
 
     function renderQuestion() {
@@ -161,6 +166,8 @@
               '<div class="quiz__row"><input class="fld__input" id="quiz-email" type="email" autocomplete="email" required />' +
               '<button class="btn btn--primary" type="submit">' + t("Send it to me", "Me l'envoyer") + "</button></div>" +
               '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
+              '<p class="consent">' + t("We use your email only to reply to you. ", "Votre e-mail sert uniquement à vous répondre. ") +
+                '<a href="privacy.html">' + t("Privacy policy", "Politique de confidentialité") + "</a>.</p>" +
             "</form>") +
         '<p class="quiz__more"><a href="guide.html">' + t("Or start with the free guide", "Ou commencez par le guide gratuit") +
           ' <span aria-hidden="true">\u2192</span></a></p>' +

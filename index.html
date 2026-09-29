@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=20261075" />
+<link rel="stylesheet" href="css/styles.css?v=20261078" />
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
@@ -187,7 +187,6 @@
         <ul class="questions" id="questions"><!-- filled by js/ui.js --></ul>
         <p class="asks__foot" id="asks-foot">Three of the twelve questions social data answers better than a survey.</p>
         <div class="page__actions" data-reveal>
-      <a class="btn btn--ghost" href="use-cases.html">Discover the use cases <span aria-hidden="true">→</span></a>
       <a class="btn btn--primary" href="book-a-meeting.html">Book a meeting <span aria-hidden="true">→</span></a>
     </div>
       </div>
@@ -251,6 +250,9 @@
         <h2 class="block__title">Where does your listening stand?</h2>
         <p class="block__lead">Six questions, three minutes. Your score now, the full readout by email.</p>
         <div class="quiz__progress" aria-hidden="true"><span id="quiz-bar"></span></div>
+        <ol class="quiz__dims" id="quiz-dims" aria-hidden="true">
+          <li>Framing</li><li>Coverage</li><li>Languages</li><li>Audiences</li><li>Alerting</li><li>Use</li>
+        </ol>
       </div>
       <div class="quiz__stage" id="quiz-stage" aria-live="polite">
         <noscript><p>The diagnostic needs JavaScript. <a href="diagnostic.html">Request a diagnostic</a> instead.</p></noscript>
@@ -370,21 +372,15 @@
         <img src="assets/img/team/consultant-dashboard.jpg" alt="A Licter consultant in an armchair, a laptop on his knees and a dashboard open on the screen in front of him" width="800" height="1200" loading="lazy" decoding="async" />
       </figure>
     </div>
-    <!-- MOCK: roles are placeholders, and names are to add once confirmed. -->
-    <ul class="people" data-mock data-reveal>
-      <li class="person">
-        <img src="assets/img/team/headshot-1.jpg" alt="Portrait of a Licter consultant in a red jacket" width="640" height="640" loading="lazy" decoding="async" />
-        <p class="person__role">Consumer insights</p>
-      </li>
-      <li class="person">
-        <img src="assets/img/team/headshot-2.jpg" alt="Portrait of a Licter consultant in a pink jumper" width="640" height="640" loading="lazy" decoding="async" />
-        <p class="person__role">Communication and reputation</p>
-      </li>
-      <li class="person">
-        <img src="assets/img/team/headshot-3.jpg" alt="Portrait of a Licter consultant in a light blue shirt" width="640" height="640" loading="lazy" decoding="async" />
-        <p class="person__role">Client director</p>
-      </li>
-    </ul>
+    <!-- MOCK: roles are placeholders; add first names once confirmed. -->
+    <div class="people" data-mock data-reveal>
+      <ul class="people__faces">
+        <li><img src="assets/img/team/headshot-1.jpg" alt="Portrait of a Licter consultant in a red jacket" width="640" height="640" loading="lazy" decoding="async" /></li>
+        <li><img src="assets/img/team/headshot-2.jpg" alt="Portrait of a Licter consultant in a pink jumper" width="640" height="640" loading="lazy" decoding="async" /></li>
+        <li><img src="assets/img/team/headshot-3.jpg" alt="Portrait of a Licter consultant in a light blue shirt" width="640" height="640" loading="lazy" decoding="async" /></li>
+      </ul>
+      <p class="people__text">Consumer insights, communication and reputation, client direction: the people you would actually work with.</p>
+    </div>
     <div class="page__actions" data-reveal>
       <a class="btn btn--ghost" href="why-licter.html">Why Licter <span aria-hidden="true">→</span></a>
     </div>
@@ -410,6 +406,7 @@
             <label class="fld__label" for="book-topic">The decision you are facing <span class="fld__opt">(optional)</span></label>
             <textarea class="fld__input" id="book-topic" name="topic" rows="3"></textarea>
           </div>
+          <p class="consent">We use your email only to reply to you. <a href="privacy.html">Privacy policy</a>.</p>
           <button class="btn btn--primary" type="submit">Book a meeting <span aria-hidden="true">→</span></button>
         </form>
         <p class="book__done" id="book-done" role="status" hidden></p>
@@ -508,17 +505,16 @@
   </div>
 
   <div class="site-foot__legal shell">
-    <span>© 2026 Licter, Social Data Intelligence</span>
+    <span>© 2026 Licter, Social Data Intelligence · <a href="legal.html">Legal notice</a> · <a href="privacy.html">Privacy</a></span>
     <span>50+ clients · 160+ projects · Top 50 worldwide, SI Lab 2024</span>
   </div>
 </footer>
 
-<script src="js/fr.js?v=20261075"></script>
-<script src="js/i18n.js?v=20261075"></script>
-<script src="js/cartography.js?v=20261075"></script>
-<script src="js/flow.js?v=20261075"></script>
-<script src="js/ui.js?v=20261075"></script>
-<script src="js/voices.js?v=20261075"></script>
-<script src="js/home.js?v=20261075"></script>
+<script src="js/i18n.js?v=20261078"></script>
+<script src="js/cartography.js?v=20261078"></script>
+<script src="js/flow.js?v=20261078"></script>
+<script src="js/ui.js?v=20261078"></script>
+<script src="js/voices.js?v=20261078"></script>
+<script src="js/home.js?v=20261078"></script>
 </body>
 </html>
