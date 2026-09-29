@@ -3809,3 +3809,60 @@ textarea.fld__input { resize: vertical; min-height: 84px; }
   .range input[type="range"] { height: 32px; }
 }
 .quiz__dims { grid-template-rows: repeat(3, auto); grid-auto-flow: column; }
+
+/* =========================================================
+   Audit 2 — header action, compact bar, videos, rhythm
+   ========================================================= */
+
+/* ---------------------------------------- the action in the header */
+.hero__top { gap: clamp(14px, 2.4vw, 32px); }
+.nav__cta { flex: none; height: 42px; padding: 0 18px; white-space: nowrap; }
+@media (max-width: 1100px) and (min-width: 861px) {
+  .nav__list { padding: 0 20px; }
+  .nav__cta { padding: 0 14px; font-size: 11px; }
+}
+@media (max-width: 860px) {
+  .hero__top .nav__cta { order: 2; margin-left: auto; height: 44px; }
+  .hero__top .lang { order: 1; margin-left: 0; }
+  .hero__top .logo { order: 0; margin-right: auto; }
+  .nav__toggle { order: 3; }
+}
+@media (max-width: 420px) {
+  .hero__top .nav__cta { padding: 0 12px; font-size: 11px; letter-spacing: .6px; }
+  .hero__top .lang { gap: 0; }
+}
+
+/* -------------------------------------------------- compact bar */
+.stickybar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 30;
+  background: rgba(252, 246, 239, .92);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  transform: translateY(-100%); visibility: hidden;
+  transition: transform .3s cubic-bezier(.16, 1, .3, 1), visibility 0s linear .3s;
+}
+.stickybar.is-shown { transform: none; visibility: visible; transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+.stickybar__in { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.stickybar__logo img { display: block; width: auto; height: 34px; }
+.stickybar__cta { height: 40px; padding: 0 16px; }
+@media (prefers-reduced-motion: reduce) { .stickybar, .stickybar.is-shown { transition: none; } }
+
+/* ----------------------------------------------------- videos */
+/* three interviews: never two on a line and one alone below */
+@media (min-width: 700px) {
+  .reels { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 699px) {
+  .reels {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 82%; grid-template-columns: none;
+    overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px;
+    margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter);
+  }
+  .reel { scroll-snap-align: start; }
+}
+
+/* ------------------------------------------------------ rhythm */
+.cases { min-height: 0; }
+.hero__asks { margin-top: clamp(24px, 4vh, 38px); }
+.quiz__q:focus, #cases-panel:focus { outline: none; }
+#cases-panel:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 4px; border-radius: 18px; }

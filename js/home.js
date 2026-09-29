@@ -35,6 +35,13 @@
       var target = document.getElementById("use-cases");
       if (tab) tab.click();
       if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      /* the answer changed further down: take keyboard and screen-reader
+         users there too, once the new readout is in */
+      var panel = document.getElementById("cases-panel");
+      if (panel) {
+        panel.setAttribute("tabindex", "-1");
+        setTimeout(function () { panel.focus({ preventScroll: true }); }, 450);
+      }
     });
   });
 
@@ -176,7 +183,15 @@
       progress();
     }
 
-    function render() { if (step < QUIZ.length) renderQuestion(); else renderResult(); }
+    function render(moveFocus) {
+      if (step < QUIZ.length) renderQuestion(); else renderResult();
+      /* the stage is rebuilt: without this, focus falls back to the page top */
+      if (moveFocus) {
+        var q = stage.querySelector(".quiz__q");
+        q.setAttribute("tabindex", "-1");
+        q.focus({ preventScroll: true });
+      }
+    }
 
     stage.addEventListener("click", function (e) {
       var opt = e.target.closest(".quiz__opt");
@@ -184,14 +199,14 @@
         answers[step] = +opt.dataset.v;
         opt.classList.add("is-on");
         /* a beat so the choice registers before the next question arrives */
-        setTimeout(function () { step++; render(); }, 180);
+        setTimeout(function () { step++; render(true); }, 180);
         return;
       }
       var back = e.target.closest(".quiz__back");
       if (back) {
         if (back.hasAttribute("data-restart")) { answers = []; step = 0; sent = false; }
         else step = Math.max(0, step - 1);
-        render();
+        render(true);
       }
     });
 
@@ -205,7 +220,7 @@
       if (!ok) { field.focus(); return; }
       /* MOCK: wire to the CRM here (score, answers, email) */
       sent = true;
-      renderResult();
+      render(true);
     });
 
     onLang(render);

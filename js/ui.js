@@ -1499,3 +1499,50 @@
     if (a && a.getAttribute("href").indexOf("#") !== -1) set(false);
   });
 })();
+
+/* =========================================================================
+   Compact bar
+   Once the header has scrolled away, scrolling back up brings a slim bar
+   with the logo and the one action that matters. It stays out of the way
+   while reading down, and where the page already shows the booking.
+   ========================================================================= */
+(function () {
+  var head = document.querySelector(".hero__top");
+  var cta = head && head.querySelector(".nav__cta");
+  if (!head || !cta || !("IntersectionObserver" in window)) return;
+
+  var bar = document.createElement("div");
+  bar.className = "stickybar";
+  bar.setAttribute("aria-hidden", "true");
+  var logo = head.querySelector(".logo");
+  bar.innerHTML =
+    '<div class="stickybar__in shell">' +
+      '<a class="stickybar__logo" href="' + (logo ? logo.getAttribute("href") : "index.html") + '" tabindex="-1" aria-label="Licter home">' +
+        '<img src="' + (document.querySelector(".logo__img") || {}).getAttribute("src") + '" alt="" width="36" height="40" /></a>' +
+      '<a class="btn btn--primary stickybar__cta" href="' + cta.getAttribute("href") + '" tabindex="-1">Book a meeting <span aria-hidden="true">→</span></a>' +
+    "</div>";
+  document.body.appendChild(bar);
+
+  var headGone = false, inBook = false, lastY = window.scrollY, up = false, ticking = false;
+
+  function render() {
+    var on = headGone && up && !inBook;
+    bar.classList.toggle("is-shown", on);
+    bar.setAttribute("aria-hidden", on ? "false" : "true");
+    Array.prototype.forEach.call(bar.querySelectorAll("a"), function (a) { a.tabIndex = on ? 0 : -1; });
+  }
+
+  new IntersectionObserver(function (e) { headGone = !e[0].isIntersecting; render(); }).observe(head);
+  var book = document.getElementById("book");
+  if (book) new IntersectionObserver(function (e) { inBook = e[0].isIntersecting; render(); }).observe(book);
+
+  window.addEventListener("scroll", function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      var y = window.scrollY;
+      if (Math.abs(y - lastY) > 6) { up = y < lastY; lastY = y; render(); }
+      ticking = false;
+    });
+  }, { passive: true });
+})();
