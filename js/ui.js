@@ -1094,14 +1094,15 @@
      This replaced a cream veil laid over the map, which dimmed it to 30% but
      kept it behind every paragraph of the site. */
   (function mapReach() {
+    /* the home has no full-page map (its communities live in the hero
+       frame): the flow still takes over below the hero */
     var canvas = document.getElementById("carto");
-    if (!canvas) return;
 
     var flow = document.getElementById("flow");
 
     var zone = document.querySelector(".hero") || document.querySelector(".page__head");
     if (!zone) {
-      canvas.style.opacity = "0";
+      if (canvas) canvas.style.opacity = "0";
       if (flow) {
         flow.style.opacity = "1";
         if (window.LicterFlow && window.LicterFlow.setActive) window.LicterFlow.setActive(true);
@@ -1124,7 +1125,7 @@
       o = Math.round(o * 100) / 100;
       if (o === last) return;
       last = o;
-      canvas.style.opacity = o;
+      if (canvas) canvas.style.opacity = o;
       if (window.LicterCarto && window.LicterCarto.setActive) {
         window.LicterCarto.setActive(o > 0);
       }

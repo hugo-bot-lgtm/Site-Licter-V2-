@@ -4019,3 +4019,11 @@ textarea.fld__input { resize: vertical; min-height: 84px; }
 .ask__arrow { font-size: 12px; }
 @media (min-width: 961px) { .ask { font-size: 13px; padding: 7px 12px; } }
 @media (max-width: 560px) { .ask { min-height: 44px; font-size: 14px; } }
+
+/* the community map frame: dark ground, like Licter's own network maps */
+.hero__frame {
+  background: radial-gradient(120% 100% at 50% 45%, #10132A 0%, #080A16 70%, #05060E 100%);
+  border-color: rgba(var(--ink-rgb), .35);
+  box-shadow: 0 34px 70px -34px rgba(var(--ink-rgb), .6);
+}
+.hero__frame .communities { position: absolute; inset: 0; display: block; cursor: crosshair; }
