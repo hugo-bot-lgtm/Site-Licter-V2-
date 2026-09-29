@@ -4013,3 +4013,9 @@ textarea.fld__input { resize: vertical; min-height: 84px; }
 .asks { gap: 8px; max-width: 560px; }
 @media (min-width: 961px) { .ask { font-size: 14px; padding: 10px 14px; } }
 @media (max-width: 560px) { .ask { min-height: 46px; font-size: 14.5px; } }
+/* hero questions, smaller again */
+.asks { gap: 6px; max-width: 520px; margin-top: clamp(18px, 2.8vh, 26px); }
+.ask { min-height: 38px; padding: 7px 12px; border-radius: 8px; font-size: 13px; line-height: 1.3; }
+.ask__arrow { font-size: 12px; }
+@media (min-width: 961px) { .ask { font-size: 13px; padding: 7px 12px; } }
+@media (max-width: 560px) { .ask { min-height: 44px; font-size: 14px; } }
