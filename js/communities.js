@@ -31,7 +31,7 @@
   var COMMUNITIES = [
     { x: 0.27, y: 0.47, r: 0.34, n: 1300, color: "#F4A93B", swirl:  0.55, platform: "TIKTOK",    cap: "Reel · 14 min" },
     { x: 0.45, y: 0.17, r: 0.25, n: 800, color: "#E2468D", swirl: -0.6,  platform: "INSTAGRAM", cap: "Story · 2 h" },
-    { x: 0.55, y: 0.38, r: 0.26, n: 900, color: "#D796E6", swirl:  0.5,  platform: "INSTAGRAM", cap: "Story · 47 min" },
+    { x: 0.55, y: 0.38, r: 0.26, n: 900, color: "#D796E6", swirl:  0.5,  platform: "TWITCH",    cap: "Live · 2 h" },
     { x: 0.66, y: 0.20, r: 0.20, n: 620, color: "#3CC2A6", swirl:  0.55, platform: "YOUTUBE",   cap: "Video · 1 h" },
     { x: 0.78, y: 0.42, r: 0.25, n: 820, color: "#4292F2", swirl: -0.5,  platform: "LINKEDIN",  cap: "Post · 3 h" },
     { x: 0.43, y: 0.75, r: 0.26, n: 920, color: "#7B6CF2", swirl:  0.6,  platform: "X",         cap: "Post · 22 min" },

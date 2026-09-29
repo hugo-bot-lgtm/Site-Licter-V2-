@@ -162,7 +162,8 @@
     X: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg>',
     LINKEDIN: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5V17M8 7.6v.1M12 17v-3.6a2.2 2.2 0 0 1 4.4 0V17"/></svg>',
     YOUTUBE: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.2 9.4l4.6 2.6-4.6 2.6z" fill="currentColor" stroke="none"/></svg>',
-    FACEBOOK: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M14.3 8.2h-1.2a1.8 1.8 0 0 0-1.8 1.8V20M9.7 12.6h4.4"/></svg>'
+    FACEBOOK: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M14.3 8.2h-1.2a1.8 1.8 0 0 0-1.8 1.8V20M9.7 12.6h4.4"/></svg>',
+    TWITCH: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M5 3.5h15.5v10.5l-4.5 4.5h-4l-3 3v-3H5.5z"/><path d="M11 8v4M15.5 8v4"/></svg>'
   };
 
   /* ------------------------------------------------------------ use cases */
