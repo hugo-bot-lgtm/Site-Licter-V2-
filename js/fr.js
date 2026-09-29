@@ -97,6 +97,7 @@ window.LicterFR = {
   "Your work email...": "Votre e-mail professionnel...", "Your work email": "Votre e-mail professionnel",
   "BOOK A MEETING": "PRENDRE RENDEZ-VOUS",
   "NOTED - WE GET BACK TO YOU WITHIN 24 HOURS": "BIEN REÇU - NOUS REVENONS VERS VOUS SOUS 24 H",
+  "NOTED - ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ - UN E-MAIL À LA PROCHAINE PUBLICATION",
   "THEY TRUST US": "ILS NOUS FONT CONFIANCE",
 
   /* ---- home ---- */
@@ -189,6 +190,8 @@ window.LicterFR = {
   "SPEED": "VITESSE",
   "Setup": "Paramétrage",
   "LATEST": "DERNIERS ARTICLES",
+  "Recent notes from the team.": "Les dernières notes de l'équipe.",
+  "All nine pieces": "Les neuf articles",
   "Model:": "Modèle :",
   "SEARCH": "SEARCH",
   "SOCIAL": "SOCIAL",
@@ -426,7 +429,7 @@ window.LicterFR = {
   "Competitive audience analysis": "Analyse des audiences concurrentes",
   "Monitoring & social listening": "Veille & social listening",
   "Which platforms does it read?": "Quelles plateformes lit-il ?",
-  "11 SEPTEMBER 2026 · 2 MIN READ": "11 SEPTEMBRE 2026 · 2 MIN DE LECTURE",
+  "11 SEPTEMBER 2026 · 3 MIN READ": "11 SEPTEMBRE 2026 · 3 MIN DE LECTURE",
   "16 SEPTEMBER 2026 · 2 MIN READ": "16 SEPTEMBRE 2026 · 2 MIN DE LECTURE",
   "A document, not an impression.": "Un document, pas une impression.",
   "A maturity score per dimension": "Un score de maturité par dimension",
