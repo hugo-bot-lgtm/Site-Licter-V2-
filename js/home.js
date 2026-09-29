@@ -356,36 +356,66 @@
 })();
 
 /* =========================================================================
-   Method: the rail on the left follows the card in view on the right.
+   Method: a horizontal track of cards. The step bar, the arrows and the
+   track stay in step whichever one moves.
    ========================================================================= */
 (function () {
+  var track = document.querySelector(".htrack");
   var cards = Array.prototype.slice.call(document.querySelectorAll(".mstep"));
-  var items = Array.prototype.slice.call(document.querySelectorAll(".mrail__item"));
-  var rail = document.querySelector(".mrail");
-  if (!cards.length || !items.length || !("IntersectionObserver" in window)) return;
-  var active = -1;
+  var steps = Array.prototype.slice.call(document.querySelectorAll(".hstep"));
+  var bar = document.querySelector(".hsteps");
+  if (!track || !cards.length) return;
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var active = 0;
+
+  /* room after the last card, so every card, the last one included,
+     can come to rest against the left edge */
+  function pad() {
+    var last = cards[cards.length - 1];
+    var start = parseFloat(getComputedStyle(track).paddingLeft) || 0;
+    /* padding-right does not extend a scroll area everywhere: a spacer item does */
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    track.style.setProperty("--end", Math.max(0, track.clientWidth - last.offsetWidth - 2 * start - gap) + "px");
+  }
+  pad();
+  window.addEventListener("resize", pad);
+
   function set(i) {
-    if (i === active) return;
     active = i;
-    items.forEach(function (a, k) {
-      a.classList.toggle("is-on", k === i);
-      a.classList.toggle("is-done", k < i);
-      if (k === i) a.setAttribute("aria-current", "step"); else a.removeAttribute("aria-current");
+    steps.forEach(function (b, k) {
+      b.classList.toggle("is-on", k === i);
+      b.classList.toggle("is-done", k < i);
+      if (k === i) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
     });
     cards.forEach(function (c, k) { c.classList.toggle("is-on", k === i); });
-    if (rail) rail.style.setProperty("--p", ((i + 0.5) / cards.length).toFixed(3));
+    if (bar) bar.style.setProperty("--p", (i / (cards.length - 1)).toFixed(3));
+    document.querySelectorAll(".hmethod__arrow").forEach(function (a) {
+      var d = +a.dataset.dir;
+      a.disabled = (d < 0 && i === 0) || (d > 0 && i === cards.length - 1);
+    });
   }
-  /* the card whose top has passed the upper third of the screen is the current one */
-  var io = new IntersectionObserver(function () {
-    var line = window.innerHeight * 0.4, cur = 0;
-    cards.forEach(function (c, k) { if (c.getBoundingClientRect().top < line) cur = k; });
-    set(cur);
-  }, { rootMargin: "-10% 0px -50% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] });
-  cards.forEach(function (c) { io.observe(c); });
-  window.addEventListener("scroll", function () {
-    var line = window.innerHeight * 0.4, cur = 0;
-    cards.forEach(function (c, k) { if (c.getBoundingClientRect().top < line) cur = k; });
-    set(cur);
+  function go(i) {
+    i = Math.max(0, Math.min(cards.length - 1, i));
+    track.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: reduced.matches ? "auto" : "smooth" });
+    set(i);
+  }
+  steps.forEach(function (b, i) { b.addEventListener("click", function () { go(i); }); });
+  document.querySelectorAll(".hmethod__arrow").forEach(function (a) {
+    a.addEventListener("click", function () { go(active + (+a.dataset.dir)); });
+  });
+  track.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") { e.preventDefault(); go(active + 1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(active - 1); }
+  });
+  /* swipe or trackpad: the card nearest the left edge is the current one */
+  var t = null;
+  track.addEventListener("scroll", function () {
+    clearTimeout(t);
+    t = setTimeout(function () {
+      var x = track.scrollLeft + cards[0].offsetLeft, best = 0, d = Infinity;
+      cards.forEach(function (c, k) { var dd = Math.abs(c.offsetLeft - x); if (dd < d) { d = dd; best = k; } });
+      set(best);
+    }, 80);
   }, { passive: true });
   set(0);
 })();

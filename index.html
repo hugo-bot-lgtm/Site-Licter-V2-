@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <meta name="theme-color" content="#FCF6EF" />
-<script src="js/theme.js?v=20261129"></script>
-<link rel="stylesheet" href="css/styles.css?v=20261129" />
+<script src="js/theme.js?v=20261133"></script>
+<link rel="stylesheet" href="css/styles.css?v=20261133" />
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
@@ -248,20 +248,24 @@
 
   <!-- ==================== METHOD ==================== -->
   <section class="block shell" id="method">
-    <div class="method">
-      <div class="method__rail">
-        <div class="method__sticky">
+    <div class="hmethod">
+      <div class="hmethod__head">
+        <div>
           <h2 class="block__title">Four steps, no black box.</h2>
           <p class="block__lead">From the decision you have to make to the people who make it. You see every step, and the person running it.</p>
-          <ol class="mrail" aria-label="The four steps">
-          <li><a class="mrail__item is-on" href="#mstep-1" data-i="0"><span class="mrail__n">1</span><span class="mrail__name">Framing</span></a></li>
-          <li><a class="mrail__item" href="#mstep-2" data-i="1"><span class="mrail__n">2</span><span class="mrail__name">Collection</span></a></li>
-          <li><a class="mrail__item" href="#mstep-3" data-i="2"><span class="mrail__n">3</span><span class="mrail__name">Analysis</span></a></li>
-          <li><a class="mrail__item" href="#mstep-4" data-i="3"><span class="mrail__n">4</span><span class="mrail__name">Decision</span></a></li>
-          </ol>
+        </div>
+        <div class="hmethod__nav">
+          <button class="hmethod__arrow" type="button" data-dir="-1" aria-label="Previous step">←</button>
+          <button class="hmethod__arrow" type="button" data-dir="1" aria-label="Next step">→</button>
         </div>
       </div>
-      <div class="method__cards">
+      <ol class="hsteps" aria-label="The four steps">
+        <li><button class="hstep is-on" type="button" data-i="0" aria-controls="mstep-1"><span class="hstep__n">1</span><span class="hstep__name">Framing</span></button></li>
+        <li><button class="hstep" type="button" data-i="1" aria-controls="mstep-2"><span class="hstep__n">2</span><span class="hstep__name">Collection</span></button></li>
+        <li><button class="hstep" type="button" data-i="2" aria-controls="mstep-3"><span class="hstep__n">3</span><span class="hstep__name">Analysis</span></button></li>
+        <li><button class="hstep" type="button" data-i="3" aria-controls="mstep-4"><span class="hstep__n">4</span><span class="hstep__name">Decision</span></button></li>
+      </ol>
+      <div class="htrack" tabindex="0" aria-label="The four steps, one card each">
         <article class="mstep" id="mstep-1" style="--i:0">
           <figure class="mstep__img"><img src="assets/img/team/meeting-portrait.jpg" alt="A Licter consultant listening during a scoping meeting" width="800" height="1200" loading="lazy" decoding="async" /></figure>
           <div class="mstep__body">
@@ -459,11 +463,11 @@
   </div>
 </footer>
 
-<script src="js/i18n.js?v=20261129"></script>
-<script src="js/communities.js?v=20261129"></script>
-<script src="js/ui.js?v=20261129"></script>
-<script src="js/voices.js?v=20261129"></script>
-<script src="js/usecases.js?v=20261129"></script>
-<script src="js/home.js?v=20261129"></script>
+<script src="js/i18n.js?v=20261133"></script>
+<script src="js/communities.js?v=20261133"></script>
+<script src="js/ui.js?v=20261133"></script>
+<script src="js/voices.js?v=20261133"></script>
+<script src="js/usecases.js?v=20261133"></script>
+<script src="js/home.js?v=20261133"></script>
 </body>
 </html>
