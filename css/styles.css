@@ -4844,3 +4844,73 @@ html[data-theme="dark"] .uv__live { color: #F48BBB; background: rgba(226, 70, 14
 .callback__dot { width: 8px; height: 8px; border-radius: 50%; background: #2E9E6B; box-shadow: 0 0 0 4px rgba(46, 158, 107, .18); animation: lf-pulse 1.8s ease-in-out infinite; }
 @media (max-width: 560px) { .callback__row { flex-direction: column; } .callback__row .btn { justify-content: center; } }
 @media (prefers-reduced-motion: reduce) { .callback__dot { animation: none; } }
+
+/* =========================================================
+   SI Lab badge: liquid metal. A chrome rim that flows around a
+   frosted-glass pill (CSS approximation of a liquid-metal shader:
+   an animated conic gradient masked to the border, and its glow)
+   ========================================================= */
+@property --lm { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.award {
+  --rim: conic-gradient(from var(--lm),
+    #ffffff 0deg, #c9ccd6 40deg, #6d7284 85deg, #f4f5f8 130deg, #EAA93D 165deg,
+    #fff4dc 190deg, #8b90a0 235deg, #ffffff 280deg, #aeb2bf 320deg, #ffffff 360deg);
+  position: relative; isolation: isolate; overflow: visible;
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 6px 18px 6px 6px; border: 0; border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .78), rgba(255, 255, 255, .38));
+  -webkit-backdrop-filter: blur(16px) saturate(170%); backdrop-filter: blur(16px) saturate(170%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95), inset 0 -1px 0 rgba(19, 22, 45, .06), 0 10px 26px -14px rgba(19, 22, 45, .45);
+  animation: lm-spin 6s linear infinite;
+}
+.award::before { /* the flowing rim */
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2px;
+  background: var(--rim);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none; animation: inherit;
+}
+.award::after { /* the glow it throws */
+  content: ""; position: absolute; inset: -3px; z-index: -1; border-radius: inherit;
+  background: var(--rim); filter: blur(10px); opacity: .45;
+  pointer-events: none; animation: inherit; transition: opacity .3s ease;
+}
+.award:hover::after { opacity: .8; }
+.award:hover { animation-duration: 2.5s; }
+@keyframes lm-spin { to { --lm: 360deg; } }
+
+.award__rank {
+  position: relative; overflow: hidden; z-index: 2;
+  padding: 6px 11px; border-radius: 999px;
+  background: linear-gradient(160deg, #2C3566 0%, #13162D 55%, #0B0D1D 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), inset 0 -1px 0 rgba(0, 0, 0, .4);
+  font: 800 11.5px/1 var(--title-font); letter-spacing: 1px; text-transform: uppercase;
+  color: transparent; background-clip: padding-box;
+}
+.award__rank::before { /* gold-chrome lettering */
+  content: attr(data-label); position: absolute; inset: 0; display: grid; place-items: center;
+  background: linear-gradient(180deg, #FFF1CF 0%, #EAA93D 55%, #B8801E 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.award__rank::after { /* a sheen passing over it */
+  content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .35), transparent);
+  transform: skewX(-20deg); animation: lm-sheen 4.5s ease-in-out infinite;
+}
+@keyframes lm-sheen { 0%, 60% { left: -60%; } 100% { left: 140%; } }
+.award__text { position: relative; z-index: 2; font: 600 13px/1 var(--body-font); letter-spacing: .2px; color: var(--ink); }
+
+html[data-theme="dark"] .award {
+  background: linear-gradient(135deg, rgba(44, 53, 102, .6), rgba(28, 33, 66, .35));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), 0 10px 26px -12px rgba(0, 0, 0, .7);
+}
+html[data-theme="dark"] .award::after { opacity: .3; }
+html[data-theme="dark"] .award__rank { background: linear-gradient(160deg, #FCF6EF, #D9D3CC); }
+html[data-theme="dark"] .award__rank::before { background: linear-gradient(180deg, #2C3566, #13162D); -webkit-background-clip: text; background-clip: text; }
+
+@media (prefers-reduced-motion: reduce) {
+  .award, .award::before, .award::after, .award__rank::after { animation: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .award { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
