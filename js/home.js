@@ -139,6 +139,7 @@
     function L(pair) { return fr() ? pair[1] : pair[0]; }
     function two(n) { return (n < 10 ? "0" : "") + n; }
     function score() { return answers.reduce(function (s, v) { return s + v; }, 0); }
+    function lead() { return window.LicterLead ? window.LicterLead.get() : ""; }
     function weakest() { return answers.indexOf(Math.min.apply(null, answers)); }
 
     /* the six dimensions across the top: done, current, to come */
@@ -186,7 +187,7 @@
           ? '<p class="quiz__sent">' + t("Noted. The full readout arrives by email.", "C'est noté. Le détail arrive par e-mail.") + "</p>"
           : '<form class="quiz__form" novalidate>' +
               '<label class="fld__label" for="quiz-email">' + t("And the full readout, dimension by dimension, by email", "Et le détail, dimension par dimension, par e-mail") + "</label>" +
-              '<div class="quiz__row"><input class="fld__input" id="quiz-email" type="email" autocomplete="email" required />' +
+              '<div class="quiz__row"><input class="fld__input" id="quiz-email" type="email" autocomplete="email" value="' + lead().replace(/"/g, "&quot;") + '" required />' +
               '<button class="btn btn--primary" type="submit">' + t("Send it to me", "Me l'envoyer") + "</button></div>" +
               '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
               '<p class="consent">' + t("We use your email only to reply to you. ", "Votre e-mail sert uniquement à vous répondre. ") +
@@ -234,6 +235,7 @@
       err.hidden = ok;
       if (!ok) { field.focus(); return; }
       /* MOCK: wire to the CRM here (score, answers, email) */
+      if (window.LicterLead) window.LicterLead.set(field.value.trim());
       sent = true;
       render(true);
     });
@@ -298,6 +300,9 @@
       if (/^\+?\d{9,15}$/.test(digits)) return "phone";
       return null;
     }
+    /* an email left elsewhere on the page is already there */
+    function prefill(v) { if (!contact.value && EMAIL.test(v || "")) contact.value = v; }
+    if (window.LicterLead) { prefill(window.LicterLead.get()); window.LicterLead.on(prefill); }
     contact.addEventListener("input", function () {
       if (!contactErr.hidden) { contactErr.hidden = true; contact.setAttribute("aria-invalid", "false"); }
     });
@@ -308,6 +313,7 @@
       contactErr.hidden = !!k;
       if (!k) { contact.focus(); return; }
       /* MOCK: wire to the CRM here (contact, kind) */
+      if (k === "email" && window.LicterLead) window.LicterLead.set(v);
       sentTo = { v: v, k: k };
       bookForm.hidden = true;
       document.getElementById("book-done").hidden = false;

@@ -1398,7 +1398,8 @@ et `MOCK` dans le code. **Rien n'est envoyé nulle part.** À remplacer :
 | Élément | Où | À fournir |
 |---|---|---|
 | Visuels des cas d'usage : 4 questions × 4 secteurs (agroalimentaire, luxe, jouets & jeux vidéo, automobile) — courbes, pics, nuages de mots, communautés, scores, course des sujets, posts, « Notre lecture » | `js/usecases.js` → `CASES`, `FILLER` | Verbatims et chiffres réels anonymisés, un cas client par secteur |
-| Offre « cas complet du secteur » sous « Notre lecture » (e-mail + secteur + question) | `js/usecases.js` → `renderGet` | Brancher au CRM et envoyer le PDF du secteur |
+| Offre « cas réel du secteur, anonymisé, envoyé par un consultant sous 48 h » sous « Notre lecture » (e-mail + secteur + question) | `js/usecases.js` → `renderGet` | Brancher au CRM ; un consultant envoie le cas à la main |
+| Mémoire du contact pour la session (préremplissage, offre en un clic, barre du guide masquée) | `js/ui.js` → `LicterLead` | Remplacer par l'identification du CRM une fois branché |
 | Prochaine étape du diagnostic selon le score (guide / revue 30 min / consultant) | `js/home.js` → `BANDS[].next` | Valider les offres et les liens |
 | Chiffres de preuve près du formulaire de rappel (50+, 160+, 20+) | `index.html` → `.book__proof` | Vérifier les chiffres |
 | Rôles des trois portraits | `index.html#team` | Prénoms et rôles confirmés |

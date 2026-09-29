@@ -500,7 +500,7 @@
       '<aside class="lf__read">' +
         '<p class="lf__k">' + t("Posts read", "Posts lus") + "</p>" +
         '<p class="lf__count" id="uv-count">0</p>' +
-        '<p class="lf__k">' + t("Latest posts", "Derniers posts") + "</p>" +
+        '<p class="lf__k lf__k--posts">' + t("Latest posts", "Derniers posts") + "</p>" +
         '<div class="mps" id="uv-posts"></div>' +
         '<div class="lf__answer" id="uv-answer" aria-live="polite"><p class="lf__reading">' + t("Reading", "Lecture en cours") +
           '<span class="lf__dots"><i></i><i></i><i></i></span></p></div>' +
@@ -525,15 +525,34 @@
   function renderGet() {
     var el = document.getElementById("uv-get");
     if (!el) return;
-    var key = current + ":" + SECTORS[sector].key, name = L(SECTORS[sector].name);
+    var key = current + ":" + SECTORS[sector].key, name = L(SECTORS[sector].name).toLowerCase();
+    var known = window.LicterLead ? window.LicterLead.get() : "";
     if (sentCases[key]) {
-      el.innerHTML = '<p class="lf__sent">' + t("Sent. The full " + name.toLowerCase() + " case arrives by email.", "C'est envoyé. Le cas complet " + name.toLowerCase() + " arrive par e-mail.") + "</p>";
+      el.innerHTML = '<p class="lf__sent">' + t("Noted. A consultant sends you a real " + name + " case within 48 hours.", "C'est noté. Un consultant vous envoie un cas réel du secteur " + name + " sous 48 h.") + "</p>";
+      return;
+    }
+    function done(email) {
+      /* MOCK: send { email, topic: current, sector: SECTORS[sector].key } to the CRM */
+      if (window.LicterLead) window.LicterLead.set(email);
+      sentCases[key] = true;
+      renderGet();
+      var msg = el.querySelector(".lf__sent");
+      if (msg) { msg.setAttribute("tabindex", "-1"); msg.focus({ preventScroll: true }); }
+    }
+    /* the title is a label when there is a field, a plain line when not */
+    function head(label) {
+      var title = t("Get a real case", "Recevez un cas réel") + " · " + esc(L(SECTORS[sector].name));
+      return (label ? '<label class="lf__k" for="uv-email">' + title + "</label>" : '<p class="lf__k">' + title + "</p>") +
+        '<p class="lf__sub">' + t("Anonymised, sent by a consultant within 48 hours.", "Anonymisé, envoyé par un consultant sous 48 h.") + "</p>";
+    }
+    /* already known: one click, no field to fill again */
+    if (known && EMAIL.test(known)) {
+      el.innerHTML = head(false) + '<button class="btn btn--primary lf__one" type="button">' + t("Send it to ", "L'envoyer à ") + esc(known) + "</button>";
+      el.querySelector(".lf__one").addEventListener("click", function () { done(known); });
       return;
     }
     el.innerHTML =
-      '<form class="lf__form" novalidate>' +
-        '<label class="lf__k" for="uv-email">' + t("Get the full case", "Recevez le cas complet") + " · " + esc(name) + "</label>" +
-        '<p class="lf__sub">' + t("Method, figures and recommendation, as a PDF.", "Méthode, chiffres et recommandation, en PDF.") + "</p>" +
+      '<form class="lf__form" novalidate>' + head(true) +
         '<div class="lf__row"><input class="fld__input" id="uv-email" type="email" autocomplete="email" placeholder="' + t("name@company.com", "nom@entreprise.com") + '" required />' +
         '<button class="btn btn--primary" type="submit">' + t("Send", "Recevoir") + "</button></div>" +
         '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
@@ -544,17 +563,14 @@
       field.setAttribute("aria-invalid", ok ? "false" : "true");
       err.hidden = ok;
       if (!ok) { field.focus(); return; }
-      /* MOCK: send { email, topic: current, sector: SECTORS[sector].key } to the CRM */
-      sentCases[key] = true;
-      renderGet();
-      var msg = el.querySelector(".lf__sent");
-      if (msg) { msg.setAttribute("tabindex", "-1"); msg.focus({ preventScroll: true }); }
+      done(field.value.trim());
     });
   }
+
   function runSide() {
     var posts = data().posts, postsEl = document.getElementById("uv-posts"), i = 0;
     function show() {
-      postsEl.innerHTML = postHTML(posts[i % posts.length]) + postHTML(posts[(i + 1) % posts.length]);
+      postsEl.innerHTML = postHTML(posts[i % posts.length]);
       postsEl.classList.remove("is-in"); void postsEl.offsetWidth; postsEl.classList.add("is-in");
       i += 1;
     }
@@ -608,7 +624,10 @@
     var TOP = Math.ceil(Math.max.apply(null, V) * 1.12 / 1000) * 1000;
     var CUM = [], acc = 0; V.forEach(function (x) { acc += x; CUM.push(acc); });
     total = acc;
-    var W = 640, H = 290, P = { l: 44, r: 16, t: 26, b: 30 };
+    /* on a phone the chart is drawn narrower rather than shrunk: the same
+       text sizes, fewer pixels per day */
+    var narrow = stage.clientWidth < 560;
+    var W = narrow ? 400 : 640, H = narrow ? 300 : 320, P = { l: 40, r: 12, t: 26, b: 30 };
     function X(x) { return P.l + x * (W - P.l - P.r) / (D - 1); }
     function Y(x) { return P.t + (1 - x / TOP) * (H - P.t - P.b); }
     function line(a) { return a.map(function (x, k) { return (k ? "L" : "M") + X(k).toFixed(1) + " " + Y(x).toFixed(1); }).join(" "); }
@@ -678,6 +697,10 @@
         '<span class="kchip__day" id="c-day"></span>' +
       "</div>" +
       '<div class="uv-chart" id="c-chart">' + svg + '<div class="uv-tip" id="c-tip" hidden></div></div>' +
+      /* what happened at each peak, readable without hovering */
+      '<ol class="c-peaks">' + d.peaks.map(function (p, k) {
+        return '<li class="is-hidden" data-i="' + k + '"><b>' + esc(L(p.tag)) + "</b><span>" + esc(L(p.txt)) + "</span></li>";
+      }).join("") + "</ol>" +
       '<input class="visually-hidden" type="range" id="c-range" min="4" max="37" value="' + c.launch + '" disabled aria-label="' + t("Campaign launch day", "Jour du lancement") + '" />';
     stage.innerHTML = frame(t("Posts per day, six weeks", "Posts par jour, six semaines"),
       '<span id="c-hint">' + t("Reading the six weeks…", "Lecture des six semaines…") + "</span>", body);
@@ -708,7 +731,7 @@
       var x = X(f);
       reveal.setAttribute("width", x.toFixed(1));
       head.setAttribute("cx", x.toFixed(1)); head.setAttribute("cy", Y(at(f)).toFixed(1));
-      Array.prototype.forEach.call(chart.querySelectorAll(".pin"), function (el) {
+      Array.prototype.forEach.call(stage.querySelectorAll(".pin, .c-peaks li"), function (el) {
         if (PK[+el.dataset.i].d <= f) el.classList.remove("is-hidden");
       });
       if (f >= launch - 0.5) g.classList.add("is-in");
@@ -717,7 +740,7 @@
       progress(CUM[shown] / CUM[D - 1]);
     }, function () {
       shown = D - 1; ready = true; g.classList.add("is-in", "is-done"); update(); progress(1);
-      Array.prototype.forEach.call(chart.querySelectorAll(".pin"), function (el) { el.classList.remove("is-hidden"); });
+      Array.prototype.forEach.call(stage.querySelectorAll(".pin, .c-peaks li"), function (el) { el.classList.remove("is-hidden"); });
       svgEl.classList.remove("is-locked"); range.disabled = false;
       head.style.opacity = "0";
       document.getElementById("c-day").textContent = "";

@@ -1,6 +1,24 @@
 /* =========================================================================
    Licter — page behaviour: logo crop, client marquee, use-case tabs, form.
    ========================================================================= */
+/* =========================================================================
+   The visitor's contact, once given anywhere on the site, is remembered for
+   the session: the other forms prefill it, one-click offers use it, and the
+   guide bar stops asking. MOCK: kept in the browser only; the CRM is the
+   real record once wired.
+   ========================================================================= */
+(function () {
+  var KEY = "licter-lead", subs = [];
+  window.LicterLead = {
+    get: function () { try { return sessionStorage.getItem(KEY) || ""; } catch (e) { return ""; } },
+    set: function (v) {
+      try { sessionStorage.setItem(KEY, v); } catch (e) { /* private mode */ }
+      subs.forEach(function (fn) { fn(v); });
+    },
+    on: function (fn) { subs.push(fn); }
+  };
+})();
+
 (function () {
   "use strict";
 
@@ -1199,6 +1217,7 @@
       error.hidden = ok;
       if (!ok) { field.focus(); return; }
       /* wire to the real endpoint here */
+      if (window.LicterLead) window.LicterLead.set(field.value.trim());
       if (note) note.classList.add("is-visible");
       field.value = "";
       field.blur();
@@ -1363,6 +1382,8 @@
   if (!bar || !("IntersectionObserver" in window)) return;
   var KEY = "licter-guide-bar";
   try { if (sessionStorage.getItem(KEY) === "closed") return; } catch (e) {}
+  /* someone who has already left an email is not asked again */
+  if (window.LicterLead && window.LicterLead.get()) return;
 
   /* after the first proof, not over the use cases the visitor is reading */
   var trigger = document.getElementById("case") || document.getElementById("use-cases");
@@ -1378,7 +1399,7 @@
     render();
   }, { threshold: 0 }).observe(trigger || document.body);
   /* it also steps aside where the page makes the same offer itself */
-  var zones = [foot, document.getElementById("guide"), document.getElementById("book"), document.getElementById("use-cases"), document.getElementById("diagnostic"), document.getElementById("method")].filter(Boolean);
+  var zones = [foot, document.getElementById("hero"), document.getElementById("guide"), document.getElementById("book"), document.getElementById("use-cases"), document.getElementById("diagnostic")].filter(Boolean);
   var inZone = {};
   if (zones.length) {
     var zio = new IntersectionObserver(function (entries) {
@@ -1388,6 +1409,8 @@
     });
     zones.forEach(function (z) { zio.observe(z); });
   }
+
+  if (window.LicterLead) window.LicterLead.on(function () { closed = true; render(); });
 
   bar.querySelector(".banner__close").addEventListener("click", function () {
     closed = true;
