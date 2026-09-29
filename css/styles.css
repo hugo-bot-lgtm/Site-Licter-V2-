@@ -4497,3 +4497,30 @@ html[data-theme="dark"] .block:nth-of-type(even)::before,
 html[data-theme="dark"] .cases:nth-of-type(even)::before { background: rgba(0, 0, 0, .14); }
 html[data-theme="dark"] .wall__caption { background: var(--bg); }
 html[data-theme="dark"] .hero__frame { background: radial-gradient(120% 100% at 50% 45%, #10132A 0%, #080A16 70%, #05060E 100%); }
+
+/* =========================================================
+   Hero, map unframed: text and title on the left, the community
+   map across the whole right side, up to the edge of the screen.
+   ========================================================= */
+@media (min-width: 961px) {
+  .hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto auto auto auto; column-gap: clamp(24px, 3vw, 48px); }
+  .hero__main > .award { grid-column: 1; }
+  .hero__main > .hero__title { grid-column: 1; font-size: clamp(32px, 3.15vw, 46px); letter-spacing: -1.2px; line-height: 1.02; }
+  .hero__grid > .hero__frame {
+    grid-column: 2; grid-row: 1 / -1; align-self: stretch;
+    min-height: clamp(460px, 62vh, 620px); margin: -40px calc(-1 * (var(--gutter) + max(0px, (100vw - var(--maxw)) / 2))) -30px 0;
+  }
+}
+/* no frame: the map fades into the page on every side */
+.hero__frame, html[data-theme="dark"] .hero__frame {
+  background: none; border: 0; border-radius: 0; box-shadow: none; overflow: visible;
+}
+.hero__frame .communities {
+  -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);
+          mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+}
+.frame__hint { color: var(--text-2); left: 50%; bottom: 8%; transform: translateX(-50%); }
+@media (max-width: 960px) {
+  .hero__frame { aspect-ratio: 1 / 1; max-height: 520px; margin-inline: calc(-1 * var(--gutter)); }
+}

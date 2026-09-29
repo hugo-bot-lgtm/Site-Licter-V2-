@@ -37,7 +37,7 @@
     { x: 0.43, y: 0.75, r: 0.26, n: 920, color: "#7B6CF2", swirl:  0.6,  platform: "X",         cap: "Post · 22 min" },
     { x: 0.52, y: 0.64, r: 0.12, n: 300, color: "#8D7DF5", swirl: -0.5,  platform: "FACEBOOK",  cap: "Post · 5 h" },
     { x: 0.66, y: 0.74, r: 0.24, n: 760, color: "#C6D64A", swirl:  0.5,  platform: "TIKTOK",    cap: "Reel · 1 h" },
-    { x: 0.11, y: 0.24, r: 0.10, n: 380, color: "#F2656F", swirl: -0.7,  platform: "YOUTUBE",   cap: "Short · 40 min" }
+    { x: 0.2, y: 0.26, r: 0.10, n: 380, color: "#F2656F", swirl: -0.7,  platform: "YOUTUBE",   cap: "Short · 40 min" }
   ];
   /* small groups on the edge, drawn as grey constellations */
   var OUTLIERS = [
@@ -67,6 +67,21 @@
       return v.length < 2 ? "0" + v : v;
     }).join("");
   }
+  /* On the dark ground the map is drawn with additive light; on the cream
+     ground (light theme, no frame) it is drawn like ink: normal blending,
+     colours pulled a little toward navy, navy hubs instead of white ones. */
+  var LIGHT = true;
+  function isLight() { return document.documentElement.getAttribute("data-theme") !== "dark"; }
+  function toward(hex, target, t) {
+    var a = parseInt(hex.slice(1), 16), b = parseInt(target.slice(1), 16);
+    return "#" + [16, 8, 0].map(function (sh) {
+      var v = Math.round((a >> sh & 255) + ((b >> sh & 255) - (a >> sh & 255)) * t).toString(16);
+      return v.length < 2 ? "0" + v : v;
+    }).join("");
+  }
+  function tone(hex) { return LIGHT ? toward(hex, "#13162D", 0.18) : hex; }
+  function BLEND() { return LIGHT ? "source-over" : "lighter"; }
+
   /* point on the quadratic curve hub -> node, bent by the community's swirl */
   function curve(hx, hy, nx, ny, swirl) {
     var mx = (hx + nx) / 2, my = (hy + ny) / 2;
@@ -86,6 +101,7 @@
 
   function build() {
     seed = 20260929;
+    LIGHT = isLight();
     W = Math.max(1, host.clientWidth);
     H = Math.max(1, host.clientHeight);
     S = Math.min(W, H);
@@ -107,7 +123,8 @@
       off.height = Math.round(size * dpr);
       var o = off.getContext("2d");
       o.scale(dpr, dpr);
-      o.globalCompositeOperation = "lighter";
+      o.globalCompositeOperation = BLEND();
+      var col = tone(c.color);
       var ox = size / 2, oy = size / 2;       /* hub, in the layer */
       var nodes = [];
       var n = Math.round(c.n * density);
@@ -122,9 +139,9 @@
 
         /* the link: brighter near the hub, fading outward */
         var grad = o.createLinearGradient(ox, oy, nx, ny);
-        grad.addColorStop(0, rgba(c.color, 0.03));
-        grad.addColorStop(0.25, rgba(c.color, 0.16));
-        grad.addColorStop(1, rgba(c.color, 0.07));
+        grad.addColorStop(0, rgba(col, LIGHT ? 0.05 : 0.03));
+        grad.addColorStop(0.25, rgba(col, LIGHT ? 0.22 : 0.16));
+        grad.addColorStop(1, rgba(col, LIGHT ? 0.1 : 0.07));
         o.strokeStyle = grad;
         o.lineWidth = 0.45;
         o.beginPath();
@@ -136,15 +153,17 @@
       for (var k = 0; k < nodes.length; k++) {
         var p = nodes[k];
         var big = rnd() < 0.04;
-        o.fillStyle = rnd() < 0.2 ? rgba(mix(c.color, 0.55), 0.9) : rgba(c.color, 0.8);
+        o.fillStyle = rnd() < 0.2
+          ? (LIGHT ? rgba(toward(c.color, "#13162D", 0.45), 0.85) : rgba(mix(c.color, 0.55), 0.9))
+          : rgba(col, LIGHT ? 0.75 : 0.8);
         o.beginPath();
         o.arc(p.x, p.y, big ? 1.3 : 0.45 + rnd() * 0.5, 0, Math.PI * 2);
         o.fill();
       }
       /* the hub's own glow is animated; the soft core here is static */
       var g = o.createRadialGradient(ox, oy, 0, ox, oy, R * 0.4);
-      g.addColorStop(0, rgba(c.color, 0.1));
-      g.addColorStop(1, rgba(c.color, 0));
+      g.addColorStop(0, rgba(col, LIGHT ? 0.08 : 0.1));
+      g.addColorStop(1, rgba(col, 0));
       o.fillStyle = g;
       o.beginPath(); o.arc(ox, oy, R * 0.45, 0, Math.PI * 2); o.fill();
 
@@ -158,23 +177,23 @@
     base.width = canvas.width; base.height = canvas.height;
     var b = base.getContext("2d");
     b.scale(dpr, dpr);
-    b.globalCompositeOperation = "lighter";
+    b.globalCompositeOperation = BLEND();
     OUTLIERS.forEach(function (g) {
       var cx = g.x * W, cy = g.y * H, R = g.r * S * 1.2, pts = [];
       for (var i = 0; i < g.n; i++) {
         var a = rnd() * Math.PI * 2, d = R * Math.sqrt(rnd());
         pts.push([cx + Math.cos(a) * d, cy + Math.sin(a) * d]);
       }
-      b.strokeStyle = "rgba(220,224,235,0.16)";
+      b.strokeStyle = LIGHT ? "rgba(19,22,45,0.18)" : "rgba(220,224,235,0.16)";
       b.lineWidth = 0.6;
       for (var p = 0; p < pts.length; p++) {
         for (var q = p + 1; q < pts.length; q++) {
           if (rnd() < 0.3) { b.beginPath(); b.moveTo(pts[p][0], pts[p][1]); b.lineTo(pts[q][0], pts[q][1]); b.stroke(); }
         }
       }
-      b.fillStyle = "rgba(230,232,240,0.7)";
+      b.fillStyle = LIGHT ? "rgba(19,22,45,0.5)" : "rgba(230,232,240,0.7)";
       pts.forEach(function (pt) { b.beginPath(); b.arc(pt[0], pt[1], 0.9, 0, Math.PI * 2); b.fill(); });
-      b.fillStyle = "rgba(255,255,255,0.9)";
+      b.fillStyle = LIGHT ? "rgba(19,22,45,0.85)" : "rgba(255,255,255,0.9)";
       b.beginPath(); b.arc(cx, cy, 1.6, 0, Math.PI * 2); b.fill();
     });
     for (var i = 0; i < layers.length; i++) {
@@ -187,8 +206,8 @@
           var ax = A.hx + na.x - A.ox, ay = A.hy + na.y - A.oy;
           var bx = B.hx + nb.x - B.ox, by = B.hy + nb.y - B.oy;
           var grad = b.createLinearGradient(ax, ay, bx, by);
-          grad.addColorStop(0, rgba(A.c.color, 0.09));
-          grad.addColorStop(1, rgba(B.c.color, 0.09));
+          grad.addColorStop(0, rgba(tone(A.c.color), LIGHT ? 0.12 : 0.09));
+          grad.addColorStop(1, rgba(tone(B.c.color), LIGHT ? 0.12 : 0.09));
           b.strokeStyle = grad; b.lineWidth = 0.5;
           var cv = curve(ax, ay, bx, by, 0.25);
           b.beginPath(); b.moveTo(ax, ay); b.quadraticCurveTo(cv.cx, cv.cy, bx, by); b.stroke();
@@ -272,7 +291,7 @@
     ctx.clearRect(0, 0, W, H);
     ctx.globalAlpha = 1;
     ctx.drawImage(base, 0, 0, W, H);
-    ctx.globalCompositeOperation = "lighter";
+    ctx.globalCompositeOperation = BLEND();
 
     for (var i = 0; i < layers.length; i++) {
       var L = layers[i];
@@ -293,12 +312,12 @@
       var hr = (2 + L.R * 0.012) * (1 + L.glow * 0.3);
       var halo = hr * (4 + 1.5 * pulse);
       var g = ctx.createRadialGradient(L.hx, L.hy, 0, L.hx, L.hy, halo);
-      g.addColorStop(0, rgba(L.c.color, 0.35 * dim));
-      g.addColorStop(1, rgba(L.c.color, 0));
+      g.addColorStop(0, rgba(tone(L.c.color), (LIGHT ? 0.45 : 0.35) * dim));
+      g.addColorStop(1, rgba(tone(L.c.color), 0));
       ctx.globalAlpha = 1;
       ctx.fillStyle = g;
       ctx.beginPath(); ctx.arc(L.hx, L.hy, halo, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = "rgba(255,255,255," + (0.95 * dim) + ")";
+      ctx.fillStyle = LIGHT ? "rgba(19,22,45," + (0.9 * dim) + ")" : "rgba(255,255,255," + (0.95 * dim) + ")";
       ctx.beginPath(); ctx.arc(L.hx, L.hy, hr, 0, Math.PI * 2); ctx.fill();
     }
 
@@ -316,7 +335,7 @@
       var px = L2.hx + lx * cs - ly * sn, py = L2.hy + lx * sn + ly * cs;
       var fade = Math.sin(Math.PI * sg.t);
       var dimS = hover >= 0 && hover !== layers.indexOf(L2) ? 0.35 : 1;
-      ctx.fillStyle = rgba(mix(L2.c.color, 0.55), 0.9 * fade * dimS);
+      ctx.fillStyle = LIGHT ? rgba(toward(L2.c.color, "#13162D", 0.35), 0.9 * fade * dimS) : rgba(mix(L2.c.color, 0.55), 0.9 * fade * dimS);
       ctx.beginPath(); ctx.arc(px, py, 1.1, 0, Math.PI * 2); ctx.fill();
     }
     ctx.globalCompositeOperation = "source-over";
@@ -352,6 +371,13 @@
     if (document.hidden) stop(); else if (visible) start();
   });
   reduced.addEventListener && reduced.addEventListener("change", function () { stop(); init(); });
+
+  if (window.MutationObserver) {
+    new MutationObserver(function () {
+      if (isLight() === LIGHT) return;
+      setHover(-1); build(); draw(performance.now());
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  }
 
   var t0 = null;
   function rebuild() { clearTimeout(t0); t0 = setTimeout(function () { setHover(-1); build(); draw(performance.now()); }, 150); }
