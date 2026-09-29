@@ -3946,12 +3946,12 @@ html[lang="fr"] .hero__main .hero__title { font-size: clamp(26px, 2.3vw, 36px); 
 .lang__btn { color: var(--text-2); }
 .lang__btn.is-on { color: var(--ink); text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 2px; text-underline-offset: 5px; }
 
-/* wider frame: it runs past the column to the right edge of the screen
-   (24px short of it), so the map grows without narrowing the text */
+/* centred composition: text and frame share the header's column, with equal
+   margins on both sides; the frame takes just over half of it */
 @media (min-width: 961px) {
-  .hero__grid { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); }
-  .hero__frame {
-    min-height: 480px;
-    margin-right: calc(-1 * (var(--gutter) + max(0px, (100vw - var(--maxw)) / 2)) + 24px);
-  }
+  .hero__grid { grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr); align-items: center; }
+  .ask { font-size: 14px; padding: 12px 14px; }
+  .hero__main .hero__title { font-size: clamp(32px, 3.05vw, 46px); }
+  .hero__frame { min-height: 480px; margin-right: 0; }
+  html[lang="fr"] .hero__main .hero__title { font-size: clamp(24px, 2.2vw, 34px); }
 }
