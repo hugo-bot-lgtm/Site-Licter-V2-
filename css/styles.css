@@ -5194,3 +5194,16 @@ html[data-theme="dark"] .uv-svg .pin:hover .pin__tag text, html[data-theme="dark
 /* once the curve is drawn, the launch line keeps only its line and grip */
 .uv-svg .launch rect, .uv-svg .launch text { transition: opacity .5s ease; }
 .uv-svg .launch.is-done rect, .uv-svg .launch.is-done text { opacity: 0; }
+
+/* =========================================================
+   Hero, more air: a slimmer logo band, more room under the nav
+   and between the badge and the title
+   ========================================================= */
+.wall { padding: 22px 0 14px; }
+.wall .marquee { height: clamp(40px, 3.3vw, 52px); }
+.hero__body { padding-top: clamp(40px, 7.5vh, 84px); }
+.hero__main > .award { margin-bottom: clamp(32px, 4.4vh, 48px); }
+@media (max-width: 960px) {
+  .hero__body { padding-top: clamp(28px, 5vh, 48px); }
+  .hero__main > .award { margin-bottom: 28px; }
+}

@@ -97,7 +97,7 @@
     if (!track) return;
 
     /* same scale-up as the rest of the hero past the reference width */
-    var k = Math.min(1.28, Math.max(1, window.innerWidth / 1247));
+    var k = Math.min(1.28, Math.max(1, window.innerWidth / 1247)) * 0.88;
     var gap = Math.round(GAP * k);
 
     var setWidth = 0;
