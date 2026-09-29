@@ -138,7 +138,7 @@ window.LicterVoices = [
 
   function tick() {
     clearTimeout(timer);
-    if (!visible || held || document.hidden || still()) return;
+    if (!visible || held || document.hidden || still() || reels.classList.contains("has-player")) return;
     timer = setTimeout(function () { swap(); tick(); }, EVERY);
   }
 
@@ -174,4 +174,49 @@ window.LicterVoices = [
 
   /* a phone turned sideways, or a window dragged wider, gets the rotation */
   if (narrow.addEventListener) narrow.addEventListener("change", tick);
+})();
+
+/* =========================================================================
+   Play in place
+   A click swaps the thumbnail for the player, on the page. The card stops
+   being a link while it plays, and the wall stops rotating. A new-tab or
+   modified click still goes to YouTube, as a link should.
+   ========================================================================= */
+(function () {
+  var reels = document.querySelector(".reels");
+  if (!reels) return;
+
+  function restore() {
+    var playing = reels.querySelector(".reel.is-playing");
+    if (playing && playing._link) playing.parentNode.replaceChild(playing._link, playing);
+  }
+
+  reels.addEventListener("click", function (e) {
+    var card = e.target.closest ? e.target.closest("a.reel") : null;
+    if (!card || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var m = (card.getAttribute("href") || "").match(/v=([\w-]{11})/);
+    if (!m) return;
+    e.preventDefault();
+    restore();
+
+    var box = document.createElement("div");
+    box.className = card.className + " is-playing";
+    box.setAttribute("style", card.getAttribute("style") || "");
+    box.innerHTML = card.innerHTML;
+    box._link = card;
+
+    var brand = card.querySelector(".reel__brand");
+    var frame = document.createElement("iframe");
+    frame.src = "https://www.youtube-nocookie.com/embed/" + m[1] + "?autoplay=1&rel=0&modestbranding=1";
+    frame.title = "Audience First interview" + (brand ? ", " + brand.textContent : "");
+    frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    frame.allowFullscreen = true;
+    var shot = box.querySelector(".reel__shot");
+    shot.innerHTML = "";
+    shot.appendChild(frame);
+
+    card.parentNode.replaceChild(box, card);
+    reels.classList.add("has-player");
+    frame.focus();
+  });
 })();

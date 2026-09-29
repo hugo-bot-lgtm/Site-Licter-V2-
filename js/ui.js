@@ -182,7 +182,7 @@
   var CASES = {
     communication: {
       family: "COMMUNICATION",
-      label: "CAMPAIGN IMPACT — SHARE OF VOICE",
+      label: "CAMPAIGN IMPACT · SHARE OF VOICE",
       metric: "+23%",
       trend: "vs. category benchmark, rolling 90 days",
       caption: "Creator-driven reach over the last 90 days, measured against the category benchmark.",
@@ -220,7 +220,7 @@
     },
     brand: {
       family: "BRAND HEALTH",
-      label: "BRAND HEALTH — NET SENTIMENT",
+      label: "BRAND HEALTH · NET SENTIMENT",
       metric: "+17%",
       trend: "net positive, owned and earned conversations",
       caption: "Net positive sentiment on owned and earned conversations, panel-weighted.",
@@ -258,7 +258,7 @@
     },
     audiences: {
       family: "AUDIENCES",
-      label: "CORE TARGET — QUALIFIED REACH",
+      label: "CORE TARGET · QUALIFIED REACH",
       metric: "2.4",
       metricPrefix: "\u00d7",
       trend: "qualified reach, look-alike communities folded in",
@@ -297,7 +297,7 @@
     },
     trends: {
       family: "INNOVATION",
-      label: "EMERGING TOPICS — VELOCITY",
+      label: "EMERGING TOPICS · VELOCITY",
       metric: "+41%",
       trend: "velocity of topics breaking out of the category",
       caption: "Velocity of the topics breaking out of the category over the last four weeks.",
@@ -525,13 +525,13 @@
       '<div class="viz__grid">' +
         statCells(d.kpis) +
         '<div class="viz__cell viz__cell--hero vizhero">' +
-          '<p class="stat__label">' + d.label.split(" — ")[0] + "</p>" +
+          '<p class="stat__label">' + d.label.split(" · ")[0] + "</p>" +
           '<p class="vizhero__metric" data-count>' + (d.metricPrefix || "") + d.metric + "</p>" +
           '<p class="vizhero__trend">' + d.trend + "</p>" +
         "</div>" +
 
         '<div class="viz__cell viz__cell--wide">' +
-          '<p class="viz__cellTitle">Trend — rolling 12 months</p>' +
+          '<p class="viz__cellTitle">Trend, rolling 12 months</p>' +
           '<p class="viz__cellNote">Indexed against the category benchmark.</p>' +
           '<div class="viz__chart">' + chart(d.series) + "</div>" +
         "</div>" +
@@ -1403,4 +1403,40 @@
     visible = true;
     start();
   }
+})();
+
+/* =========================================================================
+   Guide bar (home)
+   The guide is offered once the visitor has read something: it slides in
+   when the use cases reach the screen, steps aside at the footer (which has
+   its own sign-up), and stays gone for the session once closed.
+   ========================================================================= */
+(function () {
+  var bar = document.getElementById("guide-bar");
+  if (!bar || !("IntersectionObserver" in window)) return;
+  var KEY = "licter-guide-bar";
+  try { if (sessionStorage.getItem(KEY) === "closed") return; } catch (e) {}
+
+  var trigger = document.getElementById("use-cases");
+  var foot = document.querySelector(".site-foot");
+  var reached = false, atFoot = false, closed = false;
+
+  function render() { bar.classList.toggle("is-shown", reached && !atFoot && !closed); }
+
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.target === trigger && (e.isIntersecting || e.boundingClientRect.top < 0)) reached = true;
+      if (e.target === foot) atFoot = e.isIntersecting;
+    });
+    render();
+  }, { threshold: 0 }).observe(trigger || document.body);
+  if (foot) new IntersectionObserver(function (entries) {
+    atFoot = entries[0].isIntersecting; render();
+  }).observe(foot);
+
+  bar.querySelector(".banner__close").addEventListener("click", function () {
+    closed = true;
+    render();
+    try { sessionStorage.setItem(KEY, "closed"); } catch (e) {}
+  });
 })();
