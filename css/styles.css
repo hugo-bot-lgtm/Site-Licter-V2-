@@ -4229,3 +4229,65 @@ textarea.fld__input { resize: vertical; min-height: 84px; }
   .topic, .bub { transition: none; }
 }
 .uc__empty { min-height: 200px; }
+
+/* =========================================================
+   Hero, larger title: badge and title run across both columns,
+   the text and the map share the row beneath
+   ========================================================= */
+@media (min-width: 961px) {
+  .hero__grid { grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr); column-gap: clamp(32px, 4.5vw, 72px); row-gap: 0; }
+  .hero__main { display: contents; }
+  .hero__main > .award { grid-column: 1 / -1; grid-row: 1; justify-self: start; }
+  .hero__main > .hero__title { grid-column: 1 / -1; grid-row: 2; }
+  .hero__main > .hero__desc { grid-column: 1; grid-row: 3; }
+  .hero__main > .asks { grid-column: 1; grid-row: 4; }
+  .hero__main > .hero__actions { grid-column: 1; grid-row: 5; align-self: start; }
+  .hero__grid > .hero__frame { grid-column: 2; grid-row: 3 / span 3; align-self: stretch; min-height: 330px; margin-top: 22px; }
+  .hero__main .hero__title { font-size: clamp(46px, 5.2vw, 80px); line-height: 1; letter-spacing: -2px; margin: 0; }
+  .hero__main .hero__desc { margin-top: 26px; }
+}
+@media (max-width: 960px) {
+  .hero__main .hero__title { font-size: clamp(38px, 9.4vw, 64px); line-height: 1.02; }
+}
+
+/* the SI Lab ranking: a medal, not a caption */
+.award {
+  position: relative; overflow: hidden;
+  display: inline-flex; align-items: center; gap: 14px;
+  margin: 0 0 clamp(18px, 2.6vh, 26px); padding: 7px 22px 7px 8px;
+  border: 1px solid rgba(var(--amber-rgb), .5); border-radius: 999px;
+  background: linear-gradient(120deg, #1B1F3D 0%, var(--navy) 55%, #0E1024 100%);
+  box-shadow: 0 16px 34px -18px rgba(var(--ink-rgb), .75), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+.award::after { /* a single sweep of light when it arrives */
+  content: ""; position: absolute; top: 0; bottom: 0; left: -40%; width: 30%;
+  background: linear-gradient(100deg, transparent, rgba(255, 220, 130, .28), transparent);
+  transform: skewX(-18deg); animation: award-shine 1.6s cubic-bezier(.3, .6, .3, 1) .9s both;
+}
+@keyframes award-shine { to { left: 130%; } }
+.award__medal { position: relative; display: grid; place-items: center; flex: none; width: 50px; height: 50px; }
+.award__laurel { position: absolute; inset: 0; width: 100%; height: 100%; }
+.award__laurel ellipse { fill: var(--amber); opacity: .9; }
+.award__n {
+  position: relative; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #FFE08A, var(--amber) 55%, var(--amber-deep));
+  color: var(--navy); font: 800 12.5px/1 var(--title-font); letter-spacing: -.4px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .15), 0 4px 10px -3px rgba(var(--amber-rgb), .7);
+}
+.award__text { display: flex; flex-direction: column; gap: 4px; }
+.award__text b { font: 800 14px/1 var(--title-font); letter-spacing: .6px; text-transform: uppercase; color: var(--amber); }
+.award__text span { font: 400 12.5px/1.2 var(--body-font); color: rgba(252, 246, 239, .82); }
+@media (max-width: 560px) {
+  .award { gap: 10px; padding-right: 16px; }
+  .award__medal { width: 42px; height: 42px; }
+  .award__text b { font-size: 12.5px; }
+  .award__text span { font-size: 11.5px; }
+}
+@media (prefers-reduced-motion: reduce) { .award::after { animation: none; display: none; } }
+.award__laurel .stem { fill: none; stroke: var(--amber); stroke-width: 1; opacity: .7; }
+@media (min-width: 961px) {
+  /* the text rows keep their own height; the last one takes what the frame adds */
+  .hero__grid { grid-template-rows: auto auto auto auto 1fr; }
+  .hero__main > .asks { margin-top: 24px; }
+}
+.hero { overflow-x: clip; }
