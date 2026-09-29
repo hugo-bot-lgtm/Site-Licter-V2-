@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=20261073" />
+<link rel="stylesheet" href="css/styles.css?v=20261074" />
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
@@ -169,6 +169,58 @@
     </div>
   </section>
 
+  <!-- ==================== SCREEN 2 — USE CASES ==================== -->
+  <section class="cases" id="use-cases">
+    <!-- generated light field: no image file, just gradients + grain -->
+    <div class="fld" aria-hidden="true"><span class="field__grain"></span></div>
+
+    <div class="cases__inner shell">
+    <p class="cases__eyebrow" data-dim data-reveal><span class="rule" aria-hidden="true"></span>OUR USE CASES</p>
+
+    <h2 class="cases__title" data-dim data-reveal>
+      <span class="line">EVERY BUSINESS QUESTION</span>
+      <span class="line line--accent">HAS A DATA ANSWER.</span>
+    </h2>
+
+    <h3 class="cases__lead" data-dim data-reveal>
+      We help brands tap into the data of the world's largest panel.
+    </h3>
+
+    <div class="cases__panel">
+      <div class="cases__asks" data-dim data-reveal>
+        <div class="asks__head">
+          <div class="asks__id"><span class="asks__dot" aria-hidden="true"></span>
+            <span class="asks__label" id="asks-label">COMMUNICATION</span></div>
+          <span class="asks__count" id="asks-count">03 / 12</span>
+        </div>
+        <ul class="questions" id="questions"><!-- filled by js/ui.js --></ul>
+        <p class="asks__foot" id="asks-foot">Three of the twelve questions social data answers better than a survey.</p>
+        <div class="page__actions" data-reveal>
+      <a class="btn btn--ghost" href="use-cases.html">Discover the use cases <span aria-hidden="true">→</span></a>
+      <a class="btn btn--primary" href="book-a-meeting.html">Book a meeting <span aria-hidden="true">→</span></a>
+    </div>
+      </div>
+
+      <div class="cases__live">
+        <div class="tabs" data-reveal role="tablist" aria-label="Use case categories" id="tabs">
+          <button class="tab is-active" role="tab" id="tab-communication" aria-selected="true"  aria-controls="cases-panel" data-tab="communication"><span class="tab__dot" aria-hidden="true"></span>COMMUNICATION</button>
+          <button class="tab"           role="tab" id="tab-brand"     aria-selected="false" aria-controls="cases-panel" data-tab="brand"     tabindex="-1"><span class="tab__dot" aria-hidden="true"></span>BRAND HEALTH</button>
+          <button class="tab"           role="tab" id="tab-audiences" aria-selected="false" aria-controls="cases-panel" data-tab="audiences" tabindex="-1"><span class="tab__dot" aria-hidden="true"></span>AUDIENCES</button>
+          <button class="tab"           role="tab" id="tab-trends"    aria-selected="false" aria-controls="cases-panel" data-tab="trends"    tabindex="-1"><span class="tab__dot" aria-hidden="true"></span>INNOVATION</button>
+        </div>
+
+        <div class="console" id="cases-panel" role="tabpanel" aria-labelledby="tab-communication" data-dim>
+          <div class="deck" id="deck">
+            <span class="deck__card deck__card--back" aria-hidden="true"></span>
+            <span class="deck__card deck__card--mid" aria-hidden="true"></span>
+            <figure class="viz" id="viz"><!-- filled by js/ui.js --></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
   <!-- ==================== CASE ====================
        MOCK: anonymised, illustrative story. Replace with a real client story
        Licter is allowed to tell before this goes live. -->
@@ -195,6 +247,22 @@
             <dd>They kept the recipe, brought the old pack back in two markets, and sales recovered within a quarter.</dd>
           </div>
         </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DIAGNOSTIC ====================
+       MOCK: the six dimensions and the scoring in js/home.js are a draft.
+       Nothing is sent anywhere yet. -->
+  <section class="block shell" id="diagnostic">
+    <div class="quiz" id="quiz" data-mock>
+      <div class="quiz__intro">
+        <h2 class="block__title">Where does your listening stand?</h2>
+        <p class="block__lead">Six questions, three minutes. Your score now, the full readout by email.</p>
+        <div class="quiz__progress" aria-hidden="true"><span id="quiz-bar"></span></div>
+      </div>
+      <div class="quiz__stage" id="quiz-stage" aria-live="polite">
+        <noscript><p>The diagnostic needs JavaScript. <a href="diagnostic.html">Request a diagnostic</a> instead.</p></noscript>
       </div>
     </div>
   </section>
@@ -263,95 +331,6 @@
     </div>
   </section>
 
-  <!-- ==================== SCREEN 2 — USE CASES ==================== -->
-  <section class="cases" id="use-cases">
-    <!-- generated light field: no image file, just gradients + grain -->
-    <div class="fld" aria-hidden="true"><span class="field__grain"></span></div>
-
-    <div class="cases__inner shell">
-    <p class="cases__eyebrow" data-dim data-reveal><span class="rule" aria-hidden="true"></span>OUR USE CASES</p>
-
-    <h2 class="cases__title" data-dim data-reveal>
-      <span class="line">EVERY BUSINESS QUESTION</span>
-      <span class="line line--accent">HAS A DATA ANSWER.</span>
-    </h2>
-
-    <h3 class="cases__lead" data-dim data-reveal>
-      We help brands tap into the data of the world's largest panel.
-    </h3>
-
-    <div class="cases__panel">
-      <div class="cases__asks" data-dim data-reveal>
-        <div class="asks__head">
-          <div class="asks__id"><span class="asks__dot" aria-hidden="true"></span>
-            <span class="asks__label" id="asks-label">COMMUNICATION</span></div>
-          <span class="asks__count" id="asks-count">03 / 12</span>
-        </div>
-        <ul class="questions" id="questions"><!-- filled by js/ui.js --></ul>
-        <p class="asks__foot" id="asks-foot">Three of the twelve questions social data answers better than a survey.</p>
-        <div class="page__actions" data-reveal>
-      <a class="btn btn--ghost" href="use-cases.html">Discover the use cases <span aria-hidden="true">→</span></a>
-      <a class="btn btn--primary" href="book-a-meeting.html">Book a meeting <span aria-hidden="true">→</span></a>
-    </div>
-      </div>
-
-      <div class="cases__live">
-        <div class="tabs" data-reveal role="tablist" aria-label="Use case categories" id="tabs">
-          <button class="tab is-active" role="tab" id="tab-communication" aria-selected="true"  aria-controls="cases-panel" data-tab="communication"><span class="tab__dot" aria-hidden="true"></span>COMMUNICATION</button>
-          <button class="tab"           role="tab" id="tab-brand"     aria-selected="false" aria-controls="cases-panel" data-tab="brand"     tabindex="-1"><span class="tab__dot" aria-hidden="true"></span>BRAND HEALTH</button>
-          <button class="tab"           role="tab" id="tab-audiences" aria-selected="false" aria-controls="cases-panel" data-tab="audiences" tabindex="-1"><span class="tab__dot" aria-hidden="true"></span>AUDIENCES</button>
-          <button class="tab"           role="tab" id="tab-trends"    aria-selected="false" aria-controls="cases-panel" data-tab="trends"    tabindex="-1"><span class="tab__dot" aria-hidden="true"></span>INNOVATION</button>
-        </div>
-
-        <div class="console" id="cases-panel" role="tabpanel" aria-labelledby="tab-communication" data-dim>
-          <div class="deck" id="deck">
-            <span class="deck__card deck__card--back" aria-hidden="true"></span>
-            <span class="deck__card deck__card--mid" aria-hidden="true"></span>
-            <figure class="viz" id="viz"><!-- filled by js/ui.js --></figure>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
-
-
-
-  <!-- ==================== TEAM ==================== -->
-  <section class="block shell" id="team">
-    <div class="block__head" data-dim data-reveal>
-      <h2 class="block__title">The team that reads it for you.</h2>
-      <p class="block__lead">The consultant who frames your question is the one who runs the analysis
-         and walks you through it. Nobody hands your brief to someone you have never met.</p>
-    </div>
-    <div class="shots shots--group" data-reveal>
-      <figure class="shot shot--wide">
-        <img src="assets/img/team/team-courtyard.jpg" alt="Four members of the Licter team laughing together in a courtyard in front of a painted mural" width="1600" height="1066" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="shot shot--tall">
-        <img src="assets/img/team/consultant-dashboard.jpg" alt="A Licter consultant in an armchair, a laptop on his knees and a dashboard open on the screen in front of him" width="800" height="1200" loading="lazy" decoding="async" />
-      </figure>
-    </div>
-    <!-- MOCK: roles are placeholders, and names are to add once confirmed. -->
-    <ul class="people" data-mock data-reveal>
-      <li class="person">
-        <img src="assets/img/team/headshot-1.jpg" alt="Portrait of a Licter consultant in a red jacket" width="640" height="640" loading="lazy" decoding="async" />
-        <p class="person__role">Consumer insights</p>
-      </li>
-      <li class="person">
-        <img src="assets/img/team/headshot-2.jpg" alt="Portrait of a Licter consultant in a pink jumper" width="640" height="640" loading="lazy" decoding="async" />
-        <p class="person__role">Communication and reputation</p>
-      </li>
-      <li class="person">
-        <img src="assets/img/team/headshot-3.jpg" alt="Portrait of a Licter consultant in a light blue shirt" width="640" height="640" loading="lazy" decoding="async" />
-        <p class="person__role">Client director</p>
-      </li>
-    </ul>
-    <div class="page__actions" data-reveal>
-      <a class="btn btn--ghost" href="why-licter.html">Why Licter <span aria-hidden="true">→</span></a>
-    </div>
-  </section>
-
   <!-- ==================== METHOD ==================== -->
   <section class="block shell" id="method">
     <div class="block__head" data-dim data-reveal>
@@ -385,87 +364,38 @@
     </ol>
   </section>
 
-  <!-- ==================== DIAGNOSTIC ====================
-       MOCK: the six dimensions and the scoring in js/home.js are a draft.
-       Nothing is sent anywhere yet. -->
-  <section class="block shell" id="diagnostic">
-    <div class="quiz" id="quiz" data-mock>
-      <div class="quiz__intro">
-        <h2 class="block__title">Where does your listening stand?</h2>
-        <p class="block__lead">Six questions, three minutes. Your score now, the full readout by email.</p>
-        <div class="quiz__progress" aria-hidden="true"><span id="quiz-bar"></span></div>
-      </div>
-      <div class="quiz__stage" id="quiz-stage" aria-live="polite">
-        <noscript><p>The diagnostic needs JavaScript. <a href="diagnostic.html">Request a diagnostic</a> instead.</p></noscript>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== GUIDE ==================== -->
-  <section class="block shell" id="guide">
-    <div class="guide" id="guide-box">
-      <div class="guide__copy" data-dim data-reveal>
-        <h2 class="block__title">Twelve questions social data answers better than a survey.</h2>
-        <p class="block__lead">Three are open below. Leave your email and the other nine open here, with the full guide sent to you.</p>
-        <form class="signup guide__form" novalidate>
-          <label class="visually-hidden" for="email-guide">Your work email</label>
-          <input class="signup__input" id="email-guide" name="email" type="email"
-                 placeholder="Your work email..." autocomplete="email" required />
-          <button class="signup__btn" type="submit">Get the guide</button>
-        </form>
-        <p class="signup__note" role="status">
-          <span class="signup__check" aria-hidden="true">✓</span>
-          NOTED - THE GUIDE IS ON ITS WAY
-        </p>
-      </div>
-      <ol class="guide__list" id="guide-list" data-reveal></ol>
-    </div>
-  </section>
-
-  <!-- ==================== LATEST FROM THE BLOG ==================== -->
-  <section class="block shell" id="latest">
+  <!-- ==================== TEAM ==================== -->
+  <section class="block shell" id="team">
     <div class="block__head" data-dim data-reveal>
-      <p class="block__kicker">LATEST</p>
-      <h2 class="block__title">Recent notes from the team.</h2>
-      <p class="block__lead">Methods that held up, methods that did not, and the occasional correction.</p>
+      <h2 class="block__title">The team that reads it for you.</h2>
+      <p class="block__lead">The consultant who frames your question is the one who runs the analysis
+         and walks you through it. Nobody hands your brief to someone you have never met.</p>
     </div>
-    <div class="covers covers--lead">
-    <a class="cover-card cover-card--ochre" href="article-where-panels-and-surveys-disagree.html" data-reveal>
-      <span class="cover">
-        <span class="cover__kicker">// CONSUMER INSIGHTS</span>
-        <span class="cover__title">WHERE PANELS AND SURVEYS DISAGREE</span>
-      </span>
-      <span class="cover-card__body">
-        <span class="cover-card__label">16 SEPTEMBER 2026 &middot; 2 MIN READ</span>
-        <p class="cover-card__text">When observed behaviour and declared intention point in opposite directions, the useful move is not to pick a winner. It is to work out which question each one actually answered.</p>
-        <span class="cover-card__link">Read the piece &rarr;</span>
-      </span>
-    </a>
-    <a class="cover-card cover-card--amber" href="article-weak-signals-before-they-trend.html" data-reveal>
-      <span class="cover">
-        <span class="cover__kicker">// SOCIAL DATA &amp; FORESIGHT</span>
-        <span class="cover__title">WEAK SIGNALS, BEFORE THEY TREND</span>
-      </span>
-      <span class="cover-card__body">
-        <span class="cover-card__label">11 SEPTEMBER 2026 &middot; 3 MIN READ</span>
-        <p class="cover-card__text">Most of what gets called a weak signal is just a small number. Here is the difference between a conversation that predicts a shift and one that only looks like it does.</p>
-        <span class="cover-card__link">Read the piece &rarr;</span>
-      </span>
-    </a>
-    <a class="cover-card cover-card--slate" href="article-what-a-platform-cannot-do-alone.html" data-reveal>
-      <span class="cover">
-        <span class="cover__kicker">// MONITORING &amp; SOCIAL LISTENING</span>
-        <span class="cover__title">WHAT A PLATFORM CANNOT DO ON ITS OWN</span>
-      </span>
-      <span class="cover-card__body">
-        <span class="cover-card__label">4 SEPTEMBER 2026 &middot; 2 MIN READ</span>
-        <p class="cover-card__text">Listening suites are very good at three things and structurally bad at two others. Knowing which is which is most of what separates a useful setup from an expensive one.</p>
-        <span class="cover-card__link">Read the piece &rarr;</span>
-      </span>
-    </a>
+    <div class="shots shots--group" data-reveal>
+      <figure class="shot shot--wide">
+        <img src="assets/img/team/team-courtyard.jpg" alt="Four members of the Licter team laughing together in a courtyard in front of a painted mural" width="1600" height="1066" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="shot shot--tall">
+        <img src="assets/img/team/consultant-dashboard.jpg" alt="A Licter consultant in an armchair, a laptop on his knees and a dashboard open on the screen in front of him" width="800" height="1200" loading="lazy" decoding="async" />
+      </figure>
     </div>
+    <!-- MOCK: roles are placeholders, and names are to add once confirmed. -->
+    <ul class="people" data-mock data-reveal>
+      <li class="person">
+        <img src="assets/img/team/headshot-1.jpg" alt="Portrait of a Licter consultant in a red jacket" width="640" height="640" loading="lazy" decoding="async" />
+        <p class="person__role">Consumer insights</p>
+      </li>
+      <li class="person">
+        <img src="assets/img/team/headshot-2.jpg" alt="Portrait of a Licter consultant in a pink jumper" width="640" height="640" loading="lazy" decoding="async" />
+        <p class="person__role">Communication and reputation</p>
+      </li>
+      <li class="person">
+        <img src="assets/img/team/headshot-3.jpg" alt="Portrait of a Licter consultant in a light blue shirt" width="640" height="640" loading="lazy" decoding="async" />
+        <p class="person__role">Client director</p>
+      </li>
+    </ul>
     <div class="page__actions" data-reveal>
-      <a class="btn btn--ghost" href="blog.html">All nine pieces <span aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost" href="why-licter.html">Why Licter <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
@@ -536,28 +466,6 @@
 <footer class="site-foot">
 
   <!-- newsletter band -->
-  <div class="nl shell">
-    <div class="nl__copy">
-      <h2 class="nl__title">Stay ahead of your market.</h2>
-      <p class="nl__text">One email when we publish something worth your time: a method, a market
-         read, or a correction. No sequence, no drip campaign.</p>
-      <form class="signup nl__form" novalidate>
-        <label class="visually-hidden" for="email-nl-index">Your work email</label>
-        <input class="signup__input" id="email-nl-index" name="email" type="email"
-               placeholder="Your work email..." autocomplete="email" required />
-        <button class="signup__btn" type="submit">SUBSCRIBE</button>
-      </form>
-      <p class="signup__note" role="status">
-        <span class="signup__check" aria-hidden="true">&#10003;</span>
-        NOTED - ONE EMAIL WHEN THE NEXT PIECE IS OUT
-      </p>
-    </div>
-    <div class="nl__visual" aria-hidden="true">
-      <span class="nl__card nl__card--back"></span>
-      <span class="nl__card"><svg class="nl__art" viewBox="0 0 200 150" aria-hidden="true"><path class="l" d="M70 62L42.4 60.9 M70 62L100.7 49.9 M70 62L92.6 73.3 M70 62L56.5 29.7 M70 62L78.0 73.8 M70 62L35.4 88.2 M70 62L36.7 49.9 M70 62L87.0 26.6 M70 62L71.1 28.7 M70 62L43.8 44.8 M70 62L101.0 82.2 M78.0 73.8L100.7 49.9 M87.0 26.6L43.8 44.8 M35.4 88.2L87.0 26.6 M150 40L162.7 68.9 M150 40L156.2 54.7 M150 40L147.6 58.7 M150 40L164.0 55.9 M150 40L152.1 55.3 M150 40L132.4 66.0 M150 40L167.4 42.6 M167.4 42.6L164.0 55.9 M147.6 58.7L167.4 42.6 M124 116L109.8 120.6 M124 116L129.1 106.2 M124 116L112.8 99.4 M124 116L107.8 126.1 M124 116L109.8 105.7 M124 116L140.2 99.3 M109.8 120.6L129.1 106.2 M109.8 105.7L107.8 126.1 M42.4 60.9L162.7 68.9 M156.2 54.7L109.8 105.7"/><circle class="h" cx="70" cy="62" r="3.2"/><circle class="h" cx="150" cy="40" r="3.2"/><circle class="h" cx="124" cy="116" r="3.2"/><circle class="n" cx="42.4" cy="60.9" r="2.0"/><circle class="n" cx="100.7" cy="49.9" r="2.3"/><circle class="n" cx="92.6" cy="73.3" r="2.0"/><circle class="n" cx="56.5" cy="29.7" r="1.2"/><circle class="n" cx="78.0" cy="73.8" r="2.2"/><circle class="n" cx="35.4" cy="88.2" r="2.0"/><circle class="n" cx="36.7" cy="49.9" r="1.5"/><circle class="n" cx="87.0" cy="26.6" r="2.1"/><circle class="n" cx="71.1" cy="28.7" r="1.9"/><circle class="n" cx="43.8" cy="44.8" r="1.6"/><circle class="n" cx="101.0" cy="82.2" r="1.5"/><circle class="n" cx="162.7" cy="68.9" r="1.6"/><circle class="n" cx="156.2" cy="54.7" r="2.0"/><circle class="n" cx="147.6" cy="58.7" r="2.3"/><circle class="n" cx="164.0" cy="55.9" r="1.7"/><circle class="n" cx="152.1" cy="55.3" r="1.9"/><circle class="n" cx="132.4" cy="66.0" r="1.5"/><circle class="n" cx="167.4" cy="42.6" r="1.9"/><circle class="n" cx="109.8" cy="120.6" r="1.5"/><circle class="n" cx="129.1" cy="106.2" r="1.5"/><circle class="n" cx="112.8" cy="99.4" r="1.5"/><circle class="n" cx="107.8" cy="126.1" r="1.2"/><circle class="n" cx="109.8" cy="105.7" r="1.5"/><circle class="n" cx="140.2" cy="99.3" r="2.1"/></svg></span>
-    </div>
-  </div>
-
   <div class="site-foot__in shell">
     <div class="site-foot__brand">
       <a class="logo" href="index.html" aria-label="Licter home">
@@ -614,12 +522,12 @@
   </div>
 </footer>
 
-<script src="js/fr.js?v=20261073"></script>
-<script src="js/i18n.js?v=20261073"></script>
-<script src="js/cartography.js?v=20261073"></script>
-<script src="js/flow.js?v=20261073"></script>
-<script src="js/ui.js?v=20261073"></script>
-<script src="js/voices.js?v=20261073"></script>
-<script src="js/home.js?v=20261073"></script>
+<script src="js/fr.js?v=20261074"></script>
+<script src="js/i18n.js?v=20261074"></script>
+<script src="js/cartography.js?v=20261074"></script>
+<script src="js/flow.js?v=20261074"></script>
+<script src="js/ui.js?v=20261074"></script>
+<script src="js/voices.js?v=20261074"></script>
+<script src="js/home.js?v=20261074"></script>
 </body>
 </html>

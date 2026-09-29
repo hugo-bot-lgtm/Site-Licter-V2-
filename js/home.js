@@ -162,6 +162,8 @@
               '<button class="btn btn--primary" type="submit">' + t("Send it to me", "Me l'envoyer") + "</button></div>" +
               '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
             "</form>") +
+        '<p class="quiz__more"><a href="guide.html">' + t("Or start with the free guide", "Ou commencez par le guide gratuit") +
+          ' <span aria-hidden="true">\u2192</span></a></p>' +
         '<button class="quiz__back" type="button" data-restart>' + t("Start again", "Recommencer") + "</button>";
       stage.classList.remove("is-swap"); void stage.offsetWidth; stage.classList.add("is-swap");
       progress();
