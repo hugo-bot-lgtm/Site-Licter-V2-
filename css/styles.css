@@ -5310,11 +5310,18 @@ html[data-theme="dark"] .home { --glow-a: .09; --glow-n: .16; --glow-navy-rgb: 9
 }
 
 /* the logo band: its lines and its light ground fade out at both ends
-   instead of stopping at the edge of the screen */
-.home .wall {
+   instead of stopping at the edge of the screen. The fade sits on a layer of
+   its own: masking the band itself also cut the caption that straddles its
+   top line. */
+.home .wall { border-color: transparent; background: none; }
+.home .wall::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  border-block: 1px solid var(--line); background: rgba(255, 255, 255, .5);
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
           mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
 }
+html[data-theme="dark"] .home .wall { background: none; }
+html[data-theme="dark"] .home .wall::after { background: rgba(var(--surf-rgb), .5); }
 
 /* =========================================================
    Method, centred: title, step bar, current card and arrows all
