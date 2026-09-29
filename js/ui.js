@@ -1501,7 +1501,7 @@
   var cta = head && head.querySelector(".nav__cta");
   if (!head || !("IntersectionObserver" in window)) return;
   /* the home has no header button (the hero carries it): book is on the page */
-  var ctaHref = cta ? cta.getAttribute("href") : "#book";
+  var ctaHref = cta ? cta.getAttribute("href") : (document.getElementById("book") ? "#book" : "book-a-meeting.html");
 
   var bar = document.createElement("div");
   bar.className = "stickybar";

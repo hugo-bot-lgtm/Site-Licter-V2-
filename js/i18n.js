@@ -141,7 +141,7 @@
   }
 
   function build() {
-    var host = document.querySelector(".hero__start") || document.querySelector(".hero__top") || document.querySelector(".site-head .shell");
+    var host = document.querySelector(".hero__end") || document.querySelector(".hero__top") || document.querySelector(".site-head .shell");
     if (!host) return;
 
     var box = document.createElement("div");

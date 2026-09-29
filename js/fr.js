@@ -91,7 +91,7 @@ window.LicterFR = {
 
   /* ---- hero ---- */
   "AI & DATA AGENCY FOR ENTERPRISES": "AGENCE IA & DATA POUR LES ENTREPRISES",
-  "STOP GUESSING,": "ARRÊTEZ DE SUPPOSER,", "START LISTENING.": "COMMENCEZ À ÉCOUTER.",
+  /* the hero title stays in English in both languages */
   "Licter is the Social Data Intelligence consultancy. We turn data from the world's largest panel – social media, search, generative AI – into decisions.":
     "Licter est le cabinet de conseil en Social Data Intelligence. Nous transformons la donnée du plus grand panel du monde – réseaux sociaux, recherche, IA générative – en décisions.",
   "Your work email...": "Votre e-mail professionnel...", "Your work email": "Votre e-mail professionnel",
