@@ -14,8 +14,17 @@
 (function () {
   "use strict";
 
-  var host = document.getElementById("carto-frame");
-  if (!host || !document.createElement("canvas").getContext) return;
+  /* The renderer is a factory: the hero uses it, and so does the audiences
+     use case, each with its own communities.
+       opts.communities  [{x, y, r, n, color, swirl, platform?, cap?}]
+       opts.outliers     grey constellations on the edge
+       opts.stories      open the platform window on hover (hero)
+       opts.labels       a name per community, shown beside its hub
+       opts.onHover(i) / opts.onSelect(i), and .select(i) for a lasting highlight */
+  function LicterMap(host, opts) {
+  if (!host || !document.createElement("canvas").getContext) return null;
+  opts = opts || {};
+  var selected = -1, alive = true, observers = [];
 
   var canvas = document.createElement("canvas");
   canvas.className = "communities";
@@ -28,7 +37,7 @@
      x, y and r are fractions of the frame (r of its smaller side).
      n is the number of accounts, swirl the direction and strength of the
      curve on the links. The largest community carries the brand amber. */
-  var COMMUNITIES = [
+  var COMMUNITIES = opts.communities || [
     { x: 0.27, y: 0.47, r: 0.34, n: 1300, color: "#F4A93B", swirl:  0.55, platform: "TIKTOK",    cap: "Reel · 14 min" },
     { x: 0.45, y: 0.17, r: 0.25, n: 800, color: "#E2468D", swirl: -0.6,  platform: "INSTAGRAM", cap: "Story · 2 h" },
     { x: 0.55, y: 0.38, r: 0.26, n: 900, color: "#D796E6", swirl:  0.5,  platform: "TWITCH",    cap: "Live · 2 h" },
@@ -40,7 +49,7 @@
     { x: 0.2, y: 0.26, r: 0.10, n: 380, color: "#F2656F", swirl: -0.7,  platform: "YOUTUBE",   cap: "Short · 40 min" }
   ];
   /* small groups on the edge, drawn as grey constellations */
-  var OUTLIERS = [
+  var OUTLIERS = opts.outliers || [
     { x: 0.14, y: 0.37, r: 0.05, n: 14 }, { x: 0.23, y: 0.12, r: 0.045, n: 12 },
     { x: 0.15, y: 0.66, r: 0.05, n: 14 }, { x: 0.22, y: 0.82, r: 0.06, n: 16 },
     { x: 0.83, y: 0.70, r: 0.05, n: 14 }, { x: 0.80, y: 0.14, r: 0.05, n: 12 },
@@ -95,6 +104,8 @@
 
   /* ------------------------------------------------------------ build */
   var W = 0, H = 0, S = 0, dpr = 1;
+  var labelBox = null;
+  if (opts.labels) { labelBox = document.createElement("div"); labelBox.className = "map-labels"; host.appendChild(labelBox); }
   var layers = [];      /* one per community: offscreen canvas + geometry */
   var base = null;      /* outliers and the links between communities */
   var signals = [];
@@ -215,6 +226,20 @@
       }
     }
 
+    /* names beside the hubs, as text so they stay crisp and translatable */
+    if (labelBox) {
+      labelBox.innerHTML = "";
+      layers.forEach(function (L, i) {
+        if (!opts.labels || !opts.labels[i]) return;
+        var el = document.createElement("span");
+        el.className = "map-label";
+        el.style.left = L.hx + "px"; el.style.top = (L.hy + 12) + "px";
+        el.style.setProperty("--c", L.c.color);
+        el.textContent = opts.labels[i];
+        labelBox.appendChild(el);
+      });
+    }
+
     /* signals: a bright point running down a link to its hub */
     signals = [];
     var count = Math.round(180 * density);
@@ -246,7 +271,7 @@
   }
   function openCard(i) {
     closeCard();
-    if (i < 0) return;
+    if (i < 0 || !opts.stories) return;
     var L = layers[i], c = L.c, CW = 216, CH = 190;
     var el = document.createElement("figure");
     el.className = "story";
@@ -268,9 +293,13 @@
     if (i === hover) return;
     hover = i;
     openCard(i);
+    if (labelBox) Array.prototype.forEach.call(labelBox.children, function (el, k) { el.classList.toggle("is-on", k === focusIndex()); });
+    if (opts.onHover) opts.onHover(i);
   }
+  /* the community in focus: under the pointer, else the selected one */
+  function focusIndex() { return hover >= 0 ? hover : selected; }
 
-  host.addEventListener("pointermove", function (e) {
+  function onMove(e) {
     var r = host.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
     var best = -1, bestD = Infinity;
     layers.forEach(function (L, i) {
@@ -278,8 +307,12 @@
       if (d < 0.8 && d < bestD) { best = i; bestD = d; }
     });
     setHover(best);
-  });
-  host.addEventListener("pointerleave", function () { setHover(-1); });
+  }
+  function onLeave() { setHover(-1); }
+  function onClick() { if (hover >= 0 && opts.onSelect) opts.onSelect(hover); }
+  host.addEventListener("pointermove", onMove);
+  host.addEventListener("pointerleave", onLeave);
+  host.addEventListener("click", onClick);
 
   /* ------------------------------------------------------------ frame */
   var running = false, last = 0;
@@ -295,8 +328,9 @@
 
     for (var i = 0; i < layers.length; i++) {
       var L = layers[i];
-      L.glow += ((hover === i ? 1 : 0) - L.glow) * 0.08;
-      var dim = hover >= 0 && hover !== i ? 0.45 : 1;
+      var f = focusIndex();
+      L.glow += ((f === i ? 1 : 0) - L.glow) * 0.08;
+      var dim = f >= 0 && f !== i ? 0.4 : 1;
       var sway = reduced.matches ? 0 : Math.sin(t * 0.25 + L.phase) * 0.05;
       ctx.save();
       ctx.globalAlpha = dim;
@@ -334,7 +368,7 @@
       var cs = Math.cos(L2.sway || 0), sn = Math.sin(L2.sway || 0);
       var px = L2.hx + lx * cs - ly * sn, py = L2.hy + lx * sn + ly * cs;
       var fade = Math.sin(Math.PI * sg.t);
-      var dimS = hover >= 0 && hover !== layers.indexOf(L2) ? 0.35 : 1;
+      var fS = focusIndex(), dimS = fS >= 0 && fS !== layers.indexOf(L2) ? 0.35 : 1;
       ctx.fillStyle = LIGHT ? rgba(toward(L2.c.color, "#13162D", 0.35), 0.9 * fade * dimS) : rgba(mix(L2.c.color, 0.55), 0.9 * fade * dimS);
       ctx.beginPath(); ctx.arc(px, py, 1.1, 0, Math.PI * 2); ctx.fill();
     }
@@ -342,7 +376,7 @@
   }
 
   function loop(now) {
-    if (!running) return;
+    if (!running || !alive) return;
     draw(now);
     requestAnimationFrame(loop);
   }
@@ -362,27 +396,53 @@
   /* only while visible */
   var visible = true;
   if ("IntersectionObserver" in window) {
-    new IntersectionObserver(function (e) {
+    var io = new IntersectionObserver(function (e) {
       visible = e[0].isIntersecting;
       if (visible && !document.hidden) start(); else stop();
-    }).observe(host);
+    });
+    io.observe(host); observers.push(io);
   }
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) stop(); else if (visible) start();
-  });
-  reduced.addEventListener && reduced.addEventListener("change", function () { stop(); init(); });
+  function onVis() { if (document.hidden) stop(); else if (visible) start(); }
+  document.addEventListener("visibilitychange", onVis);
 
   if (window.MutationObserver) {
-    new MutationObserver(function () {
+    var mo = new MutationObserver(function () {
       if (isLight() === LIGHT) return;
       setHover(-1); build(); draw(performance.now());
-    }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    });
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    observers.push(mo);
   }
 
   var t0 = null;
   function rebuild() { clearTimeout(t0); t0 = setTimeout(function () { setHover(-1); build(); draw(performance.now()); }, 150); }
-  if (window.ResizeObserver) new ResizeObserver(rebuild).observe(host);
+  if (window.ResizeObserver) { var ro = new ResizeObserver(rebuild); ro.observe(host); observers.push(ro); }
   else window.addEventListener("resize", rebuild);
 
   init();
+
+  return {
+    select: function (i) {
+      selected = i;
+      if (labelBox) Array.prototype.forEach.call(labelBox.children, function (el, k) { el.classList.toggle("is-on", k === focusIndex()); });
+      if (!running) draw(performance.now());
+    },
+    destroy: function () {
+      alive = false; stop(); clearTimeout(t0);
+      observers.forEach(function (o) { o.disconnect(); });
+      document.removeEventListener("visibilitychange", onVis);
+      window.removeEventListener("resize", rebuild);
+      host.removeEventListener("pointermove", onMove);
+      host.removeEventListener("pointerleave", onLeave);
+      host.removeEventListener("click", onClick);
+      canvas.remove(); cards.remove(); if (labelBox) labelBox.remove();
+    }
+  };
+  }
+
+  window.LicterMap = LicterMap;
+
+  /* the hero */
+  var hero = document.getElementById("carto-frame");
+  if (hero) LicterMap(hero, { stories: true });
 })();

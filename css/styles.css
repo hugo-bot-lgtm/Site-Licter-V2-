@@ -4914,3 +4914,107 @@ html[data-theme="dark"] .award__rank::before { background: linear-gradient(180de
 @media (prefers-reduced-transparency: reduce) {
   .award { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
+
+/* ---- use cases, round 2 ---- */
+/* 1: the curve reveals itself; the head follows the pen */
+.uv-svg .brand { stroke-dasharray: none; animation: none; }
+.uv-svg .head { fill: var(--amber); stroke: var(--surface, #fff); stroke-width: 3; filter: drop-shadow(0 0 6px rgba(var(--amber-rgb), .8)); transition: opacity .4s ease; }
+.uv-svg .pin { transition: opacity .4s ease; }
+.uv-svg .pin.is-hidden { opacity: 0; pointer-events: none; }
+.uv-svg.is-locked { cursor: default; }
+.uv-svg.is-locked .launch { opacity: .35; }
+.uv-svg:not(.is-locked) .launch__grip { animation: grip 1.6s ease-in-out 3; transform-box: fill-box; transform-origin: center; }
+@keyframes grip { 50% { transform: scale(1.35); } }
+.uv-chart:has(.is-locked) { cursor: default; }
+.kchip__day { align-self: center; margin-left: auto; font: 600 12px/1 var(--body-font); color: var(--text-2); font-variant-numeric: tabular-nums; }
+
+/* 2: words land one by one */
+.word { animation: none; opacity: 0; transform: scale(.55); transition: opacity .45s ease, transform .5s cubic-bezier(.16, 1, .3, 1), background-color .2s ease; }
+.word.is-shown { opacity: 1; transform: none; }
+.word.is-shown.is-off { opacity: .1; }
+.word.is-shown:hover { transform: scale(1.06); }
+.tone__n { margin-left: 2px; font: 700 11.5px/1 var(--body-font); color: var(--text-2); font-variant-numeric: tabular-nums; }
+
+/* 3: audience map + scores */
+.aud2 { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 18px; align-items: stretch; }
+.aud2__map { position: relative; min-height: 380px; border-radius: 16px; overflow: hidden;
+  background: radial-gradient(120% 100% at 50% 45%, rgba(var(--ink-rgb), .03), transparent 70%); }
+html[data-theme="dark"] .aud2__map { background: radial-gradient(120% 100% at 50% 45%, #10132A 0%, #080A16 75%); }
+.aud2__map .communities { position: absolute; inset: 0; display: block; cursor: pointer; }
+.map-labels { position: absolute; inset: 0; pointer-events: none; }
+.map-label {
+  position: absolute; transform: translateX(-50%); padding: 3px 8px; border-radius: 999px; white-space: nowrap;
+  background: color-mix(in srgb, var(--surface, #fff) 82%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 45%, transparent);
+  font: 600 11px/1.2 var(--body-font); color: var(--ink); transition: transform .25s ease, box-shadow .25s ease;
+}
+.map-label.is-on { transform: translateX(-50%) scale(1.08); box-shadow: inset 0 0 0 2px var(--c), 0 6px 16px -8px rgba(0, 0, 0, .4); }
+.aud2__side { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.aud2__focus { padding: 16px 18px; border-radius: 16px; background: rgba(var(--ink-rgb), .04); }
+.afocus__name { display: flex; align-items: center; gap: 9px; margin: 0; font: 600 18px/1.25 var(--title-font); color: var(--ink); }
+.afocus__name i { flex: none; width: 11px; height: 11px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 4px color-mix(in srgb, var(--c) 25%, transparent); }
+.afocus__meta { margin: 4px 0 12px; font: 500 12.5px/1.3 var(--body-font); color: var(--text-2); }
+.gauges { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.gauge { position: relative; display: grid; justify-items: center; gap: 4px; }
+.gauge svg { width: 64px; height: 64px; transform: rotate(-90deg); }
+.gauge__bg { fill: none; stroke: rgba(var(--ink-rgb), .09); stroke-width: 6; }
+.gauge__v { fill: none; stroke-width: 6; stroke-linecap: round; transition: stroke-dashoffset .9s cubic-bezier(.16, 1, .3, 1); }
+.gauge b { position: absolute; top: 20px; left: 0; right: 0; text-align: center; font: 700 17px/1 var(--title-font); color: var(--ink); font-variant-numeric: tabular-nums; }
+.gauge span { font: 600 11.5px/1.2 var(--body-font); color: var(--text-2); }
+.afocus__note { margin: 12px 0 0; font: 600 13.5px/1.45 var(--body-font); color: var(--ink); }
+.arank__head { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0; font: 700 11px/1.2 var(--body-font); letter-spacing: .8px; text-transform: uppercase; color: var(--text-2); }
+.arank__keys { display: inline-flex; align-items: center; gap: 5px; letter-spacing: 0; text-transform: none; font-weight: 500; }
+.arank__keys i { width: 8px; height: 8px; border-radius: 2px; margin-left: 6px; }
+.aud2__rank { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.arow {
+  display: grid; grid-template-columns: minmax(0, 1fr) 96px 28px; align-items: center; gap: 10px; width: 100%;
+  padding: 8px 10px; border: 0; border-radius: 10px; background: transparent; cursor: pointer; text-align: left;
+  transition: background-color .2s ease;
+}
+.arow:hover, .aud2__rank li.is-on .arow { background: rgba(var(--ink-rgb), .05); }
+.arow__name { display: flex; align-items: center; gap: 8px; min-width: 0; font: 600 13px/1.25 var(--body-font); color: var(--ink); }
+.arow__name i { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.arow__bars { display: grid; gap: 3px; }
+.arow__bar { display: block; height: 4px; border-radius: 4px; background: rgba(var(--ink-rgb), .08); overflow: hidden; }
+.arow__bar i { display: block; height: 100%; width: var(--w); border-radius: 4px; }
+.aud2__rank.is-in .arow__bar i { animation: grow .9s cubic-bezier(.16, 1, .3, 1) both; }
+.arow b { font: 700 15px/1 var(--title-font); color: #23845A; text-align: right; font-variant-numeric: tabular-nums; }
+html[data-theme="dark"] .arow b { color: #62CC98; }
+
+/* 4: the race */
+.race2 { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.race { position: relative; }
+.race__month { position: absolute; right: 4px; bottom: 2px; margin: 0; font: 800 clamp(26px, 3vw, 38px)/1 var(--title-font); color: rgba(var(--ink-rgb), .08); letter-spacing: -1px; text-transform: capitalize; pointer-events: none; }
+.race__row {
+  position: absolute; left: 0; right: 0; top: 0; height: 30px; display: grid; grid-template-columns: minmax(0, 1fr) 30px 16px; align-items: center; gap: 8px;
+  padding: 0; border: 0; background: none; cursor: pointer; text-align: left;
+  transition: transform .55s cubic-bezier(.45, 0, .2, 1);
+}
+.race__bar { position: absolute; left: 0; top: 0; bottom: 0; right: 54px; }
+.race__bar i { display: block; height: 100%; width: 0; border-radius: 0 8px 8px 0; background: linear-gradient(90deg, color-mix(in srgb, var(--c) 55%, transparent), var(--c)); transition: width .55s cubic-bezier(.45, 0, .2, 1); }
+.race__name { position: relative; z-index: 1; padding-left: 10px; font: 600 12.5px/1 var(--body-font); color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.race__v { font: 700 14px/1 var(--title-font); color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
+.race__delta { font-size: 10px; text-align: center; opacity: 0; transition: opacity .3s ease; }
+.race__delta.is-up { color: #23845A; opacity: 1; } .race__delta.is-down { color: #C23A51; opacity: 1; }
+.race__row.is-on .race__bar i { box-shadow: 0 0 0 2px var(--ink); }
+.race__row:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 2px; border-radius: 8px; }
+html[data-theme="dark"] .race__name { color: #0B0D1D; }
+.tcard__name { display: flex; align-items: center; gap: 9px; }
+.tcard__name i { flex: none; width: 11px; height: 11px; border-radius: 50%; background: var(--c); }
+.tcard__lead { margin: 6px 0 0; font: 500 13px/1.4 var(--body-font); color: var(--ink); }
+.tcard__lead span { color: var(--text-2); }
+.race2__card { padding: 16px 18px; border-radius: 16px; background: rgba(var(--ink-rgb), .04); }
+
+@media (max-width: 760px) {
+  .aud2, .race2 { grid-template-columns: minmax(0, 1fr); }
+  .aud2__map { min-height: 320px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .word, .race__row, .race__bar i, .gauge__v { transition: none; }
+  .uv-svg .launch__grip, .aud2__rank.is-in .arow__bar i { animation: none; }
+}
+.race__month { top: 0; bottom: auto; right: 0; font-size: 18px; letter-spacing: 0; color: var(--ink); opacity: .55; }
+/* race names stay readable where they run past a short bar */
+html[data-theme="dark"] .race__name { color: #fff; text-shadow: 0 1px 2px rgba(0, 0, 0, .55); }
+.race__month { opacity: 1; color: var(--text-2); }
+.uv__hint span:not([aria-hidden]) { color: inherit; }
+.arow b { color: #1C6B48; }

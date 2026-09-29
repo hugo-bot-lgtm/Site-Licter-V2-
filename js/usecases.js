@@ -82,8 +82,8 @@
         { name: ["Sport fans", "Sportifs"], w: 0.21, color: "#3CC2A6" },
         { name: ["Seniors", "Seniors"], w: 0.16, color: "#4292F2" }
       ],
-      answer: ["<b>Not the audience in the brief.</b> Parents write 41 % of the posts; the 18-24 target barely 22 %. They talk about saving time, not about recipes.",
-               "<b>Pas l'audience du brief.</b> Les parents écrivent 41 % des posts ; la cible 18-24 ans à peine 22 %. Ils parlent de temps gagné, pas de recettes."],
+      answer: ["<b>The opportunity is not in the brief.</b> Food creators' followers love the brand but barely buy it: opportunity 86 / 100. Students, the brief's target, score 31.",
+               "<b>L'opportunité n'est pas dans le brief.</b> Les abonnés des créateurs food adorent la marque mais l'achètent peu : opportunité 86 / 100. Les étudiants, cible du brief, font 31."],
       posts: [
         ["FACEBOOK", "@claire.maman", 0, 1, "The only thing my kids eat without negotiating.", "La seule chose que mes enfants mangent sans négocier."],
         ["INSTAGRAM", "@papa.en.cuisine", 0, 1, "Wednesday dinner sorted in ten minutes.", "Dîner du mercredi réglé en dix minutes."],
@@ -122,7 +122,7 @@
   var PLATFORM_NAMES = { TIKTOK: "TikTok", INSTAGRAM: "Instagram", X: "X", YOUTUBE: "YouTube", LINKEDIN: "LinkedIn", FACEBOOK: "Facebook", TWITCH: "Twitch" };
   var READ_TOTAL = { communication: 11400, brand: 8230, audiences: 15640, trends: 42300 };
 
-  var current = null, visible = false, timers = [], cleanup = [];
+  var current = null, timers = [], cleanup = [];
   function later(fn, ms) { var id = setTimeout(fn, ms); timers.push(id); return id; }
   function every(fn, ms) { var id = setInterval(fn, ms); timers.push(id); return id; }
   function stopAll() {
@@ -160,33 +160,47 @@
       '<p class="mp__text">' + esc(fr() ? p[5] : p[4]) + "</p></div>";
   }
 
-  /* the count climbs, two posts rotate, then the answer lands */
+  /* The side panel: two posts rotate; the count and the answer follow the
+     visual. A visual calls progress(k) with k from 0 to 1 as it reveals
+     itself; at 1 the answer lands. Visuals with nothing to reveal use
+     autoProgress(). */
+  var gen = 0;
   function runSide(key) {
-    var d = DATA[key], target = READ_TOTAL[key];
-    var countEl = document.getElementById("uv-count");
+    var d = DATA[key];
     var postsEl = document.getElementById("uv-posts");
-    var answerEl = document.getElementById("uv-answer");
     var i = 0;
     function showPosts() {
       postsEl.innerHTML = postHTML(d.posts[i % d.posts.length]) + postHTML(d.posts[(i + 1) % d.posts.length]);
       postsEl.classList.remove("is-in"); void postsEl.offsetWidth; postsEl.classList.add("is-in");
       i += 1;
     }
-    function answer() {
-      answerEl.classList.add("is-in");
-      answerEl.innerHTML = '<p class="lf__k">' + t("What it means", "Ce que ça veut dire") + "</p><p>" + L(d.answer) + "</p>";
-    }
     showPosts();
-    if (reduced.matches) { countEl.textContent = num(target); answer(); return; }
-    var start = performance.now(), DUR = 3200;
-    (function tick(now) {
-      var k = Math.min(1, (now - start) / DUR);
-      countEl.textContent = num(target * (1 - Math.pow(1 - k, 3)));
-      if (k < 1 && current === key) requestAnimationFrame(tick);
-    })(start);
-    later(answer, DUR + 300);
     every(showPosts, 3600);
   }
+  var answered = false;
+  function progress(k) {
+    var countEl = document.getElementById("uv-count"), answerEl = document.getElementById("uv-answer");
+    if (!countEl) return;
+    k = Math.max(0, Math.min(1, k));
+    countEl.textContent = num(READ_TOTAL[current] * k);
+    if (k >= 1 && !answered) {
+      answered = true;
+      answerEl.classList.add("is-in");
+      answerEl.innerHTML = '<p class="lf__k">' + t("What it means", "Ce que ça veut dire") + "</p><p>" + L(DATA[current].answer) + "</p>";
+    }
+  }
+  /* runs fn(k) from 0 to 1 over ms, frame by frame, until the topic changes */
+  function tween(ms, fn, done) {
+    var my = gen, start = performance.now();
+    if (reduced.matches) { fn(1); if (done) done(); return; }
+    (function step(now) {
+      if (my !== gen) return;
+      var k = Math.min(1, (now - start) / ms);
+      fn(k);
+      if (k < 1) requestAnimationFrame(step); else if (done) done();
+    })(start);
+  }
+  function autoProgress() { tween(3200, function (k) { progress(1 - Math.pow(1 - k, 3)); }); }
 
   /* ================================================= 1. communication */
   function communication() {
@@ -197,6 +211,7 @@
       V.push(Math.round(v));
       CAT.push(Math.round(930 + 40 * Math.sin(d * 0.5)));
     }
+    var CUM = [], acc = 0; V.forEach(function (v) { acc += v; CUM.push(acc); });
     var PEAKS = [
       { d: 23, pf: "TIKTOK", h: "@chef.maud", txt: ["The recipe video that started it: 1.2M views in 48 hours.", "La vidéo recette qui a tout lancé : 1,2 M de vues en 48 heures."] },
       { d: 27, pf: "INSTAGRAM", h: "@thomas.run", txt: ["Stories reshare the recipe three days in a row.", "Les stories repartagent la recette trois jours d'affilée."] },
@@ -215,18 +230,19 @@
       return '<text class="ax" x="' + X(d + 3) + '" y="' + (H - 8) + '" text-anchor="middle">' + t("Week ", "Sem. ") + (i + 1) + "</text>";
     }).join("");
     var pins = PEAKS.map(function (p, i) {
-      return '<g class="pin" tabindex="0" role="button" data-i="' + i + '" transform="translate(' + X(p.d).toFixed(1) + "," + Y(V[p.d]).toFixed(1) + ')" aria-label="' + esc(L(p.txt)) + '">' +
+      return '<g class="pin is-hidden" tabindex="0" role="button" data-i="' + i + '" transform="translate(' + X(p.d).toFixed(1) + "," + Y(V[p.d]).toFixed(1) + ')" aria-label="' + esc(L(p.txt)) + '">' +
         '<circle class="pin__halo" r="13"/><circle class="pin__dot" r="5.5"/></g>';
     }).join("");
     var svg =
-      '<svg class="uv-svg" id="c-svg" viewBox="0 0 ' + W + " " + H + '" role="group" aria-label="' + t("Daily volume of posts over six weeks", "Volume quotidien de posts sur six semaines") + '">' +
-        '<defs><linearGradient id="c-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAA93D" stop-opacity=".38"/><stop offset="1" stop-color="#EAA93D" stop-opacity="0"/></linearGradient></defs>' +
+      '<svg class="uv-svg is-locked" id="c-svg" viewBox="0 0 ' + W + " " + H + '" role="group" aria-label="' + t("Daily volume of posts over six weeks", "Volume quotidien de posts sur six semaines") + '">' +
+        '<defs><linearGradient id="c-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAA93D" stop-opacity=".38"/><stop offset="1" stop-color="#EAA93D" stop-opacity="0"/></linearGradient>' +
+          '<clipPath id="c-clip"><rect id="c-reveal" x="0" y="0" width="' + P.l + '" height="' + H + '"/></clipPath></defs>' +
         grid + weeks +
         '<rect class="after" id="c-after" y="' + P.t + '" height="' + (H - P.t - P.b) + '"/>' +
-        '<path class="area" d="' + area + '"/>' +
         '<path class="cat" d="' + line(CAT) + '"/>' +
         '<text class="cat__t" x="' + (W - P.r) + '" y="' + (Y(CAT[D - 1]) + 16) + '" text-anchor="end">' + t("Category average", "Moyenne de la catégorie") + "</text>" +
-        '<path class="brand draw" pathLength="1" d="' + line(V) + '"/>' +
+        '<g clip-path="url(#c-clip)"><path class="area" d="' + area + '"/><path class="brand" d="' + line(V) + '"/></g>' +
+        '<circle class="head" id="c-head" r="5"/>' +
         '<g id="c-launch" class="launch"><line y1="' + (P.t - 6) + '" y2="' + (H - P.b) + '"/>' +
           '<rect x="-34" y="' + (P.t - 20) + '" width="68" height="22" rx="11"/>' +
           '<text y="' + (P.t - 5) + '" text-anchor="middle">' + t("Launch", "Lancement") + "</text>" +
@@ -235,30 +251,54 @@
       "</svg>";
     var body =
       '<div class="kchips">' +
-        '<div class="kchip"><span>' + t("Before", "Avant") + '</span><b id="c-b"></b></div>' +
-        '<div class="kchip"><span>' + t("After", "Après") + '</span><b id="c-a"></b></div>' +
-        '<div class="kchip kchip--hi"><span>' + t("Uplift", "Gain") + '</span><b id="c-u"></b></div>' +
+        '<div class="kchip"><span>' + t("Before", "Avant") + '</span><b id="c-b">–</b></div>' +
+        '<div class="kchip"><span>' + t("After", "Après") + '</span><b id="c-a">–</b></div>' +
+        '<div class="kchip kchip--hi"><span>' + t("Uplift", "Gain") + '</span><b id="c-u">–</b></div>' +
+        '<span class="kchip__day" id="c-day"></span>' +
       "</div>" +
       '<div class="uv-chart" id="c-chart">' + svg + '<div class="uv-tip" id="c-tip" hidden></div></div>' +
-      '<input class="visually-hidden" type="range" id="c-range" min="4" max="37" value="' + L0 + '" aria-label="' + t("Campaign launch day", "Jour du lancement") + '" />';
+      '<input class="visually-hidden" type="range" id="c-range" min="4" max="37" value="' + L0 + '" disabled aria-label="' + t("Campaign launch day", "Jour du lancement") + '" />';
     stage.innerHTML = frame(t("Posts per day, six weeks", "Posts par jour, six semaines"),
-      t("Drag the launch line. Hover the peaks.", "Déplacez la ligne de lancement. Survolez les pics."), body);
+      '<span id="c-hint">' + t("Reading the six weeks…", "Lecture des six semaines…") + "</span>", body);
 
     var svgEl = document.getElementById("c-svg"), g = document.getElementById("c-launch"), after = document.getElementById("c-after");
     var range = document.getElementById("c-range"), tip = document.getElementById("c-tip"), chart = document.getElementById("c-chart");
-    var launch = L0;
+    var reveal = document.getElementById("c-reveal"), head = document.getElementById("c-head");
+    var launch = L0, shown = 0, ready = false;
     function avg(a) { return a.reduce(function (s, v) { return s + v; }, 0) / (a.length || 1); }
     function update() {
       var x = (X(launch - 1) + X(launch)) / 2;
       g.setAttribute("transform", "translate(" + x.toFixed(1) + ",0)");
-      after.setAttribute("x", x.toFixed(1)); after.setAttribute("width", (W - P.r - x).toFixed(1));
-      var b = avg(V.slice(Math.max(0, launch - 14), launch)), a = avg(V.slice(launch, launch + 14));
-      document.getElementById("c-b").textContent = num(b) + t("/day", "/jour");
-      document.getElementById("c-a").textContent = num(a) + t("/day", "/jour");
-      var up = (a / b - 1) * 100;
-      document.getElementById("c-u").textContent = (up >= 0 ? "+" : "") + Math.round(up) + " %";
+      after.setAttribute("x", x.toFixed(1)); after.setAttribute("width", Math.max(0, X(Math.max(launch, shown)) - x).toFixed(1));
+      var b = V.slice(Math.max(0, launch - 14), Math.min(launch, shown + 1));
+      var a = shown >= launch ? V.slice(launch, Math.min(launch + 14, shown + 1)) : [];
+      document.getElementById("c-b").textContent = b.length ? num(avg(b)) + t("/day", "/jour") : "–";
+      document.getElementById("c-a").textContent = a.length ? num(avg(a)) + t("/day", "/jour") : "–";
+      document.getElementById("c-u").textContent = a.length && b.length ? ((avg(a) / avg(b) - 1) * 100 >= 0 ? "+" : "") + Math.round((avg(a) / avg(b) - 1) * 100) + " %" : "–";
       range.value = launch;
     }
+    /* the curve draws itself day by day; the chips and the count follow it */
+    tween(4200, function (k) {
+      var f = k * (D - 1);
+      shown = Math.floor(f);
+      var x = X(f);
+      reveal.setAttribute("width", x.toFixed(1));
+      var i = Math.min(D - 2, shown), v = V[i] + (V[i + 1] - V[i]) * (f - i);
+      head.setAttribute("cx", x.toFixed(1)); head.setAttribute("cy", Y(v).toFixed(1));
+      Array.prototype.forEach.call(chart.querySelectorAll(".pin"), function (el) {
+        if (PEAKS[+el.dataset.i].d <= f) el.classList.remove("is-hidden");
+      });
+      document.getElementById("c-day").textContent = t("Day ", "Jour ") + (shown + 1) + " / " + D;
+      update();
+      progress(CUM[shown] / CUM[D - 1]);
+    }, function () {
+      shown = D - 1; ready = true; update(); progress(1);
+      svgEl.classList.remove("is-locked"); range.disabled = false;
+      head.style.opacity = "0";
+      document.getElementById("c-day").textContent = "";
+      document.getElementById("c-hint").textContent = t("Now drag the launch line. Hover the peaks.", "Déplacez maintenant la ligne de lancement. Survolez les pics.");
+    });
+
     function fromPointer(e) {
       var r = svgEl.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * W;
       launch = Math.max(4, Math.min(37, Math.round((x - P.l) / ((W - P.l - P.r) / (D - 1)) + 0.5)));
@@ -266,7 +306,7 @@
     }
     var dragging = false;
     svgEl.addEventListener("pointerdown", function (e) {
-      if (e.target.closest(".pin")) return;
+      if (!ready || e.target.closest(".pin")) return;
       dragging = true; svgEl.setPointerCapture(e.pointerId); fromPointer(e);
     });
     svgEl.addEventListener("pointermove", function (e) { if (dragging) fromPointer(e); });
@@ -307,17 +347,19 @@
     var body =
       '<div class="tones" role="group" aria-label="' + t("Tone", "Tonalité") + '">' +
         [["neg", t("Negative", "Négatif")], ["neu", t("Neutral", "Neutre")], ["pos", t("Positive", "Positif")]].map(function (x) {
-          return '<button class="tone tone--' + x[0] + ' is-on" type="button" data-t="' + x[0] + '" aria-pressed="true"><i></i>' + x[1] + "</button>";
+          return '<button class="tone tone--' + x[0] + ' is-on" type="button" data-t="' + x[0] + '" aria-pressed="true"><i></i>' + x[1] +
+            ' <b class="tone__n" data-n="' + x[0] + '">0</b></button>';
         }).join("") +
       "</div>" +
       '<div class="cloud" id="b-cloud"></div>' +
-      '<div class="quotes" id="b-q"><p class="quotes__hint">' + t("Click a word to read what people actually wrote.", "Cliquez un mot pour lire ce que les gens ont vraiment écrit.") + "</p></div>";
+      '<div class="quotes" id="b-q"><p class="quotes__hint">' + t("Words appear as we read. Click one to see what people actually wrote.", "Les mots apparaissent à mesure que nous lisons. Cliquez-en un pour lire ce que les gens ont vraiment écrit.") + "</p></div>";
     stage.innerHTML = frame(t("What people say about the brand", "Ce que les gens disent de la marque"),
       t("Filter by tone. Click a word.", "Filtrez par ton. Cliquez un mot."), body);
 
     var cloud = document.getElementById("b-cloud"), q = document.getElementById("b-q");
     var font = getComputedStyle(document.body).fontFamily;
     var ctx = document.createElement("canvas").getContext("2d");
+    var order = [], revealed = 0;
 
     function layout() {
       var Wc = cloud.clientWidth || 600, Hc = cloud.clientHeight || 300, cx = Wc / 2, cy = Hc / 2;
@@ -334,8 +376,8 @@
           var hit = placed.some(function (p) { return x < p[0] + p[2] + 4 && x + bw + 4 > p[0] && y < p[1] + p[3] + 2 && y + bh + 2 > p[1]; });
           if (hit) continue;
           placed.push([x, y, bw, bh]);
-          out += '<button class="word word--' + TONE[w[3]] + '" type="button" data-i="' + i + '" style="left:' + x.toFixed(0) + "px;top:" + y.toFixed(0) +
-            "px;font-size:" + size + "px;--d:" + (i * 45) + 'ms">' + esc(label) + "</button>";
+          out += '<button class="word word--' + TONE[w[3]] + (i < revealed || revealed >= WORDS.length ? " is-shown" : "") + '" type="button" data-i="' + i +
+            '" style="left:' + x.toFixed(0) + "px;top:" + y.toFixed(0) + "px;font-size:" + size + 'px">' + esc(label) + "</button>";
           break;
         }
       });
@@ -346,9 +388,30 @@
       Array.prototype.forEach.call(cloud.querySelectorAll(".word"), function (el) {
         var tone = TONE[WORDS[+el.dataset.i][3]];
         el.classList.toggle("is-off", !on[tone]);
-        el.tabIndex = on[tone] ? 0 : -1;
+        el.tabIndex = on[tone] && el.classList.contains("is-shown") ? 0 : -1;
       });
     }
+    /* the order words are read in: loud ones first, then the rest shuffled */
+    var rest = WORDS.map(function (_, i) { return i; }).slice(4);
+    for (var k = rest.length - 1; k > 0; k--) { var j = (k * 7 + 3) % (k + 1), tmp = rest[k]; rest[k] = rest[j]; rest[j] = tmp; }
+    order = [0, 1, 3, 2].concat(rest);
+    function counts() {
+      var n = { neg: 0, neu: 0, pos: 0 };
+      order.slice(0, revealed).forEach(function (i) { n[TONE[WORDS[i][3]]] += WORDS[i][2] * 137 + 42; });
+      Array.prototype.forEach.call(stage.querySelectorAll(".tone__n"), function (b) { b.textContent = num(n[b.dataset.n]); });
+    }
+    layout();
+    tween(4600, function (k) {
+      var target = Math.round(k * WORDS.length);
+      while (revealed < target) {
+        var el = cloud.querySelector('.word[data-i="' + order[revealed] + '"]');
+        if (el) el.classList.add("is-shown");
+        revealed++;
+      }
+      filter(); counts();
+      progress(k);
+    });
+
     function quotesFor(w) {
       var posts = DATA.brand.posts, key = w[0].split(" ")[0].toLowerCase();
       var hits = posts.filter(function (p) { return p[4].toLowerCase().indexOf(key) >= 0; });
@@ -371,197 +434,210 @@
       b.classList.toggle("is-on", on[b.dataset.t]); b.setAttribute("aria-pressed", on[b.dataset.t] ? "true" : "false");
       filter();
     });
-    layout();
     var rt = null;
     function onResize() { clearTimeout(rt); rt = setTimeout(layout, 150); }
     window.addEventListener("resize", onResize);
     cleanup.push(function () { window.removeEventListener("resize", onResize); });
   }
 
-  /* ===================================================== 3. audiences */
-  var SEGMENTS = [
-    { name: ["Parents", "Parents"], share: 41, age: "30–44", color: "#EAA93D", x: 190, y: 170,
-      platforms: [["Instagram", 62], ["Facebook", 48], ["YouTube", 41]],
-      interests: [["Batch cooking", "Batch cooking"], ["School runs", "Trajets d'école"], ["Budget", "Budget"]],
-      expect: ["Time saved, not recipes.", "Du temps gagné, pas des recettes."] },
-    { name: ["Students", "Étudiants"], share: 22, age: "18–24", color: "#E2468D", x: 395, y: 90, brief: true,
-      platforms: [["TikTok", 78], ["Instagram", 55], ["Twitch", 31]],
-      interests: [["Quick recipes", "Recettes rapides"], ["Flatshare", "Coloc"], ["Dupes", "Dupes"]],
-      expect: ["Something worth filming.", "Quelque chose qui vaut une vidéo."] },
-    { name: ["Sport fans", "Sportifs"], share: 21, age: "25–39", color: "#3CC2A6", x: 400, y: 245,
-      platforms: [["Instagram", 51], ["YouTube", 47], ["Strava", 29]],
-      interests: [["Protein", "Protéines"], ["Labels", "Étiquettes"], ["Running", "Course"]],
-      expect: ["Proof, not promises.", "Des preuves, pas des promesses."] },
-    { name: ["Seniors", "Seniors"], share: 16, age: "55+", color: "#4292F2", x: 75, y: 60,
-      platforms: [["Facebook", 64], ["YouTube", 35], ["Pinterest", 22]],
-      interests: [["Tradition", "Tradition"], ["Quality", "Qualité"], ["Price", "Prix"]],
-      expect: ["Don't change the recipe.", "Ne changez pas la recette."] }
+  /* ===================================================== 3. audiences
+     The hero's map, with audience communities, and their scores beside it:
+     affinity (how much they like the brand), penetration (share already
+     buying) and opportunity (room to grow). */
+  var AUDIENCES = [
+    { name: ["Pragmatic parents", "Parents pragmatiques"], share: 41, aff: 78, pen: 122, opp: 52, color: "#EAA93D",
+      x: 0.36, y: 0.52, r: 0.36, n: 2300, swirl: 0.55,
+      note: ["Your base. Loyal, already buying: keep them, do not chase them.", "Votre socle. Fidèles, déjà clients : à garder, pas à conquérir."] },
+    { name: ["Food creators' followers", "Abonnés des créateurs food"], share: 19, aff: 74, pen: 36, opp: 86, color: "#E2468D",
+      x: 0.66, y: 0.26, r: 0.26, n: 1560, swirl: -0.6,
+      note: ["Love the brand, barely buy it. The biggest opportunity on the map.", "Aiment la marque, l'achètent peu. La plus grosse opportunité de la carte."] },
+    { name: ["Sport fans", "Sportifs"], share: 16, aff: 57, pen: 48, opp: 69, color: "#3CC2A6",
+      x: 0.73, y: 0.7, r: 0.24, n: 1400, swirl: 0.5,
+      note: ["Interested if the proof is there: labels, protein, tests.", "Intéressés si la preuve suit : étiquettes, protéines, tests."] },
+    { name: ["Students", "Étudiants"], share: 14, aff: 36, pen: 30, opp: 31, color: "#7B6CF2",
+      x: 0.5, y: 0.83, r: 0.2, n: 1120, swirl: -0.55,
+      note: ["The brief's target. Low affinity: expensive to convince.", "La cible du brief. Faible affinité : chers à convaincre."] },
+    { name: ["Loyal seniors", "Seniors fidèles"], share: 10, aff: 82, pen: 140, opp: 24, color: "#4292F2",
+      x: 0.16, y: 0.24, r: 0.2, n: 1040, swirl: 0.6,
+      note: ["Already won. Do not change the recipe.", "Déjà acquis. Ne changez pas la recette."] }
   ];
-  var LINKS = [[0, 1, 3], [0, 2, 2], [1, 2, 4], [0, 3, 3], [1, 3, 1]];
+  var AUD_OUT = [{ x: 0.1, y: 0.62, r: 0.05, n: 12 }, { x: 0.9, y: 0.45, r: 0.05, n: 12 }, { x: 0.88, y: 0.1, r: 0.04, n: 10 }, { x: 0.28, y: 0.9, r: 0.05, n: 12 }];
 
-  function audiences() {
-    var sel = 0, brief = false;
-    function R(s) { return 20 + Math.sqrt(s.share) * 6.4; }
-    var W = 480, H = 310;
-    var defs = SEGMENTS.map(function (s, i) {
-      return '<radialGradient id="a-g' + i + '" cx=".38" cy=".32" r=".75"><stop offset="0" stop-color="#fff" stop-opacity=".85"/>' +
-        '<stop offset=".55" stop-color="' + s.color + '" stop-opacity=".55"/><stop offset="1" stop-color="' + s.color + '" stop-opacity=".9"/></radialGradient>';
-    }).join("");
-    var links = LINKS.map(function (l) {
-      var a = SEGMENTS[l[0]], b = SEGMENTS[l[1]];
-      return '<line class="alink" x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y + '" stroke-width="' + (l[2] * 1.4) + '"/>';
-    }).join("");
-    var nodes = SEGMENTS.map(function (s, i) {
-      var r = R(s);
-      return '<g class="seg" data-i="' + i + '" tabindex="0" role="button" transform="translate(' + s.x + "," + s.y + ')" style="--c:' + s.color + '" aria-label="' + esc(L(s.name)) + ", " + s.share + '%">' +
-        '<circle class="seg__ring" r="' + (r + 7) + '"/>' +
-        '<circle class="seg__disc" r="' + r + '" fill="url(#a-g' + i + ')"/>' +
-        '<text class="seg__n" y="5" text-anchor="middle">' + s.share + "%</text>" +
-        '<text class="seg__name" y="' + (r + 20) + '" text-anchor="middle">' + esc(L(s.name)) + "</text></g>";
-    }).join("");
-    var b = SEGMENTS[1], br = R(b) + 18;
-    var body =
-      '<div class="aud">' +
-        '<div class="aud__map">' +
-          '<svg class="uv-svg" viewBox="0 0 ' + W + " " + H + '" role="group" aria-label="' + t("Communities talking about the brand", "Communautés qui parlent de la marque") + '">' +
-            "<defs>" + defs + "</defs>" + links + nodes +
-            '<g class="brief" id="a-brief" transform="translate(' + b.x + "," + b.y + ')"><circle r="' + br + '"/>' +
-              '<text y="' + (-br - 8) + '" text-anchor="middle">' + t("The brief's target, 18–24", "La cible du brief, 18-24 ans") + "</text></g>" +
-          "</svg>" +
-          '<button class="brief-btn" type="button" id="a-btn" aria-pressed="false"><i></i>' + t("Show the brief's target", "Montrer la cible du brief") + "</button>" +
-        "</div>" +
-        '<div class="aud__card" id="a-card"></div>' +
-      "</div>" +
-      '<p class="aud__note" id="a-note" hidden>' + t("<b>The brief put 60 % of the media budget on 18–24s.</b> They write 22 % of the posts. Parents write 41 %.",
-        "<b>Le brief mettait 60 % du budget média sur les 18-24 ans.</b> Ils écrivent 22 % des posts. Les parents, 41 %.") + "</p>";
-    stage.innerHTML = frame(t("Who actually talks about the brand", "Qui parle vraiment de la marque"),
-      t("Click a community. Compare with the brief.", "Cliquez une communauté. Comparez avec le brief."), body);
-
-    var map = stage.querySelector(".aud__map svg");
-    function draw() {
-      var s = SEGMENTS[sel];
-      Array.prototype.forEach.call(map.querySelectorAll(".seg"), function (g, i) {
-        g.classList.toggle("is-on", i === sel);
-        g.setAttribute("aria-pressed", i === sel ? "true" : "false");
-      });
-      document.getElementById("a-card").innerHTML =
-        '<p class="acard__name" style="--c:' + s.color + '"><i></i>' + esc(L(s.name)) + "</p>" +
-        '<p class="acard__meta">' + s.share + " % " + t("of the posts", "des posts") + " · " + s.age + " " + t("years", "ans") + "</p>" +
-        '<p class="acard__k">' + t("Where they are", "Où ils sont") + "</p>" +
-        s.platforms.map(function (p) {
-          return '<div class="abar"><span>' + p[0] + '</span><span class="abar__t"><i style="width:' + p[1] + "%;background:" + s.color + '"></i></span><b>' + p[1] + "%</b></div>";
-        }).join("") +
-        '<p class="acard__k">' + t("What they talk about", "De quoi ils parlent") + "</p>" +
-        '<p class="acard__tags">' + s.interests.map(function (x) { return "<span>" + esc(L(x)) + "</span>"; }).join("") + "</p>" +
-        '<p class="acard__expect">“' + esc(L(s.expect)) + "”</p>";
-    }
-    function pick(e) {
-      var g = e.target.closest(".seg"); if (!g) return;
-      if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
-      e.preventDefault(); sel = +g.dataset.i; draw();
-    }
-    map.addEventListener("click", pick);
-    map.addEventListener("keydown", pick);
-    document.getElementById("a-btn").addEventListener("click", function () {
-      brief = !brief;
-      this.setAttribute("aria-pressed", brief ? "true" : "false");
-      this.classList.toggle("is-on", brief);
-      stage.querySelector(".aud").classList.toggle("show-brief", brief);
-      document.getElementById("a-note").hidden = !brief;
-    });
-    draw();
+  function ring(v, color, label) {
+    var C = 2 * Math.PI * 26;
+    return '<div class="gauge"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="gauge__bg" cx="32" cy="32" r="26"/>' +
+      '<circle class="gauge__v" cx="32" cy="32" r="26" stroke="' + color + '" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + C.toFixed(1) + '" data-v="' + v + '"/></svg>' +
+      '<b>' + v + "</b><span>" + label + "</span></div>";
   }
 
-  /* ======================================================== 4. trends */
-  var TRENDS = [
-    { name: ["Upcycled food", "Alimentation upcyclée"], from: [6, 8], to: [20, 92], verdict: ["Small, but growing fastest. Worth a pilot now, before it is obvious.", "Petit, mais c'est ce qui croît le plus vite. À tester maintenant, avant que ce soit évident."] },
-    { name: ["High-protein snacks", "Snacks protéinés"], from: [14, 24], to: [62, 76], verdict: ["Moved from gyms to parents. Mainstream within a year.", "Passé des salles de sport aux parents. Grand public d'ici un an."] },
-    { name: ["Gut health", "Santé intestinale"], from: [24, 30], to: [56, 60], verdict: ["Steady climb, driven by creators. A safe bet for messaging.", "Montée régulière, portée par les créateurs. Un pari sûr pour le discours."] },
-    { name: ["Plant-based milk", "Laits végétaux"], from: [72, 44], to: [84, 2], verdict: ["Big and flat. Compete on price and taste, not novelty.", "Gros et stable. Se battre sur le prix et le goût, pas sur la nouveauté."] },
-    { name: ["Zero-sugar drinks", "Boissons zéro sucre"], from: [56, 26], to: [62, 20], verdict: ["Mature. No reason to lead with it.", "Mature. Aucune raison d'en faire un argument principal."] },
-    { name: ["Meal kits", "Box repas"], from: [52, 22], to: [34, -14], verdict: ["Fading since the pandemic peak. Do not build here.", "En recul depuis le pic du confinement. Ne pas investir ici."] }
+  function audiences() {
+    var sel = 1, map = null;
+    var body =
+      '<div class="aud2">' +
+        '<div class="aud2__map" id="a-map" aria-hidden="true"></div>' +
+        '<div class="aud2__side">' +
+          '<div class="aud2__focus" id="a-focus" aria-live="polite"></div>' +
+          '<ol class="aud2__rank" id="a-rank" aria-label="' + t("Communities by opportunity", "Communautés par opportunité") + '"></ol>' +
+        "</div>" +
+      "</div>";
+    stage.innerHTML = frame(t("Audience communities and their scores", "Communautés d'audience et leurs scores"),
+      t("Hover the map or pick a community.", "Survolez la carte ou choisissez une communauté."), body);
+    var focusEl = document.getElementById("a-focus"), rankEl = document.getElementById("a-rank");
+    var labels = AUDIENCES.map(function (a) { return L(a.name); });
+
+    function focusCard(i) {
+      var a = AUDIENCES[i];
+      focusEl.style.setProperty("--c", a.color);
+      focusEl.innerHTML =
+        '<p class="afocus__name"><i></i>' + esc(L(a.name)) + "</p>" +
+        '<p class="afocus__meta">' + a.share + " % " + t("of the conversation", "de la conversation") + "</p>" +
+        '<div class="gauges">' +
+          ring(a.aff, "#EAA93D", t("Affinity", "Affinité")) +
+          ring(a.pen, "#4292F2", t("Penetration", "Pénétration")) +
+          ring(a.opp, "#2E9E6B", t("Opportunity", "Opportunité")) +
+        "</div>" +
+        '<p class="afocus__note">' + esc(L(a.note)) + "</p>";
+      var C = 2 * Math.PI * 26;
+      requestAnimationFrame(function () {
+        Array.prototype.forEach.call(focusEl.querySelectorAll(".gauge__v"), function (c) {
+          c.style.strokeDashoffset = (C * (1 - (+c.dataset.v) / 100)).toFixed(1);
+        });
+      });
+      Array.prototype.forEach.call(rankEl.children, function (li) { li.classList.toggle("is-on", +li.dataset.i === i); });
+    }
+    var sorted = AUDIENCES.map(function (a, i) { return i; }).sort(function (a, b) { return AUDIENCES[b].opp - AUDIENCES[a].opp; });
+    rankEl.innerHTML = sorted.map(function (i) {
+      var a = AUDIENCES[i];
+      return '<li data-i="' + i + '" style="--c:' + a.color + '"><button type="button" class="arow" data-i="' + i + '">' +
+        '<span class="arow__name"><i></i>' + esc(L(a.name)) + "</span>" +
+        '<span class="arow__bars">' +
+          '<span class="arow__bar" title="' + t("Affinity", "Affinité") + '"><i style="--w:' + a.aff + '%;background:#EAA93D"></i></span>' +
+          '<span class="arow__bar" title="' + t("Penetration", "Pénétration") + '"><i style="--w:' + a.pen + '%;background:#4292F2"></i></span>' +
+          '<span class="arow__bar" title="' + t("Opportunity", "Opportunité") + '"><i style="--w:' + a.opp + '%;background:#2E9E6B"></i></span>' +
+        "</span><b>" + a.opp + "</b></button></li>";
+    }).join("");
+    rankEl.insertAdjacentHTML("beforebegin", '<p class="arank__head"><span>' + t("Ranked by opportunity", "Classées par opportunité") + "</span><span class=\"arank__keys\"><i style=\"background:#EAA93D\"></i>" + t("Affinity", "Affinité") +
+      '<i style="background:#4292F2"></i>' + t("Penetration", "Pénétration") + '<i style="background:#2E9E6B"></i>' + t("Opportunity", "Opportunité") + "</span></p>");
+    rankEl.addEventListener("click", function (e) {
+      var b = e.target.closest(".arow"); if (!b) return;
+      sel = +b.dataset.i; if (map) map.select(sel); focusCard(sel);
+    });
+
+    if (window.LicterMap) {
+      map = window.LicterMap(document.getElementById("a-map"), {
+        communities: AUDIENCES, outliers: AUD_OUT, labels: labels,
+        onHover: function (i) { focusCard(i >= 0 ? i : sel); },
+        onSelect: function (i) { sel = i; map.select(i); focusCard(i); }
+      });
+      if (map) { map.select(sel); cleanup.push(function () { map.destroy(); }); }
+    }
+    focusCard(sel);
+    rankEl.classList.add("is-in");
+    autoProgress();
+  }
+
+  /* ======================================================== 4. trends
+     A race: food topics by volume of conversation, month by month over
+     eighteen months. The bars reorder as topics overtake one another. */
+  var RACE = [
+    { name: ["High-protein snacks", "Snacks protéinés"], color: "#EAA93D", f: function (m) { return 18 + 75 / (1 + Math.exp(-(m - 8) / 2.2)); },
+      lead: ["Parents, then gyms", "Les parents, puis les salles de sport"], verdict: ["go", "Mainstream within a year. Build it now.", "Grand public d'ici un an. À lancer maintenant."] },
+    { name: ["Gut health", "Santé intestinale"], color: "#3CC2A6", f: function (m) { return 28 + 2.4 * m; },
+      lead: ["Food creators", "Créateurs food"], verdict: ["watch", "Steady climb. A safe angle for messaging.", "Montée régulière. Un angle sûr pour le discours."] },
+    { name: ["Upcycled food", "Alimentation upcyclée"], color: "#7B6CF2", f: function (m) { return m < 5 ? 2 + m * .3 : 3.5 + Math.pow(m - 5, 1.5) * 1.35; },
+      lead: ["Zero-waste communities", "Communautés zéro déchet"], verdict: ["go", "Out of nowhere, fastest riser. Pilot it before it is obvious.", "Parti de rien, la plus forte hausse. À tester avant que ce soit évident."] },
+    { name: ["Plant-based milk", "Laits végétaux"], color: "#C6D64A", f: function (m) { return 78 - 0.3 * m + 3 * Math.sin(m); },
+      lead: ["Everyone", "Tout le monde"], verdict: ["watch", "Big and flat. Compete on price, not novelty.", "Gros et stable. Se battre sur le prix, pas la nouveauté."] },
+    { name: ["Zero-sugar drinks", "Boissons zéro sucre"], color: "#4292F2", f: function (m) { return 60 - 0.45 * m + 2 * Math.cos(m * 0.8); },
+      lead: ["Sport fans", "Sportifs"], verdict: ["watch", "Mature. No reason to lead with it.", "Mature. Aucune raison d'en faire un argument."] },
+    { name: ["Meal kits", "Box repas"], color: "#E2468D", f: function (m) { return 74 - 2.9 * m; },
+      lead: ["Busy couples", "Couples pressés"], verdict: ["stop", "Fading since the pandemic. Do not build here.", "En recul depuis le confinement. Ne pas investir ici."] },
+    { name: ["Fermented drinks", "Boissons fermentées"], color: "#F2656F", f: function (m) { return 12 + 1.9 * m + 2 * Math.sin(m * 1.3); },
+      lead: ["Health optimisers", "Adeptes du bien-être"], verdict: ["watch", "Rising slowly. Watch for a creator to tip it.", "Monte lentement. Guetter le créateur qui la fera basculer."] },
+    { name: ["Mushroom coffee", "Café aux champignons"], color: "#D796E6", f: function (m) { return m < 9 ? 1 + m * .1 : 1.9 + (m - 9) * 3.6; },
+      lead: ["Remote workers", "Télétravailleurs"], verdict: ["watch", "Brand new. Too early to bet, worth monitoring.", "Tout nouveau. Trop tôt pour parier, à surveiller."] }
   ];
   var MONTHS = 18;
 
   function trends() {
-    var month = 0, sel = 0, timer = null;
+    var month = 0, sel = 2, timer = null, prevRank = null;
+    var start = new Date(2024, 3, 1);
+    function monthLabel(m) {
+      var d = new Date(start.getFullYear(), start.getMonth() + m, 1);
+      return d.toLocaleDateString(fr() ? "fr-FR" : "en-GB", { month: "short", year: "numeric" });
+    }
+    var ROW = 36;
     var body =
-      '<div class="radar2">' +
-        '<div class="radar2__chart" id="t-chart"></div>' +
-        '<div class="radar2__card" id="t-card"></div>' +
+      '<div class="race2">' +
+        '<div class="race" id="t-race" style="height:' + (RACE.length * ROW + 34) + 'px">' +
+          '<p class="race__month" id="t-when" aria-hidden="true"></p>' +
+          RACE.map(function (r, i) {
+            return '<button class="race__row" type="button" data-i="' + i + '" style="--c:' + r.color + '">' +
+              '<span class="race__bar"><i></i></span>' +
+              '<span class="race__name">' + esc(L(r.name)) + "</span>" +
+              '<span class="race__v"></span><span class="race__delta"></span></button>';
+          }).join("") +
+        "</div>" +
+        '<div class="race2__card" id="t-card"></div>' +
       "</div>" +
       '<div class="play2">' +
         '<button class="play2__btn" type="button" id="t-play">▶</button>' +
         '<div class="play2__track"><input type="range" id="t-range" min="0" max="' + MONTHS + '" value="0" aria-label="' + t("Month", "Mois") + '" /></div>' +
         '<span class="play2__m" id="t-month"></span>' +
       "</div>";
-    stage.innerHTML = frame(t("Food topics, volume against growth", "Sujets food, volume et croissance"),
-      t("Press play, then click a topic.", "Lancez la lecture, puis cliquez un sujet."), body);
-    var box = document.getElementById("t-chart"), range = document.getElementById("t-range"), btn = document.getElementById("t-play");
-    var W = 460, H = 300, P = { l: 30, r: 12, t: 12, b: 26 };
-    function X(v) { return P.l + v / 100 * (W - P.l - P.r); }
-    function Y(g) { return P.t + (1 - (g + 20) / 120) * (H - P.t - P.b); }
-    function pos(tr, m) { var k = m / MONTHS; k = k * k * (3 - 2 * k); return [tr.from[0] + (tr.to[0] - tr.from[0]) * k, tr.from[1] + (tr.to[1] - tr.from[1]) * k]; }
+    stage.innerHTML = frame(t("Food topics, share of the conversation over 18 months", "Sujets food, part de la conversation sur 18 mois"),
+      t("Watch them overtake each other. Click a topic.", "Regardez-les se dépasser. Cliquez un sujet."), body);
+    var race = document.getElementById("t-race"), rows = Array.prototype.slice.call(race.querySelectorAll(".race__row"));
+    var range = document.getElementById("t-range"), btn = document.getElementById("t-play");
+
+    function vals(m) { return RACE.map(function (r) { return Math.max(0, r.f(m)); }); }
     function draw() {
-      var mx = X(45), my = Y(40);
-      var q =
-        '<rect class="q q--weak" x="' + P.l + '" y="' + P.t + '" width="' + (mx - P.l) + '" height="' + (my - P.t) + '" rx="10"/>' +
-        '<rect class="q q--rise" x="' + mx + '" y="' + P.t + '" width="' + (W - P.r - mx) + '" height="' + (my - P.t) + '" rx="10"/>' +
-        '<rect class="q q--mat" x="' + mx + '" y="' + my + '" width="' + (W - P.r - mx) + '" height="' + (H - P.b - my) + '" rx="10"/>' +
-        '<rect class="q q--fade" x="' + P.l + '" y="' + my + '" width="' + (mx - P.l) + '" height="' + (H - P.b - my) + '" rx="10"/>' +
-        /* labels sit against the centre lines, away from the corners the dots end up in */
-        '<text class="q__t" x="' + (mx - 10) + '" y="' + (my - 10) + '" text-anchor="end">' + t("Weak signals", "Signaux faibles") + "</text>" +
-        '<text class="q__t" x="' + (mx + 10) + '" y="' + (my - 10) + '">' + t("Rising", "En essor") + "</text>" +
-        '<text class="q__t" x="' + (mx + 10) + '" y="' + (my + 20) + '">' + t("Mature", "Matures") + "</text>" +
-        '<text class="q__t" x="' + (mx - 10) + '" y="' + (my + 20) + '" text-anchor="end">' + t("Fading", "En recul") + "</text>" +
-        '<text class="ax" x="' + (W - P.r) + '" y="' + (H - 6) + '" text-anchor="end">' + t("Volume →", "Volume →") + "</text>" +
-        '<text class="ax" x="12" y="' + ((P.t + H - P.b) / 2) + '" text-anchor="middle" transform="rotate(-90 12 ' + ((P.t + H - P.b) / 2) + ')">' + t("Growth →", "Croissance →") + "</text>";
-      var dots = TRENDS.map(function (tr, i) {
-        var p = pos(tr, month), trail = "";
-        for (var m = 0; m <= month; m += 2) { var pp = pos(tr, m); trail += (m ? "L" : "M") + X(pp[0]).toFixed(1) + " " + Y(pp[1]).toFixed(1); }
-        trail += "L" + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1);
-        var right = p[0] > 58;
-        return '<path class="trail' + (i === sel ? " is-on" : "") + '" d="' + trail + '"/>' +
-          '<g class="tdot2' + (i === sel ? " is-on" : "") + '" data-i="' + i + '" tabindex="0" role="button" transform="translate(' + X(p[0]).toFixed(1) + "," + Y(p[1]).toFixed(1) + ')" aria-label="' + esc(L(tr.name)) + '">' +
-          '<circle class="tdot2__halo" r="14"/><circle class="tdot2__dot" r="' + (i === sel ? 7 : 5.5) + '"/>' +
-          '<text x="' + (right ? -12 : 12) + '" y="4" text-anchor="' + (right ? "end" : "start") + '">' + esc(L(tr.name)) + "</text></g>";
-      }).join("");
-      box.innerHTML = '<svg class="uv-svg" viewBox="0 0 ' + W + " " + H + '" role="group" aria-label="' + t("Topics by volume and growth", "Sujets par volume et croissance") + '">' + q + dots + "</svg>";
-      var tr = TRENDS[sel], p = pos(tr, month), sp = "", sw = 200, sh = 50;
-      /* the curve is the topic's growth, scaled to its own range so every topic reads */
-      var gs = []; for (var m = 0; m <= MONTHS; m++) gs.push(pos(tr, m)[1]);
-      var lo = Math.min.apply(null, gs), hi = Math.max.apply(null, gs), span = (hi - lo) || 1;
-      function SY(g) { return (sh - 6 - (g - lo) / span * (sh - 12)).toFixed(1); }
-      gs.forEach(function (g, m) { sp += (m ? "L" : "M") + (m / MONTHS * sw).toFixed(1) + " " + SY(g); });
-      var verdictTone = tr.to[1] > 40 ? "go" : tr.to[1] < 0 ? "stop" : "watch";
-      document.getElementById("t-card").innerHTML =
-        '<p class="tcard__name">' + esc(L(tr.name)) + "</p>" +
-        '<div class="tcard__nums"><div><b>' + Math.round(p[0]) + "</b><span>" + t("volume index", "indice de volume") + "</span></div>" +
-          "<div><b>" + (p[1] >= 0 ? "+" : "") + Math.round(p[1]) + "%</b><span>" + t("growth", "croissance") + "</span></div></div>" +
-        '<svg class="tcard__spark" viewBox="0 0 ' + sw + " " + sh + '" preserveAspectRatio="none" aria-hidden="true"><path d="' + sp + '"/><circle cx="' + (month / MONTHS * sw) + '" cy="' + SY(p[1]) + '" r="3.5"/></svg>' +
-        '<p class="tcard__verdict tcard__verdict--' + verdictTone + '">' + esc(L(tr.verdict)) + "</p>";
+      var v = vals(month), max = Math.max.apply(null, v);
+      var order = v.map(function (x, i) { return i; }).sort(function (a, b) { return v[b] - v[a]; });
+      var rank = []; order.forEach(function (i, k) { rank[i] = k; });
+      rows.forEach(function (row, i) {
+        row.style.transform = "translateY(" + (34 + rank[i] * ROW) + "px)";
+        row.querySelector(".race__bar i").style.width = (v[i] / max * 100).toFixed(1) + "%";
+        row.querySelector(".race__v").textContent = Math.round(v[i]);
+        var d = row.querySelector(".race__delta");
+        if (prevRank && prevRank[i] !== rank[i]) { d.textContent = prevRank[i] > rank[i] ? "▲" : "▼"; d.className = "race__delta " + (prevRank[i] > rank[i] ? "is-up" : "is-down"); }
+        row.classList.toggle("is-on", i === sel);
+        row.setAttribute("aria-label", L(RACE[i].name) + ", " + (rank[i] + 1) + ", " + Math.round(v[i]));
+      });
+      prevRank = rank;
+      document.getElementById("t-when").textContent = monthLabel(month);
       document.getElementById("t-month").textContent = t("Month ", "Mois ") + month + " / " + MONTHS;
-      range.value = month;
-      range.style.setProperty("--fill", (month / MONTHS * 100) + "%");
+      range.value = month; range.style.setProperty("--fill", (month / MONTHS * 100) + "%");
+      card();
+      progress(month / MONTHS);
+    }
+    function card() {
+      var r = RACE[sel], s = [], lo = Infinity, hi = -Infinity;
+      for (var m = 0; m <= MONTHS; m++) { var x = Math.max(0, r.f(m)); s.push(x); lo = Math.min(lo, x); hi = Math.max(hi, x); }
+      var sw = 200, sh = 54, span = (hi - lo) || 1;
+      function SY(x) { return (sh - 6 - (x - lo) / span * (sh - 12)).toFixed(1); }
+      var path = s.map(function (x, m) { return (m ? "L" : "M") + (m / MONTHS * sw).toFixed(1) + " " + SY(x); }).join(" ");
+      var now = s[month], first = s[0], ch = Math.round(now - first);
+      document.getElementById("t-card").innerHTML =
+        '<p class="tcard__name" style="--c:' + r.color + '"><i></i>' + esc(L(r.name)) + "</p>" +
+        '<div class="tcard__nums"><div><b>' + Math.round(now) + "</b><span>" + t("share index, ", "indice de part, ") + monthLabel(month) + "</span></div>" +
+          "<div><b>" + (ch >= 0 ? "+" : "") + ch + "</b><span>" + t("since ", "depuis ") + monthLabel(0) + "</span></div></div>" +
+        '<svg class="tcard__spark" viewBox="0 0 ' + sw + " " + sh + '" preserveAspectRatio="none" aria-hidden="true"><path d="' + path + '" style="stroke:' + r.color + '"/><circle cx="' + (month / MONTHS * sw).toFixed(1) + '" cy="' + SY(now) + '" r="3.5"/></svg>' +
+        '<p class="tcard__lead"><span>' + t("Driven by", "Porté par") + "</span> " + esc(L(r.lead)) + "</p>" +
+        '<p class="tcard__verdict tcard__verdict--' + r.verdict[0] + '">' + esc(fr() ? r.verdict[2] : r.verdict[1]) + "</p>";
     }
     function stopPlay() { clearInterval(timer); timer = null; btn.textContent = "▶"; btn.setAttribute("aria-label", t("Play 18 months", "Lire 18 mois")); }
     function play() {
-      if (month >= MONTHS) month = 0;
+      if (month >= MONTHS) { month = 0; prevRank = null; }
       if (reduced.matches) { month = MONTHS; draw(); return; }
       btn.textContent = "❚❚"; btn.setAttribute("aria-label", t("Pause", "Pause"));
-      timer = setInterval(function () { month++; draw(); if (month >= MONTHS) stopPlay(); }, 240);
+      timer = setInterval(function () { month++; draw(); if (month >= MONTHS) stopPlay(); }, 320);
     }
     btn.addEventListener("click", function () { if (timer) stopPlay(); else play(); });
     range.addEventListener("input", function () { stopPlay(); month = +range.value; draw(); });
-    function pick(e) {
-      var g = e.target.closest(".tdot2"); if (!g) return;
-      if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
-      e.preventDefault(); sel = +g.dataset.i; draw();
-    }
-    box.addEventListener("click", pick);
-    box.addEventListener("keydown", pick);
+    race.addEventListener("click", function (e) { var r = e.target.closest(".race__row"); if (!r) return; sel = +r.dataset.i; draw(); });
     stopPlay(); draw();
-    later(play, 700);
+    later(play, 500);
     cleanup.push(stopPlay);
   }
 
@@ -570,9 +646,10 @@
 
   function render() {
     stopAll();
+    gen += 1; answered = false;
     RENDER[current]();
     stage.classList.remove("is-in"); void stage.offsetWidth; stage.classList.add("is-in");
-    if (visible) runSide(current);
+    runSide(current);
   }
 
   function select(key) {
@@ -597,15 +674,6 @@
       n.focus(); select(n.dataset.topic);
     });
   });
-
-  /* the side panel only runs while the section is on screen */
-  if ("IntersectionObserver" in window) {
-    new IntersectionObserver(function (e) {
-      var was = visible;
-      visible = e[0].isIntersecting;
-      if (visible && !was && current) render();
-    }, { threshold: 0.15 }).observe(stage);
-  } else visible = true;
 
   if (window.MutationObserver) {
     new MutationObserver(function () { if (current) render(); })
