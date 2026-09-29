@@ -3164,6 +3164,9 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
    own ratio: two frames ending on different lines read as a mistake, and the
    ratio it gives up was never load-bearing */
 .shots:has(> .shot--wide) > .shot--tall { aspect-ratio: auto; align-self: stretch; }
+/* its image leaves the flow too, or a 2:3 original sets the row height itself
+   and the wide frame ends short of it */
+.shots:has(> .shot--wide) > .shot--tall img { position: absolute; inset: 0; }
 
 /* a portrait set beside a section head. The margin that separates a head from
    what follows moves to the pair, otherwise the photo — taller than the head —
@@ -3228,6 +3231,12 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
   }
   /* a poster band keeps its own proportions here too, both frames halved */
   .shots:has(> .shot--poster) > .shot--wide { grid-column: span 1; }
+  /* a group photo cropped to portrait loses half the group: on a phone it
+     keeps the full width and its landscape frame, and the second photo goes */
+  .shots--group:not(:has(> .shot--poster)):has(> .shot:nth-child(2):last-child) > .shot--wide {
+    grid-column: span 2; aspect-ratio: 16 / 10;
+  }
+  .shots--group > .shot--tall { display: none; }
 }
 
 /* A poster is all content — crop it anywhere and it stops saying what it says.
