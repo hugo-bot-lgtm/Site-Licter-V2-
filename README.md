@@ -1397,7 +1397,7 @@ et `MOCK` dans le code. **Rien n'est envoyé nulle part.** À remplacer :
 
 | Élément | Où | À fournir |
 |---|---|---|
-| Flux d'écoute des cas d'usage (posts, comptes, répartitions, réponses) | `js/usecases.js` → `DATA` | Verbatims et chiffres réels anonymisés |
+| Visuels des cas d'usage (courbe, nuage de mots, communautés, radar, posts, réponses) | `js/usecases.js` → `DATA`, `WORDS`, `SEGMENTS`, `TRENDS` | Verbatims et chiffres réels anonymisés |
 | Rôles des trois portraits | `index.html#team` | Prénoms et rôles confirmés |
 | Diagnostic : 6 dimensions, questions, paliers | `js/home.js` → `QUIZ`, `BANDS` | Validation par l'équipe |
 | Créneaux de rendez-vous | `js/home.js` → bloc booking | Calendrier réel (Calendly, Cal.com, HubSpot) |
