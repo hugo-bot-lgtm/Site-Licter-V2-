@@ -5172,3 +5172,17 @@ html[data-theme="dark"] .uv-svg .pin:hover .pin__tag text, html[data-theme="dark
 @media (prefers-reduced-motion: reduce) {
   .uv__next span, .uv-svg .launch__grip, .aud3__map .map-label { transition: none; }
 }
+
+/* close a case, back to the question list */
+.uv__close {
+  display: inline-grid; place-items: center; flex: none; width: 30px; height: 30px; margin-left: 2px; padding: 0;
+  border: 1px solid var(--line); border-radius: 50%; background: var(--surface, #fff); color: var(--ink);
+  font: 400 19px/1 var(--body-font); cursor: pointer; transition: border-color .15s ease, transform .15s ease;
+}
+.uv__close:hover { border-color: var(--ink); transform: rotate(90deg); }
+.uv__close:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 2px; }
+@media (max-width: 720px) {
+  .uv__head { position: relative; padding-right: 38px; }
+  .uv__close { position: absolute; top: 0; right: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .uv__close { transition: none; } }

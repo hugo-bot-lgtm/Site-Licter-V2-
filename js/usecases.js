@@ -53,7 +53,9 @@
 
   /* ============================================================== data
      posts:   [platform, handle, sentiment -1/0/1, EN, FR]
-     read:    posts read for the case
+     read:    posts read for the case; every other count on screen adds up
+              to it (the campaign's is the sum of its own curve)
+     tones:   brand only, % of posts negative / neutral / positive
      insight: a headline, two facts, a recommendation */
   var CASES = {
 
@@ -62,7 +64,7 @@
        waves [day, extra posts, width]. peaks: what happened there. */
     communication: {
       food: {
-        subject: ["Spring sauce campaign", "Campagne sauce de printemps"], read: 11400,
+        subject: ["Spring sauce campaign", "Campagne sauce de printemps"],
         curve: { base: 800, launch: 21, spike: 2500, plateau: 760, bumps: [[27, 520, 2], [34, 420, 3]] },
         peaks: [
           { d: 23, pf: "TIKTOK", h: "@chef.maud", tag: ["Creator video", "Vidéo créateur"], txt: ["The recipe video that started it: 1.2M views in 48 hours.", "La vidéo recette qui a tout lancé : 1,2 M de vues en 48 heures."] },
@@ -83,7 +85,7 @@
         }
       },
       luxury: {
-        subject: ["Fragrance launch at Fashion Week", "Lancement parfum à la Fashion Week"], read: 7300,
+        subject: ["Fragrance launch at Fashion Week", "Lancement parfum à la Fashion Week"],
         curve: { base: 520, launch: 20, spike: 1900, plateau: 880, bumps: [[26, 760, 3], [33, 420, 3]] },
         peaks: [
           { d: 21, pf: "INSTAGRAM", h: "@maison.critique", tag: ["Runway show", "Défilé"], txt: ["The show goes viral on Instagram within the hour.", "Le défilé devient viral sur Instagram dans l'heure."] },
@@ -104,7 +106,7 @@
         }
       },
       toys: {
-        subject: ["Video game trailer reveal", "Révélation du trailer d'un jeu"], read: 26800,
+        subject: ["Video game trailer reveal", "Révélation du trailer d'un jeu"],
         curve: { base: 1500, launch: 22, spike: 6200, plateau: 1600, bumps: [[28, 2600, 3], [33, 1700, 2]] },
         peaks: [
           { d: 23, pf: "X", h: "@leakhunter", tag: ["Trailer", "Trailer"], txt: ["The trailer: 4M views on day one.", "Le trailer : 4 M de vues le premier jour."] },
@@ -125,7 +127,7 @@
         }
       },
       auto: {
-        subject: ["Electric model launch", "Lancement d'un modèle électrique"], read: 9600,
+        subject: ["Electric model launch", "Lancement d'un modèle électrique"],
         curve: { base: 620, launch: 21, spike: 1700, plateau: 520, bumps: [[27, 800, 3], [35, 760, 3]] },
         peaks: [
           { d: 22, pf: "LINKEDIN", h: "@auto.press", tag: ["Press reveal", "Révélation presse"], txt: ["The press reveal sets the tone: design first.", "La révélation presse donne le ton : le design d'abord."] },
@@ -152,6 +154,7 @@
     brand: {
       food: {
         subject: ["Food brand, last month", "Marque food, le mois dernier"], read: 8230,
+        tones: [52, 21, 27],
         words: [["delivery", "livraison", 10, -1], ["late", "retard", 8, -1], ["parcel", "colis", 7, -1], ["product", "produit", 6, 1],
           ["tracking", "suivi", 5, -1], ["waiting", "attente", 5, -1], ["expensive", "cher", 4, -1], ["taste", "goût", 4, 1],
           ["customer service", "service client", 4, 1], ["pack", "format", 4, 0], ["refund", "remboursement", 3, -1], ["quick reply", "réponse rapide", 3, 1],
@@ -175,6 +178,7 @@
       },
       luxury: {
         subject: ["Leather goods house", "Maison de maroquinerie"], read: 5140,
+        tones: [38, 30, 32],
         words: [["boutique", "boutique", 9, 0], ["sales associate", "vendeur", 8, -1], ["price increase", "hausse de prix", 8, 0], ["waitlist", "liste d'attente", 7, -1],
           ["craftsmanship", "savoir-faire", 6, 1], ["iconic", "iconique", 6, 1], ["counterfeit", "contrefaçon", 5, -1], ["resale", "revente", 5, 0],
           ["leather", "cuir", 5, 1], ["rude", "désagréable", 5, -1], ["timeless", "intemporel", 4, 1], ["heritage", "héritage", 4, 1],
@@ -198,6 +202,7 @@
       },
       toys: {
         subject: ["Video game launch weekend", "Week-end de sortie d'un jeu vidéo"], read: 31200,
+        tones: [47, 18, 35],
         words: [["servers", "serveurs", 10, -1], ["crash", "crash", 8, -1], ["bugs", "bugs", 8, -1], ["story", "scénario", 7, 1],
           ["graphics", "graphismes", 6, 1], ["patch", "patch", 6, 0], ["lag", "lag", 5, -1], ["masterpiece", "chef-d'œuvre", 5, 1],
           ["microtransactions", "microtransactions", 5, -1], ["multiplayer", "multijoueur", 4, 0], ["soundtrack", "bande-son", 4, 1], ["pay-to-win", "pay-to-win", 4, -1],
@@ -221,6 +226,7 @@
       },
       auto: {
         subject: ["Car maker, first quarter", "Constructeur automobile, premier trimestre"], read: 12700,
+        tones: [44, 24, 32],
         words: [["charging", "recharge", 10, -1], ["range", "autonomie", 9, -1], ["charging point", "borne", 7, -1], ["design", "design", 7, 1],
           ["silence", "silence", 6, 1], ["software", "logiciel", 5, -1], ["dealer", "concession", 5, 0], ["acceleration", "accélération", 5, 1],
           ["battery", "batterie", 5, 0], ["winter", "hiver", 4, -1], ["recall", "rappel", 4, -1], ["comfort", "confort", 4, 1],
@@ -482,6 +488,7 @@
           '<span class="uv__live"><i></i>' + t("Live", "En direct") + "</span>" +
           '<p class="uv__title">' + title + "</p>" +
           '<span class="uv__tag">' + t("Illustrative data", "Données illustratives") + "</span>" +
+          '<button class="uv__close" type="button" id="uv-close" aria-label="' + t("Close", "Fermer") + '"><span aria-hidden="true">×</span></button>' +
         "</div>" +
         '<div class="uv__case">' +
           '<p class="uv__sector"><b>' + esc(L(SECTORS[sector].name)) + "</b><span>" + esc(L(d.subject)) + "</span></p>" +
@@ -509,7 +516,7 @@
 
   /* The side panel: two posts rotate; the count and our read follow the
      visual. A visual calls progress(k), k from 0 to 1; at 1 our read lands. */
-  var gen = 0, answered = false;
+  var gen = 0, answered = false, total = 0;
   function runSide() {
     var posts = data().posts, postsEl = document.getElementById("uv-posts"), i = 0;
     function show() {
@@ -524,7 +531,7 @@
     var countEl = document.getElementById("uv-count"), answerEl = document.getElementById("uv-answer");
     if (!countEl) return;
     k = Math.max(0, Math.min(1, k));
-    countEl.textContent = num(data().read * k);
+    countEl.textContent = num(Math.round(total * k));
     if (k >= 1 && !answered) {
       answered = true;
       var ins = data().insight;
@@ -563,6 +570,7 @@
     }
     var TOP = Math.ceil(Math.max.apply(null, V) * 1.12 / 1000) * 1000;
     var CUM = [], acc = 0; V.forEach(function (x) { acc += x; CUM.push(acc); });
+    total = acc;
     var W = 640, H = 290, P = { l: 44, r: 16, t: 26, b: 30 };
     function X(x) { return P.l + x * (W - P.l - P.r) / (D - 1); }
     function Y(x) { return P.t + (1 - x / TOP) * (H - P.t - P.b); }
@@ -775,11 +783,14 @@
         el.tabIndex = on[tone] && el.classList.contains("is-shown") ? 0 : -1;
       });
     }
-    function counts() {
-      var n = { neg: 0, neu: 0, pos: 0 };
-      order.slice(0, revealed).forEach(function (i) { n[TONE[WORDS[i][3]]] += WORDS[i][2] * 137 + 42; });
+    /* the three tones share the posts read: they always add up to the count */
+    function counts(k) {
+      var read = Math.round(total * k), neg = Math.round(read * d.tones[0] / 100), neu = Math.round(read * d.tones[1] / 100);
+      var n = { neg: neg, neu: neu, pos: read - neg - neu };
       Array.prototype.forEach.call(stage.querySelectorAll(".tone__n"), function (b) { b.textContent = num(n[b.dataset.n]); });
     }
+    /* posts that use a word: the loudest word is in about a quarter of them */
+    function mentions(w) { return Math.round(total * 0.026 * w[2]); }
     layout();
     tween(5200, function (k) {
       var target = Math.round(k * WORDS.length);
@@ -788,7 +799,7 @@
         if (el) el.classList.add("is-shown");
         revealed++;
       }
-      filter(); counts();
+      filter(); counts(k);
       progress(k);
     });
 
@@ -804,7 +815,7 @@
       Array.prototype.forEach.call(cloud.querySelectorAll(".word"), function (x) { x.classList.toggle("is-on", x === el); });
       var w = WORDS[+el.dataset.i];
       q.innerHTML = '<p class="quotes__head"><b class="word--' + TONE[w[3]] + '">' + esc(fr() ? w[1] : w[0]) + "</b> · " +
-        num(w[2] * 137 + 42) + " " + t("mentions", "mentions") + "</p>" +
+        num(mentions(w)) + " " + t("posts", "posts") + "</p>" +
         quotesFor(w).map(function (p) {
           return '<blockquote class="quote"><p>' + esc(fr() ? p[4] : p[3]) + "</p><cite>" + esc(p[1]) + " · " + PLATFORM_NAMES[p[0]] + "</cite></blockquote>";
         }).join("");
@@ -825,12 +836,13 @@
      The communities form one after the other on a map laid out like the
      hero's, then their scores: gauges for the one in focus, and a matrix
      of all of them (affinity against penetration, size = opportunity). */
+  /* close enough that the communities overlap, as they do in the hero */
   var SLOTS = [
-    { x: 0.33, y: 0.52, r: 0.27, n: 2200, swirl: 0.55 },
-    { x: 0.63, y: 0.33, r: 0.21, n: 1500, swirl: -0.6 },
-    { x: 0.67, y: 0.74, r: 0.19, n: 1300, swirl: 0.5 },
-    { x: 0.12, y: 0.27, r: 0.15, n: 900, swirl: 0.6 },
-    { x: 0.88, y: 0.52, r: 0.16, n: 1000, swirl: -0.55 }
+    { x: 0.36, y: 0.53, r: 0.31, n: 2200, swirl: 0.55 },
+    { x: 0.58, y: 0.35, r: 0.25, n: 1500, swirl: -0.6 },
+    { x: 0.61, y: 0.7, r: 0.23, n: 1300, swirl: 0.5 },
+    { x: 0.17, y: 0.33, r: 0.19, n: 900, swirl: 0.6 },
+    { x: 0.8, y: 0.5, r: 0.21, n: 1000, swirl: -0.55 }
   ];
   var OUT = [{ x: 0.08, y: 0.76, r: 0.05, n: 12 }, { x: 0.46, y: 0.1, r: 0.04, n: 9 }, { x: 0.93, y: 0.14, r: 0.04, n: 9 }, { x: 0.44, y: 0.92, r: 0.04, n: 10 }];
 
@@ -904,7 +916,7 @@
       focusEl.style.setProperty("--c", a.color);
       focusEl.innerHTML =
         '<p class="afocus__name"><i></i>' + esc(L(a.name)) + "</p>" +
-        '<p class="afocus__meta">' + a.share + " % " + t("of the conversation", "de la conversation") + "</p>" +
+        '<p class="afocus__meta">' + a.share + " % " + t("of the conversation", "de la conversation") + " · " + num(total * a.share / 100) + " " + t("posts", "posts") + "</p>" +
         '<div class="gauges">' +
           ring(a.aff, "#EAA93D", t("Affinity", "Affinité")) +
           ring(a.pen, "#4292F2", t("Penetration", "Pénétration")) +
@@ -946,6 +958,15 @@
   function trends() {
     var d = data();
     var RACE = d.topics.map(function (x) { return { name: [x[0], x[1]], color: x[2], f: shape(x[3]), lead: x[4], verdict: x[5] }; });
+    /* the curves are shapes; scaled so that every post of every month adds
+       up to the posts read, and the count grows month by month */
+    var raw = 0, peak = 0, CUM = [];
+    for (var m0 = 0; m0 <= MONTHS; m0++) {
+      RACE.forEach(function (r) { var x = Math.max(0, r.f(m0)); raw += x; peak = Math.max(peak, x); });
+      CUM.push(raw);
+    }
+    var scale = d.read / raw;
+    total = d.read;
     var month = 0, sel = 0, timer = null, prevRank = null;
     var start = new Date(2024, 3, 1);
     function monthLabel(m, long) {
@@ -976,12 +997,12 @@
         "</div>" +
         '<div class="rc__detail" id="t-card"></div>' +
       "</div>";
-    stage.innerHTML = frame(t("Topics, share of the conversation over 18 months", "Sujets, part de la conversation sur 18 mois"),
+    stage.innerHTML = frame(t("Topics, posts per month over 18 months", "Sujets, posts par mois sur 18 mois"),
       t("Watch them overtake each other. Click a topic.", "Regardez-les se dépasser. Cliquez un sujet."), body);
     var race = document.getElementById("t-race"), rows = Array.prototype.slice.call(race.querySelectorAll(".rc__row"));
     var range = document.getElementById("t-range"), btn = document.getElementById("t-play");
 
-    function vals(m) { return RACE.map(function (r) { return Math.max(0, r.f(m)); }); }
+    function vals(m) { return RACE.map(function (r) { return Math.max(0, r.f(m)) * scale; }); }
     function draw() {
       var v = vals(month);
       var order = v.map(function (x, i) { return i; }).sort(function (a, b) { return v[b] - v[a]; });
@@ -989,25 +1010,25 @@
       rows.forEach(function (row, i) {
         row.style.transform = "translateY(" + (rank[i] * ROW) + "px)";
         row.querySelector(".rc__rank").textContent = rank[i] + 1;
-        row.querySelector(".rc__bar").style.width = Math.max(1.5, Math.min(100, v[i])).toFixed(1) + "%";
-        row.querySelector(".rc__v").textContent = Math.round(v[i]);
+        row.querySelector(".rc__bar").style.width = Math.max(1.5, v[i] / (peak * scale) * 100).toFixed(1) + "%";
+        row.querySelector(".rc__v").textContent = num(v[i]);
         var mv = row.querySelector(".rc__move");
         if (prevRank && prevRank[i] !== rank[i]) {
           var up = prevRank[i] > rank[i];
           mv.textContent = up ? "↑" : "↓"; mv.className = "rc__move " + (up ? "is-up" : "is-down");
         }
         row.classList.toggle("is-on", i === sel);
-        row.setAttribute("aria-label", (rank[i] + 1) + ". " + L(RACE[i].name) + ", " + Math.round(v[i]));
+        row.setAttribute("aria-label", (rank[i] + 1) + ". " + L(RACE[i].name) + ", " + num(v[i]) + " " + t("posts", "posts"));
       });
       prevRank = rank;
       document.getElementById("t-when").innerHTML = "<b>" + monthLabel(month, true) + "</b><span>" + t("Month ", "Mois ") + month + " / " + MONTHS + "</span>";
       range.value = month; range.style.setProperty("--fill", (month / MONTHS * 100) + "%");
       detail();
-      progress(month / MONTHS);
+      progress(CUM[month] / raw);
     }
     function detail() {
       var r = RACE[sel], s = [], lo = Infinity, hi = -Infinity;
-      for (var m = 0; m <= MONTHS; m++) { var x = Math.max(0, r.f(m)); s.push(x); lo = Math.min(lo, x); hi = Math.max(hi, x); }
+      for (var m = 0; m <= MONTHS; m++) { var x = Math.max(0, r.f(m)) * scale; s.push(x); lo = Math.min(lo, x); hi = Math.max(hi, x); }
       var sw = 220, sh = 46, span = (hi - lo) || 1;
       function SY(x) { return (sh - 5 - (x - lo) / span * (sh - 10)).toFixed(1); }
       var path = s.map(function (x, m) { return (m ? "L" : "M") + (m / MONTHS * sw).toFixed(1) + " " + SY(x); }).join(" ");
@@ -1016,8 +1037,8 @@
       document.getElementById("t-card").innerHTML =
         '<div class="rcd__id" style="--c:' + r.color + '"><p class="rcd__name"><i></i>' + esc(L(r.name)) + "</p>" +
           '<p class="rcd__lead">' + t("Driven by ", "Porté par ") + "<b>" + esc(L(r.lead)) + "</b></p></div>" +
-        '<div class="rcd__num"><b>' + Math.round(now) + "</b><span>" + t("share index", "indice de part") + "</span></div>" +
-        '<div class="rcd__num"><b class="' + (ch >= 0 ? "is-up" : "is-down") + '">' + (ch >= 0 ? "+" : "") + ch + "</b><span>" + t("since ", "depuis ") + monthLabel(0) + "</span></div>" +
+        '<div class="rcd__num"><b>' + num(now) + "</b><span>" + t("posts this month", "posts ce mois-ci") + "</span></div>" +
+        '<div class="rcd__num"><b class="' + (ch >= 0 ? "is-up" : "is-down") + '">' + (ch >= 0 ? "+" : "−") + num(Math.abs(ch)) + "</b><span>" + t("vs ", "vs ") + monthLabel(0) + "</span></div>" +
         '<svg class="rcd__spark" viewBox="0 0 ' + sw + " " + sh + '" preserveAspectRatio="none" aria-hidden="true" style="--c:' + r.color + '"><path class="f" d="' + fill + '"/><path class="l" d="' + path + '"/>' +
           '<circle cx="' + (month / MONTHS * sw).toFixed(1) + '" cy="' + SY(now) + '" r="3.5"/></svg>' +
         '<p class="rcd__verdict rcd__verdict--' + r.verdict[0] + '">' + esc(fr() ? r.verdict[2] : r.verdict[1]) + "</p>";
@@ -1042,12 +1063,26 @@
 
   function render() {
     stopAll();
-    gen += 1; answered = false;
+    gen += 1; answered = false; total = data().read || 0;
     RENDER[current]();
+    var close = document.getElementById("uv-close");
+    if (close) close.addEventListener("click", closeCase);
     var next = document.getElementById("uv-next");
     if (next) next.addEventListener("click", function () { sector = nextSector(current); render(); document.getElementById("uv-next").focus(); });
     stage.classList.remove("is-in"); void stage.offsetWidth; stage.classList.add("is-in");
     runSide();
+  }
+
+  /* back to the empty state: no question open */
+  var EMPTY = stage.innerHTML;
+  function closeCase() {
+    var tab = document.getElementById("tab-" + current);
+    stopAll(); gen += 1; current = null;
+    topics.forEach(function (b) { b.classList.remove("is-on"); b.setAttribute("aria-selected", "false"); });
+    stage.removeAttribute("aria-labelledby");
+    stage.classList.remove("has-feed", "is-in");
+    stage.innerHTML = EMPTY;
+    if (tab) tab.focus();
   }
 
   function select(key) {
