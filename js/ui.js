@@ -1085,68 +1085,6 @@
     setTimeout(open, 2600);
   })();
 
-  /* --------------------------------------------------- the map's reach
-     The cartography is the hero's subject, not the page's wallpaper. It is
-     painted only while the top zone is on screen — the hero on the home, the
-     page head elsewhere — and fades out as that zone leaves. Below it the
-     ground is plain cream, and the loop stops: nothing to draw.
-
-     This replaced a cream veil laid over the map, which dimmed it to 30% but
-     kept it behind every paragraph of the site. */
-  (function mapReach() {
-    /* the home has no full-page map (its communities live in the hero
-       frame): the flow still takes over below the hero */
-    var canvas = document.getElementById("carto");
-
-    var flow = document.getElementById("flow");
-
-    var zone = document.querySelector(".hero") || document.querySelector(".page__head");
-    if (!zone) {
-      if (canvas) canvas.style.opacity = "0";
-      if (flow) {
-        flow.style.opacity = "1";
-        if (window.LicterFlow && window.LicterFlow.setActive) window.LicterFlow.setActive(true);
-      }
-      return;
-    }
-
-    var raf = null, last = -1;
-
-    function apply() {
-      raf = null;
-      var h = window.innerHeight;
-      /* The fade ends at the bottom of the top zone, or at the end of the
-         first screen if that zone is shorter — otherwise a short page head,
-         as on the article pages, would start dimming the map before the
-         reader has scrolled at all. */
-      var end = Math.max(zone.offsetTop + zone.offsetHeight, h);
-      var start = end - h * 0.55;
-      var o = 1 - Math.max(0, Math.min(1, (window.scrollY - start) / (end - start)));
-      o = Math.round(o * 100) / 100;
-      if (o === last) return;
-      last = o;
-      if (canvas) canvas.style.opacity = o;
-      if (window.LicterCarto && window.LicterCarto.setActive) {
-        window.LicterCarto.setActive(o > 0);
-      }
-      /* The flow takes over exactly what the map gives up: the two are the
-         same reading of the page, so one opacity drives both and there is
-         never a moment with two canvases painting. */
-      if (flow) {
-        flow.style.opacity = 1 - o;
-        if (window.LicterFlow && window.LicterFlow.setActive) {
-          window.LicterFlow.setActive(o < 1);
-        }
-      }
-    }
-
-    window.addEventListener("scroll", function () {
-      if (!raf) raf = requestAnimationFrame(apply);
-    }, { passive: true });
-    window.addEventListener("resize", apply);
-    apply();
-  })();
-
   /* ---------------------------------------------------------- reveals
      Hero blocks play on load, the rest as they scroll in. The hiding rule
      lives behind `html.reveal`, added here: if this script never runs, or

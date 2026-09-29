@@ -125,40 +125,6 @@ a { color: inherit; text-decoration: none; }
               transform .5s cubic-bezier(.16, .84, .34, 1) calc(var(--d, 0s) + var(--i, 0) * .07s);
 }
 
-/* ---------- cartography canvas ---------- */
-
-#carto {
-  /* faded by js/ui.js: the map lives in the hero and nowhere else. No
-     transition — the value is already recomputed on every scroll frame, and a
-     transition on top of that only makes it lag behind the scroll. */
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  display: block;
-}
-
-/* The flow takes the map's place under the hero: paths entering from both
-   edges and bending into one point at the centre of the screen. Driven by
-   js/ui.js in counterpoint to #carto — one fades in as the other fades out.
-
-   z-index 1, not 0 like the map: at 0 it would sit under body::after, whose
-   white wash is strongest at 50% / 38% — exactly where the paths converge,
-   which took half of the effect away. Above the wash and still under main,
-   so it never crosses a line of text. */
-#flow {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  display: block;
-  opacity: 0;
-}
-
 /* Pulls the eye back to the centre and gives the outer bands a reason to be
    darker than the middle. */
 body::after {
@@ -3926,7 +3892,6 @@ textarea.fld__input { resize: vertical; min-height: 84px; }
   background: radial-gradient(120% 90% at 30% 20%, #fff 0%, var(--cream) 70%);
   box-shadow: 0 30px 60px -40px rgba(var(--ink-rgb), .45), inset 0 1px 0 rgba(255, 255, 255, .8);
 }
-#carto.is-framed { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
 
 @media (max-width: 960px) {
   .hero__grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
@@ -4475,7 +4440,6 @@ html[data-theme="dark"] .client-logo img, html[data-theme="dark"] .wall-logo { f
 html[data-theme="dark"] .client-logo:hover img, html[data-theme="dark"] .logo-wall > li:hover .wall-logo { filter: brightness(0) invert(1); opacity: 1; }
 
 /* canvases drawn in dark ink on cream: inverted, hues kept */
-html[data-theme="dark"] #carto, html[data-theme="dark"] #flow { filter: invert(1) hue-rotate(180deg); }
 html[data-theme="dark"] .hero__frame { border-color: rgba(252, 246, 239, .14); box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .7); }
 
 /* photos sit a touch darker so they do not glare */
@@ -4524,3 +4488,5 @@ html[data-theme="dark"] .hero__frame { background: radial-gradient(120% 100% at 
 @media (max-width: 960px) {
   .hero__frame { aspect-ratio: 1 / 1; max-height: 520px; margin-inline: calc(-1 * var(--gutter)); }
 }
+/* the sheet behind page heads kept the text off the old background map; the map is gone */
+.page__head::before, html[data-theme="dark"] .page__head::before { content: none; }
