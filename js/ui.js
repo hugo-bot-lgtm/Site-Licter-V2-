@@ -1011,8 +1011,12 @@
      A traveller on the right-hand side of the hero occasionally opens into a
      story card: the moving point IS the story. The media slot is empty for
      now — drop a <video> in `renderMedia` when the clips are ready. */
+  /* Off until the clips exist: an empty media slot on the first screen
+     reads as a placeholder. Set to true once renderMedia returns a video. */
+  var STORIES_READY = false;
+
   (function stories() {
-    if (reduced.matches) return;
+    if (!STORIES_READY || reduced.matches) return;
     var hero = document.querySelector(".hero");
     if (!hero || !window.matchMedia("(min-width: 901px)").matches) return;
 
