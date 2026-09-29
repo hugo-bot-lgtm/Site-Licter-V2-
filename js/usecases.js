@@ -967,7 +967,8 @@
     }
     var scale = d.read / raw;
     total = d.read;
-    var month = 0, sel = 0, timer = null, prevRank = null;
+    /* pos: where the race is, in months, as a real number so it plays smoothly */
+    var pos = 0, month = 0, sel = 0, playing = false, prevRank = null;
     var start = new Date(2024, 3, 1);
     function monthLabel(m, long) {
       var dt = new Date(start.getFullYear(), start.getMonth() + m, 1);
@@ -983,7 +984,7 @@
           '<p class="rc__when" id="t-when"></p>' +
           '<div class="rc__ctrl">' +
             '<button class="play2__btn" type="button" id="t-play">▶</button>' +
-            '<input type="range" id="t-range" min="0" max="' + MONTHS + '" value="0" aria-label="' + t("Month", "Mois") + '" />' +
+            '<input type="range" id="t-range" min="0" max="' + MONTHS + '" step="any" value="0" aria-label="' + t("Month", "Mois") + '" />' +
           "</div>" +
         "</div>" +
         '<div class="rc__list" id="t-race" style="height:' + (RACE.length * ROW) + 'px">' +
@@ -1004,7 +1005,8 @@
 
     function vals(m) { return RACE.map(function (r) { return Math.max(0, r.f(m)) * scale; }); }
     function draw() {
-      var v = vals(month);
+      month = Math.min(MONTHS, Math.floor(pos + 1e-6));
+      var v = vals(pos);
       var order = v.map(function (x, i) { return i; }).sort(function (a, b) { return v[b] - v[a]; });
       var rank = []; order.forEach(function (i, k) { rank[i] = k; });
       rows.forEach(function (row, i) {
@@ -1022,9 +1024,11 @@
       });
       prevRank = rank;
       document.getElementById("t-when").innerHTML = "<b>" + monthLabel(month, true) + "</b><span>" + t("Month ", "Mois ") + month + " / " + MONTHS + "</span>";
-      range.value = month; range.style.setProperty("--fill", (month / MONTHS * 100) + "%");
+      range.value = pos; range.style.setProperty("--fill", (pos / MONTHS * 100) + "%");
+      range.setAttribute("aria-valuetext", monthLabel(month, true));
       detail();
-      progress(CUM[month] / raw);
+      var i = Math.min(MONTHS - 1, Math.floor(pos));
+      progress((CUM[i] + (CUM[i + 1] - CUM[i]) * (pos - i)) / raw);
     }
     function detail() {
       var r = RACE[sel], s = [], lo = Infinity, hi = -Infinity;
@@ -1040,18 +1044,37 @@
         '<div class="rcd__num"><b>' + num(now) + "</b><span>" + t("posts this month", "posts ce mois-ci") + "</span></div>" +
         '<div class="rcd__num"><b class="' + (ch >= 0 ? "is-up" : "is-down") + '">' + (ch >= 0 ? "+" : "−") + num(Math.abs(ch)) + "</b><span>" + t("vs ", "vs ") + monthLabel(0) + "</span></div>" +
         '<svg class="rcd__spark" viewBox="0 0 ' + sw + " " + sh + '" preserveAspectRatio="none" aria-hidden="true" style="--c:' + r.color + '"><path class="f" d="' + fill + '"/><path class="l" d="' + path + '"/>' +
-          '<circle cx="' + (month / MONTHS * sw).toFixed(1) + '" cy="' + SY(now) + '" r="3.5"/></svg>' +
+          '<circle cx="' + (pos / MONTHS * sw).toFixed(1) + '" cy="' + SY(Math.max(0, r.f(pos)) * scale) + '" r="3.5"/></svg>' +
         '<p class="rcd__verdict rcd__verdict--' + r.verdict[0] + '">' + esc(fr() ? r.verdict[2] : r.verdict[1]) + "</p>";
     }
-    function stopPlay() { clearInterval(timer); timer = null; btn.textContent = "▶"; btn.setAttribute("aria-label", t("Play 18 months", "Lire 18 mois")); }
+    function stopPlay() { playing = false; btn.textContent = "▶"; btn.setAttribute("aria-label", t("Play 18 months", "Lire 18 mois")); }
+    /* one frame at a time, about 0.36 s a month */
+    var MS_PER_MONTH = 360;
     function play() {
-      if (month >= MONTHS) { month = 0; prevRank = null; }
-      if (reduced.matches) { month = MONTHS; draw(); return; }
+      if (pos >= MONTHS) { pos = 0; prevRank = null; }
+      if (reduced.matches) { pos = MONTHS; draw(); return; }
       btn.textContent = "❚❚"; btn.setAttribute("aria-label", t("Pause", "Pause"));
-      timer = setInterval(function () { month++; draw(); if (month >= MONTHS) stopPlay(); }, 340);
+      playing = true;
+      var my = gen, last = performance.now();
+      (function step(now) {
+        if (!playing || my !== gen) return;
+        pos = Math.min(MONTHS, pos + (now - last) / MS_PER_MONTH);
+        last = now;
+        draw();
+        if (pos >= MONTHS) { stopPlay(); return; }
+        requestAnimationFrame(step);
+      })(last);
     }
-    btn.addEventListener("click", function () { if (timer) stopPlay(); else play(); });
-    range.addEventListener("input", function () { stopPlay(); month = +range.value; draw(); });
+    btn.addEventListener("click", function () { if (playing) stopPlay(); else play(); });
+    range.addEventListener("input", function () { stopPlay(); pos = +range.value; draw(); });
+    /* the arrow keys still move a whole month */
+    range.addEventListener("keydown", function (e) {
+      var dir = e.key === "ArrowRight" || e.key === "ArrowUp" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowDown" ? -1 : 0;
+      if (!dir) return;
+      e.preventDefault(); stopPlay();
+      pos = Math.max(0, Math.min(MONTHS, (dir > 0 ? Math.floor(pos + 1e-6) : Math.ceil(pos - 1e-6)) + dir));
+      draw();
+    });
     race.addEventListener("click", function (e) { var r = e.target.closest(".rc__row"); if (!r) return; sel = +r.dataset.i; draw(); });
     stopPlay(); draw();
     later(play, 500);

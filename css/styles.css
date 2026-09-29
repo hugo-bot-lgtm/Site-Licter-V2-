@@ -5207,3 +5207,6 @@ html[data-theme="dark"] .uv-svg .pin:hover .pin__tag text, html[data-theme="dark
   .hero__body { padding-top: clamp(28px, 5vh, 48px); }
   .hero__main > .award { margin-bottom: 28px; }
 }
+
+/* the race plays frame by frame: the bars follow the values directly */
+.rc__bar { transition: none; }
