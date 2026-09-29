@@ -626,7 +626,7 @@
        half of it. */
     /* The sheets and the veil now carry most of the legibility work, so the
        punch-out can be lighter and let the communities read through. */
-    var steps = 6, feather = 34, strength = 0.42;
+    var steps = 6, feather = 40, strength = 0.78;
     ctx.save();
     ctx.globalCompositeOperation = "destination-out";
     for (var i = 0; i < dimZones.length; i++) {

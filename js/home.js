@@ -29,7 +29,7 @@
 
   /* ------------------------------------------------------ hero questions */
   /* A question in the hero opens the matching family in the use cases. */
-  Array.prototype.forEach.call(document.querySelectorAll(".chip[data-case]"), function (chip) {
+  Array.prototype.forEach.call(document.querySelectorAll(".ask[data-case], .chip[data-case]"), function (chip) {
     chip.addEventListener("click", function () {
       var tab = document.getElementById("tab-" + chip.dataset.case);
       var target = document.getElementById("use-cases");
