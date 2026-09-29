@@ -318,8 +318,9 @@
 })();
 
 /* =========================================================================
-   Method: a horizontal track of cards. The step bar, the arrows and the
-   track stay in step whichever one moves.
+   Method: a horizontal track of cards, the current one centred. The step
+   bar, the arrows and the track stay in step whichever one moves, and the
+   four steps loop: past the fourth comes the first again.
    ========================================================================= */
 (function () {
   var track = document.querySelector(".htrack");
@@ -328,19 +329,15 @@
   var bar = document.querySelector(".hsteps");
   if (!track || !cards.length) return;
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var active = 0;
+  var last = cards.length - 1, active = 0;
 
-  /* room after the last card, so every card, the last one included,
-     can come to rest against the left edge */
+  /* room on both sides, so the first and the last card can come to the centre */
   function pad() {
-    var last = cards[cards.length - 1];
-    var start = parseFloat(getComputedStyle(track).paddingLeft) || 0;
-    /* padding-right does not extend a scroll area everywhere: a spacer item does */
-    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-    track.style.setProperty("--end", Math.max(0, track.clientWidth - last.offsetWidth - 2 * start - gap) + "px");
+    track.style.setProperty("--side", Math.max(0, (track.clientWidth - cards[0].offsetWidth) / 2) + "px");
   }
+  function leftOf(i) { return cards[i].offsetLeft - (track.clientWidth - cards[i].offsetWidth) / 2; }
   pad();
-  window.addEventListener("resize", pad);
+  window.addEventListener("resize", function () { pad(); track.scrollTo({ left: leftOf(active), behavior: "auto" }); });
 
   function set(i) {
     active = i;
@@ -350,16 +347,17 @@
       if (k === i) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
     });
     cards.forEach(function (c, k) { c.classList.toggle("is-on", k === i); });
-    if (bar) bar.style.setProperty("--p", (i / (cards.length - 1)).toFixed(3));
-    document.querySelectorAll(".hmethod__arrow").forEach(function (a) {
-      var d = +a.dataset.dir;
-      a.disabled = (d < 0 && i === 0) || (d > 0 && i === cards.length - 1);
-    });
+    if (bar) bar.style.setProperty("--p", (i / last).toFixed(3));
   }
+  var wrapping = false;
   function go(i) {
-    i = Math.max(0, Math.min(cards.length - 1, i));
-    track.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: reduced.matches ? "auto" : "smooth" });
+    /* the steps loop both ways */
+    if (i > last) i = 0;
+    if (i < 0) i = last;
+    wrapping = Math.abs(i - active) > 1;
+    track.scrollTo({ left: leftOf(i), behavior: reduced.matches ? "auto" : "smooth" });
     set(i);
+    if (wrapping) setTimeout(function () { wrapping = false; }, 900);
   }
   steps.forEach(function (b, i) { b.addEventListener("click", function () { go(i); }); });
   document.querySelectorAll(".hmethod__arrow").forEach(function (a) {
@@ -369,15 +367,37 @@
     if (e.key === "ArrowRight") { e.preventDefault(); go(active + 1); }
     if (e.key === "ArrowLeft") { e.preventDefault(); go(active - 1); }
   });
-  /* swipe or trackpad: the card nearest the left edge is the current one */
+
+  /* swipe or trackpad: the card nearest the centre is the current one */
   var t = null;
   track.addEventListener("scroll", function () {
     clearTimeout(t);
     t = setTimeout(function () {
-      var x = track.scrollLeft + cards[0].offsetLeft, best = 0, d = Infinity;
-      cards.forEach(function (c, k) { var dd = Math.abs(c.offsetLeft - x); if (dd < d) { d = dd; best = k; } });
+      if (wrapping) return;
+      var mid = track.scrollLeft + track.clientWidth / 2, best = 0, d = Infinity;
+      cards.forEach(function (c, k) { var dd = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (dd < d) { d = dd; best = k; } });
       set(best);
     }, 80);
   }, { passive: true });
+
+  /* scrolling on past the fourth card brings the first one back */
+  function atEnd() { return track.scrollLeft >= track.scrollWidth - track.clientWidth - 4; }
+  var cool = 0, push = 0;
+  track.addEventListener("wheel", function (e) {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || e.deltaX <= 0) { push = 0; return; }
+    if (active !== last || !atEnd() || Date.now() < cool) return;
+    /* a deliberate push, not the tail of the inertia that brought us here */
+    push += e.deltaX;
+    if (push > 60) { push = 0; cool = Date.now() + 1200; go(0); }
+  }, { passive: true });
+  var x0 = null;
+  track.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener("touchend", function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    x0 = null;
+    if (dx < -50 && active === last && atEnd()) go(0);
+  }, { passive: true });
+
   set(0);
 })();
