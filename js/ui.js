@@ -60,45 +60,36 @@
   });
 
   /* --------------------------------------------------------- client logos
-     PLACEHOLDER MARKS. The real files were not supplied; each entry below is
-     a white wordmark at the display ratio taken from the mock. Drop the
-     official assets in as white silhouettes on transparent ground and keep
-     the same width / height pairs. */
+     Official marks (Wikimedia Commons / Wikipedia), cropped to their ink and
+     sized to a common visual area so no brand shouts over the others. Shown in
+     grey; colour returns on hover. Licter must hold each client's agreement to
+     display its logo. Sources: assets/img/clients/SOURCES.md */
   var CLIENTS = [
-    { name: "HP",                   w:  42, h: 42, opacity: 0.78, weight: 700, tracking: 0 },
-    { name: "DECATHLON",            w:  64, h: 42, opacity: 1,    weight: 700, tracking: 0 },
-    { name: "UNESCO",               w: 120, h: 25, opacity: 0.78, weight: 600, tracking: 2 },
-    { name: "L'ORÉAL",              w: 120, h: 22, opacity: 1,    weight: 400, tracking: 4 },
-    { name: "DANONE",               w: 114, h: 36, opacity: 1,    weight: 700, tracking: 1 },
-    { name: "SOCIÉTÉ GÉNÉRALE",     w: 120, h: 24, opacity: 1,    weight: 600, tracking: 0 },
-    { name: "GALERIES LAFAYETTE",   w: 132, h: 20, opacity: 1,    weight: 400, tracking: 1 },
-    { name: "CELIO",                w: 120, h: 26, opacity: 1,    weight: 600, tracking: 3 },
-    { name: "LA POSTE",             w:  96, h: 30, opacity: 1,    weight: 700, tracking: 0 },
-    { name: "SISLEY",               w: 104, h: 22, opacity: 1,    weight: 400, tracking: 5 },
-    { name: "BOUYGUES TELECOM",     w: 130, h: 22, opacity: 1,    weight: 600, tracking: 0 },
-    { name: "STUDI",                w:  88, h: 28, opacity: 1,    weight: 700, tracking: 1 },
-    { name: "TV5 MONDE",            w: 104, h: 28, opacity: 1,    weight: 700, tracking: 0 },
-    { name: "PMU",                  w:  74, h: 30, opacity: 1,    weight: 700, tracking: 1 },
-    { name: "LA MARINE RECRUTE",    w: 124, h: 24, opacity: 1,    weight: 600, tracking: 0 },
-    /* nom complet en étiquette accessible, le wordmark serait illisible */
-    { name: "BIOPARC", label: "Bioparc de Doué La Fontaine",
-                                    w: 108, h: 26, opacity: 1,    weight: 600, tracking: 2 }
+    { name: "HP",                  src: "assets/img/clients/hp.svg", w:  46, h: 46 },
+    { name: "DECATHLON",           src: "assets/img/clients/decathlon.svg", w: 119, h: 19 },
+    { name: "UNESCO",              src: "assets/img/clients/unesco.svg", w:  55, h: 42 },
+    { name: "L'ORÉAL",             src: "assets/img/clients/loreal.svg", w: 110, h: 21 },
+    { name: "DANONE",              src: "assets/img/clients/danone.png", w:  41, h: 46 },
+    { name: "SOCIÉTÉ GÉNÉRALE",    src: "assets/img/clients/societegenerale.svg", w:  98, h: 23 },
+    { name: "GALERIES LAFAYETTE",  src: "assets/img/clients/galerieslafayette.svg", w:  66, h: 35 },
+    { name: "CELIO",               src: "assets/img/clients/celio.svg", w:  84, h: 27 },
+    { name: "LA POSTE",            src: "assets/img/clients/laposte.svg", w: 120, h: 19 },
+    { name: "SISLEY",              src: "assets/img/clients/sisley.svg", w: 168, h: 12 },
+    { name: "BOUYGUES TELECOM",    src: "assets/img/clients/bouygues.svg", w:  85, h: 27 },
+    { name: "STUDI",               src: "assets/img/clients/studi.svg", w:  80, h: 29 },
+    { name: "TV5 MONDE",           src: "assets/img/clients/tv5monde.svg", w:  83, h: 28 },
+    { name: "PMU",                 src: "assets/img/clients/pmu.svg", w:  77, h: 30 },
+    { name: "LA MARINE RECRUTE",   src: "assets/img/clients/marine.svg", w:  31, h: 46, label: "Marine nationale" },
+    { name: "BIOPARC",             src: "assets/img/clients/bioparc.png", w:  64, h: 36, label: "Bioparc de Doué La Fontaine" }
   ];
   var GAP = 44;
   /* px per second the logo band travels. It ran at 126, which reads as a
      ticker rather than a wall of names you have time to recognise. */
   var MARQUEE_SPEED = 45;
 
-  function svgFor(c) {
-      var vw = 200, vh = Math.round(200 * c.h / c.w);
-      var size = Math.min(vh * 0.86, (vw * 1.35) / Math.max(4, c.name.length));
-      return '<svg viewBox="0 0 ' + vw + ' ' + vh + '" role="img" aria-label="' +
-        (c.label || c.name) + '">' +
-        '<text x="' + (vw / 2) + '" y="' + (vh / 2) + '" fill="currentColor" ' +
-        'text-anchor="middle" dominant-baseline="central" ' +
-        'font-family="Josefin Sans, system-ui, sans-serif" font-weight="' + c.weight + '" ' +
-        'letter-spacing="' + c.tracking + '" font-size="' + size.toFixed(1) + '">' +
-        c.name + "</text></svg>";
+  function markFor(c, hidden) {
+    return '<img src="' + c.src + '" alt="' + (hidden ? "" : (c.label || c.name)) +
+      '" width="' + c.w + '" height="' + c.h + '" loading="lazy" decoding="async" />';
   }
 
   function buildMarquee() {
@@ -120,8 +111,7 @@
       CLIENTS.forEach(function (c) {
         html += '<span class="client-logo" style="width:' + Math.round(c.w * k) +
                 "px;height:" + Math.round(c.h * k) +
-                "px;--logo-opacity:" + c.opacity + '"' +
-                (r === 0 ? "" : ' aria-hidden="true"') + ">" + svgFor(c) + "</span>";
+                'px"' + (r === 0 ? "" : ' aria-hidden="true"') + ">" + markFor(c, r > 0) + "</span>";
       });
     }
     track.innerHTML = html;
@@ -144,10 +134,10 @@
     var wall = document.getElementById("logo-wall");
     if (!wall) return;
     wall.innerHTML = CLIENTS.map(function (c) {
-      return '<li><span class="wordmark" style="font-weight:' + c.weight +
-             ";letter-spacing:" + (c.tracking * 0.06).toFixed(2) + "em;opacity:" + c.opacity +
-             '">' + (c.label ? '<abbr title="' + c.label + '">' + c.name + "</abbr>" : c.name) +
-             "</span></li>";
+      /* one height for the grid, scaled from the marquee size */
+      var k = 1.15;
+      return '<li><img class="wall-logo" src="' + c.src + '" alt="' + (c.label || c.name) +
+             '" width="' + Math.round(c.w * k) + '" height="' + Math.round(c.h * k) + '" loading="lazy" decoding="async" /></li>';
     }).join("");
     wall.classList.add("is-built");
   })();
