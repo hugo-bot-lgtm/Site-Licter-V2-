@@ -1,7 +1,26 @@
 # Licter — landing page
 
-HTML / CSS / JS vanille, aucune dépendance, aucun build. Déployable tel quel
+HTML / CSS / JS vanille, aucune dépendance. Déployable tel quel
 (Vercel : « Other / no framework », racine = ce dossier).
+
+**Une seule étape de build, pour le CSS.** On édite `css/styles.css` (le
+source, commentaires compris) ; les pages chargent `css/styles.min.css`, qu'on
+régénère après chaque modification :
+
+```bash
+python3 tools/build-css.py
+```
+
+Le script retire commentaires et espaces, les sélecteurs dont la classe ou l'id
+n'existe dans aucun fichier HTML/JS, et les déclarations écrasées plus bas par
+le même sélecteur dans le même contexte. 243 Ko → 147 Ko (27 Ko compressé),
+rendu vérifié identique au pixel sur les 26 pages. **Oublier de relancer le
+script = la modification n'apparaît pas.**
+
+**Images.** Les photos des pages sont servies en WebP (`*-800.webp` et une
+version pleine taille pour les écrans denses, via `srcset`) ; les avatars en
+`*-160.webp`. Les JPEG d'origine restent dans `assets/img/` comme sources. Pour
+une nouvelle photo : générer les mêmes variantes (Pillow, qualité 80).
 
 ```
 index.html          ← hero + use cases + colonne vertébrale du funnel
@@ -18,7 +37,9 @@ tech-soprism.html    ┘
 guide.html          ← aimant à leads : le guide des 12 questions
 diagnostic.html     ← diagnostic social data (milieu de funnel)
 book-a-meeting.html ← prise de rendez-vous (bas de funnel)
-css/styles.css
+css/styles.css      ← source à éditer
+css/styles.min.css  ← généré par tools/build-css.py, chargé par les pages
+tools/build-css.py
 js/cartography.js   ← la carto animée (canvas)
 js/i18n.js          ← bascule EN / FR
 js/fr.js            ← dictionnaire français
