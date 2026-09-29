@@ -100,6 +100,8 @@ window.LicterFR = {
   "NOTED - ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ - UN E-MAIL À LA PROCHAINE PUBLICATION",
   "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
   "Skip to content": "Aller au contenu",
+  "From the decision you have to make to the people who make it. You see every step, and the person running it.": "De la décision à prendre jusqu'à celles et ceux qui la prennent. Vous voyez chaque étape, et la personne qui la mène.",
+  "The four steps": "Les quatre étapes",
   "A word from the founders.": "Un mot des fondateurs.",
   "We spent years reading the country's conversation from inside the Élysée. We left with one conviction: French organisations were not short of data, they were short of a method to read it.": "Nous avons passé des années à lire la conversation du pays depuis l'Élysée. Nous en sommes sortis avec une conviction : les organisations françaises ne manquaient pas de données, elles manquaient d'une méthode pour les lire.",
   "Licter is that method. Every question is framed by a consultant and every answer is read by one, not left to a dashboard default.": "Licter, c'est cette méthode. Chaque question est cadrée par un consultant, et chaque réponse est lue par un consultant, pas laissée au réglage d'un tableau de bord.",

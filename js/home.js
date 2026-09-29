@@ -354,3 +354,38 @@
     onLang(function () { renderSlots(); renderDone(); });
   }
 })();
+
+/* =========================================================================
+   Method: the rail on the left follows the card in view on the right.
+   ========================================================================= */
+(function () {
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".mstep"));
+  var items = Array.prototype.slice.call(document.querySelectorAll(".mrail__item"));
+  var rail = document.querySelector(".mrail");
+  if (!cards.length || !items.length || !("IntersectionObserver" in window)) return;
+  var active = -1;
+  function set(i) {
+    if (i === active) return;
+    active = i;
+    items.forEach(function (a, k) {
+      a.classList.toggle("is-on", k === i);
+      a.classList.toggle("is-done", k < i);
+      if (k === i) a.setAttribute("aria-current", "step"); else a.removeAttribute("aria-current");
+    });
+    cards.forEach(function (c, k) { c.classList.toggle("is-on", k === i); });
+    if (rail) rail.style.setProperty("--p", ((i + 0.5) / cards.length).toFixed(3));
+  }
+  /* the card whose top has passed the upper third of the screen is the current one */
+  var io = new IntersectionObserver(function () {
+    var line = window.innerHeight * 0.4, cur = 0;
+    cards.forEach(function (c, k) { if (c.getBoundingClientRect().top < line) cur = k; });
+    set(cur);
+  }, { rootMargin: "-10% 0px -50% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] });
+  cards.forEach(function (c) { io.observe(c); });
+  window.addEventListener("scroll", function () {
+    var line = window.innerHeight * 0.4, cur = 0;
+    cards.forEach(function (c, k) { if (c.getBoundingClientRect().top < line) cur = k; });
+    set(cur);
+  }, { passive: true });
+  set(0);
+})();
