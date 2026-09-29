@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=20261084" />
+<link rel="stylesheet" href="css/styles.css?v=20261088" />
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
@@ -69,7 +69,7 @@
 
     <div class="hero__body shell">
       <div class="hero__grid">
-        <div class="hero__main" data-dim>
+        <div class="hero__main">
           <h1 class="hero__title" data-reveal>
             <span class="line">STOP GUESSING,</span>
             <span class="line line--accent">START LISTENING.</span>
@@ -80,22 +80,21 @@
             search and ask AI into decisions.
           </p>
 
+          <ul class="asks" aria-label="What do you need to know?" data-reveal>
+            <li><button class="ask" type="button" data-case="communication"><span>Did our campaign work?</span><span class="ask__arrow" aria-hidden="true">→</span></button></li>
+            <li><button class="ask" type="button" data-case="brand"><span>What is being said about us?</span><span class="ask__arrow" aria-hidden="true">→</span></button></li>
+            <li><button class="ask" type="button" data-case="audiences"><span>Who are our audiences, really?</span><span class="ask__arrow" aria-hidden="true">→</span></button></li>
+            <li><button class="ask" type="button" data-case="trends"><span>What should we build next?</span><span class="ask__arrow" aria-hidden="true">→</span></button></li>
+          </ul>
+
           <div class="hero__actions" data-reveal>
             <a class="btn btn--primary" href="#book">Book a meeting <span aria-hidden="true">→</span></a>
             <a class="hero__link" href="#diagnostic">Or take the 3-minute diagnostic</a>
           </div>
         </div>
 
-        <aside class="asks" aria-labelledby="asks-title" data-reveal>
-          <p class="asks__title" id="asks-title">Start from your question</p>
-          <ul class="asks__list">
-            <li><button class="ask" type="button" data-case="communication"><span>Did our campaign work?</span><span class="ask__arrow" aria-hidden="true">→</span></button></li>
-            <li><button class="ask" type="button" data-case="brand"><span>What is being said about us?</span><span class="ask__arrow" aria-hidden="true">→</span></button></li>
-            <li><button class="ask" type="button" data-case="audiences"><span>Who are our audiences, really?</span><span class="ask__arrow" aria-hidden="true">→</span></button></li>
-            <li><button class="ask" type="button" data-case="trends"><span>What should we build next?</span><span class="ask__arrow" aria-hidden="true">→</span></button></li>
-          </ul>
-          <p class="asks__foot">Each one opens an example of what we would answer.</p>
-        </aside>
+        <!-- the community map, framed: js/cartography.js moves #carto in here -->
+        <div class="hero__frame" id="carto-frame" aria-hidden="true"></div>
       </div>
     </div>
 
@@ -510,11 +509,11 @@
   </div>
 </footer>
 
-<script src="js/i18n.js?v=20261084"></script>
-<script src="js/cartography.js?v=20261084"></script>
-<script src="js/flow.js?v=20261084"></script>
-<script src="js/ui.js?v=20261084"></script>
-<script src="js/voices.js?v=20261084"></script>
-<script src="js/home.js?v=20261084"></script>
+<script src="js/i18n.js?v=20261088"></script>
+<script src="js/cartography.js?v=20261088"></script>
+<script src="js/flow.js?v=20261088"></script>
+<script src="js/ui.js?v=20261088"></script>
+<script src="js/voices.js?v=20261088"></script>
+<script src="js/home.js?v=20261088"></script>
 </body>
 </html>

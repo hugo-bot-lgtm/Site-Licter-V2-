@@ -98,6 +98,12 @@
   if (!canvas || !canvas.getContext) return;
   var ctx = canvas.getContext("2d");
 
+  /* Framed mode (home): the map lives in a frame beside the text instead of
+     behind the whole page. It is sized to the frame, does not scroll with the
+     page, and has no text over it to dim. */
+  var frameEl = document.getElementById("carto-frame");
+  if (frameEl) { frameEl.appendChild(canvas); canvas.classList.add("is-framed"); }
+
   var still = document.createElement("canvas");
   var sctx = still.getContext("2d");
 
@@ -609,6 +615,7 @@
 
   function collectDimZones() {
     dimZones = [];
+    if (frameEl) return;
     var els = document.querySelectorAll("[data-dim]");
     for (var i = 0; i < els.length; i++) {
       var r = els[i].getBoundingClientRect();
@@ -667,7 +674,7 @@
     if (!startedAt) startedAt = now;
 
     var maxShift = view.sh - view.h;
-    shift = Math.min(maxShift, window.scrollY * PARALLAX);
+    shift = frameEl ? 0 : Math.min(maxShift, window.scrollY * PARALLAX);
 
     ctx.setTransform(view.dpr, 0, 0, view.dpr, 0, 0);
     ctx.clearRect(0, 0, view.w, view.h);
@@ -728,13 +735,18 @@
   function measure() {
     /* innerWidth includes the scrollbar: sizing to it pushed the fixed canvas
        past the viewport and gave the page a horizontal scroll on narrow screens */
-    view.w = Math.max(1, document.documentElement.clientWidth || window.innerWidth);
-    view.h = Math.max(1, window.innerHeight);
+    view.w = Math.max(1, frameEl ? frameEl.clientWidth : (document.documentElement.clientWidth || window.innerWidth));
+    view.h = Math.max(1, frameEl ? frameEl.clientHeight : window.innerHeight);
     view.sh = Math.round(view.h * STATIC_OVERSCAN);
     view.dpr = Math.min(2, window.devicePixelRatio || 1);
     /* below ~900 px the map loses density rather than being scaled down */
     view.density = Math.max(0.5, Math.min(1, view.w / 1040));
-    if (view.w < 820) {
+    if (frameEl) {
+      /* cover the frame with the 600 x 500 design space, centred */
+      view.density = Math.max(0.55, Math.min(1, view.w / 700));
+      view.scale = Math.max(view.w / 600, view.h / 500) * 1.08;
+      view.oy = (view.h - 500 * view.scale) / 2;
+    } else if (view.w < 820) {
       /* portrait: fit the 600 x 500 design space to the width instead of
          cropping it, otherwise the communities fall outside the screen */
       view.scale = (view.w / 600) * 1.15;
@@ -817,10 +829,16 @@
      would keep the wider size and hand the document a horizontal scroll, so
      check the width again once the page has settled. */
   function refit() {
-    var w = document.documentElement.clientWidth || window.innerWidth;
-    if (Math.abs(w - view.w) > 1) build();
+    var w = frameEl ? frameEl.clientWidth : (document.documentElement.clientWidth || window.innerWidth);
+    var h = frameEl ? frameEl.clientHeight : view.h;
+    if (Math.abs(w - view.w) > 1 || Math.abs(h - view.h) > 1) build();
   }
   window.addEventListener("load", function () { setTimeout(refit, 60); });
+  /* the frame follows the text column's height, which moves when fonts land */
+  if (frameEl && window.ResizeObserver) {
+    var roTimer = null;
+    new ResizeObserver(function () { clearTimeout(roTimer); roTimer = setTimeout(refit, 120); }).observe(frameEl);
+  }
   setTimeout(refit, 400);
   setTimeout(refit, 1400);
 
