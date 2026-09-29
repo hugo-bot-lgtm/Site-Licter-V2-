@@ -93,28 +93,28 @@
   /* MOCK: a draft of the six dimensions, to be checked by the team. */
   var QUIZ = [
     { dim: ["Framing", "Cadrage"],
-      q: ["When a listening project starts, what comes first?", "Quand un projet d'écoute démarre, qu'est-ce qui vient en premier ?"],
+      q: ["When a listening project starts, what comes first?", "Quand un projet d'écoute démarre, qu'est-ce qui vient en premier ?"],
       a: [["The keywords", "Les mots-clés"], ["A topic we want to follow", "Un sujet à suivre"], ["The decision it has to inform", "La décision qu'il doit éclairer"]] },
     { dim: ["Coverage", "Couverture"],
-      q: ["Which sources do you read today?", "Quelles sources lisez-vous aujourd'hui ?"],
+      q: ["Which sources do you read today?", "Quelles sources lisez-vous aujourd'hui ?"],
       a: [["One social network", "Un seul réseau social"], ["Several networks", "Plusieurs réseaux"], ["Social, search and generative AI", "Réseaux, recherche et IA générative"]] },
     { dim: ["Languages", "Langues"],
-      q: ["How do you read a foreign market?", "Comment lisez-vous un marché étranger ?"],
+      q: ["How do you read a foreign market?", "Comment lisez-vous un marché étranger ?"],
       a: [["Machine translation", "Traduction automatique"], ["A local agency, case by case", "Une agence locale, au cas par cas"], ["Analysts who speak the language", "Des analystes qui parlent la langue"]] },
     { dim: ["Audiences", "Audiences"],
-      q: ["Do you know who is behind the conversation?", "Savez-vous qui est derrière la conversation ?"],
+      q: ["Do you know who is behind the conversation?", "Savez-vous qui est derrière la conversation ?"],
       a: [["No, we see volumes", "Non, nous voyons des volumes"], ["Roughly, from platform data", "À peu près, via la plateforme"], ["Yes, profiled and segmented", "Oui, profilés et segmentés"]] },
     { dim: ["Alerting", "Alerte"],
-      q: ["When something moves, how do you hear about it?", "Quand quelque chose bouge, comment l'apprenez-vous ?"],
+      q: ["When something moves, how do you hear about it?", "Quand quelque chose bouge, comment l'apprenez-vous ?"],
       a: [["From the press", "Par la presse"], ["From a keyword alert", "Par une alerte mots-clés"], ["From an analyst who has read it", "Par un analyste qui l'a lu"]] },
     { dim: ["Use", "Usage"],
-      q: ["What happens to the analysis?", "Que devient l'analyse ?"],
+      q: ["What happens to the analysis?", "Que devient l'analyse ?"],
       a: [["It sits in a dashboard", "Elle reste dans un tableau de bord"], ["It goes into a monthly report", "Elle part dans un rapport mensuel"], ["It changes a decision", "Elle change une décision"]] }
   ];
   var BANDS = [
     { max: 4, name: ["Listening, not yet reading", "Vous écoutez, sans encore lire"],
       text: ["You collect the conversation. The next step is to frame it around a decision, so the data answers something.",
-             "Vous collectez la conversation. L'étape suivante : la cadrer autour d'une décision, pour que la donnée réponde à quelque chose."] },
+             "Vous collectez la conversation. L'étape suivante : la cadrer autour d'une décision, pour que la donnée réponde à quelque chose."] },
     { max: 8, name: ["Reading, not yet deciding", "Vous lisez, sans encore décider"],
       text: ["The reading is there. What is missing is the path from the analysis to the people who decide.",
              "La lecture est là. Il manque le chemin entre l'analyse et celles et ceux qui décident."] },
@@ -165,7 +165,7 @@
         '<p class="quiz__score"><b>' + score + "</b><span>/ 12</span></p>" +
         '<h3 class="quiz__q">' + L(band.name) + "</h3>" +
         '<p class="quiz__text">' + L(band.text) + " " +
-          t("Your weakest dimension: ", "Votre dimension la plus faible : ") + "<b>" + L(QUIZ[weakest].dim).toLowerCase() + "</b>.</p>" +
+          t("Your weakest dimension: ", "Votre dimension la plus faible : ") + "<b>" + L(QUIZ[weakest].dim).toLowerCase() + "</b>.</p>" +
         (sent
           ? '<p class="quiz__sent">' + t("Noted. The full readout arrives by email.", "C'est noté. Le détail arrive par e-mail.") + "</p>"
           : '<form class="quiz__form" novalidate>' +
@@ -309,7 +309,7 @@
       }).join("");
       if (picked) {
         picked.label = dayLabel(list[picked.day]) + ", " + picked.time;
-        document.getElementById("book-picked").textContent = t("Your slot: ", "Votre créneau : ") + picked.label;
+        document.getElementById("book-picked").textContent = t("Your slot: ", "Votre créneau : ") + picked.label;
       }
     }
 
