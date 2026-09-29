@@ -29,15 +29,15 @@
      n is the number of accounts, swirl the direction and strength of the
      curve on the links. The largest community carries the brand amber. */
   var COMMUNITIES = [
-    { x: 0.27, y: 0.47, r: 0.34, n: 1300, color: "#F4A93B", swirl:  0.55 },
-    { x: 0.45, y: 0.17, r: 0.25, n: 800, color: "#E2468D", swirl: -0.6  },
-    { x: 0.55, y: 0.38, r: 0.26, n: 900, color: "#D796E6", swirl:  0.5  },
-    { x: 0.66, y: 0.20, r: 0.20, n: 620, color: "#3CC2A6", swirl:  0.55 },
-    { x: 0.78, y: 0.42, r: 0.25, n: 820, color: "#4292F2", swirl: -0.5  },
-    { x: 0.43, y: 0.75, r: 0.26, n: 920, color: "#7B6CF2", swirl:  0.6  },
-    { x: 0.52, y: 0.64, r: 0.12, n: 300, color: "#8D7DF5", swirl: -0.5  },
-    { x: 0.66, y: 0.74, r: 0.24, n: 760, color: "#C6D64A", swirl:  0.5  },
-    { x: 0.11, y: 0.24, r: 0.10, n: 380, color: "#F2656F", swirl: -0.7  }
+    { x: 0.27, y: 0.47, r: 0.34, n: 1300, color: "#F4A93B", swirl:  0.55, platform: "TIKTOK",    cap: "Reel · 14 min" },
+    { x: 0.45, y: 0.17, r: 0.25, n: 800, color: "#E2468D", swirl: -0.6,  platform: "INSTAGRAM", cap: "Story · 2 h" },
+    { x: 0.55, y: 0.38, r: 0.26, n: 900, color: "#D796E6", swirl:  0.5,  platform: "INSTAGRAM", cap: "Story · 47 min" },
+    { x: 0.66, y: 0.20, r: 0.20, n: 620, color: "#3CC2A6", swirl:  0.55, platform: "YOUTUBE",   cap: "Video · 1 h" },
+    { x: 0.78, y: 0.42, r: 0.25, n: 820, color: "#4292F2", swirl: -0.5,  platform: "LINKEDIN",  cap: "Post · 3 h" },
+    { x: 0.43, y: 0.75, r: 0.26, n: 920, color: "#7B6CF2", swirl:  0.6,  platform: "X",         cap: "Post · 22 min" },
+    { x: 0.52, y: 0.64, r: 0.12, n: 300, color: "#8D7DF5", swirl: -0.5,  platform: "FACEBOOK",  cap: "Post · 5 h" },
+    { x: 0.66, y: 0.74, r: 0.24, n: 760, color: "#C6D64A", swirl:  0.5,  platform: "TIKTOK",    cap: "Reel · 1 h" },
+    { x: 0.11, y: 0.24, r: 0.10, n: 380, color: "#F2656F", swirl: -0.7,  platform: "YOUTUBE",   cap: "Short · 40 min" }
   ];
   /* small groups on the edge, drawn as grey constellations */
   var OUTLIERS = [
@@ -211,6 +211,46 @@
   /* ------------------------------------------------------------ pointer
      The community under the pointer lights up; the others step back. */
   var hover = -1;
+
+  /* the same window the old map opened on its travellers: platform, a media
+     slot, a caption, and a thread back to the hub it belongs to */
+  var cards = document.createElement("div");
+  cards.className = "stories";
+  host.appendChild(cards);
+  var card = null;
+
+  function closeCard() {
+    if (!card) return;
+    var old = card; card = null;
+    old.classList.add("is-out");
+    setTimeout(function () { old.remove(); }, 400);
+  }
+  function openCard(i) {
+    closeCard();
+    if (i < 0) return;
+    var L = layers[i], c = L.c, CW = 216, CH = 190;
+    var el = document.createElement("figure");
+    el.className = "story";
+    el.style.setProperty("--story-color", c.color);
+    el.style.setProperty("--hold", "4200ms");
+    el.innerHTML =
+      '<span class="story__bar"><i></i></span>' +
+      '<span class="story__head">' + ((window.LicterIcons || {})[c.platform] || "") + c.platform + "</span>" +
+      '<span class="story__media"><span class="story__play" aria-hidden="true">▶</span></span>' +
+      '<figcaption class="story__cap">' + c.cap + "</figcaption>";
+    var x = L.hx + 34;
+    if (x + CW + 10 > W) { x = L.hx - 34 - CW; el.classList.add("story--left"); }
+    el.style.left = Math.round(Math.max(10, x)) + "px";
+    el.style.top = Math.round(Math.max(10, Math.min(H - CH - 10, L.hy - CH / 2))) + "px";
+    cards.appendChild(el);
+    card = el;
+  }
+  function setHover(i) {
+    if (i === hover) return;
+    hover = i;
+    openCard(i);
+  }
+
   host.addEventListener("pointermove", function (e) {
     var r = host.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
     var best = -1, bestD = Infinity;
@@ -218,9 +258,9 @@
       var d = Math.hypot(x - L.hx, y - L.hy) / L.R;
       if (d < 0.8 && d < bestD) { best = i; bestD = d; }
     });
-    hover = best;
+    setHover(best);
   });
-  host.addEventListener("pointerleave", function () { hover = -1; });
+  host.addEventListener("pointerleave", function () { setHover(-1); });
 
   /* ------------------------------------------------------------ frame */
   var running = false, last = 0;
@@ -314,7 +354,7 @@
   reduced.addEventListener && reduced.addEventListener("change", function () { stop(); init(); });
 
   var t0 = null;
-  function rebuild() { clearTimeout(t0); t0 = setTimeout(function () { build(); draw(performance.now()); }, 150); }
+  function rebuild() { clearTimeout(t0); t0 = setTimeout(function () { setHover(-1); build(); draw(performance.now()); }, 150); }
   if (window.ResizeObserver) new ResizeObserver(rebuild).observe(host);
   else window.addEventListener("resize", rebuild);
 

@@ -100,6 +100,7 @@ window.LicterFR = {
   "NOTED - ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ - UN E-MAIL À LA PROCHAINE PUBLICATION",
   "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
   "Skip to content": "Aller au contenu",
+  "Hover a community": "Survolez une communauté",
   "Or take the 3-minute diagnostic": "Ou faites le diagnostic en 3 minutes",
   "Start from your question": "Partez de votre question",
   "Each one opens an example of what we would answer.": "Chacune ouvre un exemple de ce que nous y répondrions.",
