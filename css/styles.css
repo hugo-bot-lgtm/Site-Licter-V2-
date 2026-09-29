@@ -5186,3 +5186,7 @@ html[data-theme="dark"] .uv-svg .pin:hover .pin__tag text, html[data-theme="dark
   .uv__close { position: absolute; top: 0; right: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .uv__close { transition: none; } }
+
+/* home: the Audience First line on one line when there is room */
+.reels__note:only-child { max-width: none; }
+@media (min-width: 1100px) { .reels__note:only-child { white-space: nowrap; } }

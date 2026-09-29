@@ -28,7 +28,7 @@ window.LicterFR = {
   "It is not a study if there is no action plan.": "Ce n'est pas une étude s'il n'y a pas de plan d'action.",
   "Social media helps us build better products.": "Les réseaux sociaux aident à créer de meilleurs produits.",
   "Millions of tweets to handle, live.": "Des millions de tweets à gérer, en direct.",
-  "Every episode of": "Chaque épisode d'", "is on": "est sur",
+  "Every episode of": "Chaque épisode du podcast", "is on": "est sur",
   "one conversation a week with the people who read the conversation.":
     "une conversation par semaine avec celles et ceux qui lisent la conversation.",
   "the channel": "la cha\u00eene", "Audience First": "Audience First",
