@@ -1397,8 +1397,6 @@ et `MOCK` dans le code. **Rien n'est envoyé nulle part.** À remplacer :
 
 | Élément | Où | À fournir |
 |---|---|---|
-| Cas client « groupe agroalimentaire » | `index.html#case` | Un vrai cas client autorisé |
-| Fourchettes de prix de l'estimateur | `js/home.js` → `ESTIMATE` | Les vraies grilles |
 | Flux d'écoute des cas d'usage (posts, comptes, répartitions, réponses) | `js/usecases.js` → `DATA` | Verbatims et chiffres réels anonymisés |
 | Rôles des trois portraits | `index.html#team` | Prénoms et rôles confirmés |
 | Diagnostic : 6 dimensions, questions, paliers | `js/home.js` → `QUIZ`, `BANDS` | Validation par l'équipe |
