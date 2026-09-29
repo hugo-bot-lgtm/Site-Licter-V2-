@@ -672,9 +672,9 @@
       "</svg>";
     var body =
       '<div class="kchips">' +
-        '<div class="kchip"><span>' + t("Before", "Avant") + '</span><b id="c-b">–</b></div>' +
-        '<div class="kchip"><span>' + t("After", "Après") + '</span><b id="c-a">–</b></div>' +
-        '<div class="kchip kchip--hi"><span>' + t("Uplift", "Gain") + '</span><b id="c-u">–</b></div>' +
+        '<div class="kchip"><span>' + t("Before", "Avant") + '</span><b id="c-b">…</b></div>' +
+        '<div class="kchip"><span>' + t("After", "Après") + '</span><b id="c-a">…</b></div>' +
+        '<div class="kchip kchip--hi"><span>' + t("Uplift", "Gain") + '</span><b id="c-u">…</b></div>' +
         '<span class="kchip__day" id="c-day"></span>' +
       "</div>" +
       '<div class="uv-chart" id="c-chart">' + svg + '<div class="uv-tip" id="c-tip" hidden></div></div>' +
@@ -695,10 +695,10 @@
       after.setAttribute("x", x.toFixed(1)); after.setAttribute("width", Math.max(0, X(Math.max(launch, shown)) - x).toFixed(1));
       var b = V.slice(Math.max(0, launch - 14), Math.min(launch, shown + 1));
       var a = shown >= launch ? V.slice(launch, Math.min(launch + 14, shown + 1)) : [];
-      document.getElementById("c-b").textContent = b.length ? num(avg(b)) + t("/day", "/jour") : "–";
-      document.getElementById("c-a").textContent = a.length ? num(avg(a)) + t("/day", "/jour") : "–";
+      document.getElementById("c-b").textContent = b.length ? num(avg(b)) + t("/day", "/jour") : "…";
+      document.getElementById("c-a").textContent = a.length ? num(avg(a)) + t("/day", "/jour") : "…";
       var up = a.length && b.length ? (avg(a) / avg(b) - 1) * 100 : null;
-      document.getElementById("c-u").textContent = up === null ? "–" : (up >= 0 ? "+" : "") + Math.round(up) + " %";
+      document.getElementById("c-u").textContent = up === null ? "…" : (up >= 0 ? "+" : "") + Math.round(up) + " %";
       range.value = launch;
     }
     /* the curve draws itself day by day; the chips and the count follow it */
