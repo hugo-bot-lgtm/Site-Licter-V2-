@@ -4047,3 +4047,27 @@ textarea.fld__input { resize: vertical; min-height: 84px; }
 }
 .hero__frame:hover .frame__hint { opacity: 0; }
 @media (prefers-reduced-motion: reduce) { .hero__frame .story { animation: none; } .hero__frame .story__bar i { animation: none; width: 100%; } }
+
+/* the SI Lab ranking, as a badge of its own above the title */
+.award {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin: 0 0 clamp(18px, 2.6vh, 26px); padding: 5px 16px 5px 5px;
+  border: 1px solid rgba(var(--amber-rgb), .55); border-radius: 999px;
+  background: linear-gradient(90deg, rgba(var(--amber-rgb), .16), rgba(255, 255, 255, .7));
+  box-shadow: 0 8px 20px -14px rgba(var(--ink-rgb), .4);
+}
+.award__seal {
+  position: relative; display: grid; place-items: center; flex: none;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #FFD766, var(--amber) 55%, var(--amber-deep));
+  color: var(--navy); font: 800 14px/1 var(--title-font); letter-spacing: -.5px;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .45), 0 3px 8px -3px rgba(var(--amber-rgb), .8);
+}
+.award__seal::after { /* a dotted ring, like a seal */
+  content: ""; position: absolute; inset: 3px; border-radius: 50%;
+  border: 1px dashed rgba(19, 22, 45, .35);
+}
+.award__text { display: flex; flex-direction: column; gap: 3px; }
+.award__text b { font: 700 12.5px/1.1 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink); }
+.award__text span { font: 400 12px/1.2 var(--body-font); color: var(--text-2); }
+@media (max-width: 560px) { .award { gap: 10px; padding-right: 12px; } .award__text span { font-size: 11.5px; } }

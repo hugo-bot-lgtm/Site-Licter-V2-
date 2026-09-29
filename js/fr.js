@@ -100,6 +100,8 @@ window.LicterFR = {
   "NOTED - ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ - UN E-MAIL À LA PROCHAINE PUBLICATION",
   "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
   "Skip to content": "Aller au contenu",
+  "Top 50 worldwide": "Top 50 mondial",
+  "Social intelligence providers · SI Lab 2024": "Acteurs de la social intelligence · SI Lab 2024",
   "Hover a community": "Survolez une communauté",
   "Or take the 3-minute diagnostic": "Ou faites le diagnostic en 3 minutes",
   "Start from your question": "Partez de votre question",
