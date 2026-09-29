@@ -25,6 +25,15 @@
   if (!host || !document.createElement("canvas").getContext) return null;
   opts = opts || {};
   var selected = -1, alive = true, observers = [];
+  /* opts.grow: the communities form one after the other, each spreading out
+     from its hub, instead of being there from the first frame */
+  var bornAt = 0, GROW_STEP = 650, GROW_DUR = 1500, shownLabels = [];
+  function growth(i, now) {
+    if (!opts.grow || reduced.matches) return 1;
+    var k = (now - bornAt - i * GROW_STEP) / GROW_DUR;
+    k = Math.max(0, Math.min(1, k));
+    return 1 - Math.pow(1 - k, 3);
+  }
 
   var canvas = document.createElement("canvas");
   canvas.className = "communities";
@@ -232,11 +241,14 @@
       layers.forEach(function (L, i) {
         if (!opts.labels || !opts.labels[i]) return;
         var el = document.createElement("span");
-        el.className = "map-label";
-        el.style.left = L.hx + "px"; el.style.top = (L.hy + 12) + "px";
+        el.className = "map-label" + (opts.grow && !reduced.matches && !shownLabels[i] ? "" : " is-shown");
+        el.style.top = (L.hy + 12) + "px";
         el.style.setProperty("--c", L.c.color);
         el.textContent = opts.labels[i];
         labelBox.appendChild(el);
+        /* kept inside the frame, even for a hub near the edge */
+        var half = el.offsetWidth / 2 + 6;
+        el.style.left = Math.max(half, Math.min(W - half, L.hx)) + "px";
       });
     }
 
@@ -322,8 +334,10 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.globalCompositeOperation = "source-over";
     ctx.clearRect(0, 0, W, H);
-    ctx.globalAlpha = 1;
+    var gAll = opts.grow ? growth(layers.length - 1, now) : 1;
+    ctx.globalAlpha = gAll;
     ctx.drawImage(base, 0, 0, W, H);
+    ctx.globalAlpha = 1;
     ctx.globalCompositeOperation = BLEND();
 
     for (var i = 0; i < layers.length; i++) {
@@ -332,10 +346,18 @@
       L.glow += ((f === i ? 1 : 0) - L.glow) * 0.08;
       var dim = f >= 0 && f !== i ? 0.4 : 1;
       var sway = reduced.matches ? 0 : Math.sin(t * 0.25 + L.phase) * 0.05;
+      var gr = growth(i, now);
+      L.gr = gr;
+      if (labelBox && labelBox.children[i] && (gr > 0.55) !== !!shownLabels[i]) {
+        shownLabels[i] = gr > 0.55;
+        labelBox.children[i].classList.toggle("is-shown", shownLabels[i]);
+      }
+      if (gr <= 0) continue;
       ctx.save();
-      ctx.globalAlpha = dim;
+      ctx.globalAlpha = dim * gr;
       ctx.translate(L.hx, L.hy);
-      ctx.rotate(sway);
+      ctx.rotate(sway + (1 - gr) * 0.6);
+      if (gr < 1) { var sc = 0.2 + 0.8 * gr; ctx.scale(sc, sc); }
       ctx.drawImage(L.off, -L.ox, -L.oy, L.size, L.size);
       if (L.glow > 0.02) { ctx.globalAlpha = L.glow * 0.6; ctx.drawImage(L.off, -L.ox, -L.oy, L.size, L.size); }
       ctx.restore();
@@ -348,11 +370,12 @@
       var g = ctx.createRadialGradient(L.hx, L.hy, 0, L.hx, L.hy, halo);
       g.addColorStop(0, rgba(tone(L.c.color), (LIGHT ? 0.45 : 0.35) * dim));
       g.addColorStop(1, rgba(tone(L.c.color), 0));
-      ctx.globalAlpha = 1;
+      ctx.globalAlpha = Math.min(1, gr * 1.6);
       ctx.fillStyle = g;
       ctx.beginPath(); ctx.arc(L.hx, L.hy, halo, 0, Math.PI * 2); ctx.fill();
       ctx.fillStyle = LIGHT ? "rgba(19,22,45," + (0.9 * dim) + ")" : "rgba(255,255,255," + (0.95 * dim) + ")";
       ctx.beginPath(); ctx.arc(L.hx, L.hy, hr, 0, Math.PI * 2); ctx.fill();
+      ctx.globalAlpha = 1;
     }
 
     /* signals travelling in to their hub */
@@ -360,6 +383,7 @@
     last = now;
     for (var s = 0; s < signals.length; s++) {
       var sg = signals[s], L2 = sg.L;
+      if (L2.gr !== undefined && L2.gr < 1) continue;
       if (!reduced.matches) sg.t += dt * sg.speed;
       if (sg.t >= 1) { signals[s] = newSignal(false); continue; }
       var u = 1 - sg.t; /* 1 at the account, 0 at the hub */
@@ -388,6 +412,7 @@
   function stop() { running = false; }
 
   function init() {
+    bornAt = performance.now();
     build();
     draw(performance.now());
     if (!reduced.matches) start();
