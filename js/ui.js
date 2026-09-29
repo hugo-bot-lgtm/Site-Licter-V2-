@@ -506,59 +506,72 @@
     questions.classList.add("is-swap");
   }
 
+  /* MOCK: example readouts, one per family. Illustrative findings, not a
+     client result. They replace the old dashboard (invented KPIs on a fake
+     screen) with what a client actually receives: a question, what the data
+     said, and the decision it informed. Replace with approved, anonymised
+     readouts before this goes live. */
+  var READOUTS = {
+    communication: {
+      question: "Did the spring campaign move anything beyond the paid reach?",
+      findings: [
+        "Creators carried most of the reach. The brand's own posts, very little.",
+        "The conversation spread into two communities the brief had not targeted.",
+        "Paid amplification stopped adding reach after the third week."
+      ],
+      decision: "Move a third of the paid budget to creator partnerships for the autumn launch."
+    },
+    brand: {
+      question: "Is the drop in sentiment a crisis, or a bad week?",
+      findings: [
+        "Negative posts tripled, but most of them came from a single community.",
+        "Search interest in the brand did not move.",
+        "The complaint was about delivery times, not the product."
+      ],
+      decision: "Fix the delivery message. No crisis communication needed."
+    },
+    audiences: {
+      question: "Who is our core target, really?",
+      findings: [
+        "The buyers are about ten years younger than the brand's personas.",
+        "They follow cooking creators, not fashion ones.",
+        "They ask generative AI for a recommendation before they search."
+      ],
+      decision: "Rebuild the personas and move the media plan toward food creators."
+    },
+    trends: {
+      question: "Is the high-protein trend worth a product line?",
+      findings: [
+        "Mentions have grown steadily for eighteen months, in three countries.",
+        "The topic moved from gym communities to parents.",
+        "The unmet need is taste, not protein content."
+      ],
+      decision: "Launch a pilot range in one market, positioned on taste."
+    }
+  };
+
   function renderViz(key) {
     if (!viz) return;
     var d = CASES[key];
-    var pairs = split(d.series, d.seed);
+    var r = READOUTS[key];
 
     viz.innerHTML =
       '<div class="viz__head">' +
         '<div class="viz__id"><span class="viz__dot" aria-hidden="true"></span>' +
-          '<span class="viz__label">' + d.label + "</span></div>" +
-        '<div class="viz__range" aria-hidden="true">' +
-          '<span class="viz__chip is-on">90 days</span>' +
-          '<span class="viz__chip">12 months</span>' +
-          '<span class="viz__chip">Export</span>' +
-        "</div>" +
+          '<span class="viz__label">' + d.family + "</span></div>" +
+        '<span class="readout__tag">Example readout</span>' +
       "</div>" +
-
-      '<div class="viz__grid">' +
-        statCells(d.kpis) +
-        '<div class="viz__cell viz__cell--hero vizhero">' +
-          '<p class="stat__label">' + d.label.split(" · ")[0] + "</p>" +
-          '<p class="vizhero__metric" data-count>' + (d.metricPrefix || "") + d.metric + "</p>" +
-          '<p class="vizhero__trend">' + d.trend + "</p>" +
-        "</div>" +
-
-        '<div class="viz__cell viz__cell--wide">' +
-          '<p class="viz__cellTitle">Trend, rolling 12 months</p>' +
-          '<p class="viz__cellNote">Indexed against the category benchmark.</p>' +
-          '<div class="viz__chart">' + chart(d.series) + "</div>" +
-        "</div>" +
-        '<div class="viz__cell viz__cell--side">' +
-          '<p class="viz__cellTitle">' + d.barsTitle + "</p>" +
-          '<p class="viz__total" data-count>' + d.barsTotal + "</p>" +
-          '<p class="viz__cellNote">' + d.barsNote + "</p>" +
-          '<div class="viz__legend"><span class="key key--owned">Owned</span>' +
-            '<span class="key key--earned">Earned</span></div>' +
-          barsChart(pairs) +
-        "</div>" +
-
-        '<div class="viz__cell viz__cell--wide">' +
-          '<p class="viz__cellTitle">' + d.railTitle + "</p>" +
-          '<table class="tbl"><thead><tr><th>Source</th><th>Share</th>' +
-            "<th>Posts</th><th>30 d</th></tr></thead>" +
-            "<tbody>" + tableRows(d.rail) + "</tbody></table>" +
-        "</div>" +
-        '<div class="viz__cell viz__cell--side">' +
-          '<p class="viz__cellTitle">' + d.signalsTitle + "</p>" +
-          '<ul class="sigs">' + signalRows(d.signals) + "</ul>" +
-        "</div>" +
+      '<div class="readout">' +
+        '<p class="readout__k">The question</p>' +
+        '<p class="readout__q">' + r.question + "</p>" +
+        '<p class="readout__k">What the data said</p>' +
+        '<ol class="readout__list">' + r.findings.map(function (f, i) {
+          return '<li style="--i:' + i + '">' + f + "</li>";
+        }).join("") + "</ol>" +
+        '<p class="readout__k">The decision it informed</p>' +
+        '<p class="readout__d">' + r.decision + "</p>" +
       "</div>" +
-
-      '<figcaption class="viz__foot">' + d.caption + "</figcaption>";
-
-    animateViz();
+      '<figcaption class="viz__foot">Illustrative example. Every readout is written by the analyst who ran the study.</figcaption>';
   }
 
   /* The panel is a data visual, so the data is what moves: the curves draw
@@ -785,7 +798,7 @@
           return { icon: "question", name: q, href: "use-cases.html" + anchors[i] };
         })
       },
-      cta: { label: "Book a meeting", href: "index.html#signup" },
+      cta: { label: "Book a meeting", href: "index.html#book" },
       link: { label: "All twelve use cases", href: "use-cases.html" }
     },
 
@@ -808,7 +821,7 @@
           { icon: "question", name: "Decision", href: "offers.html#method" }
         ]
       },
-      cta: { label: "Book a meeting", href: "index.html#signup" },
+      cta: { label: "Book a meeting", href: "index.html#book" },
       link: { label: "Compare the offers", href: "offers.html" }
     },
 
@@ -836,7 +849,7 @@
           { icon: "ai", name: "Generative AI", href: "tech-tools.html#sources" }
         ]
       },
-      cta: { label: "Book a meeting", href: "index.html#signup" },
+      cta: { label: "Book a meeting", href: "index.html#book" },
       link: { label: "See the stack", href: "tech-tools.html" }
     }
   };
@@ -1426,13 +1439,20 @@
   new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.target === trigger && (e.isIntersecting || e.boundingClientRect.top < 0)) reached = true;
-      if (e.target === foot) atFoot = e.isIntersecting;
     });
     render();
   }, { threshold: 0 }).observe(trigger || document.body);
-  if (foot) new IntersectionObserver(function (entries) {
-    atFoot = entries[0].isIntersecting; render();
-  }).observe(foot);
+  /* it also steps aside where the page makes the same offer itself */
+  var zones = [foot, document.getElementById("guide"), document.getElementById("book")].filter(Boolean);
+  var inZone = {};
+  if (zones.length) {
+    var zio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { inZone[e.target.id || "foot"] = e.isIntersecting; });
+      atFoot = Object.keys(inZone).some(function (k) { return inZone[k]; });
+      render();
+    });
+    zones.forEach(function (z) { zio.observe(z); });
+  }
 
   bar.querySelector(".banner__close").addEventListener("click", function () {
     closed = true;

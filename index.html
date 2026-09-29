@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=20261067" />
+<link rel="stylesheet" href="css/styles.css?v=20261073" />
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
@@ -83,16 +83,20 @@
         search and ask AI into decisions.
       </p>
 
-      <form class="signup" id="signup" novalidate data-dim data-reveal>
-        <label class="visually-hidden" for="email">Your work email</label>
-        <input class="signup__input" id="email" name="email" type="email"
-               placeholder="Your work email..." autocomplete="email" required />
-        <button class="signup__btn" type="submit">BOOK A MEETING</button>
-      </form>
-      <p class="signup__note" id="signup-note" role="status" data-dim>
-        <span class="signup__check" aria-hidden="true">✓</span>
-        NOTED - WE GET BACK TO YOU WITHIN 24 HOURS
-      </p>
+      <div class="hero__asks" data-dim data-reveal>
+        <p class="hero__asks-label">What do you need to know?</p>
+        <ul class="chips">
+          <li><button class="chip" type="button" data-case="communication">Did our campaign work?</button></li>
+          <li><button class="chip" type="button" data-case="brand">What is being said about us?</button></li>
+          <li><button class="chip" type="button" data-case="audiences">Who are our audiences, really?</button></li>
+          <li><button class="chip" type="button" data-case="trends">What should we build next?</button></li>
+        </ul>
+      </div>
+
+      <div class="hero__actions" data-dim data-reveal>
+        <a class="btn btn--primary" href="#book">Book a meeting <span aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href="#diagnostic">Take the diagnostic</a>
+      </div>
     </div>
 
     <div class="clients" id="clients" data-reveal>
@@ -165,6 +169,36 @@
     </div>
   </section>
 
+  <!-- ==================== CASE ====================
+       MOCK: anonymised, illustrative story. Replace with a real client story
+       Licter is allowed to tell before this goes live. -->
+  <section class="block shell" id="case" data-mock>
+    <div class="case" data-reveal>
+      <div class="case__figure">
+        <p class="case__tag">Example, anonymised</p>
+        <p class="case__n">11,400</p>
+        <p class="case__n-label">posts read in three weeks, across four markets and four languages</p>
+      </div>
+      <div class="case__story">
+        <h2 class="block__title">A food group was about to change the recipe of its best seller.</h2>
+        <dl class="case__steps">
+          <div class="case__step">
+            <dt>The question</dt>
+            <dd>Sales were down and the surveys blamed the taste. Should they reformulate?</dd>
+          </div>
+          <div class="case__step">
+            <dt>What the data said</dt>
+            <dd>Nobody was complaining about the taste. People were angry about the new, smaller pack, and said so in posts no survey had asked about.</dd>
+          </div>
+          <div class="case__step">
+            <dt>What they changed</dt>
+            <dd>They kept the recipe, brought the old pack back in two markets, and sales recovered within a quarter.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== OFFERS ==================== -->
   <section class="block shell" id="offers">
     <div class="block__head" data-dim data-reveal>
@@ -172,32 +206,67 @@
       <p class="block__lead">Fixed fee, unlimited studies, no commitment. Consultants frame the question,
          configure the collection and produce the analysis.</p>
     </div>
-    <div class="grid" data-reveal>
-      <a class="card" href="offers.html#social-insights">
-        <span class="card__num">SOCIAL INSIGHTS</span>
-        <h3 class="card__title">Your analyses, run by experts</h3>
-        <p class="card__text">A fixed monthly fee, unlimited studies, no tool licence to staff.</p>
-      </a>
-      <a class="card" href="offers.html#vigie">
-        <span class="card__num">VIGIE 360</span>
-        <h3 class="card__title">Alerts in 15 minutes, 24/7</h3>
-        <p class="card__text">Your brand, your executives and your markets, in 20+ languages.</p>
-      </a>
-      <a class="card" href="offers.html#slaas">
-        <span class="card__num">LISTENING AS A SERVICE</span>
-        <h3 class="card__title">Make your platform produce decisions</h3>
-        <p class="card__text">We take over the taxonomy, the dashboards and the recurring analyses.</p>
-      </a>
-    </div>
-    <div class="page__actions" data-reveal>
-      <a class="btn btn--ghost" href="offers.html">Compare the offers <span aria-hidden="true">→</span></a>
+    <div class="offers">
+      <ul class="offers__list" data-reveal>
+        <li><a class="offer" href="offers.html#social-insights">
+          <span class="offer__name">SOCIAL INSIGHTS</span>
+          <span class="offer__title">Your analyses, run by experts</span>
+          <span class="offer__text">A fixed monthly fee, unlimited studies, no tool licence to staff.</span>
+          <span class="offer__for">For insights and marketing teams</span>
+          <span class="offer__arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li><a class="offer" href="offers.html#vigie">
+          <span class="offer__name">VIGIE 360</span>
+          <span class="offer__title">Alerts in 15 minutes, 24/7</span>
+          <span class="offer__text">Your brand, your executives and your markets, in 20+ languages.</span>
+          <span class="offer__for">For communication and risk teams</span>
+          <span class="offer__arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li><a class="offer" href="offers.html#slaas">
+          <span class="offer__name">LISTENING AS A SERVICE</span>
+          <span class="offer__title">Make your platform produce decisions</span>
+          <span class="offer__text">We take over the taxonomy, the dashboards and the recurring analyses.</span>
+          <span class="offer__for">For teams that already own a platform</span>
+          <span class="offer__arrow" aria-hidden="true">→</span>
+        </a></li>
+      </ul>
+
+      <!-- MOCK: indicative pricing. The formula in js/home.js is a placeholder;
+           replace it with Licter's real ranges before this goes live. -->
+      <form class="estimator" id="estimator" data-mock data-reveal>
+        <h3 class="estimator__title">Estimate your budget</h3>
+        <p class="estimator__note">An indicative range, before a thirty-minute call.</p>
+        <fieldset class="seg">
+          <legend class="estimator__label">Offer</legend>
+          <label class="seg__opt"><input type="radio" name="offer" value="insights" checked /><span>Social Insights</span></label>
+          <label class="seg__opt"><input type="radio" name="offer" value="vigie" /><span>Vigie 360</span></label>
+          <label class="seg__opt"><input type="radio" name="offer" value="slaas" /><span>Listening as a Service</span></label>
+        </fieldset>
+        <div class="range">
+          <label class="estimator__label" for="est-markets">Markets</label>
+          <output class="range__out" id="est-markets-out" for="est-markets">2</output>
+          <input type="range" id="est-markets" name="markets" min="1" max="12" value="2" />
+        </div>
+        <div class="range">
+          <label class="estimator__label" for="est-langs">Languages</label>
+          <output class="range__out" id="est-langs-out" for="est-langs">2</output>
+          <input type="range" id="est-langs" name="langs" min="1" max="12" value="2" />
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="est-alerts" name="alerts" />
+          <span class="toggle__ui" aria-hidden="true"></span>
+          <span>24/7 monitoring with alerts</span>
+        </label>
+        <p class="estimator__out" id="est-out" aria-live="polite"></p>
+        <a class="btn btn--primary" href="#book">Get an exact quote <span aria-hidden="true">→</span></a>
+      </form>
     </div>
   </section>
 
   <!-- ==================== SCREEN 2 — USE CASES ==================== -->
   <section class="cases" id="use-cases">
     <!-- generated light field: no image file, just gradients + grain -->
-    <div class="field" aria-hidden="true"><span class="field__grain"></span></div>
+    <div class="fld" aria-hidden="true"><span class="field__grain"></span></div>
 
     <div class="cases__inner shell">
     <p class="cases__eyebrow" data-dim data-reveal><span class="rule" aria-hidden="true"></span>OUR USE CASES</p>
@@ -263,81 +332,93 @@
         <img src="assets/img/team/consultant-dashboard.jpg" alt="A Licter consultant in an armchair, a laptop on his knees and a dashboard open on the screen in front of him" width="800" height="1200" loading="lazy" decoding="async" />
       </figure>
     </div>
+    <!-- MOCK: roles are placeholders, and names are to add once confirmed. -->
+    <ul class="people" data-mock data-reveal>
+      <li class="person">
+        <img src="assets/img/team/headshot-1.jpg" alt="Portrait of a Licter consultant in a red jacket" width="640" height="640" loading="lazy" decoding="async" />
+        <p class="person__role">Consumer insights</p>
+      </li>
+      <li class="person">
+        <img src="assets/img/team/headshot-2.jpg" alt="Portrait of a Licter consultant in a pink jumper" width="640" height="640" loading="lazy" decoding="async" />
+        <p class="person__role">Communication and reputation</p>
+      </li>
+      <li class="person">
+        <img src="assets/img/team/headshot-3.jpg" alt="Portrait of a Licter consultant in a light blue shirt" width="640" height="640" loading="lazy" decoding="async" />
+        <p class="person__role">Client director</p>
+      </li>
+    </ul>
     <div class="page__actions" data-reveal>
       <a class="btn btn--ghost" href="why-licter.html">Why Licter <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
-  <!-- ============== METHOD + FAQ, side by side ============== -->
+  <!-- ==================== METHOD ==================== -->
   <section class="block shell" id="method">
-    <div class="duo">
+    <div class="block__head" data-dim data-reveal>
+      <h2 class="block__title">Four steps, no black box.</h2>
+    </div>
+    <ol class="steps" data-reveal>
+      <li class="step">
+        <h3 class="step__name">Framing</h3>
+        <p class="step__text">We start from the business decision, not the keyword list. What will change depending on the
+           answer, and who has to be convinced by it?</p>
+        <p class="step__get"><span class="step__k">You receive</span> a one-page brief: the decision, the question, the perimeter.</p>
+      </li>
+      <li class="step">
+        <h3 class="step__name">Collection</h3>
+        <p class="step__text">Social listening, audience intelligence, digital panel and search listening, combined and
+           filtered by consultants rather than by a dashboard default.</p>
+        <p class="step__get"><span class="step__k">You receive</span> the source plan: platforms, markets, languages, period.</p>
+      </li>
+      <li class="step">
+        <h3 class="step__name">Analysis</h3>
+        <p class="step__text">Proprietary algorithms profile the audiences; analysts read them against your market, in the
+           language that market actually speaks.</p>
+        <p class="step__get"><span class="step__k">You receive</span> working sessions with the analyst, not a report in your inbox.</p>
+      </li>
+      <li class="step">
+        <h3 class="step__name">Decision</h3>
+        <p class="step__text">A readout your teams can act on, recurring monitoring where it matters, and alerts when
+           something moves.</p>
+        <p class="step__get"><span class="step__k">You receive</span> a recommendation, presented to the people who decide.</p>
+      </li>
+    </ol>
+  </section>
 
-      <div class="duo__col">
-        <div class="block__head" data-dim data-reveal>
-          <h2 class="block__title">Four steps, no black box.</h2>
-        </div>
-        <div class="faq" data-dim data-reveal>
-          <details>
-            <summary><span class="faq__n">01</span>Framing</summary>
-            <p>We start from the business decision, not the keyword list. What will change depending on the
-               answer, and who has to be convinced by it?</p>
-          </details>
-          <details>
-            <summary><span class="faq__n">02</span>Collection</summary>
-            <p>Social listening, audience intelligence, digital panel and search listening, combined and
-               filtered by consultants rather than by a dashboard default.</p>
-          </details>
-          <details>
-            <summary><span class="faq__n">03</span>Analysis</summary>
-            <p>Proprietary algorithms profile the audiences; analysts read them against your market, in the
-               language that market actually speaks.</p>
-          </details>
-          <details>
-            <summary><span class="faq__n">04</span>Decision</summary>
-            <p>A readout your teams can act on, recurring monitoring where it matters, and alerts when
-               something moves.</p>
-          </details>
-        </div>
+  <!-- ==================== DIAGNOSTIC ====================
+       MOCK: the six dimensions and the scoring in js/home.js are a draft.
+       Nothing is sent anywhere yet. -->
+  <section class="block shell" id="diagnostic">
+    <div class="quiz" id="quiz" data-mock>
+      <div class="quiz__intro">
+        <h2 class="block__title">Where does your listening stand?</h2>
+        <p class="block__lead">Six questions, three minutes. Your score now, the full readout by email.</p>
+        <div class="quiz__progress" aria-hidden="true"><span id="quiz-bar"></span></div>
       </div>
-
-      <div class="duo__col" id="faq">
-        <div class="block__head" data-dim data-reveal>
-          <h2 class="block__title">Five questions we get every week.</h2>
-        </div>
-        <div class="faq" data-dim data-reveal>
-          <details>
-            <summary>Is this social listening, or something else?</summary>
-            <p>Social listening is one of four layers. On its own it tells you what is being said. We add
-               audience intelligence (who is behind the accounts), a behavioural panel of about three billion
-               consumers, and search listening. Most questions need at least two.</p>
-          </details>
-          <details>
-            <summary>Do we need to own a listening platform first?</summary>
-            <p>No. We work with the leading platforms and our own algorithms; the licence is ours, not a
-               prerequisite for you. If you already pay for one and under-use it, that is exactly what Social
-               Listening as a Service is for.</p>
-          </details>
-          <details>
-            <summary>How long until the first usable answer?</summary>
-            <p>A focused read is a matter of days rather than weeks. A full diagnostic of an existing setup
-               takes two to three weeks. Continuous monitoring starts alerting as soon as the perimeter is
-               configured.</p>
-          </details>
-          <details>
-            <summary>Which markets and languages do you cover?</summary>
-            <p>Monitoring runs in more than twenty languages, and our consultants work in Mandarin, English,
-               Spanish, Hindi, Cantonese and Arabic. A market read through machine translation is a market
-               read half-wrong.</p>
-          </details>
-          <details>
-            <summary>What does it cost?</summary>
-            <p>A fixed monthly fee, with unlimited studies inside it, and no commitment. The exact level
-               depends on the perimeter: markets, languages, monitoring. Thirty minutes is usually enough to
-               give you a number.</p>
-          </details>
-        </div>
+      <div class="quiz__stage" id="quiz-stage" aria-live="polite">
+        <noscript><p>The diagnostic needs JavaScript. <a href="diagnostic.html">Request a diagnostic</a> instead.</p></noscript>
       </div>
+    </div>
+  </section>
 
+  <!-- ==================== GUIDE ==================== -->
+  <section class="block shell" id="guide">
+    <div class="guide" id="guide-box">
+      <div class="guide__copy" data-dim data-reveal>
+        <h2 class="block__title">Twelve questions social data answers better than a survey.</h2>
+        <p class="block__lead">Three are open below. Leave your email and the other nine open here, with the full guide sent to you.</p>
+        <form class="signup guide__form" novalidate>
+          <label class="visually-hidden" for="email-guide">Your work email</label>
+          <input class="signup__input" id="email-guide" name="email" type="email"
+                 placeholder="Your work email..." autocomplete="email" required />
+          <button class="signup__btn" type="submit">Get the guide</button>
+        </form>
+        <p class="signup__note" role="status">
+          <span class="signup__check" aria-hidden="true">✓</span>
+          NOTED - THE GUIDE IS ON ITS WAY
+        </p>
+      </div>
+      <ol class="guide__list" id="guide-list" data-reveal></ol>
     </div>
   </section>
 
@@ -388,26 +469,64 @@
     </div>
   </section>
 
-  <!-- ==================== CLOSING PATHS ==================== -->
-  <section class="block shell" id="start">
-    <div class="block__head" data-dim data-reveal>
-      <h2 class="block__title">Pick the one that matches where you are.</h2>
-    </div>
-    <div class="paths" data-reveal>
-      <div class="path path--lead">
-        <h3>Just exploring</h3>
-        <p>The twelve questions social data answers better than a survey, and the method behind each one.</p>
-        <a class="btn btn--primary" href="guide.html">Get the free guide <span aria-hidden="true">→</span></a>
+  <!-- ==================== BOOK ====================
+       MOCK: the slots are generated in js/home.js and nothing is booked.
+       Replace with the real calendar (Calendly, Cal.com, HubSpot Meetings). -->
+  <section class="block shell" id="book">
+    <div class="book">
+      <div class="book__main" data-mock>
+        <h2 class="block__title">Thirty minutes with a consultant.</h2>
+        <p class="block__lead">Pick a slot. You describe the decision, we tell you what the data can settle.</p>
+        <div class="slots" id="slots"></div>
+        <form class="book__form" id="book-form" novalidate hidden>
+          <p class="book__picked" id="book-picked"></p>
+          <div class="fld">
+            <label class="fld__label" for="book-email">Your work email</label>
+            <input class="fld__input" id="book-email" name="email" type="email" autocomplete="email" required />
+            <p class="fld__error" id="book-email-error" hidden>Enter a work email, like name@company.com.</p>
+          </div>
+          <div class="fld">
+            <label class="fld__label" for="book-topic">The decision you are facing <span class="fld__opt">(optional)</span></label>
+            <textarea class="fld__input" id="book-topic" name="topic" rows="3"></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Book a meeting <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="book__done" id="book-done" role="status" hidden></p>
       </div>
-      <div class="path">
-        <h3>You already run listening</h3>
-        <p>An independent diagnostic: audit, maturity score on six dimensions, quick wins and a roadmap.</p>
-        <a class="btn btn--ghost" href="diagnostic.html">Request a diagnostic <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="path">
-        <h3>You have a decision to make</h3>
-        <p>Thirty minutes with a consultant. You describe the decision, we say what the data can settle.</p>
-        <a class="btn btn--ghost" href="book-a-meeting.html">Book a meeting <span aria-hidden="true">→</span></a>
+      <div class="book__faq" id="faq">
+        <h3 class="book__faq-title">Five questions we get every week.</h3>
+        <div class="faq" data-dim data-reveal>
+          <details>
+            <summary>Is this social listening, or something else?</summary>
+            <p>Social listening is one of four layers. On its own it tells you what is being said. We add
+               audience intelligence (who is behind the accounts), a behavioural panel of about three billion
+               consumers, and search listening. Most questions need at least two.</p>
+          </details>
+          <details>
+            <summary>Do we need to own a listening platform first?</summary>
+            <p>No. We work with the leading platforms and our own algorithms; the licence is ours, not a
+               prerequisite for you. If you already pay for one and under-use it, that is exactly what Social
+               Listening as a Service is for.</p>
+          </details>
+          <details>
+            <summary>How long until the first usable answer?</summary>
+            <p>A focused read is a matter of days rather than weeks. A full diagnostic of an existing setup
+               takes two to three weeks. Continuous monitoring starts alerting as soon as the perimeter is
+               configured.</p>
+          </details>
+          <details>
+            <summary>Which markets and languages do you cover?</summary>
+            <p>Monitoring runs in more than twenty languages, and our consultants work in Mandarin, English,
+               Spanish, Hindi, Cantonese and Arabic. A market read through machine translation is a market
+               read half-wrong.</p>
+          </details>
+          <details>
+            <summary>What does it cost?</summary>
+            <p>A fixed monthly fee, with unlimited studies inside it, and no commitment. The exact level
+               depends on the perimeter: markets, languages, monitoring. Thirty minutes is usually enough to
+               give you a number.</p>
+          </details>
+        </div>
       </div>
     </div>
   </section>
@@ -495,11 +614,12 @@
   </div>
 </footer>
 
-<script src="js/fr.js?v=20261067"></script>
-<script src="js/i18n.js?v=20261067"></script>
-<script src="js/cartography.js?v=20261067"></script>
-<script src="js/flow.js?v=20261067"></script>
-<script src="js/ui.js?v=20261067"></script>
-<script src="js/voices.js?v=20261067"></script>
+<script src="js/fr.js?v=20261073"></script>
+<script src="js/i18n.js?v=20261073"></script>
+<script src="js/cartography.js?v=20261073"></script>
+<script src="js/flow.js?v=20261073"></script>
+<script src="js/ui.js?v=20261073"></script>
+<script src="js/voices.js?v=20261073"></script>
+<script src="js/home.js?v=20261073"></script>
 </body>
 </html>

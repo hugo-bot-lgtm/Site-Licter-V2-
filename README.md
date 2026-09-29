@@ -1389,3 +1389,18 @@ l'indicateur `+23%`, le lien final et les survols de menu.
   l'AA est un critère. L'ambre pur n'est jamais utilisé pour du texte.
 - Le token GitHub du dépôt Licter était expiré — à renouveler avant le
   premier push.
+
+## ⚠️ Contenu fictif (MOCK) à remplacer avant mise en ligne
+
+La home contient des maquettes interactives marquées `data-mock` dans le HTML
+et `MOCK` dans le code. **Rien n'est envoyé nulle part.** À remplacer :
+
+| Élément | Où | À fournir |
+|---|---|---|
+| Cas client « groupe agroalimentaire » (11 400 publications) | `index.html#case` | Un vrai cas client autorisé |
+| Fourchettes de prix de l'estimateur | `js/home.js` → `ESTIMATE` | Les vraies grilles |
+| Restitutions d'exemple (4 onglets) | `js/ui.js` → `READOUTS` | Restitutions réelles anonymisées |
+| Rôles des trois portraits | `index.html#team` | Prénoms et rôles confirmés |
+| Diagnostic : 6 dimensions, questions, paliers | `js/home.js` → `QUIZ`, `BANDS` | Validation par l'équipe |
+| Créneaux de rendez-vous | `js/home.js` → bloc booking | Calendrier réel (Calendly, Cal.com, HubSpot) |
+| Envoi des formulaires (diagnostic, guide, RDV, newsletter) | `js/home.js`, `js/ui.js` (`wire to the real endpoint`) | Outil CRM / formulaires |
