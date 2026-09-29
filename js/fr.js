@@ -100,6 +100,8 @@ window.LicterFR = {
   "NOTED - ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ - UN E-MAIL À LA PROCHAINE PUBLICATION",
   "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
   "Skip to content": "Aller au contenu",
+  "Top 50": "Top 50",
+  "Worldwide · SI Lab 2024": "Mondial · SI Lab 2024",
   "Pick a topic. The dashboard shows what we would answer, and you can play with it.": "Choisissez un sujet. Le tableau de bord montre ce que nous y répondrions, et vous pouvez jouer avec.",
   "Pick a topic": "Choisissez un sujet",
   "Communication": "Communication",
