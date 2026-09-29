@@ -3945,3 +3945,13 @@ html[lang="fr"] .hero__main .hero__title { font-size: clamp(26px, 2.3vw, 36px); 
 /* language switch: readable on the plain ground (the map no longer sits behind it) */
 .lang__btn { color: var(--text-2); }
 .lang__btn.is-on { color: var(--ink); text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+
+/* wider frame: it runs past the column to the right edge of the screen
+   (24px short of it), so the map grows without narrowing the text */
+@media (min-width: 961px) {
+  .hero__grid { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); }
+  .hero__frame {
+    min-height: 480px;
+    margin-right: calc(-1 * (var(--gutter) + max(0px, (100vw - var(--maxw)) / 2)) + 24px);
+  }
+}
