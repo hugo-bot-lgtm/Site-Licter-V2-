@@ -134,7 +134,7 @@
     function score() { return answers.reduce(function (s, v) { return s + v; }, 0); }
     function weakest() { return answers.indexOf(Math.min.apply(null, answers)); }
 
-    /* the six dimensions on the left: done, current, to come */
+    /* the six dimensions across the top: done, current, to come */
     function renderSteps() {
       if (!stepsEl) return;
       var done = step >= N, weak = done ? weakest() : -1;
@@ -144,15 +144,10 @@
       }).join("");
     }
 
-    function bar(filled) {
-      return '<div class="qbar" aria-hidden="true"><span style="width:' + (filled / N * 100).toFixed(1) + '%"></span></div>';
-    }
-
     function renderQuestion() {
       var item = QUIZ[step];
       stage.innerHTML =
         '<p class="quiz__count">' + t("Question", "Question") + " " + (step + 1) + " " + t("of", "sur") + " " + N + "</p>" +
-        bar(step) +
         '<h3 class="quiz__q">' + L(item.q) + "</h3>" +
         '<div class="quiz__opts" role="group" aria-label="' + L(item.q).replace(/"/g, "&quot;") + '">' +
           item.a.map(function (a, i) {
@@ -169,9 +164,13 @@
       var band = BANDS.filter(function (b) { return s <= b.max; })[0];
       var w = weakest();
       stage.innerHTML =
-        '<p class="quiz__count">' + t("Your score", "Votre score") + "</p>" +
-        '<p class="quiz__score"><b>' + s + "</b><span>/ " + N * 2 + "</span></p>" +
-        '<h3 class="quiz__q">' + L(band.name) + "</h3>" +
+        '<div class="qres">' +
+        '<div class="qres__head">' +
+          '<p class="quiz__count">' + t("Your score", "Votre score") + "</p>" +
+          '<p class="quiz__score"><b>' + s + "</b><span>/ " + N * 2 + "</span></p>" +
+          '<h3 class="quiz__q">' + L(band.name) + "</h3>" +
+        "</div>" +
+        '<div class="qres__body">' +
         '<p class="quiz__text">' + L(band.text) + " " +
           t("Start with ", "Commencez par ") + "<b>" + L(QUIZ[w].dim).toLowerCase() + "</b>.</p>" +
         (sent
@@ -186,7 +185,8 @@
             "</form>") +
         '<p class="quiz__more"><a href="guide.html">' + t("Or start with the free guide", "Ou commencez par le guide gratuit") +
           ' <span aria-hidden="true">\u2192</span></a></p>' +
-        '<button class="quiz__back" type="button" data-restart>' + t("Start again", "Recommencer") + "</button>";
+        '<button class="quiz__back" type="button" data-restart>' + t("Start again", "Recommencer") + "</button>" +
+        "</div></div>";
       stage.classList.remove("is-swap"); void stage.offsetWidth; stage.classList.add("is-swap");
     }
 
