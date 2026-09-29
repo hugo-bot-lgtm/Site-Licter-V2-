@@ -125,66 +125,139 @@
 
   var stage = document.getElementById("quiz-stage");
   if (stage) {
-    var bar = document.getElementById("quiz-bar");
+    var quiz = document.getElementById("quiz");
+    var radarEl = document.getElementById("quiz-radar");
+    var reducedQ = window.matchMedia("(prefers-reduced-motion: reduce)");
     var answers = [];
     var step = 0, sent = false;
     function L(pair) { return fr() ? pair[1] : pair[0]; }
+    function two(n) { return (n < 10 ? "0" : "") + n; }
+    function weakest() { return answers.indexOf(Math.min.apply(null, answers)); }
 
-    var dims = document.querySelectorAll("#quiz-dims li");
-    function progress() {
-      if (bar) bar.style.transform = "scaleX(" + Math.min(step, QUIZ.length) / QUIZ.length + ")";
-      Array.prototype.forEach.call(dims, function (li, i) {
-        li.classList.toggle("is-done", i < step);
-        li.classList.toggle("is-now", i === step);
+    /* ---- the listening radar: six axes, one per dimension. An answer
+       pushes its axis out (level 1, 2 or 3 of 3); hovering an answer
+       previews it; at the end the weakest axis shows in pink. */
+    var RW = 400, RH = 360, CX = 200, CY = 182, RR = 122, N = QUIZ.length;
+    var shown = QUIZ.map(function () { return 0.07; }), preview = null, tweenId = 0;
+    function pt(i, f) {
+      var a = -Math.PI / 2 + i * 2 * Math.PI / N;
+      return [CX + Math.cos(a) * RR * f, CY + Math.sin(a) * RR * f];
+    }
+    function target(i) {
+      var v = i === step && preview !== null ? preview : answers[i];
+      return v === undefined || v === null ? 0.07 : (v + 1) / 3;
+    }
+    function ring(f) { return QUIZ.map(function (_, i) { return pt(i, f).map(function (x) { return x.toFixed(1); }).join(","); }).join(" "); }
+    function buildRadar() {
+      if (!radarEl) return;
+      var done = step >= N, weak = done ? weakest() : -1;
+      var axes = "", labels = "";
+      QUIZ.forEach(function (q, i) {
+        var e = pt(i, 1), l = pt(i, 1.2), a = Math.cos(-Math.PI / 2 + i * 2 * Math.PI / N);
+        var anchor = Math.abs(a) < 0.2 ? "middle" : a > 0 ? "start" : "end";
+        var dy = i === 0 ? -4 : Math.abs(a) < 0.2 ? 14 : 4;
+        var cls = done ? (i === weak ? "is-weak" : "is-done") : i === step ? "is-now" : answers[i] !== undefined ? "is-done" : "";
+        axes += '<line class="qr__axis ' + cls + '" x1="' + CX + '" y1="' + CY + '" x2="' + e[0].toFixed(1) + '" y2="' + e[1].toFixed(1) + '"/>';
+        labels += '<text class="qr__label ' + cls + '" x="' + l[0].toFixed(1) + '" y="' + (l[1] + dy).toFixed(1) + '" text-anchor="' + anchor + '">' +
+          '<tspan class="qr__n">' + two(i + 1) + "</tspan> " + L(q.dim) + "</text>";
+      });
+      radarEl.innerHTML =
+        '<svg viewBox="0 0 ' + RW + " " + RH + '" class="qr' + (done ? " is-done" : "") + '">' +
+          '<defs><radialGradient id="qr-fill" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#EAA93D" stop-opacity=".55"/><stop offset="1" stop-color="#EAA93D" stop-opacity=".18"/></radialGradient></defs>' +
+          '<circle class="qr__sonar" cx="' + CX + '" cy="' + CY + '" r="' + RR + '"/>' +
+          '<circle class="qr__sonar qr__sonar--2" cx="' + CX + '" cy="' + CY + '" r="' + RR + '"/>' +
+          [1 / 3, 2 / 3, 1].map(function (f) { return '<polygon class="qr__ring" points="' + ring(f) + '"/>'; }).join("") +
+          axes +
+          '<polygon class="qr__shape" id="qr-shape" points="' + ring(0.07) + '"/>' +
+          QUIZ.map(function (_, i) { return '<circle class="qr__dot' + (i === weak ? " is-weak" : "") + '" id="qr-dot-' + i + '" r="' + (i === step || i === weak ? 5.5 : 4) + '"/>'; }).join("") +
+          labels +
+        "</svg>";
+      paint();
+    }
+    function paint() {
+      var shape = document.getElementById("qr-shape");
+      if (!shape) return;
+      shape.setAttribute("points", shown.map(function (f, i) { return pt(i, f).map(function (x) { return x.toFixed(1); }).join(","); }).join(" "));
+      shown.forEach(function (f, i) {
+        var d = document.getElementById("qr-dot-" + i), p = pt(i, f);
+        if (d) { d.setAttribute("cx", p[0].toFixed(1)); d.setAttribute("cy", p[1].toFixed(1)); }
       });
     }
+    /* eases the shape to where the answers put it */
+    function morph() {
+      var from = shown.slice(), to = QUIZ.map(function (_, i) { return target(i); }), my = ++tweenId, t0 = performance.now();
+      if (reducedQ.matches) { shown = to; paint(); return; }
+      (function frame(now) {
+        if (my !== tweenId) return;
+        var k = Math.min(1, (now - t0) / 480), e = 1 - Math.pow(1 - k, 3);
+        shown = from.map(function (f, i) { return f + (to[i] - f) * e; });
+        paint();
+        if (k < 1) requestAnimationFrame(frame);
+      })(t0);
+    }
+    function score() { return answers.reduce(function (s, v) { return s + v; }, 0); }
 
+    var LEVELS = [["Level 1", "Niveau 1"], ["Level 2", "Niveau 2"], ["Level 3", "Niveau 3"]];
     function renderQuestion() {
       var item = QUIZ[step];
       stage.innerHTML =
-        '<p class="quiz__count">' + t("Question", "Question") + " " + (step + 1) + " " + t("of", "sur") + " " + QUIZ.length +
-          " <span>" + L(item.dim) + "</span></p>" +
+        '<div class="qhead">' +
+          '<p class="qnum"><b>' + two(step + 1) + "</b><span>/ " + two(N) + "</span></p>" +
+          '<p class="qdim">' + L(item.dim) + "</p>" +
+        "</div>" +
+        '<div class="qseg" aria-hidden="true">' + QUIZ.map(function (_, i) {
+          return "<i" + (i < step ? ' class="is-done"' : i === step ? ' class="is-now"' : "") + "></i>";
+        }).join("") + "</div>" +
         '<h3 class="quiz__q">' + L(item.q) + "</h3>" +
         '<div class="quiz__opts" role="group" aria-label="' + L(item.q).replace(/"/g, "&quot;") + '">' +
           item.a.map(function (a, i) {
             var on = answers[step] === i ? " is-on" : "";
-            return '<button class="quiz__opt' + on + '" type="button" data-v="' + i + '">' + L(a) + "</button>";
+            return '<button class="quiz__opt' + on + '" type="button" data-v="' + i + '">' +
+              '<span class="qsig" data-l="' + (i + 1) + '" aria-hidden="true"><i></i><i></i><i></i></span>' +
+              '<span class="qopt__t">' + L(a) + '<small>' + L(LEVELS[i]) + "</small></span>" +
+              '<kbd aria-hidden="true">' + (i + 1) + "</kbd></button>";
           }).join("") +
         "</div>" +
-        (step ? '<button class="quiz__back" type="button">' + t("Back", "Retour") + "</button>" : "");
+        '<div class="qfoot">' +
+          (step ? '<button class="quiz__back" type="button">← ' + t("Back", "Retour") + "</button>" : "<span></span>") +
+          '<p class="qkeys">' + t("Keys 1, 2, 3 work too", "Les touches 1, 2, 3 marchent aussi") + "</p>" +
+        "</div>";
       stage.classList.remove("is-swap"); void stage.offsetWidth; stage.classList.add("is-swap");
-      progress();
     }
 
     function renderResult() {
-      var score = answers.reduce(function (s, v) { return s + v; }, 0);
-      var band = BANDS.filter(function (b) { return score <= b.max; })[0];
-      var weakest = answers.indexOf(Math.min.apply(null, answers));
+      var s = score();
+      var band = BANDS.filter(function (b) { return s <= b.max; })[0];
+      var w = weakest();
       stage.innerHTML =
-        '<p class="quiz__count">' + t("Your score", "Votre score") + "</p>" +
-        '<p class="quiz__score"><b>' + score + "</b><span>/ 12</span></p>" +
-        '<h3 class="quiz__q">' + L(band.name) + "</h3>" +
-        '<p class="quiz__text">' + L(band.text) + " " +
-          t("Your weakest dimension: ", "Votre dimension la plus faible : ") + "<b>" + L(QUIZ[weakest].dim).toLowerCase() + "</b>.</p>" +
+        '<div class="qhead"><p class="qnum"><b>' + s + "</b><span>/ " + N * 2 + "</span></p>" +
+          '<p class="qdim">' + t("Your score", "Votre score") + "</p></div>" +
+        '<div class="qseg is-full" aria-hidden="true">' + QUIZ.map(function () { return '<i class="is-done"></i>'; }).join("") + "</div>" +
+        '<h3 class="quiz__q quiz__q--band">' + L(band.name) + "</h3>" +
+        '<p class="quiz__text">' + L(band.text) + "</p>" +
+        '<p class="qweak"><span>' + t("Where to start", "Par où commencer") + "</span><b>" + two(w + 1) + " " + L(QUIZ[w].dim) + "</b></p>" +
         (sent
           ? '<p class="quiz__sent">' + t("Noted. The full readout arrives by email.", "C'est noté. Le détail arrive par e-mail.") + "</p>"
           : '<form class="quiz__form" novalidate>' +
               '<label class="fld__label" for="quiz-email">' + t("Get the full readout, dimension by dimension", "Recevez le détail, dimension par dimension") + "</label>" +
-              '<div class="quiz__row"><input class="fld__input" id="quiz-email" type="email" autocomplete="email" required />' +
+              '<div class="quiz__row"><input class="fld__input" id="quiz-email" type="email" autocomplete="email" placeholder="' + t("name@company.com", "nom@entreprise.com") + '" required />' +
               '<button class="btn btn--primary" type="submit">' + t("Send it to me", "Me l'envoyer") + "</button></div>" +
               '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
               '<p class="consent">' + t("We use your email only to reply to you. ", "Votre e-mail sert uniquement à vous répondre. ") +
                 '<a href="privacy.html">' + t("Privacy policy", "Politique de confidentialité") + "</a>.</p>" +
             "</form>") +
-        '<p class="quiz__more"><a href="guide.html">' + t("Or start with the free guide", "Ou commencez par le guide gratuit") +
-          ' <span aria-hidden="true">\u2192</span></a></p>' +
-        '<button class="quiz__back" type="button" data-restart>' + t("Start again", "Recommencer") + "</button>";
+        '<div class="qfoot">' +
+          '<button class="quiz__back" type="button" data-restart>↺ ' + t("Start again", "Recommencer") + "</button>" +
+          '<p class="quiz__more"><a href="guide.html">' + t("Or start with the free guide", "Ou commencez par le guide gratuit") +
+            ' <span aria-hidden="true">\u2192</span></a></p>' +
+        "</div>";
       stage.classList.remove("is-swap"); void stage.offsetWidth; stage.classList.add("is-swap");
-      progress();
     }
 
     function render(moveFocus) {
+      preview = null;
       if (step < QUIZ.length) renderQuestion(); else renderResult();
+      buildRadar(); morph();
       /* the stage is rebuilt: without this, focus falls back to the page top */
       if (moveFocus) {
         var q = stage.querySelector(".quiz__q");
@@ -193,21 +266,45 @@
       }
     }
 
+    function choose(v) {
+      var opt = stage.querySelector('.quiz__opt[data-v="' + v + '"]');
+      if (!opt || step >= QUIZ.length) return;
+      answers[step] = v;
+      Array.prototype.forEach.call(stage.querySelectorAll(".quiz__opt"), function (o) { o.classList.toggle("is-on", o === opt); });
+      /* a beat so the choice registers before the next question arrives */
+      preview = v; morph();
+      setTimeout(function () { step++; render(true); }, 260);
+    }
+
     stage.addEventListener("click", function (e) {
       var opt = e.target.closest(".quiz__opt");
-      if (opt) {
-        answers[step] = +opt.dataset.v;
-        opt.classList.add("is-on");
-        /* a beat so the choice registers before the next question arrives */
-        setTimeout(function () { step++; render(true); }, 180);
-        return;
-      }
+      if (opt) { choose(+opt.dataset.v); return; }
       var back = e.target.closest(".quiz__back");
       if (back) {
         if (back.hasAttribute("data-restart")) { answers = []; step = 0; sent = false; }
         else step = Math.max(0, step - 1);
         render(true);
       }
+    });
+    /* hovering or focusing an answer previews it on the radar */
+    function onPreview(e) {
+      var opt = e.target.closest && e.target.closest(".quiz__opt");
+      var v = opt ? +opt.dataset.v : null;
+      if (v === preview) return;
+      preview = v; morph();
+    }
+    stage.addEventListener("mouseover", onPreview);
+    stage.addEventListener("focusin", onPreview);
+    stage.addEventListener("mouseleave", function () { if (preview !== null && step < QUIZ.length) { preview = null; morph(); } });
+    /* 1, 2, 3 answer while the diagnostic is on screen */
+    var inView = false;
+    if ("IntersectionObserver" in window && quiz) {
+      new IntersectionObserver(function (en) { inView = en[0].isIntersecting && en[0].intersectionRatio > 0.5; }, { threshold: [0, 0.5, 1] }).observe(quiz);
+    }
+    document.addEventListener("keydown", function (e) {
+      if (!inView || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (/^(INPUT|TEXTAREA|SELECT)$/.test((e.target || {}).tagName || "")) return;
+      if (e.key === "1" || e.key === "2" || e.key === "3") { e.preventDefault(); choose(+e.key - 1); }
     });
 
     stage.addEventListener("submit", function (e) {
