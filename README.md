@@ -1402,3 +1402,4 @@ et `MOCK` dans le code. **Rien n'est envoyé nulle part.** À remplacer :
 | Diagnostic : 6 dimensions, questions, paliers | `js/home.js` → `QUIZ`, `BANDS` | Validation par l'équipe |
 | Créneaux de rendez-vous | `js/home.js` → bloc booking | Calendrier réel (Calendly, Cal.com, HubSpot) |
 | Envoi des formulaires (diagnostic, guide, RDV, newsletter) | `js/home.js`, `js/ui.js` (`wire to the real endpoint`) | Outil CRM / formulaires |
+| Mot des fondateurs (texte) | `index.html#founders` | Validation par Antoine et Adrien |

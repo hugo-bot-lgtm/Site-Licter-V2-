@@ -4517,3 +4517,19 @@ html[data-theme="dark"] .asks-wrap .ask, html[data-theme="dark"] .asks-wrap .ask
 /* case: the story alone, without the figure column */
 .case { grid-template-columns: minmax(0, 1fr); }
 .case__story { max-width: 860px; }
+
+/* a word from the founders: the photo, their words, their names */
+.founders { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 4.5vw, 72px); align-items: center; }
+.founders__photo { margin: 0; border-radius: 18px; overflow: hidden; aspect-ratio: 3 / 2; }
+.founders__photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.founders__quote { margin: 22px 0 0; padding: 0; border: 0; }
+.founders__quote p { margin: 0 0 14px; font: 500 clamp(16px, 1.25vw, 18.5px)/1.6 var(--body-font); color: var(--ink); max-width: 52ch; }
+.founders__quote p:first-child::before { content: "\201C"; margin-right: 2px; color: var(--amber); font: 700 1.4em/0 var(--title-font); vertical-align: -.25em; }
+.founders__sign { display: flex; flex-wrap: wrap; gap: 14px 28px; margin: 22px 0 0; padding: 0; list-style: none; }
+.founders__sign li { display: flex; align-items: center; gap: 12px; }
+.founders__sign img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.founders__sign span { display: flex; flex-direction: column; gap: 2px; font: 400 12.5px/1.3 var(--body-font); color: var(--text-2); }
+.founders__sign b { font: 600 14.5px/1.3 var(--body-font); color: var(--ink); }
+@media (max-width: 900px) { .founders { grid-template-columns: minmax(0, 1fr); } }
+html[data-theme="dark"] .founders__photo img { filter: brightness(.94); }
+html[lang="fr"] .founders__quote p:first-child::before { content: "\00AB\00A0"; }
