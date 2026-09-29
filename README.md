@@ -1400,6 +1400,6 @@ et `MOCK` dans le code. **Rien n'est envoyé nulle part.** À remplacer :
 | Visuels des cas d'usage (courbe, nuage de mots, communautés, radar, posts, réponses) | `js/usecases.js` → `DATA`, `WORDS`, `SEGMENTS`, `TRENDS` | Verbatims et chiffres réels anonymisés |
 | Rôles des trois portraits | `index.html#team` | Prénoms et rôles confirmés |
 | Diagnostic : 6 dimensions, questions, paliers | `js/home.js` → `QUIZ`, `BANDS` | Validation par l'équipe |
-| Créneaux de rendez-vous | `js/home.js` → bloc booking | Calendrier réel (Calendly, Cal.com, HubSpot) |
+| Formulaire de rappel (e-mail ou téléphone, rappel sous 30 min) | `js/home.js` → bloc callback | Branchement CRM + engagement « 30 min » à tenir |
 | Envoi des formulaires (diagnostic, guide, RDV, newsletter) | `js/home.js`, `js/ui.js` (`wire to the real endpoint`) | Outil CRM / formulaires |
 | Mot des fondateurs (texte) | `index.html#founders` | Validation par Antoine et Adrien |

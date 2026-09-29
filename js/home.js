@@ -270,88 +270,42 @@
     });
   }
 
-  /* ------------------------------------------------------------- booking */
-  /* MOCK: generated availability. The real calendar replaces this block. */
-  var slots = document.getElementById("slots");
+  /* ------------------------------------------------------------- callback
+     One field, email or phone. MOCK: nothing is sent yet; wire to the CRM. */
   var bookForm = document.getElementById("book-form");
-  if (slots && bookForm) {
-    var picked = null, booked = false;
-    var TIMES = ["09:30", "11:00", "14:00", "16:30"];
-
-    function days() {
-      var out = [], d = new Date();
-      d.setHours(12, 0, 0, 0);
-      while (out.length < 5) {
-        d.setDate(d.getDate() + 1);
-        if (d.getDay() !== 0 && d.getDay() !== 6) out.push(new Date(d));
-      }
-      return out;
+  if (bookForm) {
+    var contact = document.getElementById("book-contact");
+    var contactErr = document.getElementById("book-contact-error");
+    var sentTo = null;
+    function kind(v) {
+      if (EMAIL.test(v)) return "email";
+      var digits = v.replace(/[\s.()-]/g, "");
+      if (/^\+?\d{9,15}$/.test(digits)) return "phone";
+      return null;
     }
-    /* a few slots taken, always the same ones, so the grid looks lived in */
-    function taken(di, ti) { return (di * 7 + ti * 3) % 5 === 0; }
-
-    function dayLabel(d) {
-      return d.toLocaleDateString(fr() ? "fr-FR" : "en-GB", { weekday: "short", day: "numeric", month: "short" });
-    }
-
-    function renderSlots() {
-      if (booked) return;
-      var list = days();
-      slots.innerHTML = list.map(function (d, di) {
-        return '<div class="slots__day"><p class="slots__date">' + dayLabel(d) + "</p>" +
-          TIMES.map(function (tm, ti) {
-            var key = di + "-" + ti;
-            var off = taken(di, ti);
-            return '<button class="slot' + (picked && picked.key === key ? " is-on" : "") + '" type="button"' +
-              (off ? " disabled" : "") + ' data-key="' + key + '" data-day="' + di + '" data-time="' + tm + '">' +
-              tm + (off ? '<span class="visually-hidden"> ' + t("unavailable", "indisponible") + "</span>" : "") + "</button>";
-          }).join("") + "</div>";
-      }).join("");
-      if (picked) {
-        picked.label = dayLabel(list[picked.day]) + ", " + picked.time;
-        document.getElementById("book-picked").textContent = t("Your slot: ", "Votre créneau : ") + picked.label;
-      }
-    }
-
-    slots.addEventListener("click", function (e) {
-      var b = e.target.closest(".slot");
-      if (!b || b.disabled) return;
-      picked = { key: b.dataset.key, day: +b.dataset.day, time: b.dataset.time };
-      bookForm.hidden = false;
-      renderSlots();
-      document.getElementById("book-email").focus({ preventScroll: true });
+    contact.addEventListener("input", function () {
+      if (!contactErr.hidden) { contactErr.hidden = true; contact.setAttribute("aria-invalid", "false"); }
     });
-
-    var bookEmail = document.getElementById("book-email");
-    var bookErr = document.getElementById("book-email-error");
-    bookEmail.addEventListener("input", function () {
-      if (!bookErr.hidden) { bookErr.hidden = true; bookEmail.setAttribute("aria-invalid", "false"); }
-    });
-
     bookForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      var ok = EMAIL.test(bookEmail.value.trim());
-      bookEmail.setAttribute("aria-invalid", ok ? "false" : "true");
-      bookErr.hidden = ok;
-      if (!ok) { bookEmail.focus(); return; }
-      /* MOCK: wire to the calendar / CRM here */
-      booked = true;
-      var done = document.getElementById("book-done");
+      var v = contact.value.trim(), k = kind(v);
+      contact.setAttribute("aria-invalid", k ? "false" : "true");
+      contactErr.hidden = !!k;
+      if (!k) { contact.focus(); return; }
+      /* MOCK: wire to the CRM here (contact, kind) */
+      sentTo = { v: v, k: k };
       bookForm.hidden = true;
-      slots.hidden = true;
-      done.hidden = false;
+      document.getElementById("book-done").hidden = false;
       renderDone();
     });
-
     function renderDone() {
-      if (!booked) return;
-      document.getElementById("book-done").innerHTML =
-        "<b>" + t("Booked for ", "Réservé pour ") + picked.label + ".</b> " +
-        t("A calendar invitation is on its way, with the consultant's name.",
-          "Une invitation arrive dans votre agenda, avec le nom du consultant.");
+      if (!sentTo) return;
+      document.getElementById("book-done").innerHTML = "<b>" + t("Noted.", "C'est noté.") + "</b> " +
+        (sentTo.k === "phone"
+          ? t("A consultant calls you on ", "Un consultant vous appelle au ") + "<b>" + sentTo.v.replace(/</g, "&lt;") + "</b>" + t(" within 30 minutes.", " dans les 30 minutes.")
+          : t("A consultant writes to you at ", "Un consultant vous écrit à ") + "<b>" + sentTo.v.replace(/</g, "&lt;") + "</b>" + t(" within 30 minutes.", " dans les 30 minutes."));
     }
-
-    onLang(function () { renderSlots(); renderDone(); });
+    onLang(renderDone);
   }
 })();
 

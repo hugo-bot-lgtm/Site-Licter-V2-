@@ -4834,3 +4834,13 @@ html[data-theme="dark"] .play2__btn { background: var(--cream); color: var(--nav
   .word, .abar__t i, .mps.is-in .mp, .lf__stage.is-in > * { animation: none; }
 }
 html[data-theme="dark"] .uv__live { color: #F48BBB; background: rgba(226, 70, 141, .16); }
+
+/* callback: one field, email or phone */
+.callback { max-width: 520px; margin-top: 22px; }
+.callback__row { display: flex; gap: 8px; }
+.callback__row .fld__input { flex: 1; min-width: 0; height: 52px; font-size: 16px; }
+.callback__row .btn { flex: none; height: 52px; }
+.callback__promise { display: flex; align-items: center; gap: 8px; margin: 4px 0 10px; font: 600 13px/1.4 var(--body-font); color: var(--ink); }
+.callback__dot { width: 8px; height: 8px; border-radius: 50%; background: #2E9E6B; box-shadow: 0 0 0 4px rgba(46, 158, 107, .18); animation: lf-pulse 1.8s ease-in-out infinite; }
+@media (max-width: 560px) { .callback__row { flex-direction: column; } .callback__row .btn { justify-content: center; } }
+@media (prefers-reduced-motion: reduce) { .callback__dot { animation: none; } }
