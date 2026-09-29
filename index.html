@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=20261108" />
+<link rel="stylesheet" href="css/styles.css?v=20261111" />
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
@@ -182,38 +182,22 @@
     <div class="cases__inner shell">
     <div class="uc__head" data-dim data-reveal>
       <h2 class="block__title cases__heading">Every business question has a data answer.</h2>
-      <p class="block__lead">Pick a topic. The dashboard shows what we would answer, and you can play with it.</p>
+      <p class="block__lead">Pick a question and watch the conversation come in. We read it, sort it, and tell you what it means.</p>
     </div>
 
-    <!-- MOCK: every figure in these dashboards is illustrative (js/usecases.js) -->
-    <div class="uc" data-mock>
-      <div class="uc__topics" role="tablist" aria-label="Pick a topic" data-reveal>
-        <button class="topic" role="tab" id="tab-communication" data-topic="communication" aria-selected="false" aria-controls="cases-panel">
-          <span class="topic__family">Communication</span>
-          <span class="topic__q">Did our campaign work?</span>
-          <span class="topic__how">Drag the launch date</span>
-        </button>
-        <button class="topic" role="tab" id="tab-brand" data-topic="brand" aria-selected="false" aria-controls="cases-panel">
-          <span class="topic__family">Brand health</span>
-          <span class="topic__q">What is being said about us?</span>
-          <span class="topic__how">Filter the complaints</span>
-        </button>
-        <button class="topic" role="tab" id="tab-audiences" data-topic="audiences" aria-selected="false" aria-controls="cases-panel">
-          <span class="topic__family">Audiences</span>
-          <span class="topic__q">Who are our audiences, really?</span>
-          <span class="topic__how">Open a segment</span>
-        </button>
-        <button class="topic" role="tab" id="tab-trends" data-topic="trends" aria-selected="false" aria-controls="cases-panel">
-          <span class="topic__family">Innovation</span>
-          <span class="topic__q">What should we build next?</span>
-          <span class="topic__how">Play 18 months</span>
-        </button>
+    <!-- MOCK: posts, handles and figures are illustrative (js/usecases.js) -->
+    <div class="lf" data-mock>
+      <div class="lf__topics" role="tablist" aria-label="Pick a question" data-reveal>
+        <button class="lf__topic" role="tab" id="tab-communication" data-topic="communication" aria-selected="false" aria-controls="cases-panel">Did our campaign work?</button>
+        <button class="lf__topic" role="tab" id="tab-brand" data-topic="brand" aria-selected="false" aria-controls="cases-panel">What is being said about us?</button>
+        <button class="lf__topic" role="tab" id="tab-audiences" data-topic="audiences" aria-selected="false" aria-controls="cases-panel">Who are our audiences, really?</button>
+        <button class="lf__topic" role="tab" id="tab-trends" data-topic="trends" aria-selected="false" aria-controls="cases-panel">What should we build next?</button>
       </div>
 
-      <div class="uc__stage" id="cases-panel" role="tabpanel" aria-live="polite" tabindex="-1">
-        <div class="uc__empty">
-          <p class="uc__empty-title">Choose a topic above.</p>
-          <p class="uc__empty-text">Four questions our clients ask most. Each opens its own dashboard.</p>
+      <div class="lf__stage" id="cases-panel" role="tabpanel" tabindex="-1">
+        <div class="lf__empty">
+          <p class="lf__empty-title">Pick a question above.</p>
+          <p class="lf__empty-text">The posts start coming in, and the answer builds as we read them.</p>
         </div>
       </div>
     </div>
@@ -519,12 +503,12 @@
   </div>
 </footer>
 
-<script src="js/i18n.js?v=20261108"></script>
-<script src="js/communities.js?v=20261108"></script>
-<script src="js/flow.js?v=20261108"></script>
-<script src="js/ui.js?v=20261108"></script>
-<script src="js/voices.js?v=20261108"></script>
-<script src="js/usecases.js?v=20261108"></script>
-<script src="js/home.js?v=20261108"></script>
+<script src="js/i18n.js?v=20261111"></script>
+<script src="js/communities.js?v=20261111"></script>
+<script src="js/flow.js?v=20261111"></script>
+<script src="js/ui.js?v=20261111"></script>
+<script src="js/voices.js?v=20261111"></script>
+<script src="js/usecases.js?v=20261111"></script>
+<script src="js/home.js?v=20261111"></script>
 </body>
 </html>

@@ -1399,7 +1399,7 @@ et `MOCK` dans le code. **Rien n'est envoyé nulle part.** À remplacer :
 |---|---|---|
 | Cas client « groupe agroalimentaire » (11 400 publications) | `index.html#case` | Un vrai cas client autorisé |
 | Fourchettes de prix de l'estimateur | `js/home.js` → `ESTIMATE` | Les vraies grilles |
-| Tableaux de bord des cas d'usage (4 sujets) | `js/usecases.js` → `SOV`, `DRIVERS`, `SEGMENTS`, `TRENDS` | Données réelles anonymisées |
+| Flux d'écoute des cas d'usage (posts, comptes, répartitions, réponses) | `js/usecases.js` → `DATA` | Verbatims et chiffres réels anonymisés |
 | Rôles des trois portraits | `index.html#team` | Prénoms et rôles confirmés |
 | Diagnostic : 6 dimensions, questions, paliers | `js/home.js` → `QUIZ`, `BANDS` | Validation par l'équipe |
 | Créneaux de rendez-vous | `js/home.js` → bloc booking | Calendrier réel (Calendly, Cal.com, HubSpot) |
