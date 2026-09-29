@@ -4241,3 +4241,58 @@ textarea.fld__input { resize: vertical; min-height: 84px; }
   .lf__track i { transition: none; }
   .post.is-tagged .post__theme { animation: none; }
 }
+
+/* =========================================================
+   Charte graphique Licter
+   Cream ground (#FCF6EF), Elysée navy (#13162D) as the dominant
+   and action colour, gold (#EAA93D) as a signature only: rules,
+   the ranking badge, progress. Never a button or a banner fill.
+   Titles in Aiglon Pro Wide, text in Raleway.
+   ========================================================= */
+:root {
+  --amber:      #EAA93D;
+  --amber-rgb:  234, 169, 61;
+  --amber-deep: #C98B22;
+  /* was a dark gold for small accent text; accents are blue now */
+  --amber-ink:  #2C3566;
+  --body-font: "Raleway", system-ui, -apple-system, sans-serif;
+  --title-font: "Aiglon Pro Wide", system-ui, sans-serif;
+}
+/* Raleway draws old-style figures by default: numbers line up in text and tables */
+body { font-feature-settings: "lnum" 1; }
+
+/* actions: navy with cream text */
+.btn--primary, .signup__btn, .menu__cta, .form__submit {
+  background: var(--navy); color: var(--cream); filter: none;
+}
+.btn--primary:hover, .signup__btn:hover, .menu__cta:hover, .form__submit:hover { background: #2C3566; filter: none; }
+.btn--ghost { background: transparent; border-color: rgba(var(--ink-rgb), .35); color: var(--ink); }
+.btn--ghost:hover { background: #fff; border-color: var(--navy); color: var(--ink); }
+/* on navy surfaces the action turns white */
+.lf__read .btn--primary, .quiz .btn--primary { background: #fff; color: var(--navy); }
+.lf__read .btn--primary:hover, .quiz .btn--primary:hover { background: var(--cream); }
+
+/* the guide bar: navy, the link underlined in gold */
+.banner { background: var(--navy); color: var(--cream); }
+.banner__link u { border-bottom-color: var(--amber); }
+.banner__close:hover { background: rgba(252, 246, 239, .12); }
+
+/* titles: navy throughout, the gold rule is the signature */
+.line--accent { color: var(--navy); }
+.hero__title::after {
+  content: ""; display: block; width: min(42%, 420px); height: 4px; margin-top: clamp(16px, 2.2vh, 22px);
+  border-radius: 4px; background: var(--amber);
+}
+.block__title::after, .page__title::after {
+  content: ""; display: block; width: 64px; height: 3px; margin-top: 14px; border-radius: 3px; background: var(--amber);
+}
+.quiz .block__title::after { width: 48px; }
+
+/* choices that used a gold fill */
+.quiz__opt.is-on { background: var(--cream); border-color: var(--cream); color: var(--navy); }
+.reel:hover .reel__play { background: var(--navy); color: var(--cream); }
+.lf__k { color: #A7B1B9; }
+.ask__arrow, .offer__arrow { color: var(--navy); }
+.award__rank { color: var(--amber); }
+/* Raleway Moyen for the lead paragraphs (charte: "Raleway Moyen - texte") */
+.hero__desc, .block__lead, .page__lead, .people__text, .case__step dd { font-weight: 500; }
