@@ -3955,3 +3955,36 @@ html[lang="fr"] .hero__main .hero__title { font-size: clamp(26px, 2.3vw, 36px); 
   .hero__frame { min-height: 480px; margin-right: 0; }
   html[lang="fr"] .hero__main .hero__title { font-size: clamp(24px, 2.2vw, 34px); }
 }
+
+/* =========================================================
+   Header: logo and language left, menu centred on the page,
+   the one action right. Both sides weigh about the same, so
+   the menu can sit on the page's centre line.
+   ========================================================= */
+.hero__start, .hero__end { display: flex; align-items: center; gap: clamp(14px, 1.8vw, 26px); }
+.hero__end { justify-content: flex-end; }
+@media (min-width: 861px) {
+  .hero__top {
+    display: grid;
+    grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+    align-items: center;
+    gap: clamp(16px, 2vw, 28px);
+  }
+  .hero__top .hero__start { justify-self: start; }
+  .hero__top .nav { justify-self: center; flex: none; width: auto; max-width: none; }
+  .hero__top .hero__end { justify-self: end; }
+  .hero__top .nav__list { justify-content: center; gap: clamp(16px, 1.9vw, 30px); padding: 0 clamp(20px, 2.2vw, 32px); }
+  .hero__top .lang { margin: 0; padding: 0; }
+  /* the dropdowns keep a comfortable width under a narrower pill */
+  .hero__top .menu { left: 50%; right: auto; width: max(100%, 640px); transform: translate(-50%, -8px); }
+  .hero__top .menu.is-open { transform: translate(-50%, 0); }
+}
+@media (max-width: 860px) {
+  .hero__start { margin-right: auto; gap: 12px; }
+  .hero__end { order: 2; }
+  .nav__toggle { order: 3; }
+}
+@media (max-width: 420px) {
+  .hero__start .lang__sep { display: none; }
+  .hero__start .lang { gap: 0; }
+}
