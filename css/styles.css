@@ -5268,24 +5268,48 @@ html[data-theme="dark"] .uv-svg .pin:hover .pin__tag text, html[data-theme="dark
 
 /* =========================================================
    Home: no more bands. One continuous ground, lit by wide soft
-   pools of light that change side from one section to the next
-   and spill over the edges, so no straight line cuts the page.
+   pools of light that change side from one section to the next.
+   Each pool fades out on an eased curve (ten stops), so it has no
+   rim, and each one bleeds far into its neighbours: the light of
+   one section is still fading when the next one starts.
    ========================================================= */
-.home { --glow-amber: rgba(var(--amber-rgb), .12); --glow-navy: rgba(19, 22, 45, .055); }
-html[data-theme="dark"] .home { --glow-amber: rgba(var(--amber-rgb), .075); --glow-navy: rgba(96, 112, 204, .13); }
-.home .block::before, .home .cases::before { inset: -160px calc(50% - 50vw); background: none; border-top: 0; }
+.home { --glow-a: .15; --glow-n: .06; --glow-navy-rgb: 19, 22, 45; }
+html[data-theme="dark"] .home { --glow-a: .09; --glow-n: .16; --glow-navy-rgb: 96, 112, 204; }
+.home .block::before, .home .cases::before { inset: -260px calc(50% - 50vw); background: none; border-top: 0; }
 .home #voices::before {
-  background: radial-gradient(46% 40% at 6% 42%, var(--glow-amber), transparent 72%),
-              radial-gradient(38% 36% at 97% 78%, var(--glow-navy), transparent 72%);
+  background:
+    radial-gradient(62% 48% at 4% 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%),
+    radial-gradient(52% 46% at 98% 82%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%);
 }
-.home #founders::before { background: radial-gradient(44% 42% at 95% 48%, var(--glow-amber), transparent 72%); }
+.home #founders::before {
+  background:
+    radial-gradient(60% 50% at 98% 46%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%),
+    radial-gradient(46% 40% at 6% 96%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%);
+}
 .home #diagnostic::before {
-  background: radial-gradient(56% 46% at 50% 52%, var(--glow-navy), transparent 72%),
-              radial-gradient(30% 30% at 8% 20%, var(--glow-amber), transparent 72%);
+  background:
+    radial-gradient(70% 52% at 50% 52%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%),
+    radial-gradient(44% 40% at 2% 16%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%);
 }
-.home #method::before { background: radial-gradient(46% 42% at 4% 58%, var(--glow-amber), transparent 72%); }
+.home #method::before {
+  background:
+    radial-gradient(62% 50% at 2% 58%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%),
+    radial-gradient(46% 42% at 98% 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%);
+}
 .home #team::before {
-  background: radial-gradient(42% 40% at 96% 40%, var(--glow-navy), transparent 72%),
-              radial-gradient(34% 30% at 20% 90%, var(--glow-amber), transparent 72%);
+  background:
+    radial-gradient(58% 48% at 98% 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%),
+    radial-gradient(50% 42% at 14% 92%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%);
 }
-.home #book::before { background: radial-gradient(58% 48% at 50% 72%, var(--glow-amber), transparent 72%); }
+.home #book::before {
+  background:
+    radial-gradient(72% 52% at 50% 72%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%),
+    radial-gradient(44% 40% at 96% 8%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%);
+}
+
+/* the logo band: its lines and its light ground fade out at both ends
+   instead of stopping at the edge of the screen */
+.home .wall {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+}
