@@ -679,7 +679,7 @@
       update();
       progress(CUM[shown] / CUM[D - 1]);
     }, function () {
-      shown = D - 1; ready = true; g.classList.add("is-in"); update(); progress(1);
+      shown = D - 1; ready = true; g.classList.add("is-in", "is-done"); update(); progress(1);
       Array.prototype.forEach.call(chart.querySelectorAll(".pin"), function (el) { el.classList.remove("is-hidden"); });
       svgEl.classList.remove("is-locked"); range.disabled = false;
       head.style.opacity = "0";
@@ -838,11 +838,11 @@
      of all of them (affinity against penetration, size = opportunity). */
   /* close enough that the communities overlap, as they do in the hero */
   var SLOTS = [
-    { x: 0.36, y: 0.53, r: 0.31, n: 2200, swirl: 0.55 },
-    { x: 0.58, y: 0.35, r: 0.25, n: 1500, swirl: -0.6 },
-    { x: 0.61, y: 0.7, r: 0.23, n: 1300, swirl: 0.5 },
-    { x: 0.17, y: 0.33, r: 0.19, n: 900, swirl: 0.6 },
-    { x: 0.8, y: 0.5, r: 0.21, n: 1000, swirl: -0.55 }
+    { x: 0.4, y: 0.54, r: 0.33, n: 2200, swirl: 0.55 },
+    { x: 0.59, y: 0.38, r: 0.27, n: 1500, swirl: -0.6 },
+    { x: 0.6, y: 0.68, r: 0.25, n: 1300, swirl: 0.5 },
+    { x: 0.24, y: 0.36, r: 0.21, n: 900, swirl: 0.6 },
+    { x: 0.77, y: 0.52, r: 0.23, n: 1000, swirl: -0.55 }
   ];
   var OUT = [{ x: 0.08, y: 0.76, r: 0.05, n: 12 }, { x: 0.46, y: 0.1, r: 0.04, n: 9 }, { x: 0.93, y: 0.14, r: 0.04, n: 9 }, { x: 0.44, y: 0.92, r: 0.04, n: 10 }];
 
