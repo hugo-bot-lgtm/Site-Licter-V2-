@@ -98,6 +98,14 @@ window.LicterFR = {
   "BOOK A MEETING": "PRENDRE RENDEZ-VOUS",
   "NOTED - WE GET BACK TO YOU WITHIN 24 HOURS": "BIEN REÇU - NOUS REVENONS VERS VOUS SOUS 24 H",
   "NOTED - ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ - UN E-MAIL À LA PROCHAINE PUBLICATION",
+  "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
+  "Skip to content": "Aller au contenu",
+  "NOTHING TO READ": "RIEN À LIRE",
+  "HERE.": "ICI.",
+  "This page has moved, or never existed. The link you followed may be old; the rest of the site is where you left it.": "Cette page a changé d'adresse, ou n'a jamais existé. Le lien suivi est peut-être ancien ; le reste du site n'a pas bougé.",
+  "Back to the home page": "Retour à l'accueil",
+  "Read the blog": "Lire le blog",
+  "Page not found — Licter": "Page introuvable — Licter",
   "THEY TRUST US": "ILS NOUS FONT CONFIANCE",
 
   /* ---- home ---- */

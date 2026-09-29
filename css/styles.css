@@ -3236,3 +3236,43 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
    flow: in it, its intrinsic height would set the row instead. */
 .shots:has(> .shot--poster) > .shot { aspect-ratio: auto; }
 .shots:has(> .shot--poster) > .shot:not(.shot--poster) img { position: absolute; inset: 0; }
+
+/* =========================================================
+   Finishing pass — wrapping, figures, press feedback,
+   skip link, inline form errors
+   ========================================================= */
+
+/* no single word stranded on the last line of a title or a quote */
+h1, h2, h3, .block__title, .cover__title, .reel__quote { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* figures that line up when they sit next to each other */
+.stat__n, .stat__value, .reel__time, .asks__count { font-variant-numeric: tabular-nums; }
+
+/* a press should feel like one */
+.btn { transition: filter .15s ease, background-color .15s ease, color .15s ease, transform .12s ease; }
+.btn:active, .signup__btn:active, .tab:active { transform: translateY(1px); }
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: var(--cream);
+  font: 700 12px/1 var(--body-font);
+  letter-spacing: 1.2px;
+  transform: translateY(-160%);
+  transition: transform .15s ease;
+}
+.skip-link:focus { transform: none; }
+
+/* say what is wrong, not just colour the border */
+.signup__error {
+  margin: 10px 0 0;
+  font: 600 12px/1.4 var(--body-font);
+  color: #A6473D;
+}
+.signup__error[hidden] { display: none; }

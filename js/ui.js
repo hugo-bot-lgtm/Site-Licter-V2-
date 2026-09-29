@@ -1228,13 +1228,28 @@
   });
 
   /* every capture form on the site, hero and page footers alike */
-  Array.prototype.forEach.call(document.querySelectorAll(".signup"), function (form) {
+  Array.prototype.forEach.call(document.querySelectorAll(".signup"), function (form, n) {
     var note = form.parentNode.querySelector(".signup__note");
+    var field = form.querySelector(".signup__input");
+    /* a red border alone does not say what is wrong */
+    var error = document.createElement("p");
+    error.className = "signup__error";
+    error.id = "signup-error-" + n;
+    error.setAttribute("role", "alert");
+    error.hidden = true;
+    error.textContent = "Enter a work email, like name@company.com.";
+    form.parentNode.insertBefore(error, form.nextSibling);
+    field.setAttribute("aria-describedby", error.id);
+    field.addEventListener("input", function () {
+      if (error.hidden) return;
+      error.hidden = true;
+      field.setAttribute("aria-invalid", "false");
+    });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var field = form.querySelector(".signup__input");
       var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(field.value.trim());
       field.setAttribute("aria-invalid", ok ? "false" : "true");
+      error.hidden = ok;
       if (!ok) { field.focus(); return; }
       /* wire to the real endpoint here */
       if (note) note.classList.add("is-visible");
