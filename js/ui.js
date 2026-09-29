@@ -1439,7 +1439,7 @@
     render();
   }, { threshold: 0 }).observe(trigger || document.body);
   /* it also steps aside where the page makes the same offer itself */
-  var zones = [foot, document.getElementById("guide"), document.getElementById("book")].filter(Boolean);
+  var zones = [foot, document.getElementById("guide"), document.getElementById("book"), document.getElementById("use-cases"), document.getElementById("diagnostic")].filter(Boolean);
   var inZone = {};
   if (zones.length) {
     var zio = new IntersectionObserver(function (entries) {

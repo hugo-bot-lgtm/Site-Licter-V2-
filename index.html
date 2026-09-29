@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Outfit:wght@800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=20261100" />
+<link rel="stylesheet" href="css/styles.css?v=20261103" />
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
@@ -180,36 +180,40 @@
     <div class="field" aria-hidden="true"><span class="field__grain"></span></div>
 
     <div class="cases__inner shell">
-    <h2 class="block__title cases__heading" data-dim data-reveal>Every business question has a data answer.</h2>
-
-    <div class="cases__panel">
-      <div class="cases__asks" data-dim data-reveal>
-        <div class="asks__head">
-          <div class="asks__id"><span class="asks__dot" aria-hidden="true"></span>
-            <span class="asks__label" id="asks-label">COMMUNICATION</span></div>
-          <span class="asks__count" id="asks-count">03 / 12</span>
-        </div>
-        <ul class="questions" id="questions"><!-- filled by js/ui.js --></ul>
-        <p class="asks__foot" id="asks-foot">Three of the twelve questions social data answers better than a survey.</p>
-        <div class="page__actions" data-reveal>
-      <a class="btn btn--primary" href="book-a-meeting.html">Book a meeting <span aria-hidden="true">→</span></a>
+    <div class="uc__head" data-dim data-reveal>
+      <h2 class="block__title cases__heading">Every business question has a data answer.</h2>
+      <p class="block__lead">Pick a topic. The dashboard shows what we would answer, and you can play with it.</p>
     </div>
+
+    <!-- MOCK: every figure in these dashboards is illustrative (js/usecases.js) -->
+    <div class="uc" data-mock>
+      <div class="uc__topics" role="tablist" aria-label="Pick a topic" data-reveal>
+        <button class="topic" role="tab" id="tab-communication" data-topic="communication" aria-selected="false" aria-controls="cases-panel">
+          <span class="topic__family">Communication</span>
+          <span class="topic__q">Did our campaign work?</span>
+          <span class="topic__how">Drag the launch date</span>
+        </button>
+        <button class="topic" role="tab" id="tab-brand" data-topic="brand" aria-selected="false" aria-controls="cases-panel">
+          <span class="topic__family">Brand health</span>
+          <span class="topic__q">What is being said about us?</span>
+          <span class="topic__how">Filter the complaints</span>
+        </button>
+        <button class="topic" role="tab" id="tab-audiences" data-topic="audiences" aria-selected="false" aria-controls="cases-panel">
+          <span class="topic__family">Audiences</span>
+          <span class="topic__q">Who are our audiences, really?</span>
+          <span class="topic__how">Open a segment</span>
+        </button>
+        <button class="topic" role="tab" id="tab-trends" data-topic="trends" aria-selected="false" aria-controls="cases-panel">
+          <span class="topic__family">Innovation</span>
+          <span class="topic__q">What should we build next?</span>
+          <span class="topic__how">Play 18 months</span>
+        </button>
       </div>
 
-      <div class="cases__live">
-        <div class="tabs" data-reveal role="tablist" aria-label="Use case categories" id="tabs">
-          <button class="tab is-active" role="tab" id="tab-communication" aria-selected="true"  aria-controls="cases-panel" data-tab="communication"><span class="tab__dot" aria-hidden="true"></span>COMMUNICATION</button>
-          <button class="tab"           role="tab" id="tab-brand"     aria-selected="false" aria-controls="cases-panel" data-tab="brand"     tabindex="-1"><span class="tab__dot" aria-hidden="true"></span>BRAND HEALTH</button>
-          <button class="tab"           role="tab" id="tab-audiences" aria-selected="false" aria-controls="cases-panel" data-tab="audiences" tabindex="-1"><span class="tab__dot" aria-hidden="true"></span>AUDIENCES</button>
-          <button class="tab"           role="tab" id="tab-trends"    aria-selected="false" aria-controls="cases-panel" data-tab="trends"    tabindex="-1"><span class="tab__dot" aria-hidden="true"></span>INNOVATION</button>
-        </div>
-
-        <div class="console" id="cases-panel" role="tabpanel" aria-labelledby="tab-communication" data-dim>
-          <div class="deck" id="deck">
-            <span class="deck__card deck__card--back" aria-hidden="true"></span>
-            <span class="deck__card deck__card--mid" aria-hidden="true"></span>
-            <figure class="viz" id="viz"><!-- filled by js/ui.js --></figure>
-          </div>
+      <div class="uc__stage" id="cases-panel" role="tabpanel" aria-live="polite" tabindex="-1">
+        <div class="uc__empty">
+          <p class="uc__empty-title">Choose a topic above.</p>
+          <p class="uc__empty-text">Four questions our clients ask most. Each opens its own dashboard.</p>
         </div>
       </div>
     </div>
@@ -515,11 +519,12 @@
   </div>
 </footer>
 
-<script src="js/i18n.js?v=20261100"></script>
-<script src="js/communities.js?v=20261100"></script>
-<script src="js/flow.js?v=20261100"></script>
-<script src="js/ui.js?v=20261100"></script>
-<script src="js/voices.js?v=20261100"></script>
-<script src="js/home.js?v=20261100"></script>
+<script src="js/i18n.js?v=20261103"></script>
+<script src="js/communities.js?v=20261103"></script>
+<script src="js/flow.js?v=20261103"></script>
+<script src="js/ui.js?v=20261103"></script>
+<script src="js/voices.js?v=20261103"></script>
+<script src="js/usecases.js?v=20261103"></script>
+<script src="js/home.js?v=20261103"></script>
 </body>
 </html>
