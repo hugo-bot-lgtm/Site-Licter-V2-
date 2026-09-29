@@ -5283,11 +5283,6 @@ html[data-theme="dark"] .home { --glow-a: .09; --glow-n: .16; --glow-navy-rgb: 9
     radial-gradient(62% 40.0% at 4% 45%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%),
     radial-gradient(50% 30.0% at 98% 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%);
 }
-.home #founders::before {
-  background:
-    radial-gradient(60% 42.0% at 98% 48%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%),
-    radial-gradient(46% 28.0% at 6% 72%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%);
-}
 .home #diagnostic::before {
   background:
     radial-gradient(70% 44.0% at 50% 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%),
@@ -5349,3 +5344,55 @@ html[data-theme="dark"] .home .wall::after { background: rgba(var(--surf-rgb), .
    worked out from the card, so the card must not depend on it */
 .htrack { grid-auto-columns: min(820px, 72vw); }
 @media (max-width: 860px) { .htrack { grid-auto-columns: 86vw; } }
+
+/* =========================================================
+   Home, audit round: founders inside the team section, proof
+   beside the callback form, the diagnostic's next step, the
+   use-case offer, and a lighter hero on phones
+   ========================================================= */
+.team__word { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(28px, 4.5vw, 72px); align-items: start; margin-top: clamp(28px, 3.4vw, 44px); }
+.team__k { margin: 0; font: 700 11.5px/1.2 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-2); }
+.team__founders .founders__quote { margin-top: 14px; }
+.team__people { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-top: 30px; }
+.team__people .people { margin-top: 0; }
+@media (max-width: 900px) { .team__word { grid-template-columns: minmax(0, 1fr); } .team__people { padding-top: 0; } }
+
+.book__proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: clamp(26px, 3vw, 36px) 0 0; padding: 22px 0 0; list-style: none; border-top: 1px solid var(--line); }
+.book__proof li { display: flex; flex-direction: column; gap: 4px; }
+.book__proof b { font: 700 clamp(28px, 2.6vw, 36px)/1 var(--title-font); color: var(--ink); font-variant-numeric: tabular-nums; }
+.book__proof b::after { content: ""; display: block; width: 18px; height: 2px; margin-top: 8px; border-radius: 2px; background: var(--amber); }
+.book__proof span { font: 500 13px/1.35 var(--body-font); color: var(--text-2); }
+
+/* the diagnostic's next step, fitted to the score */
+.qnext { display: flex; align-items: center; justify-content: space-between; gap: 14px 20px; flex-wrap: wrap; margin: 0 0 22px; padding: 16px 18px; border-radius: 14px; background: rgba(var(--amber-rgb), .12); box-shadow: inset 3px 0 0 var(--amber); }
+.qnext p { flex: 1 1 260px; margin: 0; font: 500 14.5px/1.5 var(--body-font); color: rgba(252, 246, 239, .9); }
+.qnext p span { display: block; margin-bottom: 4px; font: 700 10.5px/1.2 var(--body-font); letter-spacing: 1px; text-transform: uppercase; color: var(--amber); }
+.quiz .qnext .btn--primary { background: var(--amber); color: var(--navy); }
+.quiz .qnext .btn--primary:hover { background: #F2BE66; }
+
+/* the use-case offer: the full case of the sector on screen */
+.lf__get:empty { display: none; }
+.lf__get { margin-bottom: 14px; padding-top: 16px; border-top: 1px solid rgba(252, 246, 239, .14); }
+.lf__get.is-in { animation: post-in .6s cubic-bezier(.16, 1, .3, 1) .15s both; }
+.lf__form .lf__k { display: block; margin-bottom: 4px; }
+.lf__sub { margin: 0 0 10px; font: 500 12.5px/1.4 var(--body-font); color: rgba(252, 246, 239, .7); }
+.lf__row { display: flex; gap: 6px; }
+.lf__row .fld__input { flex: 1; min-width: 0; height: 42px; padding: 0 12px; font-size: 13.5px; }
+.lf__row .btn { height: 42px; padding: 0 16px; flex: none; }
+.lf__read .fld__error { margin: 6px 0 0; color: #F2A99E; font-size: 12px; }
+.lf__sent { margin: 0; padding: 12px 14px; border-radius: 12px; background: rgba(var(--amber-rgb), .16); font: 600 13.5px/1.45 var(--body-font); color: var(--cream); }
+.lf__sent:focus { outline: none; }
+.lf__book { margin-top: auto; align-self: flex-start; padding-bottom: 2px; border-bottom: 1px solid rgba(var(--amber-rgb), .6); font: 600 13.5px/1.3 var(--body-font); color: var(--cream); }
+.lf__book:hover { color: var(--amber); }
+@media (prefers-reduced-motion: reduce) { .lf__get.is-in { animation: none; } }
+
+/* phones: a shorter hero */
+@media (max-width: 960px) {
+  .hero .hero__grid > .hero__frame { min-height: 0; aspect-ratio: auto; height: min(80vw, 360px); margin: 8px 0 0; }
+}
+@media (max-width: 560px) {
+  .hero .hero__grid > .hero__frame { height: 290px; }
+  .award { gap: 8px; }
+  .award__text { white-space: nowrap; font-size: 11px; }
+}
+@media (hover: none) { .frame__hint { display: none; } }

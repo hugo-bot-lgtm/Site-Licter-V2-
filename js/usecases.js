@@ -504,7 +504,8 @@
         '<div class="mps" id="uv-posts"></div>' +
         '<div class="lf__answer" id="uv-answer" aria-live="polite"><p class="lf__reading">' + t("Reading", "Lecture en cours") +
           '<span class="lf__dots"><i></i><i></i><i></i></span></p></div>' +
-        '<a class="btn btn--primary lf__cta" href="#book">' + t("Book a meeting", "Prendre rendez-vous") + ' <span aria-hidden="true">→</span></a>' +
+        '<div class="lf__get" id="uv-get"></div>' +
+        '<a class="lf__book" href="#book">' + t("Or talk to a consultant", "Ou parler à un consultant") + ' <span aria-hidden="true">→</span></a>' +
       "</aside>";
   }
 
@@ -517,6 +518,39 @@
   /* The side panel: two posts rotate; the count and our read follow the
      visual. A visual calls progress(k), k from 0 to 1; at 1 our read lands. */
   var gen = 0, answered = false, total = 0;
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, sentCases = {};
+
+  /* The offer once the read has landed: the full case of the sector on
+     screen, by email. The lead arrives with its sector and its question. */
+  function renderGet() {
+    var el = document.getElementById("uv-get");
+    if (!el) return;
+    var key = current + ":" + SECTORS[sector].key, name = L(SECTORS[sector].name);
+    if (sentCases[key]) {
+      el.innerHTML = '<p class="lf__sent">' + t("Sent. The full " + name.toLowerCase() + " case arrives by email.", "C'est envoyé. Le cas complet " + name.toLowerCase() + " arrive par e-mail.") + "</p>";
+      return;
+    }
+    el.innerHTML =
+      '<form class="lf__form" novalidate>' +
+        '<label class="lf__k" for="uv-email">' + t("Get the full case", "Recevez le cas complet") + " · " + esc(name) + "</label>" +
+        '<p class="lf__sub">' + t("Method, figures and recommendation, as a PDF.", "Méthode, chiffres et recommandation, en PDF.") + "</p>" +
+        '<div class="lf__row"><input class="fld__input" id="uv-email" type="email" autocomplete="email" placeholder="' + t("name@company.com", "nom@entreprise.com") + '" required />' +
+        '<button class="btn btn--primary" type="submit">' + t("Send", "Recevoir") + "</button></div>" +
+        '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
+      "</form>";
+    el.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var field = el.querySelector("#uv-email"), err = el.querySelector(".fld__error"), ok = EMAIL.test(field.value.trim());
+      field.setAttribute("aria-invalid", ok ? "false" : "true");
+      err.hidden = ok;
+      if (!ok) { field.focus(); return; }
+      /* MOCK: send { email, topic: current, sector: SECTORS[sector].key } to the CRM */
+      sentCases[key] = true;
+      renderGet();
+      var msg = el.querySelector(".lf__sent");
+      if (msg) { msg.setAttribute("tabindex", "-1"); msg.focus({ preventScroll: true }); }
+    });
+  }
   function runSide() {
     var posts = data().posts, postsEl = document.getElementById("uv-posts"), i = 0;
     function show() {
@@ -541,6 +575,9 @@
         '<p class="ins__head">' + esc(L(ins.head)) + "</p>" +
         '<ul class="ins__facts">' + ins.facts.map(function (f) { return "<li>" + esc(L(f)) + "</li>"; }).join("") + "</ul>" +
         '<p class="ins__reco"><span>' + t("We recommend", "Notre recommandation") + "</span>" + esc(L(ins.reco)) + "</p>";
+      renderGet();
+      var get = document.getElementById("uv-get");
+      if (get) { get.classList.remove("is-in"); void get.offsetWidth; get.classList.add("is-in"); }
     }
   }
   /* runs fn(k) from 0 to 1 over ms, frame by frame, until the case changes */
@@ -1131,6 +1168,18 @@
       n.focus(); select(n.dataset.topic);
     });
   });
+
+  /* the first question plays on its own when the section comes into view:
+     the visual is the point of the section, it should not wait for a click */
+  var section = document.getElementById("use-cases"), launched = false;
+  if (section && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (launched) return;
+      if (current) { launched = true; io.disconnect(); return; }
+      if (entries[0].isIntersecting) { launched = true; io.disconnect(); select(topics[0].dataset.topic); }
+    }, { threshold: 0.35 });
+    io.observe(section);
+  }
 
   if (window.MutationObserver) {
     new MutationObserver(function () { if (current) render(); })

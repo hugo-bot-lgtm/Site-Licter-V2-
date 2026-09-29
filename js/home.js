@@ -112,13 +112,20 @@
       a: [["It sits in a dashboard", "Elle reste dans un tableau de bord"], ["It goes into a monthly report", "Elle part dans un rapport mensuel"], ["It changes a decision", "Elle change une décision"]] }
   ];
   var BANDS = [
+    /* next: the step that fits the score, from the lightest to the most direct */
     { max: 4, name: ["Listening, not yet reading", "Vous écoutez, sans encore lire"],
+      next: { text: ["Start with the guide: the 12 questions social data answers better than a survey.", "Commencez par le guide : les 12 questions auxquelles la donnée sociale répond mieux qu'un sondage."],
+              cta: ["Get the free guide", "Recevoir le guide gratuit"], href: "guide.html" },
       text: ["You collect the conversation. The next step is to frame it around a decision, so the data answers something.",
              "Vous collectez la conversation. L'étape suivante : la cadrer autour d'une décision, pour que la donnée réponde à quelque chose."] },
     { max: 8, name: ["Reading, not yet deciding", "Vous lisez, sans encore décider"],
+      next: { text: ["A 30-minute review of your setup shows where the reading stops before the decision.", "Une revue de 30 minutes de votre dispositif montre où la lecture s'arrête avant la décision."],
+              cta: ["Book a free 30-minute review", "Réserver une revue gratuite de 30 min"], href: "#book" },
       text: ["The reading is there. What is missing is the path from the analysis to the people who decide.",
              "La lecture est là. Il manque le chemin entre l'analyse et celles et ceux qui décident."] },
     { max: 12, name: ["Deciding with the data", "Vous décidez avec la donnée"],
+      next: { text: ["Your setup is mature: the conversation worth having is about coverage, languages and speed.", "Votre dispositif est mûr : la conversation à avoir porte sur la couverture, les langues et la vitesse."],
+              cta: ["Talk to a consultant", "Parler à un consultant"], href: "#book" },
       text: ["Your setup already informs decisions. The gains now are in coverage, languages and speed.",
              "Votre dispositif éclaire déjà des décisions. Les gains sont désormais dans la couverture, les langues et la vitesse."] }
   ];
@@ -173,18 +180,18 @@
         '<div class="qres__body">' +
         '<p class="quiz__text">' + L(band.text) + " " +
           t("Start with ", "Commencez par ") + "<b>" + L(QUIZ[w].dim).toLowerCase() + "</b>.</p>" +
+        '<div class="qnext"><p><span>' + t("Your next step", "Votre prochaine étape") + "</span>" + L(band.next.text) + "</p>" +
+          '<a class="btn btn--primary" href="' + band.next.href + '">' + L(band.next.cta) + ' <span aria-hidden="true">→</span></a></div>' +
         (sent
           ? '<p class="quiz__sent">' + t("Noted. The full readout arrives by email.", "C'est noté. Le détail arrive par e-mail.") + "</p>"
           : '<form class="quiz__form" novalidate>' +
-              '<label class="fld__label" for="quiz-email">' + t("Get the full readout, dimension by dimension", "Recevez le détail, dimension par dimension") + "</label>" +
+              '<label class="fld__label" for="quiz-email">' + t("And the full readout, dimension by dimension, by email", "Et le détail, dimension par dimension, par e-mail") + "</label>" +
               '<div class="quiz__row"><input class="fld__input" id="quiz-email" type="email" autocomplete="email" required />' +
               '<button class="btn btn--primary" type="submit">' + t("Send it to me", "Me l'envoyer") + "</button></div>" +
               '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
               '<p class="consent">' + t("We use your email only to reply to you. ", "Votre e-mail sert uniquement à vous répondre. ") +
                 '<a href="privacy.html">' + t("Privacy policy", "Politique de confidentialité") + "</a>.</p>" +
             "</form>") +
-        '<p class="quiz__more"><a href="guide.html">' + t("Or start with the free guide", "Ou commencez par le guide gratuit") +
-          ' <span aria-hidden="true">\u2192</span></a></p>' +
         '<button class="quiz__back" type="button" data-restart>' + t("Start again", "Recommencer") + "</button>" +
         "</div></div>";
       stage.classList.remove("is-swap"); void stage.offsetWidth; stage.classList.add("is-swap");
