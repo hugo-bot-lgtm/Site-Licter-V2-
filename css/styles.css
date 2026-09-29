@@ -4514,3 +4514,6 @@ html[data-theme="dark"] .asks-wrap .ask, html[data-theme="dark"] .asks-wrap .ask
   .asks-wrap .asks { grid-template-columns: minmax(0, 1fr); }
   .asks-wrap .ask { min-height: 40px; font-size: 14px; }
 }
+/* case: the story alone, without the figure column */
+.case { grid-template-columns: minmax(0, 1fr); }
+.case__story { max-width: 860px; }
