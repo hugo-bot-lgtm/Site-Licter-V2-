@@ -18,9 +18,7 @@
 (function () {
   "use strict";
 
-  var stage = document.getElementById("cases-panel");
-  var topics = Array.prototype.slice.call(document.querySelectorAll(".lf__topic[data-topic]"));
-  if (!stage || !topics.length) return;
+  if (!document.getElementById("cases-panel") && !document.querySelector("[data-uc-stage]")) return;
 
   var html = document.documentElement;
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -469,743 +467,829 @@
     ["problem", "problème", 2, -1], ["perfect", "parfait", 1, 1], ["tweet", "tweet", 1, 0], ["support", "support", 1, 0], ["deal", "offre", 1, 0]
   ];
 
-  /* ============================================================ frame */
-  var current = null, sector = 0, timers = [], cleanup = [];
-  function later(fn, ms) { var id = setTimeout(fn, ms); timers.push(id); return id; }
-  function every(fn, ms) { var id = setInterval(fn, ms); timers.push(id); return id; }
-  function stopAll() {
-    timers.forEach(function (id) { clearTimeout(id); clearInterval(id); });
-    timers = [];
-    cleanup.forEach(function (fn) { fn(); });
-    cleanup = [];
-  }
-  function data() { return CASES[current][SECTORS[sector].key]; }
 
-  function frame(title, hint, body) {
-    var d = data();
-    return '<div class="uv">' +
-        '<div class="uv__head">' +
-          '<span class="uv__live"><i></i>' + t("Live", "En direct") + "</span>" +
-          '<p class="uv__title">' + title + "</p>" +
-          '<span class="uv__tag">' + t("Illustrative data", "Données illustratives") + "</span>" +
-          '<button class="uv__close" type="button" id="uv-close" aria-label="' + t("Close", "Fermer") + '"><span aria-hidden="true">×</span></button>' +
-        "</div>" +
-        '<div class="uv__case">' +
-          '<p class="uv__sector"><b>' + esc(L(SECTORS[sector].name)) + "</b><span>" + esc(L(d.subject)) + "</span></p>" +
-          '<button class="uv__next" type="button" id="uv-next">' + t("Another case", "Voir un autre cas") + ' <span aria-hidden="true">↻</span></button>' +
-        "</div>" +
-        '<p class="uv__hint"><span aria-hidden="true">✦</span>' + hint + "</p>" +
-        '<div class="uv__body">' + body + "</div>" +
-      "</div>" +
-      '<aside class="lf__read">' +
-        '<p class="lf__k">' + t("Posts read", "Posts lus") + "</p>" +
-        '<p class="lf__count" id="uv-count">0</p>' +
-        '<p class="lf__k lf__k--posts">' + t("Latest posts", "Derniers posts") + "</p>" +
-        '<div class="mps" id="uv-posts"></div>' +
-        '<div class="lf__answer" id="uv-answer" aria-live="polite"><p class="lf__reading">' + t("Reading", "Lecture en cours") +
-          '<span class="lf__dots"><i></i><i></i><i></i></span></p></div>' +
-        '<div class="lf__get" id="uv-get"></div>' +
-        '<a class="lf__book" href="#book">' + t("Or talk to a consultant", "Ou parler à un consultant") + ' <span aria-hidden="true">→</span></a>' +
-      "</aside>";
-  }
-
-  function postHTML(p) {
-    return '<div class="mp">' +
-      '<p class="mp__meta">' + ((window.LicterIcons || {})[p[0]] || "") + "<b>" + esc(p[1]) + "</b><span>" + PLATFORM_NAMES[p[0]] + "</span></p>" +
-      '<p class="mp__text">' + esc(fr() ? p[4] : p[3]) + "</p></div>";
-  }
-
-  /* The side panel: two posts rotate; the count and our read follow the
-     visual. A visual calls progress(k), k from 0 to 1; at 1 our read lands. */
-  var gen = 0, answered = false, total = 0;
-  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, sentCases = {};
-
-  /* The offer once the read has landed: the full case of the sector on
-     screen, by email. The lead arrives with its sector and its question. */
-  function renderGet() {
-    var el = document.getElementById("uv-get");
-    if (!el) return;
-    var key = current + ":" + SECTORS[sector].key, name = L(SECTORS[sector].name).toLowerCase();
-    var known = window.LicterLead ? window.LicterLead.get() : "";
-    if (sentCases[key]) {
-      el.innerHTML = '<p class="lf__sent">' + t("Noted. A consultant sends you a real " + name + " case within 48 hours.", "C'est noté. Un consultant vous envoie un cas réel du secteur " + name + " sous 48 h.") + "</p>";
-      return;
+  /* =====================================================================
+     One stage: the visual, the side panel, the offer. The home has one,
+     driven by the question tabs; the use-cases page has one per family,
+     each fixed to its question. Every id inside a stage carries the
+     stage's prefix, so several stages live on one page.
+     opts: prefix, topics (tab buttons), closable, onClose
+     ===================================================================== */
+  function Stage(stage, opts) {
+    var PX = opts.prefix || "";
+    var topics = opts.topics || [];
+    function $(id) { return document.getElementById(PX + id); }
+    /* ============================================================ frame */
+    var current = null, sector = 0, timers = [], cleanup = [];
+    function later(fn, ms) { var id = setTimeout(fn, ms); timers.push(id); return id; }
+    function every(fn, ms) { var id = setInterval(fn, ms); timers.push(id); return id; }
+    function stopAll() {
+      timers.forEach(function (id) { clearTimeout(id); clearInterval(id); });
+      timers = [];
+      cleanup.forEach(function (fn) { fn(); });
+      cleanup = [];
     }
-    function done(email) {
-      /* MOCK: send { email, topic: current, sector: SECTORS[sector].key } to the CRM */
-      if (window.LicterLead) window.LicterLead.set(email);
-      sentCases[key] = true;
-      renderGet();
-      var msg = el.querySelector(".lf__sent");
-      if (msg) { msg.setAttribute("tabindex", "-1"); msg.focus({ preventScroll: true }); }
-    }
-    /* the title is a label when there is a field, a plain line when not */
-    function head(label) {
-      var title = t("Get a real case", "Recevez un cas réel") + " · " + esc(L(SECTORS[sector].name));
-      return (label ? '<label class="lf__k" for="uv-email">' + title + "</label>" : '<p class="lf__k">' + title + "</p>") +
-        '<p class="lf__sub">' + t("Anonymised, sent by a consultant within 48 hours.", "Anonymisé, envoyé par un consultant sous 48 h.") + "</p>";
-    }
-    /* already known: one click, no field to fill again */
-    if (known && EMAIL.test(known)) {
-      el.innerHTML = head(false) + '<button class="btn btn--primary lf__one" type="button">' + t("Send it to ", "L'envoyer à ") + esc(known) + "</button>";
-      el.querySelector(".lf__one").addEventListener("click", function () { done(known); });
-      return;
-    }
-    el.innerHTML =
-      '<form class="lf__form" novalidate>' + head(true) +
-        '<div class="lf__row"><input class="fld__input" id="uv-email" type="email" autocomplete="email" placeholder="' + t("name@company.com", "nom@entreprise.com") + '" required />' +
-        '<button class="btn btn--primary" type="submit">' + t("Send", "Recevoir") + "</button></div>" +
-        '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
-      "</form>";
-    el.querySelector("form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      var field = el.querySelector("#uv-email"), err = el.querySelector(".fld__error"), ok = EMAIL.test(field.value.trim());
-      field.setAttribute("aria-invalid", ok ? "false" : "true");
-      err.hidden = ok;
-      if (!ok) { field.focus(); return; }
-      done(field.value.trim());
-    });
-  }
+    function data() { return CASES[current][SECTORS[sector].key]; }
 
-  function runSide() {
-    var posts = data().posts, postsEl = document.getElementById("uv-posts"), i = 0;
-    function show() {
-      postsEl.innerHTML = postHTML(posts[i % posts.length]);
-      postsEl.classList.remove("is-in"); void postsEl.offsetWidth; postsEl.classList.add("is-in");
-      i += 1;
-    }
-    show();
-    every(show, 3600);
-  }
-  function progress(k) {
-    var countEl = document.getElementById("uv-count"), answerEl = document.getElementById("uv-answer");
-    if (!countEl) return;
-    k = Math.max(0, Math.min(1, k));
-    countEl.textContent = num(Math.round(total * k));
-    if (k >= 1 && !answered) {
-      answered = true;
-      var ins = data().insight;
-      answerEl.classList.add("is-in");
-      answerEl.innerHTML =
-        '<p class="lf__k">' + t("Our read", "Notre lecture") + "</p>" +
-        '<p class="ins__head">' + esc(L(ins.head)) + "</p>" +
-        '<ul class="ins__facts">' + ins.facts.map(function (f) { return "<li>" + esc(L(f)) + "</li>"; }).join("") + "</ul>" +
-        '<p class="ins__reco"><span>' + t("We recommend", "Notre recommandation") + "</span>" + esc(L(ins.reco)) + "</p>";
-      renderGet();
-      var get = document.getElementById("uv-get");
-      if (get) { get.classList.remove("is-in"); void get.offsetWidth; get.classList.add("is-in"); }
-    }
-  }
-  /* runs fn(k) from 0 to 1 over ms, frame by frame, until the case changes */
-  function tween(ms, fn, done) {
-    var my = gen, start = performance.now();
-    if (reduced.matches) { fn(1); if (done) done(); return; }
-    (function step(now) {
-      if (my !== gen) return;
-      var k = Math.min(1, (now - start) / ms);
-      fn(k);
-      if (k < 1) requestAnimationFrame(step); else if (done) done();
-    })(start);
-  }
-  function autoProgress(ms) { tween(ms || 3200, function (k) { progress(1 - Math.pow(1 - k, 3)); }); }
-
-  /* ================================================= 1. communication */
-  function communication() {
-    var d = data(), c = d.curve, D = 42, V = [], CAT = [];
-    for (var i = 0; i < D; i++) {
-      var v = c.base * (1 + 0.07 * Math.sin(i * 1.3) + 0.04 * Math.cos(i * 0.7));
-      if (i >= c.launch) {
-        v += c.spike * Math.exp(-Math.pow(i - c.launch - 1.5, 2) / 5) + c.plateau * (1 - Math.exp(-(i - c.launch) / 5));
-        c.bumps.forEach(function (b) { v += b[1] * Math.exp(-Math.pow(i - b[0], 2) / b[2]); });
-      }
-      V.push(Math.round(v));
-      CAT.push(Math.round(c.base * (1.16 + 0.05 * Math.sin(i * 0.5))));
-    }
-    var TOP = Math.ceil(Math.max.apply(null, V) * 1.12 / 1000) * 1000;
-    var CUM = [], acc = 0; V.forEach(function (x) { acc += x; CUM.push(acc); });
-    total = acc;
-    /* on a phone the chart is drawn narrower rather than shrunk: the same
-       text sizes, fewer pixels per day */
-    var narrow = stage.clientWidth < 560;
-    var W = narrow ? 400 : 640, H = narrow ? 300 : 320, P = { l: 40, r: 12, t: 26, b: 30 };
-    function X(x) { return P.l + x * (W - P.l - P.r) / (D - 1); }
-    function Y(x) { return P.t + (1 - x / TOP) * (H - P.t - P.b); }
-    function line(a) { return a.map(function (x, k) { return (k ? "L" : "M") + X(k).toFixed(1) + " " + Y(x).toFixed(1); }).join(" "); }
-    function at(f) { var k = Math.max(0, Math.min(D - 2, Math.floor(f))); return V[k] + (V[k + 1] - V[k]) * (f - k); }
-    var area = line(V) + " L" + X(D - 1) + " " + (H - P.b) + " L" + X(0) + " " + (H - P.b) + " Z";
-    var grid = [0, .25, .5, .75, 1].map(function (q) {
-      var val = TOP * q, lab = val ? (val / 1000).toLocaleString(fr() ? "fr-FR" : "en-GB", { maximumFractionDigits: 1 }) + "k" : "0";
-      return '<line class="g" x1="' + P.l + '" x2="' + (W - P.r) + '" y1="' + Y(val) + '" y2="' + Y(val) + '"/>' +
-        '<text class="ax" x="' + (P.l - 8) + '" y="' + (Y(val) + 3.5) + '" text-anchor="end">' + lab + "</text>";
-    }).join("");
-    var weeks = [0, 7, 14, 21, 28, 35].map(function (x, k) {
-      return '<text class="ax" x="' + X(x + 3) + '" y="' + (H - 8) + '" text-anchor="middle">' + t("Week ", "Sem. ") + (k + 1) + "</text>";
-    }).join("");
-    /* each pin sits on the top of its wave, and carries its own label, placed
-       where it covers nothing: above the pin, else right, left, below */
-    var PK = d.peaks.map(function (p) {
-      var best = p.d;
-      for (var j = p.d - 1; j <= p.d + 1; j++) if (j > c.launch - 1 && j < D && V[j] > V[best]) best = j;
-      return { d: best, x: X(best), y: Y(V[best]) };
-    });
-    var boxes = [[X(c.launch - 0.5) - 42, 0, 84, P.t + 2]];
-    PK.forEach(function (q) { boxes.push([q.x - 8, q.y - 8, 16, 16]); });
-    function overlap(bx, by, w, h) {
-      return boxes.reduce(function (s, b) {
-        var ox = Math.min(bx + w + 4, b[0] + b[2]) - Math.max(bx - 4, b[0]), oy = Math.min(by + h + 3, b[1] + b[3]) - Math.max(by - 3, b[1]);
-        return s + (ox > 0 && oy > 0 ? ox * oy : 0);
-      }, 0);
-    }
-    var pins = d.peaks.map(function (p, k) {
-      var label = L(p.tag), w = Math.round(label.length * 6.4 + 22), h = 20, px = PK[k].x, py = PK[k].y;
-      var cands = [[-w / 2, -h - 12], [14, -h / 2], [-14 - w, -h / 2], [-w / 2, 12], [14, -h - 16], [-14 - w, -h - 16], [-w / 2, -h - 34], [-w / 2, 34]];
-      var pick = null, least = Infinity;
-      cands.forEach(function (cd) {
-        var bx = px + cd[0], by = py + cd[1];
-        if (bx < P.l || bx + w > W - P.r || by < 2 || by + h > H - P.b) return;
-        var o = overlap(bx, by, w, h);
-        if (o < least - 0.5) { least = o; pick = cd; }
-      });
-      pick = pick || cands[0];
-      boxes.push([px + pick[0], py + pick[1], w, h]);
-      return '<g class="pin is-hidden" tabindex="0" role="button" data-i="' + k + '" transform="translate(' + px.toFixed(1) + "," + py.toFixed(1) + ')" aria-label="' + esc(label + ". " + L(p.txt)) + '">' +
-        '<g class="pin__tag" transform="translate(' + pick[0].toFixed(1) + "," + pick[1].toFixed(1) + ')"><rect width="' + w + '" height="' + h + '" rx="10"/>' +
-        '<text x="' + (w / 2) + '" y="14" text-anchor="middle">' + esc(label) + "</text></g>" +
-        '<circle class="pin__halo" r="12"/><circle class="pin__dot" r="5.5"/></g>';
-    }).join("");
-    var svg =
-      '<svg class="uv-svg is-locked" id="c-svg" viewBox="0 0 ' + W + " " + H + '" role="group" aria-label="' + t("Daily volume of posts over six weeks", "Volume quotidien de posts sur six semaines") + '">' +
-        '<defs><linearGradient id="c-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAA93D" stop-opacity=".38"/><stop offset="1" stop-color="#EAA93D" stop-opacity="0"/></linearGradient>' +
-          '<clipPath id="c-clip"><rect id="c-reveal" x="0" y="0" width="' + P.l + '" height="' + H + '"/></clipPath></defs>' +
-        grid + weeks +
-        '<rect class="after" id="c-after" y="' + P.t + '" height="' + (H - P.t - P.b) + '"/>' +
-        '<path class="cat" d="' + line(CAT) + '"/>' +
-        '<text class="cat__t" x="' + (W - P.r) + '" y="' + (Y(CAT[D - 1]) + 16) + '" text-anchor="end">' + t("Category average", "Moyenne de la catégorie") + "</text>" +
-        '<g clip-path="url(#c-clip)"><path class="area" d="' + area + '"/><path class="brand" d="' + line(V) + '"/></g>' +
-        '<circle class="head" id="c-head" r="5"/>' +
-        '<g id="c-launch" class="launch"><line y1="' + (P.t - 4) + '" y2="' + (H - P.b) + '"/>' +
-          '<rect x="-38" y="' + (P.t - 24) + '" width="76" height="20" rx="10"/>' +
-          '<text y="' + (P.t - 10) + '" text-anchor="middle">' + t("Launch", "Lancement") + "</text>" +
-          '<circle class="launch__grip" id="c-grip" r="8"/></g>' +
-        pins +
-      "</svg>";
-    var body =
-      '<div class="kchips">' +
-        '<div class="kchip"><span>' + t("Before", "Avant") + '</span><b id="c-b">…</b></div>' +
-        '<div class="kchip"><span>' + t("After", "Après") + '</span><b id="c-a">…</b></div>' +
-        '<div class="kchip kchip--hi"><span>' + t("Uplift", "Gain") + '</span><b id="c-u">…</b></div>' +
-        '<span class="kchip__day" id="c-day"></span>' +
-      "</div>" +
-      '<div class="uv-chart" id="c-chart">' + svg + '<div class="uv-tip" id="c-tip" hidden></div></div>' +
-      /* what happened at each peak, readable without hovering */
-      '<ol class="c-peaks">' + d.peaks.map(function (p, k) {
-        return '<li class="is-hidden" data-i="' + k + '"><b>' + esc(L(p.tag)) + "</b><span>" + esc(L(p.txt)) + "</span></li>";
-      }).join("") + "</ol>" +
-      '<input class="visually-hidden" type="range" id="c-range" min="4" max="37" value="' + c.launch + '" disabled aria-label="' + t("Campaign launch day", "Jour du lancement") + '" />';
-    stage.innerHTML = frame(t("Posts per day, six weeks", "Posts par jour, six semaines"),
-      '<span id="c-hint">' + t("Reading the six weeks…", "Lecture des six semaines…") + "</span>", body);
-
-    var svgEl = document.getElementById("c-svg"), g = document.getElementById("c-launch"), grip = document.getElementById("c-grip");
-    var after = document.getElementById("c-after"), range = document.getElementById("c-range"), tip = document.getElementById("c-tip");
-    var chart = document.getElementById("c-chart"), reveal = document.getElementById("c-reveal"), head = document.getElementById("c-head");
-    var launch = c.launch, shown = 0, ready = false;
-    function avg(a) { return a.reduce(function (s, x) { return s + x; }, 0) / (a.length || 1); }
-    function update() {
-      var x = (X(launch - 1) + X(launch)) / 2;
-      g.setAttribute("transform", "translate(" + x.toFixed(1) + ",0)");
-      /* the grip rides the curve, wherever the line is dragged */
-      grip.setAttribute("cy", Y(at(launch - 0.5)).toFixed(1));
-      after.setAttribute("x", x.toFixed(1)); after.setAttribute("width", Math.max(0, X(Math.max(launch, shown)) - x).toFixed(1));
-      var b = V.slice(Math.max(0, launch - 14), Math.min(launch, shown + 1));
-      var a = shown >= launch ? V.slice(launch, Math.min(launch + 14, shown + 1)) : [];
-      document.getElementById("c-b").textContent = b.length ? num(avg(b)) + t("/day", "/jour") : "…";
-      document.getElementById("c-a").textContent = a.length ? num(avg(a)) + t("/day", "/jour") : "…";
-      var up = a.length && b.length ? (avg(a) / avg(b) - 1) * 100 : null;
-      document.getElementById("c-u").textContent = up === null ? "…" : (up >= 0 ? "+" : "") + Math.round(up) + " %";
-      range.value = launch;
-    }
-    /* the curve draws itself day by day; the chips and the count follow it */
-    tween(4200, function (k) {
-      var f = k * (D - 1);
-      shown = Math.floor(f);
-      var x = X(f);
-      reveal.setAttribute("width", x.toFixed(1));
-      head.setAttribute("cx", x.toFixed(1)); head.setAttribute("cy", Y(at(f)).toFixed(1));
-      Array.prototype.forEach.call(stage.querySelectorAll(".pin, .c-peaks li"), function (el) {
-        if (PK[+el.dataset.i].d <= f) el.classList.remove("is-hidden");
-      });
-      if (f >= launch - 0.5) g.classList.add("is-in");
-      document.getElementById("c-day").textContent = t("Day ", "Jour ") + (shown + 1) + " / " + D;
-      update();
-      progress(CUM[shown] / CUM[D - 1]);
-    }, function () {
-      shown = D - 1; ready = true; g.classList.add("is-in", "is-done"); update(); progress(1);
-      Array.prototype.forEach.call(stage.querySelectorAll(".pin, .c-peaks li"), function (el) { el.classList.remove("is-hidden"); });
-      svgEl.classList.remove("is-locked"); range.disabled = false;
-      head.style.opacity = "0";
-      document.getElementById("c-day").textContent = "";
-      document.getElementById("c-hint").textContent = t("Now drag the launch line. Hover the peaks.", "Déplacez maintenant la ligne de lancement. Survolez les pics.");
-    });
-
-    function fromPointer(e) {
-      var r = svgEl.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * W;
-      launch = Math.max(4, Math.min(37, Math.round((x - P.l) / ((W - P.l - P.r) / (D - 1)) + 0.5)));
-      update();
-    }
-    var dragging = false;
-    svgEl.addEventListener("pointerdown", function (e) {
-      if (!ready || e.target.closest(".pin")) return;
-      dragging = true; svgEl.setPointerCapture(e.pointerId); fromPointer(e);
-    });
-    svgEl.addEventListener("pointermove", function (e) { if (dragging) fromPointer(e); });
-    svgEl.addEventListener("pointerup", function () { dragging = false; });
-    range.addEventListener("input", function () { launch = +range.value; update(); });
-
-    function showTip(k) {
-      var p = d.peaks[k], q = PK[k];
-      tip.innerHTML = '<p class="uv-tip__meta">' + ((window.LicterIcons || {})[p.pf] || "") + "<b>" + p.h + "</b> · " + PLATFORM_NAMES[p.pf] + "</p><p>" + esc(L(p.txt)) + "</p>";
-      tip.style.left = (q.x / W * 100) + "%";
-      tip.style.top = (q.y / H * 100) + "%";
-      tip.hidden = false;
-    }
-    Array.prototype.forEach.call(chart.querySelectorAll(".pin"), function (el) {
-      var k = +el.dataset.i;
-      el.addEventListener("mouseenter", function () { showTip(k); });
-      el.addEventListener("focus", function () { showTip(k); });
-      el.addEventListener("click", function () { showTip(k); });
-      el.addEventListener("mouseleave", function () { tip.hidden = true; });
-      el.addEventListener("blur", function () { tip.hidden = true; });
-    });
-    update();
-  }
-
-  /* ======================================================== 2. brand */
-  var TONE = { "-1": "neg", "0": "neu", "1": "pos" };
-
-  function brand() {
-    var d = data(), on = { neg: true, neu: true, pos: true };
-    /* the sector's words first, then the common ones it does not already have */
-    var seenW = {};
-    var WORDS = d.words.concat(FILLER).filter(function (w) {
-      var k = w[1].toLowerCase();
-      if (seenW[k]) return false;
-      seenW[k] = 1; return true;
-    });
-    var body =
-      '<div class="tones" role="group" aria-label="' + t("Tone", "Tonalité") + '">' +
-        [["neg", t("Negative", "Négatif")], ["neu", t("Neutral", "Neutre")], ["pos", t("Positive", "Positif")]].map(function (x) {
-          return '<button class="tone tone--' + x[0] + ' is-on" type="button" data-t="' + x[0] + '" aria-pressed="true"><i></i>' + x[1] +
-            ' <b class="tone__n" data-n="' + x[0] + '">0</b></button>';
-        }).join("") +
-      "</div>" +
-      '<div class="cloud" id="b-cloud"></div>' +
-      '<div class="quotes" id="b-q"><p class="quotes__hint">' + t("Words appear as we read. Click one to see what people actually wrote.", "Les mots apparaissent à mesure que nous lisons. Cliquez-en un pour lire ce que les gens ont vraiment écrit.") + "</p></div>";
-    stage.innerHTML = frame(t("What people say about the brand", "Ce que les gens disent de la marque"),
-      t("Filter by tone. Click a word.", "Filtrez par ton. Cliquez un mot."), body);
-
-    var cloud = document.getElementById("b-cloud"), q = document.getElementById("b-q");
-    var font = getComputedStyle(document.body).fontFamily;
-    var ctx = document.createElement("canvas").getContext("2d");
-    var revealed = 0;
-    /* reading order: the four loudest first, then the rest shuffled */
-    var rest = WORDS.map(function (_, i) { return i; }).slice(4);
-    for (var k = rest.length - 1; k > 0; k--) { var j = (k * 7 + 3) % (k + 1), tmp = rest[k]; rest[k] = rest[j]; rest[j] = tmp; }
-    var order = [0, 1, 2, 3].concat(rest), rankOf = [];
-    order.forEach(function (w, r) { rankOf[w] = r; });
-
-    function layout() {
-      var Wc = cloud.clientWidth || 600, Hc = cloud.clientHeight || 300, cx = Wc / 2, cy = Hc / 2;
-      var scale = Math.max(.72, Math.min(1, Wc / 640));
-      var placed = [], out = "";
-      WORDS.forEach(function (w, i) {
-        var label = fr() ? w[1] : w[0], size = Math.round((9 + w[2] * 3.6) * scale);
-        ctx.font = "700 " + size + "px " + font;
-        var bw = ctx.measureText(label).width + 6, bh = size * 1.02;
-        for (var s = 0; s < 4000; s += 1) {
-          var a = s * 0.21, r = 1.35 * a;
-          var x = cx + r * Math.cos(a) * 1.7 - bw / 2, y = cy + r * Math.sin(a) - bh / 2;
-          if (x < 2 || y < 2 || x + bw > Wc - 2 || y + bh > Hc - 2) continue;
-          var hit = placed.some(function (p) { return x < p[0] + p[2] + 1 && x + bw + 1 > p[0] && y < p[1] + p[3] && y + bh > p[1]; });
-          if (hit) continue;
-          placed.push([x, y, bw, bh]);
-          out += '<button class="word word--' + TONE[w[3]] + (rankOf[i] < revealed ? " is-shown" : "") + '" type="button" data-i="' + i +
-            '" style="left:' + x.toFixed(0) + "px;top:" + y.toFixed(0) + "px;font-size:" + size + 'px">' + esc(label) + "</button>";
-          break;
-        }
-      });
-      cloud.innerHTML = out;
-      filter();
-    }
-    function filter() {
-      Array.prototype.forEach.call(cloud.querySelectorAll(".word"), function (el) {
-        var tone = TONE[WORDS[+el.dataset.i][3]];
-        el.classList.toggle("is-off", !on[tone]);
-        el.tabIndex = on[tone] && el.classList.contains("is-shown") ? 0 : -1;
-      });
-    }
-    /* the three tones share the posts read: they always add up to the count */
-    function counts(k) {
-      var read = Math.round(total * k), neg = Math.round(read * d.tones[0] / 100), neu = Math.round(read * d.tones[1] / 100);
-      var n = { neg: neg, neu: neu, pos: read - neg - neu };
-      Array.prototype.forEach.call(stage.querySelectorAll(".tone__n"), function (b) { b.textContent = num(n[b.dataset.n]); });
-    }
-    /* posts that use a word: the loudest word is in about a quarter of them */
-    function mentions(w) { return Math.round(total * 0.026 * w[2]); }
-    layout();
-    tween(5200, function (k) {
-      var target = Math.round(k * WORDS.length);
-      while (revealed < target) {
-        var el = cloud.querySelector('.word[data-i="' + order[revealed] + '"]');
-        if (el) el.classList.add("is-shown");
-        revealed++;
-      }
-      filter(); counts(k);
-      progress(k);
-    });
-
-    function quotesFor(w) {
-      var posts = d.posts, key = w[0].split(" ")[0].toLowerCase();
-      var hits = posts.filter(function (p) { return p[3].toLowerCase().indexOf(key) >= 0; });
-      if (hits.length < 2) hits = hits.concat(posts.filter(function (p) { return p[2] === w[3] && hits.indexOf(p) < 0; }));
-      if (hits.length < 2) hits = hits.concat(posts.filter(function (p) { return hits.indexOf(p) < 0; }));
-      return hits.slice(0, 2);
-    }
-    cloud.addEventListener("click", function (e) {
-      var el = e.target.closest(".word"); if (!el) return;
-      Array.prototype.forEach.call(cloud.querySelectorAll(".word"), function (x) { x.classList.toggle("is-on", x === el); });
-      var w = WORDS[+el.dataset.i];
-      q.innerHTML = '<p class="quotes__head"><b class="word--' + TONE[w[3]] + '">' + esc(fr() ? w[1] : w[0]) + "</b> · " +
-        num(mentions(w)) + " " + t("posts", "posts") + "</p>" +
-        quotesFor(w).map(function (p) {
-          return '<blockquote class="quote"><p>' + esc(fr() ? p[4] : p[3]) + "</p><cite>" + esc(p[1]) + " · " + PLATFORM_NAMES[p[0]] + "</cite></blockquote>";
-        }).join("");
-    });
-    stage.querySelector(".tones").addEventListener("click", function (e) {
-      var b = e.target.closest(".tone"); if (!b) return;
-      on[b.dataset.t] = !on[b.dataset.t];
-      b.classList.toggle("is-on", on[b.dataset.t]); b.setAttribute("aria-pressed", on[b.dataset.t] ? "true" : "false");
-      filter();
-    });
-    var rt = null;
-    function onResize() { clearTimeout(rt); rt = setTimeout(layout, 150); }
-    window.addEventListener("resize", onResize);
-    cleanup.push(function () { window.removeEventListener("resize", onResize); });
-  }
-
-  /* ===================================================== 3. audiences
-     The communities form one after the other on a map laid out like the
-     hero's, then their scores: gauges for the one in focus, and a matrix
-     of all of them (affinity against penetration, size = opportunity). */
-  /* close enough that the communities overlap, as they do in the hero */
-  var SLOTS = [
-    { x: 0.4, y: 0.54, r: 0.33, n: 2200, swirl: 0.55 },
-    { x: 0.59, y: 0.38, r: 0.27, n: 1500, swirl: -0.6 },
-    { x: 0.6, y: 0.68, r: 0.25, n: 1300, swirl: 0.5 },
-    { x: 0.24, y: 0.36, r: 0.21, n: 900, swirl: 0.6 },
-    { x: 0.77, y: 0.52, r: 0.23, n: 1000, swirl: -0.55 }
-  ];
-  var OUT = [{ x: 0.08, y: 0.76, r: 0.05, n: 12 }, { x: 0.46, y: 0.1, r: 0.04, n: 9 }, { x: 0.93, y: 0.14, r: 0.04, n: 9 }, { x: 0.44, y: 0.92, r: 0.04, n: 10 }];
-
-  function ring(v, color, label) {
-    var C = 2 * Math.PI * 26;
-    return '<div class="gauge"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="gauge__bg" cx="32" cy="32" r="26"/>' +
-      '<circle class="gauge__v" cx="32" cy="32" r="26" stroke="' + color + '" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + C.toFixed(1) + '" data-v="' + v + '"/></svg>' +
-      '<b>' + v + "</b><span>" + label + "</span></div>";
-  }
-
-  function audiences() {
-    var d = data(), G = d.groups, map = null;
-    var sel = G.reduce(function (b, g, i) { return g.opp > G[b].opp ? i : b; }, 0);
-    var comms = G.map(function (g, i) { var s = SLOTS[i]; return { x: s.x, y: s.y, r: s.r, n: s.n, swirl: s.swirl, color: g.color }; });
-    var MW = 320, MH = 230, MP = { l: 30, r: 14, t: 14, b: 28 };
-    /* the axes cover the range the scores use, so the bubbles spread out */
-    var pens = G.map(function (g) { return g.pen; }), affs = G.map(function (g) { return g.aff; });
-    var p0 = Math.max(0, Math.min.apply(null, pens) - 8), p1 = Math.min(100, Math.max.apply(null, pens) + 10);
-    var a0 = Math.max(0, Math.min.apply(null, affs) - 10), a1 = Math.min(100, Math.max.apply(null, affs) + 8);
-    function MX(v) { return MP.l + (v - p0) / (p1 - p0) * (MW - MP.l - MP.r); }
-    function MY(v) { return MP.t + (1 - (v - a0) / (a1 - a0)) * (MH - MP.t - MP.b); }
-    var midP = Math.max(p0 + 4, Math.min(p1 - 4, 40)), midA = Math.max(a0 + 4, Math.min(a1 - 4, 60));
-    /* each name goes where it covers no other bubble or name */
-    var pts = G.map(function (a) { return { x: MX(a.pen), y: MY(a.aff), rr: 5 + a.opp / 11 }; });
-    var taken = pts.map(function (q) { return [q.x - q.rr, q.y - q.rr, q.rr * 2, q.rr * 2]; });
-    var bubbles = G.map(function (a, i) {
-      var q = pts[i], label = L(a.short), w = label.length * 5.9 + 2, h = 12;
-      var cands = [[q.rr + 5, 4, "start"], [-(q.rr + 5), 4, "end"], [0, -(q.rr + 5), "middle"], [0, q.rr + 13, "middle"]];
-      var pick = cands[0], least = Infinity;
-      cands.forEach(function (cd) {
-        var bx = cd[2] === "start" ? q.x + cd[0] : cd[2] === "end" ? q.x + cd[0] - w : q.x - w / 2, by = q.y + cd[1] - 10;
-        if (bx < MP.l || bx + w > MW - 2 || by < 2 || by + h > MH - MP.b + 6) return;
-        var o = taken.reduce(function (s2, t2, j) {
-          if (j === i) return s2;
-          var ox = Math.min(bx + w + 2, t2[0] + t2[2]) - Math.max(bx - 2, t2[0]), oy = Math.min(by + h + 1, t2[1] + t2[3]) - Math.max(by - 1, t2[1]);
-          return s2 + (ox > 0 && oy > 0 ? ox * oy : 0);
-        }, 0);
-        if (o < least - 0.5) { least = o; pick = cd; pick.box = [bx, by, w, h]; }
-      });
-      if (pick.box) taken.push(pick.box);
-      return '<g class="mb" data-i="' + i + '" tabindex="0" role="button" transform="translate(' + q.x.toFixed(1) + "," + q.y.toFixed(1) + ')" style="--c:' + a.color + '" aria-label="' +
-        esc(L(a.name)) + ", " + t("affinity", "affinité") + " " + a.aff + ", " + t("penetration", "pénétration") + " " + a.pen + ", " + t("opportunity", "opportunité") + " " + a.opp + '">' +
-        '<circle class="mb__halo" r="' + (8 + a.opp / 5).toFixed(1) + '"/><circle class="mb__dot" r="' + q.rr.toFixed(1) + '"/>' +
-        '<text class="mb__t" x="' + pick[0].toFixed(1) + '" y="' + pick[1].toFixed(1) + '" text-anchor="' + pick[2] + '">' + esc(label) + "</text></g>";
-    }).join("");
-    var matrix =
-      '<svg class="uv-svg matrix" viewBox="0 0 ' + MW + " " + MH + '" role="group" aria-label="' + t("Affinity against penetration", "Affinité et pénétration") + '">' +
-        '<rect class="mz" x="' + MP.l + '" y="' + MP.t + '" width="' + (MX(midP) - MP.l).toFixed(1) + '" height="' + (MY(midA) - MP.t).toFixed(1) + '" rx="10"/>' +
-        '<text class="mz__t" x="' + (MP.l + 8) + '" y="' + (MP.t + 15) + '">' + t("Opportunity zone", "Zone d'opportunité") + "</text>" +
-        '<line class="g" x1="' + MX(midP).toFixed(1) + '" x2="' + MX(midP).toFixed(1) + '" y1="' + MP.t + '" y2="' + (MH - MP.b) + '"/>' +
-        '<line class="g" x1="' + MP.l + '" x2="' + (MW - MP.r) + '" y1="' + MY(midA).toFixed(1) + '" y2="' + MY(midA).toFixed(1) + '"/>' +
-        '<text class="ax" x="' + (MW - MP.r) + '" y="' + (MH - 8) + '" text-anchor="end">' + t("Penetration →", "Pénétration →") + "</text>" +
-        '<text class="ax" x="11" y="' + ((MP.t + MH - MP.b) / 2) + '" text-anchor="middle" transform="rotate(-90 11 ' + ((MP.t + MH - MP.b) / 2) + ')">' + t("Affinity →", "Affinité →") + "</text>" +
-        bubbles +
-      "</svg>";
-    var body =
-      '<div class="aud3">' +
-        '<div class="aud3__map aud3__map--mixed" id="a-map" aria-hidden="true"></div>' +
-        '<div class="aud3__row">' +
-          '<div class="aud2__focus" id="a-focus" aria-live="polite"></div>' +
-          '<div class="aud3__matrix"><p class="aud3__k">' + t("Where each community sits", "Où se place chaque communauté") +
-            ' <span>' + t("bubble size = opportunity", "taille = opportunité") + "</span></p>" + matrix + "</div>" +
-        "</div>" +
-      "</div>";
-    stage.innerHTML = frame(t("Audience communities and their scores", "Communautés d'audience et leurs scores"),
-      t("Watch the communities form. Hover the map or a bubble.", "Regardez les communautés se former. Survolez la carte ou une bulle."), body);
-    var focusEl = document.getElementById("a-focus"), mx = stage.querySelector(".matrix");
-
-    function focusCard(i) {
-      var a = G[i];
-      focusEl.style.setProperty("--c", a.color);
-      focusEl.innerHTML =
-        '<p class="afocus__name"><i></i>' + esc(L(a.name)) + "</p>" +
-        '<p class="afocus__meta">' + a.share + " % " + t("of the conversation", "de la conversation") + " · " + num(total * a.share / 100) + " " + t("posts", "posts") + "</p>" +
-        '<div class="gauges">' +
-          ring(a.aff, "#EAA93D", t("Affinity", "Affinité")) +
-          ring(a.pen, "#4292F2", t("Penetration", "Pénétration")) +
-          ring(a.opp, "#2E9E6B", t("Opportunity", "Opportunité")) +
-        "</div>" +
-        '<p class="afocus__note">' + esc(L(a.note)) + "</p>";
-      var C = 2 * Math.PI * 26;
-      requestAnimationFrame(function () {
-        Array.prototype.forEach.call(focusEl.querySelectorAll(".gauge__v"), function (el) {
-          el.style.strokeDashoffset = (C * (1 - (+el.dataset.v) / 100)).toFixed(1);
-        });
-      });
-      Array.prototype.forEach.call(mx.querySelectorAll(".mb"), function (b) { b.classList.toggle("is-on", +b.dataset.i === i); });
-    }
-    function pick(i) { sel = i; if (map) map.select(i); focusCard(i); }
-    mx.addEventListener("click", function (e) { var b = e.target.closest(".mb"); if (b) pick(+b.dataset.i); });
-    mx.addEventListener("keydown", function (e) { var b = e.target.closest(".mb"); if (b && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); pick(+b.dataset.i); } });
-    mx.addEventListener("mouseover", function (e) { var b = e.target.closest(".mb"); if (b) { if (map) map.select(+b.dataset.i); focusCard(+b.dataset.i); } });
-    mx.addEventListener("mouseleave", function () { if (map) map.select(sel); focusCard(sel); });
-
-    if (window.LicterMap) {
-      map = window.LicterMap(document.getElementById("a-map"), {
-        communities: comms, outliers: OUT, labels: G.map(function (a) { return L(a.name); }), grow: true,
-        onHover: function (i) { focusCard(i >= 0 ? i : sel); },
-        onSelect: function (i) { pick(i); }
-      });
-      if (map) { map.select(sel); cleanup.push(function () { map.destroy(); }); }
-    }
-    focusCard(sel);
-    /* the count follows the communities forming, 0.65 s apart, 1.5 s each */
-    autoProgress(650 * (G.length - 1) + 1500);
-  }
-
-  /* ======================================================== 4. trends
-     A race: topics by share of the conversation, month by month over
-     eighteen months. Rows reorder as topics overtake one another. */
-  var MONTHS = 18;
-
-  function trends() {
-    var d = data();
-    var RACE = d.topics.map(function (x) { return { name: [x[0], x[1]], color: x[2], f: shape(x[3]), lead: x[4], verdict: x[5] }; });
-    /* the curves are shapes; scaled so that every post of every month adds
-       up to the posts read, and the count grows month by month */
-    var raw = 0, peak = 0, CUM = [];
-    for (var m0 = 0; m0 <= MONTHS; m0++) {
-      RACE.forEach(function (r) { var x = Math.max(0, r.f(m0)); raw += x; peak = Math.max(peak, x); });
-      CUM.push(raw);
-    }
-    var scale = d.read / raw;
-    total = d.read;
-    /* pos: where the race is, in months, as a real number so it plays smoothly */
-    var pos = 0, month = 0, sel = 0, playing = false, prevRank = null;
-    var start = new Date(2024, 3, 1);
-    function monthLabel(m, long) {
-      var dt = new Date(start.getFullYear(), start.getMonth() + m, 1);
-      return dt.toLocaleDateString(fr() ? "fr-FR" : "en-GB", { month: long ? "long" : "short", year: "numeric" });
-    }
-    /* open on the fastest riser */
-    var bestRise = -Infinity;
-    RACE.forEach(function (r, i) { var rise = r.f(MONTHS) - r.f(0); if (rise > bestRise) { bestRise = rise; sel = i; } });
-    var ROW = 38;
-    var body =
-      '<div class="rc">' +
-        '<div class="rc__top">' +
-          '<p class="rc__when" id="t-when"></p>' +
-          '<div class="rc__ctrl">' +
-            '<button class="play2__btn" type="button" id="t-play">▶</button>' +
-            '<input type="range" id="t-range" min="0" max="' + MONTHS + '" step="any" value="0" aria-label="' + t("Month", "Mois") + '" />' +
+    function frame(title, hint, body) {
+      var d = data();
+      return '<div class="uv">' +
+          '<div class="uv__head">' +
+            '<span class="uv__live"><i></i>' + t("Live", "En direct") + "</span>" +
+            '<p class="uv__title">' + title + "</p>" +
+            '<span class="uv__tag">' + t("Illustrative data", "Données illustratives") + "</span>" +
+            (opts.closable ? '<button class="uv__close" type="button" id="' + PX + 'uv-close" aria-label="' + t("Close", "Fermer") + '"><span aria-hidden="true">×</span></button>' : "") +
           "</div>" +
+          '<div class="uv__case">' +
+            '<p class="uv__sector"><b>' + esc(L(SECTORS[sector].name)) + "</b><span>" + esc(L(d.subject)) + "</span></p>" +
+            '<button class="uv__next" type="button" id="' + PX + 'uv-next">' + t("Another case", "Voir un autre cas") + ' <span aria-hidden="true">↻</span></button>' +
+          "</div>" +
+          '<p class="uv__hint"><span aria-hidden="true">✦</span>' + hint + "</p>" +
+          '<div class="uv__body">' + body + "</div>" +
         "</div>" +
-        '<div class="rc__list" id="t-race" style="height:' + (RACE.length * ROW) + 'px">' +
-          RACE.map(function (r, i) {
-            return '<button class="rc__row" type="button" data-i="' + i + '" style="--c:' + r.color + '">' +
-              '<span class="rc__rank"></span>' +
-              '<span class="rc__name"><i></i>' + esc(L(r.name)) + "</span>" +
-              '<span class="rc__track"><span class="rc__bar"></span><b class="rc__v"></b></span>' +
-              '<span class="rc__move"></span></button>';
+        '<aside class="lf__read">' +
+          '<p class="lf__k">' + t("Posts read", "Posts lus") + "</p>" +
+          '<p class="lf__count" id="' + PX + 'uv-count">0</p>' +
+          '<p class="lf__k lf__k--posts">' + t("Latest posts", "Derniers posts") + "</p>" +
+          '<div class="mps" id="' + PX + 'uv-posts"></div>' +
+          '<div class="lf__answer" id="' + PX + 'uv-answer" aria-live="polite"><p class="lf__reading">' + t("Reading", "Lecture en cours") +
+            '<span class="lf__dots"><i></i><i></i><i></i></span></p></div>' +
+          '<div class="lf__get" id="' + PX + 'uv-get"></div>' +
+          '<a class="lf__book" href="#book">' + t("Or talk to a consultant", "Ou parler à un consultant") + ' <span aria-hidden="true">→</span></a>' +
+        "</aside>";
+    }
+
+    function postHTML(p) {
+      return '<div class="mp">' +
+        '<p class="mp__meta">' + ((window.LicterIcons || {})[p[0]] || "") + "<b>" + esc(p[1]) + "</b><span>" + PLATFORM_NAMES[p[0]] + "</span></p>" +
+        '<p class="mp__text">' + esc(fr() ? p[4] : p[3]) + "</p></div>";
+    }
+
+    /* The side panel: two posts rotate; the count and our read follow the
+       visual. A visual calls progress(k), k from 0 to 1; at 1 our read lands. */
+    var gen = 0, answered = false, total = 0;
+    var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, sentCases = {};
+
+    /* The offer once the read has landed: the full case of the sector on
+       screen, by email. The lead arrives with its sector and its question. */
+    function renderGet() {
+      var el = $("uv-get");
+      if (!el) return;
+      var key = current + ":" + SECTORS[sector].key, name = L(SECTORS[sector].name).toLowerCase();
+      var known = window.LicterLead ? window.LicterLead.get() : "";
+      if (sentCases[key]) {
+        el.innerHTML = '<p class="lf__sent">' + t("Noted. A consultant sends you a real " + name + " case within 48 hours.", "C'est noté. Un consultant vous envoie un cas réel du secteur " + name + " sous 48 h.") + "</p>";
+        return;
+      }
+      function done(email) {
+        /* MOCK: send { email, topic: current, sector: SECTORS[sector].key } to the CRM */
+        if (window.LicterLead) window.LicterLead.set(email);
+        sentCases[key] = true;
+        renderGet();
+        var msg = el.querySelector(".lf__sent");
+        if (msg) { msg.setAttribute("tabindex", "-1"); msg.focus({ preventScroll: true }); }
+      }
+      /* the title is a label when there is a field, a plain line when not */
+      function head(label) {
+        var title = t("Get a real case", "Recevez un cas réel") + " · " + esc(L(SECTORS[sector].name));
+        return (label ? '<label class="lf__k" for="' + PX + 'uv-email">' + title + "</label>" : '<p class="lf__k">' + title + "</p>") +
+          '<p class="lf__sub">' + t("Anonymised, sent by a consultant within 48 hours.", "Anonymisé, envoyé par un consultant sous 48 h.") + "</p>";
+      }
+      /* already known: one click, no field to fill again */
+      if (known && EMAIL.test(known)) {
+        el.innerHTML = head(false) + '<button class="btn btn--primary lf__one" type="button">' + t("Send it to ", "L'envoyer à ") + esc(known) + "</button>";
+        el.querySelector(".lf__one").addEventListener("click", function () { done(known); });
+        return;
+      }
+      el.innerHTML =
+        '<form class="lf__form" novalidate>' + head(true) +
+          '<div class="lf__row"><input class="fld__input" id="' + PX + 'uv-email" type="email" autocomplete="email" placeholder="' + t("name@company.com", "nom@entreprise.com") + '" required />' +
+          '<button class="btn btn--primary" type="submit">' + t("Send", "Recevoir") + "</button></div>" +
+          '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
+        "</form>";
+      el.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var field = el.querySelector(".fld__input"), err = el.querySelector(".fld__error"), ok = EMAIL.test(field.value.trim());
+        field.setAttribute("aria-invalid", ok ? "false" : "true");
+        err.hidden = ok;
+        if (!ok) { field.focus(); return; }
+        done(field.value.trim());
+      });
+    }
+
+    function runSide() {
+      var posts = data().posts, postsEl = $("uv-posts"), i = 0;
+      function show() {
+        postsEl.innerHTML = postHTML(posts[i % posts.length]);
+        postsEl.classList.remove("is-in"); void postsEl.offsetWidth; postsEl.classList.add("is-in");
+        i += 1;
+      }
+      show();
+      every(show, 3600);
+    }
+    function progress(k) {
+      var countEl = $("uv-count"), answerEl = $("uv-answer");
+      if (!countEl) return;
+      k = Math.max(0, Math.min(1, k));
+      countEl.textContent = num(Math.round(total * k));
+      if (k >= 1 && !answered) {
+        answered = true;
+        var ins = data().insight;
+        answerEl.classList.add("is-in");
+        answerEl.innerHTML =
+          '<p class="lf__k">' + t("Our read", "Notre lecture") + "</p>" +
+          '<p class="ins__head">' + esc(L(ins.head)) + "</p>" +
+          '<ul class="ins__facts">' + ins.facts.map(function (f) { return "<li>" + esc(L(f)) + "</li>"; }).join("") + "</ul>" +
+          '<p class="ins__reco"><span>' + t("We recommend", "Notre recommandation") + "</span>" + esc(L(ins.reco)) + "</p>";
+        renderGet();
+        var get = $("uv-get");
+        if (get) { get.classList.remove("is-in"); void get.offsetWidth; get.classList.add("is-in"); }
+      }
+    }
+    /* runs fn(k) from 0 to 1 over ms, frame by frame, until the case changes */
+    function tween(ms, fn, done) {
+      var my = gen, start = performance.now();
+      if (reduced.matches) { fn(1); if (done) done(); return; }
+      (function step(now) {
+        if (my !== gen) return;
+        var k = Math.min(1, (now - start) / ms);
+        fn(k);
+        if (k < 1) requestAnimationFrame(step); else if (done) done();
+      })(start);
+    }
+    function autoProgress(ms) { tween(ms || 3200, function (k) { progress(1 - Math.pow(1 - k, 3)); }); }
+
+    /* ================================================= 1. communication */
+    function communication() {
+      var d = data(), c = d.curve, D = 42, V = [], CAT = [];
+      for (var i = 0; i < D; i++) {
+        var v = c.base * (1 + 0.07 * Math.sin(i * 1.3) + 0.04 * Math.cos(i * 0.7));
+        if (i >= c.launch) {
+          v += c.spike * Math.exp(-Math.pow(i - c.launch - 1.5, 2) / 5) + c.plateau * (1 - Math.exp(-(i - c.launch) / 5));
+          c.bumps.forEach(function (b) { v += b[1] * Math.exp(-Math.pow(i - b[0], 2) / b[2]); });
+        }
+        V.push(Math.round(v));
+        CAT.push(Math.round(c.base * (1.16 + 0.05 * Math.sin(i * 0.5))));
+      }
+      var TOP = Math.ceil(Math.max.apply(null, V) * 1.12 / 1000) * 1000;
+      var CUM = [], acc = 0; V.forEach(function (x) { acc += x; CUM.push(acc); });
+      total = acc;
+      /* on a phone the chart is drawn narrower rather than shrunk: the same
+         text sizes, fewer pixels per day */
+      var narrow = stage.clientWidth < 560;
+      var W = narrow ? 400 : 640, H = narrow ? 300 : 320, P = { l: 40, r: 12, t: 26, b: 30 };
+      function X(x) { return P.l + x * (W - P.l - P.r) / (D - 1); }
+      function Y(x) { return P.t + (1 - x / TOP) * (H - P.t - P.b); }
+      function line(a) { return a.map(function (x, k) { return (k ? "L" : "M") + X(k).toFixed(1) + " " + Y(x).toFixed(1); }).join(" "); }
+      function at(f) { var k = Math.max(0, Math.min(D - 2, Math.floor(f))); return V[k] + (V[k + 1] - V[k]) * (f - k); }
+      var area = line(V) + " L" + X(D - 1) + " " + (H - P.b) + " L" + X(0) + " " + (H - P.b) + " Z";
+      var grid = [0, .25, .5, .75, 1].map(function (q) {
+        var val = TOP * q, lab = val ? (val / 1000).toLocaleString(fr() ? "fr-FR" : "en-GB", { maximumFractionDigits: 1 }) + "k" : "0";
+        return '<line class="g" x1="' + P.l + '" x2="' + (W - P.r) + '" y1="' + Y(val) + '" y2="' + Y(val) + '"/>' +
+          '<text class="ax" x="' + (P.l - 8) + '" y="' + (Y(val) + 3.5) + '" text-anchor="end">' + lab + "</text>";
+      }).join("");
+      var weeks = [0, 7, 14, 21, 28, 35].map(function (x, k) {
+        return '<text class="ax" x="' + X(x + 3) + '" y="' + (H - 8) + '" text-anchor="middle">' + t("Week ", "Sem. ") + (k + 1) + "</text>";
+      }).join("");
+      /* each pin sits on the top of its wave, and carries its own label, placed
+         where it covers nothing: above the pin, else right, left, below */
+      var PK = d.peaks.map(function (p) {
+        var best = p.d;
+        for (var j = p.d - 1; j <= p.d + 1; j++) if (j > c.launch - 1 && j < D && V[j] > V[best]) best = j;
+        return { d: best, x: X(best), y: Y(V[best]) };
+      });
+      var boxes = [[X(c.launch - 0.5) - 42, 0, 84, P.t + 2]];
+      PK.forEach(function (q) { boxes.push([q.x - 8, q.y - 8, 16, 16]); });
+      function overlap(bx, by, w, h) {
+        return boxes.reduce(function (s, b) {
+          var ox = Math.min(bx + w + 4, b[0] + b[2]) - Math.max(bx - 4, b[0]), oy = Math.min(by + h + 3, b[1] + b[3]) - Math.max(by - 3, b[1]);
+          return s + (ox > 0 && oy > 0 ? ox * oy : 0);
+        }, 0);
+      }
+      var pins = d.peaks.map(function (p, k) {
+        var label = L(p.tag), w = Math.round(label.length * 6.4 + 22), h = 20, px = PK[k].x, py = PK[k].y;
+        var cands = [[-w / 2, -h - 12], [14, -h / 2], [-14 - w, -h / 2], [-w / 2, 12], [14, -h - 16], [-14 - w, -h - 16], [-w / 2, -h - 34], [-w / 2, 34]];
+        var pick = null, least = Infinity;
+        cands.forEach(function (cd) {
+          var bx = px + cd[0], by = py + cd[1];
+          if (bx < P.l || bx + w > W - P.r || by < 2 || by + h > H - P.b) return;
+          var o = overlap(bx, by, w, h);
+          if (o < least - 0.5) { least = o; pick = cd; }
+        });
+        pick = pick || cands[0];
+        boxes.push([px + pick[0], py + pick[1], w, h]);
+        return '<g class="pin is-hidden" tabindex="0" role="button" data-i="' + k + '" transform="translate(' + px.toFixed(1) + "," + py.toFixed(1) + ')" aria-label="' + esc(label + ". " + L(p.txt)) + '">' +
+          '<g class="pin__tag" transform="translate(' + pick[0].toFixed(1) + "," + pick[1].toFixed(1) + ')"><rect width="' + w + '" height="' + h + '" rx="10"/>' +
+          '<text x="' + (w / 2) + '" y="14" text-anchor="middle">' + esc(label) + "</text></g>" +
+          '<circle class="pin__halo" r="12"/><circle class="pin__dot" r="5.5"/></g>';
+      }).join("");
+      var svg =
+        '<svg class="uv-svg is-locked" id="' + PX + 'c-svg" viewBox="0 0 ' + W + " " + H + '" role="group" aria-label="' + t("Daily volume of posts over six weeks", "Volume quotidien de posts sur six semaines") + '">' +
+          '<defs><linearGradient id="' + PX + 'c-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAA93D" stop-opacity=".38"/><stop offset="1" stop-color="#EAA93D" stop-opacity="0"/></linearGradient>' +
+            '<clipPath id="' + PX + 'c-clip"><rect id="' + PX + 'c-reveal" x="0" y="0" width="' + P.l + '" height="' + H + '"/></clipPath></defs>' +
+          grid + weeks +
+          '<rect class="after" id="' + PX + 'c-after" y="' + P.t + '" height="' + (H - P.t - P.b) + '"/>' +
+          '<path class="cat" d="' + line(CAT) + '"/>' +
+          '<text class="cat__t" x="' + (W - P.r) + '" y="' + (Y(CAT[D - 1]) + 16) + '" text-anchor="end">' + t("Category average", "Moyenne de la catégorie") + "</text>" +
+          '<g clip-path="url(#' + PX + 'c-clip)"><path class="area" style="fill:url(#' + PX + 'c-fill)" d="' + area + '"/><path class="brand" d="' + line(V) + '"/></g>' +
+          '<circle class="head" id="' + PX + 'c-head" r="5"/>' +
+          '<g id="' + PX + 'c-launch" class="launch"><line y1="' + (P.t - 4) + '" y2="' + (H - P.b) + '"/>' +
+            '<rect x="-38" y="' + (P.t - 24) + '" width="76" height="20" rx="10"/>' +
+            '<text y="' + (P.t - 10) + '" text-anchor="middle">' + t("Launch", "Lancement") + "</text>" +
+            '<circle class="launch__grip" id="' + PX + 'c-grip" r="8"/></g>' +
+          pins +
+        "</svg>";
+      var body =
+        '<div class="kchips">' +
+          '<div class="kchip"><span>' + t("Before", "Avant") + '</span><b id="' + PX + 'c-b">…</b></div>' +
+          '<div class="kchip"><span>' + t("After", "Après") + '</span><b id="' + PX + 'c-a">…</b></div>' +
+          '<div class="kchip kchip--hi"><span>' + t("Uplift", "Gain") + '</span><b id="' + PX + 'c-u">…</b></div>' +
+          '<span class="kchip__day" id="' + PX + 'c-day"></span>' +
+        "</div>" +
+        '<div class="uv-chart" id="' + PX + 'c-chart">' + svg + '<div class="uv-tip" id="' + PX + 'c-tip" hidden></div></div>' +
+        /* what happened at each peak, readable without hovering */
+        '<ol class="c-peaks">' + d.peaks.map(function (p, k) {
+          return '<li class="is-hidden" data-i="' + k + '"><b>' + esc(L(p.tag)) + "</b><span>" + esc(L(p.txt)) + "</span></li>";
+        }).join("") + "</ol>" +
+        '<input class="visually-hidden" type="range" id="' + PX + 'c-range" min="4" max="37" value="' + c.launch + '" disabled aria-label="' + t("Campaign launch day", "Jour du lancement") + '" />';
+      stage.innerHTML = frame(t("Posts per day, six weeks", "Posts par jour, six semaines"),
+        '<span id="' + PX + 'c-hint">' + t("Reading the six weeks…", "Lecture des six semaines…") + "</span>", body);
+
+      var svgEl = $("c-svg"), g = $("c-launch"), grip = $("c-grip");
+      var after = $("c-after"), range = $("c-range"), tip = $("c-tip");
+      var chart = $("c-chart"), reveal = $("c-reveal"), head = $("c-head");
+      var launch = c.launch, shown = 0, ready = false;
+      function avg(a) { return a.reduce(function (s, x) { return s + x; }, 0) / (a.length || 1); }
+      function update() {
+        var x = (X(launch - 1) + X(launch)) / 2;
+        g.setAttribute("transform", "translate(" + x.toFixed(1) + ",0)");
+        /* the grip rides the curve, wherever the line is dragged */
+        grip.setAttribute("cy", Y(at(launch - 0.5)).toFixed(1));
+        after.setAttribute("x", x.toFixed(1)); after.setAttribute("width", Math.max(0, X(Math.max(launch, shown)) - x).toFixed(1));
+        var b = V.slice(Math.max(0, launch - 14), Math.min(launch, shown + 1));
+        var a = shown >= launch ? V.slice(launch, Math.min(launch + 14, shown + 1)) : [];
+        $("c-b").textContent = b.length ? num(avg(b)) + t("/day", "/jour") : "…";
+        $("c-a").textContent = a.length ? num(avg(a)) + t("/day", "/jour") : "…";
+        var up = a.length && b.length ? (avg(a) / avg(b) - 1) * 100 : null;
+        $("c-u").textContent = up === null ? "…" : (up >= 0 ? "+" : "") + Math.round(up) + " %";
+        range.value = launch;
+      }
+      /* the curve draws itself day by day; the chips and the count follow it */
+      tween(4200, function (k) {
+        var f = k * (D - 1);
+        shown = Math.floor(f);
+        var x = X(f);
+        reveal.setAttribute("width", x.toFixed(1));
+        head.setAttribute("cx", x.toFixed(1)); head.setAttribute("cy", Y(at(f)).toFixed(1));
+        Array.prototype.forEach.call(stage.querySelectorAll(".pin, .c-peaks li"), function (el) {
+          if (PK[+el.dataset.i].d <= f) el.classList.remove("is-hidden");
+        });
+        if (f >= launch - 0.5) g.classList.add("is-in");
+        $("c-day").textContent = t("Day ", "Jour ") + (shown + 1) + " / " + D;
+        update();
+        progress(CUM[shown] / CUM[D - 1]);
+      }, function () {
+        shown = D - 1; ready = true; g.classList.add("is-in", "is-done"); update(); progress(1);
+        Array.prototype.forEach.call(stage.querySelectorAll(".pin, .c-peaks li"), function (el) { el.classList.remove("is-hidden"); });
+        svgEl.classList.remove("is-locked"); range.disabled = false;
+        head.style.opacity = "0";
+        $("c-day").textContent = "";
+        $("c-hint").textContent = t("Now drag the launch line. Hover the peaks.", "Déplacez maintenant la ligne de lancement. Survolez les pics.");
+      });
+
+      function fromPointer(e) {
+        var r = svgEl.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * W;
+        launch = Math.max(4, Math.min(37, Math.round((x - P.l) / ((W - P.l - P.r) / (D - 1)) + 0.5)));
+        update();
+      }
+      var dragging = false;
+      svgEl.addEventListener("pointerdown", function (e) {
+        if (!ready || e.target.closest(".pin")) return;
+        dragging = true; svgEl.setPointerCapture(e.pointerId); fromPointer(e);
+      });
+      svgEl.addEventListener("pointermove", function (e) { if (dragging) fromPointer(e); });
+      svgEl.addEventListener("pointerup", function () { dragging = false; });
+      range.addEventListener("input", function () { launch = +range.value; update(); });
+
+      function showTip(k) {
+        var p = d.peaks[k], q = PK[k];
+        tip.innerHTML = '<p class="uv-tip__meta">' + ((window.LicterIcons || {})[p.pf] || "") + "<b>" + p.h + "</b> · " + PLATFORM_NAMES[p.pf] + "</p><p>" + esc(L(p.txt)) + "</p>";
+        tip.style.left = (q.x / W * 100) + "%";
+        tip.style.top = (q.y / H * 100) + "%";
+        tip.hidden = false;
+      }
+      Array.prototype.forEach.call(chart.querySelectorAll(".pin"), function (el) {
+        var k = +el.dataset.i;
+        el.addEventListener("mouseenter", function () { showTip(k); });
+        el.addEventListener("focus", function () { showTip(k); });
+        el.addEventListener("click", function () { showTip(k); });
+        el.addEventListener("mouseleave", function () { tip.hidden = true; });
+        el.addEventListener("blur", function () { tip.hidden = true; });
+      });
+      update();
+    }
+
+    /* ======================================================== 2. brand */
+    var TONE = { "-1": "neg", "0": "neu", "1": "pos" };
+
+    function brand() {
+      var d = data(), on = { neg: true, neu: true, pos: true };
+      /* the sector's words first, then the common ones it does not already have */
+      var seenW = {};
+      var WORDS = d.words.concat(FILLER).filter(function (w) {
+        var k = w[1].toLowerCase();
+        if (seenW[k]) return false;
+        seenW[k] = 1; return true;
+      });
+      var body =
+        '<div class="tones" role="group" aria-label="' + t("Tone", "Tonalité") + '">' +
+          [["neg", t("Negative", "Négatif")], ["neu", t("Neutral", "Neutre")], ["pos", t("Positive", "Positif")]].map(function (x) {
+            return '<button class="tone tone--' + x[0] + ' is-on" type="button" data-t="' + x[0] + '" aria-pressed="true"><i></i>' + x[1] +
+              ' <b class="tone__n" data-n="' + x[0] + '">0</b></button>';
           }).join("") +
         "</div>" +
-        '<div class="rc__detail" id="t-card"></div>' +
-      "</div>";
-    stage.innerHTML = frame(t("Topics, posts per month over 18 months", "Sujets, posts par mois sur 18 mois"),
-      t("Watch them overtake each other. Click a topic.", "Regardez-les se dépasser. Cliquez un sujet."), body);
-    var race = document.getElementById("t-race"), rows = Array.prototype.slice.call(race.querySelectorAll(".rc__row"));
-    var range = document.getElementById("t-range"), btn = document.getElementById("t-play");
+        '<div class="cloud" id="' + PX + 'b-cloud"></div>' +
+        '<div class="quotes" id="' + PX + 'b-q"><p class="quotes__hint">' + t("Words appear as we read. Click one to see what people actually wrote.", "Les mots apparaissent à mesure que nous lisons. Cliquez-en un pour lire ce que les gens ont vraiment écrit.") + "</p></div>";
+      stage.innerHTML = frame(t("What people say about the brand", "Ce que les gens disent de la marque"),
+        t("Filter by tone. Click a word.", "Filtrez par ton. Cliquez un mot."), body);
 
-    function vals(m) { return RACE.map(function (r) { return Math.max(0, r.f(m)) * scale; }); }
-    function draw() {
-      month = Math.min(MONTHS, Math.floor(pos + 1e-6));
-      var v = vals(pos);
-      var order = v.map(function (x, i) { return i; }).sort(function (a, b) { return v[b] - v[a]; });
-      var rank = []; order.forEach(function (i, k) { rank[i] = k; });
-      rows.forEach(function (row, i) {
-        row.style.transform = "translateY(" + (rank[i] * ROW) + "px)";
-        row.querySelector(".rc__rank").textContent = rank[i] + 1;
-        row.querySelector(".rc__bar").style.width = Math.max(1.5, v[i] / (peak * scale) * 100).toFixed(1) + "%";
-        row.querySelector(".rc__v").textContent = num(v[i]);
-        var mv = row.querySelector(".rc__move");
-        if (prevRank && prevRank[i] !== rank[i]) {
-          var up = prevRank[i] > rank[i];
-          mv.textContent = up ? "↑" : "↓"; mv.className = "rc__move " + (up ? "is-up" : "is-down");
+      var cloud = $("b-cloud"), q = $("b-q");
+      var font = getComputedStyle(document.body).fontFamily;
+      var ctx = document.createElement("canvas").getContext("2d");
+      var revealed = 0;
+      /* reading order: the four loudest first, then the rest shuffled */
+      var rest = WORDS.map(function (_, i) { return i; }).slice(4);
+      for (var k = rest.length - 1; k > 0; k--) { var j = (k * 7 + 3) % (k + 1), tmp = rest[k]; rest[k] = rest[j]; rest[j] = tmp; }
+      var order = [0, 1, 2, 3].concat(rest), rankOf = [];
+      order.forEach(function (w, r) { rankOf[w] = r; });
+
+      function layout() {
+        var Wc = cloud.clientWidth || 600, Hc = cloud.clientHeight || 300, cx = Wc / 2, cy = Hc / 2;
+        var scale = Math.max(.72, Math.min(1, Wc / 640));
+        var placed = [], out = "";
+        WORDS.forEach(function (w, i) {
+          var label = fr() ? w[1] : w[0], size = Math.round((9 + w[2] * 3.6) * scale);
+          ctx.font = "700 " + size + "px " + font;
+          var bw = ctx.measureText(label).width + 6, bh = size * 1.02;
+          for (var s = 0; s < 4000; s += 1) {
+            var a = s * 0.21, r = 1.35 * a;
+            var x = cx + r * Math.cos(a) * 1.7 - bw / 2, y = cy + r * Math.sin(a) - bh / 2;
+            if (x < 2 || y < 2 || x + bw > Wc - 2 || y + bh > Hc - 2) continue;
+            var hit = placed.some(function (p) { return x < p[0] + p[2] + 1 && x + bw + 1 > p[0] && y < p[1] + p[3] && y + bh > p[1]; });
+            if (hit) continue;
+            placed.push([x, y, bw, bh]);
+            out += '<button class="word word--' + TONE[w[3]] + (rankOf[i] < revealed ? " is-shown" : "") + '" type="button" data-i="' + i +
+              '" style="left:' + x.toFixed(0) + "px;top:" + y.toFixed(0) + "px;font-size:" + size + 'px">' + esc(label) + "</button>";
+            break;
+          }
+        });
+        cloud.innerHTML = out;
+        filter();
+      }
+      function filter() {
+        Array.prototype.forEach.call(cloud.querySelectorAll(".word"), function (el) {
+          var tone = TONE[WORDS[+el.dataset.i][3]];
+          el.classList.toggle("is-off", !on[tone]);
+          el.tabIndex = on[tone] && el.classList.contains("is-shown") ? 0 : -1;
+        });
+      }
+      /* the three tones share the posts read: they always add up to the count */
+      function counts(k) {
+        var read = Math.round(total * k), neg = Math.round(read * d.tones[0] / 100), neu = Math.round(read * d.tones[1] / 100);
+        var n = { neg: neg, neu: neu, pos: read - neg - neu };
+        Array.prototype.forEach.call(stage.querySelectorAll(".tone__n"), function (b) { b.textContent = num(n[b.dataset.n]); });
+      }
+      /* posts that use a word: the loudest word is in about a quarter of them */
+      function mentions(w) { return Math.round(total * 0.026 * w[2]); }
+      layout();
+      tween(5200, function (k) {
+        var target = Math.round(k * WORDS.length);
+        while (revealed < target) {
+          var el = cloud.querySelector('.word[data-i="' + order[revealed] + '"]');
+          if (el) el.classList.add("is-shown");
+          revealed++;
         }
-        row.classList.toggle("is-on", i === sel);
-        row.setAttribute("aria-label", (rank[i] + 1) + ". " + L(RACE[i].name) + ", " + num(v[i]) + " " + t("posts", "posts"));
+        filter(); counts(k);
+        progress(k);
       });
-      prevRank = rank;
-      document.getElementById("t-when").innerHTML = "<b>" + monthLabel(month, true) + "</b><span>" + t("Month ", "Mois ") + month + " / " + MONTHS + "</span>";
-      range.value = pos; range.style.setProperty("--fill", (pos / MONTHS * 100) + "%");
-      range.setAttribute("aria-valuetext", monthLabel(month, true));
-      detail();
-      var i = Math.min(MONTHS - 1, Math.floor(pos));
-      progress((CUM[i] + (CUM[i + 1] - CUM[i]) * (pos - i)) / raw);
+
+      function quotesFor(w) {
+        var posts = d.posts, key = w[0].split(" ")[0].toLowerCase();
+        var hits = posts.filter(function (p) { return p[3].toLowerCase().indexOf(key) >= 0; });
+        if (hits.length < 2) hits = hits.concat(posts.filter(function (p) { return p[2] === w[3] && hits.indexOf(p) < 0; }));
+        if (hits.length < 2) hits = hits.concat(posts.filter(function (p) { return hits.indexOf(p) < 0; }));
+        return hits.slice(0, 2);
+      }
+      cloud.addEventListener("click", function (e) {
+        var el = e.target.closest(".word"); if (!el) return;
+        Array.prototype.forEach.call(cloud.querySelectorAll(".word"), function (x) { x.classList.toggle("is-on", x === el); });
+        var w = WORDS[+el.dataset.i];
+        q.innerHTML = '<p class="quotes__head"><b class="word--' + TONE[w[3]] + '">' + esc(fr() ? w[1] : w[0]) + "</b> · " +
+          num(mentions(w)) + " " + t("posts", "posts") + "</p>" +
+          quotesFor(w).map(function (p) {
+            return '<blockquote class="quote"><p>' + esc(fr() ? p[4] : p[3]) + "</p><cite>" + esc(p[1]) + " · " + PLATFORM_NAMES[p[0]] + "</cite></blockquote>";
+          }).join("");
+      });
+      stage.querySelector(".tones").addEventListener("click", function (e) {
+        var b = e.target.closest(".tone"); if (!b) return;
+        on[b.dataset.t] = !on[b.dataset.t];
+        b.classList.toggle("is-on", on[b.dataset.t]); b.setAttribute("aria-pressed", on[b.dataset.t] ? "true" : "false");
+        filter();
+      });
+      var rt = null;
+      function onResize() { clearTimeout(rt); rt = setTimeout(layout, 150); }
+      window.addEventListener("resize", onResize);
+      cleanup.push(function () { window.removeEventListener("resize", onResize); });
     }
-    function detail() {
-      var r = RACE[sel], s = [], lo = Infinity, hi = -Infinity;
-      for (var m = 0; m <= MONTHS; m++) { var x = Math.max(0, r.f(m)) * scale; s.push(x); lo = Math.min(lo, x); hi = Math.max(hi, x); }
-      var sw = 220, sh = 46, span = (hi - lo) || 1;
-      function SY(x) { return (sh - 5 - (x - lo) / span * (sh - 10)).toFixed(1); }
-      var path = s.map(function (x, m) { return (m ? "L" : "M") + (m / MONTHS * sw).toFixed(1) + " " + SY(x); }).join(" ");
-      var fill = path + " L" + sw + " " + sh + " L0 " + sh + " Z";
-      var now = s[month], ch = Math.round(now - s[0]);
-      document.getElementById("t-card").innerHTML =
-        '<div class="rcd__id" style="--c:' + r.color + '"><p class="rcd__name"><i></i>' + esc(L(r.name)) + "</p>" +
-          '<p class="rcd__lead">' + t("Driven by ", "Porté par ") + "<b>" + esc(L(r.lead)) + "</b></p></div>" +
-        '<div class="rcd__num"><b>' + num(now) + "</b><span>" + t("posts this month", "posts ce mois-ci") + "</span></div>" +
-        '<div class="rcd__num"><b class="' + (ch >= 0 ? "is-up" : "is-down") + '">' + (ch >= 0 ? "+" : "−") + num(Math.abs(ch)) + "</b><span>" + t("vs ", "vs ") + monthLabel(0) + "</span></div>" +
-        '<svg class="rcd__spark" viewBox="0 0 ' + sw + " " + sh + '" preserveAspectRatio="none" aria-hidden="true" style="--c:' + r.color + '"><path class="f" d="' + fill + '"/><path class="l" d="' + path + '"/>' +
-          '<circle cx="' + (pos / MONTHS * sw).toFixed(1) + '" cy="' + SY(Math.max(0, r.f(pos)) * scale) + '" r="3.5"/></svg>' +
-        '<p class="rcd__verdict rcd__verdict--' + r.verdict[0] + '">' + esc(fr() ? r.verdict[2] : r.verdict[1]) + "</p>";
+
+    /* ===================================================== 3. audiences
+       The communities form one after the other on a map laid out like the
+       hero's, then their scores: gauges for the one in focus, and a matrix
+       of all of them (affinity against penetration, size = opportunity). */
+    /* close enough that the communities overlap, as they do in the hero */
+    var SLOTS = [
+      { x: 0.4, y: 0.54, r: 0.33, n: 2200, swirl: 0.55 },
+      { x: 0.59, y: 0.38, r: 0.27, n: 1500, swirl: -0.6 },
+      { x: 0.6, y: 0.68, r: 0.25, n: 1300, swirl: 0.5 },
+      { x: 0.24, y: 0.36, r: 0.21, n: 900, swirl: 0.6 },
+      { x: 0.77, y: 0.52, r: 0.23, n: 1000, swirl: -0.55 }
+    ];
+    var OUT = [{ x: 0.08, y: 0.76, r: 0.05, n: 12 }, { x: 0.46, y: 0.1, r: 0.04, n: 9 }, { x: 0.93, y: 0.14, r: 0.04, n: 9 }, { x: 0.44, y: 0.92, r: 0.04, n: 10 }];
+
+    function ring(v, color, label) {
+      var C = 2 * Math.PI * 26;
+      return '<div class="gauge"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="gauge__bg" cx="32" cy="32" r="26"/>' +
+        '<circle class="gauge__v" cx="32" cy="32" r="26" stroke="' + color + '" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + C.toFixed(1) + '" data-v="' + v + '"/></svg>' +
+        '<b>' + v + "</b><span>" + label + "</span></div>";
     }
-    function stopPlay() { playing = false; btn.textContent = "▶"; btn.setAttribute("aria-label", t("Play 18 months", "Lire 18 mois")); }
-    /* one frame at a time, about 0.36 s a month */
-    var MS_PER_MONTH = 360;
-    function play() {
-      if (pos >= MONTHS) { pos = 0; prevRank = null; }
-      if (reduced.matches) { pos = MONTHS; draw(); return; }
-      btn.textContent = "❚❚"; btn.setAttribute("aria-label", t("Pause", "Pause"));
-      playing = true;
-      var my = gen, last = performance.now();
-      (function step(now) {
-        if (!playing || my !== gen) return;
-        pos = Math.min(MONTHS, pos + (now - last) / MS_PER_MONTH);
-        last = now;
+
+    function audiences() {
+      var d = data(), G = d.groups, map = null;
+      var sel = G.reduce(function (b, g, i) { return g.opp > G[b].opp ? i : b; }, 0);
+      var comms = G.map(function (g, i) { var s = SLOTS[i]; return { x: s.x, y: s.y, r: s.r, n: s.n, swirl: s.swirl, color: g.color }; });
+      var MW = 320, MH = 230, MP = { l: 30, r: 14, t: 14, b: 28 };
+      /* the axes cover the range the scores use, so the bubbles spread out */
+      var pens = G.map(function (g) { return g.pen; }), affs = G.map(function (g) { return g.aff; });
+      var p0 = Math.max(0, Math.min.apply(null, pens) - 8), p1 = Math.min(100, Math.max.apply(null, pens) + 10);
+      var a0 = Math.max(0, Math.min.apply(null, affs) - 10), a1 = Math.min(100, Math.max.apply(null, affs) + 8);
+      function MX(v) { return MP.l + (v - p0) / (p1 - p0) * (MW - MP.l - MP.r); }
+      function MY(v) { return MP.t + (1 - (v - a0) / (a1 - a0)) * (MH - MP.t - MP.b); }
+      var midP = Math.max(p0 + 4, Math.min(p1 - 4, 40)), midA = Math.max(a0 + 4, Math.min(a1 - 4, 60));
+      /* each name goes where it covers no other bubble or name */
+      var pts = G.map(function (a) { return { x: MX(a.pen), y: MY(a.aff), rr: 5 + a.opp / 11 }; });
+      var taken = pts.map(function (q) { return [q.x - q.rr, q.y - q.rr, q.rr * 2, q.rr * 2]; });
+      var bubbles = G.map(function (a, i) {
+        var q = pts[i], label = L(a.short), w = label.length * 5.9 + 2, h = 12;
+        var cands = [[q.rr + 5, 4, "start"], [-(q.rr + 5), 4, "end"], [0, -(q.rr + 5), "middle"], [0, q.rr + 13, "middle"]];
+        var pick = cands[0], least = Infinity;
+        cands.forEach(function (cd) {
+          var bx = cd[2] === "start" ? q.x + cd[0] : cd[2] === "end" ? q.x + cd[0] - w : q.x - w / 2, by = q.y + cd[1] - 10;
+          if (bx < MP.l || bx + w > MW - 2 || by < 2 || by + h > MH - MP.b + 6) return;
+          var o = taken.reduce(function (s2, t2, j) {
+            if (j === i) return s2;
+            var ox = Math.min(bx + w + 2, t2[0] + t2[2]) - Math.max(bx - 2, t2[0]), oy = Math.min(by + h + 1, t2[1] + t2[3]) - Math.max(by - 1, t2[1]);
+            return s2 + (ox > 0 && oy > 0 ? ox * oy : 0);
+          }, 0);
+          if (o < least - 0.5) { least = o; pick = cd; pick.box = [bx, by, w, h]; }
+        });
+        if (pick.box) taken.push(pick.box);
+        return '<g class="mb" data-i="' + i + '" tabindex="0" role="button" transform="translate(' + q.x.toFixed(1) + "," + q.y.toFixed(1) + ')" style="--c:' + a.color + '" aria-label="' +
+          esc(L(a.name)) + ", " + t("affinity", "affinité") + " " + a.aff + ", " + t("penetration", "pénétration") + " " + a.pen + ", " + t("opportunity", "opportunité") + " " + a.opp + '">' +
+          '<circle class="mb__halo" r="' + (8 + a.opp / 5).toFixed(1) + '"/><circle class="mb__dot" r="' + q.rr.toFixed(1) + '"/>' +
+          '<text class="mb__t" x="' + pick[0].toFixed(1) + '" y="' + pick[1].toFixed(1) + '" text-anchor="' + pick[2] + '">' + esc(label) + "</text></g>";
+      }).join("");
+      var matrix =
+        '<svg class="uv-svg matrix" viewBox="0 0 ' + MW + " " + MH + '" role="group" aria-label="' + t("Affinity against penetration", "Affinité et pénétration") + '">' +
+          '<rect class="mz" x="' + MP.l + '" y="' + MP.t + '" width="' + (MX(midP) - MP.l).toFixed(1) + '" height="' + (MY(midA) - MP.t).toFixed(1) + '" rx="10"/>' +
+          '<text class="mz__t" x="' + (MP.l + 8) + '" y="' + (MP.t + 15) + '">' + t("Opportunity zone", "Zone d'opportunité") + "</text>" +
+          '<line class="g" x1="' + MX(midP).toFixed(1) + '" x2="' + MX(midP).toFixed(1) + '" y1="' + MP.t + '" y2="' + (MH - MP.b) + '"/>' +
+          '<line class="g" x1="' + MP.l + '" x2="' + (MW - MP.r) + '" y1="' + MY(midA).toFixed(1) + '" y2="' + MY(midA).toFixed(1) + '"/>' +
+          '<text class="ax" x="' + (MW - MP.r) + '" y="' + (MH - 8) + '" text-anchor="end">' + t("Penetration →", "Pénétration →") + "</text>" +
+          '<text class="ax" x="11" y="' + ((MP.t + MH - MP.b) / 2) + '" text-anchor="middle" transform="rotate(-90 11 ' + ((MP.t + MH - MP.b) / 2) + ')">' + t("Affinity →", "Affinité →") + "</text>" +
+          bubbles +
+        "</svg>";
+      var body =
+        '<div class="aud3">' +
+          '<div class="aud3__map aud3__map--mixed" id="' + PX + 'a-map" aria-hidden="true"></div>' +
+          '<div class="aud3__row">' +
+            '<div class="aud2__focus" id="' + PX + 'a-focus" aria-live="polite"></div>' +
+            '<div class="aud3__matrix"><p class="aud3__k">' + t("Where each community sits", "Où se place chaque communauté") +
+              ' <span>' + t("bubble size = opportunity", "taille = opportunité") + "</span></p>" + matrix + "</div>" +
+          "</div>" +
+        "</div>";
+      stage.innerHTML = frame(t("Audience communities and their scores", "Communautés d'audience et leurs scores"),
+        t("Watch the communities form. Hover the map or a bubble.", "Regardez les communautés se former. Survolez la carte ou une bulle."), body);
+      var focusEl = $("a-focus"), mx = stage.querySelector(".matrix");
+
+      function focusCard(i) {
+        var a = G[i];
+        focusEl.style.setProperty("--c", a.color);
+        focusEl.innerHTML =
+          '<p class="afocus__name"><i></i>' + esc(L(a.name)) + "</p>" +
+          '<p class="afocus__meta">' + a.share + " % " + t("of the conversation", "de la conversation") + " · " + num(total * a.share / 100) + " " + t("posts", "posts") + "</p>" +
+          '<div class="gauges">' +
+            ring(a.aff, "#EAA93D", t("Affinity", "Affinité")) +
+            ring(a.pen, "#4292F2", t("Penetration", "Pénétration")) +
+            ring(a.opp, "#2E9E6B", t("Opportunity", "Opportunité")) +
+          "</div>" +
+          '<p class="afocus__note">' + esc(L(a.note)) + "</p>";
+        var C = 2 * Math.PI * 26;
+        requestAnimationFrame(function () {
+          Array.prototype.forEach.call(focusEl.querySelectorAll(".gauge__v"), function (el) {
+            el.style.strokeDashoffset = (C * (1 - (+el.dataset.v) / 100)).toFixed(1);
+          });
+        });
+        Array.prototype.forEach.call(mx.querySelectorAll(".mb"), function (b) { b.classList.toggle("is-on", +b.dataset.i === i); });
+      }
+      function pick(i) { sel = i; if (map) map.select(i); focusCard(i); }
+      mx.addEventListener("click", function (e) { var b = e.target.closest(".mb"); if (b) pick(+b.dataset.i); });
+      mx.addEventListener("keydown", function (e) { var b = e.target.closest(".mb"); if (b && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); pick(+b.dataset.i); } });
+      mx.addEventListener("mouseover", function (e) { var b = e.target.closest(".mb"); if (b) { if (map) map.select(+b.dataset.i); focusCard(+b.dataset.i); } });
+      mx.addEventListener("mouseleave", function () { if (map) map.select(sel); focusCard(sel); });
+
+      if (window.LicterMap) {
+        map = window.LicterMap($("a-map"), {
+          communities: comms, outliers: OUT, labels: G.map(function (a) { return L(a.name); }), grow: true,
+          onHover: function (i) { focusCard(i >= 0 ? i : sel); },
+          onSelect: function (i) { pick(i); }
+        });
+        if (map) { map.select(sel); cleanup.push(function () { map.destroy(); }); }
+      }
+      focusCard(sel);
+      /* the count follows the communities forming, 0.65 s apart, 1.5 s each */
+      autoProgress(650 * (G.length - 1) + 1500);
+    }
+
+    /* ======================================================== 4. trends
+       A race: topics by share of the conversation, month by month over
+       eighteen months. Rows reorder as topics overtake one another. */
+    var MONTHS = 18;
+
+    function trends() {
+      var d = data();
+      var RACE = d.topics.map(function (x) { return { name: [x[0], x[1]], color: x[2], f: shape(x[3]), lead: x[4], verdict: x[5] }; });
+      /* the curves are shapes; scaled so that every post of every month adds
+         up to the posts read, and the count grows month by month */
+      var raw = 0, peak = 0, CUM = [];
+      for (var m0 = 0; m0 <= MONTHS; m0++) {
+        RACE.forEach(function (r) { var x = Math.max(0, r.f(m0)); raw += x; peak = Math.max(peak, x); });
+        CUM.push(raw);
+      }
+      var scale = d.read / raw;
+      total = d.read;
+      /* pos: where the race is, in months, as a real number so it plays smoothly */
+      var pos = 0, month = 0, sel = 0, playing = false, prevRank = null;
+      var start = new Date(2024, 3, 1);
+      function monthLabel(m, long) {
+        var dt = new Date(start.getFullYear(), start.getMonth() + m, 1);
+        return dt.toLocaleDateString(fr() ? "fr-FR" : "en-GB", { month: long ? "long" : "short", year: "numeric" });
+      }
+      /* open on the fastest riser */
+      var bestRise = -Infinity;
+      RACE.forEach(function (r, i) { var rise = r.f(MONTHS) - r.f(0); if (rise > bestRise) { bestRise = rise; sel = i; } });
+      var ROW = 38;
+      var body =
+        '<div class="rc">' +
+          '<div class="rc__top">' +
+            '<p class="rc__when" id="' + PX + 't-when"></p>' +
+            '<div class="rc__ctrl">' +
+              '<button class="play2__btn" type="button" id="' + PX + 't-play">▶</button>' +
+              '<input type="range" id="' + PX + 't-range" min="0" max="' + MONTHS + '" step="any" value="0" aria-label="' + t("Month", "Mois") + '" />' +
+            "</div>" +
+          "</div>" +
+          '<div class="rc__list" id="' + PX + 't-race" style="height:' + (RACE.length * ROW) + 'px">' +
+            RACE.map(function (r, i) {
+              return '<button class="rc__row" type="button" data-i="' + i + '" style="--c:' + r.color + '">' +
+                '<span class="rc__rank"></span>' +
+                '<span class="rc__name"><i></i>' + esc(L(r.name)) + "</span>" +
+                '<span class="rc__track"><span class="rc__bar"></span><b class="rc__v"></b></span>' +
+                '<span class="rc__move"></span></button>';
+            }).join("") +
+          "</div>" +
+          '<div class="rc__detail" id="' + PX + 't-card"></div>' +
+        "</div>";
+      stage.innerHTML = frame(t("Topics, posts per month over 18 months", "Sujets, posts par mois sur 18 mois"),
+        t("Watch them overtake each other. Click a topic.", "Regardez-les se dépasser. Cliquez un sujet."), body);
+      var race = $("t-race"), rows = Array.prototype.slice.call(race.querySelectorAll(".rc__row"));
+      var range = $("t-range"), btn = $("t-play");
+
+      function vals(m) { return RACE.map(function (r) { return Math.max(0, r.f(m)) * scale; }); }
+      function draw() {
+        month = Math.min(MONTHS, Math.floor(pos + 1e-6));
+        var v = vals(pos);
+        var order = v.map(function (x, i) { return i; }).sort(function (a, b) { return v[b] - v[a]; });
+        var rank = []; order.forEach(function (i, k) { rank[i] = k; });
+        rows.forEach(function (row, i) {
+          row.style.transform = "translateY(" + (rank[i] * ROW) + "px)";
+          row.querySelector(".rc__rank").textContent = rank[i] + 1;
+          row.querySelector(".rc__bar").style.width = Math.max(1.5, v[i] / (peak * scale) * 100).toFixed(1) + "%";
+          row.querySelector(".rc__v").textContent = num(v[i]);
+          var mv = row.querySelector(".rc__move");
+          if (prevRank && prevRank[i] !== rank[i]) {
+            var up = prevRank[i] > rank[i];
+            mv.textContent = up ? "↑" : "↓"; mv.className = "rc__move " + (up ? "is-up" : "is-down");
+          }
+          row.classList.toggle("is-on", i === sel);
+          row.setAttribute("aria-label", (rank[i] + 1) + ". " + L(RACE[i].name) + ", " + num(v[i]) + " " + t("posts", "posts"));
+        });
+        prevRank = rank;
+        $("t-when").innerHTML = "<b>" + monthLabel(month, true) + "</b><span>" + t("Month ", "Mois ") + month + " / " + MONTHS + "</span>";
+        range.value = pos; range.style.setProperty("--fill", (pos / MONTHS * 100) + "%");
+        range.setAttribute("aria-valuetext", monthLabel(month, true));
+        detail();
+        var i = Math.min(MONTHS - 1, Math.floor(pos));
+        progress((CUM[i] + (CUM[i + 1] - CUM[i]) * (pos - i)) / raw);
+      }
+      function detail() {
+        var r = RACE[sel], s = [], lo = Infinity, hi = -Infinity;
+        for (var m = 0; m <= MONTHS; m++) { var x = Math.max(0, r.f(m)) * scale; s.push(x); lo = Math.min(lo, x); hi = Math.max(hi, x); }
+        var sw = 220, sh = 46, span = (hi - lo) || 1;
+        function SY(x) { return (sh - 5 - (x - lo) / span * (sh - 10)).toFixed(1); }
+        var path = s.map(function (x, m) { return (m ? "L" : "M") + (m / MONTHS * sw).toFixed(1) + " " + SY(x); }).join(" ");
+        var fill = path + " L" + sw + " " + sh + " L0 " + sh + " Z";
+        var now = s[month], ch = Math.round(now - s[0]);
+        $("t-card").innerHTML =
+          '<div class="rcd__id" style="--c:' + r.color + '"><p class="rcd__name"><i></i>' + esc(L(r.name)) + "</p>" +
+            '<p class="rcd__lead">' + t("Driven by ", "Porté par ") + "<b>" + esc(L(r.lead)) + "</b></p></div>" +
+          '<div class="rcd__num"><b>' + num(now) + "</b><span>" + t("posts this month", "posts ce mois-ci") + "</span></div>" +
+          '<div class="rcd__num"><b class="' + (ch >= 0 ? "is-up" : "is-down") + '">' + (ch >= 0 ? "+" : "−") + num(Math.abs(ch)) + "</b><span>" + t("vs ", "vs ") + monthLabel(0) + "</span></div>" +
+          '<svg class="rcd__spark" viewBox="0 0 ' + sw + " " + sh + '" preserveAspectRatio="none" aria-hidden="true" style="--c:' + r.color + '"><path class="f" d="' + fill + '"/><path class="l" d="' + path + '"/>' +
+            '<circle cx="' + (pos / MONTHS * sw).toFixed(1) + '" cy="' + SY(Math.max(0, r.f(pos)) * scale) + '" r="3.5"/></svg>' +
+          '<p class="rcd__verdict rcd__verdict--' + r.verdict[0] + '">' + esc(fr() ? r.verdict[2] : r.verdict[1]) + "</p>";
+      }
+      function stopPlay() { playing = false; btn.textContent = "▶"; btn.setAttribute("aria-label", t("Play 18 months", "Lire 18 mois")); }
+      /* one frame at a time, about 0.36 s a month */
+      var MS_PER_MONTH = 360;
+      function play() {
+        if (pos >= MONTHS) { pos = 0; prevRank = null; }
+        if (reduced.matches) { pos = MONTHS; draw(); return; }
+        btn.textContent = "❚❚"; btn.setAttribute("aria-label", t("Pause", "Pause"));
+        playing = true;
+        var my = gen, last = performance.now();
+        (function step(now) {
+          if (!playing || my !== gen) return;
+          pos = Math.min(MONTHS, pos + (now - last) / MS_PER_MONTH);
+          last = now;
+          draw();
+          if (pos >= MONTHS) { stopPlay(); return; }
+          requestAnimationFrame(step);
+        })(last);
+      }
+      btn.addEventListener("click", function () { if (playing) stopPlay(); else play(); });
+      range.addEventListener("input", function () { stopPlay(); pos = +range.value; draw(); });
+      /* the arrow keys still move a whole month */
+      range.addEventListener("keydown", function (e) {
+        var dir = e.key === "ArrowRight" || e.key === "ArrowUp" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowDown" ? -1 : 0;
+        if (!dir) return;
+        e.preventDefault(); stopPlay();
+        pos = Math.max(0, Math.min(MONTHS, (dir > 0 ? Math.floor(pos + 1e-6) : Math.ceil(pos - 1e-6)) + dir));
         draw();
-        if (pos >= MONTHS) { stopPlay(); return; }
-        requestAnimationFrame(step);
-      })(last);
+      });
+      race.addEventListener("click", function (e) { var r = e.target.closest(".rc__row"); if (!r) return; sel = +r.dataset.i; draw(); });
+      stopPlay(); draw();
+      later(play, 500);
+      cleanup.push(stopPlay);
     }
-    btn.addEventListener("click", function () { if (playing) stopPlay(); else play(); });
-    range.addEventListener("input", function () { stopPlay(); pos = +range.value; draw(); });
-    /* the arrow keys still move a whole month */
-    range.addEventListener("keydown", function (e) {
-      var dir = e.key === "ArrowRight" || e.key === "ArrowUp" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowDown" ? -1 : 0;
-      if (!dir) return;
-      e.preventDefault(); stopPlay();
-      pos = Math.max(0, Math.min(MONTHS, (dir > 0 ? Math.floor(pos + 1e-6) : Math.ceil(pos - 1e-6)) + dir));
-      draw();
+
+
+    /* ========================================================== switch */
+    var RENDER = { communication: communication, brand: brand, audiences: audiences, trends: trends };
+
+    function render() {
+      stopAll();
+      gen += 1; answered = false; total = data().read || 0;
+      RENDER[current]();
+      var close = $("uv-close");
+      if (close) close.addEventListener("click", closeCase);
+      var next = $("uv-next");
+      if (next) next.addEventListener("click", function () { sector = nextSector(current); render(); $("uv-next").focus(); });
+      stage.classList.remove("is-in"); void stage.offsetWidth; stage.classList.add("is-in");
+      runSide();
+    }
+
+    /* back to the empty state: no question open */
+    var EMPTY = stage.innerHTML;
+    function closeCase() {
+      var tab = document.getElementById("tab-" + current);
+      stopAll(); gen += 1; current = null;
+      topics.forEach(function (b) { b.classList.remove("is-on"); b.setAttribute("aria-selected", "false"); });
+      stage.removeAttribute("aria-labelledby");
+      stage.classList.remove("has-feed", "is-in");
+      stage.innerHTML = EMPTY;
+      if (tab) tab.focus();
+    }
+
+    function select(key) {
+      current = key;
+      sector = nextSector(key);
+      topics.forEach(function (b) {
+        var on = b.dataset.topic === key;
+        b.classList.toggle("is-on", on);
+        b.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      if (topics.length) stage.setAttribute("aria-labelledby", "tab-" + key);
+      stage.classList.add("has-feed");
+      render();
+    }
+
+    if (window.MutationObserver) {
+      new MutationObserver(function () { if (current) render(); })
+        .observe(html, { attributes: true, attributeFilter: ["lang"] });
+    }
+
+    return { select: select, current: function () { return current; } };
+  }
+
+  /* the stage plays on its own when it comes into view, once */
+  function autoplay(target, when, play) {
+    if (!target || !("IntersectionObserver" in window)) return;
+    var done = false;
+    var io = new IntersectionObserver(function (entries) {
+      if (done) return;
+      if (when()) { done = true; io.disconnect(); return; }
+      if (entries[0].isIntersecting) { done = true; io.disconnect(); play(); }
+    }, { threshold: 0.35 });
+    io.observe(target);
+  }
+
+  /* ------------------------------------------------------------ home */
+  var homeStage = document.getElementById("cases-panel");
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".lf__topic[data-topic]"));
+  if (homeStage && tabs.length) {
+    var home = Stage(homeStage, { prefix: "", topics: tabs, closable: true });
+    tabs.forEach(function (b, i) {
+      b.addEventListener("click", function () { home.select(b.dataset.topic); });
+      b.addEventListener("keydown", function (e) {
+        var dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (!dir) return;
+        e.preventDefault();
+        var n = tabs[(i + dir + tabs.length) % tabs.length];
+        n.focus(); home.select(n.dataset.topic);
+      });
     });
-    race.addEventListener("click", function (e) { var r = e.target.closest(".rc__row"); if (!r) return; sel = +r.dataset.i; draw(); });
-    stopPlay(); draw();
-    later(play, 500);
-    cleanup.push(stopPlay);
+    /* the first question plays on its own: the visual is the point of the
+       section, it should not wait for a click */
+    autoplay(document.getElementById("use-cases"), function () { return !!home.current(); }, function () { home.select(tabs[0].dataset.topic); });
   }
 
-  /* ============================================================ switch */
-  var RENDER = { communication: communication, brand: brand, audiences: audiences, trends: trends };
-
-  function render() {
-    stopAll();
-    gen += 1; answered = false; total = data().read || 0;
-    RENDER[current]();
-    var close = document.getElementById("uv-close");
-    if (close) close.addEventListener("click", closeCase);
-    var next = document.getElementById("uv-next");
-    if (next) next.addEventListener("click", function () { sector = nextSector(current); render(); document.getElementById("uv-next").focus(); });
-    stage.classList.remove("is-in"); void stage.offsetWidth; stage.classList.add("is-in");
-    runSide();
-  }
-
-  /* back to the empty state: no question open */
-  var EMPTY = stage.innerHTML;
-  function closeCase() {
-    var tab = document.getElementById("tab-" + current);
-    stopAll(); gen += 1; current = null;
-    topics.forEach(function (b) { b.classList.remove("is-on"); b.setAttribute("aria-selected", "false"); });
-    stage.removeAttribute("aria-labelledby");
-    stage.classList.remove("has-feed", "is-in");
-    stage.innerHTML = EMPTY;
-    if (tab) tab.focus();
-  }
-
-  function select(key) {
-    current = key;
-    sector = nextSector(key);
-    topics.forEach(function (b) {
-      var on = b.dataset.topic === key;
-      b.classList.toggle("is-on", on);
-      b.setAttribute("aria-selected", on ? "true" : "false");
-    });
-    stage.setAttribute("aria-labelledby", "tab-" + key);
-    stage.classList.add("has-feed");
-    render();
-  }
-
-  topics.forEach(function (b, i) {
-    b.addEventListener("click", function () { select(b.dataset.topic); });
-    b.addEventListener("keydown", function (e) {
-      var dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-      if (!dir) return;
-      e.preventDefault();
-      var n = topics[(i + dir + topics.length) % topics.length];
-      n.focus(); select(n.dataset.topic);
+  /* -------------------------------------------- use-cases page: one per family */
+  /* on a phone the four cases would stack into a very long page: each one
+     waits behind a button and plays on tap */
+  var phone = window.matchMedia("(max-width: 720px)").matches;
+  Array.prototype.forEach.call(document.querySelectorAll("[data-uc-stage]"), function (el) {
+    var topic = el.getAttribute("data-uc-stage");
+    var one = Stage(el, { prefix: topic + "-", closable: false });
+    if (!phone) { autoplay(el, function () { return false; }, function () { one.select(topic); }); return; }
+    el.classList.add("is-folded");
+    el.innerHTML = '<button class="ucf__open" type="button"><span class="ucf__open-dot" aria-hidden="true"></span>' +
+      t("Explore the live case", "Explorer le cas en direct") + "<small>" + t("one minute, four sectors", "une minute, quatre secteurs") + '</small><span aria-hidden="true">→</span></button>';
+    el.querySelector(".ucf__open").addEventListener("click", function () {
+      el.classList.remove("is-folded");
+      one.select(topic);
+      el.setAttribute("tabindex", "-1"); el.focus({ preventScroll: true });
     });
   });
 
-  /* the first question plays on its own when the section comes into view:
-     the visual is the point of the section, it should not wait for a click */
-  var section = document.getElementById("use-cases"), launched = false;
-  if (section && "IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      if (launched) return;
-      if (current) { launched = true; io.disconnect(); return; }
-      if (entries[0].isIntersecting) { launched = true; io.disconnect(); select(topics[0].dataset.topic); }
-    }, { threshold: 0.35 });
-    io.observe(section);
+  /* the family bar: the current family lit as the page scrolls, and pushed
+     down under the compact header when that one shows */
+  var ucnav = document.querySelector(".ucnav");
+  if (ucnav) {
+    var links = Array.prototype.slice.call(ucnav.querySelectorAll("a[href^='#']"));
+    var fams = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+    function spy() {
+      var y = window.innerHeight * 0.35, on = -1;
+      fams.forEach(function (f, i) { if (f && f.getBoundingClientRect().top <= y) on = i; });
+      links.forEach(function (a, i) {
+        a.classList.toggle("is-on", i === on);
+        if (i === on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+      });
+      /* it sits under what is already pinned at the top: the guide banner,
+         and the compact header while that one shows */
+      var top = 0, banner = document.querySelector("body > .banner"), bar = document.querySelector(".stickybar.is-shown");
+      if (banner && getComputedStyle(banner).position === "sticky") top = banner.offsetHeight;
+      /* the compact header is fixed at the very top, under the banner */
+      if (bar) top = Math.max(top, bar.offsetHeight);
+      document.documentElement.style.setProperty("--uc-top", top + "px");
+    }
+    /* the compact header comes and goes on its own schedule: follow it */
+    var sb = document.querySelector(".stickybar");
+    if (sb && window.MutationObserver) new MutationObserver(spy).observe(sb, { attributes: true, attributeFilter: ["class"] });
+    else if (!sb && window.MutationObserver) {
+      var wait = new MutationObserver(function () {
+        var el = document.querySelector(".stickybar");
+        if (!el) return;
+        wait.disconnect();
+        new MutationObserver(spy).observe(el, { attributes: true, attributeFilter: ["class"] });
+      });
+      wait.observe(document.body, { childList: true });
+    }
+    window.addEventListener("scroll", spy, { passive: true });
+    window.addEventListener("resize", spy);
+    spy();
   }
 
-  if (window.MutationObserver) {
-    new MutationObserver(function () { if (current) render(); })
-      .observe(html, { attributes: true, attributeFilter: ["lang"] });
+  /* on a phone the use cases fold, to keep the page short */
+  if (window.matchMedia("(max-width: 720px)").matches) {
+    Array.prototype.forEach.call(document.querySelectorAll(".ucf__case[open]"), function (d) { d.removeAttribute("open"); });
   }
 })();

@@ -4668,7 +4668,7 @@ html[data-theme="dark"] .mstep__img img { filter: brightness(.92); }
 .kchip--hi span { color: rgba(252, 246, 239, .7); }
 .kchip--hi b { color: var(--amber); }
 .uv-chart { position: relative; cursor: ew-resize; touch-action: pan-y; }
-.uv-svg .area { fill: url(#c-fill); }
+/* the fill is set on the path itself: its gradient id carries the stage prefix */
 .uv-svg .brand { fill: none; stroke: var(--amber-deep); stroke-width: 2.6; stroke-linejoin: round; stroke-linecap: round; }
 .uv-svg .brand.draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.6s cubic-bezier(.4, 0, .2, 1) .2s forwards; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
@@ -5460,3 +5460,127 @@ html[data-theme="dark"] .home .wall::after { background: rgba(var(--surf-rgb), .
 
 /* French is applied at load: the page waits for it (js/theme.js, js/i18n.js) */
 html.i18n-pending body { visibility: hidden; }
+
+/* =========================================================
+   Use-cases page: the long version of the home's use cases.
+   A family bar that follows the scroll; per family, the live
+   case, its three use cases and a client in their own words;
+   the callback form to close. Soft light instead of bands.
+   ========================================================= */
+.ucx { --glow-a: .14; --glow-n: .055; --glow-navy-rgb: 19, 22, 45; }
+html[data-theme="dark"] .ucx { --glow-a: .085; --glow-n: .15; --glow-navy-rgb: 96, 112, 204; }
+.ucx__head .page__head { padding-bottom: clamp(20px, 3vw, 36px); }
+.ucx__head .page__title { max-width: 16ch; }
+
+/* the family bar */
+.ucnav {
+  position: sticky; top: var(--uc-top, 0px); z-index: 25; margin: 0 0 8px;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-block: 1px solid var(--line);
+  transition: top .3s cubic-bezier(.16, 1, .3, 1);
+}
+.ucnav__list { display: flex; justify-content: center; gap: 6px; margin: 0 auto; padding-block: 10px; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.ucnav__list::-webkit-scrollbar { display: none; }
+.ucnav a {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; white-space: nowrap;
+  font: 600 13.5px/1 var(--body-font); color: var(--text-2); transition: background-color .2s ease, color .2s ease;
+}
+.ucnav a span { font: 700 11px/1 var(--body-font); font-variant-numeric: tabular-nums; color: var(--amber-deep); }
+.ucnav a:hover { color: var(--ink); background: rgba(var(--ink-rgb), .05); }
+.ucnav a.is-on { background: var(--navy); color: var(--cream); }
+.ucnav a.is-on span { color: var(--amber); }
+html[data-theme="dark"] .ucnav a.is-on { background: var(--cream); color: var(--navy); }
+html[data-theme="dark"] .ucnav a.is-on span { color: var(--amber-deep); }
+
+/* a family */
+.ucf { position: relative; padding: clamp(56px, 8vh, 96px) 0; scroll-margin-top: 70px; }
+.ucf::before { content: ""; position: absolute; inset: -200px calc(50% - 50vw); z-index: -1; pointer-events: none; }
+.ucf__head { max-width: 720px; margin: 0 auto clamp(26px, 3.4vw, 40px); text-align: center; }
+.ucf__head .block__title::after { margin-inline: auto; }
+.ucf__head .block__lead { margin-inline: auto; }
+.ucf__kicker { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 14px; font: 700 12px/1 var(--body-font); letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink); }
+.ucf__kicker span { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: var(--amber); font-size: 11px; letter-spacing: 0; }
+html[data-theme="dark"] .ucf__kicker span { background: var(--cream); color: var(--navy); }
+.ucf__stage { min-height: 560px; }
+.ucf__stage:not(.has-feed) { display: grid; place-items: center; border: 1px dashed var(--line); border-radius: 22px; }
+
+.ucf__more { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); align-items: start; margin-top: clamp(26px, 3vw, 40px); }
+.ucf__cases { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.ucf__cases > li { border-bottom: 1px solid var(--line); }
+.ucf__case summary { display: flex; align-items: baseline; gap: 14px; padding: 16px 0 6px; list-style: none; cursor: default; }
+.ucf__case summary::-webkit-details-marker { display: none; }
+.ucf__n { flex: none; font: 700 12px/1 var(--body-font); font-variant-numeric: tabular-nums; color: var(--amber-deep); }
+.ucf__t { font: 600 17px/1.35 var(--title-font); color: var(--ink); }
+.ucf__body { padding: 0 0 16px 30px; }
+.ucf__body p { margin: 0; font: 500 14.5px/1.6 var(--body-font); color: var(--text-2); max-width: 62ch; }
+.ucf__body .ucf__get { margin-top: 8px; font-size: 13.5px; color: var(--ink); }
+.ucf__voice { align-self: start; }
+.ucf__voice-k { display: block; margin: 12px 0 4px; font: 700 11px/1.2 var(--body-font); letter-spacing: 1px; text-transform: uppercase; color: var(--text-2); }
+.ucf__other { margin: 22px 0 0; font: 500 14px/1.5 var(--body-font); color: var(--text-2); }
+.ucf__other a { color: var(--ink); font-weight: 600; border-bottom: 1px solid rgba(var(--amber-rgb), .7); }
+.ucf__other a:hover { color: var(--amber-ink); }
+
+/* the callback to close the page */
+.book--uc { align-items: center; }
+.book__proof--side { grid-template-columns: minmax(0, 1fr); gap: 22px; margin: 0; padding: 0 0 0 clamp(20px, 3vw, 40px); border-top: 0; border-left: 1px solid var(--line); }
+.ucf__diag { margin: 22px 0 0; font: 500 14px/1.5 var(--body-font); color: var(--text-2); }
+.ucf__diag a { color: var(--ink); font-weight: 600; border-bottom: 1px solid rgba(var(--amber-rgb), .7); }
+
+@media (max-width: 900px) {
+  .ucf__more { grid-template-columns: minmax(0, 1fr); }
+  .book__proof--side { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 22px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+}
+@media (max-width: 720px) {
+  .ucnav__list { justify-content: flex-start; padding-inline: var(--gutter); }
+  .ucf__stage { min-height: 420px; }
+  .ucf__case summary { cursor: pointer; padding: 14px 28px 14px 0; position: relative; }
+  .ucf__case summary::after { content: "+"; position: absolute; right: 2px; top: 12px; font: 400 20px/1 var(--body-font); color: var(--text-2); transition: transform .2s ease; }
+  .ucf__case[open] summary::after { transform: rotate(45deg); }
+  .ucf__t { font-size: 15.5px; }
+  .ucf__body { padding-left: 0; }
+  .ucf__head { text-align: left; }
+  .ucf__head .block__title::after { margin-inline: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .ucnav, .ucnav a, .ucf__case summary::after { transition: none; } }
+
+.ucx #communication::before {
+  background:
+    radial-gradient(60% 40.0% at 4% 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%),
+    radial-gradient(46% 30.0% at 98% 72%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%);
+}
+.ucx #brand-health::before {
+  background:
+    radial-gradient(58% 42.0% at 97% 45%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%),
+    radial-gradient(44% 28.0% at 4% 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%);
+}
+.ucx #audiences::before {
+  background:
+    radial-gradient(62% 42.0% at 4% 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%),
+    radial-gradient(46% 30.0% at 96% 28%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%);
+}
+.ucx #trends::before {
+  background:
+    radial-gradient(60% 42.0% at 96% 55%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%),
+    radial-gradient(46% 28.0% at 4% 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%);
+}
+.ucx #book::before {
+  background:
+    radial-gradient(70% 42.0% at 50% 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%);
+}
+.ucnav a span { color: var(--amber-ink); }
+html[data-theme="dark"] .ucnav a span { color: var(--amber); }
+html[data-theme="dark"] .ucnav a.is-on span { color: var(--navy); }
+/* phones: a folded case, one tap to play it */
+.ucf__stage.is-folded { min-height: 0; border: 0; display: block; }
+.ucf__open {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: 12px; width: 100%;
+  padding: 16px 18px; border: 0; border-radius: 16px; background: var(--navy); color: var(--cream); text-align: left; cursor: pointer;
+  font: 600 15px/1.3 var(--body-font);
+}
+.ucf__open small { grid-column: 2; grid-row: 2; margin-top: 3px; font: 500 12px/1.3 var(--body-font); color: rgba(252, 246, 239, .7); }
+.ucf__open > span:last-child { grid-column: 3; grid-row: 1 / span 2; font-size: 18px; color: var(--amber); }
+.ucf__open-dot { grid-row: 1 / span 2; width: 9px; height: 9px; border-radius: 50%; background: #E2468D; box-shadow: 0 0 0 4px rgba(226, 70, 141, .25); animation: lf-pulse 1.6s ease-in-out infinite; }
+.ucf__open:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+html[data-theme="dark"] .ucf__open { background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+@media (prefers-reduced-motion: reduce) { .ucf__open-dot { animation: none; } }

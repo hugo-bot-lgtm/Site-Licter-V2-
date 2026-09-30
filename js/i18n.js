@@ -79,6 +79,7 @@
     if (lang === "fr" && current !== "fr") {
       if (!FR) { loadFR(function () { apply("fr"); }); return; }
       translateTree(document.body, FR);
+      if (FR[document.title]) document.title = FR[document.title];
       document.documentElement.lang = "fr";
       current = "fr";
       watch();
