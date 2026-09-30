@@ -3,7 +3,7 @@
 
    Loaded in <head>, before the stylesheet paints, so a dark page never
    flashes cream first. The visitor's choice is kept in this browser; with no
-   choice made, the page follows the system setting. The switch sits next to
+   choice made, the page opens in the dark theme. The switch sits next to
    EN / FR in the header.
    ========================================================================= */
 (function () {
@@ -19,7 +19,8 @@
   function current() {
     var s = stored();
     if (s === "dark" || s === "light") return s;
-    return system && system.matches ? "dark" : "light";
+    /* dark by default: the light theme is one click away, and remembered */
+    return "dark";
   }
   function apply(theme) {
     root.setAttribute("data-theme", theme);

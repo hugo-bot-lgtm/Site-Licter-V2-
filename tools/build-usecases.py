@@ -270,7 +270,7 @@ def page(lang, path, alt_path, title, meta, body, ld, og_type="website", og_imag
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="theme-color" content="#FCF6EF" />
+<meta name="theme-color" content="#13162D" />
 <script src="/js/theme.js?v={v}"></script>
 <link rel="stylesheet" href="/css/styles.min.css?v={v}" />
 {ld_tags}
