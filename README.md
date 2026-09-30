@@ -53,8 +53,9 @@ c'est `index.html`, le fichier qu'on édite) et `/fr/` (français, générée).
 description, canonique, hreflang, Open Graph, données structurées
 Organization / WebSite / WebPage / FAQPage) et régénère `/fr/index.html`
 avec le texte traduit dans le HTML. `tools/build-usecases.py` le lance à la
-fin : une seule commande régénère tout. Un navigateur en français qui arrive
-sur `/` est envoyé sur `/fr/` (sauf s'il a choisi EN).
+fin : une seule commande régénère tout. Pas de redirection automatique par langue (déconseillée par Google) :
+les hreflang orientent les recherches, et un navigateur en français qui
+arrive sur `/` voit un bandeau « Voir le site en français ».
 
 **Langue.** Le site s'affiche **en français par défaut**. Le HTML reste écrit en
 anglais (source de vérité) et `js/i18n.js` applique `js/fr.js` au chargement ;

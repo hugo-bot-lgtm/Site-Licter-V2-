@@ -1529,3 +1529,29 @@ window.LicterUC = (function () {
     });
   }, { passive: true });
 })();
+
+/* =========================================================================
+   English home, French browser: offer the French site in a banner rather
+   than redirecting (search engines are told by hreflang, not by a redirect).
+   Once closed or chosen, it does not come back.
+   ========================================================================= */
+(function () {
+  var h = document.documentElement;
+  if (!h.hasAttribute("data-i18n-static") || h.lang !== "en") return;
+  var alt = h.getAttribute("data-alt-fr");
+  if (!alt || !/^fr\b/i.test(navigator.language || "")) return;
+  var KEY = "licter-fr-offer";
+  try { if (localStorage.getItem("licter-lang") === "en" || localStorage.getItem(KEY)) return; } catch (e) { return; }
+  var bar = document.createElement("aside");
+  bar.className = "langoffer";
+  bar.setAttribute("lang", "fr");
+  bar.setAttribute("aria-label", "Langue");
+  bar.innerHTML = '<a class="langoffer__go" href="' + alt + '">Voir le site en français <span aria-hidden="true">→</span></a>' +
+    '<button class="langoffer__x" type="button" aria-label="Fermer">×</button>';
+  /* after the skip link, which has to stay the first thing on the page */
+  var skip = document.querySelector(".skip-link");
+  document.body.insertBefore(bar, skip ? skip.nextSibling : document.body.firstChild);
+  function done() { try { localStorage.setItem(KEY, "1"); } catch (e) {} }
+  bar.querySelector(".langoffer__go").addEventListener("click", function () { done(); try { localStorage.setItem("licter-lang", "fr"); } catch (e) {} });
+  bar.querySelector(".langoffer__x").addEventListener("click", function () { done(); bar.remove(); });
+})();

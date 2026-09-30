@@ -100,6 +100,8 @@ window.LicterFR = {
   "NOTED - ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ - UN E-MAIL À LA PROCHAINE PUBLICATION",
   "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
   "Skip to content": "Aller au contenu",
+  "Social data intelligence consultancy": "Cabinet de conseil en social data intelligence",
+  "See the site in French": "Voir le site en français",
   "A Licter consultant in an armchair, a laptop on his knees and a dashboard open on the screen in front of him": "Un consultant Licter dans un fauteuil, un ordinateur sur les genoux et un tableau de bord ouvert à l'écran devant lui",
   "A Licter consultant listening during a scoping meeting": "Un membre de l'équipe Licter à l'écoute pendant une réunion de cadrage",
   "A consultant walking a colleague through an analysis, laptops open": "Présentation d'une analyse entre collègues, ordinateurs ouverts",

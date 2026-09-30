@@ -114,18 +114,15 @@ def main():
     src = re.sub(r'href="(/fr/cas-usage/[^"]*)" data-en="([^"]*)"', r'href="\2" data-fr="\1"', src)
     # the English page needs no dictionary
     src = re.sub(r'\s*<script src="(?:/)?js/fr\.js[^"]*"></script>', "", src)
-    # a French browser that lands on "/" goes to its French home (a visitor who
-    # chose English stays; search engines, with no stored choice and an
-    # English browser, stay too)
-    redirect = ('<script>(function(){try{var l=localStorage.getItem("licter-lang");'
-                'if(l==="fr"||(!l&&/^fr\\b/i.test(navigator.language||"")))location.replace("/fr/"+location.hash);}catch(e){}})();</script>')
+        # no automatic redirect by language (Google advises against it): the
+    # hreflang tags send French searchers to /fr/, and a French browser that
+    # lands here is offered the French site in a banner (js/ui.js)
+    redirect = ""
     src = re.sub(r"\s*<script>\(function\(\)\{try\{var l=localStorage\.getItem\(\"licter-lang\"\).*?</script>", "", src, flags=re.S)
-    src = src.replace('<meta charset="utf-8" />', '<meta charset="utf-8" />\n' + redirect, 1)
     (ROOT / "index.html").write_text(src)
 
     # --- 2. the French home, generated
     fr = src
-    fr = fr.replace(redirect + "\n", "").replace(redirect, "")
     fr = re.sub(r"<!-- seo: generated.*?<!-- /seo -->", head(FR, src), fr, flags=re.S)
     fr = re.sub(r'<html[^>]*>', '<html lang="fr" data-i18n-static data-alt-fr="/fr/" data-alt-en="/">', fr, count=1)
     fr = re.sub(r'href="([^"]*)" data-fr="([^"]*)"', r'href="\2"', fr)
