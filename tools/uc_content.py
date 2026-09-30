@@ -850,3 +850,36 @@ EXTRA = {
     "voice": "transat", "articles": ["article-weak-signals-before-they-trend.html", "article-the-trend-you-already-missed.html"],
   },
 }
+
+# Family pages, "a read, not a dashboard": what a dashboard shows next to
+# what the read says, on the same illustrative case. MOCK.
+DASHBOARD = {
+  "communication": {
+    "rows": [(("Mentions", "Mentions"), "57 006", "up"), (("Portée estimée", "Estimated reach"), "4,2 M", "up"),
+             (("Sentiment", "Sentiment"), "+18 %", "up"), (("Mot le plus cité", "Top word"), ("recette", "recipe"), "")],
+    "note": (("Le lancement a été porté par les recettes des créateurs sur TikTok, pas par la publicité TV : 46 % des posts les partagent, 14 % parlent de la pub.",
+              "The launch was carried by creators' recipes on TikTok, not by the TV ad: 46% of posts share them, 14% mention the ad."),
+             ("Basculer un tiers du média payé vers des partenariats créateurs.", "Move a third of paid media to creator partnerships.")),
+  },
+  "brand": {
+    "rows": [(("Mentions", "Mentions"), "5 140", "up"), (("Sentiment", "Sentiment"), "−12 %", "down"),
+             (("Mentions négatives", "Negative mentions"), "1 953", "up"), (("Mot le plus cité", "Top word"), ("boutique", "boutique"), "")],
+    "note": (("Les hausses de prix sont acceptées ; c'est l'accueil en boutique qui concentre 38 % des critiques.",
+              "Price increases are accepted; the in-store welcome accounts for 38% of the criticism."),
+             ("Former les équipes boutique avant la prochaine hausse.", "Train boutique teams before the next increase.")),
+  },
+  "audiences": {
+    "rows": [(("Audience totale", "Total audience"), "15 640", "up"), (("Âge dominant", "Main age group"), "35-49", ""),
+             (("Genre", "Gender"), ("58 % femmes", "58% women"), ""), (("Centre d'intérêt n° 1", "Top interest"), ("cuisine", "cooking"), "")],
+    "note": (("Les abonnés des créateurs food aiment la marque mais l'achètent peu : opportunité 86 sur 100, contre 31 pour les étudiants visés par le brief.",
+              "Food creators' followers love the brand but barely buy it: opportunity 86 out of 100, against 31 for the students the brief targets."),
+             ("Réorienter le plan média vers les audiences des créateurs food.", "Shift the media plan toward food creators' audiences.")),
+  },
+  "trends": {
+    "rows": [(("Sujets suivis", "Topics tracked"), "8", ""), (("Sujet n° 1", "Top topic"), ("Snacks protéinés", "High-protein snacks"), "up"),
+             (("Plus forte hausse", "Fastest riser"), "+460", "up"), (("Plus forte baisse", "Biggest drop"), "−52", "down")],
+    "note": (("Le protéiné fait le plus de bruit, mais l'alimentation upcyclée est passée de rien à la quatrième place en un an, sans concurrent installé.",
+              "Protein is the loudest, but upcycled food went from nowhere to fourth place in a year, with no established competitor."),
+             ("Tester une gamme upcyclée sur un marché avant que la concurrence ne s'en aperçoive.", "Pilot an upcycled range in one market before competitors notice.")),
+  },
+}

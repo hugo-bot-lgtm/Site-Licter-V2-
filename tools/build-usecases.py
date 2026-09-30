@@ -540,35 +540,53 @@ def family_body(f, lang):
     aside = '\n      <div class="ucp__hero-voice">\n%s\n      </div>' % reel(f["video"], lang)
     kicker = '%s<span>0%d · %s</span>' % (icon(FAM_ICON[f["key"]]), idx, T(f["name"], lang))
     cards = "".join(
-        '\n        <li><a class="ucp__card" href="%s">'
-        '<span class="ucp__card-n">0%d</span>'
-        '<b class="ucp__card-t">%s</b>'
-        '<span class="ucp__card-d">%s</span>'
-        '<span class="ucp__card-get"><span>%s</span>%s</span>'
-        '<span class="ucp__card-go">%s <span aria-hidden="true">→</span></span>'
-        '</a></li>' % (case_path(x, lang), i + 1, T(x["name"], lang), T(x["meta"], lang),
-                       T(L["get"], lang), T(x["deliverables"][0], lang), T(L["read_case"], lang))
+        '\n        <li><a class="ucf-row" href="%s">'
+        '<span class="ucf-row__n">0%d</span>'
+        '<span class="ucf-row__main"><b class="ucf-row__t">%s</b>'
+        '<span class="ucf-row__q">%s</span>'
+        '<span class="ucf-row__get"><span>%s</span>%s</span></span>'
+        '<span class="ucf-row__go" aria-hidden="true">→</span>'
+        '</a></li>' % (case_path(x, lang), i + 1, T(x["name"], lang),
+                       esc(typo(("« %s »" if lang == FR else "“%s”") % x["questions"][0][lang], lang)),
+                       T(L["get"], lang), T(x["deliverables"][0], lang))
         for i, x in enumerate(cases))
     vs = "".join('<tr><td>%s</td><td>%s</td></tr>' % (T(a, lang), T(b, lang)) for a, b in VERSUS)
     others = "".join('<li><a href="%s">%s%s <span aria-hidden="true">→</span></a></li>' % (
         fam_path(o, lang), icon(FAM_ICON[o["key"]]), T(o["name"], lang)) for o in C.FAMILIES if o is not f)
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], hub_path(lang)), (f["name"][lang], None)]
-    why = ('  <section class="ucp">\n'
-           '    <div class="shell ucp__cols ucp__cols--why">\n'
-           '      <div>\n'
+    dash = C.DASHBOARD[f["key"]]
+    arrow = {"up": '<i class="is-up" aria-label="%s">▲</i>' % T(L["up"], lang), "down": '<i class="is-down" aria-label="%s">▼</i>' % T(L["down"], lang), "": ""}
+    rows = "".join('<li><span>%s</span><b>%s%s</b></li>' % (T(k, lang), esc(v[lang] if isinstance(v, tuple) else v), arrow[d])
+                   for k, v, d in dash["rows"])
+    why = ('  <section class="ucp ucf-read">\n'
+           '    <div class="shell">\n'
+           '      <div class="ucf-read__head">\n'
            '        <h2 class="ucp__h2">%s</h2>\n'
            '        <p class="ucp__why">%s</p>\n'
            '      </div>\n'
-           '      <table class="ucp__vs">\n'
-           '        <thead><tr><th scope="col">%s</th><th scope="col">%s</th></tr></thead>\n'
-           '        <tbody>%s</tbody>\n'
-           '      </table>\n'
+           '      <div class="ucf-read__cmp">\n'
+           '        <figure class="ucf-dash" aria-label="%s">\n'
+           '          <figcaption>%s</figcaption>\n'
+           '          <ul>%s</ul>\n'
+           '          <p class="ucf-dash__foot">%s</p>\n'
+           '        </figure>\n'
+           '        <span class="ucf-read__arrow" aria-hidden="true">→</span>\n'
+           '        <figure class="ucf-note" aria-label="%s">\n'
+           '          <figcaption>%s</figcaption>\n'
+           '          <p class="ucf-note__found">%s</p>\n'
+           '          <p class="ucf-note__reco"><span>%s</span>%s</p>\n'
+           '          <p class="ucf-note__by">%s</p>\n'
+           '        </figure>\n'
+           '      </div>\n'
+           '      <p class="ucp__note">%s</p>\n'
            '    </div>\n'
-           '  </section>') % (T(L["why"], lang), T(f["why"], lang), T(L["tool"], lang), T(L["licter"], lang), vs)
+           '  </section>') % (T(L["why"], lang), T(f["why"], lang), T(L["dash_t"], lang), T(L["dash_t"], lang), rows, T(L["dash_foot"], lang),
+                              T(L["note_t"], lang), T(L["note_t"], lang), T(dash["note"][0], lang), T(L["reco"], lang), T(dash["note"][1], lang),
+                              T(L["presented"], lang), T(L["same_case"], lang))
     return "\n".join([
         crumbs(items, lang),
         hero(kicker, T(f["h1"], lang), T(f["intro"], lang), lang, aside),
-        section('      <h2 class="ucp__h2">%s</h2>\n      <ul class="ucp__cards">%s\n      </ul>' % (T(L["three"], lang), cards)),
+        section('      <h2 class="ucp__h2">%s</h2>\n      <ol class="ucf-rows">%s\n      </ol>' % (T(L["three"], lang), cards)),
         why,
         client_block(next((x for x in cases if C.VOICES[C.EXTRA[x["key"]]["voice"]][0] != f["video"][0]), cases[0]), lang),
         cta({"key": f["key"]}, lang),
@@ -649,6 +667,12 @@ L.update({
     "cta_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
     "bar_offer": ("Recevoir un cas réel", "Get a real case"),
     "bar_call": ("Être rappelé", "Get a call back"),
+    "dash_t": ("Ce que montre un tableau de bord", "What a dashboard shows"),
+    "dash_foot": ("À vous d'interpréter.", "Yours to interpret."),
+    "note_t": ("Ce que vous remet Licter", "What Licter hands you"),
+    "same_case": ("Exemple illustratif : les deux côtés portent sur la même conversation.", "Illustrative example: both sides read the same conversation."),
+    "up": ("en hausse", "up"),
+    "down": ("en baisse", "down"),
     "hub_voices": ("Ils le racontent mieux que nous", "They tell it better than we do"),
     "hub_offer_t": ("Recevez un cas réel, dans votre secteur.", "Get a real case, in your sector."),
 })
