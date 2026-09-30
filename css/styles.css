@@ -5584,3 +5584,11 @@ html[data-theme="dark"] .ucnav a.is-on span { color: var(--navy); }
 .ucf__open:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
 html[data-theme="dark"] .ucf__open { background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
 @media (prefers-reduced-motion: reduce) { .ucf__open-dot { animation: none; } }
+
+/* the header and its drop-down menus sit above everything in the hero: the
+   map canvas and the SI Lab badge each make a layer of their own, and they
+   used to paint over an open menu */
+.hero__top { position: relative; z-index: 12; }
+/* an open menu is fully opaque: the hero title used to show through it */
+.menu { background: var(--surface, #fff); }
+html[data-theme="dark"] .menu { background: var(--surface); }
