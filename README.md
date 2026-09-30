@@ -17,6 +17,13 @@ le même sélecteur dans le même contexte. 243 Ko → 147 Ko (27 Ko compressé)
 rendu vérifié identique au pixel sur les 26 pages. **Oublier de relancer le
 script = la modification n'apparaît pas.**
 
+**Langue.** Le site s'affiche **en français par défaut**. Le HTML reste écrit en
+anglais (source de vérité) et `js/i18n.js` applique `js/fr.js` au chargement ;
+`js/theme.js` masque la page le temps de la traduction pour éviter tout flash
+d'anglais (filet de sécurité : 2,5 s). Le choix « EN » est mémorisé
+(`localStorage`, clé `licter-lang`). Limite : Google n'indexe que l'anglais tant
+qu'il n'existe pas de version `/fr/` statique avec `hreflang`.
+
 **Images.** Les photos des pages sont servies en WebP (`*-800.webp` et une
 version pleine taille pour les écrans denses, via `srcset`) ; les avatars en
 `*-160.webp`. Les JPEG d'origine restent dans `assets/img/` comme sources. Pour

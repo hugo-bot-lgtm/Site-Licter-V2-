@@ -14,8 +14,9 @@
   "use strict";
 
   var FR = window.LicterFR || null;
-  /* The dictionary is 100 KB: it loads only when French is asked for. Its URL
-     is this script's own, with the file name swapped. */
+  /* The dictionary is loaded by the page itself, before this script, now that
+     French is the default. If it is missing, it is fetched from this script's
+     own URL, with the file name swapped. */
   var SELF = document.currentScript && document.currentScript.src;
   function loadFR(done) {
     if (FR) { done(); return; }
@@ -71,6 +72,9 @@
 
   /* --------------------------------------------------------------- apply */
 
+  /* js/theme.js hides the page until French is on it: lift that once done */
+  function reveal() { document.documentElement.classList.remove("i18n-pending"); }
+
   function apply(lang) {
     if (lang === "fr" && current !== "fr") {
       if (!FR) { loadFR(function () { apply("fr"); }); return; }
@@ -78,6 +82,7 @@
       document.documentElement.lang = "fr";
       current = "fr";
       watch();
+      reveal();
     } else if (lang === "en" && current !== "en") {
       /* going back to English: the source of truth is the HTML file itself */
       unwatch();
@@ -163,12 +168,14 @@
     });
   }
 
-  var saved = "en";
-  try { saved = localStorage.getItem(STORE) || "en"; } catch (e) { /* private mode */ }
+  /* French by default: the site speaks to French organisations first.
+     English is one click away, and remembered once chosen. */
+  var saved = "fr";
+  try { saved = localStorage.getItem(STORE) || "fr"; } catch (e) { /* private mode */ }
 
   function init() {
     build();
-    if (saved === "fr") apply("fr"); else mark();
+    if (saved === "fr") apply("fr"); else { mark(); reveal(); }
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

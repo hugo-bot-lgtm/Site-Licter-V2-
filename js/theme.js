@@ -38,6 +38,16 @@
 
   apply(current());
 
+  /* French is the default language (js/i18n.js). The HTML is written in
+     English, so until French is applied the page stays hidden: no English
+     flash on first paint. A safety net lifts it anyway after 2.5 s. */
+  var lang = null;
+  try { lang = localStorage.getItem("licter-lang"); } catch (e) { /* private mode */ }
+  if (lang !== "en") {
+    root.classList.add("i18n-pending");
+    setTimeout(function () { root.classList.remove("i18n-pending"); }, 2500);
+  }
+
   if (system && system.addEventListener) {
     system.addEventListener("change", function () { if (!stored()) apply(current()); });
   }
