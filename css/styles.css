@@ -5901,3 +5901,9 @@ html[data-theme="dark"] .ucp__roi { background: var(--surface); box-shadow: inse
 /* the offer follows the client case: pulled closer to it */
 #cas-client + .ucp--cta { padding-top: 0; }
 .ucp__related--ico .ucp__art-l { display: block; }
+
+/* use-case pages: the hero starts right under the breadcrumb (the generic
+   .page top padding was made for pages without one) */
+.ucp__head.page { padding-top: 0; }
+.ucp__hero { padding-block: clamp(28px, 3.4vw, 44px) clamp(24px, 3vw, 40px); }
+@media (max-width: 720px) { .ucp__hero { padding-block: 22px 20px; } }
