@@ -297,158 +297,225 @@ def write(path, text):
     return out
 
 # ------------------------------------------------------------------ bodies
-def head_block(kicker, h1, intro, lang, actions=True, cls="ucp__head"):
+# the site's own icon set (the menus in js/ui.js), reused rather than redrawn
+_UI = (ROOT / "js" / "ui.js").read_text()
+ICON = dict(re.findall(r"^\s{4}(\w+): '(<svg.*?</svg>)',?$",
+                       re.search(r"var ICONS = \{(.*?)\n  \};", _UI, re.S).group(1), re.M))
+FAM_ICON = {"communication": "influence", "brand": "brand", "audiences": "audiences", "trends": "trends"}
+
+
+def icon(name):
+    return '<span class="ucp__ico" aria-hidden="true">%s</span>' % ICON.get(name, ICON["chart"])
+
+
+def source_icon(label_en):
+    l = label_en.lower()
+    table = (
+        (("search",), "search"),
+        (("generative ai",), "ai"),
+        (("panel", "audience", "communit", "affinit", "base"), "audiences"),
+        (("press", "blog", "media", "expert", "institution"), "layers"),
+        (("review", "forum", "customer"), "panel"),
+        (("competit", "peer", "controvers", "trend"), "chart"),
+        (("social", "linkedin", "tiktok", "creator", "x and", "networks"), "influence"),
+        (("language",), "bell"),
+    )
+    for keys, name in table:
+        if any(k in l for k in keys):
+            return name
+    return "chart"
+
+
+# the same four lines on every family page: what sets a read apart from a tool
+VERSUS = [
+    (("Des volumes de mentions", "Mention volumes"),
+     ("Qui parle, avec quelle influence, et ce qui a changé", "Who is talking, with what influence, and what changed")),
+    (("Des alertes sur des mots-clés", "Keyword alerts"),
+     ("Un analyste qui qualifie chaque signal avant de vous prévenir", "An analyst who qualifies each signal before alerting you")),
+    (("La traduction automatique", "Machine translation"),
+     ("Des analystes qui parlent la langue du marché", "Analysts who speak the market's language")),
+    (("Un export à interpréter", "An export to interpret"),
+     ("Une recommandation présentée à celles et ceux qui décident", "A recommendation presented to the people who decide")),
+]
+
+L.update({
+    "tool": ("Un outil de veille vous donne", "A monitoring tool gives you"),
+    "licter": ("Licter vous donne", "Licter gives you"),
+    "found": ("Ce que la conversation a montré", "What the conversation showed"),
+    "reco": ("Notre recommandation", "Our recommendation"),
+    "illus": ("Exemple illustratif", "Illustrative example"),
+    "presented": ("Présenté par le consultant qui a mené l'analyse.", "Presented by the consultant who ran the analysis."),
+    "see_q": ("Voir les questions", "See the questions"),
+    "jump": ("Aller à une famille", "Go to a family"),
+})
+
+
+def split_example(text):
+    """'Exemple illustratif : situation. Recommandation : action.' -> (situation, action)"""
+    t = re.sub(r"^(Exemple illustratif|Illustrative example)\s*:\s*", "", text)
+    m = re.split(r"\s*(?:Recommandation|Recommendation)\s*:\s*", t, maxsplit=1)
+    cap = lambda x: x[:1].upper() + x[1:]
+    return (cap(m[0]), cap(m[1])) if len(m) == 2 else (cap(t), "")
+
+
+def hero(kicker_html, h1, intro, lang, aside="", actions=True, extra="", after=""):
     act = ""
     if actions:
-        act = f'''
-        <div class="page__actions">
-          <a class="btn btn--primary" href="#book">{T(L["book"], lang)} <span aria-hidden="true">→</span></a>
-        </div>'''
-    return f'''  <section class="page {cls}">
-    <div class="shell">
-      <div class="page__head">
-        <p class="page__eyebrow"><span class="rule" aria-hidden="true"></span>{kicker}</p>
-        <h1 class="page__title ucp__title">{h1}</h1>
-        <p class="page__lead">{intro}</p>{act}
-      </div>
-    </div>
-  </section>'''
+        act = ('\n          <div class="page__actions">'
+               '\n            <a class="btn btn--primary" href="#book">%s <span aria-hidden="true">→</span></a>%s'
+               '\n          </div>') % (T(L["book"], lang), extra)
+    split = " ucp__head--split" if aside else ""
+    return ('  <section class="page ucp__head%s">\n'
+            '    <div class="shell ucp__hero">\n'
+            '      <div class="ucp__hero-main">\n'
+            '        <p class="ucp__kicker">%s</p>\n'
+            '        <h1 class="ucp__title">%s</h1>\n'
+            '        <p class="ucp__lead">%s</p>%s%s\n'
+            '      </div>%s\n'
+            '    </div>\n'
+            '  </section>') % (split, kicker_html, h1, intro, act, after, aside)
+
+
+def related(title_id, title, links, extra=""):
+    return ('      <aside class="ucp__related" aria-labelledby="%s">\n'
+            '        <h2 class="ucp__h2" id="%s">%s</h2>\n'
+            '        <ul>%s</ul>%s\n'
+            '      </aside>') % (title_id, title_id, title, links, extra)
+
+
+def faq_block(faq, lang, aside):
+    return ('  <section class="ucp">\n'
+            '    <div class="shell ucp__cols ucp__cols--faq">\n'
+            '      <div>\n'
+            '        <h2 class="ucp__h2">%s</h2>\n'
+            '        <div class="faq">%s</div>\n'
+            '      </div>\n%s\n'
+            '    </div>\n'
+            '  </section>') % (T(L["faq"], lang), faq_html(faq, lang), aside)
+
+
+def section(inner, sid=""):
+    return '  <section class="ucp"%s>\n    <div class="shell">\n%s\n    </div>\n  </section>' % (
+        ' id="%s"' % sid if sid else "", inner)
+
 
 def case_body(c, lang):
     f = FAM[c["family"]]
-    n = C.CASES.index(c) % 3 + 1
-    qs = "".join("<li>%s</li>" % T(q, lang) for q in c["questions"])
+    n = [x for x in C.CASES if x["family"] == c["family"]].index(c) + 1
     gets = "".join("<li>%s</li>" % T(g, lang) for g in c["deliverables"])
-    src = "".join('<li><b>%s</b><span>%s</span></li>' % (T(a, lang), T(b, lang)) for a, b in c["sources"])
-    steps = "".join('<li><span class="ucp__n">0%d</span><b>%s</b><p>%s</p></li>' % (i + 1, T(C.STEPS[i], lang), T(s, lang))
+    aside = ('\n      <aside class="ucp__get" aria-labelledby="get-%s">'
+             '\n        <p class="ucp__get-k" id="get-%s">%s</p>'
+             '\n        <ul class="ucp__ticks">%s</ul>'
+             '\n        <p class="ucp__get-foot">%s</p>'
+             '\n      </aside>') % (c["key"], c["key"], T(L["get"], lang), gets, T(L["presented"], lang))
+    kicker = '%s<a href="%s">%s</a><span class="ucp__kicker-n">0%d / 03</span>' % (
+        icon(FAM_ICON[f["key"]]), fam_path(f, lang), T(f["name"], lang), n)
+    qs = "".join('<li><span class="ucp__q-n">0%d</span><p>%s</p></li>' % (i + 1, T(q, lang))
+                 for i, q in enumerate(c["questions"]))
+    src = "".join('<li>%s<b>%s</b><span>%s</span></li>' % (icon(source_icon(a[EN])), T(a, lang), T(b, lang))
+                  for a, b in c["sources"])
+    steps = "".join('<li><span class="ucp__dot">%d</span><b>%s</b><p>%s</p></li>' % (i + 1, T(C.STEPS[i], lang), T(s, lang))
                     for i, s in enumerate(c["steps"]))
+    sit, rec = split_example(c["example"][lang])
     siblings = [x for x in C.CASES if x["family"] == c["family"] and x is not c]
-    rel = "".join('<li><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (case_path(x, lang), T(x["name"], lang)) for x in siblings)
+    rel = "".join('<li><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (case_path(x, lang), T(x["name"], lang))
+                  for x in siblings)
+    up = '\n        <a class="ucp__up" href="%s">%s <span aria-hidden="true">→</span></a>' % (
+        fam_path(f, lang), esc(typo(L["family_all"][lang] % f["name"][lang], lang)))
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], hub_path(lang)), (f["name"][lang], fam_path(f, lang)), (c["name"][lang], None)]
+    example = ('      <h2 class="ucp__h2">%s</h2>\n'
+               '      <article class="ucp__case">\n'
+               '        <p class="ucp__case-k">%s</p>\n'
+               '        <div class="ucp__case-cols">\n'
+               '          <div><p class="ucp__case-h">%s</p><p>%s</p></div>\n'
+               '          <div class="ucp__case-reco"><p class="ucp__case-h">%s</p><p>%s</p></div>\n'
+               '        </div>\n'
+               '      </article>') % (T(L["example"], lang), T(L["illus"], lang), T(L["found"], lang),
+                                     esc(typo(sit, lang)), T(L["reco"], lang), esc(typo(rec, lang)))
     return "\n".join([
         crumbs(items, lang),
-        head_block("%s · 0%d" % (T(f["name"], lang), n), T(c["h1"], lang), T(c["intro"], lang), lang),
-        f'''  <section class="ucp">
-    <div class="shell ucp__cols">
-      <div class="ucp__block">
-        <h2 class="ucp__h2">{T(L["questions"], lang)}</h2>
-        <ul class="ucp__qs">{qs}</ul>
-      </div>
-      <div class="ucp__block ucp__block--get">
-        <h2 class="ucp__h2">{T(L["get"], lang)}</h2>
-        <ul class="ucp__ticks">{gets}</ul>
-      </div>
-    </div>
-  </section>
-  <section class="ucp">
-    <div class="shell">
-      <h2 class="ucp__h2">{T(L["read"], lang)}</h2>
-      <ul class="ucp__sources">{src}</ul>
-    </div>
-  </section>
-  <section class="ucp">
-    <div class="shell">
-      <h2 class="ucp__h2">{T(L["how"], lang)}</h2>
-      <ol class="ucp__steps">{steps}</ol>
-    </div>
-  </section>
-  <section class="ucp">
-    <div class="shell">
-      <h2 class="ucp__h2">{T(L["example"], lang)}</h2>
-      <p class="ucp__example">{T(c["example"], lang)}</p>
-    </div>
-  </section>
-  <section class="ucp">
-    <div class="shell ucp__cols ucp__cols--faq">
-      <div>
-        <h2 class="ucp__h2">{T(L["faq"], lang)}</h2>
-        <div class="faq">{faq_html(c["faq"], lang)}</div>
-      </div>
-      <aside class="ucp__related" aria-labelledby="rel-{c["key"]}">
-        <h2 class="ucp__h2" id="rel-{c["key"]}">{T(L["same"], lang)}</h2>
-        <ul>{rel}</ul>
-        <a class="ucp__up" href="{fam_path(f, lang)}">{esc(typo(L["family_all"][lang] % f["name"][lang], lang))} <span aria-hidden="true">→</span></a>
-      </aside>
-    </div>
-  </section>''',
+        hero(kicker, T(c["h1"], lang), T(c["intro"], lang), lang, aside,
+             extra='\n            <a class="ucp__textlink" href="#nos-questions">%s <span aria-hidden="true">↓</span></a>' % T(L["see_q"], lang)),
+        section('      <h2 class="ucp__h2">%s</h2>\n      <ol class="ucp__qs">%s</ol>' % (T(L["questions"], lang), qs), "nos-questions"),
+        section('      <h2 class="ucp__h2">%s</h2>\n      <ul class="ucp__sources">%s</ul>' % (T(L["read"], lang), src)),
+        section('      <h2 class="ucp__h2">%s</h2>\n      <ol class="ucp__steps">%s</ol>' % (T(L["how"], lang), steps)),
+        section(example),
+        faq_block(c["faq"], lang, related("rel-" + c["key"], T(L["same"], lang), rel, up)),
         book(lang),
     ]), items
+
 
 def family_body(f, lang):
     cases = [x for x in C.CASES if x["family"] == f["key"]]
     idx = C.FAMILIES.index(f) + 1
-    cards = "".join(f'''
-        <li><a class="ucp__card" href="{case_path(x, lang)}">
-          <span class="ucp__n">0{i + 1}</span>
-          <b class="ucp__card-t">{T(x["name"], lang)}</b>
-          <span class="ucp__card-d">{T(x["meta"], lang)}</span>
-          <span class="ucp__card-get">{T(x["deliverables"][0], lang)}</span>
-          <span class="ucp__card-go">{T(L["read_case"], lang)} <span aria-hidden="true">→</span></span>
-        </a></li>''' for i, x in enumerate(cases))
-    others = "".join('<li><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (fam_path(o, lang), T(o["name"], lang))
-                     for o in C.FAMILIES if o is not f)
+    aside = '\n      <div class="ucp__hero-voice">\n%s\n      </div>' % reel(f["video"], lang)
+    kicker = '%s<span>0%d · %s</span>' % (icon(FAM_ICON[f["key"]]), idx, T(f["name"], lang))
+    cards = "".join(
+        '\n        <li><a class="ucp__card" href="%s">'
+        '<span class="ucp__card-n">0%d</span>'
+        '<b class="ucp__card-t">%s</b>'
+        '<span class="ucp__card-d">%s</span>'
+        '<span class="ucp__card-get"><span>%s</span>%s</span>'
+        '<span class="ucp__card-go">%s <span aria-hidden="true">→</span></span>'
+        '</a></li>' % (case_path(x, lang), i + 1, T(x["name"], lang), T(x["meta"], lang),
+                       T(L["get"], lang), T(x["deliverables"][0], lang), T(L["read_case"], lang))
+        for i, x in enumerate(cases))
+    vs = "".join('<tr><td>%s</td><td>%s</td></tr>' % (T(a, lang), T(b, lang)) for a, b in VERSUS)
+    others = "".join('<li><a href="%s">%s%s <span aria-hidden="true">→</span></a></li>' % (
+        fam_path(o, lang), icon(FAM_ICON[o["key"]]), T(o["name"], lang)) for o in C.FAMILIES if o is not f)
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], hub_path(lang)), (f["name"][lang], None)]
+    why = ('  <section class="ucp">\n'
+           '    <div class="shell ucp__cols ucp__cols--why">\n'
+           '      <div>\n'
+           '        <h2 class="ucp__h2">%s</h2>\n'
+           '        <p class="ucp__why">%s</p>\n'
+           '      </div>\n'
+           '      <table class="ucp__vs">\n'
+           '        <thead><tr><th scope="col">%s</th><th scope="col">%s</th></tr></thead>\n'
+           '        <tbody>%s</tbody>\n'
+           '      </table>\n'
+           '    </div>\n'
+           '  </section>') % (T(L["why"], lang), T(f["why"], lang), T(L["tool"], lang), T(L["licter"], lang), vs)
     return "\n".join([
         crumbs(items, lang),
-        head_block("0%d · %s" % (idx, T(f["name"], lang)), T(f["h1"], lang), T(f["intro"], lang), lang),
-        f'''  <section class="ucp">
-    <div class="shell">
-      <h2 class="ucp__h2">{T(L["three"], lang)}</h2>
-      <ul class="ucp__cards">{cards}
-      </ul>
-    </div>
-  </section>
-  <section class="ucp">
-    <div class="shell ucp__cols ucp__cols--why">
-      <div>
-        <h2 class="ucp__h2">{T(L["why"], lang)}</h2>
-        <p class="ucp__why">{T(f["why"], lang)}</p>
-      </div>
-{reel(f["video"], lang)}
-    </div>
-  </section>
-  <section class="ucp">
-    <div class="shell ucp__cols ucp__cols--faq">
-      <div>
-        <h2 class="ucp__h2">{T(L["faq"], lang)}</h2>
-        <div class="faq">{faq_html(f["faq"], lang)}</div>
-      </div>
-      <aside class="ucp__related" aria-labelledby="rel-{f["key"]}">
-        <h2 class="ucp__h2" id="rel-{f["key"]}">{T(L["others"], lang)}</h2>
-        <ul>{others}</ul>
-      </aside>
-    </div>
-  </section>''',
+        hero(kicker, T(f["h1"], lang), T(f["intro"], lang), lang, aside),
+        section('      <h2 class="ucp__h2">%s</h2>\n      <ul class="ucp__cards">%s\n      </ul>' % (T(L["three"], lang), cards)),
+        why,
+        faq_block(f["faq"], lang, related("rel-" + f["key"], T(L["others"], lang), others)).replace(
+            '<aside class="ucp__related"', '<aside class="ucp__related ucp__related--ico"', 1),
         book(lang),
     ]), items
 
+
 def hub_body(lang):
+    jump = "".join('<li><a href="#%s">%s%s</a></li>' % (f["key"], icon(FAM_ICON[f["key"]]), T(f["name"], lang)) for f in C.FAMILIES)
     fams = []
     for i, f in enumerate(C.FAMILIES):
         cases = [x for x in C.CASES if x["family"] == f["key"]]
-        links = "".join('<li><a href="%s"><b>%s</b><span>%s</span></a></li>' % (case_path(x, lang), T(x["name"], lang), T(x["meta"], lang)) for x in cases)
-        fams.append(f'''      <li class="ucp__fam">
-        <div class="ucp__fam-head">
-          <p class="ucf__kicker"><span>0{i + 1}</span>{T(f["name"], lang)}</p>
-          <h2 class="ucp__fam-t"><a href="{fam_path(f, lang)}">{T(f["h1"], lang)}</a></h2>
-          <p class="ucp__fam-d">{T(f["intro"], lang)}</p>
-        </div>
-        <ul class="ucp__fam-cases">{links}</ul>
-      </li>''')
+        links = "".join('<li><a href="%s"><b>%s</b><span>%s</span><i aria-hidden="true">→</i></a></li>' % (
+            case_path(x, lang), T(x["name"], lang), T(x["meta"], lang)) for x in cases)
+        fams.append(
+            '      <li class="ucp__fam" id="%s">\n'
+            '        <div class="ucp__fam-head">\n'
+            '          <p class="ucp__fam-k">%s<span>0%d · %s</span></p>\n'
+            '          <h2 class="ucp__fam-t"><a href="%s">%s</a></h2>\n'
+            '          <p class="ucp__fam-d">%s</p>\n'
+            '          <a class="ucp__textlink" href="%s">%s <span aria-hidden="true">→</span></a>\n'
+            '        </div>\n'
+            '        <ul class="ucp__fam-cases">%s</ul>\n'
+            '      </li>' % (f["key"], icon(FAM_ICON[f["key"]]), i + 1, T(f["name"], lang), fam_path(f, lang), T(f["h1"], lang),
+                            T(f["intro"], lang), fam_path(f, lang), esc(typo(L["family_all"][lang] % f["name"][lang], lang)), links))
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], None)]
+    nav = '\n        <nav class="ucp__jump" aria-label="%s"><ul>%s</ul></nav>' % (T(L["jump"], lang), jump)
     return "\n".join([
         crumbs(items, lang),
-        head_block(T(C.HUB["kicker"], lang), T(C.HUB["h1"], lang), T(C.HUB["intro"], lang), lang, actions=False),
-        f'''  <section class="ucp">
-    <div class="shell">
-      <h2 class="visually-hidden">{T(L["families"], lang)}</h2>
-      <ol class="ucp__fams">
-{chr(10).join(fams)}
-      </ol>
-    </div>
-  </section>''',
+        hero('<span>%s</span>' % T(C.HUB["kicker"], lang), T(C.HUB["h1"], lang), T(C.HUB["intro"], lang), lang,
+             actions=False, after=nav),
+        section('      <h2 class="visually-hidden">%s</h2>\n      <ol class="ucp__fams">\n%s\n      </ol>' % (
+            T(L["families"], lang), "\n".join(fams))),
         book(lang),
     ]), items
+
 
 # ------------------------------------------------------------------- build
 def main():
