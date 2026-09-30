@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/use-cases.html", "destination": "/fr/cas-usage/", "permanent": true },
+    { "source": "/use-cases", "destination": "/fr/cas-usage/", "permanent": true }
+  ]
+}

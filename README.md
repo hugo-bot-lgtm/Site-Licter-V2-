@@ -17,6 +17,31 @@ le même sélecteur dans le même contexte. 243 Ko → 147 Ko (27 Ko compressé)
 rendu vérifié identique au pixel sur les 26 pages. **Oublier de relancer le
 script = la modification n'apparaît pas.**
 
+**Pages cas d'usage (SEO).** Les cas d'usage vivent dans 34 pages statiques,
+en français et en anglais, générées par un script :
+
+```bash
+python3 tools/build-usecases.py
+```
+
+- `/fr/cas-usage/` et `/en/use-cases/` : le sommaire ;
+- `/fr/cas-usage/<famille>/` : une page par famille (4) ;
+- `/fr/cas-usage/<famille>/<cas>/` : une page par cas d'usage (12) ;
+- et leurs jumelles anglaises, reliées par `hreflang` ;
+- plus `sitemap.xml` et `robots.txt`.
+
+Le texte est **dans le HTML** (Google l'indexe), en français et en anglais.
+On l'édite dans `tools/uc_content.py`, jamais dans les pages générées, puis on
+relance le script. L'en-tête, le bandeau et le pied de page sont repris de
+`offers.html` et traduits avec `js/fr.js`, donc toute modification de ceux-ci
+demande aussi de relancer le script. Chaque page porte : titre et description
+optimisés, URL canonique, `hreflang`, fil d'Ariane, données structurées
+(BreadcrumbList, FAQPage, Service), FAQ, liens internes vers les cas voisins.
+`use-cases.html` redirige vers `/fr/cas-usage/` (et `vercel.json` fait une
+redirection 301). **À confirmer : le domaine** (`SITE` dans `tools/uc_content.py`,
+actuellement `https://www.licter.com`), utilisé pour les canoniques, `hreflang`
+et le sitemap.
+
 **Langue.** Le site s'affiche **en français par défaut**. Le HTML reste écrit en
 anglais (source de vérité) et `js/i18n.js` applique `js/fr.js` au chargement ;
 `js/theme.js` masque la page le temps de la traduction pour éviter tout flash
@@ -1426,7 +1451,7 @@ et `MOCK` dans le code. **Rien n'est envoyé nulle part.** À remplacer :
 | Élément | Où | À fournir |
 |---|---|---|
 | Visuels des cas d'usage : 4 questions × 4 secteurs (agroalimentaire, luxe, jouets & jeux vidéo, automobile) — courbes, pics, nuages de mots, communautés, scores, course des sujets, posts, « Notre lecture » | `js/usecases.js` → `CASES`, `FILLER` | Verbatims et chiffres réels anonymisés, un cas client par secteur |
-| Page Cas d'usage : un cas en direct par famille (mêmes données que la home), vidéo client par famille (Paris 2024, SNCF, L'Oréal, Orange) | `use-cases.html`, `js/usecases.js` → `Stage`, `[data-uc-stage]` | Valider le choix des vidéos par famille |
+| Textes des 16 pages cas d'usage (FR + EN) : questions, sources, étapes, livrables, exemples illustratifs, FAQ | `tools/uc_content.py` | Relire et valider le fond, confirmer le domaine (`SITE`) |
 | Offre « cas réel du secteur, anonymisé, envoyé par un consultant sous 48 h » sous « Notre lecture » (e-mail + secteur + question) | `js/usecases.js` → `renderGet` | Brancher au CRM ; un consultant envoie le cas à la main |
 | Mémoire du contact pour la session (préremplissage, offre en un clic, barre du guide masquée) | `js/ui.js` → `LicterLead` | Remplacer par l'identification du CRM une fois branché |
 | Prochaine étape du diagnostic selon le score (guide / revue 30 min / consultant) | `js/home.js` → `BANDS[].next` | Valider les offres et les liens |

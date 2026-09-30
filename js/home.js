@@ -115,7 +115,7 @@
     /* next: the step that fits the score, from the lightest to the most direct */
     { max: 4, name: ["Listening, not yet reading", "Vous écoutez, sans encore lire"],
       next: { text: ["Start with the guide: the 12 questions social data answers better than a survey.", "Commencez par le guide : les 12 questions auxquelles la donnée sociale répond mieux qu'un sondage."],
-              cta: ["Get the free guide", "Recevoir le guide gratuit"], href: "guide.html" },
+              cta: ["Get the free guide", "Recevoir le guide gratuit"], href: "/guide.html" },
       text: ["You collect the conversation. The next step is to frame it around a decision, so the data answers something.",
              "Vous collectez la conversation. L'étape suivante : la cadrer autour d'une décision, pour que la donnée réponde à quelque chose."] },
     { max: 8, name: ["Reading, not yet deciding", "Vous lisez, sans encore décider"],
@@ -191,7 +191,7 @@
               '<button class="btn btn--primary" type="submit">' + t("Send it to me", "Me l'envoyer") + "</button></div>" +
               '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
               '<p class="consent">' + t("We use your email only to reply to you. ", "Votre e-mail sert uniquement à vous répondre. ") +
-                '<a href="privacy.html">' + t("Privacy policy", "Politique de confidentialité") + "</a>.</p>" +
+                '<a href="/privacy.html">' + t("Privacy policy", "Politique de confidentialité") + "</a>.</p>" +
             "</form>") +
         '<button class="quiz__back" type="button" data-restart>' + t("Start again", "Recommencer") + "</button>" +
         "</div></div>";

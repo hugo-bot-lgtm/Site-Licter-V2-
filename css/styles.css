@@ -5592,3 +5592,104 @@ html[data-theme="dark"] .ucf__open { background: var(--surface); box-shadow: ins
 /* an open menu is fully opaque: the hero title used to show through it */
 .menu { background: var(--surface, #fff); }
 html[data-theme="dark"] .menu { background: var(--surface); }
+
+/* =========================================================
+   Use-case pages (/fr/cas-usage/…, /en/use-cases/…), generated
+   by tools/build-usecases.py
+   ========================================================= */
+.crumbs { padding-top: 18px; }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 4px 0; margin: 0; padding: 0; list-style: none; font: 500 12.5px/1.4 var(--body-font); color: var(--text-2); }
+.crumbs li + li::before { content: "›"; margin: 0 8px; color: var(--text-3, var(--text-2)); }
+.crumbs a { color: var(--text-2); border-bottom: 1px solid transparent; }
+.crumbs a:hover { color: var(--ink); border-bottom-color: rgba(var(--amber-rgb), .7); }
+.crumbs [aria-current] { color: var(--ink); font-weight: 600; }
+
+.ucp__head .page__head { padding-top: clamp(20px, 3vw, 36px); padding-bottom: clamp(16px, 2.4vw, 28px); }
+.ucp__title { max-width: 20ch; font-size: clamp(34px, 4.4vw, 60px); line-height: 1.05; text-transform: none; letter-spacing: -1px; }
+
+.ucp { position: relative; padding: clamp(34px, 5vh, 60px) 0; }
+.ucp__h2 { margin: 0 0 18px; font: 600 clamp(22px, 2vw, 28px)/1.2 var(--title-font); color: var(--ink); }
+.ucp__cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: start; }
+.ucp__cols--faq { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+.ucp__cols--why { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; }
+
+.ucp__qs, .ucp__ticks { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.ucp__qs li { position: relative; padding: 14px 16px 14px 44px; border-radius: 14px; background: rgba(var(--ink-rgb), .04); font: 600 15.5px/1.45 var(--body-font); color: var(--ink); }
+.ucp__qs li::before { content: "?"; position: absolute; left: 14px; top: 13px; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--navy); color: var(--amber); font: 700 11px/1 var(--body-font); }
+html[data-theme="dark"] .ucp__qs li::before { background: var(--cream); color: var(--navy); }
+.ucp__block--get { padding: 22px 24px; border-radius: 18px; background: var(--navy); color: var(--cream); }
+.ucp__block--get .ucp__h2 { color: var(--cream); }
+html[data-theme="dark"] .ucp__block--get { background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.ucp__ticks li { position: relative; padding-left: 26px; font: 500 15px/1.5 var(--body-font); color: rgba(252, 246, 239, .92); }
+.ucp__ticks li::before { content: ""; position: absolute; left: 2px; top: .45em; width: 12px; height: 7px; border-left: 2px solid var(--amber); border-bottom: 2px solid var(--amber); transform: rotate(-45deg); }
+
+.ucp__sources { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.ucp__sources li { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface, #fff); box-shadow: inset 0 3px 0 var(--amber); }
+.ucp__sources b { font: 700 14.5px/1.3 var(--body-font); color: var(--ink); }
+.ucp__sources span { font: 500 13.5px/1.5 var(--body-font); color: var(--text-2); }
+
+.ucp__steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; counter-reset: s; }
+.ucp__steps li { position: relative; padding: 18px 18px 4px; border-top: 2px solid var(--amber); }
+.ucp__n { display: block; margin-bottom: 8px; font: 700 12px/1 var(--body-font); font-variant-numeric: tabular-nums; color: var(--amber-ink); }
+.ucp__steps b { display: block; margin-bottom: 6px; font: 600 17px/1.3 var(--title-font); color: var(--ink); }
+.ucp__steps p { margin: 0; font: 500 14px/1.55 var(--body-font); color: var(--text-2); }
+
+.ucp__example { max-width: 72ch; margin: 0 0 20px; padding: 16px 18px; border-radius: 14px; background: rgba(var(--amber-rgb), .12); box-shadow: inset 3px 0 0 var(--amber); font: 500 15px/1.6 var(--body-font); color: var(--ink); }
+.ucp__note { margin: 12px 0 0; font: 500 12.5px/1.5 var(--body-font); color: var(--text-2); }
+
+.ucp__related { padding: 20px 22px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface, #fff); }
+.ucp__related .ucp__h2 { font-size: 19px; }
+.ucp__related ul { display: grid; gap: 4px; margin: 0 0 14px; padding: 0; list-style: none; }
+.ucp__related a { display: block; padding: 8px 0; font: 600 14.5px/1.4 var(--body-font); color: var(--ink); border-bottom: 1px solid var(--line); }
+.ucp__related a:hover { color: var(--amber-ink); }
+.ucp__up { display: inline-block; margin-top: 4px; font: 600 14px/1.4 var(--body-font); color: var(--ink); border-bottom: 1px solid rgba(var(--amber-rgb), .7); }
+
+.ucp__cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.ucp__card {
+  display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 20px 22px; border-radius: 18px; border: 1px solid var(--line);
+  background: var(--surface, #fff); color: var(--ink); transition: transform .25s cubic-bezier(.16, 1, .3, 1), box-shadow .25s ease, border-color .2s ease;
+}
+.ucp__card:hover { transform: translateY(-3px); border-color: rgba(var(--amber-rgb), .8); box-shadow: 0 22px 40px -28px rgba(19, 22, 45, .45); }
+.ucp__card-t { font: 600 18px/1.3 var(--title-font); }
+.ucp__card-d { font: 500 14px/1.55 var(--body-font); color: var(--text-2); }
+.ucp__card-get { font: 600 13px/1.5 var(--body-font); color: var(--ink); padding-top: 10px; border-top: 1px solid var(--line); }
+.ucp__card-go { margin-top: auto; font: 700 13px/1 var(--body-font); color: var(--amber-ink); }
+.ucp__why { margin: 0; max-width: 60ch; font: 500 16px/1.65 var(--body-font); color: var(--text-2); }
+
+/* the hub */
+.ucp__fams { display: grid; gap: clamp(20px, 3vw, 32px); margin: 0; padding: 0; list-style: none; }
+.ucp__fam { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(20px, 4vw, 56px); padding: clamp(22px, 3vw, 34px); border-radius: 22px; border: 1px solid var(--line); background: var(--surface, #fff); }
+.ucp__fam-t { margin: 0 0 10px; font: 600 clamp(21px, 1.9vw, 26px)/1.25 var(--title-font); }
+.ucp__fam-t a { color: var(--ink); }
+.ucp__fam-t a:hover { color: var(--amber-ink); }
+.ucp__fam-d { margin: 0; font: 500 14.5px/1.6 var(--body-font); color: var(--text-2); }
+.ucp__fam-cases { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.ucp__fam-cases a { display: flex; flex-direction: column; gap: 4px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.ucp__fam-cases b { font: 600 15.5px/1.35 var(--body-font); color: var(--ink); }
+.ucp__fam-cases span { font: 500 13.5px/1.5 var(--body-font); color: var(--text-2); }
+.ucp__fam-cases a:hover b { color: var(--amber-ink); }
+
+@media (max-width: 960px) {
+  .ucp__sources, .ucp__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ucp__cards { grid-template-columns: minmax(0, 1fr); }
+  .ucp__fam { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .ucp__cols, .ucp__cols--faq, .ucp__cols--why { grid-template-columns: minmax(0, 1fr); }
+  .ucp__sources, .ucp__steps { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .ucp__card { transition: none; } }
+
+/* soft light on the use-case pages, alternating sides */
+.ucp::before { content: ""; position: absolute; inset: -160px calc(50% - 50vw); z-index: -1; pointer-events: none; }
+.ucp:nth-of-type(odd)::before {
+  background: radial-gradient(56% 40.0% at 3% 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 1)) 0%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.9)) 10%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.74)) 20%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.56)) 30%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.39)) 40%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.25)) 50%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.14)) 60%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.065)) 70%, rgba(var(--amber-rgb), calc(var(--glow-a) * 0.02)) 80%, transparent 90%);
+}
+.ucp:nth-of-type(even)::before {
+  background: radial-gradient(50% 36.0% at 97% 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 1)) 0%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.9)) 10%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.74)) 20%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.56)) 30%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.39)) 40%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.25)) 50%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.14)) 60%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.065)) 70%, rgba(var(--glow-navy-rgb), calc(var(--glow-n) * 0.02)) 80%, transparent 90%);
+}
+
+/* footer headings are h3 now (they follow the page's h2s) */
+.site-foot h3 { margin: 0 0 14px; font: 600 11px/1 var(--body-font); letter-spacing: 1.8px; color: var(--text-2); }
+/* the guide banner is a labelled landmark; the whole bar stays one link */
+.banner__a { display: block; color: inherit; }

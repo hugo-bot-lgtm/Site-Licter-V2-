@@ -1,4 +1,30 @@
 /* =========================================================================
+   Where the use-case pages live, in the visitor's language. They are
+   generated in both (tools/build-usecases.py); the rest of the site links
+   to the right twin.
+   ========================================================================= */
+window.LicterUC = (function () {
+  var h = document.documentElement, lang = "fr";
+  if (h.hasAttribute("data-i18n-static")) lang = h.lang;
+  else { try { lang = localStorage.getItem("licter-lang") || "fr"; } catch (e) { lang = "fr"; } }
+  var P = {
+    fr: { hub: "/fr/cas-usage/", communication: "/fr/cas-usage/communication/", brand: "/fr/cas-usage/sante-de-marque/",
+          audiences: "/fr/cas-usage/audiences/", trends: "/fr/cas-usage/tendances-innovation/",
+          "campaign-impact": "/fr/cas-usage/communication/mesurer-impact-campagne/",
+          reputation: "/fr/cas-usage/sante-de-marque/e-reputation-image-de-marque/",
+          segmentation: "/fr/cas-usage/audiences/segmentation-cibles/",
+          "product-test": "/fr/cas-usage/tendances-innovation/tester-evaluer-produits/" },
+    en: { hub: "/en/use-cases/", communication: "/en/use-cases/communication/", brand: "/en/use-cases/brand-health/",
+          audiences: "/en/use-cases/audiences/", trends: "/en/use-cases/trends-innovation/",
+          "campaign-impact": "/en/use-cases/communication/measure-campaign-impact/",
+          reputation: "/en/use-cases/brand-health/brand-reputation-monitoring/",
+          segmentation: "/en/use-cases/audiences/audience-segmentation/",
+          "product-test": "/en/use-cases/trends-innovation/product-testing/" }
+  };
+  return function (key) { return (P[lang] || P.fr)[key || "hub"]; };
+})();
+
+/* =========================================================================
    Licter — page behaviour: logo crop, client marquee, use-case tabs, form.
    ========================================================================= */
 /* =========================================================================
@@ -83,22 +109,22 @@
      grey; colour returns on hover. Licter must hold each client's agreement to
      display its logo. Sources: assets/img/clients/SOURCES.md */
   var CLIENTS = [
-    { name: "HP",                  src: "assets/img/clients/hp.svg", w:  46, h: 46 },
-    { name: "DECATHLON",           src: "assets/img/clients/decathlon.svg", w: 119, h: 19 },
-    { name: "UNESCO",              src: "assets/img/clients/unesco.svg", w:  55, h: 42 },
-    { name: "L'ORÉAL",             src: "assets/img/clients/loreal.svg", w: 110, h: 21 },
-    { name: "DANONE",              src: "assets/img/clients/danone.png", w:  41, h: 46 },
-    { name: "SOCIÉTÉ GÉNÉRALE",    src: "assets/img/clients/societegenerale.svg", w:  98, h: 23 },
-    { name: "GALERIES LAFAYETTE",  src: "assets/img/clients/galerieslafayette.svg", w:  66, h: 35 },
-    { name: "CELIO",               src: "assets/img/clients/celio.svg", w:  84, h: 27 },
-    { name: "LA POSTE",            src: "assets/img/clients/laposte.svg", w: 120, h: 19 },
-    { name: "SISLEY",              src: "assets/img/clients/sisley.svg", w: 168, h: 12 },
-    { name: "BOUYGUES TELECOM",    src: "assets/img/clients/bouygues.svg", w:  85, h: 27 },
-    { name: "STUDI",               src: "assets/img/clients/studi.svg", w:  80, h: 29 },
-    { name: "TV5 MONDE",           src: "assets/img/clients/tv5monde.svg", w:  83, h: 28 },
-    { name: "PMU",                 src: "assets/img/clients/pmu.svg", w:  77, h: 30 },
-    { name: "LA MARINE RECRUTE",   src: "assets/img/clients/marine.svg", w:  31, h: 46, label: "Marine nationale" },
-    { name: "BIOPARC",             src: "assets/img/clients/bioparc.png", w:  64, h: 36, label: "Bioparc de Doué La Fontaine" }
+    { name: "HP",                  src: "/assets/img/clients/hp.svg", w:  46, h: 46 },
+    { name: "DECATHLON",           src: "/assets/img/clients/decathlon.svg", w: 119, h: 19 },
+    { name: "UNESCO",              src: "/assets/img/clients/unesco.svg", w:  55, h: 42 },
+    { name: "L'ORÉAL",             src: "/assets/img/clients/loreal.svg", w: 110, h: 21 },
+    { name: "DANONE",              src: "/assets/img/clients/danone.png", w:  41, h: 46 },
+    { name: "SOCIÉTÉ GÉNÉRALE",    src: "/assets/img/clients/societegenerale.svg", w:  98, h: 23 },
+    { name: "GALERIES LAFAYETTE",  src: "/assets/img/clients/galerieslafayette.svg", w:  66, h: 35 },
+    { name: "CELIO",               src: "/assets/img/clients/celio.svg", w:  84, h: 27 },
+    { name: "LA POSTE",            src: "/assets/img/clients/laposte.svg", w: 120, h: 19 },
+    { name: "SISLEY",              src: "/assets/img/clients/sisley.svg", w: 168, h: 12 },
+    { name: "BOUYGUES TELECOM",    src: "/assets/img/clients/bouygues.svg", w:  85, h: 27 },
+    { name: "STUDI",               src: "/assets/img/clients/studi.svg", w:  80, h: 29 },
+    { name: "TV5 MONDE",           src: "/assets/img/clients/tv5monde.svg", w:  83, h: 28 },
+    { name: "PMU",                 src: "/assets/img/clients/pmu.svg", w:  77, h: 30 },
+    { name: "LA MARINE RECRUTE",   src: "/assets/img/clients/marine.svg", w:  31, h: 46, label: "Marine nationale" },
+    { name: "BIOPARC",             src: "/assets/img/clients/bioparc.png", w:  64, h: 36, label: "Bioparc de Doué La Fontaine" }
   ];
   var GAP = 44;
   /* px per second the logo band travels. It ran at 126, which reads as a
@@ -220,7 +246,7 @@
         { name: "Brand mentions", note: "steady, no spike", state: "flat", v: "18%" },
         { name: "Paid amplification", note: "losing ground", state: "down", v: "9%" }
       ],
-      anchor: "use-cases.html#communication",
+      anchor: LicterUC("communication"),
       questions: [
         "Analyze the impact of an event or campaign",
         "Optimize your leader advocacy strategy",
@@ -258,7 +284,7 @@
         { name: "Product quality", note: "stable quarter on quarter", state: "flat", v: "38%" },
         { name: "Corporate news", note: "fading from the feed", state: "down", v: "8%" }
       ],
-      anchor: "use-cases.html#brand-health",
+      anchor: LicterUC("brand"),
       questions: [
         "Monitor your brand image and reputation",
         "Develop your brand messaging",
@@ -297,7 +323,7 @@
         { name: "Prescribers", note: "size holding", state: "flat", v: "16%" },
         { name: "Detractor cluster", note: "shrinking slowly", state: "down", v: "10%" }
       ],
-      anchor: "use-cases.html#audiences",
+      anchor: LicterUC("audiences"),
       questions: [
         "Segment your target profiles",
         "Rejuvenate your audiences",
@@ -335,7 +361,7 @@
         { name: "Resale", note: "plateau after two quarters", state: "flat", v: "14%" },
         { name: "Longevity claims", note: "cooling off", state: "down", v: "10%" }
       ],
-      anchor: "use-cases.html#trends",
+      anchor: LicterUC("trends"),
       questions: [
         "Test and evaluate your products",
         "Analyze markets and identify opportunities",
@@ -791,75 +817,75 @@
     "use-cases": {
       label: "FOUR FAMILIES OF QUESTIONS",
       items: [
-        { icon: "influence", name: "Communication", href: "use-cases.html#communication",
+        { icon: "influence", name: "Communication", href: LicterUC("communication"),
           desc: "Campaign impact, leader advocacy, the right ambassadors." },
-        { icon: "brand", name: "Brand health", href: "use-cases.html#brand-health",
+        { icon: "brand", name: "Brand health", href: LicterUC("brand"),
           desc: "Image, messaging and the risks worth catching early." },
-        { icon: "audiences", name: "Audiences", href: "use-cases.html#audiences",
+        { icon: "audiences", name: "Audiences", href: LicterUC("audiences"),
           desc: "Segmentation, rejuvenation, expectations at every touchpoint." },
-        { icon: "trends", name: "Trends & innovation", href: "use-cases.html#trends",
+        { icon: "trends", name: "Trends & innovation", href: LicterUC("trends"),
           desc: "Product verdicts, market opportunities, emerging topics." }
       ],
       aside: {
         label: "FLAGSHIP QUESTIONS",
         items: QUESTIONS.map(function (q, i) {
-          var anchors = ["#communication", "#brand-health", "#audiences", "#trends"];
-          return { icon: "question", name: q, href: "use-cases.html" + anchors[i] };
+          var cases = ["campaign-impact", "reputation", "segmentation", "product-test"];
+          return { icon: "question", name: q, href: LicterUC(cases[i]) };
         })
       },
-      cta: { label: "Book a meeting", href: "index.html#book" },
-      link: { label: "All twelve use cases", href: "use-cases.html" }
+      cta: { label: "Book a meeting", href: "/index.html#book" },
+      link: { label: "All twelve use cases", href: LicterUC() }
     },
 
     offers: {
       label: "THREE WAYS TO WORK WITH US",
       items: [
-        { icon: "chart", name: "Social Insights", href: "offers.html#social-insights",
+        { icon: "chart", name: "Social Insights", href: "/offers.html#social-insights",
           desc: "Fixed fee, unlimited studies, no commitment." },
-        { icon: "bell", name: "Vigie 360", href: "offers.html#vigie",
+        { icon: "bell", name: "Vigie 360", href: "/offers.html#vigie",
           desc: "Alerts in 15 minutes, 24/7, in 20+ languages." },
-        { icon: "layers", name: "Social Listening as a Service", href: "offers.html#slaas",
+        { icon: "layers", name: "Social Listening as a Service", href: "/offers.html#slaas",
           desc: "We make the platform you already own produce decisions." }
       ],
       aside: {
         label: "HOW AN ENGAGEMENT RUNS",
         items: [
-          { icon: "question", name: "Framing", href: "offers.html#method" },
-          { icon: "question", name: "Collection", href: "offers.html#method" },
-          { icon: "question", name: "Analysis", href: "offers.html#method" },
-          { icon: "question", name: "Decision", href: "offers.html#method" }
+          { icon: "question", name: "Framing", href: "/offers.html#method" },
+          { icon: "question", name: "Collection", href: "/offers.html#method" },
+          { icon: "question", name: "Analysis", href: "/offers.html#method" },
+          { icon: "question", name: "Decision", href: "/offers.html#method" }
         ]
       },
-      cta: { label: "Book a meeting", href: "index.html#book" },
-      link: { label: "Compare the offers", href: "offers.html" }
+      cta: { label: "Book a meeting", href: "/index.html#book" },
+      link: { label: "Compare the offers", href: "/offers.html" }
     },
 
     tech: {
       label: "THE PLATFORMS WE RUN",
       items: [
-        { letter: "T", logo: "assets/img/tools/talkwalker.png", name: "Talkwalker", href: "tech-talkwalker.html",
+        { letter: "T", logo: "/assets/img/tools/talkwalker.png", name: "Talkwalker", href: "/tech-talkwalker.html",
           desc: "Broad listening and analytics, across markets and languages." },
-        { letter: "V", logo: "assets/img/tools/visibrain.png", name: "Visibrain", href: "tech-visibrain.html",
+        { letter: "V", logo: "/assets/img/tools/visibrain.png", name: "Visibrain", href: "/tech-visibrain.html",
           desc: "Real-time monitoring, and the media conversation as it breaks." },
-        { letter: "Y", logo: "assets/img/tools/youscan.png", name: "YouScan", href: "tech-youscan.html",
+        { letter: "Y", logo: "/assets/img/tools/youscan.png", name: "YouScan", href: "/tech-youscan.html",
           desc: "Visual listening: what appears in the image, not only in the text." },
-        { letter: "S", logo: "assets/img/tools/soprism.png", name: "SoPrism", href: "tech-soprism.html",
+        { letter: "S", logo: "/assets/img/tools/soprism.png", name: "SoPrism", href: "/tech-soprism.html",
           desc: "Audience intelligence: who the communities are, in detail." }
       ],
       aside: {
         label: "WHERE THE DATA COMES FROM",
         items: [
-          { platform: "TIKTOK", name: "TikTok", href: "tech-tools.html#sources" },
-          { platform: "INSTAGRAM", name: "Instagram", href: "tech-tools.html#sources" },
-          { platform: "X", name: "X", href: "tech-tools.html#sources" },
-          { platform: "LINKEDIN", name: "LinkedIn", href: "tech-tools.html#sources" },
-          { platform: "YOUTUBE", name: "YouTube", href: "tech-tools.html#sources" },
-          { platform: "FACEBOOK", name: "Facebook", href: "tech-tools.html#sources" },
-          { icon: "ai", name: "Generative AI", href: "tech-tools.html#sources" }
+          { platform: "TIKTOK", name: "TikTok", href: "/tech-tools.html#sources" },
+          { platform: "INSTAGRAM", name: "Instagram", href: "/tech-tools.html#sources" },
+          { platform: "X", name: "X", href: "/tech-tools.html#sources" },
+          { platform: "LINKEDIN", name: "LinkedIn", href: "/tech-tools.html#sources" },
+          { platform: "YOUTUBE", name: "YouTube", href: "/tech-tools.html#sources" },
+          { platform: "FACEBOOK", name: "Facebook", href: "/tech-tools.html#sources" },
+          { icon: "ai", name: "Generative AI", href: "/tech-tools.html#sources" }
         ]
       },
-      cta: { label: "Book a meeting", href: "index.html#book" },
-      link: { label: "See the stack", href: "tech-tools.html" }
+      cta: { label: "Book a meeting", href: "/index.html#book" },
+      link: { label: "See the stack", href: "/tech-tools.html" }
     }
   };
 
@@ -1464,7 +1490,7 @@
   var cta = head && head.querySelector(".nav__cta");
   if (!head || !("IntersectionObserver" in window)) return;
   /* the home has no header button (the hero carries it): book is on the page */
-  var ctaHref = cta ? cta.getAttribute("href") : (document.getElementById("book") ? "#book" : "book-a-meeting.html");
+  var ctaHref = cta ? cta.getAttribute("href") : (document.getElementById("book") ? "#book" : "/book-a-meeting.html");
 
   var bar = document.createElement("div");
   bar.className = "stickybar";
@@ -1472,7 +1498,7 @@
   var logo = head.querySelector(".logo");
   bar.innerHTML =
     '<div class="stickybar__in shell">' +
-      '<a class="stickybar__logo" href="' + (logo ? logo.getAttribute("href") : "index.html") + '" tabindex="-1" aria-label="Licter home">' +
+      '<a class="stickybar__logo" href="' + (logo ? logo.getAttribute("href") : "/index.html") + '" tabindex="-1" aria-label="Licter home">' +
         '<img src="' + (document.querySelector(".logo__img") || {}).getAttribute("src") + '" alt="" width="36" height="40" /></a>' +
       '<a class="btn btn--primary stickybar__cta" href="' + ctaHref + '" tabindex="-1">Book a meeting <span aria-hidden="true">→</span></a>' +
     "</div>";

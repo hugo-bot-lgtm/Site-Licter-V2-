@@ -18,7 +18,9 @@ import re, pathlib
 
 root = pathlib.Path(__file__).resolve().parent.parent
 src = (root / "css" / "styles.css").read_text()
-sources = "\n".join(p.read_text() for p in list(root.glob("*.html")) + list((root / "js").glob("*.js")))
+# every page, including the generated use-case pages in fr/ and en/
+pages = [p for p in root.rglob("*.html") if "node_modules" not in p.parts]
+sources = "\n".join(p.read_text() for p in pages + list((root / "js").glob("*.js")))
 
 # ---------------------------------------------------------------- parse
 css = re.sub(r"/\*.*?\*/", "", src, flags=re.S)

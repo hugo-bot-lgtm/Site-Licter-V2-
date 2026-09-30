@@ -165,6 +165,12 @@
       if (!btn) return;
       var lang = btn.dataset.lang;
       try { localStorage.setItem(STORE, lang); } catch (err) { /* private mode */ }
+      /* a page written in both languages: go to its twin */
+      if (STATIC) {
+        var alt = html.getAttribute("data-alt-" + lang);
+        if (lang !== current && alt) location.href = alt + location.hash;
+        return;
+      }
       apply(lang);
     });
   }
@@ -174,9 +180,36 @@
   var saved = "fr";
   try { saved = localStorage.getItem(STORE) || "fr"; } catch (e) { /* private mode */ }
 
+  /* Pages generated in both languages (the use-case pages, see
+     tools/build-usecases.py) carry their text in the HTML and point to their
+     twin; the dictionary only covers what the scripts render on them. */
+  var html = document.documentElement;
+  var STATIC = html.hasAttribute("data-i18n-static");
+
+  /* the other pages link to the use-case pages in French; in English, to
+     their English twins */
+  function localLinks(lang) {
+    Array.prototype.forEach.call(document.querySelectorAll("a[data-en]"), function (a) {
+      if (!a.hasAttribute("data-fr")) a.setAttribute("data-fr", a.getAttribute("href"));
+      a.setAttribute("href", a.getAttribute(lang === "en" ? "data-en" : "data-fr"));
+    });
+  }
+
   function init() {
     build();
-    if (saved === "fr") apply("fr"); else { mark(); reveal(); }
+    if (STATIC) {
+      if (html.lang === "fr") {
+        FR = window.LicterFR || FR || {};
+        translateTree(document.body, FR);
+        current = "fr";
+        watch();
+      } else {
+        current = "en";
+      }
+      mark(); reveal();
+      return;
+    }
+    if (saved === "fr") apply("fr"); else { localLinks("en"); mark(); reveal(); }
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
