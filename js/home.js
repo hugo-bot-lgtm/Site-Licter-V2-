@@ -468,7 +468,8 @@
 (function () {
   var bar = document.querySelector(".ucp-bar");
   if (!bar || !("IntersectionObserver" in window)) return;
-  var hero = document.querySelector(".ucp__head");
+  var hero = document.querySelector(".ucp__head, .ucr-hero");
+  if (!hero) return;
   var zones = [document.getElementById("offre"), document.getElementById("book"), document.querySelector(".site-foot")].filter(Boolean);
   var pastHero = false, inZone = {};
   if (!document.getElementById("offre")) bar.querySelector('a[href="#offre"]').remove();
@@ -488,4 +489,24 @@
     render();
   });
   zones.forEach(function (z) { io.observe(z); });
+})();
+
+/* =========================================================================
+   Use-case report: the contents column lights the section in view.
+   ========================================================================= */
+(function () {
+  var toc = document.querySelector(".ucr__toc");
+  if (!toc) return;
+  var links = Array.prototype.slice.call(toc.querySelectorAll("a[href^='#']")).filter(function (a) { return a.getAttribute("href") !== "#offre"; });
+  var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  function spy() {
+    var y = window.innerHeight * 0.3, on = 0;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= y) on = i; });
+    links.forEach(function (a, i) {
+      a.classList.toggle("is-on", i === on);
+      if (i === on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    });
+  }
+  window.addEventListener("scroll", spy, { passive: true });
+  spy();
 })();
