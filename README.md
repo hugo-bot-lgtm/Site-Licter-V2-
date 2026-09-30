@@ -47,6 +47,15 @@ Images de partage (LinkedIn…) : `python3 tools/build-og.py` régénère
 reçoivent un encadré « Cas d'usage liés » à chaque génération (entre les
 marqueurs `<!-- uc-links -->`).
 
+**Home (SEO).** La home existe en deux pages statiques : `/` (anglais,
+c'est `index.html`, le fichier qu'on édite) et `/fr/` (français, générée).
+`python3 tools/build-home.py` écrit le bloc SEO de `index.html` (titre,
+description, canonique, hreflang, Open Graph, données structurées
+Organization / WebSite / WebPage / FAQPage) et régénère `/fr/index.html`
+avec le texte traduit dans le HTML. `tools/build-usecases.py` le lance à la
+fin : une seule commande régénère tout. Un navigateur en français qui arrive
+sur `/` est envoyé sur `/fr/` (sauf s'il a choisi EN).
+
 **Langue.** Le site s'affiche **en français par défaut**. Le HTML reste écrit en
 anglais (source de vérité) et `js/i18n.js` applique `js/fr.js` au chargement ;
 `js/theme.js` masque la page le temps de la traduction pour éviter tout flash

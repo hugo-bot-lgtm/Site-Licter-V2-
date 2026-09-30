@@ -14,7 +14,6 @@
   <url><loc>https://www.licter.com/clients.html</loc></url>
   <url><loc>https://www.licter.com/diagnostic.html</loc></url>
   <url><loc>https://www.licter.com/guide.html</loc></url>
-  <url><loc>https://www.licter.com/</loc></url>
   <url><loc>https://www.licter.com/legal.html</loc></url>
   <url><loc>https://www.licter.com/offers.html</loc></url>
   <url><loc>https://www.licter.com/privacy.html</loc></url>
@@ -24,6 +23,16 @@
   <url><loc>https://www.licter.com/tech-visibrain.html</loc></url>
   <url><loc>https://www.licter.com/tech-youscan.html</loc></url>
   <url><loc>https://www.licter.com/why-licter.html</loc></url>
+  <url><loc>https://www.licter.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/" />
+  </url>
+  <url><loc>https://www.licter.com/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/" />
+  </url>
   <url><loc>https://www.licter.com/fr/cas-usage/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/cas-usage/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/en/use-cases/" />

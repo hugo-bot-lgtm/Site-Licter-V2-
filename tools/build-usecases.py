@@ -222,7 +222,7 @@ def reel(v, lang):
     q = typo("« %s »" % quote[FR], FR) if lang == FR else "“%s”" % quote[EN]
     return f'''        <a class="reel ucf__voice" href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener">
           <span class="reel__shot">
-            <img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy" decoding="async" />
+            <img src="https://i.ytimg.com/vi_webp/{vid}/hqdefault.webp" width="480" height="360" alt="" loading="lazy" decoding="async" />
             <span class="reel__play" aria-hidden="true"></span>
             <span class="reel__time">{time}</span>
           </span>
@@ -472,7 +472,7 @@ def case_body(c, lang):
     vid, time, quote, brand, who = C.VOICES[x["voice"]]
     q = typo("« %s »" % quote[FR], FR) if lang == FR else "“%s”" % quote[EN]
     voice = ('<a class="ucr-voice" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener">'
-             '<span class="ucr-voice__shot"><img src="https://i.ytimg.com/vi/%s/hqdefault.jpg" alt="" loading="lazy" decoding="async" />'
+             '<span class="ucr-voice__shot"><img src="https://i.ytimg.com/vi_webp/%s/hqdefault.webp" width="480" height="360" alt="" loading="lazy" decoding="async" />'
              '<span class="reel__play" aria-hidden="true"></span></span>'
              '<span class="ucr-voice__txt"><span class="ucr__label">%s</span><span class="ucr-voice__q">%s</span>'
              '<span class="ucr-voice__who"><b>%s</b> · %s · %s</span></span></a>') % (
@@ -845,8 +845,10 @@ def main():
     root_pages = sorted(p.name for p in ROOT.glob("*.html") if p.name not in ("404.html", "use-cases.html"))
     entries = []
     for name in root_pages:
-        loc = SITE + ("/" if name == "index.html" else "/" + name)
-        entries.append("  <url><loc>%s</loc></url>" % loc)
+        if name == "index.html":
+            continue   # the home goes in with its French twin, below
+        entries.append("  <url><loc>%s</loc></url>" % (SITE + "/" + name))
+    urls.insert(0, ("/fr/", "/"))
     for fr_p, en_p in urls:
         for p in (fr_p, en_p):
             entries.append('''  <url><loc>{s}{p}</loc>
@@ -858,7 +860,10 @@ def main():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
         + "\n".join(entries) + "\n</urlset>\n")
     (ROOT / "robots.txt").write_text("User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % SITE)
-    print("%d pages written (%d use-case pages x 2 languages), sitemap.xml, robots.txt" % (len(urls) * 2, len(urls)))
+    print("%d use-case pages written (FR + EN), sitemap.xml, robots.txt" % ((len(urls) - 1) * 2))
 
 if __name__ == "__main__":
     main()
+    # the home in both languages, from the same dictionary
+    import runpy
+    runpy.run_path(str(ROOT / "tools" / "build-home.py"), run_name="__main__")

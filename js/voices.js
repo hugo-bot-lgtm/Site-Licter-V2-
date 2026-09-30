@@ -82,7 +82,7 @@ window.LicterVoices = [
   /* YouTube answers 200 with a grey 120x90 placeholder when maxresdefault does
      not exist, so onerror never fires: show hqdefault (which always exists and
      crops to exactly the 16:9 frame) and upgrade only once maxres proves real */
-  function thumb(id) { return "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg"; }
+  function thumb(id) { return "https://i.ytimg.com/vi_webp/" + id + "/hqdefault.webp"; }
 
   /* hqdefault (480 wide) already covers a card at 2x on most screens;
      maxres was 1280 wide for a 350px frame */

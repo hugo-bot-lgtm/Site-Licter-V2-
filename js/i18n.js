@@ -58,6 +58,14 @@
       hits++;
     }
 
+    /* the home has a French page of its own */
+    if (dict === FR) {
+      Array.prototype.forEach.call(root.querySelectorAll ? root.querySelectorAll('a[href="index.html"], a[href="/index.html"], a[href="/"], a[href^="index.html#"], a[href^="/index.html#"], a[href^="/#"]') : [], function (a) {
+        var h = a.getAttribute("href"), hash = h.indexOf("#") >= 0 ? h.slice(h.indexOf("#")) : "";
+        if (!(document.getElementById("content") && hash && location.pathname.replace(/index\.html$/, "") === "/fr/")) a.setAttribute("href", "/fr/" + hash);
+      });
+    }
+
     /* attributes that are read by users too */
     Array.prototype.forEach.call(root.querySelectorAll("[placeholder]"), function (el) {
       var k = el.getAttribute("placeholder").trim();

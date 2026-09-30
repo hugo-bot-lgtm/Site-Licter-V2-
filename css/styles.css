@@ -6183,3 +6183,6 @@ html[data-theme="dark"] .ucf-note { background: var(--surface); box-shadow: inse
   .ucf-row__n { font-size: 34px; }
 }
 @media (prefers-reduced-motion: reduce) { .ucf-row, .ucf-row__go { transition: none; } }
+
+/* the hero shows at once: fading it in held back the largest paint by seconds */
+.reveal .hero [data-reveal], .reveal .hero [data-reveal] .line, .reveal .hero .questions li { opacity: 1; transform: none; transition: none; }

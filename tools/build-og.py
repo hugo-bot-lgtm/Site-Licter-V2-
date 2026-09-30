@@ -52,4 +52,7 @@ for lang, code in ((0, "fr"), (1, "en")):
     card(C.HUB["kicker"][lang], C.HUB["h1"][lang], "uc-hub-%s.png" % code)
     for f in C.FAMILIES:
         card("%s · %s" % (C.HUB["kicker"][lang], f["name"][lang]), f["h1"][lang], "uc-%s-%s.png" % (f["key"], code))
+for lang, code in ((0, "fr"), (1, "en")):
+    card(("Cabinet de conseil en social data intelligence", "Social data intelligence consultancy")[lang],
+         "Stop guessing, start listening.", "home-%s.png" % code)
 print("share images:", len(list(OUT.glob("uc-*.png"))))

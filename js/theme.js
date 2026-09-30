@@ -44,7 +44,7 @@
      flash on first paint. A safety net lifts it anyway after 2.5 s. */
   var lang = null;
   try { lang = localStorage.getItem("licter-lang"); } catch (e) { /* private mode */ }
-  if (lang !== "en") {
+  if (lang !== "en" && !root.hasAttribute("data-i18n-static")) {
     root.classList.add("i18n-pending");
     setTimeout(function () { root.classList.remove("i18n-pending"); }, 2500);
   }
