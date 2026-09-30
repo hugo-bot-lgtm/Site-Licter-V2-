@@ -27,8 +27,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <meta name="theme-color" content="#FCF6EF" />
-<script src="/js/theme.js?v=20261201"></script>
-<link rel="stylesheet" href="/css/styles.min.css?v=20261201" />
+<script src="/js/theme.js?v=20261203"></script>
+<link rel="stylesheet" href="/css/styles.min.css?v=20261203" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.licter.com/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://www.licter.com/en/use-cases/"}, {"@type": "ListItem", "position": 3, "name": "Brand health", "item": "https://www.licter.com/en/use-cases/brand-health/"}, {"@type": "ListItem", "position": 4, "name": "Monitor your brand image and reputation", "item": "https://www.licter.com/en/use-cases/brand-health/brand-reputation-monitoring/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Monitor your brand image and reputation", "description": "Track image, sentiment and the subjects attached to your name, continuously and across markets, with 24/7 alerting on the breaks.", "serviceType": "Brand health", "provider": {"@type": "Organization", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "areaServed": "FR", "inLanguage": "en", "url": "https://www.licter.com/en/use-cases/brand-health/brand-reputation-monitoring/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is this different from a monitoring tool?", "acceptedAnswer": {"@type": "Answer", "text": "The tool collects; our analysts read, qualify and tell you what to do. You get a decision, not an export."}}, {"@type": "Question", "name": "Do you cover several countries?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, in more than twenty languages, with analysts who speak the market's language."}}, {"@type": "Question", "name": "What commitment?", "acceptedAnswer": {"@type": "Answer", "text": "A fixed monthly fee, no commitment, with unlimited studies inside it."}}]}</script>
@@ -88,7 +88,7 @@
         <p class="ucp__lead">Your reputation plays out every day, on platforms and in languages your teams cannot all follow. We continuously read what is said about you, the subjects that attach to your name and how they move against your competitors.</p>
           <div class="page__actions">
             <a class="btn btn--primary" href="#book">Book a meeting <span aria-hidden="true">→</span></a>
-            <a class="ucp__textlink" href="#cas-client">See a client case <span aria-hidden="true">↓</span></a>
+            <a class="ucp__textlink" href="#cas-client">See a typical case <span aria-hidden="true">↓</span></a>
           </div>
       </div>
       <aside class="ucp__get" aria-labelledby="get-reputation">
@@ -117,14 +117,14 @@
   <section class="ucp ucp--roi">
     <div class="shell">
       <div class="ucp__roi">
-        <div class="ucp__roi-head"><p class="ucp__roi-k">ROI</p><h2 class="ucp__h2">What it pays back</h2><p class="ucp__roi-foot">A fixed monthly fee, no commitment, with unlimited studies inside it.</p></div>
+        <div class="ucp__roi-head"><p class="ucp__roi-k">ROI</p><h2 class="ucp__h2">What it pays back</h2></div>
         <ol class="ucp__roi-list"><li><span class="ucp__roi-n">01</span><b>Problems seen in time</b><p>A 24/7 alert when a subject shifts, before it costs you.</p></li><li><span class="ucp__roi-n">02</span><b>Less time spent watching</b><p>Your teams read a monthly note instead of sorting mentions.</p></li><li><span class="ucp__roi-n">03</span><b>A predictable budget</b><p>A fixed monthly fee, no commitment, with unlimited studies inside it.</p></li></ol>
       </div>
     </div>
   </section>
   <section class="ucp" id="cas-client">
     <div class="shell">
-      <h2 class="ucp__h2">Client case</h2>
+      <h2 class="ucp__h2">A typical case</h2>
       <div class="ucp__client">
         <article class="ucp__case">
           <p class="ucp__case-k">Illustrative example</p>
@@ -148,7 +148,7 @@
     </div>
   </section>
   <!-- MOCK: sends nothing yet (js/home.js, .ucp-lead); wire to the CRM with the case and the sector. -->
-  <section class="ucp ucp--cta">
+  <section class="ucp ucp--cta" id="offre">
     <div class="shell">
       <div class="ucp__cta">
         <div class="ucp__cta-copy">
@@ -159,10 +159,11 @@
         <form class="ucp-lead" data-case="reputation" novalidate>
           <div class="ucp-lead__row">
             <label class="ucp-lead__f"><span>Work email</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
-            <label class="ucp-lead__f"><span>Your sector</span><select class="fld__input" name="sector"><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
+            <label class="ucp-lead__f"><span>Your sector</span><select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
           </div>
           <button class="btn btn--primary" type="submit">Get the case <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Enter a work email, like name@company.com.</p>
+          <p class="fld__error ucp-lead__sector-err" hidden>Choose your sector.</p>
           <p class="consent">We use your email only to reply to you. <a href="/privacy.html">Privacy policy</a>.</p>
         </form>
         <p class="ucp-lead__done" role="status" hidden>Noted. A consultant sends you a real case within 48 hours.</p>
@@ -219,6 +220,11 @@
     </div>
   </section>
 </main>
+
+<div class="ucp-bar" aria-hidden="true" hidden>
+  <a class="btn btn--primary" href="#offre" tabindex="-1">Get a real case</a>
+  <a class="btn btn--ghost" href="#book" tabindex="-1">Get a call back</a>
+</div>
 
 <footer class="site-foot">
   <div class="site-foot__in shell">
@@ -277,8 +283,8 @@
   </div>
 </footer>
 
-<script src="/js/i18n.js?v=20261201"></script>
-<script src="/js/ui.js?v=20261201"></script>
-<script src="/js/home.js?v=20261201"></script>
+<script src="/js/i18n.js?v=20261203"></script>
+<script src="/js/ui.js?v=20261203"></script>
+<script src="/js/home.js?v=20261203"></script>
 </body>
 </html>

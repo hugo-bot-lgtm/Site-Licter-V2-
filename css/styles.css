@@ -5907,3 +5907,53 @@ html[data-theme="dark"] .ucp__roi { background: var(--surface); box-shadow: inse
 .ucp__head.page { padding-top: 0; }
 .ucp__hero { padding-block: clamp(28px, 3.4vw, 44px) clamp(24px, 3vw, 40px); }
 @media (max-width: 720px) { .ucp__hero { padding-block: 22px 20px; } }
+
+/* =========================================================
+   Use-case pages, audit 2: the phone bar, a short breadcrumb,
+   a clean logo caption, a more compact phone layout
+   ========================================================= */
+.ucp-bar { display: none; }
+@media (max-width: 720px) {
+  .ucp-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 35; display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px;
+    padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--bg) 92%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line); box-shadow: 0 -12px 30px -18px rgba(19, 22, 45, .35);
+    transform: translateY(110%); visibility: hidden;
+    transition: transform .3s cubic-bezier(.16, 1, .3, 1), visibility 0s linear .3s;
+  }
+  .ucp-bar.is-shown { transform: none; visibility: visible; transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+  .ucp-bar .btn { justify-content: center; height: 46px; padding: 0 12px; font-size: 12.5px; }
+  .ucp-bar .btn:only-child { grid-column: 1 / -1; }
+  .ucp-page .site-foot { padding-bottom: 76px; }
+
+  /* the breadcrumb: only the way back up */
+  .crumbs li { display: none; }
+  .crumbs li:nth-last-child(2) { display: block; }
+  .crumbs li:nth-last-child(2)::before { content: "‹"; margin: 0 6px 0 0; }
+  .crumbs li + li::before { content: none; }
+  .crumbs li:nth-last-child(2)::before { content: "‹"; }
+  .crumbs li:only-child { display: block; }
+  .crumbs li:only-child::before { content: none; }
+
+  /* the logo caption on one line */
+  .ucp-page .wall__caption { white-space: nowrap; font-size: 11.5px; }
+  .ucp-page .wall__tail { display: none; }
+
+  /* compact */
+  .ucp__get { padding: 20px; border-radius: 20px; }
+  .ucp__get .ucp__ticks { gap: 10px; }
+  .ucp__get .ucp__ticks li { font-size: 14px; }
+  .ucp__get-foot { display: none; }
+  .ucp__qs { gap: 8px; }
+  .ucp__qs li { padding: 12px 14px; gap: 12px; }
+  .ucp__q-n { font-size: 20px; }
+  .ucp__qs p { font-size: 14.5px; }
+  .ucp__sources span { display: none; }
+  .ucp__sources li { flex-direction: row; align-items: center; gap: 10px; padding: 12px; }
+  .ucp__sources .ucp__ico { margin: 0; width: 30px; height: 30px; }
+  .ucp__sources b { font-size: 13.5px; }
+  .ucp__approach { font-size: 15px; margin-bottom: 22px; }
+  .ucp { padding: 26px 0; }
+}
+@media (prefers-reduced-motion: reduce) { .ucp-bar { transition: none; } }

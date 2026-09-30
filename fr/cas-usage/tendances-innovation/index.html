@@ -27,8 +27,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <meta name="theme-color" content="#FCF6EF" />
-<script src="/js/theme.js?v=20261201"></script>
-<link rel="stylesheet" href="/css/styles.min.css?v=20261201" />
+<script src="/js/theme.js?v=20261203"></script>
+<link rel="stylesheet" href="/css/styles.min.css?v=20261203" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.licter.com/"}, {"@type": "ListItem", "position": 2, "name": "Cas d'usage", "item": "https://www.licter.com/fr/cas-usage/"}, {"@type": "ListItem", "position": 3, "name": "Tendances & innovation", "item": "https://www.licter.com/fr/cas-usage/tendances-innovation/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Combien de temps à l'avance repère-t-on une tendance ?", "acceptedAnswer": {"@type": "Answer", "text": "Souvent plusieurs mois avant qu'elle n'apparaisse dans les études classiques : les communautés de niche en parlent bien avant le grand public."}}, {"@type": "Question", "name": "Pouvez-vous analyser les produits de nos concurrents ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Les avis, les forums et les réseaux parlent autant de leurs produits que des vôtres : nous comparons les forces et les irritants, produit par produit."}}, {"@type": "Question", "name": "Quelle différence avec une étude de marché ?", "acceptedAnswer": {"@type": "Answer", "text": "Une étude interroge des gens sur ce qu'ils pensent. Nous lisons ce qu'ils disent et font spontanément, en continu, à l'échelle de tout un marché."}}]}</script>
 </head>
@@ -135,8 +135,33 @@
       </table>
     </div>
   </section>
+  <section class="ucp" id="cas-client">
+    <div class="shell">
+      <h2 class="ucp__h2">Un cas type</h2>
+      <div class="ucp__client">
+        <article class="ucp__case">
+          <p class="ucp__case-k">Exemple illustratif</p>
+          <p class="ucp__case-h">Le contexte</p><p class="ucp__case-ctx">Un éditeur de jeux vidéo lit les réactions à sa bêta.</p>
+          <div class="ucp__case-cols">
+            <div><p class="ucp__case-h">Ce que la conversation a montré</p><p>Le scénario et les graphismes sont loués ; les microtransactions et le lag concentrent les critiques.</p></div>
+            <div class="ucp__case-reco"><p class="ucp__case-h">Notre recommandation</p><p>Corriger le lag avant la sortie et revoir le modèle économique.</p></div>
+          </div>
+        </article>
+        <a class="reel ucf__voice" href="https://www.youtube.com/watch?v=cnwA-t0Vqk4" target="_blank" rel="noopener">
+          <span class="reel__shot">
+            <img src="https://i.ytimg.com/vi/cnwA-t0Vqk4/hqdefault.jpg" alt="" loading="lazy" decoding="async" />
+            <span class="reel__play" aria-hidden="true"></span>
+            <span class="reel__time">1:00:32</span>
+          </span>
+          <span class="ucf__voice-k">Ils en parlent</span>
+          <span class="reel__quote">« Les réseaux sociaux nous aident à faire de meilleurs produits. »</span>
+          <span class="reel__meta"><b class="reel__brand">Dassault Systèmes</b> <em class="reel__who">Jean-Stéphane Bou</em></span>
+        </a>
+      </div>
+    </div>
+  </section>
   <!-- MOCK: sends nothing yet (js/home.js, .ucp-lead); wire to the CRM with the case and the sector. -->
-  <section class="ucp ucp--cta">
+  <section class="ucp ucp--cta" id="offre">
     <div class="shell">
       <div class="ucp__cta">
         <div class="ucp__cta-copy">
@@ -147,10 +172,11 @@
         <form class="ucp-lead" data-case="trends" novalidate>
           <div class="ucp-lead__row">
             <label class="ucp-lead__f"><span>E-mail professionnel</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="nom@entreprise.com" required /></label>
-            <label class="ucp-lead__f"><span>Votre secteur</span><select class="fld__input" name="sector"><option>Agroalimentaire</option><option>Luxe &amp; mode</option><option>Beauté</option><option>Jouets &amp; jeux vidéo</option><option>Automobile &amp; mobilité</option><option>Banque &amp; assurance</option><option>Distribution</option><option>Secteur public</option><option>Autre</option></select></label>
+            <label class="ucp-lead__f"><span>Votre secteur</span><select class="fld__input" name="sector" required><option value="" disabled selected>Choisir…</option><option>Agroalimentaire</option><option>Luxe &amp; mode</option><option>Beauté</option><option>Jouets &amp; jeux vidéo</option><option>Automobile &amp; mobilité</option><option>Banque &amp; assurance</option><option>Distribution</option><option>Secteur public</option><option>Autre</option></select></label>
           </div>
           <button class="btn btn--primary" type="submit">Recevoir le cas <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Saisissez un e-mail professionnel, par exemple nom@entreprise.com.</p>
+          <p class="fld__error ucp-lead__sector-err" hidden>Choisissez votre secteur.</p>
           <p class="consent">Votre e-mail sert uniquement à vous répondre. <a href="/privacy.html">Politique de confidentialité</a>.</p>
         </form>
         <p class="ucp-lead__done" role="status" hidden>C&#x27;est noté. Un consultant vous envoie un cas réel sous 48 h.</p>
@@ -198,6 +224,11 @@
     </div>
   </section>
 </main>
+
+<div class="ucp-bar" aria-hidden="true" hidden>
+  <a class="btn btn--primary" href="#offre" tabindex="-1">Recevoir un cas réel</a>
+  <a class="btn btn--ghost" href="#book" tabindex="-1">Être rappelé</a>
+</div>
 
 <footer class="site-foot">
   <div class="site-foot__in shell">
@@ -255,9 +286,9 @@
   </div>
 </footer>
 
-<script src="/js/fr.js?v=20261201"></script>
-<script src="/js/i18n.js?v=20261201"></script>
-<script src="/js/ui.js?v=20261201"></script>
-<script src="/js/home.js?v=20261201"></script>
+<script src="/js/fr.js?v=20261203"></script>
+<script src="/js/i18n.js?v=20261203"></script>
+<script src="/js/ui.js?v=20261203"></script>
+<script src="/js/home.js?v=20261203"></script>
 </body>
 </html>

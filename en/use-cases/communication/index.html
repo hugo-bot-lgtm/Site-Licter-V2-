@@ -27,8 +27,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <meta name="theme-color" content="#FCF6EF" />
-<script src="/js/theme.js?v=20261201"></script>
-<link rel="stylesheet" href="/css/styles.min.css?v=20261201" />
+<script src="/js/theme.js?v=20261203"></script>
+<link rel="stylesheet" href="/css/styles.min.css?v=20261203" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.licter.com/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://www.licter.com/en/use-cases/"}, {"@type": "ListItem", "position": 3, "name": "Communication", "item": "https://www.licter.com/en/use-cases/communication/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can you measure a campaign that has no conversion link?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We measure what the campaign moved in the conversation: volume, tone, themes, and above all which audiences changed their position. That often says more than a click-through rate."}}, {"@type": "Question", "name": "Do you need to know before the launch?", "acceptedAnswer": {"@type": "Answer", "text": "It helps to set the baseline, but it is not required: the conversation is public and archived, so we can rebuild the before after the fact."}}, {"@type": "Question", "name": "Which platforms do you cover?", "acceptedAnswer": {"@type": "Answer", "text": "Social networks (TikTok, Instagram, X, LinkedIn, YouTube, Facebook), online press, forums and reviews, search, and the answers of generative AI."}}]}</script>
 </head>
@@ -135,8 +135,33 @@
       </table>
     </div>
   </section>
+  <section class="ucp" id="cas-client">
+    <div class="shell">
+      <h2 class="ucp__h2">A typical case</h2>
+      <div class="ucp__client">
+        <article class="ucp__case">
+          <p class="ucp__case-k">Illustrative example</p>
+          <p class="ucp__case-h">The context</p><p class="ucp__case-ctx">A CEO posts every week about innovation, with little echo.</p>
+          <div class="ucp__case-cols">
+            <div><p class="ucp__case-h">What the conversation showed</p><p>The read shows their audience expects them on jobs and regional industry, where their peers are absent.</p></div>
+            <div class="ucp__case-reco"><p class="ucp__case-h">Our recommendation</p><p>Refocus their voice on those two subjects.</p></div>
+          </div>
+        </article>
+        <a class="reel ucf__voice" href="https://www.youtube.com/watch?v=0HfWWSB0v78" target="_blank" rel="noopener">
+          <span class="reel__shot">
+            <img src="https://i.ytimg.com/vi/0HfWWSB0v78/hqdefault.jpg" alt="" loading="lazy" decoding="async" />
+            <span class="reel__play" aria-hidden="true"></span>
+            <span class="reel__time">54:27</span>
+          </span>
+          <span class="ucf__voice-k">They talk about it</span>
+          <span class="reel__quote">“What media diversity actually buys you.”</span>
+          <span class="reel__meta"><b class="reel__brand">AXA</b> <em class="reel__who">Z. Gebran</em></span>
+        </a>
+      </div>
+    </div>
+  </section>
   <!-- MOCK: sends nothing yet (js/home.js, .ucp-lead); wire to the CRM with the case and the sector. -->
-  <section class="ucp ucp--cta">
+  <section class="ucp ucp--cta" id="offre">
     <div class="shell">
       <div class="ucp__cta">
         <div class="ucp__cta-copy">
@@ -147,10 +172,11 @@
         <form class="ucp-lead" data-case="communication" novalidate>
           <div class="ucp-lead__row">
             <label class="ucp-lead__f"><span>Work email</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
-            <label class="ucp-lead__f"><span>Your sector</span><select class="fld__input" name="sector"><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
+            <label class="ucp-lead__f"><span>Your sector</span><select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
           </div>
           <button class="btn btn--primary" type="submit">Get the case <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Enter a work email, like name@company.com.</p>
+          <p class="fld__error ucp-lead__sector-err" hidden>Choose your sector.</p>
           <p class="consent">We use your email only to reply to you. <a href="/privacy.html">Privacy policy</a>.</p>
         </form>
         <p class="ucp-lead__done" role="status" hidden>Noted. A consultant sends you a real case within 48 hours.</p>
@@ -198,6 +224,11 @@
     </div>
   </section>
 </main>
+
+<div class="ucp-bar" aria-hidden="true" hidden>
+  <a class="btn btn--primary" href="#offre" tabindex="-1">Get a real case</a>
+  <a class="btn btn--ghost" href="#book" tabindex="-1">Get a call back</a>
+</div>
 
 <footer class="site-foot">
   <div class="site-foot__in shell">
@@ -256,8 +287,8 @@
   </div>
 </footer>
 
-<script src="/js/i18n.js?v=20261201"></script>
-<script src="/js/ui.js?v=20261201"></script>
-<script src="/js/home.js?v=20261201"></script>
+<script src="/js/i18n.js?v=20261203"></script>
+<script src="/js/ui.js?v=20261203"></script>
+<script src="/js/home.js?v=20261203"></script>
 </body>
 </html>

@@ -432,12 +432,25 @@
     field.addEventListener("input", function () {
       if (!err.hidden) { err.hidden = true; field.setAttribute("aria-invalid", "false"); }
     });
+    var sector = form.querySelector("select");
+    var sectorErr = form.querySelector(".ucp-lead__sector-err");
+    if (sector) sector.addEventListener("change", function () {
+      if (sectorErr) sectorErr.hidden = true;
+      sector.setAttribute("aria-invalid", "false");
+    });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var v = field.value.trim(), ok = EMAIL.test(v);
       field.setAttribute("aria-invalid", ok ? "false" : "true");
       err.hidden = ok;
       if (!ok) { field.focus(); return; }
+      /* the sector has to be chosen: a preselected one sent bad data */
+      if (sector && !sector.value) {
+        sector.setAttribute("aria-invalid", "true");
+        if (sectorErr) sectorErr.hidden = false;
+        sector.focus();
+        return;
+      }
       /* MOCK: send { email: v, case: form.dataset.case, sector: form.sector.value } */
       if (window.LicterLead) window.LicterLead.set(v);
       form.hidden = true;
@@ -446,4 +459,33 @@
       done.focus({ preventScroll: true });
     });
   });
+})();
+
+/* =========================================================================
+   Use-case pages, phones: the two actions pinned to the bottom of the
+   screen once the hero has gone, stepping aside where the page shows them.
+   ========================================================================= */
+(function () {
+  var bar = document.querySelector(".ucp-bar");
+  if (!bar || !("IntersectionObserver" in window)) return;
+  var hero = document.querySelector(".ucp__head");
+  var zones = [document.getElementById("offre"), document.getElementById("book"), document.querySelector(".site-foot")].filter(Boolean);
+  var pastHero = false, inZone = {};
+  if (!document.getElementById("offre")) bar.querySelector('a[href="#offre"]').remove();
+  function render() {
+    var show = pastHero && !Object.keys(inZone).some(function (k) { return inZone[k]; });
+    bar.hidden = false;
+    bar.classList.toggle("is-shown", show);
+    bar.setAttribute("aria-hidden", show ? "false" : "true");
+    Array.prototype.forEach.call(bar.querySelectorAll("a"), function (a) { a.tabIndex = show ? 0 : -1; });
+  }
+  new IntersectionObserver(function (en) {
+    pastHero = !en[0].isIntersecting && en[0].boundingClientRect.top < 0;
+    render();
+  }).observe(hero);
+  var io = new IntersectionObserver(function (en) {
+    en.forEach(function (e) { inZone[e.target.id || "foot"] = e.isIntersecting; });
+    render();
+  });
+  zones.forEach(function (z) { io.observe(z); });
 })();

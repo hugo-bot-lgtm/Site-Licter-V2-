@@ -287,6 +287,11 @@ def page(lang, path, alt_path, title, meta, body, ld, og_type="website", og_imag
 {body}
 </main>
 
+<div class="ucp-bar" aria-hidden="true" hidden>
+  <a class="btn btn--primary" href="#offre" tabindex="-1">{T(L["bar_offer"], lang)}</a>
+  <a class="btn btn--ghost" href="#book" tabindex="-1">{T(L["bar_call"], lang)}</a>
+</div>
+
 {shared(FOOTER, lang)}
 
 {chr(10).join(scripts)}
@@ -487,6 +492,7 @@ def family_body(f, lang):
         hero(kicker, T(f["h1"], lang), T(f["intro"], lang), lang, aside),
         section('      <h2 class="ucp__h2">%s</h2>\n      <ul class="ucp__cards">%s\n      </ul>' % (T(L["three"], lang), cards)),
         why,
+        client_block(next((x for x in cases if C.VOICES[C.EXTRA[x["key"]]["voice"]][0] != f["video"][0]), cases[0]), lang),
         cta({"key": f["key"]}, lang),
         faq_block(f["faq"], lang, further(lang, "rel-" + f["key"], T(L["others"], lang), others,
                                           list(dict.fromkeys(a for x in cases for a in C.EXTRA[x["key"]]["articles"]))[:3], ico=True)),
@@ -517,9 +523,10 @@ def hub_body(lang):
     return "\n".join([
         crumbs(items, lang),
         hero('<span>%s</span>' % T(C.HUB["kicker"], lang), T(C.HUB["h1"], lang), T(C.HUB["intro"], lang), lang,
-             actions=False, after=nav),
+             actions=True, after=nav, extra='\n            <a class="ucp__textlink" href="#offre">%s <span aria-hidden="true">↓</span></a>' % T(L["bar_offer"], lang)),
         section('      <h2 class="visually-hidden">%s</h2>\n      <ol class="ucp__fams">\n%s\n      </ol>' % (
             T(L["families"], lang), "\n".join(fams))),
+        cta({"key": "hub"}, lang).replace(T(L["cta_t"], lang), T(L["hub_offer_t"], lang), 1),
         book(lang),
     ]), items
 
@@ -541,7 +548,7 @@ L.update({
     "roi_k": ("ROI", "ROI"),
     "roi_foot": ("Un forfait mensuel, sans engagement, avec des études illimitées à l'intérieur.",
                  "A fixed monthly fee, no commitment, with unlimited studies inside it."),
-    "client": ("Cas client", "Client case"),
+    "client": ("Un cas type", "A typical case"),
     "context": ("Le contexte", "The context"),
     "articles": ("Articles liés", "Related articles"),
     "read_article": ("Lire l'article", "Read the article"),
@@ -558,6 +565,11 @@ L.update({
     "cta_done": ("C'est noté. Un consultant vous envoie un cas réel sous 48 h.", "Noted. A consultant sends you a real case within 48 hours."),
     "cta_consent": ("Votre e-mail sert uniquement à vous répondre.", "We use your email only to reply to you."),
     "privacy": ("Politique de confidentialité", "Privacy policy"),
+    "cta_pick": ("Choisir…", "Choose…"),
+    "cta_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
+    "bar_offer": ("Recevoir un cas réel", "Get a real case"),
+    "bar_call": ("Être rappelé", "Get a call back"),
+    "hub_offer_t": ("Recevez un cas réel, dans votre secteur.", "Get a real case, in your sector."),
 })
 
 SECTORS = [("Agroalimentaire", "Food & drink"), ("Luxe & mode", "Luxury & fashion"), ("Beauté", "Beauty"),
@@ -567,9 +579,9 @@ SECTORS = [("Agroalimentaire", "Food & drink"), ("Luxe & mode", "Luxury & fashio
 
 
 def cta(c, lang):
-    opts = "".join('<option>%s</option>' % T(s, lang) for s in SECTORS)
+    opts = '<option value="" disabled selected>%s</option>' % T(L["cta_pick"], lang) + "".join('<option>%s</option>' % T(s, lang) for s in SECTORS)
     return ('  <!-- MOCK: sends nothing yet (js/home.js, .ucp-lead); wire to the CRM with the case and the sector. -->\n'
-            '  <section class="ucp ucp--cta">\n'
+            '  <section class="ucp ucp--cta" id="offre">\n'
             '    <div class="shell">\n'
             '      <div class="ucp__cta">\n'
             '        <div class="ucp__cta-copy">\n'
@@ -580,10 +592,11 @@ def cta(c, lang):
             '        <form class="ucp-lead" data-case="%s" novalidate>\n'
             '          <div class="ucp-lead__row">\n'
             '            <label class="ucp-lead__f"><span>%s</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="%s" required /></label>\n'
-            '            <label class="ucp-lead__f"><span>%s</span><select class="fld__input" name="sector">%s</select></label>\n'
+            '            <label class="ucp-lead__f"><span>%s</span><select class="fld__input" name="sector" required>%s</select></label>\n'
             '          </div>\n'
             '          <button class="btn btn--primary" type="submit">%s <span aria-hidden="true">→</span></button>\n'
             '          <p class="fld__error" hidden>%s</p>\n'
+            '          <p class="fld__error ucp-lead__sector-err" hidden>%s</p>\n'
             '          <p class="consent">%s <a href="/privacy.html">%s</a>.</p>\n'
             '        </form>\n'
             '        <p class="ucp-lead__done" role="status" hidden>%s</p>\n'
@@ -591,7 +604,7 @@ def cta(c, lang):
             '    </div>\n'
             '  </section>') % (T(L["cta_k"], lang), T(L["cta_t"], lang), T(L["cta_d"], lang), c["key"],
                                T(L["cta_email"], lang), "nom@entreprise.com" if lang == FR else "name@company.com",
-                               T(L["cta_sector"], lang), opts, T(L["cta_btn"], lang), T(L["cta_err"], lang),
+                               T(L["cta_sector"], lang), opts, T(L["cta_btn"], lang), T(L["cta_err"], lang), T(L["cta_pick_err"], lang),
                                T(L["cta_consent"], lang), T(L["privacy"], lang), T(L["cta_done"], lang))
 
 
@@ -620,11 +633,13 @@ def case_extras(c, lang):
     roi_sec = ('  <section class="ucp ucp--roi">\n'
                '    <div class="shell">\n'
                '      <div class="ucp__roi">\n'
-               '        <div class="ucp__roi-head"><p class="ucp__roi-k">%s</p><h2 class="ucp__h2">%s</h2><p class="ucp__roi-foot">%s</p></div>\n'
+               '        <div class="ucp__roi-head"><p class="ucp__roi-k">%s</p><h2 class="ucp__h2">%s</h2>%s</div>\n'
                '        <ol class="ucp__roi-list">%s</ol>\n'
                '      </div>\n'
                '    </div>\n'
-               '  </section>') % (T(L["roi_k"], lang), T(L["roi"], lang), T(L["roi_foot"], lang), roi)
+               '  </section>') % (T(L["roi_k"], lang), T(L["roi"], lang),
+                                  "" if any("forfait" in b[FR] for a, b in x["roi"]) else '<p class="ucp__roi-foot">%s</p>' % T(L["roi_foot"], lang),
+                                  roi)
     ctx, rest = split_context(c["example"][lang])
     sit_rec = split_example(rest)
     case = ('      <h2 class="ucp__h2">%s</h2>\n'
@@ -646,7 +661,7 @@ def case_extras(c, lang):
 
 L.update({
     "recognise": ("Vous vous posez ces questions ?", "Are these your questions?"),
-    "see_case": ("Voir un cas client", "See a client case"),
+    "see_case": ("Voir un cas type", "See a typical case"),
     "further": ("Pour aller plus loin", "Going further"),
     "sources_k": ("Ce que nous lisons", "What we read"),
 })
