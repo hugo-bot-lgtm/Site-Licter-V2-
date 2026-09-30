@@ -545,10 +545,10 @@ def family_body(f, lang):
         '<span class="ucf-row__main"><b class="ucf-row__t">%s</b>'
         '<span class="ucf-row__q">%s</span>'
         '<span class="ucf-row__get"><span>%s</span>%s</span></span>'
-        '<span class="ucf-row__go" aria-hidden="true">→</span>'
+        '<span class="ucf-row__go" aria-hidden="true" data-l="%s">→</span>'
         '</a></li>' % (case_path(x, lang), i + 1, T(x["name"], lang),
                        esc(typo(("« %s »" if lang == FR else "“%s”") % x["questions"][0][lang], lang)),
-                       T(L["get"], lang), T(x["deliverables"][0], lang))
+                       T(L["get"], lang), T(x["deliverables"][0], lang), T(L["read_case"], lang))
         for i, x in enumerate(cases))
     vs = "".join('<tr><td>%s</td><td>%s</td></tr>' % (T(a, lang), T(b, lang)) for a, b in VERSUS)
     others = "".join('<li><a href="%s">%s%s <span aria-hidden="true">→</span></a></li>' % (

@@ -6197,3 +6197,32 @@ html[data-theme="dark"] .ucf-note { background: var(--surface); box-shadow: inse
 .langoffer__go:hover { border-bottom-color: var(--navy); }
 .langoffer__x { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border: 0; border-radius: 50%; background: transparent; color: var(--navy); font-size: 18px; cursor: pointer; }
 .langoffer__x:hover { background: rgba(19, 22, 45, .1); }
+
+/* =========================================================
+   Family pages, the three cases, lighter: three columns side
+   by side, a small number, no oversized type
+   ========================================================= */
+.ucf-rows { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ucf-rows > li + li { border-left: 1px solid var(--line); }
+.ucf-row { display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 22px 24px 20px; border-bottom: 0; }
+.ucf-rows > li:first-child .ucf-row { padding-left: 0; }
+.ucf-rows > li:last-child .ucf-row { padding-right: 0; }
+.ucf-row__n { font: 700 12px/1 var(--body-font); letter-spacing: 1px; color: var(--amber-ink); font-variant-numeric: tabular-nums; }
+html[data-theme="dark"] .ucf-row__n { color: var(--amber); }
+.ucf-row__main { gap: 8px; flex: 1; }
+.ucf-row__t { font: 600 17px/1.3 var(--title-font); letter-spacing: 0; }
+.ucf-row__q { font: 500 14px/1.5 var(--body-font); }
+.ucf-row__get { margin-top: auto; padding-top: 10px; font-size: 13px; color: var(--text-2); }
+.ucf-row__get > span { display: block; margin: 0 0 3px; }
+.ucf-row__go { width: auto; height: auto; margin: 4px 0 0; border: 0; border-radius: 0; place-items: start; font: 700 13px/1 var(--body-font); color: var(--amber-ink); }
+html[data-theme="dark"] .ucf-row__go { color: var(--amber); }
+.ucf-row__go::before { content: attr(data-l) " "; }
+.ucf-row:hover .ucf-row__go { background: none; border-color: transparent; color: var(--amber-ink); transform: translateX(3px); }
+html[data-theme="dark"] .ucf-row:hover .ucf-row__go { background: none; color: var(--amber); }
+@media (max-width: 860px) {
+  .ucf-rows { grid-template-columns: minmax(0, 1fr); border-bottom: 0; }
+  .ucf-rows > li + li { border-left: 0; }
+  .ucf-row, .ucf-rows > li:first-child .ucf-row, .ucf-rows > li:last-child .ucf-row { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .ucf-row__go { display: block; }
+}
+.ucf-row__go { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; align-self: flex-start; }
