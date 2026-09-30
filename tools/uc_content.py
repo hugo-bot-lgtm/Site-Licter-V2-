@@ -883,3 +883,40 @@ DASHBOARD = {
              ("Tester une gamme upcyclée sur un marché avant que la concurrence ne s'en aperçoive.", "Pilot an upcycled range in one market before competitors notice.")),
   },
 }
+
+# Family pages: the analysis note, as handed to the client. Three parts,
+# each annotated in the margin: what happened, the proof, what to do. MOCK.
+NOTE = {
+  "communication": {
+    "what": ("Le lancement a été porté par les recettes des créateurs sur TikTok, pas par la publicité TV.",
+             "The launch was carried by creators' recipes on TikTok, not by the TV ad."),
+    "proof": ("46 % des posts partagent leurs recettes ; 14 % seulement parlent de la pub. L'intention d'achat est trois fois supérieure à la moyenne de la catégorie.",
+              "46% of posts share their recipes; only 14% mention the ad. Purchase intent is three times the category average."),
+    "reco": ("Basculer un tiers du média payé vers des partenariats créateurs pour le lancement d'automne.",
+             "Move a third of paid media to creator partnerships for the autumn launch."),
+  },
+  "brand": {
+    "what": ("Les hausses de prix sont acceptées ; c'est l'accueil en boutique qui abîme la marque.",
+             "Price increases are accepted; it is the in-store welcome that hurts the brand."),
+    "proof": ("38 % des posts négatifs portent sur l'accueil en boutique ; 70 % des posts sur les hausses de prix restent neutres.",
+              "38% of negative posts are about the in-store welcome; 70% of posts about price increases stay neutral."),
+    "reco": ("Former les équipes boutique avant la prochaine hausse, pas après.",
+             "Train boutique teams before the next increase, not after."),
+  },
+  "audiences": {
+    "what": ("L'opportunité n'est pas dans le brief : ce sont les abonnés des créateurs food, pas les étudiants.",
+             "The opportunity is not in the brief: it is food creators' followers, not students."),
+    "proof": ("Ils aiment la marque mais l'achètent peu : opportunité 86 sur 100, contre 31 pour les étudiants visés.",
+              "They love the brand but barely buy it: opportunity 86 out of 100, against 31 for the targeted students."),
+    "reco": ("Réorienter le plan média vers les audiences des créateurs food.",
+             "Shift the media plan toward food creators' audiences."),
+  },
+  "trends": {
+    "what": ("Le protéiné fait le plus de bruit, mais c'est l'alimentation upcyclée qu'il faut regarder.",
+             "Protein is the loudest, but upcycled food is the one to watch."),
+    "proof": ("Partie de rien, elle est quatrième en un an, sans concurrent installé.",
+              "From nowhere, it reached fourth place in a year, with no established competitor."),
+    "reco": ("Tester une gamme upcyclée sur un marché avant que la concurrence ne s'en aperçoive.",
+             "Pilot an upcycled range in one market before competitors notice."),
+  },
+}

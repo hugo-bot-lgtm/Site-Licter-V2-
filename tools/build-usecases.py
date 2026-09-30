@@ -554,35 +554,32 @@ def family_body(f, lang):
     others = "".join('<li><a href="%s">%s%s <span aria-hidden="true">→</span></a></li>' % (
         fam_path(o, lang), icon(FAM_ICON[o["key"]]), T(o["name"], lang)) for o in C.FAMILIES if o is not f)
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], hub_path(lang)), (f["name"][lang], None)]
-    dash = C.DASHBOARD[f["key"]]
-    arrow = {"up": '<i class="is-up" aria-label="%s">▲</i>' % T(L["up"], lang), "down": '<i class="is-down" aria-label="%s">▼</i>' % T(L["down"], lang), "": ""}
-    rows = "".join('<li><span>%s</span><b>%s%s</b></li>' % (T(k, lang), esc(v[lang] if isinstance(v, tuple) else v), arrow[d])
-                   for k, v, d in dash["rows"])
-    why = ('  <section class="ucp ucf-read">\n'
-           '    <div class="shell">\n'
-           '      <div class="ucf-read__head">\n'
+    note = C.NOTE[f["key"]]
+    first = C.DASHBOARD[f["key"]]["rows"][0]
+    figure = "%s %s" % (first[1][lang] if isinstance(first[1], tuple) else first[1], first[0][lang].lower())
+
+    def part(key, label, cls=""):
+        return ('<div class="ucn__part%s"><p class="ucn__ann" aria-hidden="true"><span>%s</span>'
+                '<svg viewBox="0 0 60 24" aria-hidden="true"><path d="M58 4C40 4 26 8 6 18" /><path d="M11 12 5 18.5l8.5 1.4" /></svg></p>'
+                '<p class="ucn__txt">%s</p></div>') % (cls, T(L[label], lang), T(note[key], lang))
+    why = ('  <section class="ucp ucn">\n'
+           '    <div class="shell ucn__grid">\n'
+           '      <div class="ucn__intro">\n'
            '        <h2 class="ucp__h2">%s</h2>\n'
-           '        <p class="ucp__why">%s</p>\n'
+           '        <p class="ucn__lead">%s</p>\n'
+           '        <p class="ucn__dash"><s>%s</s><span>%s</span></p>\n'
            '      </div>\n'
-           '      <div class="ucf-read__cmp">\n'
-           '        <figure class="ucf-dash" aria-label="%s">\n'
-           '          <figcaption>%s</figcaption>\n'
-           '          <ul>%s</ul>\n'
-           '          <p class="ucf-dash__foot">%s</p>\n'
-           '        </figure>\n'
-           '        <span class="ucf-read__arrow" aria-hidden="true">→</span>\n'
-           '        <figure class="ucf-note" aria-label="%s">\n'
-           '          <figcaption>%s</figcaption>\n'
-           '          <p class="ucf-note__found">%s</p>\n'
-           '          <p class="ucf-note__reco"><span>%s</span>%s</p>\n'
-           '          <p class="ucf-note__by">%s</p>\n'
-           '        </figure>\n'
-           '      </div>\n'
-           '      <p class="ucp__note">%s</p>\n'
+           '      <article class="ucn__sheet" aria-label="%s">\n'
+           '        <header class="ucn__head"><span>%s</span><span>%s · %s</span></header>\n'
+           '        %s\n        %s\n        %s\n'
+           '        <footer class="ucn__sign"><span>%s</span><em>%s</em></footer>\n'
+           '      </article>\n'
            '    </div>\n'
-           '  </section>') % (T(L["why"], lang), T(f["why"], lang), T(L["dash_t"], lang), T(L["dash_t"], lang), rows, T(L["dash_foot"], lang),
-                              T(L["note_t"], lang), T(L["note_t"], lang), T(dash["note"][0], lang), T(L["reco"], lang), T(dash["note"][1], lang),
-                              T(L["presented"], lang), T(L["same_case"], lang))
+           '  </section>') % (
+        T(L["why"], lang), T(L["note_lead"], lang), esc(figure), T(L["note_stop"], lang),
+        T(L["note_t"], lang), T(L["note_kind"], lang), T(f["name"], lang), T(L["illus"], lang),
+        part("what", "ann_what"), part("proof", "ann_proof"), part("reco", "ann_reco", " ucn__part--reco"),
+        T(L["note_by"], lang), T(L["note_sig"], lang))
     return "\n".join([
         crumbs(items, lang),
         hero(kicker, T(f["h1"], lang), T(f["intro"], lang), lang, aside),
@@ -667,6 +664,15 @@ L.update({
     "cta_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
     "bar_offer": ("Recevoir un cas réel", "Get a real case"),
     "bar_call": ("Être rappelé", "Get a call back"),
+    "note_lead": ("Un tableau de bord s'arrête au chiffre. Voici ce que nous remettons à la place : une note, écrite et présentée par le consultant qui a lu la conversation.",
+                  "A dashboard stops at the number. Here is what we hand over instead: a note, written and presented by the consultant who read the conversation."),
+    "note_stop": ("… et après ?", "… and then?"),
+    "note_kind": ("Note d'analyse", "Analysis note"),
+    "ann_what": ("ce qui s'est passé", "what happened"),
+    "ann_proof": ("la preuve", "the proof"),
+    "ann_reco": ("quoi faire", "what to do"),
+    "note_by": ("Le consultant qui a mené l'analyse", "The consultant who ran the analysis"),
+    "note_sig": ("présentée en rendez-vous, pas envoyée par e-mail", "presented in a meeting, not sent by email"),
     "dash_t": ("Ce que montre un tableau de bord", "What a dashboard shows"),
     "dash_foot": ("À vous d'interpréter.", "Yours to interpret."),
     "note_t": ("Ce que vous remet Licter", "What Licter hands you"),
