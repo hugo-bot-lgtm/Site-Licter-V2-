@@ -42,6 +42,11 @@ redirection 301). **À confirmer : le domaine** (`SITE` dans `tools/uc_content.p
 actuellement `https://www.licter.com`), utilisé pour les canoniques, `hreflang`
 et le sitemap.
 
+Images de partage (LinkedIn…) : `python3 tools/build-og.py` régénère
+`assets/img/og/uc-*.png` depuis les mêmes textes. Les articles du blog
+reçoivent un encadré « Cas d'usage liés » à chaque génération (entre les
+marqueurs `<!-- uc-links -->`).
+
 **Langue.** Le site s'affiche **en français par défaut**. Le HTML reste écrit en
 anglais (source de vérité) et `js/i18n.js` applique `js/fr.js` au chargement ;
 `js/theme.js` masque la page le temps de la traduction pour éviter tout flash
@@ -1452,6 +1457,8 @@ et `MOCK` dans le code. **Rien n'est envoyé nulle part.** À remplacer :
 |---|---|---|
 | Visuels des cas d'usage : 4 questions × 4 secteurs (agroalimentaire, luxe, jouets & jeux vidéo, automobile) — courbes, pics, nuages de mots, communautés, scores, course des sujets, posts, « Notre lecture » | `js/usecases.js` → `CASES`, `FILLER` | Verbatims et chiffres réels anonymisés, un cas client par secteur |
 | Textes des 16 pages cas d'usage (FR + EN) : questions, sources, étapes, livrables, exemples illustratifs, FAQ | `tools/uc_content.py` | Relire et valider le fond, confirmer le domaine (`SITE`) |
+| Pages cas : approche, ROI (3 leviers, sans chiffres inventés), cas client illustratif + interview, articles liés | `tools/uc_content.py` → `EXTRA`, `VOICES`, `ARTICLES` | Remplacer les cas illustratifs par de vrais cas clients anonymisés ; valider le ROI |
+| Offre « Recevez un cas réel » (e-mail + secteur) sur les pages cas | `js/home.js` → `.ucp-lead` | Brancher au CRM avec le cas et le secteur |
 | Offre « cas réel du secteur, anonymisé, envoyé par un consultant sous 48 h » sous « Notre lecture » (e-mail + secteur + question) | `js/usecases.js` → `renderGet` | Brancher au CRM ; un consultant envoie le cas à la main |
 | Mémoire du contact pour la session (préremplissage, offre en un clic, barre du guide masquée) | `js/ui.js` → `LicterLead` | Remplacer par l'identification du CRM une fois branché |
 | Prochaine étape du diagnostic selon le score (guide / revue 30 min / consultant) | `js/home.js` → `BANDS[].next` | Valider les offres et les liens |

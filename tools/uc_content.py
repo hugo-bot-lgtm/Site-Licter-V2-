@@ -719,3 +719,134 @@ CASES = [
     ],
   },
 ]
+
+# ------------------------------------------------------------------ extras
+# Client interviews from the Audience First channel, one per use case.
+VOICES = {
+    "paris2024": ("l-OevQ4q8js", "55:08", ("Des millions de tweets à gérer, en direct.", "Millions of tweets to handle, live."), "Paris 2024", "C. Legall"),
+    "axa": ("0HfWWSB0v78", "54:27", ("Ce que la diversité des médias rapporte vraiment.", "What media diversity actually buys you."), "AXA", "Z. Gebran"),
+    "lvmh": ("CEFJc7tP4hU", "41:22", ("600 000 abonnés en deux ans.", "600k followers in two years."), "LVMH", "Clara Mallien"),
+    "sncf": ("z3EkLWjQXMQ", "56:29", ("La social room a changé notre façon de travailler.", "The social room changed the way we work."), "SNCF", "M. Fleurbaey"),
+    "loreal": ("moW2HYtTor8", "51:29", ("Internet, pour capter la voix du consommateur.", "The internet, to capture the consumer's voice."), "L'Oréal", "C. Besson"),
+    "kantar": ("NwA84KwnDKU", "53:14", ("Consommer est devenu un acte militant.", "Consumption has become an act of activism."), "Kantar", "G. Lefloch"),
+    "paris": ("JSI5LBi8K-g", "51:52", ("Peut-on capter la voix des Parisiens ?", "Can you capture the voice of Parisians?"), "Ville de Paris", "B. Tailly & F. Lootvoet"),
+    "orange": ("UElJ_Pdd0wo", "58:39", ("Toutes les tendances partent désormais de TikTok.", "Every trend now starts on TikTok."), "Orange", "B. Hoang"),
+    "francedigitale": ("EOkpQ_v-3kw", "45:24", ("Le meilleur argent, c'est celui de vos clients.", "The best money is your customers' money."), "France Digitale", "A. Labarrière"),
+    "dassault": ("cnwA-t0Vqk4", "1:00:32", ("Les réseaux sociaux nous aident à faire de meilleurs produits.", "Social media helps us build better products."), "Dassault Systèmes", "Jean-Stéphane Bou"),
+    "seb": ("1PXRd4_JgEc", "1:03:49", ("Ce n'est pas une étude s'il n'y a pas de plan d'action.", "It is not a study if there is no action plan."), "Groupe SEB", "Hélène Classine"),
+    "transat": ("yEe6j9oLmQY", "53:28", ("J'ai vécu deux révolutions.", "I have lived through two revolutions."), "Transat Café l'Or", "Antoine Robin"),
+}
+
+# Blog articles, by file name.
+ARTICLES = {
+    "article-alerting-thresholds-are-editorial.html": ("Les seuils d'alerte sont un choix éditorial", "Alerting thresholds are an editorial choice"),
+    "article-behaviour-against-declaration.html": ("Le comportement contre la déclaration", "Behaviour against declaration"),
+    "article-language-coverage-is-not-translation.html": ("Couvrir une langue n'est pas la traduire", "Language coverage is not translation"),
+    "article-the-persona-workshop-replaced.html": ("L'atelier persona, remplacé", "The persona workshop, replaced"),
+    "article-the-trend-you-already-missed.html": ("La tendance que vous avez déjà ratée", "The trend you already missed"),
+    "article-the-voices-that-actually-carry.html": ("Les voix qui portent vraiment", "The voices that actually carry"),
+    "article-weak-signals-before-they-trend.html": ("Les signaux faibles, avant qu'ils ne deviennent tendance", "Weak signals, before they trend"),
+    "article-what-a-platform-cannot-do-alone.html": ("Ce qu'une plateforme ne fait pas seule", "What a platform cannot do on its own"),
+    "article-where-panels-and-surveys-disagree.html": ("Là où le panel et l'étude se contredisent", "Where panels and surveys disagree"),
+}
+
+# Per case: our approach, three returns on the investment, the client
+# interview, the related articles. MOCK: to be validated by Licter.
+EXTRA = {
+  "campaign-impact": {
+    "approach": ("Nous ne regardons pas la campagne isolément. Nous fixons d'abord une période de référence, puis nous comparons la conversation avant et après, audience par audience, face à la moyenne de votre catégorie. Ce qui compte n'est pas le pic de volume, mais ce qui reste une fois le pic retombé, et chez qui.",
+                 "We never look at the campaign on its own. We first set a baseline, then compare the conversation before and after, audience by audience, against your category's average. What counts is not the volume peak but what remains once it has passed, and in whom."),
+    "roi": [(("Un budget mieux placé", "Budget where it pays"), ("Vous savez quels leviers ont vraiment porté la campagne : la suivante mise sur eux.", "You know which levers really carried the campaign: the next one backs them.")),
+            (("Un bilan en jours", "A review in days"), ("Une première lecture dès la fin de la campagne, pas un bilan trois mois plus tard.", "A first read as soon as the campaign ends, not a review three months later.")),
+            (("Des arbitrages défendables", "Decisions you can defend"), ("Des preuves chiffrées, audience par audience, pour arbitrer en comité.", "Evidence, audience by audience, to settle choices in committee."))],
+    "voice": "paris2024", "articles": ["article-what-a-platform-cannot-do-alone.html", "article-the-voices-that-actually-carry.html"],
+  },
+  "leader-advocacy": {
+    "approach": ("Nous partons des sujets sur lesquels votre dirigeant est légitime, pas de ceux sur lesquels il aimerait l'être. Nous mesurons sa part de voix sujet par sujet face à un panel de pairs choisi avec vous, et nous regardons qui relaie ses messages. Le résultat est un plan de prise de parole, pas un classement.",
+                 "We start from the subjects on which your leader is credible, not the ones they would like to own. We measure their share of voice subject by subject against a peer set chosen with you, and look at who relays their messages. The result is a speaking plan, not a ranking."),
+    "roi": [(("Moins de prises de parole perdues", "Fewer wasted statements"), ("Le dirigeant parle là où il est attendu, et plus là où il ajoute du bruit.", "The leader speaks where they are expected, no longer where they add noise.")),
+            (("Une visibilité qui profite à la marque", "Visibility that serves the brand"), ("Ses sujets et ceux de l'entreprise se renforcent au lieu de se disperser.", "Their subjects and the company's reinforce each other instead of scattering.")),
+            (("Des faux pas évités", "Missteps avoided"), ("Savoir sur quoi il est attendu protège aussi en période sensible.", "Knowing what they are expected to address also protects in sensitive times."))],
+    "voice": "axa", "articles": ["article-the-voices-that-actually-carry.html", "article-where-panels-and-surveys-disagree.html"],
+  },
+  "ambassadors": {
+    "approach": ("Nous ne partons pas d'une liste d'influenceurs. Nous partons de votre audience cible, et nous cherchons les voix qu'elle écoute vraiment. Chaque voix est ensuite classée sur trois critères : recouvrement d'audience, affinité avec votre catégorie et risques attachés à son nom.",
+                 "We do not start from a list of influencers. We start from your target audience, and look for the voices it actually listens to. Each voice is then ranked on three criteria: audience overlap, affinity with your category and risks attached to its name."),
+    "roi": [(("Un budget d'influence qui touche les bonnes personnes", "Influence spend that reaches the right people"), ("Vous payez pour une audience qui recoupe la vôtre, pas pour des abonnés.", "You pay for an audience that overlaps yours, not for followers.")),
+            (("Des créateurs repérés tôt", "Creators found early"), ("Les voix émergentes coûtent moins cher avant de devenir évidentes.", "Emerging voices cost less before they become obvious.")),
+            (("Des polémiques évitées", "Controversies avoided"), ("Les signaux de risque sont vérifiés avant de signer.", "Risk flags are checked before signing."))],
+    "voice": "lvmh", "articles": ["article-the-voices-that-actually-carry.html", "article-the-persona-workshop-replaced.html"],
+  },
+  "reputation": {
+    "approach": ("Nous lisons votre réputation en continu, dans toutes les langues de vos marchés, et nous la comparons à celle de vos concurrents. Un analyste qualifie les évolutions chaque mois, et vous alerte dès qu'un sujet rompt la tendance. Vous recevez une note d'analyse, pas un tableau de bord de plus.",
+                 "We read your reputation continuously, in every language of your markets, and compare it with your competitors'. An analyst qualifies the changes every month, and alerts you as soon as a subject breaks the trend. You get an analysis note, not one more dashboard."),
+    "roi": [(("Des problèmes vus à temps", "Problems seen in time"), ("Une alerte 24 h/24 quand un sujet change, avant qu'il ne coûte.", "A 24/7 alert when a subject shifts, before it costs you.")),
+            (("Moins de temps passé à surveiller", "Less time spent watching"), ("Vos équipes lisent une note mensuelle au lieu de trier des mentions.", "Your teams read a monthly note instead of sorting mentions.")),
+            (("Un budget prévisible", "A predictable budget"), ("Un forfait mensuel, sans engagement, avec des études illimitées à l'intérieur.", "A fixed monthly fee, no commitment, with unlimited studies inside it."))],
+    "voice": "sncf", "articles": ["article-language-coverage-is-not-translation.html", "article-alerting-thresholds-are-editorial.html"],
+  },
+  "messaging": {
+    "approach": ("Nous confrontons votre plateforme de marque à la conversation réelle de votre catégorie. Nous classons les mots, les promesses et les preuves par traction, chez vous et chez vos concurrents, pour voir lesquels circulent et lesquels restent dans vos présentations.",
+                 "We set your brand platform against the real conversation of your category. We rank words, claims and proofs by traction, for you and your competitors, to see which ones travel and which ones stay in your presentations."),
+    "roi": [(("Des messages qui portent", "Messages that land"), ("Votre discours reprend les mots que vos clients utilisent déjà.", "Your messaging uses the words your customers already use.")),
+            (("Moins d'allers-retours avec l'agence", "Fewer rounds with the agency"), ("Un brief appuyé sur des preuves, pas sur des intuitions.", "A brief built on evidence, not hunches.")),
+            (("Un terrain que vos concurrents n'occupent pas", "Ground your competitors do not hold"), ("Les promesses libres de votre catégorie apparaissent clairement.", "The unclaimed claims of your category show up clearly."))],
+    "voice": "loreal", "articles": ["article-where-panels-and-surveys-disagree.html", "article-behaviour-against-declaration.html"],
+  },
+  "brand-risk": {
+    "approach": ("Nous cartographions avec vous les risques propres à votre secteur, puis nous fixons des seuils d'alerte avec un éditeur, pas un algorithme. Chaque signal est qualifié par un analyste avant de vous être envoyé : qui le porte, avec quelle influence, à quelle vitesse il se propage.",
+                 "We map your sector's own risks with you, then set alert thresholds with an editor, not an algorithm. Every signal is qualified by an analyst before it reaches you: who carries it, with what influence, how fast it spreads."),
+    "roi": [(("Des crises évitées", "Crises avoided"), ("Un signal traité quand il est encore maîtrisable coûte moins qu'une crise.", "A signal handled while still containable costs less than a crisis.")),
+            (("Une alerte en 15 minutes", "Alerted within 15 minutes"), ("Dans plus de vingt langues, avec un protocole d'escalade défini à l'avance.", "In more than twenty languages, with an escalation protocol set in advance.")),
+            (("Pas de fausses alertes", "No false alarms"), ("Vos équipes ne sont dérangées que pour ce qui compte.", "Your teams are only disturbed for what matters."))],
+    "voice": "kantar", "articles": ["article-weak-signals-before-they-trend.html", "article-alerting-thresholds-are-editorial.html"],
+  },
+  "segmentation": {
+    "approach": ("Nous partons de ce que vos clients font, pas de ce qu'ils déclarent. Le panel comportemental fait apparaître les communautés qui composent réellement votre audience ; nous mesurons pour chacune l'affinité, la pénétration et l'opportunité, et nous en tirons les priorités du plan média.",
+                 "We start from what your customers do, not what they declare. The behavioural panel reveals the communities that really make up your audience; for each one we measure affinity, penetration and opportunity, and turn them into media plan priorities."),
+    "roi": [(("Un plan média qui vise juste", "A media plan that hits"), ("Le budget va aux communautés où l'opportunité est la plus forte.", "Budget goes to the communities with the strongest opportunity.")),
+            (("Des cibles oubliées retrouvées", "Overlooked targets found"), ("Les communautés que le brief n'avait pas vues apparaissent.", "The communities the brief had missed come to light.")),
+            (("Des personas qui durent", "Personas that last"), ("Bâtis sur plus de 5 000 critères, ils se mettent à jour avec les données.", "Built on more than 5,000 criteria, they update with the data."))],
+    "voice": "paris", "articles": ["article-the-persona-workshop-replaced.html", "article-behaviour-against-declaration.html"],
+  },
+  "rejuvenate": {
+    "approach": ("Nous comparons point par point la génération que vous visez et votre base actuelle : sujets, plateformes, créateurs, mots. L'écart devient une liste de ponts concrets, pour rajeunir votre audience sans perdre celle que vous avez.",
+                 "We compare, point by point, the generation you want and your current base: subjects, platforms, creators, words. The gap becomes a list of concrete bridges, to reach younger audiences without losing the one you have."),
+    "roi": [(("Des clients pour les dix prochaines années", "Customers for the next ten years"), ("Vous préparez la relève de votre base avant qu'elle ne vieillisse.", "You prepare the next generation of your base before it ages.")),
+            (("Moins d'essais à l'aveugle", "Fewer blind tests"), ("Vous savez où et avec qui parler à la génération suivante.", "You know where and with whom to talk to the next generation.")),
+            (("Une base actuelle préservée", "Your current base kept"), ("Les ponts passent par ce que les deux audiences partagent.", "The bridges go through what both audiences share."))],
+    "voice": "orange", "articles": ["article-the-persona-workshop-replaced.html", "article-the-trend-you-already-missed.html"],
+  },
+  "touchpoints": {
+    "approach": ("Nous découpons avec vous le parcours client en étapes, puis nous lisons ce que vos clients racontent de chacune, chez vous et chez vos concurrents. Les attentes et les irritants sont classés par fréquence, pour savoir quoi corriger en premier.",
+                 "We split the customer journey into steps with you, then read what your customers say about each one, for you and your competitors. Expectations and irritants are ranked by frequency, so you know what to fix first."),
+    "roi": [(("Moins de clients perdus", "Fewer customers lost"), ("Vous corrigez d'abord les irritants qui font partir.", "You fix first the irritants that make people leave.")),
+            (("Moins de réclamations", "Fewer complaints"), ("Les problèmes récurrents sont traités à la source.", "Recurring problems are dealt with at the source.")),
+            (("Des investissements bien ciblés", "Well-aimed investment"), ("Chaque étape du parcours est priorisée par ce qu'elle rapporte.", "Each step of the journey is prioritised by what it brings."))],
+    "voice": "francedigitale", "articles": ["article-where-panels-and-surveys-disagree.html", "article-behaviour-against-declaration.html"],
+  },
+  "product-test": {
+    "approach": ("Nous lisons le verdict non filtré sur vos produits et ceux de vos concurrents : avis, vidéos de test, forums, usages détournés. Un analyste classe les forces et les irritants par fréquence, produit par produit, et en tire les priorités de la prochaine version.",
+                 "We read the unfiltered verdict on your products and your competitors': reviews, test videos, forums, workarounds. An analyst ranks strengths and irritants by frequency, product by product, and turns them into priorities for the next version."),
+    "roi": [(("Des retours produits en moins", "Fewer returns"), ("Les défauts qui font renvoyer un produit sont corrigés en priorité.", "The flaws that make people return a product are fixed first.")),
+            (("Une feuille de route appuyée sur des preuves", "An evidence-based roadmap"), ("La prochaine version répond à ce que les clients disent vraiment.", "The next version answers what customers actually say.")),
+            (("Des idées gratuites", "Free ideas"), ("Les usages détournés ouvrent des pistes produit que personne n'a testées.", "Workarounds open product leads nobody has tested."))],
+    "voice": "dassault", "articles": ["article-where-panels-and-surveys-disagree.html", "article-the-trend-you-already-missed.html"],
+  },
+  "market-opportunities": {
+    "approach": ("Nous délimitons avec vous le marché, puis nous en lisons toute la conversation et la demande exprimée en recherche. Les besoins qui reviennent sans réponse et les espaces que vos concurrents n'occupent pas deviennent une recommandation argumentée : y aller ou non, et avec quelle offre.",
+                 "We define the market with you, then read its whole conversation and the demand expressed in search. The needs that keep coming up unanswered and the spaces your competitors do not hold become a reasoned recommendation: go or not, and with which offer."),
+    "roi": [(("Un lancement moins risqué", "A less risky launch"), ("Vous entrez sur un marché en sachant ce qui y manque.", "You enter a market knowing what it lacks.")),
+            (("Un avantage d'avance", "A head start"), ("Les besoins apparaissent dans la conversation avant les études.", "Needs show up in the conversation before the surveys.")),
+            (("Moins d'études de marché ad hoc", "Fewer one-off market studies"), ("Un forfait mensuel remplace les études au coup par coup.", "A fixed monthly fee replaces one-off studies."))],
+    "voice": "seb", "articles": ["article-the-trend-you-already-missed.html", "article-language-coverage-is-not-translation.html"],
+  },
+  "stakeholders": {
+    "approach": ("Nous repérons les communautés, les experts, les médias et les institutions qui façonnent votre catégorie, puis nous suivons l'évolution des sujets mois après mois, sur dix-huit mois. Un analyste distingue ce qui monte vraiment de ce qui fait du bruit, et vous dit quoi lancer, surveiller ou arrêter.",
+                 "We identify the communities, experts, media and institutions that shape your category, then follow how topics evolve month after month, over eighteen months. An analyst tells what is really rising from what is just noise, and tells you what to build, watch or stop."),
+    "roi": [(("Des tendances prises avant les autres", "Trends caught before others"), ("Vous agissez quand un sujet monte, pas quand il est partout.", "You act when a topic is rising, not when it is everywhere.")),
+            (("Moins de paris ratés", "Fewer failed bets"), ("Les modes passagères sont écartées avant d'y investir.", "Passing fads are ruled out before you invest.")),
+            (("Les bons interlocuteurs", "The right people to talk to"), ("Vous savez qui compte dans votre catégorie, et quand leur parler.", "You know who matters in your category, and when to talk to them."))],
+    "voice": "transat", "articles": ["article-weak-signals-before-they-trend.html", "article-the-trend-you-already-missed.html"],
+  },
+}

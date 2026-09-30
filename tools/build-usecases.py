@@ -112,6 +112,7 @@ HEADER = re.search(r'<div class="site-head">.*?</header>\s*</div>', SRC, re.S).g
 FOOTER = re.search(r'<footer class="site-foot">.*?</footer>', SRC, re.S).group(0)
 
 def shared(part, lang):
+    part = re.sub(r"\s*<!-- newsletter band -->.*?(?=<div class=\"site-foot__in)", "\n  ", part, flags=re.S)
     part = absolutize(part, lang)
     return translate(part) if lang == FR else part
 
@@ -231,7 +232,7 @@ def reel(v, lang):
         </a>'''
 
 # ------------------------------------------------------------------- page
-def page(lang, path, alt_path, title, meta, body, ld, og_type="website"):
+def page(lang, path, alt_path, title, meta, body, ld, og_type="website", og_image="hub"):
     v = version()
     other = 1 - lang
     fr_path, en_path = (path, alt_path) if lang == FR else (alt_path, path)
@@ -263,7 +264,10 @@ def page(lang, path, alt_path, title, meta, body, ld, og_type="website"):
 <meta property="og:url" content="{SITE}{path}" />
 <meta property="og:title" content="{esc(typo(title, lang))}" />
 <meta property="og:description" content="{esc(typo(meta, lang))}" />
-<meta name="twitter:card" content="summary" />
+<meta property="og:image" content="{SITE}/assets/img/og/uc-{og_image}-{LANGS[lang]}.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -373,7 +377,8 @@ def hero(kicker_html, h1, intro, lang, aside="", actions=True, extra="", after="
             '        <p class="ucp__lead">%s</p>%s%s\n'
             '      </div>%s\n'
             '    </div>\n'
-            '  </section>') % (split, kicker_html, h1, intro, act, after, aside)
+            '%s\n'
+            '  </section>') % (split, kicker_html, h1, intro, act, after, aside, clients(lang))
 
 
 def related(title_id, title, links, extra=""):
@@ -438,9 +443,10 @@ def case_body(c, lang):
              extra='\n            <a class="ucp__textlink" href="#nos-questions">%s <span aria-hidden="true">↓</span></a>' % T(L["see_q"], lang)),
         section('      <h2 class="ucp__h2">%s</h2>\n      <ol class="ucp__qs">%s</ol>' % (T(L["questions"], lang), qs), "nos-questions"),
         section('      <h2 class="ucp__h2">%s</h2>\n      <ul class="ucp__sources">%s</ul>' % (T(L["read"], lang), src)),
-        section('      <h2 class="ucp__h2">%s</h2>\n      <ol class="ucp__steps">%s</ol>' % (T(L["how"], lang), steps)),
-        section(example),
+        *case_extras(c, lang),
+        cta(c, lang),
         faq_block(c["faq"], lang, related("rel-" + c["key"], T(L["same"], lang), rel, up)),
+        articles_block(C.EXTRA[c["key"]]["articles"], lang),
         book(lang),
     ]), items
 
@@ -483,6 +489,7 @@ def family_body(f, lang):
         why,
         faq_block(f["faq"], lang, related("rel-" + f["key"], T(L["others"], lang), others)).replace(
             '<aside class="ucp__related"', '<aside class="ucp__related ucp__related--ico"', 1),
+        articles_block(list(dict.fromkeys(a for x in cases for a in C.EXTRA[x["key"]]["articles"]))[:3], lang),
         book(lang),
     ]), items
 
@@ -517,6 +524,134 @@ def hub_body(lang):
     ]), items
 
 
+# ------------------------------------------------------------------ extras
+# the client logo band of the home, at the foot of every hero
+CLIENTS = re.search(r'<div class="clients" id="clients"[^>]*>.*?</div>\s*</div>\s*</div>', (ROOT / "index.html").read_text(), re.S).group(0)
+CLIENTS = CLIENTS.replace(' data-reveal', '')
+
+
+def clients(lang):
+    band = CLIENTS.replace('class="clients"', 'class="clients ucp__clients"')
+    return translate(band) if lang == FR else band
+
+
+L.update({
+    "approach": ("Notre approche sur ce cas", "Our approach to this case"),
+    "roi": ("Ce que ça rapporte", "What it pays back"),
+    "roi_k": ("ROI", "ROI"),
+    "roi_foot": ("Un forfait mensuel, sans engagement, avec des études illimitées à l'intérieur.",
+                 "A fixed monthly fee, no commitment, with unlimited studies inside it."),
+    "client": ("Cas client", "Client case"),
+    "context": ("Le contexte", "The context"),
+    "articles": ("Articles liés", "Related articles"),
+    "read_article": ("Lire l'article", "Read the article"),
+    "blog_k": ("Le blog", "The blog"),
+    "voice_more": ("Ils en parlent", "They talk about it"),
+    "cta_k": ("Et chez vous ?", "And for you?"),
+    "cta_t": ("Recevez un cas réel de ce type, dans votre secteur.", "Get a real case of this kind, in your sector."),
+    "cta_d": ("Anonymisé, envoyé par un consultant sous 48 h. Pour voir concrètement ce que la lecture donne chez une entreprise comme la vôtre.",
+              "Anonymised, sent by a consultant within 48 hours. To see what the read actually gives for a company like yours."),
+    "cta_email": ("E-mail professionnel", "Work email"),
+    "cta_sector": ("Votre secteur", "Your sector"),
+    "cta_btn": ("Recevoir le cas", "Get the case"),
+    "cta_err": ("Saisissez un e-mail professionnel, par exemple nom@entreprise.com.", "Enter a work email, like name@company.com."),
+    "cta_done": ("C'est noté. Un consultant vous envoie un cas réel sous 48 h.", "Noted. A consultant sends you a real case within 48 hours."),
+    "cta_consent": ("Votre e-mail sert uniquement à vous répondre.", "We use your email only to reply to you."),
+    "privacy": ("Politique de confidentialité", "Privacy policy"),
+})
+
+SECTORS = [("Agroalimentaire", "Food & drink"), ("Luxe & mode", "Luxury & fashion"), ("Beauté", "Beauty"),
+           ("Jouets & jeux vidéo", "Toys & video games"), ("Automobile & mobilité", "Automotive & mobility"),
+           ("Banque & assurance", "Banking & insurance"), ("Distribution", "Retail"), ("Secteur public", "Public sector"),
+           ("Autre", "Other")]
+
+
+def cta(c, lang):
+    opts = "".join('<option>%s</option>' % T(s, lang) for s in SECTORS)
+    return ('  <!-- MOCK: sends nothing yet (js/home.js, .ucp-lead); wire to the CRM with the case and the sector. -->\n'
+            '  <section class="ucp ucp--cta">\n'
+            '    <div class="shell">\n'
+            '      <div class="ucp__cta">\n'
+            '        <div class="ucp__cta-copy">\n'
+            '          <p class="ucp__cta-k">%s</p>\n'
+            '          <h2 class="ucp__cta-t">%s</h2>\n'
+            '          <p class="ucp__cta-d">%s</p>\n'
+            '        </div>\n'
+            '        <form class="ucp-lead" data-case="%s" novalidate>\n'
+            '          <div class="ucp-lead__row">\n'
+            '            <label class="ucp-lead__f"><span>%s</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="%s" required /></label>\n'
+            '            <label class="ucp-lead__f"><span>%s</span><select class="fld__input" name="sector">%s</select></label>\n'
+            '          </div>\n'
+            '          <button class="btn btn--primary" type="submit">%s <span aria-hidden="true">→</span></button>\n'
+            '          <p class="fld__error" hidden>%s</p>\n'
+            '          <p class="consent">%s <a href="/privacy.html">%s</a>.</p>\n'
+            '        </form>\n'
+            '        <p class="ucp-lead__done" role="status" hidden>%s</p>\n'
+            '      </div>\n'
+            '    </div>\n'
+            '  </section>') % (T(L["cta_k"], lang), T(L["cta_t"], lang), T(L["cta_d"], lang), c["key"],
+                               T(L["cta_email"], lang), "nom@entreprise.com" if lang == FR else "name@company.com",
+                               T(L["cta_sector"], lang), opts, T(L["cta_btn"], lang), T(L["cta_err"], lang),
+                               T(L["cta_consent"], lang), T(L["privacy"], lang), T(L["cta_done"], lang))
+
+
+def articles_block(keys, lang):
+    cards = "".join('<li><a class="ucp__art" href="/%s"><span class="ucp__art-k">%s</span><b>%s</b>'
+                    '<span class="ucp__art-go">%s <span aria-hidden="true">→</span></span></a></li>' % (
+                        k, T(L["blog_k"], lang), T(C.ARTICLES[k], lang), T(L["read_article"], lang)) for k in keys)
+    return section('      <h2 class="ucp__h2">%s</h2>\n      <ul class="ucp__arts">%s</ul>' % (T(L["articles"], lang), cards))
+
+
+def voice_card(key, lang):
+    return reel(C.VOICES[key], lang).replace(
+        '<span class="ucf__voice-k">%s</span>' % T(L["voice"], lang),
+        '<span class="ucf__voice-k">%s</span>' % T(L["voice_more"], lang))
+
+
+def case_extras(c, lang):
+    """approach, ROI and client case, in page order"""
+    x = C.EXTRA[c["key"]]
+    steps = "".join('<li><span class="ucp__dot">%d</span><b>%s</b><p>%s</p></li>' % (i + 1, T(C.STEPS[i], lang), T(s, lang))
+                    for i, s in enumerate(c["steps"]))
+    approach = section('      <h2 class="ucp__h2">%s</h2>\n      <p class="ucp__approach">%s</p>\n      <ol class="ucp__steps">%s</ol>' % (
+        T(L["approach"], lang), T(x["approach"], lang), steps))
+    roi = "".join('<li><span class="ucp__roi-n">0%d</span><b>%s</b><p>%s</p></li>' % (i + 1, T(a, lang), T(b, lang))
+                  for i, (a, b) in enumerate(x["roi"]))
+    roi_sec = ('  <section class="ucp ucp--roi">\n'
+               '    <div class="shell">\n'
+               '      <div class="ucp__roi">\n'
+               '        <div class="ucp__roi-head"><p class="ucp__roi-k">%s</p><h2 class="ucp__h2">%s</h2><p class="ucp__roi-foot">%s</p></div>\n'
+               '        <ol class="ucp__roi-list">%s</ol>\n'
+               '      </div>\n'
+               '    </div>\n'
+               '  </section>') % (T(L["roi_k"], lang), T(L["roi"], lang), T(L["roi_foot"], lang), roi)
+    ctx, rest = split_context(c["example"][lang])
+    sit_rec = split_example(rest)
+    case = ('      <h2 class="ucp__h2">%s</h2>\n'
+            '      <div class="ucp__client">\n'
+            '        <article class="ucp__case">\n'
+            '          <p class="ucp__case-k">%s</p>\n'
+            '          <p class="ucp__case-h">%s</p><p class="ucp__case-ctx">%s</p>\n'
+            '          <div class="ucp__case-cols">\n'
+            '            <div><p class="ucp__case-h">%s</p><p>%s</p></div>\n'
+            '            <div class="ucp__case-reco"><p class="ucp__case-h">%s</p><p>%s</p></div>\n'
+            '          </div>\n'
+            '        </article>\n'
+            '%s\n'
+            '      </div>') % (T(L["client"], lang), T(L["illus"], lang), T(L["context"], lang), esc(typo(ctx, lang)),
+                              T(L["found"], lang), esc(typo(sit_rec[0], lang)), T(L["reco"], lang), esc(typo(sit_rec[1], lang)),
+                              voice_card(x["voice"], lang))
+    return [approach, roi_sec, section(case)]
+
+
+def split_context(text):
+    """first sentence = the context, the rest = what was found and done"""
+    t = re.sub(r"^(Exemple illustratif|Illustrative example)\s*:\s*", "", text)
+    m = re.match(r"(.+?[.])\s+(.*)$", t)
+    cap = lambda s: s[:1].upper() + s[1:]
+    return (cap(m.group(1)), m.group(2)) if m else (cap(t), "")
+
+
 # ------------------------------------------------------------------- build
 def main():
     urls = []   # (fr_path, en_path)
@@ -532,7 +667,7 @@ def main():
         for lang in (FR, EN):
             body, items = family_body(f, lang)
             ld = [breadcrumb_ld([(a, b or fam_path(f, lang)) for a, b in items]), faq_ld(f["faq"], lang)]
-            write(fam_path(f, lang), page(lang, fam_path(f, lang), fam_path(f, 1 - lang), f["seo_title"][lang], f["meta"][lang], body, ld))
+            write(fam_path(f, lang), page(lang, fam_path(f, lang), fam_path(f, 1 - lang), f["seo_title"][lang], f["meta"][lang], body, ld, og_image=f["key"]))
         urls.append((fam_path(f, FR), fam_path(f, EN)))
 
     for c in C.CASES:
@@ -543,7 +678,7 @@ def main():
                    "description": typo(c["meta"][lang], lang), "serviceType": FAM[c["family"]]["name"][lang],
                    "provider": ORG, "areaServed": "FR", "inLanguage": LANGS[lang], "url": SITE + case_path(c, lang)},
                   faq_ld(c["faq"], lang)]
-            write(case_path(c, lang), page(lang, case_path(c, lang), case_path(c, 1 - lang), c["seo_title"][lang], c["meta"][lang], body, ld))
+            write(case_path(c, lang), page(lang, case_path(c, lang), case_path(c, 1 - lang), c["seo_title"][lang], c["meta"][lang], body, ld, og_type="article", og_image=c["family"]))
         urls.append((case_path(c, FR), case_path(c, EN)))
 
     # sitemap: the site's pages, and every use-case page with its twin

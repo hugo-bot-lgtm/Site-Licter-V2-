@@ -5805,3 +5805,84 @@ html[data-theme="dark"] .ucp__vs th + th { background: var(--cream); color: var(
   .ucp__sources span { font-size: 12.5px; }
 }
 .ucp__hero-voice .reel__who { color: var(--text-2); }
+
+/* =========================================================
+   Use-case pages, round 3: client band in the hero, approach,
+   ROI, client case, the "real case" offer, related articles
+   ========================================================= */
+/* the client band, at the foot of the hero, faded at both ends like the home */
+.ucp__clients { padding-top: clamp(8px, 1.6vw, 20px); }
+.ucp-page .wall { border-color: transparent; background: none; }
+.ucp-page .wall::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  border-block: 1px solid var(--line); background: rgba(255, 255, 255, .5);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+}
+html[data-theme="dark"] .ucp-page .wall { background: none; }
+html[data-theme="dark"] .ucp-page .wall::after { background: rgba(var(--surf-rgb), .5); }
+.ucp-page .wall__caption { background: var(--bg); }
+
+/* approach */
+.ucp__approach { max-width: 72ch; margin: -4px 0 30px; font: 500 16.5px/1.7 var(--body-font); color: var(--text-2); }
+
+/* ROI */
+.ucp__roi { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr); gap: clamp(24px, 4vw, 56px); align-items: start;
+  padding: clamp(26px, 3vw, 40px); border-radius: 26px; background: var(--navy); color: var(--cream); position: relative; overflow: hidden; isolation: isolate; }
+.ucp__roi::before { content: ""; position: absolute; z-index: -1; left: -15%; bottom: -60%; width: 60%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(var(--amber-rgb), .22), transparent); }
+html[data-theme="dark"] .ucp__roi { background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.ucp__roi-k { display: inline-block; margin: 0 0 12px; padding: 5px 10px; border-radius: 999px; background: var(--amber); color: var(--navy); font: 700 11.5px/1 var(--body-font); letter-spacing: 1.4px; }
+.ucp__roi .ucp__h2 { color: var(--cream); }
+.ucp__roi-foot { margin: 6px 0 0; font: 500 14px/1.55 var(--body-font); color: rgba(252, 246, 239, .72); }
+.ucp__roi-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.ucp__roi-list li { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 14px; padding: 16px 0; border-top: 1px solid rgba(252, 246, 239, .14); }
+.ucp__roi-list li:first-child { border-top: 0; padding-top: 4px; }
+.ucp__roi-n { grid-row: 1 / span 2; font: 600 26px/1 var(--title-font); color: var(--amber); font-variant-numeric: tabular-nums; }
+.ucp__roi-list b { font: 600 17.5px/1.35 var(--title-font); color: var(--cream); }
+.ucp__roi-list p { margin: 4px 0 0; font: 500 14.5px/1.55 var(--body-font); color: rgba(252, 246, 239, .8); }
+
+/* client case, beside the interview */
+.ucp__client { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(18px, 3vw, 32px); align-items: start; }
+.ucp__case-ctx { margin: 0 0 18px; font: 600 17px/1.55 var(--body-font); color: var(--ink); }
+.ucp__case > .ucp__case-h { margin: 0 0 6px; font: 700 11.5px/1.2 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-2); }
+.ucp__client .ucf__voice { display: block; padding: 14px; border-radius: 22px; background: var(--surface, #fff); border: 1px solid var(--line); }
+.ucp__client .reel__who { color: var(--text-2); }
+
+/* the offer */
+.ucp__cta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(20px, 4vw, 56px); align-items: center;
+  padding: clamp(24px, 3vw, 40px); border-radius: 26px; border: 1px solid rgba(var(--amber-rgb), .55);
+  background: linear-gradient(135deg, rgba(var(--amber-rgb), .16), rgba(var(--amber-rgb), .04) 60%), var(--surface, #fff); }
+.ucp__cta-k { margin: 0 0 8px; font: 700 12px/1.2 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: var(--amber-ink); }
+.ucp__cta-t { margin: 0; font: 600 clamp(22px, 2.1vw, 30px)/1.2 var(--title-font); color: var(--ink); text-wrap: balance; }
+.ucp__cta-d { margin: 12px 0 0; font: 500 15px/1.6 var(--body-font); color: var(--text-2); }
+.ucp-lead { display: grid; gap: 12px; }
+.ucp-lead__row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 10px; }
+.ucp-lead__f { display: grid; gap: 6px; }
+.ucp-lead__f > span { font: 600 12.5px/1.2 var(--body-font); color: var(--ink); }
+.ucp-lead .btn { justify-self: start; }
+.ucp-lead .consent { margin: 0; }
+.ucp-lead__done { grid-column: 2; margin: 0; padding: 16px 18px; border-radius: 14px; background: rgba(var(--amber-rgb), .16); font: 600 15px/1.5 var(--body-font); color: var(--ink); }
+.ucp-lead__done:focus { outline: none; }
+
+/* related articles */
+.ucp__arts { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.ucp__art { display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 20px 22px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface, #fff); color: var(--ink); transition: border-color .2s ease, transform .25s cubic-bezier(.16, 1, .3, 1); }
+.ucp__art:hover { border-color: rgba(var(--amber-rgb), .8); transform: translateY(-3px); }
+.ucp__art-k { font: 700 11px/1.2 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-2); }
+.ucp__art b { font: 600 18px/1.3 var(--title-font); }
+.ucp__art-go { margin-top: auto; font: 700 13px/1 var(--body-font); color: var(--amber-ink); }
+
+/* on a blog article: the use cases it relates to */
+.uc-links { max-width: 720px; margin: clamp(28px, 4vw, 44px) auto 0; padding: 20px 22px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface, #fff); }
+.uc-links__k { margin: 0 0 8px; font: 700 11.5px/1.2 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-2); }
+.uc-links ul { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.uc-links a { display: block; padding: 10px 0; border-bottom: 1px solid var(--line); font: 600 15px/1.4 var(--body-font); color: var(--ink); }
+.uc-links li:last-child a { border-bottom: 0; }
+.uc-links a:hover { color: var(--amber-ink); }
+
+@media (max-width: 900px) {
+  .ucp__roi, .ucp__client, .ucp__cta { grid-template-columns: minmax(0, 1fr); }
+  .ucp-lead__done { grid-column: 1; }
+}
+@media (max-width: 560px) { .ucp-lead__row { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .ucp__art { transition: none; } }

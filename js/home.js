@@ -414,3 +414,36 @@
 
   set(0);
 })();
+
+/* =========================================================================
+   Use-case pages: "get a real case" (email + sector). MOCK: nothing is sent;
+   wire to the CRM with the case (data-case) and the sector.
+   ========================================================================= */
+(function () {
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  Array.prototype.forEach.call(document.querySelectorAll("form.ucp-lead"), function (form) {
+    var field = form.querySelector('input[type="email"]');
+    var err = form.querySelector(".fld__error");
+    var done = form.parentNode.querySelector(".ucp-lead__done");
+    if (window.LicterLead) {
+      var known = window.LicterLead.get();
+      if (known && EMAIL.test(known)) field.value = known;
+    }
+    field.addEventListener("input", function () {
+      if (!err.hidden) { err.hidden = true; field.setAttribute("aria-invalid", "false"); }
+    });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = field.value.trim(), ok = EMAIL.test(v);
+      field.setAttribute("aria-invalid", ok ? "false" : "true");
+      err.hidden = ok;
+      if (!ok) { field.focus(); return; }
+      /* MOCK: send { email: v, case: form.dataset.case, sector: form.sector.value } */
+      if (window.LicterLead) window.LicterLead.set(v);
+      form.hidden = true;
+      done.hidden = false;
+      done.setAttribute("tabindex", "-1");
+      done.focus({ preventScroll: true });
+    });
+  });
+})();
