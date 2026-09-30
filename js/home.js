@@ -247,8 +247,8 @@
   /* The twelve questions are the use-case questions: three open, nine
      unlocked by the email. */
   var GUIDE = [
-    ["Analyze the impact of an event or campaign", "Mesurer l'impact d'un événement ou d'une campagne"],
-    ["Optimize your leader advocacy strategy", "Optimiser la prise de parole de vos dirigeants"],
+    ["Analyse the impact of an event or campaign", "Mesurer l'impact d'un événement ou d'une campagne"],
+    ["Optimise your leader advocacy strategy", "Optimiser la prise de parole de vos dirigeants"],
     ["Identify the right ambassadors", "Identifier les bons ambassadeurs"],
     ["Monitor your brand image and reputation", "Surveiller l'image et la réputation de votre marque"],
     ["Develop your brand messaging", "Construire votre discours de marque"],
@@ -257,7 +257,7 @@
     ["Rejuvenate your audiences", "Rajeunir vos audiences"],
     ["Understand expectations at every touchpoint", "Comprendre les attentes à chaque point de contact"],
     ["Test and evaluate your products", "Tester et évaluer vos produits"],
-    ["Analyze markets and identify opportunities", "Analyser les marchés et repérer les opportunités"],
+    ["Analyse markets and identify opportunities", "Analyser les marchés et repérer les opportunités"],
     ["Map out your stakeholders and future trends", "Cartographier vos parties prenantes et les tendances à venir"]
   ];
   var list = document.getElementById("guide-list");

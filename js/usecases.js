@@ -475,6 +475,9 @@
      stage's prefix, so several stages live on one page.
      opts: prefix, topics (tab buttons), closable, onClose
      ===================================================================== */
+  /* each question of the home opens onto its full use-case page */
+  var FULL = { communication: "campaign-impact", brand: "reputation", audiences: "segmentation", trends: "market-opportunities" };
+
   function Stage(stage, opts) {
     var PX = opts.prefix || "";
     var topics = opts.topics || [];
@@ -515,7 +518,8 @@
           '<div class="lf__answer" id="' + PX + 'uv-answer" aria-live="polite"><p class="lf__reading">' + t("Reading", "Lecture en cours") +
             '<span class="lf__dots"><i></i><i></i><i></i></span></p></div>' +
           '<div class="lf__get" id="' + PX + 'uv-get"></div>' +
-          '<a class="lf__book" href="#book">' + t("Or talk to a consultant", "Ou parler à un consultant") + ' <span aria-hidden="true">→</span></a>' +
+          (window.LicterUC && FULL[current] ? '<a class="lf__more" href="' + window.LicterUC(FULL[current]) + '">' + t("See the full use case", "Voir le cas d'usage complet") + ' <span aria-hidden="true">→</span></a>' : "") +
+        '<a class="lf__book" href="#book">' + t("Or talk to a consultant", "Ou parler à un consultant") + ' <span aria-hidden="true">→</span></a>' +
         "</aside>";
     }
 

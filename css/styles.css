@@ -1,3 +1,16 @@
+/* Raleway, hosted on the site: no request to Google (GDPR), no third-party
+   connection before the text shows. Variable font, 400 to 700. */
+@font-face {
+  font-family: "Raleway"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("../assets/fonts/Raleway-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Raleway"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("../assets/fonts/Raleway-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* =========================================================
    Licter — landing page
    Design reference: 1097 px wide. Pixel values below are
@@ -5957,3 +5970,15 @@ html[data-theme="dark"] .ucp__roi { background: var(--surface); box-shadow: inse
   .ucp { padding: 26px 0; }
 }
 @media (prefers-reduced-motion: reduce) { .ucp-bar { transition: none; } }
+
+/* home use cases: the way to the full page */
+.lf__more { margin-top: auto; margin-bottom: 8px; align-self: flex-start; padding-bottom: 2px; border-bottom: 1px solid rgba(var(--amber-rgb), .6); font: 600 13.5px/1.3 var(--body-font); color: var(--amber); }
+.lf__more:hover { color: var(--cream); }
+.lf__more + .lf__book { margin-top: 0; }
+/* use-case pages: titles without an orphan word, a byline, the index interviews */
+.ucp__title { max-width: 21ch; text-wrap: balance; }
+.ucp__byline { margin: 18px 0 0; font: 500 12.5px/1.4 var(--body-font); color: var(--text-2); }
+.ucp__voices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.ucp__voices .reel__who { color: var(--text-2); }
+@media (max-width: 900px) { .ucp__voices { grid-template-columns: minmax(0, 1fr); } }
+.ucp__head--split .ucp__title--long { font-size: clamp(30px, 3vw, 44px); max-width: 24ch; }

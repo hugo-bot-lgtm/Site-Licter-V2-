@@ -54,6 +54,9 @@ d'anglais (filet de sécurité : 2,5 s). Le choix « EN » est mémorisé
 (`localStorage`, clé `licter-lang`). Limite : Google n'indexe que l'anglais tant
 qu'il n'existe pas de version `/fr/` statique avec `hreflang`.
 
+**Polices.** Raleway est hébergée sur le site (`assets/fonts/Raleway-latin*.woff2`,
+police variable 400 à 700) : plus aucune requête vers Google Fonts (RGPD).
+
 **Images.** Les photos des pages sont servies en WebP (`*-800.webp` et une
 version pleine taille pour les écrans denses, via `srcset`) ; les avatars en
 `*-160.webp`. Les JPEG d'origine restent dans `assets/img/` comme sources. Pour

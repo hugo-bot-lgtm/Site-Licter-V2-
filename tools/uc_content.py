@@ -154,7 +154,7 @@ CASES = [
   {
     "key": "campaign-impact", "family": "communication",
     "slug": ("mesurer-impact-campagne", "measure-campaign-impact"),
-    "name": ("Mesurer l'impact d'un événement ou d'une campagne", "Analyze the impact of an event or campaign"),
+    "name": ("Mesurer l'impact d'un événement ou d'une campagne", "Analyse the impact of an event or campaign"),
     "seo_title": ("Mesurer l'impact d'une campagne ou d'un événement | Licter",
                   "Measure the impact of a campaign or event | Licter"),
     "meta": ("Ce qu'un lancement, un sponsoring ou une prise de parole a vraiment déplacé : volume, portée, tonalité, et quelles audiences ont changé de position.",
@@ -201,13 +201,13 @@ CASES = [
   {
     "key": "leader-advocacy", "family": "communication",
     "slug": ("prise-de-parole-dirigeants", "leader-advocacy"),
-    "name": ("Optimiser la prise de parole de vos dirigeants", "Optimize your leader advocacy strategy"),
+    "name": ("Optimiser la prise de parole de vos dirigeants", "Optimise your leader advocacy strategy"),
     "seo_title": ("Prise de parole des dirigeants : mesurer leur influence | Licter",
                   "Executive visibility: measure your leaders' influence | Licter"),
     "meta": ("Comment vos dirigeants sont entendus face à leurs pairs, sur quels sujets leur voix retient l'attention, et où elle ajoute du bruit.",
              "How your executives are heard next to their peers, on which subjects their voice earns attention, and where it adds noise."),
     "h1": ("Optimiser la prise de parole de vos dirigeants, sujet par sujet.",
-           "Optimize your leaders' voice, subject by subject."),
+           "Optimise your leaders' voice, subject by subject."),
     "intro": ("Un dirigeant qui prend la parole engage la marque. Encore faut-il savoir sur quels sujets il est attendu, face à quels pairs, et devant quelles audiences. Nous mesurons sa part de voix sujet par sujet, pour concentrer ses prises de parole là où elles comptent.",
               "An executive who speaks commits the brand. You still need to know on which subjects they are expected, against which peers, and in front of which audiences. We measure their share of voice subject by subject, to focus their voice where it counts."),
     "questions": [
@@ -627,13 +627,13 @@ CASES = [
   {
     "key": "market-opportunities", "family": "trends",
     "slug": ("analyse-marche-opportunites", "market-opportunities"),
-    "name": ("Analyser les marchés et repérer les opportunités", "Analyze markets and identify opportunities"),
+    "name": ("Analyser les marchés et repérer les opportunités", "Analyse markets and identify opportunities"),
     "seo_title": ("Analyse de marché : repérer les opportunités | Licter",
                   "Market analysis: find the opportunities nobody covers | Licter"),
     "meta": ("Dimensionnez la conversation d'un marché, repérez les besoins non couverts et les espaces que personne n'a pris.",
              "Size the conversation of a market, spot the unmet needs and the whitespace nobody has claimed yet, before your competitors do."),
     "h1": ("Analyser un marché et repérer les opportunités que personne n'a prises.",
-           "Analyze a market and find the opportunities nobody has claimed."),
+           "Analyse a market and find the opportunities nobody has claimed."),
     "intro": ("Avant d'entrer sur un marché ou de lancer une gamme, il faut savoir de quoi les gens parlent, ce qu'ils cherchent et ce qu'ils ne trouvent pas. La conversation d'un marché fait apparaître ces besoins mal couverts, souvent avant les études.",
               "Before entering a market or launching a range, you need to know what people talk about, what they look for and what they cannot find. A market's conversation reveals those unmet needs, often before the surveys."),
     "questions": [

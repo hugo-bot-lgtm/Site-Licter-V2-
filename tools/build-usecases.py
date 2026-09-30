@@ -18,7 +18,7 @@ The header, banner and footer are taken from offers.html so they stay in
 step with the rest of the site; the French ones are translated with the
 site's own dictionary (js/fr.js).
 """
-import html, json, pathlib, re, subprocess, sys
+import datetime, html, json, pathlib, re, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
@@ -236,6 +236,8 @@ def page(lang, path, alt_path, title, meta, body, ld, og_type="website", og_imag
     v = version()
     other = 1 - lang
     fr_path, en_path = (path, alt_path) if lang == FR else (alt_path, path)
+    ld = ld + [{"@context": "https://schema.org", "@type": "WebPage", "name": title, "url": SITE + path,
+                "inLanguage": LANGS[lang], "dateModified": TODAY.isoformat(), "author": ORG, "publisher": ORG}]
     ld_tags = "\n".join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False) for x in ld)
     scripts = ([f'<script src="/js/fr.js?v={v}"></script>'] if lang == FR else []) + [
         f'<script src="/js/i18n.js?v={v}"></script>',
@@ -268,9 +270,6 @@ def page(lang, path, alt_path, title, meta, body, ld, og_type="website", og_imag
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <meta name="theme-color" content="#FCF6EF" />
 <script src="/js/theme.js?v={v}"></script>
 <link rel="stylesheet" href="/css/styles.min.css?v={v}" />
@@ -367,6 +366,17 @@ def split_example(text):
     return (cap(m[0]), cap(m[1])) if len(m) == 2 else (cap(t), "")
 
 
+TODAY = datetime.date.today()
+MONTHS_FR = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+
+
+def byline(lang):
+    d = ("%d %s %d" % (TODAY.day, MONTHS_FR[TODAY.month - 1], TODAY.year)) if lang == FR else TODAY.strftime("%-d %B %Y")
+    by = ("Par l'équipe d'analyse Licter", "By the Licter analysis team")[lang]
+    up = ("Mis à jour le", "Updated")[lang]
+    return '\n        <p class="ucp__byline">%s · %s <time datetime="%s">%s</time></p>' % (esc(by), up, TODAY.isoformat(), d)
+
+
 def hero(kicker_html, h1, intro, lang, aside="", actions=True, extra="", after=""):
     act = ""
     if actions:
@@ -378,12 +388,12 @@ def hero(kicker_html, h1, intro, lang, aside="", actions=True, extra="", after="
             '    <div class="shell ucp__hero">\n'
             '      <div class="ucp__hero-main">\n'
             '        <p class="ucp__kicker">%s</p>\n'
-            '        <h1 class="ucp__title">%s</h1>\n'
-            '        <p class="ucp__lead">%s</p>%s%s\n'
+            '        <h1 class="ucp__title%s">%s</h1>\n'
+            '        <p class="ucp__lead">%s</p>%s%s%s\n'
             '      </div>%s\n'
             '    </div>\n'
             '%s\n'
-            '  </section>') % (split, kicker_html, h1, intro, act, after, aside, clients(lang))
+            '  </section>') % (split, kicker_html, " ucp__title--long" if len(html.unescape(h1)) > 52 else "", h1, intro, act, after, byline(lang), aside, clients(lang))
 
 
 def related(title_id, title, links, extra=""):
@@ -526,6 +536,8 @@ def hub_body(lang):
              actions=True, after=nav, extra='\n            <a class="ucp__textlink" href="#offre">%s <span aria-hidden="true">↓</span></a>' % T(L["bar_offer"], lang)),
         section('      <h2 class="visually-hidden">%s</h2>\n      <ol class="ucp__fams">\n%s\n      </ol>' % (
             T(L["families"], lang), "\n".join(fams))),
+        section('      <h2 class="ucp__h2">%s</h2>\n      <div class="ucp__voices">\n%s\n      </div>' % (
+            T(L["hub_voices"], lang), "\n".join(reel(C.VOICES[k], lang) for k in ("paris2024", "loreal", "orange")))),
         cta({"key": "hub"}, lang).replace(T(L["cta_t"], lang), T(L["hub_offer_t"], lang), 1),
         book(lang),
     ]), items
@@ -569,6 +581,7 @@ L.update({
     "cta_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
     "bar_offer": ("Recevoir un cas réel", "Get a real case"),
     "bar_call": ("Être rappelé", "Get a call back"),
+    "hub_voices": ("Ils le racontent mieux que nous", "They tell it better than we do"),
     "hub_offer_t": ("Recevez un cas réel, dans votre secteur.", "Get a real case, in your sector."),
 })
 

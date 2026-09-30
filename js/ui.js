@@ -13,13 +13,15 @@ window.LicterUC = (function () {
           "campaign-impact": "/fr/cas-usage/communication/mesurer-impact-campagne/",
           reputation: "/fr/cas-usage/sante-de-marque/e-reputation-image-de-marque/",
           segmentation: "/fr/cas-usage/audiences/segmentation-cibles/",
-          "product-test": "/fr/cas-usage/tendances-innovation/tester-evaluer-produits/" },
+          "product-test": "/fr/cas-usage/tendances-innovation/tester-evaluer-produits/",
+          "market-opportunities": "/fr/cas-usage/tendances-innovation/analyse-marche-opportunites/" },
     en: { hub: "/en/use-cases/", communication: "/en/use-cases/communication/", brand: "/en/use-cases/brand-health/",
           audiences: "/en/use-cases/audiences/", trends: "/en/use-cases/trends-innovation/",
           "campaign-impact": "/en/use-cases/communication/measure-campaign-impact/",
           reputation: "/en/use-cases/brand-health/brand-reputation-monitoring/",
           segmentation: "/en/use-cases/audiences/audience-segmentation/",
-          "product-test": "/en/use-cases/trends-innovation/product-testing/" }
+          "product-test": "/en/use-cases/trends-innovation/product-testing/",
+          "market-opportunities": "/en/use-cases/trends-innovation/market-opportunities/" }
   };
   return function (key) { return (P[lang] || P.fr)[key || "hub"]; };
 })();
@@ -248,8 +250,8 @@ window.LicterUC = (function () {
       ],
       anchor: LicterUC("communication"),
       questions: [
-        "Analyze the impact of an event or campaign",
-        "Optimize your leader advocacy strategy",
+        "Analyse the impact of an event or campaign",
+        "Optimise your leader advocacy strategy",
         "Identify the right ambassadors"
       ]
     },
@@ -364,7 +366,7 @@ window.LicterUC = (function () {
       anchor: LicterUC("trends"),
       questions: [
         "Test and evaluate your products",
-        "Analyze markets and identify opportunities",
+        "Analyse markets and identify opportunities",
         "Map out your stakeholders and future trends"
       ]
     }
@@ -807,7 +809,7 @@ window.LicterUC = (function () {
 
   /* One flagship question per family, for the nav panel. */
   var QUESTIONS = [
-    "Analyze the impact of a campaign",
+    "Analyse the impact of a campaign",
     "Monitor your brand reputation",
     "Segment your target profiles",
     "Test and evaluate your products"
