@@ -27,8 +27,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <meta name="theme-color" content="#FCF6EF" />
-<script src="/js/theme.js?v=20261198"></script>
-<link rel="stylesheet" href="/css/styles.min.css?v=20261198" />
+<script src="/js/theme.js?v=20261200"></script>
+<link rel="stylesheet" href="/css/styles.min.css?v=20261200" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.licter.com/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://www.licter.com/en/use-cases/"}, {"@type": "ListItem", "position": 3, "name": "Communication", "item": "https://www.licter.com/en/use-cases/communication/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can you measure a campaign that has no conversion link?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We measure what the campaign moved in the conversation: volume, tone, themes, and above all which audiences changed their position. That often says more than a click-through rate."}}, {"@type": "Question", "name": "Do you need to know before the launch?", "acceptedAnswer": {"@type": "Answer", "text": "It helps to set the baseline, but it is not required: the conversation is public and archived, so we can rebuild the before after the fact."}}, {"@type": "Question", "name": "Which platforms do you cover?", "acceptedAnswer": {"@type": "Answer", "text": "Social networks (TikTok, Instagram, X, LinkedIn, YouTube, Facebook), online press, forums and reviews, search, and the answers of generative AI."}}]}</script>
 </head>
@@ -135,6 +135,28 @@
       </table>
     </div>
   </section>
+  <!-- MOCK: sends nothing yet (js/home.js, .ucp-lead); wire to the CRM with the case and the sector. -->
+  <section class="ucp ucp--cta">
+    <div class="shell">
+      <div class="ucp__cta">
+        <div class="ucp__cta-copy">
+          <p class="ucp__cta-k">And for you?</p>
+          <h2 class="ucp__cta-t">Get a real case of this kind, in your sector.</h2>
+          <p class="ucp__cta-d">Anonymised, sent by a consultant within 48 hours. To see what the read actually gives for a company like yours.</p>
+        </div>
+        <form class="ucp-lead" data-case="communication" novalidate>
+          <div class="ucp-lead__row">
+            <label class="ucp-lead__f"><span>Work email</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
+            <label class="ucp-lead__f"><span>Your sector</span><select class="fld__input" name="sector"><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
+          </div>
+          <button class="btn btn--primary" type="submit">Get the case <span aria-hidden="true">→</span></button>
+          <p class="fld__error" hidden>Enter a work email, like name@company.com.</p>
+          <p class="consent">We use your email only to reply to you. <a href="/privacy.html">Privacy policy</a>.</p>
+        </form>
+        <p class="ucp-lead__done" role="status" hidden>Noted. A consultant sends you a real case within 48 hours.</p>
+      </div>
+    </div>
+  </section>
   <section class="ucp">
     <div class="shell ucp__cols ucp__cols--faq">
       <div>
@@ -144,13 +166,9 @@
       <aside class="ucp__related ucp__related--ico" aria-labelledby="rel-communication">
         <h2 class="ucp__h2" id="rel-communication">The other families</h2>
         <ul><li><a href="/en/use-cases/brand-health/"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19.5 6v6.1c0 4-3.1 7-7.5 8.4-4.4-1.4-7.5-4.4-7.5-8.4V6z"/><path d="m9.2 12 2 2 3.6-3.8"/></svg></span>Brand health <span aria-hidden="true">→</span></a></li><li><a href="/en/use-cases/audiences/"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span>Audiences <span aria-hidden="true">→</span></a></li><li><a href="/en/use-cases/trends-innovation/"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 16.5 9 11l3.5 3.5L20.5 6"/><path d="M15.5 6h5v5"/></svg></span>Trends &amp; innovation <span aria-hidden="true">→</span></a></li></ul>
+        <h2 class="ucp__h2 ucp__h2--sub">Related articles</h2>
+        <ul class="ucp__arts-l"><li><a class="ucp__art-l" href="/article-what-a-platform-cannot-do-alone.html"><span>The blog</span>What a platform cannot do on its own <span aria-hidden="true">→</span></a></li><li><a class="ucp__art-l" href="/article-the-voices-that-actually-carry.html"><span>The blog</span>The voices that actually carry <span aria-hidden="true">→</span></a></li><li><a class="ucp__art-l" href="/article-where-panels-and-surveys-disagree.html"><span>The blog</span>Where panels and surveys disagree <span aria-hidden="true">→</span></a></li></ul>
       </aside>
-    </div>
-  </section>
-  <section class="ucp">
-    <div class="shell">
-      <h2 class="ucp__h2">Related articles</h2>
-      <ul class="ucp__arts"><li><a class="ucp__art" href="/article-what-a-platform-cannot-do-alone.html"><span class="ucp__art-k">The blog</span><b>What a platform cannot do on its own</b><span class="ucp__art-go">Read the article <span aria-hidden="true">→</span></span></a></li><li><a class="ucp__art" href="/article-the-voices-that-actually-carry.html"><span class="ucp__art-k">The blog</span><b>The voices that actually carry</b><span class="ucp__art-go">Read the article <span aria-hidden="true">→</span></span></a></li><li><a class="ucp__art" href="/article-where-panels-and-surveys-disagree.html"><span class="ucp__art-k">The blog</span><b>Where panels and surveys disagree</b><span class="ucp__art-go">Read the article <span aria-hidden="true">→</span></span></a></li></ul>
     </div>
   </section>
   <!-- MOCK: the callback form sends nothing yet (js/home.js); wire to the CRM. -->
@@ -238,8 +256,8 @@
   </div>
 </footer>
 
-<script src="/js/i18n.js?v=20261198"></script>
-<script src="/js/ui.js?v=20261198"></script>
-<script src="/js/home.js?v=20261198"></script>
+<script src="/js/i18n.js?v=20261200"></script>
+<script src="/js/ui.js?v=20261200"></script>
+<script src="/js/home.js?v=20261200"></script>
 </body>
 </html>

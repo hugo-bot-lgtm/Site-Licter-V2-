@@ -440,13 +440,13 @@ def case_body(c, lang):
     return "\n".join([
         crumbs(items, lang),
         hero(kicker, T(c["h1"], lang), T(c["intro"], lang), lang, aside,
-             extra='\n            <a class="ucp__textlink" href="#nos-questions">%s <span aria-hidden="true">↓</span></a>' % T(L["see_q"], lang)),
-        section('      <h2 class="ucp__h2">%s</h2>\n      <ol class="ucp__qs">%s</ol>' % (T(L["questions"], lang), qs), "nos-questions"),
-        section('      <h2 class="ucp__h2">%s</h2>\n      <ul class="ucp__sources">%s</ul>' % (T(L["read"], lang), src)),
-        *case_extras(c, lang),
+             extra='\n            <a class="ucp__textlink" href="#cas-client">%s <span aria-hidden="true">↓</span></a>' % T(L["see_case"], lang)),
+        section('      <h2 class="ucp__h2">%s</h2>\n      <ol class="ucp__qs">%s</ol>' % (T(L["recognise"], lang), qs), "nos-questions"),
+        roi_block(c, lang),
+        client_block(c, lang),
         cta(c, lang),
-        faq_block(c["faq"], lang, related("rel-" + c["key"], T(L["same"], lang), rel, up)),
-        articles_block(C.EXTRA[c["key"]]["articles"], lang),
+        how_block(c, lang, src),
+        faq_block(c["faq"], lang, further(lang, "rel-" + c["key"], T(L["same"], lang), rel + up_li(f, lang), C.EXTRA[c["key"]]["articles"])),
         book(lang),
     ]), items
 
@@ -487,9 +487,9 @@ def family_body(f, lang):
         hero(kicker, T(f["h1"], lang), T(f["intro"], lang), lang, aside),
         section('      <h2 class="ucp__h2">%s</h2>\n      <ul class="ucp__cards">%s\n      </ul>' % (T(L["three"], lang), cards)),
         why,
-        faq_block(f["faq"], lang, related("rel-" + f["key"], T(L["others"], lang), others)).replace(
-            '<aside class="ucp__related"', '<aside class="ucp__related ucp__related--ico"', 1),
-        articles_block(list(dict.fromkeys(a for x in cases for a in C.EXTRA[x["key"]]["articles"]))[:3], lang),
+        cta({"key": f["key"]}, lang),
+        faq_block(f["faq"], lang, further(lang, "rel-" + f["key"], T(L["others"], lang), others,
+                                          list(dict.fromkeys(a for x in cases for a in C.EXTRA[x["key"]]["articles"]))[:3], ico=True)),
         book(lang),
     ]), items
 
@@ -642,6 +642,46 @@ def case_extras(c, lang):
                               T(L["found"], lang), esc(typo(sit_rec[0], lang)), T(L["reco"], lang), esc(typo(sit_rec[1], lang)),
                               voice_card(x["voice"], lang))
     return [approach, roi_sec, section(case)]
+
+
+L.update({
+    "recognise": ("Vous vous posez ces questions ?", "Are these your questions?"),
+    "see_case": ("Voir un cas client", "See a client case"),
+    "further": ("Pour aller plus loin", "Going further"),
+    "sources_k": ("Ce que nous lisons", "What we read"),
+})
+
+
+def roi_block(c, lang):
+    return case_extras(c, lang)[1]
+
+
+def client_block(c, lang):
+    return case_extras(c, lang)[2].replace('<section class="ucp">', '<section class="ucp" id="cas-client">', 1)
+
+
+def how_block(c, lang, src):
+    """the approach, its four steps and the sources, in one place"""
+    return case_extras(c, lang)[0].replace(
+        '</ol>\n    </div>',
+        '</ol>\n      <h3 class="ucp__h3">%s</h3>\n      <ul class="ucp__sources">%s</ul>\n    </div>' % (T(L["sources_k"], lang), src), 1)
+
+
+def up_li(f, lang):
+    return '<li class="ucp__up-li"><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (
+        fam_path(f, lang), esc(typo(L["family_all"][lang] % f["name"][lang], lang)))
+
+
+def further(lang, rid, title, links, arts, ico=False):
+    """beside the FAQ: the neighbouring pages, then the related articles"""
+    art = "".join('<li><a class="ucp__art-l" href="/%s"><span>%s</span>%s <span aria-hidden="true">→</span></a></li>' % (
+        k, T(L["blog_k"], lang), T(C.ARTICLES[k], lang)) for k in arts)
+    return ('      <aside class="ucp__related%s" aria-labelledby="%s">\n'
+            '        <h2 class="ucp__h2" id="%s">%s</h2>\n'
+            '        <ul>%s</ul>\n'
+            '        <h2 class="ucp__h2 ucp__h2--sub">%s</h2>\n'
+            '        <ul class="ucp__arts-l">%s</ul>\n'
+            '      </aside>') % (" ucp__related--ico" if ico else "", rid, rid, title, links, T(L["articles"], lang), art)
 
 
 def split_context(text):
