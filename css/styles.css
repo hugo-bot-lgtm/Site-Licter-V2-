@@ -6127,3 +6127,7 @@ html[data-theme="dark"] .ucr__toc .ucr__toc-cta { background: var(--cream); colo
 html[data-theme="dark"] .ucr__big { color: var(--amber); }
 .ucr__big { color: var(--amber-ink); }
 html[data-theme="dark"] .ucr__big { color: var(--amber); }
+
+/* method: the current card on the left edge of the column, not centred */
+.htrack { padding-inline: var(--start, 0px) var(--end, 0px); scroll-padding-inline: var(--start, 0px) 0; }
+.mstep { scroll-snap-align: start; transform-origin: left center; }

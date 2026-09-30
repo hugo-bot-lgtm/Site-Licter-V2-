@@ -344,11 +344,15 @@
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
   var last = cards.length - 1, active = 0;
 
-  /* room on both sides, so the first and the last card can come to the centre */
+  /* the current card sits on the left edge of the column, the next one
+     peeking on the right; room after the last one lets it come there too */
+  var col = track.closest(".hmethod") || track.parentNode;
   function pad() {
-    track.style.setProperty("--side", Math.max(0, (track.clientWidth - cards[0].offsetWidth) / 2) + "px");
+    var start = Math.max(0, col.getBoundingClientRect().left - track.getBoundingClientRect().left);
+    track.style.setProperty("--start", start + "px");
+    track.style.setProperty("--end", Math.max(0, track.clientWidth - cards[0].offsetWidth - start) + "px");
   }
-  function leftOf(i) { return cards[i].offsetLeft - (track.clientWidth - cards[i].offsetWidth) / 2; }
+  function leftOf(i) { return cards[i].offsetLeft - cards[0].offsetLeft; }
   pad();
   window.addEventListener("resize", function () { pad(); track.scrollTo({ left: leftOf(active), behavior: "auto" }); });
 
@@ -381,14 +385,14 @@
     if (e.key === "ArrowLeft") { e.preventDefault(); go(active - 1); }
   });
 
-  /* swipe or trackpad: the card nearest the centre is the current one */
+  /* swipe or trackpad: the card nearest the left edge is the current one */
   var t = null;
   track.addEventListener("scroll", function () {
     clearTimeout(t);
     t = setTimeout(function () {
       if (wrapping) return;
-      var mid = track.scrollLeft + track.clientWidth / 2, best = 0, d = Infinity;
-      cards.forEach(function (c, k) { var dd = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (dd < d) { d = dd; best = k; } });
+      var x = track.scrollLeft, best = 0, d = Infinity;
+      cards.forEach(function (c, k) { var dd = Math.abs(leftOf(k) - x); if (dd < d) { d = dd; best = k; } });
       set(best);
     }, 80);
   }, { passive: true });
