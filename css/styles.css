@@ -1103,6 +1103,7 @@ main { position: relative; z-index: 1; }
    the smaller of the two axes so a wide-but-short screen stays sane. */
 @media (min-width: 1248px) {
   :root {
+    --gutter: clamp(64px, 5vw, 84px);
     --field-h: clamp(48px, min(4vw, 7vh), 60px);
     --field-w: clamp(460px, min(38vw, 66vh), 610px);
     --btn-w: clamp(159px, min(13vw, 23vh), 204px);
@@ -6130,13 +6131,3 @@ html[data-theme="dark"] .ucr__big { color: var(--amber); }
 /* method: the current card on the left edge of the column, not centred */
 .htrack { padding-inline: var(--start, 0px) var(--end, 0px); scroll-padding-inline: var(--start, 0px) 0; }
 .mstep { scroll-snap-align: start; transform-origin: left center; }
-
-
-/* =========================================================
-   Page width: the column follows the screen. The side margin
-   grows with it (5.6 % of the width, 20 to 112 px) and the
-   column only stops growing past 1840 px, so a laptop is no
-   longer framed by wide empty bands and a very wide screen
-   still keeps its text readable.
-   ========================================================= */
-:root { --gutter: clamp(20px, 5.6vw, 112px); --maxw: 1840px; }
