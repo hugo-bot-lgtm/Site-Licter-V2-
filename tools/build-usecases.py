@@ -124,7 +124,7 @@ L = {  # interface words of these pages
     "get": ("Ce que vous obtenez", "What you get"),
     "read": ("Ce que nous lisons", "What we read"),
     "how": ("Comment on s'y prend", "How we go about it"),
-    "example": ("Un exemple, en direct", "An example, live"),
+    "example": ("Un exemple", "An example"),
     "example_note": ("Données illustratives. Le cas change de secteur à chaque visite : agroalimentaire, luxe, jeux vidéo, automobile.",
                      "Illustrative data. The case changes sector on every visit: food, luxury, video games, automotive."),
     "faq": ("Questions fréquentes", "Frequently asked questions"),
@@ -238,9 +238,7 @@ def page(lang, path, alt_path, title, meta, body, ld, og_type="website"):
     ld_tags = "\n".join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False) for x in ld)
     scripts = ([f'<script src="/js/fr.js?v={v}"></script>'] if lang == FR else []) + [
         f'<script src="/js/i18n.js?v={v}"></script>',
-        f'<script src="/js/communities.js?v={v}"></script>',
         f'<script src="/js/ui.js?v={v}"></script>',
-        f'<script src="/js/usecases.js?v={v}"></script>',
         f'<script src="/js/home.js?v={v}"></script>',
     ]
     skip = "Aller au contenu" if lang == FR else "Skip to content"
@@ -305,7 +303,6 @@ def head_block(kicker, h1, intro, lang, actions=True, cls="ucp__head"):
         act = f'''
         <div class="page__actions">
           <a class="btn btn--primary" href="#book">{T(L["book"], lang)} <span aria-hidden="true">→</span></a>
-          <a class="btn btn--ghost" href="#live">{T(L["live"], lang)}</a>
         </div>'''
     return f'''  <section class="page {cls}">
     <div class="shell">
@@ -355,12 +352,10 @@ def case_body(c, lang):
       <ol class="ucp__steps">{steps}</ol>
     </div>
   </section>
-  <section class="ucp" id="live">
+  <section class="ucp">
     <div class="shell">
       <h2 class="ucp__h2">{T(L["example"], lang)}</h2>
       <p class="ucp__example">{T(c["example"], lang)}</p>
-{stage(f["key"], lang)}
-      <p class="ucp__note">{T(L["example_note"], lang)}</p>
     </div>
   </section>
   <section class="ucp">
@@ -396,13 +391,7 @@ def family_body(f, lang):
     return "\n".join([
         crumbs(items, lang),
         head_block("0%d · %s" % (idx, T(f["name"], lang)), T(f["h1"], lang), T(f["intro"], lang), lang),
-        f'''  <section class="ucp" id="live">
-    <div class="shell">
-{stage(f["key"], lang)}
-      <p class="ucp__note">{T(L["example_note"], lang)}</p>
-    </div>
-  </section>
-  <section class="ucp">
+        f'''  <section class="ucp">
     <div class="shell">
       <h2 class="ucp__h2">{T(L["three"], lang)}</h2>
       <ul class="ucp__cards">{cards}
