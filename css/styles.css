@@ -6832,6 +6832,7 @@ html[data-theme="dark"] .ucx__table thead .is-us { border-bottom-color: #C98B22;
 }
 
 /* ===== Family pages: the three cases, pills and a stack of cards (.ucw) ===== */
+.ucw { overflow-x: clip; }
 .ucw__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
 .ucw__tabs { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: clamp(24px, 3vw, 36px); }
 .ucw__tab { position: relative; display: inline-flex; align-items: center; gap: 12px; max-width: 100%; padding: 13px 22px 13px 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--text-2); font: 600 15.5px/1.3 var(--body-font); text-align: left; cursor: pointer; overflow: hidden; transition: background-color .3s ease, color .3s ease, border-color .3s ease, transform .3s cubic-bezier(.16, 1, .3, 1); }

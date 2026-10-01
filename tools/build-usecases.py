@@ -617,12 +617,12 @@ def wheel(f, cases, lang):
             " is-on" if i == 0 else "", k, i, k, i, "true" if i == 0 else "false", "" if i == 0 else ' tabindex="-1"',
             i + 1, T(x["name"], lang)) for i, x in enumerate(cases))
     cards = "".join(
-        '\n        <article class="ucw__card %s" role="tabpanel" id="ucw-%s-p%d" aria-labelledby="ucw-%s-t%d">'
+        '\n        <div class="ucw__card %s" role="tabpanel" id="ucw-%s-p%d" aria-labelledby="ucw-%s-t%d">'
         '<div class="ucw__peek" aria-hidden="true"><div class="ucw__scale">%s</div></div>'
         '<div class="ucw__body"><h3 class="ucw__badge">0%d · %s</h3>'
         '<p class="ucw__q">%s</p>'
         '<p class="ucw__get"><span>%s</span>%s</p>'
-        '<a class="ucw__go" href="%s">%s <span aria-hidden="true">→</span></a></div></article>' % (
+        '<a class="ucw__go" href="%s">%s <span aria-hidden="true">→</span></a></div></div>' % (
             pos[i], k, i, k, i, D.render(x["key"], lang, esc, typo), i + 1, T(x["name"], lang),
             esc(typo(("« %s »" if lang == FR else "“%s”") % x["questions"][0][lang], lang)),
             T(L["get"], lang), T(x["deliverables"][0], lang), case_path(x, lang), T(L["read_case"], lang))
