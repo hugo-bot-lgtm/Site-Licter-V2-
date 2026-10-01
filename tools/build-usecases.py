@@ -420,118 +420,140 @@ def section(inner, sid=""):
 
 
 def case_body(c, lang):
-    """A use case, laid out like a consultancy report: a wide title, then a
-    sticky contents column beside sections separated by rules, not cards."""
+    """A use case in six blocks: the client's problem, the deliverable they
+    receive (its own for each case), how it runs, the proof, the offer."""
+    import uc_deliverables as D
     f = FAM[c["family"]]
     x = C.EXTRA[c["key"]]
     n = [y for y in C.CASES if y["family"] == c["family"]].index(c) + 1
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], hub_path(lang)), (f["name"][lang], fam_path(f, lang)), (c["name"][lang], None)]
     long = " ucr__title--long" if len(c["h1"][lang]) > 52 else ""
-
-    gets = "".join("<li>%s</li>" % T(g, lang) for g in c["deliverables"])
+    lead = c["meta"][lang]
+    gets = "".join("<li>%s</li>" % T(g, lang) for g in c["deliverables"][:3])
     kicker = '%s<a href="%s">%s</a><span class="ucp__kicker-n">0%d / 03</span>' % (
         icon(FAM_ICON[f["key"]]), fam_path(f, lang), T(f["name"], lang), n)
-    hero = (
-        '  <section class="ucr-hero">\n'
-        '    <div class="shell">\n'
-        '      <p class="ucp__kicker">%s</p>\n'
-        '      <h1 class="ucr__title%s">%s</h1>\n'
-        '      <div class="ucr-hero__row">\n'
-        '        <div>\n'
-        '          <p class="ucr__lead">%s</p>\n'
-        '          <div class="page__actions">\n'
-        '            <a class="btn btn--primary" href="#book">%s <span aria-hidden="true">→</span></a>\n'
-        '            <a class="ucp__textlink" href="#cas">%s <span aria-hidden="true">↓</span></a>\n'
-        '          </div>%s\n'
-        '        </div>\n'
-        '        <div class="ucr-hero__get">\n'
-        '          <p class="ucr__label">%s</p>\n'
-        '          <ul class="ucr__ticks">%s</ul>\n'
-        '        </div>\n'
-        '      </div>\n'
-        '    </div>\n'
-        '%s\n'
-        '  </section>') % (kicker, long, T(c["h1"], lang), T(c["intro"], lang), T(L["book"], lang), T(L["see_case"], lang),
-                           byline(lang), T(L["get"], lang), gets, clients(lang))
 
-    # the sections of the report
-    toc_items = [("vos-questions", L["recognise"]), ("roi", L["roi"]), ("cas", L["client"]), ("approche", L["approach"]), ("faq", L["faq"])]
+    # 1. hero
+    hero = ('  <section class="ucr-hero ucv-hero">\n'
+            '    <div class="shell">\n'
+            '      <p class="ucp__kicker">%s</p>\n'
+            '      <div class="ucv-hero__row">\n'
+            '        <div>\n'
+            '          <h1 class="ucr__title%s">%s</h1>\n'
+            '          <p class="ucr__lead">%s</p>\n'
+            '          <div class="page__actions">\n'
+            '            <a class="btn btn--primary" href="#book">%s <span aria-hidden="true">→</span></a>\n'
+            '            <a class="ucp__textlink" href="#livrable">%s <span aria-hidden="true">↓</span></a>\n'
+            '          </div>%s\n'
+            '        </div>\n'
+            '        <div class="ucr-hero__get">\n'
+            '          <p class="ucr__label">%s</p>\n'
+            '          <ul class="ucr__ticks">%s</ul>\n'
+            '        </div>\n'
+            '      </div>\n'
+            '    </div>\n'
+            '%s\n'
+            '  </section>') % (kicker, long, T(c["h1"], lang), esc(typo(lead, lang)), T(L["book"], lang), T(L["see_dlv"], lang),
+                               byline(lang), T(L["get"], lang), gets, clients(lang))
 
-    def sec(sid, i, title, inner):
-        return ('      <section class="ucr__sec" id="%s" aria-labelledby="%s-t">\n'
-                '        <header class="ucr__sec-head"><span class="ucr__n">0%d</span><h2 class="ucr__h2" id="%s-t">%s</h2></header>\n'
-                '%s\n'
-                '      </section>') % (sid, sid, i, sid, T(title, lang), inner)
+    # 2. the problem, in the client's words
+    sym = "".join('<li><span class="ucv-sym__now">%s</span><span class="ucv-sym__arr" aria-hidden="true">→</span><span class="ucv-sym__miss">%s</span></li>' % (
+        T(a, lang), T(b, lang)) for a, b in D.SYMPTOMS[c["key"]])
+    q = typo(("« %s »" if lang == FR else "“%s”") % c["questions"][0][lang], lang)
+    problem = ('  <section class="ucp ucv-problem">\n'
+               '    <div class="shell">\n'
+               '      <p class="ucr__label">%s</p>\n'
+               '      <h2 class="ucv-quote">%s</h2>\n'
+               '      <div class="ucv-sym">\n'
+               '        <p class="ucv-sym__head"><span>%s</span><span>%s</span></p>\n'
+               '        <ul>%s</ul>\n'
+               '      </div>\n'
+               '    </div>\n'
+               '  </section>') % (T(L["problem_k"], lang), esc(q), T(L["now"], lang), T(L["missing"], lang), sym)
 
-    qs = "".join('<li>%s</li>' % T(q, lang) for q in c["questions"])
-    roi = "".join('<li><span class="ucr__big">0%d</span><b>%s</b><p>%s</p></li>' % (i + 1, T(a, lang), T(b, lang))
-                  for i, (a, b) in enumerate(x["roi"]))
-    roi_foot = "" if any("forfait" in b[FR] for a, b in x["roi"]) else '<p class="ucr__note">%s</p>' % T(L["roi_foot"], lang)
+    # 3. the deliverable, its own for each case
+    dlv = ('  <section class="ucp ucv-dlv" id="livrable">\n'
+           '    <div class="shell ucv-dlv__grid">\n'
+           '      <div class="ucv-dlv__copy">\n'
+           '        <p class="ucr__label">%s</p>\n'
+           '        <h2 class="ucp__h2">%s</h2>\n'
+           '        <p class="ucv-p">%s</p>\n'
+           '        <ul class="ucr__ticks">%s</ul>\n'
+           '      </div>\n'
+           '      %s\n'
+           '    </div>\n'
+           '  </section>') % (T(L["dlv_k"], lang), T(D.TITLES[c["key"]], lang), T(x["approach"], lang),
+                              "".join("<li>%s</li>" % T(g, lang) for g in c["deliverables"]), D.render(c["key"], lang, esc, typo))
+
+    # 4. how it runs: a dated timeline, the sources beneath
+    days = ["J0", "J+3", "J+7", "J+10"] if lang == FR else ["Day 0", "Day 3", "Day 7", "Day 10"]
+    steps = "".join('<li><span class="ucv-day">%s</span><b>%s</b><p>%s</p></li>' % (days[i], T(C.STEPS[i], lang), T(s, lang))
+                    for i, s in enumerate(c["steps"]))
+    src = "".join('<li>%s<span>%s</span></li>' % (icon(source_icon(a[EN])), T(a, lang)) for a, b in c["sources"])
+    how = ('  <section class="ucp ucv-how">\n'
+           '    <div class="shell">\n'
+           '      <h2 class="ucp__h2">%s</h2>\n'
+           '      <ol class="ucv-time">%s</ol>\n'
+           '      <p class="ucv-note">%s</p>\n'
+           '      <div class="ucv-src"><p class="ucr__label">%s</p><ul>%s</ul></div>\n'
+           '    </div>\n'
+           '  </section>') % (T(L["how_t"], lang), steps, T(L["days_note"], lang), T(L["sources_k"], lang), src)
+
+    # 5. the proof: client interview, typical case, what it pays back
     ctx, rest = split_context(c["example"][lang])
     found, reco = split_example(rest)
     vid, time, quote, brand, who = C.VOICES[x["voice"]]
-    q = typo("« %s »" % quote[FR], FR) if lang == FR else "“%s”" % quote[EN]
-    voice = ('<a class="ucr-voice" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener">'
-             '<span class="ucr-voice__shot"><img src="https://i.ytimg.com/vi_webp/%s/hqdefault.webp" width="480" height="360" alt="" loading="lazy" decoding="async" />'
-             '<span class="reel__play" aria-hidden="true"></span></span>'
-             '<span class="ucr-voice__txt"><span class="ucr__label">%s</span><span class="ucr-voice__q">%s</span>'
-             '<span class="ucr-voice__who"><b>%s</b> · %s · %s</span></span></a>') % (
-        vid, vid, T(L["voice_more"], lang), esc(q), esc(brand), esc(who), time)
-    steps = "".join('<li><span class="ucr__n">%d</span><b>%s</b><p>%s</p></li>' % (i + 1, T(C.STEPS[i], lang), T(s, lang))
-                    for i, s in enumerate(c["steps"]))
-    src = "".join('<li>%s<span><b>%s</b>%s</span></li>' % (icon(source_icon(a[EN])), T(a, lang), T(b, lang)) for a, b in c["sources"])
+    vq = typo("« %s »" % quote[FR], FR) if lang == FR else "“%s”" % quote[EN]
+    roi = "".join('<li><b>%s</b><span>%s</span></li>' % (T(a, lang), T(b, lang)) for a, b in x["roi"])
+    proof = ('  <section class="ucp ucv-proof" id="cas">\n'
+             '    <div class="shell">\n'
+             '      <h2 class="ucp__h2">%s</h2>\n'
+             '      <div class="ucv-proof__grid">\n'
+             '        <a class="ucv-video" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener">\n'
+             '          <span class="ucv-video__shot"><img src="https://i.ytimg.com/vi_webp/%s/hqdefault.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">%s</span></span>\n'
+             '          <span class="ucv-video__q">%s</span>\n'
+             '          <span class="ucv-video__who"><b>%s</b> · %s</span>\n'
+             '        </a>\n'
+             '        <article class="ucv-case">\n'
+             '          <p class="ucr-case__tag">%s</p>\n'
+             '          <p class="ucv-case__ctx">%s</p>\n'
+             '          <p class="ucv-case__found">%s</p>\n'
+             '          <p class="ucv-case__reco"><span>%s</span>%s</p>\n'
+             '        </article>\n'
+             '      </div>\n'
+             '      <ul class="ucv-roi">%s</ul>\n'
+             '    </div>\n'
+             '  </section>') % (T(L["proof_t"], lang), vid, vid, time, esc(vq), esc(brand), esc(who), T(L["illus"], lang),
+                                esc(typo(ctx, lang)), esc(typo(found, lang)), T(L["reco"], lang), esc(typo(reco, lang)), roi)
+
+    # 6. the offer, the FAQ with the links beside it, the callback
     siblings = [y for y in C.CASES if y["family"] == c["family"] and y is not c]
     rel = "".join('<li><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (case_path(y, lang), T(y["name"], lang)) for y in siblings)
-    arts = "".join('<li><a href="/%s"><span class="ucr__label">%s</span>%s <span aria-hidden="true">→</span></a></li>' % (
-        k, T(L["blog_k"], lang), T(C.ARTICLES[k], lang)) for k in x["articles"])
-
-    body = [
-        sec("vos-questions", 1, L["recognise"], '        <ol class="ucr__qs">%s</ol>' % qs),
-        sec("roi", 2, L["roi"], '        <ol class="ucr__roi">%s</ol>%s' % (roi, roi_foot)),
-        sec("cas", 3, L["client"],
-            ('        <div class="ucr-case">\n'
-             '          <p class="ucr-case__tag">%s</p>\n'
-             '          <dl class="ucr-case__dl">\n'
-             '            <dt>%s</dt><dd>%s</dd>\n'
-             '            <dt>%s</dt><dd>%s</dd>\n'
-             '          </dl>\n'
-             '          <blockquote class="ucr-case__reco"><p class="ucr__label">%s</p><p>%s</p></blockquote>\n'
-             '        </div>\n'
-             '        %s') % (T(L["illus"], lang), T(L["context"], lang), esc(typo(ctx, lang)), T(L["found"], lang),
-                             esc(typo(found, lang)), T(L["reco"], lang), esc(typo(reco, lang)), voice)),
-        sec("approche", 4, L["approach"],
-            ('        <p class="ucr__p">%s</p>\n'
-             '        <ol class="ucr__steps">%s</ol>\n'
-             '        <p class="ucr__label ucr__label--sp">%s</p>\n'
-             '        <ul class="ucr__src">%s</ul>') % (T(x["approach"], lang), steps, T(L["sources_k"], lang), src)),
-        sec("faq", 5, L["faq"], '        <div class="faq">%s</div>' % faq_html(c["faq"], lang)),
-    ]
-    toc = "".join('<li><a href="#%s"><span>0%d</span>%s</a></li>' % (sid, i + 1, T(t, lang)) for i, (sid, t) in enumerate(toc_items))
-    report = ('  <div class="ucr shell">\n'
-              '    <aside class="ucr__toc" aria-label="%s">\n'
-              '      <p class="ucr__label">%s</p>\n'
-              '      <ol>%s</ol>\n'
-              '      <a class="btn btn--primary ucr__toc-cta" href="#offre">%s <span aria-hidden="true">→</span></a>\n'
-              '    </aside>\n'
-              '    <div class="ucr__body">\n%s\n'
-              '      <nav class="ucr__more" aria-label="%s">\n'
-              '        <div><p class="ucr__label">%s</p><ul>%s%s</ul></div>\n'
-              '        <div><p class="ucr__label">%s</p><ul>%s</ul></div>\n'
-              '      </nav>\n'
-              '    </div>\n'
-              '  </div>') % (T(L["contents"], lang), T(L["contents"], lang), toc, T(L["bar_offer"], lang), "\n".join(body),
-                             T(L["further"], lang), T(L["same"], lang), rel, up_li(f, lang), T(L["articles"], lang), arts)
-
     return "\n".join([
         crumbs(items, lang),
         hero,
-        report,
+        problem,
+        dlv,
+        how,
+        proof,
         cta(c, lang).replace('class="ucp ucp--cta"', 'class="ucp ucp--cta ucr-offer"', 1),
+        faq_block(c["faq"], lang, further(lang, "rel-" + c["key"], T(L["same"], lang), rel + up_li(f, lang), x["articles"])),
         book(lang),
     ]), items
 
 
-L.update({"contents": ("Dans cette page", "On this page")})
+L.update({
+    "contents": ("Dans cette page", "On this page"),
+    "see_dlv": ("Voir le livrable", "See the deliverable"),
+    "problem_k": ("La question qu'on nous pose", "The question we get"),
+    "now": ("Aujourd'hui, vous voyez", "Today, you see"),
+    "missing": ("Ce qui vous manque", "What is missing"),
+    "dlv_k": ("Ce que vous recevez", "What you receive"),
+    "how_t": ("Comment ça se passe", "How it runs"),
+    "days_note": ("Durées indicatives pour une première lecture ; la veille continue démarre dès le cadrage.",
+                  "Indicative timings for a first read; continuous monitoring starts as soon as framing is done."),
+    "proof_t": ("Ils en parlent, et un cas type", "They talk about it, and a typical case"),
+})
 
 
 def family_body(f, lang):
