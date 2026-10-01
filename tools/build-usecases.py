@@ -639,14 +639,56 @@ def hub_body(lang):
         crumbs(items, lang),
         hero('<span>%s</span>' % T(C.HUB["kicker"], lang), T(C.HUB["h1"], lang), T(C.HUB["intro"], lang), lang,
              actions=True, after=nav, extra='\n            <a class="ucp__textlink" href="#offre">%s <span aria-hidden="true">↓</span></a>' % T(L["bar_offer"], lang)),
-        section('      <h2 class="visually-hidden">%s</h2>\n      <ol class="ucp__fams">\n%s\n      </ol>' % (
-            T(L["families"], lang), "\n".join(fams))),
+        finder(lang),
+        tiles(lang),
         section('      <h2 class="ucp__h2">%s</h2>\n      <div class="ucp__voices">\n%s\n      </div>' % (
             T(L["hub_voices"], lang), "\n".join(reel(C.VOICES[k], lang) for k in ("paris2024", "loreal", "orange")))),
         cta({"key": "hub"}, lang).replace(T(L["cta_t"], lang), T(L["hub_offer_t"], lang), 1),
         book(lang),
     ]), items
 
+
+
+def finder(lang):
+    """the twelve questions clients ask, each one leading to its case"""
+    rows = []
+    for f in C.FAMILIES:
+        for x in [y for y in C.CASES if y["family"] == f["key"]]:
+            q = typo(("« %s »" if lang == FR else "“%s”") % x["questions"][0][lang], lang)
+            rows.append('<li><a href="%s"><span class="hubq__f">%s%s</span><span class="hubq__q">%s</span>'
+                        '<span class="hubq__c">%s <span aria-hidden="true">→</span></span></a></li>' % (
+                            case_path(x, lang), icon(FAM_ICON[f["key"]]), T(f["name"], lang), esc(q), T(x["name"], lang)))
+    return ('  <section class="ucp hubq">\n    <div class="shell">\n'
+            '      <h2 class="xs__title">%s</h2>\n      <p class="xs__lead">%s</p>\n'
+            '      <ul class="hubq__list">%s</ul>\n    </div>\n  </section>') % (
+        T(L["finder_t"], lang), T(L["finder_d"], lang), "".join(rows))
+
+
+def tiles(lang):
+    """the four families, each with a glimpse of what it delivers"""
+    import uc_deliverables as D
+    out = []
+    for i, f in enumerate(C.FAMILIES):
+        cases = [x for x in C.CASES if x["family"] == f["key"]]
+        links = "".join('<li><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (case_path(x, lang), T(x["name"], lang)) for x in cases)
+        out.append(
+            '<li class="hubt" id="%s"><div class="hubt__peek" aria-hidden="true"><div class="hubt__scale">%s</div></div>'
+            '<div class="hubt__body"><p class="hubt__k">%s<span>0%d · %s</span></p>'
+            '<h3 class="hubt__t"><a href="%s">%s</a></h3>'
+            '<ul class="hubt__cases">%s</ul></div></li>' % (
+                f["key"], D.render(cases[0]["key"], lang, esc, typo), icon(FAM_ICON[f["key"]]), i + 1, T(f["name"], lang),
+                fam_path(f, lang), T(f["h1"], lang), links))
+    return ('  <section class="ucp hubt-s">\n    <div class="shell">\n'
+            '      <h2 class="xs__title">%s</h2>\n      <p class="xs__lead">%s</p>\n'
+            '      <ol class="hubt__grid">%s</ol>\n    </div>\n  </section>') % (
+        T(L["families"], lang), T(L["tiles_d"], lang), "".join(out))
+
+
+L.update({
+    "finder_t": ("Laquelle de ces questions vous posez-vous ?", "Which of these questions are you asking?"),
+    "finder_d": ("Choisissez la vôtre : chacune mène au cas d'usage qui y répond.", "Pick yours: each one leads to the use case that answers it."),
+    "tiles_d": ("Chaque famille, et un aperçu de ce que vous recevez.", "Each family, and a glimpse of what you receive."),
+})
 
 # ------------------------------------------------------------------ extras
 # the client logo band of the home, at the foot of every hero

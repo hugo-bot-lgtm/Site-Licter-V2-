@@ -1572,3 +1572,42 @@ window.LicterUC = (function () {
     if (key === hit || h.replace(/^\//, "") === hit) { a.classList.add("is-current"); a.setAttribute("aria-current", "page"); }
   });
 })();
+
+/* =========================================================================
+   Tabs on the offers and tech pages (.xo__wrap, .xl__wrap): click, arrow
+   keys, and links elsewhere on the page that open a given tab (data-tab).
+   ========================================================================= */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('.xo__wrap [role="tablist"], .xl__wrap [role="tablist"]'), function (list) {
+    var tabs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+    function show(i, focus) {
+      tabs.forEach(function (t, k) {
+        var on = k === i, panel = document.getElementById(t.getAttribute("aria-controls"));
+        t.classList.toggle("is-on", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        if (panel) { panel.hidden = !on; if (on) { panel.classList.remove("is-in"); void panel.offsetWidth; panel.classList.add("is-in"); } }
+      });
+      if (focus) tabs[i].focus();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { show(i); });
+      t.addEventListener("keydown", function (e) {
+        var d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (!d) return;
+        e.preventDefault();
+        show((i + d + tabs.length) % tabs.length, true);
+      });
+    });
+    /* "which one is for you": a situation opens its offer */
+    Array.prototype.forEach.call(document.querySelectorAll("[data-tab]"), function (a) {
+      a.addEventListener("click", function (e) {
+        var i = +a.getAttribute("data-tab") - 1;
+        if (!tabs[i]) return;
+        e.preventDefault();
+        show(i);
+        list.closest("section").scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+      });
+    });
+  });
+})();
