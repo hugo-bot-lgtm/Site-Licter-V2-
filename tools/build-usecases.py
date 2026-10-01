@@ -966,7 +966,11 @@ def main():
     print("%d use-case pages written (FR + EN), sitemap.xml, robots.txt" % ((len(urls) - 1) * 2))
 
 if __name__ == "__main__":
+    # the offer pages first: they write their French into js/fr.js, which the
+    # shared header and footer of the pages below are translated with
+    import runpy
+    runpy.run_path(str(ROOT / "tools" / "build-offers.py"), run_name="__main__")
+    DICT.update(fr_dict())
     main()
     # the home in both languages, from the same dictionary
-    import runpy
     runpy.run_path(str(ROOT / "tools" / "build-home.py"), run_name="__main__")

@@ -840,14 +840,16 @@ window.LicterUC = (function () {
     },
 
     offers: {
-      label: "THREE WAYS TO WORK WITH US",
+      label: "FOUR WAYS TO WORK WITH US",
       items: [
-        { icon: "chart", name: "Social Insights", href: "/offers.html#social-insights",
+        { icon: "chart", name: "Social Insights", href: "/offer-social-insights.html",
           desc: "Fixed fee, unlimited studies, no commitment." },
-        { icon: "bell", name: "Vigie 360", href: "/offers.html#vigie",
+        { icon: "bell", name: "Vigie 360", href: "/offer-vigie-360.html",
           desc: "Alerts in 15 minutes, 24/7, in 20+ languages." },
-        { icon: "layers", name: "Social Listening as a Service", href: "/offers.html#slaas",
-          desc: "We make the platform you already own produce decisions." }
+        { icon: "layers", name: "Social Listening as a Service", href: "/offer-slaas.html",
+          desc: "We make the platform you already own produce decisions." },
+        { icon: "ai", name: "Nox", href: "/offer-nox.html",
+          desc: "AI-assisted monitoring, tuned by our analysts." }
       ],
       aside: {
         label: "HOW AN ENGAGEMENT RUNS",
@@ -1561,7 +1563,7 @@ window.LicterUC = (function () {
 (function () {
   var path = location.pathname.replace(/index\.html$/, "");
   var map = [
-    [/\/(fr\/cas-usage|en\/use-cases)\//, "use-cases"], [/\/offers\.html$/, "offers.html"], [/\/why-licter\.html$/, "why-licter.html"],
+    [/\/(fr\/cas-usage|en\/use-cases)\//, "use-cases"], [/\/(offers|offer-[a-z0-9-]+)\.html$/, "offers.html"], [/\/why-licter\.html$/, "why-licter.html"],
     [/\/(tech-[\w-]+)\.html$/, "tech"], [/\/clients\.html$/, "clients.html"], [/\/(blog|article-[\w-]+)\.html$/, "blog.html"]
   ];
   var hit = null;

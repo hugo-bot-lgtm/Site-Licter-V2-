@@ -1517,4 +1517,409 @@ window.LicterFR = {
 
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
+
+  /* ---- offer pages (tools/build-offers.py) ---- */
+  "New range":
+    "Nouvelle gamme",
+  "1,284 posts":
+    "1 284 posts",
+  "+112%":
+    "+112 %",
+  "Delivery delays":
+    "Retards de livraison",
+  "356 posts":
+    "356 posts",
+  "+48%":
+    "+48 %",
+  "Unusual":
+    "Inhabituel",
+  "Competitor price cut":
+    "Baisse de prix concurrente",
+  "902 posts":
+    "902 posts",
+  "New":
+    "Nouveau",
+  "Customer service":
+    "Service client",
+  "211 posts":
+    "211 posts",
+  "−9%":
+    "−9 %",
+  "A Nox morning brief":
+    "Le brief du matin de Nox",
+  "Nox · morning brief":
+    "Nox · brief du matin",
+  "Today in three lines":
+    "Aujourd'hui en trois lignes",
+  "Talk about the new range has doubled, driven by two cooking creators.":
+    "On parle deux fois plus de la nouvelle gamme, portée par deux créateurs culinaires.",
+  "Delivery delays are back in reviews, mostly in Spain.":
+    "Les retards de livraison reviennent dans les avis, surtout en Espagne.",
+  "A competitor's price cut is widely shared; few comparisons with you so far.":
+    "La baisse de prix d'un concurrent circule beaucoup ; peu de comparaisons avec vous pour l'instant.",
+  "Topics":
+    "Sujets",
+  "Flagged by Nox · checked by an analyst":
+    "Signalé par Nox · vérifié par un analyste",
+  "You have recurring questions: campaigns, competitors, audiences, every month.":
+    "Vous avez des questions récurrentes : campagnes, concurrents, audiences, chaque mois.",
+  "Nobody in the team has the time, or the training, to run a listening platform.":
+    "Personne dans l'équipe n'a le temps, ni la formation, de faire tourner une plateforme d'écoute.",
+  "You need answers presented to the people who decide, not exports.":
+    "Vous avez besoin de réponses présentées à ceux qui décident, pas d'exports.",
+  "You need an alert the moment something breaks: that is Vigie 360.":
+    "Vous devez être alerté dès que quelque chose casse : c'est Vigie 360.",
+  "You already pay for a platform and want it used: that is Social Listening as a Service.":
+    "Vous payez déjà une plateforme et voulez qu'elle serve : c'est Social Listening as a Service.",
+  "Unlimited studies":
+    "Études illimitées",
+  "Campaign reads, competitor benchmarks, audience studies, trend scans: as many as you need, inside one monthly fee.":
+    "Lectures de campagne, benchmarks concurrents, études d'audience, veilles de tendances : autant qu'il vous en faut, dans un forfait mensuel.",
+  "A dedicated consultant":
+    "Un consultant dédié",
+  "The same person frames every question with you, and knows your brand, your market and your history.":
+    "La même personne cadre chaque question avec vous, et connaît votre marque, votre marché et votre historique.",
+  "Four layers of signal":
+    "Quatre couches de signal",
+  "What people post, who they are, what they do and what they search for, chosen question by question.":
+    "Ce que les gens publient, qui ils sont, ce qu'ils font et ce qu'ils recherchent, choisies question par question.",
+  "A readout, not a deck":
+    "Une restitution, pas un deck",
+  "Each study ends with a recommendation presented to the people who decide.":
+    "Chaque étude se termine par une recommandation présentée à ceux qui décident.",
+  "A monthly note":
+    "Une note mensuelle",
+  "What moved in your market this month, on one page, for the executive team.":
+    "Ce qui a bougé sur votre marché dans le mois, en une page, pour le comité de direction.",
+  "We list the questions of the quarter with you, ranked by the decision each one feeds.":
+    "Nous listons avec vous les questions du trimestre, classées selon la décision qu'elles nourrissent.",
+  "Ongoing":
+    "En continu",
+  "Studies":
+    "Études",
+  "Each question becomes a study, delivered in about ten days.":
+    "Chaque question devient une étude, livrée en une dizaine de jours.",
+  "Each study":
+    "À chaque étude",
+  "Readout":
+    "Restitution",
+  "A consultant presents the answer, and what to do with it.":
+    "Un consultant présente la réponse, et ce qu'il faut en faire.",
+  "Each month":
+    "Chaque mois",
+  "One page on what moved, for the executive team.":
+    "Une page sur ce qui a bougé, pour le comité de direction.",
+  "How many studies are really included?":
+    "Combien d'études sont vraiment incluses ?",
+  "As many as your questions need. The fee covers the team's time, not a number of reports; we plan the quarter together so the most useful questions come first.":
+    "Autant que vos questions en demandent. Le forfait couvre le temps de l'équipe, pas un nombre de rapports ; nous planifions le trimestre ensemble pour traiter d'abord les questions les plus utiles.",
+  "How fast is a study delivered?":
+    "En combien de temps une étude est-elle livrée ?",
+  "About ten days for a first read, from framing to readout. A quick check on a running topic can come back within the week.":
+    "Une dizaine de jours pour une première lecture, du cadrage à la restitution. Une vérification rapide sur un sujet en cours peut revenir dans la semaine.",
+  "Do we need our own platform?":
+    "Faut-il avoir notre propre plateforme ?",
+  "No. We bring the licences and the sources, and pick the right platform for each question.":
+    "Non. Nous apportons les licences et les sources, et choisissons la bonne plateforme pour chaque question.",
+  "Can we stop at any time?":
+    "Peut-on arrêter à tout moment ?",
+  "Yes. There is no lock-in: the monthly fee stops when you decide.":
+    "Oui. Il n'y a pas d'engagement : le forfait s'arrête quand vous le décidez.",
+  "Nox":
+    "Nox",
+  "AI-assisted monitoring.":
+    "La veille assistée par l'IA.",
+  "Breadcrumb":
+    "Fil d'Ariane",
+  "Home":
+    "Accueil",
+  "Offers":
+    "Offres",
+  "OFFER":
+    "OFFRE",
+  "What's included":
+    "Ce qui est inclus",
+  "Is it for you?":
+    "Est-ce pour vous ?",
+  "For you if":
+    "Pour vous si",
+  "Not the right fit if":
+    "Pas le bon choix si",
+  "How it runs":
+    "Comment ça se passe",
+  "Indicative timings, adjusted with you at framing.":
+    "Durées indicatives, ajustées avec vous au cadrage.",
+  "They talk about it":
+    "Ils en parlent",
+  "In their words":
+    "Dans leurs mots",
+  "The other offers":
+    "Les autres offres",
+  "Frequently asked questions":
+    "Questions fréquentes",
+  "What would you ask first?":
+    "Quelle serait votre première question ?",
+  "from signal to alert":
+    "du signal à l'alerte",
+  "24/7":
+    "24/7",
+  "nights and weekends included":
+    "nuits et week-ends compris",
+  "20+":
+    "20+",
+  "Your brand, your executives or your products are exposed to fast-moving subjects.":
+    "Votre marque, vos dirigeants ou vos produits sont exposés à des sujets qui vont vite.",
+  "You have already learnt about a crisis from the press, or from your CEO.":
+    "Vous avez déjà appris une crise par la presse, ou par votre PDG.",
+  "You operate in several countries and languages.":
+    "Vous opérez dans plusieurs pays et plusieurs langues.",
+  "You need a study to decide, not an alert: that is Social Insights.":
+    "Vous avez besoin d'une étude pour décider, pas d'une alerte : c'est Social Insights.",
+  "You want to follow the conversation at your own pace: that is Nox.":
+    "Vous voulez suivre la conversation à votre rythme : c'est Nox.",
+  "A tailored perimeter":
+    "Un périmètre sur mesure",
+  "Brand, executives, products, competitors and sensitive topics, set with you and reviewed every quarter.":
+    "Marque, dirigeants, produits, concurrents et sujets sensibles, fixés avec vous et revus chaque trimestre.",
+  "Alerts read by an analyst":
+    "Des alertes lues par un analyste",
+  "Every signal is qualified before it reaches you: its level, its reach, and what to do.":
+    "Chaque signal est qualifié avant de vous parvenir : son niveau, sa portée, et ce qu'il faut faire.",
+  "Three alert levels":
+    "Trois niveaux d'alerte",
+  "From a signal to watch to a crisis in progress, each with its own channel and delay.":
+    "Du signal à surveiller à la crise en cours, chacun avec son canal et son délai.",
+  "Crisis follow-up":
+    "Un suivi de crise",
+  "When it escalates, a daily update on how the conversation evolves, until it settles.":
+    "Quand le sujet monte, un point quotidien sur l'évolution de la conversation, jusqu'à ce qu'elle retombe.",
+  "A monthly review":
+    "Une revue mensuelle",
+  "What was flagged, what was not and why, and the perimeter adjusted accordingly.":
+    "Ce qui a été signalé, ce qui ne l'a pas été et pourquoi, et le périmètre ajusté en conséquence.",
+  "Perimeter":
+    "Périmètre",
+  "We set what to watch, who to alert and through which channel.":
+    "Nous définissons ce qu'il faut surveiller, qui alerter et par quel canal.",
+  "Calibration":
+    "Calibrage",
+  "Test alerts to set the thresholds with you.":
+    "Des alertes de test pour régler les seuils avec vous.",
+  "Then, 24/7":
+    "Ensuite, 24/7",
+  "Monitoring":
+    "Veille",
+  "Analysts read the signal day and night, and alert you within 15 minutes.":
+    "Les analystes lisent le signal jour et nuit, et vous alertent en 15 minutes.",
+  "Review":
+    "Revue",
+  "What happened, what was flagged, and what changes.":
+    "Ce qui s'est passé, ce qui a été signalé, et ce qui change.",
+  "What triggers an alert?":
+    "Qu'est-ce qui déclenche une alerte ?",
+  "Not a keyword. An analyst reads the signal and alerts you when something happened: a story spreading, a voice that carries, a change of tone. The noise is filtered before it reaches you.":
+    "Pas un mot-clé. Un analyste lit le signal et vous alerte quand il s'est passé quelque chose : une histoire qui se propage, une voix qui porte, un changement de ton. Le bruit est filtré avant de vous parvenir.",
+  "How are alerts sent?":
+    "Comment les alertes sont-elles envoyées ?",
+  "By email, text or messaging, depending on the level. A crisis-level alert also comes with a phone call.":
+    "Par e-mail, SMS ou messagerie, selon le niveau. Une alerte de crise s'accompagne aussi d'un appel.",
+  "Which languages do you cover?":
+    "Quelles langues couvrez-vous ?",
+  "More than twenty, read by native analysts, including English, Spanish, Chinese, Arabic and Hindi.":
+    "Plus de vingt, lues par des analystes natifs, dont l'anglais, l'espagnol, le chinois, l'arabe et l'hindi.",
+  "Can Vigie 360 cover our executives?":
+    "Vigie 360 peut-elle couvrir nos dirigeants ?",
+  "Yes. Executives are often the first exposed; we follow their mentions with the same alert levels as the brand.":
+    "Oui. Les dirigeants sont souvent les premiers exposés ; nous suivons leurs mentions avec les mêmes niveaux d'alerte que la marque.",
+  "What should we be watching for you?":
+    "Que devrions-nous surveiller pour vous ?",
+  "Your platform":
+    "Votre plateforme",
+  "kept, not replaced":
+    "gardée, pas remplacée",
+  "Audit first":
+    "Audit d'abord",
+  "of the existing setup":
+    "de l'existant",
+  "Recurring":
+    "Récurrent",
+  "analyses delivered":
+    "analyses livrées",
+  "You pay for a listening platform that few people open.":
+    "Vous payez une plateforme d'écoute que peu de gens ouvrent.",
+  "Your dashboards were set up once and never revisited.":
+    "Vos tableaux de bord ont été configurés une fois, et jamais revus.",
+  "Your teams receive exports, but no conclusions.":
+    "Vos équipes reçoivent des exports, mais pas de conclusions.",
+  "You have no platform and do not want one: that is Social Insights.":
+    "Vous n'avez pas de plateforme et ne voulez pas en avoir : c'est Social Insights.",
+  "You need alerts day and night: that is Vigie 360.":
+    "Vous avez besoin d'alertes jour et nuit : c'est Vigie 360.",
+  "An audit of your setup":
+    "Un audit de votre configuration",
+  "Queries, taxonomy, dashboards and usage, reviewed against the questions your teams actually ask.":
+    "Requêtes, taxonomie, tableaux de bord et usages, revus au regard des questions que vos équipes se posent vraiment.",
+  "A rebuilt taxonomy":
+    "Une taxonomie refaite",
+  "Topics, brands and products tagged the way your business talks about them.":
+    "Sujets, marques et produits classés comme votre entreprise en parle.",
+  "Dashboards people use":
+    "Des tableaux de bord utilisés",
+  "Fewer of them, each built for one team and one decision.":
+    "Moins nombreux, chacun construit pour une équipe et une décision.",
+  "Recurring analyses":
+    "Des analyses récurrentes",
+  "The weekly and monthly reads produced by our analysts, inside your platform.":
+    "Les lectures hebdomadaires et mensuelles produites par nos analystes, dans votre plateforme.",
+  "Team training":
+    "La formation des équipes",
+  "Short sessions, by role, so each team reads its own data.":
+    "Des sessions courtes, par rôle, pour que chaque équipe lise ses propres données.",
+  "Weeks 1 and 2":
+    "Semaines 1 et 2",
+  "Audit":
+    "Audit",
+  "We review the setup and test it against your questions.":
+    "Nous passons en revue la configuration et la confrontons à vos questions.",
+  "Weeks 3 to 6":
+    "Semaines 3 à 6",
+  "Rebuild":
+    "Reconstruction",
+  "Taxonomy and dashboards reworked, one team at a time.":
+    "Taxonomie et tableaux de bord repris, une équipe après l'autre.",
+  "From month 2":
+    "Dès le mois 2",
+  "Delivery":
+    "Livraison",
+  "Recurring analyses delivered inside your platform.":
+    "Les analyses récurrentes arrivent dans votre plateforme.",
+  "Each quarter":
+    "Chaque trimestre",
+  "Usage is measured, and the setup adjusted.":
+    "L'usage est mesuré, et la configuration ajustée.",
+  "Which platforms do you work with?":
+    "Avec quelles plateformes travaillez-vous ?",
+  "Talkwalker, Visibrain, YouScan and SoPrism every day, and most other listening platforms on the market.":
+    "Talkwalker, Visibrain, YouScan et SoPrism au quotidien, et la plupart des autres plateformes d'écoute du marché.",
+  "Do we keep our licence?":
+    "Gardons-nous notre licence ?",
+  "Yes. The licence stays yours; we make it produce decisions. If the audit shows it does not fit your needs, we tell you.":
+    "Oui. La licence reste la vôtre ; nous la faisons produire des décisions. Si l'audit montre qu'elle ne correspond pas à vos besoins, nous vous le disons.",
+  "How long before teams use it?":
+    "Combien de temps avant que les équipes s'en servent ?",
+  "Usually within the first quarter: the audit and rebuild take about six weeks, then usage is measured every month.":
+    "En général dans le premier trimestre : l'audit et la reconstruction prennent environ six semaines, puis l'usage est mesuré chaque mois.",
+  "Do you train our teams?":
+    "Formez-vous nos équipes ?",
+  "Yes. Training is part of the offer, by role and on your own data, not on a demo account.":
+    "Oui. La formation fait partie de l'offre, par rôle et sur vos propres données, pas sur un compte de démonstration.",
+  "Which platform are you paying for?":
+    "Pour quelle plateforme payez-vous ?",
+  "AI-sorted":
+    "Trié par l'IA",
+  "topics grouped for you":
+    "les sujets regroupés pour vous",
+  "A daily brief":
+    "Un brief quotidien",
+  "what changed, in a few lines":
+    "ce qui a changé, en quelques lignes",
+  "Analyst-tuned":
+    "Réglé par nos analystes",
+  "set up and checked by us":
+    "configuré et vérifié par nous",
+  "You want to follow your brand day to day, without reading every post.":
+    "Vous voulez suivre votre marque au jour le jour, sans lire chaque publication.",
+  "Your team needs a shared view of what is being said, in one place.":
+    "Votre équipe a besoin d'une vue partagée de ce qui se dit, au même endroit.",
+  "You want AI to do the sorting, and people you trust to check it.":
+    "Vous voulez que l'IA fasse le tri, et que des gens de confiance le vérifient.",
+  "You need a full study with a recommendation: that is Social Insights.":
+    "Vous avez besoin d'une étude complète avec une recommandation : c'est Social Insights.",
+  "You need a person to call you when a crisis starts: that is Vigie 360.":
+    "Vous avez besoin qu'une personne vous appelle quand une crise démarre : c'est Vigie 360.",
+  "Topics, not mentions":
+    "Des sujets regroupés",
+  "Posts are grouped into topics automatically: you see what is being discussed, not a list of mentions.":
+    "Les publications sont regroupées par sujet automatiquement : vous voyez de quoi on parle, pas une liste de mentions.",
+  "A brief every morning":
+    "Un brief chaque matin",
+  "What changed in a few lines, with the posts behind each point.":
+    "Ce qui a changé en quelques lignes, avec les publications derrière chaque point.",
+  "The unusual, flagged":
+    "L'inhabituel signalé",
+  "A topic growing faster than usual, a new voice, a change of tone: Nox points it out.":
+    "Un sujet qui grossit plus vite que d'habitude, une nouvelle voix, un changement de ton : Nox le pointe.",
+  "Set up by our analysts":
+    "Configuré par nos analystes",
+  "We set the perimeter, check the topics and correct the model with you, to keep the noise out.":
+    "Nous fixons le périmètre, vérifions les sujets et corrigeons le modèle avec vous, pour tenir le bruit à l'écart.",
+  "An analyst to hand over to":
+    "Un analyste en relais",
+  "When Nox flags something you want properly read, an analyst picks it up.":
+    "Quand Nox signale un sujet que vous voulez faire lire pour de bon, un analyste le reprend.",
+  "We set the perimeter with you: brands, topics, sources and languages.":
+    "Nous fixons le périmètre avec vous : marques, sujets, sources et langues.",
+  "Tuning":
+    "Réglage",
+  "Our analysts check what Nox groups and flags, and correct it.":
+    "Nos analystes vérifient ce que Nox regroupe et signale, et le corrigent.",
+  "Every day":
+    "Chaque jour",
+  "Brief":
+    "Brief",
+  "Your team receives the brief and explores the topics in Nox.":
+    "Votre équipe reçoit le brief et explore les sujets dans Nox.",
+  "We review what was flagged, and adjust the perimeter.":
+    "Nous revoyons ce qui a été signalé, et ajustons le périmètre.",
+  "What does the AI do, and what do people do?":
+    "Que fait l'IA, et que font les analystes ?",
+  "The AI reads, groups and summarises at a volume no team could follow. Our analysts set it up, check what it produces, correct it, and read anything that needs judgement.":
+    "L'IA lit, regroupe et résume à un volume qu'aucune équipe ne pourrait suivre. Nos analystes la configurent, vérifient ce qu'elle produit, la corrigent, et lisent tout ce qui demande du jugement.",
+  "Which sources does Nox read?":
+    "Quelles sources Nox lit-il ?",
+  "The social networks, news, forums and reviews in your perimeter, set with you at the start.":
+    "Les réseaux sociaux, la presse, les forums et les avis de votre périmètre, définis avec vous au démarrage.",
+  "How is Nox different from Vigie 360?":
+    "Quelle différence avec Vigie 360 ?",
+  "Nox gives your team a daily view to explore at its own pace. Vigie 360 is a service: analysts watch for you day and night, and call you within 15 minutes when something happens.":
+    "Nox donne à votre équipe une vue quotidienne à explorer à son rythme. Vigie 360 est un service : des analystes veillent pour vous jour et nuit, et vous appellent en 15 minutes quand il se passe quelque chose.",
+  "Can Nox be combined with another offer?":
+    "Peut-on combiner Nox avec une autre offre ?",
+  "Yes. Nox covers the day-to-day, and Social Insights takes over for the questions that need a full study.":
+    "Oui. Nox sert au suivi quotidien, et Social Insights prend le relais pour les questions qui demandent une étude complète.",
+  "Your monitoring, sorted by AI, checked by an analyst.":
+    "Votre veille, triée par l'IA, vérifiée par un analyste.",
+  "Nox is our AI-assisted monitoring tool. It reads the conversation about your brand continuously, groups it into topics, summarises what changed and flags what looks unusual. Our analysts tune it with you, so what it surfaces is worth your time.":
+    "Nox est notre outil de veille assisté par l'IA. Il lit en continu la conversation sur votre marque, la regroupe par sujets, résume ce qui a changé et signale ce qui sort de l'ordinaire. Nos analystes le règlent avec vous, pour que ce qu'il fait remonter mérite votre temps.",
+  "Want to see what Nox would surface for you?":
+    "Envie de voir ce que Nox ferait remonter pour vous ?",
+  "Four ways to work with us, from a study on demand to an AI-assisted monitoring tool. Our consultants frame, collect and read. You get the decision, not a platform to staff.":
+    "Quatre façons de travailler avec nous, de l'étude à la demande à l'outil de veille assisté par l'IA. Nos consultants cadrent, collectent et lisent. Vous obtenez la décision, pas une plateforme à faire tourner.",
+  "Four offers. See what each one delivers.":
+    "Quatre offres. Voyez ce que chacune livre.",
+  "The four offers":
+    "Les quatre offres",
+  "Monitoring, sorted by AI.":
+    "La veille, triée par l'IA.",
+  "Teams who want to follow their brand day to day":
+    "Les équipes qui veulent suivre leur marque au quotidien",
+  "Subscription · set up and tuned by our analysts":
+    "Abonnement · configuré et réglé par nos analystes",
+  "You want to follow your brand every day, with AI doing the sorting.":
+    "Vous voulez suivre votre marque chaque jour, et que l'IA fasse le tri.",
+  "Nox, AI-assisted monitoring":
+    "Nox, la veille assistée par l'IA",
+  "FOUR WAYS TO WORK WITH US":
+    "QUATRE FAÇONS DE TRAVAILLER AVEC NOUS",
+  "AI-assisted monitoring, tuned by our analysts.":
+    "La veille assistée par l'IA, réglée par nos analystes.",
+  "Everything about Social Insights":
+    "Tout sur Social Insights",
+  "Everything about Vigie 360":
+    "Tout sur Vigie 360",
+  "Everything about Social Listening as a Service":
+    "Tout sur Social Listening as a Service",
+  "Everything about Nox":
+    "Tout sur Nox",
+  /* ---- end offer pages ---- */
 };
