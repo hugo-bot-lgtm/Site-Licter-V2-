@@ -920,3 +920,63 @@ NOTE = {
              "Pilot an upcycled range in one market before competitors notice."),
   },
 }
+
+
+# ----------------------------------------------------------- hub: the comparison
+# Licter against the two usual alternatives, criterion by criterion. Each
+# alternative keeps the case where it is the right choice.
+COMPARE = {
+    "title": ("Pourquoi pas un outil seul ?", "Why not just a tool?"),
+    "lead": ("Trois façons d'obtenir une réponse. Elles ne se valent pas, selon ce que vous devez décider.",
+             "Three ways to get an answer. Which one fits depends on what you have to decide."),
+    "cols": (("Une plateforme en self-service", "A self-service platform"),
+             ("Un institut d'études", "A research agency"),
+             ("Licter", "Licter")),
+    "rows": [
+        (("Ce que vous recevez", "What you receive"),
+         ("Un tableau de bord, à lire vous-même", "A dashboard, for you to read"),
+         ("Un rapport, une fois", "A report, once"),
+         ("Une recommandation, présentée par un consultant", "A recommendation, presented by a consultant")),
+        (("Qui fait le travail", "Who does the work"),
+         ("Votre équipe, après une formation", "Your team, after some training"),
+         ("L'institut, à partir d'un questionnaire", "The agency, from a questionnaire"),
+         ("Nos consultants, du cadrage à la restitution", "Our consultants, from framing to readout")),
+        (("Ce qui est lu", "What gets read"),
+         ("Ce que l'outil collecte, souvent une seule couche", "What the tool collects, often a single layer"),
+         ("Ce que les gens déclarent", "What people say they do"),
+         ("Ce qu'ils publient, recherchent, font et demandent à l'IA", "What they post, search, do and ask AI")),
+        (("Délai", "Timing"),
+         ("Les données tout de suite, la lecture quand quelqu'un a le temps", "Data at once, the reading whenever someone has time"),
+         ("Six à douze semaines", "Six to twelve weeks"),
+         ("Une première lecture en dix jours, une alerte en quinze minutes", "A first read in ten days, an alert in fifteen minutes")),
+        (("Coût", "Cost"),
+         ("Une licence annuelle, que l'outil serve ou non", "A yearly licence, used or not"),
+         ("Un budget par étude", "A budget per study"),
+         ("Un forfait mensuel, études illimitées, sans engagement", "A fixed monthly fee, unlimited studies, no lock-in")),
+        (("Le bon choix quand", "The right choice when"),
+         ("Vous avez une équipe dédiée qui sait lire la donnée", "You have a dedicated team that can read the data"),
+         ("Vous testez un concept qui n'existe pas encore en public", "You are testing a concept nobody has seen yet"),
+         ("Vous devez décider, et personne n'a le temps de lire", "You have to decide, and nobody has time to read")),
+    ],
+}
+
+HUB_FAQ = [
+    (("À quoi sert la social data pour une marque ?", "What is social data used for by a brand?"),
+     ("À répondre à des questions business avec ce que les gens publient, recherchent et demandent à l'IA, sans les interroger : l'effet d'une campagne, l'état de votre réputation, qui sont vraiment vos audiences, ce qu'il faut lancer ensuite.",
+      "To answer business questions with what people post, search and ask AI, without asking them: what a campaign changed, where your reputation stands, who your audiences really are, what to launch next.")),
+    (("Quelle différence avec un outil de social listening ?", "How is this different from a social listening tool?"),
+     ("Un outil collecte et affiche. Nous choisissons les sources, nettoyons le bruit et lisons le résultat : vous recevez une recommandation, pas un tableau de bord à interpréter. Nous travaillons d'ailleurs avec les meilleurs outils du marché.",
+      "A tool collects and displays. We pick the sources, clean out the noise and read the result: you receive a recommendation, not a dashboard to interpret. We work with the best tools on the market, too.")),
+    (("Combien de temps faut-il pour une première réponse ?", "How long until a first answer?"),
+     ("Environ dix jours pour une première lecture, du cadrage à la restitution. Une veille continue démarre dès le cadrage, et une alerte vous parvient en quinze minutes.",
+      "About ten days for a first read, from framing to readout. Continuous monitoring starts as soon as framing is done, and an alert reaches you within fifteen minutes.")),
+    (("Faut-il déjà avoir une plateforme ?", "Do we need a platform already?"),
+     ("Non. Nous apportons les licences et les sources. Si vous en avez déjà une, nous pouvons aussi la reprendre et la faire servir.",
+      "No. We bring the licences and the sources. If you already own one, we can also take it over and make it useful.")),
+    (("Les données sont-elles fiables ?", "Can the data be trusted?"),
+     ("Elles sont publiques, mais brutes. Un analyste écarte les bots, les doublons et les hors-sujets avant toute lecture, et chaque chiffre de la restitution renvoie à sa source.",
+      "They are public, but raw. An analyst removes bots, duplicates and off-topic posts before any reading, and every figure in the readout points back to its source.")),
+    (("Combien ça coûte ?", "How much does it cost?"),
+     ("Un forfait mensuel fixe, avec des études illimitées à l'intérieur et sans engagement. Le montant dépend du périmètre : marques, marchés et langues suivis.",
+      "A fixed monthly fee, with unlimited studies inside it and no lock-in. The amount depends on the scope: brands, markets and languages covered.")),
+]

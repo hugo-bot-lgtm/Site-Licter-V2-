@@ -654,11 +654,14 @@ def hub_body(lang):
     return "\n".join([
         crumbs(items, lang),
         hero('<span>%s</span>' % T(C.HUB["kicker"], lang), T(C.HUB["h1"], lang), T(C.HUB["intro"], lang), lang,
-             actions=True, after=nav, extra='\n            <a class="ucp__textlink" href="#offre">%s <span aria-hidden="true">↓</span></a>' % T(L["bar_offer"], lang)),
+             aside=bubbles(lang), actions=True, after=nav, extra='\n            <a class="ucp__textlink" href="#offre">%s <span aria-hidden="true">↓</span></a>' % T(L["bar_offer"], lang)),
         carousel,
+        compare(lang),
         section('      <h2 class="ucp__h2">%s</h2>\n      <div class="ucp__voices">\n%s\n      </div>' % (
             T(L["hub_voices"], lang), "\n".join(reel(C.VOICES[k], lang) for k in ("paris2024", "loreal", "orange")))),
         cta({"key": "hub"}, lang).replace(T(L["cta_t"], lang), T(L["hub_offer_t"], lang), 1),
+        faq_block(C.HUB_FAQ, lang, related("hub-more", T(L["by_family"], lang), "".join(
+            '<li><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (fam_path(f, lang), T(f["name"], lang)) for f in C.FAMILIES))),
         book(lang),
     ]), items
 
@@ -669,6 +672,52 @@ L.update({
                  "Pick the family your question belongs to, then the case that looks like it."),
     "prev": ("Famille précédente", "Previous family"),
     "next": ("Famille suivante", "Next family"),
+})
+
+
+def bubbles(lang):
+    """the hero's right column: the twelve questions clients ask, drifting
+    upwards; each one opens its case. The second copy only closes the loop."""
+    items = []
+    for x in C.CASES:
+        f = FAM[x["family"]]
+        q = typo(("« %s »" if lang == FR else "“%s”") % x["questions"][0][lang], lang)
+        items.append((case_path(x, lang), icon(FAM_ICON[f["key"]]), T(f["name"], lang), esc(q)))
+    one = lambda hidden: "".join(
+        '<li><a href="%s"%s><span class="ucq__f">%s%s</span><span class="ucq__q">%s</span></a></li>' % (
+            h, ' tabindex="-1"' if hidden else "", ic, fam, q) for h, ic, fam, q in items)
+    return ('\n      <div class="ucq">\n'
+            '        <p class="visually-hidden">%s</p>\n'
+            '        <div class="ucq__win">\n'
+            '          <ul class="ucq__list">%s</ul>\n'
+            '          <ul class="ucq__list" aria-hidden="true">%s</ul>\n'
+            '        </div>\n'
+            '      </div>') % (T(L["bubbles_sr"], lang), one(False), one(True))
+
+
+def compare(lang):
+    X = C.COMPARE
+    head = "".join('<th scope="col"%s>%s</th>' % (' class="is-us"' if i == 2 else "", T(c, lang)) for i, c in enumerate(X["cols"]))
+    rows = "".join('<tr><th scope="row">%s</th>%s</tr>' % (T(r[0], lang), "".join(
+        '<td data-l="%s"%s>%s</td>' % (T(X["cols"][i], lang), ' class="is-us"' if i == 2 else "", T(v, lang)) for i, v in enumerate(r[1:])))
+        for r in X["rows"])
+    return ('  <section class="ucp ucx" aria-labelledby="ucx-t">\n'
+            '    <div class="shell">\n'
+            '      <div class="xs__head">\n'
+            '        <h2 class="xs__title" id="ucx-t">%s</h2>\n'
+            '        <p class="xs__lead">%s</p>\n'
+            '      </div>\n'
+            '      <table class="ucx__table">\n'
+            '        <thead><tr><td></td>%s</tr></thead>\n'
+            '        <tbody>%s</tbody>\n'
+            '      </table>\n'
+            '    </div>\n'
+            '  </section>') % (T(X["title"], lang), T(X["lead"], lang), head, rows)
+
+
+L.update({
+    "bubbles_sr": ("Les questions que nos clients nous posent :", "The questions our clients ask us:"),
+    "by_family": ("Explorer par famille", "Explore by family"),
 })
 
 
@@ -871,7 +920,8 @@ def main():
         body, items = hub_body(lang)
         ld = [breadcrumb_ld([(a, b or hub_path(lang)) for a, b in items]),
               {"@context": "https://schema.org", "@type": "CollectionPage", "name": typo(C.HUB["h1"][lang], lang),
-               "url": SITE + hub_path(lang), "inLanguage": LANGS[lang], "publisher": ORG}]
+               "url": SITE + hub_path(lang), "inLanguage": LANGS[lang], "publisher": ORG},
+              faq_ld(C.HUB_FAQ, lang)]
         write(hub_path(lang), page(lang, hub_path(lang), hub_path(1 - lang), C.HUB["seo_title"][lang], C.HUB["meta"][lang], body, ld))
     urls.append((hub_path(FR), hub_path(EN)))
 
