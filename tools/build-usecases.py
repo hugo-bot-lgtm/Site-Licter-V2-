@@ -616,36 +616,60 @@ def family_body(f, lang):
 
 
 def hub_body(lang):
-    jump = "".join('<li><a href="#%s">%s%s</a></li>' % (f["key"], icon(FAM_ICON[f["key"]]), T(f["name"], lang)) for f in C.FAMILIES)
+    jump = "".join('<li><a href="#fam-%s">%s%s</a></li>' % (f["key"], icon(FAM_ICON[f["key"]]), T(f["name"], lang)) for f in C.FAMILIES)
     fams = []
     for i, f in enumerate(C.FAMILIES):
         cases = [x for x in C.CASES if x["family"] == f["key"]]
-        links = "".join('<li><a href="%s"><b>%s</b><span>%s</span><i aria-hidden="true">→</i></a></li>' % (
-            case_path(x, lang), T(x["name"], lang), T(x["meta"], lang)) for x in cases)
+        links = "".join('<li><a href="%s">%s <i aria-hidden="true">→</i></a></li>' % (case_path(x, lang), T(x["name"], lang)) for x in cases)
+        photo = HUB_PHOTO[f["key"]]
         fams.append(
-            '      <li class="ucp__fam" id="%s">\n'
-            '        <div class="ucp__fam-head">\n'
-            '          <p class="ucp__fam-k">%s<span>0%d · %s</span></p>\n'
-            '          <h2 class="ucp__fam-t"><a href="%s">%s</a></h2>\n'
-            '          <p class="ucp__fam-d">%s</p>\n'
-            '          <a class="ucp__textlink" href="%s">%s <span aria-hidden="true">→</span></a>\n'
-            '        </div>\n'
-            '        <ul class="ucp__fam-cases">%s</ul>\n'
-            '      </li>' % (f["key"], icon(FAM_ICON[f["key"]]), i + 1, T(f["name"], lang), fam_path(f, lang), T(f["h1"], lang),
-                            T(f["intro"], lang), fam_path(f, lang), esc(typo(L["family_all"][lang] % f["name"][lang], lang)), links))
+            '        <li class="ucc__card" id="fam-%s">\n'
+            '          <img src="/assets/img/team/morning/%s-800.webp" srcset="/assets/img/team/morning/%s-800.webp 800w, /assets/img/team/morning/%s-1600.webp 1600w" sizes="(max-width: 640px) 82vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />\n'
+            '          <div class="ucc__top">\n'
+            '            <p class="ucc__k">%s<span>0%d · %s</span></p>\n'
+            '            <h3 class="ucc__t"><a href="%s">%s</a></h3>\n'
+            '          </div>\n'
+            '          <div class="ucc__foot">\n'
+            '            <ul class="ucc__cases">%s</ul>\n'
+            '            <a class="ucc__all" href="%s">%s <span aria-hidden="true">→</span></a>\n'
+            '          </div>\n'
+            '        </li>' % (f["key"], photo, photo, photo, icon(FAM_ICON[f["key"]]), i + 1, T(f["name"], lang),
+                            fam_path(f, lang), T(f["h1"], lang), links,
+                            fam_path(f, lang), esc(typo(L["family_all"][lang] % f["name"][lang], lang))))
+    carousel = ('  <section class="ucp ucc" aria-labelledby="ucc-t">\n'
+                '    <div class="shell ucc__head">\n'
+                '      <div>\n'
+                '        <h2 class="xs__title" id="ucc-t">%s</h2>\n'
+                '        <p class="xs__lead">%s</p>\n'
+                '      </div>\n'
+                '      <div class="ucc__nav">\n'
+                '        <button class="ucc__btn" type="button" data-dir="-1" aria-label="%s" disabled><span aria-hidden="true">←</span></button>\n'
+                '        <button class="ucc__btn" type="button" data-dir="1" aria-label="%s"><span aria-hidden="true">→</span></button>\n'
+                '      </div>\n'
+                '    </div>\n'
+                '    <ol class="ucc__track">\n%s\n    </ol>\n'
+                '  </section>') % (T(L["families"], lang), T(L["fam_lead"], lang), T(L["prev"], lang), T(L["next"], lang), "\n".join(fams))
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], None)]
     nav = '\n        <nav class="ucp__jump" aria-label="%s"><ul>%s</ul></nav>' % (T(L["jump"], lang), jump)
     return "\n".join([
         crumbs(items, lang),
         hero('<span>%s</span>' % T(C.HUB["kicker"], lang), T(C.HUB["h1"], lang), T(C.HUB["intro"], lang), lang,
              actions=True, after=nav, extra='\n            <a class="ucp__textlink" href="#offre">%s <span aria-hidden="true">↓</span></a>' % T(L["bar_offer"], lang)),
-        section('      <h2 class="visually-hidden">%s</h2>\n      <ol class="ucp__fams">\n%s\n      </ol>' % (
-            T(L["families"], lang), "\n".join(fams))),
+        carousel,
         section('      <h2 class="ucp__h2">%s</h2>\n      <div class="ucp__voices">\n%s\n      </div>' % (
             T(L["hub_voices"], lang), "\n".join(reel(C.VOICES[k], lang) for k in ("paris2024", "loreal", "orange")))),
         cta({"key": "hub"}, lang).replace(T(L["cta_t"], lang), T(L["hub_offer_t"], lang), 1),
         book(lang),
     ]), items
+
+
+HUB_PHOTO = {"communication": "work-three", "brand": "work-table", "audiences": "work-sofa", "trends": "work-laptop"}
+L.update({
+    "fam_lead": ("Choisissez la famille de votre question, puis le cas qui lui ressemble.",
+                 "Pick the family your question belongs to, then the case that looks like it."),
+    "prev": ("Famille précédente", "Previous family"),
+    "next": ("Famille suivante", "Next family"),
+})
 
 
 # ------------------------------------------------------------------ extras

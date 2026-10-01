@@ -1611,3 +1611,29 @@ window.LicterUC = (function () {
     });
   });
 })();
+
+/* =========================================================================
+   Carousel of the four families on the use-cases hub (.ucc): the arrows
+   scroll by one card, and switch off at either end.
+   ========================================================================= */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll(".ucc"), function (box) {
+    var track = box.querySelector(".ucc__track"), btns = box.querySelectorAll(".ucc__btn");
+    if (!track) return;
+    function step() {
+      var card = track.querySelector(".ucc__card");
+      return card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0) : track.clientWidth;
+    }
+    function sync() {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      btns[0].disabled = track.scrollLeft <= 2;
+      btns[1].disabled = track.scrollLeft >= max;
+    }
+    Array.prototype.forEach.call(btns, function (b) {
+      b.addEventListener("click", function () { track.scrollBy({ left: step() * +b.getAttribute("data-dir") }); });
+    });
+    track.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    sync();
+  });
+})();
