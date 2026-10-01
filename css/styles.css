@@ -6533,3 +6533,5 @@ html[data-theme="dark"] .people__more a { background: var(--cream); color: var(-
   .people__faces li + li { margin-left: -10px; }
 }
 .pm-m { display: none; } @media (max-width: 560px) { .pm-d { display: none; } .pm-m { display: inline; } }
+.nav__list a.is-current { color: var(--ink); box-shadow: inset 0 -2px 0 var(--amber); }
+html[data-theme="dark"] .nav__list a.is-current { color: var(--cream); }

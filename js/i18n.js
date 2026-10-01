@@ -206,6 +206,9 @@
   function init() {
     build();
     if (STATIC) {
+      /* a page written in a language sets it for the rest of the visit,
+         unless the visitor has already chosen */
+      try { if (!localStorage.getItem(STORE)) localStorage.setItem(STORE, html.lang); } catch (e) { /* private mode */ }
       if (html.lang === "fr") {
         FR = window.LicterFR || FR || {};
         translateTree(document.body, FR);

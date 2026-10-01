@@ -992,9 +992,8 @@ window.LicterUC = (function () {
     triggers.forEach(function (btn) {
       var key = btn.dataset.menu;
 
-      btn.addEventListener("click", function () {
-        if (openKey === key) close(); else open(key);
-      });
+      /* the item is a link to its own page: a click goes there. The menu
+         opens on hover, and from the keyboard with the down arrow. */
 
       btn.addEventListener("mouseenter", function () {
         if (!canHover.matches) return;
@@ -1554,4 +1553,22 @@ window.LicterUC = (function () {
   function done() { try { localStorage.setItem(KEY, "1"); } catch (e) {} }
   bar.querySelector(".langoffer__go").addEventListener("click", function () { done(); try { localStorage.setItem("licter-lang", "fr"); } catch (e) {} });
   bar.querySelector(".langoffer__x").addEventListener("click", function () { done(); bar.remove(); });
+})();
+
+/* =========================================================================
+   The navigation item of the page you are on, marked.
+   ========================================================================= */
+(function () {
+  var path = location.pathname.replace(/index\.html$/, "");
+  var map = [
+    [/\/(fr\/cas-usage|en\/use-cases)\//, "use-cases"], [/\/offers\.html$/, "offers.html"], [/\/why-licter\.html$/, "why-licter.html"],
+    [/\/(tech-[\w-]+)\.html$/, "tech"], [/\/clients\.html$/, "clients.html"], [/\/(blog|article-[\w-]+)\.html$/, "blog.html"]
+  ];
+  var hit = null;
+  map.forEach(function (m) { if (!hit && m[0].test(path)) hit = m[1]; });
+  if (!hit) return;
+  Array.prototype.forEach.call(document.querySelectorAll(".hero__top .nav__list > .nav__item > a"), function (a) {
+    var h = a.getAttribute("href") || "", key = a.getAttribute("data-menu");
+    if (key === hit || h.replace(/^\//, "") === hit) { a.classList.add("is-current"); a.setAttribute("aria-current", "page"); }
+  });
 })();
