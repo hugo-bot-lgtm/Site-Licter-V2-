@@ -647,7 +647,7 @@ def hub_body(lang):
                 '        <button class="ucc__btn" type="button" data-dir="1" aria-label="%s"><span aria-hidden="true">→</span></button>\n'
                 '      </div>\n'
                 '    </div>\n'
-                '    <ol class="ucc__track">\n%s\n    </ol>\n'
+                '    <div class="shell">\n    <ol class="ucc__track">\n%s\n    </ol>\n    </div>\n'
                 '  </section>') % (T(L["families"], lang), T(L["fam_lead"], lang), T(L["prev"], lang), T(L["next"], lang), "\n".join(fams))
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], None)]
     nav = '\n        <nav class="ucp__jump" aria-label="%s"><ul>%s</ul></nav>' % (T(L["jump"], lang), jump)
