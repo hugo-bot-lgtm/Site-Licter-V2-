@@ -616,7 +616,6 @@ def family_body(f, lang):
 
 
 def hub_body(lang):
-    jump = "".join('<li><a href="#fam-%s">%s%s</a></li>' % (f["key"], icon(FAM_ICON[f["key"]]), T(f["name"], lang)) for f in C.FAMILIES)
     fams = []
     for i, f in enumerate(C.FAMILIES):
         cases = [x for x in C.CASES if x["family"] == f["key"]]
@@ -650,11 +649,10 @@ def hub_body(lang):
                 '    <div class="shell">\n    <ol class="ucc__track">\n%s\n    </ol>\n    </div>\n'
                 '  </section>') % (T(L["families"], lang), T(L["fam_lead"], lang), T(L["prev"], lang), T(L["next"], lang), "\n".join(fams))
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], None)]
-    nav = '\n        <nav class="ucp__jump" aria-label="%s"><ul>%s</ul></nav>' % (T(L["jump"], lang), jump)
     return "\n".join([
         crumbs(items, lang),
         hero('<span>%s</span>' % T(C.HUB["kicker"], lang), T(C.HUB["h1"], lang), T(C.HUB["intro"], lang), lang,
-             aside=bubbles(lang), actions=True, after=nav, extra='\n            <a class="ucp__textlink" href="#offre">%s <span aria-hidden="true">↓</span></a>' % T(L["bar_offer"], lang)),
+             aside=bubbles(lang), actions=True, extra='\n            <a class="ucp__textlink" href="#offre">%s <span aria-hidden="true">↓</span></a>' % T(L["bar_offer"], lang)),
         carousel,
         compare(lang),
         section('      <h2 class="ucp__h2">%s</h2>\n      <div class="ucp__voices">\n%s\n      </div>' % (
