@@ -1637,3 +1637,69 @@ window.LicterUC = (function () {
     sync();
   });
 })();
+
+/* =========================================================================
+   The three cases of a family page (.ucw): pills turn a stack of cards.
+   It turns by itself every few seconds while in view, and stops for good
+   as soon as the visitor clicks, types or prefers reduced motion.
+   ========================================================================= */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll(".ucw"), function (box) {
+    var tabs = Array.prototype.slice.call(box.querySelectorAll('[role="tab"]'));
+    var cards = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
+    var n = tabs.length, cur = 0, timer = null, T = 6000, stopped = false, seen = false;
+    if (!n) return;
+    box.style.setProperty("--ucw-t", T / 1000 + "s");
+    function show(i, focus) {
+      cur = (i + n) % n;
+      tabs.forEach(function (t, k) {
+        var on = k === cur;
+        t.classList.toggle("is-on", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        // restart the progress bar on the new pill
+        var bar = t.querySelector(".ucw__bar"); if (bar && on) { bar.style.animation = "none"; void bar.offsetWidth; bar.style.animation = ""; }
+      });
+      cards.forEach(function (c, k) {
+        var d = (k - cur + n) % n;
+        c.classList.remove("is-on", "is-next", "is-prev");
+        c.classList.add(d === 0 ? "is-on" : d === 1 ? "is-next" : "is-prev");
+        // the cards behind stay clickable (they come forward), but out of
+        // the tab order and hidden from screen readers
+        if (d === 0) c.removeAttribute("aria-hidden"); else c.setAttribute("aria-hidden", "true");
+        Array.prototype.forEach.call(c.querySelectorAll("a"), function (a) { a.tabIndex = d === 0 ? 0 : -1; });
+      });
+      if (focus) tabs[cur].focus();
+    }
+    function stop() { stopped = true; clearInterval(timer); timer = null; box.classList.remove("is-auto"); }
+    function play() {
+      if (stopped || timer || !seen) return;
+      box.classList.add("is-auto"); show(cur);
+      timer = setInterval(function () { show(cur + 1); }, T);
+    }
+    function pause() { clearInterval(timer); timer = null; box.classList.remove("is-auto"); }
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { stop(); show(i); });
+      t.addEventListener("keydown", function (e) {
+        var d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (e.key === "Home") d = -cur; if (e.key === "End") d = n - 1 - cur;
+        if (d === undefined) return;
+        e.preventDefault(); stop(); show(cur + d, true);
+      });
+    });
+    // a card behind the front one comes forward when clicked
+    cards.forEach(function (c, k) {
+      c.addEventListener("click", function (e) { if (k !== cur) { e.preventDefault(); stop(); show(k); } });
+    });
+    box.addEventListener("mouseenter", pause);
+    box.addEventListener("mouseleave", play);
+    box.addEventListener("focusin", pause);
+    show(0);
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { stopped = true; return; }
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { seen = e.isIntersecting; if (seen) play(); else pause(); });
+      }, { threshold: 0.4 }).observe(box);
+    }
+  });
+})();

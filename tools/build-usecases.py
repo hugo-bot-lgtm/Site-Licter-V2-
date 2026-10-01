@@ -561,17 +561,6 @@ def family_body(f, lang):
     idx = C.FAMILIES.index(f) + 1
     aside = '\n      <div class="ucp__hero-voice">\n%s\n      </div>' % reel(f["video"], lang)
     kicker = '%s<span>0%d · %s</span>' % (icon(FAM_ICON[f["key"]]), idx, T(f["name"], lang))
-    cards = "".join(
-        '\n        <li><a class="ucf-row" href="%s">'
-        '<span class="ucf-row__n">0%d</span>'
-        '<span class="ucf-row__main"><b class="ucf-row__t">%s</b>'
-        '<span class="ucf-row__q">%s</span>'
-        '<span class="ucf-row__get"><span>%s</span>%s</span></span>'
-        '<span class="ucf-row__go" aria-hidden="true" data-l="%s">→</span>'
-        '</a></li>' % (case_path(x, lang), i + 1, T(x["name"], lang),
-                       esc(typo(("« %s »" if lang == FR else "“%s”") % x["questions"][0][lang], lang)),
-                       T(L["get"], lang), T(x["deliverables"][0], lang), T(L["read_case"], lang))
-        for i, x in enumerate(cases))
     vs = "".join('<tr><td>%s</td><td>%s</td></tr>' % (T(a, lang), T(b, lang)) for a, b in VERSUS)
     others = "".join('<li><a href="%s">%s%s <span aria-hidden="true">→</span></a></li>' % (
         fam_path(o, lang), icon(FAM_ICON[o["key"]]), T(o["name"], lang)) for o in C.FAMILIES if o is not f)
@@ -605,7 +594,7 @@ def family_body(f, lang):
     return "\n".join([
         crumbs(items, lang),
         hero(kicker, T(f["h1"], lang), T(f["intro"], lang), lang, aside),
-        section('      <h2 class="ucp__h2">%s</h2>\n      <ol class="ucf-rows">%s\n      </ol>' % (T(L["three"], lang), cards)),
+        wheel(f, cases, lang),
         why,
         client_block(next((x for x in cases if C.VOICES[C.EXTRA[x["key"]]["voice"]][0] != f["video"][0]), cases[0]), lang),
         cta({"key": f["key"]}, lang),
@@ -613,6 +602,47 @@ def family_body(f, lang):
                                           list(dict.fromkeys(a for x in cases for a in C.EXTRA[x["key"]]["articles"]))[:3], ico=True)),
         book(lang),
     ]), items
+
+
+def wheel(f, cases, lang):
+    """the family's three cases: pills on the left, a stack of cards on the
+    right, the front card showing the deliverable of that case (js/ui.js
+    turns it, and stops as soon as the visitor takes over)"""
+    import uc_deliverables as D
+    k = f["key"]
+    pos = ("is-on", "is-next", "is-prev")
+    tabs = "".join(
+        '<button class="ucw__tab%s" type="button" role="tab" id="ucw-%s-t%d" aria-controls="ucw-%s-p%d" aria-selected="%s"%s>'
+        '<span class="ucw__n">0%d</span><span class="ucw__name">%s</span><i class="ucw__bar" aria-hidden="true"></i></button>' % (
+            " is-on" if i == 0 else "", k, i, k, i, "true" if i == 0 else "false", "" if i == 0 else ' tabindex="-1"',
+            i + 1, T(x["name"], lang)) for i, x in enumerate(cases))
+    cards = "".join(
+        '\n        <article class="ucw__card %s" role="tabpanel" id="ucw-%s-p%d" aria-labelledby="ucw-%s-t%d">'
+        '<div class="ucw__peek" aria-hidden="true"><div class="ucw__scale">%s</div></div>'
+        '<div class="ucw__body"><h3 class="ucw__badge">0%d · %s</h3>'
+        '<p class="ucw__q">%s</p>'
+        '<p class="ucw__get"><span>%s</span>%s</p>'
+        '<a class="ucw__go" href="%s">%s <span aria-hidden="true">→</span></a></div></article>' % (
+            pos[i], k, i, k, i, D.render(x["key"], lang, esc, typo), i + 1, T(x["name"], lang),
+            esc(typo(("« %s »" if lang == FR else "“%s”") % x["questions"][0][lang], lang)),
+            T(L["get"], lang), T(x["deliverables"][0], lang), case_path(x, lang), T(L["read_case"], lang))
+        for i, x in enumerate(cases))
+    return ('  <section class="ucp ucw">\n'
+            '    <div class="shell ucw__grid">\n'
+            '      <div class="ucw__side">\n'
+            '        <h2 class="xs__title">%s</h2>\n'
+            '        <p class="xs__lead">%s</p>\n'
+            '        <div class="ucw__tabs" role="tablist" aria-label="%s">%s</div>\n'
+            '      </div>\n'
+            '      <div class="ucw__stage">%s\n      </div>\n'
+            '    </div>\n'
+            '  </section>') % (T(L["three"], lang), T(L["wheel_lead"], lang), T(L["three"], lang), tabs, cards)
+
+
+L.update({
+    "wheel_lead": ("Trois questions qu'on nous pose, et le livrable qui répond à chacune.",
+                   "Three questions we get, and the deliverable that answers each one."),
+})
 
 
 def hub_body(lang):
