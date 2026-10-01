@@ -544,7 +544,7 @@ def case_body(c, lang):
 
 L.update({
     "contents": ("Dans cette page", "On this page"),
-    "see_dlv": ("Voir le livrable", "See the deliverable"),
+    "see_dlv": ("Voir un livrable", "See a deliverable"),
     "problem_k": ("La question qu'on nous pose", "The question we get"),
     "now": ("Aujourd'hui, vous voyez", "Today, you see"),
     "missing": ("Ce qui vous manque", "What is missing"),
