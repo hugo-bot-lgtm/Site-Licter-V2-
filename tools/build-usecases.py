@@ -565,37 +565,10 @@ def family_body(f, lang):
     others = "".join('<li><a href="%s">%s%s <span aria-hidden="true">→</span></a></li>' % (
         fam_path(o, lang), icon(FAM_ICON[o["key"]]), T(o["name"], lang)) for o in C.FAMILIES if o is not f)
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], hub_path(lang)), (f["name"][lang], None)]
-    note = C.NOTE[f["key"]]
-    first = C.DASHBOARD[f["key"]]["rows"][0]
-    figure = "%s %s" % (first[1][lang] if isinstance(first[1], tuple) else first[1], first[0][lang].lower())
-
-    def part(key, label, cls=""):
-        return ('<div class="ucn__part%s"><p class="ucn__ann" aria-hidden="true"><span>%s</span>'
-                '<svg viewBox="0 0 60 24" aria-hidden="true"><path d="M58 4C40 4 26 8 6 18" /><path d="M11 12 5 18.5l8.5 1.4" /></svg></p>'
-                '<p class="ucn__txt">%s</p></div>') % (cls, T(L[label], lang), T(note[key], lang))
-    why = ('  <section class="ucp ucn">\n'
-           '    <div class="shell ucn__grid">\n'
-           '      <div class="ucn__intro">\n'
-           '        <h2 class="ucp__h2">%s</h2>\n'
-           '        <p class="ucn__lead">%s</p>\n'
-           '        <p class="ucn__dash"><s>%s</s><span>%s</span></p>\n'
-           '      </div>\n'
-           '      <article class="ucn__sheet" aria-label="%s">\n'
-           '        <header class="ucn__head"><span>%s</span><span>%s · %s</span></header>\n'
-           '        %s\n        %s\n        %s\n'
-           '        <footer class="ucn__sign"><span>%s</span><em>%s</em></footer>\n'
-           '      </article>\n'
-           '    </div>\n'
-           '  </section>') % (
-        T(L["why"], lang), T(L["note_lead"], lang), esc(figure), T(L["note_stop"], lang),
-        T(L["note_t"], lang), T(L["note_kind"], lang), T(f["name"], lang), T(L["illus"], lang),
-        part("what", "ann_what"), part("proof", "ann_proof"), part("reco", "ann_reco", " ucn__part--reco"),
-        T(L["note_by"], lang), T(L["note_sig"], lang))
     return "\n".join([
         crumbs(items, lang),
         hero(kicker, T(f["h1"], lang), T(f["intro"], lang), lang, aside),
         wheel(f, cases, lang),
-        why,
         client_block(next((x for x in cases if C.VOICES[C.EXTRA[x["key"]]["voice"]][0] != f["video"][0]), cases[0]), lang),
         cta({"key": f["key"]}, lang),
         faq_block(f["faq"], lang, further(lang, "rel-" + f["key"], T(L["others"], lang), others,
