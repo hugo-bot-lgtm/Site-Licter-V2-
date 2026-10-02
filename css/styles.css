@@ -7055,3 +7055,84 @@ html[data-theme="dark"] .xe-ex__list a { color: #EAA93D; }
 html[data-theme="dark"] .xe-ex__read { background: #FCF6EF; color: #13162D; }
 html[data-theme="dark"] .xe-ex__read span { color: #8A5A0E; }
 @media (max-width: 560px) { .xe-ex__list li { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
+
+/* ===== The sales drawer (js/assistant.js): a launcher, a panel from the right ===== */
+.lx { --lx-w: min(400px, calc(100vw - 32px)); font-family: var(--body-font); }
+.lx__launch { position: fixed; right: 20px; bottom: 20px; z-index: 60; display: flex; align-items: center; gap: 10px; padding: 6px 18px 6px 6px; border: 0; border-radius: 999px; background: var(--navy); color: #FCF6EF; box-shadow: 0 18px 40px -16px rgba(19, 22, 45, .55); cursor: pointer; font: 700 14px/1.2 var(--body-font); transition: transform .25s cubic-bezier(.16, 1, .3, 1), opacity .2s ease, bottom .3s ease; }
+.lx__launch:hover { transform: translateY(-2px); }
+.lx__launch:focus-visible, .lx button:focus-visible, .lx a:focus-visible, .lx input:focus-visible { outline: 2px solid #EAA93D; outline-offset: 3px; }
+html[data-theme="dark"] .lx__launch { background: #FCF6EF; color: #13162D; }
+.lx.is-open .lx__launch { opacity: 0; pointer-events: none; transform: translateY(8px); }
+.lx__face { position: relative; flex: none; display: block; width: 42px; height: 42px; }
+.lx__face img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.lx__face i { position: absolute; right: 0; bottom: 1px; width: 11px; height: 11px; border-radius: 50%; background: #2FA36B; box-shadow: 0 0 0 2px var(--navy); }
+html[data-theme="dark"] .lx__launch .lx__face i { box-shadow: 0 0 0 2px #FCF6EF; }
+body:has(.ucp-bar.is-shown) .lx__launch { bottom: 84px; }
+
+.lx__panel { position: fixed; top: 16px; right: 16px; bottom: 16px; z-index: 70; display: flex; flex-direction: column; width: var(--lx-w); border-radius: 24px; background: var(--card-bg); color: var(--ink); box-shadow: 0 0 0 1px var(--line), 0 40px 90px -30px rgba(19, 22, 45, .55); overflow: hidden; transform: translateX(calc(100% + 24px)); transition: transform .45s cubic-bezier(.16, 1, .3, 1); }
+.lx.is-open .lx__panel { transform: none; }
+.lx__head { display: flex; align-items: center; gap: 12px; padding: 16px 16px 14px 18px; background: var(--navy); color: #FCF6EF; }
+.lx__head .lx__face i { box-shadow: 0 0 0 2px var(--navy); }
+.lx__who { display: grid; flex: 1; min-width: 0; }
+.lx__who b { font: 600 16px/1.25 var(--title-font); }
+.lx__who small { font: 500 12.5px/1.35 var(--body-font); color: rgba(252, 246, 239, .8); }
+.lx__who .lx__bot { margin-top: 2px; font-size: 11px; letter-spacing: .3px; color: #EAA93D; }
+.lx__close { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 50%; background: rgba(252, 246, 239, .12); color: #FCF6EF; font-size: 22px; line-height: 1; cursor: pointer; }
+.lx__close:hover { background: rgba(252, 246, 239, .22); }
+.lx__tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 12px 14px 0; padding: 4px; border-radius: 999px; background: rgba(var(--ink-rgb), .06); }
+.lx__tab { height: 38px; border: 0; border-radius: 999px; background: transparent; color: var(--text-2); font: 700 13.5px/1 var(--body-font); cursor: pointer; }
+.lx__tab[aria-selected="true"] { background: var(--card-bg); color: var(--ink); box-shadow: 0 2px 10px -4px rgba(19, 22, 45, .35); }
+.lx__view { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.lx__view[hidden] { display: none; }
+
+.lx__call { padding: 22px 22px 24px; overflow-y: auto; }
+.lx__title { margin: 0; font: 600 24px/1.2 var(--title-font); color: var(--ink); text-wrap: balance; }
+.lx__lead { margin: 10px 0 18px; font: 500 15px/1.55 var(--body-font); color: var(--text-2); }
+.lx__form { display: grid; gap: 10px; }
+.lx__form[hidden] { display: none; }
+.lx__label { font: 700 13px/1.3 var(--body-font); color: var(--ink); }
+.lx__input { height: 48px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--field-br); background: var(--field-bg); color: var(--ink); font: 500 15px/1 var(--body-font); }
+.lx__input[aria-invalid="true"] { border-color: #C0442F; }
+.lx__err { margin: 0; font: 600 13px/1.4 var(--body-font); color: #B33A26; }
+html[data-theme="dark"] .lx__err { color: #F08B76; }
+.lx__submit { justify-content: center; height: 48px; }
+.lx__promise { display: flex; align-items: center; gap: 8px; margin: 4px 0 0; font: 600 13px/1.4 var(--body-font); color: var(--ink); }
+.lx__dot { width: 8px; height: 8px; border-radius: 50%; background: #2FA36B; box-shadow: 0 0 0 4px rgba(47, 163, 107, .2); }
+.lx__consent { margin: 0; font: 500 12px/1.5 var(--body-font); color: var(--text-2); }
+.lx__consent a { color: inherit; text-decoration: underline; }
+.lx__done { margin: 0; padding: 14px 16px; border-radius: 14px; background: rgba(47, 163, 107, .12); font: 500 15px/1.5 var(--body-font); color: var(--ink); }
+
+.lx__log { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 18px 16px 8px; }
+.lx__msg { max-width: 88%; padding: 11px 14px; border-radius: 16px; font: 500 14.5px/1.5 var(--body-font); }
+.lx__msg--him { align-self: flex-start; border-bottom-left-radius: 5px; background: rgba(var(--ink-rgb), .06); color: var(--ink); }
+.lx__msg--you { align-self: flex-end; border-bottom-right-radius: 5px; background: var(--navy); color: #FCF6EF; }
+html[data-theme="dark"] .lx__msg--you { background: #FCF6EF; color: #13162D; }
+.lx__cta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.lx__cta-call { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 13px; border: 0; border-radius: 999px; background: #EAA93D; color: #13162D; font: 700 12.5px/1 var(--body-font); cursor: pointer; }
+.lx__cta-call:hover { filter: brightness(1.05); }
+.lx__cta-go { display: inline-flex; align-items: center; height: 34px; padding: 0 13px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); color: var(--ink); font: 700 12.5px/1 var(--body-font); }
+.lx__cta-go:hover { box-shadow: inset 0 0 0 1px rgba(var(--ink-rgb), .4); }
+.lx__typing { padding: 14px 16px; }
+.lx__dots { display: inline-flex; gap: 4px; }
+.lx__dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--text-2); animation: lx-dot 1s infinite ease-in-out; }
+.lx__dots i:nth-child(2) { animation-delay: .15s; } .lx__dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes lx-dot { 0%, 80%, 100% { opacity: .3; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+.lx__chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 16px 10px; }
+.lx__chips[hidden] { display: none; }
+.lx__chip { height: 32px; padding: 0 12px; border: 0; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); background: transparent; color: var(--ink); font: 600 12.5px/1 var(--body-font); cursor: pointer; }
+.lx__chip:hover { background: rgba(var(--ink-rgb), .06); }
+.lx__ask { display: flex; gap: 8px; padding: 10px 14px 14px; border-top: 1px solid var(--line); }
+.lx__q { flex: 1; min-width: 0; height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--field-br); background: var(--field-bg); color: var(--ink); font: 500 14.5px/1 var(--body-font); }
+.lx__send { flex: none; width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--navy); color: #FCF6EF; font: 700 18px/1 var(--body-font); cursor: pointer; }
+html[data-theme="dark"] .lx__send { background: #FCF6EF; color: #13162D; }
+
+@media (max-width: 720px) {
+  .lx__launch { right: 14px; bottom: 14px; padding: 5px; }
+  .lx__launch-t { display: none; }
+  .lx__panel { top: auto; right: 8px; left: 8px; bottom: 8px; width: auto; height: min(640px, calc(100dvh - 72px)); border-radius: 22px; transform: translateY(calc(100% + 16px)); }
+}
+@media (prefers-reduced-motion: reduce) { .lx__panel, .lx__launch { transition: none; } .lx__dots i { animation: none; } }
+/* the floating guide banner steps aside while the drawer is open, and the
+   launcher keeps to its face where the two would meet */
+html.lx-open .banner--float { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s ease, visibility 0s linear .2s; }
+@media (max-width: 1280px) { .lx__launch { padding: 5px; } .lx__launch-t { display: none; } }

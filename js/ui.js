@@ -1734,3 +1734,16 @@ window.LicterUC = (function () {
     }
   });
 })();
+
+/* =========================================================================
+   The sales drawer (callback and chat, js/assistant.js), on every page:
+   loaded from here so no page has to list it, with this file's version.
+   ========================================================================= */
+(function () {
+  var me = document.querySelector('script[src*="js/ui.js"]');
+  if (!me || document.querySelector('script[src*="js/assistant.js"]')) return;
+  var s = document.createElement("script");
+  s.src = me.getAttribute("src").replace(/ui\.js/, "assistant.js");
+  s.defer = true;
+  document.body.appendChild(s);
+})();
