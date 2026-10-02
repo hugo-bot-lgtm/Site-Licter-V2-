@@ -5446,7 +5446,8 @@ html[data-theme="dark"] .home .wall::after { background: rgba(var(--surf-rgb), .
 @media (max-width: 720px) {
   .c-peaks { gap: 0; margin-top: 10px; border-top: 1px solid var(--line); }
   .c-peaks li { padding: 8px 0; border-radius: 0; background: none; box-shadow: none; border-bottom: 1px solid var(--line); }
-  .c-peaks b { display: inline; margin: 0 6px 0 0; color: var(--amber-deep); }
+  .c-peaks b { display: inline; margin: 0 6px 0 0; color: var(--amber-ink); }
+  html[data-theme="dark"] .c-peaks b { color: var(--amber); }
   .c-peaks span { font-size: 12.5px; }
 }
 

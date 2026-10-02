@@ -618,7 +618,8 @@ L.update({
 })
 
 
-def hub_body(lang):
+def families(lang):
+    """the four families as a carousel of photo cards: the hub and the home"""
     fams = []
     for i, f in enumerate(C.FAMILIES):
         cases = [x for x in C.CASES if x["family"] == f["key"]]
@@ -651,6 +652,11 @@ def hub_body(lang):
                 '    </div>\n'
                 '    <div class="shell">\n    <ol class="ucc__track">\n%s\n    </ol>\n    </div>\n'
                 '  </section>') % (T(L["families"], lang), T(L["fam_lead"], lang), T(L["prev"], lang), T(L["next"], lang), "\n".join(fams))
+    return carousel
+
+
+def hub_body(lang):
+    carousel = families(lang)
     items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], None)]
     return "\n".join([
         crumbs(items, lang),
@@ -659,7 +665,7 @@ def hub_body(lang):
         carousel,
         compare(lang),
         section('      <h2 class="ucp__h2">%s</h2>\n      <div class="ucp__voices">\n%s\n      </div>' % (
-            T(L["hub_voices"], lang), "\n".join(reel(C.VOICES[k], lang) for k in ("paris2024", "loreal", "orange")))),
+            T(L["hub_voices"], lang), "\n".join(reel(C.VOICES[k], lang) for k in ("lvmh", "loreal", "orange")))),
         cta({"key": "hub"}, lang).replace(T(L["cta_t"], lang), T(L["hub_offer_t"], lang), 1),
         faq_block(C.HUB_FAQ, lang, related("hub-more", T(L["by_family"], lang), "".join(
             '<li><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (fam_path(f, lang), T(f["name"], lang)) for f in C.FAMILIES))),

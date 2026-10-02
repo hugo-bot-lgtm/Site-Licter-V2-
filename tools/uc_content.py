@@ -44,7 +44,7 @@ FAMILIES = [
               "You already know what you published. The real question is what it moved: in which audiences, on which platforms, and whether the voices carrying it were the right ones. The online conversation answers all three, provided you read it beyond the volumes."),
     "why": ("Un tableau de bord compte les mentions. Il ne dit pas si elles viennent des bonnes personnes, ni si elles ont changé une opinion. Nous comparons la conversation avant et après, audience par audience, et nous vous disons ce qui a vraiment bougé et pourquoi.",
             "A dashboard counts mentions. It does not tell you whether they come from the right people, or whether they changed a mind. We compare the conversation before and after, audience by audience, and tell you what actually moved and why."),
-    "video": ("l-OevQ4q8js", "55:08", ("Des millions de tweets à gérer, en direct.", "Millions of tweets to handle, live."), "Paris 2024", "C. Legall"),
+    "video": ("0HfWWSB0v78", "54:27", ("Ce que la diversité des médias rapporte vraiment.", "What media diversity actually buys you."), "AXA", "Z. Gebran"),
     "faq": [
       (("Peut-on mesurer l'impact d'une campagne qui n'a pas de lien de conversion ?", "Can you measure a campaign that has no conversion link?"),
        ("Oui. Nous mesurons ce que la campagne a déplacé dans la conversation : volume, tonalité, thèmes, et surtout quelles audiences ont changé de position. C'est souvent plus parlant qu'un taux de clic.",
@@ -723,7 +723,6 @@ CASES = [
 # ------------------------------------------------------------------ extras
 # Client interviews from the Audience First channel, one per use case.
 VOICES = {
-    "paris2024": ("l-OevQ4q8js", "55:08", ("Des millions de tweets à gérer, en direct.", "Millions of tweets to handle, live."), "Paris 2024", "C. Legall"),
     "axa": ("0HfWWSB0v78", "54:27", ("Ce que la diversité des médias rapporte vraiment.", "What media diversity actually buys you."), "AXA", "Z. Gebran"),
     "lvmh": ("CEFJc7tP4hU", "41:22", ("600 000 abonnés en deux ans.", "600k followers in two years."), "LVMH", "Clara Mallien"),
     "sncf": ("z3EkLWjQXMQ", "56:29", ("La social room a changé notre façon de travailler.", "The social room changed the way we work."), "SNCF", "M. Fleurbaey"),
@@ -759,7 +758,7 @@ EXTRA = {
     "roi": [(("Un budget mieux placé", "Budget where it pays"), ("Vous savez quels leviers ont vraiment porté la campagne : la suivante mise sur eux.", "You know which levers really carried the campaign: the next one backs them.")),
             (("Un bilan en jours", "A review in days"), ("Une première lecture dès la fin de la campagne, pas un bilan trois mois plus tard.", "A first read as soon as the campaign ends, not a review three months later.")),
             (("Des arbitrages défendables", "Decisions you can defend"), ("Des preuves chiffrées, audience par audience, pour arbitrer en comité.", "Evidence, audience by audience, to settle choices in committee."))],
-    "voice": "paris2024", "articles": ["article-what-a-platform-cannot-do-alone.html", "article-the-voices-that-actually-carry.html"],
+    "voice": "lvmh", "articles": ["article-what-a-platform-cannot-do-alone.html", "article-the-voices-that-actually-carry.html"],
   },
   "leader-advocacy": {
     "approach": ("Nous partons des sujets sur lesquels votre dirigeant est légitime, pas de ceux sur lesquels il aimerait l'être. Nous mesurons sa part de voix sujet par sujet face à un panel de pairs choisi avec vous, et nous regardons qui relaie ses messages. Le résultat est un plan de prise de parole, pas un classement.",

@@ -815,7 +815,6 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     |---|---|---|---|
     | Groupe SEB | Hélène Classine | 1:03:49 | `1PXRd4_JgEc` |
     | Dassault Systèmes | Jean-Stéphane Bou | 1:00:32 | `cnwA-t0Vqk4` |
-    | Paris 2024 | C. Legall | 55:08 | `l-OevQ4q8js` |
 
     Les trois durées correspondent exactement à celles de l'ancienne maquette,
     ce qui confirme que ce sont bien ces épisodes-là.

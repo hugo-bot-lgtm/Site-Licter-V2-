@@ -17,8 +17,6 @@ window.LicterVoices = [
     quote: "It is not a study if there is no action plan." },
   { id: "cnwA-t0Vqk4", brand: "Dassault Systèmes", who: "Jean-Stéphane Bou",          time: "1:00:32",
     quote: "Social media helps us build better products." },
-  { id: "l-OevQ4q8js", brand: "Paris 2024",        who: "C. Legall",                  time: "55:08",
-    quote: "Millions of tweets to handle, live." },
   { id: "z3EkLWjQXMQ", brand: "SNCF",              who: "M. Fleurbaey",               time: "56:29",
     quote: "The social room changed the way we work." },
   { id: "UElJ_Pdd0wo", brand: "Orange",            who: "B. Hoang",                   time: "58:39",

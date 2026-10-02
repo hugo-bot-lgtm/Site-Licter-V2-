@@ -145,7 +145,7 @@ OFFERS = [
         "book_t": ("Quelle serait votre première question ?", "What would you ask first?"),
     },
     {
-        "key": "vigie", "file": "offer-vigie-360.html", "voice": "paris2024", "n": 2,
+        "key": "vigie", "file": "offer-vigie-360.html", "voice": "sncf", "n": 2,
         "name": ("Vigie 360", "Vigie 360"),
         "short": ("Alerté en 15 minutes, 24 h/24.", "Alerted in 15 minutes, 24/7."),
         "seo_title": ("Vigie 360 : veille et alertes 24/7 en 15 minutes | Licter",
@@ -210,7 +210,7 @@ OFFERS = [
         "book_t": ("Que devrions-nous surveiller pour vous ?", "What should we be watching for you?"),
     },
     {
-        "key": "slaas", "file": "offer-slaas.html", "voice": "sncf", "n": 3,
+        "key": "slaas", "file": "offer-slaas.html", "voice": "seb", "n": 3,
         "name": ("Social Listening as a Service", "Social Listening as a Service"),
         "short": ("Votre plateforme, enfin utilisée.", "Your platform, finally used."),
         "seo_title": ("Social Listening as a Service : faire servir votre plateforme | Licter",
