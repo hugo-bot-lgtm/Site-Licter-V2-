@@ -1,5 +1,5 @@
 /* =========================================================================
-   Client voices — the rotating wall on clients.html
+   Client voices: the rotating wall on clients.html and the home
 
    The pool is a snapshot of the long-form episodes on the Licter channel
    (youtube.com/@audience_first). It is baked in on purpose: the site has no
@@ -40,7 +40,16 @@ window.LicterVoices = [
 (function () {
   var pool = window.LicterVoices || [];
   var reels = document.querySelector(".reels");
-  if (!reels || pool.length < 4) return;
+  if (!reels) return;
+  /* a page can name the only interviews it rolls through (data-pool, by
+     YouTube id, in order of preference): the home keeps to five */
+  var only = (reels.getAttribute("data-pool") || "").split(/\s+/).filter(Boolean);
+  if (only.length) {
+    pool = only.map(function (id) {
+      return pool.filter(function (v) { return v.id === id; })[0];
+    }).filter(Boolean);
+  }
+  if (pool.length < 4) return;
 
   var cards = Array.prototype.slice.call(reels.querySelectorAll(".reel"));
   if (!cards.length) return;

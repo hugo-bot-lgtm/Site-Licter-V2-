@@ -274,6 +274,8 @@ window.LicterFR = {
   "Map what people expect before, during and after purchase, and where the experience breaks down.": "Cartographiez les attentes avant, pendant et après l'achat, et là où l'expérience se casse.",
   "Follow the communities, experts and institutions that shape a category, and the trends breaking out of it.": "Suivez les communautés, les experts et les institutions qui façonnent une catégorie, et les tendances qui en sortent.",
   "“The social room changed the way we work.”": "« La social room a changé notre façon de travailler. »",
+  "“What media diversity actually buys you.”": "« Ce que la diversité des médias rapporte vraiment. »",
+  "“600k followers in two years.”": "« 600 000 abonnés en deux ans. »",
   "“The internet, to capture the consumer's voice.”": "« Internet, pour capter la voix du consommateur. »",
   "“Every trend now starts on TikTok.”": "« Toutes les tendances partent désormais de TikTok. »",
   "Use cases | Licter": "Cas d'usage | Licter",
