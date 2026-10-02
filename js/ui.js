@@ -839,6 +839,35 @@ window.LicterUC = (function () {
       link: { label: "All twelve use cases", href: LicterUC() }
     },
 
+    expertise: {
+      label: "SOCIAL INTELLIGENCE",
+      items: [
+        { icon: "chart", name: "Social listening", href: "/expertise-social-listening.html",
+          desc: "What is said about you, your competitors and your market." },
+        { icon: "audiences", name: "Audience listening", href: "/expertise-audience-listening.html",
+          desc: "Who the people talking about you really are." },
+        { icon: "influence", name: "Influence listening", href: "/expertise-influence-listening.html",
+          desc: "The voices that actually carry in your category." },
+        { icon: "ai", name: "AI listening", href: "/expertise-ai-listening.html",
+          desc: "What generative AI says about your brand." },
+        { icon: "bell", name: "Live listening", href: "/expertise-live-listening.html",
+          desc: "The conversation in real time, an alert within 15 minutes." },
+        { icon: "search", name: "Search listening", href: "/expertise-search-listening.html",
+          desc: "What people search for on Google, YouTube and Amazon." }
+      ],
+      aside: {
+        label: "IN OUR OFFERS",
+        items: [
+          { icon: "chart", name: "Social Insights", href: "/offer-social-insights.html" },
+          { icon: "bell", name: "Vigie 360", href: "/offer-vigie-360.html" },
+          { icon: "layers", name: "Social Listening as a Service", href: "/offer-slaas.html" },
+          { icon: "ai", name: "Nox", href: "/offer-nox.html" }
+        ]
+      },
+      cta: { label: "Book a meeting", href: "/index.html#book" },
+      link: { label: "All our expertise", href: "/expertise.html" }
+    },
+
     offers: {
       label: "FOUR WAYS TO WORK WITH US",
       items: [
@@ -1563,7 +1592,7 @@ window.LicterUC = (function () {
 (function () {
   var path = location.pathname.replace(/index\.html$/, "");
   var map = [
-    [/\/(fr\/cas-usage|en\/use-cases)\//, "use-cases"], [/\/(offers|offer-[a-z0-9-]+)\.html$/, "offers.html"], [/\/why-licter\.html$/, "why-licter.html"],
+    [/\/(fr\/cas-usage|en\/use-cases)\//, "use-cases"], [/\/(offers|offer-[a-z0-9-]+)\.html$/, "offers.html"], [/\/expertise(-[a-z0-9-]+)?\.html$/, "expertise.html"], [/\/why-licter\.html$/, "why-licter.html"],
     [/\/(tech-[\w-]+)\.html$/, "tech"], [/\/clients\.html$/, "clients.html"], [/\/(blog|article-[\w-]+)\.html$/, "blog.html"]
   ];
   var hit = null;

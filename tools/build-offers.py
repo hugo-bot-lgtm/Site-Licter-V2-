@@ -25,14 +25,19 @@ C = U.C
 FR, EN = 0, 1
 SITE = U.SITE
 NEW = {}   # English -> French, for js/fr.js
-BLOCK = re.compile(r"\n  /\* ---- offer pages \(tools/build-offers\.py\) ---- \*/.*?/\* ---- end offer pages ---- \*/\n", re.S)
+# every generated block of js/fr.js, and this script's own
+BLOCKS = re.compile(r"\n  /\* ---- ([a-z ]+) \(tools/build-[a-z]+\.py\) ---- \*/.*?/\* ---- end \1 ---- \*/\n", re.S)
+
+
+def block_re(label):
+    return re.compile(r"\n  /\* ---- %s \(tools/build-[a-z]+\.py\) ---- \*/.*?/\* ---- end %s ---- \*/\n" % (label, label), re.S)
 
 
 def base_dict():
-    """js/fr.js without this script's own block, so a rerun registers its
-    strings again instead of finding them already there"""
+    """js/fr.js without any generated block, so a rerun registers its strings
+    again instead of finding them already there"""
     import subprocess
-    js = BLOCK.sub("\n", (ROOT / "js" / "fr.js").read_text())
+    js = BLOCKS.sub("\n", (ROOT / "js" / "fr.js").read_text())
     out = subprocess.run(["node", "-e", "var window={};" + js + ";process.stdout.write(JSON.stringify(window.LicterFR||{}))"],
                          capture_output=True, text=True, check=True).stdout
     return json.loads(out)
@@ -546,13 +551,13 @@ def page(o, offers_html):
     (ROOT / o["file"]).write_text(out)
 
 
-def write_dict():
-    """the French of these pages, in a block of js/fr.js"""
+def write_dict(label="offer pages", script="build-offers.py", entries=None):
+    """the French of these pages, in a block of js/fr.js of their own"""
+    entries = NEW if entries is None else entries
     p = ROOT / "js" / "fr.js"
-    src = p.read_text()
-    src = BLOCK.sub("\n", src)
-    lines = "\n".join("  %s:\n    %s," % (json.dumps(k, ensure_ascii=False), json.dumps(v, ensure_ascii=False)) for k, v in NEW.items())
-    block = "\n  /* ---- offer pages (tools/build-offers.py) ---- */\n%s\n  /* ---- end offer pages ---- */\n" % lines
+    src = block_re(label).sub("\n", p.read_text())
+    lines = "\n".join("  %s:\n    %s," % (json.dumps(k, ensure_ascii=False), json.dumps(v, ensure_ascii=False)) for k, v in entries.items())
+    block = "\n  /* ---- %s (tools/%s) ---- */\n%s\n  /* ---- end %s ---- */\n" % (label, script, lines, label)
     i = src.rindex("};")
     p.write_text(src[:i].rstrip() + "\n" + block + src[i:])
 

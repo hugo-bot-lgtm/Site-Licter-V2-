@@ -983,6 +983,7 @@ if __name__ == "__main__":
     # shared header and footer of the pages below are translated with
     import runpy
     runpy.run_path(str(ROOT / "tools" / "build-offers.py"), run_name="__main__")
+    runpy.run_path(str(ROOT / "tools" / "build-expertise.py"), run_name="__main__")
     DICT.update(fr_dict())
     main()
     # the home in both languages, from the same dictionary
