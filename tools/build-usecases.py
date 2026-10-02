@@ -703,27 +703,41 @@ def bubbles(lang):
 
 
 def compare(lang):
+    """Licter against a tool and an agency: what each one is right for, on
+    show; the point-by-point table folded under it, open on demand"""
     X = C.COMPARE
+    *rows, last = X["rows"]
+    verdict = "".join(
+        '<li%s><b>%s</b><span>%s</span></li>' % (' class="is-us"' if i == 2 else "", T(c, lang), T(last[i + 1], lang))
+        for i, c in enumerate(X["cols"]))
     head = "".join('<th scope="col"%s>%s</th>' % (' class="is-us"' if i == 2 else "", T(c, lang)) for i, c in enumerate(X["cols"]))
-    rows = "".join('<tr><th scope="row">%s</th>%s</tr>' % (T(r[0], lang), "".join(
+    body = "".join('<tr><th scope="row">%s</th>%s</tr>' % (T(r[0], lang), "".join(
         '<td data-l="%s"%s>%s</td>' % (T(X["cols"][i], lang), ' class="is-us"' if i == 2 else "", T(v, lang)) for i, v in enumerate(r[1:])))
-        for r in X["rows"])
-    return ('  <section class="ucp ucx" aria-labelledby="ucx-t">\n'
+        for r in rows)
+    return ('  <section class="ucp cmp" aria-labelledby="ucx-t">\n'
             '    <div class="shell">\n'
             '      <div class="xs__head">\n'
             '        <h2 class="xs__title" id="ucx-t">%s</h2>\n'
             '        <p class="xs__lead">%s</p>\n'
             '      </div>\n'
-            '      <table class="ucx__table">\n'
-            '        <thead><tr><td></td>%s</tr></thead>\n'
-            '        <tbody>%s</tbody>\n'
-            '      </table>\n'
+            '      <p class="ucx__k">%s</p>\n'
+            '      <ul class="ucx__verdict">%s</ul>\n'
+            '      <details class="ucx__more">\n'
+            '        <summary><span class="ucx__open">%s</span><span class="ucx__close">%s</span></summary>\n'
+            '        <table class="ucx__table">\n'
+            '          <thead><tr><td></td>%s</tr></thead>\n'
+            '          <tbody>%s</tbody>\n'
+            '        </table>\n'
+            '      </details>\n'
             '    </div>\n'
-            '  </section>') % (T(X["title"], lang), T(X["lead"], lang), head, rows)
+            '  </section>') % (T(X["title"], lang), T(X["lead"], lang), T(last[0], lang), verdict,
+                               T(L["cmp_open"], lang), T(L["cmp_close"], lang), head, body)
 
 
 L.update({
     "bubbles_sr": ("Les questions que nos clients nous posent :", "The questions our clients ask us:"),
+    "cmp_open": ("Voir la comparaison point par point", "See the point-by-point comparison"),
+    "cmp_close": ("Masquer la comparaison", "Hide the comparison"),
     "by_family": ("Explorer par famille", "Explore by family"),
 })
 

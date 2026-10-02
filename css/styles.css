@@ -6959,3 +6959,36 @@ html[data-theme="dark"] .of-oth i { color: #EAA93D; }
 .xo-ba b.b { color: rgba(27, 30, 56, .74); }
 .of-voice .reel__who { color: var(--text-2); }
 .of-hero .xh__title { font-size: clamp(36px, 3.9vw, 58px); max-width: 16ch; }
+
+/* the comparison, lighter: the verdict on show, the table folded (.ucx__more) */
+.ucx__k { margin: 0 0 12px; font: 700 11px/1.3 var(--body-font); letter-spacing: 1.3px; text-transform: uppercase; color: var(--text-2); }
+.ucx__verdict { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); margin: 0; padding: 0; list-style: none; }
+.ucx__verdict li { display: flex; flex-direction: column; gap: 8px; padding: clamp(18px, 2vw, 26px); border-radius: 20px; box-shadow: inset 0 0 0 1px var(--line); }
+.ucx__verdict b { font: 600 clamp(16px, 1.25vw, 18px)/1.25 var(--title-font); color: var(--ink); }
+.ucx__verdict span { font: 500 15px/1.5 var(--body-font); color: var(--text-2); }
+.ucx__verdict .is-us { background: var(--navy); box-shadow: none; }
+.ucx__verdict .is-us b { color: #FCF6EF; }
+.ucx__verdict .is-us span { color: rgba(252, 246, 239, .86); font-weight: 600; }
+html[data-theme="dark"] .ucx__verdict .is-us { background: #FCF6EF; }
+html[data-theme="dark"] .ucx__verdict .is-us b { color: #13162D; }
+html[data-theme="dark"] .ucx__verdict .is-us span { color: rgba(19, 22, 45, .82); }
+.ucx__more { margin-top: clamp(18px, 2vw, 26px); }
+.ucx__more summary { display: inline-flex; align-items: center; gap: 10px; padding: 11px 18px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); font: 700 14px/1.2 var(--body-font); color: var(--ink); cursor: pointer; list-style: none; transition: background-color .2s ease, box-shadow .2s ease; }
+.ucx__more summary::-webkit-details-marker { display: none; }
+.ucx__more summary::after { content: ""; width: 8px; height: 8px; margin-top: -4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .25s ease; }
+.ucx__more[open] summary::after { margin-top: 4px; transform: rotate(-135deg); }
+.ucx__more summary:hover { box-shadow: inset 0 0 0 1px rgba(var(--ink-rgb), .35); }
+.ucx__more summary:focus-visible { outline: 2px solid #EAA93D; outline-offset: 3px; }
+.ucx__close, .ucx__more[open] .ucx__open { display: none; }
+.ucx__more[open] .ucx__close { display: inline; }
+.ucx__more .ucx__table { margin-top: clamp(18px, 2vw, 28px); }
+.ucx__more[open] .ucx__table { animation: ucx-in .35s cubic-bezier(.16, 1, .3, 1); }
+@keyframes ucx-in { from { opacity: 0; transform: translateY(-6px); } }
+.ucx__table tbody tr:last-child .is-us { font-weight: 500; color: rgba(252, 246, 239, .86); }
+html[data-theme="dark"] .ucx__table tbody tr:last-child .is-us { color: rgba(19, 22, 45, .82); }
+@media (max-width: 760px) { .ucx__verdict { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .ucx__more[open] .ucx__table { animation: none; } .ucx__more summary::after { transition: none; } }
+/* the home has no bands: since the families and the comparison came in
+   under the hero, the live demo became an even section and picked up the
+   band of the other pages, cut straight across 260px above it */
+html .home .cases:nth-of-type(n)::before { background: none; }
