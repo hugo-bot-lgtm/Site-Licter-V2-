@@ -921,42 +921,29 @@ NOTE = {
 }
 
 
-# ----------------------------------------------------------- hub: the comparison
-# Licter against the two usual alternatives, criterion by criterion. Each
-# alternative keeps the case where it is the right choice.
+# ------------------------------------------- hub and home: why not just a tool
+# A tool counts, an AI summarises, people understand: what a human team does
+# that software does not, beside a photo of the team.
 COMPARE = {
     "title": ("Pourquoi pas un outil seul ?", "Why not just a tool?"),
-    "lead": ("Trois façons d'obtenir une réponse. Elles ne se valent pas, selon ce que vous devez décider.",
-             "Three ways to get an answer. Which one fits depends on what you have to decide."),
-    "cols": (("Une plateforme en self-service", "A self-service platform"),
-             ("Un institut d'études", "A research agency"),
-             ("Licter", "Licter")),
+    "lead": ("Parce qu'un outil compte et qu'une IA résume, mais que ce sont des personnes qui comprennent. Chez Licter, chaque lecture est faite par quelqu'un qui parle la langue du marché et connaît votre marque.",
+             "Because a tool counts and an AI summarises, but it takes people to understand. At Licter, every reading is done by someone who speaks the market's language and knows your brand."),
+    "photo": ("team-trio", ("Trois analystes de Licter, assises ensemble dans les bureaux", "Three Licter analysts sitting together in the office")),
+    "badge": ("Des analystes, pas un algorithme", "Analysts, not an algorithm"),
+    "them": ("Un outil seul", "A tool alone"),
+    "us": ("Notre équipe", "Our team"),
     "rows": [
-        (("Ce que vous recevez", "What you receive"),
-         ("Un tableau de bord, à lire vous-même", "A dashboard, for you to read"),
-         ("Un rapport, une fois", "A report, once"),
-         ("Une recommandation, présentée par un consultant", "A recommendation, presented by a consultant")),
-        (("Qui fait le travail", "Who does the work"),
-         ("Votre équipe, après une formation", "Your team, after some training"),
-         ("L'institut, à partir d'un questionnaire", "The agency, from a questionnaire"),
-         ("Nos consultants, du cadrage à la restitution", "Our consultants, from framing to readout")),
-        (("Ce qui est lu", "What gets read"),
-         ("Ce que l'outil collecte, souvent une seule couche", "What the tool collects, often a single layer"),
-         ("Ce que les gens déclarent", "What people say they do"),
-         ("Ce qu'ils publient, recherchent, font et demandent à l'IA", "What they post, search, do and ask AI")),
-        (("Délai", "Timing"),
-         ("Les données tout de suite, la lecture quand quelqu'un a le temps", "Data at once, the reading whenever someone has time"),
-         ("Six à douze semaines", "Six to twelve weeks"),
-         ("Une première lecture en dix jours, une alerte en quinze minutes", "A first read in ten days, an alert in fifteen minutes")),
-        (("Coût", "Cost"),
-         ("Une licence annuelle, que l'outil serve ou non", "A yearly licence, used or not"),
-         ("Un budget par étude", "A budget per study"),
-         ("Un forfait mensuel, études illimitées, sans engagement", "A fixed monthly fee, unlimited studies, no lock-in")),
-        (("Le bon choix quand", "The right choice when"),
-         ("Vous avez une équipe dédiée qui sait lire la donnée", "You have a dedicated team that can read the data"),
-         ("Vous testez un concept qui n'existe pas encore en public", "You are testing a concept nobody has seen yet"),
-         ("Vous devez décider, et personne n'a le temps de lire", "You have to decide, and nobody has time to read")),
+        (("Compte les mentions.", "Counts the mentions."),
+         ("Les lit, dans la langue du marché.", "Reads them, in the language of the market.")),
+        (("Résume ce qui se dit.", "Summarises what is said."),
+         ("Vous dit ce que ça change pour vous.", "Tells you what it changes for you.")),
+        (("Attend qu'on ouvre le tableau de bord.", "Waits for someone to open the dashboard."),
+         ("Vous appelle quand ça compte.", "Calls you when it matters.")),
+        (("Se renouvelle chaque année.", "Renews every year."),
+         ("Apprend votre marque, question après question.", "Learns your brand, one question after another.")),
     ],
+    "foot": ("Nous utilisons les meilleurs outils et l'IA pour collecter et trier. Ce sont des personnes qui lisent, et qui décident avec vous.",
+             "We use the best tools and AI to collect and sort. People do the reading, and decide with you."),
 }
 
 HUB_FAQ = [

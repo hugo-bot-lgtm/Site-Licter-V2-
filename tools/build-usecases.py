@@ -703,41 +703,34 @@ def bubbles(lang):
 
 
 def compare(lang):
-    """Licter against a tool and an agency: what each one is right for, on
-    show; the point-by-point table folded under it, open on demand"""
+    """why not just a tool: what a human team does that software does not,
+    beside a photo of the team"""
     X = C.COMPARE
-    *rows, last = X["rows"]
-    verdict = "".join(
-        '<li%s><b>%s</b><span>%s</span></li>' % (' class="is-us"' if i == 2 else "", T(c, lang), T(last[i + 1], lang))
-        for i, c in enumerate(X["cols"]))
-    head = "".join('<th scope="col"%s>%s</th>' % (' class="is-us"' if i == 2 else "", T(c, lang)) for i, c in enumerate(X["cols"]))
-    body = "".join('<tr><th scope="row">%s</th>%s</tr>' % (T(r[0], lang), "".join(
-        '<td data-l="%s"%s>%s</td>' % (T(X["cols"][i], lang), ' class="is-us"' if i == 2 else "", T(v, lang)) for i, v in enumerate(r[1:])))
-        for r in rows)
-    return ('  <section class="ucp cmp" aria-labelledby="ucx-t">\n'
-            '    <div class="shell">\n'
-            '      <div class="xs__head">\n'
-            '        <h2 class="xs__title" id="ucx-t">%s</h2>\n'
+    photo, alt = X["photo"]
+    sr = lambda k: '<span class="visually-hidden">%s\u00a0: </span>' % T(X[k], lang) if lang == FR else '<span class="visually-hidden">%s: </span>' % T(X[k], lang)
+    rows = "".join('<li><span class="cmp__them">%s%s</span><span class="cmp__us">%s%s</span></li>' % (sr("them"), T(a, lang), sr("us"), T(b, lang)) for a, b in X["rows"])
+    return ('  <section class="ucp cmp" aria-labelledby="cmp-t">\n'
+            '    <div class="shell cmp__grid">\n'
+            '      <figure class="cmp__photo">\n'
+            '        <img src="/assets/img/team/morning/%s-800.webp" srcset="/assets/img/team/morning/%s-800.webp 800w, /assets/img/team/morning/%s-1080.webp 1080w" sizes="(max-width: 900px) 92vw, 40vw" alt="%s" width="800" height="1197" loading="lazy" decoding="async" />\n'
+            '        <figcaption class="cmp__badge">%s</figcaption>\n'
+            '      </figure>\n'
+            '      <div class="cmp__copy">\n'
+            '        <h2 class="xs__title" id="cmp-t">%s</h2>\n'
             '        <p class="xs__lead">%s</p>\n'
+            '        <div class="cmp__vs">\n'
+            '          <p class="cmp__head" aria-hidden="true"><span>%s</span><span>%s</span></p>\n'
+            '          <ul class="cmp__rows">%s</ul>\n'
+            '        </div>\n'
+            '        <p class="cmp__foot">%s</p>\n'
             '      </div>\n'
-            '      <p class="ucx__k">%s</p>\n'
-            '      <ul class="ucx__verdict">%s</ul>\n'
-            '      <details class="ucx__more">\n'
-            '        <summary><span class="ucx__open">%s</span><span class="ucx__close">%s</span></summary>\n'
-            '        <table class="ucx__table">\n'
-            '          <thead><tr><td></td>%s</tr></thead>\n'
-            '          <tbody>%s</tbody>\n'
-            '        </table>\n'
-            '      </details>\n'
             '    </div>\n'
-            '  </section>') % (T(X["title"], lang), T(X["lead"], lang), T(last[0], lang), verdict,
-                               T(L["cmp_open"], lang), T(L["cmp_close"], lang), head, body)
+            '  </section>') % (photo, photo, photo, T(alt, lang), T(X["badge"], lang), T(X["title"], lang), T(X["lead"], lang),
+                               T(X["them"], lang), T(X["us"], lang), rows, T(X["foot"], lang))
 
 
 L.update({
     "bubbles_sr": ("Les questions que nos clients nous posent :", "The questions our clients ask us:"),
-    "cmp_open": ("Voir la comparaison point par point", "See the point-by-point comparison"),
-    "cmp_close": ("Masquer la comparaison", "Hide the comparison"),
     "by_family": ("Explorer par famille", "Explore by family"),
 })
 

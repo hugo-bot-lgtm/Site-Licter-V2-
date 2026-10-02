@@ -1205,14 +1205,14 @@
   }
 
   /* the stage plays on its own when it comes into view, once */
-  function autoplay(target, when, play) {
+  function autoplay(target, when, play, threshold) {
     if (!target || !("IntersectionObserver" in window)) return;
     var done = false;
     var io = new IntersectionObserver(function (entries) {
       if (done) return;
       if (when()) { done = true; io.disconnect(); return; }
       if (entries[0].isIntersecting) { done = true; io.disconnect(); play(); }
-    }, { threshold: 0.35 });
+    }, { threshold: threshold || 0.35 });
     io.observe(target);
   }
 
@@ -1231,9 +1231,11 @@
         n.focus(); home.select(n.dataset.topic);
       });
     });
-    /* the first question plays on its own: the visual is the point of the
-       section, it should not wait for a click */
-    autoplay(document.getElementById("use-cases"), function () { return !!home.current(); }, function () { home.select(tabs[0].dataset.topic); });
+    /* the audiences question plays on its own, once the stage itself is half
+       on screen: the visual is the point of the section, it should not wait
+       for a click, nor start while the visitor is still above it */
+    var first = tabs.filter(function (b) { return b.dataset.topic === "audiences"; })[0] || tabs[0];
+    autoplay(homeStage, function () { return !!home.current(); }, function () { home.select(first.dataset.topic); }, 0.5);
   }
 
   /* -------------------------------------------- use-cases page: one per family */
