@@ -7158,3 +7158,13 @@ html.lx-open .banner--float { opacity: 0; visibility: hidden; pointer-events: no
 }
 /* the home row shows every face, on a phone too */
 .people__faces.team2__faces li:nth-child(n):not(.people__more) { display: block; }
+
+/* the SI Lab badge, quieter: no spinning rim, no glow, a size down */
+.award { animation: none; gap: 8px; padding: 3px 12px 3px 3px; box-shadow: inset 0 0 0 1px var(--line); background: rgba(var(--ink-rgb), .03); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.award::before, .award::after { content: none; }
+.award__rank { padding: 4px 8px; font-size: 9.5px; letter-spacing: .8px; }
+.award__text { font-size: 11.5px; font-weight: 500; color: var(--text-2); }
+.award__go { font-size: 10.5px; }
+html[data-theme="dark"] .award { border: 0; background: rgba(var(--ink-rgb), .04); box-shadow: inset 0 0 0 1px var(--line); }
+.hero__main > .award { margin-bottom: clamp(24px, 3.4vh, 36px); }
+@media (max-width: 560px) { .award__text { font-size: 10.5px; } }
