@@ -1274,6 +1274,7 @@ window.LicterUC = (function () {
       });
       if (firstBad) { firstBad.focus(); return; }
       /* wire to the real endpoint here */
+      if (window.LicterTrack) window.LicterTrack("form_submit", { form: (form.id || "form").replace(/-form$/, "") });
       form.classList.add("is-sent");
     });
   });
@@ -1304,6 +1305,7 @@ window.LicterUC = (function () {
       if (!ok) { field.focus(); return; }
       /* wire to the real endpoint here */
       if (window.LicterLead) window.LicterLead.set(field.value.trim());
+      if (window.LicterTrack) window.LicterTrack("form_submit", { form: form.classList.contains("nl__form") ? "newsletter" : "signup" });
       if (note) note.classList.add("is-visible");
       field.value = "";
       field.blur();
@@ -1851,7 +1853,14 @@ window.LicterUC = (function () {
 (function () {
   var me = document.querySelector('script[src*="js/ui.js"]');
   if (!me || document.querySelector('script[src*="js/assistant.js"]')) return;
-  /* the two popups first: the chat hands its callback over to them */
+  /* audience measurement first: the popups and the chat report to it */
+  if (!window.LicterTrack) {
+    var tr = document.createElement("script");
+    tr.src = me.getAttribute("src").replace(/ui\.js/, "track.js");
+    tr.async = false;
+    document.body.appendChild(tr);
+  }
+  /* the two popups next: the chat hands its callback over to them */
   var pp = document.createElement("script");
   pp.src = me.getAttribute("src").replace(/ui\.js/, "popups.js");
   pp.async = false;

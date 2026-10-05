@@ -4,7 +4,7 @@
    - "mag":  the Audience First magazine, sent as a PDF by email.
 
    The magazine opens by itself once per visitor, centred, 3 seconds after
-   arriving (on the home, once the client videos have scrolled by), on every
+   arriving (on the home, once the demo or the comparison has scrolled by), on every
    screen size, never on a page whose point is a form (booking, diagnostic,
    guide, events). One field: the email. Closed without sending, it goes into a small dock at the
    bottom left, to be found again; once sent, it leaves the dock.
@@ -137,8 +137,10 @@
   /* per visitor: "" (never shown), "seen" (closed, in the dock), "sent" */
   function state(k, v) { if (v === undefined) return get("pp-" + k) || ""; set("pp-" + k, v); paintDock(); }
 
+  function track(n, p) { if (window.LicterTrack) window.LicterTrack(n, p); }
   function open(k, auto) {
     if (current) close(true);
+    track("popup_open", { popup: k, auto: !!auto });
     current = k;
     lastFocus = document.activeElement;
     render();
@@ -154,6 +156,7 @@
   }
   function close(quiet) {
     if (!current) return;
+    if (!sent[current]) track("popup_close", { popup: current });
     root.classList.remove("is-open");
     dock.classList.remove("is-hidden");
     html.classList.remove("pp-open");
@@ -207,6 +210,7 @@
     }
     if (bad) { bad.setAttribute("aria-invalid", "true"); err.hidden = false; bad.focus(); return; }
     state(k, "sent");
+    track("popup_submit", { popup: k });
     render();
     var ok = box.querySelector(".pp__done");
     if (ok) { ok.setAttribute("tabindex", "-1"); ok.focus(); }
@@ -275,13 +279,16 @@
     open(k, true);
   }
   /* the home asks for nothing before its proof is seen: the magazine waits
-     until the client videos have scrolled by (about 40 % of the page, and
-     the same 3 s at least); every other page opens it after 3 s */
+     until the argument has scrolled by (the demo, or "Why not just a tool?"
+     on a phone; and the same 3 s at least); every other page opens it after 3 s */
   if (document.body.classList.contains("home")) {
     var timeUp = false, scrolled = false;
     var go = function () { if (timeUp && scrolled) auto("mag"); };
     setTimeout(function () { timeUp = true; go(); }, 3000);
-    var proof = document.getElementById("voices");
+    /* after the live demo where it shows (large screens), else after "Why
+       not just a tool?": never in the middle of the main argument */
+    var demo = document.getElementById("use-cases");
+    var proof = demo && getComputedStyle(demo).display !== "none" ? demo : (document.querySelector(".cmp") || document.getElementById("voices"));
     var onScroll = function () {
       var past = proof ? proof.getBoundingClientRect().bottom < window.innerHeight * 0.5
                        : window.scrollY > (document.documentElement.scrollHeight - window.innerHeight) * 0.4;
@@ -307,6 +314,8 @@
     var href = a.getAttribute("href");
     if (href !== "#book" && !SAYS.test((a.textContent || "").replace(/\s+/g, " ").trim())) return;
     e.preventDefault();
+    var sec = a.closest("section[id], header, aside, .stickybar");
+    track("cta_click", { where: sec ? (sec.id || sec.className.split(" ")[0]) : "page" });
     open("call", false);
   });
 

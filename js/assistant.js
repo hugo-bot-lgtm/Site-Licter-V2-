@@ -335,6 +335,7 @@
   });
 
   function open(tab, quiet) {
+    if (window.LicterTrack) window.LicterTrack("chat_open", { tab: tab, auto: !!quiet });
     show(tab);
     panel.hidden = false;
     requestAnimationFrame(function () { root.classList.add("is-open"); html.classList.add("lx-open"); });

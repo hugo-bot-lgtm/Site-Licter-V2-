@@ -134,7 +134,7 @@
   if (stage) {
     var stepsEl = document.getElementById("quiz-steps");
     var answers = [];
-    var step = 0, sent = false;
+    var step = 0, sent = false, quizCounted = false;
     var N = QUIZ.length;
     function L(pair) { return fr() ? pair[1] : pair[0]; }
     function two(n) { return (n < 10 ? "0" : "") + n; }
@@ -175,6 +175,8 @@
 
     function renderResult() {
       var s = score();
+      /* once per completed run (a language switch re-renders it) */
+      if (!quizCounted && window.LicterTrack) { quizCounted = true; window.LicterTrack("quiz_complete", { score: s }); }
       var band = BANDS.filter(function (b) { return s <= b.max; })[0];
       var w = weakest();
       stage.innerHTML =
@@ -226,7 +228,7 @@
       }
       var back = e.target.closest(".quiz__back");
       if (back) {
-        if (back.hasAttribute("data-restart")) { answers = []; step = 0; sent = false; }
+        if (back.hasAttribute("data-restart")) { answers = []; step = 0; sent = false; quizCounted = false; }
         else step = Math.max(0, step - 1);
         render(true);
       }
@@ -242,6 +244,7 @@
       if (!ok) { field.focus(); return; }
       /* MOCK: wire to the CRM here (score, answers, email) */
       if (window.LicterLead) window.LicterLead.set(field.value.trim());
+      if (window.LicterTrack) window.LicterTrack("quiz_email", {});
       sent = true;
       render(true);
     });
@@ -321,6 +324,7 @@
       /* MOCK: wire to the CRM here (contact, kind) */
       if (k === "email" && window.LicterLead) window.LicterLead.set(v);
       sentTo = { v: v, k: k };
+      if (window.LicterTrack) window.LicterTrack("form_submit", { form: "callback", kind: k });
       bookForm.hidden = true;
       document.getElementById("book-done").hidden = false;
       renderDone();

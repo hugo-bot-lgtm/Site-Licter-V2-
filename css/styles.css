@@ -7815,3 +7815,11 @@ section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); 
 
 /* a large screen: the magazine cover steps aside over the footer */
 .ppd.is-footer { opacity: 0; transform: translateY(10px); pointer-events: none; visibility: hidden; transition: opacity .2s ease, transform .3s cubic-bezier(.16, 1, .3, 1), visibility 0s linear .3s; }
+
+/* a phone: the events banner slides away while reading down (js/events.js) */
+@media (max-width: 720px) {
+  .banner { transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+  .banner.banner--away { transform: translateY(-100%); }
+  .stickybar:not(.stickybar--bottom) { transition: transform .3s cubic-bezier(.16, 1, .3, 1), top .3s cubic-bezier(.16, 1, .3, 1); }
+}
+@media (max-width: 720px) and (prefers-reduced-motion: reduce) { .banner, .stickybar:not(.stickybar--bottom) { transition: none; } }

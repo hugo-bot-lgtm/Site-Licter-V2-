@@ -1309,7 +1309,7 @@
       /* it sits under what is already pinned at the top: the guide banner,
          and the compact header while that one shows */
       var top = 0, banner = document.querySelector("body > .banner"), bar = document.querySelector(".stickybar.is-shown");
-      if (banner && getComputedStyle(banner).position === "sticky") top = banner.offsetHeight;
+      if (banner && getComputedStyle(banner).position === "sticky" && !banner.classList.contains("banner--away")) top = banner.offsetHeight;
       /* the compact header slides in just under the pinned banner */
       if (bar && !bar.classList.contains("stickybar--bottom")) top += bar.offsetHeight;
       document.documentElement.style.setProperty("--uc-top", top + "px");

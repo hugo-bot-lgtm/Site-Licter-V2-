@@ -110,7 +110,7 @@ Règles :
 - **Mobile :** 16 à 20px de marge, aucun défilement horizontal, `min-height: 100svh` et jamais `100vh`.
 - **Sur téléphone (720px et moins), l'accueil a sa propre mise en forme**, avec le même HTML et le même ordre (environ 7,5 écrans). Règle : **tout est aligné à gauche**.
   - **Premier écran :** la promesse et les logos clients. Le hero est resserré et le bandeau d'événement tient sur deux lignes.
-  - **Retiré :** la cartographie du hero (elle n'est même pas dessinée).
+  - **Retiré :** la cartographie du hero. Les scripts de la démo et de la carte (`usecases.js`, `communities.js`, environ 120 Ko) ne sont pas téléchargés sous 720px ; ils se chargent si la fenêtre s'élargit.
   - **Familles :** même carte que sur ordinateur, en carrousel au doigt (86 % de largeur, la suivante dépasse), sans flèches.
   - **Vidéos :** une à la fois, sans la note sur la chaîne.
 - **Pied de page sur téléphone (tout le site) :** les quatre colonnes deviennent des volets, un seul ouvert à la fois (`js/ui.js`), et le paragraphe de présentation est retiré.
@@ -184,7 +184,7 @@ Un consultant rappelle **dans les 30 minutes en semaine, de 9 h à 19 h** (heure
 |---|---|
 | 30 | `.stickybar` : barre compacte avec le CTA, après le hero. En haut quand on remonte ; sur l'accueil mobile, **en bas et permanente** (`.stickybar--bottom`), masquée sur le formulaire |
 | 35 | `.ucp-bar` : barre d'actions mobile des pages cas d'usage |
-| 40 | `.banner` : bandeau du prochain événement, ou du guide, **collé en haut de toutes les pages**. Sa hauteur est publiée dans `--banner-h` (`js/events.js`) : la barre compacte se place juste dessous, et les ancres comme les panneaux collants en tiennent compte. Sur mobile, il tient sur deux lignes courtes |
+| 40 | `.banner` : bandeau du prochain événement, ou du guide, **collé en haut de toutes les pages**. Sa hauteur est publiée dans `--banner-h` (`js/events.js`) : la barre compacte se place juste dessous, et les ancres comme les panneaux collants en tiennent compte. Sur mobile, il tient sur deux lignes courtes, **s'efface quand on descend** et revient dès qu'on remonte |
 | 45 | `.langoffer` : proposition de langue |
 | 55 | `.ppd` : le bouton du magazine, en bas à gauche, **discret** : la couverture seule, inclinée, avec une petite étiquette dorée « Recevoir gratuitement » sur deux lignes. Il apparaît une fois le popup fermé sans envoi, jamais par-dessus le hero de l'accueil, ni par-dessus le formulaire de contact ou le pied de page. Sur l'accueil, sous 1200 px, la couverture passe **dans la barre du bas**, à côté d'Antoine, au lieu de flotter |
 | 60 | `.lx__launch` : lanceur du chat Antoine, en bas à droite |
@@ -213,12 +213,27 @@ Il est généré par `tools/build-events.py` et mis à jour par `js/events.js`. 
 
 - **Le rappel** (« Trente minutes avec un consultant ») s'ouvre sur **chaque « Parler à un consultant »** : tout lien vers `#book`, ou qui porte ces mots. Un cmd-clic suit toujours le lien. Il est en deux volets : la photo de l'équipe avec les badges « Réponse sous 30 min » et « 160+ projets depuis 2022 », puis le formulaire. Sur téléphone, la photo devient un bandeau et le clavier ne s'ouvre pas tout seul. Il ne s'ouvre jamais de lui-même.
 - **Le magazine** s'ouvre une seule fois par visiteur, **centré**, après 3 s, **sur tous les écrans, mobile compris**. Il ne demande **que l'e-mail**.
-- **Sur téléphone, les popups sont des panneaux qui montent du bas**, pas des plein-écrans : la page reste visible au-dessus. Le magazine y garde une petite couverture, le titre et le champ (322 px de haut). Sur l'accueil, il attend que les vidéos clients soient passées (environ 40 % de la page). Une fois fermé sans envoi, il reste accessible depuis son bouton en bas à gauche. Il est réservé aux écrans larges et ne s'ouvre jamais sur une page de formulaire. Une fois fermé, il reste accessible dans le dock `.ppd`.
+- **Sur téléphone, les popups sont des panneaux qui montent du bas**, pas des plein-écrans : la page reste visible au-dessus. Le magazine y garde une petite couverture, le titre et le champ (322 px de haut). Sur l'accueil, il attend que l'argument soit passé : après la démo sur grand écran, après « Pourquoi pas un outil seul » sur téléphone. Une fois fermé sans envoi, il reste accessible depuis son bouton en bas à gauche. Il est réservé aux écrans larges et ne s'ouvre jamais sur une page de formulaire. Une fois fermé, il reste accessible dans le dock `.ppd`.
 - **Le tiroir d'Antoine** glisse depuis la droite. Il a deux onglets, chat et rappel. Chaque réponse du chat se termine par un CTA.
   - **Sur téléphone, il occupe tout l'écran.** Sa hauteur suit le clavier (visual viewport). Les champs sont en 16px, pour qu'iOS ne zoome pas. Le clavier ne s'ouvre pas tout seul. La page derrière est bloquée. Les questions suggérées défilent sur une ligne.
 - Aucune autre popup automatique : le magazine est le seul à s'ouvrir sans clic.
 
 ---
+
+### Mesure d'audience
+
+`js/track.js` (chargé par `js/ui.js` sur toutes les pages) expose `window.LicterTrack(nom, props)`. Chaque événement part dans `dataLayer` (prêt pour Google Tag Manager), et vers Plausible ou GA4 s'ils sont présents sur la page. Aucun outil externe n'est chargé par défaut. Pour activer Plausible (sans cookie, sans bandeau), il suffit de renseigner `PLAUSIBLE_DOMAIN`. GA4 et GTM demandent d'abord un bandeau de consentement.
+
+| Événement | Quand |
+|---|---|
+| `popup_open`, `popup_close`, `popup_submit` | magazine ou rappel ; `close` = fermé sans envoi |
+| `cta_click` | un « Parler à un consultant », avec la section d'origine |
+| `bar_click` | la barre compacte : `cta`, `chat` ou `mag` |
+| `chat_open` | le tiroir d'Antoine |
+| `quiz_complete`, `quiz_email` | le quiz terminé (avec le score), puis l'e-mail laissé |
+| `form_submit` | rappel, guide, diagnostic, rendez-vous, newsletter, événement |
+
+Tout nouveau formulaire ou aimant envoie son événement.
 
 ## 7. Images
 

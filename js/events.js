@@ -129,6 +129,7 @@
       /* MOCK: send { event: page.getAttribute("data-ev-date"), first, last, company, email } to the CRM */
       if (window.LicterLead) window.LicterLead.set(v.email);
       sent = v;
+      if (window.LicterTrack) window.LicterTrack("form_submit", { form: "event", event: page ? page.getAttribute("data-ev-date") : "" });
       form.hidden = true;
       done.hidden = false;
       paintPage();
@@ -146,11 +147,29 @@
      bar, anchors and sticky panels use to sit under it */
   function measure() {
     if (!banner) return;
-    html.style.setProperty("--banner-h", (banner.hidden ? 0 : banner.offsetHeight) + "px");
+    var away = banner.hidden || banner.classList.contains("banner--away");
+    html.style.setProperty("--banner-h", (away ? 0 : banner.offsetHeight) + "px");
   }
   if (banner) {
     if (window.ResizeObserver) new ResizeObserver(measure).observe(banner);
     window.addEventListener("resize", measure);
+  }
+
+  /* on a phone the banner steps out of the way while reading down, and comes
+     back as soon as the visitor scrolls up (with the compact bar) */
+  if (banner && window.matchMedia) {
+    var phone = window.matchMedia("(max-width: 720px)"), lastY = window.scrollY, tick = false;
+    window.addEventListener("scroll", function () {
+      if (tick) return; tick = true;
+      requestAnimationFrame(function () {
+        tick = false;
+        var y = window.scrollY, d = y - lastY;
+        if (Math.abs(d) < 8) return;
+        var away = phone.matches && d > 0 && y > banner.offsetHeight + 40;
+        if (banner.classList.contains("banner--away") !== away) { banner.classList.toggle("banner--away", away); measure(); }
+        lastY = y;
+      });
+    }, { passive: true });
   }
 
   function paint() { paintBanner(); paintPage(); measure(); }
