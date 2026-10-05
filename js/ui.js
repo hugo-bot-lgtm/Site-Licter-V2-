@@ -1743,8 +1743,14 @@ window.LicterUC = (function () {
 (function () {
   var me = document.querySelector('script[src*="js/ui.js"]');
   if (!me || document.querySelector('script[src*="js/assistant.js"]')) return;
+  /* the two popups first: the chat hands its callback over to them */
+  var pp = document.createElement("script");
+  pp.src = me.getAttribute("src").replace(/ui\.js/, "popups.js");
+  pp.async = false;
+  document.body.appendChild(pp);
   var s = document.createElement("script");
   s.src = me.getAttribute("src").replace(/ui\.js/, "assistant.js");
+  s.async = false;
   s.defer = true;
   document.body.appendChild(s);
   /* the events banner and the registration pages (js/events.js) */

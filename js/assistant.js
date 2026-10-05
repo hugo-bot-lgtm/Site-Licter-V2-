@@ -280,7 +280,10 @@
     if (b) ask(b.textContent.replace(/ /g, " ") + " ");
   });
   log.addEventListener("click", function (e) {
-    if (e.target.closest(".lx__cta-call")) { show("call"); root.querySelector(".lx__input").focus(); }
+    if (!e.target.closest(".lx__cta-call")) return;
+    /* the callback lives in its own popup (js/popups.js) */
+    if (window.LicterPopups) { close(); window.LicterPopups.open("call"); return; }
+    show("call"); root.querySelector(".lx__input").focus();
   });
 
   /* --------------------------------------------------------- the callback */
@@ -377,7 +380,9 @@
     onHero();
   }
   function auto() {
-    if (isHome) return;
+    /* the callback now opens as a popup of its own (js/popups.js): the
+       drawer is the chat, and only opens when asked */
+    if (window.LicterPopups || isHome) return;
     if (session("lx-shown") || session("lx-sent") || !wide.matches || root.classList.contains("is-open") || pageBookInView()) return;
     open("call", true);
   }
@@ -389,6 +394,7 @@
   window.addEventListener("scroll", onScroll, { passive: true });
 
   paint();
-  show("call");
+  show(window.LicterPopups ? "chat" : "call");
+  if (window.LicterPopups) root.classList.add("lx--chat");
   new MutationObserver(function () { paint(); done(); }).observe(html, { attributes: true, attributeFilter: ["lang"] });
 })();
