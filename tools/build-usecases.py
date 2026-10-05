@@ -107,7 +107,7 @@ def absolutize(fragment, lang):
 
 # ------------------------------------------------------------ shared parts
 SRC = (ROOT / "offers.html").read_text()   # any inner page: same banner, header and footer
-BANNER = re.search(r'<aside class="banner".*?</aside>', SRC, re.S).group(0)
+BANNER = re.search(r'<aside class="banner(?: banner--event)?".*?</aside>', SRC, re.S).group(0)
 HEADER = re.search(r'<div class="site-head">.*?</header>\s*</div>', SRC, re.S).group(0)
 FOOTER = re.search(r'<footer class="site-foot">.*?</footer>', SRC, re.S).group(0)
 
@@ -982,6 +982,7 @@ if __name__ == "__main__":
     # the offer pages first: they write their French into js/fr.js, which the
     # shared header and footer of the pages below are translated with
     import runpy
+    runpy.run_path(str(ROOT / "tools" / "build-events.py"), run_name="__main__")
     runpy.run_path(str(ROOT / "tools" / "build-offers.py"), run_name="__main__")
     runpy.run_path(str(ROOT / "tools" / "build-expertise.py"), run_name="__main__")
     DICT.update(fr_dict())

@@ -1747,4 +1747,10 @@ window.LicterUC = (function () {
   s.src = me.getAttribute("src").replace(/ui\.js/, "assistant.js");
   s.defer = true;
   document.body.appendChild(s);
+  /* the events banner and the registration pages (js/events.js) */
+  if (!document.querySelector('script[src*="js/events.js"]')) {
+    var ev = document.createElement("script");
+    ev.src = me.getAttribute("src").replace(/ui\.js/, "events.js");
+    document.body.appendChild(ev);
+  }
 })();

@@ -1546,6 +1546,126 @@ window.LicterFR = {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+  /* ---- event pages (tools/build-events.py) ---- */
+  "Next event":
+    "Prochain événement",
+  "Sector study · Toys & games":
+    "Étude sectorielle · Jeux & jouets",
+  "Friday 16 October · Musée de la Vie romantique":
+    "Vendredi 16 octobre · Musée de la Vie romantique",
+  "Register":
+    "M'inscrire",
+  "Who buys, and who recommends: parents, grandparents, content creators.":
+    "Qui achète, et qui prescrit : parents, grands-parents, créateurs de contenu.",
+  "The trends rising on TikTok and YouTube, and the ones fading.":
+    "Les tendances qui montent sur TikTok et YouTube, et celles qui retombent.",
+  "What reviews say about price, quality and durability.":
+    "Ce que les avis disent des prix, de la qualité et de la durabilité.",
+  "Home":
+    "Accueil",
+  "Events":
+    "Événements",
+  "Toys & games":
+    "Jeux & jouets",
+  "Breadcrumb":
+    "Fil d'Ariane",
+  "Sector study":
+    "Étude sectorielle",
+  "Toys & games: what the conversation says about the sector.":
+    "Jeux & jouets : ce que la conversation dit du secteur.",
+  "We present our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays.":
+    "Nous présentons notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
+  "When":
+    "Quand",
+  "Friday 16 October 2026":
+    "Vendredi 16 octobre 2026",
+  "Where":
+    "Où",
+  "See the map":
+    "Voir le plan",
+  "Time":
+    "Horaire",
+  "Given in the confirmation email":
+    "Précisé dans l'e-mail de confirmation",
+  "Entry":
+    "Entrée",
+  "On registration, limited seats":
+    "Sur inscription, places limitées",
+  "What you will hear":
+    "Ce que vous y entendrez",
+  "Registration":
+    "Inscription",
+  "First name":
+    "Prénom",
+  "Last name":
+    "Nom",
+  "Company":
+    "Société",
+  "Work email":
+    "E-mail professionnel",
+  "Fill in all four fields, with a valid email.":
+    "Remplissez les quatre champs, avec un e-mail valide.",
+  "Registration is subject to confirmation and availability. Your seat is not guaranteed until we confirm it by email.":
+    "Inscription sous réserve de confirmation et de places disponibles. Votre place n'est pas garantie avant notre confirmation par e-mail.",
+  "We use your details only to manage your registration.":
+    "Vos coordonnées servent uniquement à gérer votre inscription.",
+  "Creators, ambassadors, clients: who really gets a house talked about.":
+    "Créateurs, ambassadeurs, clients : qui fait vraiment parler d'une maison.",
+  "Resale and second hand, in the conversation.":
+    "La seconde main et la revente, dans la conversation.",
+  "What international audiences say, in their own language.":
+    "Ce que les audiences internationales disent, dans leur langue.",
+  "Luxury":
+    "Luxe",
+  "Luxury: what the conversation says about the houses.":
+    "Luxe : ce que la conversation dit des maisons.",
+  "We present our sector study: how desire for a house is built online, who carries it, and what clients and onlookers really say about prices, creations and the experience.":
+    "Nous présentons notre étude sectorielle : comment se construit le désir d'une maison en ligne, qui le porte, et ce que les clients et les curieux disent vraiment des prix, des créations et de l'expérience.",
+  "Tuesday 3 November 2026":
+    "Mardi 3 novembre 2026",
+  "The recipes and creators that drive sales.":
+    "Les recettes et les créateurs qui font vendre.",
+  "Price, health, origin: what really weighs in the choice.":
+    "Prix, santé, origine : ce qui pèse vraiment dans le choix.",
+  "The unmet needs that searches reveal.":
+    "Les besoins non couverts que révèlent les recherches.",
+  "Food":
+    "Food",
+  "Food: what the conversation says about what we eat.":
+    "Food : ce que la conversation dit de nos assiettes.",
+  "We present our sector study: what consumers post, search and ask AI about what they eat, and the expectations brands can still take up.":
+    "Nous présentons notre étude sectorielle : ce que les consommateurs publient, recherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes que les marques peuvent encore saisir.",
+  "Thursday 19 November 2026":
+    "Jeudi 19 novembre 2026",
+  "Oct":
+    "oct.",
+  "Nov":
+    "nov.",
+  "Our sector studies, presented in person.":
+    "Nos études sectorielles, présentées en personne.",
+  "We present what the conversation says about a sector, with the brands that work in it. On registration, in Paris.":
+    "Nous présentons ce que la conversation dit d'un secteur, avec les marques qui y travaillent. Sur inscription, à Paris.",
+  "All events":
+    "Tous les événements",
+  "Upcoming":
+    "À venir",
+  "This event has taken place.":
+    "Cet événement a eu lieu.",
+  "See the next one":
+    "Voir le prochain",
+  /* ---- end event pages ---- */
+
   /* ---- offer pages (tools/build-offers.py) ---- */
   "New range":
     "Nouvelle gamme",
