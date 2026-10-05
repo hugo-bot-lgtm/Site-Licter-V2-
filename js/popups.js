@@ -235,6 +235,14 @@
         esc(fr() ? "Être rappelé" : "Call me back") + "</button>";
     }).join("");
   }
+  /* never over the home's hero: the dock waits until it has scrolled by */
+  var hero = document.body.classList.contains("home") && document.getElementById("hero");
+  if (hero) {
+    var heroWait = function () { dock.classList.toggle("is-waiting", hero.getBoundingClientRect().bottom > window.innerHeight * 0.4); };
+    window.addEventListener("scroll", heroWait, { passive: true });
+    window.addEventListener("resize", heroWait);
+    heroWait();
+  }
   dock.addEventListener("click", function (e) {
     var b = e.target.closest("[data-open]");
     if (b) open(b.getAttribute("data-open"), false);

@@ -181,7 +181,7 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
 | 35 | `.ucp-bar` : barre d'actions mobile des pages cas d'usage |
 | 40 | `.banner` : bandeau du prochain événement, ou du guide, **collé en haut de toutes les pages**. Sa hauteur est publiée dans `--banner-h` (`js/events.js`) : la barre compacte se place juste dessous, et les ancres comme les panneaux collants en tiennent compte. Sur mobile, il tient sur deux lignes courtes |
 | 45 | `.langoffer` : proposition de langue |
-| 55 | `.ppd` : le bouton du magazine, en bas à gauche, **discret** : la couverture seule, inclinée, avec une petite étiquette dorée « Recevoir gratuitement » sur deux lignes. Il apparaît une fois le popup fermé sans envoi |
+| 55 | `.ppd` : le bouton du magazine, en bas à gauche, **discret** : la couverture seule, inclinée, avec une petite étiquette dorée « Recevoir gratuitement » sur deux lignes. Il apparaît une fois le popup fermé sans envoi, et jamais par-dessus le hero de l'accueil |
 | 60 | `.lx__launch` : lanceur du chat Antoine, en bas à droite |
 | 70 | `.lx__panel` : tiroir chat et rappel |
 | 80 | `.pp` : popup magazine |
