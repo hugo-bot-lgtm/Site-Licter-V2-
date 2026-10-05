@@ -103,7 +103,7 @@ Règles :
   - **Retiré :** la cartographie du hero (elle n'est même pas dessinée).
   - **Familles :** même carte que sur ordinateur, en carrousel au doigt (86 % de largeur, la suivante dépasse), sans flèches.
   - **Vidéos :** une à la fois, sans la note sur la chaîne.
-  - **Équipe :** fusionnée dans « Pourquoi pas un outil seul ». Le badge et les visages passent sous le titre, le mot des fondateurs est replié. Les éléments sont déplacés en JS (`js/home.js`), jamais copiés.
+  - **« Pourquoi pas un outil seul » + Équipe :** le titre, le badge et les visages, puis un tableau à deux colonnes « Un outil seul / Notre équipe ». Le chapô et la phrase de fin, redondants avec le tableau, sont retirés ; le mot des fondateurs est replié. Les éléments d'équipe sont déplacés en JS (`js/home.js`), jamais copiés.
   - **Démo :** ne joue qu'au toucher d'une question, en version courte (le visuel principal et notre lecture).
   - **Méthode :** mêmes cartes que sur ordinateur (photo, étapes, flèches).
   - **Diagnostic :** replié derrière un bouton. Un lien `#diagnostic` l'ouvre.

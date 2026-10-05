@@ -7510,3 +7510,17 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .home .stickybar__chat i { position: absolute; right: 1px; bottom: 1px; width: 12px; height: 12px; border-radius: 50%; background: #2FA36B; box-shadow: 0 0 0 2px var(--bg); }
   body.home:has(.stickybar--bottom.is-shown) .ppd { transform: translateY(-72px); }
 }
+
+/* ---------- home on a phone: "Why not just a tool?" as a compact table ---------- */
+@media (max-width: 720px) {
+  .home .cmp .xs__title { font-size: 26px; }
+  /* the table says it: the lead and the closing line repeat it */
+  .home .cmp .xs__lead, .home .cmp__foot, .home .cmp__copy .team2__people { display: none; }
+  .home .cmp__who { margin: 16px 0 0; gap: 12px; }
+  .home .cmp__vs { margin-top: 22px; }
+  .home .cmp__head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 14px; margin-bottom: 8px; font-size: 12px; letter-spacing: 1px; }
+  .home .cmp__rows li { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 14px; align-items: start; padding: 11px 0; }
+  .home .cmp__them { font-size: 13px; line-height: 1.4; }
+  .home .cmp__us { padding-left: 16px; font-size: 14.5px; line-height: 1.35; }
+  .home .cmp__more { margin-top: 20px; }
+}
