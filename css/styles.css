@@ -7447,21 +7447,6 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .home .cmp__more .team__founders { padding-bottom: 8px; }
   .home .cmp__more .founders__quote { margin-top: 4px; }
 
-  /* method: four rows, one open */
-  .home .hsteps, .home .hmethod__nav, .home .mstep__img, .home .mstep__n, .home .mstep .step__name { display: none; }
-  .home .htrack { display: grid; grid-auto-flow: row; grid-template-columns: minmax(0, 1fr); gap: 10px; overflow: visible; margin: 26px 0 0; padding: 0; scroll-snap-type: none; }
-  .home .htrack::after { content: none; }
-  .home .mstep { display: block; width: auto; min-height: 0; opacity: 1; transform: none; border-radius: 16px; }
-  .home .mstep__body { min-height: 0; padding: 0 18px 18px; gap: 12px; }
-  .home .mstep:not(.is-open) .mstep__body { display: none; }
-  .home .mstep__toggle { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 60px; padding: 12px 18px; border: 0; background: none; color: var(--ink); text-align: left; cursor: pointer; font: 600 19px/1.25 var(--title-font); }
-  .home .mstep__tn { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--line); font: 700 13px/1 var(--body-font); color: var(--text-2); }
-  .home .mstep.is-open .mstep__tn { background: #EAA93D; box-shadow: none; color: #13162D; }
-  .home .mstep__tname { flex: 1; }
-  .home .mstep__chev { width: 9px; height: 9px; border-right: 2px solid var(--text-2); border-bottom: 2px solid var(--text-2); transform: rotate(45deg) translate(-2px, -2px); transition: transform .2s ease; }
-  .home .mstep.is-open .mstep__chev { transform: rotate(-135deg) translate(-2px, -2px); }
-  .home .mstep .step__get { margin: 0; }
-
   /* diagnostic: one card until it is opened */
   .home .quiz.qz { padding: 24px 22px; border-radius: 22px; }
   .home .quiz.qz.is-folded .qz__meter, .home .quiz.qz.is-folded .qz__stage { display: none; }

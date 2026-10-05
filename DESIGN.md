@@ -105,7 +105,7 @@ Règles :
   - **Vidéos :** une à la fois, sans la note sur la chaîne.
   - **Équipe :** fusionnée dans « Pourquoi pas un outil seul ». Le badge et les visages passent sous le titre, le mot des fondateurs est replié. Les éléments sont déplacés en JS (`js/home.js`), jamais copiés.
   - **Démo :** ne joue qu'au toucher d'une question, en version courte (le visuel principal et notre lecture).
-  - **Méthode :** un accordéon dont une étape est ouverte.
+  - **Méthode :** mêmes cartes que sur ordinateur (photo, étapes, flèches).
   - **Diagnostic :** replié derrière un bouton. Un lien `#diagnostic` l'ouvre.
   - **Une seule action :** la barre du bas, avec l'avatar d'Antoine qui ouvre le chat. Les boutons de section et le lanceur flottant sont retirés.
 

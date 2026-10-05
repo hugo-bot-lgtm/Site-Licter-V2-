@@ -525,7 +525,6 @@
    Home on a phone: the same page, cut to what reads on a small screen.
    - "Why not just a tool?" takes in the team (the faces, and the founders'
      word folded), and the team section goes;
-   - the four method steps become an accordion;
    - the diagnostic waits behind one card and opens in place.
    The elements are moved, not copied, and put back above 720 px.
    ========================================================================= */
@@ -540,7 +539,6 @@
   var people = team && team.querySelector(".team2__people");
   var founders = team && team.querySelector(".team__founders");
   var cmp = document.querySelector(".cmp .cmp__copy");
-  var cards = Array.prototype.slice.call(document.querySelectorAll(".mstep"));
   var quiz = document.getElementById("quiz");
   var intro = quiz && quiz.querySelector(".quiz__intro");
   var homes = [], more = null, opener = null, on = false;
@@ -548,18 +546,9 @@
   function label() {
     if (more) more.querySelector("summary").textContent = T("Read the founders' word", "Lire le mot des fondateurs");
     if (opener) opener.querySelector("span").textContent = T("Start the diagnostic", "Commencer le diagnostic");
-    cards.forEach(function (c) {
-      var b = c.querySelector(".mstep__toggle");
-      if (b) b.querySelector(".mstep__tname").textContent = c.querySelector(".step__name").textContent;
-    });
   }
   function park(el) { homes.push([el, el.parentNode, el.nextSibling]); }
 
-  function openStep(c, open) {
-    c.classList.toggle("is-open", open);
-    var b = c.querySelector(".mstep__toggle");
-    if (b) b.setAttribute("aria-expanded", open ? "true" : "false");
-  }
   function unfold(focus) {
     if (!quiz || !quiz.classList.contains("is-folded")) return;
     quiz.classList.remove("is-folded");
@@ -593,20 +582,6 @@
         title.insertAdjacentElement("afterend", who);
       }
     }
-    /* the method, as an accordion: the first step open */
-    cards.forEach(function (c, i) {
-      var b = document.createElement("button");
-      b.type = "button"; b.className = "mstep__toggle";
-      b.setAttribute("aria-controls", c.id);
-      b.innerHTML = '<span class="mstep__tn">' + (i + 1) + '</span><span class="mstep__tname"></span><span class="mstep__chev" aria-hidden="true"></span>';
-      b.addEventListener("click", function () {
-        var open = !c.classList.contains("is-open");
-        cards.forEach(function (o) { openStep(o, false); });
-        openStep(c, open);
-      });
-      c.insertBefore(b, c.firstChild);
-      openStep(c, i === 0);
-    });
     /* the diagnostic, folded behind its own card */
     if (quiz && intro) {
       quiz.classList.add("is-folded");
@@ -627,10 +602,6 @@
     var who = document.querySelector(".cmp__who"); if (who) who.remove();
     if (more) { more.remove(); more = null; }
     if (team) team.classList.remove("is-moved");
-    cards.forEach(function (c) {
-      var b = c.querySelector(".mstep__toggle"); if (b) b.remove();
-      c.classList.remove("is-open");
-    });
     if (opener) { opener.remove(); opener = null; }
     if (quiz) quiz.classList.remove("is-folded");
   }
