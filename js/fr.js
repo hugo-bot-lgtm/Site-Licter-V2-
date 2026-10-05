@@ -368,6 +368,7 @@ window.LicterFR = {
   "Privacy policy": "Politique de confidentialité",
   "Legal notice": "Mentions légales",
   "Privacy": "Confidentialité",
+  "Anushka, a Licter consultant, in the office": "Anushka, consultante chez Licter, dans les bureaux",
   "Consumer insights, communication and reputation, client direction: the people you would actually work with.": "Consumer insights, communication et réputation, direction conseil : les personnes avec qui vous travaillerez vraiment.",
   "Framing": "Cadrage",
   "Coverage": "Couverture",
@@ -1519,6 +1520,8 @@ window.LicterFR = {
 
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
+
+
 
 
 

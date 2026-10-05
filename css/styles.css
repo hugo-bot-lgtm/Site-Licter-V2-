@@ -7136,3 +7136,25 @@ html[data-theme="dark"] .lx__send { background: #FCF6EF; color: #13162D; }
    launcher keeps to its face where the two would meet */
 html.lx-open .banner--float { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s ease, visibility 0s linear .2s; }
 @media (max-width: 1280px) { .lx__launch { padding: 5px; } .lx__launch-t { display: none; } }
+
+/* ===== Home team, reduced: Anushka, the founders' word, everyone's face in a row ===== */
+.team2 { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.team2__photo { margin: 0; aspect-ratio: 3 / 4; max-height: 520px; }
+.team2__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; border-radius: 26px; }
+.team2__people { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 18px 28px; margin-top: clamp(32px, 4vw, 52px); padding-top: clamp(24px, 3vw, 34px); border-top: 1px solid var(--line); }
+.team2__faces { grid-column: 1 / -1; flex-wrap: nowrap; }
+.team2__faces li + li { margin-left: -12px; }
+.team2__faces img { width: 52px; height: 52px; border-radius: 50%; box-shadow: 0 0 0 3px var(--bg); }
+.team2__people .people__text { max-width: 60ch; margin: 0; }
+@media (max-width: 860px) {
+  .team2 { grid-template-columns: minmax(0, 1fr); }
+  .team2__photo { aspect-ratio: 4 / 3; max-height: none; }
+}
+@media (max-width: 560px) {
+  .team2__people { grid-template-columns: minmax(0, 1fr); }
+  /* fifteen faces on one line, whatever the width: each takes its share */
+  .team2__faces img { width: min(31px, calc((100vw - 2 * var(--gutter) + 126px) / 15)); height: auto; aspect-ratio: 1; box-shadow: 0 0 0 2px var(--bg); }
+  .team2__faces li + li { margin-left: -9px; }
+}
+/* the home row shows every face, on a phone too */
+.people__faces.team2__faces li:nth-child(n):not(.people__more) { display: block; }
