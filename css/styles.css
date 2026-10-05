@@ -7256,3 +7256,27 @@ html[data-theme="dark"] .quiz.qz { background: radial-gradient(70% 90% at 0% 0%,
 /* the launcher waits for the end of the hero on the home */
 .lx.lx--wait .lx__launch { opacity: 0; pointer-events: none; transform: translateY(12px); }
 @media (max-width: 560px) { .team2__people { gap: 16px; } .team2__actions { width: 100%; } .team2__actions .btn { width: 100%; justify-content: center; } }
+
+/* the home's header carries the main action too: last, after the language,
+   with the menu a little tighter so the row still fits */
+.hero__end .nav__cta { order: 9; height: 40px; padding: 0 16px; font-size: 12px; }
+@media (min-width: 861px) {
+  .home .hero__top { grid-template-columns: auto minmax(0, 1fr) auto; gap: clamp(12px, 1.4vw, 22px); }
+  .home .hero__top .nav__list { gap: clamp(12px, 1.35vw, 24px); padding: 0 clamp(16px, 1.6vw, 26px); }
+  .home .hero__top .hero__end { gap: clamp(10px, 1vw, 14px); }
+}
+@media (min-width: 861px) and (max-width: 1240px) {
+  .home .hero__top .nav__list a, .home .hero__top .nav__link { letter-spacing: .8px; font-size: 11px; }
+  .hero__end .nav__cta { padding: 0 12px; font-size: 11px; }
+  .hero__end .nav__cta span { display: none; }
+}
+@media (max-width: 860px) { .hero__end .nav__cta { display: none; } }
+/* the home's header is wider than the text column, so the menu and the
+   action both fit; under 1180px the action stays in the hero and the
+   compact bar, not in the header */
+@media (min-width: 861px) { .home .hero__top.shell { width: min(100%, calc(var(--maxw) + 240px)); } }
+@media (min-width: 861px) and (max-width: 1200px) { .home .hero__end .nav__cta { display: none; } }
+@media (min-width: 861px) and (max-width: 1000px) {
+  .home .hero__top .nav__list { gap: 10px; padding: 0 14px; }
+  .home .hero__top .nav__list a, .home .hero__top .nav__link { font-size: 10.5px; letter-spacing: .5px; }
+}
