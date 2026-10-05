@@ -7475,7 +7475,12 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .home .hero__main .hero__desc { margin-top: 22px; }
   .home .hero__main .hero__actions { margin-top: 24px; gap: 14px; }
   .home .clients { padding-top: 22px; }
-  .home .wall__caption { white-space: nowrap; font-size: 11px; }
+  /* the whole proof, on two lines: no separator at the start of the second */
+  html .home .wall__caption { position: static; transform: none; max-width: none; margin: 0 auto 16px; padding: 0 16px; background: none; white-space: nowrap; font-size: 12px; line-height: 1.5; }
+  .home .wall__wave { display: inline-block; }
+  .home .wall__tail { display: block; }
+  .home .wall__sep { display: none; }
+  .home .wall { padding-top: 18px; }
 
   /* one alignment on a small screen: left */
   .home #voices .block__head, .home #use-cases .uc__head, .home .hmethod__head { margin-inline: 0; text-align: left; align-items: flex-start; }

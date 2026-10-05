@@ -15,7 +15,10 @@ class NoCache(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
 
-socketserver.TCPServer.allow_reuse_address = True
-with socketserver.TCPServer(("", PORT), NoCache) as httpd:
+# threaded: a phone on the network holding a connection open no longer
+# blocks every other request
+socketserver.ThreadingTCPServer.allow_reuse_address = True
+socketserver.ThreadingTCPServer.daemon_threads = True
+with socketserver.ThreadingTCPServer(("", PORT), NoCache) as httpd:
     print("Licter — http://localhost:%d  (Ctrl+C pour arrêter)" % PORT)
     httpd.serve_forever()

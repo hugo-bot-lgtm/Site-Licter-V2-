@@ -459,6 +459,7 @@ window.LicterFR = {
   "Vigie 360, 24/7 monitoring": "Vigie 360, veille 24/7",
   "© 2026 Licter, Social Data Intelligence": "© 2026 Licter, Social Data Intelligence",
   "· 160+ projects since 2022": "· 160+ projets depuis 2022",
+  "160+ projects since 2022": "160+ projets depuis 2022",
   "Full conversations with the people who run listening inside their organisation: what they were trying to decide, and what the data changed. In French, on our channel, uncut.":
     "Des conversations entières avec celles et ceux qui pilotent l'écoute dans leur organisation : ce qu'ils avaient à décider, et ce que la donnée a changé. En français, sur notre chaîne, sans coupe.",
   ". One conversation a week with the people who read the conversation.":
@@ -1525,6 +1526,9 @@ window.LicterFR = {
 
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
+
+
+
 
 
 
