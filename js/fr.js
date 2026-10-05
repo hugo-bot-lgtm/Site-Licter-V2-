@@ -307,6 +307,7 @@ window.LicterFR = {
   "Co-founder": "Cofondateur",
   "Live · 2 h": "Live · 2 h",
   "Or start from your question": "Ou partez de votre question",
+  "Free diagnostic": "Diagnostic gratuit",
   "Pick a question and watch the conversation come in. We read it, sort it, and tell you what it means.": "Choisissez une question et regardez la conversation arriver. Nous la lisons, la classons, et vous disons ce qu'elle signifie.",
   "Pick a question": "Choisissez une question",
   "Pick a question above.": "Choisissez une question ci-dessus.",
@@ -1520,6 +1521,8 @@ window.LicterFR = {
 
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
+
+
 
 
 

@@ -424,13 +424,22 @@
        MOCK: the six dimensions and the scoring in js/home.js are a draft.
        Nothing is sent anywhere yet. -->
   <section class="block shell" id="diagnostic">
-    <div class="quiz" id="quiz" data-mock>
-      <div class="quiz__intro">
-        <h2 class="block__title">Où en est votre écoute ?</h2>
-        <p class="block__lead">Six questions, trois minutes. Votre score tout de suite, le détail par e-mail.</p>
+    <div class="quiz qz" id="quiz" data-mock>
+      <div class="qz__side">
+        <p class="qz__kick">Diagnostic gratuit</p>
+        <div class="quiz__intro">
+          <h2 class="block__title">Où en est votre écoute ?</h2>
+          <p class="block__lead">Six questions, trois minutes. Votre score tout de suite, le détail par e-mail.</p>
+        </div>
+        <div class="qz__meter">
+          <div class="qz__gauge" aria-hidden="true">
+            <svg viewBox="0 0 120 120"><circle class="qz__track" cx="60" cy="60" r="52" /><circle class="qz__fill" id="quiz-fill" cx="60" cy="60" r="52" /></svg>
+            <span class="qz__n"><b id="quiz-gauge">0</b><small>/ 12</small></span>
+          </div>
+          <ol class="qsteps qz__steps" id="quiz-steps" aria-hidden="true"></ol>
+        </div>
       </div>
-      <ol class="qsteps" id="quiz-steps" aria-hidden="true"></ol>
-      <div class="quiz__stage" id="quiz-stage" aria-live="polite">
+      <div class="quiz__stage qz__stage" id="quiz-stage" aria-live="polite">
         <noscript><p>Le diagnostic a besoin de JavaScript. <a href="/diagnostic.html">Demander un diagnostic</a> instead.</p></noscript>
       </div>
     </div>

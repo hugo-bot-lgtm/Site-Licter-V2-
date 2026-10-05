@@ -150,6 +150,12 @@
         var cls = i === weak ? "is-weak" : i < step ? "is-done" : i === step ? "is-now" : "";
         return '<li class="' + cls + '"><span>' + two(i + 1) + "</span>" + L(q.dim) + "</li>";
       }).join("");
+      /* the gauge fills as the answers come in: the score is the reward, it
+         should be in view from the first question, not only at the end */
+      var got = answers.slice(0, Math.min(step, N)).reduce(function (s, v) { return s + v; }, 0);
+      var n = document.getElementById("quiz-gauge"), fill = document.getElementById("quiz-fill");
+      if (n) n.textContent = got;
+      if (fill) fill.style.strokeDashoffset = String(326.7 * (1 - got / (N * 2)));
     }
 
     function renderQuestion() {
@@ -160,7 +166,7 @@
         '<div class="quiz__opts" role="group" aria-label="' + L(item.q).replace(/"/g, "&quot;") + '">' +
           item.a.map(function (a, i) {
             var on = answers[step] === i ? " is-on" : "";
-            return '<button class="quiz__opt' + on + '" type="button" data-v="' + i + '"><span class="qopt__k" aria-hidden="true">' + "ABC".charAt(i) + "</span>" + L(a) + "</button>";
+            return '<button class="quiz__opt' + on + '" type="button" data-v="' + i + '"><span class="qopt__k" aria-hidden="true">' + "ABC".charAt(i) + '</span><span class="qopt__t">' + L(a) + '</span><span class="qopt__go" aria-hidden="true">→</span></button>';
           }).join("") +
         "</div>" +
         (step ? '<button class="quiz__back" type="button">← ' + t("Back", "Retour") + "</button>" : "");
