@@ -4,7 +4,7 @@
    - "mag":  the Audience First magazine, sent as a PDF by email.
 
    The magazine opens by itself once per visitor, centred, 3 seconds after
-   arriving (after a first scroll on the home; large screens only, never on
+   arriving (on the home, once the client videos have scrolled by; large screens only, never on
    a phone, never on a page whose point is a form: booking, diagnostic,
    guide, events). Closed without sending, it goes into a small dock at the
    bottom left, to be found again; once sent, it leaves the dock.
@@ -253,15 +253,18 @@
     if (current) { if (current !== k) queued = k; return; }
     open(k, true);
   }
-  /* the home asks for nothing before its promise is read: the magazine waits
-     for a first scroll past half a screen (and the same 3 s); every other
-     page opens it after 3 s */
+  /* the home asks for nothing before its proof is seen: the magazine waits
+     until the client videos have scrolled by (about 40 % of the page, and
+     the same 3 s at least); every other page opens it after 3 s */
   if (document.body.classList.contains("home")) {
     var timeUp = false, scrolled = false;
     var go = function () { if (timeUp && scrolled) auto("mag"); };
     setTimeout(function () { timeUp = true; go(); }, 3000);
+    var proof = document.getElementById("voices");
     var onScroll = function () {
-      if (window.scrollY < window.innerHeight * 0.5) return;
+      var past = proof ? proof.getBoundingClientRect().bottom < window.innerHeight * 0.5
+                       : window.scrollY > (document.documentElement.scrollHeight - window.innerHeight) * 0.4;
+      if (!past) return;
       window.removeEventListener("scroll", onScroll);
       scrolled = true; go();
     };

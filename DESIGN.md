@@ -86,7 +86,8 @@ Règles :
 - `text-wrap: balance` sur les titres. Largeur de lecture : 620 à 680px maximum.
 - **Un titre de section = surtitre + H2 + filet or** (`.block__title::after`, 64 × 3px). Le H1 du hero porte un filet plus long (42 %, 4px).
 - Pour souligner un mot dans un titre : `<em>`, qui passe en `--amber-ink` sans italique. Jamais une autre police.
-- **Plancher : 12px** pour tout texte utile. La page d'accueil compte encore une cinquantaine de surtitres à 10,5 à 11,5px (dette connue).
+- **Plancher : 12px** pour tout texte utile, y compris le menu, le bandeau, les surtitres et les titres du pied de page.
+- **Cibles :** 44px sur mobile, 24px sur ordinateur. Pour les liens en ligne et les petites pastilles, la zone s'agrandit avec du padding ou un `::after` invisible, sans bouger la mise en page.
 
 ---
 
@@ -200,10 +201,19 @@ Il est généré par `tools/build-events.py` et mis à jour par `js/events.js`. 
 - La confirmation remplace le formulaire et reçoit le focus. Elle reprend le prénom et l'e-mail saisis.
 - **Tous les formulaires sont des maquettes** (commentaire `MOCK`) : rien n'est envoyé tant que le CRM n'est pas branché.
 
+### Bloc « Pas encore prêt à parler ? » (accueil)
+
+Il s'adresse au visiteur qui n'est pas prêt pour un rappel. Il est placé après l'équipe, avant le diagnostic, sur ordinateur comme sur mobile, et contient trois cartes :
+- **le magazine**, avec un seul champ (e-mail) ;
+- **le guide des 12 questions**, avec un seul champ ;
+- **le prochain événement**, rempli par `js/events.js`, qui passe seul au suivant.
+
+Une fois le magazine demandé ici, son popup ne s'ouvre plus. Les formulaires sont des maquettes.
+
 ### Panneaux et popups
 
 - **Le rappel** (« Trente minutes avec un consultant ») s'ouvre sur **chaque « Parler à un consultant »** : tout lien vers `#book`, ou qui porte ces mots. Un cmd-clic suit toujours le lien. Il est en deux volets : la photo de l'équipe avec les badges « Réponse sous 30 min » et « 160+ projets depuis 2022 », puis le formulaire. Sur téléphone, la photo devient un bandeau et le clavier ne s'ouvre pas tout seul. Il ne s'ouvre jamais de lui-même.
-- **Le magazine** s'ouvre une seule fois par visiteur, **centré**, après 3 s. Sur l'accueil, il attend en plus un premier défilement d'un demi-écran. Il est réservé aux écrans larges et ne s'ouvre jamais sur une page de formulaire. Une fois fermé, il reste accessible dans le dock `.ppd`.
+- **Le magazine** s'ouvre une seule fois par visiteur, **centré**, après 3 s. Sur l'accueil, il attend que les vidéos clients soient passées (environ 40 % de la page), et le dock n'y apparaît pas : le magazine a son propre bloc. Il est réservé aux écrans larges et ne s'ouvre jamais sur une page de formulaire. Une fois fermé, il reste accessible dans le dock `.ppd`.
 - **Le tiroir d'Antoine** glisse depuis la droite. Il a deux onglets, chat et rappel. Chaque réponse du chat se termine par un CTA.
   - **Sur téléphone, il occupe tout l'écran.** Sa hauteur suit le clavier (visual viewport). Les champs sont en 16px, pour qu'iOS ne zoome pas. Le clavier ne s'ouvre pas tout seul. La page derrière est bloquée. Les questions suggérées défilent sur une ligne.
 - Aucune autre popup automatique : le magazine est le seul à s'ouvrir sans clic.
@@ -263,5 +273,4 @@ Il est généré par `tools/build-events.py` et mis à jour par `js/events.js`. 
 ## 11. Dettes connues
 
 - La police Aiglon est préchargée avec `?v=`, alors que le CSS la charge sans : elle est téléchargée deux fois.
-- Environ 50 textes font moins de 12px sur l'accueil.
 - Les formulaires ne sont pas branchés au CRM.

@@ -618,3 +618,41 @@
   });
   if (location.hash === "#diagnostic") unfold(false);
 })();
+
+/* =========================================================================
+   "Not ready to talk yet?": the magazine and the guide, one field each.
+   MOCK: nothing is sent yet; wire both to the CRM in the marked line.
+   Once the magazine is asked for here, its popup never opens again.
+   ========================================================================= */
+(function () {
+  var forms = document.querySelectorAll(".res__form");
+  if (!forms.length) return;
+  var html = document.documentElement;
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  function fr() { return html.lang === "fr"; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  var DONE = {
+    mag: ["The magazine is on its way to <b>%</b>, as a PDF.", "C'est noté. Le magazine arrive à <b>%</b>, en PDF."],
+    guide: ["The guide is on its way to <b>%</b>.", "C'est noté. Le guide arrive à <b>%</b>."]
+  };
+  Array.prototype.forEach.call(forms, function (form) {
+    var k = form.getAttribute("data-res");
+    var input = form.querySelector("input"), err = form.querySelector(".fld__error");
+    var done = form.parentNode.querySelector(".res__done");
+    if (window.LicterLead && !input.value) input.value = window.LicterLead.get() || "";
+    input.addEventListener("input", function () { err.hidden = true; input.setAttribute("aria-invalid", "false"); });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = input.value.trim();
+      if (!EMAIL.test(v)) { err.hidden = false; input.setAttribute("aria-invalid", "true"); input.focus(); return; }
+      /* MOCK: send { email: v, resource: k } to the CRM */
+      if (window.LicterLead) window.LicterLead.set(v);
+      if (k === "mag") { try { localStorage.setItem("pp-mag", "sent"); } catch (x) { /* private mode */ } }
+      form.hidden = true;
+      done.innerHTML = DONE[k][fr() ? 1 : 0].replace("%", esc(v));
+      done.hidden = false;
+      done.setAttribute("tabindex", "-1");
+      done.focus();
+    });
+  });
+})();

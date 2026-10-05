@@ -7606,3 +7606,100 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 @media (max-width: 700px) { .pp__box--call .pp__x { background: rgba(19, 22, 45, .6); color: #FCF6EF; } }
 .pp__box { max-height: calc(100vh - 40px); max-height: calc(100dvh - 40px); }
 @media (max-width: 700px) { .pp { padding: 12px; } .pp__box--call .pp__body { padding-inline: 18px; } .pp__box--call .fld__input { padding-inline: 12px; } }
+
+/* =========================================================
+   Home: "Not ready to talk yet?" — the magazine, the guide
+   (one field each) and the next event
+   ========================================================= */
+.res { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .72fr); gap: 16px; align-items: stretch; }
+.res__card { display: flex; gap: 20px; padding: 22px; border-radius: 20px; background: var(--card-bg); box-shadow: 0 0 0 1px var(--line), 0 24px 50px -36px rgba(var(--ink-rgb), .45); color: var(--ink); }
+.res__art { flex: none; display: grid; place-items: center; width: 112px; align-self: flex-start; }
+.res__cover { display: block; width: 100%; height: auto; border-radius: 5px; transform: rotate(-3deg); box-shadow: 0 18px 30px -14px rgba(10, 12, 28, .6), 0 0 0 1px rgba(255, 255, 255, .1); }
+.res__art--guide { aspect-ratio: 440 / 640; border-radius: 6px; transform: rotate(2deg); background: radial-gradient(90% 70% at 20% 10%, rgba(234, 169, 61, .35), transparent 60%), #13162D; box-shadow: 0 18px 30px -14px rgba(10, 12, 28, .6), 0 0 0 1px rgba(255, 255, 255, .1); align-content: center; gap: 2px; }
+.res__num { font: 700 46px/1 var(--title-font); color: #EAA93D; }
+.res__num-l { font: 700 12px/1.2 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: #FCF6EF; }
+.res__body { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.res__k { margin: 0 0 8px; font: 700 12px/1.2 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: var(--amber-ink); }
+html[data-theme="dark"] .res__k { color: #EAA93D; }
+.res__t { display: block; margin: 0; font: 600 19px/1.25 var(--title-font); color: var(--ink); text-wrap: balance; }
+.res__l { display: block; margin: 8px 0 16px; font: 500 14.5px/1.55 var(--body-font); color: var(--text-2); }
+.res__l a { color: var(--ink); text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 3px; }
+.res__form { display: grid; gap: 8px; margin-top: auto; }
+.res__form .fld__input { width: 100%; height: 48px; }
+.res__form .fld__input[aria-invalid="true"] { border-color: #C0442F; }
+.res__form .btn { justify-content: center; height: 48px; }
+.res__form .fld__error { margin: 0; }
+.res__done { margin: auto 0 0; padding: 14px 16px; border-radius: 14px; background: rgba(47, 163, 107, .12); font: 500 14.5px/1.5 var(--body-font); color: var(--ink); }
+.res__done:focus { outline: none; }
+/* the event: the whole card is the link */
+.res__card--event { flex-direction: column; gap: 16px; text-decoration: none; transition: transform .2s cubic-bezier(.16, .84, .34, 1), box-shadow .2s ease; }
+.res__card--event:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px var(--line), 0 30px 56px -34px rgba(var(--ink-rgb), .55); }
+.res__date { display: grid; place-items: center; align-content: center; width: 76px; height: 76px; border-radius: 16px; background: #FCF6EF; color: #13162D; box-shadow: 0 0 0 1px var(--line); }
+.res__date b { font: 700 30px/1 var(--title-font); }
+.res__date small { font: 700 12px/1.2 var(--body-font); letter-spacing: 1px; text-transform: uppercase; }
+.res__go { display: inline-flex; gap: 6px; margin-top: auto; padding-top: 6px; font: 700 14px/1.3 var(--body-font); color: var(--ink); border-bottom: 1.5px solid #EAA93D; align-self: flex-start; }
+@media (max-width: 1080px) {
+  .res { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .res__card--event { grid-column: 1 / -1; flex-direction: row; align-items: center; }
+}
+@media (max-width: 720px) {
+  .res { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .res__card { gap: 16px; padding: 18px; }
+  .res__art { width: 84px; }
+  .res__num { font-size: 36px; }
+  .res__t { font-size: 18px; }
+  .res__card--event { grid-column: auto; }
+  .res__date { width: 64px; height: 64px; flex: none; }
+}
+@media (prefers-reduced-motion: reduce) { .res__card--event { transition: none; } .res__card--event:hover { transform: none; } }
+
+/* the quiz says what it gives before it asks */
+.qz__gets { display: grid; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+.qz__gets li { display: flex; align-items: center; gap: 10px; font: 600 14.5px/1.35 var(--body-font); color: rgba(252, 246, 239, .9); }
+.qz__gets li::before { content: ""; flex: none; width: 18px; height: 18px; border-radius: 50%; background: rgba(234, 169, 61, .18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EAA93D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center / 12px no-repeat; }
+
+/* the home has the magazine in its own block: no dock */
+.home .ppd { display: none; }
+
+/* the callback at the bottom of the home: the button under the field, as in the popup */
+.home #book .callback__row { flex-direction: column; }
+.home #book .callback__row .btn { justify-content: center; }
+/* the cover and the text on top, the form under them, full width */
+.res__card:not(.res__card--event) { flex-direction: column; gap: 18px; }
+.res__top { display: flex; gap: 20px; }
+.res__top .res__l { margin-bottom: 0; }
+.res__form .btn { white-space: nowrap; }
+.res__done { margin-top: auto; }
+@media (max-width: 720px) { .res__top { gap: 16px; } }
+
+/* =========================================================
+   Readability floor: 12 px for any text that says something,
+   and targets big enough for a finger (44 px on a phone) or a
+   cursor (24 px). Hit areas grow with padding on inline links
+   or an invisible ::after, so the layout does not move.
+   ========================================================= */
+.banner__tag, .nav__list a, .lang__btn, .award__rank, .award__text, .frame__hint,
+.ucc__k span, .reel__brand, .reel__who, .cmp__head, .mstep__n, .step__k, .team__k,
+.qz__kick, .quiz__count, .site-foot h3, .hero__kick { font-size: 12px; }
+@media (max-width: 720px) {
+  .banner--event .banner__a > b, .banner--event .banner__a > u { font-size: 12px; }
+  .award__text { font-size: 12px; }
+}
+/* desktop: menu and footer links get a 24 px tall target */
+@media (min-width: 721px) {
+  .nav__list a { padding-block: 6px; }
+  .site-foot li a { display: inline-block; padding-block: 4px; }
+}
+/* the more specific rules that kept a few labels under 12 px */
+.hero__top .lang__btn, .mstep .step__k, .quiz.qz .quiz__count { font-size: 12px; }
+.banner--event .banner__a { min-height: 24px; }
+.ucc__cases a { min-height: 44px; }
+/* the small pills and text links that sit on their own */
+.award, .hero__link, .ucc__all, .hstep { position: relative; }
+.award::after, .hero__link::after, .hstep::after { content: ""; position: absolute; inset: -12px -4px; }
+@media (max-width: 720px) {
+  .ucc__all { display: inline-flex; align-items: center; min-height: 44px; padding-block: 0; }
+  .theme__btn, .hero__top .lang__btn { min-width: 44px; min-height: 44px; }
+  .banner--event .banner__a { display: flex; min-height: 44px; }
+  .hstep::after { inset: -8px -6px; }
+}

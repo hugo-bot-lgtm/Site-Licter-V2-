@@ -142,7 +142,23 @@
     if (over(li.getAttribute("data-ev-date"))) li.classList.add("is-past");
   });
 
-  function paint() { paintBanner(); paintPage(); }
+  /* ------------------------------- the home's "next event" card */
+  var card = document.querySelector("[data-next-event]");
+  var MON = [["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
+             ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]];
+  function paintCard() {
+    if (!card) return;
+    if (!next) { card.hidden = true; return; }
+    var d = new Date(next.date + "T12:00:00");
+    card.setAttribute("href", next.href);
+    card.querySelector('[data-ev="day"]').textContent = d.getDate();
+    card.querySelector('[data-ev="mon"]').textContent = MON[fr() ? 0 : 1][d.getMonth()];
+    /* never a line starting with the separator */
+    card.querySelector('[data-ev="title"]').textContent = L(next.k).replace(/ · /g, "\u00a0· ");
+    card.querySelector('[data-ev="place"]').textContent = L(next.d);
+  }
+
+  function paint() { paintBanner(); paintPage(); paintCard(); }
   paint();
   new MutationObserver(paint).observe(html, { attributes: true, attributeFilter: ["lang"] });
 })();

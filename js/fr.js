@@ -280,6 +280,23 @@ window.LicterFR = {
   "“Every trend now starts on TikTok.”": "« Toutes les tendances partent désormais de TikTok. »",
   "Use cases | Licter": "Cas d'usage | Licter",
   "A word from the founders": "Un mot des fondateurs",
+  /* ---- home: "not ready to talk yet?" and the quiz promise ---- */
+  "Not ready to talk yet?": "Pas encore prêt à parler ?",
+  "Start with what we publish. Free, and no sales call attached.": "Commencez par ce que nous publions. Gratuit, et sans appel commercial à la clé.",
+  "Free magazine": "Magazine gratuit",
+  "Audience First, the magazine.": "Audience First, le magazine.",
+  "The podcast's conversations and our reads of social data, in one PDF.": "Les conversations du podcast et nos lectures de la donnée sociale, réunies en PDF.",
+  "name@company.com": "nom@entreprise.com",
+  "Send me the magazine": "Recevoir le magazine",
+  "Enter a valid work email.": "Indiquez un e-mail professionnel valide.",
+  "questions": "questions",
+  "The 12 questions social data answers better than a survey.": "Les 12 questions auxquelles la social data répond mieux qu'une étude.",
+  "Twelve business questions, and the method that answers each one.": "Douze questions business, et la méthode qui répond à chacune.",
+  "See what's inside": "Voir le sommaire",
+  "Send me the guide": "Recevoir le guide",
+  "Your score out of 12": "Votre score sur 12",
+  "Your three priorities": "Vos trois priorités",
+  "The full readout by email": "Le détail par e-mail",
   "organisations served": "organisations accompagnées",
   "projects since 2022": "projets depuis 2022",
   "languages monitored": "langues suivies",
@@ -1526,6 +1543,12 @@ window.LicterFR = {
 
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
+
+
+
+
+
+
 
 
 
