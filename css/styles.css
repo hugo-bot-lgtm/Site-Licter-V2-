@@ -2875,8 +2875,11 @@ html[lang="fr"] .lang-note + .prose { margin-top: clamp(18px, 2.4vh, 26px); }
   /* The beam is 108px long and turns with the path, so at the corners its box
      stuck out past the viewport and gave the page a horizontal scroll once the
      band went edge to edge. `clip` never creates a scroll container, and the
-     margin leaves room for the caption, which sits astride the top border. */
-  overflow: clip;
+     margin leaves room for the caption, which sits astride the top border.
+     Only the horizontal axis is clipped: Safari ignores overflow-clip-margin
+     and cut the top half of the caption off. */
+  overflow-x: clip;
+  overflow-y: visible;
   overflow-clip-margin: 36px;
   background: rgba(255, 255, 255, .5);
   backdrop-filter: blur(6px);
