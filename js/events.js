@@ -142,24 +142,18 @@
     if (over(li.getAttribute("data-ev-date"))) li.classList.add("is-past");
   });
 
-  /* ------------------------------- the home's "next event" card */
-  var card = document.querySelector("[data-next-event]");
-  var MON = [["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
-             ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]];
-  function paintCard() {
-    if (!card) return;
-    var box = card.closest(".res__item") || card;
-    if (!next) { box.hidden = true; return; }
-    var d = new Date(next.date + "T12:00:00");
-    card.setAttribute("href", next.href);
-    box.querySelector('[data-ev="day"]').textContent = d.getDate();
-    box.querySelector('[data-ev="mon"]').textContent = MON[fr() ? 0 : 1][d.getMonth()];
-    /* never a line starting with the separator */
-    box.querySelector('[data-ev="title"]').textContent = L(next.k).replace(/ · /g, "\u00a0· ");
-    box.querySelector('[data-ev="place"]').textContent = L(next.d);
+  /* the banner is pinned: its height goes to --banner-h, which the compact
+     bar, anchors and sticky panels use to sit under it */
+  function measure() {
+    if (!banner) return;
+    html.style.setProperty("--banner-h", (banner.hidden ? 0 : banner.offsetHeight) + "px");
+  }
+  if (banner) {
+    if (window.ResizeObserver) new ResizeObserver(measure).observe(banner);
+    window.addEventListener("resize", measure);
   }
 
-  function paint() { paintBanner(); paintPage(); paintCard(); }
+  function paint() { paintBanner(); paintPage(); measure(); }
   paint();
   new MutationObserver(paint).observe(html, { attributes: true, attributeFilter: ["lang"] });
 })();

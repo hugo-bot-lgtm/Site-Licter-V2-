@@ -178,9 +178,9 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
 |---|---|
 | 30 | `.stickybar` : barre compacte avec le CTA, après le hero. En haut quand on remonte ; sur l'accueil mobile, **en bas et permanente** (`.stickybar--bottom`), masquée sur le formulaire |
 | 35 | `.ucp-bar` : barre d'actions mobile des pages cas d'usage |
-| 40 | `.banner` : bandeau du prochain événement, ou du guide. Il **défile avec la page** : s'il restait collé, il recouvrirait la barre compacte |
+| 40 | `.banner` : bandeau du prochain événement, ou du guide, **collé en haut de toutes les pages**. Sa hauteur est publiée dans `--banner-h` (`js/events.js`) : la barre compacte se place juste dessous, et les ancres comme les panneaux collants en tiennent compte. Sur mobile, il tient sur deux lignes courtes |
 | 45 | `.langoffer` : proposition de langue |
-| 55 | `.ppd` : dock « Le magazine », en bas à gauche |
+| 55 | `.ppd` : le bouton du magazine, en bas à gauche : une petite carte navy avec la couverture inclinée, « Audience First », « Le magazine, en PDF » et une étiquette « Gratuit » |
 | 60 | `.lx__launch` : lanceur du chat Antoine, en bas à droite |
 | 70 | `.lx__panel` : tiroir chat et rappel |
 | 80 | `.pp` : popup magazine |
@@ -203,19 +203,10 @@ Il est généré par `tools/build-events.py` et mis à jour par `js/events.js`. 
 - La confirmation remplace le formulaire et reçoit le focus. Elle reprend le prénom et l'e-mail saisis.
 - **Tous les formulaires sont des maquettes** (commentaire `MOCK`) : rien n'est envoyé tant que le CRM n'est pas branché.
 
-### Bloc « Pas encore prêt à parler ? » (accueil)
-
-Il s'adresse au visiteur qui n'est pas prêt pour un rappel, et reste **discret** : une rangée de trois éléments entre de fins filets, sans fond de carte, avec une vignette de 56px, un titre court et un lien souligné d'or. Il contient :
-- **le magazine** ;
-- **le guide des 12 questions** ;
-- **le prochain événement**, rempli par `js/events.js`.
-
-**Aucun champ n'est visible d'emblée** : le champ e-mail n'apparaît qu'au clic sur « Recevoir le magazine » ou « Recevoir le guide ». Une fois le magazine demandé ici, son popup ne s'ouvre plus. Les formulaires sont des maquettes.
-
 ### Panneaux et popups
 
 - **Le rappel** (« Trente minutes avec un consultant ») s'ouvre sur **chaque « Parler à un consultant »** : tout lien vers `#book`, ou qui porte ces mots. Un cmd-clic suit toujours le lien. Il est en deux volets : la photo de l'équipe avec les badges « Réponse sous 30 min » et « 160+ projets depuis 2022 », puis le formulaire. Sur téléphone, la photo devient un bandeau et le clavier ne s'ouvre pas tout seul. Il ne s'ouvre jamais de lui-même.
-- **Le magazine** s'ouvre une seule fois par visiteur, **centré**, après 3 s. Sur l'accueil, il attend que les vidéos clients soient passées (environ 40 % de la page). Il s'ajoute au bloc « Pas encore prêt à parler ? » et garde son dock, sauf si le magazine a déjà été demandé dans le bloc. Il est réservé aux écrans larges et ne s'ouvre jamais sur une page de formulaire. Une fois fermé, il reste accessible dans le dock `.ppd`.
+- **Le magazine** s'ouvre une seule fois par visiteur, **centré**, après 3 s. Sur l'accueil, il attend que les vidéos clients soient passées (environ 40 % de la page). Une fois fermé sans envoi, il reste accessible depuis son bouton en bas à gauche. Il est réservé aux écrans larges et ne s'ouvre jamais sur une page de formulaire. Une fois fermé, il reste accessible dans le dock `.ppd`.
 - **Le tiroir d'Antoine** glisse depuis la droite. Il a deux onglets, chat et rappel. Chaque réponse du chat se termine par un CTA.
   - **Sur téléphone, il occupe tout l'écran.** Sa hauteur suit le clavier (visual viewport). Les champs sont en 16px, pour qu'iOS ne zoome pas. Le clavier ne s'ouvre pas tout seul. La page derrière est bloquée. Les questions suggérées défilent sur une ligne.
 - Aucune autre popup automatique : le magazine est le seul à s'ouvrir sans clic.

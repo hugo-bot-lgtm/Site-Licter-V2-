@@ -1310,8 +1310,8 @@
          and the compact header while that one shows */
       var top = 0, banner = document.querySelector("body > .banner"), bar = document.querySelector(".stickybar.is-shown");
       if (banner && getComputedStyle(banner).position === "sticky") top = banner.offsetHeight;
-      /* the compact header is fixed at the very top, under the banner */
-      if (bar) top = Math.max(top, bar.offsetHeight);
+      /* the compact header slides in just under the pinned banner */
+      if (bar && !bar.classList.contains("stickybar--bottom")) top += bar.offsetHeight;
       document.documentElement.style.setProperty("--uc-top", top + "px");
     }
     /* the compact header comes and goes on its own schedule: follow it */

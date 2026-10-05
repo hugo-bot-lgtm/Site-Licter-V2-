@@ -218,7 +218,6 @@
 
   /* --------------------------------------------------------- the dock
      the popups a visitor closed without sending, to open them again */
-  var ICON_MAG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 4.5h10.5L19 8v11.5H5z"/><path d="M8.5 10h7M8.5 13.5h7M8.5 17h4"/></svg>';
   var ICON_CALL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6.5 4.5h3l1.5 4-2 1.3a10 10 0 0 0 5.2 5.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.5 6.7a2 2 0 0 1 2-2.2z"/></svg>';
   var dock = document.createElement("div");
   dock.className = "ppd";
@@ -229,9 +228,17 @@
     dock.hidden = !items.length;
     dock.setAttribute("aria-label", fr() ? "Retrouver nos propositions" : "Find our offers again");
     dock.innerHTML = items.map(function (k) {
+      if (k === "mag") {
+        /* the magazine shows itself: its cover, its name, what it costs */
+        return '<button type="button" class="ppd__b ppd__b--mag" data-open="mag">' +
+          '<img class="ppd__cover" src="/assets/img/magazine/audience-first-ed2-440.webp" alt="" width="440" height="640" decoding="async" />' +
+          '<span class="ppd__txt"><b>Audience First</b><small>' + esc(fr() ? "Le magazine, en PDF" : "The magazine, as a PDF") + "</small></span>" +
+          '<span class="ppd__tag">' + esc(fr() ? "Gratuit" : "Free") + "</span>" +
+          '<span class="ppd__go" aria-hidden="true">→</span></button>';
+      }
       return '<button type="button" class="ppd__b ppd__b--' + k + '" data-open="' + k + '">' +
-        '<span class="ppd__i" aria-hidden="true">' + (k === "mag" ? ICON_MAG : ICON_CALL) + "</span>" +
-        esc(k === "mag" ? (fr() ? "Le magazine" : "The magazine") : (fr() ? "Être rappelé" : "Call me back")) + "</button>";
+        '<span class="ppd__i" aria-hidden="true">' + ICON_CALL + "</span>" +
+        esc(fr() ? "Être rappelé" : "Call me back") + "</button>";
     }).join("");
   }
   dock.addEventListener("click", function (e) {

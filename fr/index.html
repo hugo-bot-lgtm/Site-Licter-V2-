@@ -27,7 +27,7 @@
 <meta name="twitter:title" content="Cabinet de conseil en social listening et data | Licter" />
 <meta name="twitter:description" content="Licter transforme ce que les gens publient, recherchent et demandent à l&#x27;IA en décisions : impact des campagnes, réputation, audiences, tendances." />
 <meta name="twitter:image" content="https://www.licter.com/assets/img/og/home-fr.png" />
-<link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2?v=20261266" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2?v=20261267" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preconnect" href="https://i.ytimg.com" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png", "sameAs": ["https://www.linkedin.com/company/licter/", "https://www.instagram.com/licter_listening/", "https://www.youtube.com/@audience_first"], "description": "Licter transforme ce que les gens publient, recherchent et demandent à l'IA en décisions : impact des campagnes, réputation, audiences, tendances.", "founder": [{"@type": "Person", "name": "Adrien Krebs"}, {"@type": "Person", "name": "Antoine Khaitrine", "sameAs": "https://www.thesilab.com/insider-50/antoine-khaitrine"}], "knowsLanguage": ["fr", "en", "zh", "es", "hi", "yue", "ar"], "areaServed": "Worldwide"}</script>
@@ -38,8 +38,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
 <meta name="theme-color" content="#13162D" />
-<script src="/js/theme.js?v=20261266"></script>
-<link rel="stylesheet" href="/css/styles.min.css?v=20261266" />
+<script src="/js/theme.js?v=20261267"></script>
+<link rel="stylesheet" href="/css/styles.min.css?v=20261267" />
 </head>
 <body class="home">
 <a class="skip-link" href="#content">Aller au contenu</a>
@@ -429,63 +429,6 @@
     </div>
   </section>
 
-  <!-- ==================== RESOURCES ====================
-       For the visitor who is not ready to talk: a quiet row, the two free
-       reads and the next event (filled by js/events.js). The email field
-       only shows once "Get it" is clicked.
-       MOCK: the two forms send nothing yet (js/home.js); wire to the CRM. -->
-  <section class="block shell" id="resources">
-    <div class="res" data-reveal>
-      <div class="res__head">
-        <h2 class="res__h">Pas encore prêt à parler ?</h2>
-        <p class="res__lead">Commencez par ce que nous publions. Gratuit, et sans appel commercial à la clé.</p>
-      </div>
-      <ul class="res__list">
-        <li class="res__item">
-          <img class="res__thumb" src="/assets/img/magazine/audience-first-ed2-440.webp" alt="" width="440" height="640" loading="lazy" decoding="async" />
-          <div class="res__body">
-            <p class="res__k">Magazine gratuit</p>
-            <h3 class="res__t">Audience First, le magazine</h3>
-            <p class="res__l">Les conversations du podcast et nos lectures de la donnée sociale, réunies en PDF.</p>
-            <button class="res__open" type="button" aria-expanded="false" aria-controls="res-form-mag">Recevoir le magazine <span aria-hidden="true">→</span></button>
-            <form class="res__form" id="res-form-mag" data-res="mag" novalidate hidden>
-              <label class="visually-hidden" for="res-mag">E-mail professionnel</label>
-              <input class="fld__input" id="res-mag" name="email" type="email" autocomplete="email" placeholder="nom@entreprise.com" required />
-              <button class="btn btn--primary" type="submit">Envoyer <span aria-hidden="true">→</span></button>
-              <p class="fld__error" hidden>Indiquez un e-mail professionnel valide.</p>
-            </form>
-            <p class="res__done" role="status" hidden></p>
-          </div>
-        </li>
-        <li class="res__item">
-          <span class="res__thumb res__thumb--guide" aria-hidden="true">12</span>
-          <div class="res__body">
-            <p class="res__k">Guide gratuit</p>
-            <h3 class="res__t">Les 12 questions auxquelles la social data répond mieux qu'une étude</h3>
-            <p class="res__l">Douze questions business, et la méthode qui répond à chacune.</p>
-            <button class="res__open" type="button" aria-expanded="false" aria-controls="res-form-guide">Recevoir le guide <span aria-hidden="true">→</span></button>
-            <form class="res__form" id="res-form-guide" data-res="guide" novalidate hidden>
-              <label class="visually-hidden" for="res-guide">E-mail professionnel</label>
-              <input class="fld__input" id="res-guide" name="email" type="email" autocomplete="email" placeholder="nom@entreprise.com" required />
-              <button class="btn btn--primary" type="submit">Envoyer <span aria-hidden="true">→</span></button>
-              <p class="fld__error" hidden>Indiquez un e-mail professionnel valide.</p>
-            </form>
-            <p class="res__done" role="status" hidden></p>
-          </div>
-        </li>
-        <li class="res__item">
-          <span class="res__thumb res__date" aria-hidden="true"><b data-ev="day">16</b><small data-ev="mon">oct.</small></span>
-          <div class="res__body">
-            <p class="res__k">Prochain événement</p>
-            <h3 class="res__t" data-ev="title">Étude sectorielle · Jeux &amp; jouets</h3>
-            <p class="res__l" data-ev="place">Vendredi 16 octobre · Musée de la Vie romantique</p>
-            <a class="res__open" href="/event-toys-games.html" data-next-event>M'inscrire <span aria-hidden="true">→</span></a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <!-- ==================== DIAGNOSTIC ====================
        MOCK: the six dimensions and the scoring in js/home.js are a draft.
        Nothing is sent anywhere yet. -->
@@ -630,12 +573,12 @@
     <span>© 2026 Licter, Social Data Intelligence · <a href="/legal.html">Mentions légales</a> · <a href="/privacy.html">Confidentialité</a></span>
   </div>
 </footer>
-<script src="/js/fr.js?v=20261266"></script>
-<script src="/js/i18n.js?v=20261266"></script>
-<script src="/js/communities.js?v=20261266"></script>
-<script src="/js/ui.js?v=20261266"></script>
-<script src="/js/voices.js?v=20261266"></script>
-<script src="/js/usecases.js?v=20261266"></script>
-<script src="/js/home.js?v=20261266"></script>
+<script src="/js/fr.js?v=20261267"></script>
+<script src="/js/i18n.js?v=20261267"></script>
+<script src="/js/communities.js?v=20261267"></script>
+<script src="/js/ui.js?v=20261267"></script>
+<script src="/js/voices.js?v=20261267"></script>
+<script src="/js/usecases.js?v=20261267"></script>
+<script src="/js/home.js?v=20261267"></script>
 </body>
 </html>

@@ -7407,9 +7407,18 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 /* =========================================================
    Home audit fixes
    ========================================================= */
-/* the events banner scrolls away with the page: pinned, it sat over the
-   compact bar (z 30 under z 40) and hid "Talk to a consultant" on the way up */
-.banner { position: relative; }
+/* the events banner stays pinned at the top of every page; its height is
+   published as --banner-h (js/events.js) so the compact bar slides in just
+   under it, and anchors and sticky panels clear it */
+.banner { position: sticky; top: 0; }
+.stickybar:not(.stickybar--bottom) { top: var(--banner-h, 0px); }
+section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); }
+.estimator { top: calc(var(--banner-h, 0px) + 24px); }
+/* on a phone the pinned banner keeps to two short lines on every page */
+@media (max-width: 720px) {
+  .banner--event { padding-block: 8px; }
+  .banner--event .banner__a > span:not(.banner__tag) { display: none; }
+}
 
 /* on a phone the home drops the community map of the hero: it only works
    with room (the live demo goes too: see the second pass below) */
@@ -7642,6 +7651,8 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 /* the small pills and text links that sit on their own */
 .award, .hero__link, .ucc__all, .hstep { position: relative; }
 .award::after, .hero__link::after, .hstep::after { content: ""; position: absolute; inset: -12px -4px; }
+/* the badge's ::after once drew a glow: here it is only a hit area */
+.award::after { z-index: 0; border-radius: 0; background: none; filter: none; opacity: 1; animation: none; }
 @media (max-width: 720px) {
   .ucc__all { display: inline-flex; align-items: center; min-height: 44px; padding-block: 0; }
   .theme__btn, .hero__top .lang__btn { min-width: 44px; min-height: 44px; }
@@ -7662,8 +7673,20 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   /* the main visual and our reading, side by side: the detail panels live
      on the use-case pages ("See the full use case") */
   .home .lf__stage :is(.rc__detail, .c-peaks, .quotes) { display: none; }
-  /* audiences keeps its scores: the map gives up some height for them */
-  .home .aud3__map { height: 210px; }
+  /* audiences keeps its scores, in a compact size: map, gauges and matrix
+     all fit in one screen with our reading next to them */
+  .home .aud3__map { height: 200px; }
+  .home .aud3 { gap: 10px; }
+  .home .aud3__row { gap: 10px; }
+  .home .aud3 .aud2__focus { padding: 10px 14px; }
+  .home .afocus__name { font-size: 15px; }
+  .home .afocus__meta { margin: 2px 0 6px; font-size: 12px; }
+  .home .gauge svg { width: 46px; height: 46px; }
+  .home .gauge b { top: 15px; font-size: 14px; }
+  .home .gauge span { font-size: 12px; }
+  .home .afocus__note { margin-top: 6px; font-size: 12.5px; line-height: 1.4; }
+  .home .aud3__matrix { padding: 8px 12px 4px; }
+  .home .aud3__matrix .matrix { display: block; width: 100%; max-height: 176px; }
 }
 
 /* ---------- the footer on a phone: four folding columns ----------
@@ -7680,53 +7703,30 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 }
 @media (max-width: 720px) { .site-foot.is-folding .site-foot__in { grid-template-columns: minmax(0, 1fr); row-gap: 0; } .site-foot.is-folding .site-foot__brand { margin-bottom: 18px; } }
 
-/* =========================================================
-   Home: "Not ready to talk yet?" — a quiet row, not a wall of
-   forms: three small items between hairlines, a text link each;
-   the email field only shows once the link is clicked
-   ========================================================= */
-.home #resources { padding-block: clamp(44px, 6vh, 72px); }
-.res__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-bottom: 22px; }
-.res__h { margin: 0; font: 600 clamp(20px, 1.7vw, 24px)/1.2 var(--title-font); color: var(--ink); }
-.res__lead { margin: 0; font: 500 15px/1.5 var(--body-font); color: var(--text-2); }
-.res__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.res__item { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; align-items: start; padding: 22px 28px 4px 0; }
-.res__item + .res__item { padding-left: 28px; border-left: 1px solid var(--line); }
-.res__item[hidden] { display: none; }
-.res__thumb { display: block; width: 56px; height: auto; border-radius: 4px; box-shadow: 0 10px 18px -10px rgba(10, 12, 28, .55), 0 0 0 1px var(--line); }
-.res__thumb--guide { display: grid; place-items: center; height: 81px; background: radial-gradient(90% 70% at 20% 10%, rgba(234, 169, 61, .35), transparent 60%), #13162D; font: 700 26px/1 var(--title-font); color: #EAA93D; }
-.res__date { display: grid; place-items: center; align-content: center; height: 56px; border-radius: 12px; background: var(--card-bg); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
-.res__date b { font: 700 22px/1 var(--title-font); }
-.res__date small { font: 700 12px/1.2 var(--body-font); letter-spacing: .6px; text-transform: uppercase; color: var(--text-2); }
-.res__body { min-width: 0; }
-.res__k { margin: 0 0 4px; font: 700 12px/1.2 var(--body-font); letter-spacing: 1.1px; text-transform: uppercase; color: var(--amber-ink); }
-html[data-theme="dark"] .res__k { color: #EAA93D; }
-.res__t { margin: 0; font: 600 17px/1.3 var(--title-font); color: var(--ink); text-wrap: balance; }
-.res__l { margin: 6px 0 10px; font: 500 14px/1.5 var(--body-font); color: var(--text-2); }
-.res__open { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0; border: 0; background: none; color: var(--ink); font: 700 14px/1.2 var(--body-font); text-decoration: none; cursor: pointer; }
-.res__open { background-image: linear-gradient(#EAA93D, #EAA93D); background-size: 100% 1.5px; background-position: 0 calc(100% - 7px); background-repeat: no-repeat; }
-.res__open:hover { color: var(--amber-ink); }
-html[data-theme="dark"] .res__open:hover { color: #EAA93D; }
-.res__open[hidden] { display: none; }
-.res__form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin-top: 4px; max-width: 340px; }
-.res__form .btn { justify-self: start; }
-.res__form[hidden] { display: none; }
-.res__form .fld__input { width: 100%; height: 44px; }
-.res__form .fld__input[aria-invalid="true"] { border-color: #C0442F; }
-.res__form .btn { height: 44px; padding: 0 16px; }
-.res__form .fld__error { grid-column: 1 / -1; margin: 0; }
-.res__done { margin: 4px 0 0; padding: 10px 12px; border-radius: 10px; background: rgba(47, 163, 107, .12); font: 500 14px/1.5 var(--body-font); color: var(--ink); }
-.res__done:focus { outline: none; }
-@media (max-width: 960px) {
-  .res__list { grid-template-columns: minmax(0, 1fr); }
-  .res__item { padding: 18px 0; }
-  .res__item + .res__item { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+/* a laptop screen (800 px tall or so): the demo still fits, the heading gives way */
+@media (min-width: 961px) and (max-height: 860px) {
+  .home #use-cases { padding-top: 36px; }
+  .home #use-cases .cases__heading { font-size: 28px; }
+  .home #use-cases .uc__head .block__lead { display: none; }
+  .home #use-cases .uc__head { margin-bottom: 12px; }
+  .home .aud3__map { height: 160px; }
+  .home .aud3__matrix .matrix { max-height: 150px; }
+  .home .lf__stage { margin-top: 12px; }
 }
-@media (max-width: 720px) {
-  .res__item { grid-template-columns: 48px minmax(0, 1fr); gap: 14px; }
-  .res__thumb { width: 48px; }
-  .res__thumb--guide { height: 70px; font-size: 22px; }
-  .res__date { height: 48px; }
-  .res__date b { font-size: 19px; }
-  .res__open { min-height: 44px; }
-}
+
+/* ---------- the magazine, waiting at the bottom left ----------
+   Not a grey pill: the cover leans out of a small navy card, with the
+   name, what it is, and that it is free */
+.ppd__b--mag { position: relative; height: auto; gap: 12px; padding: 10px 14px 10px 66px; border-radius: 16px; background: linear-gradient(135deg, #1C2142, #13162D); color: #FCF6EF; box-shadow: 0 0 0 1px rgba(234, 169, 61, .35), 0 20px 40px -18px rgba(10, 12, 28, .7); text-align: left; }
+.ppd__b--mag:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px rgba(234, 169, 61, .8), 0 24px 44px -18px rgba(10, 12, 28, .75); }
+.ppd__cover { position: absolute; left: 12px; bottom: 8px; width: 44px; height: auto; border-radius: 3px; transform: rotate(-6deg); box-shadow: 0 10px 18px -8px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .12); transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+.ppd__b--mag:hover .ppd__cover { transform: rotate(-2deg) translateY(-4px); }
+.ppd__txt { display: grid; gap: 2px; }
+.ppd__txt b { font: 600 14.5px/1.15 var(--title-font); color: #FCF6EF; }
+.ppd__txt small { font: 500 12px/1.2 var(--body-font); color: rgba(252, 246, 239, .72); }
+.ppd__tag { padding: 4px 8px; border-radius: 999px; background: #EAA93D; color: #13162D; font: 700 12px/1 var(--body-font); letter-spacing: .3px; }
+.ppd__go { color: #EAA93D; font-weight: 700; transition: transform .2s ease; }
+.ppd__b--mag:hover .ppd__go { transform: translateX(3px); }
+html[data-theme="light"] .ppd__b--mag { box-shadow: 0 0 0 1px rgba(19, 22, 45, .2), 0 20px 40px -18px rgba(19, 22, 45, .55); }
+@media (max-width: 720px) { .ppd__b--mag { padding: 8px 12px 8px 58px; } .ppd__cover { width: 38px; } .ppd__txt small { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ppd__cover, .ppd__go { transition: none; } }
