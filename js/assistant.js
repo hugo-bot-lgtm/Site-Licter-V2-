@@ -391,6 +391,9 @@
   }
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  /* the home's bottom bar on a phone carries Antoine's face: it opens the chat */
+  window.LicterChat = { open: function () { open("chat"); }, close: close };
+
   paint();
   show("chat");
   new MutationObserver(function () { paint(); done(); }).observe(html, { attributes: true, attributeFilter: ["lang"] });

@@ -579,6 +579,19 @@
       more.appendChild(founders);
       people.insertAdjacentElement("afterend", more);
       team.classList.add("is-moved");
+      /* the faces (and the photo's badge) come up under the title: the
+         people are the argument, they open it */
+      var faces = people.querySelector(".team2__faces");
+      var badge = document.querySelector(".cmp__badge");
+      var title = cmp.querySelector(".xs__title");
+      if (faces && title) {
+        park(faces);
+        var who = document.createElement("div");
+        who.className = "cmp__who";
+        if (badge) { park(badge); who.appendChild(badge); }
+        who.appendChild(faces);
+        title.insertAdjacentElement("afterend", who);
+      }
     }
     /* the method, as an accordion: the first step open */
     cards.forEach(function (c, i) {
@@ -611,6 +624,7 @@
     on = false;
     homes.reverse().forEach(function (h) { h[1].insertBefore(h[0], h[2]); });
     homes = [];
+    var who = document.querySelector(".cmp__who"); if (who) who.remove();
     if (more) { more.remove(); more = null; }
     if (team) team.classList.remove("is-moved");
     cards.forEach(function (c) {

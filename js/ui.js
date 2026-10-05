@@ -1536,6 +1536,17 @@ window.LicterUC = (function () {
         (document.body.classList.contains("home") ? "Talk to a consultant" : "Book a meeting") + ' <span aria-hidden="true">→</span></a>' +
     "</div>";
   document.body.appendChild(bar);
+  /* home, phone: Antoine rides in the bar instead of floating over the text */
+  if (document.body.classList.contains("home")) {
+    var chat = document.createElement("button");
+    chat.type = "button"; chat.className = "stickybar__chat"; chat.tabIndex = -1;
+    chat.innerHTML = '<img src="/assets/img/team/founder-antoine-160.webp" alt="" width="44" height="44" /><i aria-hidden="true"></i>';
+    var chatLabel = function () { chat.setAttribute("aria-label", document.documentElement.lang === "fr" ? "Discuter avec Antoine" : "Chat with Antoine"); };
+    chatLabel();
+    new MutationObserver(chatLabel).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    chat.addEventListener("click", function () { if (window.LicterChat) window.LicterChat.open(); });
+    bar.querySelector(".stickybar__in").insertBefore(chat, bar.querySelector(".stickybar__cta"));
+  }
 
   var headGone = false, inBook = false, lastY = window.scrollY, up = false, ticking = false;
   /* on a phone the home pins it at the bottom, under the thumb, and keeps it
@@ -1551,7 +1562,7 @@ window.LicterUC = (function () {
     var on = headGone && (up || (thumb && thumb.matches)) && !inBook;
     bar.classList.toggle("is-shown", on);
     bar.setAttribute("aria-hidden", on ? "false" : "true");
-    Array.prototype.forEach.call(bar.querySelectorAll("a"), function (a) { a.tabIndex = on ? 0 : -1; });
+    Array.prototype.forEach.call(bar.querySelectorAll("a, button"), function (a) { a.tabIndex = on ? 0 : -1; });
   }
 
   new IntersectionObserver(function (e) { headGone = !e[0].isIntersecting; render(); }).observe(head);

@@ -7412,10 +7412,10 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
    compact bar (z 30 under z 40) and hid "Talk to a consultant" on the way up */
 .banner { position: relative; }
 
-/* on a phone the home keeps its story and drops what only works with room:
-   the community map of the hero and the live demo (2 screens on its own) */
+/* on a phone the home drops the community map of the hero: it only works
+   with room (the live demo stays, compact: see the second pass below) */
 @media (max-width: 720px) {
-  .home .hero__frame, .home #use-cases { display: none; }
+  .home .hero__frame { display: none; }
 }
 
 /* =========================================================
@@ -7476,4 +7476,52 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   body.home:has(.stickybar--bottom.is-shown) .lx__launch { bottom: 84px; }
   body.home:has(.stickybar--bottom.is-shown) .ppd { transform: translateY(-72px); }
   body.home:has(.stickybar--bottom.is-shown) .site-foot { padding-bottom: 80px; }
+}
+
+/* ---------- home on a phone, second pass ---------- */
+.stickybar__chat { display: none; }
+@media (max-width: 720px) {
+  /* the first screen shows the promise AND the client logos */
+  .home .banner--event { padding-block: 8px; }
+  .home .banner--event .banner__a > span:not(.banner__tag) { display: none; }
+  .home .hero { padding-top: 16px; }
+  .home .hero { min-height: 0; }
+  .home .hero__body { margin-top: 0; padding-top: 20px; }
+  .home .award { margin-bottom: 28px; }
+  .home .hero__main .hero__desc { margin-top: 22px; }
+  .home .hero__main .hero__actions { margin-top: 24px; gap: 14px; }
+  .home .clients { padding-top: 22px; }
+  .home .wall__caption { white-space: nowrap; font-size: 11px; }
+
+  /* one alignment on a small screen: left */
+  .home #voices .block__head, .home #use-cases .uc__head, .home .hmethod__head { margin-inline: 0; text-align: left; align-items: flex-start; }
+  .home #voices .block__title::after, .home #use-cases .block__title::after, .home .hmethod__head .block__title::after { margin-inline: 0; }
+  .home #voices .block__lead, .home #use-cases .block__lead, .home .hmethod__head .block__lead { margin-inline: 0; }
+
+  /* families: the next card peeks, the swipe replaces the arrows */
+  .home .ucc__nav { display: none; }
+  .home .ucc__track { --gap: 12px; }
+  .home .ucc__card { width: 86%; }
+
+  /* why not just a tool: the faces open it, under the title */
+  .home .cmp__who { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; margin: 18px 0 4px; }
+  .home .cmp__who .cmp__badge { position: static; }
+  .home .cmp__who .team2__faces { margin: 0; }
+
+  /* the live demo: compact, and only on a tap */
+  .home #use-cases .cases__heading { font-size: 26px; }
+  .home #use-cases .block__lead { font-size: 14.5px; }
+  .home #use-cases .lf__topics { justify-content: stretch; }
+  .home .lf__stage:not(.has-feed) { display: none; }
+  .home .lf__stage .uv__hint, .home .lf__stage .uv__case,
+  .home .lf__stage .aud3__row, .home .lf__stage .rc__detail,
+  .home .lf__stage .c-peaks, .home .lf__stage .quotes, .home .lf__stage .lf__cta { display: none; }
+
+  /* Antoine in the bar, not floating over the text */
+  .home .lx__launch { display: none; }
+  .home .stickybar--bottom .stickybar__in { gap: 12px; }
+  .home .stickybar--bottom .stickybar__chat { position: relative; display: block; flex: none; width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
+  .home .stickybar__chat img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--line); }
+  .home .stickybar__chat i { position: absolute; right: 1px; bottom: 1px; width: 12px; height: 12px; border-radius: 50%; background: #2FA36B; box-shadow: 0 0 0 2px var(--bg); }
+  body.home:has(.stickybar--bottom.is-shown) .ppd { transform: translateY(-72px); }
 }

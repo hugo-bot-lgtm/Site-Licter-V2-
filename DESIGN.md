@@ -98,14 +98,16 @@ Règles :
 - **Grilles :** CSS Grid, `repeat(auto-fit, minmax(270px, 1fr))` pour les cartes.
 - **Points de rupture utilisés :** 1200 (CTA de la barre de navigation masqué en dessous), 960, 860 (menu replié dans la pilule), 720, 560 (une colonne, boutons pleine largeur), 420.
 - **Mobile :** 16 à 20px de marge, aucun défilement horizontal, `min-height: 100svh` et jamais `100vh`.
-- **Sur téléphone (720px et moins), l'accueil a sa propre mise en forme**, avec le même HTML et le même ordre (objectif : moins de 8 écrans).
-  - **Retirés :** la cartographie du hero (elle n'est même pas dessinée) et la démo en direct.
-  - **Familles :** identiques à l'ordinateur (photo, trois cas, flèches).
+- **Sur téléphone (720px et moins), l'accueil a sa propre mise en forme**, avec le même HTML et le même ordre (environ 8,5 écrans). Règle : **tout est aligné à gauche**.
+  - **Premier écran :** la promesse et les logos clients. Le hero est resserré et le bandeau d'événement tient sur deux lignes.
+  - **Retiré :** la cartographie du hero (elle n'est même pas dessinée).
+  - **Familles :** même carte que sur ordinateur, en carrousel au doigt (86 % de largeur, la suivante dépasse), sans flèches.
   - **Vidéos :** une à la fois, sans la note sur la chaîne.
-  - **Équipe :** fusionnée dans « Pourquoi pas un outil seul ». La photo disparaît, les visages restent, le mot des fondateurs est replié. Les éléments sont déplacés en JS (`js/home.js`), jamais copiés.
+  - **Équipe :** fusionnée dans « Pourquoi pas un outil seul ». Le badge et les visages passent sous le titre, le mot des fondateurs est replié. Les éléments sont déplacés en JS (`js/home.js`), jamais copiés.
+  - **Démo :** ne joue qu'au toucher d'une question, en version courte (le visuel principal et notre lecture).
   - **Méthode :** un accordéon dont une étape est ouverte.
   - **Diagnostic :** replié derrière un bouton. Un lien `#diagnostic` l'ouvre.
-  - **Les boutons de section** (`.cta-row`) cèdent la place à la barre CTA du bas.
+  - **Une seule action :** la barre du bas, avec l'avatar d'Antoine qui ouvre le chat. Les boutons de section et le lanceur flottant sont retirés.
 
 ---
 

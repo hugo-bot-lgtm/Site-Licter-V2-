@@ -1242,7 +1242,9 @@
        the stage is still a screen below, it takes its height out of sight,
        and nothing under it jumps when it plays (it then plays from the start) */
     var built = false;
-    if ("IntersectionObserver" in window) {
+    /* on a phone the demo waits for a tap: nothing plays, nothing grows */
+    var phoneHome = window.matchMedia("(max-width: 720px)").matches;
+    if (!phoneHome && "IntersectionObserver" in window) {
       var near = new IntersectionObserver(function (e) {
         if (!e[0].isIntersecting) return;
         near.disconnect();
@@ -1250,7 +1252,7 @@
       }, { rootMargin: "0px 0px 100% 0px" });
       near.observe(homeStage);
     }
-    autoplay(homeStage, function () { return !!home.current() && !built; }, function () { built = false; home.select(first.dataset.topic); }, 0.5);
+    if (!phoneHome) autoplay(homeStage, function () { return !!home.current() && !built; }, function () { built = false; home.select(first.dataset.topic); }, 0.5);
   }
 
   /* -------------------------------------------- use-cases page: one per family */
