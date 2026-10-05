@@ -1542,6 +1542,62 @@ window.LicterUC = (function () {
 })();
 
 /* =========================================================================
+   The callback form (#book-form): one field, email or phone. It sits at the
+   bottom of the home, the offers, the expertise and the use-case pages, so
+   it is handled here, on every page (it once lived in js/home.js, and the
+   pages without that file reloaded with the number in the address bar).
+   MOCK: nothing is sent yet; wire to the CRM (see A-FAIRE.md).
+   ========================================================================= */
+(function () {
+  var form = document.getElementById("book-form");
+  var contact = document.getElementById("book-contact");
+  var done = document.getElementById("book-done");
+  if (!form || !contact || !done || form.hasAttribute("data-wired")) return;
+  form.setAttribute("data-wired", "");
+  var html = document.documentElement;
+  var err = document.getElementById("book-contact-error");
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  function fr() { return (html.lang || "fr").slice(0, 2) === "fr"; }
+  function t(en, f) { return fr() ? f : en; }
+  function esc(v) { return String(v).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function kind(v) {
+    if (EMAIL.test(v)) return "email";
+    return /^\+?\d{9,15}$/.test(v.replace(/[\s.()-]/g, "")) ? "phone" : null;
+  }
+  var sentTo = null;
+  /* an email left elsewhere on the site is already there */
+  function prefill(v) { if (!contact.value && EMAIL.test(v || "")) contact.value = v; }
+  if (window.LicterLead) { prefill(window.LicterLead.get()); if (window.LicterLead.on) window.LicterLead.on(prefill); }
+  contact.addEventListener("input", function () {
+    if (err && !err.hidden) { err.hidden = true; contact.setAttribute("aria-invalid", "false"); }
+  });
+  function when() { return window.LicterHours ? window.LicterHours.when(fr()) + "." : t(" within 30 minutes.", " dans les 30 minutes."); }
+  function render() {
+    if (!sentTo) return;
+    done.innerHTML = "<b>" + t("Noted.", "C'est noté.") + "</b> " +
+      (sentTo.k === "phone" ? t("A consultant calls you on ", "Un consultant vous appelle au ") : t("A consultant writes to you at ", "Un consultant vous écrit à ")) +
+      "<b>" + esc(sentTo.v) + "</b>" + when();
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = contact.value.trim(), k = kind(v);
+    contact.setAttribute("aria-invalid", k ? "false" : "true");
+    if (err) err.hidden = !!k;
+    if (!k) { contact.focus(); return; }
+    /* MOCK: wire to the CRM here (contact, kind) */
+    if (k === "email" && window.LicterLead) window.LicterLead.set(v);
+    if (window.LicterTrack) window.LicterTrack("form_submit", { form: "callback", kind: k });
+    sentTo = { v: v, k: k };
+    form.hidden = true;
+    done.hidden = false;
+    render();
+    done.setAttribute("tabindex", "-1");
+    done.focus();
+  });
+  new MutationObserver(render).observe(html, { attributes: true, attributeFilter: ["lang"] });
+})();
+
+/* =========================================================================
    Footer on a phone: each column folds behind its title (one open at a
    time); above 720 px everything is back as it was.
    ========================================================================= */

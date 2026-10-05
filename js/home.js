@@ -296,48 +296,7 @@
     });
   }
 
-  /* ------------------------------------------------------------- callback
-     One field, email or phone. MOCK: nothing is sent yet; wire to the CRM. */
-  var bookForm = document.getElementById("book-form");
-  if (bookForm) {
-    var contact = document.getElementById("book-contact");
-    var contactErr = document.getElementById("book-contact-error");
-    var sentTo = null;
-    function kind(v) {
-      if (EMAIL.test(v)) return "email";
-      var digits = v.replace(/[\s.()-]/g, "");
-      if (/^\+?\d{9,15}$/.test(digits)) return "phone";
-      return null;
-    }
-    /* an email left elsewhere on the page is already there */
-    function prefill(v) { if (!contact.value && EMAIL.test(v || "")) contact.value = v; }
-    if (window.LicterLead) { prefill(window.LicterLead.get()); window.LicterLead.on(prefill); }
-    contact.addEventListener("input", function () {
-      if (!contactErr.hidden) { contactErr.hidden = true; contact.setAttribute("aria-invalid", "false"); }
-    });
-    bookForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var v = contact.value.trim(), k = kind(v);
-      contact.setAttribute("aria-invalid", k ? "false" : "true");
-      contactErr.hidden = !!k;
-      if (!k) { contact.focus(); return; }
-      /* MOCK: wire to the CRM here (contact, kind) */
-      if (k === "email" && window.LicterLead) window.LicterLead.set(v);
-      sentTo = { v: v, k: k };
-      if (window.LicterTrack) window.LicterTrack("form_submit", { form: "callback", kind: k });
-      bookForm.hidden = true;
-      document.getElementById("book-done").hidden = false;
-      renderDone();
-    });
-    function renderDone() {
-      if (!sentTo) return;
-      document.getElementById("book-done").innerHTML = "<b>" + t("Noted.", "C'est noté.") + "</b> " +
-        (sentTo.k === "phone"
-          ? t("A consultant calls you on ", "Un consultant vous appelle au ") + "<b>" + sentTo.v.replace(/</g, "&lt;") + "</b>" + (window.LicterHours ? window.LicterHours.when(fr()) + "." : t(" within 30 minutes.", " dans les 30 minutes."))
-          : t("A consultant writes to you at ", "Un consultant vous écrit à ") + "<b>" + sentTo.v.replace(/</g, "&lt;") + "</b>" + (window.LicterHours ? window.LicterHours.when(fr()) + "." : t(" within 30 minutes.", " dans les 30 minutes.")));
-    }
-    onLang(renderDone);
-  }
+  /* the callback form (#book-form) is handled by js/ui.js, on every page */
 })();
 
 /* =========================================================================
