@@ -195,6 +195,7 @@ Il est généré par `tools/build-events.py` et mis à jour par `js/events.js`. 
 
 - **Le magazine** s'ouvre une seule fois par visiteur, en haut de l'écran, après 3 s. Sur l'accueil, il attend en plus un premier défilement d'un demi-écran. Il est réservé aux écrans larges et ne s'ouvre jamais sur une page de formulaire. Une fois fermé, il reste accessible dans le dock `.ppd`.
 - **Le tiroir d'Antoine** glisse depuis la droite. Il a deux onglets, chat et rappel. Chaque réponse du chat se termine par un CTA.
+  - **Sur téléphone, il occupe tout l'écran.** Sa hauteur suit le clavier (visual viewport). Les champs sont en 16px, pour qu'iOS ne zoome pas. Le clavier ne s'ouvre pas tout seul. La page derrière est bloquée. Les questions suggérées défilent sur une ligne.
 - Aucune autre popup automatique.
 
 ---

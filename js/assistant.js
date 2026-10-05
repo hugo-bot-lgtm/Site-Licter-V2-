@@ -340,8 +340,30 @@
     requestAnimationFrame(function () { root.classList.add("is-open"); html.classList.add("lx-open"); });
     launch.setAttribute("aria-expanded", "true");
     session("lx-shown", "1");
-    /* the automatic opening never takes the focus away from the page */
-    if (!quiet) (tab === "chat" ? root.querySelector(".lx__q") : input).focus();
+    /* the automatic opening never takes the focus away from the page; on a
+       phone the focus goes to the panel, not the field: the keyboard would
+       otherwise cover half the conversation before anything is read */
+    if (!quiet) {
+      if (phone.matches) root.querySelector(".lx__close").focus({ preventScroll: true });
+      else (tab === "chat" ? root.querySelector(".lx__q") : input).focus();
+    }
+    fit();
+  }
+  /* phone: the panel is the whole screen, and follows the keyboard (the
+     visual viewport) so the field always stays above it */
+  var phone = window.matchMedia("(max-width: 720px)");
+  var vv = window.visualViewport;
+  function fit() {
+    if (!phone.matches || !vv) { panel.style.removeProperty("--lx-vh"); panel.style.removeProperty("--lx-top"); return; }
+    panel.style.setProperty("--lx-vh", Math.round(vv.height) + "px");
+    panel.style.setProperty("--lx-top", Math.round(vv.offsetTop) + "px");
+  }
+  if (vv) { vv.addEventListener("resize", fit); vv.addEventListener("scroll", fit); }
+  /* back to where the visitor opened it from: the launcher, or the home's bar */
+  function back() {
+    var bar = document.querySelector(".stickybar.is-shown .stickybar__chat");
+    var seen = function (el) { return el && el.getClientRects().length > 0; };
+    if (seen(launch)) launch.focus(); else if (seen(bar)) bar.focus();
   }
   function close() {
     root.classList.remove("is-open");
@@ -350,8 +372,8 @@
     setTimeout(function () { if (!root.classList.contains("is-open")) panel.hidden = true; }, 320);
   }
   launch.addEventListener("click", function () { root.classList.contains("is-open") ? close() : open("chat"); });
-  root.querySelector(".lx__close").addEventListener("click", function () { close(); launch.focus(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("is-open")) { close(); launch.focus(); } });
+  root.querySelector(".lx__close").addEventListener("click", function () { close(); back(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("is-open")) { close(); back(); } });
 
   /* ------------------------------------------------- the automatic opening
      Once per visit, on a large screen, half-way down the page or after 35

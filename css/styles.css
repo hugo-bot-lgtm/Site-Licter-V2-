@@ -7519,3 +7519,29 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .home .cmp__us { padding-left: 16px; font-size: 14.5px; line-height: 1.35; }
   .home .cmp__more { margin-top: 20px; }
 }
+
+/* ---------- Antoine's chat on a phone: the whole screen ----------
+   A floating card left the page scrolling behind it and the keyboard over
+   the field. Full screen, sized on the visual viewport (js/assistant.js sets
+   --lx-vh / --lx-top as the keyboard comes and goes), fields at 16 px so iOS
+   does not zoom, the notch and the home bar kept clear. */
+@media (max-width: 720px) {
+  .lx__panel { top: var(--lx-top, 0px); left: 0; right: 0; bottom: auto; width: auto; height: var(--lx-vh, 100dvh); border-radius: 0; box-shadow: none; transform: translateY(calc(100% + 24px)); }
+  .lx.is-open .lx__panel { transform: none; }
+  .lx__head { padding: calc(10px + env(safe-area-inset-top, 0px)) 12px 10px 14px; }
+  .lx__head .lx__face { width: 38px; height: 38px; }
+  .lx__who small:not(.lx__bot) { display: none; }
+  .lx__close { width: 40px; height: 40px; }
+  .lx__tabs { margin: 10px 12px 0; }
+  .lx__log { padding: 14px 12px 8px; overscroll-behavior: contain; }
+  .lx__msg { max-width: 92%; }
+  .lx__chips { flex-wrap: nowrap; overflow-x: auto; padding: 4px 12px 10px; scrollbar-width: none; }
+  .lx__chips::-webkit-scrollbar { display: none; }
+  .lx__chip { flex: none; height: 36px; }
+  .lx__ask { padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px)); }
+  .lx__q, .lx__input { font-size: 16px; }
+  .lx__call { padding: 20px 18px calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .lx__cta-call, .lx__cta-go { height: 40px; }
+  /* the page stays put under the chat */
+  html.lx-open, html.lx-open body { overflow: hidden; }
+}
