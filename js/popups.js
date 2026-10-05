@@ -4,9 +4,9 @@
    - "mag":  the Audience First magazine, sent as a PDF by email.
 
    The magazine opens by itself once per visitor, centred, 3 seconds after
-   arriving (on the home, once the client videos have scrolled by; large screens only, never on
-   a phone, never on a page whose point is a form: booking, diagnostic,
-   guide, events). Closed without sending, it goes into a small dock at the
+   arriving (on the home, once the client videos have scrolled by), on every
+   screen size, never on a page whose point is a form (booking, diagnostic,
+   guide, events). One field: the email. Closed without sending, it goes into a small dock at the
    bottom left, to be found again; once sent, it leaves the dock.
    The callback opens on every "Talk to a consultant" (any link to #book on
    the page, or with those words): never by itself.
@@ -54,12 +54,10 @@
     magT: ["Audience First, le magazine.", "Audience First, the magazine."],
     magL: ["Les conversations du podcast avec celles et ceux qui pilotent l'écoute dans leur organisation, et nos lectures de la donnée sociale, réunies en PDF.",
            "The podcast's conversations with the people who run listening inside their organisation, and our reads of social data, together in one PDF."],
-    magFirst: ["Prénom", "First name"],
     magMail: ["E-mail professionnel", "Work email"],
-    magCo: ["Société", "Company"],
     magB: ["Recevoir le magazine", "Send me the magazine"],
     magC: ["Vos coordonnées servent uniquement à vous envoyer le magazine.", "We use your details only to send you the magazine."],
-    magE: ["Indiquez votre prénom, votre société et un e-mail valide.", "Enter your first name, your company and a valid email."],
+    magE: ["Indiquez un e-mail professionnel valide.", "Enter a valid work email."],
     magOk: ["C'est noté. Le magazine arrive à ", "Noted. The magazine is on its way to "],
     magOkE: [", en PDF.", ", as a PDF."]
   };
@@ -120,12 +118,8 @@
           '<p class="pp__l">' + esc(T(C.magL)) + "</p>" +
           (sent.mag ? '<p class="pp__done" role="status">' + esc(T(C.magOk)) + "<b>" + esc(sent.mag.email) + "</b>" + esc(T(C.magOkE)) + "</p>" :
           '<form class="pp__form" novalidate data-form="mag">' +
-            '<div class="pp__two">' +
-              '<div><label class="fld__label" for="pp-first">' + esc(T(C.magFirst)) + '</label><input class="fld__input" id="pp-first" name="first" type="text" autocomplete="given-name" required /></div>' +
-              '<div><label class="fld__label" for="pp-co">' + esc(T(C.magCo)) + '</label><input class="fld__input" id="pp-co" name="company" type="text" autocomplete="organization" required /></div>' +
-            "</div>" +
             '<label class="fld__label" for="pp-mail">' + esc(T(C.magMail)) + "</label>" +
-            '<input class="fld__input" id="pp-mail" name="email" type="email" autocomplete="email" required />' +
+            '<input class="fld__input" id="pp-mail" name="email" type="email" autocomplete="email" placeholder="' + esc(T(C.callP).split(" ")[0]) + '" required />' +
             '<p class="fld__error" hidden>' + esc(T(C.magE)) + "</p>" +
             '<button class="btn btn--primary pp__wide" type="submit">' + esc(T(C.magB)) + ' <span aria-hidden="true">→</span></button>' +
             '<p class="consent">' + esc(T(C.magC)) + ' <a href="/privacy.html">' + esc(T(C.privacy)) + "</a>.</p>" +
@@ -204,7 +198,7 @@
         if (!ok && !bad) bad = x;
       });
       if (!bad) {
-        /* MOCK: send { first, company, email } to the CRM, which emails the PDF */
+        /* MOCK: send { email } to the CRM, which emails the PDF */
         if (window.LicterLead) window.LicterLead.set(d.email);
         sent.mag = d;
       }
@@ -230,11 +224,11 @@
     dock.innerHTML = items.map(function (k) {
       if (k === "mag") {
         /* the magazine shows itself: its cover, its name, what it costs */
-        return '<button type="button" class="ppd__b ppd__b--mag" data-open="mag">' +
+        /* just the cover and "free": it says what it is without a word more */
+        return '<button type="button" class="ppd__b ppd__b--mag" data-open="mag" aria-label="' +
+          esc(fr() ? "Audience First, le magazine gratuit" : "Audience First, the free magazine") + '">' +
           '<img class="ppd__cover" src="/assets/img/magazine/audience-first-ed2-440.webp" alt="" width="440" height="640" decoding="async" />' +
-          '<span class="ppd__txt"><b>Audience First</b><small>' + esc(fr() ? "Le magazine, en PDF" : "The magazine, as a PDF") + "</small></span>" +
-          '<span class="ppd__tag">' + esc(fr() ? "Gratuit" : "Free") + "</span>" +
-          '<span class="ppd__go" aria-hidden="true">→</span></button>';
+          '<span class="ppd__tag" aria-hidden="true">' + esc(fr() ? "Gratuit" : "Free") + "</span></button>";
       }
       return '<button type="button" class="ppd__b ppd__b--' + k + '" data-open="' + k + '">' +
         '<span class="ppd__i" aria-hidden="true">' + ICON_CALL + "</span>" +
@@ -249,10 +243,9 @@
   /* ------------------------------------------------ the automatic opening */
   var path = location.pathname;
   var formPage = /\/(book-a-meeting|diagnostic|guide|events|event-[a-z0-9-]+)\.html$/.test(path);
-  var wide = window.matchMedia("(min-width: 900px)");
   var queued = null;
   function may(k) {
-    return wide.matches && !formPage && !state(k) && !html.classList.contains("lx-open") &&
+    return !formPage && !state(k) && !html.classList.contains("lx-open") && !html.classList.contains("pp-open") &&
       !(document.activeElement && document.activeElement.matches("input, textarea, select"));
   }
   function auto(k) {
