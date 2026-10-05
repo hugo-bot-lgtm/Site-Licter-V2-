@@ -1532,7 +1532,8 @@ window.LicterUC = (function () {
     '<div class="stickybar__in shell">' +
       '<a class="stickybar__logo" href="' + (logo ? logo.getAttribute("href") : "/index.html") + '" tabindex="-1" aria-label="Licter home">' +
         '<img src="' + (document.querySelector(".logo__img") || {}).getAttribute("src") + '" alt="" width="36" height="40" /></a>' +
-      '<a class="btn btn--primary stickybar__cta" href="' + ctaHref + '" tabindex="-1">Book a meeting <span aria-hidden="true">→</span></a>' +
+      '<a class="btn btn--primary stickybar__cta" href="' + ctaHref + '" tabindex="-1">' +
+        (document.body.classList.contains("home") ? "Talk to a consultant" : "Book a meeting") + ' <span aria-hidden="true">→</span></a>' +
     "</div>";
   document.body.appendChild(bar);
 

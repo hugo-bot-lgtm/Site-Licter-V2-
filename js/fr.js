@@ -308,6 +308,10 @@ window.LicterFR = {
   "Live · 2 h": "Live · 2 h",
   "Or start from your question": "Ou partez de votre question",
   "Free diagnostic": "Diagnostic gratuit",
+  "Talk to a consultant": "Parler à un consultant",
+  "A consultant calls you back within 30 minutes, not a sales team.": "Un consultant vous rappelle dans les 30 minutes, pas un commercial.",
+  "Framing comes first: tell us the decision, we tell you what to read.": "Le cadrage d'abord : dites-nous la décision, nous vous disons quoi lire.",
+  "Half an hour with a consultant is enough to frame a first question around a decision.": "Une demi-heure avec un consultant suffit pour cadrer une première question autour d'une décision.",
   "Pick a question and watch the conversation come in. We read it, sort it, and tell you what it means.": "Choisissez une question et regardez la conversation arriver. Nous la lisons, la classons, et vous disons ce qu'elle signifie.",
   "Pick a question": "Choisissez une question",
   "Pick a question above.": "Choisissez une question ci-dessus.",
@@ -1521,6 +1525,8 @@ window.LicterFR = {
 
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
+
+
 
 
 

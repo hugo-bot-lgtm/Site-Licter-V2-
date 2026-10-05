@@ -7247,3 +7247,12 @@ html[data-theme="dark"] .quiz.qz { background: radial-gradient(70% 90% at 0% 0%,
   .quiz.qz .qnext .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; }
   .quiz.qz .quiz__row .fld__input { flex: none; }
 }
+
+/* ===== Home calls to action: one main action, at the moments that matter ===== */
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 22px; margin-top: clamp(30px, 4vw, 48px); text-align: center; }
+.cta-row__note { margin: 0; font: 500 14px/1.5 var(--body-font); color: var(--text-2); }
+.team2__actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.lf__read .lf__cta { justify-content: center; width: 100%; margin-top: 14px; }
+/* the launcher waits for the end of the hero on the home */
+.lx.lx--wait .lx__launch { opacity: 0; pointer-events: none; transform: translateY(12px); }
+@media (max-width: 560px) { .team2__people { gap: 16px; } .team2__actions { width: 100%; } .team2__actions .btn { width: 100%; justify-content: center; } }

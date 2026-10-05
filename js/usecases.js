@@ -519,7 +519,10 @@
             '<span class="lf__dots"><i></i><i></i><i></i></span></p></div>' +
           '<div class="lf__get" id="' + PX + 'uv-get"></div>' +
           (window.LicterUC && FULL[current] ? '<a class="lf__more" href="' + window.LicterUC(FULL[current]) + '">' + t("See the full use case", "Voir le cas d'usage complet") + ' <span aria-hidden="true">→</span></a>' : "") +
-        '<a class="lf__book" href="#book">' + t("Or talk to a consultant", "Ou parler à un consultant") + ' <span aria-hidden="true">→</span></a>' +
+        (opts.lead === false
+          /* the home asks for one thing only: a consultant, the one action of the page */
+          ? '<a class="btn btn--primary lf__cta" href="#book">' + t("Talk to a consultant", "Parler à un consultant") + ' <span aria-hidden="true">→</span></a>'
+          : '<a class="lf__book" href="#book">' + t("Or talk to a consultant", "Ou parler à un consultant") + ' <span aria-hidden="true">→</span></a>') +
         "</aside>";
     }
 
@@ -538,7 +541,7 @@
        screen, by email. The lead arrives with its sector and its question. */
     function renderGet() {
       var el = $("uv-get");
-      if (!el) return;
+      if (!el || opts.lead === false) return;
       var key = current + ":" + SECTORS[sector].key, name = L(SECTORS[sector].name).toLowerCase();
       var known = window.LicterLead ? window.LicterLead.get() : "";
       if (sentCases[key]) {
@@ -1220,7 +1223,7 @@
   var homeStage = document.getElementById("cases-panel");
   var tabs = Array.prototype.slice.call(document.querySelectorAll(".lf__topic[data-topic]"));
   if (homeStage && tabs.length) {
-    var home = Stage(homeStage, { prefix: "", topics: tabs, closable: true });
+    var home = Stage(homeStage, { prefix: "", topics: tabs, closable: true, lead: false });
     tabs.forEach(function (b, i) {
       b.addEventListener("click", function () { home.select(b.dataset.topic); });
       b.addEventListener("keydown", function (e) {

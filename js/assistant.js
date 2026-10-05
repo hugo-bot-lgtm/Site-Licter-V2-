@@ -362,7 +362,22 @@
     var r = b.getBoundingClientRect();
     return r.top < innerHeight && r.bottom > 0;
   }
+  /* the home has its own callback at the end: the drawer never opens by
+     itself there, and the launcher waits until the hero (and its client
+     logos) has scrolled past */
+  var isHome = document.body.classList.contains("home");
+  var hero = document.getElementById("hero");
+  if (isHome && hero) {
+    root.classList.add("lx--wait");
+    var onHero = function () {
+      var past = hero.getBoundingClientRect().bottom < innerHeight * 0.4;
+      root.classList.toggle("lx--wait", !past);
+    };
+    window.addEventListener("scroll", onHero, { passive: true });
+    onHero();
+  }
   function auto() {
+    if (isHome) return;
     if (session("lx-shown") || session("lx-sent") || !wide.matches || root.classList.contains("is-open") || pageBookInView()) return;
     open("call", true);
   }

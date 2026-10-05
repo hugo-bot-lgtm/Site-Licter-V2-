@@ -114,13 +114,13 @@
   var BANDS = [
     /* next: the step that fits the score, from the lightest to the most direct */
     { max: 4, name: ["Listening, not yet reading", "Vous écoutez, sans encore lire"],
-      next: { text: ["Start with the guide: the 12 questions social data answers better than a survey.", "Commencez par le guide : les 12 questions auxquelles la donnée sociale répond mieux qu'un sondage."],
-              cta: ["Get the free guide", "Recevoir le guide gratuit"], href: "/guide.html" },
+      next: { text: ["Half an hour with a consultant is enough to frame a first question around a decision.", "Une demi-heure avec un consultant suffit pour cadrer une première question autour d'une décision."],
+              cta: ["Talk to a consultant", "Parler à un consultant"], href: "#book" },
       text: ["You collect the conversation. The next step is to frame it around a decision, so the data answers something.",
              "Vous collectez la conversation. L'étape suivante : la cadrer autour d'une décision, pour que la donnée réponde à quelque chose."] },
     { max: 8, name: ["Reading, not yet deciding", "Vous lisez, sans encore décider"],
       next: { text: ["A 30-minute review of your setup shows where the reading stops before the decision.", "Une revue de 30 minutes de votre dispositif montre où la lecture s'arrête avant la décision."],
-              cta: ["Book a free 30-minute review", "Réserver une revue gratuite de 30 min"], href: "#book" },
+              cta: ["Talk to a consultant", "Parler à un consultant"], href: "#book" },
       text: ["The reading is there. What is missing is the path from the analysis to the people who decide.",
              "La lecture est là. Il manque le chemin entre l'analyse et celles et ceux qui décident."] },
     { max: 12, name: ["Deciding with the data", "Vous décidez avec la donnée"],
