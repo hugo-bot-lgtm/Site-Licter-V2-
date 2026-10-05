@@ -520,3 +520,116 @@
   window.addEventListener("scroll", spy, { passive: true });
   spy();
 })();
+
+/* =========================================================================
+   Home on a phone: the same page, cut to what reads on a small screen.
+   - "Why not just a tool?" takes in the team (the faces, and the founders'
+     word folded), and the team section goes;
+   - the four method steps become an accordion;
+   - the diagnostic waits behind one card and opens in place.
+   The elements are moved, not copied, and put back above 720 px.
+   ========================================================================= */
+(function () {
+  if (!document.body.classList.contains("home")) return;
+  var html = document.documentElement;
+  var mq = window.matchMedia("(max-width: 720px)");
+  function fr() { return html.lang === "fr"; }
+  function T(en, f) { return fr() ? f : en; }
+
+  var team = document.getElementById("team");
+  var people = team && team.querySelector(".team2__people");
+  var founders = team && team.querySelector(".team__founders");
+  var cmp = document.querySelector(".cmp .cmp__copy");
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".mstep"));
+  var quiz = document.getElementById("quiz");
+  var intro = quiz && quiz.querySelector(".quiz__intro");
+  var homes = [], more = null, opener = null, on = false;
+
+  function label() {
+    if (more) more.querySelector("summary").textContent = T("Read the founders' word", "Lire le mot des fondateurs");
+    if (opener) opener.querySelector("span").textContent = T("Start the diagnostic", "Commencer le diagnostic");
+    cards.forEach(function (c) {
+      var b = c.querySelector(".mstep__toggle");
+      if (b) b.querySelector(".mstep__tname").textContent = c.querySelector(".step__name").textContent;
+    });
+  }
+  function park(el) { homes.push([el, el.parentNode, el.nextSibling]); }
+
+  function openStep(c, open) {
+    c.classList.toggle("is-open", open);
+    var b = c.querySelector(".mstep__toggle");
+    if (b) b.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  function unfold(focus) {
+    if (!quiz || !quiz.classList.contains("is-folded")) return;
+    quiz.classList.remove("is-folded");
+    if (focus) { var s = document.getElementById("quiz-stage"); var f = s && s.querySelector("button, a"); if (f) f.focus({ preventScroll: true }); }
+  }
+
+  function phone() {
+    if (on) return;
+    on = true;
+    /* the team, into "Why not just a tool?" */
+    if (team && people && founders && cmp) {
+      park(people); park(founders);
+      cmp.appendChild(people);
+      more = document.createElement("details");
+      more.className = "cmp__more";
+      more.innerHTML = "<summary></summary>";
+      more.appendChild(founders);
+      people.insertAdjacentElement("afterend", more);
+      team.classList.add("is-moved");
+    }
+    /* the method, as an accordion: the first step open */
+    cards.forEach(function (c, i) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "mstep__toggle";
+      b.setAttribute("aria-controls", c.id);
+      b.innerHTML = '<span class="mstep__tn">' + (i + 1) + '</span><span class="mstep__tname"></span><span class="mstep__chev" aria-hidden="true"></span>';
+      b.addEventListener("click", function () {
+        var open = !c.classList.contains("is-open");
+        cards.forEach(function (o) { openStep(o, false); });
+        openStep(c, open);
+      });
+      c.insertBefore(b, c.firstChild);
+      openStep(c, i === 0);
+    });
+    /* the diagnostic, folded behind its own card */
+    if (quiz && intro) {
+      quiz.classList.add("is-folded");
+      opener = document.createElement("button");
+      opener.type = "button"; opener.className = "btn qz__open";
+      opener.innerHTML = '<span></span> <i aria-hidden="true">→</i>';
+      opener.addEventListener("click", function () { unfold(true); });
+      intro.appendChild(opener);
+    }
+    label();
+  }
+
+  function wide() {
+    if (!on) return;
+    on = false;
+    homes.reverse().forEach(function (h) { h[1].insertBefore(h[0], h[2]); });
+    homes = [];
+    if (more) { more.remove(); more = null; }
+    if (team) team.classList.remove("is-moved");
+    cards.forEach(function (c) {
+      var b = c.querySelector(".mstep__toggle"); if (b) b.remove();
+      c.classList.remove("is-open");
+    });
+    if (opener) { opener.remove(); opener = null; }
+    if (quiz) quiz.classList.remove("is-folded");
+  }
+
+  function apply() { if (mq.matches) phone(); else wide(); }
+  apply();
+  if (mq.addEventListener) mq.addEventListener("change", apply); else mq.addListener(apply);
+  new MutationObserver(label).observe(html, { attributes: true, attributeFilter: ["lang"] });
+
+  /* a link to the diagnostic (the hero's) opens it on the way */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#diagnostic"], a[href="#quiz"]');
+    if (a) unfold(false);
+  });
+  if (location.hash === "#diagnostic") unfold(false);
+})();

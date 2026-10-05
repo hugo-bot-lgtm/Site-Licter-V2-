@@ -1538,9 +1538,17 @@ window.LicterUC = (function () {
   document.body.appendChild(bar);
 
   var headGone = false, inBook = false, lastY = window.scrollY, up = false, ticking = false;
+  /* on a phone the home pins it at the bottom, under the thumb, and keeps it
+     there from the end of the hero to the booking form */
+  var thumb = document.body.classList.contains("home") && window.matchMedia ? window.matchMedia("(max-width: 720px)") : null;
+  if (thumb) {
+    var mode = function () { bar.classList.toggle("stickybar--bottom", thumb.matches); render(); };
+    if (thumb.addEventListener) thumb.addEventListener("change", mode); else thumb.addListener(mode);
+    bar.classList.toggle("stickybar--bottom", thumb.matches);
+  }
 
   function render() {
-    var on = headGone && up && !inBook;
+    var on = headGone && (up || (thumb && thumb.matches)) && !inBook;
     bar.classList.toggle("is-shown", on);
     bar.setAttribute("aria-hidden", on ? "false" : "true");
     Array.prototype.forEach.call(bar.querySelectorAll("a"), function (a) { a.tabIndex = on ? 0 : -1; });

@@ -7417,3 +7417,70 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 @media (max-width: 720px) {
   .home .hero__frame, .home #use-cases { display: none; }
 }
+
+/* =========================================================
+   Home on a phone (<= 720 px): the same page, shorter.
+   js/home.js moves the team into "Why not just a tool?", turns the method
+   into an accordion and folds the diagnostic; js/ui.js pins the compact bar
+   at the bottom. Section CTAs give way to that bar.
+   ========================================================= */
+@media (max-width: 720px) {
+  /* one action, under the thumb: the section buttons step back */
+  .home .cta-row, .home .team2__actions .btn--primary { display: none; }
+  .home .block { padding-block: 52px; }
+
+  /* families: lower cards, the next one peeking */
+  .home .ucc__nav { display: none; }
+  .home .ucc__track { --gap: 12px; }
+  .home .ucc__card { width: 84%; height: 340px; border-radius: 22px; }
+  .home .ucc__cases { display: none; }
+  .home .ucc__t { font-size: 20px; }
+
+  /* voices: one interview at a time, the note goes */
+  .home #voices .reels__foot { display: none; }
+  .home #voices .block__head { margin-bottom: 22px; }
+
+  /* why not just a tool, with the team in it */
+  .home .cmp__photo { display: none; }
+  .home #team.is-moved { display: none; }
+  .home .cmp__copy .team2__people { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .home .cmp__copy .team2__actions { margin-top: 14px; }
+  .home .cmp__more { margin-top: 18px; border-top: 1px solid var(--line); }
+  .home .cmp__more summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; cursor: pointer; list-style: none; font: 700 15px/1.3 var(--body-font); color: var(--ink); }
+  .home .cmp__more summary::-webkit-details-marker { display: none; }
+  .home .cmp__more summary::after { content: "+"; font: 400 24px/1 var(--body-font); color: var(--text-2); transition: transform .2s ease; }
+  .home .cmp__more[open] summary::after { transform: rotate(45deg); }
+  .home .cmp__more .team__k { display: none; }
+  .home .cmp__more .team__founders { padding-bottom: 8px; }
+  .home .cmp__more .founders__quote { margin-top: 4px; }
+
+  /* method: four rows, one open */
+  .home .hsteps, .home .hmethod__nav, .home .mstep__img, .home .mstep__n, .home .mstep .step__name { display: none; }
+  .home .htrack { display: grid; grid-auto-flow: row; grid-template-columns: minmax(0, 1fr); gap: 10px; overflow: visible; margin: 26px 0 0; padding: 0; scroll-snap-type: none; }
+  .home .htrack::after { content: none; }
+  .home .mstep { display: block; width: auto; min-height: 0; opacity: 1; transform: none; border-radius: 16px; }
+  .home .mstep__body { min-height: 0; padding: 0 18px 18px; gap: 12px; }
+  .home .mstep:not(.is-open) .mstep__body { display: none; }
+  .home .mstep__toggle { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 60px; padding: 12px 18px; border: 0; background: none; color: var(--ink); text-align: left; cursor: pointer; font: 600 19px/1.25 var(--title-font); }
+  .home .mstep__tn { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--line); font: 700 13px/1 var(--body-font); color: var(--text-2); }
+  .home .mstep.is-open .mstep__tn { background: #EAA93D; box-shadow: none; color: #13162D; }
+  .home .mstep__tname { flex: 1; }
+  .home .mstep__chev { width: 9px; height: 9px; border-right: 2px solid var(--text-2); border-bottom: 2px solid var(--text-2); transform: rotate(45deg) translate(-2px, -2px); transition: transform .2s ease; }
+  .home .mstep.is-open .mstep__chev { transform: rotate(-135deg) translate(-2px, -2px); }
+  .home .mstep .step__get { margin: 0; }
+
+  /* diagnostic: one card until it is opened */
+  .home .quiz.qz { padding: 24px 22px; border-radius: 22px; }
+  .home .quiz.qz.is-folded .qz__meter, .home .quiz.qz.is-folded .qz__stage { display: none; }
+  .home .qz__open { margin-top: 20px; height: 50px; background: #FCF6EF; color: #13162D; }
+
+  /* the compact bar, at the bottom */
+  .home .stickybar--bottom { top: auto; bottom: 0; border-top: 1px solid var(--line); border-bottom: 0; transform: translateY(100%); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .home .stickybar--bottom.is-shown { transform: none; }
+  .home .stickybar--bottom .stickybar__in { height: 68px; }
+  .home .stickybar--bottom .stickybar__logo { display: none; }
+  .home .stickybar--bottom .stickybar__cta { flex: 1; justify-content: center; height: 48px; font-size: 13px; }
+  body.home:has(.stickybar--bottom.is-shown) .lx__launch { bottom: 84px; }
+  body.home:has(.stickybar--bottom.is-shown) .ppd { transform: translateY(-72px); }
+  body.home:has(.stickybar--bottom.is-shown) .site-foot { padding-bottom: 80px; }
+}

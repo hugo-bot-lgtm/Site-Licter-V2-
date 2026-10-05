@@ -98,7 +98,14 @@ Règles :
 - **Grilles :** CSS Grid, `repeat(auto-fit, minmax(270px, 1fr))` pour les cartes.
 - **Points de rupture utilisés :** 1200 (CTA de la barre de navigation masqué en dessous), 960, 860 (menu replié dans la pilule), 720, 560 (une colonne, boutons pleine largeur), 420.
 - **Mobile :** 16 à 20px de marge, aucun défilement horizontal, `min-height: 100svh` et jamais `100vh`.
-- **Sur téléphone (720px et moins), l'accueil retire ce qui ne marche qu'avec de la place :** la cartographie du hero (elle n'est même pas dessinée) et la démo en direct.
+- **Sur téléphone (720px et moins), l'accueil a sa propre mise en forme**, avec le même HTML et le même ordre (objectif : moins de 8 écrans).
+  - **Retirés :** la cartographie du hero (elle n'est même pas dessinée) et la démo en direct.
+  - **Familles :** cartes de 340px, sans la liste des cas.
+  - **Vidéos :** une à la fois, sans la note sur la chaîne.
+  - **Équipe :** fusionnée dans « Pourquoi pas un outil seul ». La photo disparaît, les visages restent, le mot des fondateurs est replié. Les éléments sont déplacés en JS (`js/home.js`), jamais copiés.
+  - **Méthode :** un accordéon dont une étape est ouverte.
+  - **Diagnostic :** replié derrière un bouton. Un lien `#diagnostic` l'ouvre.
+  - **Les boutons de section** (`.cta-row`) cèdent la place à la barre CTA du bas.
 
 ---
 
@@ -155,7 +162,7 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
 
 | z | Élément |
 |---|---|
-| 30 | `.stickybar` : barre compacte avec le CTA, après le hero |
+| 30 | `.stickybar` : barre compacte avec le CTA, après le hero. En haut quand on remonte ; sur l'accueil mobile, **en bas et permanente** (`.stickybar--bottom`), masquée sur le formulaire |
 | 35 | `.ucp-bar` : barre d'actions mobile des pages cas d'usage |
 | 40 | `.banner` : bandeau du prochain événement, ou du guide. Il **défile avec la page** : s'il restait collé, il recouvrirait la barre compacte |
 | 45 | `.langoffer` : proposition de langue |
