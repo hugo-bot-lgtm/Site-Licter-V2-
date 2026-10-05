@@ -329,8 +329,8 @@
       if (!sentTo) return;
       document.getElementById("book-done").innerHTML = "<b>" + t("Noted.", "C'est noté.") + "</b> " +
         (sentTo.k === "phone"
-          ? t("A consultant calls you on ", "Un consultant vous appelle au ") + "<b>" + sentTo.v.replace(/</g, "&lt;") + "</b>" + t(" within 30 minutes.", " dans les 30 minutes.")
-          : t("A consultant writes to you at ", "Un consultant vous écrit à ") + "<b>" + sentTo.v.replace(/</g, "&lt;") + "</b>" + t(" within 30 minutes.", " dans les 30 minutes."));
+          ? t("A consultant calls you on ", "Un consultant vous appelle au ") + "<b>" + sentTo.v.replace(/</g, "&lt;") + "</b>" + (window.LicterHours ? window.LicterHours.when(fr()) + "." : t(" within 30 minutes.", " dans les 30 minutes."))
+          : t("A consultant writes to you at ", "Un consultant vous écrit à ") + "<b>" + sentTo.v.replace(/</g, "&lt;") + "</b>" + (window.LicterHours ? window.LicterHours.when(fr()) + "." : t(" within 30 minutes.", " dans les 30 minutes.")));
     }
     onLang(renderDone);
   }
@@ -617,4 +617,38 @@
     if (a) unfold(false);
   });
   if (location.hash === "#diagnostic") unfold(false);
+})();
+
+/* =========================================================================
+   The FAQ on a phone: two questions, then "See the other three"
+   ========================================================================= */
+(function () {
+  var faq = document.querySelector("#book .faq");
+  if (!faq || !window.matchMedia) return;
+  var items = Array.prototype.slice.call(faq.querySelectorAll(":scope > details"));
+  if (items.length <= 2) return;
+  var html = document.documentElement, mq = window.matchMedia("(max-width: 720px)"), more = null, shown = false;
+  function label() {
+    if (!more) return;
+    var n = items.length - 2;
+    more.textContent = html.lang === "fr" ? "Voir les " + n + " autres questions" : "See the other " + n + " questions";
+  }
+  function apply() {
+    var fold = mq.matches && !shown;
+    items.forEach(function (d, i) { d.hidden = fold && i >= 2; });
+    if (fold && !more) {
+      more = document.createElement("button");
+      more.type = "button"; more.className = "faq__more";
+      more.addEventListener("click", function () {
+        shown = true; apply();
+        items[2].querySelector("summary").focus();
+      });
+      faq.appendChild(more);
+      label();
+    }
+    if (more) more.hidden = !fold;
+  }
+  apply();
+  if (mq.addEventListener) mq.addEventListener("change", apply); else mq.addListener(apply);
+  new MutationObserver(label).observe(html, { attributes: true, attributeFilter: ["lang"] });
 })();

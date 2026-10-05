@@ -281,6 +281,8 @@ window.LicterFR = {
   "Use cases | Licter": "Cas d'usage | Licter",
   "A word from the founders": "Un mot des fondateurs",
   /* ---- home: the quiz promise ---- */
+  "A consultant, not a sales team. Weekdays, 9am to 7pm.": "Un consultant, pas un commercial. En semaine, de 9\u00a0h à 19\u00a0h.",
+  "A consultant calls you back within 30 minutes on weekdays, not a sales team.": "Un consultant vous rappelle dans les 30\u00a0minutes en semaine, pas un commercial.",
   "Company name": "Nom de l'entreprise",
   "Rather read first?": "Plutôt lire d'abord\u00a0?",
   "The guide to the 12 questions": "Le guide des 12 questions",
@@ -1535,6 +1537,9 @@ window.LicterFR = {
 
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
+
+
+
 
 
 

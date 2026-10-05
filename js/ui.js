@@ -1,4 +1,32 @@
 /* =========================================================================
+   Callback hours: a consultant calls back within 30 minutes on weekdays,
+   9:00 to 19:00, Paris time. Outside them, every promise says when instead
+   ("Monday from 9am", "tomorrow from 9am"), never "30 minutes" at midnight.
+   ========================================================================= */
+window.LicterHours = (function () {
+  function paris() {
+    try {
+      var p = {};
+      new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Paris", weekday: "short", hour: "numeric", minute: "numeric", hourCycle: "h23" })
+        .formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+      return { day: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(p.weekday), h: +p.hour + (+p.minute) / 60 };
+    } catch (e) { var d = new Date(); return { day: d.getDay(), h: d.getHours() + d.getMinutes() / 60 }; }
+  }
+  /* open until 18:30, so the 30 minutes still land before 19:00 */
+  function open() { var t = paris(); return t.day >= 1 && t.day <= 5 && t.h >= 9 && t.h < 18.5; }
+  /* when the call comes, outside the hours */
+  function next(fr) {
+    var t = paris(), early = t.h < 9;
+    if (t.day >= 1 && t.day <= 5 && early) return fr ? "ce matin dès 9\u00a0h" : "this morning from 9am";
+    if ((t.day >= 1 && t.day <= 4) || (t.day === 0)) return fr ? "demain dès 9\u00a0h" : "tomorrow from 9am";
+    return fr ? "lundi dès 9\u00a0h" : "on Monday from 9am";
+  }
+  /* " within 30 minutes" or " tomorrow from 9am", to end a sentence */
+  function when(fr) { return open() ? (fr ? " dans les 30\u00a0minutes" : " within 30 minutes") : " " + next(fr); }
+  return { open: open, next: next, when: when };
+})();
+
+/* =========================================================================
    Where the use-case pages live, in the visitor's language. They are
    generated in both (tools/build-usecases.py); the rest of the site links
    to the right twin.

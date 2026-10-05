@@ -29,6 +29,9 @@
   function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* private mode */ } }
   var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  /* callback hours (js/ui.js): "30 minutes" only when it is true */
+  function hours() { return window.LicterHours || { open: function () { return true; }, next: function () { return ""; }, when: function (f) { return f ? " dans les 30 minutes" : " within 30 minutes"; } }; }
+  function open30() { return hours().open(); }
 
   var C = {
     close: ["Fermer", "Close"],
@@ -43,12 +46,11 @@
     callF: ["E-mail ou téléphone", "Email or phone"],
     callP: ["nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"],
     callB: ["Me faire rappeler", "Call me back"],
-    callPr: ["Un consultant, pas un commercial. Dans les 30 minutes.", "A consultant, not a sales team. Within 30 minutes."],
+    callPr: ["Un consultant, pas un commercial. En semaine, de 9\u00a0h à 19\u00a0h.", "A consultant, not a sales team. Weekdays, 9am to 7pm."],
     callC: ["Vos coordonnées servent uniquement à vous rappeler.", "We use your contact details only to call you back."],
     callE: ["Indiquez un e-mail professionnel ou un numéro de téléphone.", "Enter a work email or a phone number."],
     callOkM: ["C'est noté. Un consultant vous écrit à ", "Noted. A consultant writes to you at "],
     callOkP: ["C'est noté. Un consultant vous appelle au ", "Noted. A consultant calls you on "],
-    callOkE: [" dans les 30 minutes.", " within 30 minutes."],
     /* the magazine */
     magK: ["Magazine gratuit", "Free magazine"],
     magT: ["Audience First, le magazine.", "Audience First, the magazine."],
@@ -88,7 +90,7 @@
         '<figure class="pp__photo">' +
           '<img src="/assets/img/team/morning/team-trio-800.webp" srcset="/assets/img/team/morning/team-trio-800.webp 800w, /assets/img/team/morning/team-trio-1080.webp 1080w" sizes="(max-width: 700px) 92vw, 340px" alt="' + esc(T(C.callImgAlt)) + '" width="800" height="1197" decoding="async" />' +
           '<figcaption class="pp__badges">' +
-            '<span class="pp__badge pp__badge--live"><span class="pp__dot" aria-hidden="true"></span>' + esc(T(C.callBadge1)) + "</span>" +
+            '<span class="pp__badge pp__badge--live"><span class="pp__dot" aria-hidden="true"></span>' + esc(open30() ? T(C.callBadge1) : (fr() ? "Rappel " : "Call back ") + hours().next(fr())) + "</span>" +
             '<span class="pp__badge">' + esc(T(C.callBadge2)) + "</span>" +
           "</figcaption>" +
         "</figure>" +
@@ -96,7 +98,7 @@
           '<p class="pp__k"><span class="pp__faces" aria-hidden="true">' + faces() + "</span>" + esc(T(C.callK)) + "</p>" +
           '<h2 class="pp__t" id="pp-title">' + esc(T(C.callT)) + "</h2>" +
           '<p class="pp__l">' + esc(T(C.callL)) + "</p>" +
-          (sent.call ? '<p class="pp__done" role="status">' + esc(T(sent.call.k === "phone" ? C.callOkP : C.callOkM)) + "<b>" + esc(sent.call.v) + "</b>" + esc(T(C.callOkE)) + "</p>" :
+          (sent.call ? '<p class="pp__done" role="status">' + esc(T(sent.call.k === "phone" ? C.callOkP : C.callOkM)) + "<b>" + esc(sent.call.v) + "</b>" + esc(hours().when(fr())) + ".</p>" :
           '<form class="pp__form" novalidate data-form="call">' +
             '<label class="fld__label" for="pp-contact">' + esc(T(C.callF)) + "</label>" +
             '<input class="fld__input" id="pp-contact" name="contact" type="text" inputmode="email" autocomplete="email" placeholder="' + esc(T(C.callP)) + '" required />' +
@@ -244,6 +246,15 @@
     window.addEventListener("scroll", heroWait, { passive: true });
     window.addEventListener("resize", heroWait);
     heroWait();
+  }
+  /* nor over the footer or the booking form at the end of a page */
+  if ("IntersectionObserver" in window) {
+    var ends = [document.querySelector(".site-foot"), document.getElementById("book")].filter(Boolean), seen = [];
+    var endIO = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { var i = ends.indexOf(e.target); seen[i] = e.isIntersecting; });
+      dock.classList.toggle("is-footer", seen.some(Boolean));
+    }, { rootMargin: "0px 0px -60px 0px" });
+    ends.forEach(function (el) { endIO.observe(el); });
   }
   dock.addEventListener("click", function (e) {
     var b = e.target.closest("[data-open]");

@@ -50,7 +50,7 @@
     send: ["Envoyer", "Send"],
     you: ["Vous", "You"],
     typing: [A.name + " écrit…", A.name + " is typing…"],
-    callCta: ["Être rappelé en 30 min", "Get a call back in 30 min"],
+    callCta: ["Être rappelé par un consultant", "Get a call back from a consultant"],
     /* the callback: the same words as the home */
     callT: ["Trente minutes avec un consultant.", "Thirty minutes with a consultant."],
     callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes.",
@@ -58,7 +58,7 @@
     field: ["E-mail ou téléphone", "Email or phone"],
     ph: ["nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"],
     callBtn: ["Me faire rappeler", "Call me back"],
-    promise: ["Un consultant, pas un commercial. Dans les 30 minutes.", "A consultant, not a sales team. Within 30 minutes."],
+    promise: ["Un consultant, pas un commercial. En semaine, de 9\u00a0h à 19\u00a0h.", "A consultant, not a sales team. Weekdays, 9am to 7pm."],
     consent: ["Vos coordonnées servent uniquement à vous rappeler.", "We use your contact details only to call you back."],
     privacy: ["Politique de confidentialité", "Privacy policy"],
     err: ["Indiquez un e-mail professionnel ou un numéro de téléphone.", "Enter a work email or a phone number."],
@@ -148,16 +148,16 @@
       a: ["Sans engagement : le forfait s'arrête quand vous le décidez. Nous préférons que vous restiez parce que c'est utile.",
           "No lock-in: the fee stops when you decide. We would rather you stay because it is useful."] },
     { k: ["rendez-vous", "rdv", "appel", "appeler", "rappel", "rappeler", "contact", "contacter", "parler", "telephone", "joindre", "meeting", "call", "talk", "demo", "phone"],
-      a: ["Avec plaisir. Laissez votre e-mail ou votre téléphone : un consultant vous rappelle dans les 30 minutes, pas un commercial.",
-          "With pleasure. Leave your email or phone number: a consultant calls you back within 30 minutes, not a salesperson."],
+      a: ["Avec plaisir. Laissez votre e-mail ou votre téléphone : un consultant vous rappelle dans les 30 minutes en semaine, pas un commercial.",
+          "With pleasure. Leave your email or phone number: a consultant calls you back within 30 minutes on weekdays, not a salesperson."],
       go: [["Choisir un créneau", "Pick a slot"], "/book-a-meeting.html"] },
     { k: ["merci", "thanks", "thank you", "super", "parfait", "top", "genial", "great"],
       a: ["Avec plaisir. Si vous voulez aller plus loin sur votre cas précis, le plus efficace reste une demi-heure avec un consultant.",
           "My pleasure. To go further on your own case, the most useful is still half an hour with a consultant."] }
   ];
   var FALLBACK = {
-    a: ["Bonne question, et je préfère ne pas vous y répondre à moitié. Le plus simple : un consultant vous rappelle dans les 30 minutes, et vous aurez une réponse précise.",
-        "Good question, and I would rather not half-answer it. The simplest: a consultant calls you back within 30 minutes, and you get a precise answer."],
+    a: ["Bonne question, et je préfère ne pas vous y répondre à moitié. Le plus simple : un consultant vous rappelle dans les 30 minutes en semaine, et vous aurez une réponse précise.",
+        "Good question, and I would rather not half-answer it. The simplest: a consultant calls you back within 30 minutes on weekdays, and you get a precise answer."],
     go: [["Prendre rendez-vous", "Book a meeting"], "/book-a-meeting.html"]
   };
   var CHIPS = [
@@ -310,7 +310,7 @@
     if (!sent) return;
     var box = root.querySelector(".lx__done");
     box.hidden = false;
-    box.innerHTML = esc(T(sent.k === "phone" ? L.donePhone : L.doneMail)) + "<b>" + esc(sent.v) + "</b>" + esc(T(L.doneEnd));
+    box.innerHTML = esc(T(sent.k === "phone" ? L.donePhone : L.doneMail)) + "<b>" + esc(sent.v) + "</b>" + esc(window.LicterHours ? window.LicterHours.when(fr()) + "." : T(L.doneEnd));
   }
 
   /* ---------------------------------------------------- open, close, tabs */

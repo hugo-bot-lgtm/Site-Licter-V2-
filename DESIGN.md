@@ -119,6 +119,7 @@ Règles :
   - **Démo retirée :** ses 4 questions répètent les 4 familles, et chaque page famille a sa propre démo mobile.
   - **Méthode :** mêmes cartes que sur ordinateur (photo, étapes, flèches).
   - **Diagnostic :** replié derrière un bouton. Un lien `#diagnostic` l'ouvre.
+  - **FAQ :** deux questions, puis « Voir les 3 autres questions ».
 - **Sous le quiz (tous écrans) :** le lien « Plutôt lire d'abord ? Le guide des 12 questions → », pour qui ne veut pas répondre tout de suite.
   - **Une seule action :** la barre du bas, avec l'avatar d'Antoine qui ouvre le chat. Les boutons de section et le lanceur flottant sont retirés.
 
@@ -167,6 +168,10 @@ Toujours longues, douces et teintées :
 
 Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La flèche est `<span aria-hidden="true">→</span>`.
 
+### Horaires de rappel
+
+Un consultant rappelle **dans les 30 minutes en semaine, de 9 h à 19 h** (heure de Paris). En dehors de ces horaires, aucun texte ne promet « 30 minutes » : le badge du popup, la confirmation et le chat disent quand le rappel aura lieu (« ce matin dès 9 h », « demain dès 9 h », « lundi dès 9 h »). L'utilitaire commun est `window.LicterHours`, dans `js/ui.js`.
+
 ### Appels à l'action
 
 - **Primaire, partout :** « Parler à un consultant » (« Talk to a consultant »), qui mène à `#book`.
@@ -181,7 +186,7 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
 | 35 | `.ucp-bar` : barre d'actions mobile des pages cas d'usage |
 | 40 | `.banner` : bandeau du prochain événement, ou du guide, **collé en haut de toutes les pages**. Sa hauteur est publiée dans `--banner-h` (`js/events.js`) : la barre compacte se place juste dessous, et les ancres comme les panneaux collants en tiennent compte. Sur mobile, il tient sur deux lignes courtes |
 | 45 | `.langoffer` : proposition de langue |
-| 55 | `.ppd` : le bouton du magazine, en bas à gauche, **discret** : la couverture seule, inclinée, avec une petite étiquette dorée « Recevoir gratuitement » sur deux lignes. Il apparaît une fois le popup fermé sans envoi, et jamais par-dessus le hero de l'accueil. Sur l'accueil, sous 1200 px, la couverture passe **dans la barre du bas**, à côté d'Antoine, au lieu de flotter |
+| 55 | `.ppd` : le bouton du magazine, en bas à gauche, **discret** : la couverture seule, inclinée, avec une petite étiquette dorée « Recevoir gratuitement » sur deux lignes. Il apparaît une fois le popup fermé sans envoi, jamais par-dessus le hero de l'accueil, ni par-dessus le formulaire de contact ou le pied de page. Sur l'accueil, sous 1200 px, la couverture passe **dans la barre du bas**, à côté d'Antoine, au lieu de flotter |
 | 60 | `.lx__launch` : lanceur du chat Antoine, en bas à droite |
 | 70 | `.lx__panel` : tiroir chat et rappel |
 | 80 | `.pp` : popup magazine |
