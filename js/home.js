@@ -620,7 +620,8 @@
 })();
 
 /* =========================================================================
-   "Not ready to talk yet?": the magazine and the guide, one field each.
+   "Not ready to talk yet?": the magazine and the guide, one field each,
+   shown only once the visitor clicks "Get the magazine" / "Get the guide".
    MOCK: nothing is sent yet; wire both to the CRM in the marked line.
    Once the magazine is asked for here, its popup never opens again.
    ========================================================================= */
@@ -635,6 +636,16 @@
     mag: ["The magazine is on its way to <b>%</b>, as a PDF.", "C'est noté. Le magazine arrive à <b>%</b>, en PDF."],
     guide: ["The guide is on its way to <b>%</b>.", "C'est noté. Le guide arrive à <b>%</b>."]
   };
+  /* the field only shows once asked for: "Get the magazine" opens it */
+  Array.prototype.forEach.call(document.querySelectorAll("button.res__open"), function (b) {
+    b.addEventListener("click", function () {
+      var form = document.getElementById(b.getAttribute("aria-controls"));
+      b.setAttribute("aria-expanded", "true");
+      b.hidden = true;
+      form.hidden = false;
+      form.querySelector("input").focus();
+    });
+  });
   Array.prototype.forEach.call(forms, function (form) {
     var k = form.getAttribute("data-res");
     var input = form.querySelector("input"), err = form.querySelector(".fld__error");

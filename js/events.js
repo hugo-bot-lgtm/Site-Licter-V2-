@@ -148,14 +148,15 @@
              ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]];
   function paintCard() {
     if (!card) return;
-    if (!next) { card.hidden = true; return; }
+    var box = card.closest(".res__item") || card;
+    if (!next) { box.hidden = true; return; }
     var d = new Date(next.date + "T12:00:00");
     card.setAttribute("href", next.href);
-    card.querySelector('[data-ev="day"]').textContent = d.getDate();
-    card.querySelector('[data-ev="mon"]').textContent = MON[fr() ? 0 : 1][d.getMonth()];
+    box.querySelector('[data-ev="day"]').textContent = d.getDate();
+    box.querySelector('[data-ev="mon"]').textContent = MON[fr() ? 0 : 1][d.getMonth()];
     /* never a line starting with the separator */
-    card.querySelector('[data-ev="title"]').textContent = L(next.k).replace(/ · /g, "\u00a0· ");
-    card.querySelector('[data-ev="place"]').textContent = L(next.d);
+    box.querySelector('[data-ev="title"]').textContent = L(next.k).replace(/ · /g, "\u00a0· ");
+    box.querySelector('[data-ev="place"]').textContent = L(next.d);
   }
 
   function paint() { paintBanner(); paintPage(); paintCard(); }

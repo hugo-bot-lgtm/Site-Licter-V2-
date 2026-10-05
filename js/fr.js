@@ -281,6 +281,9 @@ window.LicterFR = {
   "Use cases | Licter": "Cas d'usage | Licter",
   "A word from the founders": "Un mot des fondateurs",
   /* ---- home: "not ready to talk yet?" and the quiz promise ---- */
+  "Audience First, the magazine": "Audience First, le magazine",
+  "Get the magazine": "Recevoir le magazine",
+  "Send": "Envoyer",
   "Not ready to talk yet?": "Pas encore prêt à parler ?",
   "Start with what we publish. Free, and no sales call attached.": "Commencez par ce que nous publions. Gratuit, et sans appel commercial à la clé.",
   "Free magazine": "Magazine gratuit",
@@ -1543,6 +1546,9 @@ window.LicterFR = {
 
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
+
+
+
 
 
 

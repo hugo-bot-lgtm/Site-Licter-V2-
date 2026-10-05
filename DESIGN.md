@@ -205,12 +205,12 @@ Il est généré par `tools/build-events.py` et mis à jour par `js/events.js`. 
 
 ### Bloc « Pas encore prêt à parler ? » (accueil)
 
-Il s'adresse au visiteur qui n'est pas prêt pour un rappel. Il est placé après l'équipe, avant le diagnostic, sur ordinateur comme sur mobile, et contient trois cartes :
-- **le magazine**, avec un seul champ (e-mail) ;
-- **le guide des 12 questions**, avec un seul champ ;
-- **le prochain événement**, rempli par `js/events.js`, qui passe seul au suivant.
+Il s'adresse au visiteur qui n'est pas prêt pour un rappel, et reste **discret** : une rangée de trois éléments entre de fins filets, sans fond de carte, avec une vignette de 56px, un titre court et un lien souligné d'or. Il contient :
+- **le magazine** ;
+- **le guide des 12 questions** ;
+- **le prochain événement**, rempli par `js/events.js`.
 
-Une fois le magazine demandé ici, son popup ne s'ouvre plus. Les formulaires sont des maquettes.
+**Aucun champ n'est visible d'emblée** : le champ e-mail n'apparaît qu'au clic sur « Recevoir le magazine » ou « Recevoir le guide ». Une fois le magazine demandé ici, son popup ne s'ouvre plus. Les formulaires sont des maquettes.
 
 ### Panneaux et popups
 
