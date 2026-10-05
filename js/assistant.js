@@ -354,11 +354,17 @@
   var phone = window.matchMedia("(max-width: 720px)");
   var vv = window.visualViewport;
   function fit() {
-    ["--lx-vh", "--lx-top", "--lx-bottom"].forEach(function (k) { panel.style.removeProperty(k); });
+    var K = ["--lx-vh", "--lx-vw", "--lx-top", "--lx-left", "--lx-bottom", "--lx-right"];
+    K.forEach(function (k) { panel.style.removeProperty(k); });
     if (!phone.matches || !vv) return;
+    /* the visible part of the page, even zoomed in (iOS zooms on a field and
+       stays there): the panel covers exactly what is on screen */
     panel.style.setProperty("--lx-vh", Math.floor(vv.height) + "px");
+    panel.style.setProperty("--lx-vw", Math.floor(vv.width) + "px");
     panel.style.setProperty("--lx-top", Math.round(vv.offsetTop) + "px");
+    panel.style.setProperty("--lx-left", Math.round(vv.offsetLeft) + "px");
     panel.style.setProperty("--lx-bottom", "auto");
+    panel.style.setProperty("--lx-right", "auto");
   }
   if (vv) { vv.addEventListener("resize", fit); vv.addEventListener("scroll", fit); }
   /* back to where the visitor opened it from: the launcher, or the home's bar */

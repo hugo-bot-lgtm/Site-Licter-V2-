@@ -7527,7 +7527,7 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 @media (max-width: 720px) {
   /* pinned to all four edges, no dvh: it fits on any browser, even without
      the script; js/assistant.js then sizes it on the visual viewport */
-  .lx__panel { top: var(--lx-top, 0px); left: 0; right: 0; bottom: var(--lx-bottom, 0px); width: auto; height: var(--lx-vh, auto); max-height: none; border-radius: 0; box-shadow: none; transform: translateY(calc(100% + 24px)); }
+  .lx__panel { top: var(--lx-top, 0px); left: var(--lx-left, 0px); right: var(--lx-right, 0px); bottom: var(--lx-bottom, 0px); width: var(--lx-vw, auto); height: var(--lx-vh, auto); max-height: none; border-radius: 0; box-shadow: none; transform: translateY(calc(100% + 24px)); }
   .lx.is-open .lx__panel { transform: none; }
   .lx__head { padding: calc(10px + env(safe-area-inset-top, 0px)) 12px 10px 14px; }
   .lx__head .lx__face { width: 38px; height: 38px; }
@@ -7545,4 +7545,10 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .lx__cta-call, .lx__cta-go { height: 40px; }
   /* the page stays put under the chat */
   html.lx-open, html.lx-open body { overflow: hidden; }
+}
+
+/* iOS zooms the page on any field under 16 px, and stays zoomed after: on a
+   phone every field is 16 px, whatever its component says */
+@media (max-width: 720px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea { font-size: 16px !important; }
 }
