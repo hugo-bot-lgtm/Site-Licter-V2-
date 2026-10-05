@@ -7429,13 +7429,6 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .home .cta-row, .home .team2__actions .btn--primary { display: none; }
   .home .block { padding-block: 52px; }
 
-  /* families: lower cards, the next one peeking */
-  .home .ucc__nav { display: none; }
-  .home .ucc__track { --gap: 12px; }
-  .home .ucc__card { width: 84%; height: 340px; border-radius: 22px; }
-  .home .ucc__cases { display: none; }
-  .home .ucc__t { font-size: 20px; }
-
   /* voices: one interview at a time, the note goes */
   .home #voices .reels__foot { display: none; }
   .home #voices .block__head { margin-bottom: 22px; }

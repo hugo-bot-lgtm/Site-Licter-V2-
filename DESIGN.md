@@ -100,7 +100,7 @@ Règles :
 - **Mobile :** 16 à 20px de marge, aucun défilement horizontal, `min-height: 100svh` et jamais `100vh`.
 - **Sur téléphone (720px et moins), l'accueil a sa propre mise en forme**, avec le même HTML et le même ordre (objectif : moins de 8 écrans).
   - **Retirés :** la cartographie du hero (elle n'est même pas dessinée) et la démo en direct.
-  - **Familles :** cartes de 340px, sans la liste des cas.
+  - **Familles :** identiques à l'ordinateur (photo, trois cas, flèches).
   - **Vidéos :** une à la fois, sans la note sur la chaîne.
   - **Équipe :** fusionnée dans « Pourquoi pas un outil seul ». La photo disparaît, les visages restent, le mot des fondateurs est replié. Les éléments sont déplacés en JS (`js/home.js`), jamais copiés.
   - **Méthode :** un accordéon dont une étape est ouverte.
