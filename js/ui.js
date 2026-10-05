@@ -1596,6 +1596,16 @@ window.LicterUC = (function () {
     new MutationObserver(chatLabel).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
     chat.addEventListener("click", function () { if (window.LicterChat) window.LicterChat.open(); });
     bar.querySelector(".stickybar__in").insertBefore(chat, bar.querySelector(".stickybar__cta"));
+    /* and the magazine, once its popup was closed without sending: the cover
+       sits in the bar rather than floating over the text */
+    var mag = document.createElement("button");
+    mag.type = "button"; mag.className = "stickybar__mag"; mag.tabIndex = -1;
+    mag.innerHTML = '<img src="/assets/img/magazine/audience-first-ed2-440.webp" alt="" width="440" height="640" />';
+    var magLabel = function () { mag.setAttribute("aria-label", document.documentElement.lang === "fr" ? "Audience First, le magazine gratuit" : "Audience First, the free magazine"); };
+    magLabel();
+    new MutationObserver(magLabel).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    mag.addEventListener("click", function () { if (window.LicterPopups) window.LicterPopups.open("mag"); });
+    bar.querySelector(".stickybar__in").insertBefore(mag, chat);
   }
 
   var headGone = false, inBook = false, lastY = window.scrollY, up = false, ticking = false;

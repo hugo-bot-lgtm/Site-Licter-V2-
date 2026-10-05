@@ -7730,7 +7730,7 @@ section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); 
 @media (prefers-reduced-motion: reduce) { .ppd__cover { transition: none; } }
 
 /* the quiz, for whoever would rather read first: the guide */
-.qz__guide { position: relative; display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font: 600 14px/1.4 var(--body-font); color: rgba(252, 246, 239, .85); text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 4px; }
+.qz__guide { position: relative; display: inline-block; margin-top: 16px; font: 600 14px/1.4 var(--body-font); color: rgba(252, 246, 239, .85); text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 4px; }
 .qz__guide::after { content: ""; position: absolute; inset: -12px -4px; }
 .qz__guide:hover { color: #FCF6EF; }
 .qz__guide:focus-visible { outline: 2px solid #EAA93D; outline-offset: 3px; border-radius: 4px; }
@@ -7742,4 +7742,51 @@ section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); 
   .pp__box--mag .pp__body { padding: 20px 18px 22px; }
   .pp__box--mag .pp__t { font-size: 22px; }
   .pp__box--mag .pp__l { margin: 8px 0 14px; font-size: 14.5px; }
+}
+
+/* an optional field says so, quietly */
+.form__opt { font: 500 12px/1 var(--body-font); letter-spacing: 0; text-transform: none; color: var(--text-3); }
+/* on a phone, two clean lines: the question, then the guide and its arrow */
+@media (max-width: 720px) {
+  .qz__guide { text-decoration: none; }
+  .qz__guide-q { display: block; margin-bottom: 2px; color: rgba(252, 246, 239, .7); font-weight: 500; }
+  .qz__guide-a { text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 4px; }
+}
+
+/* the live demo on the home: every label at 12 px at least (HTML labels) */
+.home #use-cases :is(.uv__live, .uv__tag, .uv__sector b, .map-label, .aud3__k, .aud3__k span, .lf__k, .mp__meta b, .mp__meta span, .ins__reco span, .tone__n, .play2__btn, .rcd__num span) { font-size: 12px; }
+/* the charts: their labels at 12 px too (the pill behind a pin or the launch
+   line is sized for it in js/usecases.js) */
+.uv-svg .ax, .uv-svg .cat__t, .uv-svg .launch text, .uv-svg .pin__tag text { font-size: 12px; }
+.home .matrix .mb__t, .home .matrix .ax { font-size: 13px; }
+.home .matrix .mz__t { font-size: 13px; letter-spacing: .3px; }
+
+/* ---------- the magazine in the home's bottom bar (phones, tablets) ---------- */
+.stickybar__mag { display: none; }
+@media (max-width: 1199px) {
+  .home .ppd { display: none; }
+  html.pp-mag-docked .home .stickybar--bottom .stickybar__mag { display: block; flex: none; width: 34px; padding: 0; border: 0; background: none; cursor: pointer; }
+  .home .stickybar__mag img { display: block; width: 34px; height: auto; border-radius: 3px; transform: rotate(-5deg); box-shadow: 0 6px 12px -6px rgba(10, 12, 28, .7), 0 0 0 1px rgba(255, 255, 255, .14); }
+  .home .stickybar__mag:focus-visible { outline: 2px solid #EAA93D; outline-offset: 4px; border-radius: 4px; }
+}
+@media (min-width: 721px) and (max-width: 1199px) { html.pp-mag-docked .home .stickybar--bottom .stickybar__mag { margin-left: auto; } html.pp-mag-docked .home .stickybar--bottom .stickybar__chat { margin-left: 0; } }
+
+/* ---------- popups on a phone: a sheet from the bottom, not a full screen ----------
+   The page stays visible above it; the magazine keeps only what decides:
+   a small cover, the title, the field */
+@media (max-width: 720px) {
+  .pp { place-items: end stretch; padding: 0; }
+  .pp__veil { background: rgba(10, 12, 28, .38); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .pp__box { width: 100%; max-height: 88vh; max-height: 88dvh; border-radius: 22px 22px 0 0; transform: translateY(100%); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .pp.is-open .pp__box { transform: none; }
+  .pp__box::before { content: ""; position: absolute; top: 8px; left: 50%; width: 40px; height: 4px; margin-left: -20px; border-radius: 4px; background: rgba(252, 246, 239, .35); z-index: 3; }
+  .pp__box--mag { grid-template-columns: 76px minmax(0, 1fr); align-items: start; }
+  .pp__box--mag .pp__cover { padding: 26px 0 0 18px; background: none; }
+  .pp__box--mag .pp__cover-img { width: 58px; transform: rotate(-4deg); }
+  .pp__box--mag .pp__body { padding: 24px 18px 20px 14px; }
+  .pp__box--mag .pp__k { margin-bottom: 6px; }
+  .pp__box--mag .pp__t { padding-right: 34px; font-size: 20px; }
+  .pp__box--mag .pp__l { display: none; }
+  .pp__box--mag .pp__form { margin-top: 26px; margin-left: -76px; }
+  .pp__box--mag .pp__x { top: 14px; right: 12px; }
 }

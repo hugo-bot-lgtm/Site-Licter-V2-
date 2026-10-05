@@ -220,6 +220,8 @@
   function paintDock() {
     var items = ["mag"].filter(function (k) { return state(k) === "seen"; });
     dock.hidden = !items.length;
+    /* the home's bottom bar (phones, tablets) carries the cover instead */
+    html.classList.toggle("pp-mag-docked", items.indexOf("mag") !== -1);
     dock.setAttribute("aria-label", fr() ? "Retrouver nos propositions" : "Find our offers again");
     dock.innerHTML = items.map(function (k) {
       if (k === "mag") {

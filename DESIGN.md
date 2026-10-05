@@ -181,7 +181,7 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
 | 35 | `.ucp-bar` : barre d'actions mobile des pages cas d'usage |
 | 40 | `.banner` : bandeau du prochain événement, ou du guide, **collé en haut de toutes les pages**. Sa hauteur est publiée dans `--banner-h` (`js/events.js`) : la barre compacte se place juste dessous, et les ancres comme les panneaux collants en tiennent compte. Sur mobile, il tient sur deux lignes courtes |
 | 45 | `.langoffer` : proposition de langue |
-| 55 | `.ppd` : le bouton du magazine, en bas à gauche, **discret** : la couverture seule, inclinée, avec une petite étiquette dorée « Recevoir gratuitement » sur deux lignes. Il apparaît une fois le popup fermé sans envoi, et jamais par-dessus le hero de l'accueil |
+| 55 | `.ppd` : le bouton du magazine, en bas à gauche, **discret** : la couverture seule, inclinée, avec une petite étiquette dorée « Recevoir gratuitement » sur deux lignes. Il apparaît une fois le popup fermé sans envoi, et jamais par-dessus le hero de l'accueil. Sur l'accueil, sous 1200 px, la couverture passe **dans la barre du bas**, à côté d'Antoine, au lieu de flotter |
 | 60 | `.lx__launch` : lanceur du chat Antoine, en bas à droite |
 | 70 | `.lx__panel` : tiroir chat et rappel |
 | 80 | `.pp` : popup magazine |
@@ -207,7 +207,8 @@ Il est généré par `tools/build-events.py` et mis à jour par `js/events.js`. 
 ### Panneaux et popups
 
 - **Le rappel** (« Trente minutes avec un consultant ») s'ouvre sur **chaque « Parler à un consultant »** : tout lien vers `#book`, ou qui porte ces mots. Un cmd-clic suit toujours le lien. Il est en deux volets : la photo de l'équipe avec les badges « Réponse sous 30 min » et « 160+ projets depuis 2022 », puis le formulaire. Sur téléphone, la photo devient un bandeau et le clavier ne s'ouvre pas tout seul. Il ne s'ouvre jamais de lui-même.
-- **Le magazine** s'ouvre une seule fois par visiteur, **centré**, après 3 s, **sur tous les écrans, mobile compris**. Il ne demande **que l'e-mail**. Sur l'accueil, il attend que les vidéos clients soient passées (environ 40 % de la page). Une fois fermé sans envoi, il reste accessible depuis son bouton en bas à gauche. Il est réservé aux écrans larges et ne s'ouvre jamais sur une page de formulaire. Une fois fermé, il reste accessible dans le dock `.ppd`.
+- **Le magazine** s'ouvre une seule fois par visiteur, **centré**, après 3 s, **sur tous les écrans, mobile compris**. Il ne demande **que l'e-mail**.
+- **Sur téléphone, les popups sont des panneaux qui montent du bas**, pas des plein-écrans : la page reste visible au-dessus. Le magazine y garde une petite couverture, le titre et le champ (322 px de haut). Sur l'accueil, il attend que les vidéos clients soient passées (environ 40 % de la page). Une fois fermé sans envoi, il reste accessible depuis son bouton en bas à gauche. Il est réservé aux écrans larges et ne s'ouvre jamais sur une page de formulaire. Une fois fermé, il reste accessible dans le dock `.ppd`.
 - **Le tiroir d'Antoine** glisse depuis la droite. Il a deux onglets, chat et rappel. Chaque réponse du chat se termine par un CTA.
   - **Sur téléphone, il occupe tout l'écran.** Sa hauteur suit le clavier (visual viewport). Les champs sont en 16px, pour qu'iOS ne zoome pas. Le clavier ne s'ouvre pas tout seul. La page derrière est bloquée. Les questions suggérées défilent sur une ligne.
 - Aucune autre popup automatique : le magazine est le seul à s'ouvrir sans clic.

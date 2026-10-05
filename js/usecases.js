@@ -685,7 +685,7 @@
         for (var j = p.d - 1; j <= p.d + 1; j++) if (j > c.launch - 1 && j < D && V[j] > V[best]) best = j;
         return { d: best, x: X(best), y: Y(V[best]) };
       });
-      var boxes = [[X(c.launch - 0.5) - 42, 0, 84, P.t + 2]];
+      var boxes = [[X(c.launch - 0.5) - 50, 0, 100, P.t + 2]];
       PK.forEach(function (q) { boxes.push([q.x - 8, q.y - 8, 16, 16]); });
       function overlap(bx, by, w, h) {
         return boxes.reduce(function (s, b) {
@@ -694,7 +694,7 @@
         }, 0);
       }
       var pins = d.peaks.map(function (p, k) {
-        var label = L(p.tag), w = Math.round(label.length * 6.4 + 22), h = 20, px = PK[k].x, py = PK[k].y;
+        var label = L(p.tag), w = Math.round(label.length * 7.3 + 24), h = 22, px = PK[k].x, py = PK[k].y;
         var cands = [[-w / 2, -h - 12], [14, -h / 2], [-14 - w, -h / 2], [-w / 2, 12], [14, -h - 16], [-14 - w, -h - 16], [-w / 2, -h - 34], [-w / 2, 34]];
         var pick = null, least = Infinity;
         cands.forEach(function (cd) {
@@ -707,7 +707,7 @@
         boxes.push([px + pick[0], py + pick[1], w, h]);
         return '<g class="pin is-hidden" tabindex="0" role="button" data-i="' + k + '" transform="translate(' + px.toFixed(1) + "," + py.toFixed(1) + ')" aria-label="' + esc(label + ". " + L(p.txt)) + '">' +
           '<g class="pin__tag" transform="translate(' + pick[0].toFixed(1) + "," + pick[1].toFixed(1) + ')"><rect width="' + w + '" height="' + h + '" rx="10"/>' +
-          '<text x="' + (w / 2) + '" y="14" text-anchor="middle">' + esc(label) + "</text></g>" +
+          '<text x="' + (w / 2) + '" y="15.5" text-anchor="middle">' + esc(label) + "</text></g>" +
           '<circle class="pin__halo" r="12"/><circle class="pin__dot" r="5.5"/></g>';
       }).join("");
       var svg =
@@ -721,7 +721,7 @@
           '<g clip-path="url(#' + PX + 'c-clip)"><path class="area" style="fill:url(#' + PX + 'c-fill)" d="' + area + '"/><path class="brand" d="' + line(V) + '"/></g>' +
           '<circle class="head" id="' + PX + 'c-head" r="5"/>' +
           '<g id="' + PX + 'c-launch" class="launch"><line y1="' + (P.t - 4) + '" y2="' + (H - P.b) + '"/>' +
-            '<rect x="-38" y="' + (P.t - 24) + '" width="76" height="20" rx="10"/>' +
+            '<rect x="-46" y="' + (P.t - 25) + '" width="92" height="22" rx="11"/>' +
             '<text y="' + (P.t - 10) + '" text-anchor="middle">' + t("Launch", "Lancement") + "</text>" +
             '<circle class="launch__grip" id="' + PX + 'c-grip" r="8"/></g>' +
           pins +

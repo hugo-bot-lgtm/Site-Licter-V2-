@@ -281,6 +281,10 @@ window.LicterFR = {
   "Use cases | Licter": "Cas d'usage | Licter",
   "A word from the founders": "Un mot des fondateurs",
   /* ---- home: the quiz promise ---- */
+  "Company name": "Nom de l'entreprise",
+  "Rather read first?": "Plutôt lire d'abord\u00a0?",
+  "The guide to the 12 questions": "Le guide des 12 questions",
+  "Get it free": "Recevoir gratuitement",
   "Rather read first? The guide to the 12 questions": "Plutôt lire d'abord\u00a0? Le guide des 12 questions",
   "Your score out of 12": "Votre score sur 12",
   "Your three priorities": "Vos trois priorités",
@@ -1531,6 +1535,9 @@ window.LicterFR = {
 
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
+
+
+
 
 
 
