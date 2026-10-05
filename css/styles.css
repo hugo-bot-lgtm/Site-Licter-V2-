@@ -7574,3 +7574,35 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .home .lf__stage.has-feed { grid-template-columns: minmax(0, 1.3fr) minmax(260px, 1fr); align-items: start; }
   .home .lf__stage .uv__hint, .home .lf__stage .aud3__row, .home .lf__stage .rc__detail, .home .lf__stage .c-peaks, .home .lf__stage .quotes { display: none; }
 }
+
+/* ---------- the callback popup: the team on the left, the form on the right ---------- */
+.pp__box--call { width: min(780px, 100%); grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
+.pp__photo { position: relative; margin: 0; min-height: 100%; overflow: hidden; background: #13162D; }
+.pp__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.pp__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(13, 15, 33, 0) 45%, rgba(13, 15, 33, .82) 100%); }
+.pp__badges { position: absolute; left: 18px; right: 18px; bottom: 18px; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.pp__badge { display: inline-flex; align-items: center; gap: 9px; padding: 8px 13px; border-radius: 999px; background: rgba(19, 22, 45, .72); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); color: #FCF6EF; font: 700 12.5px/1.2 var(--body-font); box-shadow: 0 0 0 1px rgba(252, 246, 239, .12); }
+.pp__badge--live .pp__dot { animation: pp-live 2s ease-in-out infinite; }
+@keyframes pp-live { 0%, 100% { box-shadow: 0 0 0 4px rgba(47, 163, 107, .25); } 50% { box-shadow: 0 0 0 7px rgba(47, 163, 107, .08); } }
+.pp__box--call .pp__body { display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 3.4vw, 44px); }
+.pp__box--call .pp__t { font-size: clamp(24px, 2.2vw, 28px); }
+.pp__box--call .pp__form { gap: 10px; }
+.pp__box--call .fld__input { height: 52px; border-radius: 12px; }
+.pp__box--call .pp__wide { height: 52px; margin-top: 2px; border-radius: 12px; }
+.pp__box--call .pp__promise { margin-top: 8px; }
+@media (prefers-reduced-motion: reduce) { .pp__badge--live .pp__dot { animation: none; } }
+/* a phone: the photo becomes a band on top */
+@media (max-width: 700px) {
+  .pp__box--call { grid-template-columns: minmax(0, 1fr); }
+  .pp__photo { min-height: 0; aspect-ratio: 16 / 7; }
+  .pp__badge:not(.pp__badge--live), .pp__box--call .pp__k { display: none; }
+  .pp__photo img { object-position: 50% 28%; }
+  .pp__badges { left: 14px; right: 14px; bottom: 12px; flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .pp__badge { padding: 6px 10px; font-size: 11.5px; }
+  .pp__box--call .pp__body { padding: 22px 20px 24px; }
+  .pp__box--call .pp__t { font-size: 24px; }
+  .pp__box--call .pp__l { margin: 10px 0 18px; font-size: 15px; }
+}
+@media (max-width: 700px) { .pp__box--call .pp__x { background: rgba(19, 22, 45, .6); color: #FCF6EF; } }
+.pp__box { max-height: calc(100vh - 40px); max-height: calc(100dvh - 40px); }
+@media (max-width: 700px) { .pp { padding: 12px; } .pp__box--call .pp__body { padding-inline: 18px; } .pp__box--call .fld__input { padding-inline: 12px; } }

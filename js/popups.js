@@ -3,13 +3,13 @@
    - "call": thirty minutes with a consultant, the callback;
    - "mag":  the Audience First magazine, sent as a PDF by email.
 
-   The magazine opens by itself once per visitor, at the top of the
-   screen, 3 seconds after arriving (large screens only, never on a phone,
-   never on a page whose point is a form: booking, diagnostic, guide,
-   events). Closed without sending, it goes into a small dock at the
+   The magazine opens by itself once per visitor, centred, 3 seconds after
+   arriving (after a first scroll on the home; large screens only, never on
+   a phone, never on a page whose point is a form: booking, diagnostic,
+   guide, events). Closed without sending, it goes into a small dock at the
    bottom left, to be found again; once sent, it leaves the dock.
-   The callback popup is kept for on-demand use only: nothing opens it by
-   itself (the callback lives in the chat drawer and on the pages).
+   The callback opens on every "Talk to a consultant" (any link to #book on
+   the page, or with those words): never by itself.
 
    window.LicterPopups.open("call" | "mag") opens one on demand (the chat's
    "call me back" button uses it).
@@ -35,6 +35,9 @@
     privacy: ["Politique de confidentialité", "Privacy policy"],
     /* the callback: the words of the home */
     callK: ["Être rappelé", "Call me back"],
+    callBadge1: ["Réponse sous 30 min", "Reply within 30 min"],
+    callBadge2: ["160+ projets depuis 2022", "160+ projects since 2022"],
+    callImgAlt: ["Trois consultantes Licter dans les bureaux", "Three Licter consultants in the office"],
     callT: ["Trente minutes avec un consultant.", "Thirty minutes with a consultant."],
     callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes.", "Leave your email or phone number. A consultant calls you back within 30 minutes."],
     callF: ["E-mail ou téléphone", "Email or phone"],
@@ -62,6 +65,7 @@
   };
 
   /* ------------------------------------------------------------ the DOM */
+  var phone = window.matchMedia("(max-width: 720px)");
   var root = document.createElement("div");
   root.className = "pp";
   root.hidden = true;
@@ -83,6 +87,13 @@
     if (k === "call") {
       box.className = "pp__box pp__box--call";
       box.innerHTML = head +
+        '<figure class="pp__photo">' +
+          '<img src="/assets/img/team/morning/team-trio-800.webp" srcset="/assets/img/team/morning/team-trio-800.webp 800w, /assets/img/team/morning/team-trio-1080.webp 1080w" sizes="(max-width: 700px) 92vw, 340px" alt="' + esc(T(C.callImgAlt)) + '" width="800" height="1197" decoding="async" />' +
+          '<figcaption class="pp__badges">' +
+            '<span class="pp__badge pp__badge--live"><span class="pp__dot" aria-hidden="true"></span>' + esc(T(C.callBadge1)) + "</span>" +
+            '<span class="pp__badge">' + esc(T(C.callBadge2)) + "</span>" +
+          "</figcaption>" +
+        "</figure>" +
         '<div class="pp__body">' +
           '<p class="pp__k"><span class="pp__faces" aria-hidden="true">' + faces() + "</span>" + esc(T(C.callK)) + "</p>" +
           '<h2 class="pp__t" id="pp-title">' + esc(T(C.callT)) + "</h2>" +
@@ -90,8 +101,8 @@
           (sent.call ? '<p class="pp__done" role="status">' + esc(T(sent.call.k === "phone" ? C.callOkP : C.callOkM)) + "<b>" + esc(sent.call.v) + "</b>" + esc(T(C.callOkE)) + "</p>" :
           '<form class="pp__form" novalidate data-form="call">' +
             '<label class="fld__label" for="pp-contact">' + esc(T(C.callF)) + "</label>" +
-            '<div class="pp__row"><input class="fld__input" id="pp-contact" name="contact" type="text" inputmode="email" autocomplete="email" placeholder="' + esc(T(C.callP)) + '" required />' +
-            '<button class="btn btn--primary" type="submit">' + esc(T(C.callB)) + ' <span aria-hidden="true">→</span></button></div>' +
+            '<input class="fld__input" id="pp-contact" name="contact" type="text" inputmode="email" autocomplete="email" placeholder="' + esc(T(C.callP)) + '" required />' +
+            '<button class="btn btn--primary pp__wide" type="submit">' + esc(T(C.callB)) + ' <span aria-hidden="true">→</span></button>' +
             '<p class="fld__error" hidden>' + esc(T(C.callE)) + "</p>" +
             '<p class="pp__promise"><span class="pp__dot" aria-hidden="true"></span>' + esc(T(C.callPr)) + "</p>" +
             '<p class="consent">' + esc(T(C.callC)) + ' <a href="/privacy.html">' + esc(T(C.privacy)) + "</a>.</p>" +
@@ -138,10 +149,11 @@
     root.hidden = false;
     html.classList.add("pp-open");
     requestAnimationFrame(function () { root.classList.add("is-open"); });
-    var first = box.querySelector("input") || box;
+    /* on a phone the focus goes to the popup, not the field: the keyboard
+       would cover it before it is read */
+    var first = (!phone.matches && box.querySelector("input")) || box;
     setTimeout(function () { first.focus({ preventScroll: true }); }, 60);
     if (state(k) !== "sent") state(k, "seen");
-    root.classList.toggle("pp--top", k === "mag");
     dock.classList.add("is-hidden");
   }
   function close(quiet) {
@@ -260,6 +272,19 @@
   paintDock();
 
   new MutationObserver(function () { if (current) render(); paintDock(); }).observe(html, { attributes: true, attributeFilter: ["lang"] });
+
+  /* every "Talk to a consultant" opens the callback instead of jumping to the
+     form at the bottom of the page (a new tab or window still follows the link) */
+  var SAYS = /^(ou\s+)?(parler à un consultant|talk to a consultant|or talk to a consultant)/i;
+  document.addEventListener("click", function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest("a[href]");
+    if (!a || root.contains(a)) return;
+    var href = a.getAttribute("href");
+    if (href !== "#book" && !SAYS.test((a.textContent || "").replace(/\s+/g, " ").trim())) return;
+    e.preventDefault();
+    open("call", false);
+  });
 
   window.LicterPopups = { open: function (k) { open(k === "mag" ? "mag" : "call", false); } };
 })();
