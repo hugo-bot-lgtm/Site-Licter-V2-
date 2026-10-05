@@ -7413,7 +7413,7 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 .banner { position: relative; }
 
 /* on a phone the home drops the community map of the hero: it only works
-   with room (the live demo stays, compact: see the second pass below) */
+   with room (the live demo goes too: see the second pass below) */
 @media (max-width: 720px) {
   .home .hero__frame { display: none; }
 }
@@ -7493,14 +7493,9 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .home .cmp__who .cmp__badge { position: static; }
   .home .cmp__who .team2__faces { margin: 0; }
 
-  /* the live demo: compact, and only on a tap */
-  .home #use-cases .cases__heading { font-size: 26px; }
-  .home #use-cases .block__lead { font-size: 14.5px; }
-  .home #use-cases .lf__topics { justify-content: stretch; }
-  .home .lf__stage:not(.has-feed) { display: none; }
-  .home .lf__stage .uv__hint, .home .lf__stage .uv__case,
-  .home .lf__stage .aud3__row, .home .lf__stage .rc__detail,
-  .home .lf__stage .c-peaks, .home .lf__stage .quotes, .home .lf__stage .lf__cta { display: none; }
+  /* the live demo stays on large screens: on a phone its four questions
+     repeat the four families, and each family page has its own demo */
+  .home #use-cases { display: none; }
 
   /* Antoine in the bar, not floating over the text */
   .home .lx__launch { display: none; }

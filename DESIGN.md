@@ -98,13 +98,13 @@ Règles :
 - **Grilles :** CSS Grid, `repeat(auto-fit, minmax(270px, 1fr))` pour les cartes.
 - **Points de rupture utilisés :** 1200 (CTA de la barre de navigation masqué en dessous), 960, 860 (menu replié dans la pilule), 720, 560 (une colonne, boutons pleine largeur), 420.
 - **Mobile :** 16 à 20px de marge, aucun défilement horizontal, `min-height: 100svh` et jamais `100vh`.
-- **Sur téléphone (720px et moins), l'accueil a sa propre mise en forme**, avec le même HTML et le même ordre (environ 8,5 écrans). Règle : **tout est aligné à gauche**.
+- **Sur téléphone (720px et moins), l'accueil a sa propre mise en forme**, avec le même HTML et le même ordre (environ 7,5 écrans). Règle : **tout est aligné à gauche**.
   - **Premier écran :** la promesse et les logos clients. Le hero est resserré et le bandeau d'événement tient sur deux lignes.
   - **Retiré :** la cartographie du hero (elle n'est même pas dessinée).
   - **Familles :** même carte que sur ordinateur, en carrousel au doigt (86 % de largeur, la suivante dépasse), sans flèches.
   - **Vidéos :** une à la fois, sans la note sur la chaîne.
   - **« Pourquoi pas un outil seul » + Équipe :** le titre, le badge et les visages, puis un tableau à deux colonnes « Un outil seul / Notre équipe ». Le chapô et la phrase de fin, redondants avec le tableau, sont retirés ; le mot des fondateurs est replié. Les éléments d'équipe sont déplacés en JS (`js/home.js`), jamais copiés.
-  - **Démo :** ne joue qu'au toucher d'une question, en version courte (le visuel principal et notre lecture).
+  - **Démo retirée :** ses 4 questions répètent les 4 familles, et chaque page famille a sa propre démo mobile.
   - **Méthode :** mêmes cartes que sur ordinateur (photo, étapes, flèches).
   - **Diagnostic :** replié derrière un bouton. Un lien `#diagnostic` l'ouvre.
   - **Une seule action :** la barre du bas, avec l'avatar d'Antoine qui ouvre le chat. Les boutons de section et le lanceur flottant sont retirés.
