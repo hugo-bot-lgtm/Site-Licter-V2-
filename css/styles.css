@@ -7612,8 +7612,6 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 .qz__gets li { display: flex; align-items: center; gap: 10px; font: 600 14.5px/1.35 var(--body-font); color: rgba(252, 246, 239, .9); }
 .qz__gets li::before { content: ""; flex: none; width: 18px; height: 18px; border-radius: 50%; background: rgba(234, 169, 61, .18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EAA93D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center / 12px no-repeat; }
 
-/* the home has the magazine in its own block: no dock */
-.home .ppd { display: none; }
 
 /* the callback at the bottom of the home: the button under the field, as in the popup */
 .home #book .callback__row { flex-direction: column; }
@@ -7663,8 +7661,9 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .home .lf__stage .uv__hint { display: none; }
   /* the main visual and our reading, side by side: the detail panels live
      on the use-case pages ("See the full use case") */
-  .home .lf__stage :is(.aud3__row, .rc__detail, .c-peaks, .quotes) { display: none; }
-  .home .aud3__map { height: 300px; }
+  .home .lf__stage :is(.rc__detail, .c-peaks, .quotes) { display: none; }
+  /* audiences keeps its scores: the map gives up some height for them */
+  .home .aud3__map { height: 210px; }
 }
 
 /* ---------- the footer on a phone: four folding columns ----------
