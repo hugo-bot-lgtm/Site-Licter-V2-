@@ -1549,9 +1549,10 @@ window.LicterUC = (function () {
   }
 
   var headGone = false, inBook = false, lastY = window.scrollY, up = false, ticking = false;
-  /* on a phone the home pins it at the bottom, under the thumb, and keeps it
-     there from the end of the hero to the booking form */
-  var thumb = document.body.classList.contains("home") && window.matchMedia ? window.matchMedia("(max-width: 720px)") : null;
+  /* on a phone or a tablet (< 1200 px, no room for the button in the header)
+     the home pins it at the bottom, under the thumb, and keeps it there from
+     the end of the hero to the booking form */
+  var thumb = document.body.classList.contains("home") && window.matchMedia ? window.matchMedia("(max-width: 1199px)") : null;
   if (thumb) {
     var mode = function () { bar.classList.toggle("stickybar--bottom", thumb.matches); render(); };
     if (thumb.addEventListener) thumb.addEventListener("change", mode); else thumb.addListener(mode);

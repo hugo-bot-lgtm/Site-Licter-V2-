@@ -7452,14 +7452,6 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .home .qz__open { margin-top: 20px; height: 50px; background: #FCF6EF; color: #13162D; }
 
   /* the compact bar, at the bottom */
-  .home .stickybar--bottom { top: auto; bottom: 0; border-top: 1px solid var(--line); border-bottom: 0; transform: translateY(100%); padding-bottom: env(safe-area-inset-bottom, 0px); }
-  .home .stickybar--bottom.is-shown { transform: none; }
-  .home .stickybar--bottom .stickybar__in { height: 68px; }
-  .home .stickybar--bottom .stickybar__logo { display: none; }
-  .home .stickybar--bottom .stickybar__cta { flex: 1; justify-content: center; height: 48px; font-size: 13px; }
-  body.home:has(.stickybar--bottom.is-shown) .lx__launch { bottom: 84px; }
-  body.home:has(.stickybar--bottom.is-shown) .ppd { transform: translateY(-72px); }
-  body.home:has(.stickybar--bottom.is-shown) .site-foot { padding-bottom: 80px; }
 }
 
 /* ---------- home on a phone, second pass ---------- */
@@ -7502,12 +7494,6 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
   .home #use-cases { display: none; }
 
   /* Antoine in the bar, not floating over the text */
-  .home .lx__launch { display: none; }
-  .home .stickybar--bottom .stickybar__in { gap: 12px; }
-  .home .stickybar--bottom .stickybar__chat { position: relative; display: block; flex: none; width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
-  .home .stickybar__chat img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--line); }
-  .home .stickybar__chat i { position: absolute; right: 1px; bottom: 1px; width: 12px; height: 12px; border-radius: 50%; background: #2FA36B; box-shadow: 0 0 0 2px var(--bg); }
-  body.home:has(.stickybar--bottom.is-shown) .ppd { transform: translateY(-72px); }
 }
 
 /* ---------- home on a phone: "Why not just a tool?" as a compact table ---------- */
@@ -7553,7 +7539,38 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 }
 
 /* iOS zooms the page on any field under 16 px, and stays zoomed after: on a
-   phone every field is 16 px, whatever its component says */
-@media (max-width: 720px) {
+   phone or a tablet (any touch screen) every field is 16 px, whatever its component says */
+@media (max-width: 720px), (pointer: coarse) {
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea { font-size: 16px !important; }
+}
+
+/* ---------- the bottom bar: phones AND tablets (<= 1199 px) ----------
+   Under 1200 px the header has no room for "Talk to a consultant": on the
+   home the compact bar sits at the bottom, under the thumb, with Antoine's
+   face that opens the chat (the floating launcher steps aside). */
+@media (max-width: 1199px) {
+  .home .stickybar--bottom { top: auto; bottom: 0; border-top: 1px solid var(--line); border-bottom: 0; transform: translateY(100%); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .home .stickybar--bottom.is-shown { transform: none; }
+  .home .stickybar--bottom .stickybar__in { height: 68px; gap: 12px; }
+  .home .stickybar--bottom .stickybar__chat { position: relative; display: block; flex: none; width: 48px; height: 48px; margin-left: auto; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
+  .home .stickybar__chat img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--line); }
+  .home .stickybar__chat i { position: absolute; right: 1px; bottom: 1px; width: 12px; height: 12px; border-radius: 50%; background: #2FA36B; box-shadow: 0 0 0 2px var(--bg); }
+  .home .stickybar--bottom .stickybar__cta { height: 48px; padding: 0 22px; font-size: 13px; }
+  .home .lx__launch { display: none; }
+  body.home:has(.stickybar--bottom.is-shown) .ppd { transform: translateY(-72px); }
+  body.home:has(.stickybar--bottom.is-shown) .site-foot { padding-bottom: 80px; }
+}
+/* a phone: no logo, the button takes the width */
+@media (max-width: 720px) {
+  .home .stickybar--bottom .stickybar__logo { display: none; }
+  .home .stickybar--bottom .stickybar__chat { margin-left: 0; }
+  .home .stickybar--bottom .stickybar__cta { flex: 1; justify-content: center; padding: 0 16px; }
+}
+
+/* ---------- home, tablet portrait (721 to 960 px): the demo in one screen ----------
+   Stacked it ran to almost two screens: the visual on the left, our reading
+   on the right, and the secondary panels (too narrow here) step aside. */
+@media (min-width: 721px) and (max-width: 960px) {
+  .home .lf__stage.has-feed { grid-template-columns: minmax(0, 1.3fr) minmax(260px, 1fr); align-items: start; }
+  .home .lf__stage .uv__hint, .home .lf__stage .aud3__row, .home .lf__stage .rc__detail, .home .lf__stage .c-peaks, .home .lf__stage .quotes { display: none; }
 }

@@ -478,7 +478,27 @@
   /* each question of the home opens onto its full use-case page */
   var FULL = { communication: "campaign-impact", brand: "reputation", audiences: "segmentation", trends: "market-opportunities" };
 
+  /* French typography on whatever the stage shows: a non-breaking space
+     before ; : ? ! and inside « », so a line never starts with one */
+  function nbsp(root) {
+    if (!fr()) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), n;
+    while ((n = w.nextNode())) {
+      var v = n.nodeValue, f = v.replace(/ ([;:?!»])/g, "\u00a0$1").replace(/« /g, "«\u00a0");
+      if (f !== v) n.nodeValue = f;
+    }
+  }
+
   function Stage(stage, opts) {
+    if (window.MutationObserver) {
+      var queued = false;
+      new MutationObserver(function () {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(function () { queued = false; nbsp(stage); });
+      })
+        .observe(stage, { childList: true, subtree: true, characterData: true });
+    }
     var PX = opts.prefix || "";
     var topics = opts.topics || [];
     function $(id) { return document.getElementById(PX + id); }

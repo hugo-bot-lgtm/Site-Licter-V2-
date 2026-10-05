@@ -96,7 +96,16 @@ Règles :
 - **Section :** `.block`, padding vertical `clamp(62px, 9vh, 108px)`. En-tête de section `.block__head`, 680px maximum, puis `clamp(32px, 5vh, 58px)` d'air avant le contenu.
 - **Alternance :** une section sur deux pose un fond `--band` bord à bord (`::before`). C'est un changement de valeur, pas de couleur. Pas de filet en plus.
 - **Grilles :** CSS Grid, `repeat(auto-fit, minmax(270px, 1fr))` pour les cartes.
-- **Points de rupture utilisés :** 1200 (CTA de la barre de navigation masqué en dessous), 960, 860 (menu replié dans la pilule), 720, 560 (une colonne, boutons pleine largeur), 420.
+- **Trois catégories d'écran :**
+
+  | Catégorie | Largeur | Règle |
+  |---|---|---|
+  | Mobile | 720px et moins | mise en page propre à l'accueil (voir plus bas), chat plein écran |
+  | Tablette | 721 à 1199px | **le contenu de l'ordinateur, les réflexes du mobile** : barre CTA en bas avec Antoine sur l'accueil (l'en-tête n'a plus la place pour le CTA), chat en panneau latéral ; en portrait (721 à 960px), la démo de l'accueil tient en un écran, visuel et lecture côte à côte |
+  | Ordinateur | 1200px et plus | la version complète, CTA dans l'en-tête |
+
+- **Champs à 16px sur tout écran tactile** (`(pointer: coarse)`) : sous 16px, iOS et iPadOS zooment sur la page et y restent.
+- **Points de rupture utilisés :** 1200 (CTA de l'en-tête masqué en dessous), 960 (hero sur une colonne), 860 (menu replié dans la pilule), 720 (mobile), 560 (une colonne, boutons pleine largeur), 420.
 - **Mobile :** 16 à 20px de marge, aucun défilement horizontal, `min-height: 100svh` et jamais `100vh`.
 - **Sur téléphone (720px et moins), l'accueil a sa propre mise en forme**, avec le même HTML et le même ordre (environ 7,5 écrans). Règle : **tout est aligné à gauche**.
   - **Premier écran :** la promesse et les logos clients. Le hero est resserré et le bandeau d'événement tient sur deux lignes.
@@ -214,7 +223,7 @@ Il est généré par `tools/build-events.py` et mis à jour par `js/events.js`. 
 
 - **Langue :** le français est la langue par défaut. Le HTML source est en anglais ; la traduction est appliquée par `js/i18n.js` + `js/fr.js`, ou écrite en dur dans les pages générées sous `/fr/`.
 - **Pas de tiret cadratin ni demi-cadratin** dans le texte visible. On utilise un point, une virgule, deux-points ou des parenthèses. Le « · » sert de séparateur dans les étiquettes courtes.
-- **Typographie française :** espace insécable avant `: ; ? !` et à l'intérieur des « ».
+- **Typographie française :** espace insécable avant `: ; ? !` et à l'intérieur des « ». Les textes affichés par la démo (`js/usecases.js`) la reçoivent automatiquement.
 - **Le ton :** concret et à la première personne du pluriel. On écrit « nous lisons », pas « solution innovante ». Aucun mot creux du type « révolutionner », « booster » ou « next-gen ».
 - **Les titres sont en casse de phrase,** jamais en Title Case.
 - **Les chiffres sont réels et sourcés,** ou bien la donnée est signalée comme illustrative.
