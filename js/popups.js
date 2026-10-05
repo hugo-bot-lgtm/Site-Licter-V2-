@@ -224,11 +224,11 @@
     dock.innerHTML = items.map(function (k) {
       if (k === "mag") {
         /* the magazine shows itself: its cover, its name, what it costs */
-        /* just the cover and "free": it says what it is without a word more */
+        /* just the cover and "get it free", on two small lines */
         return '<button type="button" class="ppd__b ppd__b--mag" data-open="mag" aria-label="' +
           esc(fr() ? "Audience First, le magazine gratuit" : "Audience First, the free magazine") + '">' +
           '<img class="ppd__cover" src="/assets/img/magazine/audience-first-ed2-440.webp" alt="" width="440" height="640" decoding="async" />' +
-          '<span class="ppd__tag" aria-hidden="true">' + esc(fr() ? "Gratuit" : "Free") + "</span></button>";
+          '<span class="ppd__tag" aria-hidden="true">' + (fr() ? "Recevoir<br />gratuitement" : "Get it<br />free") + "</span></button>";
       }
       return '<button type="button" class="ppd__b ppd__b--' + k + '" data-open="' + k + '">' +
         '<span class="ppd__i" aria-hidden="true">' + ICON_CALL + "</span>" +
