@@ -113,6 +113,8 @@ Règles :
   - **Retiré :** la cartographie du hero (elle n'est même pas dessinée).
   - **Familles :** même carte que sur ordinateur, en carrousel au doigt (86 % de largeur, la suivante dépasse), sans flèches.
   - **Vidéos :** une à la fois, sans la note sur la chaîne.
+- **Pied de page sur téléphone (tout le site) :** les quatre colonnes deviennent des volets, un seul ouvert à la fois (`js/ui.js`), et le paragraphe de présentation est retiré.
+- **Vidéos de l'accueil :** la citation sous la miniature est masquée visuellement, puisque la miniature l'affiche déjà. Elle reste le nom du lien pour les lecteurs d'écran et Google.
   - **« Pourquoi pas un outil seul » + Équipe :** le titre, le badge et les visages, puis un tableau à deux colonnes « Un outil seul / Notre équipe ». Le chapô et la phrase de fin, redondants avec le tableau, sont retirés ; le mot des fondateurs est replié. Les éléments d'équipe sont déplacés en JS (`js/home.js`), jamais copiés.
   - **Démo retirée :** ses 4 questions répètent les 4 familles, et chaque page famille a sa propre démo mobile.
   - **Méthode :** mêmes cartes que sur ordinateur (photo, étapes, flèches).

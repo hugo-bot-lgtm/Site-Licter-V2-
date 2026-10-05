@@ -1512,6 +1512,56 @@ window.LicterUC = (function () {
 })();
 
 /* =========================================================================
+   Footer on a phone: each column folds behind its title (one open at a
+   time); above 720 px everything is back as it was.
+   ========================================================================= */
+(function () {
+  var foot = document.querySelector(".site-foot");
+  if (!foot || !window.matchMedia) return;
+  var cols = Array.prototype.filter.call(foot.querySelectorAll(".site-foot__in > div"), function (d) {
+    return d.querySelector(":scope > h3") && d.querySelector(":scope > ul");
+  });
+  if (!cols.length) return;
+  var mq = window.matchMedia("(max-width: 720px)"), on = false;
+  function fold() {
+    if (on) return; on = true;
+    foot.classList.add("is-folding");
+    cols.forEach(function (d, i) {
+      var h = d.querySelector(":scope > h3"), ul = d.querySelector(":scope > ul");
+      if (!ul.id) ul.id = "foot-col-" + i;
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "site-foot__toggle";
+      b.setAttribute("aria-expanded", "false"); b.setAttribute("aria-controls", ul.id);
+      while (h.firstChild) b.appendChild(h.firstChild);
+      h.appendChild(b);
+      ul.hidden = true;
+      b.addEventListener("click", function () {
+        var open = b.getAttribute("aria-expanded") !== "true";
+        cols.forEach(function (o) {
+          var ob = o.querySelector(".site-foot__toggle"), ou = o.querySelector(":scope > ul");
+          if (ob) ob.setAttribute("aria-expanded", "false");
+          ou.hidden = true;
+        });
+        b.setAttribute("aria-expanded", open ? "true" : "false");
+        ul.hidden = !open;
+      });
+    });
+  }
+  function unfold() {
+    if (!on) return; on = false;
+    foot.classList.remove("is-folding");
+    cols.forEach(function (d) {
+      var h = d.querySelector(":scope > h3"), b = h.querySelector(".site-foot__toggle");
+      if (b) { while (b.firstChild) h.insertBefore(b.firstChild, b); b.remove(); }
+      d.querySelector(":scope > ul").hidden = false;
+    });
+  }
+  function apply() { if (mq.matches) fold(); else unfold(); }
+  apply();
+  if (mq.addEventListener) mq.addEventListener("change", apply); else mq.addListener(apply);
+})();
+
+/* =========================================================================
    Compact bar
    Once the header has scrolled away, scrolling back up brings a slim bar
    with the logo and the one action that matters. It stays out of the way

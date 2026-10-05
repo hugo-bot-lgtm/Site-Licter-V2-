@@ -7703,3 +7703,30 @@ html[data-theme="dark"] .res__k { color: #EAA93D; }
   .banner--event .banner__a { display: flex; min-height: 44px; }
   .hstep::after { inset: -8px -6px; }
 }
+
+/* ---------- home: the last trims of the audit ---------- */
+/* the thumbnail already carries the quote: the line under it stays for
+   screen readers and search engines (it names the link), not for the eye */
+.home .reel { position: relative; }
+.home .reel__quote { position: absolute; top: 0; left: 0; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+/* the live demo on a large screen: closer to one screen */
+@media (min-width: 961px) {
+  .home #use-cases { padding-block: 56px 60px; }
+  .home #use-cases .uc__head { margin-bottom: 18px; }
+  .home .lf__stage .uv__hint { display: none; }
+  .home .aud3__map { height: 240px; }
+}
+
+/* ---------- the footer on a phone: four folding columns ----------
+   js/ui.js turns each column title into a button; the lists open one at a time */
+@media (max-width: 720px) {
+  .site-foot__brand > p { display: none; }
+  .site-foot.is-folding .site-foot__in > div:not(.site-foot__brand) { border-top: 1px solid var(--line); }
+  .site-foot.is-folding h3 { margin: 0; }
+  .site-foot__toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 52px; padding: 0; border: 0; background: none; color: var(--text-2); font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
+  .site-foot__toggle::after { content: "+"; font: 400 22px/1 var(--body-font); transition: transform .2s ease; }
+  .site-foot__toggle[aria-expanded="true"]::after { transform: rotate(45deg); }
+  .site-foot.is-folding .site-foot__in > div > ul[hidden] { display: none; }
+  .site-foot.is-folding .site-foot__in > div > ul { padding-bottom: 12px; }
+}
+@media (max-width: 720px) { .site-foot.is-folding .site-foot__in { grid-template-columns: minmax(0, 1fr); row-gap: 0; } .site-foot.is-folding .site-foot__brand { margin-bottom: 18px; } }
