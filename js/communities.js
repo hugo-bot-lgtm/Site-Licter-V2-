@@ -467,7 +467,7 @@
 
   window.LicterMap = LicterMap;
 
-  /* the hero */
+  /* the hero; on a phone the map is not shown (css), so it is not drawn */
   var hero = document.getElementById("carto-frame");
-  if (hero) LicterMap(hero, { stories: true });
+  if (hero && !window.matchMedia("(max-width: 720px)").matches) LicterMap(hero, { stories: true });
 })();

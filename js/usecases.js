@@ -1225,20 +1225,32 @@
   if (homeStage && tabs.length) {
     var home = Stage(homeStage, { prefix: "", topics: tabs, closable: true, lead: false });
     tabs.forEach(function (b, i) {
-      b.addEventListener("click", function () { home.select(b.dataset.topic); });
+      b.addEventListener("click", function () { built = false; home.select(b.dataset.topic); });
       b.addEventListener("keydown", function (e) {
         var dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
         if (!dir) return;
         e.preventDefault();
         var n = tabs[(i + dir + tabs.length) % tabs.length];
-        n.focus(); home.select(n.dataset.topic);
+        n.focus(); built = false; home.select(n.dataset.topic);
       });
     });
     /* the audiences question plays on its own, once the stage itself is half
        on screen: the visual is the point of the section, it should not wait
        for a click, nor start while the visitor is still above it */
     var first = tabs.filter(function (b) { return b.dataset.topic === "audiences"; })[0] || tabs[0];
-    autoplay(homeStage, function () { return !!home.current(); }, function () { home.select(first.dataset.topic); }, 0.5);
+    /* the answer is several times taller than the empty stage: built while
+       the stage is still a screen below, it takes its height out of sight,
+       and nothing under it jumps when it plays (it then plays from the start) */
+    var built = false;
+    if ("IntersectionObserver" in window) {
+      var near = new IntersectionObserver(function (e) {
+        if (!e[0].isIntersecting) return;
+        near.disconnect();
+        if (!home.current()) { home.select(first.dataset.topic); built = true; }
+      }, { rootMargin: "0px 0px 100% 0px" });
+      near.observe(homeStage);
+    }
+    autoplay(homeStage, function () { return !!home.current() && !built; }, function () { built = false; home.select(first.dataset.topic); }, 0.5);
   }
 
   /* -------------------------------------------- use-cases page: one per family */

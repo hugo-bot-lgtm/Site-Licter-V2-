@@ -241,7 +241,22 @@
     if (current) { if (current !== k) queued = k; return; }
     open(k, true);
   }
-  setTimeout(function () { auto("mag"); }, 3000);
+  /* the home asks for nothing before its promise is read: the magazine waits
+     for a first scroll past half a screen (and the same 3 s); every other
+     page opens it after 3 s */
+  if (document.body.classList.contains("home")) {
+    var timeUp = false, scrolled = false;
+    var go = function () { if (timeUp && scrolled) auto("mag"); };
+    setTimeout(function () { timeUp = true; go(); }, 3000);
+    var onScroll = function () {
+      if (window.scrollY < window.innerHeight * 0.5) return;
+      window.removeEventListener("scroll", onScroll);
+      scrolled = true; go();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+  } else {
+    setTimeout(function () { auto("mag"); }, 3000);
+  }
   paintDock();
 
   new MutationObserver(function () { if (current) render(); paintDock(); }).observe(html, { attributes: true, attributeFilter: ["lang"] });

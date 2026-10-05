@@ -7404,3 +7404,16 @@ html[data-theme="dark"] .pp__k { color: #EAA93D; }
 body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 .pp__cover-img { display: block; width: min(250px, 100%); height: auto; border-radius: 6px; box-shadow: 0 30px 50px -20px rgba(0, 0, 0, .75), 0 0 0 1px rgba(255, 255, 255, .12); transform: rotate(-3deg); }
 @media (max-width: 700px) { .pp__cover-img { width: 130px; } }
+
+/* =========================================================
+   Home audit fixes
+   ========================================================= */
+/* the events banner scrolls away with the page: pinned, it sat over the
+   compact bar (z 30 under z 40) and hid "Talk to a consultant" on the way up */
+.banner { position: relative; }
+
+/* on a phone the home keeps its story and drops what only works with room:
+   the community map of the hero and the live demo (2 screens on its own) */
+@media (max-width: 720px) {
+  .home .hero__frame, .home #use-cases { display: none; }
+}
