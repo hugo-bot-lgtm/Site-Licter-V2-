@@ -2,10 +2,9 @@
    The sales drawer: a panel that slides in from the right, with two tabs.
 
    - "Call me back": the callback of the home, one field, email or phone.
-   - "Chat": Antoine or Adrien (one of the two co-founders, drawn once per
-     visitor) answers questions about Licter. Every answer ends on a call to
-     action. It is labelled as an automatic assistant: it speaks in their
-     name, it is not them typing.
+   - "Chat": Antoine Khaitrine, co-founder, answers questions about Licter.
+     Every answer ends on a call to action. It is labelled as an automatic
+     assistant: it speaks in his name, it is not him typing.
 
    MOCK: nothing is sent anywhere yet (the callback, like the one of the
    home, is to be wired to the CRM). The answers are matched on keywords,
@@ -31,13 +30,7 @@
   function session(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
 
   /* ------------------------------------------------------------ the agent */
-  var AGENTS = {
-    antoine: { name: "Antoine", full: "Antoine Khaitrine", img: "/assets/img/team/founder-antoine-160.webp" },
-    adrien: { name: "Adrien", full: "Adrien Krebs", img: "/assets/img/team/founder-adrien-160.webp" }
-  };
-  var key = store("licter-agent");
-  if (!AGENTS[key]) { key = Math.random() < 0.5 ? "antoine" : "adrien"; store("licter-agent", key); }
-  var A = AGENTS[key];
+  var A = { name: "Antoine", full: "Antoine Khaitrine", img: "/assets/img/team/founder-antoine-160.webp" };
 
   var UC = function (fam) { return fr() ? "/fr/cas-usage/" + (fam ? fam + "/" : "") : "/en/use-cases/" + (fam ? { "sante-de-marque": "brand-health", "tendances-innovation": "trends-innovation" }[fam] || fam : "") + (fam ? "/" : ""); };
 
