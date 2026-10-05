@@ -1531,6 +1531,8 @@ window.LicterFR = {
 
 
 
+
+
   /* ---- offer pages (tools/build-offers.py) ---- */
   "New range":
     "Nouvelle gamme",
