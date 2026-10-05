@@ -354,9 +354,11 @@
   var phone = window.matchMedia("(max-width: 720px)");
   var vv = window.visualViewport;
   function fit() {
-    if (!phone.matches || !vv) { panel.style.removeProperty("--lx-vh"); panel.style.removeProperty("--lx-top"); return; }
-    panel.style.setProperty("--lx-vh", Math.round(vv.height) + "px");
+    ["--lx-vh", "--lx-top", "--lx-bottom"].forEach(function (k) { panel.style.removeProperty(k); });
+    if (!phone.matches || !vv) return;
+    panel.style.setProperty("--lx-vh", Math.floor(vv.height) + "px");
     panel.style.setProperty("--lx-top", Math.round(vv.offsetTop) + "px");
+    panel.style.setProperty("--lx-bottom", "auto");
   }
   if (vv) { vv.addEventListener("resize", fit); vv.addEventListener("scroll", fit); }
   /* back to where the visitor opened it from: the launcher, or the home's bar */

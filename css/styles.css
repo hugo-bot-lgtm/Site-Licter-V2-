@@ -7129,7 +7129,6 @@ html[data-theme="dark"] .lx__send { background: #FCF6EF; color: #13162D; }
 @media (max-width: 720px) {
   .lx__launch { right: 14px; bottom: 14px; padding: 5px; }
   .lx__launch-t { display: none; }
-  .lx__panel { top: auto; right: 8px; left: 8px; bottom: 8px; width: auto; height: min(640px, calc(100dvh - 72px)); border-radius: 22px; transform: translateY(calc(100% + 16px)); }
 }
 @media (prefers-reduced-motion: reduce) { .lx__panel, .lx__launch { transition: none; } .lx__dots i { animation: none; } }
 /* the floating guide banner steps aside while the drawer is open, and the
@@ -7523,10 +7522,12 @@ body:has(.ucp-bar.is-shown) .ppd { bottom: 84px; }
 /* ---------- Antoine's chat on a phone: the whole screen ----------
    A floating card left the page scrolling behind it and the keyboard over
    the field. Full screen, sized on the visual viewport (js/assistant.js sets
-   --lx-vh / --lx-top as the keyboard comes and goes), fields at 16 px so iOS
+   --lx-vh / --lx-top / --lx-bottom as the keyboard comes and goes), fields at 16 px so iOS
    does not zoom, the notch and the home bar kept clear. */
 @media (max-width: 720px) {
-  .lx__panel { top: var(--lx-top, 0px); left: 0; right: 0; bottom: auto; width: auto; height: var(--lx-vh, 100dvh); border-radius: 0; box-shadow: none; transform: translateY(calc(100% + 24px)); }
+  /* pinned to all four edges, no dvh: it fits on any browser, even without
+     the script; js/assistant.js then sizes it on the visual viewport */
+  .lx__panel { top: var(--lx-top, 0px); left: 0; right: 0; bottom: var(--lx-bottom, 0px); width: auto; height: var(--lx-vh, auto); max-height: none; border-radius: 0; box-shadow: none; transform: translateY(calc(100% + 24px)); }
   .lx.is-open .lx__panel { transform: none; }
   .lx__head { padding: calc(10px + env(safe-area-inset-top, 0px)) 12px 10px 14px; }
   .lx__head .lx__face { width: 38px; height: 38px; }
