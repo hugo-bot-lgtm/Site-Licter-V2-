@@ -281,8 +281,6 @@
   });
   log.addEventListener("click", function (e) {
     if (!e.target.closest(".lx__cta-call")) return;
-    /* the callback lives in its own popup (js/popups.js) */
-    if (window.LicterPopups) { close(); window.LicterPopups.open("call"); return; }
     show("call"); root.querySelector(".lx__input").focus();
   });
 
@@ -394,7 +392,6 @@
   window.addEventListener("scroll", onScroll, { passive: true });
 
   paint();
-  show(window.LicterPopups ? "chat" : "call");
-  if (window.LicterPopups) root.classList.add("lx--chat");
+  show("chat");
   new MutationObserver(function () { paint(); done(); }).observe(html, { attributes: true, attributeFilter: ["lang"] });
 })();

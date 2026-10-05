@@ -3,14 +3,13 @@
    - "call": thirty minutes with a consultant, the callback;
    - "mag":  the Audience First magazine, sent as a PDF by email.
 
-   When they open by themselves (large screens only, never on a phone):
-   - the callback, half-way down a page or after 40 seconds; not on the
-     home, which has its own callback at the end;
-   - the magazine, when the pointer leaves the window towards the tabs
-     (exit intent), after 15 seconds on the page.
-   Never both in the same visit, never after a form has been sent, never
-   on a page whose point is a form (booking, diagnostic, guide, events),
-   and a closed popup stays closed for 7 days.
+   The magazine opens by itself once per visitor, at the top of the
+   screen, 3 seconds after arriving (large screens only, never on a phone,
+   never on a page whose point is a form: booking, diagnostic, guide,
+   events). Closed without sending, it goes into a small dock at the
+   bottom left, to be found again; once sent, it leaves the dock.
+   The callback popup is kept for on-demand use only: nothing opens it by
+   itself (the callback lives in the chat drawer and on the pages).
 
    window.LicterPopups.open("call" | "mag") opens one on demand (the chat's
    "call me back" button uses it).
@@ -29,8 +28,6 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* private mode */ } }
-  function sget(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
-  function sset(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { /* private mode */ } }
   var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   var C = {
@@ -61,10 +58,7 @@
     magC: ["Vos coordonnées servent uniquement à vous envoyer le magazine.", "We use your details only to send you the magazine."],
     magE: ["Indiquez votre prénom, votre société et un e-mail valide.", "Enter your first name, your company and a valid email."],
     magOk: ["C'est noté. Le magazine arrive à ", "Noted. The magazine is on its way to "],
-    magOkE: [", en PDF.", ", as a PDF."],
-    cover: ["Le magazine", "The magazine"],
-    issue: ["N° 1", "Issue 1"],
-    coverLine: ["Ce que la conversation dit des marques", "What the conversation says about brands"]
+    magOkE: [", en PDF.", ", as a PDF."]
   };
 
   /* ------------------------------------------------------------ the DOM */
@@ -106,12 +100,9 @@
     } else {
       box.className = "pp__box pp__box--mag";
       box.innerHTML = head +
-        '<div class="pp__cover" aria-hidden="true"><div class="pp__mag">' +
-          '<span class="pp__mag-k">' + esc(T(C.cover)) + "</span>" +
-          '<span class="pp__mag-t">Audience<br />First</span>' +
-          '<span class="pp__mag-l">' + esc(T(C.coverLine)) + "</span>" +
-          '<span class="pp__mag-n">' + esc(T(C.issue)) + " · PDF</span>" +
-        "</div></div>" +
+        '<div class="pp__cover" aria-hidden="true">' +
+          '<img class="pp__cover-img" src="/assets/img/magazine/audience-first-ed2-440.webp" srcset="/assets/img/magazine/audience-first-ed2-440.webp 440w, /assets/img/magazine/audience-first-ed2-880.webp 880w" sizes="260px" alt="" width="440" height="640" decoding="async" />' +
+        "</div>" +
         '<div class="pp__body">' +
           '<p class="pp__k">' + esc(T(C.magK)) + "</p>" +
           '<h2 class="pp__t" id="pp-title">' + esc(T(C.magT)) + "</h2>" +
@@ -136,6 +127,9 @@
   }
 
   /* ----------------------------------------------------- open and close */
+  /* per visitor: "" (never shown), "seen" (closed, in the dock), "sent" */
+  function state(k, v) { if (v === undefined) return get("pp-" + k) || ""; set("pp-" + k, v); paintDock(); }
+
   function open(k, auto) {
     if (current) close(true);
     current = k;
@@ -146,15 +140,18 @@
     requestAnimationFrame(function () { root.classList.add("is-open"); });
     var first = box.querySelector("input") || box;
     setTimeout(function () { first.focus({ preventScroll: true }); }, 60);
-    if (auto) sset("pp-shown", "1");
+    if (state(k) !== "sent") state(k, "seen");
+    root.classList.toggle("pp--top", k === "mag");
+    dock.classList.add("is-hidden");
   }
   function close(quiet) {
     if (!current) return;
-    if (!quiet && !sent[current]) set("pp-closed-" + current, String(Date.now()));
     root.classList.remove("is-open");
+    dock.classList.remove("is-hidden");
     html.classList.remove("pp-open");
     current = null;
     setTimeout(function () { if (!current) root.hidden = true; }, 220);
+    if (queued) { var q = queued; queued = null; setTimeout(function () { if (may(q)) open(q, true); }, 600); }
     if (!quiet && lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
   }
   root.addEventListener("click", function (e) { if (e.target.closest("[data-close]")) close(); });
@@ -201,43 +198,53 @@
       }
     }
     if (bad) { bad.setAttribute("aria-invalid", "true"); err.hidden = false; bad.focus(); return; }
-    sset("pp-sent", "1");
+    state(k, "sent");
     render();
     var ok = box.querySelector(".pp__done");
     if (ok) { ok.setAttribute("tabindex", "-1"); ok.focus(); }
   });
 
+  /* --------------------------------------------------------- the dock
+     the popups a visitor closed without sending, to open them again */
+  var ICON_MAG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 4.5h10.5L19 8v11.5H5z"/><path d="M8.5 10h7M8.5 13.5h7M8.5 17h4"/></svg>';
+  var ICON_CALL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6.5 4.5h3l1.5 4-2 1.3a10 10 0 0 0 5.2 5.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.5 6.7a2 2 0 0 1 2-2.2z"/></svg>';
+  var dock = document.createElement("div");
+  dock.className = "ppd";
+  dock.setAttribute("role", "region");
+  document.body.appendChild(dock);
+  function paintDock() {
+    var items = ["mag"].filter(function (k) { return state(k) === "seen"; });
+    dock.hidden = !items.length;
+    dock.setAttribute("aria-label", fr() ? "Retrouver nos propositions" : "Find our offers again");
+    dock.innerHTML = items.map(function (k) {
+      return '<button type="button" class="ppd__b ppd__b--' + k + '" data-open="' + k + '">' +
+        '<span class="ppd__i" aria-hidden="true">' + (k === "mag" ? ICON_MAG : ICON_CALL) + "</span>" +
+        esc(k === "mag" ? (fr() ? "Le magazine" : "The magazine") : (fr() ? "Être rappelé" : "Call me back")) + "</button>";
+    }).join("");
+  }
+  dock.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-open]");
+    if (b) open(b.getAttribute("data-open"), false);
+  });
+
   /* ------------------------------------------------ the automatic opening */
   var path = location.pathname;
   var formPage = /\/(book-a-meeting|diagnostic|guide|events|event-[a-z0-9-]+)\.html$/.test(path);
-  var isHome = document.body.classList.contains("home");
   var wide = window.matchMedia("(min-width: 900px)");
-  function recently(k) { var t = +get("pp-closed-" + k); return t && Date.now() - t < 7 * 864e5; }
+  var queued = null;
   function may(k) {
-    return wide.matches && !formPage && !current && !sget("pp-shown") && !sget("pp-sent") && !recently(k) &&
-      !html.classList.contains("lx-open") && !(document.activeElement && document.activeElement.matches("input, textarea, select"));
+    return wide.matches && !formPage && !state(k) && !html.classList.contains("lx-open") &&
+      !(document.activeElement && document.activeElement.matches("input, textarea, select"));
   }
-
-  if (!isHome) {
-    var callTimer = setTimeout(function () { if (may("call")) open("call", true); }, 40000);
-    var onScroll = function () {
-      var h = document.documentElement.scrollHeight - innerHeight;
-      if (h > 0 && scrollY / h > 0.5) {
-        window.removeEventListener("scroll", onScroll);
-        clearTimeout(callTimer);
-        if (may("call")) open("call", true);
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
+  function auto(k) {
+    if (!may(k)) return;
+    if (current) { if (current !== k) queued = k; return; }
+    open(k, true);
   }
-  var armed = false;
-  setTimeout(function () { armed = true; }, 15000);
-  document.addEventListener("mouseout", function (e) {
-    if (!armed || e.relatedTarget || e.clientY > 8) return;
-    if (may("mag")) open("mag", true);
-  });
+  setTimeout(function () { auto("mag"); }, 3000);
+  paintDock();
 
-  new MutationObserver(function () { if (current) render(); }).observe(html, { attributes: true, attributeFilter: ["lang"] });
+  new MutationObserver(function () { if (current) render(); paintDock(); }).observe(html, { attributes: true, attributeFilter: ["lang"] });
 
   window.LicterPopups = { open: function (k) { open(k === "mag" ? "mag" : "call", false); } };
 })();

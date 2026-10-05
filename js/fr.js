@@ -1563,6 +1563,12 @@ window.LicterFR = {
 
 
 
+
+
+
+
+
+
   /* ---- event pages (tools/build-events.py) ---- */
   "Next event":
     "Prochain événement",
