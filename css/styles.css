@@ -9530,3 +9530,12 @@ html[data-theme="dark"] .cl-close__panel { background: #0C0F24; box-shadow: 0 0 
   .cl-tab { flex: none; }
 }
 .cl-tab small, .cl-cell__n, .cl-v__pick span, .cl-v__pick small { color: var(--text-2); }
+/* clients: the interview thumbnail is the home's reel (16:9, play, duration) */
+.cl-v__slide { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.cl-v__reel { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+.cl-v__watch { font: 600 14px/1.3 var(--body-font); color: var(--ink); }
+.cl-v__reel:hover .cl-v__watch { color: var(--amber-ink); }
+html[data-theme="dark"] .cl-v__reel:hover .cl-v__watch { color: #EAA93D; }
+.cl-v__reel:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 4px; border-radius: 12px; }
+@media (max-width: 720px) { .cl-v__slide { grid-template-columns: minmax(0, 1fr); } .cl-v__reel { grid-column: 1; grid-row: auto; } }
+@media (min-width: 721px) { .cl-v__slide { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); } }
