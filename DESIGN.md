@@ -188,10 +188,10 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
 
 - **Deux langues statiques :** `offers.html` et `offer-*.html` en anglais à la racine, leurs jumelles françaises sous `/fr/offres/…/`, avec `hreflang` et des titres et données structurées propres à chaque langue. `offers.html` reste le fichier source de la page Offres : son contenu est généré par `hub_main()` entre `<!-- offers-main … -->` et `<!-- /offers-main -->`, seul le rappel (`#book`) y est écrit à la main. Les exemples des heros des pages d'offre sont dans `tools/offer_demos.html`. Les autres générateurs copient la coque via `shell_source()`, sans son propre bloc SEO.
 - **La page Offres (environ 5 écrans sur ordinateur, 6 sur mobile) :**
-  1. le hero : la promesse à gauche (« Parler à un consultant », « Comparer en détail ↓ »), à droite l'aiguilleur « Quelle est votre situation ? » : quatre situations qui mènent chacune à sa carte (`#card-<offre>`, mise en avant par `:target`), et le diagnostic de 3 minutes ; puis les logos ;
-  2. **les quatre cartes**, façon page de tarifs : papier clair dans les deux thèmes, une couleur par offre (Social Insights ambre, Vigie 360 rouge, SLaaS bleu ardoise, Nox vert), nom, promesse, vignette de livrable, « Pour vous si », trois éléments reçus, modèle, « Grille sur demande », « Voir l'offre ». Sur grand écran, les lignes des cartes s'alignent (`subgrid`) ; sur mobile, elles défilent de côté. Aucune offre n'est mise en avant ;
-  3. le comparatif détaillé, replié (`<details>`, `#compare`) ;
-  4. ce qui ne change pas, quelle que soit l'offre (consultant dédié, langues, livrables à vous, lancement) ;
+  1. le hero : la promesse à gauche, à droite « Quelle est votre situation ? » dans le style de l'ancienne liste : la situation, une flèche, l'offre en pastille (au survol, la ligne glisse et la pastille se remplit). Un clic fait défiler jusqu'à l'offre dans le carrousel et la met en évidence ; puis les logos ;
+  2. **les quatre offres**, en cartes photo comme les quatre familles des cas d'usage (`.ucc`) : la couleur de l'offre en filet, son nom, sa promesse, « Pour vous si », trois éléments inclus et « Découvrir l'offre » ; elles défilent de côté sous 1100 px ;
+  3. le comparatif détaillé, replié (`#compare`) ;
+  4. ce qui ne change pas, en cartes à reflet (glare) : deux photos de l'équipe, deux grands chiffres (20+, S1), qui s'inclinent et accrochent la lumière sous le pointeur (immobiles si l'utilisateur réduit les animations) ;
   5. trois interviews clients (AXA, Dassault Systèmes, SNCF) ;
   6. l'aimant « Recevoir la grille tarifaire » (`#offre`) ;
   7. la FAQ ;

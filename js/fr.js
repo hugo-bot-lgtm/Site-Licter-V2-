@@ -1751,6 +1751,8 @@ window.LicterFR = {
     "Je paie une plateforme que personne n'ouvre.",
   "I want to follow my brand every day, with AI doing the sorting.":
     "Je veux suivre ma marque chaque jour, et que l'IA fasse le tri.",
+  "Nox":
+    "Nox",
   "I am not sure where my listening stands.":
     "Je ne sais pas où en est mon écoute.",
   "The 3-minute diagnostic":
@@ -1761,20 +1763,12 @@ window.LicterFR = {
     "Un consultant dédié",
   "Four layers of signal":
     "Quatre couches de signal",
-  "See the use case":
-    "Voir le cas d'usage",
   "For you if":
     "Pour vous si",
   "Recurring questions, nobody to run a tool":
     "Des questions récurrentes, personne pour faire tourner un outil",
-  "Studies on demand, priced to the scope":
-    "Études à la demande, tarif selon le périmètre",
-  "Price":
-    "Tarif",
-  "Price list on request":
-    "Grille sur demande",
-  "See the offer":
-    "Voir l'offre",
+  "Discover Social Insights":
+    "Découvrir Social Insights",
   "A tailored perimeter":
     "Un périmètre sur mesure",
   "Alerts read by an analyst":
@@ -1783,8 +1777,8 @@ window.LicterFR = {
     "Trois niveaux d'alerte",
   "An exposed brand or executives":
     "Une marque ou des dirigeants exposés",
-  "Monitoring subscription":
-    "Abonnement de veille",
+  "Discover Vigie 360":
+    "Découvrir Vigie 360",
   "An audit of your setup":
     "Un audit de votre configuration",
   "A rebuilt taxonomy":
@@ -1793,24 +1787,24 @@ window.LicterFR = {
     "Des tableaux de bord utilisés",
   "A platform paid for, little used":
     "Une plateforme payée, peu utilisée",
-  "Support on your own platform":
-    "Accompagnement sur votre plateforme",
+  "Discover Social Listening as a Service":
+    "Découvrir Social Listening as a Service",
   "Topics, not mentions":
     "Des sujets regroupés",
   "A brief every morning":
     "Un brief chaque matin",
   "The unusual, flagged":
     "L'inhabituel signalé",
-  "Nox":
-    "Nox",
   "AI-assisted monitoring.":
     "La veille assistée par l'IA.",
   "Following your brand day to day":
     "Suivre sa marque au quotidien",
-  "Subscription, tuned by our analysts":
-    "Abonnement, réglé par nos analystes",
+  "Discover Nox":
+    "Découvrir Nox",
   "who frames and reads for you":
     "qui cadre et lit pour vous",
+  "20+":
+    "20+",
   "20+ languages":
     "20+ langues",
   "monitored continuously":
@@ -1819,6 +1813,8 @@ window.LicterFR = {
     "Vos livrables",
   "belong to you":
     "vous appartiennent",
+  "W1":
+    "S1",
   "A quick start":
     "Un démarrage rapide",
   "framing in week one or two":
@@ -1865,6 +1861,18 @@ window.LicterFR = {
     "Vos équipes, formées par nous",
   "AI sorts, an analyst checks":
     "L'IA trie, un analyste vérifie",
+  "Studies on demand, priced to the scope":
+    "Études à la demande, tarif selon le périmètre",
+  "Monitoring subscription":
+    "Abonnement de veille",
+  "Support on your own platform":
+    "Accompagnement sur votre plateforme",
+  "Subscription, tuned by our analysts":
+    "Abonnement, réglé par nos analystes",
+  "Price":
+    "Tarif",
+  "Price list on request":
+    "Grille sur demande",
   "Get the price list":
     "Recevoir la grille",
   "Breadcrumb":
@@ -1883,6 +1891,10 @@ window.LicterFR = {
     "Quatre offres, une même équipe.",
   "Choose by what you want to receive. All of them are framed and read by our consultants.":
     "Choisissez selon ce que vous voulez recevoir. Toutes sont cadrées et lues par nos consultants.",
+  "Previous offer":
+    "Offre précédente",
+  "Next offer":
+    "Offre suivante",
   "Compare the four offers in detail":
     "Comparer les quatre offres en détail",
   "What stays the same, whichever offer":
@@ -2017,6 +2029,8 @@ window.LicterFR = {
     "Pas le bon choix si",
   "The detail of the offer, and a sample deliverable as it reaches you.":
     "Le détail de l'offre, et un exemple de livrable tel qu'il arrive chez vous.",
+  "See the use case":
+    "Voir le cas d'usage",
   "How it runs":
     "Comment ça se passe",
   "Indicative timings, adjusted with you at framing.":

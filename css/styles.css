@@ -9127,3 +9127,67 @@ html[data-theme="dark"] .tk-step.is-on .tk-step__dot { background: #EAA93D; colo
 .tk-logo-geo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .tk-step__dot i { font: 700 16px/1 var(--body-font); }
 @media (max-width: 720px) { .tk-sel__item, .tk-sel__item.is-on { flex: none; } }
+
+/* =========================================================================
+   Offers overview, third pass
+   ========================================================================= */
+/* the situations: as the old "which offer is for me" list */
+.of-guide__list { gap: 0; border-top: 1px solid var(--line); }
+.of-guide__list a { display: grid; grid-template-columns: minmax(0, 1.5fr) 28px minmax(0, 1fr); grid-template-rows: auto; gap: 12px; align-items: center; padding: 16px 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; transition: padding .25s ease; }
+.of-guide__list a:hover { padding-left: 10px; background: none; }
+.of-guide__s { font: 500 clamp(15px, 1.15vw, 17px)/1.35 var(--title-font); color: var(--ink); }
+.of-guide__list i { grid-row: auto; grid-column: auto; text-align: center; font-size: 18px; transition: transform .25s ease; }
+.of-guide__list a:hover i { transform: translateX(4px); }
+.of-guide__o { justify-self: start; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); font: 700 12.5px/1.2 var(--body-font); color: var(--ink); transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+.of-guide__list a:hover .of-guide__o, .of-guide__list a:focus-visible .of-guide__o { background: var(--navy); border-color: var(--navy); color: var(--cream); }
+html[data-theme="dark"] .of-guide__list a:hover .of-guide__o, html[data-theme="dark"] .of-guide__list a:focus-visible .of-guide__o { background: var(--cream); border-color: var(--cream); color: var(--navy); }
+.of-guide__diag a { border-style: none; border-bottom: 1px solid var(--line); }
+.of-guide__diag .of-guide__o { border-style: dashed; }
+@media (max-width: 720px) {
+  .of-guide__list a { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .of-guide__list i { display: none; }
+}
+
+/* the four offers: the four families' cards, with each offer's colour */
+.of-offers { padding: clamp(56px, 7vw, 100px) 0 clamp(28px, 3vw, 44px); }
+.of-ucc { width: calc((100% - 3 * var(--gap)) / 4); border-top: 0; }
+.of-ucc::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; background: var(--acc); z-index: 2; }
+.of-ucc__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 0 4px rgba(252, 246, 239, .18); }
+.of-ucc__promise { margin: 10px 0 0; font: 500 15px/1.45 var(--body-font); color: rgba(252, 246, 239, .86); text-shadow: 0 1px 12px rgba(13, 15, 33, .6); }
+.of-ucc__for { margin: 0 0 6px; font: 500 13px/1.45 var(--body-font); color: rgba(252, 246, 239, .8); text-shadow: 0 1px 10px rgba(13, 15, 33, .6); }
+.of-ucc__for b { display: block; font: 700 11px/1.3 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: var(--acc); }
+.of-ucc .ucc__cases i { color: var(--acc); }
+.of-ucc.is-picked { animation: of-pick 1.4s ease; }
+@keyframes of-pick { 0%, 100% { box-shadow: 0 0 0 0 transparent; } 30% { box-shadow: 0 0 0 5px var(--acc); } }
+@media (max-width: 1100px) { .of-ucc { width: calc((100% - 2 * var(--gap)) / 3); } }
+@media (max-width: 960px) { .of-ucc { width: 46%; } }
+@media (max-width: 720px) { .of-ucc { width: 86%; } }
+
+/* what never changes: glare cards */
+.of-common { background: transparent; }
+.of-glares { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 22px); margin: 0; padding: 0; list-style: none; perspective: 1000px; }
+.of-glare { --mx: 50%; --my: 50%; --rx: 0deg; --ry: 0deg; position: relative; display: flex; flex-direction: column; justify-content: flex-end; aspect-ratio: 17 / 21; overflow: hidden; border-radius: 34px; background: #0B0E22; color: #FCF6EF; box-shadow: 0 0 0 1px rgba(252, 246, 239, .1), 0 40px 70px -46px rgba(0, 0, 0, .8); transform: rotateX(var(--rx)) rotateY(var(--ry)); transition: transform .5s cubic-bezier(.16, 1, .3, 1); isolation: isolate; }
+.of-glare.is-lit { transition: transform .08s linear; }
+.of-glare > img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; filter: brightness(.82) saturate(.95); transition: transform .8s cubic-bezier(.16, 1, .3, 1); }
+.of-glare:hover > img { transform: scale(1.05); }
+.of-glare--img::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 40%, rgba(11, 14, 34, .92)); }
+.of-glare__big { position: absolute; left: 0; right: 0; top: 18%; z-index: -1; text-align: center; font: 800 clamp(64px, 7vw, 110px)/1 var(--title-font); letter-spacing: -3px; color: transparent; -webkit-text-stroke: 2px #EAA93D; }
+.of-glare--big { background: radial-gradient(120% 90% at 50% 0%, #252B55, #0B0E22 70%); }
+.of-glare__shine { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0; mix-blend-mode: soft-light; transition: opacity .4s ease;
+  background: radial-gradient(farthest-corner circle at var(--mx) var(--my), rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, .45) 12%, rgba(0, 0, 0, .35) 90%),
+              linear-gradient(115deg, transparent 20%, rgba(234, 169, 61, .55) 40%, rgba(129, 160, 255, .5) 55%, rgba(255, 130, 200, .45) 68%, transparent 85%);
+  background-size: 100% 100%, 220% 220%; background-position: center, var(--mx) var(--my); }
+.of-glare.is-lit .of-glare__shine { opacity: .85; }
+.of-glare__t { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 6px; padding: clamp(20px, 2vw, 28px); }
+.of-glare__t b { font: 700 clamp(19px, 1.6vw, 23px)/1.2 var(--title-font); }
+.of-glare__t span { font: 500 14.5px/1.45 var(--body-font); color: rgba(252, 246, 239, .82); }
+@media (max-width: 960px) { .of-glares { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .of-glare { aspect-ratio: 4 / 3; border-radius: 26px; } .of-glare__big { top: 12%; font-size: 72px; } }
+@media (prefers-reduced-motion: reduce) { .of-glare, .of-glare > img { transition: none; transform: none; } }
+@media (min-width: 1101px) { .of-offers .ucc__nav { display: none; } }
+/* the glare, visible on the dark cards too */
+.of-glare__shine { mix-blend-mode: screen;
+  background: radial-gradient(farthest-corner circle at var(--mx) var(--my), rgba(255, 255, 255, .55) 0%, rgba(255, 255, 255, .12) 28%, transparent 60%),
+              linear-gradient(115deg, transparent 25%, rgba(234, 169, 61, .35) 42%, rgba(129, 160, 255, .3) 55%, rgba(255, 130, 200, .28) 66%, transparent 82%);
+  background-size: 100% 100%, 220% 220%; background-position: center, var(--mx) var(--my); }
+.of-glare.is-lit .of-glare__shine { opacity: 1; }

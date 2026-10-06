@@ -836,28 +836,41 @@ HUB = {
     "proof_t": ("Ils en parlent", "They talk about it"),
 }
 CARD_ACCENT = {"social-insights": "si", "vigie": "vig", "slaas": "sla", "nox": "nox"}
+# the overview's photos: the Licter team at work (assets/img/team)
+HUB_PHOTO = {"social-insights": "working-session-800", "vigie": "meeting-portrait-800", "slaas": "consultant-dashboard-800", "nox": "two-colleagues-800"}
+# what never changes: each glare card shows a photo or a big figure
+HUB_GLARE = [("img", "consultant-portrait-800"), ("big", ("20+", "20+")), ("img", "client-conversation-800"), ("big", ("S1", "W1"))]
+
+
+def fmt_see(o):
+    return ("Découvrir %s" % o["name"][FR], "Discover %s" % o["name"][EN])
 
 
 def hub_main():
-    guide = "".join('<li><a href="#card-%s"><span>%s</span><i aria-hidden="true">→</i></a></li>' % (k, t(txt)) for k, txt in HUB["guide"])
-    guide += '<li class="of-guide__diag"><a href="index.html#diagnostic"><span>%s</span><b>%s</b><i aria-hidden="true">→</i></a></li>' % (
+    # "what is your situation": the situation, an arrow, the offer it leads to (the animation of the old list)
+    guide = "".join('<li><a href="#card-%s" data-card="%s"><span class="of-guide__s">%s</span><i aria-hidden="true">→</i><span class="of-guide__o">%s</span></a></li>' % (
+        k, k, t(txt), t(next(o["name"] for o in OFFERS if o["key"] == k))) for k, txt in HUB["guide"])
+    guide += '<li class="of-guide__diag"><a href="index.html#diagnostic"><span class="of-guide__s">%s</span><i aria-hidden="true">→</i><span class="of-guide__o">%s</span></a></li>' % (
         t(HUB["guide_diag"]), t(S["diag3"]))
+    # the four offers, as the four families of the use-cases hub
     cards = ""
     for i, o in enumerate(OFFERS):
-        gets = "".join("<li>%s</li>" % t(x) for x, _ in o["incl"][:3])
-        cards += ('<li class="of-card of-card--%s" id="card-%s">'
-                  '<div class="of-card__top"><span class="of-card__n">0%d</span><h3 class="of-card__name"><a href="%s">%s</a></h3>'
-                  '<p class="of-card__promise">%s</p></div>'
-                  '<a class="of-card__thumb" href="%s" data-en="%s" aria-label="%s"><!--dlv:%s--><span class="of-card__case">%s <i aria-hidden="true">→</i></span></a>'
-                  '<p class="of-card__k">%s</p><p class="of-card__for">%s</p>'
-                  '<p class="of-card__k">%s</p><ul class="of-card__get">%s</ul>'
-                  '<dl class="of-card__terms"><dt>%s</dt><dd>%s</dd><dt>%s</dt><dd><a href="#offre">%s</a></dd></dl>'
-                  '<a class="btn btn--primary of-card__go" href="%s">%s <span aria-hidden="true">→</span></a></li>') % (
-            CARD_ACCENT[o["key"]], o["key"], o["n"], o["file"], t(o["name"]), t(o["short"]),
-            U.case_path(case(o), FR), U.case_path(case(o), EN), a(S["dlv_link"]), MORE[o["key"]]["dlv"], t(S["dlv_link"]),
-            t(HUB["for"]), t(COMPARE_ROWS[1][1][i]), t(HUB["get"]), gets,
-            t(HUB["model"]), t(COMPARE_ROWS[5][1][i]), t(HUB["price"]), t(S["price_cell"]), o["file"], t(HUB["see"]))
-    common = "".join("<li><b>%s</b><span>%s</span></li>" % (t(x), t(y)) for x, y in HUB["common"])
+        gets = "".join('<li><a href="%s#included">%s <i aria-hidden="true">→</i></a></li>' % (o["file"], t(x)) for x, _ in o["incl"][:3])
+        cards += ('<li class="ucc__card of-ucc of-acc--%s" id="card-%s">'
+                  '<img src="/assets/img/team/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" />'
+                  '<div class="ucc__top"><p class="ucc__k"><span class="of-ucc__dot" aria-hidden="true"></span><span>0%d · <span>%s</span></span></p>'
+                  '<h3 class="ucc__t"><a href="%s">%s</a></h3><p class="of-ucc__promise">%s</p></div>'
+                  '<div class="ucc__foot"><p class="of-ucc__for"><b>%s</b> %s</p><ul class="ucc__cases">%s</ul>'
+                  '<a class="ucc__all" href="%s">%s <span aria-hidden="true">→</span></a></div></li>') % (
+            CARD_ACCENT[o["key"]], o["key"], HUB_PHOTO[o["key"]], o["n"], t(("Offre", "Offer")), o["file"], t(o["name"]), t(o["short"]),
+            t(HUB["for"]), t(COMPARE_ROWS[1][1][i]), gets, o["file"], t(fmt_see(o)))
+    # what never changes: glare cards
+    gl = ""
+    for k, ((x, y), art) in enumerate(zip(HUB["common"], HUB_GLARE)):
+        kind, val = art
+        visual = ('<img src="/assets/img/team/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" />' % val) if kind == "img" else '<span class="of-glare__big" aria-hidden="true">%s</span>' % t(val)
+        gl += ('<li class="of-glare of-glare--%s" data-glare>%s<span class="of-glare__shine" aria-hidden="true"></span>'
+               '<div class="of-glare__t"><b>%s</b><span>%s</span></div></li>') % (kind, visual, t(x), t(y))
     proof = "".join(reel(k) for k in ("axa", "dassault", "sncf"))
     head = "".join('<th scope="col"><a href="%s">%s</a></th>' % (o["file"], t(o["name"])) for o in OFFERS)
     rows = "".join('<tr><th scope="row">%s</th>%s</tr>' % (t(k), "".join("<td>%s</td>" % t(v) for v in vals)) for k, vals in COMPARE_ROWS)
@@ -886,11 +899,19 @@ def hub_main():
 {logos()}
   </section>
 
-  <section class="of-cards" id="offers">
+  <section class="ucp ucc of-offers" id="offers" aria-labelledby="of-offers-t">
+    <div class="shell ucc__head">
+      <div>
+        <h2 class="xs__title" id="of-offers-t">{t(HUB["cards_t"])}</h2>
+        <p class="xs__lead">{t(HUB["cards_lead"])}</p>
+      </div>
+      <div class="ucc__nav">
+        <button class="ucc__btn" type="button" data-dir="-1" aria-label="{a(("Offre précédente", "Previous offer"))}" disabled><span aria-hidden="true">←</span></button>
+        <button class="ucc__btn" type="button" data-dir="1" aria-label="{a(("Offre suivante", "Next offer"))}"><span aria-hidden="true">→</span></button>
+      </div>
+    </div>
     <div class="shell">
-      <div class="xs__head"><h2 class="xs__title">{t(HUB["cards_t"])}</h2><p class="xs__lead">{t(HUB["cards_lead"])}</p></div>
-      <ol class="of-cards__list">{cards}</ol>
-      {dots(len(OFFERS))}
+    <ol class="ucc__track">{cards}</ol>
     </div>
   </section>
 
@@ -905,8 +926,8 @@ def hub_main():
 
   <section class="of-common">
     <div class="shell">
-      <h2 class="of-common__t">{t(HUB["common_t"])}</h2>
-      <ul class="of-common__list">{common}</ul>
+      <div class="xs__head"><h2 class="xs__title">{t(HUB["common_t"])}</h2></div>
+      <ul class="of-glares">{gl}</ul>
     </div>
   </section>
 

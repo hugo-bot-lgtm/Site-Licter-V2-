@@ -2217,3 +2217,34 @@ window.LicterUC = (function () {
     if ("IntersectionObserver" in window) new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { show(0); o.disconnect(); } }, { threshold: .4 }).observe(root);
   });
 })();
+
+/* =========================================================================
+   Offers overview: a situation opens its offer in the carousel, and the
+   cards of "what never changes" catch the light under the pointer.
+   ========================================================================= */
+(function () {
+  "use strict";
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".of-guide a[data-card]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var card = document.getElementById("card-" + a.getAttribute("data-card"));
+      if (!card) return;
+      e.preventDefault();
+      var track = card.parentNode;
+      card.closest("section").scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" });
+      track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: still ? "auto" : "smooth" });
+      card.classList.remove("is-picked"); void card.offsetWidth; card.classList.add("is-picked");
+      if (history.replaceState) history.replaceState(null, "", "#card-" + a.getAttribute("data-card"));
+    });
+  });
+  if (still) return;
+  document.querySelectorAll("[data-glare]").forEach(function (c) {
+    c.addEventListener("pointermove", function (e) {
+      var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      c.style.setProperty("--mx", x * 100 + "%"); c.style.setProperty("--my", y * 100 + "%");
+      c.style.setProperty("--rx", (0.5 - y) * 14 + "deg"); c.style.setProperty("--ry", (x - 0.5) * 14 + "deg");
+      c.classList.add("is-lit");
+    });
+    c.addEventListener("pointerleave", function () { c.classList.remove("is-lit"); c.style.setProperty("--rx", "0deg"); c.style.setProperty("--ry", "0deg"); });
+  });
+})();
