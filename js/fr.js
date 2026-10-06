@@ -1,6 +1,15 @@
 /* Dictionnaire EN → FR. Toute chaîne absente reste en anglais. */
 window.LicterFR = {
 
+  /* positioning: a consultancy, found as an agency (October 2026) */
+  "Social listening consultancy":
+    "Cabinet de conseil en social listening",
+  "Six questions we get every week.":
+    "Six questions qu'on nous pose chaque semaine.",
+  "Are you a social listening agency?":
+    "Êtes-vous une agence de social listening ?",
+  "More than an agency: a consultancy. Our consultants frame the question, read the data across four layers and tell you what to decide. You get a recommendation, not a dashboard to run.":
+    "Plus qu'une agence : un cabinet de conseil. Nos consultants cadrent la question, lisent les données sur quatre couches et vous disent quoi décider. Vous recevez une recommandation, pas un tableau de bord à faire tourner.",
   /* pricing, without the fixed fee, unlimited and no-commitment claims (October 2026) */
   "The price depends on the offer and the perimeter: markets, languages, monitoring. Thirty minutes is usually enough to give you a number.":
     "Le tarif dépend de l'offre et du périmètre : marchés, langues, veille. Trente minutes suffisent généralement pour vous donner un chiffre.",
@@ -245,7 +254,6 @@ window.LicterFR = {
   "THE TEAM": "L'ÉQUIPE",
   "The people who read it for you.": "Celles et ceux qui la lisent pour vous.",
   "Analysts, consultants and client leads, in one office. The person who frames your question is the one who reads the conversation and presents what it means.": "Analystes, consultants et responsables clients, dans un même bureau. La personne qui cadre votre question est celle qui lit la conversation et vous présente ce qu'elle signifie.",
-  "Social data intelligence consultancy": "Cabinet de conseil en social data intelligence",
   "See the site in French": "Voir le site en français",
   "A Licter consultant in an armchair, a laptop on his knees and a dashboard open on the screen in front of him": "Un consultant Licter dans un fauteuil, un ordinateur sur les genoux et un tableau de bord ouvert à l'écran devant lui",
   "A Licter consultant listening during a scoping meeting": "Un membre de l'équipe Licter à l'écoute pendant une réunion de cadrage",
@@ -524,7 +532,6 @@ window.LicterFR = {
   "Discover the use cases": "Découvrir les cas d'usage",
   "Four steps, no black box.": "Quatre étapes, aucune boîte noire.",
   "BEFORE YOU ASK": "AVANT DE NOUS ÉCRIRE",
-  "Five questions we get every week.": "Cinq questions qu'on nous pose chaque semaine.",
   "THREE WAYS TO START": "TROIS FAÇONS DE COMMENCER",
   "Pick the one that matches where you are.": "Choisissez celle qui correspond à votre situation.",
   "Just exploring": "Vous explorez",

@@ -26,8 +26,8 @@ FR, EN = 0, 1
 SEO = {
     "title": ("Cabinet de conseil en social listening et data | Licter",
               "Social listening & data intelligence consultancy | Licter"),
-    "desc": ("Licter transforme ce que les gens publient, recherchent et demandent à l'IA en décisions : impact des campagnes, réputation, audiences, tendances.",
-             "Licter turns what people post, search and ask AI into decisions: campaign impact, brand reputation, audiences and trends, read by consultants."),
+    "desc": ("Cabinet de social listening, plus qu'une agence : Licter transforme ce que les gens publient, recherchent et demandent à l'IA en décisions, lues par des consultants.",
+             "Social listening consultancy, more than an agency: Licter turns what people post, search and ask AI into decisions on campaigns, reputation, audiences and trends."),
     "og_alt": ("Licter, cabinet de conseil en social data intelligence", "Licter, the social data intelligence consultancy"),
 }
 PATH = ("/fr/", "/")
