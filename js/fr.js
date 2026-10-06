@@ -168,6 +168,26 @@ window.LicterFR = {
     "Voir l'entretien · ",
   "Watch the interview":
     "Voir l'entretien",
+  "Luxury, beauty & fashion":
+    "Luxe, beauté & mode",
+  "Consumer goods & health":
+    "Grande consommation & santé",
+  "Retail, mobility & tech":
+    "Distribution, mobilité & tech",
+  "Finance & services":
+    "Finance & services",
+  "Institutions, culture & media":
+    "Institutions, culture & médias",
+  "+ 30 others":
+    "+ 30 autres",
+  "Luxury, consumer goods, retail, finance, institutions.":
+    "Luxe, grande consommation, distribution, finance, institutions.",
+  "A shared panel serves very different mandates. That is why the list runs from luxury and FMCG to mobility, finance, public institutions and broadcasters.":
+    "Un même panel sert des missions très différentes. C'est pourquoi la liste va du luxe et de la grande consommation à la mobilité, la finance, les institutions publiques et les médias.",
+  "50+ organisations read their market with Licter: Chanel, LVMH, L'Oréal, Danone, Unilever, Renault, Orange, Société Générale, UNESCO and more.":
+    "50+ organisations lisent leur marché avec Licter : Chanel, LVMH, L'Oréal, Danone, Unilever, Renault, Orange, Société Générale, l'UNESCO et d'autres.",
+  "Your organisation?": "Votre organisation ?",
+  "Add your name": "Ajoutez votre nom",
   /* clients, studio page (October 2026) */
   "50+ teams":
     "50+ équipes",

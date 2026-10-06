@@ -9539,3 +9539,29 @@ html[data-theme="dark"] .cl-v__reel:hover .cl-v__watch { color: #EAA93D; }
 .cl-v__reel:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 4px; border-radius: 12px; }
 @media (max-width: 720px) { .cl-v__slide { grid-template-columns: minmax(0, 1fr); } .cl-v__reel { grid-column: 1; grid-row: auto; } }
 @media (min-width: 721px) { .cl-v__slide { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); } }
+/* clients: the quote and its video sit in the middle of the speakers' list */
+@media (min-width: 961px) {
+  .cl-v { align-items: center; }
+  .cl-v__slide { align-items: center; }
+  .cl-v__slide blockquote, .cl-v__slide figcaption { align-self: auto; }
+  .cl-v__slide { grid-template-rows: auto auto; align-content: center; }
+  .cl-v__reel { align-self: center; }
+}
+@media (min-width: 961px) {
+  .cl-v { grid-template-columns: minmax(0, .62fr) minmax(0, 1.38fr); }
+  .cl-v__slide { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .cl-v__slide blockquote { font-size: clamp(22px, 2vw, 32px); }
+}
+/* logos drawn on their own solid block (LEGO, Orange, Bandai…): in dark mode they
+   cannot be turned white, they go grey and keep their block */
+html[data-theme="dark"] .wall-logo.is-box, html[data-theme="dark"] .client-logo.is-box img, html[data-theme="dark"] .cl-cell.is-box img { filter: grayscale(1); opacity: .7; }
+/* the index: logos capped in pixels so a tall mark never stretches its row */
+.cl-cell img { max-width: 62%; max-height: 64px; }
+.cl-cell--you a { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; color: var(--ink); text-decoration: none; background: rgba(var(--amber-rgb), .08); transition: background-color .3s ease; }
+.cl-cell--you a:hover { background: rgba(var(--amber-rgb), .2); }
+.cl-cell--you b { font: 600 clamp(17px, 1.4vw, 21px)/1.2 var(--title-font); }
+.cl-cell__cta { font: 700 13px/1.2 var(--body-font); color: var(--amber-ink); }
+html[data-theme="dark"] .cl-cell__cta { color: #EAA93D; }
+.cl-cell--you a:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: -3px; }
+@media (max-width: 720px) { .cl-cell img { max-height: 48px; } }
+@media (max-width: 720px) { .cl-cell__s { display: none; } .cl-cell img { max-height: 44px; max-width: 70%; } }

@@ -403,7 +403,7 @@ La taille des grands titres suit la largeur de leur colonne (`cqi`) pour tenir e
 Une direction différente de « Pourquoi Licter » : le registre d'un rapport annuel. Styles `.cl-*`, script « Clients » dans `js/ui.js`.
 1. **Le hero** : la promesse en titre posé, à droite une planche « Index des clients » (9 logos en grille au filet, ombre ambre décalée) ;
 2. **un registre de chiffres** entre deux filets (organisations, projets, langues, secteurs) ;
-3. **l'index des 16 clients**, numérotés, en grille au filet, logos en gris qui prennent leur couleur au survol, avec un filtre par secteur (Beauté & mode, Grande consommation & distribution, Services & finance, Institutions & médias) ;
+3. **l'index des 39 clients** (liste fournie par Licter, chaque client compté une fois), numérotés, en grille au filet, logos en gris qui prennent leur couleur au survol, avec un filtre par secteur (Luxe, beauté & mode · Grande consommation & santé · Distribution, mobilité & tech · Finance & services · Institutions, culture & médias) ; une 40e case invite à prendre rendez-vous. La même liste alimente le bandeau de logos de toutes les pages (`CLIENTS` dans `js/ui.js`) ; les logos posés sur un aplat (LEGO, Orange, Bandai, Fleury Michon, Norauto) portent `box: true` et restent gris en mode sombre au lieu de virer au blanc.
 4. **les entretiens vidéo** : la liste des intervenants à gauche, une seule citation à la une avec sa vidéo ;
 5. **les quatre questions** en grille 2 × 2, chacune avec une photo de l'équipe en noir et blanc qui prend sa couleur au survol ;
 6. **l'appel final** dans un panneau navy filet ambre.

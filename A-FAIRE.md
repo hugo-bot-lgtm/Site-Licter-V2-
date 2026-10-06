@@ -140,6 +140,12 @@ Les pages offres sont prêtes, mais quatre informations ne peuvent pas être inv
 - [ ] **Les 4 pages assistants** (Claude, Gemini, Perplexity, Grok) : faits limités à l'éditeur, au lancement, à la recherche web et à l'accès ; à relire.
 - [ ] **Les logos** : les glyphes des réseaux viennent de Simple Icons (CC0), mais les chartes de marque encadrent leur usage. Les logos des plateformes (`assets/img/tools/`) manquent toujours : le menu affiche des monogrammes.
 
+## 6. Clients : à valider
+
+- [ ] **L'accord de chaque client** pour afficher son logo (39 logos sur la page Clients et dans le bandeau de toutes les pages). Sources dans `assets/img/clients/SOURCES.md`.
+- [ ] **Les clients écartés** de la liste publique : Image 7, Advancy Notes, Student Pop, EDC, CentraleSupélec, DGSE (Albert School), CWF, PCS, VeridisQuo, Avant-Garde Fondation, FRANCE & META, Junior City, les partis (PS, Renaissance), et Netflix et l'Ambassade de l'Inde (clients de Publicis Consultants). À réintégrer si vous le souhaitez.
+- [ ] **Le classement par secteur** et le logo d'Asmodee (icône du site, faute de logo complet).
+
 ## Le jour de la bascule sur le vrai domaine
 
 Le site pointe déjà vers `https://www.licter.com` pour les URL canoniques, les `hreflang` et le sitemap (`SITE` dans `tools/uc_content.py`). Il faudra vérifier ces liens une fois le domaine branché, et utiliser ce même domaine dans Plausible.

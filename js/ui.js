@@ -138,23 +138,47 @@ window.LicterUC = (function () {
      sized to a common visual area so no brand shouts over the others. Shown in
      grey; colour returns on hover. Licter must hold each client's agreement to
      display its logo. Sources: assets/img/clients/SOURCES.md */
+  /* every client, once (list validated by Licter, October 2026) */
   var CLIENTS = [
-    { name: "HP",                  src: "/assets/img/clients/hp.svg", w:  46, h: 46 },
-    { name: "DECATHLON",           src: "/assets/img/clients/decathlon.svg", w: 119, h: 19 },
-    { name: "UNESCO",              src: "/assets/img/clients/unesco.svg", w:  55, h: 42 },
-    { name: "L'ORÉAL",             src: "/assets/img/clients/loreal.svg", w: 110, h: 21 },
-    { name: "DANONE",              src: "/assets/img/clients/danone.png", w:  41, h: 46 },
-    { name: "SOCIÉTÉ GÉNÉRALE",    src: "/assets/img/clients/societegenerale.svg", w:  98, h: 23 },
-    { name: "GALERIES LAFAYETTE",  src: "/assets/img/clients/galerieslafayette.svg", w:  66, h: 35 },
-    { name: "CELIO",               src: "/assets/img/clients/celio.svg", w:  84, h: 27 },
-    { name: "LA POSTE",            src: "/assets/img/clients/laposte.svg", w: 120, h: 19 },
-    { name: "SISLEY",              src: "/assets/img/clients/sisley.svg", w: 168, h: 12 },
-    { name: "BOUYGUES TELECOM",    src: "/assets/img/clients/bouygues.svg", w:  85, h: 27 },
-    { name: "STUDI",               src: "/assets/img/clients/studi.svg", w:  80, h: 29 },
-    { name: "TV5 MONDE",           src: "/assets/img/clients/tv5monde.svg", w:  83, h: 28 },
-    { name: "PMU",                 src: "/assets/img/clients/pmu.svg", w:  77, h: 30 },
-    { name: "LA MARINE RECRUTE",   src: "/assets/img/clients/marine.svg", w:  31, h: 46, label: "Marine nationale" },
-    { name: "BIOPARC",             src: "/assets/img/clients/bioparc.png", w:  64, h: 36, label: "Bioparc de Doué La Fontaine" }
+    { name: "CHANEL", src: "/assets/img/clients/chanel.png", w: 121, h: 19, label: "Chanel" },
+    { name: "LVMH", src: "/assets/img/clients/lvmh.png", w: 120, h: 19, label: "LVMH" },
+    { name: "KERING", src: "/assets/img/clients/kering.png", w:  83, h: 28, label: "Kering" },
+    { name: "L'ORÉAL", src: "/assets/img/clients/loreal.svg", w: 110, h: 21, label: "L'Oréal" },
+    { name: "COTY", src: "/assets/img/clients/coty.png", w:  79, h: 29, label: "Coty" },
+    { name: "INTERPARFUMS", src: "/assets/img/clients/interparfums.png", w: 130, h: 15, label: "Interparfums" },
+    { name: "SISLEY", src: "/assets/img/clients/sisley.svg", w: 168, h: 12, label: "Sisley" },
+    { name: "LACOSTE", src: "/assets/img/clients/lacoste.png", w: 124, h: 19, label: "Lacoste" },
+    { name: "CELIO", src: "/assets/img/clients/celio.svg", w:  84, h: 27, label: "Celio" },
+    { name: "GALERIES LAFAYETTE", src: "/assets/img/clients/galerieslafayette.svg", w:  66, h: 35, label: "Galeries Lafayette" },
+    { name: "DANONE", src: "/assets/img/clients/danone.png", w:  41, h: 46, label: "Danone" },
+    { name: "UNILEVER", src: "/assets/img/clients/unilever.png", w:  42, h: 46, label: "Unilever" },
+    { name: "FLEURY MICHON", src: "/assets/img/clients/fleurymichon.png", w:  92, h: 25, label: "Fleury Michon", box: true },
+    { name: "OPELLA", src: "/assets/img/clients/opella.png", w:  91, h: 25, label: "Opella" },
+    { name: "MAYOLY", src: "/assets/img/clients/mayoly.png", w: 106, h: 22, label: "Mayoly" },
+    { name: "LEGO", src: "/assets/img/clients/lego.png", w:  46, h: 46, label: "LEGO", box: true },
+    { name: "BANDAI", src: "/assets/img/clients/bandai.png", w:  47, h: 46, label: "Bandai", box: true },
+    { name: "ASMODEE", src: "/assets/img/clients/asmodee.png", w:  44, h: 46, label: "Asmodee" },
+    { name: "DECATHLON", src: "/assets/img/clients/decathlon.svg", w: 119, h: 19, label: "Decathlon" },
+    { name: "NORAUTO", src: "/assets/img/clients/norauto.png", w: 117, h: 20, label: "Norauto", box: true },
+    { name: "RENAULT GROUP", src: "/assets/img/clients/renault.png", w:  71, h: 32, label: "Renault Group" },
+    { name: "HP", src: "/assets/img/clients/hp.svg", w:  46, h: 46, label: "HP" },
+    { name: "DASSAULT SYSTÈMES", src: "/assets/img/clients/dassault.png", w:  87, h: 26, label: "Dassault Systèmes" },
+    { name: "LEBONCOIN", src: "/assets/img/clients/leboncoin.png", w: 114, h: 20, label: "leboncoin" },
+    { name: "DELIVEROO", src: "/assets/img/clients/deliveroo.png", w:  93, h: 25, label: "Deliveroo" },
+    { name: "ORANGE", src: "/assets/img/clients/orange.png", w:  46, h: 46, label: "Orange", box: true },
+    { name: "BOUYGUES TELECOM", src: "/assets/img/clients/bouygues.svg", w:  85, h: 27, label: "Bouygues Telecom" },
+    { name: "SOCIÉTÉ GÉNÉRALE", src: "/assets/img/clients/societegenerale.svg", w:  98, h: 23, label: "Société Générale" },
+    { name: "AG2R LA MONDIALE", src: "/assets/img/clients/ag2r.png", w:  79, h: 29, label: "AG2R La Mondiale" },
+    { name: "IBANFIRST", src: "/assets/img/clients/ibanfirst.png", w:  88, h: 26, label: "iBanFirst" },
+    { name: "PMU", src: "/assets/img/clients/pmu.svg", w:  77, h: 30, label: "PMU" },
+    { name: "LA POSTE", src: "/assets/img/clients/laposte.svg", w: 120, h: 19, label: "La Poste" },
+    { name: "STUDI", src: "/assets/img/clients/studi.svg", w:  80, h: 29, label: "Studi" },
+    { name: "PUBLICIS GROUPE", src: "/assets/img/clients/publicis.png", w:  49, h: 46, label: "Publicis Groupe" },
+    { name: "UNESCO", src: "/assets/img/clients/unesco.svg", w:  55, h: 42, label: "UNESCO" },
+    { name: "MARINE NATIONALE", src: "/assets/img/clients/marine.svg", w:  31, h: 46, label: "Marine nationale" },
+    { name: "FRANCE TÉLÉVISIONS", src: "/assets/img/clients/francetv.png", w: 115, h: 20, label: "France Télévisions" },
+    { name: "TV5 MONDE", src: "/assets/img/clients/tv5monde.svg", w:  83, h: 28, label: "TV5 Monde" },
+    { name: "BIOPARC DE DOUÉ LA FONTAINE", src: "/assets/img/clients/bioparc.png", w:  64, h: 36, label: "Bioparc de Doué La Fontaine" }
   ];
   var GAP = 44;
   /* px per second the logo band travels. It ran at 126, which reads as a
@@ -183,7 +207,7 @@ window.LicterUC = (function () {
     var html = "";
     for (var r = 0; r < repeats; r++) {
       CLIENTS.forEach(function (c) {
-        html += '<span class="client-logo" style="width:' + Math.round(c.w * k) +
+        html += '<span class="client-logo' + (c.box ? ' is-box' : '') + '" style="width:' + Math.round(c.w * k) +
                 "px;height:" + Math.round(c.h * k) +
                 'px"' + (r === 0 ? "" : ' aria-hidden="true"') + ">" + markFor(c, r > 0) + "</span>";
       });
@@ -210,7 +234,7 @@ window.LicterUC = (function () {
     wall.innerHTML = CLIENTS.map(function (c) {
       /* one height for the grid, scaled from the marquee size */
       var k = 1.15;
-      return '<li><img class="wall-logo" src="' + c.src + '" alt="' + (c.label || c.name) +
+      return '<li><img class="wall-logo' + (c.box ? ' is-box' : '') + '" src="' + c.src + '" alt="' + (c.label || c.name) +
              '" width="' + Math.round(c.w * k) + '" height="' + Math.round(c.h * k) + '" loading="lazy" decoding="async" /></li>';
     }).join("");
     wall.classList.add("is-built");
