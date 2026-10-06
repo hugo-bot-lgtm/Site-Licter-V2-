@@ -235,7 +235,7 @@ TOOLS = [
      "uses": ["reputation", "brand-risk", "messaging"],
      "limits": [(("Des réponses variables", "Answers that vary"), ("La même question ne donne pas toujours la même réponse : nous posons chaque question plusieurs fois et comparons.", "The same question does not always get the same answer: we ask each question several times and compare.")),
                 (("Ce n'est pas de l'écoute", "It is not listening"), ("ChatGPT n'a pas accès à toute la conversation des réseaux : il complète l'écoute sociale, il ne la remplace pas.", "ChatGPT has no access to the whole social conversation: it completes social listening, it does not replace it."))],
-     "pair": ["geo", "semrush", "talkwalker"],
+     "pair": ["geo", "claude", "gemini"],
      "faq": [(("Pourquoi suivre ce que répond une IA ?", "Why track what an AI answers?"), ("Parce qu'une partie de vos clients s'y informe avant d'acheter, et que la réponse ne vient pas de vous.", "Because part of your customers get their information there before buying, and the answer does not come from you.")),
              (("Pouvez-vous changer ce que l'IA répond ?", "Can you change what the AI answers?"), ("Pas directement : nous identifions les contenus et les sources qui nourrissent la réponse, c'est là qu'on agit (voir GEO).", "Not directly: we identify the content and sources that feed the answer, which is where you act (see GEO).")),
              (("Transmettez-vous nos données à l'IA ?", "Do you send our data to the AI?"), ("Non. Nous posons des questions publiques ; aucune donnée client n'est transmise.", "No. We ask public questions; no client data is sent."))]},
@@ -260,7 +260,7 @@ TOOLS = [
      "uses": ["reputation", "messaging", "market-opportunities"],
      "limits": [(("Des réponses qui bougent", "Answers that move"), ("Les moteurs changent souvent : c'est pourquoi nous suivons le même panel de questions dans le temps.", "Engines change often: that is why we follow the same question panel over time.")),
                 (("Pas de garantie", "No guarantee"), ("Personne ne contrôle la réponse d'une IA ; on agit sur les sources, et on mesure l'effet.", "Nobody controls an AI's answer; you act on the sources, and measure the effect."))],
-     "pair": ["chatgpt", "semrush", "google-news"],
+     "pair": ["chatgpt", "perplexity", "gemini"],
      "faq": [(("Quelle différence entre GEO et SEO ?", "How is GEO different from SEO?"), ("Le SEO vise une place dans une liste de liens ; le GEO vise une mention dans une réponse rédigée par une IA, souvent sans clic. Les leviers se recoupent en partie.", "SEO aims for a place in a list of links; GEO aims for a mention in an answer written by an AI, often with no click. The levers overlap in part.")),
              (("Produisez-vous les contenus ?", "Do you produce the content?"), ("Non : nous mesurons, expliquons et recommandons ; la production reste à vos équipes ou à vos agences.", "No: we measure, explain and recommend; production stays with your teams or agencies."))]},
 
@@ -335,4 +335,87 @@ TOOLS = [
      "pair": ["soprism", "youscan", "meta-ads"],
      "faq": [(("Social Blade suffit-il pour choisir un créateur ?", "Is Social Blade enough to pick a creator?"), ("Non : il dit comment un compte grandit, pas qui le suit. Nous le croisons avec l'analyse de l'audience réelle.", "No: it says how an account grows, not who follows it. We cross it with an analysis of the real audience.")),
              (("Les chiffres sont-ils exacts ?", "Are the figures exact?"), ("Ce sont des données publiques relevées par l'outil : elles servent à repérer des tendances et des anomalies, pas à facturer.", "They are public data collected by the tool: they serve to spot trends and anomalies, not to invoice."))]},
+]
+
+
+# ------------------------------------------------------------------ AI assistants
+# with ChatGPT above: what each one answers about a brand is audited the same
+# way (GEO). Facts kept to the publisher, the launch, web search and access;
+# no model version is named.
+def _assistant(slug, name, letter, tag, lead, what, facts, features, limit2, pair, faq):
+    return {
+        "slug": slug, "name": name, "letter": letter, "tag": tag, "lead": lead, "what": what, "facts": facts, "features": features,
+        "deliver": [(("Audit des réponses", "Answer audit"), [("Les questions clés de votre catégorie", "Your category's key questions"), ("Ce que répond l'assistant", "What the assistant answers"), ("Votre place face aux concurrents", "Your place against competitors"), ("Les erreurs à corriger", "Errors to correct")]),
+                    (("Suivi régulier", "Regular tracking"), [("Les mêmes questions chaque mois", "The same questions every month"), ("L'évolution des réponses", "How answers change"), ("Les sources citées", "The sources cited"), ("Une note pour la communication", "A note for communication")]),
+                    (("Comparaison des assistants", "Assistants compared"), [("ChatGPT, Claude, Gemini, Perplexity, Grok", "ChatGPT, Claude, Gemini, Perplexity, Grok"), ("Qui vous cite, et qui ne vous cite pas", "Who cites you, and who does not"), ("Les écarts de discours", "Differences in what they say"), ("Les priorités GEO", "GEO priorities")])],
+        "uses": ["reputation", "brand-risk", "messaging"],
+        "limits": [(("Des réponses variables", "Answers that vary"), ("La même question ne donne pas toujours la même réponse : nous posons chaque question plusieurs fois et comparons.", "The same question does not always get the same answer: we ask each question several times and compare.")), limit2],
+        "pair": pair, "faq": faq,
+    }
+
+
+TOOLS += [
+    _assistant("claude", "Claude", "C", ("ce que Claude dit de vous", "what Claude says about you"),
+        ("Claude, l'assistant d'Anthropic, est de plus en plus utilisé en entreprise pour se renseigner, comparer et rédiger. Nous lisons ce qu'il répond sur votre marque et votre catégorie.",
+         "Claude, Anthropic's assistant, is increasingly used at work to look things up, compare and write. We read what it answers about your brand and your category."),
+        ("Claude est l'assistant conversationnel d'Anthropic, une entreprise d'IA basée à San Francisco, lancé en mars 2023. Il peut chercher sur le web et citer ses sources. Comme ChatGPT, c'est une source d'opinion à part entière, à auditer.",
+         "Claude is the conversational assistant of Anthropic, an AI company based in San Francisco, launched in March 2023. It can search the web and cite its sources. Like ChatGPT, it is a source of opinion in its own right, to be audited."),
+        [(("Éditeur", "Publisher"), ("Anthropic", "Anthropic")), (("Lancement", "Launch"), ("Mars 2023", "March 2023")),
+         (("Recherche web", "Web search"), ("Oui, avec sources", "Yes, with sources")), (("Accès", "Access"), ("Gratuit ou payant", "Free or paid"))],
+        [(("Ce que Claude recommande", "What Claude recommends"), ("Les marques citées sur les questions de votre catégorie, et dans quel ordre.", "The brands cited on your category's questions, and in which order.")),
+         (("Les sources citées", "The sources cited"), ("Les sites et articles sur lesquels il s'appuie quand il cherche sur le web.", "The sites and articles it relies on when it searches the web.")),
+         (("Les erreurs", "Errors"), ("Les informations fausses ou datées sur votre marque.", "False or outdated information about your brand.")),
+         (("Un public professionnel", "A professional audience"), ("Un assistant très présent en entreprise : ce qu'il dit pèse sur les décideurs.", "An assistant widely used at work: what it says weighs on decision-makers."))],
+        (("Ce n'est pas de l'écoute", "It is not listening"), ("Claude ne lit pas la conversation des réseaux sociaux : il complète l'écoute sociale, il ne la remplace pas.", "Claude does not read the social conversation: it completes social listening, it does not replace it.")),
+        ["chatgpt", "gemini", "geo"],
+        [(("Pourquoi auditer Claude en plus de ChatGPT ?", "Why audit Claude as well as ChatGPT?"), ("Parce que les assistants ne citent pas les mêmes marques ni les mêmes sources : votre place peut être bonne dans l'un et absente dans l'autre.", "Because assistants do not cite the same brands or sources: your place can be good in one and absent in another.")),
+         (("Transmettez-vous nos données à l'IA ?", "Do you send our data to the AI?"), ("Non. Nous posons des questions publiques ; aucune donnée client n'est transmise.", "No. We ask public questions; no client data is sent."))]),
+
+    _assistant("gemini", "Gemini", "G", ("l'IA de Google", "Google's AI"),
+        ("Gemini est l'assistant de Google, présent dans son application, dans Android et dans les outils Google. Nous lisons ce qu'il répond sur votre marque, et d'où il le tient.",
+         "Gemini is Google's assistant, available in its own app, in Android and in Google's tools. We read what it answers about your brand, and where it gets it from."),
+        ("Gemini est l'assistant conversationnel de Google. Lancé en mars 2023 sous le nom de Bard, il a été renommé Gemini en février 2024. Il s'appuie sur la recherche Google et cite ses sources ; sa diffusion dans l'écosystème Google lui donne une audience considérable.",
+         "Gemini is Google's conversational assistant. Launched in March 2023 as Bard, it was renamed Gemini in February 2024. It draws on Google Search and cites its sources; its reach across Google's ecosystem gives it a very large audience."),
+        [(("Éditeur", "Publisher"), ("Google", "Google")), (("Lancement", "Launch"), ("2023, sous le nom de Bard", "2023, as Bard")),
+         (("Recherche web", "Web search"), ("Oui, via la recherche Google", "Yes, through Google Search")), (("Accès", "Access"), ("Gratuit ou payant", "Free or paid"))],
+        [(("Ce que Gemini recommande", "What Gemini recommends"), ("Les marques citées sur vos questions, et dans quel ordre.", "The brands cited on your questions, and in which order.")),
+         (("Le lien avec la recherche Google", "The link with Google Search"), ("Les sources reprises, souvent proches de celles qui ressortent sur Google.", "The sources it picks up, often close to those that rank on Google.")),
+         (("Les erreurs", "Errors"), ("Les informations fausses ou datées sur votre marque.", "False or outdated information about your brand.")),
+         (("Une audience immense", "A huge audience"), ("Android, l'application et les outils Google : une réponse vue par beaucoup.", "Android, the app and Google's tools: an answer seen by many."))],
+        (("Ce n'est pas de l'écoute", "It is not listening"), ("Gemini ne lit pas la conversation des réseaux : il complète l'écoute sociale, il ne la remplace pas.", "Gemini does not read the social conversation: it completes social listening, it does not replace it.")),
+        ["chatgpt", "google-trends", "geo"],
+        [(("Gemini et Bard, c'est la même chose ?", "Are Gemini and Bard the same?"), ("Oui : Google a renommé Bard en Gemini en février 2024.", "Yes: Google renamed Bard to Gemini in February 2024.")),
+         (("Le SEO suffit-il pour être cité par Gemini ?", "Is SEO enough to be cited by Gemini?"), ("Il aide, puisque Gemini s'appuie sur la recherche Google, mais il ne suffit pas : voir notre page GEO.", "It helps, since Gemini draws on Google Search, but it is not enough: see our GEO page."))]),
+
+    _assistant("perplexity", "Perplexity", "P", ("le moteur de réponses", "the answer engine"),
+        ("Perplexity se présente comme un moteur de réponses : chaque réponse s'appuie sur une recherche web et cite ses sources. Nous lisons ce qu'il dit de votre marque, et quels sites il cite.",
+         "Perplexity calls itself an answer engine: each answer is built on a web search and cites its sources. We read what it says about your brand, and which sites it cites."),
+        ("Perplexity est un moteur de réponses par IA, édité par Perplexity AI, une entreprise de San Francisco fondée en 2022. Contrairement à un assistant classique, il cherche systématiquement sur le web et affiche ses sources, ce qui le rend très lisible pour un audit.",
+         "Perplexity is an AI answer engine, published by Perplexity AI, a San Francisco company founded in 2022. Unlike a classic assistant, it always searches the web and shows its sources, which makes it very readable for an audit."),
+        [(("Éditeur", "Publisher"), ("Perplexity AI", "Perplexity AI")), (("Origine", "Origin"), ("San Francisco, 2022", "San Francisco, 2022")),
+         (("Recherche web", "Web search"), ("Toujours, avec sources", "Always, with sources")), (("Accès", "Access"), ("Gratuit ou payant", "Free or paid"))],
+        [(("Les sources, en clair", "Sources, in plain sight"), ("Chaque réponse liste les sites utilisés : on voit d'où vient l'image de votre marque.", "Each answer lists the sites used: you see where your brand's image comes from.")),
+         (("Ce qu'il recommande", "What it recommends"), ("Les marques citées sur les questions de votre catégorie.", "The brands cited on your category's questions.")),
+         (("La presse et les forums", "Press and forums"), ("Les articles, avis et discussions qui pèsent dans ses réponses.", "The articles, reviews and discussions that weigh in its answers.")),
+         (("L'évolution", "Change over time"), ("Les mêmes questions, suivies dans le temps.", "The same questions, followed over time."))],
+        (("Des sources choisies par l'outil", "Sources picked by the tool"), ("Perplexity choisit ses sources selon ses propres critères : un site absent ne veut pas dire un site inutile.", "Perplexity picks its sources by its own criteria: a missing site does not mean a useless one.")),
+        ["chatgpt", "google-news", "geo"],
+        [(("Pourquoi Perplexity est-il utile pour un audit ?", "Why is Perplexity useful for an audit?"), ("Parce qu'il montre ses sources à chaque réponse : on sait sur quels sites agir.", "Because it shows its sources with every answer: you know which sites to act on.")),
+         (("Transmettez-vous nos données à l'IA ?", "Do you send our data to the AI?"), ("Non. Nous posons des questions publiques ; aucune donnée client n'est transmise.", "No. We ask public questions; no client data is sent."))]),
+
+    _assistant("grok", "Grok", "G", ("l'IA de X", "X's AI"),
+        ("Grok est l'assistant de xAI, intégré à X. Il puise dans les publications de X en temps réel : ce qu'il dit de votre marque reflète souvent ce qui s'y dit à chaud.",
+         "Grok is xAI's assistant, built into X. It draws on X posts in real time: what it says about your brand often reflects what is being said there right now."),
+        ("Grok est l'assistant conversationnel de xAI, la société d'IA d'Elon Musk, lancé en novembre 2023. Il est intégré au réseau X et accessible sur son propre site ; sa particularité est son accès aux publications de X en temps réel.",
+         "Grok is the conversational assistant of xAI, Elon Musk's AI company, launched in November 2023. It is built into the X network and available on its own site; what sets it apart is its real-time access to X posts."),
+        [(("Éditeur", "Publisher"), ("xAI", "xAI")), (("Lancement", "Launch"), ("Novembre 2023", "November 2023")),
+         (("Sources", "Sources"), ("Le web et les publications de X", "The web and X posts")), (("Accès", "Access"), ("Gratuit ou payant", "Free or paid"))],
+        [(("Ce que Grok dit de vous", "What Grok says about you"), ("Les réponses sur votre marque, souvent nourries par la conversation de X.", "Answers about your brand, often fed by the conversation on X.")),
+         (("Le lien avec X", "The link with X"), ("Les publications qu'il reprend, et le ton qu'il en tire.", "The posts it picks up, and the tone it draws from them.")),
+         (("Les sujets chauds", "Hot topics"), ("Une crise ou une polémique sur X se retrouve vite dans ses réponses.", "A crisis or a row on X quickly shows up in its answers.")),
+         (("Les erreurs", "Errors"), ("Les informations fausses ou datées sur votre marque.", "False or outdated information about your brand."))],
+        (("Le reflet de X", "A mirror of X"), ("Ses réponses peuvent reprendre le ton d'une polémique en cours : nous les lisons avec la conversation de X, pas seules.", "Its answers can echo the tone of a running row: we read them with the conversation on X, not on their own.")),
+        ["chatgpt", "visibrain", "geo"],
+        [(("Pourquoi auditer Grok ?", "Why audit Grok?"), ("Parce qu'il est intégré à X et s'appuie sur ses publications : il amplifie ce qui s'y dit de vous.", "Because it is built into X and draws on its posts: it amplifies what is said about you there.")),
+         (("Grok est-il lié à X ?", "Is Grok tied to X?"), ("Oui : il est édité par xAI et intégré au réseau X.", "Yes: it is published by xAI and built into the X network."))]),
 ]

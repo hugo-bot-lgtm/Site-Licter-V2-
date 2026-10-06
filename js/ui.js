@@ -939,14 +939,18 @@ window.LicterUC = (function () {
       extra: {
         label: "AND, DEPENDING ON THE QUESTION",
         items: [
-          { letter: "S", name: "Semrush", desc: "Search and SEO", href: "/tech-semrush.html" },
-          { letter: "G", name: "Google Trends", desc: "Search interest", href: "/tech-google-trends.html" },
-          { letter: "A", name: "AnswerThePublic", desc: "The questions people ask", href: "/tech-answerthepublic.html" },
-          { letter: "C", name: "ChatGPT", desc: "What AI answers", href: "/tech-chatgpt.html" },
-          { letter: "G", name: "GEO", desc: "Visibility in AI engines", href: "/tech-geo.html" },
-          { letter: "M", name: "Meta Ads", desc: "The Meta Ad Library", href: "/tech-meta-ads.html" },
-          { letter: "G", name: "Google News", desc: "Press coverage", href: "/tech-google-news.html" },
-          { letter: "S", name: "Social Blade", desc: "Account and creator growth", href: "/tech-social-blade.html" }
+          { letter: "S", logo: "/assets/img/tools/semrush.png", name: "Semrush", desc: "Search and SEO", href: "/tech-semrush.html" },
+          { letter: "G", logo: "/assets/img/tools/google-trends.png", name: "Google Trends", desc: "Search interest", href: "/tech-google-trends.html" },
+          { letter: "A", logo: "/assets/img/tools/answerthepublic.png", name: "AnswerThePublic", desc: "The questions people ask", href: "/tech-answerthepublic.html" },
+          { letter: "C", logo: "/assets/img/tools/chatgpt.png", name: "ChatGPT", desc: "What AI answers", href: "/tech-chatgpt.html" },
+          { letter: "C", logo: "/assets/img/tools/claude.png", name: "Claude", desc: "What Claude says about you", href: "/tech-claude.html" },
+          { letter: "G", logo: "/assets/img/tools/gemini.png", name: "Gemini", desc: "Google's AI", href: "/tech-gemini.html" },
+          { letter: "P", logo: "/assets/img/tools/perplexity.png", name: "Perplexity", desc: "The answer engine", href: "/tech-perplexity.html" },
+          { letter: "G", logo: "/assets/img/tools/grok.png", name: "Grok", desc: "X's AI", href: "/tech-grok.html" },
+          { glyph: "googlegemini", name: "GEO", desc: "Visibility in AI engines", href: "/tech-geo.html" },
+          { letter: "M", logo: "/assets/img/tools/meta-ads.png", name: "Meta Ads", desc: "The Meta Ad Library", href: "/tech-meta-ads.html" },
+          { letter: "G", logo: "/assets/img/tools/google-news.png", name: "Google News", desc: "Press coverage", href: "/tech-google-news.html" },
+          { letter: "S", logo: "/assets/img/tools/social-blade.png", name: "Social Blade", desc: "Account and creator growth", href: "/tech-social-blade.html" }
         ]
       },
       aside: {
@@ -2106,5 +2110,75 @@ window.LicterUC = (function () {
     }
     list.addEventListener("scroll", function () { window.requestAnimationFrame(update); }, { passive: true });
     update();
+  });
+})();
+
+/* =========================================================================
+   Tool and network carousels (tools/build-tech.py)
+   .tk-prog   use cases: a large photo, tabs with a progress bar, autoplay
+   .tk-conn   deliverables: the current one large, the others as capsules
+   .tk-offers data and limits: a scrolling row of cards, with arrows
+   Autoplay stops on hover, on focus, and when motion is reduced.
+   ========================================================================= */
+(function () {
+  "use strict";
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function cycle(root, sel, onShow) {
+    var items = root.querySelectorAll(sel), n = items.length, cur = 0, timer = null;
+    var delay = +root.getAttribute("data-auto") || 6000;
+    if (!n) return;
+    function show(i) { cur = (i + n) % n; onShow(cur); root.style.setProperty("--dur", delay + "ms"); restart(); }
+    function restart() {
+      clearTimeout(timer);
+      if (still || root.matches(":hover") || root.contains(document.activeElement)) return;
+      timer = setTimeout(function () { show(cur + 1); }, delay);
+    }
+    root.addEventListener("mouseenter", function () { clearTimeout(timer); root.classList.add("is-paused"); });
+    root.addEventListener("mouseleave", function () { root.classList.remove("is-paused"); restart(); });
+    root.addEventListener("focusin", function () { clearTimeout(timer); root.classList.add("is-paused"); });
+    /* start only once it is on screen */
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { show(0); o.disconnect(); } }, { threshold: .35 }).observe(root);
+    } else show(0);
+    return show;
+  }
+
+  document.querySelectorAll(".tk-prog").forEach(function (root) {
+    var slides = root.querySelectorAll(".tk-prog__slide"), tabs = root.querySelectorAll(".tk-prog__tab");
+    var show = cycle(root, ".tk-prog__tab", function (i) {
+      slides.forEach(function (s, k) { s.classList.toggle("is-on", k === i); s.tabIndex = k === i ? 0 : -1; });
+      tabs.forEach(function (b, k) { b.classList.remove("is-on"); void b.offsetWidth; b.classList.toggle("is-on", k === i); b.setAttribute("aria-selected", k === i ? "true" : "false"); });
+    });
+    tabs.forEach(function (b, k) { b.addEventListener("click", function () { show(k); }); });
+  });
+
+  document.querySelectorAll(".tk-conn").forEach(function (root) {
+    var cards = root.querySelectorAll(".tk-conn__card"), dots = root.querySelectorAll(".tk-conn__dot"), n = cards.length;
+    var show = cycle(root, ".tk-conn__card", function (i) {
+      cards.forEach(function (c, k) {
+        c.classList.toggle("is-on", k === i);
+        c.classList.toggle("is-prev", n > 1 && k === (i - 1 + n) % n && k !== i);
+        c.classList.toggle("is-next", n > 2 && k === (i + 1) % n);
+      });
+      dots.forEach(function (d, k) { d.classList.remove("is-on"); void d.offsetWidth; d.classList.toggle("is-on", k === i); });
+    });
+    dots.forEach(function (d, k) { d.addEventListener("click", function () { show(k); }); });
+    cards.forEach(function (c, k) { c.addEventListener("click", function () { if (!c.classList.contains("is-on")) show(k); }); });
+  });
+
+  document.querySelectorAll(".tk-offers").forEach(function (root) {
+    var track = root.querySelector(".tk-offers__track"), prev = root.querySelector(".tk-offers__nav--prev"), next = root.querySelector(".tk-offers__nav--next");
+    function step() { var c = track.querySelector(".tk-offer"); return c ? c.getBoundingClientRect().width + 18 : 300; }
+    function state() {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      root.classList.toggle("is-static", max <= 0);
+      prev.disabled = track.scrollLeft <= 2; next.disabled = track.scrollLeft >= max;
+    }
+    prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: still ? "auto" : "smooth" }); });
+    next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: still ? "auto" : "smooth" }); });
+    track.addEventListener("scroll", function () { window.requestAnimationFrame(state); }, { passive: true });
+    window.addEventListener("resize", state);
+    state();
   });
 })();

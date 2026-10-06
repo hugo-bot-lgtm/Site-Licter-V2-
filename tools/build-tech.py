@@ -121,6 +121,10 @@ SHORT = {
     "meta-ads": ("veille publicitaire sur Meta", "Meta ad monitoring"),
     "google-news": ("la presse face au social", "the press against social"),
     "social-blade": ("vérifier les comptes et les créateurs", "checking accounts and creators"),
+    "claude": ("ce que Claude dit de votre marque", "what Claude says about your brand"),
+    "gemini": ("ce que l'IA de Google dit de vous", "what Google's AI says about you"),
+    "perplexity": ("votre marque dans le moteur de réponses", "your brand in the answer engine"),
+    "grok": ("ce que l'IA de X dit de vous", "what X's AI says about you"),
 }
 HUB = {"title": ("Techno & outils : nos plateformes d'écoute et nos sources | Licter", "Tech & tools: our listening platforms and data sources | Licter"),
        "desc": ("Les plateformes d'écoute que Licter opère, les outils de recherche, de presse et d'IA qui les complètent, et les 22 réseaux d'où viennent les données.",
@@ -165,30 +169,174 @@ def fmt(pair, *args):
     return tuple(p % tuple(x[i] for x in args) for i, p in enumerate(pair))
 
 
-def block(id_, kick, title, inner, lead=None):
-    return ('      <section class="block" id="%s">\n        <div class="block__head" data-dim data-reveal>\n'
-            '          <p class="block__kicker block__kicker--slash"><i>//</i>%s</p>\n          <h2 class="block__title">%s</h2>\n%s'
-            '        </div>\n%s\n      </section>\n\n') % (id_, kick, title, ('          <p class="block__lead">%s</p>\n' % lead) if lead else "", inner)
+# ------------------------------------------------------------------ brand colours
+# each network's own colour (Simple Icons), and the ink that reads on it
+NET_STYLE = {
+    "facebook": ("#0866FF", "#fff"), "instagram": ("#E1306C", "#fff"), "threads": ("#101010", "#fff"), "whatsapp": ("#25D366", "#fff"),
+    "messenger": ("#0099FF", "#fff"), "x-twitter": ("#101010", "#fff"), "tiktok": ("#101010", "#fff"), "youtube": ("#FF0000", "#fff"),
+    "linkedin": ("#0A66C2", "#fff"), "reddit": ("#FF4500", "#fff"), "snapchat": ("#FFFC00", "#111"), "pinterest": ("#BD081C", "#fff"),
+    "discord": ("#5865F2", "#fff"), "twitch": ("#9146FF", "#fff"), "telegram": ("#26A5E4", "#fff"), "bluesky": ("#0285FF", "#fff"),
+    "vk": ("#0077FF", "#fff"), "wechat": ("#07C160", "#fff"), "weibo": ("#E6162D", "#fff"), "douyin": ("#101010", "#fff"),
+    "xiaohongshu": ("#FF2442", "#fff"), "bilibili": ("#00A1D6", "#fff"),
+}
+# a second colour for the hero panel's gradient
+NET_GLOW = {"instagram": "#F77737", "tiktok": "#FE2C55", "douyin": "#25F4EE", "threads": "#555", "x-twitter": "#3a3a3a", "snapchat": "#FFD500"}
+TOOL_STYLE = {
+    "talkwalker": "#8C6BFF", "visibrain": "#3DCB9A", "youscan": "#5CB531", "soprism": "#F15A29", "radarly": "#2BBBAD",
+    "semrush": "#A87BFF", "google-trends": "#4285F4", "answerthepublic": "#FF5A1F", "chatgpt": "#10A37F", "geo": "#7C5CFF",
+    "meta-ads": "#0866FF", "google-news": "#4285F4", "social-blade": "#C0392B",
+    "claude": "#D97757", "gemini": "#4E7BEF", "perplexity": "#1F8A8A", "grok": "#4B4B55",
+}
+GEO_ENGINES = ["chatgpt", "claude", "gemini", "perplexity"]
+# where each screenshot comes from (assets/img/shots/<slug>.webp, captured in October 2026)
+SHOT_SRC = {
+    "talkwalker": "talkwalker.com", "visibrain": "visibrain.com", "youscan": "youscan.io", "soprism": "audiense.com", "radarly": "meltwater.com",
+    "semrush": "semrush.com", "google-trends": "trends.google.com", "answerthepublic": "answerthepublic.com", "chatgpt": "chatgpt.com",
+    "geo": "arxiv.org/abs/2311.09735", "meta-ads": "facebook.com/ads/library", "google-news": "news.google.com", "social-blade": "socialblade.com",
+    "claude": "anthropic.com/claude", "perplexity": "perplexity.ai", "gemini": "gemini.google.com", "grok": "grok.com",
+    "facebook": "facebook.com", "instagram": "about.instagram.com", "threads": "threads.com", "whatsapp": "whatsapp.com", "messenger": "messenger.com",
+    "x-twitter": "about.x.com", "tiktok": "newsroom.tiktok.com", "youtube": "blog.youtube", "linkedin": "linkedin.com", "reddit": "redditinc.com",
+    "snapchat": "snap.com", "pinterest": "newsroom.pinterest.com", "discord": "discord.com", "twitch": "twitch.tv", "telegram": "telegram.org",
+    "bluesky": "bsky.social", "vk": "vk.company", "wechat": "wechat.com", "weibo": "weibo.com", "douyin": None,
+    "xiaohongshu": "xiaohongshu.com", "bilibili": "ir.bilibili.com",
+}
+# a photo rather than a screenshot: its credit (Wikimedia Commons)
+PHOTO_CREDIT = {"douyin": ("Siège de Douyin Group, Pékin. Photo : Wikimedia Commons, CC BY-SA 4.0",
+                           "Douyin Group headquarters, Beijing. Photo: Wikimedia Commons, CC BY-SA 4.0",
+                           "https://commons.wikimedia.org/wiki/File:Douyin_Group_and_Feishu_logos_on_Fashion_Vanke_Center_20260620143040.jpg")}
 
 
-def card_grid(items, two=False):
-    return '        <div class="grid%s">%s</div>' % (" grid--two" if two else "", "".join(
-        '<article class="card card--hover" data-reveal><span class="card__num">0%d</span><h3 class="card__title">%s</h3><p class="card__text">%s</p></article>' % (
-            i + 1, t(ti), t(tx)) for i, (ti, tx) in enumerate(items)))
+def shot(slug, name, mark):
+    """the real thing: the official site in a browser frame, its logo on top"""
+    if slug in PHOTO_CREDIT:
+        fr, en, url = PHOTO_CREDIT[slug]
+        cap = '<figcaption><a href="%s" target="_blank" rel="noopener">%s</a></figcaption>' % (url, t((fr, en)))
+        bar = ""
+    else:
+        label = ("L'article de recherche fondateur", "The founding research paper") if slug == "geo" else ("Capture du site officiel", "Official site, captured")
+        cap = '<figcaption>%s <span>%s</span></figcaption>' % (t(label), SHOT_SRC[slug])
+        bar = '<div class="tk-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>%s</span></div>' % SHOT_SRC[slug]
+    return ('<figure class="tk-shot">%s<img src="/assets/img/shots/%s.webp" alt="%s" width="1200" height="750" decoding="async" fetchpriority="high" />%s</figure>'
+            '<div class="tk-tile">%s</div>') % (bar, slug, html.escape(t((("Site officiel de %s" % name), ("%s official site" % name)))), cap, mark)
 
 
-FLOW_ITEM = """          <li class="flow__item" data-reveal style="--d:%dms">
-            <span class="flow__n" aria-hidden="true">%d</span>
-            <div class="flow__card">
-              <h3 class="flow__title"><span class="flow__tick" aria-hidden="true"></span>%s</h3>
-              <p class="flow__text">%s</p>
-            </div>
-          </li>
-"""
+def glyph(name, cls="tk-glyph"):
+    return '<i class="%s" style="--g:url(/assets/img/networks/%s.svg)" aria-hidden="true"></i>' % (cls, name)
 
 
-def flow():
-    return '        <ol class="flow">\n' + "".join(FLOW_ITEM % (i * 90, i + 1, t(ti), t(tx)) for i, (ti, tx) in enumerate(S["steps"])) + "        </ol>"
+def logo(slug, size="", alt=""):
+    """a tool's logo: its picture, or for GEO the engines it measures"""
+    if slug == "geo":
+        return '<span class="tk-logo-geo%s" role="img" aria-label="%s">%s</span>' % (size, html.escape(alt or "GEO"), "".join(
+            '<img src="/assets/img/tools/%s.png" alt="" width="48" height="48" loading="lazy" decoding="async" />' % e for e in GEO_ENGINES))
+    return '<img src="/assets/img/tools/%s.png" alt="%s" width="96" height="96" loading="lazy" decoding="async" />' % (slug, html.escape(alt))
+
+
+# ------------------------------------------------------------------ blocks
+def head(kick, title, lead=None):
+    return ('<div class="tk-head" data-reveal><p class="tk-k">%s</p><h2 class="tk-h2">%s</h2>%s</div>' % (
+        kick, title, '<p class="tk-sub">%s</p>' % lead if lead else ""))
+
+
+def sec(id_, inner, band=False):
+    return '  <section class="tk-sec%s" id="%s">\n    <div class="shell">\n%s\n    </div>\n  </section>\n\n' % (" tk-sec--band" if band else "", id_, inner)
+
+
+def feats(items, slug=None):
+    """a bento: the first card large, in the brand colour, over a crop of the
+    real site; the others each with their own ground"""
+    out = ""
+    for i, (ti, tx) in enumerate(items):
+        shot_ = ('<img class="tk-feat__shot" src="/assets/img/shots/%s.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" />' % slug) if i == 0 and slug else ""
+        out += '<article class="tk-feat tk-feat--%d" data-reveal><span class="tk-feat__n" aria-hidden="true">0%d</span><div class="tk-feat__t"><h3>%s</h3><p>%s</p></div>%s</article>' % (
+            i + 1, i + 1, t(ti), t(tx), shot_)
+    return '<div class="tk-feats tk-feats--%d">%s</div>' % (len(items), out)
+
+
+VS_ALONE = [("Un outil à apprendre et à faire tourner", "A tool to learn and to run"),
+            ("Des requêtes réglées une fois, jamais revues", "Queries set once, never reviewed"),
+            ("Des tableaux de bord que personne n'ouvre", "Dashboards nobody opens"),
+            ("Des exports à interpréter seul", "Exports to interpret on your own")]
+VS_LICTER = [("Nous l'opérons pour vous : rien à apprendre", "We run it for you: nothing to learn"),
+             ("Un consultant qui cadre la question avec vous", "A consultant who frames the question with you"),
+             ("Une configuration lue et ajustée en continu", "A setup read and adjusted continuously"),
+             ("Une recommandation présentée à ceux qui décident", "A recommendation presented to those who decide")]
+
+
+def versus(slug, nm):
+    """the tool alone, against the tool with Licter"""
+    alone = "".join("<li>%s</li>" % t(x) for x in VS_ALONE)
+    licter = "".join("<li>%s</li>" % t(x) for x in VS_LICTER)
+    return ('<div class="tk-vs">'
+            '<div class="tk-vs__col tk-vs__col--alone" data-reveal><p class="tk-vs__k"><span class="tk-vs__logo">%s</span>%s</p><ul>%s</ul></div>'
+            '<span class="tk-vs__mid" aria-hidden="true">VS</span>'
+            '<div class="tk-vs__col tk-vs__col--licter" data-reveal><p class="tk-vs__k"><span class="tk-vs__logo">%s</span><img class="tk-vs__licter" src="/assets/img/logo-navy.png" alt="" width="22" height="24" />%s</p><ul>%s</ul>'
+            '<p class="tk-vs__out">%s</p></div></div>') % (
+        logo(slug), t(fmt(("%s seul", "%s on its own"), nm)), alone,
+        logo(slug), t(fmt(("%s avec Licter", "%s with Licter"), nm)), licter,
+        t(("Vous recevez une recommandation, pas un tableau de bord à faire tourner.", "You receive a recommendation, not a dashboard to run.")))
+
+
+
+# ------------------------------------------------------------------ carousels (js/ui.js, "tool and network carousels")
+UC_PHOTO = {"communication": "working-session-1200", "brand": "client-conversation-1200", "audiences": "team-sofa-1200", "trends": "two-colleagues-1200"}
+DEL_PHOTO = ["consultant-dashboard-800", "meeting-portrait-800", "consultant-armchair-800"]
+
+
+def prog(keys):
+    """use cases: one large photo, the cases as tabs with a progress bar"""
+    slides, tabs = "", ""
+    for i, key in enumerate(keys):
+        c = CASES[key]; f = FAMILY[c["family"]]
+        fam = (f["name"][FR], f["name"][EN])
+        slides += ('<a class="tk-prog__slide%s" href="%s" data-en="%s" data-i="%d"%s><img src="/assets/img/team/%s.webp" alt="" width="1200" height="800" loading="%s" decoding="async" />'
+                   '<span class="tk-prog__go"><b>%s</b><span>%s</span></span></a>') % (
+            " is-on" if i == 0 else "", U.case_path(c, FR), U.case_path(c, EN), i, "" if i == 0 else ' tabindex="-1"', UC_PHOTO[c["family"]], "eager" if i == 0 else "lazy",
+            t(c["name"]), t(S["see_case"]))
+        tabs += ('<button class="tk-prog__tab%s" type="button" role="tab" aria-selected="%s" data-i="%d"><span class="tk-prog__pill">%s</span>'
+                 '<span class="tk-prog__name">%s</span><i class="tk-prog__bar" aria-hidden="true"></i></button>') % (
+            " is-on" if i == 0 else "", "true" if i == 0 else "false", i, t(fam), t(c["name"]))
+    return '<div class="tk-prog" data-auto="5500"><div class="tk-prog__stage">%s</div><div class="tk-prog__tabs" role="tablist">%s</div></div>' % (slides, tabs)
+
+
+def conn(items):
+    """what we deliver: the current deliverable large, the others as linked capsules"""
+    cards, dots = "", ""
+    n = len(items)
+    for i, (ti, bullets) in enumerate(items):
+        cards += ('<article class="tk-conn__card%s" data-i="%d"><div class="tk-conn__body"><span class="tk-conn__k">0%d / 0%d</span><h3>%s</h3><ul>%s</ul></div>'
+                  '<div class="tk-conn__photo"><img src="/assets/img/team/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" />'
+                  '<span class="tk-conn__vt" aria-hidden="true">%s</span></div></article>') % (
+            " is-on" if i == 0 else "", i, i + 1, n, t(ti), "".join("<li>%s</li>" % t(b) for b in bullets), DEL_PHOTO[i % len(DEL_PHOTO)], t(ti))
+        dots += '<button class="tk-conn__dot%s" type="button" aria-label="%s" data-i="%d"><i></i></button>' % (" is-on" if i == 0 else "", a((ti[FR], ti[EN])), i)
+    return '<div class="tk-conn" data-auto="6500"><div class="tk-conn__stage">%s</div><div class="tk-conn__dots">%s</div></div>' % (cards, dots)
+
+
+def offers(cards):
+    """data and limits: a row of cards that scrolls, with arrows"""
+    out = ""
+    for c in cards:
+        img = c.get("img") or '<span class="tk-offer__art tk-offer__art--%s" aria-hidden="true">%s</span>' % (c["kind"], c.get("art", ""))
+        foot = ('<a class="tk-offer__foot" href="%s"><span class="tk-offer__logo">%s</span><span><b>%s</b><small>%s</small></span><i aria-hidden="true">↗</i></a>' % (
+            c["href"], c["logo"], c["foot"], c["foot_sub"])) if c.get("href") else ('<p class="tk-offer__foot"><span class="tk-offer__logo">%s</span><span><b>%s</b><small>%s</small></span></p>' % (c["logo"], c["foot"], c["foot_sub"]))
+        out += ('<article class="tk-offer tk-offer--%s"><div class="tk-offer__img">%s</div><div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">%s</i>%s</p>'
+                '<h3>%s</h3><p>%s</p></div>%s</article>') % (c["kind"], img, c["icon"], c["tag"], c["title"], c["text"], foot)
+    return ('<div class="tk-offers"><div class="tk-offers__track" tabindex="0">%s</div>'
+            '<button class="tk-offers__nav tk-offers__nav--prev" type="button" aria-label="%s">‹</button>'
+            '<button class="tk-offers__nav tk-offers__nav--next" type="button" aria-label="%s">›</button></div>') % (
+        out, a(("Précédent", "Previous")), a(("Suivant", "Next")))
+
+
+def tool_offer(slug, tag):
+    x = TOOL[slug]; nm = (x.get("fr_name", x["name"]), x["name"])
+    return {"kind": "tool", "img": '<img src="/assets/img/shots/%s.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" />' % slug,
+            "icon": "＋", "tag": t(tag), "title": t(nm), "text": t(x["features"][0][1]),
+            "href": "tech-%s.html" % slug, "logo": logo(slug), "foot": t(nm), "foot_sub": t(("Voir la page", "See the page"))}
+
+
+def steps():
+    return '<ol class="tk-steps">%s</ol>' % "".join(
+        '<li data-reveal><span class="tk-steps__n">0%d</span><h3>%s</h3><p>%s</p></li>' % (i + 1, t(ti), t(tx)) for i, (ti, tx) in enumerate(S["steps"]))
 
 
 def covers(keys):
@@ -202,129 +350,131 @@ def covers(keys):
                 '<span class="cover-card__link">%s</span></span></a>') % (
             TINT[c["family"]], U.case_path(c, FR), U.case_path(c, EN), t(("// " + fam[FR], "// " + fam[EN])),
             t((c["name"][FR].upper(), c["name"][EN].upper())), t(fam), t(c["name"]), t(S["see_case"]))
-    return '        <div class="covers covers--three">%s</div>' % out
+    return '<div class="covers covers--three">%s</div>' % out
 
 
-def faq(items):
-    return '        <div class="faq" data-dim data-reveal>%s</div>' % "".join(
-        "<details><summary>%s</summary><p>%s</p></details>" % (t(q), t(r)) for q, r in items)
+def faq_block(title, items):
+    return ('<div class="tk-faq"><div class="tk-head" data-reveal><p class="tk-k">%s</p><h2 class="tk-h2">%s</h2></div>'
+            '<div class="faq" data-reveal>%s</div></div>') % (t(S["faq_k"]), title, "".join(
+                "<details><summary>%s</summary><p>%s</p></details>" % (t(q), t(r)) for q, r in items))
 
 
-def chips(items):
-    """links to other pages, each with a glyph or a monogram"""
-    return '<ul class="tchips">%s</ul>' % "".join(
-        '<li><a href="%s">%s<span>%s</span></a></li>' % (href, mark, t(name) if isinstance(name, tuple) else html.escape(name)) for href, mark, name in items)
+def tool_chips(slugs):
+    return '<ul class="tk-chips">%s</ul>' % "".join(
+        '<li><a href="tech-%s.html"><span class="tk-chips__logo">%s</span><span>%s</span></a></li>' % (
+            s, logo(s), t((TOOL[s].get("fr_name", TOOL[s]["name"]), TOOL[s]["name"]))) for s in slugs)
 
 
-def tool_chip(slug):
-    x = TOOL[slug]
-    return ("tech-%s.html" % slug, '<span class="tchips__mono" aria-hidden="true">%s</span>' % x["letter"], (x.get("fr_name", x["name"]), x["name"]))
+def crumbs(name):
+    return ('<nav class="tk-crumbs" aria-label="%s"><ol><li><a href="index.html">%s</a></li><li><a href="tech-tools.html">%s</a></li>'
+            '<li aria-current="page">%s</li></ol></nav>') % (a(("Fil d'Ariane", "Breadcrumb")), t(("Accueil", "Home")), t(("Techno & outils", "Tech & tools")), name)
 
 
-def net_chip(slug):
-    n = NET[slug]
-    return ("source-%s.html" % slug, '<i class="xt__glyph" style="--g:url(/assets/img/networks/%s.svg)" aria-hidden="true"></i>' % n["glyph"], n["name"])
+def hero(copy, art):
+    return '  <section class="tk-hero">\n    <div class="shell tk-hero__grid">\n      <div class="tk-hero__copy">%s</div>\n      <div class="tk-hero__art">%s</div>\n    </div>\n  </section>\n\n' % (copy, art)
 
 
-TAIL = """      <section class="band" data-reveal>
-        <div>
-          <p class="block__kicker block__kicker--slash"><i>//</i>%(act)s</p>
-          <h2 class="band__title">%(band)s</h2>
-        </div>
-        <div class="band__actions">
-          <a class="btn btn--solid" href="diagnostic.html">%(diag)s <span aria-hidden="true">→</span></a>
-          <a class="btn btn--ghost" href="book-a-meeting.html">%(expert)s <span aria-hidden="true">→</span></a>
-        </div>
-      </section>
+def h1_cls(*texts):
+    """a word of more than 12 letters (ANSWERTHEPUBLIC, PROFESSIONNELLE) does not fit a phone at the usual size"""
+    words = re.sub(r"<[^>]+>|&[a-z]+;", " ", " ".join(texts)).replace(",", " ").replace(".", " ").split()
+    return "tk-h1 tk-h1--long" if max(len(w) for w in words) > 12 else "tk-h1"
 
-      <section class="cta" data-reveal>
-        <h2 class="cta__title">%(cta)s</h2>
-        <p class="cta__text">%(cta_text)s</p>
-        <form class="signup" novalidate>
-          <label class="visually-hidden" for="email-%(slug)s">Your work email</label>
-          <input class="signup__input" id="email-%(slug)s" name="email" type="email"
-                 placeholder="Your work email..." autocomplete="email" required />
-          <button class="signup__btn" type="submit">BOOK A MEETING</button>
-        </form>
-        <p class="consent">We use your email only to reply to you. <a href="privacy.html">Privacy policy</a>.</p>
-        <p class="signup__note" role="status">
-          <span class="signup__check" aria-hidden="true">✓</span>
-          NOTED - WE GET BACK TO YOU WITHIN 24 HOURS
-        </p>
-      </section>
-    </div>
-  </section>
-</main>"""
 
-HEAD = """<main id="content">
-  <section class="page">
+def cta(band, sub, mark, slug):
+    return '''  <section class="tk-sec tk-sec--cta" id="book">
     <div class="shell">
-      <div class="page__head">
-        <p class="page__eyebrow" data-dim data-reveal><span class="rule" aria-hidden="true"></span>%(eyebrow)s</p>
-        <h1 class="%(cls)s" data-dim data-reveal>%(h1)s</h1>
-        <p class="page__lead" data-dim data-reveal>%(lead)s</p>
-        <div class="page__actions" data-reveal>
-          <a class="btn btn--primary" href="book-a-meeting.html">%(book)s <span aria-hidden="true">→</span></a>
-          <a class="btn btn--ghost" href="%(ghost_href)s">%(ghost)s</a>
+      <div class="tk-cta" data-reveal>
+        <div class="tk-cta__mark" aria-hidden="true">%(mark)s</div>
+        <div class="tk-cta__copy">
+          <p class="tk-k">%(act)s</p>
+          <h2 class="tk-h2">%(band)s</h2>
+          <p class="tk-sub">%(sub)s</p>
+          <div class="tk-actions">
+            <a class="btn btn--primary" href="book-a-meeting.html">%(expert)s <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="diagnostic.html">%(diag)s</a>
+          </div>
+        </div>
+        <div class="tk-cta__form">
+          <form class="signup" novalidate>
+            <label class="visually-hidden" for="email-%(slug)s">Your work email</label>
+            <input class="signup__input" id="email-%(slug)s" name="email" type="email" placeholder="Your work email..." autocomplete="email" required />
+            <button class="signup__btn" type="submit">BOOK A MEETING</button>
+          </form>
+          <p class="consent">We use your email only to reply to you. <a href="privacy.html">Privacy policy</a>.</p>
+          <p class="signup__note" role="status"><span class="signup__check" aria-hidden="true">✓</span> NOTED - WE GET BACK TO YOU WITHIN 24 HOURS</p>
         </div>
       </div>
-
-"""
-
-
-def head_block(eyebrow, h1, lead, ghost_href, ghost, fr_h1=""):
-    # a word of more than 12 letters (ANSWERTHEPUBLIC, PROFESSIONNELLE) does not fit a phone at the usual size
-    words = re.sub(r"<[^>]+>|&[a-z]+;", " ", h1 + " " + fr_h1).replace(",", " ").replace(".", " ").split()
-    cls = "page__title page__title--long" if max(len(w) for w in words) > 12 else "page__title"
-    return HEAD % {"eyebrow": eyebrow, "h1": h1, "lead": lead, "book": t(S["book"]), "ghost_href": ghost_href, "ghost": t(ghost), "cls": cls}
+    </div>
+  </section>
+</main>''' % {"mark": mark, "act": t(S["act_k"]), "band": band, "sub": sub, "expert": t(S["expert"]), "diag": t(S["diag"]), "slug": slug}
 
 
-def tail_block(band, cta, slug):
-    return TAIL % {"act": t(S["act_k"]), "band": band, "diag": t(S["diag"]), "expert": t(S["expert"]), "cta": cta, "cta_text": t(S["cta_text"]), "slug": slug}
-
-
+# ------------------------------------------------------------------ tool page
 def tool_body(x):
     name = x["name"]; fn = x.get("fr_name", name); nm = (fn, name); NM = (fn.upper(), name.upper())
     ag = agency(x["slug"], name, x.get("fr_name"))
-    h1 = "<br>".join(t(p) for p in [("AGENCE %s," % fn.upper(), "%s AGENCY," % name.upper()), (x["tag"][FR].upper() + ".", x["tag"][EN].upper() + ".")])
-    eyebrow = '<span class="tool-mark"><img src="assets/img/tools/%s.png" alt="%s" onerror="this.parentNode.remove()" /></span>%s' % (x["slug"], html.escape(name), t(S["kick"]))
-    sheet = '        <dl class="tsheet" data-reveal>%s</dl>' % "".join('<div><dt>%s</dt><dd>%s</dd></div>' % (t(k), t(v)) for k, v in x["facts"])
-    sols = '        <div class="solutions">%s</div>' % "".join(
-        '<article class="solution" data-reveal><span class="solution__band" aria-hidden="true"></span><div class="solution__body"><h3>%s</h3><ul>%s</ul></div></article>' % (
-            t(ti), "".join("<li>%s</li>" % t(b) for b in bullets)) for ti, bullets in x["deliver"])
-    lims = card_grid(x["limits"], two=len(x["limits"]) == 2) + '\n        <div class="tpair" data-reveal><p class="tpair__k">%s</p>%s</div>' % (
-        t(S["pair"]), chips([tool_chip(p) for p in x["pair"]]))
-    out = head_block(eyebrow, h1, t(x["lead"]), "tech-tools.html", S["all"], "AGENCE %s %s" % (fn.upper(), x["tag"][FR].upper()))
-    out += block("what", t(fmt(S["what_k"], NM)), t(fmt(S["what_t"], nm)), sheet, t(x["what"]))
-    out += block("features", t(S["feat_k"]), t(fmt(S["feat_t"], nm)), card_grid(x["features"]))
-    out += block("agency", t(ag["kick"]), t(fmt(S["ag_t"], nm)), flow(), t(fmt(S["ag_lead"], nm, nm)))
-    out += block("deliverables", t(S["del_k"]), t(fmt(S["del_t"], nm)), sols)
-    out += block("uses", t(S["uses_k2"]), t(fmt(S["uses_t2"], nm)), covers(x["uses"]), t(S["uses_lead"]))
-    out += block("limits", t(S["lim_k"]), t(fmt(S["lim_t"], nm)), lims)
-    out += block("faq", t(S["faq_k"]), t(fmt(S["faq_t2"], nm)), faq([(ag["q"], ag["a"])] + x["faq"]))
-    return out + tail_block(t(ag["band"]), t(("Pas sûr que %s soit le bon outil ?" % fn, "Not sure %s is the right tool?" % name)), x["slug"])
+    l1, l2 = ("AGENCE %s," % fn.upper(), "%s AGENCY," % name.upper()), (x["tag"][FR].upper() + ".", x["tag"][EN].upper() + ".")
+    copy = (crumbs(t(nm)) + '<p class="tk-kick">%s</p>' % t(S["kick"]) +
+            '<h1 class="%s">%s<br><span>%s</span></h1>' % (h1_cls(l1[0], l1[1], l2[0], l2[1]), t(l1), t(l2)) +
+            '<p class="tk-lead">%s</p>' % t(x["lead"]) +
+            '<div class="tk-actions"><a class="btn btn--primary" href="book-a-meeting.html">%s <span aria-hidden="true">→</span></a>'
+            '<a class="btn btn--ghost" href="tech-tools.html">%s</a></div>' % (t(S["book"]), t(S["all"])))
+    art = shot(x["slug"], name, logo(x["slug"], alt=name)) + '<div class="tk-badge"><i>✓</i><span>%s</span></div>' % t(("Lu par un consultant Licter", "Read by a Licter consultant"))
+    sheet = ('<aside class="tk-sheet" data-reveal><div class="tk-sheet__top"><span class="tk-sheet__logo">%s</span><b>%s</b></div><dl>%s</dl></aside>' % (
+        logo(x["slug"], alt=name), html.escape(name), "".join('<div><dt>%s</dt><dd>%s</dd></div>' % (t(k), t(v)) for k, v in x["facts"])))
+    dels = conn(x["deliver"])
+    lim_cards = [{"kind": "limit", "icon": "!", "tag": t(("Limite", "Limit")), "title": t(ti), "text": t(tx), "art": "!",
+                  "logo": logo(x["slug"]), "foot": html.escape(name), "foot_sub": t(("Ce que nous compensons", "What we make up for"))} for ti, tx in x["limits"]]
+    lims = offers(lim_cards + [tool_offer(p_, ("Nous le croisons avec", "We cross it with")) for p_ in x["pair"]])
+    out = '<main id="content" class="tk tk--tool" style="--brand:%s">\n' % TOOL_STYLE[x["slug"]]
+    out += hero(copy, art)
+    out += sec("what", '<div class="tk-split">%s%s</div>' % (
+        '<div>%s<p class="tk-prose" data-reveal>%s</p></div>' % (head(t(fmt(S["what_k"], NM)), t(fmt(S["what_t"], nm))), t(x["what"])), sheet))
+    out += sec("features", head(t(S["feat_k"]), t(fmt(S["feat_t"], nm))) + feats(x["features"], x["slug"]), band=True)
+    out += sec("agency", head(t(ag["kick"]), t(fmt(S["ag_t"], nm)), t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
+    out += sec("deliverables", head(t(S["del_k"]), t(fmt(S["del_t"], nm))) + dels, band=True)
+    out += sec("uses", head(t(S["uses_k2"]), t(fmt(S["uses_t2"], nm)), t(S["uses_lead"])) + prog(x["uses"]))
+    out += sec("limits", head(t(S["lim_k"]), t(fmt(S["lim_t"], nm))) + lims, band=True)
+    out += sec("faq", faq_block(t(fmt(S["faq_t2"], nm)), [(ag["q"], ag["a"])] + x["faq"]))
+    return out + cta(t(ag["band"]), t(S["cta_text"]), logo(x["slug"], alt=""), x["slug"])
+
+
+# ------------------------------------------------------------------ network page
+SPARK = '<svg viewBox="0 0 120 40" preserveAspectRatio="none"><path d="M0 34 L12 31 L24 33 L36 27 L48 29 L60 22 L72 24 L84 15 L96 17 L108 8 L120 4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
 
 def net_body(n):
     nm = n["name"]; NMx = (nm, nm); NMU = (nm.upper(), nm.upper())
+    color, ink = NET_STYLE[n["slug"]]
     ag = agency_net(n)
-    h1 = "<br>".join(t(p) for p in [("SOCIAL LISTENING %s," % nm.upper(), "%s SOCIAL LISTENING," % nm.upper()), (n["tag"][FR].upper() + ".", n["tag"][EN].upper() + ".")])
-    eyebrow = '<i class="xt__glyph" style="--g:url(/assets/img/networks/%s.svg)" aria-hidden="true"></i>%s' % (n["glyph"], t(S["net_kick"]))
-    acc = ('        <div class="grid grid--two"><article class="card" data-reveal><span class="card__num">%s</span><p class="card__text">%s</p></article>'
-           '<article class="card" data-reveal><span class="card__num">%s</span><p class="card__text">%s</p></article></div>') % (
-        t(S["nacc_yes"]), t(n["access"]), t(S["nacc_no"]), t(n["limits"]))
-    met = flow()
-    if n["tools"]:   # only the tools whose vendors state they cover this network
-        met += '\n        <div class="tpair" data-reveal><p class="tpair__k">%s</p>%s</div>' % (t(fmt(S["nmet_tools"], NMx)), chips([tool_chip(p) for p in n["tools"]]))
-    others = "        " + chips([net_chip(o["slug"]) for o in NETWORKS if o is not n])
-    out = head_block(eyebrow, h1, t(n["lead"]), "tech-tools.html#sources", ("Tous les réseaux", "Every network"), n["tag"][FR].upper())
-    out += block("why", t(fmt(S["nwhy_k"], NMU)), t(fmt(S["nwhy_t"], NMx)), card_grid(n["reads"]))
-    out += block("data", t(S["nacc_k"]), t(fmt(S["nacc_t"], NMx)), acc)
-    out += block("method", t(S["nmet_k"]), t(fmt(S["nmet_t"], NMx)), met)
-    out += block("uses", t(S["uses_k2"]), t(fmt(S["nuses_t"], NMx)), covers(n["uses"]), t(S["uses_lead"]))
-    out += block("networks", t(S["noth_k"]), t(S["noth_t"]), others)
-    out += block("faq", t(S["faq_k"]), t(fmt(S["nfaq_t"], NMx)), faq([(ag["q"], ag["a"])] + n["faq"]))
-    return out + tail_block(t(ag["band"]), t(("Une question sur %s ?" % nm, "A question about %s?" % nm)), "src-" + n["slug"])
+    l1, l2 = ("SOCIAL LISTENING %s," % nm.upper(), "%s SOCIAL LISTENING," % nm.upper()), (n["tag"][FR].upper() + ".", n["tag"][EN].upper() + ".")
+    copy = (crumbs(html.escape(nm)) + '<p class="tk-kick">%s</p>' % t(S["net_kick"]) +
+            '<h1 class="%s">%s<br><span>%s</span></h1>' % (h1_cls(l1[0], l2[0], l2[1]), t(l1), t(l2)) +
+            '<p class="tk-lead">%s</p>' % t(n["lead"]) +
+            '<div class="tk-actions"><a class="btn btn--primary" href="book-a-meeting.html">%s <span aria-hidden="true">→</span></a>'
+            '<a class="btn btn--ghost" href="tech-tools.html#sources">%s</a></div>' % (t(S["book"]), t(("Tous les réseaux", "Every network"))))
+    art = '<div class="tk-net">%s%s</div>' % (glyph(n["glyph"], "tk-net__wm"), shot(n["slug"], nm, '<span class="tk-tile__net">%s</span>' % glyph(n["glyph"])))
+    netmark = '<span class="tk-offer__net">%s</span>' % glyph(n["glyph"])
+    io_cards = [{"kind": "yes", "icon": "✓", "tag": t(S["nacc_yes"]), "title": t(fmt(("Le public de %s", "The public side of %s"), NMx)), "text": t(n["access"]),
+                 "img": '<img src="/assets/img/shots/%s.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" />' % n["slug"],
+                 "logo": netmark, "foot": html.escape(nm), "foot_sub": t(("Données publiques", "Public data"))},
+                {"kind": "no", "icon": "✕", "tag": t(S["nacc_no"]), "title": t(("Le privé reste privé", "Private stays private")), "text": t(n["limits"]), "art": "",
+                 "logo": netmark, "foot": html.escape(nm), "foot_sub": t(("Jamais collecté", "Never collected"))}]
+    # only the tools whose vendors state they cover this network
+    io = offers(io_cards + [tool_offer(p_, fmt(("Couvre %s selon l'éditeur", "Covers %s, per the vendor"), NMx)) for p_ in n["tools"]])
+    method = steps()
+    nets = '<ul class="tk-nets">%s</ul>' % "".join(
+        '<li><a href="source-%s.html" style="--c:%s;--i:%s"><span class="tk-nets__mark">%s</span><span>%s</span></a></li>' % (
+            o["slug"], NET_STYLE[o["slug"]][0], NET_STYLE[o["slug"]][1], glyph(o["glyph"]), html.escape(o["name"])) for o in NETWORKS if o is not n)
+    out = '<main id="content" class="tk tk--net" style="--brand:%s;--brand-ink:%s;--brand-2:%s">\n' % (color, ink, NET_GLOW.get(n["slug"], color))
+    out += hero(copy, art)
+    out += sec("why", head(t(fmt(S["nwhy_k"], NMU)), t(fmt(S["nwhy_t"], NMx))) + feats(n["reads"], n["slug"]), band=True)
+    out += sec("data", head(t(S["nacc_k"]), t(fmt(S["nacc_t"], NMx))) + io)
+    out += sec("method", head(t(S["nmet_k"]), t(fmt(S["nmet_t"], NMx))) + method, band=True)
+    out += sec("uses", head(t(S["uses_k2"]), t(fmt(S["nuses_t"], NMx)), t(S["uses_lead"])) + prog(n["uses"]))
+    out += sec("networks", head(t(S["noth_k"]), t(S["noth_t"])) + nets, band=True)
+    out += sec("faq", faq_block(t(fmt(S["nfaq_t"], NMx)), [(ag["q"], ag["a"])] + n["faq"]))
+    return out + cta(t(ag["band"]), t(S["cta_text"]), '<span class="tk-cta__net">%s</span>' % glyph(n["glyph"]), "src-" + n["slug"])
 
 
 def seo(src, file, title, desc, fr_url):
@@ -375,7 +525,7 @@ def to_fr(page, file, fr_url, title, desc, name):
     fr = fr.replace('<link rel="canonical" href="%s/%s" />' % (O.SITE, file), '<link rel="canonical" href="%s%s" />' % (O.SITE, fr_url), 1)
     fr = re.sub(r'(href|src)="(?!https?:|/|#|mailto:|data:)([^"]+)"', r'\1="/\2"', fr)
     b0, b1 = fr.index("<body"), fr.index("</body>")
-    body = U.translate(fr[b0:b1]).replace(">Skip to content<", ">Aller au contenu<")
+    body = O.per_lang(U.translate(fr[b0:b1]).replace(">Skip to content<", ">Aller au contenu<"), FR)
     fr = fr[:b0] + body + fr[b1:]
     fr = re.sub(r"<!--ld-->.*?(?=\n<!-- /seo:tech -->)", lambda m: ld(body, FR, name, O.SITE + fr_url, file), fr, count=1, flags=re.S)
     fr = fr.replace('placeholder="name@company.com"', 'placeholder="nom@entreprise.com"')
@@ -409,7 +559,7 @@ def main():
         b0, b1 = src.index("<body"), src.index("</body>")
         en = re.sub(r"<!--ld-->", lambda m: ld(src[b0:b1], EN, name, "%s/%s" % (O.SITE, f), f), src, count=1)
         to_fr(src, f, fr_url, title, desc, name)
-        (ROOT / f).write_text(en)
+        (ROOT / f).write_text(O.per_lang(en, EN))
     print("%d tool and network pages written in English and French, %d strings in js/fr.js" % (len(pages), len(O.NEW)))
 
 

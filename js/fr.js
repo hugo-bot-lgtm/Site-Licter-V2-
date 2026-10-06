@@ -85,6 +85,25 @@ window.LicterFR = {
     "J'ai assisté à deux révolutions.",
   "“I have witnessed two revolutions.”":
     "« J'ai assisté à deux révolutions. »",
+  "See every tool": "Voir tous les outils",
+  "tools": "outils",
+  "networks": "réseaux",
+  "What Claude says about you":
+    "Ce que Claude dit de vous",
+  "Google's AI":
+    "L'IA de Google",
+  "The answer engine":
+    "Le moteur de réponses",
+  "X's AI":
+    "L'IA de X",
+  "What Claude, Anthropic's assistant, answers about your brand and your category.":
+    "Ce que Claude, l'assistant d'Anthropic, répond sur votre marque et votre catégorie.",
+  "What Google's assistant answers about your brand, drawing on Google Search.":
+    "Ce que l'assistant de Google répond sur votre marque, en s'appuyant sur la recherche Google.",
+  "The answer engine that cites its sources: which sites shape your brand's image.":
+    "Le moteur de réponses qui cite ses sources : quels sites façonnent l'image de votre marque.",
+  "xAI's assistant, built into X: what it says of you, often fed by the conversation on X.":
+    "L'assistant de xAI, intégré à X : ce qu'il dit de vous, souvent nourri par la conversation de X.",
   /* positioning: a consultancy, found as an agency (October 2026) */
   "Social data intelligence consultancy":
     "Cabinet de conseil en social data intelligence",
@@ -975,7 +994,7 @@ window.LicterFR = {
   "Do we need our own Talkwalker licence?": "Faut-il notre propre licence Talkwalker ?",
   "Does it cover press as well as social?": "Couvre-t-il la presse autant que le social ?",
   "How assistants answer about your brand": "Ce que les assistants répondent sur votre marque",
-  "One question, four ways of hearing it.": "Une question, quatre façons de l'entendre.",
+  "Four layers, four ways of hearing a market.": "Quatre couches, quatre façons d'entendre un marché.",
   "Thirty minutes, one question, no deck.": "Trente minutes, une question, aucun slide.",
   "consumer profiles in the panel we read": "profils consommateurs dans le panel que nous lisons",
   "from signal to alert, around the clock": "du signal à l'alerte, 24h/24",
@@ -2899,8 +2918,24 @@ window.LicterFR = {
   /* ---- end expertise pages ---- */
 
   /* ---- tech pages (tools/build-tech.py) ---- */
+  "Talkwalker":
+    "Talkwalker",
+  "Breadcrumb":
+    "Fil d'Ariane",
+  "Home":
+    "Accueil",
   "TALKWALKER AGENCY,":
     "AGENCE TALKWALKER,",
+  "Talkwalker is one of the most complete social listening platforms on the market. We run it for our clients: broad coverage, several markets, several languages, and an analysis that arrives as an answer.":
+    "Talkwalker est l'une des plateformes d'écoute sociale les plus complètes du marché. Nous l'opérons pour nos clients : couverture large, plusieurs marchés, plusieurs langues, et une analyse qui arrive sous forme de réponse.",
+  "See all our tools":
+    "Voir tous nos outils",
+  "Official site, captured":
+    "Capture du site officiel",
+  "Talkwalker official site":
+    "Site officiel de Talkwalker",
+  "Read by a Licter consultant":
+    "Lu par un consultant Licter",
   "Hootsuite, since 2024":
     "Hootsuite, depuis 2024",
   "Origin":
@@ -2941,10 +2976,14 @@ window.LicterFR = {
     "Les sujets qui accélèrent",
   "Multi-market comparison":
     "Comparaison multi-marchés",
+  "Limit":
+    "Limite",
   "Public data only":
     "Seulement le public",
   "Like every listening platform, it only reads what is public: no private messages, no closed accounts.":
     "Comme toutes les plateformes d'écoute, elle ne lit que ce qui est public : ni messages privés, ni comptes fermés.",
+  "What we make up for":
+    "Ce que nous compensons",
   "Uneven coverage across networks":
     "Une couverture inégale selon les réseaux",
   "Networks restrict access to their data; we check what is covered for your question before starting.":
@@ -2953,14 +2992,22 @@ window.LicterFR = {
     "Nous le croisons avec",
   "Visibrain":
     "Visibrain",
+  "The conversation as it happens, without waiting for the weekly export.":
+    "La conversation à l'instant, sans attendre l'export de la semaine.",
+  "See the page":
+    "Voir la page",
   "YouScan":
     "YouScan",
+  "Your brand recognised in visuals, even when nobody names it.":
+    "Votre marque reconnue dans les visuels, même quand personne ne la nomme.",
   "SoPrism":
     "SoPrism",
-  "Talkwalker is one of the most complete social listening platforms on the market. We run it for our clients: broad coverage, several markets, several languages, and an analysis that arrives as an answer.":
-    "Talkwalker est l'une des plateformes d'écoute sociale les plus complètes du marché. Nous l'opérons pour nos clients : couverture large, plusieurs marchés, plusieurs langues, et une analyse qui arrive sous forme de réponse.",
-  "See all our tools":
-    "Voir tous nos outils",
+  "What an audience cares about, ranked by real affinity.":
+    "Ce qui passionne une audience, classé par affinité réelle.",
+  "Previous":
+    "Précédent",
+  "Next":
+    "Suivant",
   "TALKWALKER AT A GLANCE":
     "TALKWALKER EN BREF",
   "What is Talkwalker?":
@@ -2989,28 +3036,42 @@ window.LicterFR = {
     "AGENCE TALKWALKER",
   "Why work with a Talkwalker agency?":
     "Pourquoi passer par une agence Talkwalker ?",
+  "Talkwalker provides data. A Talkwalker agency like Licter turns it into a decision: here is how we use it.":
+    "Talkwalker fournit des données. Une agence Talkwalker comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "A tool to learn and to run":
+    "Un outil à apprendre et à faire tourner",
+  "Queries set once, never reviewed":
+    "Des requêtes réglées une fois, jamais revues",
+  "Dashboards nobody opens":
+    "Des tableaux de bord que personne n'ouvre",
+  "Exports to interpret on your own":
+    "Des exports à interpréter seul",
+  "We run it for you: nothing to learn":
+    "Nous l'opérons pour vous : rien à apprendre",
+  "A consultant who frames the question with you":
+    "Un consultant qui cadre la question avec vous",
+  "A setup read and adjusted continuously":
+    "Une configuration lue et ajustée en continu",
+  "A recommendation presented to those who decide":
+    "Une recommandation présentée à ceux qui décident",
+  "Talkwalker on its own":
+    "Talkwalker seul",
+  "Talkwalker with Licter":
+    "Talkwalker avec Licter",
+  "You receive a recommendation, not a dashboard to run.":
+    "Vous recevez une recommandation, pas un tableau de bord à faire tourner.",
   "We start from the decision to make, not from a keyword list: the perimeter follows the question.":
     "Nous partons de la décision à prendre, pas d'une liste de mots-clés : le périmètre suit la question.",
   "Queries, sources, languages and periods, set by the consultants who will read the output themselves.":
     "Requêtes, sources, langues et périodes, réglées par les consultants qui liront eux-mêmes le résultat.",
   "An analysis crossed with our other sources, and a recommendation your teams can act on.":
     "Une analyse croisée avec nos autres sources, et une recommandation que vos équipes peuvent appliquer.",
-  "Talkwalker provides data. A Talkwalker agency like Licter turns it into a decision: here is how we use it.":
-    "Talkwalker fournit des données. Une agence Talkwalker comme Licter en tire une décision : voici comment nous l'utilisons.",
   "WHAT WE DELIVER":
     "CE QUE NOUS LIVRONS",
   "What we deliver with Talkwalker.":
     "Ce que nous livrons avec Talkwalker.",
   "Talkwalker: the use cases where it counts.":
     "Talkwalker : les cas d'usage où il compte.",
-  "MONITOR YOUR BRAND IMAGE AND REPUTATION":
-    "SURVEILLER L'IMAGE ET LA RÉPUTATION DE VOTRE MARQUE",
-  "ANALYSE THE IMPACT OF AN EVENT OR CAMPAIGN":
-    "MESURER L'IMPACT D'UN ÉVÉNEMENT OU D'UNE CAMPAGNE",
-  "// TRENDS & INNOVATION":
-    "// TENDANCES & INNOVATION",
-  "ANALYSE MARKETS AND IDENTIFY OPPORTUNITIES":
-    "ANALYSER LES MARCHÉS ET REPÉRER LES OPPORTUNITÉS",
   "Each card leads to the use case it contributes to.":
     "Chaque carte mène au cas d'usage auquel il contribue.",
   "LIMITS AND COMPLEMENTS":
@@ -3035,12 +3096,14 @@ window.LicterFR = {
     "C'est le cas le plus fréquent : la plupart des questions se règlent avec deux outils croisés.",
   "Looking for a Talkwalker agency?":
     "Vous cherchez une agence Talkwalker ?",
-  "Not sure Talkwalker is the right tool?":
-    "Pas sûr que Talkwalker soit le bon outil ?",
   "Send us the question. If another tool answers it better, we will tell you: we use about fifteen.":
     "Envoyez-nous la question. Si un autre outil y répond mieux, nous vous le dirons : nous en utilisons une quinzaine.",
   "VISIBRAIN AGENCY,":
     "AGENCE VISIBRAIN,",
+  "Visibrain is the French real-time monitoring platform, built for communication teams. We use it when you need to know fast: a topic taking off, a crisis forming, an executive under fire.":
+    "Visibrain est la plateforme française de veille en temps réel, pensée pour les équipes de communication. Nous l'utilisons quand il faut savoir vite : un sujet qui démarre, une crise qui se forme, un dirigeant mis en cause.",
+  "Visibrain official site":
+    "Site officiel de Visibrain",
   "Visibrain, independent":
     "Visibrain, indépendant",
   "Paris, 2011":
@@ -3077,12 +3140,12 @@ window.LicterFR = {
     "La vitesse avant la profondeur",
   "Built to react fast; for an in-depth study over time, we cross it with a more analytical platform.":
     "Faite pour réagir vite ; pour une étude de fond sur la durée, nous la croisons avec une plateforme plus analytique.",
-  "Talkwalker":
-    "Talkwalker",
+  "Every article on the same story, grouped.":
+    "Tous les articles sur un même sujet, regroupés.",
   "Radarly":
     "Radarly",
-  "Visibrain is the French real-time monitoring platform, built for communication teams. We use it when you need to know fast: a topic taking off, a crisis forming, an executive under fire.":
-    "Visibrain est la plateforme française de veille en temps réel, pensée pour les équipes de communication. Nous l'utilisons quand il faut savoir vite : un sujet qui démarre, une crise qui se forme, un dirigeant mis en cause.",
+  "Topics and categories set with you, applied to the whole collection.":
+    "Des sujets et des catégories définis avec vous, appliqués à toute la collecte.",
   "VISIBRAIN AT A GLANCE":
     "VISIBRAIN EN BREF",
   "What is Visibrain?":
@@ -3091,8 +3154,6 @@ window.LicterFR = {
     "Visibrain est une plateforme de veille du web et des réseaux sociaux fondée à Paris en 2011. Elle surveille en temps réel les réseaux, la presse en ligne et les blogs, et sert surtout à protéger la réputation et à prévenir les crises.",
   "What Visibrain lets you analyse.":
     "Ce que Visibrain permet d'analyser.",
-  "The conversation as it happens, without waiting for the weekly export.":
-    "La conversation à l'instant, sans attendre l'export de la semaine.",
   "Alerts":
     "Les alertes",
   "By email, text, Slack or Telegram, according to the agreed protocol.":
@@ -3111,14 +3172,14 @@ window.LicterFR = {
     "Pourquoi passer par une agence Visibrain ?",
   "Visibrain provides data. A Visibrain agency like Licter turns it into a decision: here is how we use it.":
     "Visibrain fournit des données. Une agence Visibrain comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Visibrain on its own":
+    "Visibrain seul",
+  "Visibrain with Licter":
+    "Visibrain avec Licter",
   "What we deliver with Visibrain.":
     "Ce que nous livrons avec Visibrain.",
   "Visibrain: the use cases where it counts.":
     "Visibrain : les cas d'usage où il compte.",
-  "IDENTIFY AND MITIGATE BRAND RISKS":
-    "IDENTIFIER ET DÉSAMORCER LES RISQUES DE MARQUE",
-  "OPTIMISE YOUR LEADER ADVOCACY STRATEGY":
-    "OPTIMISER LA PRISE DE PAROLE DE VOS DIRIGEANTS",
   "The limits of Visibrain, and how we make up for them.":
     "Les limites de Visibrain, et comment nous les compensons.",
   "Frequently asked questions about Visibrain.":
@@ -3139,10 +3200,12 @@ window.LicterFR = {
     "Oui, la presse en ligne et les blogs, en plus des réseaux : le passage de l'un à l'autre est souvent le signal qui compte.",
   "Looking for a Visibrain agency?":
     "Vous cherchez une agence Visibrain ?",
-  "Not sure Visibrain is the right tool?":
-    "Pas sûr que Visibrain soit le bon outil ?",
   "YOUSCAN AGENCY,":
     "AGENCE YOUSCAN,",
+  "YouScan reads what appears in images, not only in captions: your logos, your products, and the context they are shown in. We use it to see the part of the conversation that text does not say.":
+    "YouScan lit ce qui apparaît dans les images, pas seulement dans les légendes : vos logos, vos produits, et le contexte dans lequel ils sont montrés. Nous l'utilisons pour voir la partie de la conversation que le texte ne dit pas.",
+  "YouScan official site":
+    "Site officiel de YouScan",
   "YouScan, independent":
     "YouScan, indépendant",
   "Kyiv, Ukraine, 2009":
@@ -3187,8 +3250,8 @@ window.LicterFR = {
     "Pour un service B2B, l'image dit peu ; d'autres outils répondent mieux, et nous le disons.",
   "Social Blade":
     "Social Blade",
-  "YouScan reads what appears in images, not only in captions: your logos, your products, and the context they are shown in. We use it to see the part of the conversation that text does not say.":
-    "YouScan lit ce qui apparaît dans les images, pas seulement dans les légendes : vos logos, vos produits, et le contexte dans lequel ils sont montrés. Nous l'utilisons pour voir la partie de la conversation que le texte ne dit pas.",
+  "Followers and views, day after day.":
+    "Abonnés et vues, jour après jour.",
   "YOUSCAN AT A GLANCE":
     "YOUSCAN EN BREF",
   "What is YouScan?":
@@ -3197,8 +3260,6 @@ window.LicterFR = {
     "YouScan est une plateforme d'écoute des réseaux sociaux fondée à Kyiv en 2009, connue pour son analyse visuelle : elle détecte dans les images les logos, objets, scènes et activités, et complète l'analyse du texte et des audiences.",
   "What YouScan lets you analyse.":
     "Ce que YouScan permet d'analyser.",
-  "Your brand recognised in visuals, even when nobody names it.":
-    "Votre marque reconnue dans les visuels, même quand personne ne la nomme.",
   "The context of use":
     "Le contexte d'usage",
   "Where, when and with whom your products appear.":
@@ -3217,14 +3278,14 @@ window.LicterFR = {
     "Pourquoi passer par une agence YouScan ?",
   "YouScan provides data. A YouScan agency like Licter turns it into a decision: here is how we use it.":
     "YouScan fournit des données. Une agence YouScan comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "YouScan on its own":
+    "YouScan seul",
+  "YouScan with Licter":
+    "YouScan avec Licter",
   "What we deliver with YouScan.":
     "Ce que nous livrons avec YouScan.",
   "YouScan: the use cases where it counts.":
     "YouScan : les cas d'usage où il compte.",
-  "TEST AND EVALUATE YOUR PRODUCTS":
-    "TESTER ET ÉVALUER VOS PRODUITS",
-  "IDENTIFY THE RIGHT AMBASSADORS":
-    "IDENTIFIER LES BONS AMBASSADEURS",
   "The limits of YouScan, and how we make up for them.":
     "Les limites de YouScan, et comment nous les compensons.",
   "Frequently asked questions about YouScan.":
@@ -3245,12 +3306,14 @@ window.LicterFR = {
     "La détection va au-delà du logo ; le périmètre est défini avec vous, sur des exemples, avant la première lecture.",
   "Looking for a YouScan agency?":
     "Vous cherchez une agence YouScan ?",
-  "Not sure YouScan is the right tool?":
-    "Pas sûr que YouScan soit le bon outil ?",
   "SOPRISM AGENCY,":
     "AGENCE SOPRISM,",
   "WHO THEY REALLY ARE.":
     "QUI ILS SONT VRAIMENT.",
+  "SoPrism describes audiences from their interests and affinities on Facebook and Instagram. We use it to know who your audiences really are, and your competitors'.":
+    "SoPrism décrit les audiences à partir de leurs centres d'intérêt et de leurs affinités sur Facebook et Instagram. Nous l'utilisons pour savoir qui sont vraiment vos publics, et ceux de vos concurrents.",
+  "SoPrism official site":
+    "Site officiel de SoPrism",
   "Audiense, since 2022":
     "Audiense, depuis 2022",
   "Belgium":
@@ -3297,8 +3360,8 @@ window.LicterFR = {
     "Il dit qui sont les gens, pas ce qu'ils disent : l'écoute sociale complète la lecture.",
   "Meta Ads":
     "Meta Ads",
-  "SoPrism describes audiences from their interests and affinities on Facebook and Instagram. We use it to know who your audiences really are, and your competitors'.":
-    "SoPrism décrit les audiences à partir de leurs centres d'intérêt et de leurs affinités sur Facebook et Instagram. Nous l'utilisons pour savoir qui sont vraiment vos publics, et ceux de vos concurrents.",
+  "All an advertiser's running ads, with their visuals.":
+    "Toutes les publicités en cours d'un annonceur, avec leurs visuels.",
   "SOPRISM AT A GLANCE":
     "SOPRISM EN BREF",
   "What is SoPrism?":
@@ -3309,8 +3372,6 @@ window.LicterFR = {
     "Ce que SoPrism permet d'analyser.",
   "Interests":
     "Les centres d'intérêt",
-  "What an audience cares about, ranked by real affinity.":
-    "Ce qui passionne une audience, classé par affinité réelle.",
   "Competitors' audiences":
     "Les audiences concurrentes",
   "Geography":
@@ -3327,14 +3388,14 @@ window.LicterFR = {
     "Pourquoi passer par une agence SoPrism ?",
   "SoPrism provides data. A SoPrism agency like Licter turns it into a decision: here is how we use it.":
     "SoPrism fournit des données. Une agence SoPrism comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "SoPrism on its own":
+    "SoPrism seul",
+  "SoPrism with Licter":
+    "SoPrism avec Licter",
   "What we deliver with SoPrism.":
     "Ce que nous livrons avec SoPrism.",
   "SoPrism: the use cases where it counts.":
     "SoPrism : les cas d'usage où il compte.",
-  "SEGMENT YOUR TARGET PROFILES":
-    "SEGMENTER VOS PROFILS CIBLES",
-  "REJUVENATE YOUR AUDIENCES":
-    "RAJEUNIR VOS AUDIENCES",
   "The limits of SoPrism, and how we make up for them.":
     "Les limites de SoPrism, et comment nous les compensons.",
   "Frequently asked questions about SoPrism.":
@@ -3357,10 +3418,12 @@ window.LicterFR = {
     "L'outil travaille sur des données agrégées et anonymes, pas sur des profils individuels.",
   "Looking for a SoPrism agency?":
     "Vous cherchez une agence SoPrism ?",
-  "Not sure SoPrism is the right tool?":
-    "Pas sûr que SoPrism soit le bon outil ?",
   "RADARLY AGENCY,":
     "AGENCE RADARLY,",
+  "Radarly is the social listening platform created by France's Linkfluence, now part of Meltwater. We pick it to follow a brand over time, with one shared set of topics for several teams.":
+    "Radarly est la plateforme d'écoute sociale créée par le français Linkfluence, aujourd'hui intégrée à Meltwater. Nous la prenons pour suivre une marque dans la durée, avec un même référentiel de sujets pour plusieurs équipes.",
+  "Radarly official site":
+    "Site officiel de Radarly",
   "Meltwater, since 2021":
     "Meltwater, depuis 2021",
   "Linkfluence, Paris, 2006":
@@ -3399,8 +3462,6 @@ window.LicterFR = {
     "Depuis le rachat, l'outil est proposé dans l'offre de Meltwater ; nous vérifions la configuration disponible avant chaque projet.",
   "Like the other platforms, it only reads what is public.":
     "Comme les autres plateformes, il ne lit que ce qui est public.",
-  "Radarly is the social listening platform created by France's Linkfluence, now part of Meltwater. We pick it to follow a brand over time, with one shared set of topics for several teams.":
-    "Radarly est la plateforme d'écoute sociale créée par le français Linkfluence, aujourd'hui intégrée à Meltwater. Nous la prenons pour suivre une marque dans la durée, avec un même référentiel de sujets pour plusieurs équipes.",
   "RADARLY AT A GLANCE":
     "RADARLY EN BREF",
   "What is Radarly?":
@@ -3411,8 +3472,6 @@ window.LicterFR = {
     "Ce que Radarly permet d'analyser.",
   "Sorting conversations":
     "Le classement des conversations",
-  "Topics and categories set with you, applied to the whole collection.":
-    "Des sujets et des catégories définis avec vous, appliqués à toute la collecte.",
   "Spikes and anomalies":
     "Les pics et anomalies",
   "What breaks the pattern, flagged early.":
@@ -3429,12 +3488,14 @@ window.LicterFR = {
     "Pourquoi passer par une agence Radarly ?",
   "Radarly provides data. A Radarly agency like Licter turns it into a decision: here is how we use it.":
     "Radarly fournit des données. Une agence Radarly comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Radarly on its own":
+    "Radarly seul",
+  "Radarly with Licter":
+    "Radarly avec Licter",
   "What we deliver with Radarly.":
     "Ce que nous livrons avec Radarly.",
   "Radarly: the use cases where it counts.":
     "Radarly : les cas d'usage où il compte.",
-  "DEVELOP YOUR BRAND MESSAGING":
-    "CONSTRUIRE VOTRE DISCOURS DE MARQUE",
   "The limits of Radarly, and how we make up for them.":
     "Les limites de Radarly, et comment nous les compensons.",
   "Frequently asked questions about Radarly.":
@@ -3453,12 +3514,16 @@ window.LicterFR = {
     "Les deux font de l'écoute sociale. Nous choisissons selon la question, et les croisons souvent.",
   "Looking for a Radarly agency?":
     "Vous cherchez une agence Radarly ?",
-  "Not sure Radarly is the right tool?":
-    "Pas sûr que Radarly soit le bon outil ?",
+  "Semrush":
+    "Semrush",
   "SEMRUSH AGENCY,":
     "AGENCE SEMRUSH,",
   "READ BEYOND SEO.":
     "LU AU-DELÀ DU SEO.",
+  "Semrush shows what your market types into search engines, who answers it, and now how AI talks about brands. We use it to read demand, not to do SEO.":
+    "Semrush montre ce que votre marché tape dans les moteurs de recherche, qui y répond, et désormais comment les IA parlent des marques. Nous l'utilisons pour lire la demande, pas pour faire du référencement.",
+  "Semrush official site":
+    "Site officiel de Semrush",
   "Adobe, since 2026":
     "Adobe, depuis 2026",
   "Boston, 2008":
@@ -3505,12 +3570,16 @@ window.LicterFR = {
     "Elle dit ce que les gens cherchent, pas ce qu'ils pensent : nous la croisons avec l'écoute sociale.",
   "Google Trends":
     "Google Trends",
+  "Date a topic, and see whether it comes back each year.":
+    "Dater un sujet, et voir s'il revient chaque année.",
   "AnswerThePublic":
     "AnswerThePublic",
+  "Why, how, which, when: each family says something else.":
+    "Pourquoi, comment, lequel, quand : chaque famille dit autre chose.",
   "GEO":
     "GEO",
-  "Semrush shows what your market types into search engines, who answers it, and now how AI talks about brands. We use it to read demand, not to do SEO.":
-    "Semrush montre ce que votre marché tape dans les moteurs de recherche, qui y répond, et désormais comment les IA parlent des marques. Nous l'utilisons pour lire la demande, pas pour faire du référencement.",
+  "On your category's questions, how often you are cited.":
+    "Sur les questions de votre catégorie, combien de fois vous êtes cité.",
   "SEMRUSH AT A GLANCE":
     "SEMRUSH EN BREF",
   "What is Semrush?":
@@ -3541,12 +3610,14 @@ window.LicterFR = {
     "Pourquoi passer par une agence Semrush ?",
   "Semrush provides data. A Semrush agency like Licter turns it into a decision: here is how we use it.":
     "Semrush fournit des données. Une agence Semrush comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Semrush on its own":
+    "Semrush seul",
+  "Semrush with Licter":
+    "Semrush avec Licter",
   "What we deliver with Semrush.":
     "Ce que nous livrons avec Semrush.",
   "Semrush: the use cases where it counts.":
     "Semrush : les cas d'usage où il compte.",
-  "UNDERSTAND EXPECTATIONS AT EVERY TOUCHPOINT":
-    "COMPRENDRE LES ATTENTES À CHAQUE POINT DE CONTACT",
   "The limits of Semrush, and how we make up for them.":
     "Les limites de Semrush, et comment nous les compensons.",
   "Frequently asked questions about Semrush.":
@@ -3565,12 +3636,14 @@ window.LicterFR = {
     "Oui, depuis avril 2026.",
   "Looking for a Semrush agency?":
     "Vous cherchez une agence Semrush ?",
-  "Not sure Semrush is the right tool?":
-    "Pas sûr que Semrush soit le bon outil ?",
   "GOOGLE TRENDS AGENCY,":
     "AGENCE GOOGLE TRENDS,",
   "PUT IN CONTEXT.":
     "MIS EN CONTEXTE.",
+  "Google Trends shows search interest over time, by country and region. A simple curve that we read with the rest: it dates a topic, compares it to another, and says whether it is really rising.":
+    "Google Trends montre l'intérêt de recherche dans le temps, par pays et par région. Une courbe simple, que nous lisons avec le reste : elle date un sujet, le compare à un autre, et dit s'il monte vraiment.",
+  "Google Trends official site":
+    "Site officiel de Google Trends",
   "Google":
     "Google",
   "Launch":
@@ -3621,10 +3694,6 @@ window.LicterFR = {
     "Un échantillon",
   "Results come from a sample and can vary between queries; small volumes are excluded.":
     "Les résultats viennent d'un échantillon et peuvent varier d'une requête à l'autre ; les petits volumes sont exclus.",
-  "Semrush":
-    "Semrush",
-  "Google Trends shows search interest over time, by country and region. A simple curve that we read with the rest: it dates a topic, compares it to another, and says whether it is really rising.":
-    "Google Trends montre l'intérêt de recherche dans le temps, par pays et par région. Une courbe simple, que nous lisons avec le reste : elle date un sujet, le compare à un autre, et dit s'il monte vraiment.",
   "GOOGLE TRENDS AT A GLANCE":
     "GOOGLE TRENDS EN BREF",
   "What is Google Trends?":
@@ -3635,8 +3704,6 @@ window.LicterFR = {
     "Ce que Google Trends permet d'analyser.",
   "Interest over time":
     "L'intérêt dans le temps",
-  "Date a topic, and see whether it comes back each year.":
-    "Dater un sujet, et voir s'il revient chaque année.",
   "Comparing terms":
     "La comparaison de termes",
   "Your brand against a competitor, one trend against another.":
@@ -3655,12 +3722,14 @@ window.LicterFR = {
     "Pourquoi passer par une agence Google Trends ?",
   "Google Trends provides data. A Google Trends agency like Licter turns it into a decision: here is how we use it.":
     "Google Trends fournit des données. Une agence Google Trends comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Google Trends on its own":
+    "Google Trends seul",
+  "Google Trends with Licter":
+    "Google Trends avec Licter",
   "What we deliver with Google Trends.":
     "Ce que nous livrons avec Google Trends.",
   "Google Trends: the use cases where it counts.":
     "Google Trends : les cas d'usage où il compte.",
-  "MAP OUT YOUR STAKEHOLDERS AND FUTURE TRENDS":
-    "CARTOGRAPHIER VOS PARTIES PRENANTES ET LES TENDANCES À VENIR",
   "The limits of Google Trends, and how we make up for them.":
     "Les limites de Google Trends, et comment nous les compensons.",
   "Frequently asked questions about Google Trends.":
@@ -3679,12 +3748,14 @@ window.LicterFR = {
     "Non, ce sont des indices relatifs de 0 à 100. C'est pourquoi nous les complétons avec Semrush.",
   "Looking for a Google Trends agency?":
     "Vous cherchez une agence Google Trends ?",
-  "Not sure Google Trends is the right tool?":
-    "Pas sûr que Google Trends soit le bon outil ?",
   "ANSWERTHEPUBLIC AGENCY,":
     "AGENCE ANSWERTHEPUBLIC,",
   "THE MARKET'S QUESTIONS.":
     "LES QUESTIONS DU MARCHÉ.",
+  "AnswerThePublic shows the questions people ask around a subject, as they type them: why, how, which, is it. We use it to hear a market before it speaks to you.":
+    "AnswerThePublic montre les questions que les gens posent autour d'un sujet, telles qu'ils les tapent : pourquoi, comment, lequel, est-ce que. Nous nous en servons pour entendre un marché avant qu'il ne s'adresse à vous.",
+  "AnswerThePublic official site":
+    "Site officiel de AnswerThePublic",
   "NP Digital, since 2022":
     "NP Digital, depuis 2022",
   "UK, 2014":
@@ -3733,8 +3804,8 @@ window.LicterFR = {
     "Le nombre de recherches gratuites est limité ; nous travaillons avec nos accès.",
   "ChatGPT":
     "ChatGPT",
-  "AnswerThePublic shows the questions people ask around a subject, as they type them: why, how, which, is it. We use it to hear a market before it speaks to you.":
-    "AnswerThePublic montre les questions que les gens posent autour d'un sujet, telles qu'ils les tapent : pourquoi, comment, lequel, est-ce que. Nous nous en servons pour entendre un marché avant qu'il ne s'adresse à vous.",
+  "The brands cited on your category's questions, and in which order.":
+    "Les marques citées sur les questions de votre catégorie, et dans quel ordre.",
   "ANSWERTHEPUBLIC AT A GLANCE":
     "ANSWERTHEPUBLIC EN BREF",
   "What is AnswerThePublic?":
@@ -3745,8 +3816,6 @@ window.LicterFR = {
     "Ce que AnswerThePublic permet d'analyser.",
   "Questions by type":
     "Les questions par type",
-  "Why, how, which, when: each family says something else.":
-    "Pourquoi, comment, lequel, quand : chaque famille dit autre chose.",
   "Comparisons":
     "Les comparaisons",
   "What the market weighs up: \"X or Y\", \"X versus Y\".":
@@ -3763,6 +3832,10 @@ window.LicterFR = {
     "Pourquoi passer par une agence AnswerThePublic ?",
   "AnswerThePublic provides data. A AnswerThePublic agency like Licter turns it into a decision: here is how we use it.":
     "AnswerThePublic fournit des données. Une agence AnswerThePublic comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "AnswerThePublic on its own":
+    "AnswerThePublic seul",
+  "AnswerThePublic with Licter":
+    "AnswerThePublic avec Licter",
   "What we deliver with AnswerThePublic.":
     "Ce que nous livrons avec AnswerThePublic.",
   "AnswerThePublic: the use cases where it counts.":
@@ -3785,12 +3858,14 @@ window.LicterFR = {
     "Des suggestions des moteurs de recherche : ce que les gens commencent à taper, et ce que le moteur complète.",
   "Looking for a AnswerThePublic agency?":
     "Vous cherchez une agence AnswerThePublic ?",
-  "Not sure AnswerThePublic is the right tool?":
-    "Pas sûr que AnswerThePublic soit le bon outil ?",
   "CHATGPT AGENCY,":
     "AGENCE CHATGPT,",
   "WHAT AI SAYS ABOUT YOU.":
     "CE QUE L'IA DIT DE VOUS.",
+  "More and more people ask an AI rather than a search engine. We read what ChatGPT answers about your brand and your category, and where it gets it from.":
+    "De plus en plus de gens posent leurs questions à une IA plutôt qu'à un moteur de recherche. Nous lisons ce que ChatGPT répond sur votre marque et votre catégorie, et d'où il le tient.",
+  "ChatGPT official site":
+    "Site officiel de ChatGPT",
   "OpenAI":
     "OpenAI",
   "November 2022":
@@ -3839,8 +3914,12 @@ window.LicterFR = {
     "Ce n'est pas de l'écoute",
   "ChatGPT has no access to the whole social conversation: it completes social listening, it does not replace it.":
     "ChatGPT n'a pas accès à toute la conversation des réseaux : il complète l'écoute sociale, il ne la remplace pas.",
-  "More and more people ask an AI rather than a search engine. We read what ChatGPT answers about your brand and your category, and where it gets it from.":
-    "De plus en plus de gens posent leurs questions à une IA plutôt qu'à un moteur de recherche. Nous lisons ce que ChatGPT répond sur votre marque et votre catégorie, et d'où il le tient.",
+  "Claude":
+    "Claude",
+  "Gemini":
+    "Gemini",
+  "The brands cited on your questions, and in which order.":
+    "Les marques citées sur vos questions, et dans quel ordre.",
   "CHATGPT AT A GLANCE":
     "CHATGPT EN BREF",
   "What is ChatGPT?":
@@ -3851,8 +3930,6 @@ window.LicterFR = {
     "Ce que ChatGPT permet d'analyser.",
   "What AI recommends":
     "Ce que l'IA recommande",
-  "The brands cited on your category's questions, and in which order.":
-    "Les marques citées sur les questions de votre catégorie, et dans quel ordre.",
   "The sources cited":
     "Les sources citées",
   "The sites and articles the answer relies on.":
@@ -3871,6 +3948,10 @@ window.LicterFR = {
     "Pourquoi passer par une agence ChatGPT ?",
   "ChatGPT provides data. A ChatGPT agency like Licter turns it into a decision: here is how we use it.":
     "ChatGPT fournit des données. Une agence ChatGPT comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "ChatGPT on its own":
+    "ChatGPT seul",
+  "ChatGPT with Licter":
+    "ChatGPT avec Licter",
   "What we deliver with ChatGPT.":
     "Ce que nous livrons avec ChatGPT.",
   "ChatGPT: the use cases where it counts.":
@@ -3897,12 +3978,16 @@ window.LicterFR = {
     "Non. Nous posons des questions publiques ; aucune donnée client n'est transmise.",
   "Looking for a ChatGPT agency?":
     "Vous cherchez une agence ChatGPT ?",
-  "Not sure ChatGPT is the right tool?":
-    "Pas sûr que ChatGPT soit le bon outil ?",
   "GEO AGENCY,":
     "AGENCE GEO,",
   "YOUR PLACE IN AI ANSWERS.":
     "VOTRE PLACE DANS LES RÉPONSES DES IA.",
+  "GEO (generative engine optimisation) measures and improves a brand's visibility in the answers of AI engines. We start from what the AIs answer, then from the sources that feed them.":
+    "Le GEO (generative engine optimisation) mesure et améliore la visibilité d'une marque dans les réponses des moteurs d'IA. Nous partons de ce que les IA répondent, puis des sources qui les nourrissent.",
+  "The founding research paper":
+    "L'article de recherche fondateur",
+  "GEO official site":
+    "Site officiel de GEO",
   "Type":
     "Nature",
   "A practice, not a tool":
@@ -3953,8 +4038,10 @@ window.LicterFR = {
     "Pas de garantie",
   "Nobody controls an AI's answer; you act on the sources, and measure the effect.":
     "Personne ne contrôle la réponse d'une IA ; on agit sur les sources, et on mesure l'effet.",
-  "GEO (generative engine optimisation) measures and improves a brand's visibility in the answers of AI engines. We start from what the AIs answer, then from the sources that feed them.":
-    "Le GEO (generative engine optimisation) mesure et améliore la visibilité d'une marque dans les réponses des moteurs d'IA. Nous partons de ce que les IA répondent, puis des sources qui les nourrissent.",
+  "Perplexity":
+    "Perplexity",
+  "Each answer lists the sites used: you see where your brand's image comes from.":
+    "Chaque réponse liste les sites utilisés : on voit d'où vient l'image de votre marque.",
   "GEO AT A GLANCE":
     "GEO EN BREF",
   "What is GEO?":
@@ -3965,8 +4052,6 @@ window.LicterFR = {
     "Ce que GEO permet d'analyser.",
   "Your share of answer":
     "Votre part de réponse",
-  "On your category's questions, how often you are cited.":
-    "Sur les questions de votre catégorie, combien de fois vous êtes cité.",
   "The sources that count":
     "Les sources qui comptent",
   "The sites, articles and forums the AIs draw on.":
@@ -3985,6 +4070,10 @@ window.LicterFR = {
     "Pourquoi passer par une agence GEO ?",
   "GEO provides data. A GEO agency like Licter turns it into a decision: here is how we use it.":
     "GEO fournit des données. Une agence GEO comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "GEO on its own":
+    "GEO seul",
+  "GEO with Licter":
+    "GEO avec Licter",
   "What we deliver with GEO.":
     "Ce que nous livrons avec GEO.",
   "GEO: the use cases where it counts.":
@@ -4007,12 +4096,14 @@ window.LicterFR = {
     "Non : nous mesurons, expliquons et recommandons ; la production reste à vos équipes ou à vos agences.",
   "Looking for a GEO agency?":
     "Vous cherchez une agence GEO ?",
-  "Not sure GEO is the right tool?":
-    "Pas sûr que GEO soit le bon outil ?",
   "META ADS AGENCY,":
     "AGENCE META ADS,",
   "CAMPAIGNS IN THE OPEN.":
     "LES CAMPAGNES À DÉCOUVERT.",
+  "Meta's Ad Library shows the ads running on Facebook, Instagram and Meta's other apps. We read it to see what your competitors push, since when, and with which messages.":
+    "La bibliothèque publicitaire de Meta montre les publicités en cours sur Facebook, Instagram et les autres applications de Meta. Nous la lisons pour voir ce que vos concurrents poussent, depuis quand, et avec quels messages.",
+  "Meta Ads official site":
+    "Site officiel de Meta Ads",
   "Meta":
     "Meta",
   "Created":
@@ -4059,8 +4150,6 @@ window.LicterFR = {
     "Une mémoire limitée hors UE",
   "Inactive commercial ads are not kept outside the European Union.":
     "Les publicités commerciales inactives ne sont pas conservées hors de l'Union européenne.",
-  "Meta's Ad Library shows the ads running on Facebook, Instagram and Meta's other apps. We read it to see what your competitors push, since when, and with which messages.":
-    "La bibliothèque publicitaire de Meta montre les publicités en cours sur Facebook, Instagram et les autres applications de Meta. Nous la lisons pour voir ce que vos concurrents poussent, depuis quand, et avec quels messages.",
   "META ADS AT A GLANCE":
     "META ADS EN BREF",
   "What is Meta Ads?":
@@ -4071,8 +4160,6 @@ window.LicterFR = {
     "Ce que Meta Ads permet d'analyser.",
   "Active ads":
     "Les publicités actives",
-  "All an advertiser's running ads, with their visuals.":
-    "Toutes les publicités en cours d'un annonceur, avec leurs visuels.",
   "Campaign duration":
     "La durée des campagnes",
   "How long an ad has been running, a sign of what works.":
@@ -4091,6 +4178,10 @@ window.LicterFR = {
     "Pourquoi passer par une agence Meta Ads ?",
   "Meta Ads provides data. A Meta Ads agency like Licter turns it into a decision: here is how we use it.":
     "Meta Ads fournit des données. Une agence Meta Ads comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Meta Ads on its own":
+    "Meta Ads seul",
+  "Meta Ads with Licter":
+    "Meta Ads avec Licter",
   "What we deliver with Meta Ads.":
     "Ce que nous livrons avec Meta Ads.",
   "Meta Ads: the use cases where it counts.":
@@ -4113,12 +4204,14 @@ window.LicterFR = {
     "Seulement pour les publicités politiques ou d'enjeu social, que Meta n'accepte plus dans l'Union européenne depuis octobre 2025. Pour les autres, non.",
   "Looking for a Meta Ads agency?":
     "Vous cherchez une agence Meta Ads ?",
-  "Not sure Meta Ads is the right tool?":
-    "Pas sûr que Meta Ads soit le bon outil ?",
   "GOOGLE NEWS AGENCY,":
     "AGENCE GOOGLE ACTUALITÉS,",
   "THE PRESS AGAINST SOCIAL.":
     "LA PRESSE FACE AU SOCIAL.",
+  "Google News gathers press coverage as it lands. We set it against the social conversation: a topic born in the media does not read like a topic born on TikTok.":
+    "Google Actualités rassemble la couverture presse au fil de l'eau. Nous la mettons en face de la conversation sociale : un sujet né dans les médias ne se lit pas comme un sujet né sur TikTok.",
+  "Google News official site":
+    "Site officiel de Google News",
   "2002":
     "2002",
   "50,000+ publishers, 38 languages":
@@ -4161,8 +4254,6 @@ window.LicterFR = {
     "Le texte intégral",
   "Access to paywalled articles depends on the outlets and your subscriptions.":
     "L'accès aux articles payants dépend des titres et de vos abonnements.",
-  "Google News gathers press coverage as it lands. We set it against the social conversation: a topic born in the media does not read like a topic born on TikTok.":
-    "Google Actualités rassemble la couverture presse au fil de l'eau. Nous la mettons en face de la conversation sociale : un sujet né dans les médias ne se lit pas comme un sujet né sur TikTok.",
   "GOOGLE NEWS AT A GLANCE":
     "GOOGLE ACTUALITÉS EN BREF",
   "What is Google News?":
@@ -4173,8 +4264,6 @@ window.LicterFR = {
     "Ce que Google Actualités permet d'analyser.",
   "A story's coverage":
     "La couverture d'un sujet",
-  "Every article on the same story, grouped.":
-    "Tous les articles sur un même sujet, regroupés.",
   "As it lands":
     "Au fil de l'eau",
   "Articles as soon as they are published.":
@@ -4193,6 +4282,10 @@ window.LicterFR = {
     "Pourquoi passer par une agence Google Actualités ?",
   "Google News provides data. A Google News agency like Licter turns it into a decision: here is how we use it.":
     "Google Actualités fournit des données. Une agence Google Actualités comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Google News on its own":
+    "Google Actualités seul",
+  "Google News with Licter":
+    "Google Actualités avec Licter",
   "What we deliver with Google News.":
     "Ce que nous livrons avec Google Actualités.",
   "Google News: the use cases where it counts.":
@@ -4215,12 +4308,14 @@ window.LicterFR = {
     "Les IA s'appuient souvent sur la presse pour répondre : votre couverture médiatique pèse sur votre visibilité dans leurs réponses.",
   "Looking for a Google News agency?":
     "Vous cherchez une agence Google Actualités ?",
-  "Not sure Google News is the right tool?":
-    "Pas sûr que Google Actualités soit le bon outil ?",
   "SOCIAL BLADE AGENCY,":
     "AGENCE SOCIAL BLADE,",
   "HOW ACCOUNTS GROW.":
     "LA CROISSANCE DES COMPTES.",
+  "Social Blade tracks how accounts and creators gain followers and views over time. We use it to check an audience before working with it.":
+    "Social Blade suit l'évolution des abonnés et des vues des comptes et des créateurs, dans le temps. Nous l'utilisons pour vérifier une audience avant de travailler avec elle.",
+  "Social Blade official site":
+    "Site officiel de Social Blade",
   "Social Blade LLC":
     "Social Blade LLC",
   "USA, 2008":
@@ -4267,8 +4362,6 @@ window.LicterFR = {
     "Plus de X",
   "X statistics were removed in 2025, after X raised its data access prices.":
     "Les statistiques de X ont été retirées en 2025, après la hausse des prix de son accès aux données.",
-  "Social Blade tracks how accounts and creators gain followers and views over time. We use it to check an audience before working with it.":
-    "Social Blade suit l'évolution des abonnés et des vues des comptes et des créateurs, dans le temps. Nous l'utilisons pour vérifier une audience avant de travailler avec elle.",
   "SOCIAL BLADE AT A GLANCE":
     "SOCIAL BLADE EN BREF",
   "What is Social Blade?":
@@ -4279,8 +4372,6 @@ window.LicterFR = {
     "Ce que Social Blade permet d'analyser.",
   "Account history":
     "L'historique des comptes",
-  "Followers and views, day after day.":
-    "Abonnés et vues, jour après jour.",
   "Suspicious spikes":
     "Les pics suspects",
   "Sudden jumps that deserve a question.":
@@ -4297,6 +4388,10 @@ window.LicterFR = {
     "Pourquoi passer par une agence Social Blade ?",
   "Social Blade provides data. A Social Blade agency like Licter turns it into a decision: here is how we use it.":
     "Social Blade fournit des données. Une agence Social Blade comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Social Blade on its own":
+    "Social Blade seul",
+  "Social Blade with Licter":
+    "Social Blade avec Licter",
   "What we deliver with Social Blade.":
     "Ce que nous livrons avec Social Blade.",
   "Social Blade: the use cases where it counts.":
@@ -4319,26 +4414,312 @@ window.LicterFR = {
     "Ce sont des données publiques relevées par l'outil : elles servent à repérer des tendances et des anomalies, pas à facturer.",
   "Looking for a Social Blade agency?":
     "Vous cherchez une agence Social Blade ?",
-  "Not sure Social Blade is the right tool?":
-    "Pas sûr que Social Blade soit le bon outil ?",
+  "CLAUDE AGENCY,":
+    "AGENCE CLAUDE,",
+  "WHAT CLAUDE SAYS ABOUT YOU.":
+    "CE QUE CLAUDE DIT DE VOUS.",
+  "Claude, Anthropic's assistant, is increasingly used at work to look things up, compare and write. We read what it answers about your brand and your category.":
+    "Claude, l'assistant d'Anthropic, est de plus en plus utilisé en entreprise pour se renseigner, comparer et rédiger. Nous lisons ce qu'il répond sur votre marque et votre catégorie.",
+  "Claude official site":
+    "Site officiel de Claude",
+  "Anthropic":
+    "Anthropic",
+  "March 2023":
+    "Mars 2023",
+  "Yes, with sources":
+    "Oui, avec sources",
+  "Answer audit":
+    "Audit des réponses",
+  "What the assistant answers":
+    "Ce que répond l'assistant",
+  "Assistants compared":
+    "Comparaison des assistants",
+  "ChatGPT, Claude, Gemini, Perplexity, Grok":
+    "ChatGPT, Claude, Gemini, Perplexity, Grok",
+  "Who cites you, and who does not":
+    "Qui vous cite, et qui ne vous cite pas",
+  "Differences in what they say":
+    "Les écarts de discours",
+  "GEO priorities":
+    "Les priorités GEO",
+  "Claude does not read the social conversation: it completes social listening, it does not replace it.":
+    "Claude ne lit pas la conversation des réseaux sociaux : il complète l'écoute sociale, il ne la remplace pas.",
+  "CLAUDE AT A GLANCE":
+    "CLAUDE EN BREF",
+  "What is Claude?":
+    "Qu'est-ce que Claude ?",
+  "Claude is the conversational assistant of Anthropic, an AI company based in San Francisco, launched in March 2023. It can search the web and cite its sources. Like ChatGPT, it is a source of opinion in its own right, to be audited.":
+    "Claude est l'assistant conversationnel d'Anthropic, une entreprise d'IA basée à San Francisco, lancé en mars 2023. Il peut chercher sur le web et citer ses sources. Comme ChatGPT, c'est une source d'opinion à part entière, à auditer.",
+  "What Claude lets you analyse.":
+    "Ce que Claude permet d'analyser.",
+  "What Claude recommends":
+    "Ce que Claude recommande",
+  "The sites and articles it relies on when it searches the web.":
+    "Les sites et articles sur lesquels il s'appuie quand il cherche sur le web.",
+  "A professional audience":
+    "Un public professionnel",
+  "An assistant widely used at work: what it says weighs on decision-makers.":
+    "Un assistant très présent en entreprise : ce qu'il dit pèse sur les décideurs.",
+  "CLAUDE AGENCY":
+    "AGENCE CLAUDE",
+  "Why work with a Claude agency?":
+    "Pourquoi passer par une agence Claude ?",
+  "Claude provides data. A Claude agency like Licter turns it into a decision: here is how we use it.":
+    "Claude fournit des données. Une agence Claude comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Claude on its own":
+    "Claude seul",
+  "Claude with Licter":
+    "Claude avec Licter",
+  "What we deliver with Claude.":
+    "Ce que nous livrons avec Claude.",
+  "Claude: the use cases where it counts.":
+    "Claude : les cas d'usage où il compte.",
+  "The limits of Claude, and how we make up for them.":
+    "Les limites de Claude, et comment nous les compensons.",
+  "Frequently asked questions about Claude.":
+    "Questions fréquentes sur Claude.",
+  "Is Licter a Claude agency?":
+    "Licter est-elle une agence Claude ?",
+  "Yes: as a Claude agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question.":
+    "Oui : en tant qu'agence Claude, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question.",
+  "Why audit Claude as well as ChatGPT?":
+    "Pourquoi auditer Claude en plus de ChatGPT ?",
+  "Because assistants do not cite the same brands or sources: your place can be good in one and absent in another.":
+    "Parce que les assistants ne citent pas les mêmes marques ni les mêmes sources : votre place peut être bonne dans l'un et absente dans l'autre.",
+  "Looking for a Claude agency?":
+    "Vous cherchez une agence Claude ?",
+  "GEMINI AGENCY,":
+    "AGENCE GEMINI,",
+  "GOOGLE'S AI.":
+    "L'IA DE GOOGLE.",
+  "Gemini is Google's assistant, available in its own app, in Android and in Google's tools. We read what it answers about your brand, and where it gets it from.":
+    "Gemini est l'assistant de Google, présent dans son application, dans Android et dans les outils Google. Nous lisons ce qu'il répond sur votre marque, et d'où il le tient.",
+  "Gemini official site":
+    "Site officiel de Gemini",
+  "2023, as Bard":
+    "2023, sous le nom de Bard",
+  "Yes, through Google Search":
+    "Oui, via la recherche Google",
+  "Gemini does not read the social conversation: it completes social listening, it does not replace it.":
+    "Gemini ne lit pas la conversation des réseaux : il complète l'écoute sociale, il ne la remplace pas.",
+  "GEMINI AT A GLANCE":
+    "GEMINI EN BREF",
+  "What is Gemini?":
+    "Qu'est-ce que Gemini ?",
+  "Gemini is Google's conversational assistant. Launched in March 2023 as Bard, it was renamed Gemini in February 2024. It draws on Google Search and cites its sources; its reach across Google's ecosystem gives it a very large audience.":
+    "Gemini est l'assistant conversationnel de Google. Lancé en mars 2023 sous le nom de Bard, il a été renommé Gemini en février 2024. Il s'appuie sur la recherche Google et cite ses sources ; sa diffusion dans l'écosystème Google lui donne une audience considérable.",
+  "What Gemini lets you analyse.":
+    "Ce que Gemini permet d'analyser.",
+  "What Gemini recommends":
+    "Ce que Gemini recommande",
+  "The link with Google Search":
+    "Le lien avec la recherche Google",
+  "The sources it picks up, often close to those that rank on Google.":
+    "Les sources reprises, souvent proches de celles qui ressortent sur Google.",
+  "A huge audience":
+    "Une audience immense",
+  "Android, the app and Google's tools: an answer seen by many.":
+    "Android, l'application et les outils Google : une réponse vue par beaucoup.",
+  "GEMINI AGENCY":
+    "AGENCE GEMINI",
+  "Why work with a Gemini agency?":
+    "Pourquoi passer par une agence Gemini ?",
+  "Gemini provides data. A Gemini agency like Licter turns it into a decision: here is how we use it.":
+    "Gemini fournit des données. Une agence Gemini comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Gemini on its own":
+    "Gemini seul",
+  "Gemini with Licter":
+    "Gemini avec Licter",
+  "What we deliver with Gemini.":
+    "Ce que nous livrons avec Gemini.",
+  "Gemini: the use cases where it counts.":
+    "Gemini : les cas d'usage où il compte.",
+  "The limits of Gemini, and how we make up for them.":
+    "Les limites de Gemini, et comment nous les compensons.",
+  "Frequently asked questions about Gemini.":
+    "Questions fréquentes sur Gemini.",
+  "Is Licter a Gemini agency?":
+    "Licter est-elle une agence Gemini ?",
+  "Yes: as a Gemini agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question.":
+    "Oui : en tant qu'agence Gemini, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question.",
+  "Are Gemini and Bard the same?":
+    "Gemini et Bard, c'est la même chose ?",
+  "Yes: Google renamed Bard to Gemini in February 2024.":
+    "Oui : Google a renommé Bard en Gemini en février 2024.",
+  "Is SEO enough to be cited by Gemini?":
+    "Le SEO suffit-il pour être cité par Gemini ?",
+  "It helps, since Gemini draws on Google Search, but it is not enough: see our GEO page.":
+    "Il aide, puisque Gemini s'appuie sur la recherche Google, mais il ne suffit pas : voir notre page GEO.",
+  "Looking for a Gemini agency?":
+    "Vous cherchez une agence Gemini ?",
+  "PERPLEXITY AGENCY,":
+    "AGENCE PERPLEXITY,",
+  "THE ANSWER ENGINE.":
+    "LE MOTEUR DE RÉPONSES.",
+  "Perplexity calls itself an answer engine: each answer is built on a web search and cites its sources. We read what it says about your brand, and which sites it cites.":
+    "Perplexity se présente comme un moteur de réponses : chaque réponse s'appuie sur une recherche web et cite ses sources. Nous lisons ce qu'il dit de votre marque, et quels sites il cite.",
+  "Perplexity official site":
+    "Site officiel de Perplexity",
+  "Perplexity AI":
+    "Perplexity AI",
+  "San Francisco, 2022":
+    "San Francisco, 2022",
+  "Always, with sources":
+    "Toujours, avec sources",
+  "Sources picked by the tool":
+    "Des sources choisies par l'outil",
+  "Perplexity picks its sources by its own criteria: a missing site does not mean a useless one.":
+    "Perplexity choisit ses sources selon ses propres critères : un site absent ne veut pas dire un site inutile.",
+  "PERPLEXITY AT A GLANCE":
+    "PERPLEXITY EN BREF",
+  "What is Perplexity?":
+    "Qu'est-ce que Perplexity ?",
+  "Perplexity is an AI answer engine, published by Perplexity AI, a San Francisco company founded in 2022. Unlike a classic assistant, it always searches the web and shows its sources, which makes it very readable for an audit.":
+    "Perplexity est un moteur de réponses par IA, édité par Perplexity AI, une entreprise de San Francisco fondée en 2022. Contrairement à un assistant classique, il cherche systématiquement sur le web et affiche ses sources, ce qui le rend très lisible pour un audit.",
+  "What Perplexity lets you analyse.":
+    "Ce que Perplexity permet d'analyser.",
+  "Sources, in plain sight":
+    "Les sources, en clair",
+  "What it recommends":
+    "Ce qu'il recommande",
+  "The brands cited on your category's questions.":
+    "Les marques citées sur les questions de votre catégorie.",
+  "Press and forums":
+    "La presse et les forums",
+  "The articles, reviews and discussions that weigh in its answers.":
+    "Les articles, avis et discussions qui pèsent dans ses réponses.",
+  "The same questions, followed over time.":
+    "Les mêmes questions, suivies dans le temps.",
+  "PERPLEXITY AGENCY":
+    "AGENCE PERPLEXITY",
+  "Why work with a Perplexity agency?":
+    "Pourquoi passer par une agence Perplexity ?",
+  "Perplexity provides data. A Perplexity agency like Licter turns it into a decision: here is how we use it.":
+    "Perplexity fournit des données. Une agence Perplexity comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Perplexity on its own":
+    "Perplexity seul",
+  "Perplexity with Licter":
+    "Perplexity avec Licter",
+  "What we deliver with Perplexity.":
+    "Ce que nous livrons avec Perplexity.",
+  "Perplexity: the use cases where it counts.":
+    "Perplexity : les cas d'usage où il compte.",
+  "The limits of Perplexity, and how we make up for them.":
+    "Les limites de Perplexity, et comment nous les compensons.",
+  "Frequently asked questions about Perplexity.":
+    "Questions fréquentes sur Perplexity.",
+  "Is Licter a Perplexity agency?":
+    "Licter est-elle une agence Perplexity ?",
+  "Yes: as a Perplexity agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question.":
+    "Oui : en tant qu'agence Perplexity, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question.",
+  "Why is Perplexity useful for an audit?":
+    "Pourquoi Perplexity est-il utile pour un audit ?",
+  "Because it shows its sources with every answer: you know which sites to act on.":
+    "Parce qu'il montre ses sources à chaque réponse : on sait sur quels sites agir.",
+  "Looking for a Perplexity agency?":
+    "Vous cherchez une agence Perplexity ?",
+  "Grok":
+    "Grok",
+  "GROK AGENCY,":
+    "AGENCE GROK,",
+  "X'S AI.":
+    "L'IA DE X.",
+  "Grok is xAI's assistant, built into X. It draws on X posts in real time: what it says about your brand often reflects what is being said there right now.":
+    "Grok est l'assistant de xAI, intégré à X. Il puise dans les publications de X en temps réel : ce qu'il dit de votre marque reflète souvent ce qui s'y dit à chaud.",
+  "Grok official site":
+    "Site officiel de Grok",
+  "xAI":
+    "xAI",
+  "November 2023":
+    "Novembre 2023",
+  "Sources":
+    "Sources",
+  "The web and X posts":
+    "Le web et les publications de X",
+  "A mirror of X":
+    "Le reflet de X",
+  "Its answers can echo the tone of a running row: we read them with the conversation on X, not on their own.":
+    "Ses réponses peuvent reprendre le ton d'une polémique en cours : nous les lisons avec la conversation de X, pas seules.",
+  "GROK AT A GLANCE":
+    "GROK EN BREF",
+  "What is Grok?":
+    "Qu'est-ce que Grok ?",
+  "Grok is the conversational assistant of xAI, Elon Musk's AI company, launched in November 2023. It is built into the X network and available on its own site; what sets it apart is its real-time access to X posts.":
+    "Grok est l'assistant conversationnel de xAI, la société d'IA d'Elon Musk, lancé en novembre 2023. Il est intégré au réseau X et accessible sur son propre site ; sa particularité est son accès aux publications de X en temps réel.",
+  "What Grok lets you analyse.":
+    "Ce que Grok permet d'analyser.",
+  "What Grok says about you":
+    "Ce que Grok dit de vous",
+  "Answers about your brand, often fed by the conversation on X.":
+    "Les réponses sur votre marque, souvent nourries par la conversation de X.",
+  "The link with X":
+    "Le lien avec X",
+  "The posts it picks up, and the tone it draws from them.":
+    "Les publications qu'il reprend, et le ton qu'il en tire.",
+  "Hot topics":
+    "Les sujets chauds",
+  "A crisis or a row on X quickly shows up in its answers.":
+    "Une crise ou une polémique sur X se retrouve vite dans ses réponses.",
+  "GROK AGENCY":
+    "AGENCE GROK",
+  "Why work with a Grok agency?":
+    "Pourquoi passer par une agence Grok ?",
+  "Grok provides data. A Grok agency like Licter turns it into a decision: here is how we use it.":
+    "Grok fournit des données. Une agence Grok comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Grok on its own":
+    "Grok seul",
+  "Grok with Licter":
+    "Grok avec Licter",
+  "What we deliver with Grok.":
+    "Ce que nous livrons avec Grok.",
+  "Grok: the use cases where it counts.":
+    "Grok : les cas d'usage où il compte.",
+  "The limits of Grok, and how we make up for them.":
+    "Les limites de Grok, et comment nous les compensons.",
+  "Frequently asked questions about Grok.":
+    "Questions fréquentes sur Grok.",
+  "Is Licter a Grok agency?":
+    "Licter est-elle une agence Grok ?",
+  "Yes: as a Grok agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question.":
+    "Oui : en tant qu'agence Grok, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question.",
+  "Why audit Grok?":
+    "Pourquoi auditer Grok ?",
+  "Because it is built into X and draws on its posts: it amplifies what is said about you there.":
+    "Parce qu'il est intégré à X et s'appuie sur ses publications : il amplifie ce qui s'y dit de vous.",
+  "Is Grok tied to X?":
+    "Grok est-il lié à X ?",
+  "Yes: it is published by xAI and built into the X network.":
+    "Oui : il est édité par xAI et intégré au réseau X.",
+  "Looking for a Grok agency?":
+    "Vous cherchez une agence Grok ?",
   "FACEBOOK SOCIAL LISTENING,":
     "SOCIAL LISTENING FACEBOOK,",
   "COMMUNITIES AND GROUPS.":
     "LES COMMUNAUTÉS ET LES GROUPES.",
-  "WHAT WE COLLECT":
-    "CE QUE NOUS COLLECTONS",
-  "Public pages, their posts and comments, and public groups.":
-    "Les pages publiques, leurs publications et leurs commentaires, et les groupes publics.",
-  "WHAT WE DO NOT READ":
-    "CE QUE NOUS NE LISONS PAS",
-  "Private profiles and closed groups: they are not accessible, and we do not try to get in.":
-    "Les profils privés et les groupes fermés : ils ne sont pas accessibles, et nous ne cherchons pas à y entrer.",
-  "The tools we cross on Facebook":
-    "Les outils que nous croisons sur Facebook",
   "Facebook remains the network of groups, local pages and comments under brand posts, with an older audience than elsewhere. It is often where customer relations play out in public.":
     "Facebook reste le réseau des groupes, des pages locales et des commentaires sous les publications des marques, avec un public plus âgé qu'ailleurs. C'est souvent là que la relation client se joue en public.",
   "Every network":
     "Tous les réseaux",
+  "Facebook official site":
+    "Site officiel de Facebook",
+  "WHAT WE COLLECT":
+    "CE QUE NOUS COLLECTONS",
+  "The public side of Facebook":
+    "Le public de Facebook",
+  "Public pages, their posts and comments, and public groups.":
+    "Les pages publiques, leurs publications et leurs commentaires, et les groupes publics.",
+  "Public data":
+    "Données publiques",
+  "WHAT WE DO NOT READ":
+    "CE QUE NOUS NE LISONS PAS",
+  "Private stays private":
+    "Le privé reste privé",
+  "Private profiles and closed groups: they are not accessible, and we do not try to get in.":
+    "Les profils privés et les groupes fermés : ils ne sont pas accessibles, et nous ne cherchons pas à y entrer.",
+  "Never collected":
+    "Jamais collecté",
+  "Covers Facebook, per the vendor":
+    "Couvre Facebook selon l'éditeur",
   "WHY FACEBOOK":
     "POURQUOI FACEBOOK",
   "Why listen to Facebook?":
@@ -4385,20 +4766,22 @@ window.LicterFR = {
     "Oui, comme les commentaires : ce sont souvent les signaux les plus directs sur un produit ou un service.",
   "Looking for a Facebook social listening agency?":
     "Vous cherchez une agence social listening Facebook ?",
-  "A question about Facebook?":
-    "Une question sur Facebook ?",
   "INSTAGRAM SOCIAL LISTENING,":
     "SOCIAL LISTENING INSTAGRAM,",
   "IMAGES AND CREATORS.":
     "L'IMAGE ET LES CRÉATEURS.",
+  "On Instagram, a brand exists through images first: its products worn, shown, repurposed, and the creators who talk about them. The conversation runs through visuals as much as captions.":
+    "Sur Instagram, une marque existe d'abord par l'image : ses produits portés, montrés, détournés, et les créateurs qui en parlent. La conversation passe autant par les visuels que par les légendes.",
+  "Instagram official site":
+    "Site officiel de Instagram",
+  "The public side of Instagram":
+    "Le public de Instagram",
   "Public business and creator accounts, their posts, comments and hashtags.":
     "Les comptes professionnels et de créateurs publics, leurs publications, leurs commentaires et les hashtags.",
   "Private accounts and messages: never. Stories, which vanish, are only partly visible.":
     "Les comptes privés et les messages : jamais. Les stories, éphémères, ne sont visibles que partiellement.",
-  "The tools we cross on Instagram":
-    "Les outils que nous croisons sur Instagram",
-  "On Instagram, a brand exists through images first: its products worn, shown, repurposed, and the creators who talk about them. The conversation runs through visuals as much as captions.":
-    "Sur Instagram, une marque existe d'abord par l'image : ses produits portés, montrés, détournés, et les créateurs qui en parlent. La conversation passe autant par les visuels que par les légendes.",
+  "Covers Instagram, per the vendor":
+    "Couvre Instagram selon l'éditeur",
   "WHY INSTAGRAM":
     "POURQUOI INSTAGRAM",
   "Why listen to Instagram?":
@@ -4437,20 +4820,22 @@ window.LicterFR = {
     "Oui : son audience réelle, sa croissance, ses affinités, et ce que ses abonnés disent des marques qu'il porte.",
   "Looking for a Instagram social listening agency?":
     "Vous cherchez une agence social listening Instagram ?",
-  "A question about Instagram?":
-    "Une question sur Instagram ?",
   "THREADS SOCIAL LISTENING,":
     "SOCIAL LISTENING THREADS,",
   "META'S TEXT CONVERSATION.":
     "LA CONVERSATION TEXTE DE META.",
+  "Threads is Meta's written conversation network, built on Instagram. Younger than X, it gathers part of the journalists, brands and their audiences.":
+    "Threads est le réseau de conversation écrite de Meta, adossé à Instagram. Plus jeune que X, il réunit une partie des journalistes, des marques et de leurs publics.",
+  "Threads official site":
+    "Site officiel de Threads",
+  "The public side of Threads":
+    "Le public de Threads",
   "Public posts and their replies.":
     "Les publications publiques et leurs réponses.",
   "Private accounts. The network is recent: listening tools are still catching up, and we tell you what is actually collected.":
     "Les comptes privés. Le réseau est récent : la couverture des outils d'écoute progresse encore, nous vous disons ce qui est réellement collecté.",
-  "The tools we cross on Threads":
-    "Les outils que nous croisons sur Threads",
-  "Threads is Meta's written conversation network, built on Instagram. Younger than X, it gathers part of the journalists, brands and their audiences.":
-    "Threads est le réseau de conversation écrite de Meta, adossé à Instagram. Plus jeune que X, il réunit une partie des journalistes, des marques et de leurs publics.",
+  "Covers Threads, per the vendor":
+    "Couvre Threads selon l'éditeur",
   "WHY THREADS":
     "POURQUOI THREADS",
   "Why listen to Threads?":
@@ -4489,20 +4874,22 @@ window.LicterFR = {
     "Pas encore partout : nous indiquons la part couverte avant de lancer l'étude.",
   "Looking for a Threads social listening agency?":
     "Vous cherchez une agence social listening Threads ?",
-  "A question about Threads?":
-    "Une question sur Threads ?",
   "WHATSAPP SOCIAL LISTENING,":
     "SOCIAL LISTENING WHATSAPP,",
   "PUBLIC CHANNELS.":
     "LES CANAUX PUBLICS.",
+  "WhatsApp is a private messaging app first, and it stays that way. What we read are its public channels, and what comes out of it: screenshots and forwarded messages that end up on other networks.":
+    "WhatsApp est d'abord une messagerie privée, et elle le reste. Ce que nous lisons, ce sont ses chaînes publiques, et ce qui en sort : les captures et les messages transférés qui finissent sur les autres réseaux.",
+  "WhatsApp official site":
+    "Site officiel de WhatsApp",
+  "The public side of WhatsApp":
+    "Le public de WhatsApp",
   "Public channels, WhatsApp content republished elsewhere, and your own exports if you share them.":
     "Les chaînes publiques, les contenus WhatsApp republiés ailleurs, et vos propres exports si vous nous les confiez.",
   "Private chats and groups: never. They are encrypted, and rightly so.":
     "Les conversations et les groupes privés : jamais. Ils sont chiffrés, et c'est très bien ainsi.",
-  "The tools we cross on WhatsApp":
-    "Les outils que nous croisons sur WhatsApp",
-  "WhatsApp is a private messaging app first, and it stays that way. What we read are its public channels, and what comes out of it: screenshots and forwarded messages that end up on other networks.":
-    "WhatsApp est d'abord une messagerie privée, et elle le reste. Ce que nous lisons, ce sont ses chaînes publiques, et ce qui en sort : les captures et les messages transférés qui finissent sur les autres réseaux.",
+  "Covers WhatsApp, per the vendor":
+    "Couvre WhatsApp selon l'éditeur",
   "WHY WHATSAPP":
     "POURQUOI WHATSAPP",
   "Why listen to WhatsApp?":
@@ -4541,20 +4928,22 @@ window.LicterFR = {
     "Parce que beaucoup de rumeurs y naissent avant d'apparaître ailleurs : savoir le reconnaître aide à réagir plus tôt.",
   "Looking for a WhatsApp social listening agency?":
     "Vous cherchez une agence social listening WhatsApp ?",
-  "A question about WhatsApp?":
-    "Une question sur WhatsApp ?",
   "MESSENGER SOCIAL LISTENING,":
     "SOCIAL LISTENING MESSENGER,",
   "PRIVATE CUSTOMER CONVERSATIONS.":
     "LA RELATION CLIENT EN PRIVÉ.",
+  "Messenger is Facebook's messaging app, and part of your customer service runs through it. These conversations are private: we only read them if you share your page's export, to analyse them with the public conversation.":
+    "Messenger est la messagerie de Facebook, et une partie de votre service client y passe. Ces échanges sont privés : nous ne les lisons que si vous nous confiez l'export de votre page, pour les analyser avec la conversation publique.",
+  "Messenger official site":
+    "Site officiel de Messenger",
+  "The public side of Messenger":
+    "Le public de Messenger",
   "Your own conversation exports, if you share them, and what is republished publicly.":
     "Vos propres exports de conversations, si vous nous les confiez, et ce qui est republié publiquement.",
   "Anyone else's conversations: never. We read no private messages without their owner's consent.":
     "Les conversations des autres : jamais. Nous ne lisons aucune messagerie privée sans l'accord de son titulaire.",
-  "The tools we cross on Messenger":
-    "Les outils que nous croisons sur Messenger",
-  "Messenger is Facebook's messaging app, and part of your customer service runs through it. These conversations are private: we only read them if you share your page's export, to analyse them with the public conversation.":
-    "Messenger est la messagerie de Facebook, et une partie de votre service client y passe. Ces échanges sont privés : nous ne les lisons que si vous nous confiez l'export de votre page, pour les analyser avec la conversation publique.",
+  "Covers Messenger, per the vendor":
+    "Couvre Messenger selon l'éditeur",
   "WHY MESSENGER":
     "POURQUOI MESSENGER",
   "Why listen to Messenger?":
@@ -4593,20 +4982,22 @@ window.LicterFR = {
     "Les irritants du service client annoncent souvent ce qui sortira demain en public : les relier permet de traiter avant.",
   "Looking for a Messenger social listening agency?":
     "Vous cherchez une agence social listening Messenger ?",
-  "A question about Messenger?":
-    "Une question sur Messenger ?",
   "X / TWITTER SOCIAL LISTENING,":
     "SOCIAL LISTENING X / TWITTER,",
   "REAL TIME.":
     "LE TEMPS RÉEL.",
+  "X, formerly Twitter, remains the network of live news: journalists, politicians, experts and crises as they start. It is often where a topic turns into a story.":
+    "X, l'ancien Twitter, reste le réseau de l'actualité en direct : journalistes, politiques, experts et crises qui démarrent. C'est souvent là qu'un sujet devient une affaire.",
+  "X / Twitter official site":
+    "Site officiel de X / Twitter",
+  "The public side of X / Twitter":
+    "Le public de X / Twitter",
   "Public posts, their replies and reposts.":
     "Les posts publics, leurs réponses et leurs reprises.",
   "Protected accounts and direct messages. Since 2023, access to X data is more restricted and costly: we state what is actually covered.":
     "Les comptes protégés et les messages privés. Depuis 2023, l'accès aux données de X est plus restreint et plus coûteux : nous indiquons ce qui est réellement couvert.",
-  "The tools we cross on X / Twitter":
-    "Les outils que nous croisons sur X / Twitter",
-  "X, formerly Twitter, remains the network of live news: journalists, politicians, experts and crises as they start. It is often where a topic turns into a story.":
-    "X, l'ancien Twitter, reste le réseau de l'actualité en direct : journalistes, politiques, experts et crises qui démarrent. C'est souvent là qu'un sujet devient une affaire.",
+  "Covers X / Twitter, per the vendor":
+    "Couvre X / Twitter selon l'éditeur",
   "WHY X / TWITTER":
     "POURQUOI X / TWITTER",
   "Why listen to X / Twitter?":
@@ -4645,20 +5036,22 @@ window.LicterFR = {
     "Avec Vigie 360, en 15 minutes, 24 h/24, après lecture par un analyste.",
   "Looking for a X / Twitter social listening agency?":
     "Vous cherchez une agence social listening X / Twitter ?",
-  "A question about X / Twitter?":
-    "Une question sur X / Twitter ?",
   "TIKTOK SOCIAL LISTENING,":
     "SOCIAL LISTENING TIKTOK,",
   "WHERE TRENDS ARE BORN.":
     "LÀ OÙ NAISSENT LES TENDANCES.",
+  "On TikTok, a trend is born in days, with its sounds, formats and codes. It is the network where the youngest talk about brands, often without naming them in the text.":
+    "Sur TikTok, une tendance naît en quelques jours, avec ses sons, ses formats et ses codes. C'est le réseau où les plus jeunes parlent des marques, souvent sans les nommer dans le texte.",
+  "TikTok official site":
+    "Site officiel de TikTok",
+  "The public side of TikTok":
+    "Le public de TikTok",
   "Public videos, their descriptions, comments and hashtags.":
     "Les vidéos publiques, leurs descriptions, leurs commentaires et les hashtags.",
   "Private accounts and messages. Content is video and sound first: without transcription and visual reading, much of it escapes the tools.":
     "Les comptes privés et les messages. Le contenu est d'abord vidéo et sonore : sans transcription ni lecture visuelle, une grande partie échappe aux outils.",
-  "The tools we cross on TikTok":
-    "Les outils que nous croisons sur TikTok",
-  "On TikTok, a trend is born in days, with its sounds, formats and codes. It is the network where the youngest talk about brands, often without naming them in the text.":
-    "Sur TikTok, une tendance naît en quelques jours, avec ses sons, ses formats et ses codes. C'est le réseau où les plus jeunes parlent des marques, souvent sans les nommer dans le texte.",
+  "Covers TikTok, per the vendor":
+    "Couvre TikTok selon l'éditeur",
   "WHY TIKTOK":
     "POURQUOI TIKTOK",
   "Why listen to TikTok?":
@@ -4695,20 +5088,22 @@ window.LicterFR = {
     "C'est l'objectif : nous suivons la vitesse des sujets, pas seulement leur volume.",
   "Looking for a TikTok social listening agency?":
     "Vous cherchez une agence social listening TikTok ?",
-  "A question about TikTok?":
-    "Une question sur TikTok ?",
   "YOUTUBE SOCIAL LISTENING,":
     "SOCIAL LISTENING YOUTUBE,",
   "LONG VIDEO AND ITS COMMENTS.":
     "LA VIDÉO LONGUE ET SES COMMENTAIRES.",
+  "YouTube is the network of tests, tutorials and detailed reviews. Comments are many and argued: a goldmine to understand a product as its users see it.":
+    "YouTube est le réseau des tests, des tutoriels et des avis détaillés. Les commentaires y sont nombreux et argumentés : une mine pour comprendre un produit vu par ceux qui l'utilisent.",
+  "YouTube official site":
+    "Site officiel de YouTube",
+  "The public side of YouTube":
+    "Le public de YouTube",
   "Public videos, their titles and descriptions, comments, and transcripts where they exist.":
     "Les vidéos publiques, leurs titres et descriptions, leurs commentaires, et les transcriptions quand elles existent.",
   "Private or unlisted videos.":
     "Les vidéos privées ou non répertoriées.",
-  "The tools we cross on YouTube":
-    "Les outils que nous croisons sur YouTube",
-  "YouTube is the network of tests, tutorials and detailed reviews. Comments are many and argued: a goldmine to understand a product as its users see it.":
-    "YouTube est le réseau des tests, des tutoriels et des avis détaillés. Les commentaires y sont nombreux et argumentés : une mine pour comprendre un produit vu par ceux qui l'utilisent.",
+  "Covers YouTube, per the vendor":
+    "Couvre YouTube selon l'éditeur",
   "WHY YOUTUBE":
     "POURQUOI YOUTUBE",
   "Why listen to YouTube?":
@@ -4745,20 +5140,22 @@ window.LicterFR = {
     "Oui : les tests et les commentaires permettent une comparaison point par point.",
   "Looking for a YouTube social listening agency?":
     "Vous cherchez une agence social listening YouTube ?",
-  "A question about YouTube?":
-    "Une question sur YouTube ?",
   "LINKEDIN SOCIAL LISTENING,":
     "SOCIAL LISTENING LINKEDIN,",
   "THE PROFESSIONAL VOICE.":
     "LA PAROLE PROFESSIONNELLE.",
+  "LinkedIn is the network of employer brands, executives and decision-makers. What is said there weighs on hiring, partners and sometimes investors.":
+    "LinkedIn est le réseau de la marque employeur, des dirigeants et des décideurs. Ce qui s'y dit pèse sur les recrutements, les partenaires et parfois les investisseurs.",
+  "LinkedIn official site":
+    "Site officiel de LinkedIn",
+  "The public side of LinkedIn":
+    "Le public de LinkedIn",
   "Public posts from pages and profiles, and their comments, as far as the tools allow.":
     "Les publications publiques des pages et des profils, et leurs commentaires, selon ce que permettent les outils.",
   "LinkedIn strongly limits automated collection: coverage is partial, and we say so before starting. Messages and restricted profiles: never.":
     "LinkedIn limite fortement la collecte automatisée : la couverture est partielle, et nous le disons avant de commencer. Les messages et les profils restreints : jamais.",
-  "The tools we cross on LinkedIn":
-    "Les outils que nous croisons sur LinkedIn",
-  "LinkedIn is the network of employer brands, executives and decision-makers. What is said there weighs on hiring, partners and sometimes investors.":
-    "LinkedIn est le réseau de la marque employeur, des dirigeants et des décideurs. Ce qui s'y dit pèse sur les recrutements, les partenaires et parfois les investisseurs.",
+  "Covers LinkedIn, per the vendor":
+    "Couvre LinkedIn selon l'éditeur",
   "WHY LINKEDIN":
     "POURQUOI LINKEDIN",
   "Why listen to LinkedIn?":
@@ -4795,20 +5192,22 @@ window.LicterFR = {
     "Parce que LinkedIn restreint l'accès à ses données. Nous combinons les sources disponibles et indiquons ce qui manque.",
   "Looking for a LinkedIn social listening agency?":
     "Vous cherchez une agence social listening LinkedIn ?",
-  "A question about LinkedIn?":
-    "Une question sur LinkedIn ?",
   "REDDIT SOCIAL LISTENING,":
     "SOCIAL LISTENING REDDIT,",
   "UNFILTERED OPINIONS.":
     "LES AVIS SANS FILTRE.",
+  "Reddit gathers enthusiast communities who discuss at length, often anonymously. Opinions there are frank, detailed and rarely sponsored.":
+    "Reddit rassemble des communautés de passionnés qui discutent longuement, souvent anonymement. Les avis y sont francs, détaillés et rarement sponsorisés.",
+  "Reddit official site":
+    "Site officiel de Reddit",
+  "The public side of Reddit":
+    "Le public de Reddit",
   "Public communities and discussions, with their votes.":
     "Les communautés et discussions publiques, avec leurs votes.",
   "Private communities and messages. Reddit is mostly English-speaking: its weight varies a lot from one market to another.":
     "Les communautés privées et les messages. Reddit est surtout anglophone : sa place varie beaucoup d'un marché à l'autre.",
-  "The tools we cross on Reddit":
-    "Les outils que nous croisons sur Reddit",
-  "Reddit gathers enthusiast communities who discuss at length, often anonymously. Opinions there are frank, detailed and rarely sponsored.":
-    "Reddit rassemble des communautés de passionnés qui discutent longuement, souvent anonymement. Les avis y sont francs, détaillés et rarement sponsorisés.",
+  "Covers Reddit, per the vendor":
+    "Couvre Reddit selon l'éditeur",
   "WHY REDDIT":
     "POURQUOI REDDIT",
   "Why listen to Reddit?":
@@ -4847,18 +5246,20 @@ window.LicterFR = {
     "Ils sont rarement sponsorisés et souvent argumentés ; nous les lisons avec le reste, jamais seuls.",
   "Looking for a Reddit social listening agency?":
     "Vous cherchez une agence social listening Reddit ?",
-  "A question about Reddit?":
-    "Une question sur Reddit ?",
   "SNAPCHAT SOCIAL LISTENING,":
     "SOCIAL LISTENING SNAPCHAT,",
   "THE YOUNGEST, IN PRIVATE.":
     "LES PLUS JEUNES, EN PRIVÉ.",
+  "Snapchat is widely used by teenagers and young adults, but mostly in private. What is public, Spotlight and public stories, gives a partial window on their codes.":
+    "Snapchat est très utilisé par les adolescents et les jeunes adultes, mais surtout en privé. Ce qui est public, Spotlight et les stories publiques, donne une fenêtre partielle sur leurs codes.",
+  "Snapchat official site":
+    "Site officiel de Snapchat",
+  "The public side of Snapchat":
+    "Le public de Snapchat",
   "Public content (Spotlight, public stories), as far as tools cover it.":
     "Les contenus publics (Spotlight, stories publiques), dans la mesure où les outils les couvrent.",
   "Most of it: private messages and stories, ephemeral and out of reach. Snapchat is therefore always read with other networks.":
     "L'essentiel : les messages et les stories privées, éphémères et inaccessibles. Snapchat se lit donc toujours avec les autres réseaux.",
-  "Snapchat is widely used by teenagers and young adults, but mostly in private. What is public, Spotlight and public stories, gives a partial window on their codes.":
-    "Snapchat est très utilisé par les adolescents et les jeunes adultes, mais surtout en privé. Ce qui est public, Spotlight et les stories publiques, donne une fenêtre partielle sur leurs codes.",
   "WHY SNAPCHAT":
     "POURQUOI SNAPCHAT",
   "Why listen to Snapchat?":
@@ -4897,20 +5298,22 @@ window.LicterFR = {
     "Celles qui veulent rajeunir leur audience ou comprendre les 15-24 ans.",
   "Looking for a Snapchat social listening agency?":
     "Vous cherchez une agence social listening Snapchat ?",
-  "A question about Snapchat?":
-    "Une question sur Snapchat ?",
   "PINTEREST SOCIAL LISTENING,":
     "SOCIAL LISTENING PINTEREST,",
   "INTENT BEFORE PURCHASE.":
     "LES INTENTIONS AVANT L'ACHAT.",
+  "On Pinterest, people plan: a home, an outfit, a wedding, a trip. What they pin says what they consider buying, often months ahead.":
+    "Sur Pinterest, les gens préparent : une maison, une tenue, un mariage, un voyage. Ce qu'ils épinglent dit ce qu'ils envisagent d'acheter, souvent des mois avant.",
+  "Pinterest official site":
+    "Site officiel de Pinterest",
+  "The public side of Pinterest":
+    "Le public de Pinterest",
   "Public pins and boards, and the trends Pinterest publishes.":
     "Les épingles et les tableaux publics, et les tendances que Pinterest publie.",
   "Secret boards and messages.":
     "Les tableaux secrets et les messages.",
-  "The tools we cross on Pinterest":
-    "Les outils que nous croisons sur Pinterest",
-  "On Pinterest, people plan: a home, an outfit, a wedding, a trip. What they pin says what they consider buying, often months ahead.":
-    "Sur Pinterest, les gens préparent : une maison, une tenue, un mariage, un voyage. Ce qu'ils épinglent dit ce qu'ils envisagent d'acheter, souvent des mois avant.",
+  "Covers Pinterest, per the vendor":
+    "Couvre Pinterest selon l'éditeur",
   "WHY PINTEREST":
     "POURQUOI PINTEREST",
   "Why listen to Pinterest?":
@@ -4949,18 +5352,20 @@ window.LicterFR = {
     "Souvent plusieurs mois : on épingle avant d'acheter.",
   "Looking for a Pinterest social listening agency?":
     "Vous cherchez une agence social listening Pinterest ?",
-  "A question about Pinterest?":
-    "Une question sur Pinterest ?",
   "DISCORD SOCIAL LISTENING,":
     "SOCIAL LISTENING DISCORD,",
   "ENTHUSIAST COMMUNITIES.":
     "LES COMMUNAUTÉS DE PASSIONNÉS.",
+  "Discord gathers communities around gaming, tech, music or a brand. Most servers are closed; public servers are a precious window on enthusiasts.":
+    "Discord réunit des communautés autour du jeu vidéo, de la tech, de la musique ou d'une marque. La plupart des serveurs sont fermés ; les serveurs publics sont une fenêtre précieuse sur les passionnés.",
+  "Discord official site":
+    "Site officiel de Discord",
+  "The public side of Discord":
+    "Le public de Discord",
   "Public servers, and your own server if you give us access.":
     "Les serveurs publics, et votre propre serveur si vous nous y donnez accès.",
   "Private servers and direct messages: never. Most of Discord is not public.":
     "Les serveurs privés et les messages directs : jamais. La plus grande partie de Discord n'est pas publique.",
-  "Discord gathers communities around gaming, tech, music or a brand. Most servers are closed; public servers are a precious window on enthusiasts.":
-    "Discord réunit des communautés autour du jeu vidéo, de la tech, de la musique ou d'une marque. La plupart des serveurs sont fermés ; les serveurs publics sont une fenêtre précieuse sur les passionnés.",
   "WHY DISCORD":
     "POURQUOI DISCORD",
   "Why listen to Discord?":
@@ -4999,20 +5404,22 @@ window.LicterFR = {
     "Parce que les passionnés y disent spontanément ce qu'ils pensent, sans question orientée.",
   "Looking for a Discord social listening agency?":
     "Vous cherchez une agence social listening Discord ?",
-  "A question about Discord?":
-    "Une question sur Discord ?",
   "TWITCH SOCIAL LISTENING,":
     "SOCIAL LISTENING TWITCH,",
   "LIVE STREAMS AND THEIR CHAT.":
     "LE LIVE ET SON CHAT.",
+  "Twitch is the network of live streams: gaming, talk shows, events, with a chat that reacts in real time. A brand is judged on the spot there, by a young and loyal audience.":
+    "Twitch est le réseau du direct : jeu vidéo, discussions, événements, avec un chat qui réagit en temps réel. Une marque y est jugée à chaud, par une audience jeune et fidèle.",
+  "Twitch official site":
+    "Site officiel de Twitch",
+  "The public side of Twitch":
+    "Le public de Twitch",
   "Public live chats, channels and public clips, as far as the tools cover them.":
     "Les chats publics des lives, les chaînes et les clips publics, selon ce que couvrent les outils.",
   "Private messages and subscriber-only content.":
     "Les messages privés et les contenus réservés aux abonnés.",
-  "The tools we cross on Twitch":
-    "Les outils que nous croisons sur Twitch",
-  "Twitch is the network of live streams: gaming, talk shows, events, with a chat that reacts in real time. A brand is judged on the spot there, by a young and loyal audience.":
-    "Twitch est le réseau du direct : jeu vidéo, discussions, événements, avec un chat qui réagit en temps réel. Une marque y est jugée à chaud, par une audience jeune et fidèle.",
+  "Covers Twitch, per the vendor":
+    "Couvre Twitch selon l'éditeur",
   "WHY TWITCH":
     "POURQUOI TWITCH",
   "Why listen to Twitch?":
@@ -5051,18 +5458,20 @@ window.LicterFR = {
     "Non : discussions, sport, musique et événements y ont aussi leur public.",
   "Looking for a Twitch social listening agency?":
     "Vous cherchez une agence social listening Twitch ?",
-  "A question about Twitch?":
-    "Une question sur Twitch ?",
   "TELEGRAM SOCIAL LISTENING,":
     "SOCIAL LISTENING TELEGRAM,",
+  "Telegram mixes private messaging with public channels followed by thousands. Public channels matter in some countries and on some topics, rumours and sensitive information included.":
+    "Telegram mêle messagerie privée et canaux publics suivis par des milliers d'abonnés. Les canaux publics comptent dans certains pays et sur certains sujets, rumeurs et informations sensibles compris.",
+  "Telegram official site":
+    "Site officiel de Telegram",
+  "The public side of Telegram":
+    "Le public de Telegram",
   "Public channels and groups.":
     "Les canaux et groupes publics.",
   "Private chats and groups: never.":
     "Les conversations et groupes privés : jamais.",
-  "The tools we cross on Telegram":
-    "Les outils que nous croisons sur Telegram",
-  "Telegram mixes private messaging with public channels followed by thousands. Public channels matter in some countries and on some topics, rumours and sensitive information included.":
-    "Telegram mêle messagerie privée et canaux publics suivis par des milliers d'abonnés. Les canaux publics comptent dans certains pays et sur certains sujets, rumeurs et informations sensibles compris.",
+  "Covers Telegram, per the vendor":
+    "Couvre Telegram selon l'éditeur",
   "WHY TELEGRAM":
     "POURQUOI TELEGRAM",
   "Why listen to Telegram?":
@@ -5097,20 +5506,22 @@ window.LicterFR = {
     "Non, seulement ce qui est public.",
   "Looking for a Telegram social listening agency?":
     "Vous cherchez une agence social listening Telegram ?",
-  "A question about Telegram?":
-    "Une question sur Telegram ?",
   "BLUESKY SOCIAL LISTENING,":
     "SOCIAL LISTENING BLUESKY,",
   "THE NEW OPEN CONVERSATION.":
     "LA NOUVELLE CONVERSATION OUVERTE.",
+  "Bluesky has welcomed part of the journalists, researchers and communities who left X. Its protocol is open: public posts are cleanly accessible.":
+    "Bluesky a accueilli une partie des journalistes, chercheurs et communautés partis de X. Son protocole est ouvert : les publications publiques y sont accessibles proprement.",
+  "Bluesky official site":
+    "Site officiel de Bluesky",
+  "The public side of Bluesky":
+    "Le public de Bluesky",
   "Public posts, thanks to its open protocol.":
     "Les publications publiques, grâce à son protocole ouvert.",
   "Private messages. The network remains smaller than X: its weight depends on your audience.":
     "Les messages privés. Le réseau reste plus petit que X : son poids dépend de votre public.",
-  "The tools we cross on Bluesky":
-    "Les outils que nous croisons sur Bluesky",
-  "Bluesky has welcomed part of the journalists, researchers and communities who left X. Its protocol is open: public posts are cleanly accessible.":
-    "Bluesky a accueilli une partie des journalistes, chercheurs et communautés partis de X. Son protocole est ouvert : les publications publiques y sont accessibles proprement.",
+  "Covers Bluesky, per the vendor":
+    "Couvre Bluesky selon l'éditeur",
   "WHY BLUESKY":
     "POURQUOI BLUESKY",
   "Why listen to Bluesky?":
@@ -5147,18 +5558,20 @@ window.LicterFR = {
     "Oui pour les publications publiques : le protocole ouvert rend l'accès plus simple qu'ailleurs.",
   "Looking for a Bluesky social listening agency?":
     "Vous cherchez une agence social listening Bluesky ?",
-  "A question about Bluesky?":
-    "Une question sur Bluesky ?",
   "VK SOCIAL LISTENING,":
     "SOCIAL LISTENING VK,",
   "THE RUSSIAN-SPEAKING NETWORK.":
     "LE RÉSEAU RUSSOPHONE.",
+  "VK (VKontakte) is the leading Russian-speaking social network. For a brand present in Russia or Russian-speaking countries, much of the conversation is read there.":
+    "VK (VKontakte) est le premier réseau social russophone. Pour une marque présente en Russie ou dans les pays russophones, c'est là que se lit une grande partie de la conversation.",
+  "VK official site":
+    "Site officiel de VK",
+  "The public side of VK":
+    "Le public de VK",
   "Public pages and communities, depending on tool coverage.":
     "Les pages et communautés publiques, selon la couverture des outils.",
   "Private profiles and messages. Tool coverage varies with the regulatory context: we check what is accessible before committing.":
     "Les profils privés et les messages. La couverture des outils varie selon le contexte réglementaire : nous vérifions ce qui est accessible avant de nous engager.",
-  "VK (VKontakte) is the leading Russian-speaking social network. For a brand present in Russia or Russian-speaking countries, much of the conversation is read there.":
-    "VK (VKontakte) est le premier réseau social russophone. Pour une marque présente en Russie ou dans les pays russophones, c'est là que se lit une grande partie de la conversation.",
   "WHY VK":
     "POURQUOI VK",
   "Why listen to VK?":
@@ -5195,18 +5608,20 @@ window.LicterFR = {
     "Nous vous le disons au cadrage : la lecture se fait dans la langue, pas par traduction automatique seule.",
   "Looking for a VK social listening agency?":
     "Vous cherchez une agence social listening VK ?",
-  "A question about VK?":
-    "Une question sur VK ?",
   "WECHAT SOCIAL LISTENING,":
     "SOCIAL LISTENING WECHAT,",
   "THE CHINESE ECOSYSTEM.":
     "L'ÉCOSYSTÈME CHINOIS.",
+  "WeChat (Weixin) is the everything app in China: messaging, payments, articles from official accounts. Its public part, official accounts and their articles, says a lot about brands and their image.":
+    "WeChat (Weixin) est l'application de tout en Chine : messagerie, paiements, articles des comptes officiels. Sa partie publique, les comptes officiels et leurs articles, dit beaucoup des marques et de leur image.",
+  "WeChat official site":
+    "Site officiel de WeChat",
+  "The public side of WeChat":
+    "Le public de WeChat",
   "Official accounts and their public articles.":
     "Les comptes officiels et leurs articles publics.",
   "Messages, groups and private Moments: never.":
     "Les messages, les groupes et les « Moments » privés : jamais.",
-  "WeChat (Weixin) is the everything app in China: messaging, payments, articles from official accounts. Its public part, official accounts and their articles, says a lot about brands and their image.":
-    "WeChat (Weixin) est l'application de tout en Chine : messagerie, paiements, articles des comptes officiels. Sa partie publique, les comptes officiels et leurs articles, dit beaucoup des marques et de leur image.",
   "WHY WECHAT":
     "POURQUOI WECHAT",
   "Why listen to WeChat?":
@@ -5245,20 +5660,22 @@ window.LicterFR = {
     "Non : nous le croisons avec Weibo, Douyin, Xiaohongshu et Bilibili.",
   "Looking for a WeChat social listening agency?":
     "Vous cherchez une agence social listening WeChat ?",
-  "A question about WeChat?":
-    "Une question sur WeChat ?",
   "WEIBO SOCIAL LISTENING,":
     "SOCIAL LISTENING WEIBO,",
   "CHINA'S PUBLIC DEBATE.":
     "LE DÉBAT PUBLIC CHINOIS.",
+  "Weibo is China's great public square: trending topics, celebrities, controversies. A brand crisis in China often becomes visible there first.":
+    "Weibo est la grande place publique chinoise : sujets tendance, célébrités, polémiques. Une crise de marque en Chine y devient souvent visible en premier.",
+  "Weibo official site":
+    "Site officiel de Weibo",
+  "The public side of Weibo":
+    "Le public de Weibo",
   "Public posts, their comments and trending topics.":
     "Les publications publiques, leurs commentaires et les sujets tendance.",
   "Restricted accounts and messages. Some content can be removed quickly: monitoring has to be continuous.":
     "Les comptes restreints et les messages. Certains contenus peuvent être retirés rapidement : la veille doit être continue.",
-  "The tools we cross on Weibo":
-    "Les outils que nous croisons sur Weibo",
-  "Weibo is China's great public square: trending topics, celebrities, controversies. A brand crisis in China often becomes visible there first.":
-    "Weibo est la grande place publique chinoise : sujets tendance, célébrités, polémiques. Une crise de marque en Chine y devient souvent visible en premier.",
+  "Covers Weibo, per the vendor":
+    "Couvre Weibo selon l'éditeur",
   "WHY WEIBO":
     "POURQUOI WEIBO",
   "Why listen to Weibo?":
@@ -5297,18 +5714,22 @@ window.LicterFR = {
     "Les deux : le débat sur Weibo, les tendances de consommation sur Douyin.",
   "Looking for a Weibo social listening agency?":
     "Vous cherchez une agence social listening Weibo ?",
-  "A question about Weibo?":
-    "Une question sur Weibo ?",
   "DOUYIN SOCIAL LISTENING,":
     "SOCIAL LISTENING DOUYIN,",
   "VIDEO TRENDS IN CHINA.":
     "LES TENDANCES VIDÉO EN CHINE.",
+  "Douyin is TikTok's Chinese counterpart, with its own creators, built-in commerce and trends. It is where many consumer products launch in China.":
+    "Douyin est la version chinoise de TikTok, avec ses propres créateurs, son commerce intégré et ses tendances. C'est là que se lancent beaucoup de produits de consommation en Chine.",
+  "Douyin Group headquarters, Beijing. Photo: Wikimedia Commons, CC BY-SA 4.0":
+    "Siège de Douyin Group, Pékin. Photo : Wikimedia Commons, CC BY-SA 4.0",
+  "Douyin official site":
+    "Site officiel de Douyin",
+  "The public side of Douyin":
+    "Le public de Douyin",
   "Public videos and their comments, depending on tool coverage.":
     "Les vidéos publiques et leurs commentaires, selon la couverture des outils.",
   "Private accounts and messages. Content is video first: transcription and visual reading are needed.":
     "Les comptes privés et les messages. Le contenu est d'abord vidéo : transcription et lecture visuelle sont nécessaires.",
-  "Douyin is TikTok's Chinese counterpart, with its own creators, built-in commerce and trends. It is where many consumer products launch in China.":
-    "Douyin est la version chinoise de TikTok, avec ses propres créateurs, son commerce intégré et ses tendances. C'est là que se lancent beaucoup de produits de consommation en Chine.",
   "WHY DOUYIN":
     "POURQUOI DOUYIN",
   "Why listen to Douyin?":
@@ -5345,18 +5766,20 @@ window.LicterFR = {
     "Oui, nos consultants travaillent en mandarin, à partir des descriptions, des commentaires et des transcriptions.",
   "Looking for a Douyin social listening agency?":
     "Vous cherchez une agence social listening Douyin ?",
-  "A question about Douyin?":
-    "Une question sur Douyin ?",
   "XIAOHONGSHU (RED) SOCIAL LISTENING,":
     "SOCIAL LISTENING XIAOHONGSHU (RED),",
   "REVIEWS AND LIFESTYLE IN CHINA.":
     "LES AVIS ET LE LIFESTYLE EN CHINE.",
+  "Xiaohongshu, or RED, is the network where Chinese consumers share their reviews, purchases and recommendations, in beauty, fashion, travel and food especially.":
+    "Xiaohongshu, ou RED, est le réseau où les consommateurs chinois partagent leurs avis, leurs achats et leurs recommandations, en beauté, mode, voyage et alimentation surtout.",
+  "Xiaohongshu (RED) official site":
+    "Site officiel de Xiaohongshu (RED)",
+  "The public side of Xiaohongshu (RED)":
+    "Le public de Xiaohongshu (RED)",
   "Public notes and their comments, depending on tool coverage.":
     "Les notes publiques et leurs commentaires, selon la couverture des outils.",
   "Messages and private accounts. Western tools' coverage remains partial: we check it before committing.":
     "Les messages et les comptes privés. La couverture des outils occidentaux reste partielle : nous la vérifions avant de nous engager.",
-  "Xiaohongshu, or RED, is the network where Chinese consumers share their reviews, purchases and recommendations, in beauty, fashion, travel and food especially.":
-    "Xiaohongshu, ou RED, est le réseau où les consommateurs chinois partagent leurs avis, leurs achats et leurs recommandations, en beauté, mode, voyage et alimentation surtout.",
   "WHY XIAOHONGSHU (RED)":
     "POURQUOI XIAOHONGSHU (RED)",
   "Why listen to Xiaohongshu (RED)?":
@@ -5393,16 +5816,18 @@ window.LicterFR = {
     "Oui, produit par produit, à partir des avis publics.",
   "Looking for a Xiaohongshu (RED) social listening agency?":
     "Vous cherchez une agence social listening Xiaohongshu (RED) ?",
-  "A question about Xiaohongshu (RED)?":
-    "Une question sur Xiaohongshu (RED) ?",
   "BILIBILI SOCIAL LISTENING,":
     "SOCIAL LISTENING BILIBILI,",
   "YOUTH CULTURE IN CHINA.":
     "LA CULTURE JEUNE EN CHINE.",
-  "Messages and restricted content. Western tools' coverage remains partial.":
-    "Les messages et les contenus réservés. La couverture des outils occidentaux reste partielle.",
   "Bilibili is the video platform of Chinese youth: animation, gaming, tech, culture, with comments scrolling over the video (danmaku).":
     "Bilibili est la plateforme vidéo de la jeunesse chinoise : animation, jeu vidéo, tech, culture, avec ses commentaires qui défilent sur la vidéo (danmaku).",
+  "Bilibili official site":
+    "Site officiel de Bilibili",
+  "The public side of Bilibili":
+    "Le public de Bilibili",
+  "Messages and restricted content. Western tools' coverage remains partial.":
+    "Les messages et les contenus réservés. La couverture des outils occidentaux reste partielle.",
   "WHY BILIBILI":
     "POURQUOI BILIBILI",
   "Why listen to Bilibili?":
@@ -5439,8 +5864,6 @@ window.LicterFR = {
     "La réaction exacte à chaque moment d'une vidéo : ce qui fait rire, agace ou convainc.",
   "Looking for a Bilibili social listening agency?":
     "Vous cherchez une agence social listening Bilibili ?",
-  "A question about Bilibili?":
-    "Une question sur Bilibili ?",
   "Talkwalker agency: social listening run by consultants | Licter":
     "Agence Talkwalker : écoute sociale opérée par des consultants | Licter",
   "Licter, Talkwalker agency: social listening run by consultants. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
@@ -5493,6 +5916,22 @@ window.LicterFR = {
     "Agence Social Blade : vérifier les comptes et les créateurs | Licter",
   "Licter, Social Blade agency: checking accounts and creators. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
     "Licter, agence Social Blade : vérifier les comptes et les créateurs. Nos consultants configurent l'outil, lisent les données et vous livrent une recommandation, pas un tableau de bord.",
+  "Claude agency: what Claude says about your brand | Licter":
+    "Agence Claude : ce que Claude dit de votre marque | Licter",
+  "Licter, Claude agency: what Claude says about your brand. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
+    "Licter, agence Claude : ce que Claude dit de votre marque. Nos consultants configurent l'outil, lisent les données et vous livrent une recommandation, pas un tableau de bord.",
+  "Gemini agency: what Google's AI says about you | Licter":
+    "Agence Gemini : ce que l'IA de Google dit de vous | Licter",
+  "Licter, Gemini agency: what Google's AI says about you. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
+    "Licter, agence Gemini : ce que l'IA de Google dit de vous. Nos consultants configurent l'outil, lisent les données et vous livrent une recommandation, pas un tableau de bord.",
+  "Perplexity agency: your brand in the answer engine | Licter":
+    "Agence Perplexity : votre marque dans le moteur de réponses | Licter",
+  "Licter, Perplexity agency: your brand in the answer engine. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
+    "Licter, agence Perplexity : votre marque dans le moteur de réponses. Nos consultants configurent l'outil, lisent les données et vous livrent une recommandation, pas un tableau de bord.",
+  "Grok agency: what X's AI says about you | Licter":
+    "Agence Grok : ce que l'IA de X dit de vous | Licter",
+  "Licter, Grok agency: what X's AI says about you. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
+    "Licter, agence Grok : ce que l'IA de X dit de vous. Nos consultants configurent l'outil, lisent les données et vous livrent une recommandation, pas un tableau de bord.",
   "Facebook social listening agency: communities and groups | Licter":
     "Agence social listening Facebook : les communautés et les groupes | Licter",
   "Licter, Facebook social listening agency: communities and groups. Our consultants listen to Facebook and deliver a recommendation, not an export.":

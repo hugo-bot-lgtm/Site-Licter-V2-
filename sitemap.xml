@@ -171,6 +171,26 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-chatgpt.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/chatgpt/" />
   </url>
+  <url><loc>https://www.licter.com/fr/outils/claude/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/claude/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-claude.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/claude/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-claude.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/claude/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-claude.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/claude/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/gemini/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/gemini/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-gemini.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/gemini/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-gemini.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/gemini/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-gemini.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/gemini/" />
+  </url>
   <url><loc>https://www.licter.com/fr/outils/geo/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/geo/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-geo.html" />
@@ -201,6 +221,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-google-trends.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/google-trends/" />
   </url>
+  <url><loc>https://www.licter.com/fr/outils/grok/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/grok/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-grok.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/grok/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-grok.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/grok/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-grok.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/grok/" />
+  </url>
   <url><loc>https://www.licter.com/fr/outils/meta-ads/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/meta-ads/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-meta-ads.html" />
@@ -210,6 +240,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/meta-ads/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-meta-ads.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/meta-ads/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/perplexity/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/perplexity/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-perplexity.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/perplexity/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-perplexity.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/perplexity/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-perplexity.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/perplexity/" />
   </url>
   <url><loc>https://www.licter.com/fr/outils/radarly/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/radarly/" />
