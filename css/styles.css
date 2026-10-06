@@ -9010,3 +9010,5 @@ a.tk-offer__foot:focus-visible { outline: 2px solid var(--amber-deep); outline-o
 .tk-conn__vt { display: none; }
 .tk-conn__card.is-prev .tk-conn__vt, .tk-conn__card.is-next .tk-conn__vt { position: absolute; inset: 0; display: flex; align-items: center; justify-content: flex-end; padding: 22px 0; border-radius: inherit; background: linear-gradient(0deg, rgba(10, 12, 28, .82), rgba(10, 12, 28, .25) 70%, rgba(10, 12, 28, .1)); color: #FCF6EF; writing-mode: vertical-rl; transform: rotate(180deg); font: 700 15px/1.2 var(--title-font); letter-spacing: .3px; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tk-conn__card.is-prev:hover .tk-conn__vt, .tk-conn__card.is-next:hover .tk-conn__vt { color: #EAA93D; }
+/* the vertical title sits in the middle of its capsule, both ways */
+.tk-conn__card.is-prev .tk-conn__vt, .tk-conn__card.is-next .tk-conn__vt { justify-content: center; align-items: center; padding: 18px 0; text-align: center; background: linear-gradient(0deg, rgba(10, 12, 28, .6), rgba(10, 12, 28, .6)); }
