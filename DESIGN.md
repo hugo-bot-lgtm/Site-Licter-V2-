@@ -186,17 +186,16 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
 
 ### Pages offres (`tools/build-offers.py`, `offers.html`)
 
-- **Deux langues statiques :** `offers.html` et `offer-*.html` en anglais à la racine, leurs jumelles françaises sous `/fr/offres/…/`, avec `hreflang` et des titres et données structurées propres à chaque langue. `offers.html` reste le fichier source de la page Offres. Ses blocs générés (fil d'Ariane, logos, comparatif, aimant, FAQ) vivent entre des marqueurs `<!-- offers-… -->`. Les autres générateurs copient sa coque via `shell_source()`, sans son propre bloc SEO.
-- **La page Offres :**
-  1. la promesse ;
-  2. les logos ;
-  3. les quatre offres en onglets ;
-  4. **le comparatif côte à côte** (ce que vous recevez, pour qui, rythme, démarrage, qui lit, modèle, tarif) ;
-  5. « Laquelle est faite pour vous ? » ;
-  6. l'aimant « Recevoir la grille tarifaire » ;
-  7. la méthode ;
-  8. la FAQ ;
-  9. le rappel.
+- **Deux langues statiques :** `offers.html` et `offer-*.html` en anglais à la racine, leurs jumelles françaises sous `/fr/offres/…/`, avec `hreflang` et des titres et données structurées propres à chaque langue. `offers.html` reste le fichier source de la page Offres : son contenu est généré par `hub_main()` entre `<!-- offers-main … -->` et `<!-- /offers-main -->`, seul le rappel (`#book`) y est écrit à la main. Les exemples des heros des pages d'offre sont dans `tools/offer_demos.html`. Les autres générateurs copient la coque via `shell_source()`, sans son propre bloc SEO.
+- **La page Offres (environ 5 écrans sur ordinateur, 6 sur mobile) :**
+  1. le hero : la promesse à gauche (« Parler à un consultant », « Comparer en détail ↓ »), à droite l'aiguilleur « Quelle est votre situation ? » : quatre situations qui mènent chacune à sa carte (`#card-<offre>`, mise en avant par `:target`), et le diagnostic de 3 minutes ; puis les logos ;
+  2. **les quatre cartes**, façon page de tarifs : papier clair dans les deux thèmes, une couleur par offre (Social Insights ambre, Vigie 360 rouge, SLaaS bleu ardoise, Nox vert), nom, promesse, vignette de livrable, « Pour vous si », trois éléments reçus, modèle, « Grille sur demande », « Voir l'offre ». Sur grand écran, les lignes des cartes s'alignent (`subgrid`) ; sur mobile, elles défilent de côté. Aucune offre n'est mise en avant ;
+  3. le comparatif détaillé, replié (`<details>`, `#compare`) ;
+  4. ce qui ne change pas, quelle que soit l'offre (consultant dédié, langues, livrables à vous, lancement) ;
+  5. trois interviews clients ;
+  6. l'aimant « Recevoir la grille tarifaire » (`#offre`) ;
+  7. la FAQ ;
+  8. le rappel.
 - **Une page d'offre :**
   1. le hero, avec son exemple, puis les logos ;
   2. « Est-ce pour vous ? » ;

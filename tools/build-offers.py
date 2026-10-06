@@ -95,9 +95,7 @@ OFFERS = [
         "h1": ("Vos analyses de données sociales méritent des experts.", "Your social data analyses deserve experts."),
         "lead": ("Nos consultants cadrent la question, configurent la collecte et produisent l'analyse. Vous obtenez la réponse, pas une licence d'outil et un plan de formation.",
                  "Our consultants frame the question, configure the collection and produce the analysis. You get the answer, not a tool licence and a training plan."),
-        "facts": [(("Forfait fixe", "Fixed fee"), ("un prix mensuel", "one monthly price")),
-                  (("Illimité", "Unlimited"), ("études incluses", "studies inside it")),
-                  (("Sans engagement", "No lock-in"), ("arrêtez quand vous voulez", "stop when you want"))],
+        "facts": [],
         "yes": [("Vous avez des questions récurrentes : campagnes, concurrents, audiences, chaque mois.",
                  "You have recurring questions: campaigns, competitors, audiences, every month."),
                 ("Personne dans l'équipe n'a le temps, ni la formation, de faire tourner une plateforme d'écoute.",
@@ -654,8 +652,8 @@ def nox_demo():
 def demo(o, offers_html):
     if o["key"] == "nox":
         return nox_demo()
-    m = re.search(r'<div class="xo__panel"[^>]*id="%s"[^>]*>.*?(<figure class="xo__demo".*?</figure>)' % o["key"], offers_html, re.S)
-    return m.group(1)
+    src = (ROOT / "tools" / "offer_demos.html").read_text()
+    return re.search(r"<!-- demo:%s -->\n(.*?)\n<!-- /demo:%s -->" % (o["key"], o["key"]), src, re.S).group(1)
 
 
 def reel(key):
@@ -694,7 +692,7 @@ def body(o, offers_html):
           <a class="btn btn--primary" href="#book">{t(S["book"])} <span aria-hidden="true">→</span></a>
           <a class="xh__link" href="#included">{t(S["incl_link"])} <span aria-hidden="true">↓</span></a>
         </div>
-        <ul class="xh__facts">{facts}</ul>
+        {'<ul class="xh__facts">%s</ul>' % facts if facts else ""}
       </div>
       <div class="of-hero__demo">
         {demo(o, offers_html)}
@@ -815,14 +813,125 @@ def hub_ld(lang):
     return "\n".join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False) for x in out)
 
 
-def hub(src):
-    """offers.html: its generated blocks, its SEO head, its language"""
+# ------------------------------------------------------------------ the overview
+HUB = {
+    "kick": ("OFFRES", "OFFERS"),
+    "h1": ("Achetez des réponses, pas des licences.", "Buy answers, not licences."),
+    "lead": OFFERS_PAGE["lead"],
+    "cmp_link": ("Comparer en détail", "Compare in detail"),
+    "guide_t": ("Quelle est votre situation ?", "What is your situation?"),
+    "guide": [("social-insights", ("J'ai des questions, et personne pour faire tourner un outil.", "I have questions, and no one to run a tool.")),
+              ("vigie", ("Je dois savoir dans l'heure quand quelque chose casse.", "I need to know within the hour when something breaks.")),
+              ("slaas", ("Je paie une plateforme que personne n'ouvre.", "I pay for a platform nobody opens.")),
+              ("nox", ("Je veux suivre ma marque chaque jour, et que l'IA fasse le tri.", "I want to follow my brand every day, with AI doing the sorting."))],
+    "guide_diag": ("Je ne sais pas où en est mon écoute.", "I am not sure where my listening stands."),
+    "cards_t": ("Quatre offres, une même équipe.", "Four offers, one team."),
+    "cards_lead": ("Choisissez selon ce que vous voulez recevoir. Toutes sont cadrées et lues par nos consultants.",
+                   "Choose by what you want to receive. All of them are framed and read by our consultants."),
+    "for": ("Pour vous si", "For you if"),
+    "get": ("Vous recevez", "You receive"),
+    "model": ("Modèle", "Model"),
+    "price": ("Tarif", "Price"),
+    "see": ("Voir l'offre", "See the offer"),
+    "cmp_sum": ("Comparer les quatre offres en détail", "Compare the four offers in detail"),
+    "common_t": ("Ce qui ne change pas, quelle que soit l'offre", "What stays the same, whichever offer"),
+    "common": [(("Un consultant dédié", "A dedicated consultant"), ("qui cadre et lit pour vous", "who frames and reads for you")),
+               (("20+ langues", "20+ languages"), ("lues par des natifs", "read by native speakers")),
+               (("Vos livrables", "Your deliverables"), ("vous appartiennent", "belong to you")),
+               (("Lancé en deux semaines", "Running in two weeks"), ("au plus, cadrage compris", "at most, framing included"))],
+    "proof_t": ("Ils en parlent", "They talk about it"),
+}
+CARD_ACCENT = {"social-insights": "si", "vigie": "vig", "slaas": "sla", "nox": "nox"}
+
+
+def hub_main():
+    guide = "".join('<li><a href="#card-%s"><span>%s</span><i aria-hidden="true">→</i></a></li>' % (k, t(txt)) for k, txt in HUB["guide"])
+    guide += '<li class="of-guide__diag"><a href="index.html#diagnostic"><span>%s</span><b>%s</b><i aria-hidden="true">→</i></a></li>' % (
+        t(HUB["guide_diag"]), t(S["diag3"]))
+    cards = ""
+    for i, o in enumerate(OFFERS):
+        gets = "".join("<li>%s</li>" % t(x) for x, _ in o["incl"][:3])
+        cards += ('<li class="of-card of-card--%s" id="card-%s">'
+                  '<div class="of-card__top"><span class="of-card__n">0%d</span><h3 class="of-card__name"><a href="%s">%s</a></h3>'
+                  '<p class="of-card__promise">%s</p></div>'
+                  '<div class="of-card__thumb" aria-hidden="true"><!--dlv:%s--></div>'
+                  '<p class="of-card__k">%s</p><p class="of-card__for">%s</p>'
+                  '<p class="of-card__k">%s</p><ul class="of-card__get">%s</ul>'
+                  '<dl class="of-card__terms"><dt>%s</dt><dd>%s</dd><dt>%s</dt><dd><a href="#offre">%s</a></dd></dl>'
+                  '<a class="btn btn--primary of-card__go" href="%s">%s <span aria-hidden="true">→</span></a></li>') % (
+            CARD_ACCENT[o["key"]], o["key"], o["n"], o["file"], t(o["name"]), t(o["short"]), MORE[o["key"]]["dlv"],
+            t(HUB["for"]), t(COMPARE_ROWS[1][1][i]), t(HUB["get"]), gets,
+            t(HUB["model"]), t(COMPARE_ROWS[5][1][i]), t(HUB["price"]), t(S["price_cell"]), o["file"], t(HUB["see"]))
+    common = "".join("<li><b>%s</b><span>%s</span></li>" % (t(x), t(y)) for x, y in HUB["common"])
+    proof = "".join(reel(k) for k in ("sncf", "loreal", "orange"))
+    head = "".join('<th scope="col"><a href="%s">%s</a></th>' % (o["file"], t(o["name"])) for o in OFFERS)
+    rows = "".join('<tr><th scope="row">%s</th>%s</tr>' % (t(k), "".join("<td>%s</td>" % t(v) for v in vals)) for k, vals in COMPARE_ROWS)
+    rows += '<tr class="of-cmp__price"><th scope="row">%s</th><td colspan="4"><span>%s</span> · <a href="#offre">%s</a></td></tr>' % (
+        t(S["price_row"]), t(S["price_cell"]), t(S["price_link"]))
     crumbs = '  <nav class="crumbs shell" aria-label="%s"><ol><li><a href="index.html">%s</a></li><li aria-current="page">%s</li></ol></nav>' % (
         a(S["crumbs"]), t(S["home"]), t(S["offers"]))
-    for name, html_ in (("crumbs", crumbs), ("logos", logos()), ("compare", compare_table()),
-                        ("magnet", magnet("of-prices", t(S["hub_magnet_t"]), t(S["hub_magnet_done"]), t(S["hub_magnet_btn"]), alt=False)),
-                        ("faq", faq_section(HUB_FAQ))):
-        src = re.sub(r"<!-- offers-%s -->.*?<!-- /offers-%s -->" % (name, name), lambda m: "<!-- offers-%s -->\n%s\n<!-- /offers-%s -->" % (name, html_, name), src, count=1, flags=re.S)
+    return f'''{crumbs}
+
+  <section class="xh of-hub-hero">
+    <div class="shell of-hub-hero__grid">
+      <div class="xh__copy">
+        <p class="xh__kick">{t(HUB["kick"])}</p>
+        <h1 class="xh__title">{t(HUB["h1"])}</h1>
+        <p class="xh__lead">{t(HUB["lead"])}</p>
+        <div class="xh__actions">
+          <a class="btn btn--primary" href="#book">{t(S["bar_call"])} <span aria-hidden="true">→</span></a>
+          <a class="xh__link" href="#compare">{t(HUB["cmp_link"])} <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <nav class="of-guide" aria-labelledby="of-guide-t">
+        <p class="of-guide__t" id="of-guide-t">{t(HUB["guide_t"])}</p>
+        <ol class="of-guide__list">{guide}</ol>
+      </nav>
+    </div>
+{logos()}
+  </section>
+
+  <section class="of-cards" id="offers">
+    <div class="shell">
+      <div class="xs__head"><h2 class="xs__title">{t(HUB["cards_t"])}</h2><p class="xs__lead">{t(HUB["cards_lead"])}</p></div>
+      <ol class="of-cards__list">{cards}</ol>
+    </div>
+  </section>
+
+  <section class="of-cmp" id="compare">
+    <div class="shell">
+      <details class="of-cmp__fold">
+        <summary>{t(HUB["cmp_sum"])}</summary>
+        <div class="of-cmp__wrap" tabindex="0"><table class="of-cmp__t"><thead><tr><td></td>{head}</tr></thead><tbody>{rows}</tbody></table></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="of-common">
+    <div class="shell">
+      <h2 class="of-common__t">{t(HUB["common_t"])}</h2>
+      <ul class="of-common__list">{common}</ul>
+    </div>
+  </section>
+
+  <section class="of-proof">
+    <div class="shell">
+      <div class="xs__head"><h2 class="xs__title">{t(HUB["proof_t"])}</h2></div>
+      <div class="of-proof__list">{proof}</div>
+    </div>
+  </section>
+
+{magnet("of-prices", t(S["hub_magnet_t"]), t(S["hub_magnet_done"]), t(S["hub_magnet_btn"]), alt=False)}
+
+{faq_section(HUB_FAQ)}
+'''
+
+
+def hub(src):
+    """offers.html: its generated blocks, its SEO head, its language"""
+    main = hub_main()
+    src = re.sub(r"<!-- offers-main: generated by tools/build-offers.py \(hub_main\) -->.*?<!-- /offers-main -->",
+                 lambda m: "<!-- offers-main: generated by tools/build-offers.py (hub_main) -->\n%s\n<!-- /offers-main -->" % main, src, count=1, flags=re.S)
     title, desc = html.escape(HUB_SEO["title"][EN]), html.escape(HUB_SEO["desc"][EN])
     src = re.sub(r"<title>.*?</title>", "<title>%s</title>" % title, src, count=1, flags=re.S)
     for pat, val in ((r'<meta name="description" content="[^"]*" />', '<meta name="description" content="%s" />' % desc),
@@ -853,8 +962,6 @@ def write_dict(label="offer pages", script="build-offers.py", entries=None):
 
 def main():
     src = (ROOT / "offers.html").read_text()
-    # the Nox tab of offers.html shows the same brief as its page
-    src = re.sub(r"<!-- nox-demo -->.*?<!-- /nox-demo -->", lambda m: "<!-- nox-demo -->%s<!-- /nox-demo -->" % nox_demo(), src, flags=re.S)
     src, hub_ld_en = hub(src)
     (ROOT / "offers.html").write_text(src)
     offers_html = shell_source(src)
@@ -863,9 +970,6 @@ def main():
         t(v)
     for k in ("diag3", "badge", "bar_offer", "bar_price", "bar_call", "bar_chat"):
         t(S[k])
-    for pair in (("4 offres", "4 offers"), ("de l'étude à l'outil IA", "from a study to an AI tool"), ("Un consultant", "One consultant"),
-                 ("qui lit pour vous", "who reads it for you"), ("Aucune licence", "No licence"), ("à faire tourner vous-même", "to run yourself")):
-        t(pair)
     for o in OFFERS:
         t(o["seo_title"])
     t(HUB_SEO["title"])
