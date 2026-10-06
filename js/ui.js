@@ -2349,3 +2349,16 @@ window.LicterUC = (function () {
     });
   });
 })();
+
+/* expertise hero: the cover of the flash read takes the brand as it is typed */
+(function () {
+  "use strict";
+  var input = document.getElementById("fl-brand"), out = document.querySelector(".xe-cover__brand");
+  if (!input || !out) return;
+  var empty = out.getAttribute("data-empty");
+  input.addEventListener("input", function () {
+    var v = input.value.trim().slice(0, 28);
+    out.textContent = v || empty;
+    out.classList.toggle("is-set", !!v);
+  });
+})();

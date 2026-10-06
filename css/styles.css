@@ -9911,3 +9911,15 @@ a.xe-cover:focus-visible { outline: 3px solid #EAA93D; outline-offset: 4px; bord
 .xe-lm__from a { color: #EAA93D; border-bottom: 1px solid rgba(234, 169, 61, .6); white-space: nowrap; }
 @media (max-width: 720px) { .xe-gform .form__row { grid-template-columns: minmax(0, 1fr); } }
 html[data-theme="dark"] .xe-gform .form__submit, .xe-lm .xe-gform .form__submit { background: #EAA93D; color: #13162D; }
+/* the hero magnet: a free flash read of the visitor's brand */
+.xe-cover__ico { margin-top: auto; }
+.xe-cover__brand { display: block; margin-top: 12px; font: 800 22px/1.05 var(--title-font); letter-spacing: -.5px; text-transform: uppercase; color: #C9C3B6; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; transition: color .2s ease; }
+.xe-cover__brand.is-set { color: #13162D; }
+.xe-cover__brand.is-set::after { content: ""; display: inline-block; width: 2px; height: .9em; margin-left: 3px; vertical-align: -2px; background: #EAA93D; animation: xe-caret 1s steps(1) infinite; }
+@keyframes xe-caret { 50% { opacity: 0; } }
+.xe-lm__items { display: grid; gap: 8px; margin: -4px 0 16px; padding: 0; list-style: none; }
+.xe-lm__items li { position: relative; padding-left: 28px; font: 500 14.5px/1.4 var(--body-font); color: rgba(252, 246, 239, .88); }
+.xe-lm__items li::before { content: "✓"; position: absolute; left: 0; top: 1px; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #EAA93D; color: #13162D; font: 700 10px/1 var(--body-font); }
+.xe-gform .form__row { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+@media (max-width: 720px) { .xe-gform .form__row { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .xe-cover__brand.is-set::after { animation: none; } }

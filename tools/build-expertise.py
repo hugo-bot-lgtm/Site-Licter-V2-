@@ -366,7 +366,7 @@ S.update({
     "magnet_done": ("C'est noté. Un consultant vous envoie un exemple sous 48 h.", "Noted. A consultant sends you a sample within 48 hours."),
     "magnet_alt": ("Plutôt lire d'abord ?", "Rather read first?"),
     "magnet_alt_link": ("Le guide des 12 questions", "The guide to the 12 questions"),
-    "bar_offer": ("Le guide gratuit", "The free guide"),
+    "bar_offer": ("Mon flash offert", "My free flash"),
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
     "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
     "hub_faq_t": ("Questions fréquentes", "Frequently asked questions"),
@@ -585,59 +585,71 @@ H1L = {"social": (("Ce que les gens disent,", "lu par des gens."), ("What people
        "search": (("Ce que les gens", "cherchent vraiment."), ("What people", "really search for.")),
        "hub": (("Six façons", "d'écouter un marché."), ("Six ways", "of listening to a market."))}
 S.update({
-    "lm_k": ("GUIDE GRATUIT", "FREE GUIDE"),
-    "lm_cover": ("questions que la social data résout mieux qu'un sondage", "questions social data answers better than a survey"),
-    "lm_now": ("Envoyé immédiatement", "Sent immediately"), "lm_noseq": ("Sans relance", "No follow-up sequence"),
-    "lm_btn": ("Recevoir le guide", "Get the guide"),
-    "lm_done": ("Guide envoyé. Pensez à vérifier vos spams.", "Guide sent. Check your spam folder too."),
-    "lm_toc": ("Voir le sommaire", "See what is inside"),
+    "lm_k": ("FLASH OFFERT", "FREE FLASH READ"),
+    "lm_brand_ph": ("Votre marque", "Your brand"),
+    "lm_yours": ("Sur votre marque", "On your brand"),
+    "lm_btn": ("Recevoir mon flash offert", "Get my free flash read"),
+    "lm_done": ("C'est noté. Un consultant vous envoie votre flash sous 48 h.", "Noted. A consultant sends you your flash read within 48 hours."),
     "lm_anon": ("Anonymisé · dans votre secteur", "Anonymised · in your sector"),
-    "lm_t": ("Recevez le guide des 12 questions.", "Get the guide to the 12 questions."),
-    "lm_t_hub": ("Recevez un vrai livrable, dans votre secteur.", "Get a real deliverable, in your sector."),
+    "lm_t": ("Le flash %s de votre marque, offert.", "Your brand's %s flash read, free."),
+    "lm_t_hub": ("Le flash de votre marque, offert.", "Your brand's flash read, free."),
     "lm_free": ("Gratuit", "Free"), "lm_anon2": ("Anonymisé", "Anonymised"), "lm_48": ("Sous 48 h", "Within 48 h"),
-    "lm_from": ("Écrit par les consultants qui les mènent.", "Written by the consultants who run them."),
+    "lm_from": ("Préparé et lu par un consultant, pas par un robot.", "Prepared and read by a consultant, not a robot."),
     "lm_call": ("Ou parler à un consultant", "Or talk to a consultant"),
     "lm_six": ("Les six écoutes", "The six listenings"),
 })
 
 
-def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, bands=None):
-    """the hero offers the guide of the 12 questions (same form as guide.html)"""
-    nums = "".join("<i>%02d</i>" % n for n in range(1, 13))
+# What the flash contains, per listening: what a consultant reads on the
+# visitor's own brand, offered. MOCK: to be validated by Licter (A-FAIRE.md).
+FLASH = {
+    "social": [("Les 3 sujets qui montent autour de votre marque", "The 3 topics rising around your brand"), ("Leur tonalité, sujet par sujet", "Their tone, topic by topic"), ("Ce qu'il faut surveiller ensuite", "What to watch next")],
+    "audience": [("Les 3 communautés qui suivent votre marque", "The 3 communities following your brand"), ("Ce qui les passionne", "What they care about"), ("Où les toucher", "Where to reach them")],
+    "influence": [("Les 5 voix qui portent dans votre catégorie", "The 5 voices that carry in your category"), ("Leur recouvrement avec votre audience", "Their overlap with your audience"), ("Les risques à vérifier", "The risks to check")],
+    "ai": [("Ce que ChatGPT, Gemini et Perplexity disent de vous", "What ChatGPT, Gemini and Perplexity say about you"), ("Les concurrents qu'ils recommandent", "The competitors they recommend"), ("Les sources qu'ils citent", "The sources they cite")],
+    "live": [("Ce qui a fait bouger votre marque en 30 jours", "What moved your brand in 30 days"), ("Qui l'a porté", "Who carried it"), ("Les signaux à surveiller", "The signals to watch")],
+    "search": [("Les 10 questions que votre marché tape le plus", "The 10 questions your market types most"), ("Les besoins qui montent", "The rising needs"), ("Ceux auxquels personne ne répond", "The ones nobody answers")],
+    "hub": [("Ce qui se dit de votre marque", "What is said about your brand"), ("Ce que les IA en répondent", "What AI answers about it"), ("Ce que votre marché cherche", "What your market searches for")],
+}
+
+
+def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, bands=None, flash_key="hub"):
+    """the hero offers a free flash read of the visitor's own brand"""
+    items = "".join("<li>%s</li>" % t(it) for it in FLASH[flash_key])
     faces = "".join('<img src="/assets/img/team/%s-160.webp" alt="" width="160" height="160" />' % f for f in ("founder-antoine", "headshot-1", "headshot-2"))
-    def fld(id_, lab, typ, auto, ph, req=True, opt=False):
-        return ('<div class="form__field"><label for="%s">%s%s</label><input id="%s" name="%s" type="%s" autocomplete="%s" placeholder="%s"%s /></div>') % (
-            id_, t(lab), (' <small class="form__opt">%s</small>' % t(("(facultatif)", "(optional)"))) if opt else "", id_, id_, typ, auto, ph, " required" if req else "")
+    def fld(id_, lab, typ, auto, ph):
+        return ('<div class="form__field"><label for="%s">%s</label><input id="%s" name="%s" type="%s" autocomplete="%s" placeholder="%s" required /></div>') % (
+            id_, t(lab), id_, id_, typ, auto, ph)
     return f'''  <section class="xe-lmh">
     <div class="shell xe-lmh__grid">
       <div class="xe-lmh__copy">
         <h1 class="xe-lmh__h1"><span class="xe-lmh__kick">{kick}</span><span class="xe-lmh__l">{t((lines[0][0], lines[1][0]))}</span><span class="xe-lmh__l xe-lmh__l--c">{t((lines[0][1], lines[1][1]))}</span></h1>
         <p class="xe-lmh__lead">{t(lead)}</p>
-        <ul class="xe-lmh__pills"><li>{t(S["lm_free"])}</li><li>{t(S["lm_now"])}</li><li>{t(S["lm_noseq"])}</li></ul>
+        <ul class="xe-lmh__pills"><li>{t(S["lm_free"])}</li><li>{t(S["lm_yours"])}</li><li>{t(S["lm_48"])}</li></ul>
         <a class="xe-lmh__call" href="#book">{t(S["lm_call"])} <span aria-hidden="true">→</span></a>
       </div>
       <div class="xe-lm" id="offre">
-        <a class="xe-cover" href="guide.html" aria-label="{a(S["lm_toc"])}">
+        <div class="xe-cover" aria-hidden="true">
           <span class="xe-cover__sheet xe-cover__sheet--3"></span><span class="xe-cover__sheet xe-cover__sheet--2"></span>
           <span class="xe-cover__sheet xe-cover__sheet--1">
             <span class="xe-cover__band"></span>
             <span class="xe-cover__top"><img src="/assets/img/logo-navy.png" alt="" width="44" height="48" /><small>{t(S["lm_k"])}</small></span>
-            <b class="xe-cover__big">12</b>
-            <b class="xe-cover__name">{t(S["lm_cover"])}</b>
-            <span class="xe-cover__nums">{nums}</span>
+            <span class="xe-cover__ico">{icon}</span>
+            <b class="xe-cover__brand" data-empty="{a(S["lm_brand_ph"])}">{t(S["lm_brand_ph"])}</b>
+            <small class="xe-cover__anon">{cover_name}</small>
           </span>
-        </a>
+        </div>
         <div class="xe-lm__body">
-          <!-- MOCK: sends nothing yet (js/ui.js, .form); wire to the CRM, as the form of guide.html. -->
-          <p class="xe-lm__t">{t(S["lm_t"])}</p>
-          <form class="form xe-gform" id="guide-hero-form" novalidate>
-            <div class="form__row">{fld("gh-first", ("Prénom", "First name"), "text", "given-name", "Camille")}{fld("gh-last", ("Nom", "Last name"), "text", "family-name", "Bernard")}</div>
-            <div class="form__row">{fld("gh-email", ("E-mail professionnel", "Work email"), "email", "email", "camille@company.com")}{fld("gh-company", ("Entreprise", "Company"), "text", "organization", "", False, True)}</div>
+          <!-- MOCK: sends nothing yet (js/ui.js, .form); wire to the CRM with the brand and the listening. -->
+          <p class="xe-lm__t">{title}</p>
+          <ul class="xe-lm__items">{items}</ul>
+          <form class="form xe-gform" id="flash-{key}-form" novalidate>
+            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-email", ("E-mail professionnel", "Work email"), "email", "email", "camille@company.com")}</div>
             <button class="form__submit" type="submit">{t(S["lm_btn"])} <span aria-hidden="true">→</span></button>
             <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>{t(S["lm_done"])}</span></p>
           </form>
           <p class="consent">{t(S["magnet_consent"])} <a href="privacy.html">{t(S["privacy"])}</a>.</p>
-          <p class="xe-lm__from"><span class="xe-lm__faces">{faces}</span><span>{t(S["lm_from"])} <a href="guide.html">{t(S["lm_toc"])} <span aria-hidden="true">→</span></a></span></p>
+          <p class="xe-lm__from"><span class="xe-lm__faces">{faces}</span><span>{t(S["lm_from"])}</span></p>
         </div>
       </div>
     </div>
@@ -668,7 +680,7 @@ def listening_body(x, offers_html):
     out = '<main id="content" class="tk tk--net xe-tk" style="--brand:%s;--brand-ink:#13162D;--brand-2:%s">\n' % (col, col)
     out += '%s\n' % tk_crumbs([(("Accueil", "Home"), "index.html"), (S["expertise"], "expertise.html"), (x["name"], None)]).replace('class="tk-crumbs"', 'class="tk-crumbs shell"')
     out += lm_hero('%s<!--glossk:%s-->' % (t(x["name"]), x["key"]), H1L[x["key"]], x["lead"], "xp-" + x["key"],
-                   t(S["lm_t"]), col, icon, t(x["name"]), logos())
+                   t((S["lm_t"][0] % x["name"][0], S["lm_t"][1] % x["name"][1])), col, icon, t(x["name"]), logos(), flash_key=x["key"])
     out += sec("", head(t(S["hears_k"]), t((S["hears_t"][0] % nm[FR], S["hears_t"][1] % nm[EN]))) + feats, band=True)
     out += sec("answers", head(t(S["answers_k"]), t(S["answers_t"]), t(S["answers_lead"])) + prog(x["cases"]))
     out += sec("", head(t(S["runs_k"]), t(S["how_runs"])) + steps + '<p class="tk-sub xe-note">%s</p>' % t(S["how_note"]), band=True)

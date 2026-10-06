@@ -146,6 +146,10 @@ Les pages offres sont prêtes, mais quatre informations ne peuvent pas être inv
 - [ ] **Les clients écartés** de la liste publique : Image 7, Advancy Notes, Student Pop, EDC, CentraleSupélec, DGSE (Albert School), CWF, PCS, VeridisQuo, Avant-Garde Fondation, FRANCE & META, Junior City, les partis (PS, Renaissance), et Netflix et l'Ambassade de l'Inde (clients de Publicis Consultants). À réintégrer si vous le souhaitez.
 - [ ] **Le classement par secteur** et le logo d'Asmodee (icône du site, faute de logo complet).
 
+## 7. Expertise : le « flash offert »
+
+- [ ] **Le hero des pages Expertise promet un flash offert** sur la marque du visiteur, préparé par un consultant sous 48 h (contenu par écoute dans `FLASH`, `tools/build-expertise.py`). À valider : pouvez-vous le tenir, et à quel volume ? Le formulaire n'envoie rien pour l'instant (marque + e-mail, à brancher au CRM).
+
 ## Le jour de la bascule sur le vrai domaine
 
 Le site pointe déjà vers `https://www.licter.com` pour les URL canoniques, les `hreflang` et le sitemap (`SITE` dans `tools/uc_content.py`). Il faudra vérifier ces liens une fois le domaine branché, et utiliser ce même domaine dans Plausible.

@@ -241,6 +241,7 @@ window.LicterFR = {
     "Cas d'usage Audiences",
   "Innovation use cases":
     "Cas d'usage Innovation",
+  "E.g. Danone": "Ex. : Danone",
   /* positioning: a consultancy, found as an agency (October 2026) */
   "Social data intelligence consultancy":
     "Cabinet de conseil en social data intelligence",
@@ -2508,36 +2509,38 @@ window.LicterFR = {
     "Restitution",
   "A summary, and what to do with it.":
     "Une synthèse, et ce qu'il faut en faire.",
-  "Get the guide to the 12 questions.":
-    "Recevez le guide des 12 questions.",
+  "Your brand's Social listening flash read, free.":
+    "Le flash Social listening de votre marque, offert.",
+  "The 3 topics rising around your brand":
+    "Les 3 sujets qui montent autour de votre marque",
+  "Their tone, topic by topic":
+    "Leur tonalité, sujet par sujet",
+  "What to watch next":
+    "Ce qu'il faut surveiller ensuite",
   "What people say,":
     "Ce que les gens disent,",
   "read by people.":
     "lu par des gens.",
   "Free":
     "Gratuit",
-  "Sent immediately":
-    "Envoyé immédiatement",
-  "No follow-up sequence":
-    "Sans relance",
+  "On your brand":
+    "Sur votre marque",
+  "Within 48 h":
+    "Sous 48 h",
   "Or talk to a consultant":
     "Ou parler à un consultant",
-  "See what is inside":
-    "Voir le sommaire",
-  "questions social data answers better than a survey":
-    "questions que la social data résout mieux qu'un sondage",
-  "First name":
-    "Prénom",
-  "Last name":
-    "Nom",
+  "FREE FLASH READ":
+    "FLASH OFFERT",
+  "Your brand":
+    "Votre marque",
   "Work email":
     "E-mail professionnel",
-  "Company":
-    "Entreprise",
-  "Guide sent. Check your spam folder too.":
-    "Guide envoyé. Pensez à vérifier vos spams.",
-  "Written by the consultants who run them.":
-    "Écrit par les consultants qui les mènent.",
+  "Get my free flash read":
+    "Recevoir mon flash offert",
+  "Noted. A consultant sends you your flash read within 48 hours.":
+    "C'est noté. Un consultant vous envoie votre flash sous 48 h.",
+  "Prepared and read by a consultant, not a robot.":
+    "Préparé et lu par un consultant, pas par un robot.",
   "WHAT IT PICKS UP":
     "CE QU'ELLE ENTEND",
   "What Social listening lets you hear.":
@@ -2646,6 +2649,14 @@ window.LicterFR = {
     "J+10",
   "The communities to prioritise, and how to reach them.":
     "Les communautés à prioriser, et comment les toucher.",
+  "Your brand's Audience listening flash read, free.":
+    "Le flash Audience listening de votre marque, offert.",
+  "The 3 communities following your brand":
+    "Les 3 communautés qui suivent votre marque",
+  "What they care about":
+    "Ce qui les passionne",
+  "Where to reach them":
+    "Où les toucher",
   "Who your audiences":
     "Qui sont vraiment",
   "really are.":
@@ -2708,6 +2719,14 @@ window.LicterFR = {
     "Shortlist",
   "A ranked, argued list, ready for the agency.":
     "Une liste classée et argumentée, prête pour l'agence.",
+  "Your brand's Influence listening flash read, free.":
+    "Le flash Influence listening de votre marque, offert.",
+  "The 5 voices that carry in your category":
+    "Les 5 voix qui portent dans votre catégorie",
+  "Their overlap with your audience":
+    "Leur recouvrement avec votre audience",
+  "The risks to check":
+    "Les risques à vérifier",
   "The voices that carry,":
     "Les voix qui portent,",
   "not the most followed.":
@@ -2764,6 +2783,14 @@ window.LicterFR = {
     "Plan",
   "The sources to correct or to feed.":
     "Les sources à corriger ou à nourrir.",
+  "Your brand's AI listening flash read, free.":
+    "Le flash AI listening de votre marque, offert.",
+  "What ChatGPT, Gemini and Perplexity say about you":
+    "Ce que ChatGPT, Gemini et Perplexity disent de vous",
+  "The competitors they recommend":
+    "Les concurrents qu'ils recommandent",
+  "The sources they cite":
+    "Les sources qu'ils citent",
   "What AI":
     "Ce que les IA",
   "says about you.":
@@ -2828,6 +2855,14 @@ window.LicterFR = {
     "Bilan",
   "What moved, and what to watch next.":
     "Ce qui a bougé, et ce qu'il faut surveiller ensuite.",
+  "Your brand's Live listening flash read, free.":
+    "Le flash Live listening de votre marque, offert.",
+  "What moved your brand in 30 days":
+    "Ce qui a fait bouger votre marque en 30 jours",
+  "Who carried it":
+    "Qui l'a porté",
+  "The signals to watch":
+    "Les signaux à surveiller",
   "What happens,":
     "Ce qui se passe,",
   "while it happens.":
@@ -2872,6 +2907,14 @@ window.LicterFR = {
     "Les questions, les problèmes et les besoins qui montent.",
   "The unmet needs, and what to launch.":
     "Les besoins non couverts, et ce qu'il faut lancer.",
+  "Your brand's Search listening flash read, free.":
+    "Le flash Search listening de votre marque, offert.",
+  "The 10 questions your market types most":
+    "Les 10 questions que votre marché tape le plus",
+  "The rising needs":
+    "Les besoins qui montent",
+  "The ones nobody answers":
+    "Ceux auxquels personne ne répond",
   "What people":
     "Ce que les gens",
   "really search for.":
@@ -2948,10 +2991,16 @@ window.LicterFR = {
     "Voir les 12 cas d'usage",
   "Social intelligence":
     "Social intelligence",
-  "Get a real deliverable, in your sector.":
-    "Recevez un vrai livrable, dans votre secteur.",
+  "Your brand's flash read, free.":
+    "Le flash de votre marque, offert.",
   "The six listenings":
     "Les six écoutes",
+  "What is said about your brand":
+    "Ce qui se dit de votre marque",
+  "What AI answers about it":
+    "Ce que les IA en répondent",
+  "What your market searches for":
+    "Ce que votre marché cherche",
   "Six ways":
     "Six façons",
   "of listening to a market.":
@@ -2982,6 +3031,8 @@ window.LicterFR = {
     "Quelle question voulez-vous écouter ?",
   "IN OUR OFFERS":
     "DANS NOS OFFRES",
+  "My free flash":
+    "Mon flash offert",
   "Chat with Antoine":
     "Discuter avec Antoine",
   "Social listening: what is said about your brand | Licter":

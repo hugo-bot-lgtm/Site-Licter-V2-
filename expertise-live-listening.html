@@ -18,8 +18,8 @@
 <link rel="alternate" hreflang="x-default" href="https://www.licter.com/expertise-live-listening.html" />
 <meta name="twitter:card" content="summary" />
 <meta name="theme-color" content="#13162D" />
-<script src="js/theme.js?v=20261312"></script>
-<link rel="stylesheet" href="css/styles.min.css?v=20261312" />
+<script src="js/theme.js?v=20261314"></script>
+<link rel="stylesheet" href="css/styles.min.css?v=20261314" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.licter.com/"}, {"@type": "ListItem", "position": 2, "name": "Expertise", "item": "https://www.licter.com/expertise.html"}, {"@type": "ListItem", "position": 3, "name": "Live listening", "item": "https://www.licter.com/expertise-live-listening.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Live listening", "description": "Event, launch, crisis: the conversation followed live, 24/7, and an analyst who alerts you within 15 minutes when something moves.", "provider": {"@type": "Organization", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "url": "https://www.licter.com/expertise-live-listening.html", "areaServed": "Worldwide"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you cover nights and weekends?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: that is often when topics start."}}, {"@type": "Question", "name": "Can you cover a one-off event?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A trade show, a launch or a speech can be followed live over the period, with a debrief at the end."}}, {"@type": "Question", "name": "How fast can you be up and running?", "acceptedAnswer": {"@type": "Answer", "text": "48 hours to set up the queries, thresholds and alert contacts."}}, {"@type": "Question", "name": "Who receives the alerts?", "acceptedAnswer": {"@type": "Answer", "text": "The people you name, by email or messaging, with the analyst's qualification and a recommendation."}}]}</script>
@@ -83,31 +83,31 @@
       <div class="xe-lmh__copy">
         <h1 class="xe-lmh__h1"><span class="xe-lmh__kick">Live listening</span><span class="xe-lmh__l">What happens,</span><span class="xe-lmh__l xe-lmh__l--c">while it happens.</span></h1>
         <p class="xe-lmh__lead">Event, launch, crisis: we follow the conversation live, 24/7, and an analyst alerts you within 15 minutes when something really moves.</p>
-        <ul class="xe-lmh__pills"><li>Free</li><li>Sent immediately</li><li>No follow-up sequence</li></ul>
+        <ul class="xe-lmh__pills"><li>Free</li><li>On your brand</li><li>Within 48 h</li></ul>
         <a class="xe-lmh__call" href="#book">Or talk to a consultant <span aria-hidden="true">→</span></a>
       </div>
       <div class="xe-lm" id="offre">
-        <a class="xe-cover" href="guide.html" aria-label="See what is inside">
+        <div class="xe-cover" aria-hidden="true">
           <span class="xe-cover__sheet xe-cover__sheet--3"></span><span class="xe-cover__sheet xe-cover__sheet--2"></span>
           <span class="xe-cover__sheet xe-cover__sheet--1">
             <span class="xe-cover__band"></span>
-            <span class="xe-cover__top"><img src="/assets/img/logo-navy.png" alt="" width="44" height="48" /><small>FREE GUIDE</small></span>
-            <b class="xe-cover__big">12</b>
-            <b class="xe-cover__name">questions social data answers better than a survey</b>
-            <span class="xe-cover__nums"><i>01</i><i>02</i><i>03</i><i>04</i><i>05</i><i>06</i><i>07</i><i>08</i><i>09</i><i>10</i><i>11</i><i>12</i></span>
+            <span class="xe-cover__top"><img src="/assets/img/logo-navy.png" alt="" width="44" height="48" /><small>FREE FLASH READ</small></span>
+            <span class="xe-cover__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5v-5a5.5 5.5 0 0 1 11 0v5l1.5 2H5z"/><path d="M10 19.8a2.2 2.2 0 0 0 4 0"/></svg></span>
+            <b class="xe-cover__brand" data-empty="Your brand">Your brand</b>
+            <small class="xe-cover__anon">Live listening</small>
           </span>
-        </a>
+        </div>
         <div class="xe-lm__body">
-          <!-- MOCK: sends nothing yet (js/ui.js, .form); wire to the CRM, as the form of guide.html. -->
-          <p class="xe-lm__t">Get the guide to the 12 questions.</p>
-          <form class="form xe-gform" id="guide-hero-form" novalidate>
-            <div class="form__row"><div class="form__field"><label for="gh-first">First name</label><input id="gh-first" name="gh-first" type="text" autocomplete="given-name" placeholder="Camille" required /></div><div class="form__field"><label for="gh-last">Last name</label><input id="gh-last" name="gh-last" type="text" autocomplete="family-name" placeholder="Bernard" required /></div></div>
-            <div class="form__row"><div class="form__field"><label for="gh-email">Work email</label><input id="gh-email" name="gh-email" type="email" autocomplete="email" placeholder="camille@company.com" required /></div><div class="form__field"><label for="gh-company">Company <small class="form__opt">(optional)</small></label><input id="gh-company" name="gh-company" type="text" autocomplete="organization" placeholder="" /></div></div>
-            <button class="form__submit" type="submit">Get the guide <span aria-hidden="true">→</span></button>
-            <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>Guide sent. Check your spam folder too.</span></p>
+          <!-- MOCK: sends nothing yet (js/ui.js, .form); wire to the CRM with the brand and the listening. -->
+          <p class="xe-lm__t">Your brand's Live listening flash read, free.</p>
+          <ul class="xe-lm__items"><li>What moved your brand in 30 days</li><li>Who carried it</li><li>The signals to watch</li></ul>
+          <form class="form xe-gform" id="flash-xp-live-form" novalidate>
+            <div class="form__row"><div class="form__field"><label for="fl-brand">Your brand</label><input id="fl-brand" name="fl-brand" type="text" autocomplete="organization" placeholder="E.g. Danone" required /></div><div class="form__field"><label for="fl-email">Work email</label><input id="fl-email" name="fl-email" type="email" autocomplete="email" placeholder="camille@company.com" required /></div></div>
+            <button class="form__submit" type="submit">Get my free flash read <span aria-hidden="true">→</span></button>
+            <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>Noted. A consultant sends you your flash read within 48 hours.</span></p>
           </form>
           <p class="consent">We use your email only to reply to you. <a href="privacy.html">Privacy policy</a>.</p>
-          <p class="xe-lm__from"><span class="xe-lm__faces"><img src="/assets/img/team/founder-antoine-160.webp" alt="" width="160" height="160" /><img src="/assets/img/team/headshot-1-160.webp" alt="" width="160" height="160" /><img src="/assets/img/team/headshot-2-160.webp" alt="" width="160" height="160" /></span><span>Written by the consultants who run them. <a href="guide.html">See what is inside <span aria-hidden="true">→</span></a></span></p>
+          <p class="xe-lm__from"><span class="xe-lm__faces"><img src="/assets/img/team/founder-antoine-160.webp" alt="" width="160" height="160" /><img src="/assets/img/team/headshot-1-160.webp" alt="" width="160" height="160" /><img src="/assets/img/team/headshot-2-160.webp" alt="" width="160" height="160" /></span><span>Prepared and read by a consultant, not a robot.</span></p>
         </div>
       </div>
     </div>
@@ -199,7 +199,7 @@
 
 <div class="ucp-bar" aria-hidden="true" hidden>
   <button class="ucp-bar__chat" type="button" tabindex="-1" aria-label="Chat with Antoine"><img src="/assets/img/team/founder-antoine-160.webp" alt="" width="44" height="44" /><i aria-hidden="true"></i></button>
-  <a class="btn btn--primary" href="#offre" tabindex="-1">The free guide</a>
+  <a class="btn btn--primary" href="#offre" tabindex="-1">My free flash</a>
   <a class="btn btn--ghost" href="#book" tabindex="-1">Talk to a consultant</a>
 </div>
 
@@ -261,7 +261,7 @@
     <span>50+ clients · 160+ projects · Top 50 Insider worldwide, SI Lab since 2022</span>
   </div>
 </footer>
-<script src="js/i18n.js?v=20261312"></script>
-<script src="js/ui.js?v=20261312"></script>
+<script src="js/i18n.js?v=20261314"></script>
+<script src="js/ui.js?v=20261314"></script>
 </body>
 </html>
