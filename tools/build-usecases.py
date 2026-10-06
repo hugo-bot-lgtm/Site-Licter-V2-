@@ -352,7 +352,9 @@ L.update({
     "licter": ("Licter vous donne", "Licter gives you"),
     "found": ("Ce que la conversation a montré", "What the conversation showed"),
     "reco": ("Notre recommandation", "Our recommendation"),
-    "illus": ("Exemple illustratif", "Illustrative example"),
+    "illus": ("Cas type · chiffres illustratifs", "Typical case · illustrative figures"),
+    "real_bridge": ("Les vrais chiffres d'une mission comparable, anonymisés\u00a0:", "The real figures of a comparable engagement, anonymised:"),
+    "real_bridge_link": ("recevoir un cas réel", "get a real case"),
     "presented": ("Présenté par le consultant qui a mené l'analyse.", "Presented by the consultant who ran the analysis."),
     "see_q": ("Voir les questions", "See the questions"),
     "jump": ("Aller à une famille", "Go to a family"),
@@ -480,11 +482,12 @@ def case_body(c, lang):
            '        <h2 class="ucp__h2">%s</h2>\n'
            '        <p class="ucv-p">%s</p>\n'
            '        <ul class="ucr__ticks">%s</ul>\n'
+           '        <a class="ucp__textlink ucv-dlv__real" href="#offre">%s <span aria-hidden="true">↓</span></a>\n'
            '      </div>\n'
            '      %s\n'
            '    </div>\n'
            '  </section>') % (T(L["dlv_k"], lang), T(D.TITLES[c["key"]], lang), T(x["approach"], lang),
-                              "".join("<li>%s</li>" % T(g, lang) for g in c["deliverables"]), D.render(c["key"], lang, esc, typo))
+                              "".join("<li>%s</li>" % T(g, lang) for g in c["deliverables"]), T(L["dlv_real"], lang), D.render(c["key"], lang, esc, typo))
 
     # 4. how it runs: a dated timeline, the sources beneath
     days = ["J0", "J+3", "J+7", "J+10"] if lang == FR else ["Day 0", "Day 3", "Day 7", "Day 10"]
@@ -520,12 +523,14 @@ def case_body(c, lang):
              '          <p class="ucv-case__ctx">%s</p>\n'
              '          <p class="ucv-case__found">%s</p>\n'
              '          <p class="ucv-case__reco"><span>%s</span>%s</p>\n'
+             '          <p class="ucv-case__real">%s <a href="#offre">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
              '        </article>\n'
              '      </div>\n'
              '      <ul class="ucv-roi">%s</ul>\n'
              '    </div>\n'
              '  </section>') % (T(L["proof_t"], lang), vid, vid, time, esc(vq), esc(brand), esc(who), T(L["illus"], lang),
-                                esc(typo(ctx, lang)), esc(typo(found, lang)), T(L["reco"], lang), esc(typo(reco, lang)), roi)
+                                esc(typo(ctx, lang)), esc(typo(found, lang)), T(L["reco"], lang), esc(typo(reco, lang)),
+                                T(L["real_bridge"], lang), T(L["real_bridge_link"], lang), roi)
 
     # 6. the offer, the FAQ with the links beside it, the callback
     siblings = [y for y in C.CASES if y["family"] == c["family"] and y is not c]
@@ -546,6 +551,7 @@ def case_body(c, lang):
 L.update({
     "contents": ("Dans cette page", "On this page"),
     "see_dlv": ("Voir un livrable possible", "See a possible deliverable"),
+    "dlv_real": ("Recevoir un cas réel de ce type", "Get a real case of this kind"),
     "problem_k": ("La question qu'on nous pose", "The question we get"),
     "now": ("Aujourd'hui, vous voyez", "Today, you see"),
     "missing": ("Ce qui vous manque", "What is missing"),
@@ -664,9 +670,9 @@ def hub_body(lang):
         hero('<span>%s</span>' % T(C.HUB["kicker"], lang), T(C.HUB["h1"], lang), T(C.HUB["intro"], lang), lang,
              aside=bubbles(lang), actions=True, extra='\n            <a class="ucp__textlink" href="#offre">%s <span aria-hidden="true">↓</span></a>' % T(L["bar_offer"], lang)),
         carousel,
-        compare(lang),
+        compare(lang, C.COMPARE_HUB),
         section('      <h2 class="ucp__h2">%s</h2>\n      <div class="ucp__voices">\n%s\n      </div>' % (
-            T(L["hub_voices"], lang), "\n".join(reel(C.VOICES[k], lang) for k in ("lvmh", "loreal", "orange")))),
+            T(L["hub_voices"], lang), "\n".join(reel(C.VOICES[k], lang) for k in ("kantar", "seb", "dassault")))),
         cta({"key": "hub"}, lang).replace(T(L["cta_t"], lang), T(L["hub_offer_t"], lang), 1),
         faq_block(C.HUB_FAQ, lang, related("hub-more", T(L["by_family"], lang), "".join(
             '<li><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (fam_path(f, lang), T(f["name"], lang)) for f in C.FAMILIES))),
@@ -703,10 +709,11 @@ def bubbles(lang):
             '      </div>') % (T(L["bubbles_sr"], lang), one(False), one(True))
 
 
-def compare(lang):
+def compare(lang, X=None):
     """why not just a tool: what a human team does that software does not,
-    beside a photo of the team"""
-    X = C.COMPARE
+    beside a photo of the team (the hub has its own version: no duplicate of
+    the home)"""
+    X = X or C.COMPARE
     photo, alt = X["photo"]
     sr = lambda k: '<span class="visually-hidden">%s\u00a0: </span>' % T(X[k], lang) if lang == FR else '<span class="visually-hidden">%s: </span>' % T(X[k], lang)
     rows = "".join('<li><span class="cmp__them">%s%s</span><span class="cmp__us">%s%s</span></li>' % (sr("them"), T(a, lang), sr("us"), T(b, lang)) for a, b in X["rows"])
@@ -792,7 +799,7 @@ L.update({
     "same_case": ("Exemple illustratif : les deux côtés portent sur la même conversation.", "Illustrative example: both sides read the same conversation."),
     "up": ("en hausse", "up"),
     "down": ("en baisse", "down"),
-    "hub_voices": ("Ils le racontent mieux que nous", "They tell it better than we do"),
+    "hub_voices": ("Leurs questions, et ce qu'ils en ont fait", "Their questions, and what they did with them"),
     "hub_offer_t": ("Recevez un cas réel, dans votre secteur.", "Get a real case, in your sector."),
 })
 
@@ -876,11 +883,12 @@ def case_extras(c, lang):
             '            <div><p class="ucp__case-h">%s</p><p>%s</p></div>\n'
             '            <div class="ucp__case-reco"><p class="ucp__case-h">%s</p><p>%s</p></div>\n'
             '          </div>\n'
+            '          <p class="ucv-case__real">%s <a href="#offre">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
             '        </article>\n'
             '%s\n'
             '      </div>') % (T(L["client"], lang), T(L["illus"], lang), T(L["context"], lang), esc(typo(ctx, lang)),
                               T(L["found"], lang), esc(typo(sit_rec[0], lang)), T(L["reco"], lang), esc(typo(sit_rec[1], lang)),
-                              voice_card(x["voice"], lang))
+                              T(L["real_bridge"], lang), T(L["real_bridge_link"], lang), voice_card(x["voice"], lang))
     return [approach, roi_sec, section(case)]
 
 

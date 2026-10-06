@@ -946,6 +946,29 @@ COMPARE = {
              "We use the best tools and AI to collect and sort. People do the reading, and decide with you."),
 }
 
+# The use-case hub's own version: the home already says "why not just a
+# tool"; here, what each answer is made of. Same layout, other words.
+COMPARE_HUB = {
+    "title": ("Une question, pas un tableau de bord", "A question, not a dashboard"),
+    "lead": ("Un outil vous rend des chiffres sur ce que vous avez su paramétrer. Nous partons de la décision que vous avez à prendre, et nous vous rendons la réponse, lue par un analyste.",
+             "A tool gives you figures on whatever you managed to set up. We start from the decision you have to make, and give you the answer, read by an analyst."),
+    "photo": ("work-standing", ("Trois consultants de Licter debout dans les bureaux, prêts à présenter", "Three Licter consultants standing in the office, ready to present")),
+    "badge": ("Une réponse, lue par un analyste", "An answer, read by an analyst"),
+    "them": ("Avec un tableau de bord", "With a dashboard"),
+    "us": ("Avec Licter", "With Licter"),
+    "rows": [
+        (("Vous partez des mots-clés.", "You start from keywords."),
+         ("Nous partons de votre décision.", "We start from your decision.")),
+        (("Vous lisez des courbes de volume.", "You read volume curves."),
+         ("Vous lisez ce qu'elles veulent dire.", "You read what they mean.")),
+        (("Une langue, souvent l'anglais.", "One language, often English."),
+         ("Plus de vingt langues, lues par des natifs.", "Over twenty languages, read by native speakers.")),
+        (("Un export à présenter vous-même.", "An export to present yourself."),
+         ("Une recommandation, présentée à ceux qui décident.", "A recommendation, presented to those who decide.")),
+    ],
+    "foot": ("Chaque cas d'usage ci-dessus montre le livrable que vous recevez.", "Each use case above shows the deliverable you receive."),
+}
+
 HUB_FAQ = [
     (("À quoi sert la social data pour une marque ?", "What is social data used for by a brand?"),
      ("À répondre à des questions business avec ce que les gens publient, recherchent et demandent à l'IA, sans les interroger : l'effet d'une campagne, l'état de votre réputation, qui sont vraiment vos audiences, ce qu'il faut lancer ensuite.",

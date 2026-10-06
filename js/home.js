@@ -426,6 +426,7 @@
       }
       /* MOCK: send { email: v, case: form.dataset.case, sector: form.sector.value } */
       if (window.LicterLead) window.LicterLead.set(v);
+      if (window.LicterTrack) window.LicterTrack("form_submit", { form: "real_case", "case": form.dataset.case, sector: form.sector.value });
       form.hidden = true;
       done.hidden = false;
       done.setAttribute("tabindex", "-1");

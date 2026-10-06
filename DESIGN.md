@@ -181,7 +181,20 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
   - la FAQ est repliée après une question (deux sur le sommaire) ;
   - les articles liés et les chiffres sont masqués ;
   - le sommaire reprend le tableau compact « Pourquoi pas un outil seul » et les vidéos à faire glisser.
-- **Plancher de 12 px partout**, sauf à l'intérieur des maquettes de livrables, qui sont des illustrations.
+- **Plancher de 12 px partout**, maquettes comprises.
+- **Sur grand écran,** le bouton d'Antoine se réduit à l'avatar une fois le hero passé. Le sommaire a ses propres blocs « Une question, pas un tableau de bord » et ses propres vidéos (Kantar, SEB, Dassault) : aucun doublon de l'accueil. Les pages famille n'ont qu'une vidéo sur téléphone.
+
+### Maquettes de livrables (`tools/uc_deliverables.py`)
+
+Chaque cas d'usage montre son livrable sous la forme d'une **vraie page de rapport Licter** : papier blanc dans les deux thèmes, avec une seconde feuille qui dépasse derrière.
+- **En-tête :** le logo, le nom du document, le client anonymisé (« Marque alimentaire · Octobre 2026 ») et l'étiquette « Données illustratives ».
+- **Corps :** le titre de section, avec un filet or et un sous-titre.
+- **Pied :** la source et le volume analysé, puis « Licter · p. 4 / 16 ».
+- **Graphiques :** axes gradués, grilles, courbes annotées, mini-tendances. Plancher de 12 px.
+
+Les métadonnées de chaque livrable sont dans `META`. Les chiffres restent illustratifs, et sont signalés comme tels.
+
+**Sous chaque maquette,** le lien « Recevoir un cas réel de ce type ↓ ». Le cas type porte la mention « Cas type · chiffres illustratifs » et se termine par « Les vrais chiffres d'une mission comparable, anonymisés : recevoir un cas réel → ».
 
 ### Horaires de rappel
 

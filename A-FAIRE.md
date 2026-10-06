@@ -106,6 +106,17 @@ Ils déposent des cookies. **Il faut d'abord un bandeau de consentement conforme
 
 ---
 
+## 3. Remplacer les chiffres illustratifs par de vrais cas
+
+Les maquettes de livrables (`tools/uc_deliverables.py`) et les cas types (`tools/uc_content.py`, `example` et `EXTRA`) utilisent des **chiffres inventés**, signalés « Données illustratives » et « Cas type · chiffres illustratifs ». Ils ne doivent pas être présentés comme réels.
+
+Dès que des missions réelles sont validées pour publication (anonymisées, avec l'accord du client) :
+- remplacer les chiffres de la maquette correspondante et du cas type ;
+- retirer l'étiquette « illustratif » de ces seules pages ;
+- garder le client anonymisé (« Marque alimentaire »), sauf accord écrit.
+
+Ce sont aussi ces cas réels qu'envoie l'aimant « Recevoir un cas réel » : il faut en préparer au moins un par cas d'usage (12) avant de brancher le formulaire.
+
 ## Le jour de la bascule sur le vrai domaine
 
 Le site pointe déjà vers `https://www.licter.com` pour les URL canoniques, les `hreflang` et le sitemap (`SITE` dans `tools/uc_content.py`). Il faudra vérifier ces liens une fois le domaine branché, et utiliser ce même domaine dans Plausible.

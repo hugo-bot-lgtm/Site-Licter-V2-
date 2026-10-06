@@ -571,6 +571,7 @@
       function done(email) {
         /* MOCK: send { email, topic: current, sector: SECTORS[sector].key } to the CRM */
         if (window.LicterLead) window.LicterLead.set(email);
+        if (window.LicterTrack) window.LicterTrack("form_submit", { form: "real_case_demo", topic: current, sector: SECTORS[sector].key });
         sentCases[key] = true;
         renderGet();
         var msg = el.querySelector(".lf__sent");
