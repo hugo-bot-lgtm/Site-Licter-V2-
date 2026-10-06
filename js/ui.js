@@ -2182,3 +2182,38 @@ window.LicterUC = (function () {
     state();
   });
 })();
+
+/* =========================================================================
+   Tech & tools hub (tech-tools.html)
+   .tk-sel     the four layers: one panel open, the others on their edge
+   .tk-steps2  collect, qualify, decide: steps beside a changing image
+   ========================================================================= */
+(function () {
+  "use strict";
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.querySelectorAll(".tk-sel").forEach(function (root) {
+    var items = root.querySelectorAll(".tk-sel__item");
+    items.forEach(function (it, k) {
+      it.querySelector(".tk-sel__tab").addEventListener("click", function () {
+        items.forEach(function (o, j) { o.classList.toggle("is-on", j === k); o.querySelector(".tk-sel__tab").setAttribute("aria-expanded", j === k ? "true" : "false"); });
+      });
+    });
+  });
+
+  document.querySelectorAll(".tk-steps2").forEach(function (root) {
+    var steps = root.querySelectorAll(".tk-step"), imgs = root.querySelectorAll(".tk-steps2__img");
+    var n = steps.length, cur = 0, timer = null, delay = +root.getAttribute("data-auto") || 5000;
+    function show(i) {
+      cur = (i + n) % n;
+      steps.forEach(function (s, k) { s.classList.toggle("is-on", k === cur); s.classList.toggle("is-done", k < cur); s.querySelector(".tk-step__btn").setAttribute("aria-expanded", k === cur ? "true" : "false"); });
+      imgs.forEach(function (im, k) { im.classList.toggle("is-on", k === cur); });
+      clearTimeout(timer);
+      if (!still && !root.matches(":hover") && !root.contains(document.activeElement)) timer = setTimeout(function () { show(cur + 1); }, delay);
+    }
+    steps.forEach(function (s, k) { s.querySelector(".tk-step__btn").addEventListener("click", function () { show(k); }); });
+    root.addEventListener("mouseenter", function () { clearTimeout(timer); });
+    root.addEventListener("mouseleave", function () { show(cur); });
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { show(0); o.disconnect(); } }, { threshold: .4 }).observe(root);
+  });
+})();

@@ -104,6 +104,7 @@ window.LicterFR = {
     "Le moteur de réponses qui cite ses sources : quels sites façonnent l'image de votre marque.",
   "xAI's assistant, built into X: what it says of you, often fed by the conversation on X.":
     "L'assistant de xAI, intégré à X : ce qu'il dit de vous, souvent nourri par la conversation de X.",
+  "The platforms we run": "Les plateformes que nous opérons",
   /* positioning: a consultancy, found as an agency (October 2026) */
   "Social data intelligence consultancy":
     "Cabinet de conseil en social data intelligence",
