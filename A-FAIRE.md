@@ -129,6 +129,12 @@ Les pages offres sont prêtes, mais quatre informations ne peuvent pas être inv
 - [ ] **Les clients à citer par offre** (« Ils l'utilisent »), avec leur accord.
 - [ ] **`diagnostic.html`** : préciser s'il est gratuit ou payant. La page Offres renvoie désormais vers le diagnostic gratuit de 3 minutes de l'accueil ; le lien « Demandez plutôt un diagnostic » du bloc de rappel mène toujours à `diagnostic.html`.
 
+## 5. Techno & outils : à valider
+
+- [ ] **Les 22 réseaux de « D'où viennent les données ».** WhatsApp, Messenger et Discord sont surtout des espaces privés : la plupart des outils d'écoute n'en lisent que la partie publique (chaînes, serveurs ouverts), voire rien. À confirmer, ou à préciser sur la page, pour ne pas promettre une collecte impossible.
+- [ ] **Les outils d'appoint** (Radarly, Semrush, Google Trends, AnswerThePublic, ChatGPT, GEO, Meta Ads, Google Actualités, Social Blade) : vérifier que chacun est bien utilisé, et les descriptions.
+- [ ] **Les logos** : les glyphes des réseaux viennent de Simple Icons (CC0), mais les chartes de marque encadrent leur usage. Les logos des plateformes (`assets/img/tools/`) manquent toujours : le menu affiche des monogrammes.
+
 ## Le jour de la bascule sur le vrai domaine
 
 Le site pointe déjà vers `https://www.licter.com` pour les URL canoniques, les `hreflang` et le sitemap (`SITE` dans `tools/uc_content.py`). Il faudra vérifier ces liens une fois le domaine branché, et utiliser ce même domaine dans Plausible.

@@ -368,3 +368,9 @@ Tout nouveau formulaire ou aimant envoie son événement.
 ### Citations des interviews
 
 Chaque citation reprend **mot pour mot** la phrase incrustée sur la miniature de sa vidéo YouTube : le visiteur voit les deux côte à côte. Elles vivent dans `VOICES` (`tools/uc_content.py`) pour les pages générées, dans `js/voices.js` et `index.html` pour l'accueil, et leur traduction dans `js/fr.js`. Une nouvelle interview : recopier la phrase de la miniature, ne jamais la résumer.
+
+### Techno & outils (menu et `tech-tools.html`)
+
+- **Le menu** (`js/ui.js`, `MENUS.tech`) : les cinq plateformes avec leur description (Talkwalker, Visibrain, YouScan, SoPrism, Radarly), puis « Et, selon la question » : les huit outils d'appoint, par leur nom seul (Semrush, Google Trends, AnswerThePublic, ChatGPT, GEO, Meta Ads, Google Actualités, Social Blade). À droite, « D'où viennent les données » : les 22 réseaux en deux colonnes. Le tout tient dans un écran de 900 px de haut. Sur téléphone, le menu ne montre que les liens : le détail est sur la page.
+- **La page** : la liste des plateformes (Radarly n'a pas de page à lui, sa ligne n'est pas un lien), les outils d'appoint en cartes (`#more`), et `#sources` : les réseaux en cinq groupes (réseaux sociaux, vidéo et live, messageries et communautés, Chine et Russie, recherche, presse et IA).
+- **Les glyphes des réseaux** sont des SVG Simple Icons (CC0) dans `assets/img/networks/`, affichés en monochrome par `mask-image` avec un chemin absolu (`--g:url(/assets/...)`) : un chemin relatif se résoudrait depuis la feuille de style et ne s'afficherait pas.

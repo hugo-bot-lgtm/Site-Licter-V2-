@@ -931,18 +931,50 @@ window.LicterUC = (function () {
         { letter: "Y", logo: "/assets/img/tools/youscan.png", name: "YouScan", href: "/tech-youscan.html",
           desc: "Visual listening: what appears in the image, not only in the text." },
         { letter: "S", logo: "/assets/img/tools/soprism.png", name: "SoPrism", href: "/tech-soprism.html",
-          desc: "Audience intelligence: who the communities are, in detail." }
+          desc: "Audience intelligence: who the communities are, in detail." },
+        { letter: "R", logo: "/assets/img/tools/radarly.png", name: "Radarly", href: "/tech-tools.html#tools",
+          desc: "Social listening and conversation analysis, over time." }
       ],
+      /* the tools around the platforms, picked question by question */
+      extra: {
+        label: "AND, DEPENDING ON THE QUESTION",
+        items: [
+          { letter: "S", name: "Semrush", desc: "Search and SEO", href: "/tech-tools.html#more" },
+          { letter: "G", name: "Google Trends", desc: "Search interest", href: "/tech-tools.html#more" },
+          { letter: "A", name: "AnswerThePublic", desc: "The questions people ask", href: "/tech-tools.html#more" },
+          { letter: "C", name: "ChatGPT", desc: "What AI answers", href: "/tech-tools.html#more" },
+          { letter: "G", name: "GEO", desc: "Visibility in AI engines", href: "/tech-tools.html#more" },
+          { letter: "M", name: "Meta Ads", desc: "The Meta Ad Library", href: "/tech-tools.html#more" },
+          { letter: "G", name: "Google News", desc: "Press coverage", href: "/tech-tools.html#more" },
+          { letter: "S", name: "Social Blade", desc: "Account and creator growth", href: "/tech-tools.html#more" }
+        ]
+      },
       aside: {
         label: "WHERE THE DATA COMES FROM",
+        grid: true,
         items: [
-          { platform: "TIKTOK", name: "TikTok", href: "/tech-tools.html#sources" },
-          { platform: "INSTAGRAM", name: "Instagram", href: "/tech-tools.html#sources" },
-          { platform: "X", name: "X", href: "/tech-tools.html#sources" },
-          { platform: "LINKEDIN", name: "LinkedIn", href: "/tech-tools.html#sources" },
-          { platform: "YOUTUBE", name: "YouTube", href: "/tech-tools.html#sources" },
-          { platform: "FACEBOOK", name: "Facebook", href: "/tech-tools.html#sources" },
-          { icon: "ai", name: "Generative AI", href: "/tech-tools.html#sources" }
+          { glyph: "facebook", name: "Facebook", href: "/tech-tools.html#sources" },
+          { glyph: "instagram", name: "Instagram", href: "/tech-tools.html#sources" },
+          { glyph: "threads", name: "Threads", href: "/tech-tools.html#sources" },
+          { glyph: "whatsapp", name: "WhatsApp", href: "/tech-tools.html#sources" },
+          { glyph: "messenger", name: "Messenger", href: "/tech-tools.html#sources" },
+          { glyph: "x", name: "X / Twitter", href: "/tech-tools.html#sources" },
+          { glyph: "tiktok", name: "TikTok", href: "/tech-tools.html#sources" },
+          { glyph: "youtube", name: "YouTube", href: "/tech-tools.html#sources" },
+          { glyph: "linkedin", name: "LinkedIn", href: "/tech-tools.html#sources" },
+          { glyph: "reddit", name: "Reddit", href: "/tech-tools.html#sources" },
+          { glyph: "snapchat", name: "Snapchat", href: "/tech-tools.html#sources" },
+          { glyph: "pinterest", name: "Pinterest", href: "/tech-tools.html#sources" },
+          { glyph: "discord", name: "Discord", href: "/tech-tools.html#sources" },
+          { glyph: "twitch", name: "Twitch", href: "/tech-tools.html#sources" },
+          { glyph: "telegram", name: "Telegram", href: "/tech-tools.html#sources" },
+          { glyph: "bluesky", name: "Bluesky", href: "/tech-tools.html#sources" },
+          { glyph: "vk", name: "VK", href: "/tech-tools.html#sources" },
+          { glyph: "wechat", name: "WeChat", href: "/tech-tools.html#sources" },
+          { glyph: "sinaweibo", name: "Weibo", href: "/tech-tools.html#sources" },
+          { glyph: "tiktok", name: "Douyin", href: "/tech-tools.html#sources" },
+          { glyph: "xiaohongshu", name: "Xiaohongshu (RED)", href: "/tech-tools.html#sources" },
+          { glyph: "bilibili", name: "Bilibili", href: "/tech-tools.html#sources" }
         ]
       },
       cta: { label: "Book a meeting", href: "/index.html#book" },
@@ -952,6 +984,8 @@ window.LicterUC = (function () {
 
   function menuIcon(item) {
     if (item.platform) return window.LicterIcons[item.platform] || "";
+    /* network glyphs (assets/img/networks, Simple Icons), coloured by CSS */
+    if (item.glyph) return '<i class="menu__glyph" style="--g:url(/assets/img/networks/' + item.glyph + '.svg)"></i>';
     /* Third-party tool logos: dropped in assets/img/tools/. If a file is
        missing the monogram takes over, so the menu never shows a broken
        image. */
@@ -983,11 +1017,15 @@ window.LicterUC = (function () {
           '<p class="menu__label">' + data.label + "</p>" +
           '<ul class="menu__list">' +
             data.items.map(function (it, i) { return menuItem(it, false, i); }).join("") + "</ul>" +
+          (data.extra ?
+          '<p class="menu__label menu__label--extra">' + data.extra.label + "</p>" +
+          '<ul class="menu__list menu__list--extra">' +
+            data.extra.items.map(function (it, i) { return menuItem(it, false, i + data.items.length); }).join("") + "</ul>" : "") +
         "</div>" +
         (data.aside ?
         '<div class="menu__aside">' +
           '<p class="menu__label">' + data.aside.label + "</p>" +
-          '<ul class="menu__list menu__list--single">' +
+          '<ul class="menu__list ' + (data.aside.grid ? "menu__list--grid" : "menu__list--single") + '">' +
             data.aside.items.map(function (it, i) { return menuItem(it, !it.desc, i + 2); }).join("") +
           "</ul>" +
         "</div>" : "") +

@@ -8377,3 +8377,62 @@ html[data-theme="dark"] .of-fit__no i { color: #EAA93D; }
   .of-get__doc .dlv { display: none; }
   .of-get__doc figcaption { margin-top: 0; }
 }
+
+/* Tech & tools menu: platforms, the tools around them, every network ---- */
+@media (min-width: 861px) { #menu-tech .menu__grid { grid-template-columns: minmax(0, 1fr) minmax(300px, .62fr); } }
+.menu__label--extra { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+.menu__list--extra { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.menu__list--extra .menu__item { align-items: center; gap: 10px; padding: 6px 10px; }
+.menu__list--extra .menu__icon { flex-basis: 24px; width: 24px; height: 24px; border-radius: 7px; }
+.menu__list--extra .menu__mono { font-size: 11px; }
+.menu__list--extra .menu__text { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.menu__list--extra .menu__desc { margin: 0; }
+.menu__list--grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 8px; }
+.menu__list--grid .menu__item { align-items: center; gap: 9px; padding: 5px 8px; }
+.menu__list--grid .menu__icon { flex-basis: 24px; width: 24px; height: 24px; border-radius: 7px; }
+.menu__list--grid .menu__name { font-size: 12.5px; }
+.menu__glyph { display: block; width: 13px; height: 13px; background: currentColor; -webkit-mask: var(--g) center / contain no-repeat; mask: var(--g) center / contain no-repeat; }
+@media (max-width: 1100px) {
+  .menu__list--extra, .menu__list--grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Tech & tools page: Radarly (no page of its own), the tools around the
+   platforms, and every source, grouped ---------------------------------- */
+.xt__row { display: grid; grid-template-columns: 64px minmax(0, 1.7fr) minmax(0, .9fr) 44px; gap: 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); color: var(--ink); }
+.xt__more { margin-top: clamp(32px, 4vw, 52px); }
+.xt__more-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.xt__more-list li { display: grid; grid-template-columns: 34px minmax(0, 1fr); column-gap: 12px; row-gap: 4px; align-content: start; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--card-bg); }
+html[data-theme="dark"] .xt__more-list li { background: rgba(255, 255, 255, .03); }
+.xt__mono--s { grid-row: 1 / span 2; width: 34px; height: 34px; border-radius: 10px; font-size: 15px; }
+.xt__more-list b { align-self: center; font: 600 16px/1.25 var(--title-font); color: var(--ink); }
+.xt__more-list p { grid-column: 2; margin: 0; font: 500 13.5px/1.5 var(--body-font); color: var(--text-2); }
+.xt--src { padding-top: 0; }
+.xt__grps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); border-top: 1px solid var(--line); padding-top: 22px; }
+.xt__grp-k { margin: 0 0 12px; font: 700 12px/1.3 var(--body-font); letter-spacing: 1.1px; text-transform: uppercase; color: var(--text-2); }
+.xt__grp ul { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.xt__grp li { display: flex; align-items: center; gap: 10px; font: 600 14.5px/1.3 var(--body-font); color: var(--ink); }
+.xt__glyph { flex: 0 0 auto; display: block; width: 28px; height: 28px; border-radius: 8px; background: rgba(var(--amber-rgb), .16); position: relative; }
+.xt__glyph::after { content: ""; position: absolute; inset: 7px; background: var(--amber-ink); -webkit-mask: var(--g) center / contain no-repeat; mask: var(--g) center / contain no-repeat; }
+html[data-theme="dark"] .xt__glyph::after { background: #EAA93D; }
+@media (max-width: 1100px) {
+  .xt__more-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .xt__grps { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 28px; }
+}
+@media (max-width: 720px) {
+  .xt__row { grid-template-columns: 56px minmax(0, 1fr); }
+  .xt__row .xt__best { display: none; }
+  .xt__more-list { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .xt__more-list li { padding: 12px 14px; }
+  .xt__grps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+  .xt__grp li { font-size: 14px; }
+}
+/* the tech menu fits a 900px screen: short descriptions, tools on one line */
+@media (min-width: 861px) {
+  #menu-tech .menu__main .menu__list:not(.menu__list--extra) .menu__item { padding-block: 8px; }
+  .menu__list--extra .menu__text { flex-wrap: nowrap; min-width: 0; }
+  .menu__list--extra .menu__name { flex: 0 0 auto; }
+  /* the tools by name in the menu; what each one does is on the page */
+  .menu__list--extra .menu__desc { display: none; }
+  .menu__list--extra .menu__item { padding-block: 5px; }
+  .menu__label--extra { margin-top: 10px; padding-top: 14px; }
+}

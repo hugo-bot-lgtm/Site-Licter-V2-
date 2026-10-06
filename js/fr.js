@@ -1,6 +1,65 @@
 /* Dictionnaire EN → FR. Toute chaîne absente reste en anglais. */
 window.LicterFR = {
 
+  /* tech & tools: the tools around the platforms, every network (October 2026) */
+  "AND, DEPENDING ON THE QUESTION":
+    "ET, SELON LA QUESTION",
+  "And, depending on the question":
+    "Et, selon la question",
+  "Social listening and conversation analysis, over time.":
+    "Écoute sociale et analyse des conversations, dans la durée.",
+  "Search and SEO":
+    "Recherche et SEO",
+  "Search interest":
+    "L'intérêt de recherche",
+  "The questions people ask":
+    "Les questions que les gens posent",
+  "What AI answers":
+    "Ce que répondent les IA",
+  "Visibility in AI engines":
+    "La visibilité dans les moteurs IA",
+  "The Meta Ad Library":
+    "La bibliothèque publicitaire de Meta",
+  "Google News":
+    "Google Actualités",
+  "Press coverage":
+    "La couverture presse",
+  "Account and creator growth":
+    "La croissance des comptes et des créateurs",
+  "Social listening and conversation analysis over time, with dashboards the whole team can share.":
+    "Écoute sociale et analyse des conversations dans la durée, avec des tableaux de bord que toute l'équipe partage.",
+  "Long-running brand tracking":
+    "Le suivi de marque au long cours",
+  "Search and SEO: what your market types into Google, and who ranks for it.":
+    "Recherche et SEO : ce que votre marché tape dans Google, et qui ressort.",
+  "Search interest over time, by country, to date a topic and size it.":
+    "L'intérêt de recherche dans le temps, par pays, pour dater un sujet et le mesurer.",
+  "The questions people ask around a subject, before they ask you.":
+    "Les questions que les gens posent autour d'un sujet, avant de vous les poser.",
+  "What generative AI answers when someone asks about your brand or your category.":
+    "Ce que répond l'IA générative quand on l'interroge sur votre marque ou votre catégorie.",
+  "Generative engine optimisation: how visible your brand is in AI answers, and why.":
+    "L'optimisation pour les moteurs génératifs : la place de votre marque dans les réponses des IA, et pourquoi.",
+  "The Meta Ad Library: the campaigns running now, yours and your competitors'.":
+    "La bibliothèque publicitaire de Meta : les campagnes en cours, les vôtres et celles de vos concurrents.",
+  "Press coverage as it lands, to set the social conversation against the media one.":
+    "La couverture presse au fil de l'eau, pour confronter la conversation sociale à celle des médias.",
+  "How accounts and creators grow over time, to check an audience before you pay for it.":
+    "La croissance des comptes et des créateurs dans le temps, pour vérifier une audience avant de la payer.",
+  "Where the data comes from.":
+    "D'où viennent les données.",
+  "22 social networks and messaging platforms, in every market we cover, plus search, press and generative AI. Each question picks its sources; none of them is read alone.":
+    "22 réseaux sociaux et messageries, sur tous les marchés que nous couvrons, plus la recherche, la presse et l'IA générative. Chaque question choisit ses sources ; aucune n'est lue seule.",
+  "Social networks":
+    "Réseaux sociaux",
+  "Video and live":
+    "Vidéo et live",
+  "Messaging and communities":
+    "Messageries et communautés",
+  "China and Russia":
+    "Chine et Russie",
+  "Search, press and AI":
+    "Recherche, presse et IA",
   /* interview quotes, word for word from each video (October 2026) */
   "A reputation is destroyed in seconds.":
     "Une réputation se détruit en quelques secondes.",
@@ -221,7 +280,7 @@ window.LicterFR = {
   "Your platform before and after": "Votre plateforme avant et après",
   "Three Licter consultants standing in the office, before a presentation": "Trois membres de l'équipe Licter debout au bureau, avant une présentation",
   "Four layers of signal. One reading.": "Quatre calques de signal. Une seule lecture.",
-  "What people say, who they are, what they do and what they search for. Four platforms collect it, our algorithms qualify it, and a consultant tells you what it means.": "Ce que les gens disent, qui ils sont, ce qu'ils font et ce qu'ils cherchent. Quatre plateformes le collectent, nos algorithmes le qualifient, et un consultant vous dit ce que cela signifie.",
+  "What people say, who they are, what they do and what they search for. Our platforms collect it, our algorithms qualify it, and a consultant tells you what it means.": "Ce que les gens disent, qui ils sont, ce qu'ils font et ce qu'ils cherchent. Nos plateformes le collectent, nos algorithmes le qualifient, et un consultant vous dit ce que cela signifie.",
   "See one question go through": "Suivre une question",
   "“Who is talking about our brand, and why?”": "« Qui parle de notre marque, et pourquoi ? »",
   "what is said": "ce qui se dit",
@@ -248,7 +307,7 @@ window.LicterFR = {
   "How loud the topic is in public": "À quel point le sujet est public",
   "Our read, all four together": "Notre lecture, les quatre ensemble",
   "It is not an image problem, it is a format problem: launch a single-portion, recyclable range, and speak through the creators they already follow.": "Ce n'est pas un problème d'image, c'est un problème de format : lancer une gamme en portions individuelles et recyclable, et parler par les créateurs qu'ils suivent déjà.",
-  "No platform covers everything, and none of them reads itself. We run four, and pick the one that fits the question.": "Aucune plateforme ne couvre tout, et aucune ne se lit toute seule. Nous en exploitons quatre, et choisissons celle qui répond à la question.",
+  "No platform covers everything, and none of them reads itself. We run five, with the search, press and AI tools around them, and pick what fits the question.": "Aucune plateforme ne couvre tout, et aucune ne se lit toute seule. Nous en exploitons cinq, avec les outils de recherche, de presse et d'IA qui les entourent, et choisissons ce qui répond à la question.",
   "The broadest coverage on the market: volume, topics and sentiment across languages, read over long periods.": "La couverture la plus large du marché : volumes, sujets et sentiment dans toutes les langues, lus sur de longues périodes.",
   "Best for": "Idéal pour",
   "Brand health over time": "La santé de marque dans la durée",
@@ -260,7 +319,7 @@ window.LicterFR = {
   "Collect, qualify, decide.": "Collecter, qualifier, décider.",
   "The platforms collect; our proprietary algorithms qualify; consultants decide what is signal.": "Les plateformes collectent, nos algorithmes propriétaires qualifient, les consultants décident de ce qui fait signal.",
   "Collect": "Collecter",
-  "Four platforms, six social networks, search and generative AI.": "Quatre plateformes, six réseaux sociaux, la recherche et l'IA générative.",
+  "Five platforms, 22 networks, search, press and generative AI.": "Cinq plateformes, 22 réseaux, la recherche, la presse et l'IA générative.",
   "Qualify": "Qualifier",
   "Our algorithms profile users on their interactions, behaviour and content consumption.": "Nos algorithmes profilent les utilisateurs selon leurs interactions, leur comportement et leurs contenus.",
   "3 bn": "3 Md",
@@ -1188,16 +1247,16 @@ window.LicterFR = {
     "Sociodémographie, centres d'intérêt, affinités de marque et rapports aux médias derrière les comptes.",
   "What surrounds it, who is holding it, in which setting — context a text query cannot reach.":
     "Ce qui l'entoure, qui le tient, dans quel décor — un contexte qu'une requête textuelle n'atteint pas.",
-  "Send us the question. If another platform answers it better, we will tell you — we run four.":
-    "Envoyez-nous la question. Si un autre outil y répond mieux, nous vous le dirons — nous en opérons quatre.",
+  "Send us the question. If another platform answers it better, we will tell you: we run five.":
+    "Envoyez-nous la question. Si un autre outil y répond mieux, nous vous le dirons : nous en opérons cinq.",
   "The guide covers the twelve questions we answer most often, with the method behind each one.":
     "Le guide couvre les douze questions auxquelles nous répondons le plus souvent, avec la méthode derrière chacune.",
   "An independent diagnostic. At the end you own the roadmap, whether or not you run it with us.":
     "Un diagnostic indépendant. À la fin, la feuille de route est à vous, que vous la meniez avec nous ou non.",
   "Yes, that comparison is the most common request — and usually the most uncomfortable reading.":
     "Oui, c'est la demande la plus fréquente — et en général la lecture la plus inconfortable.",
-  "That is usually what happens. We run four; most questions are answered by two of them together.":
-    "C'est généralement ce qui arrive. Nous en opérons quatre ; la plupart des questions se règlent avec deux d'entre eux.",
+  "That is usually what happens. We run five; most questions are answered by two of them together.":
+    "C'est généralement ce qui arrive. Nous en opérons cinq ; la plupart des questions se règlent avec deux d'entre eux.",
   "Track image, sentiment and the subjects attached to your name, continuously and across markets.":
     "Suivez l'image, le sentiment et les sujets attachés à votre nom, en continu et sur tous les marchés.",
   "Map what people expect before, during and after purchase — and where the experience breaks down.":
@@ -1334,8 +1393,8 @@ window.LicterFR = {
     "Nous partons de la décision business, pas de la liste de mots-clés. Qu'est-ce qui changera selon la réponse, et qui doit en être convaincu ?",
   "Bring the decision you are currently making on instinct. You will leave knowing whether the data can settle it, and what that would take.":
     "Apportez la décision que vous prenez aujourd'hui à l'instinct. Vous repartirez en sachant si la donnée peut la trancher, et ce que cela demanderait.",
-  "The same four platforms serve fifty-odd organisations here — what changes from one to the next is the question, and who reads the output.":
-    "Les mêmes quatre outils servent une cinquantaine d'organisations ici — ce qui change d'une à l'autre, c'est la question, et qui en lit le résultat.",
+  "The same five platforms serve fifty-odd organisations here. What changes from one to the next is the question, and who reads the output.":
+    "Les mêmes cinq outils servent une cinquantaine d'organisations ici. Ce qui change d'une à l'autre, c'est la question, et qui en lit le résultat.",
   "You already know what you published. The question is what it moved, in whose mind, and whether the voices carrying it were the right ones.":
     "Vous savez déjà ce que vous avez publié. La question est ce que cela a déplacé, dans quel esprit, et si les voix qui l'ont portée étaient les bonnes.",
   "Four families of questions, twelve concrete use cases, one source: the behaviour of three billion consumers, observed rather than declared.":
