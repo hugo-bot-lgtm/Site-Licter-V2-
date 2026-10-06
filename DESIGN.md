@@ -407,3 +407,10 @@ Une direction différente de « Pourquoi Licter » : le registre d'un rapport an
 4. **les entretiens vidéo** : la liste des intervenants à gauche, une seule citation à la une avec sa vidéo ;
 5. **les quatre questions** en grille 2 × 2, chacune avec une photo de l'équipe en noir et blanc qui prend sa couleur au survol ;
 6. **l'appel final** dans un panneau navy filet ambre.
+
+### Expertise (`tools/build-expertise.py`) : refonte d'octobre 2026
+
+- **Les mêmes composants que les pages outils** (`.tk-*`) et la page Offres (`.ucc`), une seule couleur (l'ambre Licter) ; aucune donnée illustrative.
+- **Le hero est un aimant à leads : le guide des 12 questions.** À gauche, le titre dans le registre de l'accueil (deux lignes en capitales, la seconde en ambre), le chapô, « Gratuit · Envoyé immédiatement · Sans relance » et un lien vers le rappel. À droite, la couverture du guide (le « 12 » et les douze numéros) et le même formulaire que `guide.html` (prénom, nom, e-mail, entreprise facultative), puis « Écrit par les consultants qui les mènent » avec le lien vers le sommaire. La barre mobile pointe vers ce formulaire (`#offre`).
+- **Page d'une écoute** : ce qu'elle entend (bento, photo de l'équipe), les questions auxquelles elle répond (carrousel de cas d'usage), comment ça se passe (quatre étapes), ses limites et ce qui la complète (carrousel : la limite, les plateformes, les offres), une interview, les cinq autres écoutes, la FAQ, le rappel.
+- **Page Expertise** : les six écoutes en cartes photo comme les familles de cas d'usage, l'exemple « une question, plusieurs écoutes », une interview, la FAQ, le rappel.

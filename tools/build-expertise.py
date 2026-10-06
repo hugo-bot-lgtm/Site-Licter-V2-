@@ -12,7 +12,7 @@ French here, not there.
 Built on tools/build-offers.py (same head, same callback, same dictionary
 mechanism). tools/build-usecases.py runs it after the offer pages.
 """
-import html, importlib.util, json, pathlib, re
+import html, importlib.util, json, math, pathlib, re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 spec = importlib.util.spec_from_file_location("bo", ROOT / "tools" / "build-offers.py")
@@ -366,7 +366,7 @@ S.update({
     "magnet_done": ("C'est noté. Un consultant vous envoie un exemple sous 48 h.", "Noted. A consultant sends you a sample within 48 hours."),
     "magnet_alt": ("Plutôt lire d'abord ?", "Rather read first?"),
     "magnet_alt_link": ("Le guide des 12 questions", "The guide to the 12 questions"),
-    "bar_offer": ("Recevoir un exemple", "Get a sample"),
+    "bar_offer": ("Le guide gratuit", "The free guide"),
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
     "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
     "hub_faq_t": ("Questions fréquentes", "Frequently asked questions"),
@@ -457,160 +457,263 @@ def crumbs(items):
     return '  <nav class="crumbs shell" aria-label="%s"><ol>%s</ol></nav>' % (a(S["crumbs"]), lis)
 
 
-def listening_body(x, offers_html):
-    i = LISTENINGS.index(x) + 1
-    demo = "".join('<li><small>%s</small><b>%s</b></li>' % (t(k), t(v)) for k, v in x["demo"])
-    hears = "".join("<li>%s</li>" % t(h) for h in x["hears"])
-    cannot = "".join("<li>%s</li>" % t(h) for h in x["cannot"])
-    answers = ""
-    for key in x["cases"]:
-        fr, en, c = uc_link(key)
-        q = ("« %s »" % c["questions"][0][FR], "“%s”" % c["questions"][0][EN])
-        answers += ('<li><a href="%s" data-en="%s"><span class="xw__s">%s</span><span class="xw__arrow" aria-hidden="true">→</span>'
-                    '<span class="xw__o">%s</span></a></li>') % (fr, en, t(q), t(c["name"]))
-    tools = "".join('<li><a href="%s"><span class="of-oth__n">%s</span><b>%s</b><span>%s</span><i aria-hidden="true">→</i></a></li>' % (
-        TOOLS[k][0], TOOLS[k][1][0], TOOLS[k][1], t(TOOLS[k][2])) for k in x["tools"])
-    offs = "".join('<li><a href="%s"><span class="of-oth__n">0%d</span><b>%s</b><span>%s</span><i aria-hidden="true">→</i></a></li>' % (
-        OFFERS[k]["file"], OFFERS[k]["n"], t(OFFERS[k]["name"]), t(OFFERS[k]["short"])) for k in x["offers"])
-    how = ""
-    if tools:
-        how += '<div><p class="of-fit__k">%s</p><ul class="of-oth">%s</ul></div>' % (t(S["tools_k"]), tools)
-    how += '<div><p class="of-fit__k">%s</p><ul class="of-oth">%s</ul></div>' % (t(S["offers_k"]), offs)
-    others = "".join('<li><a href="%s">%s</a></li>' % (y["file"], t(y["name"])) for y in LISTENINGS if y is not x)
-    faq = "".join("<details><summary>%s</summary><p>%s</p></details>" % (t(q), t(r)) for q, r in x["faq"])
-    return f'''<main id="content">
-{crumbs([(("Accueil", "Home"), "index.html"), (S["expertise"], "expertise.html"), (x["name"], None)])}
+# ------------------------------------------------------------------ the six listenings
+# These pages use the components of the tool and offer pages (.tk-*, .ucc):
+# a hero with a visual, a bento, the use cases as a photo carousel, limits
+# and complements as a card carousel, the FAQ beside its title. Each way of
+# listening keeps its own colour (--brand). No illustrative figure.
+CHANNEL = {k: "#EAA93D" for k in ("social", "audience", "influence", "ai", "live", "search")}   # one colour: Licter's amber
+PHOTO = {"social": "team/morning/work-three-800", "audience": "team/morning/work-sofa-800", "influence": "team/meeting-portrait-800",
+         "ai": "team/consultant-dashboard-800", "live": "team/morning/work-standing-800", "search": "team/morning/work-laptop-800"}
+UC_PHOTO = {"communication": "working-session-1200", "brand": "client-conversation-1200", "audiences": "team-sofa-1200", "trends": "two-colleagues-1200"}
 
-  <section class="xh of-hero xe-hero">
-    <div class="shell xh__grid">
-      <div class="xh__copy">
-        <p class="xh__kick">{t(S["kicker"])} <span>0{i}</span> · {t(x["name"])}<!--glossk:{x["key"]}--></p>
-        <h1 class="xh__title">{t(x["h1"])}</h1>
-        <p class="xh__lead">{t(x["lead"])}</p>
-        <div class="xh__actions">
-          <a class="btn btn--primary" href="#book">{t(S["book"])} <span aria-hidden="true">→</span></a>
-          <a class="xh__link" href="#answers">{t(S["answers_link"])} <span aria-hidden="true">↓</span></a>
+S.update({
+    "of6": ("sur 6", "of 6"),
+    "hears_k": ("CE QU'ELLE ENTEND", "WHAT IT PICKS UP"),
+    "hears_t": ("Ce que %s permet d'entendre.", "What %s lets you hear."),
+    "answers_k": ("CAS D'USAGE", "USE CASES"),
+    "answers_lead": ("Chaque question mène au cas d'usage où cette écoute fait la différence.", "Each question leads to the use case where this listening makes the difference."),
+    "runs_k": ("MÉTHODE", "METHOD"),
+    "lim_k": ("LIMITES ET COMPLÉMENTS", "LIMITS AND COMPLEMENTS"),
+    "lim_t": ("Ses limites, et ce qui la complète.", "Its limits, and what completes it."),
+    "lim_tag": ("Sa limite", "Its limit"),
+    "lim_sub": ("Ce qu'elle ne dit pas seule", "What it cannot say on its own"),
+    "tool_tag": ("La plateforme", "The platform"),
+    "offer_tag": ("Dans l'offre", "In the offer"),
+    "see_page": ("Voir la page", "See the page"),
+    "voice_k": ("DANS LEURS MOTS", "IN THEIR WORDS"),
+    "voice_t": ("Ils en parlent.", "They talk about it."),
+    "others_k": ("TOUTES LES ÉCOUTES", "EVERY WAY OF LISTENING"),
+    "others_t2": ("Les cinq autres écoutes.", "The five other ways of listening."),
+    "six_k": ("SIX FAÇONS D'ÉCOUTER", "SIX WAYS OF LISTENING"),
+    "six_lead": ("Chaque écoute répond à une partie de la question. Ouvrez celle qui vous concerne.", "Each one answers part of the question. Open the one that concerns you."),
+    "discover": ("Découvrir", "Discover"),
+    "ex_k": ("EXEMPLE", "EXAMPLE"),
+    "photo_cap": ("L'équipe Licter au travail", "The Licter team at work"),
+})
+
+
+def head(kick, title, lead=None):
+    return '<div class="tk-head" data-reveal><p class="tk-k">%s</p><h2 class="tk-h2">%s</h2>%s</div>' % (
+        kick, title, '<p class="tk-sub">%s</p>' % lead if lead else "")
+
+
+def sec(id_, inner, band=False):
+    return '  <section class="tk-sec%s"%s>\n    <div class="shell">\n%s\n    </div>\n  </section>\n\n' % (
+        " tk-sec--band" if band else "", ' id="%s"' % id_ if id_ else "", inner)
+
+
+def tk_crumbs(items):
+    lis = "".join('<li><a href="%s">%s</a></li>' % (h, t(l)) if h else '<li aria-current="page">%s</li>' % t(l) for l, h in items)
+    return '<nav class="tk-crumbs" aria-label="%s"><ol>%s</ol></nav>' % (a(S["crumbs"]), lis)
+
+
+def art(photo, icon):
+    """the hero visual: a photo of the team on a panel in the listening's colour"""
+    return ('<div class="tk-net"><span class="tk-net__wm xe-wm" aria-hidden="true">%s</span>'
+            '<figure class="tk-shot"><img src="/assets/img/%s.webp" alt="%s" width="800" height="1200" decoding="async" fetchpriority="high" /></figure>'
+            '<div class="tk-tile"><span class="tk-tile__net">%s</span></div></div>') % (icon, photo, a(S["photo_cap"]), icon)
+
+
+def prog(keys):
+    """the use cases: a large photo, the cases as tabs with a progress bar (js/ui.js)"""
+    slides, tabs = "", ""
+    for i, key in enumerate(keys):
+        fr, en, c = uc_link(key)
+        fam = next(f for f in C.FAMILIES if f["key"] == c["family"])
+        q = ("« %s »" % c["questions"][0][FR], "“%s”" % c["questions"][0][EN])
+        slides += ('<a class="tk-prog__slide%s" href="%s" data-en="%s" data-i="%d"%s><img src="/assets/img/team/%s.webp" alt="" width="1200" height="800" loading="%s" decoding="async" />'
+                   '<span class="tk-prog__go"><b>%s</b><span>%s</span></span></a>') % (
+            " is-on" if i == 0 else "", fr, en, i, "" if i == 0 else ' tabindex="-1"', UC_PHOTO[c["family"]], "eager" if i == 0 else "lazy", t(q), t(S["dlv_link"]))
+        tabs += ('<button class="tk-prog__tab%s" type="button" role="tab" aria-selected="%s" data-i="%d"><span class="tk-prog__pill">%s</span>'
+                 '<span class="tk-prog__name">%s</span><i class="tk-prog__bar" aria-hidden="true"></i></button>') % (
+            " is-on" if i == 0 else "", "true" if i == 0 else "false", i, t(fam["name"]), t(c["name"]))
+    return '<div class="tk-prog" data-auto="5500"><div class="tk-prog__stage">%s</div><div class="tk-prog__tabs" role="tablist">%s</div></div>' % (slides, tabs)
+
+
+def offer_cards(x):
+    """limits and complements: the limit, the platforms, the offers"""
+    icon = ICON_SVG.get(x["icon"], "")
+    mark = '<span class="tk-offer__net">%s</span>' % icon
+    cards = '<article class="tk-offer tk-offer--limit"><div class="tk-offer__img"><span class="tk-offer__art tk-offer__art--limit" aria-hidden="true">!</span></div><div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">!</i>%s</p><h3>%s</h3><p>%s</p></div><p class="tk-offer__foot"><span class="tk-offer__logo">%s</span><span><b>%s</b><small>%s</small></span></p></article>' % (
+        t(S["lim_tag"]), t(x["name"]), t(x["cannot"][0]), mark, t(x["name"]), t(S["lim_sub"]))
+    for k in x["tools"]:
+        f, nm, d = TOOLS[k]
+        cards += ('<article class="tk-offer tk-offer--tool"><div class="tk-offer__img"><img src="/assets/img/shots/%s.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" /></div>'
+                  '<div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">＋</i>%s</p><h3>%s</h3><p>%s</p></div>'
+                  '<a class="tk-offer__foot" href="%s"><span class="tk-offer__logo"><img src="/assets/img/tools/%s.png" alt="" width="96" height="96" loading="lazy" decoding="async" /></span><span><b>%s</b><small>%s</small></span><i aria-hidden="true">↗</i></a></article>') % (
+            k, t(S["tool_tag"]), nm, t(d), f, k, nm, t(S["see_page"]))
+    for k in x["offers"]:
+        o = OFFERS[k]
+        cards += ('<article class="tk-offer tk-offer--offer of-acc--%s"><div class="tk-offer__img"><img src="/assets/img/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" /></div>'
+                  '<div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">0%d</i>%s</p><h3>%s</h3><p>%s</p></div>'
+                  '<a class="tk-offer__foot" href="%s"><span class="tk-offer__logo xe-offer-n">0%d</span><span><b>%s</b><small>%s</small></span><i aria-hidden="true">↗</i></a></article>') % (
+            O.CARD_ACCENT[k], "team/" + O.HUB_PHOTO[k], o["n"], t(S["offer_tag"]), t(o["name"]), t(o["short"]), o["file"], o["n"], t(o["name"]), t(S["see_page"]))
+    return ('<div class="tk-offers"><div class="tk-offers__track" tabindex="0">%s</div>'
+            '<button class="tk-offers__nav tk-offers__nav--prev" type="button" aria-label="%s">‹</button>'
+            '<button class="tk-offers__nav tk-offers__nav--next" type="button" aria-label="%s">›</button></div>') % (
+        cards, a(("Précédent", "Previous")), a(("Suivant", "Next")))
+
+
+def others_list(x=None):
+    return '<ul class="tk-nets">%s</ul>' % "".join(
+        '<li><a href="%s" style="--c:%s;--i:#13162D"><span class="tk-nets__mark">%s</span><span>%s</span></a></li>' % (
+            y["file"], CHANNEL[y["key"]], ICON_SVG.get(y["icon"], ""), t(y["name"])) for y in LISTENINGS if y is not x)
+
+
+def faq_block(title, items):
+    return ('<div class="tk-faq"><div class="tk-head" data-reveal><p class="tk-k">%s</p><h2 class="tk-h2">%s</h2></div>'
+            '<div class="faq" data-reveal>%s</div></div>') % (t(S["faq"]), t(title), "".join(
+                "<details><summary>%s</summary><p>%s</p></details>" % (t(q), t(r)) for q, r in items))
+
+
+def voice(key):
+    return sec("", '<div class="xe-voice__grid">%s<div class="xe-voice__reel">%s</div></div>' % (head(t(S["voice_k"]), t(S["voice_t"])), O.reel(key)))
+
+
+
+# ------------------------------------------------------------------ the lead-magnet hero
+# The hero of every expertise page sells one thing: a real, anonymised
+# deliverable of that listening, sent by a consultant. Title in the home's
+# register (two lines, the second in the channel colour), the cover of the
+# sample and its form on the right. The form is the .ucp-lead of js/ui.js.
+H1L = {"social": (("Ce que les gens disent,", "lu par des gens."), ("What people say,", "read by people.")),
+       "audience": (("Qui sont vraiment", "vos audiences."), ("Who your audiences", "really are.")),
+       "influence": (("Les voix qui portent,", "pas les plus suivies."), ("The voices that carry,", "not the most followed.")),
+       "ai": (("Ce que les IA", "disent de vous."), ("What AI", "says about you.")),
+       "live": (("Ce qui se passe,", "pendant que ça se passe."), ("What happens,", "while it happens.")),
+       "search": (("Ce que les gens", "cherchent vraiment."), ("What people", "really search for.")),
+       "hub": (("Six façons", "d'écouter un marché."), ("Six ways", "of listening to a market."))}
+S.update({
+    "lm_k": ("GUIDE GRATUIT", "FREE GUIDE"),
+    "lm_cover": ("questions que la social data résout mieux qu'un sondage", "questions social data answers better than a survey"),
+    "lm_now": ("Envoyé immédiatement", "Sent immediately"), "lm_noseq": ("Sans relance", "No follow-up sequence"),
+    "lm_btn": ("Recevoir le guide", "Get the guide"),
+    "lm_done": ("Guide envoyé. Pensez à vérifier vos spams.", "Guide sent. Check your spam folder too."),
+    "lm_toc": ("Voir le sommaire", "See what is inside"),
+    "lm_anon": ("Anonymisé · dans votre secteur", "Anonymised · in your sector"),
+    "lm_t": ("Recevez le guide des 12 questions.", "Get the guide to the 12 questions."),
+    "lm_t_hub": ("Recevez un vrai livrable, dans votre secteur.", "Get a real deliverable, in your sector."),
+    "lm_free": ("Gratuit", "Free"), "lm_anon2": ("Anonymisé", "Anonymised"), "lm_48": ("Sous 48 h", "Within 48 h"),
+    "lm_from": ("Écrit par les consultants qui les mènent.", "Written by the consultants who run them."),
+    "lm_call": ("Ou parler à un consultant", "Or talk to a consultant"),
+    "lm_six": ("Les six écoutes", "The six listenings"),
+})
+
+
+def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, bands=None):
+    """the hero offers the guide of the 12 questions (same form as guide.html)"""
+    nums = "".join("<i>%02d</i>" % n for n in range(1, 13))
+    faces = "".join('<img src="/assets/img/team/%s-160.webp" alt="" width="160" height="160" />' % f for f in ("founder-antoine", "headshot-1", "headshot-2"))
+    def fld(id_, lab, typ, auto, ph, req=True, opt=False):
+        return ('<div class="form__field"><label for="%s">%s%s</label><input id="%s" name="%s" type="%s" autocomplete="%s" placeholder="%s"%s /></div>') % (
+            id_, t(lab), (' <small class="form__opt">%s</small>' % t(("(facultatif)", "(optional)"))) if opt else "", id_, id_, typ, auto, ph, " required" if req else "")
+    return f'''  <section class="xe-lmh">
+    <div class="shell xe-lmh__grid">
+      <div class="xe-lmh__copy">
+        <h1 class="xe-lmh__h1"><span class="xe-lmh__kick">{kick}</span><span class="xe-lmh__l">{t((lines[0][0], lines[1][0]))}</span><span class="xe-lmh__l xe-lmh__l--c">{t((lines[0][1], lines[1][1]))}</span></h1>
+        <p class="xe-lmh__lead">{t(lead)}</p>
+        <ul class="xe-lmh__pills"><li>{t(S["lm_free"])}</li><li>{t(S["lm_now"])}</li><li>{t(S["lm_noseq"])}</li></ul>
+        <a class="xe-lmh__call" href="#book">{t(S["lm_call"])} <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="xe-lm" id="offre">
+        <a class="xe-cover" href="guide.html" aria-label="{a(S["lm_toc"])}">
+          <span class="xe-cover__sheet xe-cover__sheet--3"></span><span class="xe-cover__sheet xe-cover__sheet--2"></span>
+          <span class="xe-cover__sheet xe-cover__sheet--1">
+            <span class="xe-cover__band"></span>
+            <span class="xe-cover__top"><img src="/assets/img/logo-navy.png" alt="" width="44" height="48" /><small>{t(S["lm_k"])}</small></span>
+            <b class="xe-cover__big">12</b>
+            <b class="xe-cover__name">{t(S["lm_cover"])}</b>
+            <span class="xe-cover__nums">{nums}</span>
+          </span>
+        </a>
+        <div class="xe-lm__body">
+          <!-- MOCK: sends nothing yet (js/ui.js, .form); wire to the CRM, as the form of guide.html. -->
+          <p class="xe-lm__t">{t(S["lm_t"])}</p>
+          <form class="form xe-gform" id="guide-hero-form" novalidate>
+            <div class="form__row">{fld("gh-first", ("Prénom", "First name"), "text", "given-name", "Camille")}{fld("gh-last", ("Nom", "Last name"), "text", "family-name", "Bernard")}</div>
+            <div class="form__row">{fld("gh-email", ("E-mail professionnel", "Work email"), "email", "email", "camille@company.com")}{fld("gh-company", ("Entreprise", "Company"), "text", "organization", "", False, True)}</div>
+            <button class="form__submit" type="submit">{t(S["lm_btn"])} <span aria-hidden="true">→</span></button>
+            <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>{t(S["lm_done"])}</span></p>
+          </form>
+          <p class="consent">{t(S["magnet_consent"])} <a href="privacy.html">{t(S["privacy"])}</a>.</p>
+          <p class="xe-lm__from"><span class="xe-lm__faces">{faces}</span><span>{t(S["lm_from"])} <a href="guide.html">{t(S["lm_toc"])} <span aria-hidden="true">→</span></a></span></p>
         </div>
       </div>
-      <div class="of-hero__demo">
-        <figure class="xo__demo xo__demo--doc" aria-label="{a(S["demo_cap"])}">
-          <div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="assets/img/logo-navy.png" alt="" width="44" height="48" /><span class="dlv__doc"><b>{t(EXTRA[x["key"]]["doc"][0])}</b><small><span>{t(EXTRA[x["key"]]["doc"][1])}</span> · <span>{t(S["oct"])}</span></small></span><span class="dlv__tag">{t(S["data_illus"])}</span></div>
-          <figcaption>{t(S["demo_cap"])}</figcaption>
-          <ul class="xe-sig">{demo}</ul>
-          <div class="dlv__foot"><span><span>{t(S["source"])}</span> <span>{t(EXTRA[x["key"]]["doc"][2])}</span></span><span>Licter</span></div>
-        </figure>
-      </div>
     </div>
-{logos()}
+{logos_html}
   </section>
 
-  <section class="of-fit">
-    <div class="shell">
-      <div class="xs__head"><h2 class="xs__title">{t(S["limits_t"])}</h2></div>
-      <div class="of-fit__grid">
-        <div class="of-fit__col of-fit__col--yes"><p class="of-fit__k">{t(S["hears"])}</p><ul>{hears}</ul></div>
-        <div class="of-fit__col of-fit__col--no"><p class="of-fit__k">{t(S["cannot"])}</p><ul>{cannot}</ul></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="xw" id="answers">
-    <div class="shell">
-      <div class="xs__head"><h2 class="xs__title">{t(S["answers_t"])}</h2></div>
-      <ul class="xw__list">{answers}</ul>
-    </div>
-  </section>
-
-{steps_block(x)}
-
-{proof_block(x)}
-
-{magnet_block("xp-" + x["key"], t((S["magnet_t"][0] % x["name"][0], S["magnet_t"][1] % x["name"][1])))}
-
-  <section class="of-steps xe-how">
-    <div class="shell">
-      <div class="xs__head"><h2 class="xs__title">{t(S["how_t"])}</h2></div>
-      <div class="xe-how__grid">{how}</div>
-      <p class="of-fit__k xe-others__k">{t(S["others_t"])}</p>
-      <ul class="xe-others">{others}<li><a href="expertise.html">{t(S["all"])} <span aria-hidden="true">→</span></a></li></ul>
-    </div>
-  </section>
-
-  <section class="of-faq">
-    <div class="shell">
-      <div class="xs__head"><h2 class="xs__title">{t(S["faq"])}</h2></div>
-      <div class="faq">{faq}</div>
-    </div>
-  </section>
-
-{book(EXTRA[x["key"]]["book_t"], offers_html)}
-</main>'''
+'''
 
 
-def dlv_card(key):
-    fr, en, c = uc_link(key)
-    return ('<li><a class="xe-dlvs__a" href="%s" data-en="%s"><span class="xe-dlvs__fig"><!--dlv:%s--></span>'
-            '<span class="xe-dlvs__n">%s</span><span class="xe-dlvs__go">%s <span aria-hidden="true">→</span></span></a></li>') % (
-        fr, en, key, t(c["name"]), t(S["dlv_link"]))
+def listening_body(x, offers_html):
+    i = LISTENINGS.index(x) + 1
+    col = CHANNEL[x["key"]]
+    icon = ICON_SVG.get(x["icon"], "")
+    e = EXTRA[x["key"]]
+    copy = (tk_crumbs([(("Accueil", "Home"), "index.html"), (S["expertise"], "expertise.html"), (x["name"], None)]) +
+            '<p class="tk-kick">%s · <span>0%d</span> <span>%s</span></p>' % (t(x["name"]), i, t(S["of6"])) +
+            '<h1 class="tk-h1">%s</h1>' % t(x["h1"]) +
+            '<p class="tk-lead">%s</p>' % t(x["lead"]) +
+            '<div class="tk-actions"><a class="btn btn--primary" href="#book">%s <span aria-hidden="true">→</span></a>'
+            '<a class="btn btn--ghost" href="#answers">%s</a></div>' % (t(S["book"]), t(S["answers_link"])))
+    feats = '<div class="tk-feats tk-feats--3">%s</div>' % "".join(
+        '<article class="tk-feat tk-feat--%d" data-reveal><span class="tk-feat__n" aria-hidden="true">0%d</span><div class="tk-feat__t"><h3>%s</h3></div>%s</article>' % (
+            k + 1, k + 1, t(h), ('<img class="tk-feat__shot" src="/assets/img/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" />' % PHOTO[x["key"]]) if k == 0 else "")
+        for k, h in enumerate(x["hears"]))
+    steps = '<ol class="tk-steps tk-steps--4">%s</ol>' % "".join(
+        '<li data-reveal><span class="tk-steps__n">%s</span><h3>%s</h3><p>%s</p></li>' % (t(d), t(n), t(p_)) for d, n, p_ in e["steps"])
+    nm = x["name"]
+    out = '<main id="content" class="tk tk--net xe-tk" style="--brand:%s;--brand-ink:#13162D;--brand-2:%s">\n' % (col, col)
+    out += '%s\n' % tk_crumbs([(("Accueil", "Home"), "index.html"), (S["expertise"], "expertise.html"), (x["name"], None)]).replace('class="tk-crumbs"', 'class="tk-crumbs shell"')
+    out += lm_hero('%s<!--glossk:%s-->' % (t(x["name"]), x["key"]), H1L[x["key"]], x["lead"], "xp-" + x["key"],
+                   t(S["lm_t"]), col, icon, t(x["name"]), logos())
+    out += sec("", head(t(S["hears_k"]), t((S["hears_t"][0] % nm[FR], S["hears_t"][1] % nm[EN]))) + feats, band=True)
+    out += sec("answers", head(t(S["answers_k"]), t(S["answers_t"]), t(S["answers_lead"])) + prog(x["cases"]))
+    out += sec("", head(t(S["runs_k"]), t(S["how_runs"])) + steps + '<p class="tk-sub xe-note">%s</p>' % t(S["how_note"]), band=True)
+    out += sec("", head(t(S["lim_k"]), t(S["lim_t"])) + offer_cards(x))
+    out += voice(e["voice"])
+    out += sec("", head(t(S["others_k"]), t(S["others_t2"])) + others_list(x) +
+               '<a class="xe-all" href="expertise.html">%s <span aria-hidden="true">→</span></a>' % t(S["all"]), band=True)
+    out += sec("", faq_block(S["faq"], x["faq"]))
+    return out + book(EXTRA[x["key"]]["book_t"], offers_html) + "\n</main>"
 
 
 def hub_body(offers_html):
-    six = "".join(
-        '<li><a href="%s"><span class="xe-six__n">0%d</span><span class="xe-six__ico" aria-hidden="true">%s</span>'
-        '<b>%s<!--gloss:%s--></b><span class="xe-six__d">%s</span><i aria-hidden="true">→</i></a></li>' % (
-            x["file"], i + 1, ICON_SVG.get(x["icon"], ""), t(x["name"]), x["key"], t(x["short"]))
-        for i, x in enumerate(LISTENINGS))
-    ex = "".join('<li><a href="%s"><b>%s</b></a><span>%s</span></li>' % (LIST[k]["file"], t(LIST[k]["name"]), t(v)) for k, v in HUB["ex"])
-    return f'''<main id="content">
-{crumbs([(("Accueil", "Home"), "index.html"), (S["expertise"], None)])}
-
-  <section class="xh of-hero xe-hero">
-    <div class="shell xh__grid">
-      <div class="xh__copy">
-        <p class="xh__kick">{t(S["kicker"])}</p>
-        <h1 class="xh__title">{t(HUB["h1"])}</h1>
-        <p class="xh__lead">{t(HUB["lead"])}</p>
-        <div class="xh__actions">
-          <a class="btn btn--primary" href="#book">{t(S["book"])} <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-      <nav class="xe-six-wrap" aria-label="{a(S["list_t"])}">
-        <ol class="xe-six">{six}</ol>
-      </nav>
-    </div>
-{logos()}
-  </section>
-
-  <section class="of-fit xe-ex">
-    <div class="shell">
-      <div class="xs__head"><h2 class="xs__title">{t(HUB["ex_t"])}</h2></div>
-      <p class="xe-ex__q">{t(HUB["ex_q"])}</p>
-      <ul class="xe-ex__list">{ex}</ul>
-      <p class="xe-ex__read"><span>{t(HUB["ex_read_k"])}</span>{t(HUB["ex_read"])}</p>
-      <a class="xh__link xe-ex__all" href="/fr/cas-usage/" data-en="/en/use-cases/">{t(S["all_cases"])} <span aria-hidden="true">→</span></a>
-    </div>
-  </section>
-
-  <section class="ucp xe-dlvs">
-    <div class="shell">
-      <div class="xs__head"><h2 class="xs__title">{t(S["dlv_t"])}</h2><p class="xs__lead">{t(S["dlv_lead"])}</p></div>
-      <ul class="xe-dlvs__list">{"".join(dlv_card(k) for k in HUB_DLV)}</ul>
-    </div>
-  </section>
-
-{proof_block(None, HUB_VOICE)}
-
-{magnet_block("xp-hub", t(S["magnet_t_hub"]))}
-
-  <section class="of-faq">
-    <div class="shell">
-      <div class="xs__head"><h2 class="xs__title">{t(S["hub_faq_t"])}</h2></div>
-      <div class="faq">{"".join("<details><summary>%s</summary><p>%s</p></details>" % (t(q), t(r)) for q, r in HUB_FAQ)}</div>
-    </div>
-  </section>
-
-{book(HUB["book_t"], offers_html)}
-</main>'''
+    copy = (tk_crumbs([(("Accueil", "Home"), "index.html"), (S["expertise"], None)]) +
+            '<p class="tk-kick">%s</p>' % t(S["kicker"]) +
+            '<h1 class="tk-h1">%s</h1>' % t(HUB["h1"]) + '<p class="tk-lead">%s</p>' % t(HUB["lead"]) +
+            '<div class="tk-actions"><a class="btn btn--primary" href="#book">%s <span aria-hidden="true">→</span></a>'
+            '<a class="btn btn--ghost" href="#six">%s</a></div>' % (t(S["book"]), t(S["list_t"])))
+    tiles = "".join('<li style="--c:%s"><a href="%s"><span>%s</span><b>%s</b></a></li>' % (CHANNEL[y["key"]], y["file"], ICON_SVG.get(y["icon"], ""), t(y["name"])) for y in LISTENINGS)
+    hero_art = ('<div class="tk-net xe-hubart"><figure class="tk-shot"><img src="/assets/img/team/morning/team-all-800.webp" alt="%s" width="800" height="533" decoding="async" fetchpriority="high" /></figure>'
+                '<ul class="xe-hubart__six">%s</ul></div>') % (a(S["photo_cap"]), tiles)
+    cards = "".join(('<li class="ucc__card of-ucc xe-ucc" id="ecoute-%s" style="--acc:%s">'
+                     '<img src="/assets/img/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" />'
+                     '<div class="ucc__top"><p class="ucc__k"><span class="xe-ucc__ico" aria-hidden="true">%s</span><span>0%d</span></p>'
+                     '<h3 class="ucc__t"><a href="%s">%s<!--gloss:%s--></a></h3><p class="of-ucc__promise">%s</p></div>'
+                     '<div class="ucc__foot"><ul class="ucc__cases">%s</ul><a class="ucc__all" href="%s">%s %s <span aria-hidden="true">→</span></a></div></li>') % (
+        y["key"], CHANNEL[y["key"]], PHOTO[y["key"]], ICON_SVG.get(y["icon"], ""), k + 1, y["file"], t(y["name"]), y["key"], t(y["short"]),
+        "".join('<li><a href="%s">%s <i aria-hidden="true">→</i></a></li>' % (y["file"], t(h)) for h in y["hears"]), y["file"], t(S["discover"]), t(y["name"]))
+        for k, y in enumerate(LISTENINGS))
+    six = ('<div class="ucc xe-six-ucc"><div class="ucc__head xe-six-head">%s<div class="ucc__nav">'
+           '<button class="ucc__btn" type="button" data-dir="-1" aria-label="%s" disabled><span aria-hidden="true">←</span></button>'
+           '<button class="ucc__btn" type="button" data-dir="1" aria-label="%s"><span aria-hidden="true">→</span></button></div></div>'
+           '<ol class="ucc__track">%s</ol></div>') % (head(t(S["six_k"]), t(S["list_t"]), t(S["six_lead"])), a(("Écoute précédente", "Previous")), a(("Écoute suivante", "Next")), cards)
+    ex = "".join('<li style="--c:%s"><a href="%s"><b>%s</b></a><span>%s</span></li>' % (CHANNEL[k], LIST[k]["file"], t(LIST[k]["name"]), t(v)) for k, v in HUB["ex"])
+    exb = ('<div class="xe-ex__grid"><p class="xe-ex__q">%s</p><ul class="xe-ex__list">%s</ul><p class="xe-ex__read"><span>%s</span>%s</p></div>'
+           '<a class="xe-all" href="/fr/cas-usage/" data-en="/en/use-cases/">%s <span aria-hidden="true">→</span></a>') % (
+        t(HUB["ex_q"]), ex, t(HUB["ex_read_k"]), t(HUB["ex_read"]), t(S["all_cases"]))
+    out = '<main id="content" class="tk tk--tool xe-tk xe-tk--hub" style="--brand:#EAA93D">\n'
+    out += '%s\n' % tk_crumbs([(("Accueil", "Home"), "index.html"), (S["expertise"], None)]).replace('class="tk-crumbs"', 'class="tk-crumbs shell"')
+    out += lm_hero(t(("Social intelligence", "Social intelligence")), H1L["hub"], HUB["lead"], "xp-hub", t(S["lm_t_hub"]), "#EAA93D",
+                   ICON_SVG.get("chart", ""), t(S["lm_six"]), logos(), bands=[CHANNEL[y["key"]] for y in LISTENINGS])
+    out += sec("six", six)
+    out += sec("", head(t(S["ex_k"]), t(HUB["ex_t"])) + exb, band=True)
+    out += voice(HUB_VOICE)
+    out += sec("", faq_block(S["hub_faq_t"], HUB_FAQ), band=True)
+    return out + book(HUB["book_t"], offers_html) + "\n</main>"
 
 
 def book(title, offers_html):
