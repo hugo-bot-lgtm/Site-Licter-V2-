@@ -446,12 +446,15 @@
   var zones = [document.getElementById("offre"), document.getElementById("book"), document.querySelector(".site-foot")].filter(Boolean);
   var pastHero = false, inZone = {};
   if (!document.getElementById("offre")) bar.querySelector('a[href="#offre"]').remove();
+  /* Antoine rides in the bar: the floating launcher steps aside on these pages */
+  var chatBtn = bar.querySelector(".ucp-bar__chat");
+  if (chatBtn) chatBtn.addEventListener("click", function () { if (window.LicterChat) window.LicterChat.open(); });
   function render() {
     var show = pastHero && !Object.keys(inZone).some(function (k) { return inZone[k]; });
     bar.hidden = false;
     bar.classList.toggle("is-shown", show);
     bar.setAttribute("aria-hidden", show ? "false" : "true");
-    Array.prototype.forEach.call(bar.querySelectorAll("a"), function (a) { a.tabIndex = show ? 0 : -1; });
+    Array.prototype.forEach.call(bar.querySelectorAll("a, button"), function (a) { a.tabIndex = show ? 0 : -1; });
   }
   new IntersectionObserver(function (en) {
     pastHero = !en[0].isIntersecting && en[0].boundingClientRect.top < 0;

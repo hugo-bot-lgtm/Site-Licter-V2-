@@ -64,7 +64,7 @@ def a(pair):
 S = {
     "home": ("Accueil", "Home"),
     "offers": ("Offres", "Offers"),
-    "book": ("Prendre rendez-vous", "Book a meeting"),
+    "book": ("Parler à un consultant", "Talk to a consultant"),
     "incl_link": ("Ce qui est inclus", "What's included"),
     "fit_t": ("Est-ce pour vous ?", "Is it for you?"),
     "fit_yes": ("Pour vous si", "For you if"),

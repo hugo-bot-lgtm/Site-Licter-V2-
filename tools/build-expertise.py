@@ -27,7 +27,7 @@ S = {
     "home": ("Accueil", "Home"),
     "expertise": ("Expertise", "Expertise"),
     "kicker": ("SOCIAL INTELLIGENCE", "SOCIAL INTELLIGENCE"),
-    "book": ("Prendre rendez-vous", "Book a meeting"),
+    "book": ("Parler à un consultant", "Talk to a consultant"),
     "answers_link": ("Les questions auxquelles elle répond", "The questions it answers"),
     "demo_cap": ("Un exemple de ce qu'elle entend", "An example of what it picks up"),
     "illus": ("Exemple illustratif", "Illustrative example"),

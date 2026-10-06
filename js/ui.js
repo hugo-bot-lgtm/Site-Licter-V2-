@@ -1598,6 +1598,41 @@ window.LicterUC = (function () {
 })();
 
 /* =========================================================================
+   FAQs of the use-case pages on a phone: the first question (two on the
+   hub, which has six), then "See the other N questions".
+   ========================================================================= */
+(function () {
+  if (!document.body.classList.contains("ucp-page") || !window.matchMedia) return;
+  var html = document.documentElement, mq = window.matchMedia("(max-width: 720px)");
+  Array.prototype.forEach.call(document.querySelectorAll(".ucp .faq"), function (faq) {
+    var items = Array.prototype.slice.call(faq.querySelectorAll(":scope > details"));
+    var keep = items.length > 4 ? 2 : 1;
+    if (items.length <= keep) return;
+    var more = null, shown = false;
+    function label() {
+      if (!more) return;
+      var n = items.length - keep;
+      more.textContent = html.lang === "fr" ? (n > 1 ? "Voir les " + n + " autres questions" : "Voir l\u2019autre question") : (n > 1 ? "See the other " + n + " questions" : "See the other question");
+    }
+    function apply() {
+      var fold = mq.matches && !shown;
+      items.forEach(function (d, i) { d.hidden = fold && i >= keep; });
+      if (fold && !more) {
+        more = document.createElement("button");
+        more.type = "button"; more.className = "faq__more";
+        more.addEventListener("click", function () { shown = true; apply(); items[keep].querySelector("summary").focus(); });
+        faq.appendChild(more);
+        label();
+      }
+      if (more) more.hidden = !fold;
+    }
+    apply();
+    if (mq.addEventListener) mq.addEventListener("change", apply); else mq.addListener(apply);
+    new MutationObserver(label).observe(html, { attributes: true, attributeFilter: ["lang"] });
+  });
+})();
+
+/* =========================================================================
    Footer on a phone: each column folds behind its title (one open at a
    time); above 720 px everything is back as it was.
    ========================================================================= */

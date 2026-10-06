@@ -7823,3 +7823,75 @@ section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); 
   .stickybar:not(.stickybar--bottom) { transition: transform .3s cubic-bezier(.16, 1, .3, 1), top .3s cubic-bezier(.16, 1, .3, 1); }
 }
 @media (max-width: 720px) and (prefers-reduced-motion: reduce) { .banner, .stickybar:not(.stickybar--bottom) { transition: none; } }
+
+/* =========================================================
+   Use-case pages on a phone: shorter, one bottom bar
+   ========================================================= */
+.ucp-bar__chat { display: none; }
+.ucp-lead__alt { margin: 14px 0 0; font: 500 14px/1.5 var(--body-font); color: var(--text-2); }
+.ucp-lead__alt a { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 4px; }
+@media (max-width: 720px) {
+  /* the bar: Antoine, the real case, a consultant; nothing floats above it */
+  .ucp-bar { grid-template-columns: 46px minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 8px; padding-inline: 12px; }
+  .ucp-bar .btn { height: 48px; padding: 0 8px; font-size: 12.5px; line-height: 1.15; text-align: center; white-space: normal; }
+  .ucp-bar__chat { position: relative; display: block; width: 46px; height: 46px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
+  .ucp-bar__chat img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--line); }
+  .ucp-bar__chat i { position: absolute; right: 0; bottom: 1px; width: 11px; height: 11px; border-radius: 50%; background: #2FA36B; box-shadow: 0 0 0 2px var(--bg); }
+  .ucp-bar__chat:focus-visible { outline: 2px solid #EAA93D; outline-offset: 3px; }
+  body.ucp-page .lx__launch, body.ucp-page .ppd { display: none; }
+
+  /* deliverable: the hero already lists what you get; the mock-up shows its top */
+  .ucv-dlv .ucr__ticks { display: none; }
+  .ucv-dlv .dlv { max-height: 300px; overflow: hidden; -webkit-mask-image: linear-gradient(#000 72%, transparent); mask-image: linear-gradient(#000 72%, transparent); }
+
+  /* how it goes: a compact timeline */
+  .ucv-time { gap: 0; }
+  .ucv-time li { display: grid; grid-template-columns: 52px minmax(0, 1fr); column-gap: 12px; padding: 12px 0 12px 0; border-top: 0; border-bottom: 1px solid var(--line); }
+  .ucv-time li::before { content: none; }
+  .ucv-time .ucv-day { grid-row: 1 / span 2; align-self: start; margin: 2px 0 0; }
+  .ucv-time b { margin-bottom: 2px; font-size: 16px; }
+  .ucv-time p { font-size: 14px; line-height: 1.45; }
+  .ucv-note { display: none; }
+  .ucv-src { margin-top: 16px; padding-top: 14px; gap: 10px; }
+  .ucv-src ul { gap: 6px 14px; }
+  .ucv-src .ucp__ico { width: 22px; height: 22px; }
+
+  /* the benefits: their names say it */
+  .ucv-roi span { display: none; }
+  .ucv-roi li { padding: 10px 0; }
+
+  /* the hub: two questions drifting by are enough */
+  .ucq__win { height: 210px; }
+}
+.ucv-day { font-size: 12px; }
+@media (max-width: 720px) { .ucv-time .ucv-day { justify-self: start; } }
+
+/* use-case pages: 12 px floor outside the deliverable mock-ups */
+.ucp-page :is(.ucq__f, .ucf__voice-k, .ucw__n, .ucw__badge, .ucw__get span, .ucp__case-k, .ucp__case-h, .ucr__label, .ucr-case__tag, .ucv-case__reco span, .ucp__art-l span) { font-size: 12px; }
+.ucp-page .wall__caption { font-size: 12px; }
+
+@media (max-width: 720px) {
+  /* the video next to the case: a thumbnail and its quote side by side */
+  .ucv-video { display: grid; grid-template-columns: 132px minmax(0, 1fr); column-gap: 14px; row-gap: 4px; align-items: start; }
+  .ucv-video__shot { grid-row: 1 / span 2; border-radius: 12px; }
+  .ucv-video__q { font-size: 15px; }
+  /* the real case: the form says it, the paragraph steps back */
+  .ucp__cta-d { display: none; }
+  /* related reading lives on the large screen; the family links stay */
+  .ucp-page .ucp__related .ucp__h2--sub, .ucp-page .ucp__related .ucp__arts-l { display: none; }
+  /* the proof figures are already at the top (logo wall caption) */
+  .book--uc .book__proof { display: none; }
+  /* the hub's voices swipe, one at a time */
+  .ucp__voices { display: grid; grid-auto-flow: column; grid-auto-columns: 82%; grid-template-columns: none; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(var(--gutter) * -1); padding: 0 var(--gutter) 8px; scroll-padding-inline: var(--gutter); scrollbar-width: none; }
+  .ucp__voices::-webkit-scrollbar { display: none; }
+  .ucp__voices > * { scroll-snap-align: start; }
+  /* "Why not just a tool?" on the hub, as on the home: a compact table */
+  .ucp-page .cmp__photo, .ucp-page .cmp .xs__lead, .ucp-page .cmp__foot { display: none; }
+  .ucp-page .cmp .xs__title { font-size: 26px; }
+  .ucp-page .cmp__vs { margin-top: 18px; }
+  .ucp-page .cmp__head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 14px; margin-bottom: 8px; font-size: 12px; letter-spacing: 1px; }
+  .ucp-page .cmp__rows li { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 14px; align-items: start; padding: 11px 0; }
+  .ucp-page .cmp__them { font-size: 13px; line-height: 1.4; }
+  .ucp-page .cmp__us { padding-left: 16px; font-size: 14.5px; line-height: 1.35; }
+}
+@media (max-width: 720px) { .ucp-bar .btn { letter-spacing: .3px; } }

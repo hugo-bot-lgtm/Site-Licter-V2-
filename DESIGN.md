@@ -168,9 +168,24 @@ Toujours longues, douces et teintées :
 
 Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La flèche est `<span aria-hidden="true">→</span>`.
 
+### Pages cas d'usage (`/fr/cas-usage/…`, `/en/use-cases/…`)
+
+- **Leur aimant, c'est le cas réel** (« Recevez un cas réel de ce type, dans votre secteur », e-mail et secteur), avec en dessous « Plutôt lire d'abord ? Le guide des 12 questions ». **Le popup du magazine ne s'y ouvre jamais tout seul.**
+- **CTA :** « Parler à un consultant » partout (hero, barre mobile), qui ouvre le popup de rappel ; « Me faire rappeler » reste le bouton du formulaire.
+- **Barre du bas sur téléphone :** Antoine (ouvre le chat), « Recevoir un cas réel », « Parler à un consultant ». Le bouton flottant d'Antoine et la couverture du magazine n'apparaissent pas sur ces pages.
+- **Téléphone, pour rester autour de 6 à 7 écrans :**
+  - le livrable montre le haut de sa maquette, en fondu ;
+  - « Comment ça se passe » devient une liste compacte ;
+  - les bénéfices ne gardent que leurs titres ;
+  - la vidéo est placée à côté de la citation ;
+  - la FAQ est repliée après une question (deux sur le sommaire) ;
+  - les articles liés et les chiffres sont masqués ;
+  - le sommaire reprend le tableau compact « Pourquoi pas un outil seul » et les vidéos à faire glisser.
+- **Plancher de 12 px partout**, sauf à l'intérieur des maquettes de livrables, qui sont des illustrations.
+
 ### Horaires de rappel
 
-Un consultant rappelle **dans les 30 minutes en semaine, de 9 h à 19 h** (heure de Paris). En dehors de ces horaires, aucun texte ne promet « 30 minutes » : le badge du popup, la confirmation et le chat disent quand le rappel aura lieu (« ce matin dès 9 h », « demain dès 9 h », « lundi dès 9 h »). L'utilitaire commun est `window.LicterHours`, dans `js/ui.js`.
+Un consultant rappelle **dans les 30 minutes en semaine, de 9 h à 19 h** (heure de Paris). En dehors de ces horaires, aucun texte ne promet « 30 minutes » : le badge du popup, la confirmation et le chat disent quand le rappel aura lieu, et tous les textes de rappel du site précisent « en semaine » (« ce matin dès 9 h », « demain dès 9 h », « lundi dès 9 h »). L'utilitaire commun est `window.LicterHours`, dans `js/ui.js`.
 
 ### Appels à l'action
 

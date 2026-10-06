@@ -119,7 +119,7 @@ def shared(part, lang):
 L = {  # interface words of these pages
     "home": ("Accueil", "Home"),
     "crumbs": ("Fil d'Ariane", "Breadcrumb"),
-    "book": ("Prendre rendez-vous", "Book a meeting"),
+    "book": ("Parler à un consultant", "Talk to a consultant"),
     "live": ("Voir un cas en direct", "See a live case"),
     "questions": ("Les questions auxquelles on répond", "The questions we answer"),
     "get": ("Ce que vous obtenez", "What you get"),
@@ -143,13 +143,13 @@ L = {  # interface words of these pages
 
 BOOK = {
     "h2": ("Laquelle de ces questions est la vôtre ?", "Which of these questions is yours?"),
-    "lead": ("Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes pour en parler.",
-             "Leave your email or phone number. A consultant calls you back within 30 minutes to talk it through."),
+    "lead": ("Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine pour en parler.",
+             "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays to talk it through."),
     "label": ("E-mail ou téléphone", "Email or phone"),
     "ph": ("nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"),
     "btn": ("Me faire rappeler", "Call me back"),
     "err": ("Saisissez un e-mail professionnel ou un numéro de téléphone.", "Enter a work email or a phone number."),
-    "promise": ("Un consultant, pas un commercial. Dans les 30 minutes.", "A consultant, not a sales team. Within 30 minutes."),
+    "promise": ("Un consultant, pas un commercial. En semaine, de 9\u00a0h à 19\u00a0h.", "A consultant, not a sales team. Weekdays, 9am to 7pm."),
     "consent": ("Vos coordonnées servent uniquement à vous rappeler.", "We use your contact details only to call you back."),
     "privacy": ("Politique de confidentialité", "Privacy policy"),
     "diag": ("Vous faites déjà du social listening ?", "Already running social listening?"),
@@ -287,6 +287,7 @@ def page(lang, path, alt_path, title, meta, body, ld, og_type="website", og_imag
 </main>
 
 <div class="ucp-bar" aria-hidden="true" hidden>
+  <button class="ucp-bar__chat" type="button" tabindex="-1" aria-label="{T(L["bar_chat"], lang)}"><img src="/assets/img/team/founder-antoine-160.webp" alt="" width="44" height="44" /><i aria-hidden="true"></i></button>
   <a class="btn btn--primary" href="#offre" tabindex="-1">{T(L["bar_offer"], lang)}</a>
   <a class="btn btn--ghost" href="#book" tabindex="-1">{T(L["bar_call"], lang)}</a>
 </div>
@@ -772,7 +773,10 @@ L.update({
     "cta_pick": ("Choisir…", "Choose…"),
     "cta_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
     "bar_offer": ("Recevoir un cas réel", "Get a real case"),
-    "bar_call": ("Être rappelé", "Get a call back"),
+    "bar_call": ("Parler à un consultant", "Talk to a consultant"),
+    "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
+    "cta_alt": ("Plutôt lire d'abord ?", "Rather read first?"),
+    "cta_alt_link": ("Le guide des 12 questions", "The guide to the 12 questions"),
     "note_lead": ("Un tableau de bord s'arrête au chiffre. Voici ce que nous remettons à la place : une note, écrite et présentée par le consultant qui a lu la conversation.",
                   "A dashboard stops at the number. Here is what we hand over instead: a note, written and presented by the consultant who read the conversation."),
     "note_stop": ("… et après ?", "… and then?"),
@@ -819,13 +823,14 @@ def cta(c, lang):
             '          <p class="fld__error ucp-lead__sector-err" hidden>%s</p>\n'
             '          <p class="consent">%s <a href="/privacy.html">%s</a>.</p>\n'
             '        </form>\n'
+            '        <p class="ucp-lead__alt">%s <a href="/guide.html">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
             '        <p class="ucp-lead__done" role="status" hidden>%s</p>\n'
             '      </div>\n'
             '    </div>\n'
             '  </section>') % (T(L["cta_k"], lang), T(L["cta_t"], lang), T(L["cta_d"], lang), c["key"],
                                T(L["cta_email"], lang), "nom@entreprise.com" if lang == FR else "name@company.com",
                                T(L["cta_sector"], lang), opts, T(L["cta_btn"], lang), T(L["cta_err"], lang), T(L["cta_pick_err"], lang),
-                               T(L["cta_consent"], lang), T(L["privacy"], lang), T(L["cta_done"], lang))
+                               T(L["cta_consent"], lang), T(L["privacy"], lang), T(L["cta_alt"], lang), T(L["cta_alt_link"], lang), T(L["cta_done"], lang))
 
 
 def articles_block(keys, lang):

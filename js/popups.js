@@ -42,7 +42,7 @@
     callBadge2: ["160+ projets depuis 2022", "160+ projects since 2022"],
     callImgAlt: ["Trois consultantes Licter dans les bureaux", "Three Licter consultants in the office"],
     callT: ["Trente minutes avec un consultant.", "Thirty minutes with a consultant."],
-    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes.", "Leave your email or phone number. A consultant calls you back within 30 minutes."],
+    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine.", "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays."],
     callF: ["E-mail ou téléphone", "Email or phone"],
     callP: ["nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"],
     callB: ["Me faire rappeler", "Call me back"],
@@ -267,7 +267,10 @@
 
   /* ------------------------------------------------ the automatic opening */
   var path = location.pathname;
-  var formPage = /\/(book-a-meeting|diagnostic|guide|events|event-[a-z0-9-]+)\.html$/.test(path);
+  var formPage = /\/(book-a-meeting|diagnostic|guide|events|event-[a-z0-9-]+)\.html$/.test(path) ||
+    /* the use-case pages bring their own magnet (a real case of the same
+       kind): the magazine never interrupts them; its cover still waits below */
+    /^\/(fr\/cas-usage|en\/use-cases)\//.test(path);
   var queued = null;
   function may(k) {
     return !formPage && !state(k) && !html.classList.contains("lx-open") && !html.classList.contains("pp-open") &&

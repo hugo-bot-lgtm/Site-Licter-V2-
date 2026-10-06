@@ -53,8 +53,8 @@
     callCta: ["Être rappelé par un consultant", "Get a call back from a consultant"],
     /* the callback: the same words as the home */
     callT: ["Trente minutes avec un consultant.", "Thirty minutes with a consultant."],
-    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes.",
-            "Leave your email or phone number. A consultant calls you back within 30 minutes."],
+    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine.",
+            "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays."],
     field: ["E-mail ou téléphone", "Email or phone"],
     ph: ["nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"],
     callBtn: ["Me faire rappeler", "Call me back"],
