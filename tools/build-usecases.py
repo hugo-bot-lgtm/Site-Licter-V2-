@@ -78,6 +78,8 @@ def expertise_fr(name):
         return OFFER_FR[name]
     if name.startswith("tech-"):
         return tech_fr(name)
+    if name.startswith("source-"):
+        return "/fr/sources/%s/" % name[len("source-"):-len(".html")]
     name = name.lstrip("/")
     return "/fr/expertise/" if name == "expertise.html" else "/fr/expertise/%s/" % name[len("expertise-"):-len(".html")]
 
@@ -85,7 +87,7 @@ def expertise_fr(name):
 def translate(fragment):
     """The same walk as js/i18n.js: text nodes and a few attributes; and the
     links to the expertise pages, which have French twins."""
-    fragment = re.sub(r'href="/?(expertise(?:-[a-z]+-listening)?\.html|offers\.html|offer-[a-z0-9-]+\.html|tech-[a-z0-9-]+\.html)(#[^"]*)?"', lambda m: 'href="%s%s"' % (expertise_fr(m.group(1)), m.group(2) or ""), fragment)
+    fragment = re.sub(r'href="/?(expertise(?:-[a-z]+-listening)?\.html|offers\.html|offer-[a-z0-9-]+\.html|tech-[a-z0-9-]+\.html|source-[a-z0-9-]+\.html)(#[^"]*)?"', lambda m: 'href="%s%s"' % (expertise_fr(m.group(1)), m.group(2) or ""), fragment)
     def text(m):
         raw = m.group(1)
         key = re.sub(r"\s+", " ", html.unescape(raw)).strip()
@@ -1002,7 +1004,7 @@ def main():
     root_pages = sorted(p.name for p in ROOT.glob("*.html") if p.name not in ("404.html", "use-cases.html"))
     entries = []
     for name in root_pages:
-        if name == "index.html" or name.startswith(("expertise", "tech-")) or name in OFFER_FR:
+        if name == "index.html" or name.startswith(("expertise", "tech-", "source-")) or name in OFFER_FR:
             continue   # the home and the expertise pages go in with their French twins, below
         entries.append("  <url><loc>%s</loc></url>" % (SITE + "/" + name))
     urls.insert(0, ("/fr/", "/"))

@@ -8444,3 +8444,43 @@ html[data-theme="dark"] .xt__glyph::after { background: #EAA93D; }
 html[data-theme="dark"] .xt__more-list a:hover b { color: var(--amber); }
 .xt__more-list a:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 2px; }
 @media (max-width: 720px) { .xt__more-list a { padding: 12px 14px; } }
+
+/* tool and network pages (tools/build-tech.py) --------------------------- */
+/* the tool's fact sheet, under "What is X?" */
+.tsheet { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 0; border-top: 2px solid var(--amber); }
+.tsheet > div { padding: 16px 18px 4px 0; }
+.tsheet > div + div { padding-left: 18px; border-left: 1px solid var(--line); }
+.tsheet dt { font: 700 12px/1.3 var(--body-font); letter-spacing: 1.1px; text-transform: uppercase; color: var(--text-2); }
+.tsheet dd { margin: 6px 0 0; font: 600 15px/1.45 var(--body-font); color: var(--ink); }
+/* links to other tools and networks */
+.tpair { margin-top: clamp(24px, 3vw, 36px); }
+.tpair__k { margin: 0 0 12px; font: 700 12px/1.3 var(--body-font); letter-spacing: 1.1px; text-transform: uppercase; color: var(--text-2); }
+.tchips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.tchips a { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 7px 14px 7px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; font: 600 14px/1.2 var(--body-font); transition: border-color .2s ease, background-color .2s ease; }
+.tchips a:hover { border-color: rgba(var(--amber-rgb), .8); background: rgba(var(--amber-rgb), .07); }
+.tchips a:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 2px; }
+.tchips__mono { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: rgba(var(--amber-rgb), .16); color: var(--amber-ink); font: 600 13px/1 var(--title-font); }
+html[data-theme="dark"] .tchips__mono { color: #EAA93D; }
+.page__eyebrow .xt__glyph { margin-right: 4px; }
+@media (max-width: 960px) {
+  .tsheet { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 12px; }
+  .tsheet > div:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 720px) {
+  .tchips a { font-size: 13.5px; padding-right: 12px; }
+}
+/* the sources list on tech-tools.html: each network opens its page */
+.xt__grp li > a { display: flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+.xt__grp li > a:hover { color: var(--amber-ink); }
+html[data-theme="dark"] .xt__grp li > a:hover { color: var(--amber); }
+.xt__grp li > a:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 2px; border-radius: 6px; }
+/* even sections: once revealed, their elements come back to their place
+   (the shifted start state outranked the generic .is-in reset, leaving the
+   heads 22px to the left, flush with the screen edge on a phone) */
+.reveal .page .block:nth-of-type(even) [data-reveal].is-in { transform: none; }
+/* the step numbers: amber on the dark theme, where cream on cream hid them */
+html[data-theme="dark"] .flow__n { background: var(--amber); color: #13162D; box-shadow: 0 0 0 5px var(--bg); }
+/* a tool or network H1 with a very long word: smaller on phones */
+@media (max-width: 720px) {
+  .page__title--long { font-size: clamp(24px, 7.4vw, 34px); overflow-wrap: break-word; hyphens: auto; }
+}

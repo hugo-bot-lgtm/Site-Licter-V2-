@@ -134,7 +134,8 @@ Les pages offres sont prêtes, mais quatre informations ne peuvent pas être inv
 - [ ] **Les 22 réseaux de « D'où viennent les données ».** WhatsApp, Messenger et Discord sont surtout des espaces privés : la plupart des outils d'écoute n'en lisent que la partie publique (chaînes, serveurs ouverts), voire rien. À confirmer, ou à préciser sur la page, pour ne pas promettre une collecte impossible.
 - [ ] **Les outils d'appoint** (Radarly, Semrush, Google Trends, AnswerThePublic, ChatGPT, GEO, Meta Ads, Google Actualités, Social Blade) : vérifier que chacun est bien utilisé, et les descriptions.
 - [ ] **« Agence <outil> »** : chaque page outil dit « agence Talkwalker », « agence Semrush »… pour le référencement. Vérifier que les éditeurs l'acceptent (certains réservent « partenaire » ou « agence certifiée » à leurs partenaires officiels) ; la FAQ précise déjà que Licter n'est pas l'éditeur.
-- [ ] **Le contenu des neuf nouvelles pages outils** (`tools/build-tech.py`, `TOOLS`) : rédigé par nous, à relire.
+- [ ] **Le contenu des 13 pages outils** (`tools/tools_data.py`) : faits vérifiés en octobre 2026, textes rédigés par nous, à relire. Points sensibles : SoPrism fait désormais partie d'Audiense, Radarly de Meltwater (le nom est-il toujours vendu ?), Semrush d'Adobe.
+- [ ] **Le contenu des 22 pages réseaux** (`tools/networks.py`) : en particulier les limites de collecte, et la lecture des contenus en russe (VK) : qui la fait ?
 - [ ] **Les logos** : les glyphes des réseaux viennent de Simple Icons (CC0), mais les chartes de marque encadrent leur usage. Les logos des plateformes (`assets/img/tools/`) manquent toujours : le menu affiche des monogrammes.
 
 ## Le jour de la bascule sur le vrai domaine
