@@ -1537,76 +1537,6 @@ window.LicterFR = {
   "Creator-driven reach over the last 90 days, measured against the category benchmark.":
     "Portée générée par les créateurs sur 90 jours, mesurée face au benchmark de la catégorie.",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   /* ---- event pages (tools/build-events.py) ---- */
   "Next event":
     "Prochain événement",
@@ -2172,6 +2102,14 @@ window.LicterFR = {
     "Quelle différence avec un outil de veille ?",
   "The tool collects. We pick the sources, remove the noise and read the result, to tell you what to do with it.":
     "L'outil collecte. Nous choisissons les sources, écartons le bruit et lisons le résultat, pour vous dire ce qu'il faut en faire.",
+  "How long before a first read?":
+    "Combien de temps avant une première lecture ?",
+  "About a week after framing, faster for an urgent topic.":
+    "Environ une semaine après le cadrage, plus vite pour un sujet urgent.",
+  "Do we need a monitoring tool already?":
+    "Faut-il déjà avoir un outil de veille ?",
+  "No. We work with our own platforms. If you have one, we can also take it over and make it speak.":
+    "Non. Nous travaillons avec nos plateformes. Si vous en avez une, nous pouvons aussi la reprendre et la faire parler.",
   "Home":
     "Accueil",
   "Expertise":
@@ -2194,6 +2132,68 @@ window.LicterFR = {
     "Ce qu'elle entend",
   "What it cannot tell you on its own":
     "Ce qu'elle ne vous dira pas",
+  "Day 0":
+    "J0",
+  "The perimeter, the markets, the languages and the sources.":
+    "Le périmètre, les marchés, les langues et les sources.",
+  "Day 2":
+    "J+2",
+  "Queries set up, the noise removed.":
+    "Les requêtes paramétrées, le bruit écarté.",
+  "Day 5":
+    "J+5",
+  "An analyst reads the topics, the tone and who carries them.":
+    "Un analyste lit les sujets, la tonalité et qui les porte.",
+  "Day 7":
+    "J+7",
+  "Readout":
+    "Restitution",
+  "A summary, and what to do with it.":
+    "Une synthèse, et ce qu'il faut en faire.",
+  "How it runs":
+    "Comment ça se passe",
+  "Indicative timings for a first read.":
+    "Durées indicatives pour une première lecture.",
+  "In their words":
+    "Dans leurs mots",
+  "Get a sample Social listening deliverable, in your sector.":
+    "Recevez un exemple de livrable Social listening, dans votre secteur.",
+  "Choose…":
+    "Choisir…",
+  "Food & drink":
+    "Agroalimentaire",
+  "Luxury & fashion":
+    "Luxe & mode",
+  "Beauty":
+    "Beauté",
+  "Toys & video games":
+    "Jouets & jeux vidéo",
+  "Automotive & mobility":
+    "Automobile & mobilité",
+  "Banking & insurance":
+    "Banque & assurance",
+  "Retail":
+    "Distribution",
+  "Public sector":
+    "Secteur public",
+  "Other":
+    "Autre",
+  "And for you?":
+    "Et chez vous ?",
+  "Anonymised, sent by a consultant within 48 hours: what you would actually receive.":
+    "Anonymisé, envoyé par un consultant sous 48 h : ce que vous recevriez vraiment.",
+  "Work email":
+    "E-mail professionnel",
+  "Your sector":
+    "Votre secteur",
+  "Get the sample":
+    "Recevoir l'exemple",
+  "Enter a valid work email.":
+    "Indiquez un e-mail professionnel valide.",
+  "Choose your sector.":
+    "Choisissez votre secteur.",
+  "Noted. A consultant sends you a sample within 48 hours.":
+    "C'est noté. Un consultant vous envoie un exemple sous 48 h.",
   "With what, and in which offer":
     "Avec quoi, et dans quelle offre",
   "The other ways of listening":
@@ -2240,10 +2240,34 @@ window.LicterFR = {
     "Peut-on comparer nos audiences à celles d'un concurrent ?",
   "Yes, and it is often the most telling: what sets your communities apart from theirs, and the ones they reach and you do not.":
     "Oui, et c'est souvent le plus parlant : ce qui distingue vos communautés des siennes, et celles qu'il touche et pas vous.",
+  "Is it GDPR-compliant?":
+    "Est-ce conforme au RGPD ?",
+  "Yes: public data only, aggregated into communities, never individual profiles.":
+    "Oui : uniquement des données publiques, agrégées en communautés, jamais de profils individuels.",
+  "What do we do with the results?":
+    "Que fait-on des résultats ?",
+  "A media plan, messages and creators for each community: the readout ends with recommendations.":
+    "Un plan média, des messages et des créateurs par communauté : la restitution se termine par des recommandations.",
   "Who your audiences really are, beyond age and gender.":
     "Qui sont vraiment vos audiences, au-delà de l'âge et du sexe.",
   "We profile communities from what they follow, share and consume: interests, brand affinities, media. Enough to replace a declared persona with observed behaviour.":
     "Nous profilons les communautés à partir de ce qu'elles suivent, partagent et consomment : centres d'intérêt, affinités de marque, médias. De quoi remplacer un persona déclaratif par un comportement observé.",
+  "The audiences to profile, and the decision to inform.":
+    "Les audiences à profiler, et la décision à éclairer.",
+  "Day 3":
+    "J+3",
+  "Profiling":
+    "Profilage",
+  "The behavioural panel brings out the communities.":
+    "Le panel comportemental fait apparaître les communautés.",
+  "Affinities, media and overlaps, read by an analyst.":
+    "Affinités, médias et recoupements, lus par un analyste.",
+  "Day 10":
+    "J+10",
+  "The communities to prioritise, and how to reach them.":
+    "Les communautés à prioriser, et comment les toucher.",
+  "Get a sample Audience listening deliverable, in your sector.":
+    "Recevez un exemple de livrable Audience listening, dans votre secteur.",
   "Creator":
     "Créatrice",
   "@studio.zoe, 142k followers, 58% overlap":
@@ -2280,10 +2304,38 @@ window.LicterFR = {
     "Peut-on mesurer l'effet d'un partenariat ?",
   "Yes, on the conversation: what it moved, with which audiences, compared with the period before.":
     "Oui, sur la conversation : ce qu'il a déplacé, auprès de quelles audiences, comparé à la période précédente.",
+  "How do you spot the risks?":
+    "Comment repérez-vous les risques ?",
+  "We go through past public stances and controversies, and flag them before any contract.":
+    "Nous relisons les prises de position publiques passées et les controverses, et les signalons avant tout contrat.",
+  "Do you need big accounts to be effective?":
+    "Faut-il de gros comptes pour être efficace ?",
+  "No. The overlap with your audience matters more than the follower count: mid-sized accounts often carry better.":
+    "Non. Le recouvrement avec votre audience compte plus que le nombre d'abonnés : les comptes moyens portent souvent mieux.",
   "The voices that carry, not the ones with the most followers.":
     "Les voix qui portent, pas celles qui ont le plus d'abonnés.",
   "Creators, experts, journalists, executives: we identify who really shapes your category's conversation, measure the overlap with your audience and flag the risks before a partnership.":
     "Créateurs, experts, journalistes, dirigeants : nous identifions qui influence vraiment la conversation de votre catégorie, mesurons le recouvrement avec votre audience et signalons les risques avant un partenariat.",
+  "The category, the goal and the target audiences.":
+    "La catégorie, l'objectif et les audiences visées.",
+  "Mapping":
+    "Repérage",
+  "Who starts topics, and who relays them.":
+    "Qui lance les sujets, et qui les relaie.",
+  "Day 6":
+    "J+6",
+  "Vetting":
+    "Vérification",
+  "Audience overlap, past stances, risks.":
+    "Recouvrement d'audience, prises de position, risques.",
+  "Day 8":
+    "J+8",
+  "Shortlist":
+    "Shortlist",
+  "A ranked, argued list, ready for the agency.":
+    "Une liste classée et argumentée, prête pour l'agence.",
+  "Get a sample Influence listening deliverable, in your sector.":
+    "Recevez un exemple de livrable Influence listening, dans votre secteur.",
   "Prompt tested":
     "Question testée",
   "“Which health insurance for a family?”":
@@ -2318,10 +2370,32 @@ window.LicterFR = {
     "Peut-on influencer ce que répondent les IA ?",
   "Indirectly: the models rely on public sources. We identify the ones they cite, and what should be corrected or added there.":
     "Indirectement : les modèles s'appuient sur des sources publiques. Nous identifions celles qu'ils citent, et ce qu'il faudrait y corriger ou y ajouter.",
+  "How often do you measure?":
+    "À quelle fréquence mesurez-vous ?",
+  "A first measure, then every month or quarter, with the same questions so it can be compared.":
+    "Une première mesure, puis chaque mois ou chaque trimestre, avec les mêmes questions pour comparer.",
+  "Is it different from SEO?":
+    "Est-ce différent du SEO ?",
+  "Yes. AI assistants do not rank pages, they synthesise sources. We read those syntheses, and the sources feeding them.":
+    "Oui. Les assistants IA ne classent pas des pages, ils synthétisent des sources. Nous lisons ces synthèses, et les sources qui les nourrissent.",
   "What AI answers when people ask about you.":
     "Ce que les IA répondent quand on leur parle de vous.",
   "More and more searches go through an AI assistant. We question the main models about your brand and your category, the way your customers would, and read what they recommend, cite or leave out.":
     "De plus en plus de recherches passent par un assistant IA. Nous interrogeons les principaux modèles sur votre marque et votre catégorie, comme le feraient vos clients, et lisons ce qu'ils recommandent, citent ou oublient.",
+  "The questions your customers ask, and the models to question.":
+    "Les questions que posent vos clients, et les modèles à interroger.",
+  "Prompting":
+    "Interrogation",
+  "The same questions, put to each model.":
+    "Les mêmes questions, posées à chaque modèle.",
+  "What they recommend, cite, leave out or get wrong.":
+    "Ce qu'ils recommandent, citent, oublient ou déforment.",
+  "Plan":
+    "Plan",
+  "The sources to correct or to feed.":
+    "Les sources à corriger ou à nourrir.",
+  "Get a sample AI listening deliverable, in your sector.":
+    "Recevez un exemple de livrable AI listening, dans votre secteur.",
   "14:32":
     "14:32",
   "Spike on “product recall”, ×4 in 2 h":
@@ -2352,10 +2426,40 @@ window.LicterFR = {
     "Peut-on suivre un événement ponctuel ?",
   "Yes. A trade show, a launch or a speech can be followed live over the period, with a debrief at the end.":
     "Oui. Un salon, un lancement ou une prise de parole peuvent être suivis en direct sur la période, avec un bilan à la fin.",
+  "How fast can you be up and running?":
+    "En combien de temps êtes-vous opérationnels ?",
+  "48 hours to set up the queries, thresholds and alert contacts.":
+    "48 heures pour paramétrer les requêtes, les seuils et les contacts d'alerte.",
+  "The people you name, by email or messaging, with the analyst's qualification and a recommendation.":
+    "Les personnes que vous désignez, par e-mail ou messagerie, avec la qualification de l'analyste et une recommandation.",
   "Knowing what happens while it happens.":
     "Savoir ce qui se passe pendant que ça se passe.",
   "Event, launch, crisis: we follow the conversation live, 24/7, and an analyst alerts you within 15 minutes when something really moves.":
     "Événement, lancement, crise : nous suivons la conversation en direct, 24 h/24, et un analyste vous alerte en 15 minutes quand quelque chose bouge vraiment.",
+  "48 h":
+    "48 h",
+  "Set-up":
+    "Paramétrage",
+  "The queries, the thresholds and the people to alert.":
+    "Les requêtes, les seuils et les personnes à alerter.",
+  "24/7":
+    "24/7",
+  "Watch":
+    "Veille",
+  "The conversation followed continuously, nights and weekends included.":
+    "La conversation suivie en continu, nuits et week-ends compris.",
+  "Alert":
+    "Alerte",
+  "An analyst qualifies the signal before alerting you.":
+    "Un analyste qualifie le signal avant de vous prévenir.",
+  "Weekly":
+    "Hebdo",
+  "Review":
+    "Bilan",
+  "What moved, and what to watch next.":
+    "Ce qui a bougé, et ce qu'il faut surveiller ensuite.",
+  "Get a sample Live listening deliverable, in your sector.":
+    "Recevez un exemple de livrable Live listening, dans votre secteur.",
   "Rising search":
     "Recherche en hausse",
   "“Single-portion recyclable”, +38% over a year":
@@ -2386,10 +2490,28 @@ window.LicterFR = {
     "Est-ce du SEO ?",
   "No, even if your SEO teams use it. We read searches to understand needs, not to rank pages.":
     "Non, même si vos équipes SEO s'en servent. Nous lisons les recherches pour comprendre les besoins, pas pour positionner des pages.",
+  "On which markets?":
+    "Sur quels marchés ?",
+  "All those in your perimeter, in their own language: we read local phrasings, not translations.":
+    "Tous ceux de votre périmètre, dans leur langue : nous lisons les formulations locales, pas des traductions.",
+  "How long for a first read?":
+    "Combien de temps pour une première lecture ?",
+  "About a week after framing.":
+    "Environ une semaine après le cadrage.",
   "What people search for when nobody is watching.":
     "Ce que les gens cherchent quand personne ne les regarde.",
   "Searches on Google, YouTube and Amazon say what people really want to know, before the purchase and after the problem. We read them to spot unmet needs and unanswered questions.":
     "Les recherches sur Google, YouTube et Amazon disent ce que les gens veulent vraiment savoir, avant l'achat et après le problème. Nous les lisons pour repérer les besoins non couverts et les questions sans réponse.",
+  "The markets, the languages and the products to read.":
+    "Les marchés, les langues et les produits à lire.",
+  "Searches on Google, YouTube and Amazon.":
+    "Les recherches sur Google, YouTube et Amazon.",
+  "The questions, the problems and the rising needs.":
+    "Les questions, les problèmes et les besoins qui montent.",
+  "The unmet needs, and what to launch.":
+    "Les besoins non couverts, et ce qu'il faut lancer.",
+  "Get a sample Search listening deliverable, in your sector.":
+    "Recevez un exemple de livrable Search listening, dans votre secteur.",
   "What is said about you, your competitors and your market.":
     "Ce qui se dit sur vous, vos concurrents et votre marché.",
   "Who the people talking about you really are.":
@@ -2426,7 +2548,43 @@ window.LicterFR = {
     "Notre lecture",
   "A format and relay problem, not an awareness one: launch the format people search for, and hand it to the voices the target already follows.":
     "Un problème de format et de relais, pas de notoriété : lancer le format recherché, et le confier aux voix que la cible suit déjà.",
+  "Get a sample deliverable, in your sector.":
+    "Recevez un exemple de livrable, dans votre secteur.",
+  "Which way of listening should we pick?":
+    "Quelle écoute choisir ?",
+  "The one your question calls for. We often combine them, and the first conversation is there to decide it.":
+    "Celle que demande votre question. Nous les combinons souvent, et le premier échange sert justement à le déterminer.",
+  "Do we need to buy a tool or a licence?":
+    "Faut-il acheter un outil ou une licence ?",
+  "No. Our consultants use our platforms: you receive the read, not a licence to run.":
+    "Non. Nos consultants utilisent nos plateformes : vous recevez la lecture, pas une licence à faire tourner.",
+  "In which languages?":
+    "Dans quelles langues ?",
+  "More than twenty, read by analysts who speak them.":
+    "Plus de vingt, lues par des analystes qui les parlent.",
+  "How long for a first answer?":
+    "Combien de temps pour une première réponse ?",
+  "One to two weeks depending on the listening, 48 hours for live monitoring.":
+    "Une à deux semaines selon les écoutes, 48 heures pour une veille en direct.",
   "IN OUR OFFERS":
     "DANS NOS OFFRES",
+  "Get a sample":
+    "Recevoir un exemple",
+  "Chat with Antoine":
+    "Discuter avec Antoine",
+  "Social listening: what is said about your brand | Licter":
+    "Social listening : ce qui se dit sur votre marque | Licter",
+  "Audience listening: who your audiences really are | Licter":
+    "Audience listening : qui sont vraiment vos audiences | Licter",
+  "Influence listening: the voices that actually carry | Licter":
+    "Influence listening : les voix qui portent vraiment | Licter",
+  "AI listening: what AI says about your brand | Licter":
+    "AI listening : ce que les IA disent de votre marque | Licter",
+  "Live listening: the conversation in real time | Licter":
+    "Live listening : la conversation en temps réel | Licter",
+  "Search listening: what people really search for | Licter":
+    "Search listening : ce que les gens cherchent vraiment | Licter",
+  "Expertise: social intelligence, six ways of listening | Licter":
+    "Expertise : la social intelligence, six façons d'écouter | Licter",
   /* ---- end expertise pages ---- */
 };

@@ -17,13 +17,6 @@
   <url><loc>https://www.licter.com/event-luxury.html</loc></url>
   <url><loc>https://www.licter.com/event-toys-games.html</loc></url>
   <url><loc>https://www.licter.com/events.html</loc></url>
-  <url><loc>https://www.licter.com/expertise-ai-listening.html</loc></url>
-  <url><loc>https://www.licter.com/expertise-audience-listening.html</loc></url>
-  <url><loc>https://www.licter.com/expertise-influence-listening.html</loc></url>
-  <url><loc>https://www.licter.com/expertise-live-listening.html</loc></url>
-  <url><loc>https://www.licter.com/expertise-search-listening.html</loc></url>
-  <url><loc>https://www.licter.com/expertise-social-listening.html</loc></url>
-  <url><loc>https://www.licter.com/expertise.html</loc></url>
   <url><loc>https://www.licter.com/guide.html</loc></url>
   <url><loc>https://www.licter.com/legal.html</loc></url>
   <url><loc>https://www.licter.com/offer-nox.html</loc></url>
@@ -47,6 +40,76 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/expertise/ai-listening/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/ai-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-ai-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/ai-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/expertise-ai-listening.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/ai-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-ai-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/ai-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/expertise/audience-listening/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/audience-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-audience-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/audience-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/expertise-audience-listening.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/audience-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-audience-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/audience-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/expertise/influence-listening/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/influence-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-influence-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/influence-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/expertise-influence-listening.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/influence-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-influence-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/influence-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/expertise/live-listening/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/live-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-live-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/live-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/expertise-live-listening.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/live-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-live-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/live-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/expertise/search-listening/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/search-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-search-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/search-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/expertise-search-listening.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/search-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-search-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/search-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/expertise/social-listening/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/social-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-social-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/social-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/expertise-social-listening.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/social-listening/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise-social-listening.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/social-listening/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/expertise/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/" />
+  </url>
+  <url><loc>https://www.licter.com/expertise.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/" />
   </url>
   <url><loc>https://www.licter.com/fr/cas-usage/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/cas-usage/" />

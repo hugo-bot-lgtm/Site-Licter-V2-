@@ -556,6 +556,8 @@ def write_dict(label="offer pages", script="build-offers.py", entries=None):
     entries = NEW if entries is None else entries
     p = ROOT / "js" / "fr.js"
     src = block_re(label).sub("\n", p.read_text())
+    # removing a block left its blank line behind: never more than one in a row
+    src = re.sub(r"\n{3,}", "\n\n", src)
     lines = "\n".join("  %s:\n    %s," % (json.dumps(k, ensure_ascii=False), json.dumps(v, ensure_ascii=False)) for k, v in entries.items())
     block = "\n  /* ---- %s (tools/%s) ---- */\n%s\n  /* ---- end %s ---- */\n" % (label, script, lines, label)
     i = src.rindex("};")

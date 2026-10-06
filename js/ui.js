@@ -1602,9 +1602,9 @@ window.LicterUC = (function () {
    hub, which has six), then "See the other N questions".
    ========================================================================= */
 (function () {
-  if (!document.body.classList.contains("ucp-page") || !window.matchMedia) return;
+  if (!(document.body.classList.contains("ucp-page") || document.body.classList.contains("xepage")) || !window.matchMedia) return;
   var html = document.documentElement, mq = window.matchMedia("(max-width: 720px)");
-  Array.prototype.forEach.call(document.querySelectorAll(".ucp .faq"), function (faq) {
+  Array.prototype.forEach.call(document.querySelectorAll(".ucp .faq, .xepage .of-faq .faq"), function (faq) {
     var items = Array.prototype.slice.call(faq.querySelectorAll(":scope > details"));
     var keep = items.length > 4 ? 2 : 1;
     if (items.length <= keep) return;
@@ -1630,6 +1630,86 @@ window.LicterUC = (function () {
     if (mq.addEventListener) mq.addEventListener("change", apply); else mq.addListener(apply);
     new MutationObserver(label).observe(html, { attributes: true, attributeFilter: ["lang"] });
   });
+})();
+
+/* =========================================================================
+   Use-case and expertise pages: "get a real case" / "an example" (email + sector). MOCK: nothing is sent;
+   wire to the CRM with the case (data-case) and the sector.
+   ========================================================================= */
+(function () {
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  Array.prototype.forEach.call(document.querySelectorAll("form.ucp-lead"), function (form) {
+    var field = form.querySelector('input[type="email"]');
+    var err = form.querySelector(".fld__error");
+    var done = form.parentNode.querySelector(".ucp-lead__done");
+    if (window.LicterLead) {
+      var known = window.LicterLead.get();
+      if (known && EMAIL.test(known)) field.value = known;
+    }
+    field.addEventListener("input", function () {
+      if (!err.hidden) { err.hidden = true; field.setAttribute("aria-invalid", "false"); }
+    });
+    var sector = form.querySelector("select");
+    var sectorErr = form.querySelector(".ucp-lead__sector-err");
+    if (sector) sector.addEventListener("change", function () {
+      if (sectorErr) sectorErr.hidden = true;
+      sector.setAttribute("aria-invalid", "false");
+    });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = field.value.trim(), ok = EMAIL.test(v);
+      field.setAttribute("aria-invalid", ok ? "false" : "true");
+      err.hidden = ok;
+      if (!ok) { field.focus(); return; }
+      /* the sector has to be chosen: a preselected one sent bad data */
+      if (sector && !sector.value) {
+        sector.setAttribute("aria-invalid", "true");
+        if (sectorErr) sectorErr.hidden = false;
+        sector.focus();
+        return;
+      }
+      /* MOCK: send { email: v, case: form.dataset.case, sector: form.sector.value } */
+      if (window.LicterLead) window.LicterLead.set(v);
+      if (window.LicterTrack) window.LicterTrack("form_submit", { form: "real_case", "case": form.dataset.case, sector: form.sector.value });
+      form.hidden = true;
+      done.hidden = false;
+      done.setAttribute("tabindex", "-1");
+      done.focus({ preventScroll: true });
+    });
+  });
+})();
+
+/* =========================================================================
+   Use-case and expertise pages, phones: the two actions pinned to the bottom of the
+   screen once the hero has gone, stepping aside where the page shows them.
+   ========================================================================= */
+(function () {
+  var bar = document.querySelector(".ucp-bar");
+  if (!bar || !("IntersectionObserver" in window)) return;
+  var hero = document.querySelector(".ucp__head, .ucr-hero, .xepage .xh");
+  if (!hero) return;
+  var zones = [document.getElementById("offre"), document.getElementById("book"), document.querySelector(".site-foot")].filter(Boolean);
+  var pastHero = false, inZone = {};
+  if (!document.getElementById("offre")) bar.querySelector('a[href="#offre"]').remove();
+  /* Antoine rides in the bar: the floating launcher steps aside on these pages */
+  var chatBtn = bar.querySelector(".ucp-bar__chat");
+  if (chatBtn) chatBtn.addEventListener("click", function () { if (window.LicterChat) window.LicterChat.open(); });
+  function render() {
+    var show = pastHero && !Object.keys(inZone).some(function (k) { return inZone[k]; });
+    bar.hidden = false;
+    bar.classList.toggle("is-shown", show);
+    bar.setAttribute("aria-hidden", show ? "false" : "true");
+    Array.prototype.forEach.call(bar.querySelectorAll("a, button"), function (a) { a.tabIndex = show ? 0 : -1; });
+  }
+  new IntersectionObserver(function (en) {
+    pastHero = !en[0].isIntersecting && en[0].boundingClientRect.top < 0;
+    render();
+  }).observe(hero);
+  var io = new IntersectionObserver(function (en) {
+    en.forEach(function (e) { inZone[e.target.id || "foot"] = e.isIntersecting; });
+    render();
+  });
+  zones.forEach(function (z) { io.observe(z); });
 })();
 
 /* =========================================================================

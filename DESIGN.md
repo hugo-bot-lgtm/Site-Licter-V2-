@@ -184,6 +184,23 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
 - **Plancher de 12 px partout**, maquettes comprises.
 - **Sur grand écran,** le bouton d'Antoine se réduit à l'avatar une fois le hero passé. Le sommaire a ses propres blocs « Une question, pas un tableau de bord » et ses propres vidéos (Kantar, SEB, Dassault) : aucun doublon de l'accueil. Les pages famille n'ont qu'une vidéo sur téléphone.
 
+### Pages expertise (`tools/build-expertise.py`)
+
+- **Deux langues statiques :** `expertise*.html` à la racine (anglais) et leurs jumelles françaises sous `/fr/expertise/…/`, avec `hreflang`, une URL canonique propre à chaque langue et le texte dans le HTML. Les liens du site vers ces pages pointent vers la version française quand la page est en français (`js/i18n.js`, `translate()` dans `build-usecases.py`).
+- **Ordre d'une sous-page :**
+  1. le hero, avec un exemple, puis les logos clients ;
+  2. « Ce qu'elle entend, et ses limites » ;
+  3. les questions auxquelles elle répond ;
+  4. « Comment ça se passe » (délais) ;
+  5. une interview client liée au sujet ;
+  6. l'aimant « Recevez un exemple de livrable … » (e-mail et secteur) avec le lien vers le guide ;
+  7. les plateformes et les offres ;
+  8. la FAQ (4 questions) ;
+  9. le rappel.
+- **La page principale** a ses logos, l'aimant, et une FAQ de 4 questions.
+- **Le popup du magazine** attend que la section marquée `data-mag-after` soit passée (les questions auxquelles l'écoute répond).
+- **Sur téléphone :** la même barre du bas que les cas d'usage (Antoine, « Recevoir un exemple », « Parler à un consultant »), la FAQ repliée, un seul signal dans l'exemple du hero.
+
 ### Maquettes de livrables (`tools/uc_deliverables.py`)
 
 Chaque cas d'usage montre son livrable sous la forme d'une **vraie page de rapport Licter** : papier blanc dans les deux thèmes, avec une seconde feuille qui dépasse derrière.

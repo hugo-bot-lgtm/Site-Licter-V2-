@@ -7838,7 +7838,7 @@ section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); 
   .ucp-bar__chat img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--line); }
   .ucp-bar__chat i { position: absolute; right: 0; bottom: 1px; width: 11px; height: 11px; border-radius: 50%; background: #2FA36B; box-shadow: 0 0 0 2px var(--bg); }
   .ucp-bar__chat:focus-visible { outline: 2px solid #EAA93D; outline-offset: 3px; }
-  body.ucp-page .lx__launch, body.ucp-page .ppd { display: none; }
+  body.ucp-page .lx__launch, body.ucp-page .ppd, body.xepage .lx__launch, body.xepage .ppd { display: none; }
 
   /* deliverable: the hero already lists what you get; the mock-up shows its top */
   .ucv-dlv .ucr__ticks { display: none; }
@@ -8027,3 +8027,25 @@ html[data-theme="dark"] .dlv::before { background: #DCD8D0; opacity: .5; }
 }
 .dlv-alertcurve .ax { font: 600 13px var(--body-font); }
 .dlv-alertcurve .v { font: 700 13px var(--body-font); fill: #C0442F; }
+
+/* =========================================================
+   Expertise pages: proof, timeline, magnet, 12 px, targets
+   ========================================================= */
+.xepage .ucp__clients { margin-top: clamp(28px, 4vw, 48px); }
+.xe-proof .xe-video { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); column-gap: clamp(20px, 3vw, 40px); row-gap: 6px; align-items: center; max-width: 980px; }
+.xe-proof .ucv-video__shot { grid-row: 1 / span 3; }
+.xe-proof .xe-video__k { align-self: end; font: 700 12px/1.2 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: var(--amber-ink); }
+html[data-theme="dark"] .xe-proof .xe-video__k { color: #EAA93D; }
+.xe-proof .ucv-video__q { font-size: clamp(20px, 2vw, 26px); line-height: 1.3; }
+.xe-proof .ucv-video__who { align-self: start; font-size: 14px; }
+.xe-steps .ucv-time { margin-top: 8px; }
+.xo__demo figcaption span, .xe-sig small, .of-fit__k { font-size: 12px; }
+.xe-others a { min-height: 44px; display: inline-flex; align-items: center; }
+@media (max-width: 720px) {
+  .xe-proof .xe-video { grid-template-columns: 132px minmax(0, 1fr); column-gap: 14px; }
+  .xe-proof .ucv-video__q { font-size: 15px; }
+  .xe-proof .xe-video__k { font-size: 12px; }
+  /* the hero example on a phone: its first signal is enough */
+  .xepage .xe-sig li:nth-child(n+2) { display: none; }
+  .xepage .ucp__clients .wall__caption { white-space: nowrap; }
+}

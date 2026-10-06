@@ -56,8 +56,16 @@ def fr_dict():
 
 DICT = fr_dict()
 
+def expertise_fr(name):
+    """the French twin of an expertise page (tools/build-expertise.py)"""
+    name = name.lstrip("/")
+    return "/fr/expertise/" if name == "expertise.html" else "/fr/expertise/%s/" % name[len("expertise-"):-len(".html")]
+
+
 def translate(fragment):
-    """The same walk as js/i18n.js: text nodes and a few attributes."""
+    """The same walk as js/i18n.js: text nodes and a few attributes; and the
+    links to the expertise pages, which have French twins."""
+    fragment = re.sub(r'href="/?(expertise(?:-[a-z]+-listening)?\.html)"', lambda m: 'href="%s"' % expertise_fr(m.group(1)), fragment)
     def text(m):
         raw = m.group(1)
         key = re.sub(r"\s+", " ", html.unescape(raw)).strip()
@@ -974,10 +982,11 @@ def main():
     root_pages = sorted(p.name for p in ROOT.glob("*.html") if p.name not in ("404.html", "use-cases.html"))
     entries = []
     for name in root_pages:
-        if name == "index.html":
-            continue   # the home goes in with its French twin, below
+        if name == "index.html" or name.startswith("expertise"):
+            continue   # the home and the expertise pages go in with their French twins, below
         entries.append("  <url><loc>%s</loc></url>" % (SITE + "/" + name))
     urls.insert(0, ("/fr/", "/"))
+    urls[1:1] = [(expertise_fr(n), "/" + n) for n in root_pages if n.startswith("expertise")]
     for fr_p, en_p in urls:
         for p in (fr_p, en_p):
             entries.append('''  <url><loc>{s}{p}</loc>

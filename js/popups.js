@@ -284,7 +284,20 @@
   /* the home asks for nothing before its proof is seen: the magazine waits
      until the argument has scrolled by (the demo, or "Why not just a tool?"
      on a phone; and the same 3 s at least); every other page opens it after 3 s */
-  if (document.body.classList.contains("home")) {
+  var after = document.querySelector("[data-mag-after]");
+  if (after && !document.body.classList.contains("home")) {
+    /* a landing page names the section the magazine waits for (expertise
+       pages: once the questions it answers have scrolled by) */
+    var tUp = false, past = false;
+    var go2 = function () { if (tUp && past) auto("mag"); };
+    setTimeout(function () { tUp = true; go2(); }, 3000);
+    var onPast = function () {
+      if (after.getBoundingClientRect().bottom > window.innerHeight * 0.5) return;
+      window.removeEventListener("scroll", onPast);
+      past = true; go2();
+    };
+    window.addEventListener("scroll", onPast, { passive: true });
+  } else if (document.body.classList.contains("home")) {
     var timeUp = false, scrolled = false;
     var go = function () { if (timeUp && scrolled) auto("mag"); };
     setTimeout(function () { timeUp = true; go(); }, 3000);

@@ -239,6 +239,182 @@ HUB = {
 LIST = {x["key"]: x for x in LISTENINGS}
 
 
+# ------------------------------------------------------------------ additions
+# Per listening: how it runs (with its timing), the client interview that fits
+# it, and two more questions. MOCK: timings and answers to be validated.
+EXTRA = {
+    "social": {
+        "voice": "orange",
+        "steps": [(("J0", "Day 0"), ("Cadrage", "Framing"), ("Le périmètre, les marchés, les langues et les sources.", "The perimeter, the markets, the languages and the sources.")),
+                  (("J+2", "Day 2"), ("Collecte", "Collection"), ("Les requêtes paramétrées, le bruit écarté.", "Queries set up, the noise removed.")),
+                  (("J+5", "Day 5"), ("Lecture", "Reading"), ("Un analyste lit les sujets, la tonalité et qui les porte.", "An analyst reads the topics, the tone and who carries them.")),
+                  (("J+7", "Day 7"), ("Restitution", "Readout"), ("Une synthèse, et ce qu'il faut en faire.", "A summary, and what to do with it."))],
+        "faq": [(("Combien de temps avant une première lecture ?", "How long before a first read?"),
+                 ("Environ une semaine après le cadrage, plus vite pour un sujet urgent.", "About a week after framing, faster for an urgent topic.")),
+                (("Faut-il déjà avoir un outil de veille ?", "Do we need a monitoring tool already?"),
+                 ("Non. Nous travaillons avec nos plateformes. Si vous en avez une, nous pouvons aussi la reprendre et la faire parler.",
+                  "No. We work with our own platforms. If you have one, we can also take it over and make it speak."))],
+    },
+    "audience": {
+        "voice": "loreal",
+        "steps": [(("J0", "Day 0"), ("Cadrage", "Framing"), ("Les audiences à profiler, et la décision à éclairer.", "The audiences to profile, and the decision to inform.")),
+                  (("J+3", "Day 3"), ("Profilage", "Profiling"), ("Le panel comportemental fait apparaître les communautés.", "The behavioural panel brings out the communities.")),
+                  (("J+7", "Day 7"), ("Analyse", "Analysis"), ("Affinités, médias et recoupements, lus par un analyste.", "Affinities, media and overlaps, read by an analyst.")),
+                  (("J+10", "Day 10"), ("Restitution", "Readout"), ("Les communautés à prioriser, et comment les toucher.", "The communities to prioritise, and how to reach them."))],
+        "faq": [(("Est-ce conforme au RGPD ?", "Is it GDPR-compliant?"),
+                 ("Oui : uniquement des données publiques, agrégées en communautés, jamais de profils individuels.", "Yes: public data only, aggregated into communities, never individual profiles.")),
+                (("Que fait-on des résultats ?", "What do we do with the results?"),
+                 ("Un plan média, des messages et des créateurs par communauté : la restitution se termine par des recommandations.",
+                  "A media plan, messages and creators for each community: the readout ends with recommendations."))],
+    },
+    "influence": {
+        "voice": "lvmh",
+        "steps": [(("J0", "Day 0"), ("Cadrage", "Framing"), ("La catégorie, l'objectif et les audiences visées.", "The category, the goal and the target audiences.")),
+                  (("J+3", "Day 3"), ("Repérage", "Mapping"), ("Qui lance les sujets, et qui les relaie.", "Who starts topics, and who relays them.")),
+                  (("J+6", "Day 6"), ("Vérification", "Vetting"), ("Recouvrement d'audience, prises de position, risques.", "Audience overlap, past stances, risks.")),
+                  (("J+8", "Day 8"), ("Shortlist", "Shortlist"), ("Une liste classée et argumentée, prête pour l'agence.", "A ranked, argued list, ready for the agency."))],
+        "faq": [(("Comment repérez-vous les risques ?", "How do you spot the risks?"),
+                 ("Nous relisons les prises de position publiques passées et les controverses, et les signalons avant tout contrat.",
+                  "We go through past public stances and controversies, and flag them before any contract.")),
+                (("Faut-il de gros comptes pour être efficace ?", "Do you need big accounts to be effective?"),
+                 ("Non. Le recouvrement avec votre audience compte plus que le nombre d'abonnés : les comptes moyens portent souvent mieux.",
+                  "No. The overlap with your audience matters more than the follower count: mid-sized accounts often carry better."))],
+    },
+    "ai": {
+        "voice": "dassault",
+        "steps": [(("J0", "Day 0"), ("Cadrage", "Framing"), ("Les questions que posent vos clients, et les modèles à interroger.", "The questions your customers ask, and the models to question.")),
+                  (("J+2", "Day 2"), ("Interrogation", "Prompting"), ("Les mêmes questions, posées à chaque modèle.", "The same questions, put to each model.")),
+                  (("J+5", "Day 5"), ("Lecture", "Reading"), ("Ce qu'ils recommandent, citent, oublient ou déforment.", "What they recommend, cite, leave out or get wrong.")),
+                  (("J+7", "Day 7"), ("Plan", "Plan"), ("Les sources à corriger ou à nourrir.", "The sources to correct or to feed."))],
+        "faq": [(("À quelle fréquence mesurez-vous ?", "How often do you measure?"),
+                 ("Une première mesure, puis chaque mois ou chaque trimestre, avec les mêmes questions pour comparer.",
+                  "A first measure, then every month or quarter, with the same questions so it can be compared.")),
+                (("Est-ce différent du SEO ?", "Is it different from SEO?"),
+                 ("Oui. Les assistants IA ne classent pas des pages, ils synthétisent des sources. Nous lisons ces synthèses, et les sources qui les nourrissent.",
+                  "Yes. AI assistants do not rank pages, they synthesise sources. We read those syntheses, and the sources feeding them."))],
+    },
+    "live": {
+        "voice": "sncf",
+        "steps": [(("48 h", "48 h"), ("Paramétrage", "Set-up"), ("Les requêtes, les seuils et les personnes à alerter.", "The queries, the thresholds and the people to alert.")),
+                  (("24/7", "24/7"), ("Veille", "Watch"), ("La conversation suivie en continu, nuits et week-ends compris.", "The conversation followed continuously, nights and weekends included.")),
+                  (("15 min", "15 min"), ("Alerte", "Alert"), ("Un analyste qualifie le signal avant de vous prévenir.", "An analyst qualifies the signal before alerting you.")),
+                  (("Hebdo", "Weekly"), ("Bilan", "Review"), ("Ce qui a bougé, et ce qu'il faut surveiller ensuite.", "What moved, and what to watch next."))],
+        "faq": [(("En combien de temps êtes-vous opérationnels ?", "How fast can you be up and running?"),
+                 ("48 heures pour paramétrer les requêtes, les seuils et les contacts d'alerte.", "48 hours to set up the queries, thresholds and alert contacts.")),
+                (("Qui reçoit les alertes ?", "Who receives the alerts?"),
+                 ("Les personnes que vous désignez, par e-mail ou messagerie, avec la qualification de l'analyste et une recommandation.",
+                  "The people you name, by email or messaging, with the analyst's qualification and a recommendation."))],
+    },
+    "search": {
+        "voice": "seb",
+        "steps": [(("J0", "Day 0"), ("Cadrage", "Framing"), ("Les marchés, les langues et les produits à lire.", "The markets, the languages and the products to read.")),
+                  (("J+2", "Day 2"), ("Collecte", "Collection"), ("Les recherches sur Google, YouTube et Amazon.", "Searches on Google, YouTube and Amazon.")),
+                  (("J+5", "Day 5"), ("Lecture", "Reading"), ("Les questions, les problèmes et les besoins qui montent.", "The questions, the problems and the rising needs.")),
+                  (("J+7", "Day 7"), ("Restitution", "Readout"), ("Les besoins non couverts, et ce qu'il faut lancer.", "The unmet needs, and what to launch."))],
+        "faq": [(("Sur quels marchés ?", "On which markets?"),
+                 ("Tous ceux de votre périmètre, dans leur langue : nous lisons les formulations locales, pas des traductions.",
+                  "All those in your perimeter, in their own language: we read local phrasings, not translations.")),
+                (("Combien de temps pour une première lecture ?", "How long for a first read?"),
+                 ("Environ une semaine après le cadrage.", "About a week after framing."))],
+    },
+}
+HUB_FAQ = [
+    (("Quelle écoute choisir ?", "Which way of listening should we pick?"),
+     ("Celle que demande votre question. Nous les combinons souvent, et le premier échange sert justement à le déterminer.",
+      "The one your question calls for. We often combine them, and the first conversation is there to decide it.")),
+    (("Faut-il acheter un outil ou une licence ?", "Do we need to buy a tool or a licence?"),
+     ("Non. Nos consultants utilisent nos plateformes : vous recevez la lecture, pas une licence à faire tourner.",
+      "No. Our consultants use our platforms: you receive the read, not a licence to run.")),
+    (("Dans quelles langues ?", "In which languages?"),
+     ("Plus de vingt, lues par des analystes qui les parlent.", "More than twenty, read by analysts who speak them.")),
+    (("Combien de temps pour une première réponse ?", "How long for a first answer?"),
+     ("Une à deux semaines selon les écoutes, 48 heures pour une veille en direct.", "One to two weeks depending on the listening, 48 hours for live monitoring.")),
+]
+for _x in LISTENINGS:
+    _x["faq"] = _x["faq"] + EXTRA[_x["key"]]["faq"]
+
+S.update({
+    "how_runs": ("Comment ça se passe", "How it runs"),
+    "how_note": ("Durées indicatives pour une première lecture.", "Indicative timings for a first read."),
+    "proof_k": ("Dans leurs mots", "In their words"),
+    "proof_t": ("Ils en parlent", "They talk about it"),
+    "magnet_k": ("Et chez vous ?", "And for you?"),
+    "magnet_t": ("Recevez un exemple de livrable %s, dans votre secteur.", "Get a sample %s deliverable, in your sector."),
+    "magnet_t_hub": ("Recevez un exemple de livrable, dans votre secteur.", "Get a sample deliverable, in your sector."),
+    "magnet_d": ("Anonymisé, envoyé par un consultant sous 48 h : ce que vous recevriez vraiment.", "Anonymised, sent by a consultant within 48 hours: what you would actually receive."),
+    "magnet_email": ("E-mail professionnel", "Work email"),
+    "magnet_sector": ("Votre secteur", "Your sector"),
+    "magnet_pick": ("Choisir…", "Choose…"),
+    "magnet_btn": ("Recevoir l'exemple", "Get the sample"),
+    "magnet_err": ("Indiquez un e-mail professionnel valide.", "Enter a valid work email."),
+    "magnet_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
+    "magnet_consent": ("Votre e-mail sert uniquement à vous répondre.", "We use your email only to reply to you."),
+    "privacy": ("Politique de confidentialité", "Privacy policy"),
+    "magnet_done": ("C'est noté. Un consultant vous envoie un exemple sous 48 h.", "Noted. A consultant sends you a sample within 48 hours."),
+    "magnet_alt": ("Plutôt lire d'abord ?", "Rather read first?"),
+    "magnet_alt_link": ("Le guide des 12 questions", "The guide to the 12 questions"),
+    "bar_offer": ("Recevoir un exemple", "Get a sample"),
+    "bar_call": ("Parler à un consultant", "Talk to a consultant"),
+    "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
+    "hub_faq_t": ("Questions fréquentes", "Frequently asked questions"),
+})
+# French slugs of the static twins
+FR_PATH = {"expertise.html": "/fr/expertise/"}
+for _x in LISTENINGS:
+    FR_PATH[_x["file"]] = "/fr/expertise/%s/" % _x["file"][len("expertise-"):-len(".html")]
+
+
+
+# ------------------------------------------------------------------ new blocks
+def logos():
+    """the client logo wall, as on the use-case pages (English here)"""
+    return U.clients(EN)
+
+
+def steps_block(x):
+    e = EXTRA[x["key"]]
+    lis = "".join('<li><span class="ucv-day">%s</span><b>%s</b><p>%s</p></li>' % (t(d), t(n), t(p_)) for d, n, p_ in e["steps"])
+    return ('  <section class="ucp ucv-how xe-steps">\n    <div class="shell">\n'
+            '      <div class="xs__head"><h2 class="xs__title">%s</h2></div>\n'
+            '      <ol class="ucv-time">%s</ol>\n      <p class="ucv-note">%s</p>\n    </div>\n  </section>') % (
+        t(S["how_runs"]), lis, t(S["how_note"]))
+
+
+def proof_block(x):
+    vid, time, quote, brand, who = C.VOICES[EXTRA[x["key"]]["voice"]]
+    q = ("« %s »" % quote[FR], "“%s”" % quote[EN])
+    return ('  <section class="ucp xe-proof">\n    <div class="shell">\n'
+            '      <a class="ucv-video xe-video" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener">\n'
+            '        <span class="ucv-video__shot"><img src="https://i.ytimg.com/vi_webp/%s/hqdefault.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">%s</span></span>\n'
+            '        <span class="xe-video__k">%s</span>\n'
+            '        <span class="ucv-video__q">%s</span>\n'
+            '        <span class="ucv-video__who"><b>%s</b> · %s</span>\n'
+            '      </a>\n    </div>\n  </section>') % (vid, vid, time, t(S["proof_k"]), t(q), html.escape(brand), html.escape(who))
+
+
+def magnet_block(key, title):
+    opts = '<option value="" disabled selected>%s</option>' % t(S["magnet_pick"]) + "".join('<option>%s</option>' % t(x) for x in U.SECTORS)
+    return ('  <!-- MOCK: sends nothing yet (js/ui.js, .ucp-lead); wire to the CRM with the listening and the sector. -->\n'
+            '  <section class="ucp ucp--cta" id="offre">\n    <div class="shell">\n      <div class="ucp__cta">\n'
+            '        <div class="ucp__cta-copy">\n          <p class="ucp__cta-k">%s</p>\n          <h2 class="ucp__cta-t">%s</h2>\n          <p class="ucp__cta-d">%s</p>\n        </div>\n'
+            '        <form class="ucp-lead" data-case="%s" novalidate>\n          <div class="ucp-lead__row">\n'
+            '            <label class="ucp-lead__f"><span>%s</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>\n'
+            '            <label class="ucp-lead__f"><span>%s</span><select class="fld__input" name="sector" required>%s</select></label>\n'
+            '          </div>\n          <button class="btn btn--primary" type="submit">%s <span aria-hidden="true">→</span></button>\n'
+            '          <p class="fld__error" hidden>%s</p>\n          <p class="fld__error ucp-lead__sector-err" hidden>%s</p>\n'
+            '          <p class="consent">%s <a href="privacy.html">%s</a>.</p>\n        </form>\n'
+            '        <p class="ucp-lead__alt">%s <a href="guide.html">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
+            '        <p class="ucp-lead__done" role="status" hidden>%s</p>\n      </div>\n    </div>\n  </section>') % (
+        t(S["magnet_k"]), title, t(S["magnet_d"]), key, t(S["magnet_email"]), t(S["magnet_sector"]), opts, t(S["magnet_btn"]),
+        t(S["magnet_err"]), t(S["magnet_pick_err"]), t(S["magnet_consent"]), t(S["privacy"]), t(S["magnet_alt"]), t(S["magnet_alt_link"]), t(S["magnet_done"]))
+
+
+def bar():
+    return ('<div class="ucp-bar" aria-hidden="true" hidden>\n'
+            '  <button class="ucp-bar__chat" type="button" tabindex="-1" aria-label="%s"><img src="/assets/img/team/founder-antoine-160.webp" alt="" width="44" height="44" /><i aria-hidden="true"></i></button>\n'
+            '  <a class="btn btn--primary" href="#offre" tabindex="-1">%s</a>\n'
+            '  <a class="btn btn--ghost" href="#book" tabindex="-1">%s</a>\n</div>') % (a(S["bar_chat"]), t(S["bar_offer"]), t(S["bar_call"]))
+
 # ------------------------------------------------------------------ blocks
 def uc_link(key):
     """a use case, linked in the visitor's language (js/i18n.js swaps it)"""
@@ -293,6 +469,7 @@ def listening_body(x, offers_html):
         </figure>
       </div>
     </div>
+{logos()}
   </section>
 
   <section class="of-fit">
@@ -305,12 +482,18 @@ def listening_body(x, offers_html):
     </div>
   </section>
 
-  <section class="xw" id="answers">
+  <section class="xw" id="answers" data-mag-after>
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">{t(S["answers_t"])}</h2></div>
       <ul class="xw__list">{answers}</ul>
     </div>
   </section>
+
+{steps_block(x)}
+
+{proof_block(x)}
+
+{magnet_block("xp-" + x["key"], t((S["magnet_t"][0] % x["name"][0], S["magnet_t"][1] % x["name"][1])))}
 
   <section class="of-steps xe-how">
     <div class="shell">
@@ -356,14 +539,24 @@ def hub_body(offers_html):
         <ol class="xe-six">{six}</ol>
       </nav>
     </div>
+{logos()}
   </section>
 
-  <section class="of-fit xe-ex">
+  <section class="of-fit xe-ex" data-mag-after>
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">{t(HUB["ex_t"])}</h2></div>
       <p class="xe-ex__q">{t(HUB["ex_q"])}</p>
       <ul class="xe-ex__list">{ex}</ul>
       <p class="xe-ex__read"><span>{t(HUB["ex_read_k"])}</span>{t(HUB["ex_read"])}</p>
+    </div>
+  </section>
+
+{magnet_block("xp-hub", t(S["magnet_t_hub"]))}
+
+  <section class="of-faq">
+    <div class="shell">
+      <div class="xs__head"><h2 class="xs__title">{t(S["hub_faq_t"])}</h2></div>
+      <div class="faq">{"".join("<details><summary>%s</summary><p>%s</p></details>" % (t(q), t(r)) for q, r in HUB_FAQ)}</div>
     </div>
   </section>
 
@@ -376,30 +569,61 @@ def book(title, offers_html):
     return re.sub(r'<h2 class="block__title">.*?</h2>', '<h2 class="block__title">%s</h2>' % t(title), m.group(0), count=1)
 
 
-def ld(file, name, desc, crumbs_, faq=None):
-    url = "%s/%s" % (SITE, file)
+def ld(file, name, desc, crumbs_, faq=None, lang=EN):
+    url = SITE + FR_PATH[file] if lang == FR else "%s/%s" % (SITE, file)
     out = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-        {"@type": "ListItem", "position": i + 1, "name": n, "item": SITE + "/" + f} for i, (n, f) in enumerate(crumbs_)]},
+        {"@type": "ListItem", "position": i + 1, "name": n, "item": SITE + (("/fr/" if f == "" else FR_PATH.get(f, "/" + f)) if lang == FR else "/" + f)} for i, (n, f) in enumerate(crumbs_)]},
         {"@context": "https://schema.org", "@type": "Service", "name": name, "description": desc, "provider": U.ORG, "url": url, "areaServed": "Worldwide"}]
     if faq:
         out.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-            {"@type": "Question", "name": q[EN], "acceptedAnswer": {"@type": "Answer", "text": r[EN]}} for q, r in faq]})
+            {"@type": "Question", "name": U.typo(q[lang], lang), "acceptedAnswer": {"@type": "Answer", "text": U.typo(r[lang], lang)}} for q, r in faq]})
     return "\n".join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False) for x in out)
 
 
-def write(file, seo_title, seo_desc, body, ld_tags, offers_html):
+def write(file, seo_title, seo_desc, body, ld_tags, offers_html, ld_fr=""):
+    """the English page at the root and its French twin under /fr/expertise/,
+    both with their text in the HTML (Google reads each in its language)"""
+    fr_url = FR_PATH[file]
+    alts = ('<link rel="alternate" hreflang="fr" href="%s%s" />\n<link rel="alternate" hreflang="en" href="%s/%s" />\n'
+            '<link rel="alternate" hreflang="x-default" href="%s/%s" />\n') % (SITE, fr_url, SITE, file, SITE, file)
     head = offers_html[:offers_html.index("</head>")]
     title, desc = html.escape(seo_title[EN]), html.escape(seo_desc[EN])
     head = re.sub(r"<title>.*?</title>", "<title>%s</title>" % title, head, flags=re.S)
     head = re.sub(r'<meta name="description" content="[^"]*" />', '<meta name="description" content="%s" />' % desc, head)
     head = re.sub(r'<meta property="og:title" content="[^"]*" />', '<meta property="og:title" content="%s" />' % title, head)
     head = re.sub(r'<meta property="og:description" content="[^"]*" />', '<meta property="og:description" content="%s" />' % desc, head)
-    head = head.replace('<meta name="twitter:card"', '<link rel="canonical" href="%s/%s" />\n<meta name="twitter:card"' % (SITE, file), 1)
-    head += ld_tags + "\n"
+    head = head.replace('<meta name="twitter:card"', '<link rel="canonical" href="%s/%s" />\n%s<meta name="twitter:card"' % (SITE, file, alts), 1)
+    head = re.sub(r'<html[^>]*>', '<html lang="en" data-i18n-static data-alt-fr="%s" data-alt-en="/%s">' % (fr_url, file), head, count=1)
+    en_head = head + ld_tags + "\n"
     main0, main1 = offers_html.index('<main id="content">'), offers_html.index("</main>") + len("</main>")
     shell = offers_html[offers_html.index("</head>"):main0] + "%s" + offers_html[main1:]
     shell = shell.replace('<body class="xpage">', '<body class="xpage xepage">', 1)
-    (ROOT / file).write_text("<!-- Generated by tools/build-expertise.py: edit that file, not this one. -->\n" + head + shell % body)
+    page = en_head + shell % body
+    page = page.replace("</main>", "</main>\n\n" + bar(), 1)
+    # 1. English: static, links to the use cases in English, no dictionary
+    en = re.sub(r'href="(/fr/cas-usage/[^"]*)" data-en="([^"]*)"', r'href="\2" data-fr="\1"', page)
+    en = re.sub(r'\s*<script src="(?:/)?js/fr\.js[^"]*"></script>', "", en)
+    (ROOT / file).write_text("<!-- Generated by tools/build-expertise.py: edit that file, not this one. -->\n" + en)
+    # 2. French: the same page, translated in the HTML
+    fr = page
+    fr = re.sub(r'<html[^>]*>', '<html lang="fr" data-i18n-static data-alt-fr="%s" data-alt-en="/%s">' % (fr_url, file), fr, count=1)
+    ft, fd = html.escape(U.typo(seo_title[FR], FR)), html.escape(U.typo(seo_desc[FR], FR))
+    fr = re.sub(r"<title>.*?</title>", "<title>%s</title>" % ft, fr, count=1, flags=re.S)
+    for pat, val in ((r'<meta name="description" content="[^"]*" />', '<meta name="description" content="%s" />' % fd),
+                     (r'<meta property="og:title" content="[^"]*" />', '<meta property="og:title" content="%s" />' % ft),
+                     (r'<meta property="og:description" content="[^"]*" />', '<meta property="og:description" content="%s" />' % fd)):
+        fr = re.sub(pat, val, fr, count=1)
+    fr = fr.replace('<link rel="canonical" href="%s/%s" />' % (SITE, file), '<link rel="canonical" href="%s%s" />' % (SITE, fr_url), 1)
+    fr = fr.replace(ld_tags, ld_fr or ld_tags, 1)
+    fr = re.sub(r'(href|src)="(?!https?:|/|#|mailto:|data:)([^"]+)"', r'\1="/\2"', fr)
+    fr = re.sub(r'srcset="([^"]+)"', lambda m: 'srcset="%s"' % ", ".join(
+        (q if q.startswith(("/", "http")) else "/" + q) for q in (y.strip() for y in m.group(1).split(","))), fr)
+    b0, b1 = fr.index("<body"), fr.index("</body>")
+    fr = fr[:b0] + U.translate(fr[b0:b1]).replace(">Skip to content<", ">Aller au contenu<") + fr[b1:]
+    fr = fr.replace('placeholder="name@company.com"', 'placeholder="nom@entreprise.com"')
+    out = ROOT / fr_url.strip("/") / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("<!-- Generated by tools/build-expertise.py from the same source as %s: edit that script. -->\n" % file + fr)
 
 
 # the icons of the menu (js/ui.js), as inline SVG for the overview
@@ -415,16 +639,29 @@ def main():
             ICON_SVG[k] = m.group(1)
     O.NEW.clear()
     offers_html = (ROOT / "offers.html").read_text()
+    pages = []
     for x in LISTENINGS:
-        write(x["file"], x["seo_title"], x["seo_desc"], listening_body(x, offers_html),
-              ld(x["file"], x["name"][EN], x["seo_desc"][EN], [("Home", ""), ("Expertise", "expertise.html"), (x["name"][EN], x["file"])], x["faq"]),
-              offers_html)
-    write(HUB["file"], HUB["seo_title"], HUB["seo_desc"], hub_body(offers_html),
-          ld(HUB["file"], "Social intelligence", HUB["seo_desc"][EN], [("Home", ""), ("Expertise", "expertise.html")]), offers_html)
-    for k in ("menu_label", "menu_aside", "all", "foot_link"):
+        body = listening_body(x, offers_html)
+        crumbs_ = [("Home", ""), ("Expertise", "expertise.html"), (x["name"][EN], x["file"])]
+        crumbs_fr = [("Accueil", ""), ("Expertise", "expertise.html"), (x["name"][FR], x["file"])]
+        pages.append((x["file"], x["seo_title"], x["seo_desc"], body,
+                      ld(x["file"], x["name"][EN], x["seo_desc"][EN], crumbs_, x["faq"]),
+                      ld(x["file"], x["name"][FR], U.typo(x["seo_desc"][FR], FR), crumbs_fr, x["faq"], FR)))
+    body = hub_body(offers_html)
+    pages.append((HUB["file"], HUB["seo_title"], HUB["seo_desc"], body,
+                  ld(HUB["file"], "Social intelligence", HUB["seo_desc"][EN], [("Home", ""), ("Expertise", "expertise.html")], HUB_FAQ),
+                  ld(HUB["file"], "Social intelligence", U.typo(HUB["seo_desc"][FR], FR), [("Accueil", ""), ("Expertise", "expertise.html")], HUB_FAQ, FR)))
+    for k in ("menu_label", "menu_aside", "all", "foot_link", "bar_offer", "bar_call", "bar_chat"):
         t(S[k])
+    for x in LISTENINGS + [HUB]:
+        t(x["seo_title"])
     O.write_dict("expertise pages", "build-expertise.py", O.NEW)
-    print("%d expertise pages written, %d strings in js/fr.js" % (len(LISTENINGS) + 1, len(O.NEW)))
+    # the dictionary now holds every string of these pages: translate them
+    U.DICT.update(U.fr_dict())
+    U.DICT.update(O.NEW)
+    for file, st, sd, body, ld_en, ld_fr in pages:
+        write(file, st, sd, body, ld_en, offers_html, ld_fr)
+    print("%d expertise pages written in English and French, %d strings in js/fr.js" % (len(pages), len(O.NEW)))
 
 
 if __name__ == "__main__":

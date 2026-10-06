@@ -66,6 +66,14 @@
       });
     }
 
+    /* the expertise pages have French twins too (tools/build-expertise.py) */
+    if (dict === FR) {
+      Array.prototype.forEach.call(root.querySelectorAll ? root.querySelectorAll('a[href*="expertise"]') : [], function (a) {
+        var m = /^\/?(expertise(?:-([a-z]+-listening))?)\.html(#.*)?$/.exec(a.getAttribute("href") || "");
+        if (m) a.setAttribute("href", "/fr/expertise/" + (m[2] ? m[2] + "/" : "") + (m[3] || ""));
+      });
+    }
+
     /* attributes that are read by users too */
     Array.prototype.forEach.call(root.querySelectorAll("[placeholder]"), function (el) {
       var k = el.getAttribute("placeholder").trim();

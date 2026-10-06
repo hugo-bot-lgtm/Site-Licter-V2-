@@ -410,7 +410,7 @@
   }
   /* use-case pages, large screens: once the hero is past, the launcher keeps
      only Antoine's face, so it never sits over the content */
-  var ucHero = document.body.classList.contains("ucp-page") && document.querySelector(".ucp__head, .ucr-hero");
+  var ucHero = (document.body.classList.contains("ucp-page") || document.body.classList.contains("xepage")) && document.querySelector(".ucp__head, .ucr-hero, .xepage .xh");
   if (ucHero && "IntersectionObserver" in window) {
     new IntersectionObserver(function (e) { root.classList.toggle("lx--compact", !e[0].isIntersecting); }).observe(ucHero);
   }
