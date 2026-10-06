@@ -144,6 +144,83 @@ window.LicterFR = {
     "question.",
   "Why Licter | The social data intelligence consultancy":
     "Pourquoi Licter | Le cabinet de social data intelligence",
+  "50+ organisations read their market with Licter.":
+    "50+ organisations lisent leur marché avec Licter.",
+  "The full index":
+    "L'index complet",
+  "Index of clients":
+    "Index des clients",
+  "+ 41 others":
+    "+ 41 autres",
+  "Licter in figures":
+    "Licter en chiffres",
+  "Organisations":
+    "Organisations",
+  "Projects since 2022":
+    "Projets depuis 2022",
+  "Languages monitored":
+    "Langues suivies",
+  "Sectors":
+    "Secteurs",
+  "NEXT":
+    "ET MAINTENANT",
+  "Watch the interview · ":
+    "Voir l'entretien · ",
+  "Watch the interview":
+    "Voir l'entretien",
+  /* clients, studio page (October 2026) */
+  "50+ teams":
+    "50+ équipes",
+  "already":
+    "écoutent",
+  "listen.":
+    "déjà.",
+  "160+ projects":
+    "160+ projets",
+  "Since 2022":
+    "Depuis 2022",
+  "See who":
+    "Voir qui",
+  "Consumer groups, retailers, banks, institutions and media. Different mandates, one source: the behaviour of three billion consumers.":
+    "Groupes de grande consommation, distributeurs, banques, institutions et médias. Des missions différentes, une même source : le comportement de trois milliards de consommateurs.",
+  "A shared panel serves very different mandates. That is why the list runs from luxury and FMCG to public institutions and broadcasters.":
+    "Un même panel sert des missions très différentes. C'est pourquoi la liste va du luxe et de la grande consommation aux institutions publiques et aux médias.",
+  "All":
+    "Tous",
+  "Beauty & fashion":
+    "Beauté & mode",
+  "Consumer goods & retail":
+    "Grande consommation & distribution",
+  "Services & finance":
+    "Services & finance",
+  "Institutions & media":
+    "Institutions & médias",
+  "Filter by sector":
+    "Filtrer par secteur",
+  "sectors, one method":
+    "secteurs, une méthode",
+  "ON VIDEO":
+    "EN VIDÉO",
+  "Impact of an event, a launch or a spokesperson, measured on the conversation, not on the media plan.":
+    "L'impact d'un événement, d'un lancement ou d'un porte-parole, mesuré sur la conversation, pas sur le plan média.",
+  "Add":
+    "Ajoutez",
+  "your":
+    "votre",
+  "name to the list.":
+    "nom à la liste.",
+  "We will show you the read we ran for an organisation that looks like yours: sector, size, and the question they arrived with.":
+    "Nous vous montrerons l'analyse menée pour une organisation qui vous ressemble : secteur, taille, et la question qu'elle avait en arrivant.",
+  "Our clients | Licter, social data intelligence consultancy":
+    "Nos clients | Licter, cabinet de social data intelligence",
+  "Communication use cases":
+    "Cas d'usage Communication",
+  "Brand health use cases":
+    "Cas d'usage Santé de marque",
+  "Audience use cases":
+    "Cas d'usage Audiences",
+  "Innovation use cases":
+    "Cas d'usage Innovation",
   /* positioning: a consultancy, found as an agency (October 2026) */
   "Social data intelligence consultancy":
     "Cabinet de conseil en social data intelligence",

@@ -397,3 +397,13 @@ Chaque citation reprend **mot pour mot** la phrase incrustée sur la miniature d
 7. **l'équipe** : la photo de groupe en pleine largeur avec un léger parallaxe, puis les portraits qui défilent ;
 8. **l'appel final** en très grande capitale, avec le formulaire.
 La taille des grands titres suit la largeur de leur colonne (`cqi`) pour tenir en français comme en anglais. Tout reste immobile si l'utilisateur réduit les animations.
+
+### Clients (`clients.html`) : une page éditoriale
+
+Une direction différente de « Pourquoi Licter » : le registre d'un rapport annuel. Styles `.cl-*`, script « Clients » dans `js/ui.js`.
+1. **Le hero** : la promesse en titre posé, à droite une planche « Index des clients » (9 logos en grille au filet, ombre ambre décalée) ;
+2. **un registre de chiffres** entre deux filets (organisations, projets, langues, secteurs) ;
+3. **l'index des 16 clients**, numérotés, en grille au filet, logos en gris qui prennent leur couleur au survol, avec un filtre par secteur (Beauté & mode, Grande consommation & distribution, Services & finance, Institutions & médias) ;
+4. **les entretiens vidéo** : la liste des intervenants à gauche, une seule citation à la une avec sa vidéo ;
+5. **les quatre questions** en grille 2 × 2, chacune avec une photo de l'équipe en noir et blanc qui prend sa couleur au survol ;
+6. **l'appel final** dans un panneau navy filet ambre.

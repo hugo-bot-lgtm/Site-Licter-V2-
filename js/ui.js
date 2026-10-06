@@ -2301,3 +2301,27 @@ window.LicterUC = (function () {
     }, { passive: true });
   }
 })();
+
+/* =========================================================================
+   Clients (.cl): the sector filter on the index, and the interview picker
+   ========================================================================= */
+(function () {
+  "use strict";
+  var root = document.querySelector(".cl");
+  if (!root) return;
+  var tabs = root.querySelectorAll(".cl-tab"), cells = root.querySelectorAll(".cl-cell");
+  tabs.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var f = b.getAttribute("data-f");
+      tabs.forEach(function (o) { o.classList.toggle("is-on", o === b); o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+      cells.forEach(function (c) { c.classList.toggle("is-dim", f !== "all" && c.getAttribute("data-s") !== f); });
+    });
+  });
+  var picks = root.querySelectorAll(".cl-v__pick"), slides = root.querySelectorAll(".cl-v__slide");
+  picks.forEach(function (p, k) {
+    p.addEventListener("click", function () {
+      picks.forEach(function (o, j) { o.classList.toggle("is-on", j === k); o.setAttribute("aria-pressed", j === k ? "true" : "false"); });
+      slides.forEach(function (s, j) { s.hidden = j !== k; s.classList.toggle("is-on", j === k); });
+    });
+  });
+})();
