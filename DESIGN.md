@@ -192,7 +192,7 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
   2. **les quatre cartes**, façon page de tarifs : papier clair dans les deux thèmes, une couleur par offre (Social Insights ambre, Vigie 360 rouge, SLaaS bleu ardoise, Nox vert), nom, promesse, vignette de livrable, « Pour vous si », trois éléments reçus, modèle, « Grille sur demande », « Voir l'offre ». Sur grand écran, les lignes des cartes s'alignent (`subgrid`) ; sur mobile, elles défilent de côté. Aucune offre n'est mise en avant ;
   3. le comparatif détaillé, replié (`<details>`, `#compare`) ;
   4. ce qui ne change pas, quelle que soit l'offre (consultant dédié, langues, livrables à vous, lancement) ;
-  5. trois interviews clients ;
+  5. trois interviews clients (AXA, Dassault Systèmes, SNCF) ;
   6. l'aimant « Recevoir la grille tarifaire » (`#offre`) ;
   7. la FAQ ;
   8. le rappel.
@@ -201,7 +201,7 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
   2. « Est-ce pour vous ? » : pour vous si, et pas le bon choix si, chaque ligne menant à l'offre qui convient mieux ;
   3. **ce que vous recevez**, liste numérotée à côté d'un livrable réel en maquette (collant au défilement), relié à son cas d'usage ;
   4. comment ça se passe ;
-  5. une interview en bandeau ;
+  5. une interview en bandeau, choisie pour son propos (Vigie 360 : AXA, Social Insights : Dassault Systèmes, SLaaS : SNCF, Nox : Orange) ;
   6. l'aimant « Recevez un exemple… » propre à l'offre ;
   7. la FAQ (6 questions, dont le démarrage et la propriété des livrables) ;
   8. les trois autres offres en mini-cartes (défilement de côté sur mobile) et le lien vers le comparatif ;
@@ -364,3 +364,7 @@ Tout nouveau formulaire ou aimant envoie son événement.
 
 - La police Aiglon est préchargée avec `?v=`, alors que le CSS la charge sans : elle est téléchargée deux fois.
 - Les formulaires ne sont pas branchés au CRM.
+
+### Citations des interviews
+
+Chaque citation reprend **mot pour mot** la phrase incrustée sur la miniature de sa vidéo YouTube : le visiteur voit les deux côte à côte. Elles vivent dans `VOICES` (`tools/uc_content.py`) pour les pages générées, dans `js/voices.js` et `index.html` pour l'accueil, et leur traduction dans `js/fr.js`. Une nouvelle interview : recopier la phrase de la miniature, ne jamais la résumer.

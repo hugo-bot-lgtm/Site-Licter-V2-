@@ -85,7 +85,7 @@ S = {
 
 OFFERS = [
     {
-        "key": "social-insights", "file": "offer-social-insights.html", "voice": "loreal", "n": 1,
+        "key": "social-insights", "file": "offer-social-insights.html", "voice": "dassault", "n": 1,
         "name": ("Social Insights", "Social Insights"),
         "short": ("Des études à la demande, lues par des experts.", "Studies on demand, read by experts."),
         "seo_title": ("Social Insights : études social data à la demande | Licter",
@@ -144,7 +144,7 @@ OFFERS = [
         "book_t": ("Quelle serait votre première question ?", "What would you ask first?"),
     },
     {
-        "key": "vigie", "file": "offer-vigie-360.html", "voice": "sncf", "n": 2,
+        "key": "vigie", "file": "offer-vigie-360.html", "voice": "axa", "n": 2,
         "name": ("Vigie 360", "Vigie 360"),
         "short": ("Alerté en 15 minutes, 24 h/24.", "Alerted in 15 minutes, 24/7."),
         "seo_title": ("Vigie 360 : veille et alertes 24/7 en 15 minutes | Licter",
@@ -198,15 +198,15 @@ OFFERS = [
                  ("Par e-mail, SMS ou messagerie, selon le niveau. Une alerte de crise s'accompagne aussi d'un appel.",
                   "By email, text or messaging, depending on the level. A crisis-level alert also comes with a phone call.")),
                 (("Quelles langues couvrez-vous ?", "Which languages do you cover?"),
-                 ("Plus de vingt, lues par des analystes natifs, dont l'anglais, l'espagnol, le chinois, l'arabe et l'hindi.",
-                  "More than twenty, read by native analysts, including English, Spanish, Chinese, Arabic and Hindi.")),
+                 ("Plus de vingt, dont l'anglais, l'espagnol, le chinois, l'arabe et l'hindi.",
+                  "More than twenty, including English, Spanish, Chinese, Arabic and Hindi.")),
                 (("Vigie 360 peut-elle couvrir nos dirigeants ?", "Can Vigie 360 cover our executives?"),
                  ("Oui. Les dirigeants sont souvent les premiers exposés ; nous suivons leurs mentions avec les mêmes niveaux d'alerte que la marque.",
                   "Yes. Executives are often the first exposed; we follow their mentions with the same alert levels as the brand."))],
         "book_t": ("Que devrions-nous surveiller pour vous ?", "What should we be watching for you?"),
     },
     {
-        "key": "slaas", "file": "offer-slaas.html", "voice": "seb", "n": 3,
+        "key": "slaas", "file": "offer-slaas.html", "voice": "sncf", "n": 3,
         "name": ("Social Listening as a Service", "Social Listening as a Service"),
         "short": ("Votre plateforme, enfin utilisée.", "Your platform, finally used."),
         "seo_title": ("Social Listening as a Service : faire servir votre plateforme | Licter",
@@ -502,7 +502,6 @@ S.update({
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
     "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
     "diag3": ("Le diagnostic en 3 minutes", "The 3-minute diagnostic"),
-    "badge": ("langues lues par des natifs", "languages read by native speakers"),
     "home": ("Accueil", "Home"),
 })
 
@@ -633,6 +632,16 @@ def reel(key):
         vid, vid, time, t(S["voice_k"]), t(q), html.escape(brand), html.escape(who))
 
 
+def case(o):
+    """the use case whose deliverable illustrates this offer"""
+    return next(x for x in C.CASES if x["key"] == MORE[o["key"]]["dlv"])
+
+
+def dots(n):
+    """position dots under a list that swipes sideways on a phone (js/ui.js)"""
+    return '<div class="of-dots" aria-hidden="true">%s</div>' % ("<i></i>" * n)
+
+
 def body(o, offers_html):
     i = OFFERS.index(o)
     others = [x for x in OFFERS if x is not o]
@@ -652,7 +661,7 @@ def body(o, offers_html):
     spec += '<div><dt>%s</dt><dd><a href="#offre">%s</a></dd></div>' % (t(S["price_row"]), t(S["price_cell"]))
     nxt = "".join('<li class="of-next__card of-acc--%s"><a href="%s"><span class="of-next__n">0%d</span><b>%s</b><span>%s</span><i aria-hidden="true">→</i></a></li>' % (
         CARD_ACCENT[x["key"]], x["file"], x["n"], t(x["name"]), t(x["short"])) for x in others)
-    c = next(x for x in C.CASES if x["key"] == MORE[o["key"]]["dlv"])
+    c = case(o)
     # the kicker is two text nodes, "OFFER" and the number, so each translates
     return f'''<main id="content" class="of-acc--{CARD_ACCENT[o["key"]]}">
   <nav class="crumbs shell" aria-label="{a(S["crumbs"])}"><ol><li><a href="index.html">{t(S["home"])}</a></li><li><a href="offers.html">{t(S["offers"])}</a></li><li aria-current="page">{t(o["name"])}</li></ol></nav>
@@ -732,6 +741,7 @@ def body(o, offers_html):
     <div class="shell">
       <div class="of-next__head"><h2 class="xs__title">{t(S["others_t"])}</h2><a class="xh__link" href="offers.html#compare">{t(S["compare"])} <span aria-hidden="true">→</span></a></div>
       <ul class="of-next__list">{nxt}</ul>
+      {dots(len(others))}
     </div>
   </section>
 
@@ -820,9 +830,9 @@ HUB = {
     "cmp_sum": ("Comparer les quatre offres en détail", "Compare the four offers in detail"),
     "common_t": ("Ce qui ne change pas, quelle que soit l'offre", "What stays the same, whichever offer"),
     "common": [(("Un consultant dédié", "A dedicated consultant"), ("qui cadre et lit pour vous", "who frames and reads for you")),
-               (("20+ langues", "20+ languages"), ("lues par des natifs", "read by native speakers")),
+               (("20+ langues", "20+ languages"), ("suivies en continu", "monitored continuously")),
                (("Vos livrables", "Your deliverables"), ("vous appartiennent", "belong to you")),
-               (("Lancé en deux semaines", "Running in two weeks"), ("au plus, cadrage compris", "at most, framing included"))],
+               (("Un démarrage rapide", "A quick start"), ("cadrage dès la première ou la deuxième semaine", "framing in week one or two"))],
     "proof_t": ("Ils en parlent", "They talk about it"),
 }
 CARD_ACCENT = {"social-insights": "si", "vigie": "vig", "slaas": "sla", "nox": "nox"}
@@ -838,16 +848,17 @@ def hub_main():
         cards += ('<li class="of-card of-card--%s" id="card-%s">'
                   '<div class="of-card__top"><span class="of-card__n">0%d</span><h3 class="of-card__name"><a href="%s">%s</a></h3>'
                   '<p class="of-card__promise">%s</p></div>'
-                  '<div class="of-card__thumb" aria-hidden="true"><!--dlv:%s--></div>'
+                  '<a class="of-card__thumb" href="%s" data-en="%s" aria-label="%s"><!--dlv:%s--><span class="of-card__case">%s <i aria-hidden="true">→</i></span></a>'
                   '<p class="of-card__k">%s</p><p class="of-card__for">%s</p>'
                   '<p class="of-card__k">%s</p><ul class="of-card__get">%s</ul>'
                   '<dl class="of-card__terms"><dt>%s</dt><dd>%s</dd><dt>%s</dt><dd><a href="#offre">%s</a></dd></dl>'
                   '<a class="btn btn--primary of-card__go" href="%s">%s <span aria-hidden="true">→</span></a></li>') % (
-            CARD_ACCENT[o["key"]], o["key"], o["n"], o["file"], t(o["name"]), t(o["short"]), MORE[o["key"]]["dlv"],
+            CARD_ACCENT[o["key"]], o["key"], o["n"], o["file"], t(o["name"]), t(o["short"]),
+            U.case_path(case(o), FR), U.case_path(case(o), EN), a(S["dlv_link"]), MORE[o["key"]]["dlv"], t(S["dlv_link"]),
             t(HUB["for"]), t(COMPARE_ROWS[1][1][i]), t(HUB["get"]), gets,
             t(HUB["model"]), t(COMPARE_ROWS[5][1][i]), t(HUB["price"]), t(S["price_cell"]), o["file"], t(HUB["see"]))
     common = "".join("<li><b>%s</b><span>%s</span></li>" % (t(x), t(y)) for x, y in HUB["common"])
-    proof = "".join(reel(k) for k in ("sncf", "loreal", "orange"))
+    proof = "".join(reel(k) for k in ("axa", "dassault", "sncf"))
     head = "".join('<th scope="col"><a href="%s">%s</a></th>' % (o["file"], t(o["name"])) for o in OFFERS)
     rows = "".join('<tr><th scope="row">%s</th>%s</tr>' % (t(k), "".join("<td>%s</td>" % t(v) for v in vals)) for k, vals in COMPARE_ROWS)
     rows += '<tr class="of-cmp__price"><th scope="row">%s</th><td colspan="4"><span>%s</span> · <a href="#offre">%s</a></td></tr>' % (
@@ -879,6 +890,7 @@ def hub_main():
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">{t(HUB["cards_t"])}</h2><p class="xs__lead">{t(HUB["cards_lead"])}</p></div>
       <ol class="of-cards__list">{cards}</ol>
+      {dots(len(OFFERS))}
     </div>
   </section>
 
@@ -952,7 +964,7 @@ def main():
     pages = [(o, page(o, offers_html)) for o in OFFERS]
     for v in OFFERS_PAGE.values():
         t(v)
-    for k in ("diag3", "badge", "bar_offer", "bar_price", "bar_call", "bar_chat"):
+    for k in ("diag3", "bar_offer", "bar_price", "bar_call", "bar_chat"):
         t(S[k])
     for o in OFFERS:
         t(o["seo_title"])
@@ -962,7 +974,6 @@ def main():
     U.DICT.update(U.fr_dict())
     U.DICT.update(NEW)
     U.DICT.setdefault("The 3-minute diagnostic", U.typo(S["diag3"][FR], FR))
-    U.DICT.setdefault("languages read by native speakers", S["badge"][FR])
     for o, (out, ld_en) in pages:
         (ROOT / o["file"]).write_text(to_en(out))
         to_fr(out, o["file"], o["seo_title"], o["seo_desc"], ld_en, ld(o, FR))

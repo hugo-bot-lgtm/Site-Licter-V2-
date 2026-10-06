@@ -1,9 +1,34 @@
 /* Dictionnaire EN → FR. Toute chaîne absente reste en anglais. */
 window.LicterFR = {
 
+  /* interview quotes, word for word from each video (October 2026) */
+  "A reputation is destroyed in seconds.":
+    "Une réputation se détruit en quelques secondes.",
+  "If I were a social network, I would be Instagram.":
+    "Si j'étais un réseau social, je serais Instagram.",
+  "The social room revolutionised the way we work.":
+    "La social room a révolutionné notre façon de travailler.",
+  "Advocacy is overtaking influence.":
+    "L'advocacy est en train de dépasser l'influence.",
+  "Consumption is an act of activism.":
+    "La consommation est un acte militant.",
+  "Social listening for the largest city in France.":
+    "Le social listening pour la plus grande ville de France.",
+  "“Social listening for the largest city in France.”":
+    "« Le social listening pour la plus grande ville de France. »",
+  "Every trend comes from TikTok.":
+    "Toutes les tendances viennent de TikTok.",
+  "The best money: your customers' money.":
+    "Le meilleur argent : celui des clients.",
+  "“The best money: your customers' money.”":
+    "« Le meilleur argent : celui des clients. »",
+  "I have witnessed two revolutions.":
+    "J'ai assisté à deux révolutions.",
+  "“I have witnessed two revolutions.”":
+    "« J'ai assisté à deux révolutions. »",
   /* positioning: a consultancy, found as an agency (October 2026) */
-  "Social listening consultancy":
-    "Cabinet de conseil en social listening",
+  "Social data intelligence consultancy":
+    "Cabinet de conseil en social data intelligence",
   "Six questions we get every week.":
     "Six questions qu'on nous pose chaque semaine.",
   "Are you a social listening agency?":
@@ -43,8 +68,8 @@ window.LicterFR = {
   "On video.": "En vidéo.",
   "Full conversations with the people who run listening inside their organisation — what they were trying to decide, and what the data changed. In French, on our channel, uncut.":
     "Des conversations entières avec celles et ceux qui pilotent l'écoute dans leur organisation : ce qu'ils avaient à décider, et ce que la donnée a changé. En français, sur notre chaîne, sans coupe.",
-  "It is not a study if there is no action plan.": "Ce n'est pas une étude s'il n'y a pas de plan d'action.",
-  "Social media helps us build better products.": "Les réseaux sociaux aident à créer de meilleurs produits.",
+  "Forums are not dead.": "Les forums ne sont pas morts.",
+  "Social listening helps us understand what is said about us.": "Le social listening aide à comprendre ce qui se dit sur nous.",
   "Millions of tweets to handle, live.": "Des millions de tweets à gérer, en direct.",
   "Every episode of": "Chaque épisode du podcast", "is on": "est sur",
   "one conversation a week with the people who read the conversation.":
@@ -284,11 +309,11 @@ window.LicterFR = {
   "Catch weak signals early, while they are still containable: a rumour, a boycott call, a supplier controversy.": "Repérez les signaux faibles tôt, tant qu'ils restent maîtrisables : une rumeur, un appel au boycott, une controverse fournisseur.",
   "Map what people expect before, during and after purchase, and where the experience breaks down.": "Cartographiez les attentes avant, pendant et après l'achat, et là où l'expérience se casse.",
   "Follow the communities, experts and institutions that shape a category, and the trends breaking out of it.": "Suivez les communautés, les experts et les institutions qui façonnent une catégorie, et les tendances qui en sortent.",
-  "“The social room changed the way we work.”": "« La social room a changé notre façon de travailler. »",
-  "“What media diversity actually buys you.”": "« Ce que la diversité des médias rapporte vraiment. »",
-  "“600k followers in two years.”": "« 600 000 abonnés en deux ans. »",
-  "“The internet, to capture the consumer's voice.”": "« Internet, pour capter la voix du consommateur. »",
-  "“Every trend now starts on TikTok.”": "« Toutes les tendances partent désormais de TikTok. »",
+  "“The social room revolutionised the way we work.”": "« La social room a révolutionné notre façon de travailler. »",
+  "“A reputation is destroyed in seconds.”": "« Une réputation se détruit en quelques secondes. »",
+  "“If I were a social network, I would be Instagram.”": "« Si j'étais un réseau social, je serais Instagram. »",
+  "“Advocacy is overtaking influence.”": "« L'advocacy est en train de dépasser l'influence. »",
+  "“Every trend comes from TikTok.”": "« Toutes les tendances viennent de TikTok. »",
   "Use cases | Licter": "Cas d'usage | Licter",
   "A word from the founders": "Un mot des fondateurs",
   /* ---- home: the quiz promise ---- */
@@ -971,8 +996,8 @@ window.LicterFR = {
     "Six plateformes, plus ce qui se passe en dehors.",
   "You talk to a consultant, not to a sales team.":
     "Vous parlez à un consultant, pas à un commercial.",
-  "“Social media helps us build better products.”":
-    "« Les réseaux sociaux aident à créer de meilleurs produits. »",
+  "“Social listening helps us understand what is said about us.”":
+    "« Le social listening aide à comprendre ce qui se dit sur nous. »",
   "Before / after comparison on the same perimeter":
     "Comparaison avant / après sur le même périmètre",
   "Can it detect our packaging, not just our logo?":
@@ -985,8 +1010,8 @@ window.LicterFR = {
     "Des seuils convenus avec vous, pas les réglages de l'éditeur",
   "Want to know which layer answers your question?":
     "Envie de savoir quel calque répond à votre question ?",
-  "“It is not a study if there is no action plan.”":
-    "« Ce n'est pas une étude s'il n'y a pas de plan d'action. »",
+  "“Forums are not dead.”":
+    "« Les forums ne sont pas morts. »",
   "Consumer groups, retailers, institutions, media.":
     "Groupes de grande consommation, distributeurs, institutions, médias.",
   "Share of voice per spokesperson, topic by topic.":
@@ -1657,6 +1682,8 @@ window.LicterFR = {
     "Un consultant dédié",
   "Four layers of signal":
     "Quatre couches de signal",
+  "See the use case":
+    "Voir le cas d'usage",
   "For you if":
     "Pour vous si",
   "Recurring questions, nobody to run a tool":
@@ -1707,16 +1734,16 @@ window.LicterFR = {
     "qui cadre et lit pour vous",
   "20+ languages":
     "20+ langues",
-  "read by native speakers":
-    "lues par des natifs",
+  "monitored continuously":
+    "suivies en continu",
   "Your deliverables":
     "Vos livrables",
   "belong to you":
     "vous appartiennent",
-  "Running in two weeks":
-    "Lancé en deux semaines",
-  "at most, framing included":
-    "au plus, cadrage compris",
+  "A quick start":
+    "Un démarrage rapide",
+  "framing in week one or two":
+    "cadrage dès la première ou la deuxième semaine",
   "In their words":
     "Dans leurs mots",
   "What you receive":
@@ -1911,8 +1938,6 @@ window.LicterFR = {
     "Pas le bon choix si",
   "The detail of the offer, and a sample deliverable as it reaches you.":
     "Le détail de l'offre, et un exemple de livrable tel qu'il arrive chez vous.",
-  "See the use case":
-    "Voir le cas d'usage",
   "How it runs":
     "Comment ça se passe",
   "Indicative timings, adjusted with you at framing.":
@@ -1989,8 +2014,8 @@ window.LicterFR = {
     "Par e-mail, SMS ou messagerie, selon le niveau. Une alerte de crise s'accompagne aussi d'un appel.",
   "Which languages do you cover?":
     "Quelles langues couvrez-vous ?",
-  "More than twenty, read by native analysts, including English, Spanish, Chinese, Arabic and Hindi.":
-    "Plus de vingt, lues par des analystes natifs, dont l'anglais, l'espagnol, le chinois, l'arabe et l'hindi.",
+  "More than twenty, including English, Spanish, Chinese, Arabic and Hindi.":
+    "Plus de vingt, dont l'anglais, l'espagnol, le chinois, l'arabe et l'hindi.",
   "Can Vigie 360 cover our executives?":
     "Vigie 360 peut-elle couvrir nos dirigeants ?",
   "Yes. Executives are often the first exposed; we follow their mentions with the same alert levels as the brand.":
@@ -2203,8 +2228,6 @@ window.LicterFR = {
     "Tout sur Social Listening as a Service",
   "Everything about Nox":
     "Tout sur Nox",
-  "languages read by native speakers":
-    "langues lues par des natifs",
   "Social Insights: social data studies on demand | Licter":
     "Social Insights : études social data à la demande | Licter",
   "Vigie 360: 24/7 monitoring, alerts within 15 minutes | Licter":
@@ -2772,8 +2795,8 @@ window.LicterFR = {
     "Trois livrables parmi d'autres : chaque écoute aboutit à un document que vos équipes peuvent utiliser.",
   "See the use case":
     "Voir le cas d'usage",
-  "“Consumption has become an act of activism.”":
-    "« Consommer est devenu un acte militant. »",
+  "“Consumption is an act of activism.”":
+    "« La consommation est un acte militant. »",
   "Get a sample deliverable, in your sector.":
     "Recevez un exemple de livrable, dans votre secteur.",
   "Which way of listening should we pick?":

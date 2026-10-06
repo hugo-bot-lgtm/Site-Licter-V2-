@@ -8341,3 +8341,39 @@ html[data-theme="dark"] .of-fit__no i { color: #EAA93D; }
   .of-next__list::-webkit-scrollbar { display: none; }
   .of-next__card { scroll-snap-align: start; }
 }
+
+/* offers, audit of October 2026 ------------------------------------------ */
+/* labels at the site's 12px floor */
+.of-card__k, .of-card__terms dt, .of-spec dt, .of-fit__k, .of-guide__diag b { font-size: 12px; }
+/* the card thumbnail opens its use case */
+.of-card__thumb { display: block; text-decoration: none; }
+.of-card__case { position: absolute; right: 8px; bottom: 10px; z-index: 1; display: inline-flex; gap: 6px; align-items: center; padding: 6px 10px; border-radius: 999px; background: #13162D; color: #FCF6EF; font: 600 12px/1 var(--body-font); opacity: 0; transform: translateY(4px); transition: opacity .2s ease, transform .2s ease; }
+.of-card__case i { font-style: normal; color: #EAA93D; }
+.of-card__thumb:hover .of-card__case, .of-card__thumb:focus-visible .of-card__case { opacity: 1; transform: none; }
+.of-card__thumb:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+/* the thumbnail's fade must not hide its label */
+.of-card__thumb { -webkit-mask-image: none; mask-image: none; }
+.of-card__thumb::after { content: ""; position: absolute; inset: auto 0 0; height: 45%; background: linear-gradient(transparent, #FFFDF8); pointer-events: none; }
+/* position dots, phone only */
+.of-dots { display: none; }
+/* the callback's proof repeats the logos and the common row: not on offer pages */
+.xpage:not(.xepage) .book__proof--side { display: none; }
+@media (max-width: 720px) {
+  .of-card__case { opacity: 1; transform: none; }
+  .of-dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+  .of-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(var(--ink-rgb), .22); transition: background-color .2s ease, width .2s ease; }
+  html[data-theme="dark"] .of-dots i { background: rgba(255, 255, 255, .25); }
+  .of-dots i.is-on { width: 20px; border-radius: 4px; background: var(--amber); }
+  .of-next .of-dots { padding-right: var(--gutter); }
+  /* the logo caption above the wall, on two lines, never cut */
+  .xpage .ucp__clients .wall__caption { position: static; transform: none; max-width: none; margin: 0 auto 14px; padding: 0 16px; background: none; white-space: nowrap; font-size: 12px; line-height: 1.5; text-align: center; }
+  .xpage .ucp__clients .wall__wave { display: inline-block; }
+  .xpage .ucp__clients .wall__tail { display: block; }
+  .xpage .ucp__clients .wall__sep { display: none; }
+  /* offer pages on a phone: the offer's own example in the hero, short;
+     under "what you receive" only the link to the use case stays */
+  .ofpage .of-hero__demo { display: block; margin-top: 4px; }
+  .ofpage .of-hero__demo > * { max-height: 230px; overflow: hidden; -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); transform: none; }
+  .of-get__doc .dlv { display: none; }
+  .of-get__doc figcaption { margin-top: 0; }
+}

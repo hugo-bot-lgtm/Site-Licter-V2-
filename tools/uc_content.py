@@ -44,7 +44,7 @@ FAMILIES = [
               "You already know what you published. The real question is what it moved: in which audiences, on which platforms, and whether the voices carrying it were the right ones. The online conversation answers all three, provided you read it beyond the volumes."),
     "why": ("Un tableau de bord compte les mentions. Il ne dit pas si elles viennent des bonnes personnes, ni si elles ont changé une opinion. Nous comparons la conversation avant et après, audience par audience, et nous vous disons ce qui a vraiment bougé et pourquoi.",
             "A dashboard counts mentions. It does not tell you whether they come from the right people, or whether they changed a mind. We compare the conversation before and after, audience by audience, and tell you what actually moved and why."),
-    "video": ("0HfWWSB0v78", "54:27", ("Ce que la diversité des médias rapporte vraiment.", "What media diversity actually buys you."), "AXA", "Z. Gebran"),
+    "video": ("0HfWWSB0v78", "54:27", ("Une réputation se détruit en quelques secondes.", "A reputation is destroyed in seconds."), "AXA", "Z. Gebran"),
     "faq": [
       (("Peut-on mesurer l'impact d'une campagne qui n'a pas de lien de conversion ?", "Can you measure a campaign that has no conversion link?"),
        ("Oui. Nous mesurons ce que la campagne a déplacé dans la conversation : volume, tonalité, thèmes, et surtout quelles audiences ont changé de position. C'est souvent plus parlant qu'un taux de clic.",
@@ -71,7 +71,7 @@ FAMILIES = [
               "Brand health is not a quarterly survey. It is a continuous signal, already public: what your customers say about you, the words they repeat, the subjects that attach to your name. The work is to read it in time, and to tell the noise from what matters."),
     "why": ("Une alerte sur un mot-clé se déclenche dès que le volume monte, y compris pour rien. Nous lisons qui parle, dans quelle langue et avec quelle portée, et un analyste vous prévient quand un sujet mérite votre attention, pas avant.",
             "A keyword alert fires as soon as volume rises, including for nothing. We read who is talking, in which language and with what reach, and an analyst tells you when a subject deserves your attention, not before."),
-    "video": ("z3EkLWjQXMQ", "56:29", ("La social room a changé notre façon de travailler.", "The social room changed the way we work."), "SNCF", "M. Fleurbaey"),
+    "video": ("z3EkLWjQXMQ", "56:29", ("La social room a révolutionné notre façon de travailler.", "The social room revolutionised the way we work."), "SNCF", "M. Fleurbaey"),
     "faq": [
       (("Quelle différence entre e-réputation et santé de marque ?", "What is the difference between online reputation and brand health?"),
        ("L'e-réputation regarde ce qui se dit de vous. La santé de marque ajoute qui le dit, avec quelle influence, et comment cela évolue face à vos concurrents. C'est ce second niveau qui permet de décider.",
@@ -98,7 +98,7 @@ FAMILIES = [
               "Declared preferences and actual behaviour rarely match. The panel shows what people do, follow, buy and say when no one is asking them a question: a panel of about three billion consumers, read by analysts."),
     "why": ("Un persona construit en atelier reflète ce que l'équipe croit savoir. Nous partons de ce que vos clients font réellement, et nous faisons apparaître les communautés que le brief n'avait pas vues, souvent là où se trouve l'opportunité.",
             "A persona built in a workshop reflects what the team believes. We start from what your customers actually do, and bring out the communities the brief had not seen, which is often where the opportunity is."),
-    "video": ("moW2HYtTor8", "51:29", ("Internet, pour capter la voix du consommateur.", "The internet, to capture the consumer's voice."), "L'Oréal", "C. Besson"),
+    "video": ("moW2HYtTor8", "51:29", ("L'advocacy est en train de dépasser l'influence.", "Advocacy is overtaking influence."), "L'Oréal", "C. Besson"),
     "faq": [
       (("D'où viennent les données d'audience ?", "Where does the audience data come from?"),
        ("D'un panel comportemental d'environ trois milliards de consommateurs, croisé avec la conversation publique et la recherche. Les données sont agrégées : nous lisons des communautés, pas des individus.",
@@ -125,7 +125,7 @@ FAMILIES = [
               "Every product decision is a bet on what people will want. The conversation of a market usually says it first: the needs nobody covers well, the irritants of existing products, the topics rising before they reach the surveys."),
     "why": ("Une tendance repérée dans une étude annuelle est déjà connue de tous. Nous suivons l'évolution des sujets mois après mois, nous distinguons ce qui monte vraiment de ce qui fait du bruit, et nous vous disons quoi lancer, quoi surveiller et quoi arrêter.",
             "A trend spotted in an annual survey is already known to everyone. We follow topics month after month, tell what is really rising from what is just noise, and tell you what to build, what to watch and what to stop."),
-    "video": ("UElJ_Pdd0wo", "58:39", ("Toutes les tendances partent désormais de TikTok.", "Every trend now starts on TikTok."), "Orange", "B. Hoang"),
+    "video": ("UElJ_Pdd0wo", "58:39", ("Toutes les tendances viennent de TikTok.", "Every trend comes from TikTok."), "Orange", "B. Hoang"),
     "faq": [
       (("Combien de temps à l'avance repère-t-on une tendance ?", "How early can a trend be spotted?"),
        ("Souvent plusieurs mois avant qu'elle n'apparaisse dans les études classiques : les communautés de niche en parlent bien avant le grand public.",
@@ -723,17 +723,17 @@ CASES = [
 # ------------------------------------------------------------------ extras
 # Client interviews from the Audience First channel, one per use case.
 VOICES = {
-    "axa": ("0HfWWSB0v78", "54:27", ("Ce que la diversité des médias rapporte vraiment.", "What media diversity actually buys you."), "AXA", "Z. Gebran"),
-    "lvmh": ("CEFJc7tP4hU", "41:22", ("600 000 abonnés en deux ans.", "600k followers in two years."), "LVMH", "Clara Mallien"),
-    "sncf": ("z3EkLWjQXMQ", "56:29", ("La social room a changé notre façon de travailler.", "The social room changed the way we work."), "SNCF", "M. Fleurbaey"),
-    "loreal": ("moW2HYtTor8", "51:29", ("Internet, pour capter la voix du consommateur.", "The internet, to capture the consumer's voice."), "L'Oréal", "C. Besson"),
-    "kantar": ("NwA84KwnDKU", "53:14", ("Consommer est devenu un acte militant.", "Consumption has become an act of activism."), "Kantar", "G. Lefloch"),
-    "paris": ("JSI5LBi8K-g", "51:52", ("Peut-on capter la voix des Parisiens ?", "Can you capture the voice of Parisians?"), "Ville de Paris", "B. Tailly & F. Lootvoet"),
-    "orange": ("UElJ_Pdd0wo", "58:39", ("Toutes les tendances partent désormais de TikTok.", "Every trend now starts on TikTok."), "Orange", "B. Hoang"),
-    "francedigitale": ("EOkpQ_v-3kw", "45:24", ("Le meilleur argent, c'est celui de vos clients.", "The best money is your customers' money."), "France Digitale", "A. Labarrière"),
-    "dassault": ("cnwA-t0Vqk4", "1:00:32", ("Les réseaux sociaux nous aident à faire de meilleurs produits.", "Social media helps us build better products."), "Dassault Systèmes", "Jean-Stéphane Bou"),
-    "seb": ("1PXRd4_JgEc", "1:03:49", ("Ce n'est pas une étude s'il n'y a pas de plan d'action.", "It is not a study if there is no action plan."), "Groupe SEB", "Hélène Classine"),
-    "transat": ("yEe6j9oLmQY", "53:28", ("J'ai vécu deux révolutions.", "I have lived through two revolutions."), "Transat Café l'Or", "Antoine Robin"),
+    "axa": ("0HfWWSB0v78", "54:27", ("Une réputation se détruit en quelques secondes.", "A reputation is destroyed in seconds."), "AXA", "Z. Gebran"),
+    "lvmh": ("CEFJc7tP4hU", "41:22", ("Si j'étais un réseau social, je serais Instagram.", "If I were a social network, I would be Instagram."), "LVMH", "Clara Mallien"),
+    "sncf": ("z3EkLWjQXMQ", "56:29", ("La social room a révolutionné notre façon de travailler.", "The social room revolutionised the way we work."), "SNCF", "M. Fleurbaey"),
+    "loreal": ("moW2HYtTor8", "51:29", ("L'advocacy est en train de dépasser l'influence.", "Advocacy is overtaking influence."), "L'Oréal", "C. Besson"),
+    "kantar": ("NwA84KwnDKU", "53:14", ("La consommation est un acte militant.", "Consumption is an act of activism."), "Kantar", "G. Lefloch"),
+    "paris": ("JSI5LBi8K-g", "51:52", ("Le social listening pour la plus grande ville de France.", "Social listening for the largest city in France."), "Ville de Paris", "B. Tailly & F. Lootvoet"),
+    "orange": ("UElJ_Pdd0wo", "58:39", ("Toutes les tendances viennent de TikTok.", "Every trend comes from TikTok."), "Orange", "B. Hoang"),
+    "francedigitale": ("EOkpQ_v-3kw", "45:24", ("Le meilleur argent : celui des clients.", "The best money: your customers' money."), "France Digitale", "A. Labarrière"),
+    "dassault": ("cnwA-t0Vqk4", "1:00:32", ("Le social listening aide à comprendre ce qui se dit sur nous.", "Social listening helps us understand what is said about us."), "Dassault Systèmes", "Jean-Stéphane Bou"),
+    "seb": ("1PXRd4_JgEc", "1:03:49", ("Les forums ne sont pas morts.", "Forums are not dead."), "Groupe SEB", "Hélène Classine"),
+    "transat": ("yEe6j9oLmQY", "53:28", ("J'ai assisté à deux révolutions.", "I have witnessed two revolutions."), "Transat Café l'Or", "Antoine Robin"),
 }
 
 # Blog articles, by file name.

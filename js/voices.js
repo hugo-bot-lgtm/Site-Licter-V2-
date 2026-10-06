@@ -14,27 +14,27 @@
 
 window.LicterVoices = [
   { id: "1PXRd4_JgEc", brand: "Groupe SEB",        who: "Hélène Classine",            time: "1:03:49",
-    quote: "It is not a study if there is no action plan." },
+    quote: "Forums are not dead." },
   { id: "cnwA-t0Vqk4", brand: "Dassault Systèmes", who: "Jean-Stéphane Bou",          time: "1:00:32",
-    quote: "Social media helps us build better products." },
+    quote: "Social listening helps us understand what is said about us." },
   { id: "z3EkLWjQXMQ", brand: "SNCF",              who: "M. Fleurbaey",               time: "56:29",
-    quote: "The social room changed the way we work." },
+    quote: "The social room revolutionised the way we work." },
   { id: "UElJ_Pdd0wo", brand: "Orange",            who: "B. Hoang",                   time: "58:39",
-    quote: "Every trend now starts on TikTok." },
+    quote: "Every trend comes from TikTok." },
   { id: "moW2HYtTor8", brand: "L'Oréal",           who: "C. Besson",                  time: "51:29",
-    quote: "The internet, to capture the consumer's voice." },
+    quote: "Advocacy is overtaking influence." },
   { id: "0HfWWSB0v78", brand: "AXA",               who: "Z. Gebran",                  time: "54:27",
-    quote: "What media diversity actually buys you." },
+    quote: "A reputation is destroyed in seconds." },
   { id: "NwA84KwnDKU", brand: "Kantar",            who: "G. Lefloch",                 time: "53:14",
-    quote: "Consumption has become an act of activism." },
+    quote: "Consumption is an act of activism." },
   { id: "CEFJc7tP4hU", brand: "LVMH",              who: "Clara Mallien",              time: "41:22",
-    quote: "600k followers in two years." },
+    quote: "If I were a social network, I would be Instagram." },
   { id: "JSI5LBi8K-g", brand: "Ville de Paris",    who: "B. Tailly & F. Lootvoet",    time: "51:52",
-    quote: "Can you capture the voice of Parisians?" },
+    quote: "Social listening for the largest city in France." },
   { id: "yEe6j9oLmQY", brand: "Transat Café l'Or", who: "Antoine Robin",              time: "53:28",
-    quote: "I have lived through two revolutions." },
+    quote: "I have witnessed two revolutions." },
   { id: "EOkpQ_v-3kw", brand: "France Digitale",   who: "A. Labarrière",              time: "45:24",
-    quote: "The best money is your customers' money." }
+    quote: "The best money: your customers' money." }
 ];
 
 (function () {

@@ -2048,3 +2048,25 @@ window.LicterUC = (function () {
     document.body.appendChild(ev);
   }
 })();
+
+/* offers: the dots under a list that swipes sideways on a phone */
+(function () {
+  "use strict";
+  document.querySelectorAll(".of-dots").forEach(function (dots) {
+    var list = dots.previousElementSibling;
+    if (!list) return;
+    var marks = dots.children;
+    function update() {
+      var items = list.children, best = 0, d = Infinity, left = list.getBoundingClientRect().left;
+      for (var i = 0; i < items.length; i++) {
+        var x = Math.abs(items[i].getBoundingClientRect().left - left);
+        if (x < d) { d = x; best = i; }
+      }
+      /* at the end of the strip, the last card is the one in view */
+      if (list.scrollLeft + list.clientWidth >= list.scrollWidth - 4) best = items.length - 1;
+      for (var j = 0; j < marks.length; j++) marks[j].classList.toggle("is-on", j === best);
+    }
+    list.addEventListener("scroll", function () { window.requestAnimationFrame(update); }, { passive: true });
+    update();
+  });
+})();
