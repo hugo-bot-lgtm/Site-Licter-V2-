@@ -1921,16 +1921,14 @@ window.LicterFR = {
     "Est-ce pour vous ?",
   "Not the right fit if":
     "Pas le bon choix si",
+  "The detail of the offer, and a sample deliverable as it reaches you.":
+    "Le détail de l'offre, et un exemple de livrable tel qu'il arrive chez vous.",
+  "See the use case":
+    "Voir le cas d'usage",
   "How it runs":
     "Comment ça se passe",
   "Indicative timings, adjusted with you at framing.":
     "Durées indicatives, ajustées avec vous au cadrage.",
-  "A sample deliverable, as it reaches you.":
-    "Un exemple de livrable, tel qu'il arrive chez vous.",
-  "See the use case":
-    "Voir le cas d'usage",
-  "The other offers":
-    "Les autres offres",
   "Get a sample Social Insights study, in your sector.":
     "Recevez un exemple d'étude Social Insights, dans votre secteur.",
   "Noted. A consultant sends you a sample within 48 hours.":
@@ -1945,18 +1943,12 @@ window.LicterFR = {
     "Et chez vous ?",
   "Anonymised, sent by a consultant within 48 hours: what you would actually receive.":
     "Anonymisé, envoyé par un consultant sous 48 h : ce que vous recevriez vraiment.",
+  "The other offers":
+    "Les autres offres",
   "What would you ask first?":
     "Quelle serait votre première question ?",
   "Get a sample":
     "Recevoir un exemple",
-  "from signal to alert":
-    "du signal à l'alerte",
-  "24/7":
-    "24/7",
-  "nights and weekends included":
-    "nuits et week-ends compris",
-  "20+":
-    "20+",
   "Your brand, your executives or your products are exposed to fast-moving subjects.":
     "Votre marque, vos dirigeants ou vos produits sont exposés à des sujets qui vont vite.",
   "You have already learnt about a crisis from the press, or from your CEO.":
@@ -2023,18 +2015,6 @@ window.LicterFR = {
     "Recevez un exemple d'alerte et de revue mensuelle Vigie 360.",
   "What should we be watching for you?":
     "Que devrions-nous surveiller pour vous ?",
-  "Your platform":
-    "Votre plateforme",
-  "kept, not replaced":
-    "gardée, pas remplacée",
-  "Audit first":
-    "Audit d'abord",
-  "of the existing setup":
-    "de l'existant",
-  "Recurring":
-    "Récurrent",
-  "analyses delivered":
-    "analyses livrées",
   "You pay for a listening platform that few people open.":
     "Vous payez une plateforme d'écoute que peu de gens ouvrent.",
   "Your dashboards were set up once and never revisited.":
@@ -2103,18 +2083,6 @@ window.LicterFR = {
     "Recevez un exemple de reporting repris, dans votre secteur.",
   "Which platform are you paying for?":
     "Pour quelle plateforme payez-vous ?",
-  "AI-sorted":
-    "Trié par l'IA",
-  "topics grouped for you":
-    "les sujets regroupés pour vous",
-  "A daily brief":
-    "Un brief quotidien",
-  "what changed, in a few lines":
-    "ce qui a changé, en quelques lignes",
-  "Analyst-tuned":
-    "Réglé par nos analystes",
-  "set up and checked by us":
-    "configuré et vérifié par nous",
   "You want to follow your brand day to day, without reading every post.":
     "Vous voulez suivre votre marque au jour le jour, sans lire chaque publication.",
   "Your team needs a shared view of what is being said, in one place.":

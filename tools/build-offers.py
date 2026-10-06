@@ -95,7 +95,6 @@ OFFERS = [
         "h1": ("Vos analyses de données sociales méritent des experts.", "Your social data analyses deserve experts."),
         "lead": ("Nos consultants cadrent la question, configurent la collecte et produisent l'analyse. Vous obtenez la réponse, pas une licence d'outil et un plan de formation.",
                  "Our consultants frame the question, configure the collection and produce the analysis. You get the answer, not a tool licence and a training plan."),
-        "facts": [],
         "yes": [("Vous avez des questions récurrentes : campagnes, concurrents, audiences, chaque mois.",
                  "You have recurring questions: campaigns, competitors, audiences, every month."),
                 ("Personne dans l'équipe n'a le temps, ni la formation, de faire tourner une plateforme d'écoute.",
@@ -158,9 +157,6 @@ OFFERS = [
         "h1": ("Nous vous alertons en 15 minutes, 24 h/24.", "We alert you in 15 minutes, 24/7."),
         "lead": ("Une veille continue de votre marque, de vos dirigeants et de vos marchés, dans plus de vingt langues. Une personne lit le signal avant qu'il ne vous parvienne : une alerte veut dire qu'il s'est passé quelque chose, pas qu'un mot-clé s'est déclenché.",
                  "Continuous monitoring of your brand, your executives and your markets, in more than twenty languages. A person reads the signal before it reaches you, so an alert means something happened, not that a keyword fired."),
-        "facts": [(("15 min", "15 min"), ("du signal à l'alerte", "from signal to alert")),
-                  (("24/7", "24/7"), ("nuits et week-ends compris", "nights and weekends included")),
-                  (("20+", "20+"), ("langues suivies", "languages monitored"))],
         "yes": [("Votre marque, vos dirigeants ou vos produits sont exposés à des sujets qui vont vite.",
                  "Your brand, your executives or your products are exposed to fast-moving subjects."),
                 ("Vous avez déjà appris une crise par la presse, ou par votre PDG.",
@@ -223,9 +219,6 @@ OFFERS = [
         "h1": ("Nous augmentons l'adoption et l'impact de votre social listening.", "We increase the adoption and impact of your social listening."),
         "lead": ("Vous possédez déjà une plateforme et elle est sous-utilisée. Nous reprenons la taxonomie, les tableaux de bord et les analyses récurrentes, et formons vos équipes à les lire, pour que la licence que vous payez produise des décisions.",
                  "You already own a platform and it is under-used. We take over the taxonomy, the dashboards and the recurring analyses, and train your teams to read them, so the licence you pay for produces decisions."),
-        "facts": [(("Votre plateforme", "Your platform"), ("gardée, pas remplacée", "kept, not replaced")),
-                  (("Audit d'abord", "Audit first"), ("de l'existant", "of the existing setup")),
-                  (("Récurrent", "Recurring"), ("analyses livrées", "analyses delivered"))],
         "yes": [("Vous payez une plateforme d'écoute que peu de gens ouvrent.",
                  "You pay for a listening platform that few people open."),
                 ("Vos tableaux de bord ont été configurés une fois, et jamais revus.",
@@ -290,9 +283,6 @@ OFFERS = [
         "h1": ("Votre veille, triée par l'IA, vérifiée par un analyste.", "Your monitoring, sorted by AI, checked by an analyst."),
         "lead": ("Nox est notre outil de veille assisté par l'IA. Il lit en continu la conversation sur votre marque, la regroupe par sujets, résume ce qui a changé et signale ce qui sort de l'ordinaire. Nos analystes le règlent avec vous, pour que ce qu'il fait remonter mérite votre temps.",
                  "Nox is our AI-assisted monitoring tool. It reads the conversation about your brand continuously, groups it into topics, summarises what changed and flags what looks unusual. Our analysts tune it with you, so what it surfaces is worth your time."),
-        "facts": [(("Trié par l'IA", "AI-sorted"), ("les sujets regroupés pour vous", "topics grouped for you")),
-                  (("Un brief quotidien", "A daily brief"), ("ce qui a changé, en quelques lignes", "what changed, in a few lines")),
-                  (("Réglé par nos analystes", "Analyst-tuned"), ("configuré et vérifié par nous", "set up and checked by us"))],
         "yes": [("Vous voulez suivre votre marque au jour le jour, sans lire chaque publication.",
                  "You want to follow your brand day to day, without reading every post."),
                 ("Votre équipe a besoin d'une vue partagée de ce qui se dit, au même endroit.",
@@ -484,9 +474,6 @@ HUB_FAQ = [
       "No. We bring the licences and the sources. Social Listening as a Service is precisely for those who already have one.")),
 ]
 S.update({
-    "compare_t": ("Les quatre offres, côte à côte", "The four offers, side by side"),
-    "compare_lead": ("Pour comparer d'un coup d'œil. Chaque offre a sa page, et un consultant vous aide à choisir.",
-                     "To compare at a glance. Each offer has its own page, and a consultant helps you choose."),
     "price_row": ("Tarif", "Price"),
     "price_cell": ("Grille sur demande", "Price list on request"),
     "price_link": ("Recevoir la grille tarifaire", "Get the price list"),
@@ -510,8 +497,9 @@ S.update({
     "magnet_alt": ("Plutôt comparer d'abord ?", "Rather compare first?"),
     "magnet_alt_link": ("Les quatre offres côte à côte", "The four offers side by side"),
     "dlv_t": ("Ce que vous recevez", "What you receive"),
-    "dlv_lead": ("Un exemple de livrable, tel qu'il arrive chez vous.", "A sample deliverable, as it reaches you."),
     "dlv_link": ("Voir le cas d'usage", "See the use case"),
+    "get_lead": ("Le détail de l'offre, et un exemple de livrable tel qu'il arrive chez vous.",
+                 "The detail of the offer, and a sample deliverable as it reaches you."),
     "bar_offer": ("Recevoir un exemple", "Get a sample"),
     "bar_price": ("Recevoir la grille", "Get the price list"),
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
@@ -543,26 +531,6 @@ def magnet(key, title, done, btn, alt=True):
 
 def logos():
     return U.clients(EN)
-
-
-def dlv_section(o):
-    c = next(x for x in C.CASES if x["key"] == MORE[o["key"]]["dlv"])
-    return ('  <section class="ucp of-dlv">\n    <div class="shell of-dlv__grid">\n'
-            '      <div class="xs__head"><h2 class="xs__title">%s</h2><p class="xs__lead">%s</p>'
-            '<a class="xh__link" href="%s" data-en="%s">%s <span aria-hidden="true">→</span></a></div>\n'
-            '      <!--dlv:%s-->\n    </div>\n  </section>') % (
-        t(S["dlv_t"]), t(S["dlv_lead"]), U.case_path(c, FR), U.case_path(c, EN), t(S["dlv_link"]), c["key"])
-
-
-def compare_table():
-    head = "".join('<th scope="col"><a href="%s">%s</a></th>' % (o["file"], t(o["name"])) for o in OFFERS)
-    rows = "".join('<tr><th scope="row">%s</th>%s</tr>' % (t(k), "".join("<td>%s</td>" % t(v) for v in vals)) for k, vals in COMPARE_ROWS)
-    price = '<tr class="of-cmp__price"><th scope="row">%s</th><td colspan="4"><span>%s</span> · <a href="#offre">%s</a></td></tr>' % (
-        t(S["price_row"]), t(S["price_cell"]), t(S["price_link"]))
-    return ('  <section class="of-cmp" id="compare">\n    <div class="shell">\n'
-            '      <div class="xs__head"><h2 class="xs__title">%s</h2><p class="xs__lead">%s</p></div>\n'
-            '      <div class="of-cmp__wrap" tabindex="0"><table class="of-cmp__t"><thead><tr><td></td>%s</tr></thead><tbody>%s%s</tbody></table></div>\n'
-            '    </div>\n  </section>') % (t(S["compare_t"]), t(S["compare_lead"]), head, rows, price)
 
 
 def faq_section(items):
@@ -669,17 +637,27 @@ def reel(key):
 
 
 def body(o, offers_html):
+    i = OFFERS.index(o)
     others = [x for x in OFFERS if x is not o]
-    facts = "".join("<li><b>%s</b><span>%s</span></li>" % (t(x), t(y)) for x, y in o["facts"])
     yes = "".join("<li>%s</li>" % t(x) for x in o["yes"])
-    no = "".join("<li>%s</li>" % t(x) for x in o["no"])
-    incl = "".join('<li><span class="of-incl__n">0%d</span><b>%s</b><p>%s</p></li>' % (i + 1, t(x), t(y)) for i, (x, y) in enumerate(o["incl"]))
+
+    def no_item(x):
+        # "not for you if…: that is <offer>": the line leads to that offer
+        alt = next((y for y in others if y["name"][EN] in x[EN]), None)
+        if not alt:
+            return "<li>%s</li>" % t(x)
+        return '<li><a href="%s"><span>%s</span><i aria-hidden="true">→</i></a></li>' % (alt["file"], t(x))
+    no = "".join(no_item(x) for x in o["no"])
+    incl = "".join('<li><span class="of-get__n">0%d</span><b>%s</b><p>%s</p></li>' % (k + 1, t(x), t(y)) for k, (x, y) in enumerate(o["incl"]))
     steps = "".join('<li><span class="ucv-day">%s</span><b>%s</b><p>%s</p></li>' % (t(w), t(x), t(y)) for w, x, y in o["steps"])
     faq = "".join("<details><summary>%s</summary><p>%s</p></details>" % (t(q), t(r)) for q, r in o["faq"])
-    oth = "".join('<li><a href="%s"><span class="of-oth__n">0%d</span><b>%s</b><span>%s</span><i aria-hidden="true">→</i></a></li>' % (
-        x["file"], x["n"], t(x["name"]), t(x["short"])) for x in others)
+    spec = "".join("<div><dt>%s</dt><dd>%s</dd></div>" % (t(COMPARE_ROWS[r][0]), t(COMPARE_ROWS[r][1][i])) for r in (2, 3, 4))
+    spec += '<div><dt>%s</dt><dd><a href="#offre">%s</a></dd></div>' % (t(S["price_row"]), t(S["price_cell"]))
+    nxt = "".join('<li class="of-next__card of-acc--%s"><a href="%s"><span class="of-next__n">0%d</span><b>%s</b><span>%s</span><i aria-hidden="true">→</i></a></li>' % (
+        CARD_ACCENT[x["key"]], x["file"], x["n"], t(x["name"]), t(x["short"])) for x in others)
+    c = next(x for x in C.CASES if x["key"] == MORE[o["key"]]["dlv"])
     # the kicker is two text nodes, "OFFER" and the number, so each translates
-    return f'''<main id="content">
+    return f'''<main id="content" class="of-acc--{CARD_ACCENT[o["key"]]}">
   <nav class="crumbs shell" aria-label="{a(S["crumbs"])}"><ol><li><a href="index.html">{t(S["home"])}</a></li><li><a href="offers.html">{t(S["offers"])}</a></li><li aria-current="page">{t(o["name"])}</li></ol></nav>
 
   <section class="xh of-hero">
@@ -692,12 +670,12 @@ def body(o, offers_html):
           <a class="btn btn--primary" href="#book">{t(S["book"])} <span aria-hidden="true">→</span></a>
           <a class="xh__link" href="#included">{t(S["incl_link"])} <span aria-hidden="true">↓</span></a>
         </div>
-        {'<ul class="xh__facts">%s</ul>' % facts if facts else ""}
       </div>
       <div class="of-hero__demo">
         {demo(o, offers_html)}
       </div>
     </div>
+    <div class="shell"><dl class="of-spec">{spec}</dl></div>
 {logos()}
   </section>
 
@@ -705,16 +683,28 @@ def body(o, offers_html):
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">{t(S["fit_t"])}</h2></div>
       <div class="of-fit__grid">
-        <div class="of-fit__col of-fit__col--yes"><p class="of-fit__k">{t(S["fit_yes"])}</p><ul>{yes}</ul></div>
-        <div class="of-fit__col of-fit__col--no"><p class="of-fit__k">{t(S["fit_no"])}</p><ul>{no}</ul></div>
+      <div class="of-fit__yes">
+        <p class="of-fit__k">{t(S["fit_yes"])}</p>
+        <ul>{yes}</ul>
+      </div>
+      <div class="of-fit__no">
+        <p class="of-fit__k">{t(S["fit_no"])}</p>
+        <ul>{no}</ul>
+      </div>
       </div>
     </div>
   </section>
 
-  <section class="of-incl" id="included">
-    <div class="shell">
-      <div class="xs__head"><h2 class="xs__title">{t(S["incl_t"])}</h2></div>
-      <ol class="of-incl__list">{incl}</ol>
+  <section class="of-get" id="included">
+    <div class="shell of-get__grid">
+      <div>
+        <div class="xs__head"><h2 class="xs__title">{t(S["dlv_t"])}</h2><p class="xs__lead">{t(S["get_lead"])}</p></div>
+        <ol class="of-get__list">{incl}</ol>
+      </div>
+      <figure class="of-get__doc">
+        <!--dlv:{c["key"]}-->
+        <figcaption><a class="xh__link" href="{U.case_path(c, FR)}" data-en="{U.case_path(c, EN)}">{t(S["dlv_link"])} <span aria-hidden="true">→</span></a></figcaption>
+      </figure>
     </div>
   </section>
 
@@ -726,19 +716,9 @@ def body(o, offers_html):
     </div>
   </section>
 
-{dlv_section(o)}
-
-  <section class="of-voice">
-    <div class="shell of-voice__grid">
-      <div>
-        <h2 class="xs__title">{t(S["voice_t"])}</h2>
-        {reel(o["voice"])}
-      </div>
-      <div>
-        <h2 class="xs__title">{t(S["others_t"])}</h2>
-        <ul class="of-oth">{oth}</ul>
-        <a class="xh__link" href="offers.html">{t(S["compare"])} <span aria-hidden="true">→</span></a>
-      </div>
+  <section class="of-quote">
+    <div class="shell">
+      {reel(o["voice"])}
     </div>
   </section>
 
@@ -748,6 +728,13 @@ def body(o, offers_html):
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">{t(S["faq"])}</h2></div>
       <div class="faq">{faq}</div>
+    </div>
+  </section>
+
+  <section class="of-next">
+    <div class="shell">
+      <div class="of-next__head"><h2 class="xs__title">{t(S["others_t"])}</h2><a class="xh__link" href="offers.html#compare">{t(S["compare"])} <span aria-hidden="true">→</span></a></div>
+      <ul class="of-next__list">{nxt}</ul>
     </div>
   </section>
 

@@ -196,15 +196,15 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
   6. l'aimant « Recevoir la grille tarifaire » (`#offre`) ;
   7. la FAQ ;
   8. le rappel.
-- **Une page d'offre :**
-  1. le hero, avec son exemple, puis les logos ;
-  2. « Est-ce pour vous ? » ;
-  3. ce qui est inclus ;
+- **Une page d'offre (environ 6 écrans sur ordinateur, 7 sur mobile) :** chaque page porte la couleur de son offre (`of-acc--si|vig|sla|nox` sur `<main>`), en filets, points et coches seulement, jamais sur du texte.
+  1. le hero et son exemple (masqué sur mobile : un seul exemple par page), puis **l'offre en bref** (rythme, démarrage, qui lit, tarif, repris du comparatif) et les logos ;
+  2. « Est-ce pour vous ? » : pour vous si, et pas le bon choix si, chaque ligne menant à l'offre qui convient mieux ;
+  3. **ce que vous recevez**, liste numérotée à côté d'un livrable réel en maquette (collant au défilement), relié à son cas d'usage ;
   4. comment ça se passe ;
-  5. un **livrable réel en maquette**, relié à son cas d'usage ;
-  6. une interview et les autres offres ;
-  7. l'aimant « Recevez un exemple… » propre à l'offre ;
-  8. la FAQ (6 questions, dont le démarrage et la propriété des livrables) ;
+  5. une interview en bandeau ;
+  6. l'aimant « Recevez un exemple… » propre à l'offre ;
+  7. la FAQ (6 questions, dont le démarrage et la propriété des livrables) ;
+  8. les trois autres offres en mini-cartes (défilement de côté sur mobile) et le lien vers le comparatif ;
   9. le rappel.
 - **Pas de popup magazine automatique.** Sur téléphone, la barre du bas (Antoine, l'aimant, le consultant), « Ce qui est inclus » en liste compacte, la méthode sans photos.
 - **Aucun prix n'est affiché** tant que la grille n'est pas validée : le comparatif dit « Grille sur demande » et renvoie vers l'aimant.
