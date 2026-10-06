@@ -117,6 +117,8 @@ Dès que des missions réelles sont validées pour publication (anonymisées, av
 
 Ce sont aussi ces cas réels qu'envoie l'aimant « Recevoir un cas réel » : il faut en préparer au moins un par cas d'usage (12) avant de brancher le formulaire.
 
+De même pour les pages expertise : l'aimant « Recevez un exemple de livrable » promet un envoi sous 48 h. Il faut **un exemple anonymisé par écoute (6)** : social, audience, influence, IA, temps réel, recherche. Les exemples des heros de ces pages (`tools/build-expertise.py`, `demo` et `doc`) sont illustratifs eux aussi.
+
 ## Le jour de la bascule sur le vrai domaine
 
 Le site pointe déjà vers `https://www.licter.com` pour les URL canoniques, les `hreflang` et le sitemap (`SITE` dans `tools/uc_content.py`). Il faudra vérifier ces liens une fois le domaine branché, et utiliser ce même domaine dans Plausible.

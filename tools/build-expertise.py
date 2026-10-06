@@ -244,6 +244,8 @@ LIST = {x["key"]: x for x in LISTENINGS}
 # it, and two more questions. MOCK: timings and answers to be validated.
 EXTRA = {
     "social": {
+        "book_t": ("Parlons de ce qui se dit sur vous.", "Let's talk about what is said about you."),
+        "doc": (("Synthèse de veille", "Monitoring summary"), ("Constructeur automobile", "Car maker"), ("Forums, presse auto · 30 jours · 8 400 posts", "Forums, motoring press · 30 days · 8,400 posts")),
         "voice": "orange",
         "steps": [(("J0", "Day 0"), ("Cadrage", "Framing"), ("Le périmètre, les marchés, les langues et les sources.", "The perimeter, the markets, the languages and the sources.")),
                   (("J+2", "Day 2"), ("Collecte", "Collection"), ("Les requêtes paramétrées, le bruit écarté.", "Queries set up, the noise removed.")),
@@ -256,6 +258,8 @@ EXTRA = {
                   "No. We work with our own platforms. If you have one, we can also take it over and make it speak."))],
     },
     "audience": {
+        "book_t": ("Parlons de vos audiences.", "Let's talk about your audiences."),
+        "doc": (("Profil d'audience", "Audience profile"), ("Marque alimentaire", "Food brand"), ("Panel comportemental · 1,2 M de profils", "Behavioural panel · 1.2M profiles")),
         "voice": "loreal",
         "steps": [(("J0", "Day 0"), ("Cadrage", "Framing"), ("Les audiences à profiler, et la décision à éclairer.", "The audiences to profile, and the decision to inform.")),
                   (("J+3", "Day 3"), ("Profilage", "Profiling"), ("Le panel comportemental fait apparaître les communautés.", "The behavioural panel brings out the communities.")),
@@ -268,6 +272,8 @@ EXTRA = {
                   "A media plan, messages and creators for each community: the readout ends with recommendations."))],
     },
     "influence": {
+        "book_t": ("Parlons des voix qui comptent pour vous.", "Let's talk about the voices that matter to you."),
+        "doc": (("Shortlist d'influence", "Influence shortlist"), ("Marque de mode", "Fashion brand"), ("Instagram, TikTok, presse · 90 jours", "Instagram, TikTok, press · 90 days")),
         "voice": "lvmh",
         "steps": [(("J0", "Day 0"), ("Cadrage", "Framing"), ("La catégorie, l'objectif et les audiences visées.", "The category, the goal and the target audiences.")),
                   (("J+3", "Day 3"), ("Repérage", "Mapping"), ("Qui lance les sujets, et qui les relaie.", "Who starts topics, and who relays them.")),
@@ -281,6 +287,8 @@ EXTRA = {
                   "No. The overlap with your audience matters more than the follower count: mid-sized accounts often carry better."))],
     },
     "ai": {
+        "book_t": ("Parlons de ce que les IA disent de vous.", "Let's talk about what AI says about you."),
+        "doc": (("Audit des réponses IA", "AI answers audit"), ("Mutuelle santé", "Health insurer"), ("5 assistants IA · 40 questions testées", "5 AI assistants · 40 questions tested")),
         "voice": "dassault",
         "steps": [(("J0", "Day 0"), ("Cadrage", "Framing"), ("Les questions que posent vos clients, et les modèles à interroger.", "The questions your customers ask, and the models to question.")),
                   (("J+2", "Day 2"), ("Interrogation", "Prompting"), ("Les mêmes questions, posées à chaque modèle.", "The same questions, put to each model.")),
@@ -294,6 +302,8 @@ EXTRA = {
                   "Yes. AI assistants do not rank pages, they synthesise sources. We read those syntheses, and the sources feeding them."))],
     },
     "live": {
+        "book_t": ("Parlons de votre veille en temps réel.", "Let's talk about your real-time monitoring."),
+        "doc": (("Journal d'alerte", "Alert log"), ("Groupe agroalimentaire", "Food group"), ("Suivi 24/7 · réseaux, presse, forums", "24/7 watch · social, press, forums")),
         "voice": "sncf",
         "steps": [(("48 h", "48 h"), ("Paramétrage", "Set-up"), ("Les requêtes, les seuils et les personnes à alerter.", "The queries, the thresholds and the people to alert.")),
                   (("24/7", "24/7"), ("Veille", "Watch"), ("La conversation suivie en continu, nuits et week-ends compris.", "The conversation followed continuously, nights and weekends included.")),
@@ -306,6 +316,8 @@ EXTRA = {
                   "The people you name, by email or messaging, with the analyst's qualification and a recommendation."))],
     },
     "search": {
+        "book_t": ("Parlons de ce que vos clients cherchent.", "Let's talk about what your customers search for."),
+        "doc": (("Étude des recherches", "Search study"), ("Marque alimentaire", "Food brand"), ("Google, YouTube, Amazon · 12 mois", "Google, YouTube, Amazon · 12 months")),
         "voice": "seb",
         "steps": [(("J0", "Day 0"), ("Cadrage", "Framing"), ("Les marchés, les langues et les produits à lire.", "The markets, the languages and the products to read.")),
                   (("J+2", "Day 2"), ("Collecte", "Collection"), ("Les recherches sur Google, YouTube et Amazon.", "Searches on Google, YouTube and Amazon.")),
@@ -318,6 +330,7 @@ EXTRA = {
                  ("Environ une semaine après le cadrage.", "About a week after framing."))],
     },
 }
+HUB_VOICE = "kantar"
 HUB_FAQ = [
     (("Quelle écoute choisir ?", "Which way of listening should we pick?"),
      ("Celle que demande votre question. Nous les combinons souvent, et le premier échange sert justement à le déterminer.",
@@ -357,6 +370,9 @@ S.update({
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
     "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
     "hub_faq_t": ("Questions fréquentes", "Frequently asked questions"),
+    "data_illus": ("Données illustratives", "Illustrative data"),
+    "source": ("Source :", "Source:"),
+    "oct": ("Octobre 2026", "October 2026"),
 })
 # French slugs of the static twins
 FR_PATH = {"expertise.html": "/fr/expertise/"}
@@ -380,8 +396,8 @@ def steps_block(x):
         t(S["how_runs"]), lis, t(S["how_note"]))
 
 
-def proof_block(x):
-    vid, time, quote, brand, who = C.VOICES[EXTRA[x["key"]]["voice"]]
+def proof_block(x, voice=None):
+    vid, time, quote, brand, who = C.VOICES[voice or EXTRA[x["key"]]["voice"]]
     q = ("« %s »" % quote[FR], "“%s”" % quote[EN])
     return ('  <section class="ucp xe-proof">\n    <div class="shell">\n'
             '      <a class="ucv-video xe-video" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener">\n'
@@ -463,9 +479,11 @@ def listening_body(x, offers_html):
         </div>
       </div>
       <div class="of-hero__demo">
-        <figure class="xo__demo" aria-label="{a(S["demo_cap"])}">
-          <figcaption>{t(S["demo_cap"])} <span>{t(S["illus"])}</span></figcaption>
+        <figure class="xo__demo xo__demo--doc" aria-label="{a(S["demo_cap"])}">
+          <div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="assets/img/logo-navy.png" alt="" width="44" height="48" /><span class="dlv__doc"><b>{t(EXTRA[x["key"]]["doc"][0])}</b><small><span>{t(EXTRA[x["key"]]["doc"][1])}</span> · <span>{t(S["oct"])}</span></small></span><span class="dlv__tag">{t(S["data_illus"])}</span></div>
+          <figcaption>{t(S["demo_cap"])}</figcaption>
           <ul class="xe-sig">{demo}</ul>
+          <div class="dlv__foot"><span><span>{t(S["source"])}</span> <span>{t(EXTRA[x["key"]]["doc"][2])}</span></span><span>Licter</span></div>
         </figure>
       </div>
     </div>
@@ -482,7 +500,7 @@ def listening_body(x, offers_html):
     </div>
   </section>
 
-  <section class="xw" id="answers" data-mag-after>
+  <section class="xw" id="answers">
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">{t(S["answers_t"])}</h2></div>
       <ul class="xw__list">{answers}</ul>
@@ -511,7 +529,7 @@ def listening_body(x, offers_html):
     </div>
   </section>
 
-{book(HUB["book_t"], offers_html)}
+{book(EXTRA[x["key"]]["book_t"], offers_html)}
 </main>'''
 
 
@@ -542,7 +560,7 @@ def hub_body(offers_html):
 {logos()}
   </section>
 
-  <section class="of-fit xe-ex" data-mag-after>
+  <section class="of-fit xe-ex">
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">{t(HUB["ex_t"])}</h2></div>
       <p class="xe-ex__q">{t(HUB["ex_q"])}</p>
@@ -550,6 +568,8 @@ def hub_body(offers_html):
       <p class="xe-ex__read"><span>{t(HUB["ex_read_k"])}</span>{t(HUB["ex_read"])}</p>
     </div>
   </section>
+
+{proof_block(None, HUB_VOICE)}
 
 {magnet_block("xp-hub", t(S["magnet_t_hub"]))}
 

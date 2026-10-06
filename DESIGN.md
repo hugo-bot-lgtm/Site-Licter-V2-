@@ -198,7 +198,9 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
   8. la FAQ (4 questions) ;
   9. le rappel.
 - **La page principale** a ses logos, l'aimant, et une FAQ de 4 questions.
-- **Le popup du magazine** attend que la section marquée `data-mag-after` soit passée (les questions auxquelles l'écoute répond).
+- **Pas de popup magazine automatique** sur ces pages, comme sur les cas d'usage : leur aimant est l'exemple de livrable.
+- **L'exemple du hero** est une page de rapport (logo, document, client anonymisé, source), et le titre du bloc de contact est propre à chaque écoute (« Parlons de votre veille en temps réel. »).
+- **La page principale** a aussi une interview (Kantar) ; sur téléphone, les six écoutes s'affichent en liste compacte et les plateformes sont repliées.
 - **Sur téléphone :** la même barre du bas que les cas d'usage (Antoine, « Recevoir un exemple », « Parler à un consultant »), la FAQ repliée, un seul signal dans l'exemple du hero.
 
 ### Maquettes de livrables (`tools/uc_deliverables.py`)

@@ -8049,3 +8049,27 @@ html[data-theme="dark"] .xe-proof .xe-video__k { color: #EAA93D; }
   .xepage .xe-sig li:nth-child(n+2) { display: none; }
   .xepage .ucp__clients .wall__caption { white-space: nowrap; }
 }
+
+/* expertise: the hero example as a report page */
+.xo__demo--doc { border-radius: 10px; background: #fff; }
+.xo__demo--doc figcaption { display: block; padding: 14px 18px 0; background: none; color: #13162D; font: 600 16px/1.25 var(--title-font); }
+.xo__demo--doc .xe-sig { padding-top: 12px; }
+.xo__demo--doc .dlv__tag { font-size: 12px; }
+/* contact title, a little longer per listening */
+.xepage .book .block__title { text-wrap: balance; }
+@media (max-width: 720px) {
+  /* the kicker on one clean line */
+  .xepage .xh__kick { flex-wrap: wrap; gap: 6px 10px; letter-spacing: 1.2px; line-height: 1.3; }
+  .xepage .xh__kick::before { flex: none; }
+  /* the overview: the six listenings as a compact list */
+  .xe-six a { grid-template-areas: "n i b go"; padding: 10px 0; }
+  .xe-six__d { display: none; }
+  .xe-six b { font-size: 16px; }
+  /* with what: the offers stay, the platforms fold away (tech pages hold them) */
+  .xe-how__grid > div:first-child:not(:only-child) { display: none; }
+  .xo__demo--doc .dlv__tag { display: none; }
+  .xo__demo--doc .dlv__foot { display: none; }
+}
+/* report frame greys: 4.5:1 at least on white */
+.dlv__tag { color: #6E6040; }
+.dlv__foot, .dlv__doc small, .dlv .dlv__head small, .dlv-kpis i, .dlv-score i { color: #646873; }

@@ -269,8 +269,9 @@
   var path = location.pathname;
   var formPage = /\/(book-a-meeting|diagnostic|guide|events|event-[a-z0-9-]+)\.html$/.test(path) ||
     /* the use-case pages bring their own magnet (a real case of the same
-       kind): the magazine never interrupts them; its cover still waits below */
-    /^\/(fr\/cas-usage|en\/use-cases)\//.test(path);
+       kind), and so do the expertise pages (a sample deliverable): the
+       magazine never interrupts them; its cover still waits below */
+    /^\/(fr\/cas-usage|en\/use-cases|fr\/expertise)\//.test(path) || /^\/expertise(-[a-z]+-listening)?\.html$/.test(path);
   var queued = null;
   function may(k) {
     return !formPage && !state(k) && !html.classList.contains("lx-open") && !html.classList.contains("pp-open") &&

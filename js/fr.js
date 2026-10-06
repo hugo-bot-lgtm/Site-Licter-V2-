@@ -2126,6 +2126,18 @@ window.LicterFR = {
     "Les questions auxquelles elle répond",
   "An example of what it picks up":
     "Un exemple de ce qu'elle entend",
+  "Monitoring summary":
+    "Synthèse de veille",
+  "Car maker":
+    "Constructeur automobile",
+  "October 2026":
+    "Octobre 2026",
+  "Illustrative data":
+    "Données illustratives",
+  "Source:":
+    "Source :",
+  "Forums, motoring press · 30 days · 8,400 posts":
+    "Forums, presse auto · 30 jours · 8 400 posts",
   "What it picks up, and its limits":
     "Ce qu'elle entend, et ses limites",
   "What it picks up":
@@ -2202,8 +2214,8 @@ window.LicterFR = {
     "Toute notre expertise",
   "Frequently asked questions":
     "Questions fréquentes",
-  "Which question do you want to listen to?":
-    "Quelle question voulez-vous écouter ?",
+  "Let's talk about what is said about you.":
+    "Parlons de ce qui se dit sur vous.",
   "Community":
     "Communauté",
   "Pragmatic parents, 41% of the audience":
@@ -2252,6 +2264,12 @@ window.LicterFR = {
     "Qui sont vraiment vos audiences, au-delà de l'âge et du sexe.",
   "We profile communities from what they follow, share and consume: interests, brand affinities, media. Enough to replace a declared persona with observed behaviour.":
     "Nous profilons les communautés à partir de ce qu'elles suivent, partagent et consomment : centres d'intérêt, affinités de marque, médias. De quoi remplacer un persona déclaratif par un comportement observé.",
+  "Audience profile":
+    "Profil d'audience",
+  "Food brand":
+    "Marque alimentaire",
+  "Behavioural panel · 1.2M profiles":
+    "Panel comportemental · 1,2 M de profils",
   "The audiences to profile, and the decision to inform.":
     "Les audiences à profiler, et la décision à éclairer.",
   "Day 3":
@@ -2268,6 +2286,8 @@ window.LicterFR = {
     "Les communautés à prioriser, et comment les toucher.",
   "Get a sample Audience listening deliverable, in your sector.":
     "Recevez un exemple de livrable Audience listening, dans votre secteur.",
+  "Let's talk about your audiences.":
+    "Parlons de vos audiences.",
   "Creator":
     "Créatrice",
   "@studio.zoe, 142k followers, 58% overlap":
@@ -2316,6 +2336,12 @@ window.LicterFR = {
     "Les voix qui portent, pas celles qui ont le plus d'abonnés.",
   "Creators, experts, journalists, executives: we identify who really shapes your category's conversation, measure the overlap with your audience and flag the risks before a partnership.":
     "Créateurs, experts, journalistes, dirigeants : nous identifions qui influence vraiment la conversation de votre catégorie, mesurons le recouvrement avec votre audience et signalons les risques avant un partenariat.",
+  "Influence shortlist":
+    "Shortlist d'influence",
+  "Fashion brand":
+    "Marque de mode",
+  "Instagram, TikTok, press · 90 days":
+    "Instagram, TikTok, presse · 90 jours",
   "The category, the goal and the target audiences.":
     "La catégorie, l'objectif et les audiences visées.",
   "Mapping":
@@ -2336,6 +2362,8 @@ window.LicterFR = {
     "Une liste classée et argumentée, prête pour l'agence.",
   "Get a sample Influence listening deliverable, in your sector.":
     "Recevez un exemple de livrable Influence listening, dans votre secteur.",
+  "Let's talk about the voices that matter to you.":
+    "Parlons des voix qui comptent pour vous.",
   "Prompt tested":
     "Question testée",
   "“Which health insurance for a family?”":
@@ -2382,6 +2410,12 @@ window.LicterFR = {
     "Ce que les IA répondent quand on leur parle de vous.",
   "More and more searches go through an AI assistant. We question the main models about your brand and your category, the way your customers would, and read what they recommend, cite or leave out.":
     "De plus en plus de recherches passent par un assistant IA. Nous interrogeons les principaux modèles sur votre marque et votre catégorie, comme le feraient vos clients, et lisons ce qu'ils recommandent, citent ou oublient.",
+  "AI answers audit":
+    "Audit des réponses IA",
+  "Health insurer":
+    "Mutuelle santé",
+  "5 AI assistants · 40 questions tested":
+    "5 assistants IA · 40 questions testées",
   "The questions your customers ask, and the models to question.":
     "Les questions que posent vos clients, et les modèles à interroger.",
   "Prompting":
@@ -2396,6 +2430,8 @@ window.LicterFR = {
     "Les sources à corriger ou à nourrir.",
   "Get a sample AI listening deliverable, in your sector.":
     "Recevez un exemple de livrable AI listening, dans votre secteur.",
+  "Let's talk about what AI says about you.":
+    "Parlons de ce que les IA disent de vous.",
   "14:32":
     "14:32",
   "Spike on “product recall”, ×4 in 2 h":
@@ -2436,6 +2472,12 @@ window.LicterFR = {
     "Savoir ce qui se passe pendant que ça se passe.",
   "Event, launch, crisis: we follow the conversation live, 24/7, and an analyst alerts you within 15 minutes when something really moves.":
     "Événement, lancement, crise : nous suivons la conversation en direct, 24 h/24, et un analyste vous alerte en 15 minutes quand quelque chose bouge vraiment.",
+  "Alert log":
+    "Journal d'alerte",
+  "Food group":
+    "Groupe agroalimentaire",
+  "24/7 watch · social, press, forums":
+    "Suivi 24/7 · réseaux, presse, forums",
   "48 h":
     "48 h",
   "Set-up":
@@ -2460,6 +2502,8 @@ window.LicterFR = {
     "Ce qui a bougé, et ce qu'il faut surveiller ensuite.",
   "Get a sample Live listening deliverable, in your sector.":
     "Recevez un exemple de livrable Live listening, dans votre secteur.",
+  "Let's talk about your real-time monitoring.":
+    "Parlons de votre veille en temps réel.",
   "Rising search":
     "Recherche en hausse",
   "“Single-portion recyclable”, +38% over a year":
@@ -2502,6 +2546,10 @@ window.LicterFR = {
     "Ce que les gens cherchent quand personne ne les regarde.",
   "Searches on Google, YouTube and Amazon say what people really want to know, before the purchase and after the problem. We read them to spot unmet needs and unanswered questions.":
     "Les recherches sur Google, YouTube et Amazon disent ce que les gens veulent vraiment savoir, avant l'achat et après le problème. Nous les lisons pour repérer les besoins non couverts et les questions sans réponse.",
+  "Search study":
+    "Étude des recherches",
+  "Google, YouTube, Amazon · 12 months":
+    "Google, YouTube, Amazon · 12 mois",
   "The markets, the languages and the products to read.":
     "Les marchés, les langues et les produits à lire.",
   "Searches on Google, YouTube and Amazon.":
@@ -2512,6 +2560,8 @@ window.LicterFR = {
     "Les besoins non couverts, et ce qu'il faut lancer.",
   "Get a sample Search listening deliverable, in your sector.":
     "Recevez un exemple de livrable Search listening, dans votre secteur.",
+  "Let's talk about what your customers search for.":
+    "Parlons de ce que vos clients cherchent.",
   "What is said about you, your competitors and your market.":
     "Ce qui se dit sur vous, vos concurrents et votre marché.",
   "Who the people talking about you really are.":
@@ -2548,6 +2598,8 @@ window.LicterFR = {
     "Notre lecture",
   "A format and relay problem, not an awareness one: launch the format people search for, and hand it to the voices the target already follows.":
     "Un problème de format et de relais, pas de notoriété : lancer le format recherché, et le confier aux voix que la cible suit déjà.",
+  "“Consumption has become an act of activism.”":
+    "« Consommer est devenu un acte militant. »",
   "Get a sample deliverable, in your sector.":
     "Recevez un exemple de livrable, dans votre secteur.",
   "Which way of listening should we pick?":
@@ -2566,6 +2618,8 @@ window.LicterFR = {
     "Combien de temps pour une première réponse ?",
   "One to two weeks depending on the listening, 48 hours for live monitoring.":
     "Une à deux semaines selon les écoutes, 48 heures pour une veille en direct.",
+  "Which question do you want to listen to?":
+    "Quelle question voulez-vous écouter ?",
   "IN OUR OFFERS":
     "DANS NOS OFFRES",
   "Get a sample":
