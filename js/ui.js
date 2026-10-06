@@ -932,21 +932,21 @@ window.LicterUC = (function () {
           desc: "Visual listening: what appears in the image, not only in the text." },
         { letter: "S", logo: "/assets/img/tools/soprism.png", name: "SoPrism", href: "/tech-soprism.html",
           desc: "Audience intelligence: who the communities are, in detail." },
-        { letter: "R", logo: "/assets/img/tools/radarly.png", name: "Radarly", href: "/tech-tools.html#tools",
+        { letter: "R", logo: "/assets/img/tools/radarly.png", name: "Radarly", href: "/tech-radarly.html",
           desc: "Social listening and conversation analysis, over time." }
       ],
       /* the tools around the platforms, picked question by question */
       extra: {
         label: "AND, DEPENDING ON THE QUESTION",
         items: [
-          { letter: "S", name: "Semrush", desc: "Search and SEO", href: "/tech-tools.html#more" },
-          { letter: "G", name: "Google Trends", desc: "Search interest", href: "/tech-tools.html#more" },
-          { letter: "A", name: "AnswerThePublic", desc: "The questions people ask", href: "/tech-tools.html#more" },
-          { letter: "C", name: "ChatGPT", desc: "What AI answers", href: "/tech-tools.html#more" },
-          { letter: "G", name: "GEO", desc: "Visibility in AI engines", href: "/tech-tools.html#more" },
-          { letter: "M", name: "Meta Ads", desc: "The Meta Ad Library", href: "/tech-tools.html#more" },
-          { letter: "G", name: "Google News", desc: "Press coverage", href: "/tech-tools.html#more" },
-          { letter: "S", name: "Social Blade", desc: "Account and creator growth", href: "/tech-tools.html#more" }
+          { letter: "S", name: "Semrush", desc: "Search and SEO", href: "/tech-semrush.html" },
+          { letter: "G", name: "Google Trends", desc: "Search interest", href: "/tech-google-trends.html" },
+          { letter: "A", name: "AnswerThePublic", desc: "The questions people ask", href: "/tech-answerthepublic.html" },
+          { letter: "C", name: "ChatGPT", desc: "What AI answers", href: "/tech-chatgpt.html" },
+          { letter: "G", name: "GEO", desc: "Visibility in AI engines", href: "/tech-geo.html" },
+          { letter: "M", name: "Meta Ads", desc: "The Meta Ad Library", href: "/tech-meta-ads.html" },
+          { letter: "G", name: "Google News", desc: "Press coverage", href: "/tech-google-news.html" },
+          { letter: "S", name: "Social Blade", desc: "Account and creator growth", href: "/tech-social-blade.html" }
         ]
       },
       aside: {

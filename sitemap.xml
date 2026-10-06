@@ -20,11 +20,6 @@
   <url><loc>https://www.licter.com/guide.html</loc></url>
   <url><loc>https://www.licter.com/legal.html</loc></url>
   <url><loc>https://www.licter.com/privacy.html</loc></url>
-  <url><loc>https://www.licter.com/tech-soprism.html</loc></url>
-  <url><loc>https://www.licter.com/tech-talkwalker.html</loc></url>
-  <url><loc>https://www.licter.com/tech-tools.html</loc></url>
-  <url><loc>https://www.licter.com/tech-visibrain.html</loc></url>
-  <url><loc>https://www.licter.com/tech-youscan.html</loc></url>
   <url><loc>https://www.licter.com/why-licter.html</loc></url>
   <url><loc>https://www.licter.com/fr/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/" />
@@ -155,6 +150,146 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offers.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/answerthepublic/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/answerthepublic/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-answerthepublic.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/answerthepublic/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-answerthepublic.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/answerthepublic/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-answerthepublic.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/answerthepublic/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/chatgpt/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/chatgpt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-chatgpt.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/chatgpt/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-chatgpt.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/chatgpt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-chatgpt.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/chatgpt/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/geo/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/geo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-geo.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/geo/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-geo.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/geo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-geo.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/geo/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/google-actualites/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/google-actualites/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-google-news.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/google-actualites/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-google-news.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/google-actualites/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-google-news.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/google-actualites/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/google-trends/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/google-trends/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-google-trends.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/google-trends/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-google-trends.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/google-trends/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-google-trends.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/google-trends/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/meta-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/meta-ads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-meta-ads.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/meta-ads/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-meta-ads.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/meta-ads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-meta-ads.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/meta-ads/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/radarly/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/radarly/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-radarly.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/radarly/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-radarly.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/radarly/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-radarly.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/radarly/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/semrush/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/semrush/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-semrush.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/semrush/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-semrush.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/semrush/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-semrush.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/semrush/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/social-blade/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/social-blade/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-social-blade.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/social-blade/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-social-blade.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/social-blade/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-social-blade.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/social-blade/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/soprism/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/soprism/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-soprism.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/soprism/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-soprism.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/soprism/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-soprism.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/soprism/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/talkwalker/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/talkwalker/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-talkwalker.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/talkwalker/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-talkwalker.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/talkwalker/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-talkwalker.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/talkwalker/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-tools.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-tools.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-tools.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/visibrain/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/visibrain/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-visibrain.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/visibrain/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-visibrain.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/visibrain/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-visibrain.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/visibrain/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/outils/youscan/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/youscan/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-youscan.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/youscan/" />
+  </url>
+  <url><loc>https://www.licter.com/tech-youscan.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/youscan/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-youscan.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/youscan/" />
   </url>
   <url><loc>https://www.licter.com/fr/cas-usage/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/cas-usage/" />

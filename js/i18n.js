@@ -68,12 +68,15 @@
 
     /* the expertise pages have French twins too (tools/build-expertise.py) */
     if (dict === FR) {
-      Array.prototype.forEach.call(root.querySelectorAll ? root.querySelectorAll('a[href*="expertise"], a[href*="offer"]') : [], function (a) {
+      Array.prototype.forEach.call(root.querySelectorAll ? root.querySelectorAll('a[href*="expertise"], a[href*="offer"], a[href*="tech-"]') : [], function (a) {
         var m = /^\/?(expertise(?:-([a-z]+-listening))?)\.html(#.*)?$/.exec(a.getAttribute("href") || "");
         if (m) a.setAttribute("href", "/fr/expertise/" + (m[2] ? m[2] + "/" : "") + (m[3] || ""));
         var o = /^\/?(offers|offer-(social-insights|vigie-360|slaas|nox))\.html(#.*)?$/.exec(a.getAttribute("href") || "");
         var OFR = { "social-insights": "social-insights/", "vigie-360": "vigie-360/", "slaas": "social-listening-as-a-service/", "nox": "nox/" };
         if (o) a.setAttribute("href", "/fr/offres/" + (o[2] ? OFR[o[2]] : "") + (o[3] || ""));
+        /* and the tool pages (tools/build-tech.py) */
+        var tk = /^\/?tech-([a-z0-9-]+)\.html(#.*)?$/.exec(a.getAttribute("href") || "");
+        if (tk) a.setAttribute("href", "/fr/outils/" + (tk[1] === "tools" ? "" : (tk[1] === "google-news" ? "google-actualites" : tk[1]) + "/") + (tk[2] || ""));
       });
     }
 
