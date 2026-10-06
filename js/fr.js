@@ -105,6 +105,45 @@ window.LicterFR = {
   "xAI's assistant, built into X: what it says of you, often fed by the conversation on X.":
     "L'assistant de xAI, intégré à X : ce qu'il dit de vous, souvent nourri par la conversation de X.",
   "The platforms we run": "Les plateformes que nous opérons",
+  /* why licter, studio page (October 2026) */
+  "Founded in 2022":
+    "Fondé en 2022",
+  "50+ organisations":
+    "50+ organisations",
+  "Replace":
+    "Remplacer",
+  "intuition":
+    "l'intuition",
+  "with data.":
+    "par la donnée.",
+  "Our story":
+    "Notre histoire",
+  "Listen":
+    "Écouter",
+  "Read":
+    "Lire",
+  "Licter was founded in 2022 by Antoine Khaitrine and Adrien Krebs, who led the Data & Digital Analysis cell at the Élysée. They left with a conviction: French organisations were years behind on audience intelligence, monitoring and social listening. The gap was one of method, not of data.":
+    "Licter a été fondé en 2022 par Antoine Khaitrine et Adrien Krebs, qui dirigeaient la cellule Data & Digital Analysis de l'Élysée. Ils en sont partis avec une conviction : les organisations françaises avaient plusieurs années de retard en audience intelligence, en veille et en social listening. Un retard de méthode, pas de données.",
+  "Antoine Khaitrine & Adrien Krebs":
+    "Antoine Khaitrine & Adrien Krebs",
+  "Antoine Khaitrine and Adrien Krebs, the founders of Licter":
+    "Antoine Khaitrine et Adrien Krebs, les fondateurs de Licter",
+  "In figures.":
+    "En chiffres.",
+  "We combine our own profiling algorithms with the leading platforms on the market. We are not selling you a seat on one of them.":
+    "Nous combinons nos propres algorithmes de profilage avec les meilleures plateformes du marché. Nous ne vous vendons pas un accès à l'une d'elles.",
+  "The same panel answers three very different mandates. That is usually how a first project becomes a shared resource.":
+    "Le même panel répond à trois missions très différentes. C'est souvent ainsi qu'un premier projet devient une ressource partagée.",
+  "The whole Licter team":
+    "Toute l'équipe Licter",
+  "Start with":
+    "Commencez par",
+  "one":
+    "une",
+  "question.":
+    "question.",
+  "Why Licter | The social data intelligence consultancy":
+    "Pourquoi Licter | Le cabinet de social data intelligence",
   /* positioning: a consultancy, found as an agency (October 2026) */
   "Social data intelligence consultancy":
     "Cabinet de conseil en social data intelligence",

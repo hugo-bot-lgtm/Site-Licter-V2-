@@ -384,3 +384,16 @@ Chaque citation reprend **mot pour mot** la phrase incrustée sur la miniature d
 - **Les carrousels** (`js/ui.js`) défilent seuls quand ils sont à l'écran, s'arrêtent au survol et au focus, et restent fixes si l'utilisateur réduit les animations. Les liens vers les cas d'usage et les outils sont de vrais liens, lisibles par les moteurs.
 - **La page Techno & outils** : une orbite en hero (le logo Licter au centre, les outils et les réseaux autour) ; les quatre couches en sélecteur (un panneau ouvert sur une photo de l'équipe, les autres repliés avec leur titre sur la tranche, en accordéon sur téléphone) ; les outils en catalogue compact (5 plateformes en cartes, 12 outils d'appoint en lignes logo + nom) ; les sources en deux bandeaux de logos qui défilent, comme le mur des clients, chaque logo prenant sa couleur au survol ; « Collecter, qualifier, décider » en étapes à gauche et image à droite qui change avec l'étape. Script : `js/ui.js` (« Tech & tools hub »).
 - **« Agence X »** (outils) et **« agence social listening X »** (réseaux) reviennent dans le titre, la description, l'accroche, une question de FAQ et l'appel final.
+
+### Pourquoi Licter (`why-licter.html`) : une page studio
+
+Écrite à la main, traduite par `js/fr.js`, styles `.wl-*`, script « Why Licter » dans `js/ui.js`. Huit temps :
+1. **le manifeste** : « Remplacer l'intuition par la donnée » en très grande capitale, mot à mot, « l'intuition » en contour barrée d'un trait ambre ; quelques visages de l'équipe flottent autour ;
+2. **un bandeau ambre incliné** qui défile (écouter, lire, décider, les quatre couches) ;
+3. **l'origine** : « 2022 » en filigrane, l'histoire, les deux fondateurs et leur photo ;
+4. **en chiffres**, sur fond navy, les nombres comptent jusqu'à leur valeur ;
+5. **la différence**, en grandes lignes : au survol, une photo suit le pointeur (sur mobile, la photo est dans la ligne) ;
+6. **trois équipes** en cartes photo, celle du milieu décalée ;
+7. **l'équipe** : la photo de groupe en pleine largeur avec un léger parallaxe, puis les portraits qui défilent ;
+8. **l'appel final** en très grande capitale, avec le formulaire.
+La taille des grands titres suit la largeur de leur colonne (`cqi`) pour tenir en français comme en anglais. Tout reste immobile si l'utilisateur réduit les animations.

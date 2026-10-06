@@ -2248,3 +2248,56 @@ window.LicterUC = (function () {
     c.addEventListener("pointerleave", function () { c.classList.remove("is-lit"); c.style.setProperty("--rx", "0deg"); c.style.setProperty("--ry", "0deg"); });
   });
 })();
+
+/* =========================================================================
+   Why Licter (.wl): numbers that count up, the photo that follows the
+   pointer over the rows, and a slow parallax on the team photo.
+   ========================================================================= */
+(function () {
+  "use strict";
+  var root = document.querySelector(".wl");
+  if (!root) return;
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* count up, once, when the figures reach the screen */
+  var nums = root.querySelectorAll("[data-count]");
+  if (nums.length && !still && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        var el = e.target, end = +el.getAttribute("data-count"), suffix = el.textContent.replace(/[0-9\s]/g, ""), t0 = null;
+        function tick(t) {
+          if (!t0) t0 = t;
+          var k = Math.min(1, (t - t0) / 1400), v = Math.round(end * (1 - Math.pow(1 - k, 3)));
+          el.textContent = v + suffix;
+          if (k < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: .6 });
+    nums.forEach(function (n) { io.observe(n); });
+  }
+
+  /* the rows: a photo under the pointer (pointer devices only) */
+  var cursor = root.querySelector(".wl-cursor"), img = cursor && cursor.querySelector("img");
+  if (cursor && window.matchMedia("(hover: hover)").matches && !still) {
+    var x = 0, y = 0, cx = 0, cy = 0, raf = null;
+    function loop() { cx += (x - cx) * .18; cy += (y - cy) * .18; cursor.style.left = cx + "px"; cursor.style.top = cy + "px"; raf = requestAnimationFrame(loop); }
+    root.querySelectorAll(".wl-row").forEach(function (row) {
+      row.addEventListener("mouseenter", function () { img.src = row.getAttribute("data-img"); cursor.classList.add("is-on"); if (!raf) loop(); });
+      row.addEventListener("mouseleave", function () { cursor.classList.remove("is-on"); });
+      row.addEventListener("mousemove", function (e) { x = e.clientX + 170; y = e.clientY; });
+    });
+  }
+
+  /* the team photo drifts a little slower than the page */
+  var group = root.querySelector(".wl-crew__group img");
+  if (group && !still) {
+    window.addEventListener("scroll", function () {
+      var r = group.parentNode.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) return;
+      group.style.setProperty("--py", (-(r.top / innerHeight) * 60 - 60) + "px");
+    }, { passive: true });
+  }
+})();
