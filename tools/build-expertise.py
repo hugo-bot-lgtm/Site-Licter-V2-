@@ -374,6 +374,20 @@ S.update({
     "source": ("Source :", "Source:"),
     "oct": ("Octobre 2026", "October 2026"),
 })
+# 6. On French pages each English name gets a French gloss beside it: the
+# English term is what people search for, the gloss is what it means.
+GLOSS = {"social": "l'écoute des conversations", "audience": "l'écoute des audiences", "influence": "l'écoute de l'influence",
+         "ai": "l'écoute des IA", "live": "l'écoute en temps réel", "search": "l'écoute des recherches"}
+# 3. The overview shows three deliverables, drawn like those of the use cases
+HUB_DLV = ["campaign-impact", "segmentation", "brand-risk"]
+S.update({
+    "dlv_t": ("Ce que vous recevez", "What you receive"),
+    "dlv_lead": ("Trois livrables parmi d'autres : chaque écoute aboutit à un document que vos équipes peuvent utiliser.",
+                 "Three deliverables among others: every way of listening ends in a document your teams can use."),
+    "dlv_link": ("Voir le cas d'usage", "See the use case"),
+    "all_cases": ("Voir les 12 cas d'usage", "See the 12 use cases"),
+})
+
 # French slugs of the static twins
 FR_PATH = {"expertise.html": "/fr/expertise/"}
 for _x in LISTENINGS:
@@ -470,7 +484,7 @@ def listening_body(x, offers_html):
   <section class="xh of-hero xe-hero">
     <div class="shell xh__grid">
       <div class="xh__copy">
-        <p class="xh__kick">{t(S["kicker"])} <span>0{i}</span> · {t(x["name"])}</p>
+        <p class="xh__kick">{t(S["kicker"])} <span>0{i}</span> · {t(x["name"])}<!--glossk:{x["key"]}--></p>
         <h1 class="xh__title">{t(x["h1"])}</h1>
         <p class="xh__lead">{t(x["lead"])}</p>
         <div class="xh__actions">
@@ -533,11 +547,18 @@ def listening_body(x, offers_html):
 </main>'''
 
 
+def dlv_card(key):
+    fr, en, c = uc_link(key)
+    return ('<li><a class="xe-dlvs__a" href="%s" data-en="%s"><span class="xe-dlvs__fig"><!--dlv:%s--></span>'
+            '<span class="xe-dlvs__n">%s</span><span class="xe-dlvs__go">%s <span aria-hidden="true">→</span></span></a></li>') % (
+        fr, en, key, t(c["name"]), t(S["dlv_link"]))
+
+
 def hub_body(offers_html):
     six = "".join(
         '<li><a href="%s"><span class="xe-six__n">0%d</span><span class="xe-six__ico" aria-hidden="true">%s</span>'
-        '<b>%s</b><span class="xe-six__d">%s</span><i aria-hidden="true">→</i></a></li>' % (
-            x["file"], i + 1, ICON_SVG.get(x["icon"], ""), t(x["name"]), t(x["short"]))
+        '<b>%s<!--gloss:%s--></b><span class="xe-six__d">%s</span><i aria-hidden="true">→</i></a></li>' % (
+            x["file"], i + 1, ICON_SVG.get(x["icon"], ""), t(x["name"]), x["key"], t(x["short"]))
         for i, x in enumerate(LISTENINGS))
     ex = "".join('<li><a href="%s"><b>%s</b></a><span>%s</span></li>' % (LIST[k]["file"], t(LIST[k]["name"]), t(v)) for k, v in HUB["ex"])
     return f'''<main id="content">
@@ -546,7 +567,7 @@ def hub_body(offers_html):
   <section class="xh of-hero xe-hero">
     <div class="shell xh__grid">
       <div class="xh__copy">
-        <p class="xh__kick"><span>{t(S["expertise"])}</span> · <span>{t(S["kicker"])}</span></p>
+        <p class="xh__kick">{t(S["kicker"])}</p>
         <h1 class="xh__title">{t(HUB["h1"])}</h1>
         <p class="xh__lead">{t(HUB["lead"])}</p>
         <div class="xh__actions">
@@ -566,6 +587,14 @@ def hub_body(offers_html):
       <p class="xe-ex__q">{t(HUB["ex_q"])}</p>
       <ul class="xe-ex__list">{ex}</ul>
       <p class="xe-ex__read"><span>{t(HUB["ex_read_k"])}</span>{t(HUB["ex_read"])}</p>
+      <a class="xh__link xe-ex__all" href="/fr/cas-usage/" data-en="/en/use-cases/">{t(S["all_cases"])} <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="ucp xe-dlvs">
+    <div class="shell">
+      <div class="xs__head"><h2 class="xs__title">{t(S["dlv_t"])}</h2><p class="xs__lead">{t(S["dlv_lead"])}</p></div>
+      <ul class="xe-dlvs__list">{"".join(dlv_card(k) for k in HUB_DLV)}</ul>
     </div>
   </section>
 
@@ -620,8 +649,14 @@ def write(file, seo_title, seo_desc, body, ld_tags, offers_html, ld_fr=""):
     shell = shell.replace('<body class="xpage">', '<body class="xpage xepage">', 1)
     page = en_head + shell % body
     page = page.replace("</main>", "</main>\n\n" + bar(), 1)
+    D = U.D if hasattr(U, "D") else __import__("uc_deliverables")
+    def per_lang(html_, lang):
+        html_ = re.sub(r"<!--gloss:(\w+)-->", lambda m: '<span class="xe-gloss">, %s</span>' % GLOSS[m.group(1)] if lang == FR else "", html_)
+        html_ = re.sub(r"<!--glossk:(\w+)-->", lambda m: '<span class="xe-gloss">· %s</span>' % GLOSS[m.group(1)] if lang == FR else "", html_)
+        return re.sub(r"<!--dlv:([\w-]+)-->", lambda m: D.render(m.group(1), lang, U.esc, U.typo), html_)
     # 1. English: static, links to the use cases in English, no dictionary
-    en = re.sub(r'href="(/fr/cas-usage/[^"]*)" data-en="([^"]*)"', r'href="\2" data-fr="\1"', page)
+    page_en, page = per_lang(page, EN), page
+    en = re.sub(r'href="(/fr/cas-usage/[^"]*)" data-en="([^"]*)"', r'href="\2" data-fr="\1"', page_en)
     en = re.sub(r'\s*<script src="(?:/)?js/fr\.js[^"]*"></script>', "", en)
     (ROOT / file).write_text("<!-- Generated by tools/build-expertise.py: edit that file, not this one. -->\n" + en)
     # 2. French: the same page, translated in the HTML
@@ -639,7 +674,7 @@ def write(file, seo_title, seo_desc, body, ld_tags, offers_html, ld_fr=""):
     fr = re.sub(r'srcset="([^"]+)"', lambda m: 'srcset="%s"' % ", ".join(
         (q if q.startswith(("/", "http")) else "/" + q) for q in (y.strip() for y in m.group(1).split(","))), fr)
     b0, b1 = fr.index("<body"), fr.index("</body>")
-    fr = fr[:b0] + U.translate(fr[b0:b1]).replace(">Skip to content<", ">Aller au contenu<") + fr[b1:]
+    fr = fr[:b0] + per_lang(U.translate(fr[b0:b1]).replace(">Skip to content<", ">Aller au contenu<"), FR) + fr[b1:]
     fr = fr.replace('placeholder="name@company.com"', 'placeholder="nom@entreprise.com"')
     out = ROOT / fr_url.strip("/") / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)

@@ -201,6 +201,9 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
 - **Pas de popup magazine automatique** sur ces pages, comme sur les cas d'usage : leur aimant est l'exemple de livrable.
 - **L'exemple du hero** est une page de rapport (logo, document, client anonymisé, source), et le titre du bloc de contact est propre à chaque écoute (« Parlons de votre veille en temps réel. »).
 - **La page principale** a aussi une interview (Kantar) ; sur téléphone, les six écoutes s'affichent en liste compacte et les plateformes sont repliées.
+- **La page principale montre aussi trois livrables** (bilan de campagne, cartes des communautés, fiche d'alerte), réduits depuis `tools/uc_deliverables.py` et reliés à leur cas d'usage, ainsi qu'un lien « Voir les 12 cas d'usage ».
+- **Noms des écoutes :** on garde le terme anglais (« Social listening », celui que les gens cherchent), suivi en français d'un sous-titre (« l'écoute des conversations ») dans l'en-tête et la liste des six écoutes (`GLOSS`).
+- **Sur téléphone,** « Les autres écoutes » et les trois livrables défilent sur une ligne.
 - **Sur téléphone :** la même barre du bas que les cas d'usage (Antoine, « Recevoir un exemple », « Parler à un consultant »), la FAQ repliée, un seul signal dans l'exemple du hero.
 
 ### Maquettes de livrables (`tools/uc_deliverables.py`)

@@ -2598,6 +2598,14 @@ window.LicterFR = {
     "Notre lecture",
   "A format and relay problem, not an awareness one: launch the format people search for, and hand it to the voices the target already follows.":
     "Un problème de format et de relais, pas de notoriété : lancer le format recherché, et le confier aux voix que la cible suit déjà.",
+  "See the 12 use cases":
+    "Voir les 12 cas d'usage",
+  "What you receive":
+    "Ce que vous recevez",
+  "Three deliverables among others: every way of listening ends in a document your teams can use.":
+    "Trois livrables parmi d'autres : chaque écoute aboutit à un document que vos équipes peuvent utiliser.",
+  "See the use case":
+    "Voir le cas d'usage",
   "“Consumption has become an act of activism.”":
     "« Consommer est devenu un acte militant. »",
   "Get a sample deliverable, in your sector.":
