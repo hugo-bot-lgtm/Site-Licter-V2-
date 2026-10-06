@@ -900,7 +900,7 @@ window.LicterUC = (function () {
       label: "FOUR WAYS TO WORK WITH US",
       items: [
         { icon: "chart", name: "Social Insights", href: "/offer-social-insights.html",
-          desc: "Fixed fee, unlimited studies, no commitment." },
+          desc: "Studies on demand, read by experts." },
         { icon: "bell", name: "Vigie 360", href: "/offer-vigie-360.html",
           desc: "Alerts in 15 minutes, 24/7, in 20+ languages." },
         { icon: "layers", name: "Social Listening as a Service", href: "/offer-slaas.html",

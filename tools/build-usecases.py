@@ -774,8 +774,8 @@ L.update({
     "approach": ("Notre approche sur ce cas", "Our approach to this case"),
     "roi": ("Ce que ça rapporte", "What it pays back"),
     "roi_k": ("ROI", "ROI"),
-    "roi_foot": ("Un forfait mensuel, sans engagement, avec des études illimitées à l'intérieur.",
-                 "A fixed monthly fee, no commitment, with unlimited studies inside it."),
+    "roi_foot": ("Le tarif dépend des marques, des marchés et des langues suivis, rien d'autre.",
+                 "The price depends on the brands, markets and languages covered, nothing else."),
     "client": ("Un cas type", "A typical case"),
     "context": ("Le contexte", "The context"),
     "articles": ("Articles liés", "Related articles"),
@@ -886,7 +886,7 @@ def case_extras(c, lang):
                '      </div>\n'
                '    </div>\n'
                '  </section>') % (T(L["roi_k"], lang), T(L["roi"], lang),
-                                  "" if any("forfait" in b[FR] for a, b in x["roi"]) else '<p class="ucp__roi-foot">%s</p>' % T(L["roi_foot"], lang),
+                                  "" if any("Le tarif dépend" in b[FR] for a, b in x["roi"]) else '<p class="ucp__roi-foot">%s</p>' % T(L["roi_foot"], lang),
                                   roi)
     ctx, rest = split_context(c["example"][lang])
     sit_rec = split_example(rest)

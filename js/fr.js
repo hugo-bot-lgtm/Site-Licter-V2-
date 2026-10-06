@@ -1,6 +1,15 @@
 /* Dictionnaire EN → FR. Toute chaîne absente reste en anglais. */
 window.LicterFR = {
 
+  /* pricing, without the fixed fee, unlimited and no-commitment claims (October 2026) */
+  "The price depends on the offer and the perimeter: markets, languages, monitoring. Thirty minutes is usually enough to give you a number.":
+    "Le tarif dépend de l'offre et du périmètre : marchés, langues, veille. Trente minutes suffisent généralement pour vous donner un chiffre.",
+  "A price set to your scope":
+    "Un tarif à votre mesure",
+  "The price depends on the markets, languages and topics you need covered, nothing else. You pay for answers, not for seats on a platform.":
+    "Le tarif dépend des marchés, des langues et des sujets à couvrir, rien d'autre. Vous payez des réponses, pas des accès à une plateforme.",
+  "Price list on request.":
+    "Grille tarifaire sur demande.",
   /* ---- bandeau, navigation, pied de page ---- */
 
   /* ---- l\u00e9gende du mur de logos ---- */
@@ -66,7 +75,6 @@ window.LicterFR = {
   "Test and evaluate your products": "Tester et évaluer vos produits",
   "Book a meeting": "Prendre rendez-vous", "All twelve use cases": "Les douze cas d'usage",
   "THREE WAYS TO WORK WITH US": "TROIS FAÇONS DE TRAVAILLER AVEC NOUS",
-  "Fixed fee, unlimited studies, no commitment.": "Forfait fixe, études illimitées, sans engagement.",
   "Alerts in 15 minutes, 24/7, in 20+ languages.": "Alerte en 15 minutes, 24/7, en plus de 20 langues.",
   "We make the platform you already own produce decisions.": "Nous faisons produire des décisions à la plateforme que vous payez déjà.",
   "HOW AN ENGAGEMENT RUNS": "COMMENT SE DÉROULE UNE MISSION",
@@ -100,13 +108,9 @@ window.LicterFR = {
   "NOTED - ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ - UN E-MAIL À LA PROCHAINE PUBLICATION",
   "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
   "Skip to content": "Aller au contenu",
-  "Three ways to work with us, one principle: a fixed fee, unlimited studies, no commitment. Our consultants frame, collect and read. You get the decision, not a platform to staff.": "Trois façons de travailler avec nous, un seul principe : un forfait fixe, des études illimitées, sans engagement. Nos consultants cadrent, collectent et lisent. Vous obtenez la décision, pas une plateforme à faire tourner.",
   "Which offer is for me?": "Quelle offre pour moi ?",
-  "Fixed fee": "Forfait fixe",
   "one monthly price": "un prix mensuel",
-  "Unlimited": "Illimité",
   "studies inside it": "études incluses",
-  "No lock-in": "Sans engagement",
   "stop when you want": "arrêtez quand vous voulez",
   "15 min": "15 min",
   "from signal to alert, 24/7": "du signal à l'alerte, 24 h/24",
@@ -118,7 +122,6 @@ window.LicterFR = {
   "For": "Pour",
   "Teams with recurring questions and no one to run a platform": "Les équipes qui ont des questions récurrentes et personne pour faire tourner un outil",
   "Model": "Modèle",
-  "Fixed monthly fee · unlimited studies · no lock-in": "Forfait mensuel · études illimitées · sans engagement",
   "A month with Social Insights": "Un mois avec Social Insights",
   "Illustrative example": "Exemple illustratif",
   "Week 1": "Semaine 1",
@@ -476,8 +479,6 @@ window.LicterFR = {
     ". Une conversation par semaine avec celles et ceux qui lisent la conversation.",
   "Social listening, audience intelligence, digital panel and search listening, combined and filtered by consultants rather than by a dashboard default.":
     "Social listening, audience intelligence, panel digital et search listening, combinés et filtrés par des consultants plutôt que par un réglage d'usine.",
-  "A fixed monthly fee, with unlimited studies inside it, and no commitment. The exact level depends on the perimeter: markets, languages, monitoring. Thirty minutes is usually enough to give you a number.":
-    "Un forfait mensuel fixe, avec des études illimitées à l'intérieur, et sans engagement. Le niveau exact dépend du périmètre : marchés, langues, veille. Trente minutes suffisent généralement pour vous donner un chiffre.",
   "Free guide.": "Guide gratuit.",
   "The 12 questions social data answers better than a survey": "Les 12 questions auxquelles la social data répond mieux qu'une étude",
   "Get the guide": "Recevoir le guide",
@@ -498,10 +499,7 @@ window.LicterFR = {
   "consumer profiles in the panel": "profils consommateurs dans le panel",
   "social intelligence providers worldwide, SI Lab 2024": "acteurs mondiaux de la social intelligence, SI Lab 2024",
   "Buy answers, not licences.": "Achetez des réponses, pas des licences.",
-  "Fixed fee, unlimited studies, no commitment. Consultants frame the question, configure the collection and produce the analysis.":
-    "Forfait fixe, études illimitées, sans engagement. Nos consultants cadrent la question, configurent la collecte et produisent l'analyse.",
   "Your analyses, run by experts": "Vos analyses, menées par des experts",
-  "A fixed monthly fee, unlimited studies, no tool licence to staff.": "Un forfait mensuel fixe, des études illimitées, aucune licence à faire vivre.",
   "Alerts in 15 minutes, 24/7": "Alerte en 15 minutes, 24/7",
   "Your brand, your executives and your markets, in 20+ languages.": "Votre marque, vos dirigeants et vos marchés, en plus de 20 langues.",
   "Make your platform produce decisions": "Faites produire des décisions à votre plateforme",
@@ -727,7 +725,6 @@ window.LicterFR = {
   "Why we run YouScan.": "Pourquoi nous opérons YouScan.",
   "// CONSUMER INSIGHTS": "// CONSUMER INSIGHTS",
   "01 — SOCIAL INSIGHTS": "01 — SOCIAL INSIGHTS",
-  "A price you can plan": "Un prix que vous pouvez budgéter",
   "Alerting that scales": "Une alerte qui passe à l'échelle",
   "Audience use cases →": "Cas d'usage audiences →",
   "Media sphere mapping": "Cartographie de la sphère média",
@@ -904,8 +901,6 @@ window.LicterFR = {
   "25+ client organisations · 20+ languages": "25+ organisations clientes · 20+ langues",
   "Can we combine it with another platform?": "Peut-on le combiner avec un autre outil ?",
   "Overlap between your audience and theirs": "Le recouvrement entre votre audience et la leur",
-  "The model that makes teams actually ask.":
-    "Le modèle qui pousse vraiment les équipes à demander.",
   "“What is being said about us right now?”": "« Qu'est-ce qu'on dit de nous en ce moment ? »",
   "Acquisition angles the comparison reveals":
     "Les angles d'acquisition que la comparaison révèle",
@@ -1007,8 +1002,6 @@ window.LicterFR = {
     "Des irritants visibles dans l'image, pas dans la légende",
   "Usage as it happens, not as the brief imagined it.":
     "L'usage tel qu'il se produit, pas tel que le brief l'imaginait.",
-  "fixed monthly fee · unlimited studies · no lock-in":
-    "forfait mensuel fixe · études illimitées · sans engagement",
   "users profiled daily on interactions and behaviour":
     "utilisateurs profilés chaque jour sur leurs interactions et leur comportement",
   "How is this different from buying the tool directly?":
@@ -1279,8 +1272,6 @@ window.LicterFR = {
     "L'outil travaille sur des données d'audience agrégées, pas sur des profils individuels. Le détail contractuel fait partie du diagnostic.",
   "Thousands of criteria are available; the useful question is which ten of them change your decision. That is the framing work.":
     "Des milliers de critères sont disponibles ; la vraie question est lesquels, parmi dix, changent votre décision. C'est le travail de cadrage.",
-  "Fixed fee, unlimited studies, no commitment. Nobody has to arbitrate between two questions because the budget only covers one.":
-    "Forfait fixe, études illimitées, sans engagement. Personne n'a à arbitrer entre deux questions parce que le budget n'en couvre qu'une.",
   "Follower count measures how many people could see something. It says almost nothing about whether anything moves when they do.":
     "Le nombre d'abonnés mesure combien de personnes pourraient voir quelque chose. Il ne dit presque rien de ce qui bouge quand elles le voient.",
   "Historical depth depends on the perimeter and the sources. We tell you what is reachable before the project starts, not after.":
@@ -1305,8 +1296,6 @@ window.LicterFR = {
     "Groupes de grande consommation, distributeurs, banques, institutions et médias. Des mandats différents, une seule source — le comportement de trois milliards de consommateurs.",
   "A sample is reviewed by hand at setup, and the perimeter is tightened until precision is acceptable. No model is right out of the box.":
     "Un échantillon est relu à la main au paramétrage, et le périmètre est resserré jusqu'à ce que la précision soit acceptable. Aucun modèle n'est juste dès la sortie de la boîte.",
-  "Fixed fee, unlimited studies, no commitment. Consultants frame, configure and produce — you get the decision, not a platform to staff.":
-    "Forfait fixe, études illimitées, sans engagement. Les consultants cadrent, configurent et produisent — vous obtenez la décision, pas un outil à faire tourner.",
   "Vigie 360 is our monitoring offer; Visibrain is one of the platforms behind it. You buy the service and the protocol, not the software.":
     "Vigie 360 est notre offre de veille ; Visibrain est l'un des outils derrière. Vous achetez le service et le protocole, pas le logiciel.",
   "We start from the business decision, not the keyword list. What will change depending on the answer, and who has to be convinced by it?":
@@ -1389,8 +1378,6 @@ window.LicterFR = {
     "Un seuil ressemble à un réglage technique. C'est en réalité une déclaration sur ce que votre organisation juge digne de réveiller quelqu'un — et c'est en ces termes qu'il faut en débattre.",
   "It is the platform we reach for when a question spans several markets, several languages and a long period — the range is its strength, and range is exactly what most brand questions need.":
     "C'est l'outil que nous prenons quand une question couvre plusieurs marchés, plusieurs langues et une longue période — l'étendue est sa force, et l'étendue est exactement ce dont la plupart des questions de marque ont besoin.",
-  "A fixed fee, unlimited studies, no commitment. Our consultants frame the question, configure the collection and produce the analysis — you get the answer, not a tool licence and a training plan.":
-    "Un forfait fixe, des études illimitées, sans engagement. Nos consultants cadrent la question, configurent la collecte et produisent l'analyse — vous obtenez la réponse, pas une licence et un plan de formation.",
   "Most brand mentions carry no text at all: a product on a table, a logo on a shirt, a packshot in a story. YouScan reads the picture, which is where a growing share of the conversation now lives.":
     "La plupart des mentions de marque ne portent aucun texte : un produit sur une table, un logo sur un t-shirt, un packshot dans une story. YouScan lit l'image, là où vit désormais une part croissante de la conversation.",
   "A focused read is a matter of days rather than weeks. A full diagnostic of an existing setup takes two to three weeks. Continuous monitoring starts alerting as soon as the perimeter is configured.":
@@ -1403,8 +1390,6 @@ window.LicterFR = {
     "Vous possédez déjà un outil et il est sous-exploité. Nous reprenons la taxonomie, les tableaux de bord et les analyses récurrentes, et formons vos équipes à les lire — pour que la licence que vous payez produise des décisions.",
   "Monitoring runs in more than twenty languages, and our consultants work in Mandarin, English, Spanish, Hindi, Cantonese and Arabic. A market read through machine translation is a market read half-wrong.":
     "La veille tourne dans plus de vingt langues, et nos consultants travaillent en mandarin, anglais, espagnol, hindi, cantonais et arabe. Un marché lu via une traduction automatique est un marché lu à moitié de travers.",
-  "A fixed monthly fee, with unlimited studies inside it, and no commitment. The exact level depends on the perimeter — markets, languages, monitoring. Thirty minutes is usually enough to give you a number.":
-    "Un forfait mensuel fixe, avec des études illimitées à l'intérieur, et sans engagement. Le niveau exact dépend du périmètre — marchés, langues, veille. Trente minutes suffisent généralement pour vous donner un chiffre.",
   "Continuous monitoring of your brand, your executives and your markets, in more than twenty languages. A human reads the signal before it reaches you, so an alert means something happened — not that a keyword fired.":
     "Veille continue de votre marque, de vos dirigeants et de vos marchés, dans plus de vingt langues. Un humain lit le signal avant qu'il ne vous parvienne : une alerte signifie qu'il s'est passé quelque chose — pas qu'un mot-clé s'est déclenché.",
   "No. We work with the leading platforms and our own algorithms; the licence is ours, not a prerequisite for you. If you already pay for one and under-use it, that is exactly what Social Listening as a Service is for.":
@@ -1659,8 +1644,8 @@ window.LicterFR = {
     "Je ne sais pas où en est mon écoute.",
   "The 3-minute diagnostic":
     "Le diagnostic en 3 minutes",
-  "Unlimited studies":
-    "Études illimitées",
+  "Studies on demand":
+    "Des études à la demande",
   "A dedicated consultant":
     "Un consultant dédié",
   "Four layers of signal":
@@ -1669,8 +1654,8 @@ window.LicterFR = {
     "Pour vous si",
   "Recurring questions, nobody to run a tool":
     "Des questions récurrentes, personne pour faire tourner un outil",
-  "Fixed monthly fee, no lock-in":
-    "Forfait mensuel fixe, sans engagement",
+  "Studies on demand, priced to the scope":
+    "Études à la demande, tarif selon le périmètre",
   "Price":
     "Tarif",
   "Price list on request":
@@ -1817,8 +1802,8 @@ window.LicterFR = {
     "Autre",
   "Before we talk":
     "Avant d'en parler",
-  "Fees and subscriptions, by perimeter. Sent by a consultant within 48 hours, with no sales follow-up.":
-    "Forfaits et abonnements, selon le périmètre. Envoyée par un consultant sous 48 h, sans relance commerciale.",
+  "The price of each offer, by perimeter. Sent by a consultant within 48 hours, with no sales follow-up.":
+    "Le tarif de chaque offre, selon le périmètre. Envoyée par un consultant sous 48 h, sans relance commerciale.",
   "Work email":
     "E-mail professionnel",
   "Your sector":
@@ -1839,8 +1824,8 @@ window.LicterFR = {
     "Oui. Une veille au quotidien avec Vigie 360 ou Nox, et des études Social Insights quand une question se pose, par exemple.",
   "How much does it cost?":
     "Combien ça coûte ?",
-  "Each offer has a fixed fee or a subscription, set by the perimeter: markets, languages, topics. Get the price list, or ask a consultant for a quote.":
-    "Chaque offre a un forfait ou un abonnement, fixé selon le périmètre : marchés, langues, sujets. Recevez la grille tarifaire, ou demandez un chiffrage à un consultant.",
+  "The price of each offer depends on the perimeter: markets, languages, topics. Get the price list, or ask a consultant for a quote.":
+    "Le tarif de chaque offre dépend du périmètre : marchés, langues, sujets. Recevez la grille tarifaire, ou demandez un chiffrage à un consultant.",
   "Do we need a listening platform?":
     "Faut-il avoir une plateforme d'écoute ?",
   "No. We bring the licences and the sources. Social Listening as a Service is precisely for those who already have one.":
@@ -1857,8 +1842,8 @@ window.LicterFR = {
     "Vous devez être alerté dès que quelque chose casse : c'est Vigie 360.",
   "You already pay for a platform and want it used: that is Social Listening as a Service.":
     "Vous payez déjà une plateforme et voulez qu'elle serve : c'est Social Listening as a Service.",
-  "Campaign reads, competitor benchmarks, audience studies, trend scans: as many as you need, inside one monthly fee.":
-    "Lectures de campagne, benchmarks concurrents, études d'audience, veilles de tendances : autant qu'il vous en faut, dans un forfait mensuel.",
+  "Campaign reads, competitor benchmarks, audience studies, trend scans: driven by the questions of the quarter.":
+    "Lectures de campagne, benchmarks concurrents, études d'audience, veilles de tendances : selon les questions du trimestre.",
   "The same person frames every question with you, and knows your brand, your market and your history.":
     "La même personne cadre chaque question avec vous, et connaît votre marque, votre marché et votre historique.",
   "What people post, who they are, what they do and what they search for, chosen question by question.":
@@ -1889,10 +1874,10 @@ window.LicterFR = {
     "Chaque mois",
   "One page on what moved, for the executive team.":
     "Une page sur ce qui a bougé, pour le comité de direction.",
-  "How many studies are really included?":
-    "Combien d'études sont vraiment incluses ?",
-  "As many as your questions need. The fee covers the team's time, not a number of reports; we plan the quarter together so the most useful questions come first.":
-    "Autant que vos questions en demandent. Le forfait couvre le temps de l'équipe, pas un nombre de rapports ; nous planifions le trimestre ensemble pour traiter d'abord les questions les plus utiles.",
+  "How many studies can we ask for?":
+    "Combien d'études pouvons-nous demander ?",
+  "It depends on the perimeter set with you. We plan the quarter together so the most useful questions come first.":
+    "Cela dépend du périmètre défini avec vous. Nous planifions le trimestre ensemble pour traiter d'abord les questions les plus utiles.",
   "How fast is a study delivered?":
     "En combien de temps une étude est-elle livrée ?",
   "About ten days for a first read, from framing to readout. A quick check on a running topic can come back within the week.":
@@ -1901,10 +1886,6 @@ window.LicterFR = {
     "Faut-il avoir notre propre plateforme ?",
   "No. We bring the licences and the sources, and pick the right platform for each question.":
     "Non. Nous apportons les licences et les sources, et choisissons la bonne plateforme pour chaque question.",
-  "Can we stop at any time?":
-    "Peut-on arrêter à tout moment ?",
-  "Yes. There is no lock-in: the monthly fee stops when you decide.":
-    "Oui. Il n'y a pas d'engagement : le forfait s'arrête quand vous le décidez.",
   "How do we start?":
     "Comment démarre-t-on ?",
   "With a framing call, then the list of the quarter's questions, ranked with you in the first week.":

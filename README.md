@@ -423,7 +423,8 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     affichées changent maintenant avec la famille sélectionnée.
 
     **Repris de licter.com** (consulté en septembre 2026) : les trois offres
-    (Social Insights « forfait fixe, études illimitées » ; Vigie 360 « alerte
+    (Social Insights, dont « forfait fixe, études illimitées, sans engagement »
+    a été retiré partout en octobre 2026 à la demande de Licter : c'était faux ; Vigie 360 « alerte
     en 15 min, 24/7 », 20+ langues, 25+ clients protégés ; Social Listening as
     a Service), les quatre couches de méthode (social listening, audience
     intelligence, digital panel, search listening), l'origine (créée en 2022
@@ -435,7 +436,7 @@ l'indicateur `+23%`, le lien final et les survols de menu.
     **De moi** : toute la rédaction anglaise (titres, descriptions, lignes
     « You get », textes des blocs de conversion). À relire par Licter —
     en particulier les formulations qui ressemblent à des engagements
-    (« 15-minute alerts », « unlimited studies »). Les chiffres sont ceux
+    (« 15-minute alerts »). Les chiffres sont ceux
     revendiqués publiquement par Licter : à revalider avant mise en ligne.
 
     **Outils** : le panneau « TECH & TOOLS » et une section de `tech-tools.html`

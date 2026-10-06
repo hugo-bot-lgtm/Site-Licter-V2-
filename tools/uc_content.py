@@ -337,7 +337,7 @@ CASES = [
       (("Couvrez-vous plusieurs pays ?", "Do you cover several countries?"),
        ("Oui, dans plus de vingt langues, avec des analystes qui parlent la langue du marché.", "Yes, in more than twenty languages, with analysts who speak the market's language.")),
       (("Quel engagement ?", "What commitment?"),
-       ("Un forfait mensuel, sans engagement, avec des études illimitées à l'intérieur.", "A fixed monthly fee, no commitment, with unlimited studies inside it.")),
+       ("Les conditions dépendent de l'offre et du périmètre ; un consultant vous les précise dès le premier échange.", "Terms depend on the offer and the scope; a consultant sets them out in the first call.")),
     ],
   },
   {
@@ -781,7 +781,7 @@ EXTRA = {
                  "We read your reputation continuously, in every language of your markets, and compare it with your competitors'. An analyst qualifies the changes every month, and alerts you as soon as a subject breaks the trend. You get an analysis note, not one more dashboard."),
     "roi": [(("Des problèmes vus à temps", "Problems seen in time"), ("Une alerte 24 h/24 quand un sujet change, avant qu'il ne coûte.", "A 24/7 alert when a subject shifts, before it costs you.")),
             (("Moins de temps passé à surveiller", "Less time spent watching"), ("Vos équipes lisent une note mensuelle au lieu de trier des mentions.", "Your teams read a monthly note instead of sorting mentions.")),
-            (("Un budget prévisible", "A predictable budget"), ("Un forfait mensuel, sans engagement, avec des études illimitées à l'intérieur.", "A fixed monthly fee, no commitment, with unlimited studies inside it."))],
+            (("Un tarif à votre mesure", "A price set to your scope"), ("Le tarif dépend des marques, des marchés et des langues suivis, rien d'autre.", "The price depends on the brands, markets and languages covered, nothing else."))],
     "voice": "sncf", "articles": ["article-language-coverage-is-not-translation.html", "article-alerting-thresholds-are-editorial.html"],
   },
   "messaging": {
@@ -837,7 +837,7 @@ EXTRA = {
                  "We define the market with you, then read its whole conversation and the demand expressed in search. The needs that keep coming up unanswered and the spaces your competitors do not hold become a reasoned recommendation: go or not, and with which offer."),
     "roi": [(("Un lancement moins risqué", "A less risky launch"), ("Vous entrez sur un marché en sachant ce qui y manque.", "You enter a market knowing what it lacks.")),
             (("Un avantage d'avance", "A head start"), ("Les besoins apparaissent dans la conversation avant les études.", "Needs show up in the conversation before the surveys.")),
-            (("Moins d'études de marché ad hoc", "Fewer one-off market studies"), ("Un forfait mensuel remplace les études au coup par coup.", "A fixed monthly fee replaces one-off studies."))],
+            (("Moins d'études de marché ad hoc", "Fewer one-off market studies"), ("Une équipe qui suit vos questions remplace les études au coup par coup.", "One team following your questions replaces one-off studies."))],
     "voice": "seb", "articles": ["article-the-trend-you-already-missed.html", "article-language-coverage-is-not-translation.html"],
   },
   "stakeholders": {
@@ -986,6 +986,6 @@ HUB_FAQ = [
      ("Elles sont publiques, mais brutes. Un analyste écarte les bots, les doublons et les hors-sujets avant toute lecture, et chaque chiffre de la restitution renvoie à sa source.",
       "They are public, but raw. An analyst removes bots, duplicates and off-topic posts before any reading, and every figure in the readout points back to its source.")),
     (("Combien ça coûte ?", "How much does it cost?"),
-     ("Un forfait mensuel fixe, avec des études illimitées à l'intérieur et sans engagement. Le montant dépend du périmètre : marques, marchés et langues suivis.",
-      "A fixed monthly fee, with unlimited studies inside it and no lock-in. The amount depends on the scope: brands, markets and languages covered.")),
+     ("Le tarif dépend de l'offre et du périmètre : marques, marchés et langues suivis. La grille tarifaire est envoyée sur demande.",
+      "The price depends on the offer and the scope: brands, markets and languages covered. The price list is sent on request.")),
 ]
