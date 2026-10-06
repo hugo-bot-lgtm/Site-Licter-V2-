@@ -1689,6 +1689,138 @@ window.LicterFR = {
     "Sujets",
   "Flagged by Nox · checked by an analyst":
     "Signalé par Nox · vérifié par un analyste",
+  "Breadcrumb":
+    "Fil d'Ariane",
+  "Home":
+    "Accueil",
+  "Offers":
+    "Offres",
+  "Nox":
+    "Nox",
+  "What you receive":
+    "Ce que vous recevez",
+  "Studies on demand, a monthly note":
+    "Des études à la demande, une note mensuelle",
+  "Alerts within 15 minutes, a monthly review":
+    "Des alertes en 15 minutes, une revue mensuelle",
+  "Your platform reworked, recurring analyses":
+    "Votre plateforme reprise, des analyses récurrentes",
+  "A daily brief, topics sorted by AI":
+    "Un brief quotidien, des sujets triés par l'IA",
+  "For whom":
+    "Pour qui",
+  "Recurring questions, nobody to run a tool":
+    "Des questions récurrentes, personne pour faire tourner un outil",
+  "An exposed brand or executives":
+    "Une marque ou des dirigeants exposés",
+  "A platform paid for, little used":
+    "Une plateforme payée, peu utilisée",
+  "Following your brand day to day":
+    "Suivre sa marque au quotidien",
+  "Pace":
+    "Rythme",
+  "A study in about ten days":
+    "Une étude en une dizaine de jours",
+  "24/7, alert within 15 minutes":
+    "24 h/24, alerte en 15 minutes",
+  "Analyses from month 2, quarterly review":
+    "Analyses dès le mois 2, revue trimestrielle",
+  "A brief every day":
+    "Un brief chaque jour",
+  "Start":
+    "Démarrage",
+  "Framing in week 1":
+    "Cadrage la première semaine",
+  "Running within two weeks":
+    "Opérationnel en deux semaines",
+  "Audit in two weeks, rework in six":
+    "Audit en deux semaines, reprise en six",
+  "Tuned within two weeks":
+    "Réglé en deux semaines",
+  "Who reads":
+    "Qui lit",
+  "A dedicated consultant":
+    "Un consultant dédié",
+  "Analysts, day and night":
+    "Des analystes, jour et nuit",
+  "Your teams, trained by us":
+    "Vos équipes, formées par nous",
+  "AI sorts, an analyst checks":
+    "L'IA trie, un analyste vérifie",
+  "Fixed monthly fee, no lock-in":
+    "Forfait mensuel fixe, sans engagement",
+  "Monitoring subscription":
+    "Abonnement de veille",
+  "Support on your own platform":
+    "Accompagnement sur votre plateforme",
+  "Subscription, tuned by our analysts":
+    "Abonnement, réglé par nos analystes",
+  "Price":
+    "Tarif",
+  "Price list on request":
+    "Grille sur demande",
+  "Get the price list":
+    "Recevoir la grille",
+  "The four offers, side by side":
+    "Les quatre offres, côte à côte",
+  "To compare at a glance. Each offer has its own page, and a consultant helps you choose.":
+    "Pour comparer d'un coup d'œil. Chaque offre a sa page, et un consultant vous aide à choisir.",
+  "Get the price list of the four offers.":
+    "Recevez la grille tarifaire des quatre offres.",
+  "Noted. A consultant sends you the price list within 48 hours.":
+    "C'est noté. Un consultant vous envoie la grille sous 48 h.",
+  "Choose…":
+    "Choisir…",
+  "Food & drink":
+    "Agroalimentaire",
+  "Luxury & fashion":
+    "Luxe & mode",
+  "Beauty":
+    "Beauté",
+  "Toys & video games":
+    "Jouets & jeux vidéo",
+  "Automotive & mobility":
+    "Automobile & mobilité",
+  "Banking & insurance":
+    "Banque & assurance",
+  "Retail":
+    "Distribution",
+  "Public sector":
+    "Secteur public",
+  "Other":
+    "Autre",
+  "Before we talk":
+    "Avant d'en parler",
+  "Fees and subscriptions, by perimeter. Sent by a consultant within 48 hours, with no sales follow-up.":
+    "Forfaits et abonnements, selon le périmètre. Envoyée par un consultant sous 48 h, sans relance commerciale.",
+  "Work email":
+    "E-mail professionnel",
+  "Your sector":
+    "Votre secteur",
+  "Enter a valid work email.":
+    "Indiquez un e-mail professionnel valide.",
+  "Choose your sector.":
+    "Choisissez votre secteur.",
+  "Frequently asked questions":
+    "Questions fréquentes",
+  "Which offer should we pick?":
+    "Quelle offre choisir ?",
+  "The one that fits your situation: questions as they come, permanent monitoring, a platform to put to use, or day-to-day tracking. The first conversation is there to decide it.":
+    "Celle qui répond à votre situation : des questions ponctuelles, une veille permanente, une plateforme à faire servir, ou un suivi quotidien. Le premier échange sert justement à le décider.",
+  "Can we combine several offers?":
+    "Peut-on combiner plusieurs offres ?",
+  "Yes. Day-to-day monitoring with Vigie 360 or Nox, and Social Insights studies when a question comes up, for example.":
+    "Oui. Une veille au quotidien avec Vigie 360 ou Nox, et des études Social Insights quand une question se pose, par exemple.",
+  "How much does it cost?":
+    "Combien ça coûte ?",
+  "Each offer has a fixed fee or a subscription, set by the perimeter: markets, languages, topics. Get the price list, or ask a consultant for a quote.":
+    "Chaque offre a un forfait ou un abonnement, fixé selon le périmètre : marchés, langues, sujets. Recevez la grille tarifaire, ou demandez un chiffrage à un consultant.",
+  "Do we need a listening platform?":
+    "Faut-il avoir une plateforme d'écoute ?",
+  "No. We bring the licences and the sources. Social Listening as a Service is precisely for those who already have one.":
+    "Non. Nous apportons les licences et les sources. Social Listening as a Service est justement pour ceux qui en ont déjà une.",
+  "Chat with Antoine":
+    "Discuter avec Antoine",
   "You have recurring questions: campaigns, competitors, audiences, every month.":
     "Vous avez des questions récurrentes : campagnes, concurrents, audiences, chaque mois.",
   "Nobody in the team has the time, or the training, to run a listening platform.":
@@ -1703,8 +1835,6 @@ window.LicterFR = {
     "Études illimitées",
   "Campaign reads, competitor benchmarks, audience studies, trend scans: as many as you need, inside one monthly fee.":
     "Lectures de campagne, benchmarks concurrents, études d'audience, veilles de tendances : autant qu'il vous en faut, dans un forfait mensuel.",
-  "A dedicated consultant":
-    "Un consultant dédié",
   "The same person frames every question with you, and knows your brand, your market and your history.":
     "La même personne cadre chaque question avec vous, et connaît votre marque, votre marché et votre historique.",
   "Four layers of signal":
@@ -1753,16 +1883,16 @@ window.LicterFR = {
     "Peut-on arrêter à tout moment ?",
   "Yes. There is no lock-in: the monthly fee stops when you decide.":
     "Oui. Il n'y a pas d'engagement : le forfait s'arrête quand vous le décidez.",
-  "Nox":
-    "Nox",
+  "How do we start?":
+    "Comment démarre-t-on ?",
+  "With a framing call, then the list of the quarter's questions, ranked with you in the first week.":
+    "Par un échange de cadrage, puis la liste des questions du trimestre, classées avec vous la première semaine.",
+  "Who owns the deliverables?":
+    "À qui appartiennent les livrables ?",
+  "You do. The studies, reports and dashboards produced for you stay yours, including if you stop. We work on public, aggregated data, in line with GDPR.":
+    "À vous. Les études, rapports et tableaux produits pour vous restent les vôtres, y compris si vous arrêtez. Nous travaillons sur des données publiques, agrégées, dans le respect du RGPD.",
   "AI-assisted monitoring.":
     "La veille assistée par l'IA.",
-  "Breadcrumb":
-    "Fil d'Ariane",
-  "Home":
-    "Accueil",
-  "Offers":
-    "Offres",
   "OFFER":
     "OFFRE",
   "What's included":
@@ -1777,16 +1907,34 @@ window.LicterFR = {
     "Comment ça se passe",
   "Indicative timings, adjusted with you at framing.":
     "Durées indicatives, ajustées avec vous au cadrage.",
+  "A sample deliverable, as it reaches you.":
+    "Un exemple de livrable, tel qu'il arrive chez vous.",
+  "See the use case":
+    "Voir le cas d'usage",
   "They talk about it":
     "Ils en parlent",
   "In their words":
     "Dans leurs mots",
   "The other offers":
     "Les autres offres",
-  "Frequently asked questions":
-    "Questions fréquentes",
+  "Get a sample Social Insights study, in your sector.":
+    "Recevez un exemple d'étude Social Insights, dans votre secteur.",
+  "Noted. A consultant sends you a sample within 48 hours.":
+    "C'est noté. Un consultant vous envoie un exemple sous 48 h.",
+  "Get the sample":
+    "Recevoir l'exemple",
+  "Rather compare first?":
+    "Plutôt comparer d'abord ?",
+  "The four offers side by side":
+    "Les quatre offres côte à côte",
+  "And for you?":
+    "Et chez vous ?",
+  "Anonymised, sent by a consultant within 48 hours: what you would actually receive.":
+    "Anonymisé, envoyé par un consultant sous 48 h : ce que vous recevriez vraiment.",
   "What would you ask first?":
     "Quelle serait votre première question ?",
+  "Get a sample":
+    "Recevoir un exemple",
   "from signal to alert":
     "du signal à l'alerte",
   "24/7":
@@ -1859,6 +2007,12 @@ window.LicterFR = {
     "Vigie 360 peut-elle couvrir nos dirigeants ?",
   "Yes. Executives are often the first exposed; we follow their mentions with the same alert levels as the brand.":
     "Oui. Les dirigeants sont souvent les premiers exposés ; nous suivons leurs mentions avec les mêmes niveaux d'alerte que la marque.",
+  "How fast are you up and running?":
+    "En combien de temps êtes-vous opérationnels ?",
+  "The perimeter and alert contacts are set in the first week, the thresholds tuned with test alerts in the second.":
+    "Le périmètre et les contacts d'alerte sont fixés la première semaine, les seuils réglés avec des alertes de test la deuxième.",
+  "Get a sample Vigie 360 alert and monthly review.":
+    "Recevez un exemple d'alerte et de revue mensuelle Vigie 360.",
   "What should we be watching for you?":
     "Que devrions-nous surveiller pour vous ?",
   "Your platform":
@@ -1941,6 +2095,10 @@ window.LicterFR = {
     "Formez-vous nos équipes ?",
   "Yes. Training is part of the offer, by role and on your own data, not on a demo account.":
     "Oui. La formation fait partie de l'offre, par rôle et sur vos propres données, pas sur un compte de démonstration.",
+  "With a two-week audit of your current setup, tested against your questions.":
+    "Par un audit de deux semaines de votre configuration actuelle, confrontée à vos questions.",
+  "Get a sample reworked reporting, in your sector.":
+    "Recevez un exemple de reporting repris, dans votre secteur.",
   "Which platform are you paying for?":
     "Pour quelle plateforme payez-vous ?",
   "AI-sorted":
@@ -2015,10 +2173,14 @@ window.LicterFR = {
     "Peut-on combiner Nox avec une autre offre ?",
   "Yes. Nox covers the day-to-day, and Social Insights takes over for the questions that need a full study.":
     "Oui. Nox sert au suivi quotidien, et Social Insights prend le relais pour les questions qui demandent une étude complète.",
+  "The perimeter is set up in the first week, then tuned by our analysts in the second.":
+    "Le périmètre est configuré la première semaine, puis réglé par nos analystes la deuxième.",
   "Your monitoring, sorted by AI, checked by an analyst.":
     "Votre veille, triée par l'IA, vérifiée par un analyste.",
   "Nox is our AI-assisted monitoring tool. It reads the conversation about your brand continuously, groups it into topics, summarises what changed and flags what looks unusual. Our analysts tune it with you, so what it surfaces is worth your time.":
     "Nox est notre outil de veille assisté par l'IA. Il lit en continu la conversation sur votre marque, la regroupe par sujets, résume ce qui a changé et signale ce qui sort de l'ordinaire. Nos analystes le règlent avec vous, pour que ce qu'il fait remonter mérite votre temps.",
+  "Get a sample Nox brief, in your sector.":
+    "Recevez un exemple de brief Nox, dans votre secteur.",
   "Want to see what Nox would surface for you?":
     "Envie de voir ce que Nox ferait remonter pour vous ?",
   "Four ways to work with us, from a study on demand to an AI-assisted monitoring tool. Our consultants frame, collect and read. You get the decision, not a platform to staff.":
@@ -2049,6 +2211,32 @@ window.LicterFR = {
     "Tout sur Social Listening as a Service",
   "Everything about Nox":
     "Tout sur Nox",
+  "The 3-minute diagnostic":
+    "Le diagnostic en 3 minutes",
+  "languages read by native speakers":
+    "langues lues par des natifs",
+  "4 offers":
+    "4 offres",
+  "from a study to an AI tool":
+    "de l'étude à l'outil IA",
+  "One consultant":
+    "Un consultant",
+  "who reads it for you":
+    "qui lit pour vous",
+  "No licence":
+    "Aucune licence",
+  "to run yourself":
+    "à faire tourner vous-même",
+  "Social Insights: social data studies on demand | Licter":
+    "Social Insights : études social data à la demande | Licter",
+  "Vigie 360: 24/7 monitoring, alerts within 15 minutes | Licter":
+    "Vigie 360 : veille et alertes 24/7 en 15 minutes | Licter",
+  "Social Listening as a Service: make your platform useful | Licter":
+    "Social Listening as a Service : faire servir votre plateforme | Licter",
+  "Nox: the AI-assisted monitoring tool | Licter":
+    "Nox : l'outil de veille assisté par l'IA | Licter",
+  "Our offers: studies, 24/7 monitoring, an AI tool | Licter":
+    "Nos offres : études, veille 24/7, outil IA | Licter",
   /* ---- end offer pages ---- */
 
   /* ---- expertise pages (tools/build-expertise.py) ---- */

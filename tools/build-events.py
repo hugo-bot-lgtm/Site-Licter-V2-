@@ -284,6 +284,10 @@ def main():
     nxt = next_event()
     n = set_banners(nxt)                      # offers.html first: the generated pages copy it
     offers_html = (ROOT / "offers.html").read_text()
+    # its own SEO head and language stay on offers.html (tools/build-offers.py)
+    offers_html = re.sub(r"\s*<!-- seo:offers -->.*?<!-- /seo:offers -->", "", offers_html, flags=re.S)
+    offers_html = re.sub(r"<html[^>]*>", '<html lang="en">', offers_html, count=1)
+    offers_html = re.sub(r"\s*<!-- offers-bar -->.*?<!-- /offers-bar -->", "", offers_html, flags=re.S)
     for e in EVENTS:
         title = "%s · %s : %s | Licter" % (S["kicker"][EN], e["sector"][EN], long_date(e, EN))
         write(file(e), title.replace(" :", ":"), e["lead"][EN], event_body(e), [ld_event(e)], offers_html)

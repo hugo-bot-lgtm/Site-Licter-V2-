@@ -1602,9 +1602,9 @@ window.LicterUC = (function () {
    hub, which has six), then "See the other N questions".
    ========================================================================= */
 (function () {
-  if (!(document.body.classList.contains("ucp-page") || document.body.classList.contains("xepage")) || !window.matchMedia) return;
+  if (!(document.body.classList.contains("ucp-page") || document.body.classList.contains("xpage")) || !window.matchMedia) return;
   var html = document.documentElement, mq = window.matchMedia("(max-width: 720px)");
-  Array.prototype.forEach.call(document.querySelectorAll(".ucp .faq, .xepage .of-faq .faq"), function (faq) {
+  Array.prototype.forEach.call(document.querySelectorAll(".ucp .faq, .xpage .of-faq .faq"), function (faq) {
     var items = Array.prototype.slice.call(faq.querySelectorAll(":scope > details"));
     var keep = items.length > 4 ? 2 : 1;
     if (items.length <= keep) return;
@@ -1686,7 +1686,7 @@ window.LicterUC = (function () {
 (function () {
   var bar = document.querySelector(".ucp-bar");
   if (!bar || !("IntersectionObserver" in window)) return;
-  var hero = document.querySelector(".ucp__head, .ucr-hero, .xepage .xh");
+  var hero = document.querySelector(".ucp__head, .ucr-hero, .xpage .xh");
   if (!hero) return;
   var zones = [document.getElementById("offre"), document.getElementById("book"), document.querySelector(".site-foot")].filter(Boolean);
   var pastHero = false, inZone = {};

@@ -392,6 +392,246 @@ for k, v in [("more_si", ("Tout sur Social Insights", "Everything about Social I
     OFFERS_PAGE[k] = v
 
 
+# ------------------------------------------------------------------ additions
+# French twins of the offer pages (static, with hreflang)
+FR_PATH = {"offers.html": "/fr/offres/", "offer-social-insights.html": "/fr/offres/social-insights/",
+           "offer-vigie-360.html": "/fr/offres/vigie-360/", "offer-slaas.html": "/fr/offres/social-listening-as-a-service/",
+           "offer-nox.html": "/fr/offres/nox/"}
+HUB_SEO = {"title": ("Nos offres : études, veille 24/7, outil IA | Licter", "Our offers: studies, 24/7 monitoring, an AI tool | Licter"),
+           "desc": ("Quatre façons de travailler avec Licter : études social data à la demande, veille et alertes 24/7, reprise de votre plateforme, outil de veille assisté par l'IA.",
+                    "Four ways to work with Licter: social data studies on demand, 24/7 monitoring and alerts, a takeover of your platform, an AI-assisted monitoring tool.")}
+# Per offer: the magnet, the deliverable shown, and two buying questions.
+# MOCK: the buying answers (start, ownership) are to be validated by Licter.
+MORE = {
+    "social-insights": {
+        "magnet": ("Recevez un exemple d'étude Social Insights, dans votre secteur.", "Get a sample Social Insights study, in your sector."),
+        "dlv": "segmentation",
+        "faq": [(("Comment démarre-t-on ?", "How do we start?"),
+                 ("Par un échange de cadrage, puis la liste des questions du trimestre, classées avec vous la première semaine.",
+                  "With a framing call, then the list of the quarter's questions, ranked with you in the first week."))],
+    },
+    "vigie": {
+        "magnet": ("Recevez un exemple d'alerte et de revue mensuelle Vigie 360.", "Get a sample Vigie 360 alert and monthly review."),
+        "dlv": "brand-risk",
+        "faq": [(("En combien de temps êtes-vous opérationnels ?", "How fast are you up and running?"),
+                 ("Le périmètre et les contacts d'alerte sont fixés la première semaine, les seuils réglés avec des alertes de test la deuxième.",
+                  "The perimeter and alert contacts are set in the first week, the thresholds tuned with test alerts in the second."))],
+    },
+    "slaas": {
+        "magnet": ("Recevez un exemple de reporting repris, dans votre secteur.", "Get a sample reworked reporting, in your sector."),
+        "dlv": "campaign-impact",
+        "faq": [(("Comment démarre-t-on ?", "How do we start?"),
+                 ("Par un audit de deux semaines de votre configuration actuelle, confrontée à vos questions.",
+                  "With a two-week audit of your current setup, tested against your questions."))],
+    },
+    "nox": {
+        "magnet": ("Recevez un exemple de brief Nox, dans votre secteur.", "Get a sample Nox brief, in your sector."),
+        "dlv": "reputation",
+        "faq": [(("Comment démarre-t-on ?", "How do we start?"),
+                 ("Le périmètre est configuré la première semaine, puis réglé par nos analystes la deuxième.",
+                  "The perimeter is set up in the first week, then tuned by our analysts in the second."))],
+    },
+}
+OWN = (("À qui appartiennent les livrables ?", "Who owns the deliverables?"),
+       ("À vous. Les études, rapports et tableaux produits pour vous restent les vôtres, y compris si vous arrêtez. Nous travaillons sur des données publiques, agrégées, dans le respect du RGPD.",
+        "You do. The studies, reports and dashboards produced for you stay yours, including if you stop. We work on public, aggregated data, in line with GDPR."))
+for _o in OFFERS:
+    _o["faq"] = _o["faq"] + MORE[_o["key"]]["faq"] + [OWN]
+
+# The comparison: every value comes from the offer pages themselves.
+COMPARE_ROWS = [
+    (("Ce que vous recevez", "What you receive"),
+     [("Des études à la demande, une note mensuelle", "Studies on demand, a monthly note"),
+      ("Des alertes en 15 minutes, une revue mensuelle", "Alerts within 15 minutes, a monthly review"),
+      ("Votre plateforme reprise, des analyses récurrentes", "Your platform reworked, recurring analyses"),
+      ("Un brief quotidien, des sujets triés par l'IA", "A daily brief, topics sorted by AI")]),
+    (("Pour qui", "For whom"),
+     [("Des questions récurrentes, personne pour faire tourner un outil", "Recurring questions, nobody to run a tool"),
+      ("Une marque ou des dirigeants exposés", "An exposed brand or executives"),
+      ("Une plateforme payée, peu utilisée", "A platform paid for, little used"),
+      ("Suivre sa marque au quotidien", "Following your brand day to day")]),
+    (("Rythme", "Pace"),
+     [("Une étude en une dizaine de jours", "A study in about ten days"),
+      ("24 h/24, alerte en 15 minutes", "24/7, alert within 15 minutes"),
+      ("Analyses dès le mois 2, revue trimestrielle", "Analyses from month 2, quarterly review"),
+      ("Un brief chaque jour", "A brief every day")]),
+    (("Démarrage", "Start"),
+     [("Cadrage la première semaine", "Framing in week 1"),
+      ("Opérationnel en deux semaines", "Running within two weeks"),
+      ("Audit en deux semaines, reprise en six", "Audit in two weeks, rework in six"),
+      ("Réglé en deux semaines", "Tuned within two weeks")]),
+    (("Qui lit", "Who reads"),
+     [("Un consultant dédié", "A dedicated consultant"),
+      ("Des analystes, jour et nuit", "Analysts, day and night"),
+      ("Vos équipes, formées par nous", "Your teams, trained by us"),
+      ("L'IA trie, un analyste vérifie", "AI sorts, an analyst checks")]),
+    (("Modèle", "Model"),
+     [("Forfait mensuel fixe, sans engagement", "Fixed monthly fee, no lock-in"),
+      ("Abonnement de veille", "Monitoring subscription"),
+      ("Accompagnement sur votre plateforme", "Support on your own platform"),
+      ("Abonnement, réglé par nos analystes", "Subscription, tuned by our analysts")]),
+]
+HUB_FAQ = [
+    (("Quelle offre choisir ?", "Which offer should we pick?"),
+     ("Celle qui répond à votre situation : des questions ponctuelles, une veille permanente, une plateforme à faire servir, ou un suivi quotidien. Le premier échange sert justement à le décider.",
+      "The one that fits your situation: questions as they come, permanent monitoring, a platform to put to use, or day-to-day tracking. The first conversation is there to decide it.")),
+    (("Peut-on combiner plusieurs offres ?", "Can we combine several offers?"),
+     ("Oui. Une veille au quotidien avec Vigie 360 ou Nox, et des études Social Insights quand une question se pose, par exemple.",
+      "Yes. Day-to-day monitoring with Vigie 360 or Nox, and Social Insights studies when a question comes up, for example.")),
+    (("Combien ça coûte ?", "How much does it cost?"),
+     ("Chaque offre a un forfait ou un abonnement, fixé selon le périmètre : marchés, langues, sujets. Recevez la grille tarifaire, ou demandez un chiffrage à un consultant.",
+      "Each offer has a fixed fee or a subscription, set by the perimeter: markets, languages, topics. Get the price list, or ask a consultant for a quote.")),
+    (("Faut-il avoir une plateforme d'écoute ?", "Do we need a listening platform?"),
+     ("Non. Nous apportons les licences et les sources. Social Listening as a Service est justement pour ceux qui en ont déjà une.",
+      "No. We bring the licences and the sources. Social Listening as a Service is precisely for those who already have one.")),
+]
+S.update({
+    "compare_t": ("Les quatre offres, côte à côte", "The four offers, side by side"),
+    "compare_lead": ("Pour comparer d'un coup d'œil. Chaque offre a sa page, et un consultant vous aide à choisir.",
+                     "To compare at a glance. Each offer has its own page, and a consultant helps you choose."),
+    "price_row": ("Tarif", "Price"),
+    "price_cell": ("Grille sur demande", "Price list on request"),
+    "price_link": ("Recevoir la grille tarifaire", "Get the price list"),
+    "hub_magnet_k": ("Avant d'en parler", "Before we talk"),
+    "hub_magnet_t": ("Recevez la grille tarifaire des quatre offres.", "Get the price list of the four offers."),
+    "hub_magnet_d": ("Forfaits et abonnements, selon le périmètre. Envoyée par un consultant sous 48 h, sans relance commerciale.",
+                     "Fees and subscriptions, by perimeter. Sent by a consultant within 48 hours, with no sales follow-up."),
+    "hub_magnet_btn": ("Recevoir la grille", "Get the price list"),
+    "magnet_k": ("Et chez vous ?", "And for you?"),
+    "magnet_d": ("Anonymisé, envoyé par un consultant sous 48 h : ce que vous recevriez vraiment.", "Anonymised, sent by a consultant within 48 hours: what you would actually receive."),
+    "magnet_btn": ("Recevoir l'exemple", "Get the sample"),
+    "magnet_email": ("E-mail professionnel", "Work email"),
+    "magnet_sector": ("Votre secteur", "Your sector"),
+    "magnet_pick": ("Choisir…", "Choose…"),
+    "magnet_err": ("Indiquez un e-mail professionnel valide.", "Enter a valid work email."),
+    "magnet_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
+    "magnet_consent": ("Votre e-mail sert uniquement à vous répondre.", "We use your email only to reply to you."),
+    "privacy": ("Politique de confidentialité", "Privacy policy"),
+    "magnet_done": ("C'est noté. Un consultant vous envoie un exemple sous 48 h.", "Noted. A consultant sends you a sample within 48 hours."),
+    "hub_magnet_done": ("C'est noté. Un consultant vous envoie la grille sous 48 h.", "Noted. A consultant sends you the price list within 48 hours."),
+    "magnet_alt": ("Plutôt comparer d'abord ?", "Rather compare first?"),
+    "magnet_alt_link": ("Les quatre offres côte à côte", "The four offers side by side"),
+    "dlv_t": ("Ce que vous recevez", "What you receive"),
+    "dlv_lead": ("Un exemple de livrable, tel qu'il arrive chez vous.", "A sample deliverable, as it reaches you."),
+    "dlv_link": ("Voir le cas d'usage", "See the use case"),
+    "bar_offer": ("Recevoir un exemple", "Get a sample"),
+    "bar_price": ("Recevoir la grille", "Get the price list"),
+    "bar_call": ("Parler à un consultant", "Talk to a consultant"),
+    "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
+    "diag3": ("Le diagnostic en 3 minutes", "The 3-minute diagnostic"),
+    "badge": ("langues lues par des natifs", "languages read by native speakers"),
+    "home": ("Accueil", "Home"),
+})
+
+
+def magnet(key, title, done, btn, alt=True):
+    opts = '<option value="" disabled selected>%s</option>' % t(S["magnet_pick"]) + "".join('<option>%s</option>' % t(x) for x in U.SECTORS)
+    alt_html = ('        <p class="ucp-lead__alt">%s <a href="offers.html#compare">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n' % (
+        t(S["magnet_alt"]), t(S["magnet_alt_link"]))) if alt else ""
+    return ('  <!-- MOCK: sends nothing yet (js/ui.js, .ucp-lead); wire to the CRM. -->\n'
+            '  <section class="ucp ucp--cta" id="offre">\n    <div class="shell">\n      <div class="ucp__cta">\n'
+            '        <div class="ucp__cta-copy">\n          <p class="ucp__cta-k">%s</p>\n          <h2 class="ucp__cta-t">%s</h2>\n          <p class="ucp__cta-d">%s</p>\n        </div>\n'
+            '        <form class="ucp-lead" data-case="%s" novalidate>\n          <div class="ucp-lead__row">\n'
+            '            <label class="ucp-lead__f"><span>%s</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>\n'
+            '            <label class="ucp-lead__f"><span>%s</span><select class="fld__input" name="sector" required>%s</select></label>\n'
+            '          </div>\n          <button class="btn btn--primary" type="submit">%s <span aria-hidden="true">→</span></button>\n'
+            '          <p class="fld__error" hidden>%s</p>\n          <p class="fld__error ucp-lead__sector-err" hidden>%s</p>\n'
+            '          <p class="consent">%s <a href="privacy.html">%s</a>.</p>\n        </form>\n%s'
+            '        <p class="ucp-lead__done" role="status" hidden>%s</p>\n      </div>\n    </div>\n  </section>') % (
+        t(S["hub_magnet_k"] if key == "of-prices" else S["magnet_k"]), title,
+        t(S["hub_magnet_d"] if key == "of-prices" else S["magnet_d"]), key, t(S["magnet_email"]), t(S["magnet_sector"]), opts, btn,
+        t(S["magnet_err"]), t(S["magnet_pick_err"]), t(S["magnet_consent"]), t(S["privacy"]), alt_html, done)
+
+
+def logos():
+    return U.clients(EN)
+
+
+def dlv_section(o):
+    c = next(x for x in C.CASES if x["key"] == MORE[o["key"]]["dlv"])
+    return ('  <section class="ucp of-dlv">\n    <div class="shell of-dlv__grid">\n'
+            '      <div class="xs__head"><h2 class="xs__title">%s</h2><p class="xs__lead">%s</p>'
+            '<a class="xh__link" href="%s" data-en="%s">%s <span aria-hidden="true">→</span></a></div>\n'
+            '      <!--dlv:%s-->\n    </div>\n  </section>') % (
+        t(S["dlv_t"]), t(S["dlv_lead"]), U.case_path(c, FR), U.case_path(c, EN), t(S["dlv_link"]), c["key"])
+
+
+def compare_table():
+    head = "".join('<th scope="col"><a href="%s">%s</a></th>' % (o["file"], t(o["name"])) for o in OFFERS)
+    rows = "".join('<tr><th scope="row">%s</th>%s</tr>' % (t(k), "".join("<td>%s</td>" % t(v) for v in vals)) for k, vals in COMPARE_ROWS)
+    price = '<tr class="of-cmp__price"><th scope="row">%s</th><td colspan="4"><span>%s</span> · <a href="#offre">%s</a></td></tr>' % (
+        t(S["price_row"]), t(S["price_cell"]), t(S["price_link"]))
+    return ('  <section class="of-cmp" id="compare">\n    <div class="shell">\n'
+            '      <div class="xs__head"><h2 class="xs__title">%s</h2><p class="xs__lead">%s</p></div>\n'
+            '      <div class="of-cmp__wrap" tabindex="0"><table class="of-cmp__t"><thead><tr><td></td>%s</tr></thead><tbody>%s%s</tbody></table></div>\n'
+            '    </div>\n  </section>') % (t(S["compare_t"]), t(S["compare_lead"]), head, rows, price)
+
+
+def faq_section(items):
+    return ('  <section class="of-faq">\n    <div class="shell">\n      <div class="xs__head"><h2 class="xs__title">%s</h2></div>\n'
+            '      <div class="faq">%s</div>\n    </div>\n  </section>') % (
+        t(S["faq"]), "".join("<details><summary>%s</summary><p>%s</p></details>" % (t(q), t(r)) for q, r in items))
+
+
+def bar(offer_label):
+    return ('<div class="ucp-bar" aria-hidden="true" hidden>\n'
+            '  <button class="ucp-bar__chat" type="button" tabindex="-1" aria-label="%s"><img src="/assets/img/team/founder-antoine-160.webp" alt="" width="44" height="44" /><i aria-hidden="true"></i></button>\n'
+            '  <a class="btn btn--primary" href="#offre" tabindex="-1">%s</a>\n'
+            '  <a class="btn btn--ghost" href="#book" tabindex="-1">%s</a>\n</div>') % (a(S["bar_chat"]), offer_label, t(S["bar_call"]))
+
+
+def shell_source(src=None):
+    """offers.html as the shell other generators copy: without its own SEO
+    block and its language attributes"""
+    src = src if src is not None else (ROOT / "offers.html").read_text()
+    src = re.sub(r"\s*<!-- seo:offers -->.*?<!-- /seo:offers -->", "", src, flags=re.S)
+    src = re.sub(r"\s*<!-- offers-bar -->.*?<!-- /offers-bar -->", "", src, flags=re.S)
+    return re.sub(r"<html[^>]*>", '<html lang="en">', src, count=1)
+
+
+def seo_block(file, ld_tags):
+    fr_url = FR_PATH[file]
+    return ('<!-- seo:offers -->\n<link rel="canonical" href="%s/%s" />\n'
+            '<link rel="alternate" hreflang="fr" href="%s%s" />\n<link rel="alternate" hreflang="en" href="%s/%s" />\n'
+            '<link rel="alternate" hreflang="x-default" href="%s/%s" />\n%s\n<!-- /seo:offers -->') % (
+        SITE, file, SITE, fr_url, SITE, file, SITE, file, ld_tags)
+
+
+def to_fr(page, file, seo_title, seo_desc, ld_en, ld_fr):
+    """the French twin: same page, text translated in the HTML, French head"""
+    fr_url = FR_PATH[file]
+    fr = re.sub(r'<html[^>]*>', '<html lang="fr" data-i18n-static data-alt-fr="%s" data-alt-en="/%s">' % (fr_url, file), page, count=1)
+    fr = re.sub(r'href="([^"]*)" data-fr="([^"]*)"', r'href="\2"', fr)
+    fr = re.sub(r'href="(?:/)?index\.html(#[^"]*)?"', lambda m: 'href="/fr/%s"' % (m.group(1) or ""), fr)
+    ft, fd = html.escape(U.typo(seo_title[FR], FR)), html.escape(U.typo(seo_desc[FR], FR))
+    fr = re.sub(r"<title>.*?</title>", "<title>%s</title>" % ft, fr, count=1, flags=re.S)
+    for pat, val in ((r'<meta name="description" content="[^"]*" />', '<meta name="description" content="%s" />' % fd),
+                     (r'<meta property="og:title" content="[^"]*" />', '<meta property="og:title" content="%s" />' % ft),
+                     (r'<meta property="og:description" content="[^"]*" />', '<meta property="og:description" content="%s" />' % fd)):
+        fr = re.sub(pat, val, fr, count=1)
+    fr = fr.replace('<link rel="canonical" href="%s/%s" />' % (SITE, file), '<link rel="canonical" href="%s%s" />' % (SITE, fr_url), 1)
+    fr = fr.replace(ld_en, ld_fr, 1)
+    fr = re.sub(r'(href|src)="(?!https?:|/|#|mailto:|data:)([^"]+)"', r'\1="/\2"', fr)
+    fr = re.sub(r'srcset="([^"]+)"', lambda m: 'srcset="%s"' % ", ".join(
+        (q if q.startswith(("/", "http")) else "/" + q) for q in (y.strip() for y in m.group(1).split(","))), fr)
+    b0, b1 = fr.index("<body"), fr.index("</body>")
+    fr = fr[:b0] + per_lang(U.translate(fr[b0:b1]).replace(">Skip to content<", ">Aller au contenu<"), FR) + fr[b1:]
+    fr = fr.replace('placeholder="name@company.com"', 'placeholder="nom@entreprise.com"')
+    out = ROOT / fr_url.strip("/") / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("<!-- Generated by tools/build-offers.py: edit that script (or offers.html for the overview). -->\n" + fr)
+
+
+def per_lang(html_, lang):
+    D = __import__("uc_deliverables")
+    return re.sub(r"<!--dlv:([\w-]+)-->", lambda m: D.render(m.group(1), lang, U.esc, U.typo), html_)
+
+
+def to_en(page):
+    page = re.sub(r'href="(/fr/cas-usage/[^"]*)" data-en="([^"]*)"', r'href="\2" data-fr="\1"', page)
+    return per_lang(page, EN)
+
+
 # ------------------------------------------------------------------ blocks
 def nox_demo():
     aria, cap, k1, brief, k2, topics, unusual, foot = NOX_DEMO
@@ -460,6 +700,7 @@ def body(o, offers_html):
         {demo(o, offers_html)}
       </div>
     </div>
+{logos()}
   </section>
 
   <section class="of-fit">
@@ -487,6 +728,8 @@ def body(o, offers_html):
     </div>
   </section>
 
+{dlv_section(o)}
+
   <section class="of-voice">
     <div class="shell of-voice__grid">
       <div>
@@ -500,6 +743,8 @@ def body(o, offers_html):
       </div>
     </div>
   </section>
+
+{magnet("of-" + o["key"], t(MORE[o["key"]]["magnet"]), t(S["magnet_done"]), t(S["magnet_btn"]))}
 
   <section class="of-faq">
     <div class="shell">
@@ -518,17 +763,18 @@ def book(o, offers_html):
     return re.sub(r'<h2 class="block__title">.*?</h2>', '<h2 class="block__title">%s</h2>' % t(o["book_t"]), sec, count=1)
 
 
-def ld(o):
-    url = "%s/%s" % (SITE, o["file"])
+def ld(o, lang=EN):
+    fr = lang == FR
+    url = SITE + FR_PATH[o["file"]] if fr else "%s/%s" % (SITE, o["file"])
     out = [
         {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
-            {"@type": "ListItem", "position": 2, "name": "Offers", "item": SITE + "/offers.html"},
-            {"@type": "ListItem", "position": 3, "name": o["name"][EN], "item": url}]},
-        {"@context": "https://schema.org", "@type": "Service", "name": o["name"][EN], "description": o["seo_desc"][EN],
+            {"@type": "ListItem", "position": 1, "name": "Accueil" if fr else "Home", "item": SITE + ("/fr/" if fr else "/")},
+            {"@type": "ListItem", "position": 2, "name": "Offres" if fr else "Offers", "item": SITE + (FR_PATH["offers.html"] if fr else "/offers.html")},
+            {"@type": "ListItem", "position": 3, "name": o["name"][lang], "item": url}]},
+        {"@context": "https://schema.org", "@type": "Service", "name": o["name"][lang], "description": U.typo(o["seo_desc"][lang], lang),
          "provider": U.ORG, "url": url, "areaServed": "Worldwide"},
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-            {"@type": "Question", "name": q[EN], "acceptedAnswer": {"@type": "Answer", "text": r[EN]}} for q, r in o["faq"]]},
+            {"@type": "Question", "name": U.typo(q[lang], lang), "acceptedAnswer": {"@type": "Answer", "text": U.typo(r[lang], lang)}} for q, r in o["faq"]]},
     ]
     return "\n".join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False) for x in out)
 
@@ -541,14 +787,55 @@ def page(o, offers_html):
     head = re.sub(r'<meta name="description" content="[^"]*" />', '<meta name="description" content="%s" />' % desc, head)
     head = re.sub(r'<meta property="og:title" content="[^"]*" />', '<meta property="og:title" content="%s" />' % title, head)
     head = re.sub(r'<meta property="og:description" content="[^"]*" />', '<meta property="og:description" content="%s" />' % desc, head)
-    head = head.replace('<meta name="twitter:card"', '<link rel="canonical" href="%s/%s" />\n<meta name="twitter:card"' % (SITE, o["file"]), 1)
-    head += ld(o) + "\n"
+    head = re.sub(r'<html[^>]*>', '<html lang="en" data-i18n-static data-alt-fr="%s" data-alt-en="/%s">' % (FR_PATH[o["file"]], o["file"]), head, count=1)
+    ld_en = ld(o)
+    head = head.replace('<meta name="twitter:card"', seo_block(o["file"], ld_en) + '\n<meta name="twitter:card"', 1)
     start = offers_html.index("</head>")
     main0, main1 = offers_html.index("<main id=\"content\">"), offers_html.index("</main>") + len("</main>")
     shell = offers_html[start:main0] + "%s" + offers_html[main1:]
     shell = shell.replace('<body class="xpage">', '<body class="xpage ofpage">', 1)
     out = "<!-- Generated by tools/build-offers.py: edit that file, not this one. -->\n" + head + shell % body(o, offers_html)
-    (ROOT / o["file"]).write_text(out)
+    out = out.replace("</main>", "</main>\n\n" + bar(t(S["bar_offer"])), 1)
+    return out, ld_en
+
+
+def hub_ld(lang):
+    fr = lang == FR
+    url = SITE + (FR_PATH["offers.html"] if fr else "/offers.html")
+    out = [
+        {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Accueil" if fr else "Home", "item": SITE + ("/fr/" if fr else "/")},
+            {"@type": "ListItem", "position": 2, "name": "Offres" if fr else "Offers", "item": url}]},
+        {"@context": "https://schema.org", "@type": "ItemList", "name": HUB_SEO["title"][lang], "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "item": {"@type": "Service", "name": o["name"][lang], "description": U.typo(o["seo_desc"][lang], lang),
+             "provider": U.ORG, "url": SITE + (FR_PATH[o["file"]] if fr else "/" + o["file"])}} for i, o in enumerate(OFFERS)]},
+        {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": U.typo(q[lang], lang), "acceptedAnswer": {"@type": "Answer", "text": U.typo(r[lang], lang)}} for q, r in HUB_FAQ]},
+    ]
+    return "\n".join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False) for x in out)
+
+
+def hub(src):
+    """offers.html: its generated blocks, its SEO head, its language"""
+    crumbs = '  <nav class="crumbs shell" aria-label="%s"><ol><li><a href="index.html">%s</a></li><li aria-current="page">%s</li></ol></nav>' % (
+        a(S["crumbs"]), t(S["home"]), t(S["offers"]))
+    for name, html_ in (("crumbs", crumbs), ("logos", logos()), ("compare", compare_table()),
+                        ("magnet", magnet("of-prices", t(S["hub_magnet_t"]), t(S["hub_magnet_done"]), t(S["hub_magnet_btn"]), alt=False)),
+                        ("faq", faq_section(HUB_FAQ))):
+        src = re.sub(r"<!-- offers-%s -->.*?<!-- /offers-%s -->" % (name, name), lambda m: "<!-- offers-%s -->\n%s\n<!-- /offers-%s -->" % (name, html_, name), src, count=1, flags=re.S)
+    title, desc = html.escape(HUB_SEO["title"][EN]), html.escape(HUB_SEO["desc"][EN])
+    src = re.sub(r"<title>.*?</title>", "<title>%s</title>" % title, src, count=1, flags=re.S)
+    for pat, val in ((r'<meta name="description" content="[^"]*" />', '<meta name="description" content="%s" />' % desc),
+                     (r'<meta property="og:title" content="[^"]*" />', '<meta property="og:title" content="%s" />' % title),
+                     (r'<meta property="og:description" content="[^"]*" />', '<meta property="og:description" content="%s" />' % desc)):
+        src = re.sub(pat, val, src, count=1)
+    src = re.sub(r"\s*<!-- seo:offers -->.*?<!-- /seo:offers -->", "", src, flags=re.S)
+    ld_en = hub_ld(EN)
+    src = src.replace('<meta name="twitter:card"', seo_block("offers.html", ld_en) + '\n<meta name="twitter:card"', 1)
+    src = re.sub(r'<html[^>]*>', '<html lang="en" data-i18n-static data-alt-fr="/fr/offres/" data-alt-en="/offers.html">', src, count=1)
+    src = re.sub(r"\s*<!-- offers-bar -->.*?<!-- /offers-bar -->", "", src, flags=re.S)
+    src = src.replace("</main>", "</main>\n<!-- offers-bar -->\n%s\n<!-- /offers-bar -->" % bar(t(S["bar_price"])), 1)
+    return src, ld_en
 
 
 def write_dict(label="offer pages", script="build-offers.py", entries=None):
@@ -565,16 +852,35 @@ def write_dict(label="offer pages", script="build-offers.py", entries=None):
 
 
 def main():
-    offers_html = (ROOT / "offers.html").read_text()
+    src = (ROOT / "offers.html").read_text()
     # the Nox tab of offers.html shows the same brief as its page
-    offers_html = re.sub(r"<!-- nox-demo -->.*?<!-- /nox-demo -->", lambda m: "<!-- nox-demo -->%s<!-- /nox-demo -->" % nox_demo(), offers_html, flags=re.S)
-    (ROOT / "offers.html").write_text(offers_html)
-    for o in OFFERS:
-        page(o, offers_html)
+    src = re.sub(r"<!-- nox-demo -->.*?<!-- /nox-demo -->", lambda m: "<!-- nox-demo -->%s<!-- /nox-demo -->" % nox_demo(), src, flags=re.S)
+    src, hub_ld_en = hub(src)
+    (ROOT / "offers.html").write_text(src)
+    offers_html = shell_source(src)
+    pages = [(o, page(o, offers_html)) for o in OFFERS]
     for v in OFFERS_PAGE.values():
         t(v)
+    for k in ("diag3", "badge", "bar_offer", "bar_price", "bar_call", "bar_chat"):
+        t(S[k])
+    for pair in (("4 offres", "4 offers"), ("de l'étude à l'outil IA", "from a study to an AI tool"), ("Un consultant", "One consultant"),
+                 ("qui lit pour vous", "who reads it for you"), ("Aucune licence", "No licence"), ("à faire tourner vous-même", "to run yourself")):
+        t(pair)
+    for o in OFFERS:
+        t(o["seo_title"])
+    t(HUB_SEO["title"])
     write_dict()
-    print("%d offer pages written, %d strings in js/fr.js" % (len(OFFERS), len(NEW)))
+    # every string is in the dictionary now: write both languages
+    U.DICT.update(U.fr_dict())
+    U.DICT.update(NEW)
+    U.DICT.setdefault("The 3-minute diagnostic", U.typo(S["diag3"][FR], FR))
+    U.DICT.setdefault("languages read by native speakers", S["badge"][FR])
+    for o, (out, ld_en) in pages:
+        (ROOT / o["file"]).write_text(to_en(out))
+        to_fr(out, o["file"], o["seo_title"], o["seo_desc"], ld_en, ld(o, FR))
+    to_fr(src, "offers.html", HUB_SEO["title"], HUB_SEO["desc"], hub_ld_en, hub_ld(FR))
+    (ROOT / "offers.html").write_text(to_en(src))
+    print("%d offer pages and the overview written in English and French, %d strings in js/fr.js" % (len(OFFERS), len(NEW)))
 
 
 if __name__ == "__main__":

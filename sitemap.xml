@@ -19,11 +19,6 @@
   <url><loc>https://www.licter.com/events.html</loc></url>
   <url><loc>https://www.licter.com/guide.html</loc></url>
   <url><loc>https://www.licter.com/legal.html</loc></url>
-  <url><loc>https://www.licter.com/offer-nox.html</loc></url>
-  <url><loc>https://www.licter.com/offer-slaas.html</loc></url>
-  <url><loc>https://www.licter.com/offer-social-insights.html</loc></url>
-  <url><loc>https://www.licter.com/offer-vigie-360.html</loc></url>
-  <url><loc>https://www.licter.com/offers.html</loc></url>
   <url><loc>https://www.licter.com/privacy.html</loc></url>
   <url><loc>https://www.licter.com/tech-soprism.html</loc></url>
   <url><loc>https://www.licter.com/tech-talkwalker.html</loc></url>
@@ -110,6 +105,56 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/offres/nox/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/nox/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offer-nox.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/nox/" />
+  </url>
+  <url><loc>https://www.licter.com/offer-nox.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/nox/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offer-nox.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/nox/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/offres/social-listening-as-a-service/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/social-listening-as-a-service/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offer-slaas.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/social-listening-as-a-service/" />
+  </url>
+  <url><loc>https://www.licter.com/offer-slaas.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/social-listening-as-a-service/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offer-slaas.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/social-listening-as-a-service/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/offres/social-insights/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/social-insights/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offer-social-insights.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/social-insights/" />
+  </url>
+  <url><loc>https://www.licter.com/offer-social-insights.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/social-insights/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offer-social-insights.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/social-insights/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/offres/vigie-360/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/vigie-360/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offer-vigie-360.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/vigie-360/" />
+  </url>
+  <url><loc>https://www.licter.com/offer-vigie-360.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/vigie-360/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offer-vigie-360.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/vigie-360/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/offres/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offers.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/" />
+  </url>
+  <url><loc>https://www.licter.com/offers.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/offers.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/offres/" />
   </url>
   <url><loc>https://www.licter.com/fr/cas-usage/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/cas-usage/" />

@@ -119,6 +119,16 @@ Ce sont aussi ces cas réels qu'envoie l'aimant « Recevoir un cas réel » : il
 
 De même pour les pages expertise : l'aimant « Recevez un exemple de livrable » promet un envoi sous 48 h. Il faut **un exemple anonymisé par écoute (6)** : social, audience, influence, IA, temps réel, recherche. Les exemples des heros de ces pages (`tools/build-expertise.py`, `demo` et `doc`) sont illustratifs eux aussi.
 
+## 4. Les offres : ce que seul Licter peut fournir
+
+Les pages offres sont prêtes, mais quatre informations ne peuvent pas être inventées :
+
+- [ ] **La grille tarifaire.** L'aimant « Recevoir la grille tarifaire » (page Offres) promet un envoi sous 48 h : il faut un document par offre (forfait ou abonnement, selon le périmètre). Si vous décidez d'afficher des prix, ajoutez une ligne « À partir de » dans `COMPARE_ROWS` (`tools/build-offers.py`) et un `Offer` dans les données structurées.
+- [ ] **Un exemple par offre** pour l'aimant « Recevez un exemple… » : une étude Social Insights, une alerte et une revue Vigie 360, un reporting repris (SLaaS), un brief Nox. Les quatre sont anonymisés.
+- [ ] **Les réponses à valider** (marquées MOCK dans `MORE` et `OWN`) : le démarrage de chaque offre, la propriété des livrables et le RGPD, et les valeurs du comparatif (« Abonnement de veille », « Accompagnement sur votre plateforme »…). Les engagements de durée de Vigie 360, SLaaS et Nox ne sont pas indiqués : à préciser s'il y en a.
+- [ ] **Les clients à citer par offre** (« Ils l'utilisent »), avec leur accord.
+- [ ] **`diagnostic.html`** : préciser s'il est gratuit ou payant. La page Offres renvoie désormais vers le diagnostic gratuit de 3 minutes de l'accueil ; le lien « Demandez plutôt un diagnostic » du bloc de rappel mène toujours à `diagnostic.html`.
+
 ## Le jour de la bascule sur le vrai domaine
 
 Le site pointe déjà vers `https://www.licter.com` pour les URL canoniques, les `hreflang` et le sitemap (`SITE` dans `tools/uc_content.py`). Il faudra vérifier ces liens une fois le domaine branché, et utiliser ce même domaine dans Plausible.

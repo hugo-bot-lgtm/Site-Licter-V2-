@@ -184,6 +184,32 @@ Le libellé tient sur une ligne et compte trois à quatre mots au maximum. La fl
 - **Plancher de 12 px partout**, maquettes comprises.
 - **Sur grand écran,** le bouton d'Antoine se réduit à l'avatar une fois le hero passé. Le sommaire a ses propres blocs « Une question, pas un tableau de bord » et ses propres vidéos (Kantar, SEB, Dassault) : aucun doublon de l'accueil. Les pages famille n'ont qu'une vidéo sur téléphone.
 
+### Pages offres (`tools/build-offers.py`, `offers.html`)
+
+- **Deux langues statiques :** `offers.html` et `offer-*.html` en anglais à la racine, leurs jumelles françaises sous `/fr/offres/…/`, avec `hreflang` et des titres et données structurées propres à chaque langue. `offers.html` reste le fichier source de la page Offres. Ses blocs générés (fil d'Ariane, logos, comparatif, aimant, FAQ) vivent entre des marqueurs `<!-- offers-… -->`. Les autres générateurs copient sa coque via `shell_source()`, sans son propre bloc SEO.
+- **La page Offres :**
+  1. la promesse ;
+  2. les logos ;
+  3. les quatre offres en onglets ;
+  4. **le comparatif côte à côte** (ce que vous recevez, pour qui, rythme, démarrage, qui lit, modèle, tarif) ;
+  5. « Laquelle est faite pour vous ? » ;
+  6. l'aimant « Recevoir la grille tarifaire » ;
+  7. la méthode ;
+  8. la FAQ ;
+  9. le rappel.
+- **Une page d'offre :**
+  1. le hero, avec son exemple, puis les logos ;
+  2. « Est-ce pour vous ? » ;
+  3. ce qui est inclus ;
+  4. comment ça se passe ;
+  5. un **livrable réel en maquette**, relié à son cas d'usage ;
+  6. une interview et les autres offres ;
+  7. l'aimant « Recevez un exemple… » propre à l'offre ;
+  8. la FAQ (6 questions, dont le démarrage et la propriété des livrables) ;
+  9. le rappel.
+- **Pas de popup magazine automatique.** Sur téléphone, la barre du bas (Antoine, l'aimant, le consultant), « Ce qui est inclus » en liste compacte, la méthode sans photos.
+- **Aucun prix n'est affiché** tant que la grille n'est pas validée : le comparatif dit « Grille sur demande » et renvoie vers l'aimant.
+
 ### Pages expertise (`tools/build-expertise.py`)
 
 - **Deux langues statiques :** `expertise*.html` à la racine (anglais) et leurs jumelles françaises sous `/fr/expertise/…/`, avec `hreflang`, une URL canonique propre à chaque langue et le texte dans le HTML. Les liens du site vers ces pages pointent vers la version française quand la page est en français (`js/i18n.js`, `translate()` dans `build-usecases.py`).

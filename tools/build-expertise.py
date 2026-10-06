@@ -693,7 +693,7 @@ def main():
         if m:
             ICON_SVG[k] = m.group(1)
     O.NEW.clear()
-    offers_html = (ROOT / "offers.html").read_text()
+    offers_html = O.shell_source()
     pages = []
     for x in LISTENINGS:
         body = listening_body(x, offers_html)

@@ -271,7 +271,8 @@
     /* the use-case pages bring their own magnet (a real case of the same
        kind), and so do the expertise pages (a sample deliverable): the
        magazine never interrupts them; its cover still waits below */
-    /^\/(fr\/cas-usage|en\/use-cases|fr\/expertise)\//.test(path) || /^\/expertise(-[a-z]+-listening)?\.html$/.test(path);
+    /^\/(fr\/cas-usage|en\/use-cases|fr\/expertise)\//.test(path) || /^\/expertise(-[a-z]+-listening)?\.html$/.test(path) ||
+    /^\/(fr\/offres\/|offers\.html|offer-[a-z0-9-]+\.html)/.test(path);
   var queued = null;
   function may(k) {
     return !formPage && !state(k) && !html.classList.contains("lx-open") && !html.classList.contains("pp-open") &&

@@ -8105,3 +8105,66 @@ html[data-theme="dark"] .xe-proof .xe-video__k { color: #EAA93D; }
 }
 .dlv-persona small, .dlv-alertcard dt, .dlv-table td small, .dlv-legend, .dlv-cols small, .dlv .k { color: #5F6370; }
 .dlv-persona.top small { color: rgba(252, 246, 239, .8); }
+
+/* =========================================================
+   Offer pages
+   ========================================================= */
+/* the panel of each offer: one column below 960 px (a later two-column
+   rule used to win over the responsive one) */
+@media (max-width: 960px) { .xo .xo__panel { grid-template-columns: minmax(0, 1fr); } }
+.xpage .xh .ucp__clients { margin-top: clamp(28px, 4vw, 48px); }
+
+/* the four offers side by side */
+.of-cmp__wrap { overflow-x: auto; border-radius: 18px; box-shadow: 0 0 0 1px var(--line); }
+.of-cmp__wrap:focus-visible { outline: 2px solid #EAA93D; outline-offset: 3px; }
+.of-cmp__t { width: 100%; min-width: 760px; border-collapse: collapse; font: 500 14.5px/1.45 var(--body-font); color: var(--text-2); }
+.of-cmp__t th, .of-cmp__t td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.of-cmp__t thead th { font: 600 17px/1.25 var(--title-font); color: var(--ink); background: rgba(var(--ink-rgb), .03); }
+.of-cmp__t thead th a { color: inherit; text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 4px; }
+.of-cmp__t tbody th { width: 150px; font: 700 12px/1.3 var(--body-font); letter-spacing: 1px; text-transform: uppercase; color: var(--text-2); }
+.of-cmp__t tbody tr:last-child th, .of-cmp__t tbody tr:last-child td { border-bottom: 0; }
+.of-cmp__price td { color: var(--ink); font-weight: 600; }
+.of-cmp__price a { color: var(--ink); text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 4px; }
+html[data-theme="dark"] .of-cmp__t thead th { background: rgba(252, 246, 239, .04); }
+
+/* the deliverable of an offer */
+.of-dlv__grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.of-dlv .xs__head .xh__link { display: inline-flex; margin-top: 16px; }
+
+/* 12 px floor in the hero examples */
+.xo__demo figcaption span, .xo-nox__k, .xo__demo .up, .xo__demo i, .xo__demo .ok, .xo__demo .w, .xo-nox__topics i, .xo-nox__topics em { font-size: 12px; }
+
+@media (max-width: 720px) {
+  .of-dlv__grid { grid-template-columns: minmax(0, 1fr); }
+  .of-dlv .dlv { max-height: 360px; overflow: hidden; -webkit-mask-image: linear-gradient(#000 74%, transparent); mask-image: linear-gradient(#000 74%, transparent); }
+  /* method on the overview: four lines, no photos */
+  .xm__steps figure { display: none; }
+  .xm__steps { gap: 0; }
+  .xm__steps li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  /* pages with a bottom bar: nothing floats above it */
+  body:has(.ucp-bar) .lx__launch, body:has(.ucp-bar) .ppd { display: none; }
+}
+@media (max-width: 720px) {
+  /* hero: the facts in one line, the example shortened */
+  .xpage .xh__facts { gap: 10px 18px; }
+  .of-hero__demo .xo__demo { max-height: 300px; overflow: hidden; -webkit-mask-image: linear-gradient(#000 76%, transparent); mask-image: linear-gradient(#000 76%, transparent); }
+  /* what is included: compact numbered rows */
+  .of-incl__list { gap: 0; }
+  .of-incl__list li { display: grid; grid-template-columns: 34px minmax(0, 1fr); column-gap: 12px; padding: 14px 0; border-radius: 0; background: none; box-shadow: none; border-bottom: 1px solid var(--line); }
+  .of-incl__n { grid-row: 1 / span 2; margin: 0; font-size: 18px; }
+  .of-incl__list b { font-size: 16.5px; }
+  .of-incl__list p { margin-top: 4px; font-size: 14px; line-height: 1.45; }
+  /* the interview beside its quote; the other offers fold into the table link */
+  .of-voice .ucf__voice { display: grid; grid-template-columns: 132px minmax(0, 1fr); column-gap: 14px; row-gap: 4px; max-width: none; }
+  .of-voice .ucf__voice .reel__shot { grid-row: 1 / span 3; }
+  .of-voice .reel__quote { font-size: 15px; }
+  .of-voice .of-oth { display: none; }
+  .of-voice__grid > div:last-child .xs__title { display: none; }
+  /* overview: the photo of the hero goes, the comparison scrolls inside its frame */
+  .xpage .xh__photo { display: none; }
+}
+/* offer steps on a phone: the day label is longer ("Semaine 1"), give it room */
+@media (max-width: 720px) {
+  .of-steps .ucv-time li { grid-template-columns: 88px minmax(0, 1fr); }
+  .of-steps .ucv-time .ucv-day { white-space: normal; text-align: center; line-height: 1.2; }
+}

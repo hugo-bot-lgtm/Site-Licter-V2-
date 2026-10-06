@@ -68,9 +68,12 @@
 
     /* the expertise pages have French twins too (tools/build-expertise.py) */
     if (dict === FR) {
-      Array.prototype.forEach.call(root.querySelectorAll ? root.querySelectorAll('a[href*="expertise"]') : [], function (a) {
+      Array.prototype.forEach.call(root.querySelectorAll ? root.querySelectorAll('a[href*="expertise"], a[href*="offer"]') : [], function (a) {
         var m = /^\/?(expertise(?:-([a-z]+-listening))?)\.html(#.*)?$/.exec(a.getAttribute("href") || "");
         if (m) a.setAttribute("href", "/fr/expertise/" + (m[2] ? m[2] + "/" : "") + (m[3] || ""));
+        var o = /^\/?(offers|offer-(social-insights|vigie-360|slaas|nox))\.html(#.*)?$/.exec(a.getAttribute("href") || "");
+        var OFR = { "social-insights": "social-insights/", "vigie-360": "vigie-360/", "slaas": "social-listening-as-a-service/", "nox": "nox/" };
+        if (o) a.setAttribute("href", "/fr/offres/" + (o[2] ? OFR[o[2]] : "") + (o[3] || ""));
       });
     }
 
