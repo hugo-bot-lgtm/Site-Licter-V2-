@@ -2371,7 +2371,17 @@ window.LicterUC = (function () {
   "use strict";
   var root = document.querySelector(".bl");
   if (!root) return;
-  var fs = root.querySelectorAll(".bl-f"), cards = root.querySelectorAll("#latest .bl-row");
+  var fs = root.querySelectorAll(".bl-f"), cards = root.querySelectorAll("#latest .bl-card");
+  /* cards or list, remembered */
+  var index = root.querySelector(".bl-index"), vs = root.querySelectorAll(".bl-v");
+  function view(v) {
+    if (!index) return;
+    index.setAttribute("data-view", v);
+    vs.forEach(function (b) { var on = b.getAttribute("data-v") === v; b.classList.toggle("is-on", on); b.setAttribute("aria-pressed", on ? "true" : "false"); });
+    try { localStorage.setItem("lx-blog-view", v); } catch (e) {}
+  }
+  vs.forEach(function (b) { b.addEventListener("click", function () { view(b.getAttribute("data-v")); }); });
+  try { var saved = localStorage.getItem("lx-blog-view"); if (saved === "list") view("list"); } catch (e) {}
   function filter(f) {
     fs.forEach(function (b) { var on = b.getAttribute("data-f") === f; b.classList.toggle("is-on", on); b.setAttribute("aria-pressed", on ? "true" : "false"); });
     cards.forEach(function (c) { var show = f === "all" || c.getAttribute("data-t") === f; c.classList.toggle("is-out", !show); c.classList.remove("is-in"); if (show) { void c.offsetWidth; c.classList.add("is-in"); } });

@@ -158,9 +158,13 @@ def blog_main():
     <div class="shell">
       <div class="bl-bar">
         <h2 class="bl-h2">Every piece</h2>
-        <div class="bl-fs" role="group" aria-label="Filter by thread">%s</div>
+        <div class="bl-view" role="group" aria-label="Display">
+          <button class="bl-v is-on" type="button" aria-pressed="true" data-v="grid"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg>Cards</button>
+          <button class="bl-v" type="button" aria-pressed="false" data-v="list"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="2" width="14" height="2.4" rx="1.2"/><rect x="1" y="6.8" width="14" height="2.4" rx="1.2"/><rect x="1" y="11.6" width="14" height="2.4" rx="1.2"/></svg>List</button>
+        </div>
       </div>
-      <ol class="bl-rows">%s</ol>
+      <div class="bl-fs" role="group" aria-label="Filter by thread">%s</div>
+      <ul class="bl-grid bl-index" data-view="grid">%s</ul>
     </div>
   </section>
 
@@ -182,7 +186,7 @@ def blog_main():
 %s
     </div>
   </section>
-</main>""" % (len(ARTS), card(lead, True), "".join(card(x) for x in side), chips, "".join(row(x) for x in ARTS), threads, mag_block("bl"))
+</main>""" % (len(ARTS), card(lead, True), "".join(card(x) for x in side), chips, "".join(card(x) for x in ARTS), threads, mag_block("bl"))
 
 
 # ------------------------------------------------------------------ an article

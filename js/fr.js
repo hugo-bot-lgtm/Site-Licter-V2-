@@ -249,6 +249,9 @@ window.LicterFR = {
   "August 2026": "août 2026",
   "September 2026": "septembre 2026",
   "October 2026": "octobre 2026",
+  "Cards": "Cartes",
+  "List": "Liste",
+  "Display": "Affichage",
   /* blog redesign (October 2026) */
   "pieces": "articles",
   "4 threads": "4 fils",
