@@ -54,7 +54,7 @@ S = {
     "faq_k": ("FAQ", "FAQ"),
     "act_k": ("PASSER À L'ACTION", "TIME TO ACT"),
     "diag": ("Demander un diagnostic", "Request a diagnostic"),
-    "expert": ("Parler à un expert", "Talk to an expert"),
+    "expert": ("Parler à un consultant", "Talk to a consultant"),
     "cta_text": ("Envoyez-nous la question. Si un autre outil y répond mieux, nous vous le dirons : nous en utilisons une quinzaine.",
                  "Send us the question. If another tool answers it better, we will tell you: we use about fifteen."),
 }

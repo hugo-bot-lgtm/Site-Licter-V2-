@@ -63,7 +63,7 @@ LISTENINGS = [
         "key": "social", "file": "expertise-social-listening.html", "icon": "chart",
         "name": ("Social listening", "Social listening"),
         "short": ("Ce qui se dit sur vous, vos concurrents et votre marché.", "What is said about you, your competitors and your market."),
-        "seo_title": ("Social listening : ce qui se dit sur votre marque | Licter", "Social listening: what is said about your brand | Licter"),
+        "seo_title": ("Agence et cabinet de social listening | Licter", "Social listening agency and consultancy | Licter"),
         "seo_desc": ("Réseaux sociaux, presse, forums et avis, collectés sur votre périmètre et lus par un analyste : sujets, tonalité, et ce que ça veut dire pour vous.",
                      "Social networks, news, forums and reviews, collected on your perimeter and read by an analyst: topics, tone, and what it means for you."),
         "h1": ("Ce que les gens disent, lu par des gens.", "What people say, read by people."),
@@ -89,10 +89,10 @@ LISTENINGS = [
         "key": "audience", "file": "expertise-audience-listening.html", "icon": "audiences",
         "name": ("Audience listening", "Audience listening"),
         "short": ("Qui sont vraiment les gens qui parlent de vous.", "Who the people talking about you really are."),
-        "seo_title": ("Audience listening : qui sont vraiment vos audiences | Licter", "Audience listening: who your audiences really are | Licter"),
-        "seo_desc": ("Centres d'intérêt, affinités de marque et médias : nous profilons vos communautés à partir de leur comportement observé, pas déclaré.",
-                     "Interests, brand affinities and media: we profile your communities from observed behaviour, not declared answers."),
-        "h1": ("Qui sont vraiment vos audiences, au-delà de l'âge et du sexe.", "Who your audiences really are, beyond age and gender."),
+        "seo_title": ("Audience intelligence : qui sont vraiment vos audiences | Licter", "Audience intelligence: who your audiences really are | Licter"),
+        "seo_desc": ("Audience intelligence : centres d'intérêt, affinités de marque et médias. Nous profilons vos communautés à partir de leur comportement observé, pas déclaré.",
+                     "Audience intelligence: interests, brand affinities and media. We profile your communities from observed behaviour, not declared answers."),
+        "h1": ("Audience intelligence : qui sont vraiment vos audiences, au-delà de l'âge et du sexe.", "Audience intelligence: who your audiences really are, beyond age and gender."),
         "lead": ("Nous profilons les communautés à partir de ce qu'elles suivent, partagent et consomment : centres d'intérêt, affinités de marque, médias. De quoi remplacer un persona déclaratif par un comportement observé.",
                  "We profile communities from what they follow, share and consume: interests, brand affinities, media. Enough to replace a declared persona with observed behaviour."),
         "demo": [(("Communauté", "Community"), ("Parents pragmatiques, 41 % de l'audience", "Pragmatic parents, 41% of the audience")),
@@ -104,7 +104,10 @@ LISTENINGS = [
         "cannot": [("Ce que ces personnes pensent de vous en particulier : c'est le social listening.", "What these people think of you in particular: that is social listening.")],
         "cases": ["segmentation", "rejuvenate", "touchpoints"],
         "tools": ["soprism"], "offers": ["social-insights"],
-        "faq": [(("D'où viennent les données d'audience ?", "Where does the audience data come from?"),
+        "faq": [(("Audience intelligence ou social listening : quelle différence ?", "Audience intelligence or social listening: what is the difference?"),
+                 ("Le social listening lit ce qui se dit sur votre marque et votre marché. L'audience intelligence, que nous appelons audience listening, décrit les gens eux-mêmes : ce qu'ils suivent, partagent et consomment, qu'ils parlent de vous ou non. L'un mesure une conversation, l'autre dessine une communauté ; les deux se croisent souvent dans une même étude.",
+                  "Social listening reads what is said about your brand and your market. Audience intelligence, which we call audience listening, describes the people themselves: what they follow, share and consume, whether they talk about you or not. One measures a conversation, the other draws a community; the two often meet in the same study.")),
+                (("D'où viennent les données d'audience ?", "Where does the audience data come from?"),
                  ("Des interactions publiques : comptes suivis, contenus partagés, engagements. Nous travaillons sur des communautés agrégées, jamais sur des individus.",
                   "From public interactions: accounts followed, content shared, engagement. We work on aggregated communities, never on individuals.")),
                 (("Peut-on comparer nos audiences à celles d'un concurrent ?", "Can we compare our audiences with a competitor's?"),
@@ -681,7 +684,8 @@ def listening_body(x, offers_html):
     out += '%s\n' % tk_crumbs([(("Accueil", "Home"), "index.html"), (S["expertise"], "expertise.html"), (x["name"], None)]).replace('class="tk-crumbs"', 'class="tk-crumbs shell"')
     out += lm_hero('%s<!--glossk:%s-->' % (t(x["name"]), x["key"]), H1L[x["key"]], x["lead"], "xp-" + x["key"],
                    t((S["lm_t"][0] % x["name"][0], S["lm_t"][1] % x["name"][1])), col, icon, t(x["name"]), logos(), flash_key=x["key"])
-    out += sec("", head(t(S["hears_k"]), t((S["hears_t"][0] % nm[FR], S["hears_t"][1] % nm[EN]))) + feats, band=True)
+    art_fr = ("l'" if nm[FR][0].lower() in "aeiou" else "le ") + nm[FR][0].lower() + nm[FR][1:] if not nm[FR].startswith("AI") else "l'" + nm[FR]
+    out += sec("", head(t(S["hears_k"]), t((S["hears_t"][0] % art_fr, S["hears_t"][1] % nm[EN]))) + feats, band=True)
     out += sec("answers", head(t(S["answers_k"]), t(S["answers_t"]), t(S["answers_lead"])) + prog(x["cases"]))
     out += sec("", head(t(S["runs_k"]), t(S["how_runs"])) + steps + '<p class="tk-sub xe-note">%s</p>' % t(S["how_note"]), band=True)
     out += sec("", head(t(S["lim_k"]), t(S["lim_t"])) + offer_cards(x))

@@ -2937,7 +2937,7 @@ window.LicterFR = {
   "Social Insights: social data studies on demand | Licter":
     "Social Insights : études social data à la demande | Licter",
   "Vigie 360: 24/7 monitoring, alerts within 15 minutes | Licter":
-    "Vigie 360 : veille et alertes 24/7 en 15 minutes | Licter",
+    "Vigie 360 : veille réseaux sociaux et gestion de crise, 24/7 | Licter",
   "Social Listening as a Service: make your platform useful | Licter":
     "Social Listening as a Service : faire servir votre plateforme | Licter",
   "Nox: the AI-assisted monitoring tool | Licter":
@@ -3020,7 +3020,7 @@ window.LicterFR = {
   "WHAT IT PICKS UP":
     "CE QU'ELLE ENTEND",
   "What Social listening lets you hear.":
-    "Ce que Social listening permet d'entendre.",
+    "Ce que le social listening permet d'entendre.",
   "Each question leads to the use case where this listening makes the difference.":
     "Chaque question mène au cas d'usage où cette écoute fait la différence.",
   "“What is being said about us, and is it changing?”":
@@ -3101,8 +3101,8 @@ window.LicterFR = {
     "Non. Nous travaillons avec nos plateformes. Si vous en avez une, nous pouvons aussi la reprendre et la faire parler.",
   "Let's talk about what is said about you.":
     "Parlons de ce qui se dit sur vous.",
-  "Who your audiences really are, beyond age and gender.":
-    "Qui sont vraiment vos audiences, au-delà de l'âge et du sexe.",
+  "Audience intelligence: who your audiences really are, beyond age and gender.":
+    "Audience intelligence : qui sont vraiment vos audiences, au-delà de l'âge et du sexe.",
   "We profile communities from what they follow, share and consume: interests, brand affinities, media. Enough to replace a declared persona with observed behaviour.":
     "Nous profilons les communautés à partir de ce qu'elles suivent, partagent et consomment : centres d'intérêt, affinités de marque, médias. De quoi remplacer un persona déclaratif par un comportement observé.",
   "A community's interests and passions":
@@ -3138,7 +3138,7 @@ window.LicterFR = {
   "really are.":
     "vos audiences.",
   "What Audience listening lets you hear.":
-    "Ce que Audience listening permet d'entendre.",
+    "Ce que l'audience listening permet d'entendre.",
   "“Who really are our customers, beyond age and gender?”":
     "« Qui sont vraiment nos clients, au-delà de l'âge et du sexe ? »",
   "“What matters to 18 to 30 year olds in our category?”":
@@ -3149,6 +3149,10 @@ window.LicterFR = {
     "Ce que ces personnes pensent de vous en particulier : c'est le social listening.",
   "Audiences, in detail":
     "Les audiences, en détail",
+  "Audience intelligence or social listening: what is the difference?":
+    "Audience intelligence ou social listening : quelle différence ?",
+  "Social listening reads what is said about your brand and your market. Audience intelligence, which we call audience listening, describes the people themselves: what they follow, share and consume, whether they talk about you or not. One measures a conversation, the other draws a community; the two often meet in the same study.":
+    "Le social listening lit ce qui se dit sur votre marque et votre marché. L'audience intelligence, que nous appelons audience listening, décrit les gens eux-mêmes : ce qu'ils suivent, partagent et consomment, qu'ils parlent de vous ou non. L'un mesure une conversation, l'autre dessine une communauté ; les deux se croisent souvent dans une même étude.",
   "Where does the audience data come from?":
     "D'où viennent les données d'audience ?",
   "From public interactions: accounts followed, content shared, engagement. We work on aggregated communities, never on individuals.":
@@ -3208,7 +3212,7 @@ window.LicterFR = {
   "not the most followed.":
     "pas les plus suivies.",
   "What Influence listening lets you hear.":
-    "Ce que Influence listening permet d'entendre.",
+    "Ce que l'influence listening permet d'entendre.",
   "“Which creators already speak to our customers, or to the ones we want?”":
     "« Quels créateurs parlent déjà à nos clients, ou à ceux qu'on veut ? »",
   "“On which subjects is our leader credible to the public?”":
@@ -3272,7 +3276,7 @@ window.LicterFR = {
   "says about you.":
     "disent de vous.",
   "What AI listening lets you hear.":
-    "Ce que AI listening permet d'entendre.",
+    "Ce que l'AI listening permet d'entendre.",
   "“How big is the conversation in this market, really?”":
     "« Quelle est la taille réelle de la conversation sur ce marché ? »",
   "How many people ask these questions: that is search listening.":
@@ -3344,7 +3348,7 @@ window.LicterFR = {
   "while it happens.":
     "pendant que ça se passe.",
   "What Live listening lets you hear.":
-    "Ce que Live listening permet d'entendre.",
+    "Ce que le live listening permet d'entendre.",
   "“Which subjects could become a crisis for us?”":
     "« Quels sujets pourraient devenir une crise pour nous ? »",
   "Why your image shifts over a year: that is a study, not an alert.":
@@ -3396,7 +3400,7 @@ window.LicterFR = {
   "really search for.":
     "cherchent vraiment.",
   "What Search listening lets you hear.":
-    "Ce que Search listening permet d'entendre.",
+    "Ce que le search listening permet d'entendre.",
   "“What do our customers really love about our products?”":
     "« Qu'est-ce que nos clients aiment vraiment dans nos produits ? »",
   "The tone of the public debate: that is social listening.":
@@ -3511,10 +3515,10 @@ window.LicterFR = {
     "Mon flash offert",
   "Chat with Antoine":
     "Discuter avec Antoine",
-  "Social listening: what is said about your brand | Licter":
-    "Social listening : ce qui se dit sur votre marque | Licter",
-  "Audience listening: who your audiences really are | Licter":
-    "Audience listening : qui sont vraiment vos audiences | Licter",
+  "Social listening agency and consultancy | Licter":
+    "Agence et cabinet de social listening | Licter",
+  "Audience intelligence: who your audiences really are | Licter":
+    "Audience intelligence : qui sont vraiment vos audiences | Licter",
   "Influence listening: the voices that actually carry | Licter":
     "Influence listening : les voix qui portent vraiment | Licter",
   "AI listening: what AI says about your brand | Licter":
