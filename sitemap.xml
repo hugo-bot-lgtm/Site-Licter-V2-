@@ -411,6 +411,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/source-youtube.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/sources/youtube/" />
   </url>
+  <url><loc>https://www.licter.com/fr/sources/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/sources/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/sources.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/sources/" />
+  </url>
+  <url><loc>https://www.licter.com/sources.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/sources/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/sources.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/sources/" />
+  </url>
   <url><loc>https://www.licter.com/fr/outils/answerthepublic/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/answerthepublic/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-answerthepublic.html" />

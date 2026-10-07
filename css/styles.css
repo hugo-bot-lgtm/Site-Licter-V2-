@@ -10367,3 +10367,16 @@ html[lang] .lang-note--fr:not([hidden]) { display: block; }
 html[lang="fr"] .xp-line > span::after { content: "\00a0:"; }
 .xp-line a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--amber); text-underline-offset: 3px; }
 .xp-line a:hover { color: var(--amber-ink, var(--amber)); }
+
+/* the Sources hub: every network, with what it is good for (SEO plan, step 10) */
+.tk-nets--hub { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.tk-nets--hub a > span:last-child { display: grid; gap: 3px; }
+.tk-nets--hub small { font: 400 13px/1.35 var(--body-font); color: var(--text-2); }
+.tk-nets--hero { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; max-width: 360px; margin-left: auto; }
+.tk-nets--hero > li > span { display: grid; place-items: center; aspect-ratio: 1; border-radius: 20px; border: 1px solid var(--line); background: var(--card-bg); }
+.tk-nets--hero .tk-nets__mark { flex: none; width: 52px; height: 52px; border-radius: 15px; font-size: 26px; }
+.tk-nets--hero .tk-nets__mark svg { width: 26px; height: 26px; }
+@media (max-width: 720px) {
+  .tk--sources .tk-nets--hub { grid-template-columns: minmax(0, 1fr); overflow: visible; grid-auto-flow: row; grid-template-rows: none; }
+  .tk-nets--hero { display: none; }
+}

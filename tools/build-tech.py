@@ -369,9 +369,40 @@ def tool_chips(slugs):
             s, logo(s), t((TOOL[s].get("fr_name", TOOL[s]["name"]), TOOL[s]["name"]))) for s in slugs)
 
 
-def crumbs(name):
-    return ('<nav class="tk-crumbs" aria-label="%s"><ol><li><a href="index.html">%s</a></li><li><a href="tech-tools.html">%s</a></li>'
-            '<li aria-current="page">%s</li></ol></nav>') % (a(("Fil d'Ariane", "Breadcrumb")), t(("Accueil", "Home")), t(("Techno & outils", "Tech & tools")), name)
+def crumbs(name, net=False):
+    mid = ('sources.html', t(SOURCES_NAME)) if net else ('tech-tools.html', t(("Techno & outils", "Tech & tools")))
+    return ('<nav class="tk-crumbs" aria-label="%s"><ol><li><a href="index.html">%s</a></li><li><a href="%s">%s</a></li>'
+            '<li aria-current="page">%s</li></ol></nav>') % (a(("Fil d'Ariane", "Breadcrumb")), t(("Accueil", "Home")), mid[0], mid[1], name)
+
+
+SOURCES_NAME = ("Sources", "Sources")
+SOURCES = {"title": ("Sources du social listening : les 22 réseaux que nous écoutons | Licter", "Social listening sources: the 22 networks we listen to | Licter"),
+           "desc": ("Les 22 réseaux d'où viennent nos données : ce qu'on peut y lire, ce qui reste privé, et les plateformes qui les couvrent. TikTok, Instagram, X, LinkedIn, Reddit…",
+                    "The 22 networks our data comes from: what can be read there, what stays private, and the platforms that cover them. TikTok, Instagram, X, LinkedIn, Reddit…")}
+
+
+def sources_body():
+    """the hub of the network pages"""
+    copy = (crumbs(t(SOURCES_NAME)).replace('<li><a href="sources.html">%s</a></li>' % t(SOURCES_NAME), '<li><a href="tech-tools.html">%s</a></li>' % t(("Techno & outils", "Tech & tools"))) +
+            '<p class="tk-kick">%s</p>' % t(("D'OÙ VIENNENT LES DONNÉES", "WHERE THE DATA COMES FROM")) +
+            '<h1 class="%s">%s<br><span>%s</span></h1>' % (h1_cls("22 RÉSEAUX,", "LUS PAR NOS ANALYSTES."), t(("22 RÉSEAUX,", "22 NETWORKS,")), t(("LUS PAR NOS ANALYSTES.", "READ BY OUR ANALYSTS."))) +
+            '<p class="tk-lead">%s</p>' % t(("Chaque réseau a son public, ses formats et ses limites de collecte. Voici ce que nous y lisons, ce qui reste privé, et les plateformes qui le couvrent.",
+                                             "Each network has its own audience, formats and collection limits. Here is what we read there, what stays private, and the platforms that cover it.")) +
+            '<div class="tk-actions"><a class="btn btn--primary" href="book-a-meeting.html">%s <span aria-hidden="true">→</span></a>'
+            '<a class="btn btn--ghost" href="tech-tools.html">%s</a></div>' % (t(S["book"]), t(S["all"])))
+    art = '<ul class="tk-nets tk-nets--hero" aria-hidden="true">%s</ul>' % "".join(
+        '<li><span style="--c:%s;--i:%s"><span class="tk-nets__mark">%s</span></span></li>' % (NET_STYLE[o["slug"]][0], NET_STYLE[o["slug"]][1], glyph(o["glyph"])) for o in NETWORKS[:12])
+    grid = '<ul class="tk-nets tk-nets--hub">%s</ul>' % "".join(
+        '<li><a href="source-%s.html" style="--c:%s;--i:%s"><span class="tk-nets__mark">%s</span><span><b>%s</b><small>%s</small></span></a></li>' % (
+            o["slug"], NET_STYLE[o["slug"]][0], NET_STYLE[o["slug"]][1], glyph(o["glyph"]), html.escape(o["name"]), t(o["tag"])) for o in NETWORKS)
+    out = '<main id="content" class="tk tk--tool tk--sources" style="--brand:#EAA93D">\n'
+    out += hero(copy, art)
+    out += sec("networks", head(t(("LES 22 RÉSEAUX", "THE 22 NETWORKS")), t(("Choisissez un réseau.", "Pick a network.")),
+                                t(("Pour chacun : ce qu'il dit de votre marché, ce que nous pouvons collecter, et comment nous le lisons.",
+                                   "For each: what it says about your market, what we can collect, and how we read it."))) + grid)
+    out += sec("method", head(t(S["nmet_k"]), t(("Comment nous écoutons un réseau.", "How we listen to a network."))) + steps() +
+               xp(None, ["social-listening", "influence-listening"]), band=True)
+    return out + cta(t(("Vous cherchez une agence social listening ?", "Looking for a social listening agency?")), t(S["cta_text"]), "", "sources")
 
 
 def hero(copy, art):
@@ -462,11 +493,11 @@ def net_body(n):
     color, ink = NET_STYLE[n["slug"]]
     ag = agency_net(n)
     l1, l2 = ("SOCIAL LISTENING %s," % nm.upper(), "%s SOCIAL LISTENING," % nm.upper()), (n["tag"][FR].upper() + ".", n["tag"][EN].upper() + ".")
-    copy = (crumbs(html.escape(nm)) + '<p class="tk-kick">%s</p>' % t(S["net_kick"]) +
+    copy = (crumbs(html.escape(nm), net=True) + '<p class="tk-kick">%s</p>' % t(S["net_kick"]) +
             '<h1 class="%s">%s<br><span>%s</span></h1>' % (h1_cls(l1[0], l2[0], l2[1]), t(l1), t(l2)) +
             '<p class="tk-lead">%s</p>' % t(n["lead"]) +
             '<div class="tk-actions"><a class="btn btn--primary" href="book-a-meeting.html">%s <span aria-hidden="true">→</span></a>'
-            '<a class="btn btn--ghost" href="tech-tools.html#sources">%s</a></div>' % (t(S["book"]), t(("Tous les réseaux", "Every network"))))
+            '<a class="btn btn--ghost" href="sources.html">%s</a></div>' % (t(S["book"]), t(("Tous les réseaux", "Every network"))))
     art = '<div class="tk-net">%s%s</div>' % (glyph(n["glyph"], "tk-net__wm"), shot(n["slug"], nm, '<span class="tk-tile__net">%s</span>' % glyph(n["glyph"])))
     netmark = '<span class="tk-offer__net">%s</span>' % glyph(n["glyph"])
     io_cards = [{"kind": "yes", "icon": "✓", "tag": t(S["nacc_yes"]), "title": t(fmt(("Le public de %s", "The public side of %s"), NMx)), "text": t(n["access"]),
@@ -514,6 +545,8 @@ def ld(body, lang, name, url, file):
     fr = lang == FR
     crumbs = [("Accueil" if fr else "Home", O.SITE + ("/fr/" if fr else "/")),
               ("Techno & outils" if fr else "Tech & tools", O.SITE + ("/fr/outils/" if fr else "/tech-tools.html"))]
+    if file.startswith("source-"):
+        crumbs[1] = ("Sources", O.SITE + ("/fr/sources/" if fr else "/sources.html"))
     if file != "tech-tools.html":
         crumbs.append((name, url))
     out = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -562,6 +595,8 @@ def main():
         ag = agency_net(n)
         foot = shell[m1:].replace("email-nl-tech-talkwal", "email-nl-src-" + n["slug"][:8])
         pages.append(("source-%s.html" % n["slug"], n["name"], ag["title"], ag["desc"], gen + shell[:m0] + net_body(n) + foot))
+    pages.append(("sources.html", "Sources", SOURCES["title"], SOURCES["desc"],
+                  gen + shell[:m0] + sources_body() + shell[m1:].replace("email-nl-tech-talkwal", "email-nl-sources")))
     pages.append(("tech-tools.html", "Tech & tools", HUB["title"], HUB["desc"], (ROOT / "tech-tools.html").read_text()))
     for f, name, title, desc, src in pages:
         t(title); t(desc)

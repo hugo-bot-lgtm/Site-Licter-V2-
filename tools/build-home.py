@@ -50,11 +50,18 @@ def faq(src, lang):
 def head(lang, src):
     v = U.version()
     t, d = U.typo(SEO["title"][lang], lang), U.typo(SEO["desc"][lang], lang)
-    org = {"@type": "Organization", "@id": SITE + "/#org", "name": "Licter", "url": SITE + "/",
-           "logo": SITE + "/assets/img/logo-navy.png", "sameAs": SAME_AS,
-           "description": d,
-           "founder": [{"@type": "Person", "name": "Adrien Krebs"},
-                       {"@type": "Person", "name": "Antoine Khaitrine", "sameAs": "https://www.thesilab.com/insider-50/antoine-khaitrine"}],
+    # the legal details are those of the official registry (legal.html)
+    org = {"@type": "Organization", "@id": SITE + "/#org", "name": "Licter", "legalName": "Licter SAS", "url": SITE + "/",
+           "logo": {"@type": "ImageObject", "url": SITE + "/assets/img/logo-navy.png"}, "image": SITE + "/assets/img/og/home-fr.png",
+           "sameAs": SAME_AS, "description": d, "foundingDate": "2022-06-30",
+           "identifier": {"@type": "PropertyValue", "propertyID": "SIREN", "value": "915259394"}, "vatID": "FR67915259394",
+           "address": {"@type": "PostalAddress", "streetAddress": "173 rue de Courcelles", "postalCode": "75017",
+                       "addressLocality": "Paris", "addressCountry": "FR"},
+           "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "contact@licter.com",
+                            "availableLanguage": ["French", "English"]},
+           "founder": [{"@type": "Person", "name": "Adrien Krebs", "jobTitle": "Cofondateur", "sameAs": ["https://www.linkedin.com/in/adrien-krebs/"]},
+                       {"@type": "Person", "name": "Antoine Khaitrine", "jobTitle": "Cofondateur",
+                        "sameAs": ["https://www.linkedin.com/in/antoine-khaitrine/", "https://www.thesilab.com/insider-50/antoine-khaitrine"]}],
            "knowsLanguage": ["fr", "en", "zh", "es", "hi", "yue", "ar"],
            "areaServed": "Worldwide"}
     ld = [

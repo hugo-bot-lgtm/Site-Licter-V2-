@@ -139,6 +139,65 @@ def honest_dates(rel, s, dates, today):
     return BYLINE.sub(lambda m_: m_.group(1) + rec["date"] + m_.group(3) + label(not re.search(r"[A-Z][a-z]+ \d{4}$", m_.group(4))) + m_.group(5), s)
 
 
+LD = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
+ORG_REF = {"@type": "Organization", "@id": SITE + "/#org", "name": "Licter", "url": SITE + "/",
+           "logo": {"@type": "ImageObject", "url": SITE + "/assets/img/logo-navy.png"}}
+AUTHORS = {"Antoine Khaitrine": ["https://www.linkedin.com/in/antoine-khaitrine/", "https://www.thesilab.com/insider-50/antoine-khaitrine"],
+           "Adrien Krebs": ["https://www.linkedin.com/in/adrien-krebs/"], "Mina Cantone": []}
+ABOUT = {"why-licter.html", "fr/pourquoi-licter/index.html"}
+COLLECTION = {"blog.html", "fr/blog/index.html", "clients.html", "fr/clients/index.html", "events.html"}
+
+
+def structured(rel, s, fr, url):
+    """a page-level entity and a breadcrumb where a page has none, and the
+    articles completed (image, dateModified, author profiles, publisher)"""
+    blocks = []
+    for m in LD.finditer(s):
+        try:
+            blocks.append(json.loads(m.group(1)))
+        except ValueError:
+            pass
+    types = {b.get("@type") for b in blocks if isinstance(b, dict)}
+    title = html.unescape(re.search(r"<title>([^<]*)</title>", s).group(1)).strip()
+    desc_m = re.search(r'<meta name="description" content="([^"]*)"', s)
+    desc = html.unescape(desc_m.group(1)) if desc_m else ""
+    add = []
+    if not types & {"WebPage", "AboutPage", "CollectionPage", "Article", "Event", "Service"}:
+        kind = "AboutPage" if rel in ABOUT else "CollectionPage" if rel in COLLECTION else "WebPage"
+        add.append({"@context": "https://schema.org", "@type": kind, "@id": url + "#webpage", "url": url, "name": title,
+                    "description": desc, "inLanguage": "fr" if fr else "en", "isPartOf": {"@id": SITE + "/#website"},
+                    "publisher": ORG_REF, "about": {"@id": SITE + "/#org"} if kind == "AboutPage" else None})
+        add[-1] = {k: v for k, v in add[-1].items() if v is not None}
+    if "BreadcrumbList" not in types and url not in (SITE + "/", SITE + "/fr/"):
+        home = (SITE + "/fr/", "Accueil") if fr else (SITE + "/", "Home")
+        items = [home]
+        if rel.startswith("article-"):
+            items.append((SITE + "/fr/blog/", "Blog"))
+        name = re.sub(r"\s*\|\s*Licter.*$", "", title)
+        items.append((url, ARTS[rel]["title"].replace("\u00a0", " ") if rel in ARTS else name))
+        add.append({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": html.unescape(n), "item": u} for i, (u, n) in enumerate(items)]})
+    for m in list(LD.finditer(s)):
+        try:
+            b = json.loads(m.group(1))
+        except ValueError:
+            continue
+        if isinstance(b, dict) and b.get("@type") == "Article":
+            og = re.search(r'<meta property="og:image" content="([^"]*)"', s)
+            if og:
+                b["image"] = [og.group(1)]
+            b.setdefault("dateModified", b.get("datePublished"))
+            b["publisher"] = ORG_REF
+            a = b.get("author") or {}
+            if a.get("@type") == "Person" and AUTHORS.get(a.get("name")):
+                a["sameAs"] = AUTHORS[a["name"]]
+            b["mainEntityOfPage"] = {"@type": "WebPage", "@id": url}
+            s = s.replace(m.group(0), '<script type="application/ld+json">%s</script>' % json.dumps(b, ensure_ascii=False), 1)
+    if add:
+        s = s.replace("</head>", "".join('<script type="application/ld+json">%s</script>\n' % json.dumps(x, ensure_ascii=False) for x in add) + "</head>", 1)
+    return s
+
+
 def main():
     import datetime
     OG.mkdir(parents=True, exist_ok=True)
@@ -190,6 +249,7 @@ def main():
             s = add_head(s, '<meta property="og:image" content="%s/assets/img/og/%s" />\n<meta property="og:image:width" content="1200" />\n'
                             '<meta property="og:image:height" content="630" />' % (SITE, name))
         s = s.replace('<meta name="twitter:card" content="summary" />', '<meta name="twitter:card" content="summary_large_image" />')
+        s = structured(rel, s, fr, url)
         s = honest_dates(rel, s, dates, today)
         if s != s0:
             p.write_text(s)

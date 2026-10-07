@@ -6698,6 +6698,64 @@ window.LicterFR = {
     "La réaction exacte à chaque moment d'une vidéo : ce qui fait rire, agace ou convainc.",
   "Looking for a Bilibili social listening agency?":
     "Vous cherchez une agence social listening Bilibili ?",
+  "22 NETWORKS,":
+    "22 RÉSEAUX,",
+  "READ BY OUR ANALYSTS.":
+    "LUS PAR NOS ANALYSTES.",
+  "Each network has its own audience, formats and collection limits. Here is what we read there, what stays private, and the platforms that cover it.":
+    "Chaque réseau a son public, ses formats et ses limites de collecte. Voici ce que nous y lisons, ce qui reste privé, et les plateformes qui le couvrent.",
+  "communities and groups":
+    "les communautés et les groupes",
+  "images and creators":
+    "l'image et les créateurs",
+  "Meta's text conversation":
+    "la conversation texte de Meta",
+  "public channels":
+    "les canaux publics",
+  "private customer conversations":
+    "la relation client en privé",
+  "real time":
+    "le temps réel",
+  "where trends are born":
+    "là où naissent les tendances",
+  "long video and its comments":
+    "la vidéo longue et ses commentaires",
+  "the professional voice":
+    "la parole professionnelle",
+  "unfiltered opinions":
+    "les avis sans filtre",
+  "the youngest, in private":
+    "les plus jeunes, en privé",
+  "intent before purchase":
+    "les intentions avant l'achat",
+  "enthusiast communities":
+    "les communautés de passionnés",
+  "live streams and their chat":
+    "le live et son chat",
+  "the new open conversation":
+    "la nouvelle conversation ouverte",
+  "the Russian-speaking network":
+    "le réseau russophone",
+  "the Chinese ecosystem":
+    "l'écosystème chinois",
+  "China's public debate":
+    "le débat public chinois",
+  "video trends in China":
+    "les tendances vidéo en Chine",
+  "reviews and lifestyle in China":
+    "les avis et le lifestyle en Chine",
+  "youth culture in China":
+    "la culture jeune en Chine",
+  "THE 22 NETWORKS":
+    "LES 22 RÉSEAUX",
+  "Pick a network.":
+    "Choisissez un réseau.",
+  "For each: what it says about your market, what we can collect, and how we read it.":
+    "Pour chacun : ce qu'il dit de votre marché, ce que nous pouvons collecter, et comment nous le lisons.",
+  "How we listen to a network.":
+    "Comment nous écoutons un réseau.",
+  "Looking for a social listening agency?":
+    "Vous cherchez une agence social listening ?",
   "Talkwalker agency: social listening run by consultants | Licter":
     "Agence Talkwalker : écoute sociale opérée par des consultants | Licter",
   "Licter, Talkwalker agency: social listening run by consultants. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
@@ -6862,6 +6920,10 @@ window.LicterFR = {
     "Agence social listening Bilibili : la culture jeune en Chine | Licter",
   "Licter, Bilibili social listening agency: youth culture in China. Our consultants listen to Bilibili and deliver a recommendation, not an export.":
     "Licter, agence social listening Bilibili : la culture jeune en Chine. Nos consultants écoutent Bilibili et vous livrent une recommandation, pas un export.",
+  "Social listening sources: the 22 networks we listen to | Licter":
+    "Sources du social listening : les 22 réseaux que nous écoutons | Licter",
+  "The 22 networks our data comes from: what can be read there, what stays private, and the platforms that cover them. TikTok, Instagram, X, LinkedIn, Reddit…":
+    "Les 22 réseaux d'où viennent nos données : ce qu'on peut y lire, ce qui reste privé, et les plateformes qui les couvrent. TikTok, Instagram, X, LinkedIn, Reddit…",
   "Tech & tools: our listening platforms and data sources | Licter":
     "Techno & outils : nos plateformes d'écoute et nos sources | Licter",
   "The listening platforms Licter runs, the search, press and AI tools around them, and the 22 networks the data comes from.":
