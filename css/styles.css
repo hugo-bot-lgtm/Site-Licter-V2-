@@ -10170,3 +10170,37 @@ html[data-theme="dark"] .bl-thread__n { color: #EAA93D; }
 }
 @media (max-width: 720px) { .bl-seis figcaption span:last-child { display: none; } }
 .bl-hero { padding-bottom: clamp(50px, 6vw, 90px); }
+/* blog hero: the head and the three featured pieces hold in one screen */
+.bl-hero { padding: clamp(14px, 2vh, 28px) 0 clamp(36px, 5vh, 60px); }
+.bl-hero__top { margin-bottom: clamp(16px, 2.4vh, 28px); padding-bottom: 12px; }
+.bl-h1 { font-size: clamp(40px, min(5vw, 8.4vh), 92px); }
+.bl-hero__head .bl-lead { font-size: clamp(15px, 1.1vw, 17px); }
+.bl-mosaic { margin-top: clamp(20px, 3vh, 36px); height: clamp(320px, calc(100svh - 430px), 520px); }
+.bl-feat .bl-card a { min-height: 0; padding: clamp(24px, 3vw, 44px); }
+.bl-side .bl-card a { padding: clamp(18px, 1.8vw, 26px); }
+.bl-side .bl-card__d { -webkit-line-clamp: 2; }
+.bl-card--big .bl-card__t { font-size: clamp(28px, min(3vw, 5vh), 48px); }
+.bl-card--big .bl-card__d { -webkit-line-clamp: 3; }
+@media (max-width: 960px) {
+  .bl-mosaic { height: auto; }
+  .bl-side { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .bl-hero__head .bl-lead { display: none; }
+  
+  .bl-side { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: calc(-1 * var(--gutter)); padding-right: var(--gutter); }
+  .bl-side::-webkit-scrollbar { display: none; }
+  .bl-side .bl-card { flex: 0 0 82%; scroll-snap-align: start; }
+  .bl-side .bl-card__d { display: none; }
+  .bl-feat .bl-card a { min-height: 0; padding: 22px; }
+  .bl-card--big .bl-card__t { font-size: 26px; }
+  .bl-card--big .bl-card__d { -webkit-line-clamp: 2; font-size: 15px; }
+}
+.bl-mosaic { height: clamp(300px, calc(100svh - 460px), 520px); }
+@media (max-width: 720px) { .bl-h1 { font-size: 38px; } .bl-hero__top { margin-bottom: 14px; } .bl-mosaic { margin-top: 18px; } }
+.bl-hero__head { grid-template-columns: minmax(0, 1.6fr) minmax(0, .7fr); }
+.bl-side .bl-card__d { display: none; }
+.bl-side .bl-card, .bl-side .bl-card a, .bl-feat .bl-card a { min-height: 0; overflow: hidden; }
+.bl-side .bl-card__top { padding-bottom: 10px; }
+@media (max-width: 720px) { .bl-hero__count span span { display: inline; } .bl-hero__count > span:last-child { display: none; } }
+@media (max-width: 720px) { .bl-hero__head { grid-template-columns: minmax(0, 1fr); } .bl-h1 { font-size: 36px; } }
