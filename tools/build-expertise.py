@@ -793,7 +793,7 @@ def write(file, seo_title, seo_desc, body, ld_tags, offers_html, ld_fr=""):
         fr = re.sub(pat, val, fr, count=1)
     fr = fr.replace('<link rel="canonical" href="%s/%s" />' % (SITE, file), '<link rel="canonical" href="%s%s" />' % (SITE, fr_url), 1)
     fr = fr.replace(ld_tags, ld_fr or ld_tags, 1)
-    fr = re.sub(r'(href|src)="(?!https?:|/|#|mailto:|data:)([^"]+)"', r'\1="/\2"', fr)
+    fr = re.sub(r'(href|src)="(?!https?:|/|#|mailto:|tel:|data:)([^"]+)"', r'\1="/\2"', fr)
     fr = re.sub(r'srcset="([^"]+)"', lambda m: 'srcset="%s"' % ", ".join(
         (q if q.startswith(("/", "http")) else "/" + q) for q in (y.strip() for y in m.group(1).split(","))), fr)
     b0, b1 = fr.index("<body"), fr.index("</body>")

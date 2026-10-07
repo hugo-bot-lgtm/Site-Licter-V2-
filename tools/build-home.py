@@ -151,7 +151,7 @@ def main():
     fr = fr.replace('href="index.html"', 'href="/fr/"')
     fr = re.sub(r'href="index\.html#', 'href="/fr/#', fr)
     # every relative path made absolute, from the sub-folder
-    fr = re.sub(r'(href|src)="(?!https?:|/|#|mailto:|data:)([^"]+)"', r'\1="/\2"', fr)
+    fr = re.sub(r'(href|src)="(?!https?:|/|#|mailto:|tel:|data:)([^"]+)"', r'\1="/\2"', fr)
     fr = re.sub(r'srcset="([^"]+)"', lambda m: 'srcset="%s"' % ", ".join(
         (p if p.startswith(("/", "http")) else "/" + p) for p in (x.strip() for x in m.group(1).split(","))), fr)
     # the dictionary, before the switch

@@ -587,7 +587,7 @@ def to_fr(page, file, fr_url, title, desc, name):
                      (r'<meta property="og:description" content="[^"]*" />', '<meta property="og:description" content="%s" />' % de)):
         fr = re.sub(pat, val, fr, count=1)
     fr = fr.replace('<link rel="canonical" href="%s/%s" />' % (O.SITE, file), '<link rel="canonical" href="%s%s" />' % (O.SITE, fr_url), 1)
-    fr = re.sub(r'(href|src)="(?!https?:|/|#|mailto:|data:)([^"]+)"', r'\1="/\2"', fr)
+    fr = re.sub(r'(href|src)="(?!https?:|/|#|mailto:|tel:|data:)([^"]+)"', r'\1="/\2"', fr)
     b0, b1 = fr.index("<body"), fr.index("</body>")
     body = O.per_lang(U.translate(fr[b0:b1]).replace(">Skip to content<", ">Aller au contenu<"), FR)
     fr = fr[:b0] + body + fr[b1:]
