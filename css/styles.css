@@ -10092,3 +10092,24 @@ html[data-theme="dark"] .bl-prose > p:first-child::first-letter { color: #EAA93D
 @media (max-width: 720px) { .bl-seis { padding: 14px 12px 6px; border-radius: 20px; } .bl-seis__pk text { display: none; } }
 @media (prefers-reduced-motion: reduce) { .bl-seis__line { animation: none; stroke-dashoffset: 0; } }
 .bl-seis__hit { fill: transparent; }
+/* blog cards: text only, the cover lives on the article page */
+.bl-card a { padding: clamp(22px, 2.2vw, 30px); border-radius: 24px; background: var(--card-bg); box-shadow: inset 0 0 0 1px var(--line); transition: transform .25s ease, box-shadow .25s ease; }
+.bl-card a:hover { transform: translateY(-4px); box-shadow: inset 0 0 0 1px var(--amber), 0 30px 50px -36px rgba(0, 0, 0, .55); }
+.bl-card__body { flex: 1; padding: 0; gap: 14px; }
+.bl-card__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.bl-tag { display: inline-flex; align-items: center; gap: 8px; font: 700 11px/1.2 var(--body-font); letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink); }
+.bl-tag::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+.bl-card__go { margin-top: auto; padding-top: 6px; }
+.bl-card a:focus-visible { outline-offset: 3px; border-radius: 24px; }
+.bl-card--big a { display: flex; padding: clamp(28px, 4vw, 56px); border-radius: 32px; background: #13162D; box-shadow: none; color: #FCF6EF; }
+html[data-theme="dark"] .bl-card--big a { background: #0E1126; box-shadow: inset 0 0 0 1px rgba(252, 246, 239, .1); }
+.bl-card--big .bl-card__top { border-color: rgba(252, 246, 239, .14); }
+.bl-card--big .bl-tag, .bl-card--big .bl-card__t { color: #FCF6EF; }
+.bl-card--big .bl-meta { color: rgba(252, 246, 239, .7); }
+.bl-card--big .bl-card__d { max-width: 62ch; color: rgba(252, 246, 239, .8); }
+.bl-card--big .bl-card__t { max-width: 22ch; font-size: clamp(32px, 4vw, 60px); }
+.bl-card--big .bl-card__go i, .bl-card--big a:hover .bl-card__t { color: #EAA93D; }
+.bl-thread { padding: 24px; }
+.bl-thread b, .bl-thread > span:not(.bl-thread__n), .bl-thread small { padding: 0; }
+.bl-thread__n { font: 800 34px/1 var(--title-font); color: transparent; -webkit-text-stroke: 1.4px var(--amber); }
+.bl-hero__count span span::before { content: none; }

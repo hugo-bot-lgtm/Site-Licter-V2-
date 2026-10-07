@@ -102,9 +102,10 @@ def meta(x):
 
 
 def card(x, big=False):
-    return ('<li class="bl-card%s" data-t="%s"><a href="%s"><span class="bl-card__art">%s<span class="bl-chip">%s</span></span>'
-            '<span class="bl-card__body">%s<b class="bl-card__t">%s</b><span class="bl-card__d">%s</span><span class="bl-card__go">Read the piece <i aria-hidden="true">→</i></span></span></a></li>') % (
-        " bl-card--big" if big else "", x["t"], x["file"], art(x["slug"], x["t"], 900 if big else 600, 560 if big else 380), x["tname"], meta(x), E(x["title"]), E(x["lead"]))
+    # text only: the picture belongs to the article page
+    return ('<li class="bl-card%s" data-t="%s"><a href="%s"><span class="bl-card__body"><span class="bl-card__top"><span class="bl-tag">%s</span>%s</span>'
+            '<b class="bl-card__t">%s</b><span class="bl-card__d">%s</span><span class="bl-card__go">Read the piece <i aria-hidden="true">→</i></span></span></a></li>') % (
+        " bl-card--big" if big else "", x["t"], x["file"], x["tname"], meta(x), E(x["title"]), E(x["lead"]))
 
 
 def mag_block(id_):
@@ -158,8 +159,8 @@ def blog_main():
     lead, rest = ARTS[0], ARTS[1:]
     chips = '<button class="bl-f is-on" type="button" aria-pressed="true" data-f="all">All <small>%d</small></button>' % len(ARTS) + "".join(
         '<button class="bl-f" type="button" aria-pressed="false" data-f="%s">%s <small>%d</small></button>' % (k, n, sum(1 for x in ARTS if x["t"] == k)) for k, _, n, _ in THREADS)
-    threads = "".join('<li><button class="bl-thread" type="button" data-f="%s"><span class="bl-thread__art">%s</span><b>%s</b><span>%s</span><small>%d <span>pieces</span> <i aria-hidden="true">→</i></small></button></li>' % (
-        k, art("thread-" + k, k, 400, 240, "bl-art bl-art--mini"), n, d, sum(1 for x in ARTS if x["t"] == k)) for k, _, n, d in THREADS)
+    threads = "".join('<li><button class="bl-thread" type="button" data-f="%s"><span class="bl-thread__n">%s</span><b>%s</b><span>%s</span><small>%d <span>pieces</span> <i aria-hidden="true">→</i></small></button></li>' % (
+        k, "0%d" % (["foresight", "listening", "insights", "influence"].index(k) + 1), n, d, sum(1 for x in ARTS if x["t"] == k)) for k, _, n, d in THREADS)
     return '''<main id="content" class="bl">
   <section class="bl-hero">
     <div class="shell">
