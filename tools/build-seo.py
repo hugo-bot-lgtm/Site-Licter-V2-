@@ -9,7 +9,10 @@ For each page of the site (the root pages, /fr/ and /en/):
   - og:url, and a share image: pages without one get a card drawn in the
     charter of tools/build-og.py (navy, amber, Aiglon), from their title,
     saved as assets/img/og/p-<page>.jpg;
-  - a meta description of 160 characters at most.
+  - a meta description of 160 characters at most;
+  - an honest "updated" date: the builders stamp the build date, and this
+    pass keeps, per page, the date its content last changed (tools/page-dates.json,
+    from a hash of the page without its dates and asset versions).
 404.html and use-cases.html (a redirect) are left alone.
 
 Run by tools/build-usecases.py and tools/build-blog.py at the end, or alone:
@@ -26,6 +29,9 @@ W, H = 1200, 630
 NAVY, CREAM, AMBER = (19, 22, 45), (252, 246, 239), (234, 169, 61)
 DEMI = str(ROOT / "assets/fonts/AiglonProWide-Demi.otf")
 OG = ROOT / "assets/img/og"
+DATES = ROOT / "tools" / "page-dates.json"   # per page: content hash and the date it last changed
+MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 STAMP = ROOT / "tools" / "og-cards.json"   # what each card was drawn from, so unchanged cards are not redrawn
 
 THREAD_FR = {"SOCIAL DATA & FORESIGHT": "Social data & prospective", "MONITORING & SOCIAL LISTENING": "Veille & social listening",
@@ -112,8 +118,32 @@ def shorten(t, n):
     return t if len(t) <= n else t[:n - 1].rsplit(" ", 1)[0].rstrip(" ,:;.") + "…"
 
 
+DM = re.compile(r'("dateModified": ")(\d{4}-\d{2}-\d{2})(")')
+BYLINE = re.compile(r'(<time datetime=")(\d{4}-\d{2}-\d{2})(">)([^<]*)(</time>)')
+
+
+def honest_dates(rel, s, dates, today):
+    """put back the date the content last changed, instead of the build date"""
+    if not DM.search(s) and not BYLINE.search(s):
+        return s
+    bare = BYLINE.sub(r"\1\3\5", DM.sub(r"\1\3", s))
+    bare = re.sub(r"\?v=\d+", "", bare)
+    h = hashlib.md5(bare.encode()).hexdigest()
+    rec = dates.get(rel)
+    if not rec or rec["hash"] != h:
+        rec = dates[rel] = {"hash": h, "date": today}
+    y, m, d = (int(x) for x in rec["date"].split("-"))
+    def label(fr_):
+        return "%d %s %d" % (d, MOIS[m - 1], y) if fr_ else "%d %s %d" % (d, MONTHS[m - 1], y)
+    s = DM.sub(lambda m_: m_.group(1) + rec["date"] + m_.group(3), s)
+    return BYLINE.sub(lambda m_: m_.group(1) + rec["date"] + m_.group(3) + label(not re.search(r"[A-Z][a-z]+ \d{4}$", m_.group(4))) + m_.group(5), s)
+
+
 def main():
+    import datetime
     OG.mkdir(parents=True, exist_ok=True)
+    dates = json.loads(DATES.read_text()) if DATES.exists() else {}
+    today = datetime.date.today().isoformat()
     done = 0
     for p in pages():
         s0 = s = p.read_text()
@@ -160,9 +190,11 @@ def main():
             s = add_head(s, '<meta property="og:image" content="%s/assets/img/og/%s" />\n<meta property="og:image:width" content="1200" />\n'
                             '<meta property="og:image:height" content="630" />' % (SITE, name))
         s = s.replace('<meta name="twitter:card" content="summary" />', '<meta name="twitter:card" content="summary_large_image" />')
+        s = honest_dates(rel, s, dates, today)
         if s != s0:
             p.write_text(s)
             done += 1
+    DATES.write_text(json.dumps(dates, indent=0, sort_keys=True))
     print("seo: %d pages updated" % done)
 
 

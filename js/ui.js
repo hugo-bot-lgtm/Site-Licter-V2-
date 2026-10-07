@@ -1270,7 +1270,16 @@ window.LicterUC = (function () {
     var root = document.documentElement;
     var items = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
     if (!items.length) return;
+    /* what is already on screen stays as painted: hiding it to fade it back
+       in would only push back the largest paint (LCP) */
+    var fold = window.innerHeight;
+    items = items.filter(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < fold && r.bottom > 0) { el.classList.add("is-in", "is-static"); return false; }
+      return true;
+    });
     root.classList.add("reveal");
+    if (!items.length) return;
 
     Array.prototype.forEach.call(document.querySelectorAll(".questions li"),
       function (li, i) { li.style.setProperty("--i", i); });

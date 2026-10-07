@@ -269,10 +269,10 @@ def page(lang, path, alt_path, title, meta, body, ld, og_type="website", og_imag
     ld = ld + [{"@context": "https://schema.org", "@type": "WebPage", "name": title, "url": SITE + path,
                 "inLanguage": LANGS[lang], "dateModified": TODAY.isoformat(), "author": ORG, "publisher": ORG}]
     ld_tags = "\n".join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False) for x in ld)
-    scripts = ([f'<script src="/js/fr.js?v={v}"></script>'] if lang == FR else []) + [
-        f'<script src="/js/i18n.js?v={v}"></script>',
-        f'<script src="/js/ui.js?v={v}"></script>',
-        f'<script src="/js/home.js?v={v}"></script>',
+    scripts = ([f'<script src="/js/fr.js?v={v}" defer></script>'] if lang == FR else []) + [
+        f'<script src="/js/i18n.js?v={v}" defer></script>',
+        f'<script src="/js/ui.js?v={v}" defer></script>',
+        f'<script src="/js/home.js?v={v}" defer></script>',
     ]
     skip = "Aller au contenu" if lang == FR else "Skip to content"
     return f'''<!doctype html>

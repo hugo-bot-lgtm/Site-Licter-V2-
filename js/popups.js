@@ -3,8 +3,9 @@
    - "call": thirty minutes with a consultant, the callback;
    - "mag":  the Audience First magazine, sent as a PDF by email.
 
-   The magazine opens by itself once per visitor, centred, 3 seconds after
-   arriving (on the home, once the demo or the comparison has scrolled by), on every
+   The magazine opens by itself once per visitor, centred, never before 3 s:
+   on the home once the demo or the comparison has scrolled by, elsewhere once
+   half the page is read or the pointer heads for the tabs; on every
    screen size, never on a page whose point is a form (booking, diagnostic,
    guide, events). One field: the email. Closed without sending, it goes into a small dock at the
    bottom left, to be found again; once sent, it leaves the dock.
@@ -145,7 +146,7 @@
     lastFocus = document.activeElement;
     render();
     root.hidden = false;
-    html.classList.add("pp-open");
+    if (k !== "mag") html.classList.add("pp-open");   /* the magazine never freezes the page behind it */
     requestAnimationFrame(function () { root.classList.add("is-open"); });
     /* on a phone the focus goes to the popup, not the field: the keyboard
        would cover it before it is read */
@@ -316,7 +317,26 @@
     };
     window.addEventListener("scroll", onScroll, { passive: true });
   } else {
-    setTimeout(function () { auto("mag"); }, 3000);
+    /* any other page may be the first one a visitor sees, coming from a
+       search: the magazine waits until half the page has been read, or (with
+       a mouse) until the pointer leaves for the tabs, and never before 3 s */
+    var tUp3 = false, wants = false;
+    var go3 = function () { if (tUp3 && wants) auto("mag"); };
+    setTimeout(function () { tUp3 = true; go3(); }, 3000);
+    var onHalf = function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0 && window.scrollY < max * 0.5) return;
+      window.removeEventListener("scroll", onHalf);
+      wants = true; go3();
+    };
+    window.addEventListener("scroll", onHalf, { passive: true });
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      document.addEventListener("mouseout", function onExit(e) {
+        if (e.relatedTarget || e.clientY > 8) return;
+        document.removeEventListener("mouseout", onExit);
+        wants = true; go3();
+      });
+    }
   }
   paintDock();
 

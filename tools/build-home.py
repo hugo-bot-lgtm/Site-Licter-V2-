@@ -24,10 +24,11 @@ SITE = U.SITE
 FR, EN = 0, 1
 
 SEO = {
-    "title": ("Cabinet de conseil en social listening et data | Licter",
-              "Social listening & data intelligence consultancy | Licter"),
-    "desc": ("Cabinet de social listening, plus qu'une agence : Licter transforme ce que les gens publient, recherchent et demandent à l'IA en décisions, lues par des consultants.",
-             "Social listening consultancy, more than an agency: Licter turns what people post, search and ask AI into decisions on campaigns, reputation, audiences and trends."),
+    # one positioning sentence everywhere (title, description, schema, why-licter, LinkedIn)
+    "title": ("Cabinet de conseil en social data intelligence | Licter",
+              "Social data intelligence consultancy | Licter"),
+    "desc": ("Licter est un cabinet de conseil en social data intelligence fondé à Paris en 2022 : social listening, audiences et veille, lus par des consultants.",
+             "Licter is a social data intelligence consultancy founded in Paris in 2022: social listening, audiences and monitoring, read by consultants."),
     "og_alt": ("Licter, cabinet de conseil en social data intelligence", "Licter, the social data intelligence consultancy"),
 }
 PATH = ("/fr/", "/")
@@ -127,7 +128,7 @@ def main():
     # links to the use-case pages: English here, the French one kept for the French home
     src = re.sub(r'href="(/fr/cas-usage/[^"]*)" data-en="([^"]*)"', r'href="\2" data-fr="\1"', src)
     # the English page needs no dictionary
-    src = re.sub(r'\s*<script src="(?:/)?js/fr\.js[^"]*"></script>', "", src)
+    src = re.sub(r'\s*<script src="(?:/)?js/fr\.js[^"]*"(?: defer)?></script>', "", src)
         # no automatic redirect by language (Google advises against it): the
     # hreflang tags send French searchers to /fr/, and a French browser that
     # lands here is offered the French site in a banner (js/ui.js)
@@ -148,7 +149,7 @@ def main():
         (p if p.startswith(("/", "http")) else "/" + p) for p in (x.strip() for x in m.group(1).split(","))), fr)
     # the dictionary, before the switch
     v = U.version()
-    fr = re.sub(r'(\s*)<script src="/js/i18n\.js', r'\1<script src="/js/fr.js?v=%s"></script>\1<script src="/js/i18n.js' % v, fr, count=1)
+    fr = re.sub(r'(\s*)<script src="/js/i18n\.js', r'\1<script src="/js/fr.js?v=%s" defer></script>\1<script src="/js/i18n.js' % v, fr, count=1)
     # the visible text, in French, in the HTML itself
     b0, b1 = fr.index("<body"), fr.index("</body>")
     body = U.translate(fr[b0:b1])
