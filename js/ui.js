@@ -2478,3 +2478,122 @@ window.LicterUC = (function () {
   var note = document.querySelector(".lang-note--fr");
   try { if (note && localStorage.getItem("licter-lang") === "en") note.hidden = false; } catch (e) { /* private mode */ }
 })();
+
+/* =========================================================================
+   Q&A roller (tools/components.py): each row's cards are cloned once so the
+   drift loops seamlessly; the clones are hidden from assistive technology and
+   out of the tab order. A tap pauses or resumes, for touch screens.
+   ========================================================================= */
+(function () {
+  /* Q&A roller (tools/components.py qa_roller): each row is a real
+     horizontal scroller, its cards doubled so it loops. A slow drift
+     moves scrollLeft; wheel, touch or a mouse drag take over, and the
+     drift resumes 2.5 s after the last manual move. */
+  var rollers = document.querySelectorAll(".qa-roller");
+  if (!rollers.length) return;
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var SPEED = 28, IDLE = 2500;
+  Array.prototype.forEach.call(rollers, function (r) {
+    var rows = Array.prototype.map.call(r.querySelectorAll(".qa-roller__row"), function (row) {
+      var track = row.querySelector(".qa-roller__track");
+      var cards = Array.prototype.slice.call(track.children);
+      cards.forEach(function (c) {
+        var copy = c.cloneNode(true);
+        copy.setAttribute("aria-hidden", "true");
+        Array.prototype.forEach.call(copy.querySelectorAll("a, button"), function (a) { a.tabIndex = -1; });
+        track.appendChild(copy);
+      });
+      var st = { row: row, track: track, first: cards.length, dir: row.getAttribute("data-dir") === "right" ? -1 : 1,
+                 pos: 0, until: 0, hover: false, period: 0 };
+      st.measure = function () { st.period = track.children[st.first].offsetLeft - track.children[0].offsetLeft; };
+      st.wrap = function () {
+        if (!st.period) return;
+        var x = row.scrollLeft;
+        if (x >= st.period) { row.scrollLeft = x - st.period; }
+        else if (x <= 0) { row.scrollLeft = x + st.period; }
+      };
+      var touch = function () { st.until = Date.now() + IDLE; };
+      row.addEventListener("wheel", touch, { passive: true });
+      row.addEventListener("touchstart", touch, { passive: true });
+      row.addEventListener("touchmove", touch, { passive: true });
+      row.addEventListener("scroll", function () { if (st.until > Date.now() || st.hover) st.wrap(); }, { passive: true });
+      row.addEventListener("mouseenter", function () { st.hover = true; });
+      row.addEventListener("mouseleave", function () { st.hover = false; touch(); });
+      row.addEventListener("focusin", function () { st.until = Infinity; });
+      row.addEventListener("focusout", touch);
+      /* mouse drag; touch and pen scroll natively */
+      var drag = null;
+      row.addEventListener("pointerdown", function (e) {
+        if (e.pointerType !== "mouse" || e.button !== 0) return;
+        drag = { x: e.clientX, start: e.clientX, moved: false };
+      });
+      window.addEventListener("pointermove", function (e) {
+        if (!drag) return;
+        if (!drag.moved && Math.abs(e.clientX - drag.start) < 4) return;
+        if (!drag.moved) { drag.moved = true; row.classList.add("is-dragging"); }
+        row.scrollLeft -= e.clientX - drag.x; drag.x = e.clientX;
+        touch(); st.wrap();
+      });
+      window.addEventListener("pointerup", function () {
+        if (!drag) return;
+        if (drag.moved) { touch(); setTimeout(function () { row.classList.remove("is-dragging"); }, 0); }
+        drag = null;
+      });
+      return st;
+    });
+    var ready = function () {
+      rows.forEach(function (st) {
+        st.measure();
+        if (st.dir < 0) st.row.scrollLeft = st.period;
+        st.pos = st.row.scrollLeft;
+      });
+    };
+    ready();
+    window.addEventListener("resize", function () { rows.forEach(function (st) { st.measure(); }); });
+    r.classList.add("is-live");
+    /* "Read the answer": the full card in a dialog */
+    var dlg = null, reading = false;
+    r.addEventListener("click", function (e) {
+      var btn = e.target.closest && e.target.closest(".qa-card__more");
+      if (!btn || btn.closest(".is-dragging")) return;
+      var card = btn.closest(".qa-card");
+      if (!dlg) {
+        dlg = document.createElement("dialog");
+        dlg.className = "qa-read";
+        dlg.innerHTML = '<div class="qa-read__in"></div><button class="qa-read__x" type="button">×</button>';
+        dlg.querySelector(".qa-read__x").setAttribute("aria-label", /^fr/.test(document.documentElement.lang) ? "Fermer" : "Close");
+        dlg.querySelector(".qa-read__x").addEventListener("click", function () { dlg.close(); });
+        dlg.addEventListener("click", function (ev) { if (ev.target === dlg) dlg.close(); });
+        dlg.addEventListener("close", function () { reading = false; rows.forEach(function (st) { st.until = Date.now() + IDLE; }); });
+        document.body.appendChild(dlg);
+      }
+      var inner = dlg.querySelector(".qa-read__in");
+      inner.innerHTML = "";
+      inner.appendChild(card.querySelector("h3").cloneNode(true));
+      Array.prototype.forEach.call(card.querySelectorAll(".qa-card__a p"), function (p) { inner.appendChild(p.cloneNode(true)); });
+      dlg.setAttribute("aria-label", card.querySelector("h3").textContent);
+      reading = true;
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+      inner.scrollTop = 0;
+    });
+    if (still) return;
+    var visible = false, last = 0;
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (en) { visible = en[0].isIntersecting; last = 0; }).observe(r);
+    } else { visible = true; }
+    (function frame(t) {
+      var dt = last ? Math.min(t - last, 64) / 1000 : 0; last = t;
+      if (visible && !document.hidden) {
+        var now = Date.now();
+        rows.forEach(function (st) {
+          if (reading || st.hover || st.until > now || !st.period) { st.pos = st.row.scrollLeft; return; }
+          st.pos += st.dir * SPEED * dt;
+          if (st.pos >= st.period) st.pos -= st.period;
+          if (st.pos <= 0) st.pos += st.period;
+          st.row.scrollLeft = st.pos;
+        });
+      }
+      requestAnimationFrame(frame);
+    })(0);
+  });
+})();

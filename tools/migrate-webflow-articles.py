@@ -62,7 +62,10 @@ EDITS = [  # typos and a placeholder left in the original texts (regex, replacem
      "Sur TikTok\u00a0: 9K mentions</strong>, un premier <strong>pic"),
     (r"la “crise'”Huda", "la «\u00a0crise\u00a0» Huda"),
     # words glued together in the original Kantar article
-    (r"Audience Firts", "Audience First"), (r"avons eule plaisir", "avons eu le plaisir"), (r"insightsstratégiques", "insights stratégiques"),
+    (r"Audience Firts", "Audience First"),
+    (r"en nous avons pu discuter", "et nous avons pu discuter"),
+    (r"<li>Ce qu'elle pense de <a [^>]*>Licter</a>[^<]*</li>", ""),
+    (r" d'une heure(?= avec| d'| de )", ""), (r"avons eule plaisir", "avons eu le plaisir"), (r"insightsstratégiques", "insights stratégiques"),
     (r"30 ansd’expérience", "30 ans d’expérience"), (r"àl'inflation", "à l'inflation"), (r"grandestransformations", "grandes transformations"),
     (r"articleexplore", "article explore"), (r"descircuits", "des circuits"),
 ]

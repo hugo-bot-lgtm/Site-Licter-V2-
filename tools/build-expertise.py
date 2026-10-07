@@ -616,6 +616,36 @@ FLASH = {
 }
 
 
+# articles and hubs each expertise page sends readers to (SEO audit, internal links)
+READS = {
+    "social": [("article-veille-reseaux-sociaux-entreprise.html", ("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide")),
+               ("sources.html", ("Les 22 réseaux que nous écoutons", "The 22 networks we listen to")),
+               ("article-comment-doubler-limpact-de-votre-strategie-social-listening-en-6-mois.html", ("Doubler l'impact de votre social listening en 6 mois", "Doubling your social listening impact in 6 months"))],
+    "live": [("article-veille-reseaux-sociaux-entreprise.html", ("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide")),
+             ("article-identifier-les-breaking-news-de-votre-secteur-comment-rester-informe-en-temps-reel.html", ("Identifier les breaking news de votre secteur", "Spotting your sector's breaking news")),
+             ("article-shein-vs-bhv-dissection-d-une-crise-digitale-a-travers-la-social-data-intelligence.html", ("Shein vs BHV : dissection d'une crise digitale", "Shein vs BHV: anatomy of a digital crisis"))],
+    "audience": [("use-cases.html", ("Nos cas d'usage audiences", "Our audience use cases")),
+                 ("article-comment-orange-analyse-tiktok-grace-au-social-listening.html", ("Comment Orange analyse TikTok", "How Orange reads TikTok")),
+                 ("article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html", ("Conquérir la cosmétique de luxe", "Winning luxury cosmetics"))],
+    "influence": [("article-licter-lvmh.html", ("LVMH : leader advocacy et social listening", "LVMH: leader advocacy and social listening")),
+                  ("article-gp-explorer-3-squeezie-bat-les-records-daudience.html", ("GP Explorer 3 : Squeezie bat les records d'audience", "GP Explorer 3: Squeezie breaks audience records")),
+                  ("article-comment-origins-associe-influence-et-technologie-pour-transformer-le-capital-risque.html", ("Origins : influence et capital-risque", "Origins: influence and venture capital"))],
+    "ai": [("article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html", ("L'Oréal : ce que l'IA change au social listening", "L'Oréal: what AI changes in social listening")),
+           ("article-social-listening-et-politique-comment-capter-la-voix-des-citoyens.html", ("Social listening et politique", "Social listening and politics"))],
+    "search": [("article-la-consommation-devient-un-acte-militant-les-insights-de-kantar-sur-les-tendances-dachat.html", ("La consommation devient un acte militant, avec Kantar", "Consumption becomes activism, with Kantar")),
+               ("article-veille-social-listening-2024.html", ("Les 7 changements de la veille en 2024", "The 7 changes in monitoring in 2024"))],
+}
+
+
+def reads(key):
+    items = READS.get(key)
+    if not items:
+        return ""
+    links = ", ".join(('<a href="/fr/cas-usage/audiences/" data-en="/en/use-cases/audiences/">%s</a>' % t(l)) if h == "use-cases.html"
+                      else '<a href="%s">%s</a>' % (h, t(l)) for h, l in items)
+    return sec("", '<p class="xp-line"><span>%s</span> %s</p>' % (t(("À lire", "Further reading")), links))
+
+
 def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, bands=None, flash_key="hub"):
     """the hero offers a free flash read of the visitor's own brand"""
     items = "".join("<li>%s</li>" % t(it) for it in FLASH[flash_key])
@@ -687,10 +717,13 @@ def listening_body(x, offers_html):
     art_fr = ("l'" if nm[FR][0].lower() in "aeiou" else "le ") + nm[FR][0].lower() + nm[FR][1:] if not nm[FR].startswith("AI") else "l'" + nm[FR]
     out += sec("", head(t(S["hears_k"]), t((S["hears_t"][0] % art_fr, S["hears_t"][1] % nm[EN]))) + feats, band=True)
     out += sec("answers", head(t(S["answers_k"]), t(S["answers_t"]), t(S["answers_lead"])) + prog(x["cases"]))
+    out += reads(x["key"])
     if x["key"] == "social":      # the long-form section (tools/sl_guide.py, SEO plan step 15)
         import sl_guide as G
-        out += sec("guide", head(t(G.KICKER), t(G.TITLE)) + '<div class="xe-guide">%s</div>' % "".join(
-            '<section class="xe-guide__b"><h3>%s</h3>%s</section>' % (t(h), "".join("<p>%s</p>" % t(p_) for p_ in ps)) for h, ps in G.BLOCKS), band=True)
+        from components import qa_roller
+        out += sec("guide", head(t(G.KICKER), t(G.TITLE)) + qa_roller(
+            [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS], t(G.KICKER),
+            t(("Lire la réponse", "Read the answer"))), band=True)
     out += sec("", head(t(S["runs_k"]), t(S["how_runs"])) + steps + '<p class="tk-sub xe-note">%s</p>' % t(S["how_note"]), band=True)
     out += sec("", head(t(S["lim_k"]), t(S["lim_t"])) + offer_cards(x))
     out += voice(e["voice"])

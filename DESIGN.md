@@ -277,6 +277,16 @@ Il est généré par `tools/build-events.py` et mis à jour par `js/events.js`. 
 - `.card` : surface 72 %, `backdrop-filter: blur(6px)`, bordure `--line`, rayon 14px. Une carte n'existe que si c'est un objet cliquable ou un livrable. Sinon, on groupe avec de l'air ou un filet.
 - `.ucc` : carte photo avec voile noir transparent et texte blanc par-dessus (familles de questions).
 
+### Sections « en détail » : le carrousel de questions (règle)
+
+Toute section longue de questions et réponses (« Le social listening, en détail » et toutes celles à venir) utilise le même composant : `qa_roller()` de `tools/components.py`, avec `css/styles.css` (bloc `.qa-roller`) et `js/ui.js`. On ne crée ni accordéon ni variante.
+
+- Deux lignes de petites cartes qui défilent lentement, chacune dans un sens : la section entière tient sur un écran. Une carte par question : le titre, le début de la réponse en fondu, puis « Lire la réponse → », qui ouvre la réponse complète dans un panneau (centré sur ordinateur, montant du bas sur téléphone, fermeture par ×, Échap ou clic à côté). Tout le texte est dans le HTML (référencement), et les copies créées pour la boucle sont en `aria-hidden`.
+- Chaque ligne est un vrai défilement horizontal : pavé tactile, doigt ou glisser à la souris. Le défilement automatique s'arrête sous le pointeur, au focus et pendant une action manuelle, puis reprend 2,5 s après.
+- Bords en fondu, halo ambre derrière. Cartes de 340 × 216 px (78vw × 200 px sur téléphone).
+- `prefers-reduced-motion` : aucun défilement automatique, le défilement à la main reste.
+- Contenu : un module Python comme `tools/sl_guide.py` (`KICKER`, `TITLE`, `BLOCKS` = [((question FR, EN), [(paragraphe FR, EN), …])]), appelé par `qa_roller([(t(h), [t(p) for p in ps]) for h, ps in BLOCKS], t(KICKER), t(("Lire la réponse", "Read the answer")))`.
+
 ### Formulaires
 
 - Hauteur 48 à 52px, rayon 8px, `--field-bg` / `--field-br`.

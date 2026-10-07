@@ -31,6 +31,22 @@ HEAD = {
                   "Social listening, veille, consumer insights et influence : ce que nos consultants apprennent en mission, et nos entretiens avec L'Oréal, AXA, LVMH ou Kantar."),
     "guide.html": ("Les 12 questions auxquelles répond la social data | Licter",
                    "Un guide offert : les douze questions auxquelles la social data répond mieux qu'une étude, les données que chacune demande et ce qu'elle ne dit pas."),
+    "diagnostic.html": ("Diagnostic social data | Licter",
+                        "Un diagnostic indépendant de votre dispositif social data : audit, score de maturité sur six dimensions, gains rapides et feuille de route en deux à trois semaines."),
+    "book-a-meeting.html": ("Prendre rendez-vous avec un consultant | Licter",
+                            "Trente minutes avec un consultant Licter : décrivez votre décision, et voyez ce que la social data peut vous dire, et ce qu'elle ne peut pas dire."),
+    "events.html": ("Événements : nos études sectorielles en présentiel | Licter",
+                    "Nous présentons ce que la conversation dit d'un secteur, avec les marques qui y travaillent. Sur inscription, à Paris."),
+    "event-toys-games.html": ("Étude sectorielle Jeux & jouets, 16 octobre 2026 | Licter",
+                              "Notre étude sectorielle : ce que parents, enfants et collectionneurs publient, cherchent et demandent à l'IA sur les jeux et jouets. À Paris, sur inscription."),
+    "event-luxury.html": ("Étude sectorielle Luxe, 3 novembre 2026 | Licter",
+                          "Notre étude sectorielle : comment le désir d'une maison se construit en ligne, qui le porte, et ce que clients et curieux disent vraiment. À Paris, sur inscription."),
+    "event-food.html": ("Étude sectorielle Alimentation, 19 novembre 2026 | Licter",
+                        "Notre étude sectorielle : ce que les consommateurs publient, cherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes que les marques peuvent saisir."),
+    "legal.html": ("Mentions légales | Licter",
+                   "Mentions légales du site Licter : éditeur (Licter SAS, RCS Paris 915 259 394), hébergeur, conditions d'utilisation et propriété intellectuelle."),
+    "privacy.html": ("Politique de confidentialité | Licter",
+                     "Comment Licter traite les données personnelles laissées sur ce site : ce que nous collectons, pourquoi, combien de temps, et vos droits."),
 }
 # head lines tools/build-seo.py writes again for each language
 SEO_LINES = re.compile(r'\n<link rel="canonical"[^>]*>|\n<link rel="alternate" hreflang="[^"]*"[^>]*>|\n<meta property="og:url"[^>]*>'

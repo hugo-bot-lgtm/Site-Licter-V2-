@@ -324,6 +324,12 @@ def title_tag(x):
     return t if len(t) <= 56 else t[:56].rsplit(" ", 1)[0].rstrip(" :,?") + "…"
 
 
+# articles substantially rewritten since publication, and when
+REWRITTEN = {f: "2026-10-07" for f in ("article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html",
+                                      "article-licter-lvmh.html", "article-licter-meltwater.html",
+                                      "article-licter-talkwalker-podcast.html", "article-licter-visibrain-podcast.html")}
+
+
 def article_page(x):
     """the whole page, from tools/article-shell.html"""
     fr = x.get("lang") == "fr"
@@ -338,7 +344,8 @@ def article_page(x):
         page = page.replace("<!--HTML-->", '<html lang="en">')
     # the article itself, for search engines
     ld = {"@context": "https://schema.org", "@type": "Article", "headline": html.unescape(x["title"]), "description": html.unescape(x["lead"]),
-          "datePublished": "%04d-%02d-%02d" % (x["key"][0], x["key"][1] + 1, x["key"][2]), "inLanguage": "fr" if fr else "en",
+          "datePublished": "%04d-%02d-%02d" % (x["key"][0], x["key"][1] + 1, x["key"][2]),
+          "dateModified": REWRITTEN.get(x["file"], "%04d-%02d-%02d" % (x["key"][0], x["key"][1] + 1, x["key"][2])), "inLanguage": "fr" if fr else "en",
           "author": {"@type": "Organization", "name": "Licter", "url": SITE + "/"} if x["author"] in ("Licter analysis team", "L'équipe Licter") else {"@type": "Person", "name": x["author"]},
           "publisher": {"@type": "Organization", "name": "Licter", "url": SITE + "/"}, "mainEntityOfPage": SITE + "/" + x["file"]}
     page = page.replace("</head>", '<script type="application/ld+json">%s</script>\n</head>' % json.dumps(ld, ensure_ascii=False), 1)

@@ -39,6 +39,11 @@ STAMP = ROOT / "tools" / "og-cards.json"   # what each card was drawn from, so u
 THREAD_FR = {"SOCIAL DATA & FORESIGHT": "Social data & prospective", "MONITORING & SOCIAL LISTENING": "Veille & social listening",
              "CONSUMER INSIGHTS": "Consumer insights", "INFLUENCE": "Influence"}
 ARTS = {a["file"]: a for a in json.loads((ROOT / "tools/blog_articles.json").read_text())}
+_spec = __import__("importlib.util").util.spec_from_file_location("ucb_seo", ROOT / "tools" / "build-usecases.py")
+U = __import__("importlib.util").util.module_from_spec(_spec)
+_spec.loader.exec_module(U)
+TWIN = re.compile(r'href="/?((?:why-licter|clients|blog|guide|diagnostic|book-a-meeting|events|event-[a-z-]+|legal|privacy|sources|offers'
+                  r'|offer-[a-z0-9-]+|expertise(?:-[a-z]+-listening)?|tech-[a-z0-9-]+|source-[a-z0-9-]+)\.html)(#[^"]*)?"')
 
 
 def pages():
@@ -126,7 +131,10 @@ BYLINE = re.compile(r'(<time datetime=")(\d{4}-\d{2}-\d{2})(">)([^<]*)(</time>)'
 
 def honest_dates(rel, s, dates, today):
     """put back the date the content last changed, instead of the build date"""
-    if not DM.search(s) and not BYLINE.search(s):
+    if rel.startswith("article-"):      # tools/build-blog.py dates its articles itself
+        m = re.search(r'"dateModified": "(\d{4}-\d{2}-\d{2})"', s)
+        if m:
+            dates[rel] = {"hash": "", "date": m.group(1)}
         return s
     bare = BYLINE.sub(r"\1\3\5", DM.sub(r"\1\3", s))
     bare = re.sub(r"\?v=\d+", "", bare)
@@ -134,6 +142,8 @@ def honest_dates(rel, s, dates, today):
     rec = dates.get(rel)
     if not rec or rec["hash"] != h:
         rec = dates[rel] = {"hash": h, "date": today}
+    if not DM.search(s) and not BYLINE.search(s):
+        return s
     y, m, d = (int(x) for x in rec["date"].split("-"))
     def label(fr_):
         return "%d %s %d" % (d, MOIS[m - 1], y) if fr_ else "%d %s %d" % (d, MONTHS[m - 1], y)
@@ -153,6 +163,19 @@ COLLECTION = {"blog.html", "fr/blog/index.html", "clients.html", "fr/clients/ind
 def structured(rel, s, fr, url):
     """a page-level entity and a breadcrumb where a page has none, and the
     articles completed (image, dateModified, author profiles, publisher)"""
+    # the blocks this pass added before are dropped first: builders copy the
+    # head of one page into another, and a block must never describe a page
+    # other than its own
+    s = re.sub(r'<script type="application/ld\+json" data-seo>.*?</script>\n?', "", s, flags=re.S)
+    def foreign(m):
+        try:
+            b = json.loads(m.group(1))
+        except ValueError:
+            return m.group(0)
+        if isinstance(b, dict) and b.get("@type") in ("WebPage", "AboutPage", "CollectionPage") and b.get("url") not in (None, url):
+            return ""
+        return m.group(0)
+    s = re.sub(r'<script type="application/ld\+json">(.*?)</script>\n?', foreign, s, flags=re.S)
     blocks = []
     for m in LD.finditer(s):
         try:
@@ -189,6 +212,7 @@ def structured(rel, s, fr, url):
             if og:
                 b["image"] = [og.group(1)]
             b.setdefault("dateModified", b.get("datePublished"))
+            b["mainEntityOfPage"] = {"@id": url + "#webpage"}
             b["publisher"] = ORG_REF
             a = b.get("author") or {}
             if a.get("@type") == "Person" and AUTHORS.get(a.get("name")):
@@ -196,7 +220,7 @@ def structured(rel, s, fr, url):
             b["mainEntityOfPage"] = {"@type": "WebPage", "@id": url}
             s = s.replace(m.group(0), '<script type="application/ld+json">%s</script>' % json.dumps(b, ensure_ascii=False), 1)
     if add:
-        s = s.replace("</head>", "".join('<script type="application/ld+json">%s</script>\n' % json.dumps(x, ensure_ascii=False) for x in add) + "</head>", 1)
+        s = s.replace("</head>", "".join('<script type="application/ld+json" data-seo>%s</script>\n' % json.dumps(x, ensure_ascii=False) for x in add) + "</head>", 1)
     return s
 
 
@@ -277,12 +301,34 @@ def main():
         if 'href="/assets/fonts/AiglonProWide-Demi.woff2"' not in s:
             s = s.replace("<title>", '<link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2" as="font" type="font/woff2" crossorigin />\n'
                                      '<link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />\n<title>', 1)
+        # the footer: who we are and how to reach us, and an award stated as the founder's
+        foot_fr = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
+                   "50+ clients · 160+ projets · Antoine Khaitrine, Top 50 Insider mondial (SI Lab) depuis 2022")
+        foot_en = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
+                   "50+ clients · 160+ projects · Antoine Khaitrine, Top 50 Insider worldwide (SI Lab) since 2022")
+        s = re.sub(r'<span>(?:Licter SAS ·.*?|50\+ clients · 160\+ (?:projects|projets) · Top 50 Insider[^<]*)</span>(?=\s*</div>\s*</footer>)',
+                   "<span>%s</span>" % (foot_fr if fr else foot_en), s, flags=re.S)
+        # French pages link to French pages in their HTML, not through a script
+        if fr:
+            s = s.replace('href="/"', 'href="/fr/"')
+            s = re.sub(r'href="([^"]*)" data-fr="([^"]*)"', r'href="\2" data-en="\1"', s)
+            s = TWIN.sub(lambda m_: 'href="%s%s"' % (U.expertise_fr(m_.group(1)), m_.group(2) or ""), s)
+        # the home without a redirect: /fr/ for French pages, / for English ones
+        home = "/fr/" if fr else "/"
+        s = re.sub(r'href="(?:/fr/|/)?index\.html(#[^"]*)?"', lambda m_: 'href="%s%s"' % (home, m_.group(1) or ""), s)
         s = structured(rel, s, fr, url)
         s = honest_dates(rel, s, dates, today)
         if s != s0:
             p.write_text(s)
             done += 1
     DATES.write_text(json.dumps(dates, indent=0, sort_keys=True))
+    # the sitemap gets the date each page last changed
+    by_url = {SITE + url_of(ROOT / r): d["date"] for r, d in dates.items() if (ROOT / r).exists()}
+    sm = ROOT / "sitemap.xml"
+    if sm.exists():
+        x = re.sub(r"\s*<lastmod>[^<]*</lastmod>", "", sm.read_text())
+        x = re.sub(r"(<loc>([^<]+)</loc>)", lambda m_: m_.group(1) + ("<lastmod>%s</lastmod>" % by_url[m_.group(2)] if m_.group(2) in by_url else ""), x)
+        sm.write_text(x)
     print("seo: %d pages updated; js/fr-core.js: %d of %d entries" % (done, n_core, n_full))
 
 

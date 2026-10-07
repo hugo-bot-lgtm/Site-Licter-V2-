@@ -71,7 +71,10 @@ def tech_fr(name):
 
 
 # root pages with a static French twin (tools/build-fr-pages.py)
-PAGE_FR = {"why-licter.html": "/fr/pourquoi-licter/", "clients.html": "/fr/clients/", "blog.html": "/fr/blog/", "guide.html": "/fr/guide/"}
+PAGE_FR = {"why-licter.html": "/fr/pourquoi-licter/", "clients.html": "/fr/clients/", "blog.html": "/fr/blog/", "guide.html": "/fr/guide/",
+           "diagnostic.html": "/fr/diagnostic/", "book-a-meeting.html": "/fr/rendez-vous/", "events.html": "/fr/evenements/",
+           "event-toys-games.html": "/fr/evenements/jeux-jouets/", "event-luxury.html": "/fr/evenements/luxe/",
+           "event-food.html": "/fr/evenements/alimentation/", "legal.html": "/fr/mentions-legales/", "privacy.html": "/fr/confidentialite/"}
 
 
 # the six expertise pages, linked from the pages that use them (plan SEO, step 8)
@@ -133,7 +136,7 @@ def expertise_fr(name):
 def translate(fragment):
     """The same walk as js/i18n.js: text nodes and a few attributes; and the
     links to the expertise pages, which have French twins."""
-    fragment = re.sub(r'href="/?(expertise(?:-[a-z]+-listening)?\.html|offers\.html|offer-[a-z0-9-]+\.html|tech-[a-z0-9-]+\.html|source-[a-z0-9-]+\.html|sources\.html|why-licter\.html|clients\.html|blog\.html|guide\.html)(#[^"]*)?"', lambda m: 'href="%s%s"' % (expertise_fr(m.group(1)), m.group(2) or ""), fragment)
+    fragment = re.sub(r'href="/?(expertise(?:-[a-z]+-listening)?\.html|offers\.html|offer-[a-z0-9-]+\.html|tech-[a-z0-9-]+\.html|source-[a-z0-9-]+\.html|sources\.html|why-licter\.html|clients\.html|blog\.html|guide\.html|diagnostic\.html|book-a-meeting\.html|events\.html|event-[a-z-]+\.html|legal\.html|privacy\.html)(#[^"]*)?"', lambda m: 'href="%s%s"' % (expertise_fr(m.group(1)), m.group(2) or ""), fragment)
     def text(m):
         raw = m.group(1)
         key = re.sub(r"\s+", " ", html.unescape(raw)).strip()
@@ -505,7 +508,7 @@ def case_body(c, lang):
     f = FAM[c["family"]]
     x = C.EXTRA[c["key"]]
     n = [y for y in C.CASES if y["family"] == c["family"]].index(c) + 1
-    items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], hub_path(lang)), (f["name"][lang], fam_path(f, lang)), (c["name"][lang], None)]
+    items = [(L["home"][lang], "/fr/" if lang == FR else "/"), (C.HUB["kicker"][lang], hub_path(lang)), (f["name"][lang], fam_path(f, lang)), (c["name"][lang], None)]
     long = " ucr__title--long" if len(c["h1"][lang]) > 52 else ""
     lead = c["meta"][lang]
     gets = "".join("<li>%s</li>" % T(g, lang) for g in c["deliverables"][:3])
@@ -649,7 +652,7 @@ def family_body(f, lang):
     vs = "".join('<tr><td>%s</td><td>%s</td></tr>' % (T(a, lang), T(b, lang)) for a, b in VERSUS)
     others = "".join('<li><a href="%s">%s%s <span aria-hidden="true">→</span></a></li>' % (
         fam_path(o, lang), icon(FAM_ICON[o["key"]]), T(o["name"], lang)) for o in C.FAMILIES if o is not f)
-    items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], hub_path(lang)), (f["name"][lang], None)]
+    items = [(L["home"][lang], "/fr/" if lang == FR else "/"), (C.HUB["kicker"][lang], hub_path(lang)), (f["name"][lang], None)]
     return "\n".join([
         crumbs(items, lang),
         hero(kicker, T(f["h1"], lang), T(f["intro"], lang), lang, aside),
@@ -742,7 +745,7 @@ def families(lang):
 
 def hub_body(lang):
     carousel = families(lang)
-    items = [(L["home"][lang], "/"), (C.HUB["kicker"][lang], None)]
+    items = [(L["home"][lang], "/fr/" if lang == FR else "/"), (C.HUB["kicker"][lang], None)]
     return "\n".join([
         crumbs(items, lang),
         hero('<span>%s</span>' % T(C.HUB["kicker"], lang), T(C.HUB["h1"], lang), T(C.HUB["intro"], lang), lang,

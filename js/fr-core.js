@@ -348,6 +348,7 @@ window.LicterFR = {
 "AI-assisted monitoring, tuned by our analysts.": "La veille assistée par l'IA, réglée par nos analystes.",
 "Free": "Gratuit",
 "Or talk to a consultant": "Ou parler à un consultant",
+"Read the answer": "Lire la réponse",
 "Next": "Suivant",
 "Audience listening": "Audience listening",
 "Influence listening": "Influence listening",

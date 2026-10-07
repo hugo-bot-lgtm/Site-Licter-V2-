@@ -135,6 +135,9 @@ HUB = {"title": ("Techno & outils : nos plateformes d'écoute et nos sources | L
                 "The listening platforms Licter runs, the search, press and AI tools around them, and the 22 networks the data comes from.")}
 
 
+FREE_TOOLS = {"google-trends", "answerthepublic", "social-blade", "meta-ads", "google-news", "chatgpt", "claude", "gemini", "perplexity", "grok"}
+
+
 def agency(slug, name, fr_name=None):
     """the agency wording of one tool page, in both languages"""
     fn = fr_name or name
@@ -144,8 +147,12 @@ def agency(slug, name, fr_name=None):
         "desc": DESC[slug],
         "kick": ("AGENCE %s" % fn.upper(), "%s AGENCY" % name.upper()),
         "q": ("Licter est-elle une agence %s ?" % fn, "Is Licter a %s agency?" % name),
-        "a": ("Oui : en tant qu'agence %s, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question." % fn,
-              "Yes: as a %s agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question." % name),
+        "a": (("Oui : le GEO est une pratique, pas un logiciel. Nous mesurons ce que les IA répondent sur votre marque, d'où viennent leurs réponses, et ce qu'il faut changer pour y figurer. Licter est un cabinet indépendant." ,
+               "Yes: GEO is a practice, not software. We measure what AI answers about your brand, where those answers come from, and what to change to appear in them. Licter is an independent consultancy.") if slug == "geo" else
+              ("Oui : %s est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant." % fn,
+               "Yes: %s is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy." % name) if slug in FREE_TOOLS else
+              ("Oui : en tant qu'agence %s, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question." % fn,
+               "Yes: as a %s agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question." % name)),
         "band": ("Vous cherchez une agence %s ?" % fn, "Looking for a %s agency?" % name),
     }
 

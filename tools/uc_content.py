@@ -803,7 +803,7 @@ EXTRA = {
                  "We map your sector's own risks with you, then set alert thresholds with an editor, not an algorithm. Every signal is qualified by an analyst before it reaches you: who carries it, with what influence, how fast it spreads."),
     "roi": [(("Des crises évitées", "Crises avoided"), ("Un signal traité quand il est encore maîtrisable coûte moins qu'une crise.", "A signal handled while still containable costs less than a crisis.")),
             (("Une alerte en 15 minutes", "Alerted within 15 minutes"), ("Dans plus de vingt langues, avec un protocole d'escalade défini à l'avance.", "In more than twenty languages, with an escalation protocol set in advance.")),
-            (("Pas de fausses alertes", "No false alarms"), ("Vos équipes ne sont dérangées que pour ce qui compte.", "Your teams are only disturbed for what matters."))],
+            (("Chaque alerte qualifiée", "Every alert qualified"), ("Un analyste lit chaque alerte avant qu'elle ne dérange vos équipes.", "An analyst reads every alert before it disturbs your teams."))],
     "voice": "kantar", "articles": ["article-axa-x-licter-gerer-une-crise-cest-dabord-lanticiper.html", "article-shein-vs-bhv-dissection-d-une-crise-digitale-a-travers-la-social-data-intelligence.html"],
   },
   "segmentation": {
