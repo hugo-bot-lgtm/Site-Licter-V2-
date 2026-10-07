@@ -58,6 +58,10 @@ EDITS = [  # typos and a placeholder left in the original texts (regex, replacem
     (r"Sur Tik Tok[\s\u00a0]*:[\s\u00a0]*9K mentions</strong>, qui correspond à une augmentation de XX%, un 1e p<strong>ic",
      "Sur TikTok\u00a0: 9K mentions</strong>, un premier <strong>pic"),
     (r"la “crise'”Huda", "la «\u00a0crise\u00a0» Huda"),
+    # words glued together in the original Kantar article
+    (r"Audience Firts", "Audience First"), (r"avons eule plaisir", "avons eu le plaisir"), (r"insightsstratégiques", "insights stratégiques"),
+    (r"30 ansd’expérience", "30 ans d’expérience"), (r"àl'inflation", "à l'inflation"), (r"grandestransformations", "grandes transformations"),
+    (r"articleexplore", "article explore"), (r"descircuits", "des circuits"),
 ]
 UC = {  # key: (French path, English path, French label)
     "reputation": ("/fr/cas-usage/sante-de-marque/e-reputation-image-de-marque/", "/en/use-cases/brand-health/brand-reputation-monitoring/", "Surveiller l'image et la réputation de votre marque"),

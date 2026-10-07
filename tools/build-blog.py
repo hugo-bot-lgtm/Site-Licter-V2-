@@ -208,11 +208,53 @@ def slugify(s):
     return re.sub(r"[^a-z0-9]+", "-", html.unescape(re.sub(r"<[^>]+>", "", s)).lower()).strip("-")
 
 
+# links put in the text of the French articles (SEO plan, step 9): the first
+# mention of each term, at most four per article, one per destination,
+# commercial pages first
+TERMS = [
+    ("gestion de crise", "/fr/offres/vigie-360/"), ("Social Listening Squad", "/fr/offres/social-listening-as-a-service/"),
+    ("consumer insights", "/fr/offres/social-insights/"), ("audience intelligence", "/fr/expertise/audience-listening/"),
+    ("e-réputation", "/fr/cas-usage/sante-de-marque/e-reputation-image-de-marque/"),
+    ("Talkwalker", "/fr/outils/talkwalker/"), ("Visibrain", "/fr/outils/visibrain/"), ("Brandwatch", "/fr/outils/brandwatch/"),
+    ("Radarly", "/fr/outils/radarly/"), ("Meltwater", "/fr/outils/radarly/"), ("Sprinklr", "/fr/outils/sprinklr/"),
+    ("TikTok", "/fr/sources/tiktok/"), ("Instagram", "/fr/sources/instagram/"), ("LinkedIn", "/fr/sources/linkedin/"),
+    ("YouTube", "/fr/sources/youtube/"), ("Twitch", "/fr/sources/twitch/"), ("Bluesky", "/fr/sources/bluesky/"), ("Threads", "/fr/sources/threads/"),
+    ("influenceurs", "/fr/expertise/influence-listening/"), ("influence", "/fr/expertise/influence-listening/"),
+    ("intelligence artificielle", "/fr/expertise/ai-listening/"), ("veille", "/fr/expertise/live-listening/"),
+    ("social listening", "/fr/expertise/social-listening/"), ("campagne", "/fr/cas-usage/communication/mesurer-impact-campagne/"),
+    ("crise", "/fr/cas-usage/sante-de-marque/risques-de-marque-crise/"),
+    ("tendances", "/fr/cas-usage/tendances-innovation/"), ("consommateurs", "/fr/cas-usage/audiences/"),
+    ("marques", "/fr/cas-usage/sante-de-marque/"),
+]
+
+
+def linkify(prose, cap=4):
+    from bs4 import BeautifulSoup, NavigableString
+    soup = BeautifulSoup(prose, "html.parser")
+    used = {a.get("href") for a in soup.find_all("a")}
+    n = 0
+    for term, url in TERMS:
+        if n >= cap or url in used:
+            continue
+        rx = re.compile(r"(?<![\w-])(%s)(?![\w-])" % re.escape(term), 0 if term[0].isupper() else re.I)
+        for node in soup.find_all(string=rx):
+            if node.find_parent(["a", "h2", "h3", "figure", "figcaption"]) or node.find_parent(class_="bl-dek") or not node.find_parent(["p", "li"]):
+                continue
+            m = rx.search(node)
+            a = soup.new_tag("a", href=url); a.string = m.group(1)
+            node.replace_with(NavigableString(node[:m.start()]), a, NavigableString(node[m.end():])) if False else None
+            before, after = NavigableString(node[:m.start()]), NavigableString(node[m.end():])
+            node.insert_before(before); node.insert_before(a); node.insert_before(after); node.extract()
+            used.add(url); n += 1
+            break
+    return str(soup)
+
+
 def article_main(x):
     fr = x.get("lang") == "fr"
     note = ('<div class="shell"><p class="lang-note lang-note--fr" lang="en" role="note" hidden>This article is only available in French.</p></div>' if fr else
             '<div class="shell"><p class="lang-note" role="note">Cet article n’est disponible qu’en anglais. Le reste du site bascule en français.</p></div>')
-    prose, toc = x["prose"], []
+    prose, toc = (linkify(x["prose"]) if fr else x["prose"]), []
     def h2(m):
         sid = slugify(m.group(1)); toc.append((sid, m.group(1)))
         return '<h2 id="%s">%s</h2>' % (sid, m.group(1))

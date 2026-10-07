@@ -89,12 +89,12 @@ XP_OF = {  # page key: the expertise it serves, most relevant first
     # use cases (tools/uc_content.py)
     "campaign-impact": ["social-listening", "influence-listening"], "leader-advocacy": ["influence-listening", "social-listening"],
     "ambassadors": ["influence-listening", "audience-listening"], "reputation": ["social-listening", "live-listening"],
-    "messaging": ["social-listening", "audience-listening"], "brand-risk": ["live-listening", "social-listening"],
+    "messaging": ["social-listening", "audience-listening", "search-listening"], "brand-risk": ["live-listening", "social-listening"],
     "segmentation": ["audience-listening", "social-listening"], "rejuvenate": ["audience-listening", "influence-listening"],
     "touchpoints": ["audience-listening", "social-listening"], "product-test": ["social-listening", "search-listening"],
     "market-opportunities": ["search-listening", "social-listening"], "stakeholders": ["social-listening", "search-listening"],
     # offers (tools/build-offers.py)
-    "social-insights": ["audience-listening", "social-listening"], "vigie": ["live-listening", "social-listening"],
+    "social-insights": ["audience-listening", "social-listening", "search-listening"], "vigie": ["live-listening", "social-listening"],
     "slaas": ["social-listening"], "nox": ["live-listening", "ai-listening"],
 }
 XP_INFLUENCE_NETS = {"tiktok", "instagram", "youtube", "twitch", "x-twitter", "douyin", "xiaohongshu"}
