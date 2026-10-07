@@ -2634,6 +2634,8 @@ window.LicterFR = {
     "OFFRE",
   "What's included":
     "Ce qui est inclus",
+  "Related expertise":
+    "Expertise associée",
   "Is it for you?":
     "Est-ce pour vous ?",
   "Not the right fit if":
@@ -3622,6 +3624,8 @@ window.LicterFR = {
     "Qu'est-ce que Talkwalker ?",
   "Talkwalker is a social listening and consumer intelligence platform founded in Luxembourg in 2009 and bought by Hootsuite in 2024. It analyses conversations across social networks, online press, blogs, forums and reviews, with sentiment analysis and image recognition.":
     "Talkwalker est une plateforme d'écoute sociale et d'intelligence consommateur fondée au Luxembourg en 2009, rachetée par Hootsuite en 2024. Elle analyse les conversations des réseaux sociaux, de la presse en ligne, des blogs, des forums et des avis, avec analyse du sentiment et reconnaissance d'images.",
+  "Related expertise":
+    "Expertise associée",
   "WHAT IT DOES":
     "CE QU'IL PERMET",
   "What Talkwalker lets you analyse.":

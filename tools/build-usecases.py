@@ -74,6 +74,44 @@ def tech_fr(name):
 PAGE_FR = {"why-licter.html": "/fr/pourquoi-licter/", "clients.html": "/fr/clients/", "blog.html": "/fr/blog/", "guide.html": "/fr/guide/"}
 
 
+# the six expertise pages, linked from the pages that use them (plan SEO, step 8)
+XP_NAME = {"social-listening": "Social listening", "audience-listening": "Audience listening", "influence-listening": "Influence listening",
+           "ai-listening": "AI listening", "live-listening": "Live listening", "search-listening": "Search listening"}
+XP_OF = {  # page key: the expertise it serves, most relevant first
+    # tools (tools/tools_data.py)
+    "talkwalker": ["social-listening", "live-listening"], "visibrain": ["live-listening", "social-listening"],
+    "youscan": ["social-listening", "influence-listening"], "soprism": ["audience-listening"], "radarly": ["social-listening"],
+    "brandwatch": ["social-listening", "audience-listening"], "sprinklr": ["social-listening", "live-listening"],
+    "semrush": ["search-listening"], "google-trends": ["search-listening"], "answerthepublic": ["search-listening"],
+    "chatgpt": ["ai-listening"], "claude": ["ai-listening"], "gemini": ["ai-listening"], "perplexity": ["ai-listening"],
+    "grok": ["ai-listening"], "geo": ["ai-listening", "search-listening"], "meta-ads": ["social-listening", "influence-listening"],
+    "google-news": ["live-listening"], "social-blade": ["influence-listening"],
+    # use cases (tools/uc_content.py)
+    "campaign-impact": ["social-listening", "influence-listening"], "leader-advocacy": ["influence-listening", "social-listening"],
+    "ambassadors": ["influence-listening", "audience-listening"], "reputation": ["social-listening", "live-listening"],
+    "messaging": ["social-listening", "audience-listening"], "brand-risk": ["live-listening", "social-listening"],
+    "segmentation": ["audience-listening", "social-listening"], "rejuvenate": ["audience-listening", "influence-listening"],
+    "touchpoints": ["audience-listening", "social-listening"], "product-test": ["social-listening", "search-listening"],
+    "market-opportunities": ["search-listening", "social-listening"], "stakeholders": ["social-listening", "search-listening"],
+    # offers (tools/build-offers.py)
+    "social-insights": ["audience-listening", "social-listening"], "vigie": ["live-listening", "social-listening"],
+    "slaas": ["social-listening"], "nox": ["live-listening", "ai-listening"],
+}
+XP_INFLUENCE_NETS = {"tiktok", "instagram", "youtube", "twitch", "x-twitter", "douyin", "xiaohongshu"}
+
+
+def xp_href(k, lang=None):
+    """an expertise page, in the given language, or the English file (translated later)"""
+    return expertise_fr("expertise-%s.html" % k) if lang == FR else "/expertise-%s.html" % k
+
+
+def xp_line(keys, lang=None, label=None):
+    """one line: the expertise pages behind this page"""
+    lab = label or ("Expertise associée", "Related expertise")[lang if lang is not None else EN]
+    links = ", ".join('<a href="%s">%s</a>' % (xp_href(k, lang), XP_NAME[k]) for k in keys)
+    return '<p class="xp-line"><span>%s</span> %s</p>' % (lab, links)
+
+
 def expertise_fr(name):
     """the French twin of an expertise page (tools/build-expertise.py), of an
     offer page, of a tool page, or of a page in PAGE_FR"""
@@ -579,7 +617,9 @@ def case_body(c, lang):
         how,
         proof,
         cta(c, lang).replace('class="ucp ucp--cta"', 'class="ucp ucp--cta ucr-offer"', 1),
-        faq_block(c["faq"], lang, further(lang, "rel-" + c["key"], T(L["same"], lang), rel + up_li(f, lang), x["articles"])),
+        faq_block(c["faq"], lang, further(lang, "rel-" + c["key"], T(L["same"], lang), rel + up_li(f, lang) + "".join(
+            '<li class="ucp__up-li"><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (xp_href(k, lang), esc(("Notre expertise %s", "Our %s expertise")[lang] % XP_NAME[k]))
+            for k in XP_OF.get(c["key"], [])), x["articles"])),
         book(lang),
     ]), items
 

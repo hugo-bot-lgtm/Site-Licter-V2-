@@ -642,6 +642,13 @@ def dots(n):
     return '<div class="of-dots" aria-hidden="true">%s</div>' % ("<i></i>" * n)
 
 
+def xp_line(key):
+    """the expertise pages behind an offer (French added by to_fr)"""
+    keys = U.XP_OF.get(key, [])
+    return ('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Expertise associée", "Related expertise")), ", ".join(
+        '<a href="expertise-%s.html">%s</a>' % (k, U.XP_NAME[k]) for k in keys))) if keys else ""
+
+
 def body(o, offers_html):
     i = OFFERS.index(o)
     others = [x for x in OFFERS if x is not o]
@@ -676,6 +683,7 @@ def body(o, offers_html):
           <a class="btn btn--primary" href="#book">{t(S["book"])} <span aria-hidden="true">→</span></a>
           <a class="xh__link" href="#included">{t(S["incl_link"])} <span aria-hidden="true">↓</span></a>
         </div>
+        {xp_line(o["key"])}
       </div>
       <div class="of-hero__demo">
         {demo(o, offers_html)}

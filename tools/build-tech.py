@@ -414,6 +414,15 @@ def cta(band, sub, mark, slug):
 
 
 # ------------------------------------------------------------------ tool page
+def xp(slug, keys=None):
+    """the expertise pages a tool or a network serves (French added by to_fr)"""
+    keys = keys or O.U.XP_OF.get(slug, [])
+    if not keys:
+        return ""
+    lab = t(("Expertise associée", "Related expertise"))
+    return '<p class="xp-line"><span>%s</span> %s</p>' % (lab, ", ".join('<a href="expertise-%s.html">%s</a>' % (k, O.U.XP_NAME[k]) for k in keys))
+
+
 def tool_body(x):
     name = x["name"]; fn = x.get("fr_name", name); nm = (fn, name); NM = (fn.upper(), name.upper())
     ag = agency(x["slug"], name, x.get("fr_name"))
@@ -433,7 +442,8 @@ def tool_body(x):
     out = '<main id="content" class="tk tk--tool" style="--brand:%s">\n' % TOOL_STYLE[x["slug"]]
     out += hero(copy, art)
     out += sec("what", '<div class="tk-split">%s%s</div>' % (
-        '<div>%s<p class="tk-prose" data-reveal>%s</p></div>' % (head(t(fmt(S["what_k"], NM)), t(fmt(S["what_t"], nm))), t(x["what"])), sheet))
+        '<div>%s<p class="tk-prose" data-reveal>%s</p>%s</div>' % (head(t(fmt(S["what_k"], NM)), t(fmt(S["what_t"], nm))), t(x["what"]),
+                                                                   xp(x["slug"])), sheet))
     out += sec("features", head(t(S["feat_k"]), t(fmt(S["feat_t"], nm))) + feats(x["features"], x["slug"]), band=True)
     out += sec("agency", head(t(ag["kick"]), t(fmt(S["ag_t"], nm)), t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
     out += sec("deliverables", head(t(S["del_k"]), t(fmt(S["del_t"], nm))) + dels, band=True)
@@ -472,7 +482,8 @@ def net_body(n):
             o["slug"], NET_STYLE[o["slug"]][0], NET_STYLE[o["slug"]][1], glyph(o["glyph"]), html.escape(o["name"])) for o in NETWORKS if o is not n)
     out = '<main id="content" class="tk tk--net" style="--brand:%s;--brand-ink:%s;--brand-2:%s">\n' % (color, ink, NET_GLOW.get(n["slug"], color))
     out += hero(copy, art)
-    out += sec("why", head(t(fmt(S["nwhy_k"], NMU)), t(fmt(S["nwhy_t"], NMx))) + feats(n["reads"], n["slug"]), band=True)
+    out += sec("why", head(t(fmt(S["nwhy_k"], NMU)), t(fmt(S["nwhy_t"], NMx))) + feats(n["reads"], n["slug"]) +
+               xp(None, ["social-listening"] + (["influence-listening"] if n["slug"] in O.U.XP_INFLUENCE_NETS else [])), band=True)
     out += sec("data", head(t(S["nacc_k"]), t(fmt(S["nacc_t"], NMx))) + io)
     out += sec("method", head(t(S["nmet_k"]), t(fmt(S["nmet_t"], NMx))) + method, band=True)
     out += sec("uses", head(t(S["uses_k2"]), t(fmt(S["nuses_t"], NMx)), t(S["uses_lead"])) + prog(n["uses"]))

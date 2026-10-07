@@ -10359,3 +10359,11 @@ html[lang] .lang-note--fr:not([hidden]) { display: block; }
 .bl-prose .bl-dek { margin: 0 0 26px; font: 500 clamp(19px, 1.6vw, 23px)/1.4 var(--title-font); color: var(--ink); }
 /* on screen at load: shown as painted, no fade (js/ui.js) */
 .reveal [data-reveal].is-static, .reveal [data-reveal].is-static .line { transition: none; }
+
+/* "Related expertise: …" under a tool, a network or an offer (SEO plan, step 8) */
+.xp-line { margin: 18px 0 0; font: 500 14.5px/1.6 var(--body-font); color: var(--text-2); }
+.xp-line > span { font-weight: 700; color: var(--ink); }
+.xp-line > span::after { content: ":"; }
+html[lang="fr"] .xp-line > span::after { content: "\00a0:"; }
+.xp-line a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--amber); text-underline-offset: 3px; }
+.xp-line a:hover { color: var(--amber-ink, var(--amber)); }

@@ -1,11 +1,11 @@
 {
 "en/use-cases/audiences/audience-segmentation/index.html": {
 "date": "2026-10-07",
-"hash": "f83195d82d96e42aa82343fe029479e3"
+"hash": "f9a62f8b4a5035336127054ebe6cce71"
 },
 "en/use-cases/audiences/customer-expectations-touchpoints/index.html": {
 "date": "2026-10-07",
-"hash": "457a93fc76cc5f51e96ab477671d74cf"
+"hash": "482f9d7884bab6dadb5b8ee012d258b6"
 },
 "en/use-cases/audiences/index.html": {
 "date": "2026-10-07",
@@ -13,19 +13,19 @@
 },
 "en/use-cases/audiences/reach-younger-audiences/index.html": {
 "date": "2026-10-07",
-"hash": "e3d2e98bd653282da1d14b16cdf87544"
+"hash": "f854fa4ae4b946d43ba7f2ef9bd8cd52"
 },
 "en/use-cases/brand-health/brand-messaging/index.html": {
 "date": "2026-10-07",
-"hash": "aaf1db304850eb3ae4a42fdf0788956b"
+"hash": "0fccca6dc0784013e7943541ebc43efc"
 },
 "en/use-cases/brand-health/brand-reputation-monitoring/index.html": {
 "date": "2026-10-07",
-"hash": "d76e70f40b96403b9f70f595faebded9"
+"hash": "d62544b56ae83f2fd41ed3f53ccd9075"
 },
 "en/use-cases/brand-health/brand-risk-crisis/index.html": {
 "date": "2026-10-07",
-"hash": "0f241d07d4896678ce91a135dabc910a"
+"hash": "81e2ac9572514a8c76140620642e1bbb"
 },
 "en/use-cases/brand-health/index.html": {
 "date": "2026-10-07",
@@ -33,7 +33,7 @@
 },
 "en/use-cases/communication/find-brand-ambassadors/index.html": {
 "date": "2026-10-07",
-"hash": "9d5faff7ec47f5619232310c8c472c30"
+"hash": "805ea11258d64c5af9c845eb646b0d95"
 },
 "en/use-cases/communication/index.html": {
 "date": "2026-10-07",
@@ -41,11 +41,11 @@
 },
 "en/use-cases/communication/leader-advocacy/index.html": {
 "date": "2026-10-07",
-"hash": "31f9b05e3bfa082fa661880cbede66bf"
+"hash": "ef586c3ce1d8791c5b13249040d7a953"
 },
 "en/use-cases/communication/measure-campaign-impact/index.html": {
 "date": "2026-10-07",
-"hash": "23285eab293f313d81653d6fb3b0186c"
+"hash": "54ab2b05b76eaaf5e20e3d73b6287944"
 },
 "en/use-cases/index.html": {
 "date": "2026-10-07",
@@ -57,15 +57,15 @@
 },
 "en/use-cases/trends-innovation/market-opportunities/index.html": {
 "date": "2026-10-07",
-"hash": "cdb8d751e0d5a75a7d5ee1deaf6f6a66"
+"hash": "45f156c9c2eb6d8ea5a0333274c0c15d"
 },
 "en/use-cases/trends-innovation/product-testing/index.html": {
 "date": "2026-10-07",
-"hash": "65b7cf4f886ee3448f0e174f733b79a6"
+"hash": "981a79ed2d09d983ca97f6a4cb3e1e1d"
 },
 "en/use-cases/trends-innovation/stakeholder-trend-mapping/index.html": {
 "date": "2026-10-07",
-"hash": "bd6abba630451fec6e054afec133b2b8"
+"hash": "9eb598031d79d3a78b964c3d272efc09"
 },
 "fr/cas-usage/audiences/index.html": {
 "date": "2026-10-07",
@@ -73,19 +73,19 @@
 },
 "fr/cas-usage/audiences/parcours-client-attentes/index.html": {
 "date": "2026-10-07",
-"hash": "d606f86dacfb62009a3a67aa07c352e2"
+"hash": "77a4fa30443cce56f52471cb528d663a"
 },
 "fr/cas-usage/audiences/rajeunir-audience/index.html": {
 "date": "2026-10-07",
-"hash": "d09b9198b38ab19024523c5cc5efc8e2"
+"hash": "9178635169f7d9b45a62e314afe65859"
 },
 "fr/cas-usage/audiences/segmentation-cibles/index.html": {
 "date": "2026-10-07",
-"hash": "deb5642af57a8e9685585005fc6ea67b"
+"hash": "3f2b1c25f8e8dbb639bdac4a0d9eafe7"
 },
 "fr/cas-usage/communication/identifier-ambassadeurs/index.html": {
 "date": "2026-10-07",
-"hash": "8f42f395122689bd1ab94016f7d61f4d"
+"hash": "69fd5bdb53ad66731b88e18801dcdf38"
 },
 "fr/cas-usage/communication/index.html": {
 "date": "2026-10-07",
@@ -93,11 +93,11 @@
 },
 "fr/cas-usage/communication/mesurer-impact-campagne/index.html": {
 "date": "2026-10-07",
-"hash": "d5d58430e65a25e5a47ee22c32ab8af7"
+"hash": "275675b82ccb662da82854d65c45c05e"
 },
 "fr/cas-usage/communication/prise-de-parole-dirigeants/index.html": {
 "date": "2026-10-07",
-"hash": "d78f77bba3bb46514b661e85006ed96e"
+"hash": "34bca1710635795103bf5a4e25e15cc3"
 },
 "fr/cas-usage/index.html": {
 "date": "2026-10-07",
@@ -105,11 +105,11 @@
 },
 "fr/cas-usage/sante-de-marque/discours-de-marque/index.html": {
 "date": "2026-10-07",
-"hash": "7004611acb9dd5a2a693ed34aecb5333"
+"hash": "de6cffc8e96c73ee04e7a481a36ed679"
 },
 "fr/cas-usage/sante-de-marque/e-reputation-image-de-marque/index.html": {
 "date": "2026-10-07",
-"hash": "fe608174c267aac6c7357268a77edc53"
+"hash": "c2ca035facce8a4f75cd0c31be665253"
 },
 "fr/cas-usage/sante-de-marque/index.html": {
 "date": "2026-10-07",
@@ -117,15 +117,15 @@
 },
 "fr/cas-usage/sante-de-marque/risques-de-marque-crise/index.html": {
 "date": "2026-10-07",
-"hash": "0544e3ad3b866270f3821377f98dfff7"
+"hash": "45173a33f3eb4615c82694a3ee7808b2"
 },
 "fr/cas-usage/tendances-innovation/analyse-marche-opportunites/index.html": {
 "date": "2026-10-07",
-"hash": "6d4739a25b7d65b28d6e9a59417015e1"
+"hash": "785956d1523cd7305065fc1be49bd48a"
 },
 "fr/cas-usage/tendances-innovation/cartographie-parties-prenantes-tendances/index.html": {
 "date": "2026-10-07",
-"hash": "3150d7434f8acfddd07ece41bd39c5fc"
+"hash": "5e54af3c6c6bc80f8e0228b65a7ee1ff"
 },
 "fr/cas-usage/tendances-innovation/index.html": {
 "date": "2026-10-07",
@@ -133,7 +133,7 @@
 },
 "fr/cas-usage/tendances-innovation/tester-evaluer-produits/index.html": {
 "date": "2026-10-07",
-"hash": "272d27e7e3ed08572385f38995415d64"
+"hash": "5e0594d13d39d8501b4461913e2a81fe"
 },
 "fr/index.html": {
 "date": "2026-10-07",
