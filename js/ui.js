@@ -2362,3 +2362,47 @@ window.LicterUC = (function () {
     out.classList.toggle("is-set", !!v);
   });
 })();
+
+/* =========================================================================
+   Blog (.bl): thread filters, reading progress, the table of contents that
+   follows the reading, and the copy-link button.
+   ========================================================================= */
+(function () {
+  "use strict";
+  var root = document.querySelector(".bl");
+  if (!root) return;
+  var fs = root.querySelectorAll(".bl-f"), cards = root.querySelectorAll("#latest .bl-card, .bl-feat .bl-card");
+  function filter(f) {
+    fs.forEach(function (b) { var on = b.getAttribute("data-f") === f; b.classList.toggle("is-on", on); b.setAttribute("aria-pressed", on ? "true" : "false"); });
+    cards.forEach(function (c) { var show = f === "all" || c.getAttribute("data-t") === f; c.classList.toggle("is-out", !show); c.classList.remove("is-in"); if (show) { void c.offsetWidth; c.classList.add("is-in"); } });
+  }
+  fs.forEach(function (b) { b.addEventListener("click", function () { filter(b.getAttribute("data-f")); }); });
+  root.querySelectorAll(".bl-thread").forEach(function (b) {
+    b.addEventListener("click", function () { filter(b.getAttribute("data-f")); var l = document.getElementById("latest"); if (l) l.scrollIntoView({ behavior: "smooth", block: "start" }); });
+  });
+
+  var bar = root.querySelector(".bl-progress i"), prose = root.querySelector(".bl-prose");
+  var links = root.querySelectorAll(".bl-toc a"), heads = Array.prototype.map.call(links, function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  if (bar && prose) {
+    var tick = function () {
+      var r = prose.getBoundingClientRect(), p = Math.min(1, Math.max(0, (innerHeight * .4 - r.top) / r.height));
+      bar.parentNode.style.setProperty("--p", p);
+      bar.style.transform = "scaleX(" + p + ")";
+      var cur = -1;
+      heads.forEach(function (h, k) { if (h && h.getBoundingClientRect().top < innerHeight * .35) cur = k; });
+      links.forEach(function (a, k) { a.classList.toggle("is-on", k === cur); });
+    };
+    window.addEventListener("scroll", function () { requestAnimationFrame(tick); }, { passive: true });
+    tick();
+  }
+  var copy = root.querySelector(".bl-copy");
+  if (copy) copy.addEventListener("click", function () {
+    var label = copy.textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(location.href) : Promise.reject()).then(function () {
+      copy.textContent = copy.getAttribute("data-copied"); setTimeout(function () { copy.textContent = label; }, 1800);
+    }, function () {});
+  });
+  root.querySelectorAll('[data-open="mag"]').forEach(function (b) {
+    b.addEventListener("click", function () { if (window.LicterPopups) window.LicterPopups.open("mag"); });
+  });
+})();
