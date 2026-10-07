@@ -98,7 +98,7 @@ def head(lang, src):
 <meta name="twitter:title" content="{U.esc(t)}" />
 <meta name="twitter:description" content="{U.esc(d)}" />
 <meta name="twitter:image" content="{img}" />
-<link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2?v={v}" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preconnect" href="https://i.ytimg.com" />
 {ld_tags}
