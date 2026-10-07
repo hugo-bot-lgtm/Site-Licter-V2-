@@ -94,8 +94,8 @@ def translate(fragment):
         hit = DICT.get(key)
         if not hit:
             return m.group(0)
-        lead = re.match(r"^\s*", raw).group(0)
-        trail = re.search(r"\s*$", raw).group(0)
+        lead = re.match(r"^(?:\s|&nbsp;)*", raw).group(0)
+        trail = re.search(r"(?:\s|&nbsp;)*$", raw).group(0)
         return ">" + lead + esc(hit).replace("&#x27;", "'") + trail + "<"
     fragment = re.sub(r">([^<>]+)<", text, fragment)
     def attr(m):

@@ -421,3 +421,12 @@ Une direction différente de « Pourquoi Licter » : le registre d'un rapport an
 - **Des couvertures génératives, sur les pages d'article seulement** (la page Blog et les cartes « À lire aussi » sont en texte) : chaque article a une image dessinée à partir de son nom (toujours la même), avec un motif par fil : lignes de signal pour la prospective, radar pour la veille, deux nuages pour les insights, réseau pour l'influence. Ce sont des dessins, pas des données.
 - **La page Blog** : en tête, le titre « Ce que nous voyons dans la donnée. » et son chapô côte à côte, puis une mosaïque (le dernier article en grand sur fond navy, les deux suivants à droite) ; « Tous les articles » en petites cartes (quatre par ligne) ou en liste compacte, au choix du lecteur (bouton Cartes / Liste, retenu dans le navigateur), filtrables par fil ; les quatre fils à côté de leur titre (un clic filtre la liste) ; le magazine Audience First.
 - **Un article** : barre de progression de lecture, en-tête avec la couverture, sommaire collant qui suit la lecture, bouton « Copier le lien », cas d'usage liés, « À lire aussi » (même fil d'abord), le magazine.
+
+### Mobile (toutes les pages hors accueil, passe d'octobre 2026)
+
+Un bloc `@media (max-width: 720px)` en fin de `css/styles.css` regroupe les règles ; à vérifier avec `scratchpad/pw/mob.js` (390 et 360 px).
+- **Aucun texte sous 12px** (étiquettes, compteurs, mentions de formulaire).
+- **Liens isolés sur une bande de 44px** (`inline-flex`, avec `gap` pour garder l'espace avant la flèche) ; fils d'Ariane agrandis par un padding compensé, sans décaler la mise en page.
+- **Des pages plus courtes** : sur les pages outils et réseaux, les cartes « Ce que ça fait » passent en une colonne compacte, les étapes en liste, les réseaux en deux rangées défilantes ; sur Pourquoi Licter, les visages flottants, les photos des lignes et l'année géante disparaissent, les équipes défilent à l'horizontale ; sur Clients, l'index passe à trois colonnes et montre 12 clients puis un bouton « Voir les 39 clients ».
+- **Les illustrations décoratives de la newsletter** sont masquées hors accueil.
+- **Les textes traduits gardent leurs espaces insécables** (`translate()` de `tools/build-usecases.py`) : la flèche d'un lien ne se colle plus au texte.

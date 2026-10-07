@@ -188,6 +188,7 @@ window.LicterFR = {
     "50+ organisations lisent leur marché avec Licter : Chanel, LVMH, L'Oréal, Danone, Unilever, Renault, Orange, Société Générale, l'UNESCO et d'autres.",
   "Your organisation?": "Votre organisation ?",
   "Add your name": "Ajoutez votre nom",
+  "See all 39 clients": "Voir les 39 clients",
   /* clients, studio page (October 2026) */
   "50+ teams":
     "50+ équipes",
@@ -647,6 +648,7 @@ window.LicterFR = {
   "29 December 2026": "29 décembre 2026",
   "30 December 2026": "30 décembre 2026",
   "31 December 2026": "31 décembre 2026",
+  "What you already run, what is not working, what you need to decide.": "Ce que vous avez déjà, ce qui ne marche pas, ce que vous devez décider.",
   /* positioning: a consultancy, found as an agency (October 2026) */
   "Social data intelligence consultancy":
     "Cabinet de conseil en social data intelligence",
@@ -1212,7 +1214,7 @@ window.LicterFR = {
   "100% free · sent by email immediately · no sequence afterwards": "100 % gratuit · envoi immédiat par e-mail · aucune séquence ensuite",
   "No commitment · Reply within 24 hours · Independent of any follow-up project": "Sans engagement · réponse sous 24 h · indépendant de toute suite",
   "Reply within 24 hours · 30 minutes · No commitment": "Réponse sous 24 h · 30 minutes · sans engagement",
-  "Guide sent. Check your inbox — and your spam folder, it happens.": "Guide envoyé. Vérifiez votre boîte de réception — et vos spams, ça arrive.",
+  "Guide sent. Check your inbox, and your spam folder: it happens.": "Guide envoyé. Vérifiez votre boîte de réception, et vos spams : ça arrive.",
   "Request received. A consultant comes back to you within 24 hours to book the scoping call.":
     "Demande reçue. Un consultant revient vers vous sous 24 h pour caler l'appel de cadrage.",
   "Booked. We come back within 24 hours with two or three slots.": "C'est noté. Nous revenons sous 24 h avec deux ou trois créneaux.",
@@ -1431,7 +1433,7 @@ window.LicterFR = {
   "How far back can we look?": "Jusqu'où peut-on remonter ?",
   "Logo and object detection": "Détection de logos et d'objets",
   "Product and usage studies": "Études produits et usages",
-  "Scoping call — 30 minutes": "Échange de cadrage — 30 minutes",
+  "Scoping call, 30 minutes": "Échange de cadrage, 30 minutes",
   "Shortlist with risk flags": "Liste courte avec signaux de risque",
   "VISIBRAIN · THE STRENGTHS": "VISIBRAIN · LES ATOUTS",
   "WHAT MAKES THE DIFFERENCE": "CE QUI FAIT LA DIFFÉRENCE",
@@ -1500,7 +1502,7 @@ window.LicterFR = {
   "Pick the model, not the project.": "Choisissez le modèle, pas le projet.",
   "Product Innovation & Development": "Innovation & Développement produit",
   "Questions this platform answers.": "Les questions auxquelles cet outil répond.",
-  "Readout — quick wins and roadmap": "Restitution — gains rapides et feuille de route",
+  "Readout: quick wins and roadmap": "Restitution : gains rapides et feuille de route",
   "“Who are our audiences, really?”": "« Qui sont vraiment nos audiences ? »",
   "Twelve questions, twelve methods.": "Douze questions, douze méthodes.",
   "WHERE PANELS AND SURVEYS DISAGREE": "LÀ OÙ LE PANEL ET L'ÉTUDE SE CONTREDISENT",
@@ -1765,8 +1767,8 @@ window.LicterFR = {
     "Vous obtenez : une liste courte classée, avec recouvrement d'audience, affinité et signaux de risque.",
   "Detection of your marks in images, including posts that never type your name.":
     "La détection de vos marques dans les images, y compris les publications qui n'écrivent jamais votre nom.",
-  "Each item with effort, cost and expected impact — so arbitration is possible.":
-    "Chaque point avec son effort, son coût et son impact attendu — pour que l'arbitrage soit possible.",
+  "Each item with effort, cost and expected impact, so arbitration is possible.":
+    "Chaque point avec son effort, son coût et son impact attendu, pour que l'arbitrage soit possible.",
   "Product verdicts, market opportunities, stakeholder maps and emerging trends.":
     "Verdicts produits, opportunités de marché, cartes des parties prenantes et tendances émergentes.",
   "You get: expectations and friction points, ordered by how often they surface.":
@@ -1775,8 +1777,8 @@ window.LicterFR = {
     "Vous obtenez : la part de voix par porte-parole, sujet par sujet, face à un panel de pairs.",
   "No client cases published yet — each card points to the use case it belongs to.":
     "Pas encore de cas clients publiés — chaque carte renvoie au cas d'usage correspondant.",
-  "Not your tooling — the decision you have to make and what currently informs it.":
-    "Pas votre outillage — la décision que vous devez prendre et ce qui l'éclaire aujourd'hui.",
+  "Not your tooling: the decision you have to make and what currently informs it.":
+    "Pas votre outillage : la décision que vous devez prendre et ce qui l'éclaire aujourd'hui.",
   "The state of the conversation at any moment, without waiting for a weekly export.":
     "L'état de la conversation à tout moment, sans attendre un export hebdomadaire.",
   "Which of the four layers answers it, how precisely, and what it will not tell you.":
@@ -1837,8 +1839,8 @@ window.LicterFR = {
     "L'impact d'un événement, d'un lancement ou d'un porte-parole — mesuré sur la conversation, pas sur le plan média.",
   "One perimeter, several countries, without rebuilding the query for each — the comparison stays valid.":
     "Un périmètre, plusieurs pays, sans reconstruire la requête à chaque fois — la comparaison reste valable.",
-  "A first read, a diagnostic or nothing at all — we will tell you if social data is the wrong instrument.":
-    "Une première lecture, un diagnostic ou rien du tout — nous vous dirons si la social data est le mauvais instrument.",
+  "A first read, a diagnostic or nothing at all: we will tell you if social data is the wrong instrument.":
+    "Une première lecture, un diagnostic ou rien du tout : nous vous dirons si la social data est le mauvais instrument.",
   "Behaviour against declaration: where panels and surveys disagree, and which one turned out to be right.":
     "Le comportement contre le déclaratif : là où panel et étude divergent, et lequel des deux avait raison.",
   "A readout your teams can act on, recurring monitoring where it matters, and alerts when something moves.":
@@ -1863,14 +1865,14 @@ window.LicterFR = {
     "C'est le point de départ habituel : une marque ou un dirigeant, étendu une fois le protocole éprouvé.",
   "Detection in minutes, not in the next morning's report — the only useful speed when a subject is travelling.":
     "Une détection en minutes, pas dans le rapport du lendemain — la seule vitesse utile quand un sujet circule.",
-  "If your question is already precise, skip the guide — thirty minutes with a consultant will get you further.":
-    "Si votre question est déjà précise, passez le guide — trente minutes avec un consultant vous mèneront plus loin.",
+  "If your question is already precise, skip the guide: thirty minutes with a consultant will get you further.":
+    "Si votre question est déjà précise, passez le guide : trente minutes avec un consultant vous mèneront plus loin.",
   "Every product decision is a bet on what people will want. The conversation of a market usually says it first.":
     "Toute décision produit est un pari sur ce que les gens voudront. La conversation d'un marché le dit généralement en premier.",
   "Personas, segmentation, market studies and trend reads, built on behaviour rather than on a recruited sample.":
     "Personas, segmentation, études de marché et lectures de tendances, bâtis sur le comportement plutôt que sur un échantillon recruté.",
-  "Sources, taxonomy, alerting, analysis, activation, organisation — scored and benchmarked against your sector.":
-    "Sources, taxonomie, alerte, analyse, activation, organisation — notées et comparées à votre secteur.",
+  "Sources, taxonomy, alerting, analysis, activation, organisation, scored and benchmarked against your sector.":
+    "Sources, taxonomie, alerte, analyse, activation, organisation, notées et comparées à votre secteur.",
   "What people ask when nobody is watching: Google and Amazon queries, before the purchase and after the problem.":
     "Ce que les gens demandent quand personne ne regarde : les requêtes Google et Amazon, avant l'achat et après le problème.",
   "Catch weak signals early — a rumour, a boycott call, a supplier controversy — while they are still containable.":
@@ -1965,8 +1967,8 @@ window.LicterFR = {
     "Une part croissante de la découverte de marque se joue désormais dans la réponse d'un assistant. Ce qu'il dit de vous est mesurable, et de plus en plus décisif.",
   "No. It reads behaviour that already exists — nobody is recruited, nobody answers a questionnaire, and there is no declaration bias to correct.":
     "Non. Il lit un comportement qui existe déjà — personne n'est recruté, personne ne remplit de questionnaire, et il n'y a pas de biais déclaratif à corriger.",
-  "Personas built in a room describe the people in the room. Built from observed affinities, they describe an audience — and they can be checked.":
-    "Des personas bâtis dans une salle décrivent les gens présents dans la salle. Bâtis sur des affinités observées, ils décrivent une audience — et ils sont vérifiables.",
+  "Personas built in a room describe the people in the room. Built from observed affinities, they describe an audience, and they can be checked.":
+    "Des personas bâtis dans une salle décrivent les gens présents dans la salle. Bâtis sur des affinités observées, ils décrivent une audience, et ils sont vérifiables.",
   "What we publish comes out of client work: the methods that held up, the ones that did not, and what the data showed before the market noticed.":
     "Ce que nous publions sort du travail client : les méthodes qui ont tenu, celles qui n'ont pas tenu, et ce que la donnée montrait avant que le marché ne le remarque.",
   "A shared panel serves very different mandates — which is why the client list runs from luxury and FMCG to public institutions and broadcasters.":
@@ -2027,8 +2029,8 @@ window.LicterFR = {
     "Quand le comportement observé et l'intention déclarée pointent dans des directions opposées, le bon réflexe n'est pas de désigner un gagnant. C'est de comprendre à quelle question chacun a réellement répondu.",
   "Real-time monitoring of the live conversation and of the media sphere. The platform we run when the question is not “what happened last quarter” but “what is happening right now”.":
     "Veille en temps réel de la conversation en direct et de la sphère média. L'outil que nous opérons quand la question n'est pas « que s'est-il passé le trimestre dernier » mais « que se passe-t-il maintenant ».",
-  "A threshold looks like a technical setting. It is really a statement about what your organisation considers worth waking someone up for — and it should be argued about in those terms.":
-    "Un seuil ressemble à un réglage technique. C'est en réalité une déclaration sur ce que votre organisation juge digne de réveiller quelqu'un — et c'est en ces termes qu'il faut en débattre.",
+  "A threshold looks like a technical setting. It is really a statement about what your organisation considers worth waking someone up for, and it should be argued about in those terms.":
+    "Un seuil ressemble à un réglage technique. C'est en réalité une déclaration sur ce que votre organisation juge digne de réveiller quelqu'un, et c'est en ces termes qu'il faut en débattre.",
   "It is the platform we reach for when a question spans several markets, several languages and a long period — the range is its strength, and range is exactly what most brand questions need.":
     "C'est l'outil que nous prenons quand une question couvre plusieurs marchés, plusieurs langues et une longue période — l'étendue est sa force, et l'étendue est exactement ce dont la plupart des questions de marque ont besoin.",
   "Most brand mentions carry no text at all: a product on a table, a logo on a shirt, a packshot in a story. YouScan reads the picture, which is where a growing share of the conversation now lives.":

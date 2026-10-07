@@ -2416,3 +2416,20 @@ window.LicterUC = (function () {
     b.addEventListener("click", function () { if (window.LicterPopups) window.LicterPopups.open("mag"); });
   });
 })();
+
+/* clients on a phone: the index shows twelve logos, then opens */
+(function () {
+  "use strict";
+  var index = document.querySelector(".cl-index");
+  if (!index) return;
+  var fr = (document.documentElement.lang || "").slice(0, 2) === "fr";
+  var n = index.querySelectorAll(".cl-cell:not(.cl-cell--you)").length;
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "cl-more";
+  b.textContent = fr ? "Voir les " + n + " clients" : "See all " + n + " clients";
+  if (!fr && window.LicterFR && (localStorage.getItem("licter-lang") || "fr") === "fr" && window.LicterFR[b.textContent]) b.textContent = window.LicterFR[b.textContent];
+  index.parentNode.insertBefore(b, index.nextSibling);
+  b.addEventListener("click", function () { index.classList.add("is-open"); b.remove(); });
+  /* a sector filter shows everything that matches */
+  document.querySelectorAll(".cl-tab").forEach(function (t) { t.addEventListener("click", function () { index.classList.add("is-open"); if (b.parentNode) b.remove(); }); });
+})();
