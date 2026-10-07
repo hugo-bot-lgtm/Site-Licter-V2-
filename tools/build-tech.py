@@ -64,6 +64,7 @@ CASES = {c["key"]: c for c in C.CASES}
 
 sys.path.insert(0, str(ROOT / "tools"))
 from tools_data import TOOLS          # noqa: E402
+from seo_desc import DESC             # noqa: E402
 from networks import NETWORKS         # noqa: E402
 TOOL = {x["slug"]: x for x in TOOLS}
 NET = {n["slug"]: n for n in NETWORKS}
@@ -139,8 +140,7 @@ def agency(slug, name, fr_name=None):
     sh = SHORT[slug]
     return {
         "title": ("Agence %s : %s | Licter" % (fn, sh[FR]), "%s agency: %s | Licter" % (name, sh[EN])),
-        "desc": ("Licter, agence %s : %s. Nos consultants configurent l'outil, lisent les données et vous livrent une recommandation, pas un tableau de bord." % (fn, sh[FR]),
-                 "Licter, %s agency: %s. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard." % (name, sh[EN])),
+        "desc": DESC[slug],
         "kick": ("AGENCE %s" % fn.upper(), "%s AGENCY" % name.upper()),
         "q": ("Licter est-elle une agence %s ?" % fn, "Is Licter a %s agency?" % name),
         "a": ("Oui : en tant qu'agence %s, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question." % fn,
@@ -157,8 +157,7 @@ def agency_net(n):
     nm, tag = n["name"], n["tag"]
     return {
         "title": ("Agence social listening %s : %s | Licter" % (nm, tag[FR]), "%s social listening agency: %s | Licter" % (nm, tag[EN])),
-        "desc": ("Licter, agence social listening %s : %s. Nos consultants écoutent %s et vous livrent une recommandation, pas un export." % (nm, tag[FR], nm),
-                 "Licter, %s social listening agency: %s. Our consultants listen to %s and deliver a recommendation, not an export." % (nm, tag[EN], nm)),
+        "desc": DESC[n["slug"]],
         "q": ("Licter est-elle une agence social listening %s ?" % nm, "Is Licter a %s social listening agency?" % nm),
         "a": ("Oui : nous écoutons %s pour nos clients, avec les plateformes adaptées, et nos consultants lisent ce qui s'y dit. Nous ne gérons ni vos comptes ni vos publicités : nous lisons la conversation et vous disons quoi décider." % nm,
               "Yes: we listen to %s for our clients, with the right platforms, and our consultants read what is said there. We do not run your accounts or your ads: we read the conversation and tell you what to decide." % nm),
