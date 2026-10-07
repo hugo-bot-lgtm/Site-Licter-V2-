@@ -2371,7 +2371,7 @@ window.LicterUC = (function () {
   "use strict";
   var root = document.querySelector(".bl");
   if (!root) return;
-  var fs = root.querySelectorAll(".bl-f"), cards = root.querySelectorAll("#latest .bl-card, .bl-feat .bl-card");
+  var fs = root.querySelectorAll(".bl-f"), cards = root.querySelectorAll("#latest .bl-row");
   function filter(f) {
     fs.forEach(function (b) { var on = b.getAttribute("data-f") === f; b.classList.toggle("is-on", on); b.setAttribute("aria-pressed", on ? "true" : "false"); });
     cards.forEach(function (c) { var show = f === "all" || c.getAttribute("data-t") === f; c.classList.toggle("is-out", !show); c.classList.remove("is-in"); if (show) { void c.offsetWidth; c.classList.add("is-in"); } });

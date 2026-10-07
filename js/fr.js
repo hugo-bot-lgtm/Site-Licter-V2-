@@ -245,6 +245,10 @@ window.LicterFR = {
   "Blog seismograph": "Le sismographe du blog",
   "One spike per piece, height = reading time": "Un pic par article, hauteur = temps de lecture",
   "Our pieces on a timeline": "Nos articles sur une frise",
+  "July 2026": "juillet 2026",
+  "August 2026": "août 2026",
+  "September 2026": "septembre 2026",
+  "October 2026": "octobre 2026",
   /* blog redesign (October 2026) */
   "pieces": "articles",
   "4 threads": "4 fils",

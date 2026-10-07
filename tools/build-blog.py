@@ -155,42 +155,63 @@ def seismo():
 
 
 # ------------------------------------------------------------------ the blog page
+def row(x):
+    """one line of the index: date, thread, title and lead, an arrow"""
+    d, m, y = x["date"].split()
+    return ('<li class="bl-row" data-t="%s"><a href="%s"><span class="bl-row__date"><b>%s</b><span>%s %s</span></span>'
+            '<span class="bl-row__main"><span class="bl-tag">%s</span><b class="bl-row__t">%s</b><span class="bl-row__d">%s</span></span>'
+            '<span class="bl-row__side"><span>%s</span><i aria-hidden="true">→</i></span></a></li>') % (
+        x["t"], x["file"], d, m, y, x["tname"], E(x["title"]), E(x["lead"]), x["read"])
+
+
 def blog_main():
-    lead, rest = ARTS[0], ARTS[1:]
+    lead, side = ARTS[0], ARTS[1:3]
     chips = '<button class="bl-f is-on" type="button" aria-pressed="true" data-f="all">All <small>%d</small></button>' % len(ARTS) + "".join(
         '<button class="bl-f" type="button" aria-pressed="false" data-f="%s">%s <small>%d</small></button>' % (k, n, sum(1 for x in ARTS if x["t"] == k)) for k, _, n, _ in THREADS)
     threads = "".join('<li><button class="bl-thread" type="button" data-f="%s"><span class="bl-thread__n">%s</span><b>%s</b><span>%s</span><small>%d <span>pieces</span> <i aria-hidden="true">→</i></small></button></li>' % (
-        k, "0%d" % (["foresight", "listening", "insights", "influence"].index(k) + 1), n, d, sum(1 for x in ARTS if x["t"] == k)) for k, _, n, d in THREADS)
-    return '''<main id="content" class="bl">
+        k, "0%d" % (i + 1), n, d, sum(1 for x in ARTS if x["t"] == k)) for i, (k, _, n, d) in enumerate(THREADS))
+    return """<main id="content" class="bl">
   <section class="bl-hero">
     <div class="shell">
       <div class="bl-hero__top">
         <p class="bl-k">BLOG</p>
         <p class="bl-hero__count"><span>%d <span>pieces</span></span><span>4 threads</span><span>Written by the consultants</span></p>
       </div>
-      <h1 class="bl-h1">What we see <em>in the data.</em></h1>
-      <p class="bl-lead">Methods, market reads and the occasional correction. Written by the consultants who ran the analysis, not by a content team.</p>
-      %s
-      <ul class="bl-feat">%s</ul>
+      <div class="bl-hero__head">
+        <h1 class="bl-h1">What we see <em>in the data.</em></h1>
+        <p class="bl-lead">Methods, market reads and the occasional correction. Written by the consultants who ran the analysis, not by a content team.</p>
+      </div>
+      <div class="bl-mosaic">
+        <ul class="bl-feat">%s</ul>
+        <ul class="bl-side">%s</ul>
+      </div>
     </div>
+  </section>
+
+  <section class="bl-band">
+    <div class="shell">%s</div>
   </section>
 
   <section class="bl-sec" id="latest">
     <div class="shell">
       <div class="bl-bar">
-        <h2 class="bl-h2">Latest pieces</h2>
+        <h2 class="bl-h2">Every piece</h2>
         <div class="bl-fs" role="group" aria-label="Filter by thread">%s</div>
       </div>
-      <ul class="bl-grid">%s</ul>
+      <ol class="bl-rows">%s</ol>
     </div>
   </section>
 
   <section class="bl-sec bl-sec--band" id="topics">
     <div class="shell">
-      <p class="bl-k">WHAT WE WRITE ABOUT</p>
-      <h2 class="bl-h2">Four running threads.</h2>
-      <p class="bl-p">What we publish comes out of client work: the methods that held up, the ones that did not, and what the data showed before the market noticed.</p>
-      <ul class="bl-threads">%s</ul>
+      <div class="bl-split">
+        <div>
+          <p class="bl-k">WHAT WE WRITE ABOUT</p>
+          <h2 class="bl-h2">Four running threads.</h2>
+          <p class="bl-p">What we publish comes out of client work: the methods that held up, the ones that did not, and what the data showed before the market noticed.</p>
+        </div>
+        <ul class="bl-threads">%s</ul>
+      </div>
     </div>
   </section>
 
@@ -199,7 +220,7 @@ def blog_main():
 %s
     </div>
   </section>
-</main>''' % (len(ARTS), seismo(), card(lead, True), chips, "".join(card(x) for x in rest), threads, mag_block("bl"))
+</main>""" % (len(ARTS), card(lead, True), "".join(card(x) for x in side), seismo(), chips, "".join(row(x) for x in ARTS), threads, mag_block("bl"))
 
 
 # ------------------------------------------------------------------ an article
