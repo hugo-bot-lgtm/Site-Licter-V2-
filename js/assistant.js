@@ -428,6 +428,22 @@
   }
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  /* phones: the launcher steps aside while the visitor reads down, so it
+     never sits on a line of text, and comes back on the way up or after a
+     pause (SEO audit, October 2026) */
+  if (window.matchMedia) {
+    var phoneQ = window.matchMedia("(max-width: 720px)"), lastY2 = scrollY, rest = null;
+    window.addEventListener("scroll", function () {
+      if (!phoneQ.matches) return;
+      var y = scrollY, d = y - lastY2;
+      if (Math.abs(d) < 6) return;
+      root.classList.toggle("lx--tuck", d > 0 && y > 120);
+      lastY2 = y;
+      clearTimeout(rest);
+      rest = setTimeout(function () { root.classList.remove("lx--tuck"); }, 1400);
+    }, { passive: true });
+  }
+
   /* the home's bottom bar on a phone carries Antoine's face: it opens the chat */
   window.LicterChat = { open: function () { open("chat"); }, close: close };
 

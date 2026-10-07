@@ -73,8 +73,31 @@
 
   /* ---------------------------------------------------------- the banner */
   var banner = document.querySelector("aside.banner:not(.banner--float)");
+  /* the banner can be closed: it stays closed until the end of the event it
+     announced (30 days for the guide), then the next one shows. js/theme.js
+     reads the same key in <head>, so a closed banner never flashes in. */
+  var OFF = "licter-banner-off";
+  function closer() {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "banner__x";
+    b.setAttribute("aria-label", fr() ? "Fermer le bandeau" : "Close the banner");
+    b.innerHTML = '<span aria-hidden="true">×</span>';
+    b.addEventListener("click", function () {
+      var until = next ? new Date(next.date + "T23:59:59").getTime() : Date.now() + 30 * 864e5;
+      try { localStorage.setItem(OFF, String(until)); } catch (e) {}
+      html.classList.add("banner-off");
+      banner.hidden = true;
+      measure();
+    });
+    banner.appendChild(b);
+  }
+  if (banner && html.classList.contains("banner-off")) banner.hidden = true;
   function paintBanner() {
     if (!banner) return;
+    paintBannerInner();
+    if (!banner.querySelector(".banner__x")) closer();
+  }
+  function paintBannerInner() {
     if (!next) {
       /* nothing upcoming: back to the free guide */
       if (!banner.classList.contains("banner--event")) return;

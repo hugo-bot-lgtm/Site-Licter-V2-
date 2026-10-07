@@ -12,7 +12,7 @@ French here, not there.
 Built on tools/build-offers.py (same head, same callback, same dictionary
 mechanism). tools/build-usecases.py runs it after the offer pages.
 """
-import html, importlib.util, json, math, pathlib, re
+import html, importlib, importlib.util, json, math, pathlib, re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 spec = importlib.util.spec_from_file_location("bo", ROOT / "tools" / "build-offers.py")
@@ -22,6 +22,7 @@ U, C = O.U, O.C
 FR, EN = 0, 1
 SITE = O.SITE
 t, a = O.t, O.a
+GUIDE = {"social": "sl_guide", "audience": "al_guide"}   # expertise key -> tools/<module>.py, a qa_roller section
 
 S = {
     "home": ("Accueil", "Home"),
@@ -666,7 +667,7 @@ def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, 
           <span class="xe-cover__sheet xe-cover__sheet--3"></span><span class="xe-cover__sheet xe-cover__sheet--2"></span>
           <span class="xe-cover__sheet xe-cover__sheet--1">
             <span class="xe-cover__band"></span>
-            <span class="xe-cover__top"><img src="/assets/img/logo-navy.png" alt="" width="44" height="48" /><small>{t(S["lm_k"])}</small></span>
+            <span class="xe-cover__top"><img src="/assets/img/logo-navy.webp" alt="" width="44" height="48" /><small>{t(S["lm_k"])}</small></span>
             <span class="xe-cover__ico">{icon}</span>
             <b class="xe-cover__brand" data-empty="{a(S["lm_brand_ph"])}">{t(S["lm_brand_ph"])}</b>
             <small class="xe-cover__anon">{cover_name}</small>
@@ -718,8 +719,9 @@ def listening_body(x, offers_html):
     out += sec("", head(t(S["hears_k"]), t((S["hears_t"][0] % art_fr, S["hears_t"][1] % nm[EN]))) + feats, band=True)
     out += sec("answers", head(t(S["answers_k"]), t(S["answers_t"]), t(S["answers_lead"])) + prog(x["cases"]))
     out += reads(x["key"])
-    if x["key"] == "social":      # the long-form section (tools/sl_guide.py, SEO plan step 15)
-        import sl_guide as G
+    guide = GUIDE.get(x["key"])
+    if guide and (ROOT / "tools" / (guide + ".py")).exists():   # the long-form sections (SEO plan step 15, audit of October 2026)
+        G = importlib.import_module(guide)
         from components import qa_roller
         out += sec("guide", head(t(G.KICKER), t(G.TITLE)) + qa_roller(
             [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS], t(G.KICKER),

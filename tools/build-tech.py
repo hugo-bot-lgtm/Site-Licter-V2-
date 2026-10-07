@@ -20,7 +20,9 @@ Run by tools/build-usecases.py (before the sitemap), or on its own:
 MOCK: the descriptions say how Licter uses each tool; to be validated by
 Licter (A-FAIRE.md, section 5).
 """
-import html, importlib.util, json, pathlib, re, sys
+import html, importlib, importlib.util, json, pathlib, re, sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import ai_engines as AI
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 spec = importlib.util.spec_from_file_location("bo", ROOT / "tools" / "build-offers.py")
@@ -142,10 +144,11 @@ def agency(slug, name, fr_name=None):
     """the agency wording of one tool page, in both languages"""
     fn = fr_name or name
     sh = SHORT[slug]
+    it = AI.INTENT.get(slug, {})
     return {
-        "title": ("Agence %s : %s | Licter" % (fn, sh[FR]), "%s agency: %s | Licter" % (name, sh[EN])),
+        "title": it.get("title") or ("Agence %s : %s | Licter" % (fn, sh[FR]), "%s agency: %s | Licter" % (name, sh[EN])),
         "desc": DESC[slug],
-        "kick": ("AGENCE %s" % fn.upper(), "%s AGENCY" % name.upper()),
+        "kick": it.get("kick") or ("AGENCE %s" % fn.upper(), "%s AGENCY" % name.upper()),
         "q": ("Licter est-elle une agence %s ?" % fn, "Is Licter a %s agency?" % name),
         "a": (("Oui : le GEO est une pratique, pas un logiciel. Nous mesurons ce que les IA répondent sur votre marque, d'où viennent leurs réponses, et ce qu'il faut changer pour y figurer. Licter est un cabinet indépendant." ,
                "Yes: GEO is a practice, not software. We measure what AI answers about your brand, where those answers come from, and what to change to appear in them. Licter is an independent consultancy.") if slug == "geo" else
@@ -153,7 +156,9 @@ def agency(slug, name, fr_name=None):
                "Yes: %s is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy." % name) if slug in FREE_TOOLS else
               ("Oui : en tant qu'agence %s, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question." % fn,
                "Yes: as a %s agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question." % name)),
-        "band": ("Vous cherchez une agence %s ?" % fn, "Looking for a %s agency?" % name),
+        "band": (("Les publicités de vos concurrents, lues chaque mois ?", "Your competitors' ads, read every month?") if slug == "meta-ads" else
+                 ("Que dit %s de votre marque ?" % fn, "What does %s say about your brand?" % name) if slug in AI.ENGINE else
+                 ("Vous cherchez une agence %s ?" % fn, "Looking for a %s agency?" % name)),
     }
 
 
@@ -281,7 +286,7 @@ def versus(slug, nm):
     return ('<div class="tk-vs">'
             '<div class="tk-vs__col tk-vs__col--alone" data-reveal><p class="tk-vs__k"><span class="tk-vs__logo">%s</span>%s</p><ul>%s</ul></div>'
             '<span class="tk-vs__mid" aria-hidden="true">VS</span>'
-            '<div class="tk-vs__col tk-vs__col--licter" data-reveal><p class="tk-vs__k"><span class="tk-vs__logo">%s</span><img class="tk-vs__licter" src="/assets/img/logo-navy.png" alt="" width="22" height="24" />%s</p><ul>%s</ul>'
+            '<div class="tk-vs__col tk-vs__col--licter" data-reveal><p class="tk-vs__k"><span class="tk-vs__logo">%s</span><img class="tk-vs__licter" src="/assets/img/logo-navy.webp" alt="" width="22" height="24" />%s</p><ul>%s</ul>'
             '<p class="tk-vs__out">%s</p></div></div>') % (
         logo(slug), t(fmt(("%s seul", "%s on its own"), nm)), alone,
         logo(slug), t(fmt(("%s avec Licter", "%s with Licter"), nm)), licter,
@@ -478,7 +483,7 @@ def proof(slug):
 def tool_body(x):
     name = x["name"]; fn = x.get("fr_name", name); nm = (fn, name); NM = (fn.upper(), name.upper())
     ag = agency(x["slug"], name, x.get("fr_name"))
-    l1, l2 = ("AGENCE %s," % fn.upper(), "%s AGENCY," % name.upper()), (x["tag"][FR].upper() + ".", x["tag"][EN].upper() + ".")
+    l1, l2 = AI.INTENT.get(x["slug"], {}).get("h1") or ("AGENCE %s," % fn.upper(), "%s AGENCY," % name.upper()), (x["tag"][FR].upper() + ".", x["tag"][EN].upper() + ".")
     copy = (crumbs(t(nm)) + '<p class="tk-kick">%s</p>' % t(S["kick"]) +
             '<h1 class="%s">%s<br><span>%s</span></h1>' % (h1_cls(l1[0], l1[1], l2[0], l2[1]), t(l1), t(l2)) +
             '<p class="tk-lead">%s</p>' % t(x["lead"]) +
@@ -497,13 +502,32 @@ def tool_body(x):
         '<div>%s<p class="tk-prose" data-reveal>%s</p>%s</div>' % (head(t(fmt(S["what_k"], NM)), t(fmt(S["what_t"], nm))), t(x["what"]),
                                                                    xp(x["slug"])), sheet))
     out += proof(x["slug"])
+    if x["slug"] in AI.ENGINE:      # what sets this assistant apart (SEO audit, October 2026)
+        out += sec("engine", head(t(fmt(AI.HEAD[0], NM)), t(fmt(AI.HEAD[1], nm))) +
+                   '<ul class="tk-proof">%s</ul>' % "".join('<li class="tk-proof__c"><b>%s</b><p>%s</p></li>' % (t(a), t(b)) for a, b in AI.ENGINE[x["slug"]]))
     out += sec("features", head(t(S["feat_k"]), t(fmt(S["feat_t"], nm))) + feats(x["features"], x["slug"]), band=True)
-    out += sec("agency", head(t(ag["kick"]), t(fmt(S["ag_t"], nm)), t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
+    out += sec("agency", head(t(ag["kick"]), t(AI.AG_T) if x["slug"] in AI.INTENT else t(fmt(S["ag_t"], nm)), t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
     out += sec("deliverables", head(t(S["del_k"]), t(fmt(S["del_t"], nm))) + dels, band=True)
     out += sec("uses", head(t(S["uses_k2"]), t(fmt(S["uses_t2"], nm)), t(S["uses_lead"])) + prog(x["uses"]))
     out += sec("limits", head(t(S["lim_k"]), t(fmt(S["lim_t"], nm))) + lims, band=True)
+    out += guide(x["slug"])
     out += sec("faq", faq_block(t(fmt(S["faq_t2"], nm)), [(ag["q"], ag["a"])] + x["faq"]))
     return out + cta(t(ag["band"]), t(S["cta_text"]), logo(x["slug"], alt=""), x["slug"])
+
+
+
+# the long-form "in detail" sections (DESIGN.md: one component, qa_roller)
+GUIDE = {"talkwalker": "talkwalker_guide", "tiktok": "tiktok_guide"}
+
+
+def guide(slug):
+    mod = GUIDE.get(slug)
+    if not mod or not (ROOT / "tools" / (mod + ".py")).exists():
+        return ""
+    from components import qa_roller
+    G = importlib.import_module(mod)
+    return sec("guide", head(t(G.KICKER), t(G.TITLE)) + qa_roller(
+        [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS], t(G.KICKER), t(("Lire la réponse", "Read the answer"))))
 
 
 # ------------------------------------------------------------------ network page
@@ -541,6 +565,7 @@ def net_body(n):
     out += sec("data", head(t(S["nacc_k"]), t(fmt(S["nacc_t"], NMx))) + io)
     out += sec("method", head(t(S["nmet_k"]), t(fmt(S["nmet_t"], NMx))) + method, band=True)
     out += sec("uses", head(t(S["uses_k2"]), t(fmt(S["nuses_t"], NMx)), t(S["uses_lead"])) + prog(n["uses"]))
+    out += guide(n["slug"])
     out += sec("networks", head(t(S["noth_k"]), t(S["noth_t"])) + nets, band=True)
     out += sec("faq", faq_block(t(fmt(S["nfaq_t"], NMx)), [(ag["q"], ag["a"])] + n["faq"]))
     return out + cta(t(ag["band"]), t(S["cta_text"]), '<span class="tk-cta__net">%s</span>' % glyph(n["glyph"]), "src-" + n["slug"])

@@ -1,0 +1,53 @@
+# Licter
+
+> Licter est un cabinet de conseil en Social Data Intelligence fondé à Paris en 2022 (Licter SAS, SIREN 915259394, 173 rue de Courcelles, 75017 Paris). Ses consultants lisent ce que les gens publient, cherchent et demandent à l'IA, et en tirent des décisions : social listening, analyse des audiences, veille et gestion de crise, visibilité dans les réponses des IA (GEO). Plus de 50 clients et 160 projets depuis 2022. Le site existe en français (/fr/) et en anglais (/).
+
+Licter n'édite pas de logiciel : le cabinet opère des plateformes d'écoute (Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly, YouScan…) et choisit l'outil selon la question. Contact : contact@licter.com.
+
+## Offres
+
+- [Social Insights](https://www.licter.com/fr/offres/social-insights/): études social data à la demande, cadrées par un consultant et présentées à ceux qui décident
+- [Vigie 360](https://www.licter.com/fr/offres/vigie-360/): veille des réseaux sociaux et de la presse 24 h/24 pour anticiper et gérer les crises, lue par un analyste
+- [Social Listening as a Service](https://www.licter.com/fr/offres/social-listening-as-a-service/): reprise d'une plateforme d'écoute sous-utilisée : taxonomie, tableaux de bord, analyses et formation des équipes
+- [Nox](https://www.licter.com/fr/offres/nox/): la conversation sur votre marque lue en continu, regroupée par sujets, avec ce qui a changé et ce qui sort de l'ordinaire
+- [Toutes les offres](https://www.licter.com/fr/offres/)
+
+## Expertises
+
+- [Social listening](https://www.licter.com/fr/expertise/social-listening/): définition, méthode, outils, limites
+- [Audience listening](https://www.licter.com/fr/expertise/audience-listening/): comprendre qui parle et ce qui compte pour chaque audience
+- [Live listening](https://www.licter.com/fr/expertise/live-listening/): veille en temps réel et gestion de crise
+- [Influence listening](https://www.licter.com/fr/expertise/influence-listening/): qui influence vraiment une catégorie : créateurs, experts, journalistes, dirigeants
+- [Search listening](https://www.licter.com/fr/expertise/search-listening/): ce que les gens cherchent sur Google, YouTube et Amazon
+- [AI listening](https://www.licter.com/fr/expertise/ai-listening/): ce que les IA répondent sur une marque
+
+## Cas d'usage
+
+- [Tous les cas d'usage](https://www.licter.com/fr/cas-usage/)
+- [Santé de marque](https://www.licter.com/fr/cas-usage/sante-de-marque/): e-réputation, discours de marque, risques et crises
+- [Communication](https://www.licter.com/fr/cas-usage/communication/): impact des campagnes, prises de parole des dirigeants, ambassadeurs
+- [Audiences](https://www.licter.com/fr/cas-usage/audiences/): segmentation, rajeunissement, parcours client
+- [Tendances et innovation](https://www.licter.com/fr/cas-usage/tendances-innovation/): marché, tests produits, parties prenantes
+
+## Guides
+
+- [Le guide des 12 questions](https://www.licter.com/fr/guide/): préparer une étude de social listening
+- [Veille des réseaux sociaux en entreprise](https://www.licter.com/article-veille-reseaux-sociaux-entreprise.html)
+- [Blog](https://www.licter.com/fr/blog/): analyses publiées et entretiens du podcast Audience First
+
+## Plateformes et sources
+
+- [Techno et outils](https://www.licter.com/fr/outils/): les plateformes d'écoute, de recherche, de presse et d'IA que Licter utilise
+- [Sources](https://www.licter.com/fr/sources/): les 22 réseaux d'où viennent les données
+
+## Le cabinet
+
+- [Pourquoi Licter](https://www.licter.com/fr/pourquoi-licter/): l'équipe et la méthode
+- [Clients](https://www.licter.com/fr/clients/)
+- [Prendre rendez-vous](https://www.licter.com/fr/rendez-vous/)
+- [Mentions légales](https://www.licter.com/fr/mentions-legales/)
+
+## Optional
+
+- [English version](https://www.licter.com/)
+- [Wikidata](https://www.wikidata.org/wiki/Q141663812)

@@ -486,14 +486,21 @@ def related(title_id, title, links, extra=""):
 
 
 def faq_block(faq, lang, aside):
+    # related articles go under the questions, so both columns end level
+    arts = ""
+    k = aside.find('<h2 class="ucp__h2 ucp__h2--sub">')
+    if k >= 0:
+        e = aside.index('</ul>', k) + 5
+        arts = '\n        <div class="ucp__faq-arts">%s</div>' % aside[k:e]
+        aside = aside[:k].rstrip() + aside[e:]
     return ('  <section class="ucp">\n'
             '    <div class="shell ucp__cols ucp__cols--faq">\n'
             '      <div>\n'
             '        <h2 class="ucp__h2">%s</h2>\n'
-            '        <div class="faq">%s</div>\n'
+            '        <div class="faq">%s</div>%s\n'
             '      </div>\n%s\n'
             '    </div>\n'
-            '  </section>') % (T(L["faq"], lang), faq_html(faq, lang), aside)
+            '  </section>') % (T(L["faq"], lang), faq_html(faq, lang), arts, aside)
 
 
 def section(inner, sid=""):
@@ -1071,7 +1078,10 @@ def main():
     (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
         + "\n".join(entries) + "\n</urlset>\n")
-    (ROOT / "robots.txt").write_text("User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % SITE)
+    (ROOT / "robots.txt").write_text(
+        "# Content signals (contentsignals.org): search, AI answers and AI training are all allowed,\n"
+        "# so that search engines and assistants describe Licter from its own pages.\n"
+        "User-agent: *\nContent-Signal: search=yes, ai-input=yes, ai-train=yes\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % SITE)
     print("%d use-case pages written (FR + EN), sitemap.xml, robots.txt" % ((len(urls) - 1) * 2))
 
 if __name__ == "__main__":

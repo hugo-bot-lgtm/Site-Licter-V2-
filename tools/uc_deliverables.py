@@ -151,7 +151,7 @@ def render(key, lang, esc, typo):
     body = globals()["_" + key.replace("-", "_")](lang, t, esc)
     doc, client, sub, src, page = META[key]
     return ('<figure class="dlv dlv--%s">'
-            '<div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.png" alt="" width="44" height="48" loading="lazy" decoding="async" />'
+            '<div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" />'
             '<span class="dlv__doc"><b>%s</b><small>%s · %s</small></span><span class="dlv__tag">%s</span></div>'
             '<figcaption class="dlv__head"><b>%s</b><small>%s</small></figcaption>'
             '<div class="dlv__body">%s</div>'

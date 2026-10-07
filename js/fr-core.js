@@ -204,6 +204,7 @@ window.LicterFR = {
 "Audience intelligence": "Audience intelligence",
 "The voices that actually carry": "Les voix qui portent vraiment",
 "TikTok, Instagram, X, LinkedIn, YouTube, Facebook": "TikTok, Instagram, X, LinkedIn, YouTube, Facebook",
+"30 d": "30 j",
 "-6.4%": "-6,4 %",
 "Posts": "Publications",
 "Share": "Part",

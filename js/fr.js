@@ -3278,6 +3278,76 @@ window.LicterFR = {
     "Comment Orange analyse TikTok",
   "Winning luxury cosmetics":
     "Conquérir la cosmétique de luxe",
+  "AUDIENCE INTELLIGENCE, IN DETAIL":
+    "L'AUDIENCE INTELLIGENCE, EN DÉTAIL",
+  "What to know before you start an audience study.":
+    "Tout ce qu'il faut savoir avant de lancer une étude d'audience.",
+  "What is audience intelligence?":
+    "Qu'est-ce que l'audience intelligence ?",
+  "Audience intelligence means describing a public from what it does online: the accounts it follows, the content it shares, the brands and media it consumes, the subjects it searches for. The result is not an average, but a map of communities, each with its size, its passions and its channels.":
+    "L'audience intelligence, ou intelligence des audiences, consiste à décrire un public à partir de ce qu'il fait en ligne : les comptes qu'il suit, les contenus qu'il partage, les marques et les médias qu'il consomme, les sujets qu'il recherche. Le résultat n'est pas une moyenne, mais une carte de communautés, chacune avec sa taille, ses passions et ses canaux.",
+  "The term covers what is also called audience analysis or a social media audience study. At Licter, we call it audience listening, one of our six listenings. The starting question stays the same: who really are the people you want to reach, beyond what you think you know about them, and where can you find them?":
+    "Le terme recouvre ce qu'on appelle aussi analyse d'audience ou étude d'audience sur les réseaux sociaux. Chez Licter, nous parlons d'audience listening, l'une de nos six écoutes. La question de départ reste la même : qui sont vraiment les gens que vous voulez toucher, au-delà de ce que vous croyez savoir d'eux, et où les trouver ?",
+  "Audience intelligence and personas: what is the difference?":
+    "Audience intelligence et persona : quelle différence ?",
+  "A classic persona is often born in a workshop: a few interviews, sales data, and what the team believes it knows about its customers. It describes a typical person, with an age, a job and assumed motivations. Useful to align a team, it remains declarative, and it ages fast, because nobody tests it against data.":
+    "Un persona classique naît souvent en atelier : quelques entretiens, des données de vente, et ce que l'équipe croit savoir de ses clients. Il décrit une personne type, avec un âge, un métier et des motivations supposées. Utile pour aligner une équipe, il reste déclaratif, et il vieillit vite, parce que personne ne le confronte aux données.",
+  "Audience intelligence works the other way round: from observed behaviour to the portrait. It does not look for a typical customer, but for the real groups that make up an audience, and what sets them apart. For example, one public can bring together busy parents, cooking enthusiasts and sports fans, who do not expect the same thing. Personas come out of it, but built on measured criteria.":
+    "L'audience intelligence part dans l'autre sens : du comportement observé vers le portrait. Elle ne cherche pas une cliente type, mais les groupes réels qui composent une audience, et ce qui les distingue. Par exemple, un même public peut réunir des parents pressés, des passionnés de cuisine et des sportifs, qui n'attendent pas la même chose. Des personas en sortent, mais bâtis sur des critères mesurés.",
+  "Charles Besson, head of global social listening at L'Oréal, puts it his own way in our Audience First podcast: advocacy is overtaking influence. For a brand, that means looking for communities with several interests, and the advocates who drive them, rather than a target defined by a single criterion.":
+    "Charles Besson, à la tête du social listening monde chez L'Oréal, le dit à sa façon dans notre podcast Audience First : « l'advocacy est en train de dépasser l'influence ». Pour une marque, cela revient à chercher des communautés aux centres d'intérêt multiples, et les ambassadeurs qui les animent, plutôt qu'une cible définie par un seul critère.",
+  "Audience analysis, audience measurement, social listening: what sets them apart":
+    "Analyse d'audience, mesure d'audience, social listening : ce qui les distingue",
+  "Audience measurement counts: how many people watched a programme, visited a site or follow an account. The native analytics of social networks belong here: they describe your own followers, with some data on age, gender and location. Audience analysis answers another question: who are these people, and what do they do away from you?":
+    "La mesure d'audience compte : combien de personnes ont vu une émission, visité un site ou suivent un compte. Les statistiques natives des réseaux sociaux en font partie : elles décrivent vos propres abonnés, avec quelques données d'âge, de sexe et de lieu. L'analyse d'audience répond à une autre question : qui sont ces gens, et que font-ils ailleurs que chez vous ?",
+  "Social listening reads what people say about a brand or a subject. The two complement each other: one says what people think of you, the other who they are and what they like. A single study often crosses them, for example to learn what a community found in the panel says about your category, and in which words.":
+    "Le social listening, lui, lit ce que les gens disent d'une marque ou d'un sujet. Les deux se complètent : l'un dit ce qu'on pense de vous, l'autre qui sont les gens et ce qu'ils aiment. Une même étude les croise souvent, par exemple pour savoir ce qu'une communauté repérée dans le panel dit de votre catégorie, et avec quels mots.",
+  "What data does an audience study use?":
+    "Quelles données utilise une étude d'audience ?",
+  "The base is a behavioural panel: about three billion consumers described by more than 5,000 criteria, including interests, media diet, brand affinities and sociodemographics. This data is aggregated and anonymous: we read groups, never a person. It describes what people already do, with no questionnaire, and so with no declaration bias.":
+    "Le socle, c'est un panel comportemental : environ trois milliards de consommateurs décrits par plus de 5 000 critères, dont les centres d'intérêt, le régime média, les affinités de marque et la sociodémographie. Ces données sont agrégées et anonymes : on lit des groupes, jamais une personne. Elles décrivent ce que les gens font déjà, sans questionnaire, donc sans biais de déclaration.",
+  "On top of this base come the public conversation, to know who talks about you and your category, and search, to know what each community looks for. Your own data, such as a customer file or an existing study, can be crossed in if you wish, but it is not needed for a first segmentation.":
+    "À ce socle s'ajoutent la conversation publique, pour savoir qui parle de vous et de votre catégorie, et la recherche, pour savoir ce que chaque communauté cherche. Vos propres données, comme un fichier clients ou une étude existante, peuvent être croisées si vous le souhaitez, mais elles ne sont pas nécessaires pour une première segmentation.",
+  "How do you segment an audience from its behaviour?":
+    "Comment segmenter une audience à partir de son comportement ?",
+  "We start from a reference audience: your customers, your brand's followers, a competitor's, or a population such as a country's 18 to 30 year-olds. The panel brings out the groups that make it up, from what they follow and consume together. We usually get five to eight communities, distinct enough to act on each one.":
+    "On part d'une audience de référence : vos clients, les abonnés de votre marque, ceux d'un concurrent, ou une population comme les 18-30 ans d'un pays. Le panel fait apparaître les groupes qui la composent, à partir de ce qu'ils suivent et consomment ensemble. On obtient en général cinq à huit communautés, assez distinctes pour qu'on puisse agir sur chacune.",
+  "Each community is then measured. Affinity says how much it likes your brand or your category. Penetration says what share of it you already reach. Opportunity brings the two together: a community that likes you but that you barely reach is often where the budget pays most. The use case Segment your target profiles shows a deliverable of this kind.":
+    "Chaque communauté est ensuite mesurée. L'affinité dit à quel point elle aime votre marque ou votre catégorie. La pénétration dit quelle part d'entre elle vous touchez déjà. L'opportunité rapproche les deux : une communauté qui vous aime mais que vous touchez peu est souvent celle où le budget rapporte le plus. Le cas d'usage Segmenter vos profils cibles montre un livrable de ce type.",
+  "An analyst then reads these groups, names them and checks that they make sense for the market. An algorithm groups; it does not understand why. For example, a community of \"sports fans\" can hide weekend joggers and triathletes, who buy nothing the same way and do not talk on the same networks.":
+    "Un analyste lit ensuite ces groupes, les nomme et vérifie qu'ils ont un sens pour le marché. Un algorithme regroupe, il ne comprend pas pourquoi. Par exemple, une communauté de « sportifs » peut cacher des coureurs du dimanche et des triathlètes, qui n'achètent rien de la même façon et ne se parlent pas sur les mêmes réseaux.",
+  "Which tools for audience analysis?":
+    "Quels outils pour l'analyse d'audience ?",
+  "Several families of tools exist side by side. The networks' native analytics describe your followers, platform by platform. Audience analysis tools, such as SoPrism, bought in 2022 by Audiense, profile any audience from aggregated data: interests, affinities, geography. Social listening platforms, finally, describe the people who talk about a subject.":
+    "Plusieurs familles d'outils coexistent. Les statistiques natives des réseaux décrivent vos abonnés, plateforme par plateforme. Les outils d'analyse d'audience, comme SoPrism, racheté en 2022 par Audiense, profilent n'importe quelle audience à partir de données agrégées : centres d'intérêt, affinités, géographie. Les plateformes de social listening, enfin, décrivent ceux qui parlent d'un sujet.",
+  "None is enough alone. SoPrism reads Facebook and Instagram, not the other networks, and it says who people are, not what they say. So we cross it with a listening platform such as Talkwalker, with Social Blade to follow followers and views, or with Meta Ads to see competitors' running ads. Our SoPrism page details these limits.":
+    "Aucun ne suffit seul. SoPrism lit Facebook et Instagram, pas les autres réseaux, et il dit qui sont les gens, pas ce qu'ils disent. Nous le croisons donc avec une plateforme d'écoute comme Talkwalker, avec Social Blade pour suivre abonnés et vues, ou avec Meta Ads pour voir les publicités en cours des concurrents. Notre page SoPrism détaille ces limites.",
+  "What audience intelligence helps you decide":
+    "Ce que l'audience intelligence permet de décider",
+  "First, where to put the budget. A segmentation can show that the brief's target is not where the opportunity is strongest, and that an overlooked community already likes the brand without buying it. The choice of platforms, formats and creators follows: a creator is picked for the audience they really reach, not for their follower count.":
+    "D'abord, où mettre le budget. Une segmentation peut montrer que la cible du brief n'est pas celle où l'opportunité est la plus forte, et qu'une communauté oubliée aime déjà la marque sans l'acheter. Le choix des plateformes, des formats et des créateurs suit : on retient un créateur pour l'audience qu'il touche réellement, pas pour son nombre d'abonnés.",
+  "Then, how to win a new public. The use case Rejuvenate your audiences compares the target generation with the current base, subject by subject and platform by platform, to find the bridges between the two. Comparing your audiences with a competitor's shows in the same way what they reach and you do not, and the angles to go after those publics.":
+    "Ensuite, comment gagner un public nouveau. Le cas d'usage Rajeunir vos audiences compare la génération visée à la base actuelle, sujet par sujet et plateforme par plateforme, pour trouver les ponts entre les deux. Comparer vos audiences à celles d'un concurrent montre de la même façon ce qu'il touche et pas vous, et les angles pour aller chercher ces publics.",
+  "Audience intelligence also feeds product strategy. For HP, in the United States, we built over six months a hybrid segmentation, crossing panel and social data on more than 5,000 criteria, completed with user stories, to segment consumer niches and strengthen product strategy from existing studies.":
+    "L'audience intelligence nourrit aussi la stratégie produit. Pour HP, aux États-Unis, nous avons construit pendant six mois une segmentation hybride, croisant données de panel et données des réseaux sociaux sur plus de 5 000 critères, complétée de user stories, pour segmenter des niches de consommateurs et renforcer la stratégie produit à partir d'études existantes.",
+  "One-off study or ongoing tracking?":
+    "Étude ponctuelle ou suivi dans le temps ?",
+  "A first study answers a precise question: who makes up our audience, where the opportunity lies, how to reach a new generation. A first read takes about ten days, from scoping to readout; a full gap analysis between two audiences takes more like two to three weeks.":
+    "Une première étude répond à une question précise : qui compose notre audience, où se trouve l'opportunité, comment toucher une nouvelle génération. Une première lecture prend une dizaine de jours, du cadrage à la restitution ; une analyse d'écart complète entre deux audiences demande plutôt deux à trois semaines.",
+  "But an audience moves: new creators emerge, one platform takes another's place, a community shifts. Reading the same communities again at regular intervals shows whether a media plan really changed anything. In our Social Insights offer, audience studies alternate with campaign reads and benchmarks, driven by the questions of the quarter.":
+    "Mais une audience bouge : de nouveaux créateurs émergent, une plateforme prend la place d'une autre, une communauté se déplace. Relire régulièrement les mêmes communautés montre si un plan média a vraiment changé quelque chose. Dans notre offre Social Insights, les études d'audience alternent avec les lectures de campagne et les benchmarks, selon les questions du trimestre.",
+  "The limits of audience intelligence":
+    "Les limites de l'audience intelligence",
+  "An audience study describes digital behaviour. It reads publics that are active online better than those that are not, and some sources cover only part of the networks: a tool built on Meta's data sees neither TikTok nor Twitch. It says who people are and what they like, not why they buy or give up buying.":
+    "Une étude d'audience décrit des comportements numériques. Elle lit mieux les publics actifs en ligne que ceux qui le sont peu, et certaines sources ne couvrent qu'une partie des réseaux : un outil fondé sur les données de Meta ne voit ni TikTok ni Twitch. Elle dit qui sont les gens et ce qu'ils aiment, pas pourquoi ils achètent ou renoncent à acheter.",
+  "It works on groups, never on individuals: that protects privacy, and it is a limit for anyone who would want to target one specific person. Finally, a statistical grouping without a reading remains a table. That is why we cross audience intelligence with social listening, search or your existing studies.":
+    "Elle travaille sur des groupes, jamais sur des individus : c'est une garantie pour la vie privée, et une limite pour qui voudrait viser une personne précise. Enfin, un regroupement statistique sans lecture reste un tableau. C'est pourquoi nous croisons l'audience intelligence avec le social listening, la recherche ou vos études existantes.",
+  "Audience intelligence agency or consultancy: what you buy":
+    "Agence ou cabinet d'audience intelligence : ce que vous achetez",
+  "With an audience intelligence agency or consultancy, you do not buy access to a profiling tool, but an answer to a marketing question. The choice of sources, the definition of the audiences to compare, the reading of the communities and the recommendation are handled by consultants, who read for themselves what they have set up.":
+    "Avec une agence ou un cabinet d'audience intelligence, vous n'achetez pas un accès à un outil de profilage, mais une réponse à une question de marketing. Le choix des sources, la définition des audiences à comparer, la lecture des communautés et la recommandation sont pris en charge par des consultants, qui lisent eux-mêmes ce qu'ils ont configuré.",
+  "Licter is an independent social data intelligence consultancy: we run SoPrism and about fifteen other tools without being their publisher, and we pick the source by the question. For a foreign market, the reading goes to analysts who speak the language and know the market. The simplest way to start: the free Audience listening flash on your brand.":
+    "Licter est un cabinet indépendant de social data intelligence : nous opérons SoPrism et une quinzaine d'autres outils sans en être l'éditeur, et nous choisissons la source selon la question. Pour un marché étranger, la lecture est confiée à des analystes qui parlent la langue et connaissent le marché. Le plus simple pour commencer : le flash Audience listening offert sur votre marque.",
   "What these people think of you in particular: that is social listening.":
     "Ce que ces personnes pensent de vous en particulier : c'est le social listening.",
   "Audiences, in detail":
@@ -3859,6 +3929,64 @@ window.LicterFR = {
     "LIMITES ET COMPLÉMENTS",
   "The limits of Talkwalker, and how we make up for them.":
     "Les limites de Talkwalker, et comment nous les compensons.",
+  "TALKWALKER, IN DETAIL":
+    "TALKWALKER, EN DÉTAIL",
+  "What to know before you choose, or take over, Talkwalker.":
+    "Ce qu'il faut savoir avant de choisir, ou de reprendre, Talkwalker.",
+  "Talkwalker is a social listening platform born in Luxembourg in 2009. In April 2024, Hootsuite, the Canadian social media management company, announced it was buying it. The Luxembourg head office became the European head office of the combined group. Access to the platform is paid, quoted on request.":
+    "Talkwalker est une plateforme d'écoute sociale née au Luxembourg en 2009. En avril 2024, Hootsuite, spécialiste canadien de la gestion des réseaux sociaux, a annoncé son rachat. Le siège luxembourgeois est devenu le siège européen de l'ensemble. L'accès à la plateforme est payant, sur devis.",
+  "Its principle is simple: collect what is published publicly on social networks, online press, blogs, forums and reviews, then sort it. Its artificial intelligence layer, called Blue Silk AI, adds logo recognition in images and videos, sentiment and emotion analysis, help with writing queries, and volume forecasts.":
+    "Son principe est simple : collecter ce qui se publie publiquement sur les réseaux sociaux, la presse en ligne, les blogs, les forums et les avis, puis le classer. Sa couche d'intelligence artificielle, baptisée Blue Silk AI, ajoute la reconnaissance de logos dans les images et les vidéos, l'analyse du sentiment et des émotions, une aide à l'écriture des requêtes et des projections de volumes.",
+  "What can you do with Talkwalker?":
+    "Que peut-on faire avec Talkwalker ?",
+  "First, tracking a brand over time: its volumes, its subjects, its tone, and its position against competitors, week after week. The history lets you compare one period with another, for instance before and after a campaign, on an identical perimeter. It is the most common use, and the one where the platform is most at ease.":
+    "Suivre une marque dans la durée, d'abord : ses volumes, ses sujets, sa tonalité, et sa place face aux concurrents, semaine après semaine. L'historique permet de comparer une période à une autre, par exemple avant et après une campagne, sur un périmètre identique. C'est l'usage le plus courant, et celui où la plateforme est la plus à l'aise.",
+  "It also serves to study a whole category across several markets, without rebuilding the query country by country, and to spot a brand in visuals, even when nobody names it. Finally, alerts flag abnormal rises in volume: useful to see a crisis starting, provided someone reads them and knows what to do with them.":
+    "Elle sert aussi à étudier une catégorie entière sur plusieurs marchés, sans reconstruire la requête pays par pays, et à repérer une marque dans les visuels, même quand personne ne la nomme. Enfin, les alertes signalent les hausses anormales de volume : utiles pour voir une crise démarrer, à condition que quelqu'un les lise et sache quoi en faire.",
+  "What Talkwalker does not do on its own":
+    "Ce que Talkwalker ne fait pas tout seul",
+  "Talkwalker collects and sorts; it does not decide. A volume spike never says why it exists. Automatic sentiment gets irony, tongue-in-cheek posts and some languages wrong. A query that is too broad brings back homonyms, one that is too narrow misses half the conversation. No dashboard fixes this on its own.":
+    "Talkwalker collecte et classe ; il ne décide pas. Un pic de volume ne dit jamais pourquoi il existe. Le sentiment automatique se trompe sur l'ironie, le second degré et certaines langues. Une requête trop large ramène des homonymes, une requête trop étroite manque la moitié de la conversation. Aucun tableau de bord ne corrige cela de lui-même.",
+  "Like every listening platform, it only reads what is public: no private messages, no closed accounts. And its coverage varies by network, as each one regulates access to its data. Before every study, we check what is really covered for the question asked, and cross it with another tool when needed.":
+    "Comme toutes les plateformes d'écoute, il ne lit que le public : ni messages privés, ni comptes fermés. Et sa couverture varie selon les réseaux, qui encadrent l'accès à leurs données. Avant chaque étude, nous vérifions ce qui est réellement couvert pour la question posée, et nous le croisons au besoin avec un autre outil.",
+  "Configuring Talkwalker well: queries, noise, languages":
+    "Bien configurer Talkwalker : requêtes, bruit, langues",
+  "It all starts with the Boolean query: brand, product and competitor names, their variants and common misspellings, and the exclusions that rule out homonyms. Talkwalker offers an assistant to write it, but nobody knows your market's words better than you do. A query is tested on a hand-read sample before it goes live.":
+    "Tout commence par la requête booléenne : les noms de marque, de produits et de concurrents, leurs variantes et leurs fautes courantes, et les exclusions qui écartent les homonymes. Talkwalker propose un assistant pour l'écrire, mais personne ne connaît mieux que vous les mots de votre marché. Une requête se teste sur un échantillon lu à la main avant d'être lancée.",
+  "Then comes the taxonomy, meaning the subjects sorted the way your company talks about them, then languages and countries. A product does not always carry the same name from one market to another, and the noise changes with the language. A configuration is never finished: it is reread with every new product, every campaign, every competitor that appears.":
+    "Viennent ensuite la taxonomie, c'est-à-dire les sujets classés comme votre entreprise en parle, puis les langues et les pays. Un produit ne porte pas toujours le même nom d'un marché à l'autre, et le bruit change selon la langue. Une configuration n'est jamais finie : elle se relit à chaque nouveau produit, chaque campagne, chaque concurrent qui apparaît.",
+  "Talkwalker, Brandwatch, Sprinklr: how to choose?":
+    "Talkwalker, Brandwatch, Sprinklr : comment choisir ?",
+  "All three do social listening, but with a different centre of gravity. Talkwalker is at ease with continuous tracking, multiple markets and images. Brandwatch is the insights teams' platform: a deep archive, fine-grained audiences and queries you can push far. Sprinklr is a customer experience platform, where listening sits next to customer service and publishing.":
+    "Les trois font de l'écoute sociale, mais pas avec le même centre de gravité. Talkwalker est à l'aise sur le suivi continu, les marchés multiples et l'image. Brandwatch est la plateforme des équipes insights : un historique profond, des audiences fines et des requêtes qu'on peut pousser loin. Sprinklr est une plateforme d'expérience client, où l'écoute côtoie le service client et la publication.",
+  "The right choice therefore depends on the question, and often on what your group already uses. A consumer study over several years leans towards Brandwatch; a voice of the customer that links reviews and customer service, towards Sprinklr; multi-country brand tracking, towards Talkwalker. We run all three, and most of the time we cross two of them.":
+    "Le bon choix dépend donc de la question, et souvent de ce que votre groupe utilise déjà. Une étude consommateur sur plusieurs années penchera vers Brandwatch ; une voix du client qui relie avis et service client, vers Sprinklr ; un suivi de marque multi-pays, vers Talkwalker. Nous opérons les trois, et la plupart du temps nous en croisons deux.",
+  "What alternative to Talkwalker?":
+    "Quelle alternative à Talkwalker ?",
+  "There is no single alternative, but tools that are stronger on a specific point. For the conversation as it happens, especially in a crisis, we use Visibrain. To find a brand in visuals, YouScan. To understand what an audience is passionate about, ranked by real affinity, SoPrism. Brandwatch and Sprinklr remain the other large general-purpose platforms.":
+    "Il n'existe pas d'alternative unique, mais des outils plus forts sur un point précis. Pour la conversation à l'instant, en particulier en situation de crise, nous utilisons Visibrain. Pour retrouver une marque dans les visuels, YouScan. Pour comprendre ce qui passionne une audience, classé par affinité réelle, SoPrism. Brandwatch et Sprinklr restent les autres grandes plateformes généralistes.",
+  "Before switching tools, ask yourself one question: does the problem come from the platform, or from the way it is configured and read? A badly set-up licence will bring the same disappointments elsewhere. We use some fifteen tools and publish none of them: if another one answers your question better, we tell you.":
+    "Avant de changer d'outil, posez-vous une question : le problème vient-il de la plateforme, ou de la façon dont elle est configurée et lue ? Une licence mal réglée donnera les mêmes déceptions ailleurs. Nous utilisons une quinzaine d'outils et ne sommes l'éditeur d'aucun : si un autre répond mieux à votre question, nous vous le disons.",
+  "Do you need a Talkwalker agency, or training?":
+    "Faut-il une agence ou une formation Talkwalker ?",
+  "If your teams have the time and the will to learn the tool, training may be enough. Otherwise, an agency runs it for you. Licter is neither Talkwalker's publisher nor a reseller: we are an independent consultancy that uses it for its clients. For a study, the licence is ours: you buy the analysis, not a seat.":
+    "Si vos équipes ont le temps et l'envie d'apprendre l'outil, une formation peut suffire. Sinon, une agence l'opère à votre place. Licter n'est ni l'éditeur ni un revendeur de Talkwalker : nous sommes un cabinet indépendant qui l'utilise pour ses clients. Pour une étude, la licence est la nôtre : vous achetez l'analyse, pas un accès.",
+  "The two are not opposed. When a company already has its licence, we take it over and train its teams, by role and on their own data, not on a demo account. The aim is not to make everyone an expert in the tool, but for each team to read what concerns it and draw a decision from it.":
+    "Les deux ne s'opposent pas. Quand une entreprise a déjà sa licence, nous la reprenons et formons ses équipes, par rôle et sur leurs propres données, pas sur un compte de démonstration. Le but n'est pas de rendre tout le monde expert de l'outil, mais que chaque équipe sache lire ce qui la concerne et en tirer une décision.",
+  "Taking over an under-used Talkwalker":
+    "Reprendre un Talkwalker sous-utilisé",
+  "It is a common case: a licence paid every year, dashboards configured once and never revisited, exports sent without a conclusion. That is what our Social Listening as a Service offer is for. The licence stays yours; we start with a two-week audit that sets the configuration against the questions your teams really ask.":
+    "Le cas est fréquent : une licence payée chaque année, des tableaux de bord configurés une fois et jamais revus, des exports envoyés sans conclusion. C'est l'objet de notre offre Social Listening as a Service. La licence reste la vôtre ; nous commençons par un audit de deux semaines, qui confronte la configuration aux questions que vos équipes se posent vraiment.",
+  "Then come the rebuild of the taxonomy and dashboards, fewer of them, each built for one team and one decision, in about six weeks. Recurring analyses arrive from the second month, inside your platform, and usage is measured every quarter. If the audit shows the tool does not fit your needs, we tell you.":
+    "Viennent ensuite la reprise de la taxonomie et des tableaux de bord, moins nombreux et chacun construit pour une équipe et une décision, en six semaines environ. Les analyses récurrentes arrivent dès le deuxième mois, dans votre plateforme, et l'usage est mesuré chaque trimestre. Si l'audit montre que l'outil ne correspond pas à vos besoins, nous vous le disons.",
+  "Talkwalker: the view of someone who rolled it out":
+    "Talkwalker : l'avis de quelqu'un qui l'a déployé",
+  "Charlotte joined Talkwalker when it was still a start-up, then opened its Paris office. On our Audience First podcast, she describes the tool as a real-time data collector that fetches data from blogs, forums, news sites and social networks. First sold to agencies, it opened up to brands, and the challenge became team adoption and training.":
+    "Charlotte a rejoint Talkwalker quand c'était encore une start-up, puis a ouvert son bureau parisien. Dans notre podcast Audience First, elle décrit l'outil comme « un collecteur de datas en temps réel qui va chercher la data sur les blogs, les forums, les sites d'actualité et les réseaux sociaux ». D'abord vendu aux agences, il s'est ouvert aux marques, et l'enjeu est devenu l'adoption et la formation des équipes.",
+  "Above all, she stresses the human part: for consumer insight, trends and market research, people will always have a role in giving the data perspective. Agency or advertiser, the use is the same in her eyes, and everything starts from one question: what is your use case? And without internal resources, she advises getting support rather than staying alone with the tool.":
+    "Elle insiste surtout sur la part humaine : « pour du consumer insight, du trends, du market research, l'humain aura toujours sa place pour vraiment donner de la perspective à la data ». Agence ou annonceur, l'usage est le même à ses yeux, et tout part d'une question : « C'est quoi ton cas d'usage ? ». Et sans ressources internes, elle conseille de se faire accompagner plutôt que de rester seul face à l'outil.",
+  "Read the answer":
+    "Lire la réponse",
   "Frequently asked questions about Talkwalker.":
     "Questions fréquentes sur Talkwalker.",
   "Is Licter a Talkwalker agency?":
@@ -4879,8 +5007,8 @@ window.LicterFR = {
     "Des suggestions des moteurs de recherche : ce que les gens commencent à taper, et ce que le moteur complète.",
   "Looking for a AnswerThePublic agency?":
     "Vous cherchez une agence AnswerThePublic ?",
-  "CHATGPT AGENCY,":
-    "AGENCE CHATGPT,",
+  "YOUR BRAND IN CHATGPT,":
+    "VOTRE MARQUE DANS CHATGPT,",
   "WHAT AI SAYS ABOUT YOU.":
     "CE QUE L'IA DIT DE VOUS.",
   "More and more people ask an AI rather than a search engine. We read what ChatGPT answers about your brand and your category, and where it gets it from.":
@@ -4945,6 +5073,22 @@ window.LicterFR = {
     "Qu'est-ce que ChatGPT ?",
   "ChatGPT is OpenAI's conversational assistant, launched in November 2022. Since late 2024 it can search the web and cite its sources. It is not a listening tool: it is a source of opinion in its own right, to be audited.":
     "ChatGPT est l'assistant conversationnel d'OpenAI, lancé en novembre 2022. Depuis fin 2024, il peut chercher sur le web et citer ses sources. Ce n'est pas un outil d'écoute : c'est une source d'opinion à part entière, qu'il faut auditer.",
+  "HOW CHATGPT ANSWERS":
+    "COMMENT CHATGPT RÉPOND",
+  "What shapes ChatGPT's answer.":
+    "Ce qui fait la réponse de ChatGPT.",
+  "Where its answers come from":
+    "D'où viennent ses réponses",
+  "Without search, ChatGPT answers from its training data, frozen at a date. With web search, open to all its users since late 2024, it reads pages live and cites its links.":
+    "Sans recherche, ChatGPT répond depuis ses données d'entraînement, arrêtées à une date. Avec la recherche web, ouverte à tous ses utilisateurs depuis fin 2024, il lit des pages en direct et cite ses liens.",
+  "What sets it apart":
+    "Ce qui le distingue",
+  "It is the most used assistant: it is often where a customer first asks \"which brand should I choose?\". Its answer mixes what it learned and what it finds, and the two do not always agree.":
+    "C'est l'assistant le plus utilisé : c'est souvent là qu'un client pose d'abord la question « quelle marque choisir ? ». Sa réponse mêle ce qu'il a appris et ce qu'il trouve, et les deux ne disent pas toujours la même chose.",
+  "What we check":
+    "Ce que nous vérifions",
+  "We ask each question with and without web search. The gap between the two shows what is outdated in its memory, and which pages it reads today to correct itself.":
+    "Nous posons chaque question avec et sans recherche web. L'écart entre les deux montre ce qui est daté dans sa mémoire, et quelles pages il va lire aujourd'hui pour se corriger.",
   "What ChatGPT lets you analyse.":
     "Ce que ChatGPT permet d'analyser.",
   "What AI recommends":
@@ -4961,10 +5105,10 @@ window.LicterFR = {
     "L'évolution",
   "The same questions asked over time, to follow the answers.":
     "Les mêmes questions posées dans le temps, pour suivre les réponses.",
-  "CHATGPT AGENCY":
-    "AGENCE CHATGPT",
-  "Why work with a ChatGPT agency?":
-    "Pourquoi passer par une agence ChatGPT ?",
+  "CHATGPT AND YOUR BRAND":
+    "CHATGPT ET VOTRE MARQUE",
+  "Why hand this tracking to a consultancy?":
+    "Pourquoi confier ce suivi à un cabinet ?",
   "ChatGPT provides data. A ChatGPT agency like Licter turns it into a decision: here is how we use it.":
     "ChatGPT fournit des données. Une agence ChatGPT comme Licter en tire une décision : voici comment nous l'utilisons.",
   "ChatGPT on its own":
@@ -4995,8 +5139,8 @@ window.LicterFR = {
     "Transmettez-vous nos données à l'IA ?",
   "No. We ask public questions; no client data is sent.":
     "Non. Nous posons des questions publiques ; aucune donnée client n'est transmise.",
-  "Looking for a ChatGPT agency?":
-    "Vous cherchez une agence ChatGPT ?",
+  "What does ChatGPT say about your brand?":
+    "Que dit ChatGPT de votre marque ?",
   "GEO AGENCY,":
     "AGENCE GEO,",
   "YOUR PLACE IN AI ANSWERS.":
@@ -5115,8 +5259,8 @@ window.LicterFR = {
     "Non : nous mesurons, expliquons et recommandons ; la production reste à vos équipes ou à vos agences.",
   "Looking for a GEO agency?":
     "Vous cherchez une agence GEO ?",
-  "META ADS AGENCY,":
-    "AGENCE META ADS,",
+  "META ADS MONITORING,":
+    "VEILLE META ADS,",
   "CAMPAIGNS IN THE OPEN.":
     "LES CAMPAGNES À DÉCOUVERT.",
   "Meta's Ad Library shows the ads running on Facebook, Instagram and Meta's other apps. We read it to see what your competitors push, since when, and with which messages.":
@@ -5191,10 +5335,8 @@ window.LicterFR = {
     "Les versions par pays",
   "How a campaign changes from one market to another.":
     "Comment une campagne change d'un marché à l'autre.",
-  "META ADS AGENCY":
-    "AGENCE META ADS",
-  "Why work with a Meta Ads agency?":
-    "Pourquoi passer par une agence Meta Ads ?",
+  "AD MONITORING":
+    "VEILLE PUBLICITAIRE",
   "Meta Ads provides data. A Meta Ads agency like Licter turns it into a decision: here is how we use it.":
     "Meta Ads fournit des données. Une agence Meta Ads comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Meta Ads on its own":
@@ -5221,8 +5363,8 @@ window.LicterFR = {
     "Voit-on les budgets ?",
   "Only for political or social-issue ads, which Meta no longer accepts in the European Union since October 2025. For the others, no.":
     "Seulement pour les publicités politiques ou d'enjeu social, que Meta n'accepte plus dans l'Union européenne depuis octobre 2025. Pour les autres, non.",
-  "Looking for a Meta Ads agency?":
-    "Vous cherchez une agence Meta Ads ?",
+  "Your competitors' ads, read every month?":
+    "Les publicités de vos concurrents, lues chaque mois ?",
   "GOOGLE NEWS AGENCY,":
     "AGENCE GOOGLE ACTUALITÉS,",
   "THE PRESS AGAINST SOCIAL.":
@@ -5433,8 +5575,8 @@ window.LicterFR = {
     "Ce sont des données publiques relevées par l'outil : elles servent à repérer des tendances et des anomalies, pas à facturer.",
   "Looking for a Social Blade agency?":
     "Vous cherchez une agence Social Blade ?",
-  "CLAUDE AGENCY,":
-    "AGENCE CLAUDE,",
+  "YOUR BRAND IN CLAUDE,":
+    "VOTRE MARQUE DANS CLAUDE,",
   "WHAT CLAUDE SAYS ABOUT YOU.":
     "CE QUE CLAUDE DIT DE VOUS.",
   "Claude, Anthropic's assistant, is increasingly used at work to look things up, compare and write. We read what it answers about your brand and your category.":
@@ -5469,6 +5611,16 @@ window.LicterFR = {
     "Qu'est-ce que Claude ?",
   "Claude is the conversational assistant of Anthropic, an AI company based in San Francisco, launched in March 2023. It can search the web and cite its sources. Like ChatGPT, it is a source of opinion in its own right, to be audited.":
     "Claude est l'assistant conversationnel d'Anthropic, une entreprise d'IA basée à San Francisco, lancé en mars 2023. Il peut chercher sur le web et citer ses sources. Comme ChatGPT, c'est une source d'opinion à part entière, à auditer.",
+  "HOW CLAUDE ANSWERS":
+    "COMMENT CLAUDE RÉPOND",
+  "What shapes Claude's answer.":
+    "Ce qui fait la réponse de Claude.",
+  "Claude, Anthropic's assistant, answers first from its training data. Since 2025 it can also search the web; it then cites the pages it read.":
+    "Claude, l'assistant d'Anthropic, répond d'abord depuis ses données d'entraînement. Depuis 2025, il peut aussi chercher sur le web ; il cite alors les pages qu'il a lues.",
+  "It is widely used at work, to write, analyse and prepare decisions: its answers reach buyers, analysts and journalists. It readily says what it does not know: a poorly documented brand is more often missing than misdescribed.":
+    "Il est beaucoup utilisé au travail, pour rédiger, analyser et préparer des décisions : ses réponses touchent des acheteurs, des analystes, des journalistes. Il signale volontiers ce qu'il ne sait pas : une marque mal documentée y est plus souvent absente que mal décrite.",
+  "Whether Claude knows your brand without searching, and what it says when it searches. An absence is fixed through public documentation: your site, the press, reference pages.":
+    "Si Claude connaît votre marque sans chercher, et ce qu'il en dit quand il cherche. Une absence se traite par la documentation publique : site, presse, pages de référence.",
   "What Claude lets you analyse.":
     "Ce que Claude permet d'analyser.",
   "What Claude recommends":
@@ -5479,10 +5631,8 @@ window.LicterFR = {
     "Un public professionnel",
   "An assistant widely used at work: what it says weighs on decision-makers.":
     "Un assistant très présent en entreprise : ce qu'il dit pèse sur les décideurs.",
-  "CLAUDE AGENCY":
-    "AGENCE CLAUDE",
-  "Why work with a Claude agency?":
-    "Pourquoi passer par une agence Claude ?",
+  "CLAUDE AND YOUR BRAND":
+    "CLAUDE ET VOTRE MARQUE",
   "Claude provides data. A Claude agency like Licter turns it into a decision: here is how we use it.":
     "Claude fournit des données. Une agence Claude comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Claude on its own":
@@ -5505,10 +5655,10 @@ window.LicterFR = {
     "Pourquoi auditer Claude en plus de ChatGPT ?",
   "Because assistants do not cite the same brands or sources: your place can be good in one and absent in another.":
     "Parce que les assistants ne citent pas les mêmes marques ni les mêmes sources : votre place peut être bonne dans l'un et absente dans l'autre.",
-  "Looking for a Claude agency?":
-    "Vous cherchez une agence Claude ?",
-  "GEMINI AGENCY,":
-    "AGENCE GEMINI,",
+  "What does Claude say about your brand?":
+    "Que dit Claude de votre marque ?",
+  "YOUR BRAND IN GEMINI,":
+    "VOTRE MARQUE DANS GEMINI,",
   "GOOGLE'S AI.":
     "L'IA DE GOOGLE.",
   "Gemini is Google's assistant, available in its own app, in Android and in Google's tools. We read what it answers about your brand, and where it gets it from.":
@@ -5527,6 +5677,16 @@ window.LicterFR = {
     "Qu'est-ce que Gemini ?",
   "Gemini is Google's conversational assistant. Launched in March 2023 as Bard, it was renamed Gemini in February 2024. It draws on Google Search and cites its sources; its reach across Google's ecosystem gives it a very large audience.":
     "Gemini est l'assistant conversationnel de Google. Lancé en mars 2023 sous le nom de Bard, il a été renommé Gemini en février 2024. Il s'appuie sur la recherche Google et cite ses sources ; sa diffusion dans l'écosystème Google lui donne une audience considérable.",
+  "HOW GEMINI ANSWERS":
+    "COMMENT GEMINI RÉPOND",
+  "What shapes Gemini's answer.":
+    "Ce qui fait la réponse de Gemini.",
+  "Gemini is Google's AI. It relies on Google Search, the same family of models as the generated answers at the top of results (AI Overviews and AI Mode).":
+    "Gemini est l'IA de Google. Il s'appuie sur la recherche Google, la même famille de modèles que les réponses générées en haut des résultats (AI Overviews et mode IA).",
+  "What Google knows about you counts directly: your indexed pages, your Business Profile, reviews, YouTube. An error in Gemini often shows up in search results, and the other way round.":
+    "Ce que Google sait de vous compte directement : vos pages indexées, votre fiche d'établissement, les avis, YouTube. Une erreur dans Gemini se retrouve souvent dans les résultats de recherche, et l'inverse.",
+  "We compare Gemini and Google Search's AI answers on the same questions, then trace back to the pages and listings that feed them.":
+    "Nous comparons Gemini et les réponses IA de la recherche Google sur les mêmes questions, puis nous remontons aux pages et aux fiches qui les nourrissent.",
   "What Gemini lets you analyse.":
     "Ce que Gemini permet d'analyser.",
   "What Gemini recommends":
@@ -5539,10 +5699,8 @@ window.LicterFR = {
     "Une audience immense",
   "Android, the app and Google's tools: an answer seen by many.":
     "Android, l'application et les outils Google : une réponse vue par beaucoup.",
-  "GEMINI AGENCY":
-    "AGENCE GEMINI",
-  "Why work with a Gemini agency?":
-    "Pourquoi passer par une agence Gemini ?",
+  "GEMINI AND YOUR BRAND":
+    "GEMINI ET VOTRE MARQUE",
   "Gemini provides data. A Gemini agency like Licter turns it into a decision: here is how we use it.":
     "Gemini fournit des données. Une agence Gemini comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Gemini on its own":
@@ -5569,10 +5727,10 @@ window.LicterFR = {
     "Le SEO suffit-il pour être cité par Gemini ?",
   "It helps, since Gemini draws on Google Search, but it is not enough: see our GEO page.":
     "Il aide, puisque Gemini s'appuie sur la recherche Google, mais il ne suffit pas : voir notre page GEO.",
-  "Looking for a Gemini agency?":
-    "Vous cherchez une agence Gemini ?",
-  "PERPLEXITY AGENCY,":
-    "AGENCE PERPLEXITY,",
+  "What does Gemini say about your brand?":
+    "Que dit Gemini de votre marque ?",
+  "YOUR BRAND IN PERPLEXITY,":
+    "VOTRE MARQUE DANS PERPLEXITY,",
   "THE ANSWER ENGINE.":
     "LE MOTEUR DE RÉPONSES.",
   "Perplexity calls itself an answer engine: each answer is built on a web search and cites its sources. We read what it says about your brand, and which sites it cites.":
@@ -5595,6 +5753,16 @@ window.LicterFR = {
     "Qu'est-ce que Perplexity ?",
   "Perplexity is an AI answer engine, published by Perplexity AI, a San Francisco company founded in 2022. Unlike a classic assistant, it always searches the web and shows its sources, which makes it very readable for an audit.":
     "Perplexity est un moteur de réponses par IA, édité par Perplexity AI, une entreprise de San Francisco fondée en 2022. Contrairement à un assistant classique, il cherche systématiquement sur le web et affiche ses sources, ce qui le rend très lisible pour un audit.",
+  "HOW PERPLEXITY ANSWERS":
+    "COMMENT PERPLEXITY RÉPOND",
+  "What shapes Perplexity's answer.":
+    "Ce qui fait la réponse de Perplexity.",
+  "Perplexity searches the web for every question and shows its sources, numbered, next to the answer. It presents itself as an answer engine more than an assistant.":
+    "Perplexity cherche sur le web à chaque question et affiche ses sources, numérotées, à côté de la réponse. Il se présente comme un moteur de réponses plus que comme un assistant.",
+  "Every answer says where it comes from: you can measure which pages really count for your category. Recent pages, the press and forums weigh heavily.":
+    "Chaque réponse dit d'où elle vient : on peut mesurer quelles pages comptent vraiment pour votre catégorie. Les pages récentes, la presse et les forums y pèsent lourd.",
+  "The list of sites cited on your market's questions, the share that talks about you, and the sources your competitors have and you do not.":
+    "La liste des sites cités sur les questions de votre marché, la part qui parle de vous, et les sources de vos concurrents que vous n'avez pas.",
   "What Perplexity lets you analyse.":
     "Ce que Perplexity permet d'analyser.",
   "Sources, in plain sight":
@@ -5609,10 +5777,8 @@ window.LicterFR = {
     "Les articles, avis et discussions qui pèsent dans ses réponses.",
   "The same questions, followed over time.":
     "Les mêmes questions, suivies dans le temps.",
-  "PERPLEXITY AGENCY":
-    "AGENCE PERPLEXITY",
-  "Why work with a Perplexity agency?":
-    "Pourquoi passer par une agence Perplexity ?",
+  "PERPLEXITY AND YOUR BRAND":
+    "PERPLEXITY ET VOTRE MARQUE",
   "Perplexity provides data. A Perplexity agency like Licter turns it into a decision: here is how we use it.":
     "Perplexity fournit des données. Une agence Perplexity comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Perplexity on its own":
@@ -5635,12 +5801,12 @@ window.LicterFR = {
     "Pourquoi Perplexity est-il utile pour un audit ?",
   "Because it shows its sources with every answer: you know which sites to act on.":
     "Parce qu'il montre ses sources à chaque réponse : on sait sur quels sites agir.",
-  "Looking for a Perplexity agency?":
-    "Vous cherchez une agence Perplexity ?",
+  "What does Perplexity say about your brand?":
+    "Que dit Perplexity de votre marque ?",
   "Grok":
     "Grok",
-  "GROK AGENCY,":
-    "AGENCE GROK,",
+  "YOUR BRAND IN GROK,":
+    "VOTRE MARQUE DANS GROK,",
   "X'S AI.":
     "L'IA DE X.",
   "Grok is xAI's assistant, built into X. It draws on X posts in real time: what it says about your brand often reflects what is being said there right now.":
@@ -5663,6 +5829,16 @@ window.LicterFR = {
     "Qu'est-ce que Grok ?",
   "Grok is the conversational assistant of xAI, Elon Musk's AI company, launched in November 2023. It is built into the X network and available on its own site; what sets it apart is its real-time access to X posts.":
     "Grok est l'assistant conversationnel de xAI, la société d'IA d'Elon Musk, lancé en novembre 2023. Il est intégré au réseau X et accessible sur son propre site ; sa particularité est son accès aux publications de X en temps réel.",
+  "HOW GROK ANSWERS":
+    "COMMENT GROK RÉPOND",
+  "What shapes Grok's answer.":
+    "Ce qui fait la réponse de Grok.",
+  "Grok is xAI's AI, built into X. It reads public posts on X in real time, as well as the web.":
+    "Grok est l'IA de xAI, intégrée à X. Il lit les publications publiques de X en temps réel, en plus du web.",
+  "It mirrors the conversation on X almost live: a controversy on X can enter its answers within hours, well before other assistants.":
+    "Il reflète la conversation de X presque en direct : une polémique sur X peut entrer dans ses réponses en quelques heures, bien avant les autres assistants.",
+  "What Grok says about you during and after a spike on X, which accounts and posts it picks up, and whether a rumour survives there once it has died down on the network.":
+    "Ce que Grok dit de vous pendant et après un pic sur X, quels comptes et quelles publications il reprend, et si une rumeur y survit une fois retombée sur le réseau.",
   "What Grok lets you analyse.":
     "Ce que Grok permet d'analyser.",
   "What Grok says about you":
@@ -5677,10 +5853,8 @@ window.LicterFR = {
     "Les sujets chauds",
   "A crisis or a row on X quickly shows up in its answers.":
     "Une crise ou une polémique sur X se retrouve vite dans ses réponses.",
-  "GROK AGENCY":
-    "AGENCE GROK",
-  "Why work with a Grok agency?":
-    "Pourquoi passer par une agence Grok ?",
+  "GROK AND YOUR BRAND":
+    "GROK ET VOTRE MARQUE",
   "Grok provides data. A Grok agency like Licter turns it into a decision: here is how we use it.":
     "Grok fournit des données. Une agence Grok comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Grok on its own":
@@ -5707,8 +5881,8 @@ window.LicterFR = {
     "Grok est-il lié à X ?",
   "Yes: it is published by xAI and built into the X network.":
     "Oui : il est édité par xAI et intégré au réseau X.",
-  "Looking for a Grok agency?":
-    "Vous cherchez une agence Grok ?",
+  "What does Grok say about your brand?":
+    "Que dit Grok de votre marque ?",
   "FACEBOOK SOCIAL LISTENING,":
     "SOCIAL LISTENING FACEBOOK,",
   "COMMUNITIES AND GROUPS.":
@@ -6109,6 +6283,76 @@ window.LicterFR = {
     "Comment nous écoutons TikTok.",
   "TikTok social listening: use cases.":
     "Social listening TikTok : les cas d'usage.",
+  "SOCIAL LISTENING ON TIKTOK, IN DETAIL":
+    "LE SOCIAL LISTENING SUR TIKTOK, EN DÉTAIL",
+  "What to know before you listen to TikTok.":
+    "Ce qu'il faut savoir avant d'écouter TikTok.",
+  "Can you do social listening on TikTok?":
+    "Peut-on faire du social listening sur TikTok ?",
+  "Yes. Public videos, their descriptions, hashtags and comments can be collected and analysed, as on other networks. What changes is the material: on TikTok, most of the message goes through the image, the voice and the sound. Listening to TikTok therefore means reading beyond the text, or you miss a large part of what is being said.":
+    "Oui. Les vidéos publiques, leurs descriptions, leurs hashtags et leurs commentaires peuvent être collectés et analysés, comme sur les autres réseaux. Ce qui change, c'est la matière : sur TikTok, l'essentiel du message passe par l'image, la voix et le son. Écouter TikTok demande donc de lire au-delà du texte, sinon on passe à côté d'une grande partie de ce qui se dit.",
+  "The question is no longer whether your brand is there. Jean-Christophe Gatuingt, co-founder of Visibrain, sums it up in our podcast: on TikTok, there is a good chance people are talking about your brand, whatever your brand. TikTok monitoring first serves to find out where, how and by whom.":
+    "La question n'est d'ailleurs plus de savoir si votre marque y est présente. Jean-Christophe Gatuingt, cofondateur de Visibrain, le résume dans notre podcast : « sur TikTok, il y a de grandes chances qu'on parle de votre marque, quelle que soit votre marque ». Une veille TikTok sert d'abord à savoir où, comment et par qui.",
+  "TikTok monitoring and TikTok social listening do not answer the same question. Monitoring signals what is happening: a video taking off, a spike in mentions, a criticism catching on. Social listening analyses the conversation over time to explain what it says about a brand, an audience or a market. On TikTok, the first helps you react fast, the second helps you understand what makes a subject last.":
+    "Veille TikTok et social listening TikTok ne répondent pas à la même question. La veille signale ce qui se passe : une vidéo qui démarre, un pic de mentions, une critique qui prend. Le social listening analyse la conversation dans la durée pour expliquer ce qu'elle dit d'une marque, d'une audience ou d'un marché. Sur TikTok, la première sert à réagir vite, le second à comprendre ce qui fait durer un sujet.",
+  "What can you read on TikTok: videos, comments, sounds, hashtags?":
+    "Qu'est-ce qu'on peut lire sur TikTok : vidéos, commentaires, sons, hashtags ?",
+  "First the video's description and hashtags: the easiest part to collect, and often the poorest. Then what is said in the video, when a transcript exists, and what is visible in the frame: a product, a logo, a place. Finally the comments, which give the audience's reaction and are often richer than the video itself.":
+    "La description de la vidéo et ses hashtags, d'abord : c'est la partie la plus facile à collecter, et souvent la plus pauvre. Puis ce qui est dit dans la vidéo, quand une transcription existe, et ce qui est visible à l'image : un produit, un logo, un lieu. Enfin les commentaires, qui donnent la réaction du public et sont souvent plus riches que la vidéo elle-même.",
+  "Sound is a case apart. On TikTok, the same music or audio clip is reused by thousands of videos, and it is often what carries a trend. Following a sound means following a format: the way a subject is told, parodied and transformed from one video to the next.":
+    "Le son est un cas à part. Sur TikTok, une même musique ou un même extrait audio est repris par des milliers de vidéos, et c'est souvent lui qui porte une tendance. Suivre un son, c'est suivre un format : la manière dont un sujet se raconte, se parodie et se transforme d'une vidéo à l'autre.",
+  "Why TikTok is different from other networks":
+    "Pourquoi TikTok est différent des autres réseaux",
+  "On TikTok, reach does not depend on followers first. According to TikTok, neither an account's follower count nor its past hits are direct factors in recommendations: the For You feed relies mainly on user interactions and on the video's details, including its caption, sound and hashtags. An unknown account can therefore reach millions of people.":
+    "Sur TikTok, la diffusion ne dépend pas d'abord des abonnés. Selon TikTok, ni le nombre d'abonnés d'un compte ni ses succès passés ne sont des facteurs directs de recommandation : le fil Pour toi s'appuie surtout sur les interactions des utilisateurs et sur les éléments de la vidéo, dont sa légende, son son et ses hashtags. Un compte inconnu peut donc toucher des millions de personnes.",
+  "The consequence for listening: a list of accounts to watch is not enough. You have to follow subjects, words, sounds and formats, and read who really carries them. A brand often appears on screen or in speech without being written in the caption: a query that only looks for the brand name lets part of the conversation slip by.":
+    "Conséquence pour l'écoute : une liste de comptes à surveiller ne suffit pas. Il faut suivre des sujets, des mots, des sons et des formats, et lire qui les porte vraiment. Une marque y apparaît souvent à l'image ou à l'oral, sans être écrite dans la légende : une requête qui ne cherche que le nom de la marque laisse passer une partie de la conversation.",
+  "How do you spot a TikTok trend before it leaves the network?":
+    "Comment repérer une tendance TikTok avant qu'elle ne sorte du réseau ?",
+  "A trend is spotted by its speed more than its volume. When it shows big numbers, it is often already settled, or even saturating. What matters is acceleration: a sound, a hashtag or a phrase taken up by a growing number of different creators, within a few days, and in communities that do not usually talk to each other.":
+    "Une tendance se repère à sa vitesse plus qu'à son volume. Quand elle affiche de gros chiffres, elle est souvent déjà installée, voire en train de saturer. Ce qui compte, c'est l'accélération : un son, un hashtag ou une expression repris par un nombre croissant de créateurs différents, en peu de jours, et dans des communautés qui ne se parlent pas d'habitude.",
+  "TikTok itself publishes part of these signals in its Creative Center: trending hashtags, sounds, creators and videos, by region and by period, with a tab for breakout sounds. It is a good starting point, but it says what is rising, not why, nor what it means for your brand.":
+    "TikTok publie lui-même une partie de ces signaux dans son Creative Center : hashtags, sons, créateurs et vidéos en tendance, par région et par période, avec un onglet dédié aux sons qui percent. C'est un bon point de départ, mais il dit ce qui monte, pas pourquoi, ni ce que cela signifie pour votre marque.",
+  "The analysis then consists of linking those signals to your category: who starts the subject, how it changes as it travels, and whether it is starting to appear elsewhere. Bruce Hoang, head of digital communication and data at Orange, puts it bluntly in our podcast: all trends come from TikTok.":
+    "Le travail d'analyse consiste ensuite à relier ces signaux à votre catégorie : qui lance le sujet, comment il se déforme en circulant, et s'il commence à apparaître ailleurs. Bruce Hoang, directeur communication digitale et data chez Orange, le dit sans détour dans notre podcast : « toutes les tendances viennent de TikTok ».",
+  "Comments, the real conversation":
+    "Les commentaires, la vraie conversation",
+  "On TikTok, the video starts a subject, but the comments say how it is received. You read agreement, irony, questions, comparisons with a competitor, and sometimes the information the video lacked. A neutral video can carry very negative comments, and the reverse is also true.":
+    "Sur TikTok, la vidéo lance un sujet, mais ce sont les commentaires qui disent comment il est reçu. On y lit l'adhésion, l'ironie, les questions, les comparaisons avec un concurrent, et parfois l'information qui manquait à la vidéo. Une vidéo neutre peut porter des commentaires très négatifs, et l'inverse est vrai aussi.",
+  "It is also where automatic sentiment goes most wrong. Comments are short, coded, full of emojis, irony and references to other videos. An analyst who knows the network's codes and the market's language has to reread them before drawing a conclusion, especially when the decision concerns a crisis.":
+    "C'est aussi là que le sentiment automatique se trompe le plus. Les commentaires sont courts, codés, pleins d'emojis, de second degré et de références à d'autres vidéos. Un analyste qui connaît les codes du réseau et la langue du marché doit les relire avant d'en tirer une conclusion, surtout quand la décision porte sur une crise.",
+  "Comments also tell you who is watching. The words used, the shared references and the questions asked say more about a video's audience than its view count. For a brand that wants to reach a younger audience, it is often the most useful reading: understanding what interests that audience, and what makes it switch off.":
+    "Les commentaires disent aussi qui regarde. Le vocabulaire employé, les références partagées et les questions posées renseignent sur le public d'une vidéo mieux que son nombre de vues. Pour une marque qui veut toucher une audience plus jeune, c'est souvent la lecture la plus utile : comprendre ce qui intéresse ce public, et ce qui le fait décrocher.",
+  "Which tools for TikTok monitoring?":
+    "Quels outils pour la veille TikTok ?",
+  "No tool reads all of TikTok. We combine several depending on the question: Visibrain to follow the conversation in real time, YouScan to recognise a brand in visuals even when nobody names it, Social Blade to track an account's followers and views day by day. TikTok coverage varies from one publisher to the next, and we check it before every study.":
+    "Aucun outil ne lit TikTok en entier. Nous en combinons plusieurs selon la question : Visibrain pour suivre la conversation en temps réel, YouScan pour reconnaître une marque dans les visuels même quand personne ne la nomme, Social Blade pour suivre les abonnés et les vues d'un compte jour après jour. La couverture de TikTok varie d'un éditeur à l'autre, et nous la vérifions avant chaque étude.",
+  "TikTok also offers its own access points. Its Research API is reserved for academic researchers and not-for-profit research bodies, for non-commercial work: a brand cannot use it for its monitoring. In Europe, however, its Commercial Content Library lets anyone look up the ads run on the platform, with their dates and main targeting parameters.":
+    "TikTok propose aussi ses propres accès. Son API de recherche est réservée aux chercheurs académiques et aux organismes de recherche à but non lucratif, pour des travaux non commerciaux : une marque ne peut pas s'en servir pour sa veille. En Europe, sa bibliothèque de contenus commerciaux permet en revanche de consulter les publicités diffusées sur la plateforme, avec leurs dates et leurs principaux critères de ciblage.",
+  "What you cannot read on TikTok":
+    "Ce qu'on ne peut pas lire sur TikTok",
+  "Private messages, private accounts and videos with restricted visibility remain out of reach, and rightly so. Shares through messaging, which circulate many videos, are not visible either. TikTok monitoring reads what is public, and only that: we never collect private data.":
+    "Les messages privés, les comptes privés et les vidéos dont la diffusion est limitée restent hors de portée, et c'est normal. Les partages en messagerie, qui font circuler beaucoup de vidéos, ne sont pas visibles non plus. Une veille TikTok lit ce qui est public, et seulement cela : nous ne collectons jamais de données privées.",
+  "Other limits come from the material. A video without text or transcript partly escapes the tools. The irony of an edit, a gesture or music chosen to mock are not detected automatically. And a view count does not say who watched, nor what they thought. That is why we always state what a study covers, and what it does not.":
+    "D'autres limites tiennent à la matière. Une vidéo sans texte ni transcription échappe en partie aux outils. L'ironie d'un montage, un geste ou une musique choisie pour se moquer ne se détectent pas automatiquement. Et un chiffre de vues ne dit pas qui a regardé, ni ce qu'il en a pensé. C'est pourquoi nous indiquons toujours ce qu'une étude couvre, et ce qu'elle ne couvre pas.",
+  "An example: the Huda Beauty crisis, read on TikTok":
+    "Un exemple : la crise Huda Beauty, lue sur TikTok",
+  "In early 2026, Huda Beauty was the target of a boycott call. With Visibrain, we collected and cleaned the conversation, then analysed it. On TikTok, we counted 9,000 mentions, a first peak at 9.2 million views in a single day, then a record on 28 January: 26.1 million views and 267,000 shares.":
+    "Début 2026, Huda Beauty a été la cible d'un appel au boycott. Avec Visibrain, nous avons collecté et nettoyé la conversation, puis l'avons analysée. Sur TikTok, nous avons compté 9 000 mentions, un premier pic à 9,2 millions de vues en une seule journée, puis un record le 28 janvier : 26,1 millions de vues et 267 000 partages.",
+  "Two lessons stand out. The crisis was global, present in 51 languages. And it was micro-influencers, not large accounts, who dominated and drew the most views: a direct illustration of how TikTok spreads content. Overall, despite 242 million views in a few days, our reading concluded it was a \"crisis\" that was not really one.":
+    "Deux enseignements ressortent. La crise était mondiale, présente dans 51 langues. Et ce sont les micro-influenceurs, pas les grands comptes, qui dominaient et faisaient le plus de vues : une illustration directe de la façon dont TikTok diffuse. Au total, malgré 242 millions de vues en quelques jours, notre lecture concluait à une « crise » qui n'en était pas vraiment une.",
+  "TikTok and the other networks":
+    "TikTok et les autres réseaux",
+  "A subject born on TikTok does not stay on TikTok. During the Huda Beauty crisis, the conversation spread in parallel on Instagram, with 6,000 posts, 28 times the previous period, and 198,000 comments on 28 January, and on X, with 40,000 tweets and retweets up 230-fold in 24 hours.":
+    "Un sujet né sur TikTok ne reste pas sur TikTok. Pendant la crise Huda Beauty, la conversation s'est propagée en parallèle sur Instagram, avec 6 000 publications, 28 fois plus que la période précédente, et 198 000 commentaires le 28 janvier, et sur X, avec 40 000 tweets et des retweets multipliés par 230 en 24 heures.",
+  "That is why we rarely read TikTok alone. X shows how a subject is taken up by media and journalists, Instagram how it reaches a brand's communities, YouTube how it settles into longer formats. Crossing these sources tells you whether a TikTok trend stays a network phenomenon or becomes a market subject.":
+    "C'est pourquoi nous lisons rarement TikTok seul. X montre comment un sujet est repris par les médias et les journalistes, Instagram comment il touche les communautés d'une marque, YouTube comment il s'installe dans des formats plus longs. Croiser ces sources permet de savoir si une tendance TikTok reste un phénomène de réseau ou devient un sujet de marché.",
+  "What a brand can decide by listening to TikTok":
+    "Ce qu'une marque peut décider grâce à l'écoute de TikTok",
+  "First, rejuvenating audiences: understanding what the youngest say about a category, in their words and formats, before trying to speak to them. Then, finding the right ambassadors: the creators who already talk about your world and whom their audience listens to, whatever their follower count. Finally, anticipating: seeing a trend or a criticism coming before it reaches other networks.":
+    "Rajeunir ses audiences, d'abord : comprendre ce que les plus jeunes disent d'une catégorie, avec leurs mots et leurs formats, avant de chercher à leur parler. Repérer les bons ambassadeurs, ensuite : les créateurs qui parlent déjà de votre univers et que leur public écoute, quel que soit leur nombre d'abonnés. Anticiper, enfin : voir venir une tendance ou une critique avant qu'elle n'atteigne les autres réseaux.",
+  "For continuous monitoring and crisis management, see our Vigie 360 offer. For a one-off study, a first read of TikTok on your brand or category follows the same rule as our other work: the decision to make first, the tools second.":
+    "Pour une veille continue et la gestion de crise, voir notre offre Vigie 360. Pour une étude ponctuelle, une première lecture de TikTok sur votre marque ou votre catégorie part de la même règle que nos autres travaux : la décision à prendre d'abord, les outils ensuite.",
   "Social listening on TikTok: frequently asked questions.":
     "Questions fréquentes sur le social listening TikTok.",
   "Is Licter a TikTok social listening agency?":
@@ -7011,16 +7255,16 @@ window.LicterFR = {
     "Agence AnswerThePublic : les questions de votre marché | Licter",
   "AnswerThePublic: the questions your market asks Google, sorted and read to turn them into content, FAQs and offers.":
     "AnswerThePublic : les questions que votre marché pose à Google, classées et lues pour en tirer contenus, FAQ et offres.",
-  "ChatGPT agency: what AI says about your brand | Licter":
-    "Agence ChatGPT : ce que l'IA dit de votre marque | Licter",
+  "Your brand in ChatGPT: an audit of its answers | Licter":
+    "Votre marque dans ChatGPT : audit des réponses | Licter",
   "ChatGPT agency: what OpenAI's assistant answers about your brand, your competitors and your category, and the sources it cites.":
     "Agence ChatGPT : ce que l'IA d'OpenAI répond sur votre marque, vos concurrents et votre catégorie, et les sources qu'elle cite.",
   "GEO agency: your visibility in AI answers | Licter":
     "Agence GEO : votre visibilité dans les réponses des IA | Licter",
   "GEO: your visibility in ChatGPT, Claude, Gemini and Perplexity answers, measured then improved by our consultants.":
     "GEO : votre visibilité dans les réponses de ChatGPT, Claude, Gemini et Perplexity, mesurée puis améliorée par nos consultants.",
-  "Meta Ads agency: Meta ad monitoring | Licter":
-    "Agence Meta Ads : veille publicitaire sur Meta | Licter",
+  "Meta Ads monitoring: your competitors' ads | Licter":
+    "Veille Meta Ads : les publicités de vos concurrents | Licter",
   "Meta Ad Library: your competitors' campaigns on Facebook and Instagram, collected and read for your decisions.":
     "Bibliothèque publicitaire Meta : les campagnes de vos concurrents sur Facebook et Instagram, relevées et lues pour vos arbitrages.",
   "Google News agency: the press against social | Licter":
@@ -7031,20 +7275,20 @@ window.LicterFR = {
     "Agence Social Blade : vérifier les comptes et les créateurs | Licter",
   "Social Blade: the real growth of accounts and creators, to check an audience before a partnership.":
     "Social Blade : la croissance réelle des comptes et des créateurs, pour vérifier une audience avant un partenariat.",
-  "Claude agency: what Claude says about your brand | Licter":
-    "Agence Claude : ce que Claude dit de votre marque | Licter",
+  "Your brand in Claude: what the AI answers | Licter":
+    "Votre marque dans Claude : ce que l'IA répond | Licter",
   "Claude agency: what Anthropic's assistant says about your brand, its sources and its mistakes, tracked question by question.":
     "Agence Claude : ce que l'assistant d'Anthropic dit de votre marque, ses sources et ses erreurs, suivis question après question.",
-  "Gemini agency: what Google's AI says about you | Licter":
-    "Agence Gemini : ce que l'IA de Google dit de vous | Licter",
+  "Your brand in Gemini and Google's AI answers | Licter":
+    "Votre marque dans Gemini et les réponses IA de Google | Licter",
   "Gemini agency: what Google's AI answers about your brand, closest to search, and how to change it.":
     "Agence Gemini : ce que l'IA de Google répond sur votre marque, au plus près de la recherche, et comment le faire évoluer.",
-  "Perplexity agency: your brand in the answer engine | Licter":
-    "Agence Perplexity : votre marque dans le moteur de réponses | Licter",
+  "Your brand in Perplexity: sources and citations | Licter":
+    "Votre marque dans Perplexity : sources et citations | Licter",
   "Perplexity agency: your brand in the answer engine that cites its sources, and the pages that shape its answer.":
     "Agence Perplexity : votre marque dans le moteur de réponses qui cite ses sources, et les pages qui pèsent sur sa réponse.",
-  "Grok agency: what X's AI says about you | Licter":
-    "Agence Grok : ce que l'IA de X dit de vous | Licter",
+  "Your brand in Grok: what X's AI answers | Licter":
+    "Votre marque dans Grok : ce que l'IA de X répond | Licter",
   "Grok agency: what X's AI says about your brand, fed by the network's live conversation.":
     "Agence Grok : ce que l'IA de X dit de votre marque, nourrie par la conversation en direct du réseau.",
   "Facebook social listening agency: communities and groups | Licter":

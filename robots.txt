@@ -1,4 +1,7 @@
+# Content signals (contentsignals.org): search, AI answers and AI training are all allowed,
+# so that search engines and assistants describe Licter from its own pages.
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 Sitemap: https://www.licter.com/sitemap.xml

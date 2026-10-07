@@ -79,4 +79,10 @@
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build);
   else build();
+
+  /* a closed event banner stays closed until its date (js/events.js) */
+  try {
+    var off = +localStorage.getItem("licter-banner-off");
+    if (off && off > Date.now()) root.classList.add("banner-off");
+  } catch (e) {}
 })();

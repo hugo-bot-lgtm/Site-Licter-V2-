@@ -4,8 +4,10 @@ HTML / CSS / JS vanille, aucune dépendance. Déployable tel quel
 (Vercel : « Other / no framework », racine = ce dossier).
 
 **Une seule étape de build, pour le CSS.** On édite `css/styles.css` (le
-source, commentaires compris) ; les pages chargent `css/styles.min.css`, qu'on
-régénère après chaque modification :
+source, commentaires compris) ; chaque page charge la feuille de son type
+(`css/t-home.min.css`, `t-uc`, `t-xp`, `t-of`, `t-tk`, `t-art`, `t-base`), et
+`css/styles.min.css` reste la feuille complète de secours. On régénère le tout
+après chaque modification, et après chaque build de pages :
 
 ```bash
 python3 tools/build-css.py
@@ -88,7 +90,8 @@ guide.html          ← aimant à leads : le guide des 12 questions
 diagnostic.html     ← diagnostic social data (milieu de funnel)
 book-a-meeting.html ← prise de rendez-vous (bas de funnel)
 css/styles.css      ← source à éditer
-css/styles.min.css  ← généré par tools/build-css.py, chargé par les pages
+css/styles.min.css  ← généré par tools/build-css.py (feuille complète, secours)
+css/t-*.min.css     ← généré par tools/build-css.py, une feuille par type de page
 tools/build-css.py
 js/cartography.js   ← la carto animée (canvas)
 js/i18n.js          ← bascule EN / FR
