@@ -55,6 +55,9 @@ FIX = [("bad buss", "bad buzz"), ("succès publicitaire en", "succès publicitai
        ("militant\u00a0: Les insights", "militant\u00a0: les insights"), ("en 2024.", "en 2024"),
        ("Shein vs BHV", "Shein vs BHV\u00a0: dissection d'une crise digitale")]
 EDITS = [  # typos and a placeholder left in the original texts (regex, replacement)
+    # what the guests say of themselves in the interviews (podcast transcripts)
+    (r"le COO de Visibrain", "Jean-Christophe Gatuingt, cofondateur de Visibrain"),
+    (r"la DG France de Talkwalker", "Charlotte, qui a ouvert le bureau parisien de Talkwalker"),
     (r"Sur Tik Tok[\s\u00a0]*:[\s\u00a0]*9K mentions</strong>, qui correspond à une augmentation de XX%, un 1e p<strong>ic",
      "Sur TikTok\u00a0: 9K mentions</strong>, un premier <strong>pic"),
     (r"la “crise'”Huda", "la «\u00a0crise\u00a0» Huda"),
@@ -255,6 +258,8 @@ def main():
             title = title.replace(a_, b_)
         desc = s.find("meta", attrs={"name": "description"})
         lead = typo(re.sub(r"\s*\(avec un tuto vidéo\s*!?\)", "", (desc.get("content") if desc else "")).strip())
+        for a_, b_ in EDITS:
+            lead = re.sub(a_, b_, lead)
         og = s.find("meta", property="og:image")
         m = re.search(r"/([0-9a-f]{24})_", og.get("content", "") if og else "")
         d = DATES.get(old) or datetime.datetime.fromtimestamp(int(m.group(1)[:8], 16), datetime.timezone.utc).date()

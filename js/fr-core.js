@@ -337,6 +337,7 @@ window.LicterFR = {
 "Chat with Antoine": "Discuter avec Antoine",
 "Studies": "Études",
 "OFFER": "OFFRE",
+"8 months": "8 mois",
 "Rebuild": "Reconstruction",
 "Delivery": "Livraison",
 "+48%": "+48 %",

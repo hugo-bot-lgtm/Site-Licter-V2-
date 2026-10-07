@@ -65,6 +65,7 @@ CASES = {c["key"]: c for c in C.CASES}
 sys.path.insert(0, str(ROOT / "tools"))
 from tools_data import TOOLS          # noqa: E402
 from seo_desc import DESC             # noqa: E402
+from proof import PROOF               # noqa: E402
 from networks import NETWORKS         # noqa: E402
 TOOL = {x["slug"]: x for x in TOOLS}
 NET = {n["slug"]: n for n in NETWORKS}
@@ -451,8 +452,20 @@ def xp(slug, keys=None):
         return ""
     lab = t(("Expertise associée", "Related expertise"))
     guide = ('<p class="xp-line"><span>%s</span> <a href="/article-veille-reseaux-sociaux-entreprise.html">%s</a></p>' % (
-        t(("À lire", "Read")), t(("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if slug in ("visibrain", "google-news", "talkwalker") else ""
+        t(("À lire", "Further reading")), t(("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if slug in ("visibrain", "google-news", "talkwalker") else ""
     return '<p class="xp-line"><span>%s</span> %s</p>' % (lab, ", ".join('<a href="expertise-%s.html">%s</a>' % (k, O.U.XP_NAME[k]) for k in keys)) + guide
+
+
+def proof(slug):
+    """what Licter has published with this tool or on this network (tools/proof.py)"""
+    items = PROOF.get(slug)
+    if not items:
+        return ""
+    cards = "".join('<li class="tk-proof__c"><b>%s</b><p>%s</p><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (
+        t(ti), t(tx), href, t(("Lire l'analyse", "Read the analysis") if href.startswith("article-") and "podcast" not in href and "meltwater" not in href
+                         else ("Écouter l'entretien", "Hear the interview") if href.startswith("article-") else ("Voir le cas", "See the case"))) for ti, tx, href in items)
+    return sec("proof", head(t(("CE QUE NOUS EN AVONS FAIT", "WHAT WE HAVE DONE WITH IT")), t(("Chez Licter, concrètement.", "At Licter, in practice."))) +
+               '<ul class="tk-proof">%s</ul>' % cards)
 
 
 def tool_body(x):
@@ -476,6 +489,7 @@ def tool_body(x):
     out += sec("what", '<div class="tk-split">%s%s</div>' % (
         '<div>%s<p class="tk-prose" data-reveal>%s</p>%s</div>' % (head(t(fmt(S["what_k"], NM)), t(fmt(S["what_t"], nm))), t(x["what"]),
                                                                    xp(x["slug"])), sheet))
+    out += proof(x["slug"])
     out += sec("features", head(t(S["feat_k"]), t(fmt(S["feat_t"], nm))) + feats(x["features"], x["slug"]), band=True)
     out += sec("agency", head(t(ag["kick"]), t(fmt(S["ag_t"], nm)), t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
     out += sec("deliverables", head(t(S["del_k"]), t(fmt(S["del_t"], nm))) + dels, band=True)
@@ -516,6 +530,7 @@ def net_body(n):
     out += hero(copy, art)
     out += sec("why", head(t(fmt(S["nwhy_k"], NMU)), t(fmt(S["nwhy_t"], NMx))) + feats(n["reads"], n["slug"]) +
                xp(None, ["social-listening"] + (["influence-listening"] if n["slug"] in O.U.XP_INFLUENCE_NETS else [])), band=True)
+    out += proof(n["slug"])
     out += sec("data", head(t(S["nacc_k"]), t(fmt(S["nacc_t"], NMx))) + io)
     out += sec("method", head(t(S["nmet_k"]), t(fmt(S["nmet_t"], NMx))) + method, band=True)
     out += sec("uses", head(t(S["uses_k2"]), t(fmt(S["nuses_t"], NMx)), t(S["uses_lead"])) + prog(n["uses"]))

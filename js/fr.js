@@ -2637,6 +2637,30 @@ window.LicterFR = {
     "Ce qui est inclus",
   "Related expertise":
     "Expertise associée",
+  "HP · United States · 2023":
+    "HP · États-Unis · 2023",
+  "Segmenting consumer niches for HP":
+    "Segmenter des niches de consommateurs pour HP",
+  "A hybrid segmentation, crossing panel and social data on more than 5,000 criteria, with user stories, to strengthen HP's product strategy from existing studies.":
+    "Une segmentation hybride, croisant les données de panel et celles des réseaux sociaux sur plus de 5 000 critères, et des user stories, pour renforcer la stratégie produit d'HP à partir d'études existantes.",
+  "6 months":
+    "6 mois",
+  "More than 5,000 criteria":
+    "Plus de 5 000 critères",
+  "La Poste · France · 2023":
+    "La Poste · France · 2023",
+  "Measuring La Poste's marketing ROI with social data":
+    "Calculer le ROI marketing de La Poste avec la social data",
+  "For a public service of more than 200,000 employees, we measured how well its marketing actions worked, in positioning and in engagement of the audiences they targeted.":
+    "Pour un service public de plus de 200 000 salariés, nous avons mesuré l'efficacité de ses actions marketing en termes de positionnement et d'engagement des publics visés.",
+  "1 year":
+    "1 an",
+  "More than 200,000 employees":
+    "Plus de 200 000 salariés",
+  "REAL CASES":
+    "CAS RÉELS",
+  "What we did, and for whom.":
+    "Ce que nous avons fait, pour qui.",
   "Is it for you?":
     "Est-ce pour vous ?",
   "Not the right fit if":
@@ -2731,8 +2755,26 @@ window.LicterFR = {
     "En combien de temps êtes-vous opérationnels ?",
   "The perimeter and alert contacts are set in the first week, the thresholds tuned with test alerts in the second.":
     "Le périmètre et les contacts d'alerte sont fixés la première semaine, les seuils réglés avec des alertes de test la deuxième.",
+  "Social media and press monitoring of your brand, your executives and your markets, in more than twenty languages, to prevent and manage crises. A person reads the signal before it reaches you, so an alert means something happened, not that a keyword fired.":
+    "Une veille des réseaux sociaux et de la presse sur votre marque, vos dirigeants et vos marchés, dans plus de vingt langues, pour prévenir et gérer les crises. Une personne lit le signal avant qu'il ne vous parvienne : une alerte veut dire qu'il s'est passé quelque chose, pas qu'un mot-clé s'est déclenché.",
+  "Further reading":
+    "À lire",
   "Social media monitoring for companies: the guide (in French)":
     "Veille des réseaux sociaux en entreprise : le guide",
+  "Crisis under way? Call us":
+    "Crise en cours ? Appelez-nous",
+  "Luxury · 2024 · client under NDA":
+    "Luxe · 2024 · client sous NDA",
+  "24/7 monitoring of a luxury leader's global CEO":
+    "Veille 24 h/24 de la PDG monde d'un leader du luxe",
+  "Five monitors, in Chinese, Hindi, French, Spanish and English, alerts guaranteed within 15 minutes, and a full scope: social networks, Wikipedia, Telegram and the dark web. Eight months protecting the executive's reputation.":
+    "Cinq veilleurs, en chinois, en hindi, en français, en espagnol et en anglais, des alertes garanties en moins de 15 minutes, et un périmètre complet : réseaux sociaux, Wikipédia, Telegram et dark web. Huit mois de protection de la réputation de la dirigeante.",
+  "8 months":
+    "8 mois",
+  "5 languages":
+    "5 langues",
+  "Alert within 15 min":
+    "Alerte en moins de 15 min",
   "Get a sample Vigie 360 alert and monthly review.":
     "Recevez un exemple d'alerte et de revue mensuelle Vigie 360.",
   "What should we be watching for you?":
@@ -3074,6 +3116,26 @@ window.LicterFR = {
     "Le marché compte de nombreuses plateformes de social listening : Talkwalker, Brandwatch, Sprinklr, Radarly, YouScan, Visibrain, entre autres, chacune avec ses points forts. Certaines excellent dans l'historique long, d'autres dans le temps réel, l'image ou les audiences. Aucune ne couvre tout, et la plupart des questions se règlent en croisant deux outils.",
   "Above all, a tool collects and sorts; it does not decide. Automatic sentiment gets irony wrong, badly written queries bring back noise, and a volume spike never says why it exists. That is why so many licences stay underused: the software is there, but nobody has the time to make it speak.":
     "Surtout, un outil collecte et classe ; il ne décide pas. Le sentiment automatique se trompe sur l'ironie, les requêtes mal écrites ramènent du bruit, et un pic de volume ne dit jamais pourquoi il existe. C'est pourquoi tant de licences restent sous-utilisées : le logiciel est là, mais personne n'a le temps de le faire parler.",
+  "Real examples":
+    "Des exemples concrets",
+  "During GP Explorer 3, Squeezie's event, we read with Visibrain more than 185,000 tweets posted at peak audience: 95% of mentions were positive or neutral, and the conversation outgrew comparable digital events. Our analysis details what the event changed for partner brands.":
+    "Lors du GP Explorer 3, l'événement de Squeezie, nous avons lu avec Visibrain plus de 185 000 tweets publiés au pic d'audience : 95 % des mentions étaient positives ou neutres, et la conversation a dépassé celle des grands événements numériques comparables. Notre analyse détaille ce que l'événement a changé pour les marques partenaires.",
+  "During the Huda Beauty boycott, we followed the crisis on TikTok, Instagram and X, in 51 languages: a record 26.1 million TikTok views in a day, carried mostly by micro-influencers, for a subject that, once read, was not really a brand crisis.":
+    "Pendant le boycott de Huda Beauty, nous avons suivi la crise sur TikTok, Instagram et X, dans 51 langues : un record de 26,1 millions de vues sur TikTok en une journée, porté surtout par des micro-influenceurs, pour un sujet qui, à la lecture, n'était pas vraiment une crise de marque.",
+  "For La Poste, we measured for a year how well its marketing actions worked, in positioning and in engagement of the audiences targeted. For HP, we crossed panel and social data on more than 5,000 criteria to segment consumer niches and feed product strategy.":
+    "Pour La Poste, nous avons mesuré pendant un an l'efficacité de ses actions marketing, en positionnement et en engagement des publics visés. Pour HP, nous avons croisé données de panel et social data sur plus de 5 000 critères pour segmenter des niches de consommateurs et nourrir la stratégie produit.",
+  "What practitioners say":
+    "Ce qu'en disent les praticiens",
+  "Charles Besson, head of global social listening at L'Oréal, sums up its place next to surveys this way: it comes on top of them and adds things traditional studies cannot always see. Charlotte, at Talkwalker, likewise sets the spontaneous opinion of social media against the declared opinion of research institutes: they are complementary.":
+    "Charles Besson, à la tête du social listening monde chez L'Oréal, résume ainsi sa place face aux études : « ça va venir en plus de ça, ça va venir ajouter des choses qu'on peut pas forcément voir par des études traditionnelles ». Charlotte, chez Talkwalker, oppose de la même façon l'opinion spontanée des réseaux à l'opinion déclarée des instituts : « on est complémentaire ».",
+  "All of them insist on the human part. For Jean-Christophe Gatuingt, co-founder of Visibrain, social networks are just one signal among others, in the service of a fuller method; for Nathalie Litvine, at Meltwater, artificial intelligence is precious, but you still need a brain to do something with it. Their full interviews are on our blog.":
+    "Tous insistent sur la part humaine. Pour Jean-Christophe Gatuingt, cofondateur de Visibrain, les réseaux sociaux sont « juste un signal parmi d'autres au service d'une méthodologie plus complète » ; pour Nathalie Litvine, chez Meltwater, l'intelligence artificielle est précieuse, mais « il faut avoir un cerveau aussi pour ensuite en faire quelque chose ». Leurs entretiens complets sont sur notre blog.",
+  "The limits to know":
+    "Les limites à connaître",
+  "Social listening does not represent a population: it says what those who speak up think, not everyone. It only reads what is public. It depends on the words chosen, and a product can be called something other than its name, especially from one country to another. Automatic sentiment gets irony wrong, and some languages are handled less well than others.":
+    "Le social listening n'est pas représentatif d'une population : il dit ce que pensent ceux qui s'expriment, pas tout le monde. Il ne lit que le public. Il dépend des mots choisis, et un produit peut être désigné autrement que par son nom, surtout d'un pays à l'autre. Le sentiment automatique se trompe sur l'ironie, et certaines langues sont moins bien traitées que d'autres.",
+  "Finally, there is not a conversation about everything. A good study says so plainly, rather than making too-small volumes speak. That is why, before starting, we check that the conversation exists for the question asked, and why we often cross social listening with search, audiences or survey data.":
+    "Enfin, il n'y a pas de conversation sur tout. Une bonne étude le dit clairement, plutôt que de faire parler des volumes trop faibles. C'est pourquoi nous vérifions, avant de commencer, que la conversation existe pour la question posée, et que nous croisons souvent le social listening avec la recherche, les audiences ou des données d'étude.",
   "Social listening agency or consultancy: what you buy":
     "Agence ou cabinet de social listening : ce que vous achetez",
   "With a social listening agency or consultancy, you do not buy access to software, but an answer. The choice of tools, the writing of queries, the reading in the market's language and the recommendation are taken care of. Your teams keep their time for the decision.":
@@ -3679,8 +3741,20 @@ window.LicterFR = {
     "Talkwalker est une plateforme d'écoute sociale et d'intelligence consommateur fondée au Luxembourg en 2009, rachetée par Hootsuite en 2024. Elle analyse les conversations des réseaux sociaux, de la presse en ligne, des blogs, des forums et des avis, avec analyse du sentiment et reconnaissance d'images.",
   "Related expertise":
     "Expertise associée",
+  "Further reading":
+    "À lire",
   "Social media monitoring for companies: the guide (in French)":
     "Veille des réseaux sociaux en entreprise : le guide",
+  "Talkwalker, from the inside":
+    "Talkwalker, vu de l'intérieur",
+  "In our Audience First podcast, Charlotte, who opened Talkwalker's Paris office, explains how brands use the platform, and why people are still needed.":
+    "Dans notre podcast Audience First, Charlotte, qui a ouvert le bureau parisien de Talkwalker, explique comment les marques utilisent la plateforme, et pourquoi l'humain reste nécessaire.",
+  "Hear the interview":
+    "Écouter l'entretien",
+  "WHAT WE HAVE DONE WITH IT":
+    "CE QUE NOUS EN AVONS FAIT",
+  "At Licter, in practice.":
+    "Chez Licter, concrètement.",
   "WHAT IT DOES":
     "CE QU'IL PERMET",
   "What Talkwalker lets you analyse.":
@@ -3819,6 +3893,16 @@ window.LicterFR = {
     "Qu'est-ce que Visibrain ?",
   "Visibrain is a web and social media monitoring platform founded in Paris in 2011. It monitors networks, online press and blogs in real time, and serves mainly to protect reputation and prevent crises.":
     "Visibrain est une plateforme de veille du web et des réseaux sociaux fondée à Paris en 2011. Elle surveille en temps réel les réseaux, la presse en ligne et les blogs, et sert surtout à protéger la réputation et à prévenir les crises.",
+  "GP Explorer 3, read with Visibrain":
+    "GP Explorer 3, lu avec Visibrain",
+  "More than 185,000 tweets at peak audience, 95% positive or neutral mentions: our analysis of Squeezie's event, run with Visibrain.":
+    "Plus de 185 000 tweets pendant le pic d'audience, 95 % de mentions positives ou neutres : notre analyse de l'événement de Squeezie, menée avec Visibrain.",
+  "Read the analysis":
+    "Lire l'analyse",
+  "The Huda Beauty backlash":
+    "Le bad buzz Huda Beauty",
+  "With Visibrain, we followed the boycott on TikTok, Instagram and X, in 51 languages, up to a record of 26.1 million views in a day.":
+    "Avec Visibrain, nous avons suivi le boycott sur TikTok, Instagram et X, dans 51 langues, jusqu'au record de 26,1 millions de vues en une journée.",
   "What Visibrain lets you analyse.":
     "Ce que Visibrain permet d'analyser.",
   "Alerts":
@@ -4135,6 +4219,10 @@ window.LicterFR = {
     "Qu'est-ce que Radarly ?",
   "Radarly is the social intelligence software of Linkfluence, founded in Paris in 2006 and bought by Meltwater in 2021. It listens to social networks, press, blogs, forums and reviews, with sentiment analysis, spike detection and audience segmentation.":
     "Radarly est le logiciel d'intelligence sociale de Linkfluence, fondé à Paris en 2006 et racheté par Meltwater en 2021. Il écoute les réseaux sociaux, la presse, les blogs, les forums et les avis, avec analyse du sentiment, détection des pics et segmentation des audiences.",
+  "Radarly and luxury":
+    "Radarly et le luxe",
+  "In our Audience First podcast, Nathalie Litvine (Meltwater) explains how large luxury accounts use Radarly's data.":
+    "Dans notre podcast Audience First, Nathalie Litvine (Meltwater) raconte comment les grands comptes du luxe exploitent la donnée de Radarly.",
   "What Radarly lets you analyse.":
     "Ce que Radarly permet d'analyser.",
   "Sorting conversations":
@@ -5687,6 +5775,10 @@ window.LicterFR = {
     "Les commentaires",
   "The public's reaction, often franker than the post.":
     "La réaction du public, souvent plus franche que la publication.",
+  "Huda Beauty on Instagram":
+    "Huda Beauty sur Instagram",
+  "During the boycott, 6,000 posts on Instagram, 28 times the previous period, and 198,000 comments in a single day.":
+    "Pendant le boycott, 6 000 publications sur Instagram, 28 fois plus que la période précédente, et 198 000 commentaires en une journée.",
   "What we collect on Instagram, and what we do not read.":
     "Ce que nous collectons sur Instagram, et ce que nous ne lisons pas.",
   "How we listen to Instagram.":
@@ -5741,6 +5833,10 @@ window.LicterFR = {
     "Le déplacement depuis X",
   "The accounts that switched networks, and what they say there.":
     "Les comptes qui ont changé de réseau, et ce qu'ils y disent.",
+  "Leaving X: who takes over?":
+    "Départs de X : qui prend le relais ?",
+  "Our read of media and organisations leaving X, and the room Threads can take for brands.":
+    "Notre lecture des départs de médias et d'organisations de X, et de la place que Threads peut prendre pour les marques.",
   "What we collect on Threads, and what we do not read.":
     "Ce que nous collectons sur Threads, et ce que nous ne lisons pas.",
   "How we listen to Threads.":
@@ -5903,6 +5999,14 @@ window.LicterFR = {
     "La parole des dirigeants",
   "What your executives and your competitors' say, and the echo they get.":
     "Ce que disent vos dirigeants, ceux de vos concurrents, et l'écho qu'ils reçoivent.",
+  "185,000 tweets at one audience peak":
+    "185 000 tweets en un pic d'audience",
+  "During GP Explorer 3, more than 185,000 tweets were posted at the event's peak: our read of the volume and the tone.":
+    "Pendant le GP Explorer 3, plus de 185 000 tweets ont été publiés au pic de l'événement : notre lecture du volume et de la tonalité.",
+  "A global crisis read on X":
+    "Une crise mondiale lue sur X",
+  "The Huda Beauty boycott on X: 40,000 tweets and 228,000 retweets, up 230-fold in 24 hours.":
+    "Le boycott de Huda Beauty sur X : 40 000 tweets et 228 000 retweets, multipliés par 230 en 24 heures.",
   "What we collect on X / Twitter, and what we do not read.":
     "Ce que nous collectons sur X / Twitter, et ce que nous ne lisons pas.",
   "How we listen to X / Twitter.":
@@ -5955,6 +6059,10 @@ window.LicterFR = {
     "Les tendances qui montent",
   "Formats and hashtags picking up speed, before they saturate.":
     "Les formats et hashtags qui accélèrent, avant qu'ils ne saturent.",
+  "Huda Beauty: 26.1 million views in a day":
+    "Huda Beauty : 26,1 millions de vues en un jour",
+  "Our read of the Huda Beauty backlash: 9,000 mentions on TikTok, a record 26.1 million views in a single day, carried mostly by micro-influencers.":
+    "Notre décryptage du bad buzz Huda Beauty : 9 000 mentions sur TikTok, un record de 26,1 millions de vues en une journée, porté surtout par des micro-influenceurs.",
   "What we collect on TikTok, and what we do not read.":
     "Ce que nous collectons sur TikTok, et ce que nous ne lisons pas.",
   "How we listen to TikTok.":
@@ -6325,6 +6433,10 @@ window.LicterFR = {
     "Les clips",
   "The moments picked up and shared elsewhere.":
     "Les moments repris et partagés ailleurs.",
+  "GP Explorer 3: 1.4 million viewers on Twitch":
+    "GP Explorer 3 : 1,4 million de spectateurs sur Twitch",
+  "Our analysis of Squeezie's event: 1.4 million concurrent viewers on Twitch, more than the Singapore Grand Prix broadcast the same day.":
+    "Notre analyse de l'événement de Squeezie : 1,4 million de spectateurs en simultané sur Twitch, plus que le Grand Prix de Singapour diffusé le même jour.",
   "What we collect on Twitch, and what we do not read.":
     "Ce que nous collectons sur Twitch, et ce que nous ne lisons pas.",
   "How we listen to Twitch.":
@@ -6373,6 +6485,12 @@ window.LicterFR = {
     "Les rumeurs",
   "Content that travels from Telegram to other networks.":
     "Les contenus qui partent de Telegram vers les autres réseaux.",
+  "Monitoring an executive, Telegram included":
+    "La veille d'une dirigeante, Telegram compris",
+  "For a luxury leader's global CEO, 24/7 monitoring in five languages, including Telegram, Wikipedia and the dark web, with alerts within 15 minutes.":
+    "Pour la PDG monde d'un leader du luxe, une veille 24 h/24 en cinq langues, dont Telegram, Wikipédia et le dark web, avec des alertes en moins de 15 minutes.",
+  "See the case":
+    "Voir le cas",
   "What we collect on Telegram, and what we do not read.":
     "Ce que nous collectons sur Telegram, et ce que nous ne lisons pas.",
   "How we listen to Telegram.":
@@ -6425,6 +6543,8 @@ window.LicterFR = {
     "La comparaison avec X",
   "What is said here and there, and who moved.":
     "Ce qui se dit ici et là, et qui a changé de réseau.",
+  "Our read of media and organisations leaving X, and what Bluesky, Threads and Mastodon can offer brands.":
+    "Notre lecture des départs de médias et d'organisations de X, et de ce que Bluesky, Threads et Mastodon peuvent offrir aux marques.",
   "What we collect on Bluesky, and what we do not read.":
     "Ce que nous collectons sur Bluesky, et ce que nous ne lisons pas.",
   "How we listen to Bluesky.":

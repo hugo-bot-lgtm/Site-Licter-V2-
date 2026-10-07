@@ -153,7 +153,7 @@ OFFERS = [
                      "Continuous monitoring of your brand, your executives and your markets in over twenty languages, read by an analyst before it alerts you."),
         "h1": ("Nous vous alertons en 15 minutes, 24 h/24.", "We alert you in 15 minutes, 24/7."),
         "lead": ("Une veille des réseaux sociaux et de la presse sur votre marque, vos dirigeants et vos marchés, dans plus de vingt langues, pour prévenir et gérer les crises. Une personne lit le signal avant qu'il ne vous parvienne : une alerte veut dire qu'il s'est passé quelque chose, pas qu'un mot-clé s'est déclenché.",
-                 "Continuous monitoring of your brand, your executives and your markets, in more than twenty languages. A person reads the signal before it reaches you, so an alert means something happened, not that a keyword fired."),
+                 "Social media and press monitoring of your brand, your executives and your markets, in more than twenty languages, to prevent and manage crises. A person reads the signal before it reaches you, so an alert means something happened, not that a keyword fired."),
         "yes": [("Votre marque, vos dirigeants ou vos produits sont exposés à des sujets qui vont vite.",
                  "Your brand, your executives or your products are exposed to fast-moving subjects."),
                 ("Vous avez déjà appris une crise par la presse, ou par votre PDG.",
@@ -642,11 +642,55 @@ def dots(n):
     return '<div class="of-dots" aria-hidden="true">%s</div>' % ("<i></i>" * n)
 
 
+# real engagements, as Licter published them on its former site (/work/...)
+REAL = {
+    "vigie": [{"k": ("Luxe · 2024 · client sous NDA", "Luxury · 2024 · client under NDA"),
+               "t": ("Veille 24 h/24 de la PDG monde d'un leader du luxe", "24/7 monitoring of a luxury leader's global CEO"),
+               "d": ("Cinq veilleurs, en chinois, en hindi, en français, en espagnol et en anglais, des alertes garanties en moins de 15 minutes, et un périmètre complet : réseaux sociaux, Wikipédia, Telegram et dark web. Huit mois de protection de la réputation de la dirigeante.",
+                     "Five monitors, in Chinese, Hindi, French, Spanish and English, alerts guaranteed within 15 minutes, and a full scope: social networks, Wikipedia, Telegram and the dark web. Eight months protecting the executive's reputation."),
+               "f": [("8 mois", "8 months"), ("5 langues", "5 languages"), ("Alerte en moins de 15 min", "Alert within 15 min")]}],
+    "social-insights": [{"k": ("HP · États-Unis · 2023", "HP · United States · 2023"),
+                         "t": ("Segmenter des niches de consommateurs pour HP", "Segmenting consumer niches for HP"),
+                         "d": ("Une segmentation hybride, croisant les données de panel et celles des réseaux sociaux sur plus de 5 000 critères, et des user stories, pour renforcer la stratégie produit d'HP à partir d'études existantes.",
+                               "A hybrid segmentation, crossing panel and social data on more than 5,000 criteria, with user stories, to strengthen HP's product strategy from existing studies."),
+                         "f": [("6 mois", "6 months"), ("Plus de 5 000 critères", "More than 5,000 criteria")]},
+                        {"k": ("La Poste · France · 2023", "La Poste · France · 2023"),
+                         "t": ("Calculer le ROI marketing de La Poste avec la social data", "Measuring La Poste's marketing ROI with social data"),
+                         "d": ("Pour un service public de plus de 200 000 salariés, nous avons mesuré l'efficacité de ses actions marketing en termes de positionnement et d'engagement des publics visés.",
+                               "For a public service of more than 200,000 employees, we measured how well its marketing actions worked, in positioning and in engagement of the audiences they targeted."),
+                         "f": [("1 an", "1 year"), ("Plus de 200 000 salariés", "More than 200,000 employees")]}],
+}
+
+REAL_SECTION = (
+    '  <section class="of-real">\n'
+    '    <div class="shell">\n'
+    '      <div class="xs__head"><p class="xs__kick">%s</p><h2 class="xs__title">%s</h2></div>\n'
+    '      <ul class="of-real__list">%s</ul>\n'
+    '    </div>\n'
+    '  </section>\n')
+
+
+def real_cases(o):
+    cs = REAL.get(o["key"])
+    if not cs:
+        return ""
+    cards = "".join('<li class="of-real__c"><p class="of-real__k">%s</p><h3>%s</h3><p>%s</p><ul class="of-real__f">%s</ul></li>' % (
+        t(c["k"]), t(c["t"]), t(c["d"]), "".join("<li>%s</li>" % t(f) for f in c["f"])) for c in cs)
+    return REAL_SECTION % (t(("CAS RÉELS", "REAL CASES")), t(("Ce que nous avons fait, pour qui.", "What we did, and for whom.")), cards)
+
+
+def crisis_line(key):
+    """a crisis does not wait for a form: the phone, on the monitoring offer"""
+    if key != "vigie":
+        return ""
+    return '<p class="xp-line of-crisis"><span>%s</span> <a href="tel:+33636406600">+33 6 36 40 66 00</a></p>' % t(("Crise en cours ? Appelez-nous", "Crisis under way? Call us"))
+
+
 def xp_line(key):
     """the expertise pages behind an offer (French added by to_fr)"""
     keys = U.XP_OF.get(key, [])
     guide = ('<p class="xp-line"><span>%s</span> <a href="/article-veille-reseaux-sociaux-entreprise.html">%s</a></p>' % (
-        t(("À lire", "Read")), t(("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if key in ("vigie", "nox") else ""
+        t(("À lire", "Further reading")), t(("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if key in ("vigie", "nox") else ""
     return (('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Expertise associée", "Related expertise")), ", ".join(
         '<a href="expertise-%s.html">%s</a>' % (k, U.XP_NAME[k]) for k in keys))) if keys else "") + guide
 
@@ -685,7 +729,7 @@ def body(o, offers_html):
           <a class="btn btn--primary" href="#book">{t(S["book"])} <span aria-hidden="true">→</span></a>
           <a class="xh__link" href="#included">{t(S["incl_link"])} <span aria-hidden="true">↓</span></a>
         </div>
-        {xp_line(o["key"])}
+        {xp_line(o["key"])}{crisis_line(o["key"])}
       </div>
       <div class="of-hero__demo">
         {demo(o, offers_html)}
@@ -695,6 +739,7 @@ def body(o, offers_html):
 {logos()}
   </section>
 
+{real_cases(o)}
   <section class="of-fit">
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">{t(S["fit_t"])}</h2></div>

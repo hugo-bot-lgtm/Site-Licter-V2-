@@ -15,9 +15,10 @@ written in French; an article marked "draft" is neither built nor listed.
 
     python3 tools/build-blog.py
 """
-import hashlib, html, importlib.util, json, math, pathlib, random, re
+import hashlib, html, importlib.util, json, math, pathlib, random, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "tools"))
 spec = importlib.util.spec_from_file_location("ucb", ROOT / "tools" / "build-usecases.py")
 U = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(U)
@@ -254,7 +255,13 @@ def article_main(x):
     fr = x.get("lang") == "fr"
     note = ('<div class="shell"><p class="lang-note lang-note--fr" lang="en" role="note" hidden>This article is only available in French.</p></div>' if fr else
             '<div class="shell"><p class="lang-note" role="note">Cet article n’est disponible qu’en anglais. Le reste du site bascule en français.</p></div>')
-    prose, toc = (linkify(x["prose"]) if fr else x["prose"]), []
+    import podcast_quotes as PQ
+    src = x["prose"]
+    if x["file"] in PQ.PROSE:      # rewritten from the interview (tools/podcast_quotes.py)
+        vid = re.search(r'<figure class="bl-video">.*?</figure>', src, re.S)
+        src = PQ.PROSE[x["file"]].replace("%(video)s", vid.group(0) if vid else "")
+    src += PQ.EXTRA.get(x["file"], "")
+    prose, toc = (linkify(src) if fr else src), []
     def h2(m):
         sid = slugify(m.group(1)); toc.append((sid, m.group(1)))
         return '<h2 id="%s">%s</h2>' % (sid, m.group(1))

@@ -33,7 +33,7 @@ SEO = {
 }
 PATH = ("/fr/", "/")
 SAME_AS = ["https://www.linkedin.com/company/licter/", "https://www.instagram.com/licter_listening/",
-           "https://www.youtube.com/@audience_first"]
+           "https://www.youtube.com/@audience_first", "https://www.wikidata.org/wiki/Q141663812"]
 
 
 def faq(src, lang):
