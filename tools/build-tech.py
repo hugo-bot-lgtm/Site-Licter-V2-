@@ -450,7 +450,9 @@ def xp(slug, keys=None):
     if not keys:
         return ""
     lab = t(("Expertise associée", "Related expertise"))
-    return '<p class="xp-line"><span>%s</span> %s</p>' % (lab, ", ".join('<a href="expertise-%s.html">%s</a>' % (k, O.U.XP_NAME[k]) for k in keys))
+    guide = ('<p class="xp-line"><span>%s</span> <a href="/article-veille-reseaux-sociaux-entreprise.html">%s</a></p>' % (
+        t(("À lire", "Read")), t(("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if slug in ("visibrain", "google-news", "talkwalker") else ""
+    return '<p class="xp-line"><span>%s</span> %s</p>' % (lab, ", ".join('<a href="expertise-%s.html">%s</a>' % (k, O.U.XP_NAME[k]) for k in keys)) + guide
 
 
 def tool_body(x):

@@ -332,7 +332,7 @@ def article_page(x):
     # the article itself, for search engines
     ld = {"@context": "https://schema.org", "@type": "Article", "headline": html.unescape(x["title"]), "description": html.unescape(x["lead"]),
           "datePublished": "%04d-%02d-%02d" % (x["key"][0], x["key"][1] + 1, x["key"][2]), "inLanguage": "fr" if fr else "en",
-          "author": {"@type": "Person" if x["author"] != "Licter analysis team" else "Organization", "name": x["author"]},
+          "author": {"@type": "Organization", "name": "Licter", "url": SITE + "/"} if x["author"] in ("Licter analysis team", "L'équipe Licter") else {"@type": "Person", "name": x["author"]},
           "publisher": {"@type": "Organization", "name": "Licter", "url": SITE + "/"}, "mainEntityOfPage": SITE + "/" + x["file"]}
     page = page.replace("</head>", '<script type="application/ld+json">%s</script>\n</head>' % json.dumps(ld, ensure_ascii=False), 1)
     (ROOT / x["file"]).write_text(page)

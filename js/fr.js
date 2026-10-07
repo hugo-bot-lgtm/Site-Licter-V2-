@@ -254,6 +254,7 @@ window.LicterFR = {
   "List": "Liste",
   "Display": "Affichage",
   /* blog dates and threads (tools/build-blog.py) */
+  "11 min read": "11 min de lecture",
   "13 November 2024": "13 novembre 2024",
   "14 June 2024": "14 juin 2024",
   "2 December 2025": "2 décembre 2025",
@@ -2730,6 +2731,8 @@ window.LicterFR = {
     "En combien de temps êtes-vous opérationnels ?",
   "The perimeter and alert contacts are set in the first week, the thresholds tuned with test alerts in the second.":
     "Le périmètre et les contacts d'alerte sont fixés la première semaine, les seuils réglés avec des alertes de test la deuxième.",
+  "Social media monitoring for companies: the guide (in French)":
+    "Veille des réseaux sociaux en entreprise : le guide",
   "Get a sample Vigie 360 alert and monthly review.":
     "Recevez un exemple d'alerte et de revue mensuelle Vigie 360.",
   "What should we be watching for you?":
@@ -3630,6 +3633,8 @@ window.LicterFR = {
     "Talkwalker est une plateforme d'écoute sociale et d'intelligence consommateur fondée au Luxembourg en 2009, rachetée par Hootsuite en 2024. Elle analyse les conversations des réseaux sociaux, de la presse en ligne, des blogs, des forums et des avis, avec analyse du sentiment et reconnaissance d'images.",
   "Related expertise":
     "Expertise associée",
+  "Social media monitoring for companies: the guide (in French)":
+    "Veille des réseaux sociaux en entreprise : le guide",
   "WHAT IT DOES":
     "CE QU'IL PERMET",
   "What Talkwalker lets you analyse.":

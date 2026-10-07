@@ -645,8 +645,10 @@ def dots(n):
 def xp_line(key):
     """the expertise pages behind an offer (French added by to_fr)"""
     keys = U.XP_OF.get(key, [])
-    return ('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Expertise associée", "Related expertise")), ", ".join(
-        '<a href="expertise-%s.html">%s</a>' % (k, U.XP_NAME[k]) for k in keys))) if keys else ""
+    guide = ('<p class="xp-line"><span>%s</span> <a href="/article-veille-reseaux-sociaux-entreprise.html">%s</a></p>' % (
+        t(("À lire", "Read")), t(("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if key in ("vigie", "nox") else ""
+    return (('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Expertise associée", "Related expertise")), ", ".join(
+        '<a href="expertise-%s.html">%s</a>' % (k, U.XP_NAME[k]) for k in keys))) if keys else "") + guide
 
 
 def body(o, offers_html):

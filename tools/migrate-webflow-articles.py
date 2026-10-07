@@ -242,7 +242,7 @@ def clean(body, slug, old_map):
 def main():
     old_map = {o: n for o, n in json.loads((ROOT / "tools" / "redirects.json").read_text()).items()}
     arts = json.loads((ROOT / "tools" / "blog_articles.json").read_text())
-    arts = [a for a in arts if a.get("lang") != "fr"]
+    arts = [a for a in arts if a.get("lang") != "fr" or not a.get("old")]   # keeps the drafts and the articles written since
     for f in sorted(SRC.glob("article__*.html")):
         old = f.stem[len("article__"):]
         if old in SKIP:
