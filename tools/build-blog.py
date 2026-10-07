@@ -334,12 +334,13 @@ SEO_TITLE = {
     "Comment Meltwater exploite les données social listening pour ses clients luxe ?": "Comment Meltwater lit le social listening pour le luxe",
     "Comment Talkwalker utilise le social listening pour comprendre ce que vos consommateurs pensent de vous ?": "Talkwalker : ce que vos consommateurs pensent de vous",
     "Comment Visibrain s'est positionné comme pionnier en social listening ?": "Visibrain, pionnier du social listening : entretien",
+    "Social Listening et Politique : Comment capter la voix des citoyens ?": "Social listening et politique : capter la voix des citoyens",
 }
 
 
 def title_tag(x):
     t = html.unescape(x["title"])
-    return SEO_TITLE.get(t, t)
+    return SEO_TITLE.get(re.sub(r"[\u00a0\u202f]", " ", t), t)
 
 
 # articles substantially rewritten since publication, and when
