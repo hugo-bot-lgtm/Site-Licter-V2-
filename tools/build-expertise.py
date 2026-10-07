@@ -687,6 +687,10 @@ def listening_body(x, offers_html):
     art_fr = ("l'" if nm[FR][0].lower() in "aeiou" else "le ") + nm[FR][0].lower() + nm[FR][1:] if not nm[FR].startswith("AI") else "l'" + nm[FR]
     out += sec("", head(t(S["hears_k"]), t((S["hears_t"][0] % art_fr, S["hears_t"][1] % nm[EN]))) + feats, band=True)
     out += sec("answers", head(t(S["answers_k"]), t(S["answers_t"]), t(S["answers_lead"])) + prog(x["cases"]))
+    if x["key"] == "social":      # the long-form section (tools/sl_guide.py, SEO plan step 15)
+        import sl_guide as G
+        out += sec("guide", head(t(G.KICKER), t(G.TITLE)) + '<div class="xe-guide">%s</div>' % "".join(
+            '<section class="xe-guide__b"><h3>%s</h3>%s</section>' % (t(h), "".join("<p>%s</p>" % t(p_) for p_ in ps)) for h, ps in G.BLOCKS), band=True)
     out += sec("", head(t(S["runs_k"]), t(S["how_runs"])) + steps + '<p class="tk-sub xe-note">%s</p>' % t(S["how_note"]), band=True)
     out += sec("", head(t(S["lim_k"]), t(S["lim_t"])) + offer_cards(x))
     out += voice(e["voice"])
