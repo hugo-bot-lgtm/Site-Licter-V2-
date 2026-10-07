@@ -319,9 +319,27 @@ def write(file, main):
     p.write_text(s[:i] + main + s[j:])
 
 
+# a complete short title for the <title> of long articles: no title cut
+# mid-sentence with "…" (audit of 7 October 2026)
+SEO_TITLE = {
+    "Analyser les succès publicitaires en moins d'une heure ? Spotlight #1 - Licter X Petit Bateau": "Analyser une campagne en moins d'une heure : Petit Bateau",
+    "Comment Axa analyse les données du web et de social listening pour sa gestion de crise ?": "Comment AXA lit la donnée sociale pour gérer une crise",
+    "Comment conquérir le marché de la cosmétique de luxe grâce au social listening ?": "Conquérir la cosmétique de luxe grâce au social listening",
+    "Comment créer une \"Social Listening Squad\" pour doubler l'adoption de votre outil ?": "Créer une Social Listening Squad pour adopter son outil",
+    "Comment France Digitale juge l'efficacité de ses actions de communication ?": "Comment France Digitale mesure sa communication",
+    "Comment L'Oréal utilise le social listening pour capter la voix du consommateur ?": "Comment L'Oréal capte la voix du consommateur",
+    "Comment Origins associe influence et technologie pour transformer le capital-risque ?": "Origins : influence et technologie dans le capital-risque",
+    "Départs de X : quels réseaux sociaux peuvent rivaliser avec la plateforme d\u2019Elon Musk ?": "Départs de X : quels réseaux pour prendre le relais ?",
+    "La consommation devient un acte militant : les insights de Kantar sur les tendances d\u2019achat": "La consommation, un acte militant : les insights Kantar",
+    "Comment Meltwater exploite les données social listening pour ses clients luxe ?": "Comment Meltwater lit le social listening pour le luxe",
+    "Comment Talkwalker utilise le social listening pour comprendre ce que vos consommateurs pensent de vous ?": "Talkwalker : ce que vos consommateurs pensent de vous",
+    "Comment Visibrain s'est positionné comme pionnier en social listening ?": "Visibrain, pionnier du social listening : entretien",
+}
+
+
 def title_tag(x):
     t = html.unescape(x["title"])
-    return t if len(t) <= 56 else t[:56].rsplit(" ", 1)[0].rstrip(" :,?") + "…"
+    return SEO_TITLE.get(t, t)
 
 
 # articles substantially rewritten since publication, and when

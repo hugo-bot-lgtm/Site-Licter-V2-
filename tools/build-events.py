@@ -278,7 +278,9 @@ def write(name, title, desc, body, ld, offers_html):
 
 # ------------------------------------------------------------------ js/events.js
 def write_js():
-    data = [{"href": "/" + file(e), "date": e["date"],
+    fr_path = {"event-toys-games.html": "/fr/evenements/jeux-jouets/", "event-luxury.html": "/fr/evenements/luxe/",
+               "event-food.html": "/fr/evenements/alimentation/"}   # the French twins (tools/build-fr-pages.py)
+    data = [{"href": "/" + file(e), "hrefFr": fr_path.get(file(e), "/" + file(e)), "date": e["date"],
              "k": [U.typo(S["kicker"][FR] + " · " + e["sector"][FR], FR), S["kicker"][EN] + " · " + e["sector"][EN]],
              "d": [U.typo(short_date(e, FR) + " · " + e["venue"], FR), short_date(e, EN) + " · " + e["venue"]],
              "long": [long_date(e, FR), long_date(e, EN)]} for e in EVENTS]

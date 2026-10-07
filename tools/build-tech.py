@@ -149,7 +149,7 @@ def agency(slug, name, fr_name=None):
         "title": it.get("title") or ("Agence %s : %s | Licter" % (fn, sh[FR]), "%s agency: %s | Licter" % (name, sh[EN])),
         "desc": DESC[slug],
         "kick": it.get("kick") or ("AGENCE %s" % fn.upper(), "%s AGENCY" % name.upper()),
-        "q": ("Licter est-elle une agence %s ?" % fn, "Is Licter a %s agency?" % name),
+        "q": AI.FAQ_Q.get(slug) or (fmt(AI.FAQ_Q_AI, (fn, name)) if slug in AI.ENGINE else ("Licter est-elle une agence %s ?" % fn, "Is Licter a %s agency?" % name)),
         "a": (("Oui : le GEO est une pratique, pas un logiciel. Nous mesurons ce que les IA répondent sur votre marque, d'où viennent leurs réponses, et ce qu'il faut changer pour y figurer. Licter est un cabinet indépendant." ,
                "Yes: GEO is a practice, not software. We measure what AI answers about your brand, where those answers come from, and what to change to appear in them. Licter is an independent consultancy.") if slug == "geo" else
               ("Oui : %s est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant." % fn,
@@ -281,8 +281,9 @@ VS_LICTER = [("Nous l'opérons pour vous : rien à apprendre", "We run it for yo
 
 def versus(slug, nm):
     """the tool alone, against the tool with Licter"""
-    alone = "".join("<li>%s</li>" % t(x) for x in VS_ALONE)
-    licter = "".join("<li>%s</li>" % t(x) for x in VS_LICTER)
+    va, vl, vo = AI.VS.get(slug) or (AI.VS["ai"] if slug in AI.ENGINE else (VS_ALONE, VS_LICTER, ("Vous recevez une recommandation, pas un tableau de bord à faire tourner.", "You receive a recommendation, not a dashboard to run.")))
+    alone = "".join("<li>%s</li>" % t(x) for x in va)
+    licter = "".join("<li>%s</li>" % t(x) for x in vl)
     return ('<div class="tk-vs">'
             '<div class="tk-vs__col tk-vs__col--alone" data-reveal><p class="tk-vs__k"><span class="tk-vs__logo">%s</span>%s</p><ul>%s</ul></div>'
             '<span class="tk-vs__mid" aria-hidden="true">VS</span>'
@@ -290,7 +291,7 @@ def versus(slug, nm):
             '<p class="tk-vs__out">%s</p></div></div>') % (
         logo(slug), t(fmt(("%s seul", "%s on its own"), nm)), alone,
         logo(slug), t(fmt(("%s avec Licter", "%s with Licter"), nm)), licter,
-        t(("Vous recevez une recommandation, pas un tableau de bord à faire tourner.", "You receive a recommendation, not a dashboard to run.")))
+        t(vo))
 
 
 
@@ -457,15 +458,31 @@ def cta(band, sub, mark, slug):
 
 
 # ------------------------------------------------------------------ tool page
+# the offer each tool leads to (audit of 7 October 2026: no tool, use case or
+# network page linked to an offer); networks default to monitoring and studies
+OFFER_NAME = {"slaas": "Social Listening as a Service", "vigie-360": "Vigie 360", "social-insights": "Social Insights", "nox": "Nox"}
+OFFER_OF = {**{k: ["slaas", "social-insights"] for k in ("talkwalker", "brandwatch", "sprinklr", "radarly", "youscan")},
+            "visibrain": ["vigie-360", "slaas"], "google-news": ["vigie-360", "nox"],
+            **{k: ["social-insights"] for k in ("soprism", "semrush", "google-trends", "answerthepublic", "meta-ads", "social-blade",
+                                                "chatgpt", "claude", "gemini", "perplexity", "grok", "geo")}}
+TOOL_SLUGS = {x["slug"] for x in TOOLS}
+
+
 def xp(slug, keys=None):
     """the expertise pages a tool or a network serves (French added by to_fr)"""
     keys = keys or O.U.XP_OF.get(slug, [])
-    if not keys:
-        return ""
     lab = t(("Expertise associée", "Related expertise"))
     guide = ('<p class="xp-line"><span>%s</span> <a href="/article-veille-reseaux-sociaux-entreprise.html">%s</a></p>' % (
         t(("À lire", "Further reading")), t(("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if slug in ("visibrain", "google-news", "talkwalker") else ""
-    return '<p class="xp-line"><span>%s</span> %s</p>' % (lab, ", ".join('<a href="expertise-%s.html">%s</a>' % (k, O.U.XP_NAME[k]) for k in keys)) + guide
+    offers = OFFER_OF.get(slug, ["vigie-360", "social-insights"])
+    off = '<p class="xp-line"><span>%s</span> %s</p>' % (t(("Offre associée", "Related offer")), ", ".join(
+        '<a href="offer-%s.html">%s</a>' % (k, OFFER_NAME[k]) for k in offers))
+    others = ""
+    if slug in TOOL_SLUGS:
+        others = '<p class="xp-line"><span>%s</span> %s</p>' % (t(("Les autres outils", "The other tools")), ", ".join(
+            '<a href="tech-%s.html">%s</a>' % (x["slug"], html.escape(x["name"])) for x in TOOLS if x["slug"] != slug))
+    exp = '<p class="xp-line"><span>%s</span> %s</p>' % (lab, ", ".join('<a href="expertise-%s.html">%s</a>' % (k, O.U.XP_NAME[k]) for k in keys)) if keys else ""
+    return exp + off + guide + others
 
 
 def proof(slug):
@@ -506,7 +523,7 @@ def tool_body(x):
         out += sec("engine", head(t(fmt(AI.HEAD[0], NM)), t(fmt(AI.HEAD[1], nm))) +
                    '<ul class="tk-proof">%s</ul>' % "".join('<li class="tk-proof__c"><b>%s</b><p>%s</p></li>' % (t(a), t(b)) for a, b in AI.ENGINE[x["slug"]]))
     out += sec("features", head(t(S["feat_k"]), t(fmt(S["feat_t"], nm))) + feats(x["features"], x["slug"]), band=True)
-    out += sec("agency", head(t(ag["kick"]), t(AI.AG_T) if x["slug"] in AI.INTENT else t(fmt(S["ag_t"], nm)), t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
+    out += sec("agency", head(t(ag["kick"]), t(AI.AG_T) if x["slug"] in AI.INTENT else t(fmt(S["ag_t"], nm)), t(fmt(AI.AG_LEAD, nm)) if x["slug"] in AI.INTENT else t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
     out += sec("deliverables", head(t(S["del_k"]), t(fmt(S["del_t"], nm))) + dels, band=True)
     out += sec("uses", head(t(S["uses_k2"]), t(fmt(S["uses_t2"], nm)), t(S["uses_lead"])) + prog(x["uses"]))
     out += sec("limits", head(t(S["lim_k"]), t(fmt(S["lim_t"], nm))) + lims, band=True)
@@ -517,7 +534,7 @@ def tool_body(x):
 
 
 # the long-form "in detail" sections (DESIGN.md: one component, qa_roller)
-GUIDE = {"talkwalker": "talkwalker_guide", "tiktok": "tiktok_guide"}
+GUIDE = {"talkwalker": "talkwalker_guide", "tiktok": "tiktok_guide", "geo": "geo_guide", "chatgpt": "chatgpt_guide"}
 
 
 def guide(slug):

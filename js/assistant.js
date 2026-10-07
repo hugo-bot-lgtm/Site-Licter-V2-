@@ -398,8 +398,9 @@
      itself there, and the launcher waits until the hero (and its client
      logos) has scrolled past */
   var isHome = document.body.classList.contains("home");
-  var hero = document.getElementById("hero");
-  if (isHome && hero) {
+  /* same on Why Licter, where the launcher would sit on the hero's links */
+  var hero = document.getElementById("hero") || document.querySelector(".wl-hero");
+  if (hero && (isHome || hero.classList.contains("wl-hero"))) {
     root.classList.add("lx--wait");
     var onHero = function () {
       var past = hero.getBoundingClientRect().bottom < innerHeight * 0.4;

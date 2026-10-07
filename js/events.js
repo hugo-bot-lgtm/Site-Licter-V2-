@@ -15,6 +15,7 @@
   var EVENTS = [
     {
       "href": "/event-toys-games.html",
+      "hrefFr": "/fr/evenements/jeux-jouets/",
       "date": "2026-10-16",
       "k": [
         "Étude sectorielle · Jeux & jouets",
@@ -31,6 +32,7 @@
     },
     {
       "href": "/event-luxury.html",
+      "hrefFr": "/fr/evenements/luxe/",
       "date": "2026-11-03",
       "k": [
         "Étude sectorielle · Luxe",
@@ -47,6 +49,7 @@
     },
     {
       "href": "/event-food.html",
+      "hrefFr": "/fr/evenements/alimentation/",
       "date": "2026-11-19",
       "k": [
         "Étude sectorielle · Food",
@@ -68,6 +71,7 @@
   function L(pair) { return fr() ? pair[0] : pair[1]; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   /* an event is over once its day is: until 23:59 local time it is "next" */
+  function hrefOf(e) { return fr() && e.hrefFr ? e.hrefFr : e.href; }
   function over(date) { return new Date(date + "T23:59:59") < new Date(); }
   var next = EVENTS.filter(function (e) { return !over(e.date); })[0] || null;
 
@@ -109,7 +113,7 @@
     }
     banner.className = "banner banner--event";
     banner.setAttribute("aria-label", fr() ? "Prochain événement" : "Next event");
-    banner.innerHTML = '<a class="banner__a" href="' + next.href + '">' +
+    banner.innerHTML = '<a class="banner__a" href="' + hrefOf(next) + '">' +
       '<i class="banner__tag">' + (fr() ? "Prochain événement" : "Next event") + "</i> <b>" + esc(L(next.k)) + "</b> <span>" + esc(L(next.d)) + "</span> <u>" +
       (fr() ? "S'inscrire" : "Register") + ' <span aria-hidden="true">→</span></u></a>';
   }
@@ -125,7 +129,7 @@
       done.hidden = false;
       done.classList.add("is-past");
       done.innerHTML = esc(fr() ? "Cet événement a eu lieu." : "This event has taken place.") +
-        (next ? ' <a href="' + next.href + '">' + esc(fr() ? "Voir le prochain" : "See the next one") + " : " + esc(L(next.k)) + ' <span aria-hidden="true">→</span></a>' : "");
+        (next ? ' <a href="' + hrefOf(next) + '">' + esc(fr() ? "Voir le prochain" : "See the next one") + " : " + esc(L(next.k)) + ' <span aria-hidden="true">→</span></a>' : "");
       return;
     }
     if (sent) {

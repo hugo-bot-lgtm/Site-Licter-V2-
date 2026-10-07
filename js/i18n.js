@@ -86,9 +86,9 @@
       var PFR = { "why-licter": "/fr/pourquoi-licter/", "clients": "/fr/clients/", "blog": "/fr/blog/", "guide": "/fr/guide/",
         "diagnostic": "/fr/diagnostic/", "book-a-meeting": "/fr/rendez-vous/", "events": "/fr/evenements/",
         "event-toys-games": "/fr/evenements/jeux-jouets/", "event-luxury": "/fr/evenements/luxe/", "event-food": "/fr/evenements/alimentation/",
-        "legal": "/fr/mentions-legales/", "privacy": "/fr/confidentialite/" };
+        "legal": "/fr/mentions-legales/", "privacy": "/fr/confidentialite/", "index": "/fr/" };
       Array.prototype.forEach.call(root.querySelectorAll ? root.querySelectorAll("a[href$='.html'], a[href*='.html#']") : [], function (a) {
-        var pm = /^\/?(why-licter|clients|blog|guide|diagnostic|book-a-meeting|events|event-toys-games|event-luxury|event-food|legal|privacy)\.html(#.*)?$/.exec(a.getAttribute("href") || "");
+        var pm = /^\/?(why-licter|clients|blog|guide|diagnostic|book-a-meeting|events|event-toys-games|event-luxury|event-food|legal|privacy|index)\.html(#.*)?$/.exec(a.getAttribute("href") || "");
         if (pm) a.setAttribute("href", PFR[pm[1]] + (pm[2] || ""));
       });
     }

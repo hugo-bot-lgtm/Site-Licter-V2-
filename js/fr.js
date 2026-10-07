@@ -718,9 +718,9 @@ window.LicterFR = {
   "Consumer research in depth: years of conversation, fine audiences.": "La recherche consommateur en profondeur : des années de conversation, des audiences fines.",
   "The customer voice at group scale: listening, reviews and care.": "La voix du client à l'échelle du groupe : écoute, avis et service client.",
   /* SEO audit fixes (October 2026) */
-  "Our co-founder, worldwide · SI Lab since 2022": "Notre cofondateur, mondial · SI Lab depuis 2022",
+  "Our co-founder, worldwide · SI Lab since 2024": "Notre cofondateur, mondial · SI Lab depuis 2024",
   "Licter SAS · 173 rue de Courcelles, 75017 Paris · ": "Licter SAS · 173 rue de Courcelles, 75017 Paris · ",
-  " · 50+ clients · 160+ projects · Antoine Khaitrine, Top 50 Insider worldwide (SI Lab) since 2022": " · 50+ clients · 160+ projets · Antoine Khaitrine, Top 50 Insider mondial (SI Lab) depuis 2022",
+  " · 50+ clients · 160+ projects · Antoine Khaitrine, Top 50 Insider worldwide (SI Lab) since 2024": " · 50+ clients · 160+ projets · Antoine Khaitrine, Top 50 Insider mondial (SI Lab) depuis 2024",
   "Every alert qualified": "Chaque alerte qualifiée",
   "An analyst reads every alert before it disturbs your teams.": "Un analyste lit chaque alerte avant qu'elle ne dérange vos équipes.",
   /* positioning: a consultancy, found as an agency (October 2026) */
@@ -1028,11 +1028,11 @@ window.LicterFR = {
   "projects since 2022": "projets depuis 2022",
   "languages monitored": "langues suivies",
   "Top 50 Insider": "Top 50 Insider",
-  "Worldwide · SI Lab since 2022": "Mondial · SI Lab depuis 2022",
+  "Worldwide · SI Lab since 2024": "Mondial · SI Lab depuis 2024",
   " (opens the SI Lab website)": " (ouvre le site de SI Lab)",
   "(opens the SI Lab website)": "(ouvre le site de SI Lab)",
-  "50+ clients · 160+ projects · Top 50 Insider worldwide, SI Lab since 2022": "50+ clients · 160+ projets · Top 50 Insider mondial, SI Lab depuis 2022",
-  "Insider worldwide, SI Lab since 2022": "Insider mondial, SI Lab depuis 2022",
+  "50+ clients · 160+ projects · Top 50 Insider worldwide, SI Lab since 2024": "50+ clients · 160+ projets · Top 50 Insider mondial, SI Lab depuis 2024",
+  "Insider worldwide, SI Lab since 2024": "Insider mondial, SI Lab depuis 2024",
   "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine.",
   "Email or phone": "E-mail ou téléphone",
   "name@company.com or 06 12 34 56 78": "nom@entreprise.com ou 06 12 34 56 78",
@@ -3656,18 +3656,28 @@ window.LicterFR = {
     "L'équipe Licter au travail",
   "What is said about you, your competitors and your market.":
     "Ce qui se dit sur vous, vos concurrents et votre marché.",
-  "Discover":
-    "Découvrir",
+  "Discover Social listening":
+    "Découvrir Social listening",
   "Who the people talking about you really are.":
     "Qui sont vraiment les gens qui parlent de vous.",
+  "Discover Audience listening":
+    "Découvrir Audience listening",
   "The voices that actually carry in your category.":
     "Les voix qui portent vraiment dans votre catégorie.",
+  "Discover Influence listening":
+    "Découvrir Influence listening",
   "What generative AI says about your brand.":
     "Ce que les IA génératives disent de votre marque.",
+  "Discover AI listening":
+    "Découvrir AI listening",
   "The conversation in real time, an alert within 15 minutes.":
     "La conversation en temps réel, une alerte en 15 minutes.",
+  "Discover Live listening":
+    "Découvrir Live listening",
   "What people search for on Google, YouTube and Amazon.":
     "Ce que les gens cherchent sur Google, YouTube et Amazon.",
+  "Discover Search listening":
+    "Découvrir Search listening",
   "SIX WAYS OF LISTENING":
     "SIX FAÇONS D'ÉCOUTER",
   "Each one answers part of the question. Open the one that concerns you.":
@@ -3855,6 +3865,10 @@ window.LicterFR = {
     "À lire",
   "Social media monitoring for companies: the guide (in French)":
     "Veille des réseaux sociaux en entreprise : le guide",
+  "Related offer":
+    "Offre associée",
+  "The other tools":
+    "Les autres outils",
   "Talkwalker, from the inside":
     "Talkwalker, vu de l'intérieur",
   "In our Audience First podcast, Charlotte, who opened Talkwalker's Paris office, explains how brands use the platform, and why people are still needed.":
@@ -5109,22 +5123,110 @@ window.LicterFR = {
     "CHATGPT ET VOTRE MARQUE",
   "Why hand this tracking to a consultancy?":
     "Pourquoi confier ce suivi à un cabinet ?",
-  "ChatGPT provides data. A ChatGPT agency like Licter turns it into a decision: here is how we use it.":
-    "ChatGPT fournit des données. Une agence ChatGPT comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "ChatGPT is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
+    "ChatGPT est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "A question asked once, by one person":
+    "Une question posée une fois, par une seule personne",
+  "Answers that change from one try to the next":
+    "Des réponses qui changent d'un essai à l'autre",
+  "No record of the sources cited":
+    "Aucune trace des sources citées",
+  "No comparison with your competitors":
+    "Pas de comparaison avec vos concurrents",
+  "The same questions asked several times, every month":
+    "Les mêmes questions posées plusieurs fois, chaque mois",
+  "The sources cited, collected and sorted":
+    "Les sources citées relevées et classées",
+  "Your place against your competitors":
+    "Votre place face à vos concurrents",
+  "What to correct, and where to act":
+    "Ce qu'il faut corriger, et où agir",
   "ChatGPT on its own":
     "ChatGPT seul",
   "ChatGPT with Licter":
     "ChatGPT avec Licter",
+  "You know what the AI says about you, and why.":
+    "Vous savez ce que l'IA dit de vous, et pourquoi.",
   "What we deliver with ChatGPT.":
     "Ce que nous livrons avec ChatGPT.",
   "ChatGPT: the use cases where it counts.":
     "ChatGPT : les cas d'usage où il compte.",
   "The limits of ChatGPT, and how we make up for them.":
     "Les limites de ChatGPT, et comment nous les compensons.",
+  "YOUR BRAND IN CHATGPT, IN DETAIL":
+    "VOTRE MARQUE DANS CHATGPT, EN DÉTAIL",
+  "Your brand in ChatGPT: an audit of its answers":
+    "Votre marque dans ChatGPT : audit des réponses",
+  "How do I find out what ChatGPT says about my brand?":
+    "Comment savoir ce que ChatGPT dit de ma marque ?",
+  "To find out what ChatGPT says about your brand, you have to ask it the questions your customers ask, not just your name. \"What do you think of this brand?\" matters, but \"which brand should I choose for this need?\" matters more: that is where it recommends, compares and rules out. A question asked only once supports no conclusion.":
+    "Pour savoir ce que ChatGPT dit de votre marque, il faut lui poser les questions que posent vos clients, pas seulement votre nom. « Que penser de cette marque ? » compte, mais « quelle marque choisir pour ce besoin ? » compte davantage : c'est là qu'il recommande, compare et écarte. Une question posée une seule fois ne permet aucune conclusion.",
+  "You then need to record what comes back: the brands cited and their order, the strengths and weaknesses attributed, the sources shown when it searches the web. This record, repeated and compared, is what lets you track your brand's mentions in ChatGPT. A single screenshot shows one possible answer, not what most of your customers see.":
+    "Il faut ensuite relever ce qui revient : les marques citées et leur ordre, les qualités et les défauts attribués, les sources affichées quand il cherche sur le web. C'est ce relevé, répété et comparé, qui permet de suivre les mentions de votre marque dans ChatGPT. Une capture d'écran isolée montre une réponse possible, pas ce que voient la plupart de vos clients.",
+  "Why ChatGPT does not always give the same answer":
+    "Pourquoi ChatGPT ne donne pas toujours la même réponse",
+  "ChatGPT does not always give the same answer, because it writes each answer at the moment it is asked. Two tries on the same question can cite other brands, in another order, with other nuances. Wording matters too: one word more or less is sometimes enough to change the recommendation.":
+    "ChatGPT ne donne pas toujours la même réponse, parce qu'il rédige chaque réponse au moment où on la lui demande. Deux essais sur la même question peuvent citer d'autres marques, dans un autre ordre, avec d'autres nuances. La formulation compte aussi : un mot de plus ou de moins suffit parfois à changer la recommandation.",
+  "The answer also depends on who asks. When memory is turned on, ChatGPT takes saved information and past conversations into account to personalise what it answers. To know what a customer discovering your category sees, it is better to question the assistant with no history and no memory.":
+    "La réponse dépend aussi de la personne qui pose la question. Quand la mémoire est activée, ChatGPT tient compte des informations enregistrées et des conversations passées pour personnaliser ce qu'il répond. Pour savoir ce que voit un client qui découvre votre catégorie, mieux vaut interroger l'assistant sans historique ni mémoire.",
+  "Finally, the assistant itself changes: new models, new features, new pages read. An answer recorded in spring does not say what it answers in autumn. That is why you measure a trend over several tries and several months, rather than a sentence recorded once and discussed as a verdict.":
+    "Enfin, l'assistant lui-même change : nouveaux modèles, nouvelles fonctions, nouvelles pages lues. Une réponse relevée au printemps ne dit pas ce qu'il répond à l'automne. C'est pourquoi on mesure une tendance sur plusieurs essais et plusieurs mois, plutôt qu'une phrase relevée une fois et commentée comme un verdict.",
+  "Where ChatGPT gets what it knows about a brand":
+    "D'où ChatGPT tire ce qu'il sait d'une marque",
+  "What ChatGPT knows about a brand comes from two places. First its training data: a large body of public texts, frozen at a date. Then, when it searches the web, the pages it reads at the moment of answering. The first source explains what it thinks it knows, the second what it checks or corrects.":
+    "Ce que ChatGPT sait d'une marque vient de deux endroits. D'abord ses données d'entraînement : une grande quantité de textes publics, arrêtée à une date. Ensuite, quand il cherche sur le web, les pages qu'il lit au moment de répondre. La première source explique ce qu'il croit savoir, la seconde ce qu'il vérifie ou corrige.",
+  "OpenAI distinguishes two crawlers. GPTBot collects content that may be used to train its models; OAI-SearchBot is used to show sites in ChatGPT's search. The two are set separately in a site's robots.txt file: blocking one does not block the other.":
+    "OpenAI distingue deux robots d'exploration. GPTBot collecte des contenus qui peuvent servir à entraîner ses modèles ; OAI-SearchBot sert à faire apparaître des sites dans la recherche de ChatGPT. Les deux se règlent séparément dans le fichier robots.txt d'un site : bloquer l'un ne bloque pas l'autre.",
+  "In both cases, ChatGPT does not read an official profile of your brand. It picks up what others have written: your site, the press, comparison articles, forums, reviews. A poorly documented brand will be described from very little, sometimes from a single old page nobody has updated.":
+    "Dans les deux cas, ChatGPT ne lit pas une fiche officielle de votre marque. Il reprend ce que d'autres ont écrit : votre site, la presse, les comparatifs, les forums, les avis. Une marque peu documentée sera décrite à partir de peu de choses, parfois d'une seule page ancienne que personne n'a mise à jour.",
+  "With or without web search: two different answers":
+    "Avec ou sans recherche web : deux réponses différentes",
+  "With or without web search, ChatGPT does not answer the same way. Search, launched at the end of October 2024 for subscribers, was opened to logged-in free users in December of the same year. The assistant decides on its own to search when the question calls for it, and users can also trigger it themselves.":
+    "Avec ou sans recherche web, ChatGPT ne répond pas de la même façon. La recherche, lancée fin octobre 2024 pour les abonnés, a été ouverte aux utilisateurs gratuits connectés en décembre de la même année. L'assistant décide seul de chercher quand la question s'y prête, et l'utilisateur peut aussi la déclencher lui-même.",
+  "When it searches, it shows its sources, as links in the text or in a separate panel. You can then see which pages weigh on the answer. Without search, there is no source to read: you have to infer where the brand's image comes from, based on what it says and the mistakes it makes.":
+    "Quand il cherche, il affiche ses sources, en lien dans le texte ou dans un panneau à part. On voit alors quelles pages pèsent sur la réponse. Sans recherche, il n'y a pas de source à lire : il faut deviner d'où vient l'image de la marque, à partir de ce qu'il dit et des erreurs qu'il commet.",
+  "That is why we ask each question in both modes. The gap between the two answers shows what is outdated in its memory: an old name, a discontinued range, a price that has changed. It also shows which pages it goes to today to correct, or confirm, what it thinks it knows.":
+    "C'est pourquoi nous posons chaque question dans les deux modes. L'écart entre les deux réponses montre ce qui est daté dans sa mémoire : un ancien nom, une gamme arrêtée, un prix qui a changé. Il montre aussi quelles pages il va chercher aujourd'hui pour corriger, ou confirmer, ce qu'il pense savoir.",
+  "Which questions to ask, and how many times":
+    "Quelles questions poser, et combien de fois",
+  "The questions to ask ChatGPT are built from your customers' questions, not from your internal keywords. There are three families: choice questions, such as \"which brand for this need?\", questions about the brand itself (reviews, price, reliability, commitments) and comparisons with a named competitor.":
+    "Les questions à poser à ChatGPT se construisent à partir de celles de vos clients, pas de vos mots-clés internes. On en distingue trois familles : les questions de choix, du type « quelle marque pour ce besoin ? », les questions sur la marque elle-même (avis, prix, fiabilité, engagements) et les comparaisons avec un concurrent nommé.",
+  "Customers' vocabulary is read elsewhere: in the searches they type, in what they post on social networks, in reviews. That is where the audit meets search listening and social listening. A question nobody asks is of no interest, even if the assistant's answer is flattering.":
+    "Le vocabulaire des clients se lit ailleurs : dans les recherches qu'ils tapent, dans ce qu'ils publient sur les réseaux, dans les avis. C'est là que l'audit rejoint le search listening et le social listening. Une question que personne ne pose n'a pas d'intérêt, même si la réponse de l'assistant est flatteuse.",
+  "Each question is asked several times, then the answers are compared: what comes back on every try counts more than what appears once. The same panel is then asked again every month, with the same wording, so that the differences come from the assistant and not from the way of asking.":
+    "Chaque question est posée plusieurs fois, puis les réponses sont comparées : ce qui revient à chaque essai compte plus que ce qui apparaît une fois. Le même panel est ensuite reposé chaque mois, avec les mêmes formulations, pour que les écarts viennent de l'assistant et non de la façon de demander.",
+  "What to do about false or outdated information":
+    "Que faire d'une information fausse ou datée",
+  "False or outdated information in ChatGPT is not fixed by rewording the question. Nobody controls an AI's answer, and it cannot be changed directly. You act upstream, on the public sources that feed it, then measure whether the answer changes in the weeks and months that follow.":
+    "Une information fausse ou datée dans ChatGPT ne se corrige pas en reformulant la question. Personne ne contrôle la réponse d'une IA, et l'on ne peut pas la modifier directement. On agit en amont, sur les sources publiques qui la nourrissent, puis on mesure si la réponse change dans les semaines et les mois qui suivent.",
+  "The first step is to find where the error comes from. When ChatGPT searches the web, its sources often tell you: an old article, a comparison never updated, a wrong listing. Without search, you trace back to the public pages that repeat the same information, and look at which ones carry authority.":
+    "La première étape consiste à trouver d'où vient l'erreur. Quand ChatGPT cherche sur le web, ses sources le disent souvent : un article ancien, un comparatif jamais mis à jour, une fiche erronée. Sans recherche, on remonte aux pages publiques qui répètent la même information, et on regarde lesquelles font autorité.",
+  "You then need to correct or complete these sources: your site first, with clear and current information, then the press and reference pages. OpenAI states that a public site can appear in ChatGPT search if it does not block OAI-SearchBot: a setting to check with your technical teams. This is the ground of GEO.":
+    "Il faut ensuite corriger ou compléter ces sources : votre site d'abord, avec une information claire et à jour, puis la presse et les pages de référence. OpenAI indique qu'un site public peut apparaître dans la recherche de ChatGPT s'il ne bloque pas OAI-SearchBot : un réglage à vérifier avec vos équipes techniques. C'est le terrain du GEO.",
+  "Tracking your competitors in the answers":
+    "Suivre ses concurrents dans les réponses",
+  "Tracking your competitors in ChatGPT's answers means looking at whom it recommends when your name is not in the question. On choice questions, it usually cites a few brands, in a certain order, with a reason for each. These reasons say how it sums up your category.":
+    "Suivre ses concurrents dans les réponses de ChatGPT, c'est regarder qui il recommande quand votre nom n'est pas dans la question. Sur les questions de choix, il cite en général quelques marques, dans un certain ordre, avec une raison pour chacune. Ces raisons disent comment il résume votre catégorie.",
+  "The comparison covers how often each brand is cited, the order, the qualities attached to each brand and the sources used. A competitor cited more often than you rarely is by chance: it is better documented, more present in the press or in comparison articles. Monthly tracking also shows the new brands that appear.":
+    "La comparaison porte sur la fréquence des citations, l'ordre, les qualités associées à chaque marque et les sources mobilisées. Un concurrent cité plus souvent que vous l'est rarement par hasard : il est mieux documenté, plus présent dans la presse ou les comparatifs. Le suivi mensuel montre aussi les nouvelles marques qui apparaissent.",
+  "ChatGPT and the other assistants":
+    "ChatGPT et les autres assistants",
+  "ChatGPT is not the only assistant your customers ask. Gemini relies on Google Search, Perplexity searches the web for every question and shows its sources, Claude answers first from its training data, Grok reads posts on X. On the same question, they do not always cite the same brands.":
+    "ChatGPT n'est pas le seul assistant que vos clients interrogent. Gemini s'appuie sur la recherche Google, Perplexity cherche sur le web à chaque question et affiche ses sources, Claude répond d'abord depuis ses données d'entraînement, Grok lit les publications de X. Sur une même question, ils ne citent pas toujours les mêmes marques.",
+  "An audit limited to ChatGPT therefore gives a partial view. Depending on your market and your customers, we define with you which assistants to question, always with the same questions, to compare their answers and spot the sources they share. A source picked up by several assistants deserves to be handled first.":
+    "Un audit limité à ChatGPT donne donc une vue partielle. Selon votre marché et vos clients, nous définissons avec vous les assistants à interroger, toujours avec les mêmes questions, pour comparer leurs réponses et repérer les sources qu'ils partagent. Une source reprise par plusieurs assistants mérite d'être traitée en priorité.",
+  "What an audit actually delivers":
+    "Ce qu'un audit livre concrètement",
+  "An audit of ChatGPT's answers first delivers an inventory: your category's key questions, what the assistant answers, your place against competitors and the errors to correct. Each finding is tied to the answers recorded and, when they exist, to the sources the assistant cited.":
+    "Un audit des réponses de ChatGPT livre d'abord un état des lieux : les questions clés de votre catégorie, ce que répond l'assistant, votre place face aux concurrents et les erreurs à corriger. Chaque constat est rattaché aux réponses relevées et, quand elles existent, aux sources citées par l'assistant.",
+  "It then delivers an action plan: missing content, sources to strengthen, messages to clarify. Licter does not produce this content; your teams or your agencies do. Regular tracking asks the same questions every month to see what has moved, with no promise of results: you act on the sources, and measure the effect.":
+    "Il livre ensuite un plan d'action : les contenus qui manquent, les sources à renforcer, les messages à clarifier. Licter ne produit pas ces contenus ; vos équipes ou vos agences s'en chargent. Un suivi régulier reprend les mêmes questions chaque mois pour voir ce qui a bougé, sans promesse de résultat : on agit sur les sources, et on mesure l'effet.",
+  "An audit does not tell everything. It shows what the assistant answers, not how many people ask it these questions: to estimate that, it is crossed with search listening. And what ChatGPT says does not replace what your customers say themselves: the conversation on social networks is read through social listening.":
+    "Un audit ne dit pas tout. Il montre ce que l'assistant répond, pas combien de personnes lui posent ces questions : pour l'estimer, on le croise avec le search listening. Et ce que dit ChatGPT ne remplace pas ce que disent vos clients eux-mêmes : la conversation sur les réseaux se lit avec l'écoute sociale.",
   "Frequently asked questions about ChatGPT.":
     "Questions fréquentes sur ChatGPT.",
-  "Is Licter a ChatGPT agency?":
-    "Licter est-elle une agence ChatGPT ?",
+  "Does Licter track what ChatGPT says about brands?":
+    "Licter suit-elle ce que ChatGPT dit des marques ?",
   "Yes: ChatGPT is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : ChatGPT est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why track what an AI answers?":
@@ -5208,7 +5310,7 @@ window.LicterFR = {
   "GEO AT A GLANCE":
     "GEO EN BREF",
   "What is GEO?":
-    "Qu'est-ce que GEO ?",
+    "Qu'est-ce que le GEO ?",
   "GEO is a practice, not software. The term comes from a research paper published in late 2023 by researchers from Princeton, Georgia Tech, the Allen Institute for AI and IIT Delhi: it measures a source's place in answers written by an AI, where SEO measures a position in a list of links.":
     "Le GEO est une pratique, pas un logiciel. Le terme vient d'un article de recherche publié fin 2023 par des chercheurs de Princeton, Georgia Tech, de l'Allen Institute for AI et de l'IIT Delhi : il mesure la place d'une source dans les réponses rédigées par une IA, là où le SEO mesure une position dans une liste de liens.",
   "What GEO lets you analyse.":
@@ -5243,6 +5345,64 @@ window.LicterFR = {
     "GEO : les cas d'usage où il compte.",
   "The limits of GEO, and how we make up for them.":
     "Les limites de GEO, et comment nous les compensons.",
+  "GEO, IN DETAIL":
+    "LE GEO, EN DÉTAIL",
+  "What to know before you work on your place in AI answers.":
+    "Ce qu'il faut savoir avant de travailler sa place dans les réponses des IA.",
+  "GEO, or generative engine optimization, covers the actions meant to make a brand, a product or a source appear in the answers written by an AI. Those answers come from ChatGPT, Gemini, Perplexity or Google's AI Overviews. They do not point to a list of links: they give an opinion, a recommendation, a name, directly.":
+    "Le GEO, ou generative engine optimization, désigne l'ensemble des actions qui visent à faire apparaître une marque, un produit ou une source dans les réponses rédigées par une IA. Ces réponses viennent de ChatGPT, de Gemini, de Perplexity ou des AI Overviews de Google. Elles ne renvoient pas vers une liste de liens : elles donnent directement un avis, une recommandation, un nom.",
+  "The word GEO was coined in a research paper posted in November 2023, then presented at the KDD conference in 2024. Its authors built a test bench of 10,000 questions, called GEO-bench, and tried nine ways of rewriting a page. They conclude that some rewrites raise a source's visibility in the answers by up to 40%, depending on the domain.":
+    "Le mot GEO a été proposé dans un article de recherche mis en ligne en novembre 2023, puis présenté à la conférence KDD en 2024. Ses auteurs ont construit un banc d'essai de 10 000 questions, baptisé GEO-bench, et testé neuf façons de réécrire une page. Ils concluent que certaines réécritures augmentent la visibilité d'une source dans les réponses jusqu'à 40 %, selon les domaines.",
+  "GEO and SEO: what is the difference?":
+    "GEO et SEO : quelle différence ?",
+  "GEO and SEO do not measure the same thing. SEO aims for a position in a list of results, then a click. GEO aims for a mention in a text written by a machine, which the user often reads without clicking. A brand can rank well on Google and be absent from an AI's answers, or the other way round.":
+    "Le GEO et le SEO ne mesurent pas la même chose. Le SEO vise une position dans une liste de résultats, puis un clic. Le GEO vise une mention dans un texte rédigé par une machine, que l'utilisateur lit souvent sans cliquer. Une marque peut être bien classée sur Google et absente des réponses d'une IA, ou l'inverse.",
+  "The two disciplines still overlap. Google says so in its documentation: to appear as a link in AI Overviews or AI Mode, a page must be indexed and eligible to show with a snippet, with no special optimization. On the other hand, the founding GEO paper notes that keyword stuffing, an old SEO recipe, brings almost nothing in an AI answer.":
+    "Les deux disciplines se recoupent pourtant. Google l'écrit dans sa documentation : pour apparaître comme lien dans les AI Overviews ou le mode IA, une page doit être indexée et pouvoir s'afficher avec un extrait, sans optimisation spéciale. En revanche, l'article fondateur du GEO note que le bourrage de mots-clés, vieille recette du SEO, n'apporte presque rien dans une réponse d'IA.",
+  "How an AI chooses its sources":
+    "Comment une IA choisit ses sources",
+  "An AI builds its answer from two reservoirs. The first is its memory: the texts read during training, frozen at a date. The second is web search: the assistant reads pages live and cites its links. ChatGPT uses both, Perplexity searches on every question, Gemini relies on Google Search. The gap between memory and search explains many outdated answers.":
+    "Une IA construit sa réponse à partir de deux réservoirs. Le premier est sa mémoire : les textes lus pendant son entraînement, arrêtés à une date. Le second est la recherche web : l'assistant lit des pages en direct et cite ses liens. ChatGPT utilise les deux, Perplexity cherche à chaque question, Gemini s'appuie sur la recherche Google. L'écart entre mémoire et recherche explique bien des réponses datées.",
+  "The choice of pages also depends on technical rules. Google explains that its AI Overviews and AI Mode run several related searches in parallel, on subtopics, before writing. OpenAI states that a site blocking its search crawler, OAI-SearchBot, no longer appears in ChatGPT's search answers. The first check is therefore simple: can these crawlers read your pages?":
+    "La sélection des pages dépend aussi de règles techniques. Google explique que ses AI Overviews et son mode IA lancent plusieurs recherches liées en parallèle, sur des sous-sujets, avant de rédiger. OpenAI précise qu'un site qui bloque son robot de recherche, OAI-SearchBot, n'apparaît plus dans les réponses de recherche de ChatGPT. Le premier contrôle est donc simple : vos pages sont-elles lisibles par ces robots ?",
+  "How to measure your visibility in AI answers":
+    "Comment mesurer sa visibilité dans les réponses des IA",
+  "Visibility in AI answers is measured from a panel of questions. They are the ones your customers ask: \"which brand to choose\", \"what is the difference between\", \"is it reliable\". On that panel, you count how often your brand is cited, in which position, against which competitors. That is what we call the share of answer.":
+    "La visibilité dans les réponses des IA se mesure à partir d'un panel de questions. Ce sont celles que posent vos clients : « quelle marque choisir », « quelle différence entre », « est-ce fiable ». Sur ce panel, on compte combien de fois votre marque est citée, à quelle place, face à quels concurrents. C'est ce que nous appelons la part de réponse.",
+  "A reliable measure needs repetition. The same question does not always give the same answer: so we ask each question several times, on each engine. On ChatGPT, we ask it with and without web search, to separate its memory from what it reads today. Finally, we record the sources cited, to know where each mention comes from.":
+    "Une mesure fiable demande de la répétition. La même question ne donne pas toujours la même réponse : nous posons donc chaque question plusieurs fois, à chaque moteur. Sur ChatGPT, nous la posons avec et sans recherche web, pour séparer la mémoire de ce qu'il lit aujourd'hui. Nous relevons enfin les sources citées, pour savoir d'où vient chaque mention.",
+  "Measurement is done engine by engine, because ChatGPT, Gemini, Perplexity and Google's AI Overviews do not cite the same brands. For instance, we compare Gemini and the AI answers of Google Search on the same questions, then trace back to the pages and listings that feed them. A good score on one engine says nothing about the others.":
+    "La mesure se fait moteur par moteur, car ChatGPT, Gemini, Perplexity et les AI Overviews de Google ne citent pas les mêmes marques. Nous comparons par exemple Gemini et les réponses IA de la recherche Google sur les mêmes questions, puis nous remontons aux pages et aux fiches qui les nourrissent. Un bon score sur un moteur ne dit rien des autres.",
+  "Which content do AIs cite?":
+    "Quels contenus sont cités par les IA ?",
+  "The content AIs cite has one thing in common: it gives a clear answer that is easy to reuse. In the founding GEO paper, the most effective rewrites add quotations, statistics or references to sources. The authors checked this result on Perplexity, in real conditions. A vague or purely promotional text offers little to hold on to.":
+    "Les contenus cités par les IA ont un point commun : ils donnent une réponse nette, facile à reprendre. Dans l'article fondateur du GEO, les réécritures les plus efficaces ajoutent des citations, des statistiques ou des références à des sources. Les auteurs ont vérifié ce résultat sur Perplexity, en conditions réelles. Un texte vague ou purement promotionnel offre peu de prise.",
+  "In practice, a page useful to an AI answers a precise question in its first lines. It gives dated, verifiable facts: prices, features, conditions. It stays up to date, because old information ends up repeated as true. The work concerns your own pages as much as other people's pages that talk about you.":
+    "Concrètement, une page utile pour une IA répond à une question précise dès ses premières lignes. Elle donne des faits datés et vérifiables : prix, caractéristiques, conditions. Elle reste à jour, car une information ancienne finit par être reprise comme vraie. Le travail porte autant sur vos pages que sur les pages des autres qui parlent de vous.",
+  "The role of the press, forums and Wikipedia":
+    "Le rôle de la presse, des forums et de Wikipédia",
+  "The press, forums and review sites weigh heavily in AI answers, because there a brand is described by others than itself. On Perplexity, which shows its sources, recent pages, articles and discussions come back often. A brand absent from these spaces has little chance of being recommended, even with an excellent site.":
+    "La presse, les forums et les sites d'avis pèsent lourd dans les réponses des IA, parce qu'une marque y est décrite par d'autres qu'elle. Sur Perplexity, qui affiche ses sources, les pages récentes, les articles et les discussions reviennent souvent. Une marque absente de ces espaces a peu de chances d'être recommandée, même avec un excellent site.",
+  "Wikipedia plays a special role. The encyclopedia is part of the declared training data of models such as GPT-3, and it often serves as the reference to describe a company. A wrong or outdated entry can therefore end up in an AI's memory. You do not fix it yourself: Wikipedia's rules strictly govern conflicts of interest.":
+    "Wikipédia joue un rôle à part. L'encyclopédie fait partie des données d'entraînement déclarées de modèles comme GPT-3, et elle sert souvent de référence pour décrire une entreprise. Une fiche fausse ou datée peut donc se retrouver dans la mémoire d'une IA. On ne la corrige pas soi-même : les règles de Wikipédia encadrent strictement les conflits d'intérêts.",
+  "What GEO cannot promise":
+    "Ce que le GEO ne peut pas promettre",
+  "GEO cannot guarantee a place in an answer. Nobody controls what an AI writes: not the brand, not its agency, not a consultant. Engines change model, sources and rules without warning. An offer that promises to be \"first on ChatGPT\" promises something it does not control.":
+    "Le GEO ne peut pas garantir une place dans une réponse. Personne ne contrôle ce qu'écrit une IA : ni la marque, ni son agence, ni un consultant. Les moteurs changent de modèle, de sources et de règles sans prévenir. Une offre qui promet d'être « premier sur ChatGPT » promet ce qu'elle ne maîtrise pas.",
+  "What GEO allows is to act on the sources that feed the answers, then measure the effect on the same question panel. Nor does it replace social listening: an AI does not read the whole social conversation. And it does not say how many people ask these questions; for that, you need search listening.":
+    "Ce que le GEO permet, c'est d'agir sur les sources qui nourrissent les réponses, puis de mesurer l'effet sur le même panel de questions. Il ne remplace pas non plus l'écoute sociale : une IA ne lit pas toute la conversation des réseaux. Et il ne dit pas combien de personnes posent ces questions ; pour cela, il faut le search listening.",
+  "How long before you see an effect?":
+    "Combien de temps pour voir un effet ?",
+  "The time a GEO effect takes depends on the reservoir the AI uses. When it searches the web, like Perplexity or ChatGPT with search, a new or corrected page can be picked up as soon as it is found. When it answers from memory, nothing moves before a new model comes out, and nobody knows that date in advance.":
+    "Le délai d'un effet GEO dépend du réservoir que l'IA utilise. Quand elle cherche sur le web, comme Perplexity ou ChatGPT avec la recherche, une page nouvelle ou corrigée peut être reprise dès qu'elle est trouvée. Quand elle répond de mémoire, rien ne bouge avant la sortie d'un nouveau modèle, dont personne ne connaît la date à l'avance.",
+  "That is why we start from a first measure, then follow the same panel every month or every quarter. Since answers vary from one try to the next, only a series of comparable measures tells whether a change is real. A one-week gap on a single question proves nothing.":
+    "C'est pourquoi nous partons d'une première mesure, puis suivons le même panel chaque mois ou chaque trimestre. Les réponses variant d'un essai à l'autre, seule une série de mesures comparables dit si une évolution est réelle. Un écart d'une semaine sur une seule question ne prouve rien.",
+  "GEO agency or consultancy: what you buy":
+    "Agence ou cabinet GEO : ce que vous achetez",
+  "With a GEO agency or consultancy, you do not buy software, but a method and a reading. The choice of questions, engines and competitors, the repeated measures, the record of sources and the recommendation are taken care of. Your teams receive a list of priorities, not a dashboard to run.":
+    "Avec une agence ou un cabinet GEO, vous n'achetez pas un logiciel, mais une méthode et une lecture. Le choix des questions, des moteurs et des concurrents, la répétition des mesures, le relevé des sources et la recommandation sont pris en charge. Vos équipes reçoivent une liste de priorités, pas un tableau de bord à faire tourner.",
+  "Licter is an independent consultancy, with no tie to the AI publishers. We measure, explain and recommend; content production stays with your teams or agencies, with whom we make the link. To start, we offer a free AI listening flash on your brand, sent within 48 hours and read by a consultant.":
+    "Licter est un cabinet indépendant, sans lien avec les éditeurs des IA. Nous mesurons, expliquons et recommandons ; la production des contenus reste à vos équipes ou à vos agences, avec qui nous faisons le lien. Pour commencer, nous proposons un flash AI listening offert sur votre marque, envoyé sous 48 heures et lu par un consultant.",
   "Frequently asked questions about GEO.":
     "Questions fréquentes sur GEO.",
   "Is Licter a GEO agency?":
@@ -5337,12 +5497,30 @@ window.LicterFR = {
     "Comment une campagne change d'un marché à l'autre.",
   "AD MONITORING":
     "VEILLE PUBLICITAIRE",
-  "Meta Ads provides data. A Meta Ads agency like Licter turns it into a decision: here is how we use it.":
-    "Meta Ads fournit des données. Une agence Meta Ads comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Meta Ads is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
+    "Meta Ads est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "A library to browse ad by ad":
+    "Une bibliothèque à parcourir annonce par annonce",
+  "Campaigns seen by chance":
+    "Des campagnes vues au hasard des recherches",
+  "No reading of messages or formats":
+    "Aucune lecture des messages ni des formats",
+  "No link with the social conversation":
+    "Pas de lien avec la conversation sur les réseaux",
+  "Your competitors' campaigns collected every month":
+    "Les campagnes de vos concurrents relevées chaque mois",
+  "Messages, formats and timing compared":
+    "Messages, formats et calendriers comparés",
+  "Cross-checked with what is said on social media":
+    "Le croisement avec ce qui se dit sur les réseaux",
+  "A note for your decisions":
+    "Une note pour vos arbitrages",
   "Meta Ads on its own":
     "Meta Ads seul",
   "Meta Ads with Licter":
     "Meta Ads avec Licter",
+  "You see what your competitors push, and what it tells you.":
+    "Vous voyez ce que vos concurrents poussent, et ce que cela vous dit.",
   "What we deliver with Meta Ads.":
     "Ce que nous livrons avec Meta Ads.",
   "Meta Ads: the use cases where it counts.":
@@ -5351,8 +5529,8 @@ window.LicterFR = {
     "Les limites de Meta Ads, et comment nous les compensons.",
   "Frequently asked questions about Meta Ads.":
     "Questions fréquentes sur Meta Ads.",
-  "Is Licter a Meta Ads agency?":
-    "Licter est-elle une agence Meta Ads ?",
+  "Does Licter monitor the Meta Ad Library?":
+    "Licter fait-elle de la veille sur la bibliothèque publicitaire Meta ?",
   "Yes: Meta Ads is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : Meta Ads est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "The library is public: why go through you?":
@@ -5633,8 +5811,8 @@ window.LicterFR = {
     "Un assistant très présent en entreprise : ce qu'il dit pèse sur les décideurs.",
   "CLAUDE AND YOUR BRAND":
     "CLAUDE ET VOTRE MARQUE",
-  "Claude provides data. A Claude agency like Licter turns it into a decision: here is how we use it.":
-    "Claude fournit des données. Une agence Claude comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Claude is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
+    "Claude est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
   "Claude on its own":
     "Claude seul",
   "Claude with Licter":
@@ -5647,8 +5825,8 @@ window.LicterFR = {
     "Les limites de Claude, et comment nous les compensons.",
   "Frequently asked questions about Claude.":
     "Questions fréquentes sur Claude.",
-  "Is Licter a Claude agency?":
-    "Licter est-elle une agence Claude ?",
+  "Does Licter track what Claude says about brands?":
+    "Licter suit-elle ce que Claude dit des marques ?",
   "Yes: Claude is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : Claude est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why audit Claude as well as ChatGPT?":
@@ -5701,8 +5879,8 @@ window.LicterFR = {
     "Android, l'application et les outils Google : une réponse vue par beaucoup.",
   "GEMINI AND YOUR BRAND":
     "GEMINI ET VOTRE MARQUE",
-  "Gemini provides data. A Gemini agency like Licter turns it into a decision: here is how we use it.":
-    "Gemini fournit des données. Une agence Gemini comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Gemini is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
+    "Gemini est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
   "Gemini on its own":
     "Gemini seul",
   "Gemini with Licter":
@@ -5715,8 +5893,8 @@ window.LicterFR = {
     "Les limites de Gemini, et comment nous les compensons.",
   "Frequently asked questions about Gemini.":
     "Questions fréquentes sur Gemini.",
-  "Is Licter a Gemini agency?":
-    "Licter est-elle une agence Gemini ?",
+  "Does Licter track what Gemini says about brands?":
+    "Licter suit-elle ce que Gemini dit des marques ?",
   "Yes: Gemini is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : Gemini est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Are Gemini and Bard the same?":
@@ -5779,8 +5957,8 @@ window.LicterFR = {
     "Les mêmes questions, suivies dans le temps.",
   "PERPLEXITY AND YOUR BRAND":
     "PERPLEXITY ET VOTRE MARQUE",
-  "Perplexity provides data. A Perplexity agency like Licter turns it into a decision: here is how we use it.":
-    "Perplexity fournit des données. Une agence Perplexity comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Perplexity is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
+    "Perplexity est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
   "Perplexity on its own":
     "Perplexity seul",
   "Perplexity with Licter":
@@ -5793,8 +5971,8 @@ window.LicterFR = {
     "Les limites de Perplexity, et comment nous les compensons.",
   "Frequently asked questions about Perplexity.":
     "Questions fréquentes sur Perplexity.",
-  "Is Licter a Perplexity agency?":
-    "Licter est-elle une agence Perplexity ?",
+  "Does Licter track what Perplexity says about brands?":
+    "Licter suit-elle ce que Perplexity dit des marques ?",
   "Yes: Perplexity is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : Perplexity est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why is Perplexity useful for an audit?":
@@ -5855,8 +6033,8 @@ window.LicterFR = {
     "Une crise ou une polémique sur X se retrouve vite dans ses réponses.",
   "GROK AND YOUR BRAND":
     "GROK ET VOTRE MARQUE",
-  "Grok provides data. A Grok agency like Licter turns it into a decision: here is how we use it.":
-    "Grok fournit des données. Une agence Grok comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Grok is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
+    "Grok est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
   "Grok on its own":
     "Grok seul",
   "Grok with Licter":
@@ -5869,8 +6047,8 @@ window.LicterFR = {
     "Les limites de Grok, et comment nous les compensons.",
   "Frequently asked questions about Grok.":
     "Questions fréquentes sur Grok.",
-  "Is Licter a Grok agency?":
-    "Licter est-elle une agence Grok ?",
+  "Does Licter track what Grok says about brands?":
+    "Licter suit-elle ce que Grok dit des marques ?",
   "Yes: Grok is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : Grok est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why audit Grok?":
@@ -7257,8 +7435,8 @@ window.LicterFR = {
     "AnswerThePublic : les questions que votre marché pose à Google, classées et lues pour en tirer contenus, FAQ et offres.",
   "Your brand in ChatGPT: an audit of its answers | Licter":
     "Votre marque dans ChatGPT : audit des réponses | Licter",
-  "ChatGPT agency: what OpenAI's assistant answers about your brand, your competitors and your category, and the sources it cites.":
-    "Agence ChatGPT : ce que l'IA d'OpenAI répond sur votre marque, vos concurrents et votre catégorie, et les sources qu'elle cite.",
+  "What ChatGPT answers about your brand, your competitors and your category, and the sources it cites: an audit run by our consultants.":
+    "Ce que ChatGPT répond sur votre marque, vos concurrents et votre catégorie, et les sources qu'il cite : un audit mené par nos consultants.",
   "GEO agency: your visibility in AI answers | Licter":
     "Agence GEO : votre visibilité dans les réponses des IA | Licter",
   "GEO: your visibility in ChatGPT, Claude, Gemini and Perplexity answers, measured then improved by our consultants.":
@@ -7277,20 +7455,20 @@ window.LicterFR = {
     "Social Blade : la croissance réelle des comptes et des créateurs, pour vérifier une audience avant un partenariat.",
   "Your brand in Claude: what the AI answers | Licter":
     "Votre marque dans Claude : ce que l'IA répond | Licter",
-  "Claude agency: what Anthropic's assistant says about your brand, its sources and its mistakes, tracked question by question.":
-    "Agence Claude : ce que l'assistant d'Anthropic dit de votre marque, ses sources et ses erreurs, suivis question après question.",
+  "What Claude, Anthropic's assistant, says about your brand: its sources and its mistakes, tracked question by question.":
+    "Ce que Claude, l'assistant d'Anthropic, dit de votre marque : ses sources et ses erreurs, suivies question après question.",
   "Your brand in Gemini and Google's AI answers | Licter":
     "Votre marque dans Gemini et les réponses IA de Google | Licter",
-  "Gemini agency: what Google's AI answers about your brand, closest to search, and how to change it.":
-    "Agence Gemini : ce que l'IA de Google répond sur votre marque, au plus près de la recherche, et comment le faire évoluer.",
+  "What Gemini, Google's AI, answers about your brand, closest to search, and how to change it.":
+    "Ce que Gemini, l'IA de Google, répond sur votre marque, au plus près de la recherche, et comment le faire évoluer.",
   "Your brand in Perplexity: sources and citations | Licter":
     "Votre marque dans Perplexity : sources et citations | Licter",
-  "Perplexity agency: your brand in the answer engine that cites its sources, and the pages that shape its answer.":
-    "Agence Perplexity : votre marque dans le moteur de réponses qui cite ses sources, et les pages qui pèsent sur sa réponse.",
+  "Your brand in Perplexity, the answer engine that cites its sources, and the pages that shape its answer.":
+    "Votre marque dans Perplexity, le moteur de réponses qui cite ses sources, et les pages qui pèsent sur sa réponse.",
   "Your brand in Grok: what X's AI answers | Licter":
     "Votre marque dans Grok : ce que l'IA de X répond | Licter",
-  "Grok agency: what X's AI says about your brand, fed by the network's live conversation.":
-    "Agence Grok : ce que l'IA de X dit de votre marque, nourrie par la conversation en direct du réseau.",
+  "What Grok, X's AI, says about your brand, fed by the network's live conversation.":
+    "Ce que Grok, l'IA de X, dit de votre marque, nourrie par la conversation en direct du réseau.",
   "Facebook social listening agency: communities and groups | Licter":
     "Agence social listening Facebook : les communautés et les groupes | Licter",
   "Facebook social listening: groups, local pages and comments under your posts, read by our analysts.":

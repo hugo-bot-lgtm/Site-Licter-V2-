@@ -207,22 +207,22 @@
     },
     {
       "source": "/cookies",
-      "destination": "/privacy.html#cookies",
+      "destination": "/fr/confidentialite/#cookies",
       "permanent": true
     },
     {
       "source": "/politique-de-confidentialite",
-      "destination": "/privacy.html",
+      "destination": "/fr/confidentialite/",
       "permanent": true
     },
     {
       "source": "/conditions-generales-dutilisation",
-      "destination": "/legal.html#terms",
+      "destination": "/fr/mentions-legales/#terms",
       "permanent": true
     },
     {
       "source": "/contact",
-      "destination": "/book-a-meeting.html",
+      "destination": "/fr/rendez-vous/",
       "permanent": true
     },
     {

@@ -2501,6 +2501,9 @@ window.LicterUC = (function () {
         var copy = c.cloneNode(true);
         copy.setAttribute("aria-hidden", "true");
         Array.prototype.forEach.call(copy.querySelectorAll("a, button"), function (a) { a.tabIndex = -1; });
+        /* the loop's copy is no second heading: the question stays once in the outline */
+        var h = copy.querySelector("h3");
+        if (h) { var q = document.createElement("p"); q.className = "qa-card__q"; q.innerHTML = h.innerHTML; h.parentNode.replaceChild(q, h); }
         track.appendChild(copy);
       });
       var st = { row: row, track: track, first: cards.length, dir: row.getAttribute("data-dir") === "right" ? -1 : 1,
@@ -2569,19 +2572,23 @@ window.LicterUC = (function () {
       }
       var inner = dlg.querySelector(".qa-read__in");
       inner.innerHTML = "";
-      inner.appendChild(card.querySelector("h3").cloneNode(true));
+      var qh = card.querySelector("h3, .qa-card__q"), h3 = document.createElement("h3");
+      h3.innerHTML = qh.innerHTML;
+      inner.appendChild(h3);
       Array.prototype.forEach.call(card.querySelectorAll(".qa-card__a p"), function (p) { inner.appendChild(p.cloneNode(true)); });
-      dlg.setAttribute("aria-label", card.querySelector("h3").textContent);
+      dlg.setAttribute("aria-label", qh.textContent);
       reading = true;
       if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
       inner.scrollTop = 0;
     });
     if (still) return;
-    var visible = false, last = 0;
+    var visible = false, last = 0, running = false;
+    /* the loop runs only while the roller is on screen */
+    function start() { if (!running) { running = true; last = 0; requestAnimationFrame(frame); } }
     if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (en) { visible = en[0].isIntersecting; last = 0; }).observe(r);
-    } else { visible = true; }
-    (function frame(t) {
+      new IntersectionObserver(function (en) { visible = en[0].isIntersecting; last = 0; if (visible) start(); }).observe(r);
+    } else { visible = true; start(); }
+    function frame(t) {
       var dt = last ? Math.min(t - last, 64) / 1000 : 0; last = t;
       if (visible && !document.hidden) {
         var now = Date.now();
@@ -2593,7 +2600,7 @@ window.LicterUC = (function () {
           st.row.scrollLeft = st.pos;
         });
       }
-      requestAnimationFrame(frame);
-    })(0);
+      if (visible) requestAnimationFrame(frame); else running = false;
+    }
   });
 })();

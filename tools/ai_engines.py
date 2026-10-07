@@ -28,6 +28,32 @@ INTENT = {
 }
 
 AG_T = ("Pourquoi confier ce suivi à un cabinet ?", "Why hand this tracking to a consultancy?")
+AG_LEAD = ("%s est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+           "%s is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.")
+FAQ_Q = {"meta-ads": ("Licter fait-elle de la veille sur la bibliothèque publicitaire Meta ?", "Does Licter monitor the Meta Ad Library?")}
+FAQ_Q_AI = ("Licter suit-elle ce que %s dit des marques ?", "Does Licter track what %s says about brands?")
+
+# the "on its own / with Licter" block, rewritten for a free assistant and for the ad library
+VS = {
+    "ai": ([("Une question posée une fois, par une seule personne", "A question asked once, by one person"),
+            ("Des réponses qui changent d'un essai à l'autre", "Answers that change from one try to the next"),
+            ("Aucune trace des sources citées", "No record of the sources cited"),
+            ("Pas de comparaison avec vos concurrents", "No comparison with your competitors")],
+           [("Les mêmes questions posées plusieurs fois, chaque mois", "The same questions asked several times, every month"),
+            ("Les sources citées relevées et classées", "The sources cited, collected and sorted"),
+            ("Votre place face à vos concurrents", "Your place against your competitors"),
+            ("Ce qu'il faut corriger, et où agir", "What to correct, and where to act")],
+           ("Vous savez ce que l'IA dit de vous, et pourquoi.", "You know what the AI says about you, and why.")),
+    "meta-ads": ([("Une bibliothèque à parcourir annonce par annonce", "A library to browse ad by ad"),
+                  ("Des campagnes vues au hasard des recherches", "Campaigns seen by chance"),
+                  ("Aucune lecture des messages ni des formats", "No reading of messages or formats"),
+                  ("Pas de lien avec la conversation sur les réseaux", "No link with the social conversation")],
+                 [("Les campagnes de vos concurrents relevées chaque mois", "Your competitors' campaigns collected every month"),
+                  ("Messages, formats et calendriers comparés", "Messages, formats and timing compared"),
+                  ("Le croisement avec ce qui se dit sur les réseaux", "Cross-checked with what is said on social media"),
+                  ("Une note pour vos arbitrages", "A note for your decisions")],
+                 ("Vous voyez ce que vos concurrents poussent, et ce que cela vous dit.", "You see what your competitors push, and what it tells you.")),
+}
 
 HEAD = (("COMMENT %s RÉPOND", "HOW %s ANSWERS"), ("Ce qui fait la réponse de %s.", "What shapes %s's answer."))
 

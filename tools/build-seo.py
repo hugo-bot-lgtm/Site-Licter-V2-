@@ -167,13 +167,29 @@ def structured(rel, s, fr, url):
     # head of one page into another, and a block must never describe a page
     # other than its own
     s = re.sub(r'<script type="application/ld\+json" data-seo>.*?</script>\n?', "", s, flags=re.S)
+    title0 = html.unescape(re.search(r"<title>([^<]*)</title>", s).group(1)).strip()
+    desc0 = re.search(r'<meta name="description" content="([^"]*)"', s)
     def foreign(m):
         try:
             b = json.loads(m.group(1))
         except ValueError:
             return m.group(0)
-        if isinstance(b, dict) and b.get("@type") in ("WebPage", "AboutPage", "CollectionPage") and b.get("url") not in (None, url):
+        if not isinstance(b, dict):
+            return m.group(0)
+        if b.get("@type") in ("WebPage", "AboutPage", "CollectionPage") and b.get("url") not in (None, url):
             return ""
+        # a breadcrumb copied from another page (its last step is not this page): rebuilt below
+        if b.get("@type") == "BreadcrumbList":
+            last = (b.get("itemListElement") or [{}])[-1]
+            if last.get("item") not in (None, url):
+                return ""
+        # an event copied from the English twin: same event, described in this page's words
+        if b.get("@type") == "Event" and b.get("url") not in (None, url):
+            b["url"] = url
+            b["name"] = re.sub(r"\s*\|\s*Licter.*$", "", title0)
+            if desc0:
+                b["description"] = html.unescape(desc0.group(1))
+            return '<script type="application/ld+json">%s</script>\n' % json.dumps(b, ensure_ascii=False)
         return m.group(0)
     s = re.sub(r'<script type="application/ld\+json">(.*?)</script>\n?', foreign, s, flags=re.S)
     blocks = []
@@ -187,7 +203,7 @@ def structured(rel, s, fr, url):
     desc_m = re.search(r'<meta name="description" content="([^"]*)"', s)
     desc = html.unescape(desc_m.group(1)) if desc_m else ""
     add = []
-    if not types & {"WebPage", "AboutPage", "CollectionPage", "Article", "Event", "Service"}:
+    if not types & {"WebPage", "AboutPage", "CollectionPage", "Article", "Event"}:   # a Service describes the offer, not the page
         kind = "AboutPage" if rel in ABOUT else "CollectionPage" if rel in COLLECTION else "WebPage"
         add.append({"@context": "https://schema.org", "@type": kind, "@id": url + "#webpage", "url": url, "name": title,
                     "description": desc, "inLanguage": "fr" if fr else "en", "isPartOf": {"@id": SITE + "/#website"},
@@ -198,7 +214,9 @@ def structured(rel, s, fr, url):
         items = [home]
         if rel.startswith("article-"):
             items.append((SITE + "/fr/blog/", "Blog"))
-        name = re.sub(r"\s*\|\s*Licter.*$", "", title)
+        elif url.startswith(SITE + "/fr/evenements/") and url != SITE + "/fr/evenements/":
+            items.append((SITE + "/fr/evenements/", "Événements"))
+        name = re.sub(r"\s*\|.*$", "", title)
         items.append((url, ARTS[rel]["title"].replace("\u00a0", " ") if rel in ARTS else name))
         add.append({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": html.unescape(n), "item": u} for i, (u, n) in enumerate(items)]})
@@ -280,8 +298,16 @@ def main():
                 s = add_head(s, '<link rel="alternate" hreflang="fr" href="%s" />\n<link rel="alternate" hreflang="x-default" href="%s" />' % (url, url))
             else:
                 s = add_head(s, '<link rel="alternate" hreflang="x-default" href="%s" />' % url)
-        if 'property="og:url"' not in s:
+        # og:url is always the page's own address (pages copied from another
+        # page's head used to keep its og:url: audit of 7 October 2026)
+        if 'property="og:url"' in s:
+            s = re.sub(r'<meta property="og:url" content="[^"]*"', '<meta property="og:url" content="%s"' % url, s, count=1)
+        else:
             s = add_head(s, '<meta property="og:url" content="%s" />' % url)
+        # x-default is the French page wherever both languages exist, as in the sitemap
+        hfr = re.search(r'<link rel="alternate" hreflang="fr" href="([^"]+)"', s)
+        if hfr and 'hreflang="en"' in s:
+            s = re.sub(r'(<link rel="alternate" hreflang="x-default" href=")[^"]+(")', lambda m: m.group(1) + hfr.group(1) + m.group(2), s, count=1)
         # share image: the cards drawn here are redrawn each time (title changes)
         s = re.sub(r'<meta property="og:image" content="%s/assets/img/og/p-[^"]+" />\n<meta property="og:image:width" content="1200" />\n'
                    r'<meta property="og:image:height" content="630" />\n' % re.escape(SITE), "", s)
@@ -297,15 +323,19 @@ def main():
         s = s.replace('<meta name="twitter:card" content="summary" />', '<meta name="twitter:card" content="summary_large_image" />')
         if fr and "data-i18n-static" in s[:400]:
             s = re.sub(r'(<script src="/?js/)fr\.js(\?v=\d+"[^>]*></script>)', r"\1fr-core.js\2", s)
+        # a page written in English needs no dictionary to load: js/i18n.js fetches
+        # it only if the visitor switches to French (155 KB gzipped saved per page)
+        elif not fr and "data-i18n-static" in s[:400]:
+            s = re.sub(r'<script src="/?js/fr\.js\?v=\d+"[^>]*></script>\n?', "", s)
         # both web fonts early, so the text does not jump when they arrive (CLS)
         if 'href="/assets/fonts/AiglonProWide-Demi.woff2"' not in s:
             s = s.replace("<title>", '<link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2" as="font" type="font/woff2" crossorigin />\n'
                                      '<link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />\n<title>', 1)
         # the footer: who we are and how to reach us, and an award stated as the founder's
         foot_fr = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
-                   "50+ clients · 160+ projets · Antoine Khaitrine, Top 50 Insider mondial (SI Lab) depuis 2022")
+                   "50+ clients · 160+ projets · Antoine Khaitrine, Top 50 Insider mondial (SI Lab) depuis 2024")
         foot_en = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
-                   "50+ clients · 160+ projects · Antoine Khaitrine, Top 50 Insider worldwide (SI Lab) since 2022")
+                   "50+ clients · 160+ projects · Antoine Khaitrine, Top 50 Insider worldwide (SI Lab) since 2024")
         s = re.sub(r'<span>(?:Licter SAS ·.*?|50\+ clients · 160\+ (?:projects|projets) · Top 50 Insider[^<]*)</span>(?=\s*</div>\s*</footer>)',
                    "<span>%s</span>" % (foot_fr if fr else foot_en), s, flags=re.S)
         # French pages link to French pages in their HTML, not through a script

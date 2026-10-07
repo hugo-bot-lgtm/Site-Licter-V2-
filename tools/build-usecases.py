@@ -44,7 +44,8 @@ def T(pair, lang):
     return esc(typo(pair[lang], lang))
 
 def version():
-    m = re.search(r"styles\.min\.css\?v=(\d+)", (ROOT / "index.html").read_text())
+    # the home links its own template sheet since the CSS split (tools/build-css.py)
+    m = re.search(r"(?:styles|t-[a-z]+)\.min\.css\?v=(\d+)", (ROOT / "index.html").read_text())
     return m.group(1) if m else "1"
 
 # ------------------------------------------------------------- dictionary
@@ -426,6 +427,18 @@ VERSUS = [
      ("Une recommandation présentée à celles et ceux qui décident", "A recommendation presented to the people who decide")),
 ]
 
+# the offer behind each case (audit of 7 October 2026: no use case linked to an offer)
+CASE_OFFER = {"leader-advocacy": "vigie-360", "brand-risk": "vigie-360", "reputation": "nox"}
+OFFER_LABEL = {"vigie-360": "Vigie 360", "social-insights": "Social Insights", "nox": "Nox", "slaas": "Social Listening as a Service"}
+
+
+def offer_li(key, lang):
+    o = CASE_OFFER.get(key, "social-insights")
+    f = "offer-%s.html" % o
+    return '<li class="ucp__up-li"><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (
+        OFFER_FR[f] if lang == FR else "/" + f, esc(("L'offre adaptée : %s", "The matching offer: %s")[lang] % OFFER_LABEL[o]))
+
+
 L.update({
     "tool": ("Un outil de veille vous donne", "A monitoring tool gives you"),
     "licter": ("Licter vous donne", "Licter gives you"),
@@ -629,7 +642,7 @@ def case_body(c, lang):
         how,
         proof,
         cta(c, lang).replace('class="ucp ucp--cta"', 'class="ucp ucp--cta ucr-offer"', 1),
-        faq_block(c["faq"], lang, further(lang, "rel-" + c["key"], T(L["same"], lang), rel + up_li(f, lang) + "".join(
+        faq_block(c["faq"], lang, further(lang, "rel-" + c["key"], T(L["same"], lang), rel + offer_li(c["key"], lang) + up_li(f, lang) + "".join(
             '<li class="ucp__up-li"><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (xp_href(k, lang), esc(("Notre expertise %s", "Our %s expertise")[lang] % XP_NAME[k]))
             for k in XP_OF.get(c["key"], [])), x["articles"])),
         book(lang),

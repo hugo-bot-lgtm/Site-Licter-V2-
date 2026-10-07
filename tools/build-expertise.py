@@ -748,9 +748,9 @@ def hub_body(offers_html):
                      '<img src="/assets/img/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" />'
                      '<div class="ucc__top"><p class="ucc__k"><span class="xe-ucc__ico" aria-hidden="true">%s</span><span>0%d</span></p>'
                      '<h3 class="ucc__t"><a href="%s">%s<!--gloss:%s--></a></h3><p class="of-ucc__promise">%s</p></div>'
-                     '<div class="ucc__foot"><ul class="ucc__cases">%s</ul><a class="ucc__all" href="%s">%s %s <span aria-hidden="true">→</span></a></div></li>') % (
+                     '<div class="ucc__foot"><ul class="ucc__cases">%s</ul><a class="ucc__all" href="%s">%s <span aria-hidden="true">→</span></a></div></li>') % (
         y["key"], CHANNEL[y["key"]], PHOTO[y["key"]], ICON_SVG.get(y["icon"], ""), k + 1, y["file"], t(y["name"]), y["key"], t(y["short"]),
-        "".join('<li><a href="%s">%s <i aria-hidden="true">→</i></a></li>' % (y["file"], t(h)) for h in y["hears"]), y["file"], t(S["discover"]), t(y["name"]))
+        "".join('<li><a href="%s">%s <i aria-hidden="true">→</i></a></li>' % (y["file"], t(h)) for h in y["hears"]), y["file"], t(("%s %s" % (S["discover"][0], y["name"][0]), "%s %s" % (S["discover"][1], y["name"][1]))))
         for k, y in enumerate(LISTENINGS))
     six = ('<div class="ucc xe-six-ucc"><div class="ucc__head xe-six-head">%s<div class="ucc__nav">'
            '<button class="ucc__btn" type="button" data-dir="-1" aria-label="%s" disabled><span aria-hidden="true">←</span></button>'
