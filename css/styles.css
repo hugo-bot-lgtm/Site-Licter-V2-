@@ -10169,3 +10169,4 @@ html[data-theme="dark"] .bl-thread__n { color: #EAA93D; }
   .bl-card--big a { min-height: 320px; }
 }
 @media (max-width: 720px) { .bl-seis figcaption span:last-child { display: none; } }
+.bl-hero { padding-bottom: clamp(50px, 6vw, 90px); }

@@ -120,40 +120,6 @@ def mag_block(id_):
       </section>'''
 
 
-def seismo():
-    """the blog as a seismograph: each piece is a spike at its publication
-    date, its height its reading time. Real dates, drawn signal around them."""
-    import datetime
-    days = [datetime.date(*x["key"][:1], x["key"][1] + 1, x["key"][2]) for x in ARTS]
-    d0, d1 = min(days) - datetime.timedelta(days=6), max(days) + datetime.timedelta(days=6)
-    W, H, base = 1200, 220, 160
-    X = lambda d: 30 + (d - d0).days / (d1 - d0).days * (W - 60)
-    r = rnd("seismo")
-    peaks = [(X(d), 50 + 28 * int(x["read"].split()[0])) for d, x in zip(days, ARTS)]
-    pts = []
-    for px in range(0, W + 1, 4):
-        y = base + r.uniform(-3, 3)
-        for cx, hgt in peaks:
-            y -= hgt * math.exp(-((px - cx) / 9) ** 2) * (1 if (px // 4) % 2 else .82)
-        pts.append("%d,%.1f" % (px, y))
-    marks = ""
-    for (cx, hgt), x in zip(peaks, ARTS):
-        top = base - hgt
-        anchor = "end" if cx > W * .8 else ("start" if cx < W * .2 else "middle")
-        marks += ('<a class="bl-seis__pk" href="%s"><title>%s</title><rect class="bl-seis__hit" x="%.0f" y="0" width="34" height="%d" /><line x1="%.0f" y1="%.0f" x2="%.0f" y2="%d" />'
-                  '<circle cx="%.0f" cy="%.0f" r="7" /><text x="%.0f" y="%.0f" text-anchor="%s">%s</text></a>') % (
-            x["file"], E(x["title"]), cx - 17, H - 20, cx, top, cx, H - 26, cx, top, cx, top - 16, anchor, E(x["title"]))
-    months, m = "", d0.replace(day=1)
-    while m <= d1:
-        if m >= d0:
-            months += '<text class="bl-seis__m" x="%.0f" y="%d">%s</text>' % (X(m), H - 6, MONTHS[m.month - 1][:3].upper())
-        m = (m.replace(day=28) + datetime.timedelta(days=4)).replace(day=1)
-    return ('<figure class="bl-seis"><figcaption><span class="bl-seis__live"><i></i>%s</span><span>%s</span></figcaption>'
-            '<svg viewBox="0 0 %d %d" aria-label="%s"><line class="bl-seis__base" x1="0" y1="%d" x2="%d" y2="%d" />'
-            '<polyline class="bl-seis__line" points="%s" />%s%s</svg></figure>') % (
-        "Blog seismograph", "One spike per piece, height = reading time", W, H, "Our pieces on a timeline", H - 26, W, H - 26, " ".join(pts), marks, months)
-
-
 # ------------------------------------------------------------------ the blog page
 def row(x):
     """one line of the index: date, thread, title and lead, an arrow"""
@@ -188,10 +154,6 @@ def blog_main():
     </div>
   </section>
 
-  <section class="bl-band">
-    <div class="shell">%s</div>
-  </section>
-
   <section class="bl-sec" id="latest">
     <div class="shell">
       <div class="bl-bar">
@@ -220,7 +182,7 @@ def blog_main():
 %s
     </div>
   </section>
-</main>""" % (len(ARTS), card(lead, True), "".join(card(x) for x in side), seismo(), chips, "".join(row(x) for x in ARTS), threads, mag_block("bl"))
+</main>""" % (len(ARTS), card(lead, True), "".join(card(x) for x in side), chips, "".join(row(x) for x in ARTS), threads, mag_block("bl"))
 
 
 # ------------------------------------------------------------------ an article
