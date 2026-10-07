@@ -333,6 +333,7 @@ def main():
             (ROOT / x["file"]).unlink()
     print("blog.html and %d articles written" % len(ARTS))
     import runpy
+    runpy.run_path(str(ROOT / "tools" / "build-fr-pages.py"), run_name="__main__")
     runpy.run_path(str(ROOT / "tools" / "build-seo.py"), run_name="__main__")
 
 

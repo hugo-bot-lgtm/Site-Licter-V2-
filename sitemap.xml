@@ -23,18 +23,14 @@
   <url><loc>https://www.licter.com/article-social-listening-et-politique-comment-capter-la-voix-des-citoyens.html</loc></url>
   <url><loc>https://www.licter.com/article-veille-social-listening-2024.html</loc></url>
   <url><loc>https://www.licter.com/article-veiller-lactivite-digitale-autour-de-votre-marque.html</loc></url>
-  <url><loc>https://www.licter.com/blog.html</loc></url>
   <url><loc>https://www.licter.com/book-a-meeting.html</loc></url>
-  <url><loc>https://www.licter.com/clients.html</loc></url>
   <url><loc>https://www.licter.com/diagnostic.html</loc></url>
   <url><loc>https://www.licter.com/event-food.html</loc></url>
   <url><loc>https://www.licter.com/event-luxury.html</loc></url>
   <url><loc>https://www.licter.com/event-toys-games.html</loc></url>
   <url><loc>https://www.licter.com/events.html</loc></url>
-  <url><loc>https://www.licter.com/guide.html</loc></url>
   <url><loc>https://www.licter.com/legal.html</loc></url>
   <url><loc>https://www.licter.com/privacy.html</loc></url>
-  <url><loc>https://www.licter.com/why-licter.html</loc></url>
   <url><loc>https://www.licter.com/fr/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/" />
@@ -44,6 +40,26 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/blog.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/blog/" />
+  </url>
+  <url><loc>https://www.licter.com/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/blog.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/blog/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/clients/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/clients/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/clients.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/clients/" />
+  </url>
+  <url><loc>https://www.licter.com/clients.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/clients/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/clients.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/clients/" />
   </url>
   <url><loc>https://www.licter.com/fr/expertise/ai-listening/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/ai-listening/" />
@@ -114,6 +130,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/guide/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/guide/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/guide/" />
+  </url>
+  <url><loc>https://www.licter.com/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/guide/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/guide/" />
   </url>
   <url><loc>https://www.licter.com/fr/offres/nox/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/nox/" />
@@ -584,6 +610,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/outils/youscan/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/tech-youscan.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/outils/youscan/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/pourquoi-licter/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/pourquoi-licter/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/why-licter.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/pourquoi-licter/" />
+  </url>
+  <url><loc>https://www.licter.com/why-licter.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/pourquoi-licter/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/why-licter.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/pourquoi-licter/" />
   </url>
   <url><loc>https://www.licter.com/fr/cas-usage/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/cas-usage/" />

@@ -132,7 +132,7 @@
     },
     {
       "source": "/article/surveiller-les-jeux-olympiques-lart-de-la-veille-et-de-la-gestion-de-crise",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
@@ -157,52 +157,52 @@
     },
     {
       "source": "/vision",
-      "destination": "/why-licter.html",
+      "destination": "/fr/pourquoi-licter/",
       "permanent": true
     },
     {
       "source": "/blog",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
       "source": "/blog-topics",
-      "destination": "/blog.html#topics",
+      "destination": "/fr/blog/#topics",
       "permanent": true
     },
     {
       "source": "/ressources",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
       "source": "/search",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
       "source": "/topic/social-data-prospective",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
       "source": "/topic/podcast",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
       "source": "/topic/actualites-de-lentreprise",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
       "source": "/topic/audience-intelligence",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
       "source": "/topic/social-listening",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
@@ -232,22 +232,22 @@
     },
     {
       "source": "/clients",
-      "destination": "/clients.html",
+      "destination": "/fr/clients/",
       "permanent": true
     },
     {
       "source": "/client/client-1",
-      "destination": "/clients.html",
+      "destination": "/fr/clients/",
       "permanent": true
     },
     {
       "source": "/client/client-2",
-      "destination": "/clients.html",
+      "destination": "/fr/clients/",
       "permanent": true
     },
     {
       "source": "/client/client-3",
-      "destination": "/clients.html",
+      "destination": "/fr/clients/",
       "permanent": true
     },
     {
@@ -257,12 +257,12 @@
     },
     {
       "source": "/work/la-poste",
-      "destination": "/clients.html",
+      "destination": "/fr/clients/",
       "permanent": true
     },
     {
       "source": "/work/luxe",
-      "destination": "/clients.html",
+      "destination": "/fr/clients/",
       "permanent": true
     },
     {
@@ -277,7 +277,7 @@
     },
     {
       "source": "/cheatsheet-veille",
-      "destination": "/guide.html",
+      "destination": "/fr/guide/",
       "permanent": true
     },
     {
@@ -367,17 +367,17 @@
     },
     {
       "source": "/the-team/adrien-krebs",
-      "destination": "/why-licter.html#origin",
+      "destination": "/fr/pourquoi-licter/#origin",
       "permanent": true
     },
     {
       "source": "/the-team/antoine-khaitrine",
-      "destination": "/why-licter.html#origin",
+      "destination": "/fr/pourquoi-licter/#origin",
       "permanent": true
     },
     {
       "source": "/the-team/mina",
-      "destination": "/why-licter.html#team",
+      "destination": "/fr/pourquoi-licter/#team",
       "permanent": true
     },
     {
@@ -392,7 +392,7 @@
     },
     {
       "source": "/general-layouts/clients",
-      "destination": "/clients.html",
+      "destination": "/fr/clients/",
       "permanent": true
     },
     {
@@ -407,22 +407,22 @@
     },
     {
       "source": "/general-layouts/the-team",
-      "destination": "/why-licter.html#team",
+      "destination": "/fr/pourquoi-licter/#team",
       "permanent": true
     },
     {
       "source": "/article/:slug*",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
       "source": "/topic/:slug*",
-      "destination": "/blog.html",
+      "destination": "/fr/blog/",
       "permanent": true
     },
     {
       "source": "/the-team/:slug*",
-      "destination": "/why-licter.html",
+      "destination": "/fr/pourquoi-licter/",
       "permanent": true
     },
     {
@@ -442,12 +442,12 @@
     },
     {
       "source": "/work/:slug*",
-      "destination": "/clients.html",
+      "destination": "/fr/clients/",
       "permanent": true
     },
     {
       "source": "/client/:slug*",
-      "destination": "/clients.html",
+      "destination": "/fr/clients/",
       "permanent": true
     },
     {

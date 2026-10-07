@@ -80,6 +80,12 @@
         if (sk) a.setAttribute("href", "/fr/sources/" + sk[1] + "/" + (sk[2] || ""));
         if (tk) a.setAttribute("href", "/fr/outils/" + (tk[1] === "tools" ? "" : (tk[1] === "google-news" ? "google-actualites" : tk[1]) + "/") + (tk[2] || ""));
       });
+      /* and the pages with a static French twin (tools/build-fr-pages.py) */
+      var PFR = { "why-licter": "/fr/pourquoi-licter/", "clients": "/fr/clients/", "blog": "/fr/blog/", "guide": "/fr/guide/" };
+      Array.prototype.forEach.call(root.querySelectorAll ? root.querySelectorAll('a[href*="why-licter"], a[href*="clients.html"], a[href*="blog.html"], a[href*="guide.html"]') : [], function (a) {
+        var pm = /^\/?(why-licter|clients|blog|guide)\.html(#.*)?$/.exec(a.getAttribute("href") || "");
+        if (pm) a.setAttribute("href", PFR[pm[1]] + (pm[2] || ""));
+      });
     }
 
     /* attributes that are read by users too */

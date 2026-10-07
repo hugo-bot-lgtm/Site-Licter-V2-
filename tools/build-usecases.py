@@ -70,10 +70,16 @@ def tech_fr(name):
     return "/fr/outils/" if slug == "tools" else "/fr/outils/%s/" % TECH_FR_SLUG.get(slug, slug)
 
 
+# root pages with a static French twin (tools/build-fr-pages.py)
+PAGE_FR = {"why-licter.html": "/fr/pourquoi-licter/", "clients.html": "/fr/clients/", "blog.html": "/fr/blog/", "guide.html": "/fr/guide/"}
+
+
 def expertise_fr(name):
     """the French twin of an expertise page (tools/build-expertise.py), of an
-    offer page, or of a tool page"""
+    offer page, of a tool page, or of a page in PAGE_FR"""
     name = name.lstrip("/")
+    if name in PAGE_FR:
+        return PAGE_FR[name]
     if name in OFFER_FR:
         return OFFER_FR[name]
     if name.startswith("tech-"):
@@ -87,7 +93,7 @@ def expertise_fr(name):
 def translate(fragment):
     """The same walk as js/i18n.js: text nodes and a few attributes; and the
     links to the expertise pages, which have French twins."""
-    fragment = re.sub(r'href="/?(expertise(?:-[a-z]+-listening)?\.html|offers\.html|offer-[a-z0-9-]+\.html|tech-[a-z0-9-]+\.html|source-[a-z0-9-]+\.html)(#[^"]*)?"', lambda m: 'href="%s%s"' % (expertise_fr(m.group(1)), m.group(2) or ""), fragment)
+    fragment = re.sub(r'href="/?(expertise(?:-[a-z]+-listening)?\.html|offers\.html|offer-[a-z0-9-]+\.html|tech-[a-z0-9-]+\.html|source-[a-z0-9-]+\.html|why-licter\.html|clients\.html|blog\.html|guide\.html)(#[^"]*)?"', lambda m: 'href="%s%s"' % (expertise_fr(m.group(1)), m.group(2) or ""), fragment)
     def text(m):
         raw = m.group(1)
         key = re.sub(r"\s+", " ", html.unescape(raw)).strip()
@@ -1005,11 +1011,11 @@ def main():
     root_pages = sorted(p.name for p in ROOT.glob("*.html") if p.name not in ("404.html", "use-cases.html"))
     entries = []
     for name in root_pages:
-        if name == "index.html" or name.startswith(("expertise", "tech-", "source-")) or name in OFFER_FR:
+        if name == "index.html" or name.startswith(("expertise", "tech-", "source-")) or name in OFFER_FR or name in PAGE_FR:
             continue   # the home and the expertise pages go in with their French twins, below
         entries.append("  <url><loc>%s</loc></url>" % (SITE + "/" + name))
     urls.insert(0, ("/fr/", "/"))
-    urls[1:1] = [(expertise_fr(n), "/" + n) for n in root_pages if n.startswith(("expertise", "tech-", "source-")) or n in OFFER_FR]
+    urls[1:1] = [(expertise_fr(n), "/" + n) for n in root_pages if n.startswith(("expertise", "tech-", "source-")) or n in OFFER_FR or n in PAGE_FR]
     for fr_p, en_p in urls:
         for p in (fr_p, en_p):
             entries.append('''  <url><loc>{s}{p}</loc>
@@ -1035,4 +1041,5 @@ if __name__ == "__main__":
     main()
     # the home in both languages, from the same dictionary
     runpy.run_path(str(ROOT / "tools" / "build-home.py"), run_name="__main__")
+    runpy.run_path(str(ROOT / "tools" / "build-fr-pages.py"), run_name="__main__")
     runpy.run_path(str(ROOT / "tools" / "build-seo.py"), run_name="__main__")
