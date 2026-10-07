@@ -745,12 +745,13 @@ def compare(lang, X=None):
     the home)"""
     X = X or C.COMPARE
     photo, alt = X["photo"]
+    big = next(("%s-%d.webp %dw" % (photo, w, w) for w in (1080, 1600) if (ROOT / "assets/img/team/morning" / ("%s-%d.webp" % (photo, w))).exists()), "%s-800.webp 800w" % photo)
     sr = lambda k: '<span class="visually-hidden">%s\u00a0: </span>' % T(X[k], lang) if lang == FR else '<span class="visually-hidden">%s: </span>' % T(X[k], lang)
     rows = "".join('<li><span class="cmp__them">%s%s</span><span class="cmp__us">%s%s</span></li>' % (sr("them"), T(a, lang), sr("us"), T(b, lang)) for a, b in X["rows"])
     return ('  <section class="ucp cmp" aria-labelledby="cmp-t">\n'
             '    <div class="shell cmp__grid">\n'
             '      <figure class="cmp__photo">\n'
-            '        <img src="/assets/img/team/morning/%s-800.webp" srcset="/assets/img/team/morning/%s-800.webp 800w, /assets/img/team/morning/%s-1080.webp 1080w" sizes="(max-width: 900px) 92vw, 40vw" alt="%s" width="800" height="1197" loading="lazy" decoding="async" />\n'
+            '        <img src="/assets/img/team/morning/%s-800.webp" srcset="/assets/img/team/morning/%s-800.webp 800w, /assets/img/team/morning/%s" sizes="(max-width: 900px) 92vw, 40vw" alt="%s" width="800" height="1197" loading="lazy" decoding="async" />\n'
             '        <figcaption class="cmp__badge">%s</figcaption>\n'
             '      </figure>\n'
             '      <div class="cmp__copy">\n'
@@ -763,7 +764,7 @@ def compare(lang, X=None):
             '        <p class="cmp__foot">%s</p>\n'
             '      </div>\n'
             '    </div>\n'
-            '  </section>') % (photo, photo, photo, T(alt, lang), T(X["badge"], lang), T(X["title"], lang), T(X["lead"], lang),
+            '  </section>') % (photo, photo, big, T(alt, lang), T(X["badge"], lang), T(X["title"], lang), T(X["lead"], lang),
                                T(X["them"], lang), T(X["us"], lang), rows, T(X["foot"], lang))
 
 
@@ -1008,7 +1009,7 @@ def main():
             continue   # the home and the expertise pages go in with their French twins, below
         entries.append("  <url><loc>%s</loc></url>" % (SITE + "/" + name))
     urls.insert(0, ("/fr/", "/"))
-    urls[1:1] = [(expertise_fr(n), "/" + n) for n in root_pages if n.startswith(("expertise", "tech-")) or n in OFFER_FR]
+    urls[1:1] = [(expertise_fr(n), "/" + n) for n in root_pages if n.startswith(("expertise", "tech-", "source-")) or n in OFFER_FR]
     for fr_p, en_p in urls:
         for p in (fr_p, en_p):
             entries.append('''  <url><loc>{s}{p}</loc>
@@ -1034,3 +1035,4 @@ if __name__ == "__main__":
     main()
     # the home in both languages, from the same dictionary
     runpy.run_path(str(ROOT / "tools" / "build-home.py"), run_name="__main__")
+    runpy.run_path(str(ROOT / "tools" / "build-seo.py"), run_name="__main__")

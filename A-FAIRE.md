@@ -137,6 +137,7 @@ Les pages offres sont prêtes, mais quatre informations ne peuvent pas être inv
 - [ ] **Le contenu des 13 pages outils** (`tools/tools_data.py`) : faits vérifiés en octobre 2026, textes rédigés par nous, à relire. Points sensibles : SoPrism fait désormais partie d'Audiense, Radarly de Meltwater (le nom est-il toujours vendu ?), Semrush d'Adobe.
 - [ ] **Le contenu des 22 pages réseaux** (`tools/networks.py`) : en particulier les limites de collecte, et la lecture des contenus en russe (VK) : qui la fait ?
 - [ ] **Les captures des sites officiels** (`assets/img/shots/`) : elles illustrent chaque page outil et réseau, avec leur source. À revoir si un éditeur s'y oppose, et à refaire de temps en temps (les sites changent).
+- [ ] **Brandwatch et Sprinklr** (ajoutées en octobre 2026 aux plateformes opérées) : faits vérifiés (Wikipedia, presse spécialisée), textes à relire, en particulier la façon dont Licter les opère (licence propre ou celle du client).
 - [ ] **Les 4 pages assistants** (Claude, Gemini, Perplexity, Grok) : faits limités à l'éditeur, au lancement, à la recherche web et à l'accès ; à relire.
 - [ ] **Les logos** : les glyphes des réseaux viennent de Simple Icons (CC0), mais les chartes de marque encadrent leur usage. Les logos des plateformes (`assets/img/tools/`) manquent toujours : le menu affiche des monogrammes.
 
@@ -149,6 +150,16 @@ Les pages offres sont prêtes, mais quatre informations ne peuvent pas être inv
 ## 7. Expertise : le « flash offert »
 
 - [ ] **Le hero des pages Expertise promet un flash offert** sur la marque du visiteur, préparé par un consultant sous 48 h (contenu par écoute dans `FLASH`, `tools/build-expertise.py`). À valider : pouvez-vous le tenir, et à quel volume ? Le formulaire n'envoie rien pour l'instant (marque + e-mail, à brancher au CRM).
+
+## 8. Blog, mentions légales, bascule depuis Webflow (octobre 2026)
+
+- [ ] **Les 23 articles repris de l'ancien site** (`tools/migrate-webflow-articles.py`, puis `tools/blog_articles.json`) : texte d'origine, typographie corrigée, images rapatriées dans `assets/img/blog/`, vidéos en lecteur intégré. À relire. Dates : celles de l'ancien site, lues dans l'identifiant de leur image ; celle de « Shein vs BHV » (2 décembre 2025) est estimée.
+- [ ] **L'article sur les JO de Paris 2024** (entretien avec Corentin Legall) n'est pas repris : il résume la vidéo qui ne doit pas paraître sur le site. Son ancienne adresse renvoie vers le blog.
+- [ ] **« Comment choisir son outil de social listening »** n'est pas repris : ce n'était qu'une page autour d'une vidéo YouTube devenue privée. Son adresse renvoie vers Techno & outils.
+- [ ] **Les 9 articles en anglais** du blog (rédigés pour remplir la maquette, jamais relus) sont en brouillon : `"draft": true` dans `tools/blog_articles.json`. Les republier = retirer ce champ, puis `python3 tools/build-blog.py`.
+- [ ] **Mentions légales** : reprises du registre officiel (Licter SAS, RCS Paris 915 259 394, TVA FR67915259394, siège 173 rue de Courcelles). À confirmer : le capital social (100 € au registre), le directeur de la publication (Antoine Khaitrine), et l'hébergeur (Vercel).
+- [ ] **Politique de confidentialité** : durée de conservation fixée à 3 ans (recommandation CNIL pour les prospects). À compléter avec le nom du CRM une fois choisi.
+- [ ] **Les 88 redirections** de l'ancien site (`vercel.json`, depuis `tools/redirects.json`) : à tester sur la prévisualisation Vercel avant la bascule DNS (ex. `/article/licter-lvmh`, `/vision`, `/contact`).
 
 ## Le jour de la bascule sur le vrai domaine
 

@@ -957,7 +957,11 @@ window.LicterUC = (function () {
         { letter: "S", logo: "/assets/img/tools/soprism.png", name: "SoPrism", href: "/tech-soprism.html",
           desc: "Audience intelligence: who the communities are, in detail." },
         { letter: "R", logo: "/assets/img/tools/radarly.png", name: "Radarly", href: "/tech-radarly.html",
-          desc: "Social listening and conversation analysis, over time." }
+          desc: "Social listening and conversation analysis, over time." },
+        { letter: "B", logo: "/assets/img/tools/brandwatch.png", name: "Brandwatch", href: "/tech-brandwatch.html",
+          desc: "Consumer research in depth: years of conversation, fine audiences." },
+        { letter: "S", logo: "/assets/img/tools/sprinklr.png", name: "Sprinklr", href: "/tech-sprinklr.html",
+          desc: "The customer voice at group scale: listening, reviews and care." }
       ],
       /* the tools around the platforms, picked question by question */
       extra: {
@@ -2432,4 +2436,36 @@ window.LicterUC = (function () {
   b.addEventListener("click", function () { index.classList.add("is-open"); b.remove(); });
   /* a sector filter shows everything that matches */
   document.querySelectorAll(".cl-tab").forEach(function (t) { t.addEventListener("click", function () { index.classList.add("is-open"); if (b.parentNode) b.remove(); }); });
+})();
+
+/* =========================================================================
+   Blog articles: a video plays where it is (youtube-nocookie), and the
+   French articles tell English readers they are in French.
+   ========================================================================= */
+(function () {
+  var prose = document.querySelector(".bl-prose");
+  if (!prose) return;
+  prose.addEventListener("click", function (e) {
+    var card = e.target.closest ? e.target.closest("a.bl-video__card") : null;
+    if (!card || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var id = card.getAttribute("data-yt");
+    if (!/^[\w-]{11}$/.test(id || "")) return;
+    e.preventDefault();
+    var shot = card.querySelector(".reel__shot");
+    var frame = document.createElement("iframe");
+    frame.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&modestbranding=1";
+    var cap = card.parentNode.querySelector("figcaption");
+    frame.title = cap ? cap.textContent : "Video";
+    frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    frame.allowFullscreen = true;
+    var box = document.createElement("div");
+    box.className = card.className + " is-playing";
+    box.appendChild(shot);
+    shot.innerHTML = "";
+    shot.appendChild(frame);
+    card.parentNode.replaceChild(box, card);
+    frame.focus();
+  });
+  var note = document.querySelector(".lang-note--fr");
+  try { if (note && localStorage.getItem("licter-lang") === "en") note.hidden = false; } catch (e) { /* private mode */ }
 })();

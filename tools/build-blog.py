@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds the blog: blog.html and the nine article-*.html pages.
+"""Builds the blog: blog.html and one article-*.html page per article.
 
 The articles live in tools/blog_articles.json (thread, title, lead, date,
 read time, author, the prose and the related use cases). Each one gets a
@@ -8,27 +8,34 @@ picture, and each thread has its own motif (signal lines for foresight, a
 radar for listening, two clouds for insights, a network for influence).
 The pictures are drawn, never data.
 
-Head, header and footer are kept from each file; only <main> is rewritten.
-The text is in English; js/fr.js translates the blog page at runtime (the
-articles carry their "English only" note).
+blog.html keeps its head, header and footer; only <main> is rewritten. The
+article pages are built whole from tools/article-shell.html. The articles of
+the former site (tools/migrate-webflow-articles.py, "lang": "fr") are pages
+written in French; an article marked "draft" is neither built nor listed.
 
     python3 tools/build-blog.py
 """
-import hashlib, html, json, math, pathlib, random, re
+import hashlib, html, importlib.util, json, math, pathlib, random, re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-ARTS = json.loads((ROOT / "tools" / "blog_articles.json").read_text())
+spec = importlib.util.spec_from_file_location("ucb", ROOT / "tools" / "build-usecases.py")
+U = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(U)
+SITE = "https://www.licter.com"
+ALL = json.loads((ROOT / "tools" / "blog_articles.json").read_text())
+ARTS = [x for x in ALL if not x.get("draft")]
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
 for x in ARTS:
     d, m, y = x["date"].split()
     x["key"] = (int(y), MONTHS.index(m), int(d))
     x["slug"] = x["file"][len("article-"):-len(".html")]
 ARTS.sort(key=lambda x: x["key"], reverse=True)
 
-THREADS = [("foresight", "SOCIAL DATA & FORESIGHT", "Social data & foresight", "Reading weak signals before they become trends: what actually predicts a shift, and what only looks like it does."),
-           ("listening", "MONITORING & SOCIAL LISTENING", "Monitoring & social listening", "How the practice is changing: alerting thresholds, language coverage, and what a platform cannot do on its own."),
-           ("insights", "CONSUMER INSIGHTS", "Consumer insights", "Behaviour against declaration: where panels and surveys disagree, and which one turned out to be right."),
-           ("influence", "INFLUENCE", "Influence", "Identifying the voices that carry an audience rather than a follower count, and measuring what they move.")]
+THREADS = [("foresight", "SOCIAL DATA & FORESIGHT", "Social data & foresight", "Reading what is shifting before it shows: new networks, consumption as activism, politics and the signals that announce a change."),
+           ("listening", "MONITORING & SOCIAL LISTENING", "Monitoring & social listening", "How the practice works in real teams: crisis monitoring, choosing a tool, getting it adopted, catching the news of your sector."),
+           ("insights", "CONSUMER INSIGHTS", "Consumer insights", "What brands learn from the conversation: L'Oréal, Orange, France Digitale, and the campaigns that worked."),
+           ("influence", "INFLUENCE", "Influence", "The voices that carry an audience: creators, leaders, and the events they turn into records.")]
 TH = {t[1]: t for t in THREADS}
 for x in ARTS:
     x["t"] = TH[x["thread"]][0]
@@ -97,15 +104,22 @@ def art(slug, thread, w=600, h=400, cls="bl-art"):
 
 
 # ------------------------------------------------------------------ blocks
-def meta(x):
+def fr_date(x):
+    d, m, y = x["date"].split()
+    return "%s %s %s" % ("1er" if d == "1" else d, MOIS[MONTHS.index(m)], y)
+
+
+def meta(x, fr=False):
+    if fr:
+        return '<span class="bl-meta"><span>%s</span><span>%s</span></span>' % (fr_date(x), x["read"].replace("min read", "min de lecture"))
     return '<span class="bl-meta"><span>%s</span><span>%s</span></span>' % (x["date"], x["read"])
 
 
-def card(x, big=False):
+def card(x, big=False, fr=False):
     # text only: the picture belongs to the article page
     return ('<li class="bl-card%s" data-t="%s"><a href="%s"><span class="bl-card__body"><span class="bl-card__top"><span class="bl-tag">%s</span>%s</span>'
             '<b class="bl-card__t">%s</b><span class="bl-card__d">%s</span><span class="bl-card__go">Read the piece <i aria-hidden="true">→</i></span></span></a></li>') % (
-        " bl-card--big" if big else "", x["t"], x["file"], x["tname"], meta(x), E(x["title"]), E(x["lead"]))
+        " bl-card--big" if big else "", x["t"], x["file"], x["tname"], meta(x, fr), E(x["title"]), E(x["lead"]))
 
 
 def mag_block(id_):
@@ -195,6 +209,9 @@ def slugify(s):
 
 
 def article_main(x):
+    fr = x.get("lang") == "fr"
+    note = ('<div class="shell"><p class="lang-note lang-note--fr" lang="en" role="note" hidden>This article is only available in French.</p></div>' if fr else
+            '<div class="shell"><p class="lang-note" role="note">Cet article n’est disponible qu’en anglais. Le reste du site bascule en français.</p></div>')
     prose, toc = x["prose"], []
     def h2(m):
         sid = slugify(m.group(1)); toc.append((sid, m.group(1)))
@@ -218,14 +235,14 @@ def article_main(x):
         <div class="bl-ah__art">%s</div>
       </div>
     </header>
-    <div class="shell"><p class="lang-note" role="note">Cet article n’est disponible qu’en anglais. Le reste du site bascule en français.</p></div>
+    %s
     <div class="shell bl-body">
       <aside class="bl-toc" aria-label="In this piece">
         <p class="bl-k">IN THIS PIECE</p>
         <ol>%s</ol>
         <button class="bl-copy" type="button" data-copied="Link copied">Copy the link</button>
       </aside>
-      <div class="prose bl-prose">%s</div>
+      <div class="prose bl-prose"%s>%s</div>
     </div>
   </article>
   <div class="shell bl-after">
@@ -242,8 +259,8 @@ def article_main(x):
 %s
     </div>
   </section>
-</main>''' % (E(x["title"]), x["tname"], E(x["title"]), E(x["lead"]), x["avatar"], x["author"], meta(x), art(x["slug"], x["t"], 900, 640),
-              toc_html, prose, x["uc"].replace('class="uc-links"', 'class="uc-links bl-uc"'), "".join(card(y) for y in more), mag_block(x["slug"][:10]))
+</main>''' % (E(x["title"]), x["tname"], E(x["title"]), E(x["lead"]), x["avatar"], x["author"], meta(x, fr), art(x["slug"], x["t"], 900, 640), note,
+              toc_html, ' lang="fr"' if fr else "", prose, x["uc"].replace('class="uc-links"', 'class="uc-links bl-uc"'), "".join(card(y, fr=fr) for y in more), mag_block(x["slug"][:10]))
 
 
 def write(file, main):
@@ -253,11 +270,70 @@ def write(file, main):
     p.write_text(s[:i] + main + s[j:])
 
 
+def title_tag(x):
+    t = html.unescape(x["title"])
+    return t if len(t) <= 56 else t[:56].rsplit(" ", 1)[0].rstrip(" :,?") + "…"
+
+
+def article_page(x):
+    """the whole page, from tools/article-shell.html"""
+    fr = x.get("lang") == "fr"
+    page = (ROOT / "tools" / "article-shell.html").read_text().split("\n", 1)[1]
+    desc = x["lead"] if len(x["lead"]) <= 160 else x["lead"][:157].rsplit(" ", 1)[0].rstrip(" ,:;") + "…"
+    page = page.replace("<!--TITLE-->", E(title_tag(x) + " | Licter")).replace("<!--DESC-->", E(desc)).replace("<!--MAIN-->", article_main(x))
+    if fr:
+        page = page.replace("<!--HTML-->", '<html lang="fr" data-i18n-static data-alt-fr="/%s" data-alt-en="/blog.html">' % x["file"])
+        b0, b1 = page.index("<body"), page.index("</body>")
+        page = page[:b0] + U.translate(page[b0:b1]).replace(">Skip to content<", ">Aller au contenu<") + page[b1:]
+    else:
+        page = page.replace("<!--HTML-->", '<html lang="en">')
+    # the article itself, for search engines
+    ld = {"@context": "https://schema.org", "@type": "Article", "headline": html.unescape(x["title"]), "description": html.unescape(x["lead"]),
+          "datePublished": "%04d-%02d-%02d" % (x["key"][0], x["key"][1] + 1, x["key"][2]), "inLanguage": "fr" if fr else "en",
+          "author": {"@type": "Person" if x["author"] != "Licter analysis team" else "Organization", "name": x["author"]},
+          "publisher": {"@type": "Organization", "name": "Licter", "url": SITE + "/"}, "mainEntityOfPage": SITE + "/" + x["file"]}
+    page = page.replace("</head>", '<script type="application/ld+json">%s</script>\n</head>' % json.dumps(ld, ensure_ascii=False), 1)
+    (ROOT / x["file"]).write_text(page)
+
+
+THREADS_FR = {
+    "foresight": "Lire ce qui bouge avant que cela se voie : nouveaux réseaux, consommation militante, politique, et les signaux qui annoncent un basculement.",
+    "listening": "Comment la pratique fonctionne dans de vraies équipes : veille de crise, choix d'un outil, adoption, actualité de votre secteur.",
+    "insights": "Ce que les marques apprennent de la conversation : L'Oréal, Orange, France Digitale, et les campagnes qui ont porté.",
+    "influence": "Les voix qui portent une audience : créateurs, dirigeants, et les événements qu'ils transforment en records."}
+
+
+def french_dictionary():
+    """the dates, reading times and thread texts of the blog page, for js/fr.js"""
+    p = ROOT / "js" / "fr.js"
+    src = p.read_text()
+    START, END = "  /* blog dates and threads (tools/build-blog.py) */\n", "  /* end of blog dates */\n"
+    if START in src:
+        i, j = src.index(START), src.index(END) + len(END)
+        src = src[:i] + src[j:]
+    pairs = {}
+    for x in ARTS:
+        pairs[x["date"]] = fr_date(x)
+        pairs[x["read"]] = x["read"].replace("min read", "min de lecture")
+    for k, _, _, d in THREADS:
+        pairs[d] = U.typo(THREADS_FR[k], U.FR)
+    pairs = {k: v for k, v in pairs.items() if '"%s":' % k not in src}
+    block = START + "".join("  %s: %s,\n" % (json.dumps(k, ensure_ascii=False), json.dumps(v, ensure_ascii=False)) for k, v in sorted(pairs.items())) + END
+    src = src.replace("  /* blog redesign", block + "  /* blog redesign", 1)
+    p.write_text(src)
+
+
 def main():
+    french_dictionary()
     write("blog.html", blog_main())
     for x in ARTS:
-        write(x["file"], article_main(x))
+        article_page(x)
+    for x in ALL:
+        if x.get("draft") and (ROOT / x["file"]).exists():
+            (ROOT / x["file"]).unlink()
     print("blog.html and %d articles written" % len(ARTS))
+    import runpy
+    runpy.run_path(str(ROOT / "tools" / "build-seo.py"), run_name="__main__")
 
 
 if __name__ == "__main__":

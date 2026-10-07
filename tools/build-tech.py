@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Builds the tool pages and the network pages, in English and French:
 
-    tech-<tool>.html        and /fr/outils/<tool>/     (13 tools, tools/tools_data.py)
+    tech-<tool>.html        and /fr/outils/<tool>/     (tools/tools_data.py)
     source-<network>.html   and /fr/sources/<network>/ (22 networks, tools/networks.py)
 
 plus the SEO head and the French twin of tech-tools.html (/fr/outils/).
@@ -113,6 +113,8 @@ SHORT = {
     "youscan": ("écoute visuelle des réseaux sociaux", "visual social listening"),
     "soprism": ("analyse des audiences", "audience intelligence"),
     "radarly": ("suivi de marque et écoute sociale", "brand tracking and social listening"),
+    "brandwatch": ("recherche consommateur et écoute sociale", "consumer research and social listening"),
+    "sprinklr": ("écoute sociale et voix du client", "social listening and customer voice"),
     "semrush": ("écoute de la recherche", "search listening"),
     "google-trends": ("lire les tendances de recherche", "reading search trends"),
     "answerthepublic": ("les questions de votre marché", "your market's questions"),
@@ -183,6 +185,7 @@ NET_STYLE = {
 NET_GLOW = {"instagram": "#F77737", "tiktok": "#FE2C55", "douyin": "#25F4EE", "threads": "#555", "x-twitter": "#3a3a3a", "snapchat": "#FFD500"}
 TOOL_STYLE = {
     "talkwalker": "#8C6BFF", "visibrain": "#3DCB9A", "youscan": "#5CB531", "soprism": "#F15A29", "radarly": "#2BBBAD",
+    "brandwatch": "#7B4DFF", "sprinklr": "#1E9BE9",
     "semrush": "#A87BFF", "google-trends": "#4285F4", "answerthepublic": "#FF5A1F", "chatgpt": "#10A37F", "geo": "#7C5CFF",
     "meta-ads": "#0866FF", "google-news": "#4285F4", "social-blade": "#C0392B",
     "claude": "#D97757", "gemini": "#4E7BEF", "perplexity": "#1F8A8A", "grok": "#4B4B55",
@@ -191,6 +194,7 @@ GEO_ENGINES = ["chatgpt", "claude", "gemini", "perplexity"]
 # where each screenshot comes from (assets/img/shots/<slug>.webp, captured in October 2026)
 SHOT_SRC = {
     "talkwalker": "talkwalker.com", "visibrain": "visibrain.com", "youscan": "youscan.io", "soprism": "audiense.com", "radarly": "meltwater.com",
+    "brandwatch": "brandwatch.com", "sprinklr": "sprinklr.com",
     "semrush": "semrush.com", "google-trends": "trends.google.com", "answerthepublic": "answerthepublic.com", "chatgpt": "chatgpt.com",
     "geo": "arxiv.org/abs/2311.09735", "meta-ads": "facebook.com/ads/library", "google-news": "news.google.com", "social-blade": "socialblade.com",
     "claude": "anthropic.com/claude", "perplexity": "perplexity.ai", "gemini": "gemini.google.com", "grok": "grok.com",

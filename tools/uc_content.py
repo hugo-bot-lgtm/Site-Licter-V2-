@@ -737,16 +737,22 @@ VOICES = {
 }
 
 # Blog articles, by file name.
-ARTICLES = {
-    "article-alerting-thresholds-are-editorial.html": ("Les seuils d'alerte sont un choix éditorial", "Alerting thresholds are an editorial choice"),
-    "article-behaviour-against-declaration.html": ("Le comportement contre la déclaration", "Behaviour against declaration"),
-    "article-language-coverage-is-not-translation.html": ("Couvrir une langue n'est pas la traduire", "Language coverage is not translation"),
-    "article-the-persona-workshop-replaced.html": ("L'atelier persona, remplacé", "The persona workshop, replaced"),
-    "article-the-trend-you-already-missed.html": ("La tendance que vous avez déjà ratée", "The trend you already missed"),
-    "article-the-voices-that-actually-carry.html": ("Les voix qui portent vraiment", "The voices that actually carry"),
-    "article-weak-signals-before-they-trend.html": ("Les signaux faibles, avant qu'ils ne deviennent tendance", "Weak signals, before they trend"),
-    "article-what-a-platform-cannot-do-alone.html": ("Ce qu'une plateforme ne fait pas seule", "What a platform cannot do on its own"),
-    "article-where-panels-and-surveys-disagree.html": ("Là où le panel et l'étude se contredisent", "Where panels and surveys disagree"),
+ARTICLES = {  # the articles of the blog (tools/blog_articles.json), as linked from the use cases
+    "article-analyser-les-succes-publicitaire-en-moins-d1h-spotlight-1-licter-x-petit-bateau.html": ("Analyser les succès publicitaires en moins d'une heure, avec Petit Bateau", "Reading what made an ad work in under an hour, with Petit Bateau"),
+    "article-axa-x-licter-gerer-une-crise-cest-dabord-lanticiper.html": ("Comment AXA lit la donnée sociale pour gérer une crise", "How AXA reads social data to manage a crisis"),
+    "article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html": ("Conquérir la cosmétique de luxe grâce au social listening", "Winning luxury cosmetics with social listening"),
+    "article-comment-france-digitale-juge-lefficacite-de-ses-actions-de-communication.html": ("Comment France Digitale juge l'efficacité de sa communication", "How France Digitale judges what its communication achieves"),
+    "article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html": ("Comment L'Oréal capte la voix du consommateur", "How L'Oréal captures the voice of the consumer"),
+    "article-comment-orange-analyse-tiktok-grace-au-social-listening.html": ("Comment Orange analyse TikTok grâce au social listening", "How Orange reads TikTok with social listening"),
+    "article-comment-origins-associe-influence-et-technologie-pour-transformer-le-capital-risque.html": ("Origins : l'influence au service du capital-risque", "Origins: influence in the service of venture capital"),
+    "article-departs-de-x-quels-reseaux-sociaux-peuvent-rivaliser-avec-la-plateforme-delon-musk.html": ("Départs de X : quels réseaux peuvent rivaliser ?", "Leaving X: which networks can compete?"),
+    "article-gp-explorer-3-squeezie-bat-les-records-daudience.html": ("GP Explorer 3 : Squeezie bat les records d'audience", "GP Explorer 3: Squeezie breaks audience records"),
+    "article-identifier-les-breaking-news-de-votre-secteur-comment-rester-informe-en-temps-reel.html": ("Identifier les breaking news de votre secteur", "Spotting the breaking news of your sector"),
+    "article-la-consommation-devient-un-acte-militant-les-insights-de-kantar-sur-les-tendances-dachat.html": ("La consommation devient un acte militant, avec Kantar", "Consumption becomes activism, with Kantar"),
+    "article-licter-lvmh.html": ("Comment LVMH mêle leader advocacy et social listening", "How LVMH combines leader advocacy and social listening"),
+    "article-shein-vs-bhv-dissection-d-une-crise-digitale-a-travers-la-social-data-intelligence.html": ("Shein vs BHV : dissection d'une crise digitale", "Shein vs BHV: anatomy of a digital crisis"),
+    "article-social-listening-et-politique-comment-capter-la-voix-des-citoyens.html": ("Social listening et politique : capter la voix des citoyens", "Social listening and politics: hearing citizens"),
+    "article-veiller-lactivite-digitale-autour-de-votre-marque.html": ("Veiller l'activité digitale autour de votre marque", "Monitoring the digital activity around your brand"),
 }
 
 # Per case: our approach, three returns on the investment, the client
@@ -758,7 +764,7 @@ EXTRA = {
     "roi": [(("Un budget mieux placé", "Budget where it pays"), ("Vous savez quels leviers ont vraiment porté la campagne : la suivante mise sur eux.", "You know which levers really carried the campaign: the next one backs them.")),
             (("Un bilan en jours", "A review in days"), ("Une première lecture dès la fin de la campagne, pas un bilan trois mois plus tard.", "A first read as soon as the campaign ends, not a review three months later.")),
             (("Des arbitrages défendables", "Decisions you can defend"), ("Des preuves chiffrées, audience par audience, pour arbitrer en comité.", "Evidence, audience by audience, to settle choices in committee."))],
-    "voice": "lvmh", "articles": ["article-what-a-platform-cannot-do-alone.html", "article-the-voices-that-actually-carry.html"],
+    "voice": "lvmh", "articles": ["article-analyser-les-succes-publicitaire-en-moins-d1h-spotlight-1-licter-x-petit-bateau.html", "article-comment-france-digitale-juge-lefficacite-de-ses-actions-de-communication.html"],
   },
   "leader-advocacy": {
     "approach": ("Nous partons des sujets sur lesquels votre dirigeant est légitime, pas de ceux sur lesquels il aimerait l'être. Nous mesurons sa part de voix sujet par sujet face à un panel de pairs choisi avec vous, et nous regardons qui relaie ses messages. Le résultat est un plan de prise de parole, pas un classement.",
@@ -766,7 +772,7 @@ EXTRA = {
     "roi": [(("Moins de prises de parole perdues", "Fewer wasted statements"), ("Le dirigeant parle là où il est attendu, et plus là où il ajoute du bruit.", "The leader speaks where they are expected, no longer where they add noise.")),
             (("Une visibilité qui profite à la marque", "Visibility that serves the brand"), ("Ses sujets et ceux de l'entreprise se renforcent au lieu de se disperser.", "Their subjects and the company's reinforce each other instead of scattering.")),
             (("Des faux pas évités", "Missteps avoided"), ("Savoir sur quoi il est attendu protège aussi en période sensible.", "Knowing what they are expected to address also protects in sensitive times."))],
-    "voice": "axa", "articles": ["article-the-voices-that-actually-carry.html", "article-where-panels-and-surveys-disagree.html"],
+    "voice": "axa", "articles": ["article-licter-lvmh.html", "article-axa-x-licter-gerer-une-crise-cest-dabord-lanticiper.html"],
   },
   "ambassadors": {
     "approach": ("Nous ne partons pas d'une liste d'influenceurs. Nous partons de votre audience cible, et nous cherchons les voix qu'elle écoute vraiment. Chaque voix est ensuite classée sur trois critères : recouvrement d'audience, affinité avec votre catégorie et risques attachés à son nom.",
@@ -774,7 +780,7 @@ EXTRA = {
     "roi": [(("Un budget d'influence qui touche les bonnes personnes", "Influence spend that reaches the right people"), ("Vous payez pour une audience qui recoupe la vôtre, pas pour des abonnés.", "You pay for an audience that overlaps yours, not for followers.")),
             (("Des créateurs repérés tôt", "Creators found early"), ("Les voix émergentes coûtent moins cher avant de devenir évidentes.", "Emerging voices cost less before they become obvious.")),
             (("Des polémiques évitées", "Controversies avoided"), ("Les signaux de risque sont vérifiés avant de signer.", "Risk flags are checked before signing."))],
-    "voice": "lvmh", "articles": ["article-the-voices-that-actually-carry.html", "article-the-persona-workshop-replaced.html"],
+    "voice": "lvmh", "articles": ["article-comment-origins-associe-influence-et-technologie-pour-transformer-le-capital-risque.html", "article-gp-explorer-3-squeezie-bat-les-records-daudience.html"],
   },
   "reputation": {
     "approach": ("Nous lisons votre réputation en continu, dans toutes les langues de vos marchés, et nous la comparons à celle de vos concurrents. Un analyste qualifie les évolutions chaque mois, et vous alerte dès qu'un sujet rompt la tendance. Vous recevez une note d'analyse, pas un tableau de bord de plus.",
@@ -782,7 +788,7 @@ EXTRA = {
     "roi": [(("Des problèmes vus à temps", "Problems seen in time"), ("Une alerte 24 h/24 quand un sujet change, avant qu'il ne coûte.", "A 24/7 alert when a subject shifts, before it costs you.")),
             (("Moins de temps passé à surveiller", "Less time spent watching"), ("Vos équipes lisent une note mensuelle au lieu de trier des mentions.", "Your teams read a monthly note instead of sorting mentions.")),
             (("Un tarif à votre mesure", "A price set to your scope"), ("Le tarif dépend des marques, des marchés et des langues suivis, rien d'autre.", "The price depends on the brands, markets and languages covered, nothing else."))],
-    "voice": "sncf", "articles": ["article-language-coverage-is-not-translation.html", "article-alerting-thresholds-are-editorial.html"],
+    "voice": "sncf", "articles": ["article-veiller-lactivite-digitale-autour-de-votre-marque.html", "article-identifier-les-breaking-news-de-votre-secteur-comment-rester-informe-en-temps-reel.html"],
   },
   "messaging": {
     "approach": ("Nous confrontons votre plateforme de marque à la conversation réelle de votre catégorie. Nous classons les mots, les promesses et les preuves par traction, chez vous et chez vos concurrents, pour voir lesquels circulent et lesquels restent dans vos présentations.",
@@ -790,7 +796,7 @@ EXTRA = {
     "roi": [(("Des messages qui portent", "Messages that land"), ("Votre discours reprend les mots que vos clients utilisent déjà.", "Your messaging uses the words your customers already use.")),
             (("Moins d'allers-retours avec l'agence", "Fewer rounds with the agency"), ("Un brief appuyé sur des preuves, pas sur des intuitions.", "A brief built on evidence, not hunches.")),
             (("Un terrain que vos concurrents n'occupent pas", "Ground your competitors do not hold"), ("Les promesses libres de votre catégorie apparaissent clairement.", "The unclaimed claims of your category show up clearly."))],
-    "voice": "loreal", "articles": ["article-where-panels-and-surveys-disagree.html", "article-behaviour-against-declaration.html"],
+    "voice": "loreal", "articles": ["article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html", "article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html"],
   },
   "brand-risk": {
     "approach": ("Nous cartographions avec vous les risques propres à votre secteur, puis nous fixons des seuils d'alerte avec un éditeur, pas un algorithme. Chaque signal est qualifié par un analyste avant de vous être envoyé : qui le porte, avec quelle influence, à quelle vitesse il se propage.",
@@ -798,7 +804,7 @@ EXTRA = {
     "roi": [(("Des crises évitées", "Crises avoided"), ("Un signal traité quand il est encore maîtrisable coûte moins qu'une crise.", "A signal handled while still containable costs less than a crisis.")),
             (("Une alerte en 15 minutes", "Alerted within 15 minutes"), ("Dans plus de vingt langues, avec un protocole d'escalade défini à l'avance.", "In more than twenty languages, with an escalation protocol set in advance.")),
             (("Pas de fausses alertes", "No false alarms"), ("Vos équipes ne sont dérangées que pour ce qui compte.", "Your teams are only disturbed for what matters."))],
-    "voice": "kantar", "articles": ["article-weak-signals-before-they-trend.html", "article-alerting-thresholds-are-editorial.html"],
+    "voice": "kantar", "articles": ["article-axa-x-licter-gerer-une-crise-cest-dabord-lanticiper.html", "article-shein-vs-bhv-dissection-d-une-crise-digitale-a-travers-la-social-data-intelligence.html"],
   },
   "segmentation": {
     "approach": ("Nous partons de ce que vos clients font, pas de ce qu'ils déclarent. Le panel comportemental fait apparaître les communautés qui composent réellement votre audience ; nous mesurons pour chacune l'affinité, la pénétration et l'opportunité, et nous en tirons les priorités du plan média.",
@@ -806,7 +812,7 @@ EXTRA = {
     "roi": [(("Un plan média qui vise juste", "A media plan that hits"), ("Le budget va aux communautés où l'opportunité est la plus forte.", "Budget goes to the communities with the strongest opportunity.")),
             (("Des cibles oubliées retrouvées", "Overlooked targets found"), ("Les communautés que le brief n'avait pas vues apparaissent.", "The communities the brief had missed come to light.")),
             (("Des personas qui durent", "Personas that last"), ("Bâtis sur plus de 5 000 critères, ils se mettent à jour avec les données.", "Built on more than 5,000 criteria, they update with the data."))],
-    "voice": "paris", "articles": ["article-the-persona-workshop-replaced.html", "article-behaviour-against-declaration.html"],
+    "voice": "paris", "articles": ["article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html", "article-comment-orange-analyse-tiktok-grace-au-social-listening.html"],
   },
   "rejuvenate": {
     "approach": ("Nous comparons point par point la génération que vous visez et votre base actuelle : sujets, plateformes, créateurs, mots. L'écart devient une liste de ponts concrets, pour rajeunir votre audience sans perdre celle que vous avez.",
@@ -814,7 +820,7 @@ EXTRA = {
     "roi": [(("Des clients pour les dix prochaines années", "Customers for the next ten years"), ("Vous préparez la relève de votre base avant qu'elle ne vieillisse.", "You prepare the next generation of your base before it ages.")),
             (("Moins d'essais à l'aveugle", "Fewer blind tests"), ("Vous savez où et avec qui parler à la génération suivante.", "You know where and with whom to talk to the next generation.")),
             (("Une base actuelle préservée", "Your current base kept"), ("Les ponts passent par ce que les deux audiences partagent.", "The bridges go through what both audiences share."))],
-    "voice": "orange", "articles": ["article-the-persona-workshop-replaced.html", "article-the-trend-you-already-missed.html"],
+    "voice": "orange", "articles": ["article-comment-orange-analyse-tiktok-grace-au-social-listening.html", "article-gp-explorer-3-squeezie-bat-les-records-daudience.html"],
   },
   "touchpoints": {
     "approach": ("Nous découpons avec vous le parcours client en étapes, puis nous lisons ce que vos clients racontent de chacune, chez vous et chez vos concurrents. Les attentes et les irritants sont classés par fréquence, pour savoir quoi corriger en premier.",
@@ -822,7 +828,7 @@ EXTRA = {
     "roi": [(("Moins de clients perdus", "Fewer customers lost"), ("Vous corrigez d'abord les irritants qui font partir.", "You fix first the irritants that make people leave.")),
             (("Moins de réclamations", "Fewer complaints"), ("Les problèmes récurrents sont traités à la source.", "Recurring problems are dealt with at the source.")),
             (("Des investissements bien ciblés", "Well-aimed investment"), ("Chaque étape du parcours est priorisée par ce qu'elle rapporte.", "Each step of the journey is prioritised by what it brings."))],
-    "voice": "francedigitale", "articles": ["article-where-panels-and-surveys-disagree.html", "article-behaviour-against-declaration.html"],
+    "voice": "francedigitale", "articles": ["article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html", "article-la-consommation-devient-un-acte-militant-les-insights-de-kantar-sur-les-tendances-dachat.html"],
   },
   "product-test": {
     "approach": ("Nous lisons le verdict non filtré sur vos produits et ceux de vos concurrents : avis, vidéos de test, forums, usages détournés. Un analyste classe les forces et les irritants par fréquence, produit par produit, et en tire les priorités de la prochaine version.",
@@ -830,7 +836,7 @@ EXTRA = {
     "roi": [(("Des retours produits en moins", "Fewer returns"), ("Les défauts qui font renvoyer un produit sont corrigés en priorité.", "The flaws that make people return a product are fixed first.")),
             (("Une feuille de route appuyée sur des preuves", "An evidence-based roadmap"), ("La prochaine version répond à ce que les clients disent vraiment.", "The next version answers what customers actually say.")),
             (("Des idées gratuites", "Free ideas"), ("Les usages détournés ouvrent des pistes produit que personne n'a testées.", "Workarounds open product leads nobody has tested."))],
-    "voice": "dassault", "articles": ["article-where-panels-and-surveys-disagree.html", "article-the-trend-you-already-missed.html"],
+    "voice": "dassault", "articles": ["article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html", "article-la-consommation-devient-un-acte-militant-les-insights-de-kantar-sur-les-tendances-dachat.html"],
   },
   "market-opportunities": {
     "approach": ("Nous délimitons avec vous le marché, puis nous en lisons toute la conversation et la demande exprimée en recherche. Les besoins qui reviennent sans réponse et les espaces que vos concurrents n'occupent pas deviennent une recommandation argumentée : y aller ou non, et avec quelle offre.",
@@ -838,7 +844,7 @@ EXTRA = {
     "roi": [(("Un lancement moins risqué", "A less risky launch"), ("Vous entrez sur un marché en sachant ce qui y manque.", "You enter a market knowing what it lacks.")),
             (("Un avantage d'avance", "A head start"), ("Les besoins apparaissent dans la conversation avant les études.", "Needs show up in the conversation before the surveys.")),
             (("Moins d'études de marché ad hoc", "Fewer one-off market studies"), ("Une équipe qui suit vos questions remplace les études au coup par coup.", "One team following your questions replaces one-off studies."))],
-    "voice": "seb", "articles": ["article-the-trend-you-already-missed.html", "article-language-coverage-is-not-translation.html"],
+    "voice": "seb", "articles": ["article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html", "article-la-consommation-devient-un-acte-militant-les-insights-de-kantar-sur-les-tendances-dachat.html"],
   },
   "stakeholders": {
     "approach": ("Nous repérons les communautés, les experts, les médias et les institutions qui façonnent votre catégorie, puis nous suivons l'évolution des sujets mois après mois, sur dix-huit mois. Un analyste distingue ce qui monte vraiment de ce qui fait du bruit, et vous dit quoi lancer, surveiller ou arrêter.",
@@ -846,7 +852,7 @@ EXTRA = {
     "roi": [(("Des tendances prises avant les autres", "Trends caught before others"), ("Vous agissez quand un sujet monte, pas quand il est partout.", "You act when a topic is rising, not when it is everywhere.")),
             (("Moins de paris ratés", "Fewer failed bets"), ("Les modes passagères sont écartées avant d'y investir.", "Passing fads are ruled out before you invest.")),
             (("Les bons interlocuteurs", "The right people to talk to"), ("Vous savez qui compte dans votre catégorie, et quand leur parler.", "You know who matters in your category, and when to talk to them."))],
-    "voice": "transat", "articles": ["article-weak-signals-before-they-trend.html", "article-the-trend-you-already-missed.html"],
+    "voice": "transat", "articles": ["article-social-listening-et-politique-comment-capter-la-voix-des-citoyens.html", "article-departs-de-x-quels-reseaux-sociaux-peuvent-rivaliser-avec-la-plateforme-delon-musk.html"],
   },
 }
 

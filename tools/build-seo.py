@@ -1,0 +1,170 @@
+#!/usr/bin/env python3
+"""The last pass over every page: what search engines and share previews read.
+
+For each page of the site (the root pages, /fr/ and /en/):
+  - the title ends in "| Licter" (no dash in the copy, titles included),
+    unless that makes it longer than 65 characters;
+  - a canonical URL, and hreflang links (to the twin page when there is one,
+    otherwise x-default to itself);
+  - og:url, and a share image: pages without one get a card drawn in the
+    charter of tools/build-og.py (navy, amber, Aiglon), from their title,
+    saved as assets/img/og/p-<page>.jpg;
+  - a meta description of 160 characters at most.
+404.html and use-cases.html (a redirect) are left alone.
+
+Run by tools/build-usecases.py and tools/build-blog.py at the end, or alone:
+
+    python3 tools/build-seo.py
+"""
+import hashlib, html, json, pathlib, re, sys, textwrap
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+SITE = "https://www.licter.com"
+SKIP = {"404.html", "use-cases.html"}
+W, H = 1200, 630
+NAVY, CREAM, AMBER = (19, 22, 45), (252, 246, 239), (234, 169, 61)
+DEMI = str(ROOT / "assets/fonts/AiglonProWide-Demi.otf")
+OG = ROOT / "assets/img/og"
+STAMP = ROOT / "tools" / "og-cards.json"   # what each card was drawn from, so unchanged cards are not redrawn
+
+THREAD_FR = {"SOCIAL DATA & FORESIGHT": "Social data & prospective", "MONITORING & SOCIAL LISTENING": "Veille & social listening",
+             "CONSUMER INSIGHTS": "Consumer insights", "INFLUENCE": "Influence"}
+ARTS = {a["file"]: a for a in json.loads((ROOT / "tools/blog_articles.json").read_text())}
+
+
+def pages():
+    out = [p for p in sorted(ROOT.glob("*.html")) if p.name not in SKIP]
+    for d in ("fr", "en"):
+        out += sorted((ROOT / d).rglob("index.html"))
+    return out
+
+
+def url_of(p):
+    rel = p.relative_to(ROOT).as_posix()
+    if rel == "index.html":
+        return "/"
+    return "/" + (rel[:-len("index.html")] if rel.endswith("/index.html") else rel)
+
+
+def kicker(rel, fr):
+    name = rel.split("/")[-2] if rel.endswith("index.html") else rel
+    if rel.startswith("article-"):
+        a = ARTS.get(rel)
+        return "Blog · " + (THREAD_FR.get(a["thread"], "") if a else "")
+    table = [
+        (lambda: rel.startswith("tech-") or rel.startswith("fr/outils/"), "Techno & outils", "Tech & tools"),
+        (lambda: rel.startswith("source-") or rel.startswith("fr/sources/"), "D'où viennent les données", "Where the data comes from"),
+        (lambda: rel.startswith("offer") or rel.startswith("fr/offres/"), "Offres", "Offers"),
+        (lambda: rel.startswith("expertise") or rel.startswith("fr/expertise/"), "Expertise", "Expertise"),
+        (lambda: rel.startswith("event"), "Événements", "Events"),
+        (lambda: rel == "blog.html", "Blog", "Blog"),
+        (lambda: rel == "clients.html", "Clients", "Clients"),
+        (lambda: rel == "why-licter.html", "Pourquoi Licter", "Why Licter"),
+        (lambda: rel == "diagnostic.html", "Diagnostic", "Diagnostic"),
+        (lambda: rel == "guide.html", "Guide offert", "Free guide"),
+        (lambda: rel == "book-a-meeting.html", "Rendez-vous", "Book a meeting"),
+        (lambda: rel in ("legal.html", "privacy.html"), "Licter", "Licter"),
+    ]
+    for test, f, e in table:
+        if test():
+            return f if fr else e
+    return "Licter"
+
+
+def card(kick, title, name):
+    """the share image, unless the same card is already drawn"""
+    stamps = json.loads(STAMP.read_text()) if STAMP.exists() else {}
+    key = hashlib.md5(("%s|%s" % (kick, title)).encode()).hexdigest()
+    if stamps.get(name) == key and (OG / name).exists():
+        return
+    im = Image.new("RGB", (W, H), NAVY)
+    glow = Image.new("RGB", (W, H), NAVY)
+    d = ImageDraw.Draw(glow)
+    d.ellipse((760, -260, 1460, 440), fill=(92, 72, 50))
+    im = Image.blend(im, glow.filter(ImageFilter.GaussianBlur(140)), .85)
+    d = ImageDraw.Draw(im)
+    d.text((80, 86), kick.upper(), font=ImageFont.truetype(DEMI, 26), fill=AMBER)
+    for size in (64, 58, 52, 46, 40):
+        f = ImageFont.truetype(DEMI, size)
+        lines = textwrap.wrap(title, width=int(1040 / (size * .62)))
+        if len(lines) <= 4:
+            break
+    y = 150
+    for line in lines[:5]:
+        d.text((80, y), line, font=f, fill=CREAM)
+        y += int(size * 1.18)
+    d.rounded_rectangle((80, y + 18, 176, y + 24), 3, fill=AMBER)
+    logo = Image.open(ROOT / "assets/img/logo-white.png").convert("RGBA")
+    logo = logo.resize((round(logo.width * 58 / logo.height), 58), Image.LANCZOS)
+    im.paste(logo, (80, H - 108), logo)
+    d.text((W - 80, H - 76), "Social Data Intelligence", font=ImageFont.truetype(DEMI, 20), fill=(200, 196, 210), anchor="ra")
+    im.save(OG / name, "JPEG", quality=84, optimize=True, progressive=True)
+    stamps[name] = key
+    STAMP.write_text(json.dumps(stamps, indent=0, sort_keys=True))
+
+
+def add_head(s, tag):
+    return s.replace("</head>", tag + "\n</head>", 1)
+
+
+def shorten(t, n):
+    return t if len(t) <= n else t[:n - 1].rsplit(" ", 1)[0].rstrip(" ,:;.") + "…"
+
+
+def main():
+    OG.mkdir(parents=True, exist_ok=True)
+    done = 0
+    for p in pages():
+        s0 = s = p.read_text()
+        rel = p.relative_to(ROOT).as_posix()
+        url = SITE + url_of(p)
+        m = re.search(r'<html[^>]*\blang="(\w+)"', s)
+        fr = bool(m and m.group(1) == "fr")
+        # titles: "| Licter", never a dash
+        s = re.sub(r"(<title>[^<]*?)\s+[—–]\s+Licter</title>", r"\1 | Licter</title>", s)
+        s = re.sub(r'(<meta (?:property="og:title"|name="twitter:title") content="[^"]*?)\s+[—–]\s+Licter"', r'\1 | Licter"', s)
+        # a title longer than 65 characters drops the brand: the subject is what shows in results
+        s = re.sub(r"<title>([^<]*?) \| Licter</title>", lambda m_: "<title>%s</title>" % m_.group(1) if len(html.unescape(m_.group(1))) > 56 else m_.group(0), s)
+        # description: 160 characters at most
+        def desc(m_):
+            d = html.unescape(m_.group(2))
+            return m_.group(1) + html.escape(shorten(d, 160), quote=True) + '"' if len(d) > 160 else m_.group(0)
+        s = re.sub(r'(<meta (?:name="description"|property="og:description") content=")([^"]*)"', desc, s)
+        # canonical
+        if 'rel="canonical"' not in s:
+            s = add_head(s, '<link rel="canonical" href="%s" />' % url)
+        # hreflang
+        if "hreflang=" not in s:
+            alt_fr = re.search(r'data-alt-fr="([^"]+)"', s)
+            alt_en = re.search(r'data-alt-en="([^"]+)"', s)
+            if alt_fr and alt_en and alt_fr.group(1) != alt_en.group(1) and not rel.startswith("article-"):
+                s = add_head(s, '<link rel="alternate" hreflang="fr" href="%s%s" />\n<link rel="alternate" hreflang="en" href="%s%s" />\n'
+                                '<link rel="alternate" hreflang="x-default" href="%s%s" />' % (SITE, alt_fr.group(1), SITE, alt_en.group(1), SITE, alt_fr.group(1)))
+            elif fr:
+                s = add_head(s, '<link rel="alternate" hreflang="fr" href="%s" />\n<link rel="alternate" hreflang="x-default" href="%s" />' % (url, url))
+            else:
+                s = add_head(s, '<link rel="alternate" hreflang="x-default" href="%s" />' % url)
+        if 'property="og:url"' not in s:
+            s = add_head(s, '<meta property="og:url" content="%s" />' % url)
+        # share image: the cards drawn here are redrawn each time (title changes)
+        s = re.sub(r'<meta property="og:image" content="%s/assets/img/og/p-[^"]+" />\n<meta property="og:image:width" content="1200" />\n'
+                   r'<meta property="og:image:height" content="630" />\n' % re.escape(SITE), "", s)
+        if 'property="og:image"' not in s:
+            t = re.search(r'<meta property="og:title" content="([^"]*)"', s) or re.search(r"<title>([^<]*)</title>", s)
+            title = re.sub(r"\s*\|\s*Licter$", "", html.unescape(t.group(1)).strip())
+            if rel in ARTS:      # the whole title of an article, not the shortened tab title
+                title = html.unescape(ARTS[rel]["title"]).replace("\u00a0", " ")
+            name = "p-%s.jpg" % (re.sub(r"[^a-z0-9]+", "-", re.sub(r"\.html$", "", url_of(p)).lower()).strip("-") or "home")
+            card(kicker(rel, fr), title, name)
+            s = add_head(s, '<meta property="og:image" content="%s/assets/img/og/%s" />\n<meta property="og:image:width" content="1200" />\n'
+                            '<meta property="og:image:height" content="630" />' % (SITE, name))
+        s = s.replace('<meta name="twitter:card" content="summary" />', '<meta name="twitter:card" content="summary_large_image" />')
+        if s != s0:
+            p.write_text(s)
+            done += 1
+    print("seo: %d pages updated" % done)
+
+
+if __name__ == "__main__":
+    main()

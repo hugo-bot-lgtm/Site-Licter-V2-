@@ -2,3 +2,8 @@
 .claude/
 .vercel
 .env*
+__pycache__/
+*.pyc
+.DS_Store
+/shots/
+/*.png

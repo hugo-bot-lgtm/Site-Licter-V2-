@@ -2,3 +2,7 @@ tools/
 README.md
 *.md
 .git
+serve.py
+__pycache__/
+*.pyc
+shots/

@@ -152,7 +152,7 @@ BANNER = re.compile(r'<aside class="banner(?: banner--event)?"[^>]*>.*?</aside>'
 def set_banners(e):
     tag = banner_html(e)
     n = 0
-    for p in sorted(ROOT.glob("*.html")):
+    for p in sorted(ROOT.glob("*.html")) + [ROOT / "tools" / "article-shell.html"]:
         if p.name in ("use-cases.html",):
             continue
         s = p.read_text()
@@ -185,8 +185,8 @@ def event_body(e):
     return f'''<main id="content">
 {crumbs([(S["home"], "index.html"), (S["events"], "events.html"), (e["sector"], None)])}
 
-  <!-- MOCK: programme, time and entry to be confirmed; the form sends nothing yet (js/events.js). -->
-  <section class="xh ev" data-ev-date="{e["date"]}" data-mock>
+  <!-- MOCK: the form sends nothing yet (js/events.js); wire it to the CRM. -->
+  <section class="xh ev" data-ev-date="{e["date"]}">
     <div class="shell ev__grid">
       <div class="ev__copy">
         <p class="xh__kick"><span>{t(S["kicker"])}</span> · <span>{t(e["sector"])}</span></p>

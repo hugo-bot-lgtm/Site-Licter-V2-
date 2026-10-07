@@ -253,6 +253,26 @@ window.LicterFR = {
   "Cards": "Cartes",
   "List": "Liste",
   "Display": "Affichage",
+  /* blog dates and threads (tools/build-blog.py) */
+  "13 November 2024": "13 novembre 2024",
+  "14 June 2024": "14 juin 2024",
+  "2 December 2025": "2 décembre 2025",
+  "23 July 2024": "23 juillet 2024",
+  "28 March 2024": "28 mars 2024",
+  "29 October 2024": "29 octobre 2024",
+  "30 October 2024": "30 octobre 2024",
+  "4 min read": "4 min de lecture",
+  "5 December 2024": "5 décembre 2024",
+  "5 min read": "5 min de lecture",
+  "6 min read": "6 min de lecture",
+  "7 June 2024": "7 juin 2024",
+  "9 December 2024": "9 décembre 2024",
+  "9 October 2025": "9 octobre 2025",
+  "How the practice works in real teams: crisis monitoring, choosing a tool, getting it adopted, catching the news of your sector.": "Comment la pratique fonctionne dans de vraies équipes : veille de crise, choix d'un outil, adoption, actualité de votre secteur.",
+  "Reading what is shifting before it shows: new networks, consumption as activism, politics and the signals that announce a change.": "Lire ce qui bouge avant que cela se voie : nouveaux réseaux, consommation militante, politique, et les signaux qui annoncent un basculement.",
+  "The voices that carry an audience: creators, leaders, and the events they turn into records.": "Les voix qui portent une audience : créateurs, dirigeants, et les événements qu'ils transforment en records.",
+  "What brands learn from the conversation: L'Oréal, Orange, France Digitale, and the campaigns that worked.": "Ce que les marques apprennent de la conversation : L'Oréal, Orange, France Digitale, et les campagnes qui ont porté.",
+  /* end of blog dates */
   /* blog redesign (October 2026) */
   "pieces": "articles",
   "4 threads": "4 fils",
@@ -649,6 +669,53 @@ window.LicterFR = {
   "30 December 2026": "30 décembre 2026",
   "31 December 2026": "31 décembre 2026",
   "What you already run, what is not working, what you need to decide.": "Ce que vous avez déjà, ce qui ne marche pas, ce que vous devez décider.",
+  /* legal notice and privacy (October 2026) */
+  "Publisher": "Éditeur",
+  "Licter SAS, a simplified joint-stock company (société par actions simplifiée) with a share capital of €100, registered with the Paris Trade and Companies Register under number 915 259 394.": "Licter SAS, société par actions simplifiée au capital de 100 €, immatriculée au registre du commerce et des sociétés de Paris sous le numéro 915 259 394.",
+  "VAT number: FR67915259394.": "Numéro de TVA intracommunautaire : FR67915259394.",
+  "Registered office: 173 rue de Courcelles, 75017 Paris, France.": "Siège social : 173 rue de Courcelles, 75017 Paris.",
+  "Publication director: Antoine Khaitrine, co-founder.": "Directeur de la publication : Antoine Khaitrine, cofondateur.",
+  "Contact:": "Contact :",
+  "Hosting": "Hébergement",
+  "This site is hosted by Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, United States (vercel.com).": "Ce site est hébergé par Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis (vercel.com).",
+  "Terms of use": "Conditions d'utilisation",
+  "By using this site, you accept these terms. Licter may change them at any time; the version online is the one that applies.": "En utilisant ce site, vous acceptez les présentes conditions. Licter peut les modifier à tout moment : la version en ligne est celle qui s'applique.",
+  "The site presents Licter, a social data intelligence consultancy: social listening, audience intelligence, monitoring and the related studies. The services described can change without notice; only a signed proposal commits Licter.": "Le site présente Licter, cabinet de conseil en social data intelligence : social listening, audience intelligence, veille et études associées. Les services décrits peuvent évoluer sans préavis ; seule une proposition signée engage Licter.",
+  "Licter takes care to keep the information on this site accurate, but cannot guarantee that it is complete or free of errors, and is not liable for damage arising from its use or from the site being unavailable.": "Licter veille à l'exactitude des informations publiées, sans pouvoir garantir qu'elles soient complètes ou exemptes d'erreurs, et ne saurait être tenue responsable des dommages liés à leur utilisation ou à une indisponibilité du site.",
+  "The site links to third-party sites, whose content Licter does not control and for which it cannot be held responsible.": "Le site renvoie vers des sites tiers, dont Licter ne maîtrise pas le contenu et dont elle ne peut être tenue responsable.",
+  "These terms are governed by French law. Any dispute about the use of the site falls under the exclusive jurisdiction of the courts of Paris.": "Les présentes conditions sont régies par le droit français. Tout litige relatif à l'utilisation du site relève de la compétence exclusive des tribunaux de Paris.",
+  "Intellectual property": "Propriété intellectuelle",
+  "The texts, photographs, videos, illustrations and logos on this site belong to Licter or are used with the permission of their owners. They may not be reproduced or reused without prior written consent.": "Les textes, photographies, vidéos, illustrations et logos de ce site appartiennent à Licter ou sont utilisés avec l'accord de leurs titulaires. Toute reproduction ou réutilisation sans accord écrit préalable est interdite.",
+  "The names and logos of clients, platforms and social networks belong to their respective owners. The screenshots of the platforms' official sites are shown to illustrate them, with their source.": "Les noms et logos des clients, plateformes et réseaux sociaux appartiennent à leurs titulaires respectifs. Les captures des sites officiels des plateformes les illustrent, avec leur source.",
+  "Team photographs and Audience First interviews: Licter, all rights reserved.": "Photographies de l'équipe et entretiens Audience First : Licter, tous droits réservés.",
+  "Personal data": "Données personnelles",
+  "How we handle the data you leave in our forms is explained in the": "La façon dont nous traitons les données laissées dans nos formulaires est décrite dans la",
+  "privacy policy": "politique de confidentialité",
+  "Who is responsible": "Responsable du traitement",
+  "Licter SAS, 173 rue de Courcelles, 75017 Paris, France. Contact:": "Licter SAS, 173 rue de Courcelles, 75017 Paris. Contact :",
+  "What we collect": "Ce que nous collectons",
+  "Only what you type into a form: your work email or phone number, and, depending on the form, your name, company, sector, brand, the question you want to answer, or your answers to the diagnostic.": "Uniquement ce que vous saisissez dans un formulaire : votre e-mail professionnel ou votre téléphone et, selon le formulaire, votre nom, votre entreprise, votre secteur, votre marque, la question à laquelle vous voulez répondre ou vos réponses au diagnostic.",
+  "Our host also keeps technical logs (IP address, browser, pages requested) for a short time, for security.": "Notre hébergeur conserve aussi, pour une courte durée et pour des raisons de sécurité, des journaux techniques (adresse IP, navigateur, pages demandées).",
+  "Why": "Pourquoi",
+  "To reply to you, send you what you asked for (a guide, an example, a magazine, a meeting invitation, a callback) and, if you subscribed, our newsletter. Legal basis: your consent, and our legitimate interest in answering a request you made.": "Pour vous répondre, vous envoyer ce que vous avez demandé (un guide, un exemple, un magazine, une invitation, un rappel) et, si vous vous êtes abonné, notre lettre d'information. Base légale : votre consentement, et notre intérêt légitime à répondre à une demande que vous avez faite.",
+  "Who sees it": "Qui y a accès",
+  "The Licter team only, and the providers that run the site and our email and client relationship tools, who process it on our behalf. We do not sell or rent your data.": "L'équipe Licter uniquement, et les prestataires qui font fonctionner le site et nos outils d'e-mail et de relation client, pour notre compte. Nous ne vendons ni ne louons vos données.",
+  "Some of these providers, starting with our host, are based in the United States; transfers are covered by the European Commission's standard contractual clauses or the EU-US Data Privacy Framework.": "Certains de ces prestataires, à commencer par notre hébergeur, sont établis aux États-Unis : les transferts sont encadrés par les clauses contractuelles types de la Commission européenne ou par le Data Privacy Framework UE-États-Unis.",
+  "How long": "Combien de temps",
+  "Three years after our last exchange, as the CNIL recommends for prospects, then it is deleted. The newsletter stops as soon as you unsubscribe.": "Trois ans après notre dernier échange, comme le recommande la CNIL pour les prospects, puis elles sont supprimées. La lettre d'information s'arrête dès votre désinscription.",
+  "Your rights": "Vos droits",
+  "You can access, correct or delete your data, limit or object to its use, ask for a copy, or withdraw your consent at any time by writing to": "Vous pouvez accéder à vos données, les rectifier ou les supprimer, en limiter l'usage ou vous y opposer, en demander une copie, ou retirer votre consentement à tout moment en écrivant à",
+  ". Each email we send has an unsubscribe link. You can also lodge a complaint with the CNIL (": ". Chaque e-mail envoyé contient un lien de désinscription. Vous pouvez aussi adresser une réclamation à la CNIL (",
+  "Cookies": "Cookies",
+  "This site sets no advertising or tracking cookie, so it does not ask for your consent. Your theme and language, and the windows you have closed, are remembered in your browser only and never sent to us.": "Ce site ne dépose aucun cookie publicitaire ni de mesure d'audience : il ne vous demande donc pas votre consentement. Votre thème, votre langue et les fenêtres que vous avez fermées sont mémorisés dans votre navigateur uniquement, et ne nous sont jamais transmis.",
+  "Interview videos play from youtube-nocookie.com, and only once you start them.": "Les vidéos d'entretien sont lues depuis youtube-nocookie.com, et seulement quand vous les lancez.",
+  "Who publishes this site, who hosts it, and the terms of use.": "Qui édite ce site, qui l'héberge, et les conditions d'utilisation.",
+  /* end of legal */
+  /* Brandwatch and Sprinklr (October 2026) */
+  "Consumer research in depth": "La recherche consommateur en profondeur",
+  "The customer voice at group scale": "La voix du client à l'échelle du groupe",
+  "Consumer research in depth: years of conversation, fine audiences.": "La recherche consommateur en profondeur : des années de conversation, des audiences fines.",
+  "The customer voice at group scale: listening, reviews and care.": "La voix du client à l'échelle du groupe : écoute, avis et service client.",
   /* positioning: a consultancy, found as an agency (October 2026) */
   "Social data intelligence consultancy":
     "Cabinet de conseil en social data intelligence",
@@ -871,7 +938,7 @@ window.LicterFR = {
   "How loud the topic is in public": "À quel point le sujet est public",
   "Our read, all four together": "Notre lecture, les quatre ensemble",
   "It is not an image problem, it is a format problem: launch a single-portion, recyclable range, and speak through the creators they already follow.": "Ce n'est pas un problème d'image, c'est un problème de format : lancer une gamme en portions individuelles et recyclable, et parler par les créateurs qu'ils suivent déjà.",
-  "No platform covers everything, and none of them reads itself. We run five, with the search, press and AI tools around them, and pick what fits the question.": "Aucune plateforme ne couvre tout, et aucune ne se lit toute seule. Nous en exploitons cinq, avec les outils de recherche, de presse et d'IA qui les entourent, et choisissons ce qui répond à la question.",
+  "No platform covers everything, and none of them reads itself. We run seven, with the search, press and AI tools around them, and pick what fits the question.": "Aucune plateforme ne couvre tout, et aucune ne se lit toute seule. Nous en exploitons sept, avec les outils de recherche, de presse et d'IA qui les entourent, et choisissons ce qui répond à la question.",
   "The broadest coverage on the market: volume, topics and sentiment across languages, read over long periods.": "La couverture la plus large du marché : volumes, sujets et sentiment dans toutes les langues, lus sur de longues périodes.",
   "Best for": "Idéal pour",
   "Brand health over time": "La santé de marque dans la durée",
@@ -4055,6 +4122,236 @@ window.LicterFR = {
     "Les deux font de l'écoute sociale. Nous choisissons selon la question, et les croisons souvent.",
   "Looking for a Radarly agency?":
     "Vous cherchez une agence Radarly ?",
+  "Brandwatch":
+    "Brandwatch",
+  "BRANDWATCH AGENCY,":
+    "AGENCE BRANDWATCH,",
+  "CONSUMER RESEARCH IN DEPTH.":
+    "LA RECHERCHE CONSOMMATEUR EN PROFONDEUR.",
+  "Brandwatch is the insights teams' platform: years of archived conversation, fine-grained audiences, and research you can push far. We run it when the question needs perspective and precision.":
+    "Brandwatch est la plateforme des équipes insights : des années de conversation archivées, des audiences fines, et une recherche qu'on peut pousser loin. Nous l'opérons quand la question demande du recul et de la précision.",
+  "Brandwatch official site":
+    "Site officiel de Brandwatch",
+  "Cision, since 2021":
+    "Cision, depuis 2021",
+  "Brighton, UK, 2007":
+    "Brighton, Royaume-Uni, 2007",
+  "Sources":
+    "Sources",
+  "100 million online sources, per the vendor":
+    "100 millions de sources en ligne, selon l'éditeur",
+  "Consumer study":
+    "Étude consommateur",
+  "Your question put to years of conversation":
+    "La question posée à des années de conversation",
+  "Needs and pain points":
+    "Les besoins et les irritants",
+  "Your customers' own words":
+    "Le vocabulaire de vos clients",
+  "A recommendation, not an export":
+    "Une recommandation, pas un export",
+  "Category read":
+    "Lecture de catégorie",
+  "A whole category, several markets":
+    "Toute une catégorie, plusieurs marchés",
+  "Topics rising, and topics fading":
+    "Les sujets qui montent, et ceux qui retombent",
+  "Your place against competitors":
+    "Votre place face aux concurrents",
+  "The signals to follow next":
+    "Les signaux à suivre ensuite",
+  "Audience segmentation":
+    "Segmentation des audiences",
+  "Segments built on what is said":
+    "Des segments construits sur ce qui est dit",
+  "Their topics and their sources":
+    "Leurs sujets et leurs sources",
+  "The voices that matter to each":
+    "Les voix qui comptent pour chacun",
+  "Personas that can be checked":
+    "Des personas vérifiables",
+  "An expert's tool":
+    "Un outil d'expert",
+  "Its power lies in queries that take time to write and maintain: that is the work we do in your place.":
+    "Sa puissance tient à des requêtes longues à écrire et à entretenir : c'est ce travail que nous faisons à votre place.",
+  "Google Trends":
+    "Google Trends",
+  "Date a topic, and see whether it comes back each year.":
+    "Dater un sujet, et voir s'il revient chaque année.",
+  "BRANDWATCH AT A GLANCE":
+    "BRANDWATCH EN BREF",
+  "What is Brandwatch?":
+    "Qu'est-ce que Brandwatch ?",
+  "Brandwatch is a consumer intelligence platform founded in Brighton in 2007 and bought by Cision in 2021. Its Consumer Research module archives the conversation of 100 million online sources; the platform has absorbed Crimson Hexagon, Qriously and Falcon.io.":
+    "Brandwatch est une plateforme d'intelligence consommateur fondée à Brighton en 2007 et rachetée par Cision en 2021. Son module Consumer Research archive la conversation de 100 millions de sources en ligne ; la plateforme a absorbé Crimson Hexagon, Qriously et Falcon.io.",
+  "What Brandwatch lets you analyse.":
+    "Ce que Brandwatch permet d'analyser.",
+  "The archive":
+    "L'historique",
+  "Years of conversation, to compare one period with another and see where a topic comes from.":
+    "Des années de conversation, pour comparer une période à une autre et voir d'où vient un sujet.",
+  "Fine-grained queries":
+    "Les requêtes fines",
+  "A precise perimeter that separates your brand from the noise, the homonyms and the competitors.":
+    "Un périmètre précis, qui sépare votre marque du bruit, des homonymes et des concurrents.",
+  "Who is talking, from which countries, with which interests and occupations.":
+    "Qui parle, de quels pays, avec quels centres d'intérêt et quelles professions.",
+  "Spikes explained":
+    "Les pics expliqués",
+  "Volume rises detected, with the posts and topics that drive them.":
+    "Les hausses de volume détectées, avec les publications et les sujets qui les portent.",
+  "BRANDWATCH AGENCY":
+    "AGENCE BRANDWATCH",
+  "Why work with a Brandwatch agency?":
+    "Pourquoi passer par une agence Brandwatch ?",
+  "Brandwatch provides data. A Brandwatch agency like Licter turns it into a decision: here is how we use it.":
+    "Brandwatch fournit des données. Une agence Brandwatch comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Brandwatch on its own":
+    "Brandwatch seul",
+  "Brandwatch with Licter":
+    "Brandwatch avec Licter",
+  "What we deliver with Brandwatch.":
+    "Ce que nous livrons avec Brandwatch.",
+  "Brandwatch: the use cases where it counts.":
+    "Brandwatch : les cas d'usage où il compte.",
+  "The limits of Brandwatch, and how we make up for them.":
+    "Les limites de Brandwatch, et comment nous les compensons.",
+  "Frequently asked questions about Brandwatch.":
+    "Questions fréquentes sur Brandwatch.",
+  "Is Licter a Brandwatch agency?":
+    "Licter est-elle une agence Brandwatch ?",
+  "Yes: as a Brandwatch agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question.":
+    "Oui : en tant qu'agence Brandwatch, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question.",
+  "Do we need our own Brandwatch licence?":
+    "Faut-il notre propre licence Brandwatch ?",
+  "Not for a study: we pick the tool by the question. If you already have a licence, we can also run it for you: that is Social Listening as a Service.":
+    "Pas pour une étude : nous choisissons l'outil selon la question. Si vous avez déjà une licence, nous pouvons aussi l'opérer pour vous : c'est Social Listening as a Service.",
+  "Does Cision own Brandwatch?":
+    "Brandwatch appartient-il à Cision ?",
+  "Yes, since 2021. It changes nothing for you: we remain independent of the publisher.":
+    "Oui, depuis 2021. Cela ne change rien pour vous : nous restons indépendants de l'éditeur.",
+  "Brandwatch or Talkwalker?":
+    "Brandwatch ou Talkwalker ?",
+  "It depends on the question: depth of archive and audiences on one side, images and continuous tracking on the other. Often, we cross the two.":
+    "Cela dépend de la question : la profondeur de l'historique et des audiences d'un côté, l'image et le suivi continu de l'autre. Souvent, nous croisons les deux.",
+  "Looking for a Brandwatch agency?":
+    "Vous cherchez une agence Brandwatch ?",
+  "Sprinklr":
+    "Sprinklr",
+  "SPRINKLR AGENCY,":
+    "AGENCE SPRINKLR,",
+  "THE CUSTOMER VOICE AT GROUP SCALE.":
+    "LA VOIX DU CLIENT À L'ÉCHELLE DU GROUPE.",
+  "Sprinklr is the customer experience platform of large groups: listening, publishing, customer care and marketing in one place. When your group uses it, we run it to get answers out of it, not only dashboards.":
+    "Sprinklr est la plateforme d'expérience client des grands groupes : écoute, publication, service client et marketing au même endroit. Quand votre groupe l'utilise, nous l'opérons pour en tirer des réponses, pas seulement des tableaux de bord.",
+  "Sprinklr official site":
+    "Site officiel de Sprinklr",
+  "Sprinklr, listed on the NYSE (CXM)":
+    "Sprinklr, coté au NYSE (CXM)",
+  "New York, 2009":
+    "New York, 2009",
+  "Modules":
+    "Modules",
+  "Insights, Social, Service, Marketing":
+    "Insights, Social, Service, Marketing",
+  "Your licence, finally used":
+    "Votre licence, enfin exploitée",
+  "Queries and taxonomy reviewed":
+    "Requêtes et taxonomie revues",
+  "Useful dashboards per team":
+    "Tableaux de bord utiles par équipe",
+  "A monthly read by an analyst":
+    "Une lecture mensuelle par un analyste",
+  "Your teams trained on what matters":
+    "Vos équipes formées à l'essentiel",
+  "Voice of the customer":
+    "Voix du client",
+  "Social, reviews and care crossed":
+    "Social, avis et service client croisés",
+  "Pain points by journey":
+    "Les irritants par parcours",
+  "Priorities with figures":
+    "Les priorités chiffrées",
+  "A readout to the teams concerned":
+    "Une restitution aux équipes concernées",
+  "Multi-country reputation":
+    "Réputation multi-pays",
+  "One perimeter for every market":
+    "Un même périmètre pour tous les marchés",
+  "Read in each country's language":
+    "Lu dans la langue de chaque pays",
+  "Alerts agreed with you":
+    "Alertes convenues avec vous",
+  "A summary for leadership":
+    "Synthèse pour la direction",
+  "Public data only, for listening":
+    "Seulement le public, côté écoute",
+  "Listening only reads what is public; private conversations only come from your own care channels.":
+    "L'écoute ne lit que ce qui est public ; les conversations privées ne viennent que de vos propres canaux de service.",
+  "A heavy platform to configure":
+    "Une plateforme lourde à paramétrer",
+  "Many modules, and value that depends on the set-up: that is often where everything is decided, and where we step in.":
+    "Beaucoup de modules, et une valeur qui dépend de la configuration : c'est souvent là que tout se joue, et là que nous intervenons.",
+  "SPRINKLR AT A GLANCE":
+    "SPRINKLR EN BREF",
+  "What is Sprinklr?":
+    "Qu'est-ce que Sprinklr ?",
+  "Sprinklr is a customer experience management platform founded in New York in 2009 by Ragy Thomas, listed on the New York Stock Exchange since 2021. Its Sprinklr Insights module covers social listening, reviews and consumer intelligence, alongside Sprinklr Social, Service and Marketing.":
+    "Sprinklr est une plateforme de gestion de l'expérience client fondée à New York en 2009 par Ragy Thomas, cotée au New York Stock Exchange depuis 2021. Son module Sprinklr Insights couvre l'écoute sociale, les avis et l'intelligence consommateur, à côté de Sprinklr Social, Service et Marketing.",
+  "What Sprinklr lets you analyse.":
+    "Ce que Sprinklr permet d'analyser.",
+  "Listening at group scale":
+    "L'écoute à l'échelle du groupe",
+  "Several brands, countries and teams on one foundation.":
+    "Plusieurs marques, plusieurs pays et plusieurs équipes sur un même socle.",
+  "Reviews and feedback":
+    "Les avis et le feedback",
+  "Customer reviews read alongside the social conversation, for one voice of the customer.":
+    "Les avis clients lus avec la conversation sociale, pour une seule voix du client.",
+  "The link with customer care":
+    "Le lien avec le service client",
+  "What reaches customer care, crossed with what is said in public.":
+    "Ce qui remonte au service client, croisé avec ce qui se dit en public.",
+  "Shared dashboards":
+    "Les tableaux de bord partagés",
+  "Views per team, from the executive committee to the markets.":
+    "Des vues par équipe, du comité de direction aux marchés.",
+  "SPRINKLR AGENCY":
+    "AGENCE SPRINKLR",
+  "Why work with a Sprinklr agency?":
+    "Pourquoi passer par une agence Sprinklr ?",
+  "Sprinklr provides data. A Sprinklr agency like Licter turns it into a decision: here is how we use it.":
+    "Sprinklr fournit des données. Une agence Sprinklr comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Sprinklr on its own":
+    "Sprinklr seul",
+  "Sprinklr with Licter":
+    "Sprinklr avec Licter",
+  "What we deliver with Sprinklr.":
+    "Ce que nous livrons avec Sprinklr.",
+  "Sprinklr: the use cases where it counts.":
+    "Sprinklr : les cas d'usage où il compte.",
+  "The limits of Sprinklr, and how we make up for them.":
+    "Les limites de Sprinklr, et comment nous les compensons.",
+  "Frequently asked questions about Sprinklr.":
+    "Questions fréquentes sur Sprinklr.",
+  "Is Licter a Sprinklr agency?":
+    "Licter est-elle une agence Sprinklr ?",
+  "Yes: as a Sprinklr agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question.":
+    "Oui : en tant qu'agence Sprinklr, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question.",
+  "We already have Sprinklr: can you run it?":
+    "Nous avons déjà Sprinklr : pouvez-vous l'opérer ?",
+  "Yes. We take over your set-up, straighten it out and deliver a read every month: that is our Social Listening as a Service offer.":
+    "Oui. Nous reprenons votre configuration, la remettons à plat et livrons chaque mois une lecture : c'est notre offre Social Listening as a Service.",
+  "Do we need a Sprinklr licence to work with you?":
+    "Faut-il une licence Sprinklr pour travailler avec vous ?",
+  "No. If you do not have one, we choose the right tool for the question with you.":
+    "Non. Si vous n'en avez pas, nous choisissons avec vous l'outil adapté à la question.",
+  "Does Sprinklr replace analysts?":
+    "Sprinklr remplace-t-il des analystes ?",
+  "No: the platform collects and sorts; someone still has to read, connect the signals and say what to decide.":
+    "Non : la plateforme collecte et classe ; il faut encore quelqu'un pour lire, relier les signaux et dire quoi décider.",
+  "Looking for a Sprinklr agency?":
+    "Vous cherchez une agence Sprinklr ?",
   "Semrush":
     "Semrush",
   "SEMRUSH AGENCY,":
@@ -4109,10 +4406,6 @@ window.LicterFR = {
     "La recherche, pas l'opinion",
   "It says what people look for, not what they think: we cross it with social listening.":
     "Elle dit ce que les gens cherchent, pas ce qu'ils pensent : nous la croisons avec l'écoute sociale.",
-  "Google Trends":
-    "Google Trends",
-  "Date a topic, and see whether it comes back each year.":
-    "Dater un sujet, et voir s'il revient chaque année.",
   "AnswerThePublic":
     "AnswerThePublic",
   "Why, how, which, when: each family says something else.":
@@ -4423,8 +4716,6 @@ window.LicterFR = {
     "Les questions clés de votre catégorie",
   "What the AI answers":
     "Ce que répond l'IA",
-  "Your place against competitors":
-    "Votre place face aux concurrents",
   "Errors to correct":
     "Les erreurs à corriger",
   "Regular tracking":
@@ -5173,8 +5464,6 @@ window.LicterFR = {
     "xAI",
   "November 2023":
     "Novembre 2023",
-  "Sources":
-    "Sources",
   "The web and X posts":
     "Le web et les publications de X",
   "A mirror of X":
@@ -6425,6 +6714,14 @@ window.LicterFR = {
     "Agence Radarly : suivi de marque et écoute sociale | Licter",
   "Licter, Radarly agency: brand tracking and social listening. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
     "Licter, agence Radarly : suivi de marque et écoute sociale. Nos consultants configurent l'outil, lisent les données et vous livrent une recommandation, pas un tableau de bord.",
+  "Brandwatch agency: consumer research and social listening | Licter":
+    "Agence Brandwatch : recherche consommateur et écoute sociale | Licter",
+  "Licter, Brandwatch agency: consumer research and social listening. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
+    "Licter, agence Brandwatch : recherche consommateur et écoute sociale. Nos consultants configurent l'outil, lisent les données et vous livrent une recommandation, pas un tableau de bord.",
+  "Sprinklr agency: social listening and customer voice | Licter":
+    "Agence Sprinklr : écoute sociale et voix du client | Licter",
+  "Licter, Sprinklr agency: social listening and customer voice. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
+    "Licter, agence Sprinklr : écoute sociale et voix du client. Nos consultants configurent l'outil, lisent les données et vous livrent une recommandation, pas un tableau de bord.",
   "Semrush agency: search listening | Licter":
     "Agence Semrush : écoute de la recherche | Licter",
   "Licter, Semrush agency: search listening. Our consultants set the tool up, read the data and deliver a recommendation, not a dashboard.":
