@@ -273,6 +273,10 @@ def main():
         s = s.replace('<meta name="twitter:card" content="summary" />', '<meta name="twitter:card" content="summary_large_image" />')
         if fr and "data-i18n-static" in s[:400]:
             s = re.sub(r'(<script src="/?js/)fr\.js(\?v=\d+"[^>]*></script>)', r"\1fr-core.js\2", s)
+        # both web fonts early, so the text does not jump when they arrive (CLS)
+        if 'href="/assets/fonts/AiglonProWide-Demi.woff2"' not in s:
+            s = s.replace("<title>", '<link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2" as="font" type="font/woff2" crossorigin />\n'
+                                     '<link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />\n<title>', 1)
         s = structured(rel, s, fr, url)
         s = honest_dates(rel, s, dates, today)
         if s != s0:
