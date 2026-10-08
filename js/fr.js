@@ -710,6 +710,7 @@ window.LicterFR = {
   "GET THE GUIDE": "RECEVOIR LE GUIDE",
   "SEND MY QUESTION": "ENVOYER MA QUESTION",
   "updated": "mis à jour le",
+  "published": "publié le",
   "Who is responsible": "Responsable du traitement",
   "Licter SAS, 173 rue de Courcelles, 75017 Paris, France. Contact:": "Licter SAS, 173 rue de Courcelles, 75017 Paris. Contact :",
   "What we collect": "Ce que nous collectons",
@@ -3044,7 +3045,7 @@ window.LicterFR = {
   "Social Insights: social data studies on demand | Licter":
     "Social Insights : études social data à la demande | Licter",
   "Vigie 360: 24/7 monitoring, alerts within 15 minutes | Licter":
-    "Vigie 360 : veille réseaux sociaux et gestion de crise, 24/7 | Licter",
+    "Vigie 360 : veille de crise et e-réputation, alertes 24 h/24 | Licter",
   "Social Listening as a Service: make your platform useful | Licter":
     "Social Listening as a Service : faire servir votre plateforme | Licter",
   "Nox: the AI-assisted monitoring tool | Licter":

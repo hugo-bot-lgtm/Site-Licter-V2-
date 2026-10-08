@@ -130,6 +130,16 @@ DM = re.compile(r'("dateModified": ")(\d{4}-\d{2}-\d{2})(")')
 BYLINE = re.compile(r'(<time datetime=")(\d{4}-\d{2}-\d{2})(">)([^<]*)(</time>)')
 
 
+# the new site went live on 8 October 2026, and every page was written for it
+# then: until a page really changes after that (the 9th still being launch
+# work), its byline says when it was published, not "updated" (audit of 9
+# October: the same "updated" date on every page read as invented)
+PUBLISHED, LAUNCH_END = "2026-10-08", "2026-10-09"
+WORD = re.compile(r'(Mis à jour le|mis à jour le|Updated|updated|Publié le|publié le|Published|published)((?:</span>)?\s*<time datetime=")')
+TO_UPDATED = {"Publié le": "Mis à jour le", "publié le": "mis à jour le", "Published": "Updated", "published": "updated"}
+TO_PUBLISHED = {"Mis à jour le": "Publié le", "mis à jour le": "publié le", "Updated": "Published", "updated": "published"}
+
+
 def honest_dates(rel, s, dates, today):
     """put back the date the content last changed, instead of the build date"""
     if rel.startswith("article-"):      # tools/build-blog.py dates its articles itself
@@ -138,6 +148,7 @@ def honest_dates(rel, s, dates, today):
             dates[rel] = {"hash": "", "date": m.group(1)}
         return s
     bare = BYLINE.sub(r"\1\3\5", DM.sub(r"\1\3", s))
+    bare = WORD.sub(lambda m_: TO_UPDATED.get(m_.group(1), m_.group(1)) + m_.group(2), bare)   # the wording is not content
     bare = re.sub(r"\?v=\d+", "", bare)
     h = hashlib.md5(bare.encode()).hexdigest()
     rec = dates.get(rel)
@@ -149,7 +160,11 @@ def honest_dates(rel, s, dates, today):
     def label(fr_):
         return "%d %s %d" % (d, MOIS[m - 1], y) if fr_ else "%d %s %d" % (d, MONTHS[m - 1], y)
     s = DM.sub(lambda m_: m_.group(1) + rec["date"] + m_.group(3), s)
-    return BYLINE.sub(lambda m_: m_.group(1) + rec["date"] + m_.group(3) + label(not re.search(r"[A-Z][a-z]+ \d{4}$", m_.group(4))) + m_.group(5), s)
+    launch = rec["date"] <= LAUNCH_END
+    shown = PUBLISHED if launch else rec["date"]
+    y, m, d = (int(x) for x in shown.split("-"))
+    s = WORD.sub(lambda m_: (TO_PUBLISHED if launch else TO_UPDATED).get(m_.group(1), m_.group(1)) + m_.group(2), s)
+    return BYLINE.sub(lambda m_: m_.group(1) + shown + m_.group(3) + label(not re.search(r"[A-Z][a-z]+ \d{4}$", m_.group(4))) + m_.group(5), s)
 
 
 LD = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
@@ -212,6 +227,7 @@ def structured(rel, s, fr, url):
         # an event copied from the English twin: same event, described in this page's words
         if b.get("@type") == "Event" and b.get("url") not in (None, url):
             b["url"] = url
+            b["inLanguage"] = "fr" if fr else "en"
             b["name"] = re.sub(r"\s*\|\s*Licter.*$", "", title0)
             if desc0:
                 b["description"] = html.unescape(desc0.group(1))

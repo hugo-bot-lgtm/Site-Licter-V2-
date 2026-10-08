@@ -32,7 +32,7 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 ## Guides
 
 - [Le guide des 12 questions](https://www.licter.com/fr/guide/): préparer une étude de social listening
-- [Veille des réseaux sociaux en entreprise](https://www.licter.com/article-veille-reseaux-sociaux-entreprise.html)
+- [Veille réseaux sociaux en entreprise : le guide](https://www.licter.com/article-veille-reseaux-sociaux-entreprise.html)
 - [Blog](https://www.licter.com/fr/blog/): analyses publiées et entretiens du podcast Audience First
 
 ## Plateformes et sources

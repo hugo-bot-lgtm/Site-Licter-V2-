@@ -249,7 +249,7 @@ def ld_event(e):
     return {"@context": "https://schema.org", "@type": "Event", "name": "%s · %s" % (S["kicker"][EN], e["sector"][EN]),
             "description": e["lead"][EN], "startDate": e["date"], "eventStatus": "https://schema.org/EventScheduled",
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "endDate": e["date"], "inLanguage": "fr", "image": [SITE + "/assets/img/og/p-%s.jpg" % file(e)[:-len(".html")]],
+            "endDate": e["date"], "inLanguage": "en", "image": [SITE + "/assets/img/og/p-%s.jpg" % file(e)[:-len(".html")]],
             "location": {"@type": "Place", "name": e["venue"], "address": postal(e["address"])},
             "organizer": U.ORG, "url": "%s/%s" % (SITE, file(e))}
 
