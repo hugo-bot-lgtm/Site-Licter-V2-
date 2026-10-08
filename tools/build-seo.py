@@ -156,7 +156,7 @@ LD = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
 ORG_REF = {"@type": "Organization", "@id": SITE + "/#org", "name": "Licter", "url": SITE + "/",
            "logo": {"@type": "ImageObject", "url": SITE + "/assets/img/logo-navy.png"}}
 AUTHORS = {"Antoine Khaitrine": ["https://www.linkedin.com/in/antoine-khaitrine/", "https://www.thesilab.com/insider-50/antoine-khaitrine"],
-           "Adrien Krebs": ["https://www.linkedin.com/in/adrien-krebs/"], "Mina Cantone": []}
+           "Adrien Krebs": ["https://www.linkedin.com/in/adrien-krebs/", "https://www.thesilab.com/insider-50/adrien-krebs"], "Mina Cantone": []}
 ABOUT = {"why-licter.html", "fr/pourquoi-licter/index.html"}
 # the founders, declared once (Why Licter) and referred to by @id everywhere they sign
 FOUNDERS = [
@@ -166,7 +166,8 @@ FOUNDERS = [
      "award": "Top 50 Insider mondial de la social intelligence (SI Lab), 2024"},
     {"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#adrien-krebs", "name": "Adrien Krebs",
      "jobTitle": "Cofondateur", "worksFor": {"@id": SITE + "/#org"}, "image": SITE + "/assets/img/team/founder-adrien-160.webp",
-     "url": SITE + "/fr/pourquoi-licter/#adrien-krebs", "sameAs": AUTHORS["Adrien Krebs"]},
+     "url": SITE + "/fr/pourquoi-licter/#adrien-krebs", "sameAs": AUTHORS["Adrien Krebs"],
+     "award": "Top 50 Insider mondial de la social intelligence (SI Lab), 2025"},
 ]
 FOUNDER_REFS = [{"@id": f["@id"]} for f in FOUNDERS]
 COLLECTION = {"blog.html", "fr/blog/index.html", "clients.html", "fr/clients/index.html", "events.html"}
@@ -357,9 +358,9 @@ def main():
                                      '<link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />\n<title>', 1)
         # the footer: who we are and how to reach us, and an award stated as the founder's
         foot_fr = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
-                   "50+ clients · 160+ projets · Antoine Khaitrine, Top 50 Insider mondial (SI Lab) depuis 2024")
+                   "50+ clients · 160+ projets · Antoine Khaitrine et Adrien Krebs, Top 50 Insider mondial (SI Lab) en 2024 et 2025")
         foot_en = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
-                   "50+ clients · 160+ projects · Antoine Khaitrine, Top 50 Insider worldwide (SI Lab) since 2024")
+                   "50+ clients · 160+ projects · Antoine Khaitrine and Adrien Krebs, Top 50 Insider worldwide (SI Lab) in 2024 and 2025")
         s = re.sub(r'<span>(?:Licter SAS ·.*?|50\+ clients · 160\+ (?:projects|projets) · Top 50 Insider[^<]*)</span>(?=\s*</div>\s*</footer>)',
                    "<span>%s</span>" % (foot_fr if fr else foot_en), s, flags=re.S)
         # French pages link to French pages in their HTML, not through a script

@@ -59,7 +59,7 @@ def head(lang, src):
                        "addressLocality": "Paris", "addressCountry": "FR"},
            "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "contact@licter.com",
                             "availableLanguage": ["French", "English"]},
-           "founder": [{"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#adrien-krebs", "name": "Adrien Krebs", "jobTitle": ("Cofondateur", "Co-founder")[lang], "sameAs": ["https://www.linkedin.com/in/adrien-krebs/"]},
+           "founder": [{"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#adrien-krebs", "name": "Adrien Krebs", "jobTitle": ("Cofondateur", "Co-founder")[lang], "sameAs": ["https://www.linkedin.com/in/adrien-krebs/", "https://www.thesilab.com/insider-50/adrien-krebs"]},
                        {"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#antoine-khaitrine", "name": "Antoine Khaitrine", "jobTitle": ("Cofondateur", "Co-founder")[lang],
                         "sameAs": ["https://www.linkedin.com/in/antoine-khaitrine/", "https://www.thesilab.com/insider-50/antoine-khaitrine"]}],
            "knowsLanguage": ["fr", "en", "zh", "es", "hi", "yue", "ar"],

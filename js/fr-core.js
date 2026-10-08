@@ -126,6 +126,8 @@ window.LicterFR = {
 "Enter a work email or a phone number.": "Saisissez un e-mail professionnel ou un numéro de téléphone.",
 "We use your contact details only to call you back.": "Vos coordonnées servent uniquement à vous rappeler.",
 "Co-founder": "Cofondateur",
+"Our": "Notre",
+"audiences": "audiences",
 "influence": "influence",
 "search": "recherche",
 "AI": "IA",
