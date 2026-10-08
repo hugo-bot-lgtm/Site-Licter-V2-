@@ -4724,8 +4724,8 @@ window.LicterFR = {
     "Vous cherchez une agence Sprinklr ?",
   "Semrush":
     "Semrush",
-  "SEMRUSH,":
-    "SEMRUSH,",
+  "SEMRUSH AGENCY,":
+    "AGENCE SEMRUSH,",
   "READ BEYOND SEO.":
     "LU AU-DELÀ DU SEO.",
   "Semrush shows what your market types into search engines, who answers it, and now how AI talks about brands. We use it to read demand, not to do SEO.":
@@ -4808,12 +4808,12 @@ window.LicterFR = {
     "La visibilité dans les IA",
   "How brands appear in ChatGPT, Gemini or Google's AI Overviews.":
     "Comment les marques apparaissent dans ChatGPT, Gemini ou les AI Overviews de Google.",
-  "SEARCH LISTENING":
-    "ÉCOUTE DE LA RECHERCHE",
-  "Why hand this tracking to a consultancy?":
-    "Pourquoi confier ce suivi à un cabinet ?",
-  "Semrush gives search volumes. What we bring is the reading: what those searches say about your market, crossed with the social conversation.":
-    "Semrush donne des volumes de recherche. Ce que nous apportons, c'est la lecture : ce que ces recherches disent de votre marché, croisé avec la conversation sociale.",
+  "SEMRUSH AGENCY":
+    "AGENCE SEMRUSH",
+  "Why work with a Semrush agency?":
+    "Pourquoi passer par une agence Semrush ?",
+  "Semrush provides data. A Semrush agency like Licter turns it into a decision: here is how we use it.":
+    "Semrush fournit des données. Une agence Semrush comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Semrush on its own":
     "Semrush seul",
   "Semrush with Licter":
@@ -4840,8 +4840,8 @@ window.LicterFR = {
     "Oui, depuis avril 2026.",
   "Looking for a Semrush agency?":
     "Vous cherchez une agence Semrush ?",
-  "GOOGLE TRENDS,":
-    "GOOGLE TRENDS,",
+  "GOOGLE TRENDS AGENCY,":
+    "AGENCE GOOGLE TRENDS,",
   "PUT IN CONTEXT.":
     "MIS EN CONTEXTE.",
   "Google Trends shows search interest over time, by country and region. A simple curve that we read with the rest: it dates a topic, compares it to another, and says whether it is really rising.":
@@ -4920,10 +4920,12 @@ window.LicterFR = {
     "Les requêtes associées",
   "What people look for around the topic, including on YouTube and Google News.":
     "Ce que les gens cherchent autour du sujet, y compris sur YouTube et dans Google Actualités.",
-  "SEARCH TRENDS":
-    "TENDANCES DE RECHERCHE",
-  "Google Trends is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
-    "Google Trends est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "GOOGLE TRENDS AGENCY":
+    "AGENCE GOOGLE TRENDS",
+  "Why work with a Google Trends agency?":
+    "Pourquoi passer par une agence Google Trends ?",
+  "Google Trends provides data. A Google Trends agency like Licter turns it into a decision: here is how we use it.":
+    "Google Trends fournit des données. Une agence Google Trends comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Google Trends on its own":
     "Google Trends seul",
   "Google Trends with Licter":
@@ -4950,8 +4952,8 @@ window.LicterFR = {
     "Non, ce sont des indices relatifs de 0 à 100. C'est pourquoi nous les complétons avec Semrush.",
   "Looking for a Google Trends agency?":
     "Vous cherchez une agence Google Trends ?",
-  "ANSWERTHEPUBLIC,":
-    "ANSWERTHEPUBLIC,",
+  "ANSWERTHEPUBLIC AGENCY,":
+    "AGENCE ANSWERTHEPUBLIC,",
   "THE MARKET'S QUESTIONS.":
     "LES QUESTIONS DU MARCHÉ.",
   "AnswerThePublic shows the questions people ask around a subject, as they type them: why, how, which, is it. We use it to hear a market before it speaks to you.":
@@ -5028,10 +5030,12 @@ window.LicterFR = {
     "Les questions changent d'un marché à l'autre.",
   "New questions appearing on a tracked topic.":
     "Les nouvelles questions qui apparaissent sur un sujet suivi.",
-  "THE MARKET'S QUESTIONS":
-    "LES QUESTIONS DU MARCHÉ",
-  "AnswerThePublic is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
-    "AnswerThePublic est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "ANSWERTHEPUBLIC AGENCY":
+    "AGENCE ANSWERTHEPUBLIC",
+  "Why work with a AnswerThePublic agency?":
+    "Pourquoi passer par une agence AnswerThePublic ?",
+  "AnswerThePublic provides data. A AnswerThePublic agency like Licter turns it into a decision: here is how we use it.":
+    "AnswerThePublic fournit des données. Une agence AnswerThePublic comme Licter en tire une décision : voici comment nous l'utilisons.",
   "AnswerThePublic on its own":
     "AnswerThePublic seul",
   "AnswerThePublic with Licter":
@@ -5158,6 +5162,8 @@ window.LicterFR = {
     "Les mêmes questions posées dans le temps, pour suivre les réponses.",
   "CHATGPT AND YOUR BRAND":
     "CHATGPT ET VOTRE MARQUE",
+  "Why hand this tracking to a consultancy?":
+    "Pourquoi confier ce suivi à un cabinet ?",
   "ChatGPT is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
     "ChatGPT est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
   "A question asked once, by one person":
@@ -5278,8 +5284,8 @@ window.LicterFR = {
     "Non. Nous posons des questions publiques ; aucune donnée client n'est transmise.",
   "What does ChatGPT say about your brand?":
     "Que dit ChatGPT de votre marque ?",
-  "GEO,":
-    "LE GEO,",
+  "GEO AGENCY,":
+    "AGENCE GEO,",
   "YOUR PLACE IN AI ANSWERS.":
     "VOTRE PLACE DANS LES RÉPONSES DES IA.",
   "GEO (generative engine optimisation) measures and improves a brand's visibility in the answers of AI engines. We start from what the AIs answer, then from the sources that feed them.":
@@ -5364,10 +5370,12 @@ window.LicterFR = {
     "Les leviers",
   "The content to produce or correct, and where.":
     "Les contenus à produire ou corriger, et où.",
-  "GENERATIVE ENGINE OPTIMIZATION":
-    "GENERATIVE ENGINE OPTIMIZATION",
-  "GEO is not bought like software: it is a method, applied question by question. Here is how we run it.":
-    "Le GEO ne s'achète pas comme un logiciel : c'est une méthode, appliquée question après question. Voici comment nous la menons.",
+  "GEO AGENCY":
+    "AGENCE GEO",
+  "Why work with a GEO agency?":
+    "Pourquoi passer par une agence GEO ?",
+  "GEO provides data. A GEO agency like Licter turns it into a decision: here is how we use it.":
+    "GEO fournit des données. Une agence GEO comme Licter en tire une décision : voici comment nous l'utilisons.",
   "GEO on its own":
     "GEO seul",
   "GEO with Licter":
@@ -5576,8 +5584,8 @@ window.LicterFR = {
     "Seulement pour les publicités politiques ou d'enjeu social, que Meta n'accepte plus dans l'Union européenne depuis octobre 2025. Pour les autres, non.",
   "Your competitors' ads, read every month?":
     "Les publicités de vos concurrents, lues chaque mois ?",
-  "GOOGLE NEWS,":
-    "GOOGLE ACTUALITÉS,",
+  "GOOGLE NEWS AGENCY,":
+    "AGENCE GOOGLE ACTUALITÉS,",
   "THE PRESS AGAINST SOCIAL.":
     "LA PRESSE FACE AU SOCIAL.",
   "Google News gathers press coverage as it lands. We set it against the social conversation: a topic born in the media does not read like a topic born on TikTok.":
@@ -5648,10 +5656,12 @@ window.LicterFR = {
     "Les titres qui comptent",
   "Which media covered it, and which were picked up.":
     "Quels médias ont couvert le sujet, et lesquels ont été repris.",
-  "PRESS AND SOCIAL":
-    "PRESSE ET RÉSEAUX",
-  "Google News is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
-    "Google Actualités est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "GOOGLE NEWS AGENCY":
+    "AGENCE GOOGLE ACTUALITÉS",
+  "Why work with a Google News agency?":
+    "Pourquoi passer par une agence Google Actualités ?",
+  "Google News provides data. A Google News agency like Licter turns it into a decision: here is how we use it.":
+    "Google Actualités fournit des données. Une agence Google Actualités comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Google News on its own":
     "Google Actualités seul",
   "Google News with Licter":
@@ -5678,8 +5688,8 @@ window.LicterFR = {
     "Les IA s'appuient souvent sur la presse pour répondre : votre couverture médiatique pèse sur votre visibilité dans leurs réponses.",
   "Looking for a Google News agency?":
     "Vous cherchez une agence Google Actualités ?",
-  "SOCIAL BLADE,":
-    "SOCIAL BLADE,",
+  "SOCIAL BLADE AGENCY,":
+    "AGENCE SOCIAL BLADE,",
   "HOW ACCOUNTS GROW.":
     "LA CROISSANCE DES COMPTES.",
   "Social Blade tracks how accounts and creators gain followers and views over time. We use it to check an audience before working with it.":
@@ -5752,10 +5762,12 @@ window.LicterFR = {
     "Où se situe un créateur dans sa catégorie.",
   "Several accounts on one scale.":
     "Plusieurs comptes sur la même échelle.",
-  "CHECKING AN AUDIENCE":
-    "VÉRIFIER UNE AUDIENCE",
-  "Social Blade is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
-    "Social Blade est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "SOCIAL BLADE AGENCY":
+    "AGENCE SOCIAL BLADE",
+  "Why work with a Social Blade agency?":
+    "Pourquoi passer par une agence Social Blade ?",
+  "Social Blade provides data. A Social Blade agency like Licter turns it into a decision: here is how we use it.":
+    "Social Blade fournit des données. Une agence Social Blade comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Social Blade on its own":
     "Social Blade seul",
   "Social Blade with Licter":
@@ -7450,36 +7462,36 @@ window.LicterFR = {
     "Agence Sprinklr : écoute sociale et voix du client | Licter",
   "Sprinklr agency: we take over your platform, straighten out its set-up and deliver a monthly read of the customer voice.":
     "Agence Sprinklr : nous reprenons votre plateforme, remettons la configuration à plat et livrons chaque mois une lecture de la voix client.",
-  "Semrush: what your customers search for on Google | Licter":
-    "Semrush : ce que vos clients cherchent sur Google | Licter",
+  "Semrush agency: search listening | Licter":
+    "Agence Semrush : écoute de la recherche | Licter",
   "Semrush agency, beyond SEO: what your customers search for on Google, read as market research by our consultants.":
     "Agence Semrush, au-delà du SEO : ce que vos clients cherchent sur Google, lu comme une étude de marché par nos consultants.",
-  "Google Trends: reading search trends | Licter":
-    "Google Trends : lire les tendances de recherche | Licter",
+  "Google Trends agency: reading search trends | Licter":
+    "Agence Google Trends : lire les tendances de recherche | Licter",
   "Google Trends in context: a topic's search curve crossed with the social conversation, to date a trend.":
     "Google Trends mis en contexte : la courbe de recherche d'un sujet croisée avec la conversation sociale, pour dater une tendance.",
-  "AnswerThePublic: your market's questions | Licter":
-    "AnswerThePublic : les questions de votre marché | Licter",
+  "AnswerThePublic agency: your market's questions | Licter":
+    "Agence AnswerThePublic : les questions de votre marché | Licter",
   "AnswerThePublic: the questions your market asks Google, sorted and read to turn them into content, FAQs and offers.":
     "AnswerThePublic : les questions que votre marché pose à Google, classées et lues pour en tirer contenus, FAQ et offres.",
   "Your brand in ChatGPT: an audit of its answers | Licter":
     "Votre marque dans ChatGPT : audit des réponses | Licter",
   "What ChatGPT answers about your brand, your competitors and your category, and the sources it cites: an audit run by our consultants.":
     "Ce que ChatGPT répond sur votre marque, vos concurrents et votre catégorie, et les sources qu'il cite : un audit mené par nos consultants.",
-  "GEO: your visibility in AI answers | Licter":
-    "GEO : votre visibilité dans les réponses des IA | Licter",
+  "GEO agency: your visibility in AI answers | Licter":
+    "Agence GEO : votre visibilité dans les réponses des IA | Licter",
   "GEO: your visibility in ChatGPT, Claude, Gemini and Perplexity answers, measured then improved by our consultants.":
     "GEO : votre visibilité dans les réponses de ChatGPT, Claude, Gemini et Perplexity, mesurée puis améliorée par nos consultants.",
   "Meta Ads monitoring: your competitors' ads | Licter":
     "Veille Meta Ads : les publicités de vos concurrents | Licter",
   "Meta Ad Library: your competitors' campaigns on Facebook and Instagram, collected and read for your decisions.":
     "Bibliothèque publicitaire Meta : les campagnes de vos concurrents sur Facebook et Instagram, relevées et lues pour vos arbitrages.",
-  "Google News: the press against social | Licter":
-    "Google Actualités : la presse face au social | Licter",
+  "Google News agency: the press against social | Licter":
+    "Agence Google Actualités : la presse face au social | Licter",
   "Google News against social: when the press picks up a topic born on social media, and what it changes for your brand.":
     "Google Actualités face au social : quand la presse reprend un sujet né sur les réseaux, et ce que cela change pour votre marque.",
-  "Social Blade: checking accounts and creators | Licter":
-    "Social Blade : vérifier les comptes et les créateurs | Licter",
+  "Social Blade agency: checking accounts and creators | Licter":
+    "Agence Social Blade : vérifier les comptes et les créateurs | Licter",
   "Social Blade: the real growth of accounts and creators, to check an audience before a partnership.":
     "Social Blade : la croissance réelle des comptes et des créateurs, pour vérifier une audience avant un partenariat.",
   "Your brand in Claude: what the AI answers | Licter":
@@ -7498,92 +7510,92 @@ window.LicterFR = {
     "Votre marque dans Grok : ce que l'IA de X répond | Licter",
   "What Grok, X's AI, says about your brand, fed by the network's live conversation.":
     "Ce que Grok, l'IA de X, dit de votre marque, nourrie par la conversation en direct du réseau.",
-  "Facebook social listening: communities and groups | Licter":
-    "Social listening Facebook : les communautés et les groupes | Licter",
+  "Facebook social listening agency: communities and groups | Licter":
+    "Agence social listening Facebook : les communautés et les groupes | Licter",
   "Facebook social listening: groups, local pages and comments under your posts, read by our analysts.":
     "Social listening Facebook : les groupes, les pages locales et les commentaires sous vos publications, lus par nos analystes.",
-  "Instagram social listening: images and creators | Licter":
-    "Social listening Instagram : l'image et les créateurs | Licter",
+  "Instagram social listening agency: images and creators | Licter":
+    "Agence social listening Instagram : l'image et les créateurs | Licter",
   "Instagram social listening: your products in the image, the creators who talk about them and what comments say.":
     "Social listening Instagram : vos produits dans l'image, les créateurs qui en parlent et ce que disent les commentaires.",
-  "Threads social listening: Meta's text conversation | Licter":
-    "Social listening Threads : la conversation texte de Meta | Licter",
+  "Threads social listening agency: Meta's text conversation | Licter":
+    "Agence social listening Threads : la conversation texte de Meta | Licter",
   "Threads social listening: Meta's written conversation, where journalists, brands and communities have settled.":
     "Social listening Threads : la conversation écrite de Meta, où journalistes, marques et communautés se sont installés.",
-  "WhatsApp social listening: public channels | Licter":
-    "Social listening WhatsApp : les chaînes publiques | Licter",
+  "WhatsApp social listening agency: public channels | Licter":
+    "Agence social listening WhatsApp : les chaînes publiques | Licter",
   "WhatsApp social listening: public channels and what spreads from them, never a private conversation.":
     "Social listening WhatsApp : les chaînes publiques et ce qui en sort, sans jamais lire une conversation privée.",
-  "Messenger social listening: private customer conversations | Licter":
-    "Social listening Messenger : la relation client en privé | Licter",
+  "Messenger social listening agency: private customer conversations | Licter":
+    "Agence social listening Messenger : la relation client en privé | Licter",
   "Messenger: your customer service in private, read only with your access, and crossed with what is said in public.":
     "Messenger : votre service client en privé, lu seulement avec vos accès, et croisé avec ce qui se dit en public.",
-  "X / Twitter social listening: real time | Licter":
-    "Social listening X / Twitter : le temps réel | Licter",
+  "X / Twitter social listening agency: real time | Licter":
+    "Agence social listening X / Twitter : le temps réel | Licter",
   "X (Twitter) social listening: live news, journalists and crises taking off, followed in real time.":
     "Social listening X (Twitter) : l'actualité en direct, les journalistes et les crises qui démarrent, suivis en temps réel.",
-  "TikTok social listening: where trends are born | Licter":
-    "Social listening TikTok : là où naissent les tendances | Licter",
+  "TikTok social listening agency: where trends are born | Licter":
+    "Agence social listening TikTok : là où naissent les tendances | Licter",
   "TikTok social listening: the trends, sounds and codes where the young talk about brands, read before they explode.":
     "Social listening TikTok : les tendances, les sons et les codes où les plus jeunes parlent des marques, lus avant qu'ils explosent.",
-  "YouTube social listening: long video and its comments | Licter":
-    "Social listening YouTube : la vidéo longue et ses commentaires | Licter",
+  "YouTube social listening agency: long video and its comments | Licter":
+    "Agence social listening YouTube : la vidéo longue et ses commentaires | Licter",
   "YouTube social listening: tests, tutorials and detailed reviews, and reasoned comments that explain a product.":
     "Social listening YouTube : tests, tutoriels et avis détaillés, et des commentaires argumentés qui expliquent un produit.",
-  "LinkedIn social listening: the professional voice | Licter":
-    "Social listening LinkedIn : la parole professionnelle | Licter",
+  "LinkedIn social listening agency: the professional voice | Licter":
+    "Agence social listening LinkedIn : la parole professionnelle | Licter",
   "LinkedIn social listening: employer brand, executives and decision makers, what is said and what weighs on your reputation.":
     "Social listening LinkedIn : marque employeur, dirigeants et décideurs, ce qui se dit et ce qui pèse sur votre réputation.",
-  "Reddit social listening: unfiltered opinions | Licter":
-    "Social listening Reddit : les avis sans filtre | Licter",
+  "Reddit social listening agency: unfiltered opinions | Licter":
+    "Agence social listening Reddit : les avis sans filtre | Licter",
   "Reddit social listening: communities of enthusiasts, frank and detailed reviews, rarely sponsored.":
     "Social listening Reddit : des communautés de passionnés, des avis francs et détaillés, rarement sponsorisés.",
-  "Snapchat social listening: the youngest, in private | Licter":
-    "Social listening Snapchat : les plus jeunes, en privé | Licter",
+  "Snapchat social listening agency: the youngest, in private | Licter":
+    "Agence social listening Snapchat : les plus jeunes, en privé | Licter",
   "Snapchat social listening: Spotlight and public stories, what the youngest let others see.":
     "Social listening Snapchat : Spotlight et les stories publiques, ce que les plus jeunes laissent voir d'eux.",
-  "Pinterest social listening: intent before purchase | Licter":
-    "Social listening Pinterest : les intentions avant l'achat | Licter",
+  "Pinterest social listening agency: intent before purchase | Licter":
+    "Agence social listening Pinterest : les intentions avant l'achat | Licter",
   "Pinterest social listening: what people pin before they buy, often months ahead.":
     "Social listening Pinterest : ce que les gens épinglent avant d'acheter, souvent des mois à l'avance.",
-  "Discord social listening: enthusiast communities | Licter":
-    "Social listening Discord : les communautés de passionnés | Licter",
+  "Discord social listening agency: enthusiast communities | Licter":
+    "Agence social listening Discord : les communautés de passionnés | Licter",
   "Discord social listening: the public servers of gaming, tech or brand communities, and their debates.":
     "Social listening Discord : les serveurs publics des communautés de jeu, de tech ou de marque, et leurs débats.",
-  "Twitch social listening: live streams and their chat | Licter":
-    "Social listening Twitch : le live et son chat | Licter",
+  "Twitch social listening agency: live streams and their chat | Licter":
+    "Agence social listening Twitch : le live et son chat | Licter",
   "Twitch social listening: live streams and their chat, where a brand is judged on the spot by a young audience.":
     "Social listening Twitch : le direct et son chat, où une marque est jugée à chaud par une audience jeune.",
-  "Telegram social listening: public channels | Licter":
-    "Social listening Telegram : les canaux publics | Licter",
+  "Telegram social listening agency: public channels | Licter":
+    "Agence social listening Telegram : les canaux publics | Licter",
   "Telegram social listening: public channels followed by thousands, useful on some countries and topics.":
     "Social listening Telegram : les canaux publics suivis par des milliers d'abonnés, utiles sur certains pays et sujets.",
-  "Bluesky social listening: the new open conversation | Licter":
-    "Social listening Bluesky : la nouvelle conversation ouverte | Licter",
+  "Bluesky social listening agency: the new open conversation | Licter":
+    "Agence social listening Bluesky : la nouvelle conversation ouverte | Licter",
   "Bluesky social listening: the open network where journalists, researchers and communities who left X gather.":
     "Social listening Bluesky : le réseau ouvert où journalistes, chercheurs et communautés partis de X se retrouvent.",
-  "VK social listening: the Russian-speaking network | Licter":
-    "Social listening VK : le réseau russophone | Licter",
+  "VK social listening agency: the Russian-speaking network | Licter":
+    "Agence social listening VK : le réseau russophone | Licter",
   "VK social listening: the leading Russian-speaking network, read in its language by our analysts.":
     "Social listening VK : le premier réseau russophone, lu dans sa langue par nos analystes.",
-  "WeChat social listening: the Chinese ecosystem | Licter":
-    "Social listening WeChat : l'écosystème chinois | Licter",
+  "WeChat social listening agency: the Chinese ecosystem | Licter":
+    "Agence social listening WeChat : l'écosystème chinois | Licter",
   "WeChat social listening: official accounts and articles of China's everything app, read in Chinese.":
     "Social listening WeChat : les comptes officiels et articles de l'application de tout en Chine, lus en chinois.",
-  "Weibo social listening: China's public debate | Licter":
-    "Social listening Weibo : le débat public chinois | Licter",
+  "Weibo social listening agency: China's public debate | Licter":
+    "Agence social listening Weibo : le débat public chinois | Licter",
   "Weibo social listening: China's public square, its trending topics and controversies, read in Mandarin.":
     "Social listening Weibo : la place publique chinoise, ses sujets tendance et ses polémiques, lus en mandarin.",
-  "Douyin social listening: video trends in China | Licter":
-    "Social listening Douyin : les tendances vidéo en Chine | Licter",
+  "Douyin social listening agency: video trends in China | Licter":
+    "Agence social listening Douyin : les tendances vidéo en Chine | Licter",
   "Douyin social listening: China's TikTok, its creators, built-in commerce and the trends born there.":
     "Social listening Douyin : le TikTok chinois, ses créateurs, son commerce intégré et les tendances qui y naissent.",
-  "Xiaohongshu (RED) social listening: reviews and lifestyle in China | Licter":
-    "Social listening Xiaohongshu (RED) : les avis et le lifestyle en Chine | Licter",
+  "Xiaohongshu (RED) social listening agency: reviews and lifestyle in China | Licter":
+    "Agence social listening Xiaohongshu (RED) : les avis et le lifestyle en Chine | Licter",
   "Xiaohongshu (RED) social listening: Chinese consumers' reviews and recommendations in beauty, fashion and travel.":
     "Social listening Xiaohongshu (RED) : les avis et recommandations des consommateurs chinois en beauté, mode et voyage.",
-  "Bilibili social listening: youth culture in China | Licter":
-    "Social listening Bilibili : la culture jeune en Chine | Licter",
+  "Bilibili social listening agency: youth culture in China | Licter":
+    "Agence social listening Bilibili : la culture jeune en Chine | Licter",
   "Bilibili social listening: the video platform of young China, animation, gaming, tech, and its on-screen comments.":
     "Social listening Bilibili : la vidéo de la jeunesse chinoise, animation, jeu, tech, et ses commentaires en surimpression.",
   "Social listening sources: the 22 networks we listen to | Licter":

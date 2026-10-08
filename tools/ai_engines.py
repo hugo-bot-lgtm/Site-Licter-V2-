@@ -22,29 +22,13 @@ INTENT = {
     "grok": {"title": ("Votre marque dans Grok : ce que l'IA de X répond | Licter", "Your brand in Grok: what X's AI answers | Licter"),
              "h1": ("VOTRE MARQUE DANS GROK,", "YOUR BRAND IN GROK,"),
              "kick": ("GROK ET VOTRE MARQUE", "GROK AND YOUR BRAND")},
-    "geo": {"title": ("GEO : votre visibilité dans les réponses des IA | Licter", "GEO: your visibility in AI answers | Licter"),
-            "h1": ("LE GEO,", "GEO,"),
-            "kick": ("GENERATIVE ENGINE OPTIMIZATION", "GENERATIVE ENGINE OPTIMIZATION")},
-    "google-trends": {"title": ("Google Trends : lire les tendances de recherche | Licter", "Google Trends: reading search trends | Licter"),
-                      "h1": ("GOOGLE TRENDS,", "GOOGLE TRENDS,"), "kick": ("TENDANCES DE RECHERCHE", "SEARCH TRENDS")},
-    "answerthepublic": {"title": ("AnswerThePublic : les questions de votre marché | Licter", "AnswerThePublic: your market's questions | Licter"),
-                        "h1": ("ANSWERTHEPUBLIC,", "ANSWERTHEPUBLIC,"), "kick": ("LES QUESTIONS DU MARCHÉ", "THE MARKET'S QUESTIONS")},
-    "semrush": {"title": ("Semrush : ce que vos clients cherchent sur Google | Licter", "Semrush: what your customers search for on Google | Licter"),
-                "h1": ("SEMRUSH,", "SEMRUSH,"), "kick": ("ÉCOUTE DE LA RECHERCHE", "SEARCH LISTENING")},
-    "social-blade": {"title": ("Social Blade : vérifier les comptes et les créateurs | Licter", "Social Blade: checking accounts and creators | Licter"),
-                     "h1": ("SOCIAL BLADE,", "SOCIAL BLADE,"), "kick": ("VÉRIFIER UNE AUDIENCE", "CHECKING AN AUDIENCE")},
-    "google-news": {"title": ("Google Actualités : la presse face au social | Licter", "Google News: the press against social | Licter"),
-                    "h1": ("GOOGLE ACTUALITÉS,", "GOOGLE NEWS,"), "kick": ("PRESSE ET RÉSEAUX", "PRESS AND SOCIAL")},
     "meta-ads": {"title": ("Veille Meta Ads : les publicités de vos concurrents | Licter", "Meta Ads monitoring: your competitors' ads | Licter"),
                  "h1": ("VEILLE META ADS,", "META ADS MONITORING,"),
                  "kick": ("VEILLE PUBLICITAIRE", "AD MONITORING")},
 }
 
 AG_T = ("Pourquoi confier ce suivi à un cabinet ?", "Why hand this tracking to a consultancy?")
-AG_LEAD_BY = {"semrush": ("Semrush donne des volumes de recherche. Ce que nous apportons, c'est la lecture : ce que ces recherches disent de votre marché, croisé avec la conversation sociale.",
-                          "Semrush gives search volumes. What we bring is the reading: what those searches say about your market, crossed with the social conversation."),
-              "geo": ("Le GEO ne s'achète pas comme un logiciel : c'est une méthode, appliquée question après question. Voici comment nous la menons.",
-                      "GEO is not bought like software: it is a method, applied question by question. Here is how we run it.")}
+AG_LEAD_BY = {}   # per-page intro of the "why a consultancy" block, when the generic one does not fit
 AG_LEAD = ("%s est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
            "%s is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.")
 FAQ_Q = {"meta-ads": ("Licter fait-elle de la veille sur la bibliothèque publicitaire Meta ?", "Does Licter monitor the Meta Ad Library?")}

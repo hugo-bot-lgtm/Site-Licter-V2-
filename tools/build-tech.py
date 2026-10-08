@@ -169,7 +169,7 @@ def agency_net(n):
     not an agency that runs your accounts"""
     nm, tag = n["name"], n["tag"]
     return {
-        "title": ("Social listening %s : %s | Licter" % (nm, tag[FR]), "%s social listening: %s | Licter" % (nm, tag[EN])),
+        "title": ("Agence social listening %s : %s | Licter" % (nm, tag[FR]), "%s social listening agency: %s | Licter" % (nm, tag[EN])),
         "desc": DESC[n["slug"]],
         "q": ("Licter est-elle une agence social listening %s ?" % nm, "Is Licter a %s social listening agency?" % nm),
         "a": ("Oui : nous écoutons %s pour nos clients, avec les plateformes adaptées, et nos consultants lisent ce qui s'y dit. Nous ne gérons ni vos comptes ni vos publicités : nous lisons la conversation et vous disons quoi décider." % nm,
