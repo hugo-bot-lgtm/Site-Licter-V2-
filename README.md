@@ -92,6 +92,7 @@ book-a-meeting.html ← prise de rendez-vous (bas de funnel)
 css/styles.css      ← source à éditer
 css/styles.min.css  ← généré par tools/build-css.py (feuille complète, secours)
 css/t-*.min.css     ← généré par tools/build-css.py, une feuille par type de page
+js/min/*.js         ← généré par tools/build-js.py (lancé par build-css.py) : copies compactes des scripts, chargées par les pages ; on édite js/*.js
 tools/build-css.py
 js/cartography.js   ← la carto animée (canvas)
 js/i18n.js          ← bascule EN / FR

@@ -2101,8 +2101,8 @@ window.LicterUC = (function () {
    loaded from here so no page has to list it, with this file's version.
    ========================================================================= */
 (function () {
-  var me = document.querySelector('script[src*="js/ui.js"]');
-  if (!me || document.querySelector('script[src*="js/assistant.js"]')) return;
+  var me = document.querySelector('script[src*="/ui.js"]');
+  if (!me || document.querySelector('script[src*="/assistant.js"]')) return;
   /* audience measurement first: the popups and the chat report to it */
   if (!window.LicterTrack) {
     var tr = document.createElement("script");
@@ -2121,7 +2121,7 @@ window.LicterUC = (function () {
   s.defer = true;
   document.body.appendChild(s);
   /* the events banner and the registration pages (js/events.js) */
-  if (!document.querySelector('script[src*="js/events.js"]')) {
+  if (!document.querySelector('script[src*="/events.js"]')) {
     var ev = document.createElement("script");
     ev.src = me.getAttribute("src").replace(/ui\.js/, "events.js");
     document.body.appendChild(ev);

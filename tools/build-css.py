@@ -233,3 +233,7 @@ for g, ps in sorted(groups.items()):
         if s2 != texts[p]:
             p.write_text(s2)
     print("  t-%s.min.css: %d KB, %d KB gzipped, %d pages" % (g, len(sheet.encode()) // 1024, len(gzip.compress(sheet.encode())) // 1024, len(ps)))
+
+# the scripts too: compact copies in js/min/, pages pointed at them (tools/build-js.py)
+import runpy
+runpy.run_path(str(root / "tools" / "build-js.py"), run_name="__main__")
