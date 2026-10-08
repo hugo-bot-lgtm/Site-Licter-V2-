@@ -350,6 +350,7 @@ window.LicterFR = {
 "Free": "Gratuit",
 "Or talk to a consultant": "Ou parler à un consultant",
 "Read the answer": "Lire la réponse",
+"and": "et",
 "Next": "Suivant",
 "Audience listening": "Audience listening",
 "Influence listening": "Influence listening",

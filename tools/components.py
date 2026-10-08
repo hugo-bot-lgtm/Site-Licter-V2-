@@ -10,7 +10,7 @@ simply scroll by hand.
 """
 
 
-def qa_roller(cards, label, more, rows=2):
+def qa_roller(cards, label, more, rows=2, by=""):
     """cards: [(question_html, [paragraph_html, ...])], already translated;
     one card per question, all its paragraphs in it"""
     lanes = [[] for _ in range(rows)]
@@ -24,4 +24,11 @@ def qa_roller(cards, label, more, rows=2):
              '<button class="qa-card__more" type="button">%s<span class="visually-hidden"> : </span><span class="visually-hidden">%s</span> <span aria-hidden="true">→</span></button></article>')
             % (q, "".join("<p>%s</p>" % x for x in a), more, q) for q, a in lane)
         out.append('<div class="qa-roller__row" data-dir="%s"><div class="qa-roller__track">%s</div></div>' % ("right" if n % 2 else "left", items))
-    return '<div class="qa-roller" role="region" aria-label="%s">%s</div>' % (label, "".join(out))
+    return by + '<div class="qa-roller" role="region" aria-label="%s">%s</div>' % (label, "".join(out))
+
+
+def authors_line(written, and_, role):
+    """who wrote a long-form section: the founders, linked to their profiles
+    on Why Licter (already translated words passed in)"""
+    return ('<p class="qa-by">%s <a href="why-licter.html#antoine-khaitrine">Antoine Khaitrine</a> %s '
+            '<a href="why-licter.html#adrien-krebs">Adrien Krebs</a>%s</p>') % (written, and_, role)

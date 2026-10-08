@@ -17,8 +17,8 @@ PROOF = {
           "With Visibrain, we followed the boycott on TikTok, Instagram and X, in 51 languages, up to a record of 26.1 million views in a day."), HUDA)],
     "talkwalker": [
         (("Talkwalker, vu de l'intérieur", "Talkwalker, from the inside"),
-         ("Dans notre podcast Audience First, Charlotte, qui a ouvert le bureau parisien de Talkwalker, explique comment les marques utilisent la plateforme, et pourquoi l'humain reste nécessaire.",
-          "In our Audience First podcast, Charlotte, who opened Talkwalker's Paris office, explains how brands use the platform, and why people are still needed."), "article-licter-talkwalker-podcast.html")],
+         ("Dans notre podcast Audience First, Charlotte Clemens, qui a ouvert le bureau parisien de Talkwalker, explique comment les marques utilisent la plateforme, et pourquoi l'humain reste nécessaire.",
+          "In our Audience First podcast, Charlotte Clemens, who opened Talkwalker's Paris office, explains how brands use the platform, and why people are still needed."), "article-licter-talkwalker-podcast.html")],
     "radarly": [
         (("Radarly et le luxe", "Radarly and luxury"),
          ("Dans notre podcast Audience First, Nathalie Litvine (Meltwater) raconte comment les grands comptes du luxe exploitent la donnée de Radarly.",

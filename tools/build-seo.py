@@ -232,9 +232,9 @@ def structured(rel, s, fr, url):
             b.setdefault("dateModified", b.get("datePublished"))
             b["mainEntityOfPage"] = {"@id": url + "#webpage"}
             b["publisher"] = ORG_REF
-            a = b.get("author") or {}
-            if a.get("@type") == "Person" and AUTHORS.get(a.get("name")):
-                a["sameAs"] = AUTHORS[a["name"]]
+            for a in (b.get("author") if isinstance(b.get("author"), list) else [b.get("author") or {}]):
+                if a.get("@type") == "Person" and AUTHORS.get(a.get("name")):
+                    a["sameAs"] = AUTHORS[a["name"]]
             b["mainEntityOfPage"] = {"@type": "WebPage", "@id": url}
             s = s.replace(m.group(0), '<script type="application/ld+json">%s</script>' % json.dumps(b, ensure_ascii=False), 1)
     if add:

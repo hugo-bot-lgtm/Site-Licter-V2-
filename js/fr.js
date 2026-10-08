@@ -1048,6 +1048,8 @@ window.LicterFR = {
   "We spent years reading the country's conversation from inside the Élysée. We left with one conviction: French organisations were not short of data, they were short of a method to read it.": "Nous avons passé des années à lire la conversation du pays depuis l'Élysée. Nous en sommes sortis avec une conviction : les organisations françaises ne manquaient pas de données, elles manquaient d'une méthode pour les lire.",
   "Licter is that method. Every question is framed by a consultant and every answer is read by one, not left to a dashboard default.": "Licter, c'est cette méthode. Chaque question est cadrée par un consultant, et chaque réponse est lue par un consultant, pas laissée au réglage d'un tableau de bord.",
   "Co-founder": "Cofondateur",
+  "Led the Data & Digital Analysis cell at the Élysée. Top 50 Insider worldwide in social intelligence (SI Lab) since 2024.": "A dirigé la cellule Data & Digital Analysis de l'Élysée. Top 50 Insider mondial de la social intelligence (SI Lab) depuis 2024.",
+  "Led the Data & Digital Analysis cell at the Élysée.": "A dirigé la cellule Data & Digital Analysis de l'Élysée.",
   "Live · 2 h": "Live · 2 h",
   "Or start from your question": "Ou partez de votre question",
   "Free diagnostic": "Diagnostic gratuit",
@@ -2489,10 +2491,10 @@ window.LicterFR = {
     "Abonnement, réglé par nos analystes",
   "Price":
     "Tarif",
-  "Price list on request":
-    "Grille sur demande",
-  "Get the price list":
-    "Recevoir la grille",
+  "On quote":
+    "Sur devis",
+  "Ask for a quote":
+    "Demander un devis",
   "Breadcrumb":
     "Fil d'Ariane",
   "Home":
@@ -2519,10 +2521,10 @@ window.LicterFR = {
     "Ce qui ne change pas, quelle que soit l'offre",
   "They talk about it":
     "Ils en parlent",
-  "Get the price list of the four offers.":
-    "Recevez la grille tarifaire des quatre offres.",
-  "Noted. A consultant sends you the price list within 48 hours.":
-    "C'est noté. Un consultant vous envoie la grille sous 48 h.",
+  "Ask for a quote for your perimeter.":
+    "Demandez un devis pour votre périmètre.",
+  "Noted. A consultant gets back to you within 48 hours.":
+    "C'est noté. Un consultant revient vers vous sous 48 h.",
   "Choose…":
     "Choisir…",
   "Food & drink":
@@ -2545,8 +2547,8 @@ window.LicterFR = {
     "Autre",
   "Before we talk":
     "Avant d'en parler",
-  "The price of each offer, by perimeter. Sent by a consultant within 48 hours, with no sales follow-up.":
-    "Le tarif de chaque offre, selon le périmètre. Envoyée par un consultant sous 48 h, sans relance commerciale.",
+  "A consultant gets back to you within 48 hours to frame the perimeter and send you a quote, with no sales follow-up.":
+    "Un consultant revient vers vous sous 48 h pour cadrer le périmètre et vous envoyer un devis, sans relance commerciale.",
   "Work email":
     "E-mail professionnel",
   "Your sector":
@@ -2567,8 +2569,8 @@ window.LicterFR = {
     "Oui. Une veille au quotidien avec Vigie 360 ou Nox, et des études Social Insights quand une question se pose, par exemple.",
   "How much does it cost?":
     "Combien ça coûte ?",
-  "The price of each offer depends on the perimeter: markets, languages, topics. Get the price list, or ask a consultant for a quote.":
-    "Le tarif de chaque offre dépend du périmètre : marchés, langues, sujets. Recevez la grille tarifaire, ou demandez un chiffrage à un consultant.",
+  "Each offer is priced on quote, by perimeter: markets, languages, topics and duration. A consultant prepares it after a first conversation.":
+    "Chaque offre est établie sur devis, selon le périmètre : marchés, langues, sujets et durée. Un consultant vous le prépare après un premier échange.",
   "Do we need a listening platform?":
     "Faut-il avoir une plateforme d'écoute ?",
   "No. We bring the licences and the sources. Social Listening as a Service is precisely for those who already have one.":
@@ -2633,6 +2635,10 @@ window.LicterFR = {
     "Comment démarre-t-on ?",
   "With a framing call, then the list of the quarter's questions, ranked with you in the first week.":
     "Par un échange de cadrage, puis la liste des questions du trimestre, classées avec vous la première semaine.",
+  "How much does Social Insights cost?":
+    "Combien coûte Social Insights ?",
+  "The price is set on quote. It depends on the markets, languages and topics to cover, and on the duration. A consultant prepares it after a first conversation.":
+    "Le prix est établi sur devis. Il dépend des marchés, des langues et des sujets à couvrir, et de la durée. Un consultant vous le prépare après un premier échange.",
   "Who owns the deliverables?":
     "À qui appartiennent les livrables ?",
   "You do. The studies, reports and dashboards produced for you stay yours, including if you stop. We work on public, aggregated data, in line with GDPR.":
@@ -2761,6 +2767,8 @@ window.LicterFR = {
     "En combien de temps êtes-vous opérationnels ?",
   "The perimeter and alert contacts are set in the first week, the thresholds tuned with test alerts in the second.":
     "Le périmètre et les contacts d'alerte sont fixés la première semaine, les seuils réglés avec des alertes de test la deuxième.",
+  "How much does Vigie 360 cost?":
+    "Combien coûte Vigie 360 ?",
   "Social media and press monitoring of your brand, your executives and your markets, in more than twenty languages, to prevent and manage crises. A person reads the signal before it reaches you, so an alert means something happened, not that a keyword fired.":
     "Une veille des réseaux sociaux et de la presse sur votre marque, vos dirigeants et vos marchés, dans plus de vingt langues, pour prévenir et gérer les crises. Une personne lit le signal avant qu'il ne vous parvienne : une alerte veut dire qu'il s'est passé quelque chose, pas qu'un mot-clé s'est déclenché.",
   "Further reading":
@@ -2849,6 +2857,8 @@ window.LicterFR = {
     "Oui. La formation fait partie de l'offre, par rôle et sur vos propres données, pas sur un compte de démonstration.",
   "With a two-week audit of your current setup, tested against your questions.":
     "Par un audit de deux semaines de votre configuration actuelle, confrontée à vos questions.",
+  "How much does Social Listening as a Service cost?":
+    "Combien coûte Social Listening as a Service ?",
   "Get a sample reworked reporting, in your sector.":
     "Recevez un exemple de reporting repris, dans votre secteur.",
   "Which platform are you paying for?":
@@ -2909,6 +2919,8 @@ window.LicterFR = {
     "Oui. Nox sert au suivi quotidien, et Social Insights prend le relais pour les questions qui demandent une étude complète.",
   "The perimeter is set up in the first week, then tuned by our analysts in the second.":
     "Le périmètre est configuré la première semaine, puis réglé par nos analystes la deuxième.",
+  "How much does Nox cost?":
+    "Combien coûte Nox ?",
   "Your monitoring, sorted by AI, checked by an analyst.":
     "Votre veille, triée par l'IA, vérifiée par un analyste.",
   "Nox is our AI-assisted monitoring tool. It reads the conversation about your brand continuously, groups it into topics, summarises what changed and flags what looks unusual. Our analysts tune it with you, so what it surfaces is worth your time.":
@@ -3158,6 +3170,12 @@ window.LicterFR = {
     "Licter est un cabinet de conseil en social data intelligence : nous opérons les plateformes du marché sans en être l'éditeur, et nous choisissons l'outil selon la question. Si vous avez déjà une licence, nous pouvons la reprendre et la faire servir. Une première lecture prend une dizaine de jours, du cadrage à la restitution.",
   "Read the answer":
     "Lire la réponse",
+  "Written by":
+    "Rédigé par",
+  "and":
+    "et",
+  ", co-founders of Licter":
+    ", cofondateurs de Licter",
   "METHOD":
     "MÉTHODE",
   "How it runs":
@@ -3871,8 +3889,8 @@ window.LicterFR = {
     "Les autres outils",
   "Talkwalker, from the inside":
     "Talkwalker, vu de l'intérieur",
-  "In our Audience First podcast, Charlotte, who opened Talkwalker's Paris office, explains how brands use the platform, and why people are still needed.":
-    "Dans notre podcast Audience First, Charlotte, qui a ouvert le bureau parisien de Talkwalker, explique comment les marques utilisent la plateforme, et pourquoi l'humain reste nécessaire.",
+  "In our Audience First podcast, Charlotte Clemens, who opened Talkwalker's Paris office, explains how brands use the platform, and why people are still needed.":
+    "Dans notre podcast Audience First, Charlotte Clemens, qui a ouvert le bureau parisien de Talkwalker, explique comment les marques utilisent la plateforme, et pourquoi l'humain reste nécessaire.",
   "Hear the interview":
     "Écouter l'entretien",
   "WHAT WE HAVE DONE WITH IT":
@@ -3995,12 +4013,18 @@ window.LicterFR = {
     "Viennent ensuite la reprise de la taxonomie et des tableaux de bord, moins nombreux et chacun construit pour une équipe et une décision, en six semaines environ. Les analyses récurrentes arrivent dès le deuxième mois, dans votre plateforme, et l'usage est mesuré chaque trimestre. Si l'audit montre que l'outil ne correspond pas à vos besoins, nous vous le disons.",
   "Talkwalker: the view of someone who rolled it out":
     "Talkwalker : l'avis de quelqu'un qui l'a déployé",
-  "Charlotte joined Talkwalker when it was still a start-up, then opened its Paris office. On our Audience First podcast, she describes the tool as a real-time data collector that fetches data from blogs, forums, news sites and social networks. First sold to agencies, it opened up to brands, and the challenge became team adoption and training.":
-    "Charlotte a rejoint Talkwalker quand c'était encore une start-up, puis a ouvert son bureau parisien. Dans notre podcast Audience First, elle décrit l'outil comme « un collecteur de datas en temps réel qui va chercher la data sur les blogs, les forums, les sites d'actualité et les réseaux sociaux ». D'abord vendu aux agences, il s'est ouvert aux marques, et l'enjeu est devenu l'adoption et la formation des équipes.",
+  "Charlotte Clemens joined Talkwalker when it was still a start-up, then opened its Paris office. On our Audience First podcast, she describes the tool as a real-time data collector that fetches data from blogs, forums, news sites and social networks. First sold to agencies, it opened up to brands, and the challenge became team adoption and training.":
+    "Charlotte Clemens a rejoint Talkwalker quand c'était encore une start-up, puis a ouvert son bureau parisien. Dans notre podcast Audience First, elle décrit l'outil comme « un collecteur de datas en temps réel qui va chercher la data sur les blogs, les forums, les sites d'actualité et les réseaux sociaux ». D'abord vendu aux agences, il s'est ouvert aux marques, et l'enjeu est devenu l'adoption et la formation des équipes.",
   "Above all, she stresses the human part: for consumer insight, trends and market research, people will always have a role in giving the data perspective. Agency or advertiser, the use is the same in her eyes, and everything starts from one question: what is your use case? And without internal resources, she advises getting support rather than staying alone with the tool.":
     "Elle insiste surtout sur la part humaine : « pour du consumer insight, du trends, du market research, l'humain aura toujours sa place pour vraiment donner de la perspective à la data ». Agence ou annonceur, l'usage est le même à ses yeux, et tout part d'une question : « C'est quoi ton cas d'usage ? ». Et sans ressources internes, elle conseille de se faire accompagner plutôt que de rester seul face à l'outil.",
   "Read the answer":
     "Lire la réponse",
+  "Written by":
+    "Rédigé par",
+  "and":
+    "et",
+  ", co-founders of Licter":
+    ", cofondateurs de Licter",
   "Frequently asked questions about Talkwalker.":
     "Questions fréquentes sur Talkwalker.",
   "Is Licter a Talkwalker agency?":

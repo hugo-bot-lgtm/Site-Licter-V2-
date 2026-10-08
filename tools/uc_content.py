@@ -992,6 +992,6 @@ HUB_FAQ = [
      ("Elles sont publiques, mais brutes. Un analyste écarte les bots, les doublons et les hors-sujets avant toute lecture, et chaque chiffre de la restitution renvoie à sa source.",
       "They are public, but raw. An analyst removes bots, duplicates and off-topic posts before any reading, and every figure in the readout points back to its source.")),
     (("Combien ça coûte ?", "How much does it cost?"),
-     ("Le tarif dépend de l'offre et du périmètre : marques, marchés et langues suivis. La grille tarifaire est envoyée sur demande.",
-      "The price depends on the offer and the scope: brands, markets and languages covered. The price list is sent on request.")),
+     ("Le prix est établi sur devis, selon l'offre et le périmètre : marques, marchés et langues suivis. Un consultant vous le prépare après un premier échange.",
+      "The price is set on quote, by offer and scope: brands, markets and languages covered. A consultant prepares it after a first conversation.")),
 ]

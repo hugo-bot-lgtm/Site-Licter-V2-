@@ -57,7 +57,7 @@ FIX = [("bad buss", "bad buzz"), ("succès publicitaire en", "succès publicitai
 EDITS = [  # typos and a placeholder left in the original texts (regex, replacement)
     # what the guests say of themselves in the interviews (podcast transcripts)
     (r"le COO de Visibrain", "Jean-Christophe Gatuingt, cofondateur de Visibrain"),
-    (r"la DG France de Talkwalker", "Charlotte, qui a ouvert le bureau parisien de Talkwalker"),
+    (r"la DG France de Talkwalker", "Charlotte Clemens, qui a ouvert le bureau parisien de Talkwalker"),
     (r"Sur Tik Tok[\s\u00a0]*:[\s\u00a0]*9K mentions</strong>, qui correspond à une augmentation de XX%, un 1e p<strong>ic",
      "Sur TikTok\u00a0: 9K mentions</strong>, un premier <strong>pic"),
     (r"la “crise'”Huda", "la «\u00a0crise\u00a0» Huda"),

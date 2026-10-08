@@ -54,7 +54,7 @@ EXTRA = {
 
     "article-licter-talkwalker-podcast.html": block(
         "Ce que Charlotte nous a dit",
-        "Charlotte a rejoint Talkwalker il y a une dizaine d'années, quand c'était une start-up d'une quarantaine de personnes, puis a ouvert le bureau parisien. Quelques passages de l'entretien.",
+        "Charlotte Clemens a rejoint Talkwalker il y a une dizaine d'années, quand c'était une start-up d'une quarantaine de personnes, puis a ouvert le bureau parisien. Quelques passages de l'entretien.",
         [q(V_TW, "01:17", "Le social listening, si on fait une traduction française, c'est un outil de veille, donc un outil de veille du web et des réseaux sociaux. C'est un collecteur de datas en temps réel qui va chercher la data sur les blogs, les forums, les sites d'actualité et les réseaux sociaux."),
          q(V_TW, "08:53", "Pour du consumer insight, du trends, du market research, l'humain aura toujours sa place pour vraiment donner de la perspective à la data."),
          q(V_TW, "10:16", "On est complémentaire. Il y a le spontané, le social listening, c'est quand même de l'opinion spontanée. Je dis ce que je pense. Et après il y a donc le non spontané où vraiment ce sont les instituts d'études."),

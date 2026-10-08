@@ -420,8 +420,13 @@ MORE = {
 OWN = (("À qui appartiennent les livrables ?", "Who owns the deliverables?"),
        ("À vous. Les études, rapports et tableaux produits pour vous restent les vôtres, y compris si vous arrêtez. Nous travaillons sur des données publiques, agrégées, dans le respect du RGPD.",
         "You do. The studies, reports and dashboards produced for you stay yours, including if you stop. We work on public, aggregated data, in line with GDPR."))
+# prices are given on quote only (no public price list)
+def price_q(o):
+    return (("Combien coûte %s ?" % o["name"][0], "How much does %s cost?" % o["name"][1]),
+            ("Le prix est établi sur devis. Il dépend des marchés, des langues et des sujets à couvrir, et de la durée. Un consultant vous le prépare après un premier échange.",
+             "The price is set on quote. It depends on the markets, languages and topics to cover, and on the duration. A consultant prepares it after a first conversation."))
 for _o in OFFERS:
-    _o["faq"] = _o["faq"] + MORE[_o["key"]]["faq"] + [OWN]
+    _o["faq"] = _o["faq"] + MORE[_o["key"]]["faq"] + [price_q(_o), OWN]
 
 # The comparison: every value comes from the offer pages themselves.
 COMPARE_ROWS = [
@@ -464,21 +469,21 @@ HUB_FAQ = [
      ("Oui. Une veille au quotidien avec Vigie 360 ou Nox, et des études Social Insights quand une question se pose, par exemple.",
       "Yes. Day-to-day monitoring with Vigie 360 or Nox, and Social Insights studies when a question comes up, for example.")),
     (("Combien ça coûte ?", "How much does it cost?"),
-     ("Le tarif de chaque offre dépend du périmètre : marchés, langues, sujets. Recevez la grille tarifaire, ou demandez un chiffrage à un consultant.",
-      "The price of each offer depends on the perimeter: markets, languages, topics. Get the price list, or ask a consultant for a quote.")),
+     ("Chaque offre est établie sur devis, selon le périmètre : marchés, langues, sujets et durée. Un consultant vous le prépare après un premier échange.",
+      "Each offer is priced on quote, by perimeter: markets, languages, topics and duration. A consultant prepares it after a first conversation.")),
     (("Faut-il avoir une plateforme d'écoute ?", "Do we need a listening platform?"),
      ("Non. Nous apportons les licences et les sources. Social Listening as a Service est justement pour ceux qui en ont déjà une.",
       "No. We bring the licences and the sources. Social Listening as a Service is precisely for those who already have one.")),
 ]
 S.update({
     "price_row": ("Tarif", "Price"),
-    "price_cell": ("Grille sur demande", "Price list on request"),
-    "price_link": ("Recevoir la grille tarifaire", "Get the price list"),
+    "price_cell": ("Sur devis", "On quote"),
+    "price_link": ("Demander un devis", "Ask for a quote"),
     "hub_magnet_k": ("Avant d'en parler", "Before we talk"),
-    "hub_magnet_t": ("Recevez la grille tarifaire des quatre offres.", "Get the price list of the four offers."),
-    "hub_magnet_d": ("Le tarif de chaque offre, selon le périmètre. Envoyée par un consultant sous 48 h, sans relance commerciale.",
-                     "The price of each offer, by perimeter. Sent by a consultant within 48 hours, with no sales follow-up."),
-    "hub_magnet_btn": ("Recevoir la grille", "Get the price list"),
+    "hub_magnet_t": ("Demandez un devis pour votre périmètre.", "Ask for a quote for your perimeter."),
+    "hub_magnet_d": ("Un consultant revient vers vous sous 48 h pour cadrer le périmètre et vous envoyer un devis, sans relance commerciale.",
+                     "A consultant gets back to you within 48 hours to frame the perimeter and send you a quote, with no sales follow-up."),
+    "hub_magnet_btn": ("Demander un devis", "Ask for a quote"),
     "magnet_k": ("Et chez vous ?", "And for you?"),
     "magnet_d": ("Anonymisé, envoyé par un consultant sous 48 h : ce que vous recevriez vraiment.", "Anonymised, sent by a consultant within 48 hours: what you would actually receive."),
     "magnet_btn": ("Recevoir l'exemple", "Get the sample"),
@@ -490,7 +495,7 @@ S.update({
     "magnet_consent": ("Votre e-mail sert uniquement à vous répondre.", "We use your email only to reply to you."),
     "privacy": ("Politique de confidentialité", "Privacy policy"),
     "magnet_done": ("C'est noté. Un consultant vous envoie un exemple sous 48 h.", "Noted. A consultant sends you a sample within 48 hours."),
-    "hub_magnet_done": ("C'est noté. Un consultant vous envoie la grille sous 48 h.", "Noted. A consultant sends you the price list within 48 hours."),
+    "hub_magnet_done": ("C'est noté. Un consultant revient vers vous sous 48 h.", "Noted. A consultant gets back to you within 48 hours."),
     "magnet_alt": ("Plutôt comparer d'abord ?", "Rather compare first?"),
     "magnet_alt_link": ("Les quatre offres côte à côte", "The four offers side by side"),
     "dlv_t": ("Ce que vous recevez", "What you receive"),
@@ -498,7 +503,7 @@ S.update({
     "get_lead": ("Le détail de l'offre, et un exemple de livrable tel qu'il arrive chez vous.",
                  "The detail of the offer, and a sample deliverable as it reaches you."),
     "bar_offer": ("Recevoir un exemple", "Get a sample"),
-    "bar_price": ("Recevoir la grille", "Get the price list"),
+    "bar_price": ("Demander un devis", "Ask for a quote"),
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
     "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
     "diag3": ("Le diagnostic en 3 minutes", "The 3-minute diagnostic"),

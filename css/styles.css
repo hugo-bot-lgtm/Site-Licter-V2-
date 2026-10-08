@@ -9302,6 +9302,10 @@ html[data-theme="dark"] .wl-row__n { color: #EAA93D; }
 .wl-cursor { position: fixed; left: 0; top: 0; z-index: 5; width: 300px; aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; pointer-events: none; opacity: 0; transform: translate(-50%, -50%) scale(.7) rotate(-6deg); transition: opacity .3s ease, transform .4s cubic-bezier(.16, 1, .3, 1); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .7); }
 .wl-cursor.is-on { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-3deg); }
 .wl-cursor img { width: 100%; height: 100%; object-fit: cover; }
+/* the founders double as the authors' profiles (articles and guides link to #antoine-khaitrine, #adrien-krebs) */
+.wl-founders li { scroll-margin-top: 160px; }
+.wl-founder__bio { display: block; max-width: 36ch; margin-top: 6px; font: 500 13.5px/1.5 var(--body-font); color: var(--text-2); }
+.wl-founder__in { display: inline-block; margin-top: 6px; font: 600 13px/1.4 var(--body-font); color: var(--ink); text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 3px; }
 /* "What makes the difference" holds in one screen, text only (no photos) */
 .wl-diff { padding: clamp(44px, 7vh, 84px) 0; min-height: 0; }
 .wl-diff .wl-head { margin-bottom: clamp(20px, 3.4vh, 36px); }
@@ -10484,6 +10488,8 @@ html[lang="fr"] .xp-line > span::after { content: "\00a0:"; }
   -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent); }
 .qa-card__a p { margin: 0; }
 .qa-card__a p + p { margin-top: 8px; }
+.qa-by { margin: -6px 0 0; font: 500 14px/1.5 var(--body-font); color: var(--text-2); }
+.qa-by a { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 3px; }
 .qa-card__more { align-self: flex-start; margin-top: 8px; padding: 0; border: 0; background: none; cursor: pointer;
   font: 600 13px/1.4 var(--body-font); color: var(--amber); }
 .qa-card__more::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }

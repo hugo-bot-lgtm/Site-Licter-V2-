@@ -541,10 +541,11 @@ def guide(slug):
     mod = GUIDE.get(slug)
     if not mod or not (ROOT / "tools" / (mod + ".py")).exists():
         return ""
-    from components import qa_roller
+    from components import qa_roller, authors_line
     G = importlib.import_module(mod)
     return sec("guide", head(t(G.KICKER), t(G.TITLE)) + qa_roller(
-        [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS], t(G.KICKER), t(("Lire la réponse", "Read the answer"))))
+        [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS], t(G.KICKER), t(("Lire la réponse", "Read the answer")),
+        by=authors_line(t(("Rédigé par", "Written by")), t(("et", "and")), t((", cofondateurs de Licter", ", co-founders of Licter")))))
 
 
 # ------------------------------------------------------------------ network page

@@ -308,7 +308,7 @@ def article_main(x):
 %s
     </div>
   </section>
-</main>''' % (E(x["title"]), x["tname"], E(x["title"]), E(x["lead"]), x["avatar"], x["author"], meta(x, fr), art(x["slug"], x["t"], 900, 640), note,
+</main>''' % (E(x["title"]), x["tname"], E(x["title"]), E(x["lead"]), x["avatar"], byline(x, fr), meta(x, fr), art(x["slug"], x["t"], 900, 640), note,
               toc_html, ' lang="fr"' if fr else "", prose, x["uc"].replace('class="uc-links"', 'class="uc-links bl-uc"'), "".join(card(y, fr=fr) for y in more), mag_block(x["slug"][:10]))
 
 
@@ -338,6 +338,25 @@ SEO_TITLE = {
 }
 
 
+# authors with a profile (the founders, on Why Licter): bylines link to it
+PROFILE = {"Antoine Khaitrine": "antoine-khaitrine", "Adrien Krebs": "adrien-krebs"}
+
+
+def byline(x, fr):
+    """the author names, each linked to its profile; several joined by "et" / "and" """
+    page = "/fr/pourquoi-licter/" if fr else "/why-licter.html"
+    names = x["author"].split(" et ")
+    return (" et " if fr else " and ").join('<a href="%s#%s">%s</a>' % (page, PROFILE[n], n) if n in PROFILE else n for n in names)
+
+
+def author_ld(x, fr):
+    if x["author"] in ("Licter analysis team", "L'équipe Licter"):
+        return {"@type": "Organization", "name": "Licter", "url": SITE + "/"}
+    page = SITE + ("/fr/pourquoi-licter/" if fr else "/why-licter.html")
+    people = [dict({"@type": "Person", "name": n}, **({"url": "%s#%s" % (page, PROFILE[n])} if n in PROFILE else {})) for n in x["author"].split(" et ")]
+    return people[0] if len(people) == 1 else people
+
+
 def title_tag(x):
     t = html.unescape(x["title"])
     return SEO_TITLE.get(re.sub(r"[\u00a0\u202f]", " ", t), t)
@@ -365,7 +384,7 @@ def article_page(x):
     ld = {"@context": "https://schema.org", "@type": "Article", "headline": html.unescape(x["title"]), "description": html.unescape(x["lead"]),
           "datePublished": "%04d-%02d-%02d" % (x["key"][0], x["key"][1] + 1, x["key"][2]),
           "dateModified": REWRITTEN.get(x["file"], "%04d-%02d-%02d" % (x["key"][0], x["key"][1] + 1, x["key"][2])), "inLanguage": "fr" if fr else "en",
-          "author": {"@type": "Organization", "name": "Licter", "url": SITE + "/"} if x["author"] in ("Licter analysis team", "L'équipe Licter") else {"@type": "Person", "name": x["author"]},
+          "author": author_ld(x, fr),
           "publisher": {"@type": "Organization", "name": "Licter", "url": SITE + "/"}, "mainEntityOfPage": SITE + "/" + x["file"]}
     page = page.replace("</head>", '<script type="application/ld+json">%s</script>\n</head>' % json.dumps(ld, ensure_ascii=False), 1)
     (ROOT / x["file"]).write_text(page)
