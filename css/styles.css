@@ -10526,8 +10526,28 @@ html[lang="fr"] .xp-line > span::after { content: "\00a0:"; }
 .cc__b button:focus-visible, .cc-manage:focus-visible { outline: 2px solid #EAA93D; outline-offset: 3px; }
 .cc-manage { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 @keyframes cc-in { from { opacity: 0; transform: translateY(12px); } }
+/* large screens: one line, low, so it covers no call to action */
+@media (min-width: 900px) {
+  .cc { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 22px; width: min(820px, calc(100vw - 40px)); padding: 14px 16px 14px 22px; }
+  .cc__t { font-size: 13.5px; }
+  .cc__b { grid-template-columns: auto auto; }
+  .cc__b button { min-width: 116px; }
+}
 @media (max-width: 720px) {
   .cc { left: 12px; right: 12px; bottom: 12px; width: auto; }
   .cc-open .lx__launch { opacity: 0; pointer-events: none; }
 }
 @media (prefers-reduced-motion: reduce) { .cc { animation: none; } }
+
+/* home, method: the six listenings behind the four steps */
+.hmethod__xp { max-width: 62ch; margin: 14px 0 0; font: 500 15px/1.6 var(--body-font); color: var(--text-2); }
+.hmethod__xp a { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 3px; }
+
+/* the Top 50 badge: the gold lettering (::before) is the only visible text of
+   the rank, on one line; on a phone the sentence may wrap inside the badge */
+.award__rank { white-space: nowrap; flex: none; }
+html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
+@media (max-width: 560px) {
+  .hero__main > .award { max-width: 100%; border-radius: 18px; }
+  .award__text { white-space: normal; line-height: 1.3; }
+}

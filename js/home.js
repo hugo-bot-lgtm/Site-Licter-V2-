@@ -199,7 +199,7 @@
               '<button class="btn btn--primary" type="submit">' + t("Send it to me", "Me l'envoyer") + "</button></div>" +
               '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
               '<p class="consent">' + t("We use your email only to reply to you. ", "Votre e-mail sert uniquement à vous répondre. ") +
-                '<a href="/privacy.html">' + t("Privacy policy", "Politique de confidentialité") + "</a>.</p>" +
+                '<a href="' + ((document.documentElement.lang || "fr").slice(0, 2) === "fr" ? "/fr/confidentialite/" : "/privacy.html") + '">' + t("Privacy policy", "Politique de confidentialité") + "</a>.</p>" +
             "</form>") +
         '<button class="quiz__back" type="button" data-restart>' + t("Start again", "Recommencer") + "</button>" +
         "</div></div>";

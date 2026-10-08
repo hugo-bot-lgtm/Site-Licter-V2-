@@ -65,8 +65,8 @@ LISTENINGS = [
         "name": ("Social listening", "Social listening"),
         "short": ("Ce qui se dit sur vous, vos concurrents et votre marché.", "What is said about you, your competitors and your market."),
         "seo_title": ("Agence et cabinet de social listening | Licter", "Social listening agency and consultancy | Licter"),
-        "seo_desc": ("Réseaux sociaux, presse, forums et avis, collectés sur votre périmètre et lus par un analyste : sujets, tonalité, et ce que ça veut dire pour vous.",
-                     "Social networks, news, forums and reviews, collected on your perimeter and read by an analyst: topics, tone, and what it means for you."),
+        "seo_desc": ("Agence de social listening à Paris : réseaux sociaux, presse, forums et avis, lus par un analyste, pour des marques en France et à l'international.",
+                     "Social listening agency in Paris: social networks, news, forums and reviews, read by an analyst, for brands in France and abroad."),
         "h1": ("Ce que les gens disent, lu par des gens.", "What people say, read by people."),
         "lead": ("Les réseaux sociaux, la presse, les forums et les avis, collectés sur votre périmètre et lus par un analyste : volumes, sujets, tonalité, et surtout ce que ça veut dire pour vous.",
                  "Social networks, news, forums and reviews, collected on your perimeter and read by an analyst: volumes, topics, tone, and above all what it means for you."),
@@ -91,8 +91,8 @@ LISTENINGS = [
         "name": ("Audience listening", "Audience listening"),
         "short": ("Qui sont vraiment les gens qui parlent de vous.", "Who the people talking about you really are."),
         "seo_title": ("Audience intelligence : qui sont vraiment vos audiences | Licter", "Audience intelligence: who your audiences really are | Licter"),
-        "seo_desc": ("Audience intelligence : centres d'intérêt, affinités de marque et médias. Nous profilons vos communautés à partir de leur comportement observé, pas déclaré.",
-                     "Audience intelligence: interests, brand affinities and media. We profile your communities from observed behaviour, not declared answers."),
+        "seo_desc": ("Audience et consumer intelligence : centres d'intérêt, affinités de marque et médias de vos communautés, lus dans leur comportement observé, pas déclaré.",
+                     "Audience and consumer intelligence: the interests, brand affinities and media of your communities, read from observed behaviour, not declared answers."),
         "h1": ("Audience intelligence : qui sont vraiment vos audiences, au-delà de l'âge et du sexe.", "Audience intelligence: who your audiences really are, beyond age and gender."),
         "lead": ("Nous profilons les communautés à partir de ce qu'elles suivent, partagent et consomment : centres d'intérêt, affinités de marque, médias. De quoi remplacer un persona déclaratif par un comportement observé.",
                  "We profile communities from what they follow, share and consume: interests, brand affinities, media. Enough to replace a declared persona with observed behaviour."),
@@ -638,13 +638,21 @@ READS = {
 }
 
 
+# the tool pages an expertise relies on (audit of 8 October 2026: AI listening
+# did not lead to the GEO and assistant pages)
+TOOLS_OF = {"ai": [("tech-geo.html", "GEO"), ("tech-chatgpt.html", "ChatGPT"), ("tech-claude.html", "Claude"),
+                   ("tech-gemini.html", "Gemini"), ("tech-perplexity.html", "Perplexity"), ("tech-grok.html", "Grok")]}
+
+
 def reads(key):
     items = READS.get(key)
     if not items:
         return ""
+    tools_line = ('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Les outils", "The tools")), ", ".join(
+        '<a href="%s">%s</a>' % (h, n) for h, n in TOOLS_OF[key]))) if key in TOOLS_OF else ""
     links = ", ".join(('<a href="/fr/cas-usage/audiences/" data-en="/en/use-cases/audiences/">%s</a>' % t(l)) if h == "use-cases.html"
                       else '<a href="%s">%s</a>' % (h, t(l)) for h, l in items)
-    return sec("", '<p class="xp-line"><span>%s</span> %s</p>' % (t(("À lire", "Further reading")), links))
+    return sec("", '<p class="xp-line"><span>%s</span> %s</p>' % (t(("À lire", "Further reading")), links) + tools_line)
 
 
 def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, bands=None, flash_key="hub"):

@@ -21,7 +21,7 @@ Run by tools/build-usecases.py and tools/build-blog.py at the end, or alone:
 
     python3 tools/build-seo.py
 """
-import hashlib, html, json, pathlib, re, sys, textwrap
+import datetime, hashlib, html, json, pathlib, re, sys, textwrap
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -31,6 +31,7 @@ W, H = 1200, 630
 NAVY, CREAM, AMBER = (19, 22, 45), (252, 246, 239), (234, 169, 61)
 DEMI = str(ROOT / "assets/fonts/AiglonProWide-Demi.otf")
 OG = ROOT / "assets/img/og"
+TODAY = datetime.date.today().isoformat()
 DATES = ROOT / "tools" / "page-dates.json"   # per page: content hash and the date it last changed
 MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -157,6 +158,17 @@ ORG_REF = {"@type": "Organization", "@id": SITE + "/#org", "name": "Licter", "ur
 AUTHORS = {"Antoine Khaitrine": ["https://www.linkedin.com/in/antoine-khaitrine/", "https://www.thesilab.com/insider-50/antoine-khaitrine"],
            "Adrien Krebs": ["https://www.linkedin.com/in/adrien-krebs/"], "Mina Cantone": []}
 ABOUT = {"why-licter.html", "fr/pourquoi-licter/index.html"}
+# the founders, declared once (Why Licter) and referred to by @id everywhere they sign
+FOUNDERS = [
+    {"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#antoine-khaitrine", "name": "Antoine Khaitrine",
+     "jobTitle": "Cofondateur", "worksFor": {"@id": SITE + "/#org"}, "image": SITE + "/assets/img/team/founder-antoine-160.webp",
+     "url": SITE + "/fr/pourquoi-licter/#antoine-khaitrine", "sameAs": AUTHORS["Antoine Khaitrine"],
+     "award": "Top 50 Insider mondial de la social intelligence (SI Lab), 2024"},
+    {"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#adrien-krebs", "name": "Adrien Krebs",
+     "jobTitle": "Cofondateur", "worksFor": {"@id": SITE + "/#org"}, "image": SITE + "/assets/img/team/founder-adrien-160.webp",
+     "url": SITE + "/fr/pourquoi-licter/#adrien-krebs", "sameAs": AUTHORS["Adrien Krebs"]},
+]
+FOUNDER_REFS = [{"@id": f["@id"]} for f in FOUNDERS]
 COLLECTION = {"blog.html", "fr/blog/index.html", "clients.html", "fr/clients/index.html", "events.html"}
 
 
@@ -205,9 +217,12 @@ def structured(rel, s, fr, url):
     add = []
     if not types & {"WebPage", "AboutPage", "CollectionPage", "Article", "Event"}:   # a Service describes the offer, not the page
         kind = "AboutPage" if rel in ABOUT else "CollectionPage" if rel in COLLECTION else "WebPage"
+        signed = 'class="qa-by"' in s
         add.append({"@context": "https://schema.org", "@type": kind, "@id": url + "#webpage", "url": url, "name": title,
                     "description": desc, "inLanguage": "fr" if fr else "en", "isPartOf": {"@id": SITE + "/#website"},
-                    "publisher": ORG_REF, "about": {"@id": SITE + "/#org"} if kind == "AboutPage" else None})
+                    "publisher": ORG_REF, "about": {"@id": SITE + "/#org"} if kind == "AboutPage" else None,
+                    "author": FOUNDER_REFS if signed else None,
+                    "dateModified": TODAY if signed else None})   # replaced by the honest date (honest_dates)
         add[-1] = {k: v for k, v in add[-1].items() if v is not None}
     if "BreadcrumbList" not in types and url not in (SITE + "/", SITE + "/fr/"):
         home = (SITE + "/fr/", "Accueil") if fr else (SITE + "/", "Home")
@@ -235,8 +250,13 @@ def structured(rel, s, fr, url):
             for a in (b.get("author") if isinstance(b.get("author"), list) else [b.get("author") or {}]):
                 if a.get("@type") == "Person" and AUTHORS.get(a.get("name")):
                     a["sameAs"] = AUTHORS[a["name"]]
+                    ref = next((f["@id"] for f in FOUNDERS if f["name"] == a.get("name")), None)
+                    if ref:
+                        a["@id"] = ref
             b["mainEntityOfPage"] = {"@type": "WebPage", "@id": url}
             s = s.replace(m.group(0), '<script type="application/ld+json">%s</script>' % json.dumps(b, ensure_ascii=False), 1)
+    if rel in ABOUT:
+        add.extend(dict({"@context": "https://schema.org"}, **f) for f in FOUNDERS)
     if add:
         s = s.replace("</head>", "".join('<script type="application/ld+json" data-seo>%s</script>\n' % json.dumps(x, ensure_ascii=False) for x in add) + "</head>", 1)
     return s
@@ -298,6 +318,10 @@ def main():
                 s = add_head(s, '<link rel="alternate" hreflang="fr" href="%s" />\n<link rel="alternate" hreflang="x-default" href="%s" />' % (url, url))
             else:
                 s = add_head(s, '<link rel="alternate" hreflang="x-default" href="%s" />' % url)
+        # video thumbnails from our own copies (tools/yt-thumbs.py): no request to
+        # YouTube before the visitor plays a video (privacy page, cookies)
+        s = re.sub(r'https://i\.ytimg\.com/vi(?:_webp)?/([A-Za-z0-9_-]{11})/[a-z0-9_]+\.(?:webp|jpg)', r'/assets/img/yt/\1.webp', s)
+        s = re.sub(r'<link rel="preconnect" href="https://i\.ytimg\.com"[^>]*/>\n?', "", s)
         # og:url is always the page's own address (pages copied from another
         # page's head used to keep its og:url: audit of 7 October 2026)
         if 'property="og:url"' in s:

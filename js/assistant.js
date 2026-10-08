@@ -135,7 +135,7 @@
     { k: ["rgpd", "gdpr", "vie privee", "privacy", "donnees personnelles", "personal data", "conforme", "legal", "anonyme"],
       a: ["Nous travaillons sur des données publiques et des communautés agrégées, jamais sur le profil d'un individu. Vos propres données restent les vôtres.",
           "We work on public data and aggregated communities, never on an individual's profile. Your own data stays yours."],
-      go: [["Lire la politique de confidentialité", "Read the privacy policy"], "/privacy.html"] },
+      go: [["Lire la politique de confidentialité", "Read the privacy policy"], ((document.documentElement.lang || "fr").slice(0, 2) === "fr" ? "/fr/confidentialite/" : "/privacy.html")] },
     { k: ["diagnostic", "audit", "evaluer", "evaluation", "score", "assess", "maturite"],
       a: ["Le diagnostic gratuit fait le point sur votre écoute en six questions, trois minutes : votre score tout de suite, la lecture complète par e-mail.",
           "The free diagnostic takes stock of your listening in six questions, three minutes: your score at once, the full readout by email."],
@@ -209,7 +209,7 @@
           '<p class="lx__err" id="lx-err" data-l="err" hidden></p>' +
           '<button class="btn btn--primary lx__submit" type="submit"><span data-l="callBtn"></span> <span aria-hidden="true">→</span></button>' +
           '<p class="lx__promise"><span class="lx__dot" aria-hidden="true"></span><span data-l="promise"></span></p>' +
-          '<p class="lx__consent"><span data-l="consent"></span> <a href="/privacy.html" data-l="privacy"></a>.</p>' +
+          '<p class="lx__consent"><span data-l="consent"></span> <a href="' + ((document.documentElement.lang || "fr").slice(0, 2) === "fr" ? "/fr/confidentialite/" : "/privacy.html") + '" data-l="privacy"></a>.</p>' +
         "</form>" +
         '<p class="lx__done" role="status" hidden></p>' +
       "</div>" +

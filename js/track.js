@@ -67,7 +67,7 @@
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
     window.gtag("consent", "default", { ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied", analytics_storage: "granted" });
     window.gtag("js", new Date());
-    window.gtag("config", GA4_ID, { cookie_expires: 13 * 30 * 24 * 3600 });   /* 13 months at most (CNIL) */
+    window.gtag("config", GA4_ID, { cookie_expires: 13 * 30 * 24 * 3600, cookie_update: false });   /* 13 months at most from consent, not renewed on each visit */   /* 13 months at most (CNIL) */
     var g = document.createElement("script");
     g.async = true;
     g.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
@@ -98,13 +98,14 @@
     var priv = fr() ? "/fr/confidentialite/#cookies" : "/privacy.html#cookies";
     bar = document.createElement("div");
     bar.className = "cc";
+    bar.setAttribute("data-nosnippet", "");   /* never part of a search snippet */
     bar.setAttribute("role", "dialog");
     bar.setAttribute("aria-live", "polite");
     bar.setAttribute("aria-label", fr() ? "Cookies de mesure d'audience" : "Audience measurement cookies");
     bar.innerHTML = '<p class="cc__t">' + (fr()
         ? "Nous mesurons l'audience du site avec Google Analytics, pour savoir quelles pages sont utiles. Ses cookies ne sont déposés que si vous acceptez."
         : "We measure the site's audience with Google Analytics, to learn which pages are useful. Its cookies are set only if you accept.") +
-      ' <a href="' + priv + '">' + (fr() ? "En savoir plus" : "Learn more") + "</a></p>" +
+      ' <a href="' + priv + '">' + (fr() ? "Lire la politique de cookies" : "Read the cookie policy") + "</a></p>" +
       '<div class="cc__b"><button class="cc__no" type="button">' + (fr() ? "Refuser" : "Decline") + '</button>' +
       '<button class="cc__yes" type="button">' + (fr() ? "Accepter" : "Accept") + "</button></div>";
     bar.querySelector(".cc__no").addEventListener("click", function () { decide("denied"); });
@@ -126,6 +127,8 @@
   function start() {
     footLink();
     var c = stored();
+    /* a choice older than six months: asked again, and the old GA cookies go */
+    try { if (!c && localStorage.getItem(KEY)) { localStorage.removeItem(KEY); dropGA(); } } catch (e) {}
     if (c === "granted") loadGA();
     else if (!c) ask();
   }

@@ -132,7 +132,7 @@
     },
     {
       "source": "/article/surveiller-les-jeux-olympiques-lart-de-la-veille-et-de-la-gestion-de-crise",
-      "destination": "/fr/blog/",
+      "destination": "/fr/cas-usage/sante-de-marque/risques-de-marque-crise/",
       "permanent": true
     },
     {
@@ -312,7 +312,7 @@
     },
     {
       "source": "/service/social-listening",
-      "destination": "/fr/offres/social-listening-as-a-service/",
+      "destination": "/fr/expertise/social-listening/",
       "permanent": true
     },
     {
@@ -367,12 +367,12 @@
     },
     {
       "source": "/the-team/adrien-krebs",
-      "destination": "/fr/pourquoi-licter/#origin",
+      "destination": "/fr/pourquoi-licter/#adrien-krebs",
       "permanent": true
     },
     {
       "source": "/the-team/antoine-khaitrine",
-      "destination": "/fr/pourquoi-licter/#origin",
+      "destination": "/fr/pourquoi-licter/#antoine-khaitrine",
       "permanent": true
     },
     {

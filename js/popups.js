@@ -106,7 +106,7 @@
             '<button class="btn btn--primary pp__wide" type="submit">' + esc(T(C.callB)) + ' <span aria-hidden="true">→</span></button>' +
             '<p class="fld__error" hidden>' + esc(T(C.callE)) + "</p>" +
             '<p class="pp__promise"><span class="pp__dot" aria-hidden="true"></span>' + esc(T(C.callPr)) + "</p>" +
-            '<p class="consent">' + esc(T(C.callC)) + ' <a href="/privacy.html">' + esc(T(C.privacy)) + "</a>.</p>" +
+            '<p class="consent">' + esc(T(C.callC)) + ' <a href="' + ((document.documentElement.lang || "fr").slice(0, 2) === "fr" ? "/fr/confidentialite/" : "/privacy.html") + '">' + esc(T(C.privacy)) + "</a>.</p>" +
           "</form>") +
         "</div>";
     } else {
@@ -125,7 +125,7 @@
             '<input class="fld__input" id="pp-mail" name="email" type="email" autocomplete="email" placeholder="' + esc(T(C.callP).split(" ")[0]) + '" required />' +
             '<p class="fld__error" hidden>' + esc(T(C.magE)) + "</p>" +
             '<button class="btn btn--primary pp__wide" type="submit">' + esc(T(C.magB)) + ' <span aria-hidden="true">→</span></button>' +
-            '<p class="consent">' + esc(T(C.magC)) + ' <a href="/privacy.html">' + esc(T(C.privacy)) + "</a>.</p>" +
+            '<p class="consent">' + esc(T(C.magC)) + ' <a href="' + ((document.documentElement.lang || "fr").slice(0, 2) === "fr" ? "/fr/confidentialite/" : "/privacy.html") + '">' + esc(T(C.privacy)) + "</a>.</p>" +
           "</form>") +
         "</div>";
     }

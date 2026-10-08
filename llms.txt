@@ -2,7 +2,7 @@
 
 > Licter est un cabinet de conseil en Social Data Intelligence fondé à Paris en 2022 (Licter SAS, SIREN 915259394, 173 rue de Courcelles, 75017 Paris). Ses consultants lisent ce que les gens publient, cherchent et demandent à l'IA, et en tirent des décisions : social listening, analyse des audiences, veille et gestion de crise, visibilité dans les réponses des IA (GEO). Plus de 50 clients et 160 projets depuis 2022. Le site existe en français (/fr/) et en anglais (/).
 
-Licter n'édite pas de logiciel : le cabinet opère des plateformes d'écoute (Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly, YouScan…) et choisit l'outil selon la question. Contact : contact@licter.com.
+Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les plateformes du marché (Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly, YouScan…) et choisit l'outil selon la question. Son offre Nox ajoute une veille assistée par l'IA, relue par ses analystes. Contact : contact@licter.com.
 
 ## Offres
 
@@ -36,6 +36,11 @@ Licter n'édite pas de logiciel : le cabinet opère des plateformes d'écoute (T
 - [Blog](https://www.licter.com/fr/blog/): analyses publiées et entretiens du podcast Audience First
 
 ## Plateformes et sources
+
+- [Talkwalker](https://www.licter.com/fr/outils/talkwalker/): ce que fait la plateforme, ses limites, comment la choisir ou la reprendre
+- [Social listening sur TikTok](https://www.licter.com/fr/sources/tiktok/): ce qu'on peut lire sur TikTok, les outils, un exemple de crise
+- [GEO](https://www.licter.com/fr/outils/geo/): la visibilité d'une marque dans les réponses des IA
+- [Votre marque dans ChatGPT](https://www.licter.com/fr/outils/chatgpt/): auditer ce que ChatGPT répond sur une marque
 
 - [Techno et outils](https://www.licter.com/fr/outils/): les plateformes d'écoute, de recherche, de presse et d'IA que Licter utilise
 - [Sources](https://www.licter.com/fr/sources/): les 22 réseaux d'où viennent les données

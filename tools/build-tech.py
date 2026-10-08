@@ -169,7 +169,7 @@ def agency_net(n):
     not an agency that runs your accounts"""
     nm, tag = n["name"], n["tag"]
     return {
-        "title": ("Agence social listening %s : %s | Licter" % (nm, tag[FR]), "%s social listening agency: %s | Licter" % (nm, tag[EN])),
+        "title": ("Social listening %s : %s | Licter" % (nm, tag[FR]), "%s social listening: %s | Licter" % (nm, tag[EN])),
         "desc": DESC[n["slug"]],
         "q": ("Licter est-elle une agence social listening %s ?" % nm, "Is Licter a %s social listening agency?" % nm),
         "a": ("Oui : nous écoutons %s pour nos clients, avec les plateformes adaptées, et nos consultants lisent ce qui s'y dit. Nous ne gérons ni vos comptes ni vos publicités : nous lisons la conversation et vous disons quoi décider." % nm,
@@ -523,7 +523,7 @@ def tool_body(x):
         out += sec("engine", head(t(fmt(AI.HEAD[0], NM)), t(fmt(AI.HEAD[1], nm))) +
                    '<ul class="tk-proof">%s</ul>' % "".join('<li class="tk-proof__c"><b>%s</b><p>%s</p></li>' % (t(a), t(b)) for a, b in AI.ENGINE[x["slug"]]))
     out += sec("features", head(t(S["feat_k"]), t(fmt(S["feat_t"], nm))) + feats(x["features"], x["slug"]), band=True)
-    out += sec("agency", head(t(ag["kick"]), t(AI.AG_T) if x["slug"] in AI.INTENT else t(fmt(S["ag_t"], nm)), t(fmt(AI.AG_LEAD, nm)) if x["slug"] in AI.INTENT else t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
+    out += sec("agency", head(t(ag["kick"]), t(AI.AG_T) if x["slug"] in AI.INTENT else t(fmt(S["ag_t"], nm)), t(AI.AG_LEAD_BY[x["slug"]]) if x["slug"] in AI.AG_LEAD_BY else t(fmt(AI.AG_LEAD, nm)) if x["slug"] in AI.INTENT else t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
     out += sec("deliverables", head(t(S["del_k"]), t(fmt(S["del_t"], nm))) + dels, band=True)
     out += sec("uses", head(t(S["uses_k2"]), t(fmt(S["uses_t2"], nm)), t(S["uses_lead"])) + prog(x["uses"]))
     out += sec("limits", head(t(S["lim_k"]), t(fmt(S["lim_t"], nm))) + lims, band=True)

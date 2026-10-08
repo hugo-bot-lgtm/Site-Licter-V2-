@@ -59,8 +59,8 @@ def head(lang, src):
                        "addressLocality": "Paris", "addressCountry": "FR"},
            "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "contact@licter.com",
                             "availableLanguage": ["French", "English"]},
-           "founder": [{"@type": "Person", "name": "Adrien Krebs", "jobTitle": ("Cofondateur", "Co-founder")[lang], "sameAs": ["https://www.linkedin.com/in/adrien-krebs/"]},
-                       {"@type": "Person", "name": "Antoine Khaitrine", "jobTitle": ("Cofondateur", "Co-founder")[lang],
+           "founder": [{"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#adrien-krebs", "name": "Adrien Krebs", "jobTitle": ("Cofondateur", "Co-founder")[lang], "sameAs": ["https://www.linkedin.com/in/adrien-krebs/"]},
+                       {"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#antoine-khaitrine", "name": "Antoine Khaitrine", "jobTitle": ("Cofondateur", "Co-founder")[lang],
                         "sameAs": ["https://www.linkedin.com/in/antoine-khaitrine/", "https://www.thesilab.com/insider-50/antoine-khaitrine"]}],
            "knowsLanguage": ["fr", "en", "zh", "es", "hi", "yue", "ar"],
            "areaServed": "Worldwide"}
@@ -100,7 +100,6 @@ def head(lang, src):
 <meta name="twitter:image" content="{img}" />
 <link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preconnect" href="https://i.ytimg.com" />
 {ld_tags}
 <!-- /seo -->'''
 
