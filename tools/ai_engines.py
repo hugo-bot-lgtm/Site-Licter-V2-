@@ -7,21 +7,6 @@ INTENT also renames the pages whose "Agence X" title drew the wrong search
 (buying ads, partnering with the AI publisher)."""
 
 INTENT = {
-    "chatgpt": {"title": ("Votre marque dans ChatGPT : audit des réponses | Licter", "Your brand in ChatGPT: an audit of its answers | Licter"),
-                "h1": ("VOTRE MARQUE DANS CHATGPT,", "YOUR BRAND IN CHATGPT,"),
-                "kick": ("CHATGPT ET VOTRE MARQUE", "CHATGPT AND YOUR BRAND")},
-    "claude": {"title": ("Votre marque dans Claude : ce que l'IA répond | Licter", "Your brand in Claude: what the AI answers | Licter"),
-               "h1": ("VOTRE MARQUE DANS CLAUDE,", "YOUR BRAND IN CLAUDE,"),
-               "kick": ("CLAUDE ET VOTRE MARQUE", "CLAUDE AND YOUR BRAND")},
-    "gemini": {"title": ("Votre marque dans Gemini et les réponses IA de Google | Licter", "Your brand in Gemini and Google's AI answers | Licter"),
-               "h1": ("VOTRE MARQUE DANS GEMINI,", "YOUR BRAND IN GEMINI,"),
-               "kick": ("GEMINI ET VOTRE MARQUE", "GEMINI AND YOUR BRAND")},
-    "perplexity": {"title": ("Votre marque dans Perplexity : sources et citations | Licter", "Your brand in Perplexity: sources and citations | Licter"),
-                   "h1": ("VOTRE MARQUE DANS PERPLEXITY,", "YOUR BRAND IN PERPLEXITY,"),
-                   "kick": ("PERPLEXITY ET VOTRE MARQUE", "PERPLEXITY AND YOUR BRAND")},
-    "grok": {"title": ("Votre marque dans Grok : ce que l'IA de X répond | Licter", "Your brand in Grok: what X's AI answers | Licter"),
-             "h1": ("VOTRE MARQUE DANS GROK,", "YOUR BRAND IN GROK,"),
-             "kick": ("GROK ET VOTRE MARQUE", "GROK AND YOUR BRAND")},
     "meta-ads": {"title": ("Veille Meta Ads : les publicités de vos concurrents | Licter", "Meta Ads monitoring: your competitors' ads | Licter"),
                  "h1": ("VEILLE META ADS,", "META ADS MONITORING,"),
                  "kick": ("VEILLE PUBLICITAIRE", "AD MONITORING")},

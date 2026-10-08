@@ -5062,8 +5062,8 @@ window.LicterFR = {
     "Des suggestions des moteurs de recherche : ce que les gens commencent à taper, et ce que le moteur complète.",
   "Looking for a AnswerThePublic agency?":
     "Vous cherchez une agence AnswerThePublic ?",
-  "YOUR BRAND IN CHATGPT,":
-    "VOTRE MARQUE DANS CHATGPT,",
+  "CHATGPT AGENCY,":
+    "AGENCE CHATGPT,",
   "WHAT AI SAYS ABOUT YOU.":
     "CE QUE L'IA DIT DE VOUS.",
   "More and more people ask an AI rather than a search engine. We read what ChatGPT answers about your brand and your category, and where it gets it from.":
@@ -5160,12 +5160,12 @@ window.LicterFR = {
     "L'évolution",
   "The same questions asked over time, to follow the answers.":
     "Les mêmes questions posées dans le temps, pour suivre les réponses.",
-  "CHATGPT AND YOUR BRAND":
-    "CHATGPT ET VOTRE MARQUE",
-  "Why hand this tracking to a consultancy?":
-    "Pourquoi confier ce suivi à un cabinet ?",
-  "ChatGPT is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
-    "ChatGPT est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "CHATGPT AGENCY":
+    "AGENCE CHATGPT",
+  "Why work with a ChatGPT agency?":
+    "Pourquoi passer par une agence ChatGPT ?",
+  "ChatGPT provides data. A ChatGPT agency like Licter turns it into a decision: here is how we use it.":
+    "ChatGPT fournit des données. Une agence ChatGPT comme Licter en tire une décision : voici comment nous l'utilisons.",
   "A question asked once, by one person":
     "Une question posée une fois, par une seule personne",
   "Answers that change from one try to the next":
@@ -5266,8 +5266,8 @@ window.LicterFR = {
     "Un audit ne dit pas tout. Il montre ce que l'assistant répond, pas combien de personnes lui posent ces questions : pour l'estimer, on le croise avec le search listening. Et ce que dit ChatGPT ne remplace pas ce que disent vos clients eux-mêmes : la conversation sur les réseaux se lit avec l'écoute sociale.",
   "Frequently asked questions about ChatGPT.":
     "Questions fréquentes sur ChatGPT.",
-  "Does Licter track what ChatGPT says about brands?":
-    "Licter suit-elle ce que ChatGPT dit des marques ?",
+  "Is Licter a ChatGPT agency?":
+    "Licter est-elle une agence ChatGPT ?",
   "Yes: ChatGPT is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : ChatGPT est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why track what an AI answers?":
@@ -5282,8 +5282,8 @@ window.LicterFR = {
     "Transmettez-vous nos données à l'IA ?",
   "No. We ask public questions; no client data is sent.":
     "Non. Nous posons des questions publiques ; aucune donnée client n'est transmise.",
-  "What does ChatGPT say about your brand?":
-    "Que dit ChatGPT de votre marque ?",
+  "Looking for a ChatGPT agency?":
+    "Vous cherchez une agence ChatGPT ?",
   "GEO AGENCY,":
     "AGENCE GEO,",
   "YOUR PLACE IN AI ANSWERS.":
@@ -5538,6 +5538,8 @@ window.LicterFR = {
     "Comment une campagne change d'un marché à l'autre.",
   "AD MONITORING":
     "VEILLE PUBLICITAIRE",
+  "Why hand this tracking to a consultancy?":
+    "Pourquoi confier ce suivi à un cabinet ?",
   "Meta Ads is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
     "Meta Ads est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
   "A library to browse ad by ad":
@@ -5794,8 +5796,8 @@ window.LicterFR = {
     "Ce sont des données publiques relevées par l'outil : elles servent à repérer des tendances et des anomalies, pas à facturer.",
   "Looking for a Social Blade agency?":
     "Vous cherchez une agence Social Blade ?",
-  "YOUR BRAND IN CLAUDE,":
-    "VOTRE MARQUE DANS CLAUDE,",
+  "CLAUDE AGENCY,":
+    "AGENCE CLAUDE,",
   "WHAT CLAUDE SAYS ABOUT YOU.":
     "CE QUE CLAUDE DIT DE VOUS.",
   "Claude, Anthropic's assistant, is increasingly used at work to look things up, compare and write. We read what it answers about your brand and your category.":
@@ -5850,10 +5852,12 @@ window.LicterFR = {
     "Un public professionnel",
   "An assistant widely used at work: what it says weighs on decision-makers.":
     "Un assistant très présent en entreprise : ce qu'il dit pèse sur les décideurs.",
-  "CLAUDE AND YOUR BRAND":
-    "CLAUDE ET VOTRE MARQUE",
-  "Claude is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
-    "Claude est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "CLAUDE AGENCY":
+    "AGENCE CLAUDE",
+  "Why work with a Claude agency?":
+    "Pourquoi passer par une agence Claude ?",
+  "Claude provides data. A Claude agency like Licter turns it into a decision: here is how we use it.":
+    "Claude fournit des données. Une agence Claude comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Claude on its own":
     "Claude seul",
   "Claude with Licter":
@@ -5866,18 +5870,18 @@ window.LicterFR = {
     "Les limites de Claude, et comment nous les compensons.",
   "Frequently asked questions about Claude.":
     "Questions fréquentes sur Claude.",
-  "Does Licter track what Claude says about brands?":
-    "Licter suit-elle ce que Claude dit des marques ?",
+  "Is Licter a Claude agency?":
+    "Licter est-elle une agence Claude ?",
   "Yes: Claude is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : Claude est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why audit Claude as well as ChatGPT?":
     "Pourquoi auditer Claude en plus de ChatGPT ?",
   "Because assistants do not cite the same brands or sources: your place can be good in one and absent in another.":
     "Parce que les assistants ne citent pas les mêmes marques ni les mêmes sources : votre place peut être bonne dans l'un et absente dans l'autre.",
-  "What does Claude say about your brand?":
-    "Que dit Claude de votre marque ?",
-  "YOUR BRAND IN GEMINI,":
-    "VOTRE MARQUE DANS GEMINI,",
+  "Looking for a Claude agency?":
+    "Vous cherchez une agence Claude ?",
+  "GEMINI AGENCY,":
+    "AGENCE GEMINI,",
   "GOOGLE'S AI.":
     "L'IA DE GOOGLE.",
   "Gemini is Google's assistant, available in its own app, in Android and in Google's tools. We read what it answers about your brand, and where it gets it from.":
@@ -5918,10 +5922,12 @@ window.LicterFR = {
     "Une audience immense",
   "Android, the app and Google's tools: an answer seen by many.":
     "Android, l'application et les outils Google : une réponse vue par beaucoup.",
-  "GEMINI AND YOUR BRAND":
-    "GEMINI ET VOTRE MARQUE",
-  "Gemini is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
-    "Gemini est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "GEMINI AGENCY":
+    "AGENCE GEMINI",
+  "Why work with a Gemini agency?":
+    "Pourquoi passer par une agence Gemini ?",
+  "Gemini provides data. A Gemini agency like Licter turns it into a decision: here is how we use it.":
+    "Gemini fournit des données. Une agence Gemini comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Gemini on its own":
     "Gemini seul",
   "Gemini with Licter":
@@ -5934,8 +5940,8 @@ window.LicterFR = {
     "Les limites de Gemini, et comment nous les compensons.",
   "Frequently asked questions about Gemini.":
     "Questions fréquentes sur Gemini.",
-  "Does Licter track what Gemini says about brands?":
-    "Licter suit-elle ce que Gemini dit des marques ?",
+  "Is Licter a Gemini agency?":
+    "Licter est-elle une agence Gemini ?",
   "Yes: Gemini is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : Gemini est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Are Gemini and Bard the same?":
@@ -5946,10 +5952,10 @@ window.LicterFR = {
     "Le SEO suffit-il pour être cité par Gemini ?",
   "It helps, since Gemini draws on Google Search, but it is not enough: see our GEO page.":
     "Il aide, puisque Gemini s'appuie sur la recherche Google, mais il ne suffit pas : voir notre page GEO.",
-  "What does Gemini say about your brand?":
-    "Que dit Gemini de votre marque ?",
-  "YOUR BRAND IN PERPLEXITY,":
-    "VOTRE MARQUE DANS PERPLEXITY,",
+  "Looking for a Gemini agency?":
+    "Vous cherchez une agence Gemini ?",
+  "PERPLEXITY AGENCY,":
+    "AGENCE PERPLEXITY,",
   "THE ANSWER ENGINE.":
     "LE MOTEUR DE RÉPONSES.",
   "Perplexity calls itself an answer engine: each answer is built on a web search and cites its sources. We read what it says about your brand, and which sites it cites.":
@@ -5996,10 +6002,12 @@ window.LicterFR = {
     "Les articles, avis et discussions qui pèsent dans ses réponses.",
   "The same questions, followed over time.":
     "Les mêmes questions, suivies dans le temps.",
-  "PERPLEXITY AND YOUR BRAND":
-    "PERPLEXITY ET VOTRE MARQUE",
-  "Perplexity is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
-    "Perplexity est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "PERPLEXITY AGENCY":
+    "AGENCE PERPLEXITY",
+  "Why work with a Perplexity agency?":
+    "Pourquoi passer par une agence Perplexity ?",
+  "Perplexity provides data. A Perplexity agency like Licter turns it into a decision: here is how we use it.":
+    "Perplexity fournit des données. Une agence Perplexity comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Perplexity on its own":
     "Perplexity seul",
   "Perplexity with Licter":
@@ -6012,20 +6020,20 @@ window.LicterFR = {
     "Les limites de Perplexity, et comment nous les compensons.",
   "Frequently asked questions about Perplexity.":
     "Questions fréquentes sur Perplexity.",
-  "Does Licter track what Perplexity says about brands?":
-    "Licter suit-elle ce que Perplexity dit des marques ?",
+  "Is Licter a Perplexity agency?":
+    "Licter est-elle une agence Perplexity ?",
   "Yes: Perplexity is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : Perplexity est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why is Perplexity useful for an audit?":
     "Pourquoi Perplexity est-il utile pour un audit ?",
   "Because it shows its sources with every answer: you know which sites to act on.":
     "Parce qu'il montre ses sources à chaque réponse : on sait sur quels sites agir.",
-  "What does Perplexity say about your brand?":
-    "Que dit Perplexity de votre marque ?",
+  "Looking for a Perplexity agency?":
+    "Vous cherchez une agence Perplexity ?",
   "Grok":
     "Grok",
-  "YOUR BRAND IN GROK,":
-    "VOTRE MARQUE DANS GROK,",
+  "GROK AGENCY,":
+    "AGENCE GROK,",
   "X'S AI.":
     "L'IA DE X.",
   "Grok is xAI's assistant, built into X. It draws on X posts in real time: what it says about your brand often reflects what is being said there right now.":
@@ -6072,10 +6080,12 @@ window.LicterFR = {
     "Les sujets chauds",
   "A crisis or a row on X quickly shows up in its answers.":
     "Une crise ou une polémique sur X se retrouve vite dans ses réponses.",
-  "GROK AND YOUR BRAND":
-    "GROK ET VOTRE MARQUE",
-  "Grok is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.":
-    "Grok est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
+  "GROK AGENCY":
+    "AGENCE GROK",
+  "Why work with a Grok agency?":
+    "Pourquoi passer par une agence Grok ?",
+  "Grok provides data. A Grok agency like Licter turns it into a decision: here is how we use it.":
+    "Grok fournit des données. Une agence Grok comme Licter en tire une décision : voici comment nous l'utilisons.",
   "Grok on its own":
     "Grok seul",
   "Grok with Licter":
@@ -6088,8 +6098,8 @@ window.LicterFR = {
     "Les limites de Grok, et comment nous les compensons.",
   "Frequently asked questions about Grok.":
     "Questions fréquentes sur Grok.",
-  "Does Licter track what Grok says about brands?":
-    "Licter suit-elle ce que Grok dit des marques ?",
+  "Is Licter a Grok agency?":
+    "Licter est-elle une agence Grok ?",
   "Yes: Grok is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
     "Oui : Grok est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why audit Grok?":
@@ -6100,8 +6110,8 @@ window.LicterFR = {
     "Grok est-il lié à X ?",
   "Yes: it is published by xAI and built into the X network.":
     "Oui : il est édité par xAI et intégré au réseau X.",
-  "What does Grok say about your brand?":
-    "Que dit Grok de votre marque ?",
+  "Looking for a Grok agency?":
+    "Vous cherchez une agence Grok ?",
   "FACEBOOK SOCIAL LISTENING,":
     "SOCIAL LISTENING FACEBOOK,",
   "COMMUNITIES AND GROUPS.":
@@ -7474,10 +7484,10 @@ window.LicterFR = {
     "Agence AnswerThePublic : les questions de votre marché | Licter",
   "AnswerThePublic: the questions your market asks Google, sorted and read to turn them into content, FAQs and offers.":
     "AnswerThePublic : les questions que votre marché pose à Google, classées et lues pour en tirer contenus, FAQ et offres.",
-  "Your brand in ChatGPT: an audit of its answers | Licter":
-    "Votre marque dans ChatGPT : audit des réponses | Licter",
-  "What ChatGPT answers about your brand, your competitors and your category, and the sources it cites: an audit run by our consultants.":
-    "Ce que ChatGPT répond sur votre marque, vos concurrents et votre catégorie, et les sources qu'il cite : un audit mené par nos consultants.",
+  "ChatGPT agency: what AI says about your brand | Licter":
+    "Agence ChatGPT : ce que l'IA dit de votre marque | Licter",
+  "ChatGPT agency: what OpenAI's assistant answers about your brand, your competitors and your category, and the sources it cites.":
+    "Agence ChatGPT : ce que l'IA d'OpenAI répond sur votre marque, vos concurrents et votre catégorie, et les sources qu'elle cite.",
   "GEO agency: your visibility in AI answers | Licter":
     "Agence GEO : votre visibilité dans les réponses des IA | Licter",
   "GEO: your visibility in ChatGPT, Claude, Gemini and Perplexity answers, measured then improved by our consultants.":
@@ -7494,22 +7504,22 @@ window.LicterFR = {
     "Agence Social Blade : vérifier les comptes et les créateurs | Licter",
   "Social Blade: the real growth of accounts and creators, to check an audience before a partnership.":
     "Social Blade : la croissance réelle des comptes et des créateurs, pour vérifier une audience avant un partenariat.",
-  "Your brand in Claude: what the AI answers | Licter":
-    "Votre marque dans Claude : ce que l'IA répond | Licter",
-  "What Claude, Anthropic's assistant, says about your brand: its sources and its mistakes, tracked question by question.":
-    "Ce que Claude, l'assistant d'Anthropic, dit de votre marque : ses sources et ses erreurs, suivies question après question.",
-  "Your brand in Gemini and Google's AI answers | Licter":
-    "Votre marque dans Gemini et les réponses IA de Google | Licter",
-  "What Gemini, Google's AI, answers about your brand, closest to search, and how to change it.":
-    "Ce que Gemini, l'IA de Google, répond sur votre marque, au plus près de la recherche, et comment le faire évoluer.",
-  "Your brand in Perplexity: sources and citations | Licter":
-    "Votre marque dans Perplexity : sources et citations | Licter",
-  "Your brand in Perplexity, the answer engine that cites its sources, and the pages that shape its answer.":
-    "Votre marque dans Perplexity, le moteur de réponses qui cite ses sources, et les pages qui pèsent sur sa réponse.",
-  "Your brand in Grok: what X's AI answers | Licter":
-    "Votre marque dans Grok : ce que l'IA de X répond | Licter",
-  "What Grok, X's AI, says about your brand, fed by the network's live conversation.":
-    "Ce que Grok, l'IA de X, dit de votre marque, nourrie par la conversation en direct du réseau.",
+  "Claude agency: what Claude says about your brand | Licter":
+    "Agence Claude : ce que Claude dit de votre marque | Licter",
+  "Claude agency: what Anthropic's assistant says about your brand, its sources and its mistakes, tracked question by question.":
+    "Agence Claude : ce que l'assistant d'Anthropic dit de votre marque, ses sources et ses erreurs, suivis question après question.",
+  "Gemini agency: what Google's AI says about you | Licter":
+    "Agence Gemini : ce que l'IA de Google dit de vous | Licter",
+  "Gemini agency: what Google's AI answers about your brand, closest to search, and how to change it.":
+    "Agence Gemini : ce que l'IA de Google répond sur votre marque, au plus près de la recherche, et comment le faire évoluer.",
+  "Perplexity agency: your brand in the answer engine | Licter":
+    "Agence Perplexity : votre marque dans le moteur de réponses | Licter",
+  "Perplexity agency: your brand in the answer engine that cites its sources, and the pages that shape its answer.":
+    "Agence Perplexity : votre marque dans le moteur de réponses qui cite ses sources, et les pages qui pèsent sur sa réponse.",
+  "Grok agency: what X's AI says about you | Licter":
+    "Agence Grok : ce que l'IA de X dit de vous | Licter",
+  "Grok agency: what X's AI says about your brand, fed by the network's live conversation.":
+    "Agence Grok : ce que l'IA de X dit de votre marque, nourrie par la conversation en direct du réseau.",
   "Facebook social listening agency: communities and groups | Licter":
     "Agence social listening Facebook : les communautés et les groupes | Licter",
   "Facebook social listening: groups, local pages and comments under your posts, read by our analysts.":

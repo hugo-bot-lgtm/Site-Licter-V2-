@@ -149,7 +149,7 @@ def agency(slug, name, fr_name=None):
         "title": it.get("title") or ("Agence %s : %s | Licter" % (fn, sh[FR]), "%s agency: %s | Licter" % (name, sh[EN])),
         "desc": DESC[slug],
         "kick": it.get("kick") or ("AGENCE %s" % fn.upper(), "%s AGENCY" % name.upper()),
-        "q": AI.FAQ_Q.get(slug) or (fmt(AI.FAQ_Q_AI, (fn, name)) if slug in AI.ENGINE else ("Licter est-elle une agence %s ?" % fn, "Is Licter a %s agency?" % name)),
+        "q": AI.FAQ_Q.get(slug) or ("Licter est-elle une agence %s ?" % fn, "Is Licter a %s agency?" % name),
         "a": (("Oui : le GEO est une pratique, pas un logiciel. Nous mesurons ce que les IA répondent sur votre marque, d'où viennent leurs réponses, et ce qu'il faut changer pour y figurer. Licter est un cabinet indépendant." ,
                "Yes: GEO is a practice, not software. We measure what AI answers about your brand, where those answers come from, and what to change to appear in them. Licter is an independent consultancy.") if slug == "geo" else
               ("Oui : %s est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant." % fn,
@@ -157,7 +157,6 @@ def agency(slug, name, fr_name=None):
               ("Oui : en tant qu'agence %s, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question." % fn,
                "Yes: as a %s agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question." % name)),
         "band": (("Les publicités de vos concurrents, lues chaque mois ?", "Your competitors' ads, read every month?") if slug == "meta-ads" else
-                 ("Que dit %s de votre marque ?" % fn, "What does %s say about your brand?" % name) if slug in AI.ENGINE else
                  ("Vous cherchez une agence %s ?" % fn, "Looking for a %s agency?" % name)),
     }
 
