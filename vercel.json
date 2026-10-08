@@ -477,8 +477,8 @@
       "destination": "https://socialintelligenceclub.vercel.app/socialintelligenceclub"
     },
     {
-      "source": "/socialintelligenceclub/:path*",
-      "destination": "https://socialintelligenceclub.vercel.app/socialintelligenceclub/:path*"
+      "source": "/socialintelligenceclub/(.*)",
+      "destination": "https://socialintelligenceclub.vercel.app/socialintelligenceclub/$1"
     }
   ],
   "headers": [
