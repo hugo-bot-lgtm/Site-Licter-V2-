@@ -1352,7 +1352,9 @@ window.LicterUC = (function () {
         if (!ok && !firstBad) firstBad = f;
       });
       if (firstBad) { firstBad.focus(); return; }
-      /* wire to the real endpoint here */
+      var fid = form.id || "";
+      if (window.LicterSend) window.LicterSend(fid === "book-form" ? "meeting" : fid === "diag-form" ? "diagnostic" : fid === "guide-form" ? "guide" : /^flash-/.test(fid) ? "flash" : "meeting",
+        /^flash-/.test(fid) ? "Flash offert · " + document.title.replace(/\s*\|.*$/, "") : window.LicterSend.where(form), form);
       if (window.LicterTrack) window.LicterTrack("form_submit", { form: (form.id || "form").replace(/-form$/, "") });
       form.classList.add("is-sent");
     });
@@ -1382,7 +1384,8 @@ window.LicterUC = (function () {
       field.setAttribute("aria-invalid", ok ? "false" : "true");
       error.hidden = ok;
       if (!ok) { field.focus(); return; }
-      /* wire to the real endpoint here */
+      var sact = form.classList.contains("nl__form") ? "newsletter" : form.classList.contains("guide__form") ? "guide" : "callback";
+      if (window.LicterSend) window.LicterSend(sact, (sact === "callback" ? "Bandeau de fin de page : " : "") + window.LicterSend.where(form), { "E-mail": field.value.trim() });
       if (window.LicterLead) window.LicterLead.set(field.value.trim());
       if (window.LicterTrack) window.LicterTrack("form_submit", { form: form.classList.contains("nl__form") ? "newsletter" : "signup" });
       if (note) note.classList.add("is-visible");
@@ -1663,7 +1666,7 @@ window.LicterUC = (function () {
     contact.setAttribute("aria-invalid", k ? "false" : "true");
     if (err) err.hidden = !!k;
     if (!k) { contact.focus(); return; }
-    /* MOCK: wire to the CRM here (contact, kind) */
+    if (window.LicterSend) window.LicterSend("callback", "Rappel en bas de page : " + window.LicterSend.where(form), { "E-mail ou téléphone": v });
     if (k === "email" && window.LicterLead) window.LicterLead.set(v);
     if (window.LicterTrack) window.LicterTrack("form_submit", { form: "callback", kind: k });
     sentTo = { v: v, k: k };
@@ -1747,7 +1750,9 @@ window.LicterUC = (function () {
         sector.focus();
         return;
       }
-      /* MOCK: send { email: v, case: form.dataset.case, sector: form.sector.value } */
+      var dc = form.dataset.case || "";
+      if (window.LicterSend) window.LicterSend(dc === "of-prices" ? "quote" : /^of-/.test(dc) ? "offer_example" : "real_case",
+        (window.LicterSend.where(form) || dc) + " (" + dc + ")", form);
       if (window.LicterLead) window.LicterLead.set(v);
       if (window.LicterTrack) window.LicterTrack("form_submit", { form: "real_case", "case": form.dataset.case, sector: form.sector.value });
       form.hidden = true;

@@ -134,6 +134,46 @@
   }
   if (document.body) start(); else document.addEventListener("DOMContentLoaded", start);
 
+  /* ------------------------------------------------ the forms
+     Every form sends what the visitor typed to /api/lead (Vercel function),
+     which emails the team through Resend. Fire and forget: the page shows its
+     confirmation whatever happens, and a failure is only logged.
+     LicterSend(action, detail, fields): fields is { label: value } or a form,
+     whose named fields are read with their visible labels. */
+  function labelOf(el) {
+    var l = el.id && document.querySelector('label[for="' + el.id + '"]');
+    var box = l || el.closest("label");
+    var txt = box ? (box.querySelector("span") || box).textContent : "";
+    txt = (txt || el.getAttribute("aria-label") || el.getAttribute("placeholder") || el.name || "").replace(/\s+/g, " ").trim();
+    return txt.replace(/\s*\(.*?\)\s*$/, "") || el.name;
+  }
+  function read(form) {
+    var out = {};
+    Array.prototype.forEach.call(form.querySelectorAll("input[name], select[name], textarea[name]"), function (el) {
+      if (el.type === "hidden" || el.type === "submit" || ((el.type === "radio" || el.type === "checkbox") && !el.checked)) return;
+      var v = el.tagName === "SELECT" ? (el.options[el.selectedIndex] || {}).text || "" : el.value;
+      if (v && String(v).trim()) out[labelOf(el)] = String(v).trim();
+    });
+    return out;
+  }
+  window.LicterSend = function (action, detail, fields) {
+    try {
+      var data = fields && fields.tagName === "FORM" ? read(fields) : (fields || {});
+      fetch("/api/lead", {
+        method: "POST", keepalive: true,
+        headers: { "Content-Type": "application/json", "X-Licter-Form": "1" },
+        body: JSON.stringify({ action: action, detail: detail || "", page: location.href, lang: fr() ? "fr" : "en", fields: data })
+      }).then(function (r) { if (!r.ok) console.warn("form not sent", r.status); })
+        .catch(function (e) { console.warn("form not sent", e); });
+    } catch (e) { /* a form never breaks the page */ }
+  };
+  /* the title of the section a form sits in: says which form it was */
+  window.LicterSend.where = function (el) {
+    var sec = el.closest("section, aside, footer, .pp, .lx, [role=dialog]") || document.body;
+    var h = sec.querySelector("h1, h2, h3, .ucp__cta-t, .nl__title");
+    return h ? h.textContent.replace(/\s+/g, " ").trim() : "";
+  };
+
   window.LicterTrack = function (name, props) {
     props = props || {};
     var page = location.pathname;

@@ -299,7 +299,7 @@
     input.setAttribute("aria-invalid", k ? "false" : "true");
     err.hidden = !!k;
     if (!k) { input.focus(); return; }
-    /* MOCK: wire to the CRM here (v, k) */
+    if (window.LicterSend) window.LicterSend("callback", "Chat d'Antoine, onglet « Être rappelé »", { "E-mail ou téléphone": v });
     if (k === "email" && window.LicterLead) window.LicterLead.set(v);
     sent = { v: v, k: k };
     form.hidden = true;

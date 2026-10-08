@@ -191,7 +191,7 @@
       var kind = EMAIL.test(v) ? "email" : (/^\+?\d{9,15}$/.test(v.replace(/[\s.()-]/g, "")) ? "phone" : null);
       if (!kind) bad = i;
       else {
-        /* MOCK: send { contact: v, kind } to the CRM */
+        if (window.LicterSend) window.LicterSend("callback", "Popup « Trente minutes avec un consultant »", { "E-mail ou téléphone": v });
         if (kind === "email" && window.LicterLead) window.LicterLead.set(v);
         sent.call = { v: v, k: kind };
       }
@@ -204,7 +204,7 @@
         if (!ok && !bad) bad = x;
       });
       if (!bad) {
-        /* MOCK: send { email } to the CRM, which emails the PDF */
+        if (window.LicterSend) window.LicterSend("magazine", "Popup « Audience First, le magazine »", form);
         if (window.LicterLead) window.LicterLead.set(d.email);
         sent.mag = d;
       }

@@ -242,7 +242,7 @@
       field.setAttribute("aria-invalid", ok ? "false" : "true");
       err.hidden = ok;
       if (!ok) { field.focus(); return; }
-      /* MOCK: wire to the CRM here (score, answers, email) */
+      if (window.LicterSend) window.LicterSend("quiz", "Quiz de l'accueil", { "E-mail": field.value.trim(), "Score": score() + " / " + N * 2, "Réponses (0 à 2 par question)": answers.join(", ") });
       if (window.LicterLead) window.LicterLead.set(field.value.trim());
       if (window.LicterTrack) window.LicterTrack("quiz_email", {});
       sent = true;

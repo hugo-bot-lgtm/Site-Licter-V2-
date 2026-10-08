@@ -153,7 +153,7 @@
       });
       document.getElementById("ev-err").hidden = !bad;
       if (bad) { bad.focus(); return; }
-      /* MOCK: send { event: page.getAttribute("data-ev-date"), first, last, company, email } to the CRM */
+      if (window.LicterSend) window.LicterSend("event", ((document.querySelector("h1") || {}).textContent || "").replace(/\s+/g, " ").trim() + (page ? " · " + page.getAttribute("data-ev-date") : ""), form);
       if (window.LicterLead) window.LicterLead.set(v.email);
       sent = v;
       if (window.LicterTrack) window.LicterTrack("form_submit", { form: "event", event: page ? page.getAttribute("data-ev-date") : "" });

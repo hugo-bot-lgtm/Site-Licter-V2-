@@ -569,7 +569,7 @@
         return;
       }
       function done(email) {
-        /* MOCK: send { email, topic: current, sector: SECTORS[sector].key } to the CRM */
+        if (window.LicterSend) window.LicterSend("real_case", "Démo de l'accueil · " + current + " · " + SECTORS[sector].key, { "E-mail": email });
         if (window.LicterLead) window.LicterLead.set(email);
         if (window.LicterTrack) window.LicterTrack("form_submit", { form: "real_case_demo", topic: current, sector: SECTORS[sector].key });
         sentCases[key] = true;
