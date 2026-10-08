@@ -162,7 +162,7 @@
       fetch("/api/lead", {
         method: "POST", keepalive: true,
         headers: { "Content-Type": "application/json", "X-Licter-Form": "1" },
-        body: JSON.stringify({ action: action, detail: detail || "", page: location.href, lang: fr() ? "fr" : "en", fields: data })
+        body: JSON.stringify({ action: action, detail: detail || "", title: document.title, page: location.href, lang: fr() ? "fr" : "en", fields: data })
       }).then(function (r) { if (!r.ok) console.warn("form not sent", r.status); })
         .catch(function (e) { console.warn("form not sent", e); });
     } catch (e) { /* a form never breaks the page */ }

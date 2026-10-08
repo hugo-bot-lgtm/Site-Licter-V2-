@@ -1354,7 +1354,7 @@ window.LicterUC = (function () {
       if (firstBad) { firstBad.focus(); return; }
       var fid = form.id || "";
       if (window.LicterSend) window.LicterSend(fid === "book-form" ? "meeting" : fid === "diag-form" ? "diagnostic" : fid === "guide-form" ? "guide" : /^flash-/.test(fid) ? "flash" : "meeting",
-        /^flash-/.test(fid) ? "Flash offert · " + document.title.replace(/\s*\|.*$/, "") : window.LicterSend.where(form), form);
+        window.LicterSend.where(form), form);
       if (window.LicterTrack) window.LicterTrack("form_submit", { form: (form.id || "form").replace(/-form$/, "") });
       form.classList.add("is-sent");
     });
@@ -1752,7 +1752,7 @@ window.LicterUC = (function () {
       }
       var dc = form.dataset.case || "";
       if (window.LicterSend) window.LicterSend(dc === "of-prices" ? "quote" : /^of-/.test(dc) ? "offer_example" : "real_case",
-        (window.LicterSend.where(form) || dc) + " (" + dc + ")", form);
+        window.LicterSend.where(form), form);
       if (window.LicterLead) window.LicterLead.set(v);
       if (window.LicterTrack) window.LicterTrack("form_submit", { form: "real_case", "case": form.dataset.case, sector: form.sector.value });
       form.hidden = true;
