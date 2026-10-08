@@ -18,10 +18,11 @@
      French is the default. If it is missing, it is fetched from this script's
      own URL, with the file name swapped. */
   var SELF = document.currentScript && document.currentScript.src;
-  function loadFR(done) {
+  function loadFR(done, file) {
     if (FR) { done(); return; }
+    file = file || "fr.js";
     var tag = document.createElement("script");
-    tag.src = SELF ? SELF.replace(/i18n\.js/, "fr.js") : "js/fr.js";
+    tag.src = SELF ? SELF.replace(/i18n\.js/, file) : "/js/min/" + file;
     tag.onload = function () { FR = window.LicterFR || {}; done(); };
     tag.onerror = function () { FR = {}; done(); };
     document.head.appendChild(tag);
@@ -237,14 +238,18 @@
          unless the visitor has already chosen */
       try { if (!localStorage.getItem(STORE)) localStorage.setItem(STORE, html.lang); } catch (e) { /* private mode */ }
       if (html.lang === "fr") {
-        FR = window.LicterFR || FR || {};
-        translateTree(document.body, FR);
-        current = "fr";
-        watch();
+        FR = window.LicterFR || FR;
+        /* a French page that forgot its dictionary still gets the menu in French */
+        loadFR(function () {
+          translateTree(document.body, FR);
+          current = "fr";
+          watch();
+          mark(); reveal();
+        }, "fr-core.js");
       } else {
         current = "en";
+        mark(); reveal();
       }
-      mark(); reveal();
       return;
     }
     if (saved === "fr") apply("fr"); else { localLinks("en"); mark(); reveal(); }

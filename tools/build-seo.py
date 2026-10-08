@@ -348,6 +348,9 @@ def main():
         s = s.replace('<meta name="twitter:card" content="summary" />', '<meta name="twitter:card" content="summary_large_image" />')
         if fr and "data-i18n-static" in s[:400]:
             s = re.sub(r'(<script src="/?js/)fr\.js(\?v=\d+"[^>]*></script>)', r"\1fr-core.js\2", s)
+            # without it, the menu and everything else the scripts render stays in English
+            if "fr-core.js" not in s:
+                s = re.sub(r'(<script src="/?js/(?:min/)?)i18n\.js(\?v=\d+")([^>]*></script>)', r'\1fr-core.js\2\3\n\g<0>', s, count=1)
         # a page written in English needs no dictionary to load: js/i18n.js fetches
         # it only if the visitor switches to French (155 KB gzipped saved per page)
         elif not fr and "data-i18n-static" in s[:400]:
