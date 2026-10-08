@@ -474,11 +474,15 @@
   "rewrites": [
     {
       "source": "/socialintelligenceclub",
-      "destination": "https://socialintelligenceclub.vercel.app/socialintelligenceclub"
+      "destination": "/socialintelligenceclub/index.html"
     },
     {
-      "source": "/socialintelligenceclub/(.*)",
-      "destination": "https://socialintelligenceclub.vercel.app/socialintelligenceclub/$1"
+      "source": "/socialintelligenceclub/rejoindre",
+      "destination": "/socialintelligenceclub/rejoindre/index.html"
+    },
+    {
+      "source": "/socialintelligenceclub/replay",
+      "destination": "/socialintelligenceclub/replay/index.html"
     }
   ],
   "headers": [
