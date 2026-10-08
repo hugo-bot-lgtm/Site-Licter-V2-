@@ -356,6 +356,18 @@ def main():
         if 'href="/assets/fonts/AiglonProWide-Demi.woff2"' not in s:
             s = s.replace("<title>", '<link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2" as="font" type="font/woff2" crossorigin />\n'
                                      '<link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />\n<title>', 1)
+        # the footer gets the six expertise pages and the networks hub as plain
+        # links: the main menu is built by JavaScript, which AI crawlers do not run
+        # (audit of 8 October 2026)
+        if 'data-foot="xp"' not in s:
+            XP = [("social-listening", "Social listening", "Social listening"), ("audience-listening", "Audiences", "Audiences"),
+                  ("influence-listening", "Influence", "Influence"), ("live-listening", "Veille en direct", "Live monitoring"),
+                  ("search-listening", "Recherche", "Search"), ("ai-listening", "IA", "AI")]
+            col = '<div data-foot="xp"> <h3>%s</h3> <ul> %s </ul> </div> ' % ("EXPERTISE", " ".join(
+                '<li><a href="%s">%s</a></li>' % (("/fr/expertise/%s/" % k) if fr else ("/expertise-%s.html" % k), f if fr else e) for k, f, e in XP))
+            s = re.sub(r'(<div>\s*<h3>(?:ENTREPRISE|COMPANY)</h3>)', lambda m_: col + m_.group(1), s, count=1)
+            s = re.sub(r'(<li><a href="(?:/fr/outils/|/?tech-tools\.html)">[^<]*</a></li>)(\s*<li><a href="(?:/fr/clients/|/?clients\.html)">)',
+                       lambda m_: m_.group(1) + ' <li><a href="%s">%s</a></li>' % (("/fr/sources/", "Sources (22 réseaux)") if fr else ("/sources.html", "Sources (22 networks)")) + m_.group(2), s, count=1)
         # the footer: who we are and how to reach us, and an award stated as the founder's
         foot_fr = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
                    "50+ clients · 160+ projets · Antoine Khaitrine et Adrien Krebs, Top 50 Insider mondial (SI Lab) en 2024 et 2025")
