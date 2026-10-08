@@ -308,7 +308,9 @@ Toute section longue de questions et réponses (« Le social listening, en déta
 
 ### Mesure d'audience
 
-`js/track.js` (chargé par `js/ui.js` sur toutes les pages) expose `window.LicterTrack(nom, props)`. Chaque événement part dans `dataLayer` (prêt pour Google Tag Manager), et vers Plausible ou GA4 s'ils sont présents sur la page. Aucun outil externe n'est chargé par défaut. Pour activer Plausible (sans cookie, sans bandeau), il suffit de renseigner `PLAUSIBLE_DOMAIN`. GA4 et GTM demandent d'abord un bandeau de consentement.
+`js/track.js` (chargé par `js/ui.js` sur toutes les pages) expose `window.LicterTrack(nom, props)`. Chaque événement part dans `dataLayer`, et vers GA4 (`G-FMNYXB14XW`) une fois le consentement donné.
+
+**Consentement (CNIL).** Un bandeau en bas de page (`.cc`) demande l'accord avant tout chargement de Google : « Refuser » et « Accepter » au même niveau. Rien n'est chargé ni déposé avant « Accepter ». Le choix est gardé six mois (`licter-consent` dans le navigateur), puis redemandé ; le lien « Cookies » du pied de page le rouvre. Les cookies GA4 sont limités à 13 mois. Le magazine attend la réponse au bandeau. La section Cookies de la page Confidentialité décrit tout cela : à tenir à jour si un outil s'ajoute.
 
 | Événement | Quand |
 |---|---|

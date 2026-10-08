@@ -280,6 +280,11 @@
       !(document.activeElement && document.activeElement.matches("input, textarea, select"));
   }
   function auto(k) {
+    /* never on top of the cookie question: the magazine waits for the answer (js/track.js) */
+    if (html.classList.contains("cc-open")) {
+      document.addEventListener("licter:consent", function () { setTimeout(function () { auto(k); }, 1500); }, { once: true });
+      return;
+    }
     if (!may(k)) return;
     if (current) { if (current !== k) queued = k; return; }
     open(k, true);

@@ -49,6 +49,7 @@ window.LicterFR = {
 "19 November 2026": "19 novembre 2026",
 "privacy policy": "politique de confidentialité",
 "Why": "Pourquoi",
+"Cookies": "Cookies",
 "Consumer research in depth": "La recherche consommateur en profondeur",
 "The customer voice at group scale": "La voix du client à l'échelle du groupe",
 "Consumer research in depth: years of conversation, fine audiences.": "La recherche consommateur en profondeur : des années de conversation, des audiences fines.",
