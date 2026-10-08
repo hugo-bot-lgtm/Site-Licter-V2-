@@ -1577,6 +1577,8 @@ a.card:hover, .card--hover:hover {
 .site-foot ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
 .site-foot a { font: 400 14px/1.4 var(--body-font); color: var(--ink); }
 .site-foot a:hover { color: var(--amber-ink); }
+/* on a touch screen, each footer link is a full-height target (44 px) */
+@media (pointer: coarse) { .site-foot ul { gap: 0; } .site-foot li a { display: inline-flex; align-items: center; min-height: 44px; } }
 .site-foot__legal {
   display: flex;
   flex-wrap: wrap;
@@ -9093,6 +9095,14 @@ a.tk-offer__foot:focus-visible { outline: 2px solid var(--amber-deep); outline-o
 .tk-mini > span:last-child { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .tk-mini b { font: 700 14.5px/1.2 var(--body-font); }
 .tk-mini small { font: 500 12.5px/1.3 var(--body-font); color: var(--text-2); }
+/* tools hub: five questions before buying a licence (no vendor named) */
+.tk-five__list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 28px 0 0; padding: 0; list-style: none; counter-reset: tkf; }
+.tk-five__i { counter-increment: tkf; padding: 22px 22px 24px; border: 1px solid var(--line); border-radius: 16px; }
+.tk-five__i::before { content: counter(tkf, decimal-leading-zero); display: block; margin-bottom: 10px; font: 700 12px/1 var(--body-font); letter-spacing: .12em; color: var(--amber, #EAA93D); }
+.tk-five__i h3 { margin: 0 0 8px; font: 700 18px/1.3 var(--body-font); color: var(--ink); }
+.tk-five__i p { margin: 0; font: 500 15px/1.6 var(--body-font); color: var(--text-2); }
+.tk-five__more { margin: 22px 0 0; font: 500 16px/1.6 var(--body-font); color: var(--text-2); }
+.tk-five__more a { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 1240px) { .tk-plats { grid-template-columns: repeat(4, minmax(0, 1fr)); } .tk-minis { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 720px) { .tk-plats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tk-minis { grid-template-columns: minmax(0, 1fr); } }
 
@@ -10534,7 +10544,10 @@ html[lang="fr"] .xp-line > span::after { content: "\00a0:"; }
   .cc__b button { min-width: 116px; }
 }
 @media (max-width: 720px) {
-  .cc { left: 12px; right: 12px; bottom: 12px; width: auto; }
+  /* compact on a phone: it hides less of the page under it */
+  .cc { left: 8px; right: 8px; bottom: 8px; width: auto; gap: 10px; padding: 12px 14px; border-radius: 14px; }
+  .cc__t { font-size: 13px; line-height: 1.45; }
+  .cc__b { gap: 8px; }
   .cc-open .lx__launch { opacity: 0; pointer-events: none; }
 }
 @media (prefers-reduced-motion: reduce) { .cc { animation: none; } }

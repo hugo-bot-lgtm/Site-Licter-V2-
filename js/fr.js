@@ -287,7 +287,7 @@ window.LicterFR = {
   "Our printed magazine, on what audiences actually do. Leave your email and receive the PDF.": "Notre magazine imprimé, sur ce que font vraiment les audiences. Laissez votre e-mail et recevez le PDF.",
   "Get the magazine": "Recevoir le magazine",
   "THE NEWSLETTER": "LA NEWSLETTER",
-  "NOTED - YOU WILL GET THE NEXT ONE": "C'EST NOTÉ, VOUS RECEVREZ LE PROCHAIN",
+  "NOTED, YOU WILL GET THE NEXT ONE": "C'EST NOTÉ, VOUS RECEVREZ LE PROCHAIN",
   "Read the piece": "Lire l'article",
   "Every piece": "Tous les articles",
   "Keep reading": "À lire aussi",
@@ -692,6 +692,24 @@ window.LicterFR = {
   "Personal data": "Données personnelles",
   "How we handle the data you leave in our forms is explained in the": "La façon dont nous traitons les données laissées dans nos formulaires est décrite dans la",
   "privacy policy": "politique de confidentialité",
+  "The Social Intelligence Club": "Le Social Intelligence Club",
+  "The forms of the Social Intelligence Club pages collect your work email and, depending on the form, your first and last name, company, job title, profile and what you expect from the club. They are received by the Licter team and follow the rules on this page: used only to process your request (joining the club, the replay, the study) and to keep you informed of the club's activities, kept three years after our last exchange, and covered by the same rights.": "Les formulaires des pages du Social Intelligence Club collectent votre e-mail professionnel et, selon le formulaire, vos prénom et nom, votre société, votre fonction, votre profil et ce que vous attendez du club. Ils sont reçus par l'équipe Licter et suivent les règles de cette page : utilisés uniquement pour traiter votre demande (adhésion au club, replay, étude) et vous tenir informé des activités du club, conservés trois ans après notre dernier échange, et couverts par les mêmes droits.",
+  "Five questions to ask before buying a social listening licence.": "Cinq questions à poser avant d'acheter une licence de social listening.",
+  "We run these platforms every day, for brands of every size. Before you sign, these are the questions we would ask.": "Nous opérons ces plateformes tous les jours, pour des marques de toutes tailles. Avant de signer, voici les questions que nous poserions.",
+  "Rather not run a licence yourself? We run it for you.": "Vous préférez ne pas opérer une licence vous-même ? Nous l'opérons pour vous.",
+  "What decision should the data inform?": "Que doit éclairer la donnée ?",
+  "Which sources are really covered?": "Quelles sources sont vraiment couvertes ?",
+  "Who will write and maintain the queries?": "Qui écrira et tiendra les requêtes à jour ?",
+  "Who will read the results, and when?": "Qui lira les résultats, et quand ?",
+  "What does the whole cost, not just the licence?": "Combien coûte l'ensemble, pas seulement la licence ?",
+  "A platform is chosen by the question, not by the demo. A crisis, a campaign, the competition or an audience: each calls for other sources and other settings.": "Une plateforme se choisit par la question, pas par la démo. Une crise, une campagne, la concurrence ou une audience : chaque usage demande d'autres sources et d'autres réglages.",
+  "TikTok, Instagram, LinkedIn, forums, reviews, press: access differs from one tool to another, depending on its agreements with each network. Ask for the list, and for a test on your own brand.": "TikTok, Instagram, LinkedIn, forums, avis, presse : l'accès diffère d'un outil à l'autre, selon ses accords avec chaque réseau. Demandez la liste, et un test sur votre propre marque.",
+  "A badly written Boolean query brings back noise or misses what matters. Plan the time, or the person, to keep it up to date.": "Une requête booléenne mal écrite remonte du bruit ou manque l'essentiel. Prévoyez le temps, ou la personne, pour la tenir à jour.",
+  "A dashboard decides nothing. Without someone reading it regularly and turning it into decisions, a licence is little used.": "Un tableau de bord ne décide rien. Sans quelqu'un pour le lire régulièrement et en tirer des décisions, une licence sert peu.",
+  "Add the users, the history, the AI modules and the time your team will spend. That total is what to compare with a service.": "Ajoutez les utilisateurs, l'historique, les modules d'IA et le temps que votre équipe y passera. C'est ce total qu'il faut comparer à une prestation.",
+  "GET THE GUIDE": "RECEVOIR LE GUIDE",
+  "SEND MY QUESTION": "ENVOYER MA QUESTION",
+  "updated": "mis à jour le",
   "Who is responsible": "Responsable du traitement",
   "Licter SAS, 173 rue de Courcelles, 75017 Paris, France. Contact:": "Licter SAS, 173 rue de Courcelles, 75017 Paris. Contact :",
   "What we collect": "Ce que nous collectons",
@@ -779,7 +797,7 @@ window.LicterFR = {
     "une conversation par semaine avec celles et ceux qui lisent la conversation.",
   "the channel": "la cha\u00eene", "Audience First": "Audience First",
   "Get the next one": "Recevoir le prochain",
-  "NOTED - THE NEXT EPISODE LANDS IN YOUR INBOX": "C'EST NOTÉ - LE PROCHAIN ÉPISODE ARRIVE DANS VOTRE BOÎTE",
+  "NOTED, THE NEXT EPISODE LANDS IN YOUR INBOX": "C'EST NOTÉ, LE PROCHAIN ÉPISODE ARRIVE DANS VOTRE BOÎTE",
   "One email when it is out. No sequence.": "Un email à sa sortie. Pas de séquence.",
 
   /* ---- cartes plateformes (tech-tools) ---- */
@@ -841,8 +859,8 @@ window.LicterFR = {
     "Licter est le cabinet de conseil en Social Data Intelligence. Nous transformons la donnée du plus grand panel du monde – réseaux sociaux, recherche, IA générative – en décisions.",
   "Your work email...": "Votre e-mail professionnel...", "Your work email": "Votre e-mail professionnel",
   "BOOK A MEETING": "PRENDRE RENDEZ-VOUS",
-  "NOTED - WE GET BACK TO YOU WITHIN 24 HOURS": "BIEN REÇU - NOUS REVENONS VERS VOUS SOUS 24 H",
-  "NOTED - ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ - UN E-MAIL À LA PROCHAINE PUBLICATION",
+  "NOTED, WE GET BACK TO YOU WITHIN 24 HOURS": "BIEN REÇU, NOUS REVENONS VERS VOUS SOUS 24 H",
+  "NOTED, ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ, UN E-MAIL À LA PROCHAINE PUBLICATION",
   "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
   "Skip to content": "Aller au contenu",
   "Which offer is for me?": "Quelle offre pour moi ?",
@@ -1217,7 +1235,7 @@ window.LicterFR = {
   "Six questions, three minutes. Your score now, the full readout by email.": "Six questions, trois minutes. Votre score tout de suite, le détail par e-mail.",
   "Twelve questions social data answers better than a survey.": "Douze questions auxquelles la social data répond mieux qu'une étude.",
   "Three are open below. Leave your email and the other nine open here, with the full guide sent to you.": "Trois sont ouvertes ci-dessous. Laissez votre e-mail : les neuf autres s'ouvrent ici, et le guide complet vous est envoyé.",
-  "NOTED - THE GUIDE IS ON ITS WAY": "C'EST NOTÉ - LE GUIDE ARRIVE",
+  "NOTED, THE GUIDE IS ON ITS WAY": "C'EST NOTÉ, LE GUIDE ARRIVE",
   "Thirty minutes with a consultant.": "Trente minutes avec un consultant.",
   "Pick a slot. You describe the decision, we tell you what the data can settle.": "Choisissez un créneau. Vous décrivez la décision, nous vous disons ce que la donnée peut trancher.",
   "The decision you are facing": "La décision à prendre",
@@ -1318,6 +1336,7 @@ window.LicterFR = {
   "Guide sent. Check your inbox, and your spam folder: it happens.": "Guide envoyé. Vérifiez votre boîte de réception, et vos spams : ça arrive.",
   "Request received. A consultant comes back to you within 24 hours to book the scoping call.":
     "Demande reçue. Un consultant revient vers vous sous 24 h pour caler l'appel de cadrage.",
+  "A Licter consultant on the sofa, looking up from a conversation": "Un membre de l'équipe Licter sur le canapé, entre deux échanges",
   "Booked. We come back within 24 hours with two or three slots.": "C'est noté. Nous revenons sous 24 h avec deux ou trois créneaux.",
   "Story · 2 h": "Story · 2 h", "Reel · 14 min": "Reel · 14 min",
   "Story · 47 min": "Story · 47 min", "Reel · 1 h": "Reel · 1 h",
@@ -3263,6 +3282,10 @@ window.LicterFR = {
     "Quelle différence avec un outil de veille ?",
   "The tool collects. We pick the sources, remove the noise and read the result, to tell you what to do with it.":
     "L'outil collecte. Nous choisissons les sources, écartons le bruit et lisons le résultat, pour vous dire ce qu'il faut en faire.",
+  "How much does a social listening study cost?":
+    "Combien coûte une étude de social listening ?",
+  "On quotation: the price depends on the scope (brands, markets, languages, sources), the duration and how often you receive deliverables. After a first thirty-minute call, we send a costed proposal.":
+    "Sur devis : le prix dépend du périmètre (marques, marchés, langues, sources), de la durée et du rythme des livrables. Après un premier échange de trente minutes, nous envoyons une proposition chiffrée.",
   "How long before a first read?":
     "Combien de temps avant une première lecture ?",
   "About a week after framing, faster for an urgent topic.":
@@ -3333,6 +3356,12 @@ window.LicterFR = {
     "L'audience intelligence, ou intelligence des audiences, consiste à décrire un public à partir de ce qu'il fait en ligne : les comptes qu'il suit, les contenus qu'il partage, les marques et les médias qu'il consomme, les sujets qu'il recherche. Le résultat n'est pas une moyenne, mais une carte de communautés, chacune avec sa taille, ses passions et ses canaux.",
   "The term covers what is also called audience analysis, a social media audience study, or consumer intelligence when the study looks at the consumers of a category. At Licter, we call it audience listening, one of our six listenings. The starting question stays the same: who really are the people you want to reach, beyond what you think you know about them, and where can you find them?":
     "Le terme recouvre ce qu'on appelle aussi analyse d'audience, étude d'audience sur les réseaux sociaux ou consumer intelligence, quand l'étude porte sur les consommateurs d'une catégorie. Chez Licter, nous parlons d'audience listening, l'une de nos six écoutes. La question de départ reste la même : qui sont vraiment les gens que vous voulez toucher, au-delà de ce que vous croyez savoir d'eux, et où les trouver ?",
+  "What is consumer intelligence?":
+    "Qu'est-ce que la consumer intelligence ?",
+  "Consumer intelligence means studying the consumers of a category from what they leave online: what they say about products, what they search for, the brands and media they follow. It usually crosses social listening, audience intelligence and search data, to answer a market question rather than a brand question.":
+    "La consumer intelligence désigne l'étude des consommateurs d'une catégorie à partir de leurs traces en ligne : ce qu'ils disent des produits, ce qu'ils recherchent, les marques et les médias qu'ils suivent. Elle croise le plus souvent social listening, audience intelligence et données de recherche, pour répondre à une question de marché plutôt qu'à une question de marque.",
+  "It differs from a declared market study: nobody is asked anything, we observe what real consumers do and say, continuously. At Licter, a consumer intelligence study starts from a question, for example why a category is losing customers or what a target expects from a product, picks the sources that answer it, and ends with recommendations.":
+    "Elle se distingue d'une étude de marché déclarative : personne n'est interrogé, on observe ce que des consommateurs réels font et disent, en continu. Chez Licter, une étude de consumer intelligence part d'une question, par exemple pourquoi une catégorie perd des clients ou ce qu'une cible attend d'un produit, choisit les sources qui y répondent, et se termine par des recommandations.",
   "Audience intelligence and personas: what is the difference?":
     "Audience intelligence et persona : quelle différence ?",
   "A classic persona is often born in a workshop: a few interviews, sales data, and what the team believes it knows about its customers. It describes a typical person, with an age, a job and assumed motivations. Useful to align a team, it remains declarative, and it ages fast, because nobody tests it against data.":
@@ -3795,8 +3824,8 @@ window.LicterFR = {
     "Discuter avec Antoine",
   "Social listening agency and consultancy | Licter":
     "Agence et cabinet de social listening | Licter",
-  "Audience intelligence: who your audiences really are | Licter":
-    "Audience intelligence : qui sont vraiment vos audiences | Licter",
+  "Audience and consumer intelligence: who your audiences are | Licter":
+    "Audience et consumer intelligence : qui sont vos audiences | Licter",
   "Influence listening: the voices that actually carry | Licter":
     "Influence listening : les voix qui portent vraiment | Licter",
   "AI listening: what AI says about your brand | Licter":
@@ -4952,8 +4981,8 @@ window.LicterFR = {
     "Questions fréquentes sur Google Trends.",
   "Is Licter a Google Trends agency?":
     "Licter est-elle une agence Google Trends ?",
-  "Yes: Google Trends is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
-    "Oui : Google Trends est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
+  "Yes: Google Trends is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
+    "Oui : Google Trends est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Google Trends is free: why go through you?":
     "Google Trends est gratuit : pourquoi passer par vous ?",
   "The curve is public, the reading is not: on its own it reads badly. We cross it with the conversation and real volumes.":
@@ -5062,8 +5091,8 @@ window.LicterFR = {
     "Questions fréquentes sur AnswerThePublic.",
   "Is Licter a AnswerThePublic agency?":
     "Licter est-elle une agence AnswerThePublic ?",
-  "Yes: AnswerThePublic is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
-    "Oui : AnswerThePublic est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
+  "Yes: AnswerThePublic is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
+    "Oui : AnswerThePublic est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "It is a free tool: why go through you?":
     "C'est un outil gratuit : pourquoi passer par vous ?",
   "The list of questions is open; the reading, the sorting and the crossing with the rest of the market are not.":
@@ -5280,8 +5309,8 @@ window.LicterFR = {
     "Questions fréquentes sur ChatGPT.",
   "Is Licter a ChatGPT agency?":
     "Licter est-elle une agence ChatGPT ?",
-  "Yes: ChatGPT is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
-    "Oui : ChatGPT est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
+  "Yes: ChatGPT is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
+    "Oui : ChatGPT est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why track what an AI answers?":
     "Pourquoi suivre ce que répond une IA ?",
   "Because part of your customers get their information there before buying, and the answer does not come from you.":
@@ -5586,8 +5615,8 @@ window.LicterFR = {
     "Questions fréquentes sur Meta Ads.",
   "Does Licter monitor the Meta Ad Library?":
     "Licter fait-elle de la veille sur la bibliothèque publicitaire Meta ?",
-  "Yes: Meta Ads is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
-    "Oui : Meta Ads est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
+  "Yes: Meta Ads is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
+    "Oui : Meta Ads est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "The library is public: why go through you?":
     "La bibliothèque est publique : pourquoi passer par vous ?",
   "It shows ads one by one. We sort them, link them to the conversation, and tell you what they reveal about your competitors' strategy.":
@@ -5690,8 +5719,8 @@ window.LicterFR = {
     "Questions fréquentes sur Google Actualités.",
   "Is Licter a Google News agency?":
     "Licter est-elle une agence Google Actualités ?",
-  "Yes: Google News is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
-    "Oui : Google Actualités est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
+  "Yes: Google News is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
+    "Oui : Google Actualités est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Do you replace a press review?":
     "Remplacez-vous une revue de presse ?",
   "Not necessarily: we add what it does not, the link with the social conversation and what to do about it.":
@@ -5796,8 +5825,8 @@ window.LicterFR = {
     "Questions fréquentes sur Social Blade.",
   "Is Licter a Social Blade agency?":
     "Licter est-elle une agence Social Blade ?",
-  "Yes: Social Blade is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
-    "Oui : Social Blade est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
+  "Yes: Social Blade is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
+    "Oui : Social Blade est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Is Social Blade enough to pick a creator?":
     "Social Blade suffit-il pour choisir un créateur ?",
   "No: it says how an account grows, not who follows it. We cross it with an analysis of the real audience.":
@@ -5936,8 +5965,8 @@ window.LicterFR = {
     "Questions fréquentes sur Claude.",
   "Is Licter a Claude agency?":
     "Licter est-elle une agence Claude ?",
-  "Yes: Claude is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
-    "Oui : Claude est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
+  "Yes: Claude is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
+    "Oui : Claude est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why audit Claude as well as ChatGPT?":
     "Pourquoi auditer Claude en plus de ChatGPT ?",
   "Because assistants do not cite the same brands or sources: your place can be good in one and absent in another.":
@@ -6058,8 +6087,8 @@ window.LicterFR = {
     "Questions fréquentes sur Gemini.",
   "Is Licter a Gemini agency?":
     "Licter est-elle une agence Gemini ?",
-  "Yes: Gemini is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
-    "Oui : Gemini est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
+  "Yes: Gemini is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
+    "Oui : Gemini est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Are Gemini and Bard the same?":
     "Gemini et Bard, c'est la même chose ?",
   "Yes: Google renamed Bard to Gemini in February 2024.":
@@ -6190,8 +6219,8 @@ window.LicterFR = {
     "Questions fréquentes sur Perplexity.",
   "Is Licter a Perplexity agency?":
     "Licter est-elle une agence Perplexity ?",
-  "Yes: Perplexity is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
-    "Oui : Perplexity est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
+  "Yes: Perplexity is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
+    "Oui : Perplexity est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why is Perplexity useful for an audit?":
     "Pourquoi Perplexity est-il utile pour un audit ?",
   "Because it shows its sources with every answer: you know which sites to act on.":
@@ -6320,8 +6349,8 @@ window.LicterFR = {
     "Questions fréquentes sur Grok.",
   "Is Licter a Grok agency?":
     "Licter est-elle une agence Grok ?",
-  "Yes: Grok is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
-    "Oui : Grok est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
+  "Yes: Grok is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy.":
+    "Oui : Grok est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant.",
   "Why audit Grok?":
     "Pourquoi auditer Grok ?",
   "Because it is built into X and draws on its posts: it amplifies what is said about you there.":
@@ -8168,8 +8197,8 @@ window.LicterFR = {
     "Sources du social listening : les 22 réseaux que nous écoutons | Licter",
   "The 22 networks our data comes from: what can be read there, what stays private, and the platforms that cover them. TikTok, Instagram, X, LinkedIn, Reddit…":
     "Les 22 réseaux d'où viennent nos données : ce qu'on peut y lire, ce qui reste privé, et les plateformes qui les couvrent. TikTok, Instagram, X, LinkedIn, Reddit…",
-  "Tech & tools: our listening platforms and data sources | Licter":
-    "Techno & outils : nos plateformes d'écoute et nos sources | Licter",
+  "Social listening tools: the platforms we run | Licter":
+    "Outils de social listening : les plateformes que nous opérons | Licter",
   "The listening platforms Licter runs, the search, press and AI tools around them, and the 22 networks the data comes from.":
     "Les plateformes d'écoute que Licter opère, les outils de recherche, de presse et d'IA qui les complètent, et les 22 réseaux d'où viennent les données.",
   /* ---- end tech pages ---- */

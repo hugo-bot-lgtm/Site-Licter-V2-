@@ -84,13 +84,16 @@ LISTENINGS = [
                   "Social networks, online news, forums, blogs and reviews, in more than twenty languages, depending on the perimeter set with you.")),
                 (("Quelle différence avec un outil de veille ?", "How is it different from a monitoring tool?"),
                  ("L'outil collecte. Nous choisissons les sources, écartons le bruit et lisons le résultat, pour vous dire ce qu'il faut en faire.",
-                  "The tool collects. We pick the sources, remove the noise and read the result, to tell you what to do with it."))],
+                  "The tool collects. We pick the sources, remove the noise and read the result, to tell you what to do with it.")),
+                (("Combien coûte une étude de social listening ?", "How much does a social listening study cost?"),
+                 ("Sur devis : le prix dépend du périmètre (marques, marchés, langues, sources), de la durée et du rythme des livrables. Après un premier échange de trente minutes, nous envoyons une proposition chiffrée.",
+                  "On quotation: the price depends on the scope (brands, markets, languages, sources), the duration and how often you receive deliverables. After a first thirty-minute call, we send a costed proposal."))],
     },
     {
         "key": "audience", "file": "expertise-audience-listening.html", "icon": "audiences",
         "name": ("Audience listening", "Audience listening"),
         "short": ("Qui sont vraiment les gens qui parlent de vous.", "Who the people talking about you really are."),
-        "seo_title": ("Audience intelligence : qui sont vraiment vos audiences | Licter", "Audience intelligence: who your audiences really are | Licter"),
+        "seo_title": ("Audience et consumer intelligence : qui sont vos audiences | Licter", "Audience and consumer intelligence: who your audiences are | Licter"),
         "seo_desc": ("Audience et consumer intelligence : centres d'intérêt, affinités de marque et médias de vos communautés, lus dans leur comportement observé, pas déclaré.",
                      "Audience and consumer intelligence: the interests, brand affinities and media of your communities, read from observed behaviour, not declared answers."),
         "h1": ("Audience intelligence : qui sont vraiment vos audiences, au-delà de l'âge et du sexe.", "Audience intelligence: who your audiences really are, beyond age and gender."),
@@ -781,7 +784,7 @@ def hub_body(offers_html):
 
 
 def book(title, offers_html):
-    m = re.search(r'  <!-- MOCK: the callback form.*?</section>', offers_html, re.S)
+    m = re.search(r'  <!-- (?:MOCK: the )?callback form.*?</section>', offers_html, re.S)
     return re.sub(r'<h2 class="block__title">.*?</h2>', '<h2 class="block__title">%s</h2>' % t(title), m.group(0), count=1)
 
 

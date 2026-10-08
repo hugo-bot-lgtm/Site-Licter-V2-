@@ -29,9 +29,17 @@ def qa_roller(cards, label, more, rows=2, by=""):
 
 def authors_line(written, and_, role):
     """who wrote a long-form section: the founders, linked to their profiles
-    on Why Licter (already translated words passed in)"""
+    on Why Licter (already translated words passed in), and when the page last
+    changed (tools/build-seo.py puts the real date in the <time>)"""
+    import datetime
+    d = datetime.date.today()
+    fr = not written.startswith("Written")
+    mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+    label = "%d %s %d" % (d.day, mois[d.month - 1], d.year) if fr else "%d %s" % (d.day, d.strftime("%B %Y"))
+    when = ('<span class="qa-by__when"> · <span>%s</span> <time datetime="%s">%s</time></span>'
+            % ("mis à jour le" if fr else "updated", d.isoformat(), label))
     return ('<p class="qa-by">%s <a href="why-licter.html#antoine-khaitrine">Antoine Khaitrine</a> %s '
-            '<a href="why-licter.html#adrien-krebs">Adrien Krebs</a>%s</p>') % (written, and_, role)
+            '<a href="why-licter.html#adrien-krebs">Adrien Krebs</a>%s%s</p>') % (written, and_, role, when)
 
 
 def sources_line(module_file, label):

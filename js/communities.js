@@ -440,7 +440,14 @@
   }
 
   var t0 = null;
-  function rebuild() { clearTimeout(t0); t0 = setTimeout(function () { setHover(-1); build(); draw(performance.now()); }, 150); }
+  /* a ResizeObserver reports the first size at once: no second build for a frame that did not change */
+  function rebuild() {
+    clearTimeout(t0);
+    t0 = setTimeout(function () {
+      if (Math.max(1, host.clientWidth) === W && Math.max(1, host.clientHeight) === H) return;
+      setHover(-1); build(); draw(performance.now());
+    }, 150);
+  }
   if (window.ResizeObserver) { var ro = new ResizeObserver(rebuild); ro.observe(host); observers.push(ro); }
   else window.addEventListener("resize", rebuild);
 

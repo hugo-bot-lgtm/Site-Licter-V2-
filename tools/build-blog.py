@@ -253,7 +253,7 @@ def linkify(prose, cap=4):
 
 def article_main(x):
     fr = x.get("lang") == "fr"
-    note = ('<div class="shell"><p class="lang-note lang-note--fr" lang="en" role="note" hidden>This article is only available in French.</p></div>' if fr else
+    note = ('<div class="shell"><p class="lang-note lang-note--fr" lang="en" role="note" hidden></p></div>' if fr else
             '<div class="shell"><p class="lang-note" role="note">Cet article n’est disponible qu’en anglais. Le reste du site bascule en français.</p></div>')
     import podcast_quotes as PQ
     src = x["prose"]

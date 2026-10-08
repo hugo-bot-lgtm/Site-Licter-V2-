@@ -227,7 +227,7 @@ l'indicateur `+23%`, le lien final et les survols de menu.
 ## Arbitrages pris (à valider)
 
 1. **Bouton / mention.** Le bouton reste `BOOK A MEETING` ; la mention devient
-   `NOTED - WE GET BACK TO YOU WITHIN 24 HOURS`. Les deux promesses sont
+   `NOTED, WE GET BACK TO YOU WITHIN 24 HOURS`. Les deux promesses sont
    alignées sur le rendez-vous, qui est l'action réellement déclenchée. Si
    c'est l'analyse qu'on veut promettre, c'est le bouton qu'il faut changer
    (`GET YOUR ANALYSIS`), pas la mention.

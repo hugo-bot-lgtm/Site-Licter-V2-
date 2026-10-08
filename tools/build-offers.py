@@ -810,7 +810,7 @@ def body(o, offers_html):
 
 
 def book(o, offers_html):
-    m = re.search(r'  <!-- MOCK: the callback form.*?</section>', offers_html, re.S)
+    m = re.search(r'  <!-- (?:MOCK: the )?callback form.*?</section>', offers_html, re.S)
     sec = m.group(0)
     return re.sub(r'<h2 class="block__title">.*?</h2>', '<h2 class="block__title">%s</h2>' % t(o["book_t"]), sec, count=1)
 

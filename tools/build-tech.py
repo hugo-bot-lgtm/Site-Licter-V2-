@@ -132,7 +132,7 @@ SHORT = {
     "perplexity": ("votre marque dans le moteur de réponses", "your brand in the answer engine"),
     "grok": ("ce que l'IA de X dit de vous", "what X's AI says about you"),
 }
-HUB = {"title": ("Techno & outils : nos plateformes d'écoute et nos sources | Licter", "Tech & tools: our listening platforms and data sources | Licter"),
+HUB = {"title": ("Outils de social listening : les plateformes que nous opérons | Licter", "Social listening tools: the platforms we run | Licter"),
        "desc": ("Les plateformes d'écoute que Licter opère, les outils de recherche, de presse et d'IA qui les complètent, et les 22 réseaux d'où viennent les données.",
                 "The listening platforms Licter runs, the search, press and AI tools around them, and the 22 networks the data comes from.")}
 
@@ -152,8 +152,8 @@ def agency(slug, name, fr_name=None):
         "q": AI.FAQ_Q.get(slug) or ("Licter est-elle une agence %s ?" % fn, "Is Licter a %s agency?" % name),
         "a": (("Oui : le GEO est une pratique, pas un logiciel. Nous mesurons ce que les IA répondent sur votre marque, d'où viennent leurs réponses, et ce qu'il faut changer pour y figurer. Licter est un cabinet indépendant." ,
                "Yes: GEO is a practice, not software. We measure what AI answers about your brand, where those answers come from, and what to change to appear in them. Licter is an independent consultancy.") if slug == "geo" else
-              ("Oui : %s est un outil public ou gratuit ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant." % fn,
-               "Yes: %s is a public or free tool; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy." % name) if slug in FREE_TOOLS else
+              ("Oui : %s est un outil accessible à tous ; ce que nous apportons, c'est la méthode, la lecture et le croisement avec les autres sources. Licter n'est pas lié à son éditeur ; nous sommes un cabinet indépendant." % fn,
+               "Yes: %s is a tool anyone can use; what we bring is the method, the reading and the cross-check with other sources. Licter is not tied to its publisher; we are an independent consultancy." % name) if slug in FREE_TOOLS else
               ("Oui : en tant qu'agence %s, nous opérons l'outil pour nos clients, nous le configurons, le lisons et livrons l'analyse. Licter n'en est pas l'éditeur ; nous sommes un cabinet indépendant, qui choisit l'outil selon la question." % fn,
                "Yes: as a %s agency, we run the tool for our clients, set it up, read it and deliver the analysis. Licter is not its publisher; we are an independent consultancy that picks the tool by the question." % name)),
         "band": (("Les publicités de vos concurrents, lues chaque mois ?", "Your competitors' ads, read every month?") if slug == "meta-ads" else
@@ -448,7 +448,7 @@ def cta(band, sub, mark, slug):
             <button class="signup__btn" type="submit">BOOK A MEETING</button>
           </form>
           <p class="consent">We use your email only to reply to you. <a href="privacy.html">Privacy policy</a>.</p>
-          <p class="signup__note" role="status"><span class="signup__check" aria-hidden="true">✓</span> NOTED - WE GET BACK TO YOU WITHIN 24 HOURS</p>
+          <p class="signup__note" role="status"><span class="signup__check" aria-hidden="true">✓</span> NOTED, WE GET BACK TO YOU WITHIN 24 HOURS</p>
         </div>
       </div>
     </div>

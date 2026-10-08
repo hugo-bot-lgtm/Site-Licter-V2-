@@ -1343,12 +1343,28 @@ window.LicterUC = (function () {
       e.preventDefault();
       var fields = form.querySelectorAll("input[required], textarea[required]");
       var firstBad = null;
+      var frp = (document.documentElement.lang || "fr").slice(0, 2) === "fr";
       Array.prototype.forEach.call(fields, function (f) {
         var v = f.value.trim();
         var ok = f.type === "email"
           ? /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)
           : v.length > 1;
         f.setAttribute("aria-invalid", ok ? "false" : "true");
+        /* a message in words, tied to the field, not only a red border */
+        var id = (f.id || f.name || "fld") + "-err", msg = document.getElementById(id);
+        if (!ok && !msg) {
+          msg = document.createElement("p");
+          msg.className = "fld__error"; msg.id = id;
+          f.insertAdjacentElement("afterend", msg);
+          f.setAttribute("aria-describedby", id);
+          f.addEventListener("input", function () { msg.hidden = true; f.setAttribute("aria-invalid", "false"); });
+        }
+        if (msg) {
+          msg.textContent = f.type === "email"
+            ? (frp ? "Indiquez un e-mail professionnel valide." : "Enter a valid work email.")
+            : (frp ? "Ce champ est à remplir." : "This field is required.");
+          msg.hidden = ok;
+        }
         if (!ok && !firstBad) firstBad = f;
       });
       if (firstBad) { firstBad.focus(); return; }
@@ -1384,7 +1400,7 @@ window.LicterUC = (function () {
       field.setAttribute("aria-invalid", ok ? "false" : "true");
       error.hidden = ok;
       if (!ok) { field.focus(); return; }
-      var sact = form.classList.contains("nl__form") ? "newsletter" : form.classList.contains("guide__form") ? "guide" : "callback";
+      var sact = form.getAttribute("data-act") || (form.classList.contains("nl__form") ? "newsletter" : form.classList.contains("guide__form") ? "guide" : "callback");
       if (window.LicterSend) window.LicterSend(sact, (sact === "callback" ? "Bandeau de fin de page : " : "") + window.LicterSend.where(form), { "E-mail": field.value.trim() });
       if (window.LicterLead) window.LicterLead.set(field.value.trim());
       if (window.LicterTrack) window.LicterTrack("form_submit", { form: form.classList.contains("nl__form") ? "newsletter" : "signup" });
@@ -1628,7 +1644,7 @@ window.LicterUC = (function () {
    bottom of the home, the offers, the expertise and the use-case pages, so
    it is handled here, on every page (it once lived in js/home.js, and the
    pages without that file reloaded with the number in the address bar).
-   MOCK: nothing is sent yet; wire to the CRM (see A-FAIRE.md).
+   Sent to the team by js/track.js (window.LicterSend, api/lead.js).
    ========================================================================= */
 (function () {
   var form = document.getElementById("book-form");
@@ -1638,6 +1654,7 @@ window.LicterUC = (function () {
   form.setAttribute("data-wired", "");
   var html = document.documentElement;
   var err = document.getElementById("book-contact-error");
+  if (err) contact.setAttribute("aria-describedby", err.id);
   var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   function fr() { return (html.lang || "fr").slice(0, 2) === "fr"; }
   function t(en, f) { return fr() ? f : en; }
@@ -1724,6 +1741,7 @@ window.LicterUC = (function () {
     var field = form.querySelector('input[type="email"]');
     var err = form.querySelector(".fld__error");
     var done = form.parentNode.querySelector(".ucp-lead__done");
+    if (err && field) { if (!err.id) err.id = (field.id || "ucp-email") + "-err"; field.setAttribute("aria-describedby", err.id); }
     if (window.LicterLead) {
       var known = window.LicterLead.get();
       if (known && EMAIL.test(known)) field.value = known;
@@ -2481,7 +2499,10 @@ window.LicterUC = (function () {
     frame.focus();
   });
   var note = document.querySelector(".lang-note--fr");
-  try { if (note && localStorage.getItem("licter-lang") === "en") note.hidden = false; } catch (e) { /* private mode */ }
+  /* written here, not in the page: crawlers of a French article should not read it */
+  try {
+    if (note && localStorage.getItem("licter-lang") === "en") { note.textContent = "This article is only available in French."; note.hidden = false; }
+  } catch (e) { /* private mode */ }
 })();
 
 /* =========================================================================

@@ -269,6 +269,8 @@
   /* ------------------------------------------------ the automatic opening */
   var path = location.pathname;
   var formPage = /\/(book-a-meeting|diagnostic|guide|events|event-[a-z0-9-]+)\.html$/.test(path) ||
+    /* their French twins, which live in folders */
+    /^\/fr\/(rendez-vous|diagnostic|guide|evenements)(\/|$)/.test(path) ||
     /* the use-case pages bring their own magnet (a real case of the same
        kind), and so do the expertise pages (a sample deliverable): the
        magazine never interrupts them; its cover still waits below */

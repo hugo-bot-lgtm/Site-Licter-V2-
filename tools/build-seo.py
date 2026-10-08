@@ -169,7 +169,20 @@ FOUNDERS = [
      "url": SITE + "/fr/pourquoi-licter/#adrien-krebs", "sameAs": AUTHORS["Adrien Krebs"],
      "award": "Top 50 Insider mondial de la social intelligence (SI Lab), 2025"},
 ]
-FOUNDER_REFS = [{"@id": f["@id"]} for f in FOUNDERS]
+# by @id, with the name and profile written out: a page that cites its authors names them itself
+FOUNDER_REFS = [{"@type": "Person", "@id": f["@id"], "name": f["name"], "url": f["url"]} for f in FOUNDERS]
+
+
+def founders(fr):
+    """the founders as described on Why Licter, in that page's language"""
+    if fr:
+        return FOUNDERS
+    out = []
+    for f in FOUNDERS:
+        e = dict(f, jobTitle="Co-founder", url=f["url"].replace("/fr/pourquoi-licter/", "/why-licter.html"))
+        e["award"] = f["award"].replace("Top 50 Insider mondial de la social intelligence", "Global Top 50 Social Intelligence Insider")
+        out.append(e)
+    return out
 COLLECTION = {"blog.html", "fr/blog/index.html", "clients.html", "fr/clients/index.html", "events.html"}
 
 
@@ -232,6 +245,8 @@ def structured(rel, s, fr, url):
             items.append((SITE + "/fr/blog/", "Blog"))
         elif url.startswith(SITE + "/fr/evenements/") and url != SITE + "/fr/evenements/":
             items.append((SITE + "/fr/evenements/", "Événements"))
+        elif url.startswith(SITE + "/event-"):
+            items.append((SITE + "/events.html", "Events"))
         name = re.sub(r"\s*\|.*$", "", title)
         items.append((url, ARTS[rel]["title"].replace("\u00a0", " ") if rel in ARTS else name))
         add.append({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -257,7 +272,7 @@ def structured(rel, s, fr, url):
             b["mainEntityOfPage"] = {"@type": "WebPage", "@id": url}
             s = s.replace(m.group(0), '<script type="application/ld+json">%s</script>' % json.dumps(b, ensure_ascii=False), 1)
     if rel in ABOUT:
-        add.extend(dict({"@context": "https://schema.org"}, **f) for f in FOUNDERS)
+        add.extend(dict({"@context": "https://schema.org"}, **f) for f in founders(fr))
     if add:
         s = s.replace("</head>", "".join('<script type="application/ld+json" data-seo>%s</script>\n' % json.dumps(x, ensure_ascii=False) for x in add) + "</head>", 1)
     return s
@@ -346,6 +361,10 @@ def main():
             s = add_head(s, '<meta property="og:image" content="%s/assets/img/og/%s" />\n<meta property="og:image:width" content="1200" />\n'
                             '<meta property="og:image:height" content="630" />' % (SITE, name))
         s = s.replace('<meta name="twitter:card" content="summary" />', '<meta name="twitter:card" content="summary_large_image" />')
+        # build notes ("MOCK: sends nothing yet") left the page: the forms are wired
+        # (api/lead.js); the callback section keeps a plain marker the builders look for
+        s = re.sub(r"<!-- MOCK: the callback form[^>]*-->", "<!-- callback form -->", s)
+        s = re.sub(r"\s*<!-- MOCK:.*?-->", "", s, flags=re.S)
         if fr and "data-i18n-static" in s[:400]:
             s = re.sub(r'(<script src="/?js/)fr\.js(\?v=\d+"[^>]*></script>)', r"\1fr-core.js\2", s)
             # without it, the menu and everything else the scripts render stays in English
@@ -371,11 +390,18 @@ def main():
             s = re.sub(r'(<div>\s*<h3>(?:ENTREPRISE|COMPANY)</h3>)', lambda m_: col + m_.group(1), s, count=1)
             s = re.sub(r'(<li><a href="(?:/fr/outils/|/?tech-tools\.html)">[^<]*</a></li>)(\s*<li><a href="(?:/fr/clients/|/?clients\.html)">)',
                        lambda m_: m_.group(1) + ' <li><a href="%s">%s</a></li>' % (("/fr/sources/", "Sources (22 réseaux)") if fr else ("/sources.html", "Sources (22 networks)")) + m_.group(2), s, count=1)
+        if fr:      # a French twin copied from an English page keeps the English label
+            s = s.replace('>Sources (22 networks)</a>', '>Sources (22 réseaux)</a>')
+        # the Social Intelligence Club, served by this site, reached from every page
+        foot_at = s.rfind("<footer")
+        if foot_at > 0 and "/socialintelligenceclub/" not in s[foot_at:]:
+            s = s[:foot_at] + re.sub(r'(<li><a href="(?:/fr/blog/|/?blog\.html)">[^<]*</a></li>)',
+                                     r'\1\n        <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>', s[foot_at:], count=1)
         # the footer: who we are and how to reach us, and an award stated as the founder's
         foot_fr = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
-                   "50+ clients · 160+ projets · Antoine Khaitrine et Adrien Krebs, Top 50 Insider mondial (SI Lab) en 2024 et 2025")
+                   "50+ clients · 160+ projets · Antoine Khaitrine (2024) et Adrien Krebs (2025), Top 50 Insider mondial (SI Lab)")
         foot_en = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
-                   "50+ clients · 160+ projects · Antoine Khaitrine and Adrien Krebs, Top 50 Insider worldwide (SI Lab) in 2024 and 2025")
+                   "50+ clients · 160+ projects · Antoine Khaitrine (2024) and Adrien Krebs (2025), Top 50 Insider worldwide (SI Lab)")
         s = re.sub(r'<span>(?:Licter SAS ·.*?|50\+ clients · 160\+ (?:projects|projets) · Top 50 Insider[^<]*)</span>(?=\s*</div>\s*</footer>)',
                    "<span>%s</span>" % (foot_fr if fr else foot_en), s, flags=re.S)
         # French pages link to French pages in their HTML, not through a script

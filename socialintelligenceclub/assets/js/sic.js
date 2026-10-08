@@ -219,11 +219,21 @@
     /* à chaque arrivée sur la page, sauf retour depuis une autre page du site ou formulaire déjà envoyé */
     var internal = false;
     try { internal = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (e) {}
+    /* once the hero has been read (scrolled past), or after 20 s: never over the title on arrival */
     if (store("sic-pp-done") !== "1" && !internal) {
-      setTimeout(function () {
+      var shown = false, hero = document.getElementById("hero");
+      var show = function () {
+        if (shown) return;
         if (document.querySelector("dialog[open]")) return;
+        shown = true;
+        window.removeEventListener("scroll", onScroll);
         pp.showModal();
-      }, 1200);
+      };
+      var onScroll = function () {
+        if (!hero || hero.getBoundingClientRect().bottom < window.innerHeight * 0.4) show();
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      setTimeout(show, 20000);
     }
   }
 

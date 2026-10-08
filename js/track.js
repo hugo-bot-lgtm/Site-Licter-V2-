@@ -156,15 +156,44 @@
     });
     return out;
   }
+  /* the page has already thanked the visitor: if the request did not reach
+     the team, say so, and offer to send it by e-mail instead */
+  function failed(data) {
+    var box = document.getElementById("lead-failed");
+    if (box) box.remove();
+    var lines = Object.keys(data).map(function (k) { return k + " : " + data[k]; }).join("\n");
+    var mail = "mailto:contact@licter.com?subject=" + encodeURIComponent(fr() ? "Demande depuis licter.com" : "Request from licter.com") +
+      "&body=" + encodeURIComponent(lines + "\n\n" + location.href);
+    box = document.createElement("div");
+    box.id = "lead-failed";
+    box.setAttribute("role", "alert");
+    box.style.cssText = "position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:520px;margin:0 auto;" +
+      "background:#13162D;color:#FCF6EF;border:1px solid #EAA93D;border-radius:14px;padding:16px 48px 16px 18px;" +
+      "font:15px/1.5 Raleway,system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.35)";
+    box.innerHTML = "<b>" + (fr() ? "Votre demande n’est pas partie." : "Your request did not go through.") + "</b> " +
+      (fr() ? "Le réseau l’a bloquée. " : "The network blocked it. ") +
+      "<a style=\"color:#EAA93D;font-weight:700\" href=\"" + mail + "\">" +
+      (fr() ? "Envoyez-la par e-mail" : "Send it by e-mail") + "</a> " +
+      (fr() ? "à contact@licter.com, elle est déjà rédigée." : "to contact@licter.com, it is already written.") +
+      "<button type=\"button\" aria-label=\"" + (fr() ? "Fermer" : "Close") + "\" style=\"position:absolute;top:8px;right:8px;width:36px;height:36px;" +
+      "border:0;background:none;color:inherit;font-size:22px;cursor:pointer\">×</button>";
+    box.querySelector("button").addEventListener("click", function () { box.remove(); });
+    document.body.appendChild(box);
+  }
   window.LicterSend = function (action, detail, fields) {
     try {
       var data = fields && fields.tagName === "FORM" ? read(fields) : (fields || {});
-      fetch("/api/lead", {
-        method: "POST", keepalive: true,
-        headers: { "Content-Type": "application/json", "X-Licter-Form": "1" },
-        body: JSON.stringify({ action: action, detail: detail || "", title: document.title, page: location.href, lang: fr() ? "fr" : "en", fields: data })
-      }).then(function (r) { if (!r.ok) console.warn("form not sent", r.status); })
-        .catch(function (e) { console.warn("form not sent", e); });
+      var body = JSON.stringify({ action: action, detail: detail || "", title: document.title, page: location.href, lang: fr() ? "fr" : "en", fields: data });
+      var post = function () {
+        return fetch("/api/lead", {
+          method: "POST", keepalive: true,
+          headers: { "Content-Type": "application/json", "X-Licter-Form": "1" }, body: body
+        }).then(function (r) { if (!r.ok) throw new Error("status " + r.status); });
+      };
+      /* one more try after a short wait, then the visitor is told */
+      post().catch(function () {
+        return new Promise(function (ok) { setTimeout(ok, 1500); }).then(post);
+      }).catch(function (e) { console.warn("form not sent", e); failed(data); });
     } catch (e) { /* a form never breaks the page */ }
   };
   /* the title of the section a form sits in: says which form it was */

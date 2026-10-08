@@ -7,3 +7,4 @@ __pycache__/
 *.pyc
 /shots/
 /css/styles.css
+/css/styles.min.css

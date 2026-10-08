@@ -1081,6 +1081,10 @@ def main():
         if name == "index.html" or name.startswith(("expertise", "tech-", "source-", "sources.html")) or name in OFFER_FR or name in PAGE_FR:
             continue   # the home and the expertise pages go in with their French twins, below
         entries.append("  <url><loc>%s</loc></url>" % (SITE + "/" + name))
+    # the Social Intelligence Club, served by this site (French only); its replay
+    # page is reached from an e-mail and stays out
+    for p in ("/socialintelligenceclub/", "/socialintelligenceclub/rejoindre/"):
+        entries.append("  <url><loc>%s</loc></url>" % (SITE + p))
     urls.insert(0, ("/fr/", "/"))
     urls[1:1] = [(expertise_fr(n), "/" + n) for n in root_pages if n.startswith(("expertise", "tech-", "source-", "sources.html")) or n in OFFER_FR or n in PAGE_FR]
     for fr_p, en_p in urls:
