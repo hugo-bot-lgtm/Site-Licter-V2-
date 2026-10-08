@@ -316,8 +316,10 @@ def page(lang, path, alt_path, title, meta, body, ld, og_type="website", og_imag
     v = version()
     other = 1 - lang
     fr_path, en_path = (path, alt_path) if lang == FR else (alt_path, path)
-    ld = ld + [{"@context": "https://schema.org", "@type": "WebPage", "name": title, "url": SITE + path,
-                "inLanguage": LANGS[lang], "dateModified": TODAY.isoformat(), "author": ORG, "publisher": ORG}]
+    # one page-level entity: none added when the page already has one (the hub's CollectionPage)
+    if not any(isinstance(x, dict) and x.get("@type") in ("WebPage", "CollectionPage", "AboutPage") for x in ld):
+        ld = ld + [{"@context": "https://schema.org", "@type": "WebPage", "name": title, "url": SITE + path,
+                    "inLanguage": LANGS[lang], "dateModified": TODAY.isoformat(), "author": ORG, "publisher": ORG}]
     ld_tags = "\n".join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False) for x in ld)
     scripts = ([f'<script src="/js/fr.js?v={v}" defer></script>'] if lang == FR else []) + [
         f'<script src="/js/i18n.js?v={v}" defer></script>',
