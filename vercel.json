@@ -1,6 +1,16 @@
 {
   "redirects": [
     {
+      "source": "/sic",
+      "destination": "/socialintelligenceclub/",
+      "permanent": true
+    },
+    {
+      "source": "/sic/(.*)",
+      "destination": "/socialintelligenceclub/$1",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -463,12 +473,12 @@
   ],
   "rewrites": [
     {
-      "source": "/sic",
-      "destination": "https://socialintelligenceclub.vercel.app/sic"
+      "source": "/socialintelligenceclub",
+      "destination": "https://socialintelligenceclub.vercel.app/socialintelligenceclub"
     },
     {
-      "source": "/sic/:path*",
-      "destination": "https://socialintelligenceclub.vercel.app/sic/:path*"
+      "source": "/socialintelligenceclub/:path*",
+      "destination": "https://socialintelligenceclub.vercel.app/socialintelligenceclub/:path*"
     }
   ],
   "headers": [
