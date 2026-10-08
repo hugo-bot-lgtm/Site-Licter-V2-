@@ -1,6 +1,6 @@
 /* =========================================================================
    Every form of the site lands here (js/track.js, window.LicterSend), and
-   leaves as one email to the team, sent with Resend from contact@licter.com.
+   leaves as one email to the team, sent with Resend from website@contact.licter.com.
    The visitor gets no email: the page shows the confirmation.
 
    The Resend key is the RESEND_API_KEY environment variable of the Vercel
@@ -20,7 +20,7 @@ const TEAM = [
 /* LEAD_TO (Vercel env, comma separated) narrows the list during a test; only team addresses are kept */
 const TO = (process.env.LEAD_TO || "").split(",").map((s) => s.trim().toLowerCase()).filter((s) => TEAM.includes(s));
 if (!TO.length) TO.push(...TEAM);
-const FROM = "Site Licter <contact@licter.com>";
+const FROM = "Site Licter <website@contact.licter.com>";
 
 /* one email subject per action: what the visitor asked for */
 const ACTIONS = {
