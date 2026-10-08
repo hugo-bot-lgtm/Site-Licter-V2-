@@ -10551,3 +10551,10 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
   .hero__main > .award { max-width: 100%; border-radius: 18px; }
   .award__text { white-space: normal; line-height: 1.3; }
 }
+
+/* the public sources of a long-form section, under its cards */
+.qa-src { margin: 18px 0 0; font: 500 12.5px/1.7 var(--body-font); color: var(--text-2); }
+.qa-src span { margin-right: 6px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; font-size: 11.5px; }
+.qa-src a { color: var(--text-2); text-decoration: underline; text-decoration-color: rgba(var(--ink-rgb), .3); text-underline-offset: 3px; }
+.qa-src a:hover { color: var(--ink); }
+.tk-proof__h { margin: 0; font: 600 clamp(18px, 1.4vw, 21px)/1.3 var(--title-font); color: var(--ink); }

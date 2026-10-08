@@ -3201,6 +3201,8 @@ window.LicterFR = {
     "et",
   ", co-founders of Licter":
     ", cofondateurs de Licter",
+  "Sources":
+    "Sources",
   "METHOD":
     "MÉTHODE",
   "How it runs":
@@ -4052,6 +4054,8 @@ window.LicterFR = {
     "et",
   ", co-founders of Licter":
     ", cofondateurs de Licter",
+  "Sources":
+    "Sources",
   "Frequently asked questions about Talkwalker.":
     "Questions fréquentes sur Talkwalker.",
   "Is Licter a Talkwalker agency?":
@@ -4516,8 +4520,6 @@ window.LicterFR = {
     "Cision, depuis 2021",
   "Brighton, UK, 2007":
     "Brighton, Royaume-Uni, 2007",
-  "Sources":
-    "Sources",
   "100 million online sources, per the vendor":
     "100 millions de sources en ligne, selon l'éditeur",
   "Consumer study":
@@ -5878,6 +5880,58 @@ window.LicterFR = {
     "Claude : les cas d'usage où il compte.",
   "The limits of Claude, and how we make up for them.":
     "Les limites de Claude, et comment nous les compensons.",
+  "CLAUDE, IN DETAIL":
+    "CLAUDE, EN DÉTAIL",
+  "Claude and your brand: what it knows, what it looks up":
+    "Claude et votre marque : ce qu'il sait, ce qu'il cherche",
+  "How do I find out what Claude says about my brand?":
+    "Comment savoir ce que Claude dit de ma marque ?",
+  "To find out what Claude says about your brand, you have to question it the way your customers would, and your business customers in particular. You ask it choice questions, questions about the brand itself and comparisons with a named competitor. It is on choice questions that it recommends and rules out. Each question is asked several times: a single answer supports no conclusion.":
+    "Pour savoir ce que Claude dit de votre marque, il faut l'interroger comme le feraient vos clients, et en particulier vos clients professionnels. On lui pose des questions de choix, des questions sur la marque elle-même et des comparaisons avec un concurrent nommé. C'est sur les questions de choix qu'il recommande et écarte. Chaque question est posée plusieurs fois : une réponse isolée ne permet aucune conclusion.",
+  "The answer also depends on the account asking. Since September 2025, Claude can remember its users' projects and preferences, first on the Team and Enterprise plans. Incognito mode, open to everyone, starts from a blank page: it is the closest thing to the view of a customer discovering your category.":
+    "La réponse dépend aussi du compte qui pose la question. Depuis septembre 2025, Claude peut garder en mémoire les projets et les préférences de ses utilisateurs, d'abord sur les offres Team et Enterprise. Le mode incognito, ouvert à tous, repart d'une page blanche : c'est ce qui se rapproche le plus du regard d'un client qui découvre votre catégorie.",
+  "Claude with and without web search":
+    "Claude avec et sans recherche web",
+  "Claude with and without web search are two distinct sources of answers. Search was launched in March 2025 for paying subscribers in the United States, then opened to all plans, worldwide, in May 2025. When it searches, Claude cites the pages it read: you can then see where what it states comes from. Without search, no source is shown.":
+    "Claude avec et sans recherche web, ce sont deux sources de réponse distinctes. La recherche a été lancée en mars 2025 pour les abonnés payants aux États-Unis, puis ouverte à toutes les offres, partout dans le monde, en mai 2025. Quand il cherche, Claude cite les pages qu'il a lues : on voit alors d'où vient ce qu'il affirme. Sans recherche, aucune source n'est affichée.",
+  "Depending on the interface, search is turned on by hand, or Claude starts it on its own when it seems useful. On the Team and Enterprise plans, an administrator must first allow it for the whole organisation. A buyer can therefore question Claude without web search and get an answer from memory only. That is why we ask each question in both modes: the gap shows what is outdated in its memory.":
+    "Selon l'interface, la recherche s'active à la main, ou Claude la lance seul quand elle lui semble utile. Sur les offres Team et Enterprise, un administrateur doit d'abord l'autoriser pour toute l'organisation. Un acheteur peut donc interroger Claude sans recherche web et n'obtenir qu'une réponse de mémoire. C'est pourquoi nous posons chaque question dans les deux modes : l'écart montre ce qui est daté dans sa mémoire.",
+  "Where Claude gets what it knows about a brand":
+    "D'où Claude tire ce qu'il sait d'une marque",
+  "What Claude knows about a brand without searching comes from its training data. Anthropic describes it as a mix of public information on the internet, public and private datasets, and other sources. The company states that it does not access password-protected pages: a customer area or a restricted document does not get in that way.":
+    "Ce que Claude sait d'une marque sans chercher vient de ses données d'entraînement. Anthropic les décrit comme un mélange d'informations publiques sur internet, de jeux de données publics et privés, et d'autres sources. L'entreprise indique ne pas accéder aux pages protégées par un mot de passe : un espace client ou un document réservé n'y entre pas par ce biais.",
+  "This data stops at a date. For each model, Anthropic publishes a reliable knowledge cutoff: the date up to which what it knows is most complete and most reliable. After that date, what it knows is more partial. A name change, a new product or a recent acquisition can therefore escape it as long as it does not search the web.":
+    "Ces données s'arrêtent à une date. Pour chaque modèle, Anthropic publie une date de fiabilité des connaissances : celle jusqu'à laquelle ce qu'il sait est le plus complet et le plus sûr. Après cette date, ce qu'il sait est plus partiel. Un changement de nom, un nouveau produit ou un rachat récent peuvent donc lui échapper tant qu'il ne cherche pas sur le web.",
+  "Why Claude sometimes answers \"I don't know\"":
+    "Pourquoi Claude répond parfois « je ne sais pas »",
+  "Claude sometimes answers \"I don't know\", and that is no accident. The principles Anthropic published to guide its behaviour ask it to acknowledge its uncertainty or lack of knowledge when that is the case, without showing more or less confidence than it has. Faced with a poorly documented brand, it often says it does not know it.":
+    "Claude répond parfois « je ne sais pas », et ce n'est pas un hasard. Les principes publiés par Anthropic pour guider son comportement lui demandent de reconnaître son incertitude ou son manque de connaissances quand c'est le cas, sans montrer plus ou moins d'assurance qu'il n'en a. Face à une marque peu documentée, il dit souvent qu'il ne la connaît pas.",
+  "For a brand, this changes the nature of the risk. On Claude, a poorly documented brand is more often missing than misdescribed. An absence makes no noise, but it counts: a better documented competitor is cited in your place. Errors remain possible, as Anthropic acknowledges in its documentation: so you need to check both, the omission and the false information.":
+    "Pour une marque, cela change la nature du risque. Sur Claude, une marque mal documentée est plus souvent absente que mal décrite. Une absence ne fait pas de bruit, mais elle compte : un concurrent mieux documenté est cité à votre place. Les erreurs restent possibles, Anthropic le reconnaît dans sa documentation : il faut donc vérifier les deux, l'oubli et l'information fausse.",
+  "Who uses Claude, and why it matters":
+    "Qui utilise Claude, et pourquoi cela compte",
+  "Claude is mostly used for work. In February 2025, Anthropic published the analysis of about one million anonymised conversations: computing tasks came first, ahead of writing and editing. Since 2024, Anthropic has also offered an Enterprise plan for organisations, with shared internal documents and role-based access rights.":
+    "Claude est surtout utilisé pour travailler. En février 2025, Anthropic a publié l'analyse d'environ un million de conversations anonymisées : les tâches informatiques arrivaient en tête, devant l'écriture et l'édition. Depuis 2024, Anthropic propose aussi une offre Enterprise pour les organisations, avec des documents internes partagés et des droits d'accès par rôle.",
+  "That is what sets Claude apart for a brand. It is used to write, analyse and prepare decisions: its answers reach buyers, analysts and journalists. A purchasing memo or a market study prepared with it can repeat what it says about you, without your knowing. Your place in its answers therefore weighs on decision makers.":
+    "C'est ce qui distingue Claude pour une marque. Il sert à rédiger, analyser et préparer des décisions : ses réponses touchent des acheteurs, des analystes, des journalistes. Une note d'achat ou une étude de marché préparée avec lui peut reprendre ce qu'il dit de vous, sans que vous le sachiez. Votre place dans ses réponses pèse donc sur des décideurs.",
+  "ClaudeBot, Claude-SearchBot, Claude-User: Anthropic's crawlers":
+    "ClaudeBot, Claude-SearchBot, Claude-User : les robots d'Anthropic",
+  "Anthropic's crawlers are three, each with its own role. ClaudeBot collects content that may be used to train its models. Claude-SearchBot browses the web to improve Claude's search results. Claude-User visits a page when a user asks a question that calls for it. All three follow the instructions in the robots.txt file, where each is named on its own to be allowed or blocked.":
+    "Les robots d'Anthropic sont trois, chacun avec son rôle. ClaudeBot collecte des contenus qui peuvent servir à entraîner ses modèles. Claude-SearchBot parcourt le web pour améliorer les résultats de recherche de Claude. Claude-User visite une page quand un utilisateur pose une question qui le demande. Tous trois respectent les consignes du fichier robots.txt, où chacun se désigne par son propre nom pour être autorisé ou bloqué.",
+  "Blocking these crawlers does not have the same effect for each one. Blocking ClaudeBot signals that the site's future content should be excluded from training. Blocking Claude-SearchBot or Claude-User can reduce the site's visibility in search answers, according to Anthropic. An old block, set as a precaution, sometimes explains an absence: something to check with your technical teams.":
+    "Bloquer ces robots n'a pas le même effet selon le robot. Bloquer ClaudeBot signale que les futurs contenus du site doivent être exclus de l'entraînement. Bloquer Claude-SearchBot ou Claude-User peut réduire la visibilité du site dans les réponses de recherche, selon Anthropic. Un blocage ancien, posé par précaution, explique parfois une absence : à vérifier avec vos équipes techniques.",
+  "What to do if Claude gets your brand wrong, or ignores it":
+    "Que faire si Claude se trompe sur votre marque, ou l'ignore",
+  "If Claude gets your brand wrong or ignores it, rewording the question changes nothing. Nobody controls its answer, and it cannot be changed directly. You start by looking for the cause: an old page cited when it searches, information missing from public sources, or a crawler blocked on your site. When it searches, the sources it shows often point the way.":
+    "Si Claude se trompe sur votre marque ou l'ignore, reformuler la question n'y change rien. Personne ne contrôle sa réponse, et on ne peut pas la modifier directement. On commence par chercher la cause : une page ancienne citée quand il cherche, une information absente des sources publiques, ou un robot bloqué sur votre site. Quand il cherche, les sources qu'il affiche mettent souvent sur la piste.",
+  "You then act on public documentation: your site, with clear and current information, then the press and reference pages. When Claude searches, a corrected page can be picked up as soon as it finds it. When it answers from memory, nothing moves before a new model. Licter does not produce this content; your teams or your agencies do.":
+    "On agit ensuite sur la documentation publique : votre site, avec une information claire et à jour, puis la presse et les pages de référence. Quand Claude cherche, une page corrigée peut être reprise dès qu'il la trouve. Quand il répond de mémoire, rien ne bouge avant un nouveau modèle. Licter ne produit pas ces contenus ; vos équipes ou vos agences s'en chargent.",
+  "What tracking Claude delivers":
+    "Ce qu'un suivi de Claude livre",
+  "Tracking Claude first delivers an audit of its answers: your category's key questions, what it answers with and without web search, your place against competitors and the errors to correct. The same questions are then asked again every month, with the same wording, to follow how the answers and the sources cited evolve. Each finding is tied to the answers recorded.":
+    "Un suivi de Claude livre d'abord un audit des réponses : les questions clés de votre catégorie, ce qu'il répond avec et sans recherche web, votre place face aux concurrents et les erreurs à corriger. Les mêmes questions sont ensuite reposées chaque mois, avec les mêmes formulations, pour suivre l'évolution des réponses et des sources citées. Chaque constat est rattaché aux réponses relevées.",
+  "Claude is also compared with the other assistants, ChatGPT, Gemini, Perplexity and Grok, on the same questions: who cites you, who leaves you out, which differences in discourse appear. This tracking promises no result and does not replace social listening: Claude does not read the social conversation. We ask public questions, without sending any client data.":
+    "Claude est aussi comparé aux autres assistants, ChatGPT, Gemini, Perplexity et Grok, sur les mêmes questions : qui vous cite, qui vous oublie, quels écarts de discours apparaissent. Ce suivi ne promet aucun résultat et ne remplace pas l'écoute sociale : Claude ne lit pas la conversation des réseaux. Nous posons des questions publiques, sans transmettre de donnée client.",
   "Frequently asked questions about Claude.":
     "Questions fréquentes sur Claude.",
   "Is Licter a Claude agency?":
@@ -5948,6 +6002,58 @@ window.LicterFR = {
     "Gemini : les cas d'usage où il compte.",
   "The limits of Gemini, and how we make up for them.":
     "Les limites de Gemini, et comment nous les compensons.",
+  "GEMINI, IN DETAIL":
+    "GEMINI, EN DÉTAIL",
+  "Gemini, AI Overviews, AI Mode: what Google's AI says about your brand.":
+    "Gemini, AI Overviews, mode IA : ce que l'IA de Google dit de votre marque.",
+  "Gemini, AI Overviews and AI Mode: what is the difference?":
+    "Gemini, AI Overviews et mode IA : quelle différence ?",
+  "Gemini, AI Overviews and AI Mode are three ways into Google's AI. AI Overviews, called Aperçus IA in French, sum up a subject at the top of the results. AI Mode allows a deeper search, in the form of a conversation. Google states that both rely on its Gemini family of models; it launched them in France on 22 July 2026.":
+    "Gemini, les AI Overviews et le mode IA sont trois façons d'accéder à l'IA de Google. Les AI Overviews, appelés Aperçus IA en français, résument un sujet en haut des résultats. Le mode IA permet une recherche plus poussée, sous forme de conversation. Google indique que les deux reposent sur sa famille de modèles Gemini ; il les a lancés en France le 22 juillet 2026.",
+  "The Gemini app, for its part, is a full assistant, available on the web, in Android and in Google's tools. People do not ask it questions the way they type in the search bar, and its answers do not always match those of AI Overviews. That is why we compare these three formats on the same questions, instead of watching only one.":
+    "L'application Gemini, elle, est un assistant à part entière, présent sur le web, dans Android et dans les outils Google. On ne lui pose pas les questions comme dans la barre de recherche, et ses réponses ne recoupent pas toujours celles des AI Overviews. C'est pourquoi nous comparons ces trois formats sur les mêmes questions, au lieu d'en observer un seul.",
+  "Where Gemini's answers come from":
+    "D'où viennent les réponses de Gemini",
+  "Gemini's answers draw on Google Search, but not only. According to Google's help pages, the app can also use, on its own, public information from Google Maps, YouTube, Google Flights and Google Hotels. A brand is therefore described from what Google's ecosystem knows about it: indexed pages, Business Profile, reviews, videos.":
+    "Les réponses de Gemini s'appuient sur la recherche Google, mais pas seulement. Selon l'aide de Google, l'application peut aussi utiliser d'elle-même les informations publiques de Google Maps, de YouTube, de Google Flights et de Google Hotels. Une marque y est donc décrite à partir de ce que l'écosystème Google sait d'elle : pages indexées, fiche d'établissement, avis, vidéos.",
+  "When Gemini draws on web pages, it can show a Sources button that opens the list of links related to its answer. Google states that not every answer includes one. These links are valuable: they show which pages weigh on what the assistant says about you, and which ones would need correcting or completing.":
+    "Quand Gemini s'appuie sur des pages web, il peut afficher un bouton Sources qui ouvre la liste des liens liés à sa réponse. Google précise que toutes les réponses n'en comportent pas. Ces liens sont précieux : ils montrent quelles pages pèsent sur ce que l'assistant dit de vous, et lesquelles il faudrait corriger ou compléter.",
+  "Why your Google Business Profile matters":
+    "Pourquoi votre fiche Google compte",
+  "Your Google Business Profile matters, because it is part of what Google knows about you. Google states that complete and accurate profiles are more likely to show up in local results, and that you cannot pay for a better local ranking. Since Gemini can draw on public information from Maps, an outdated profile can end up in its answers.":
+    "Votre fiche d'établissement Google compte, parce qu'elle fait partie de ce que Google sait de vous. Google indique que les fiches complètes et exactes ont plus de chances d'apparaître dans les résultats locaux, et qu'on ne peut pas payer pour un meilleur classement local. Comme Gemini peut puiser dans les informations publiques de Maps, une fiche datée peut finir dans ses réponses.",
+  "Reviews weigh just as much. In March 2026, Google launched Ask Maps in the United States and India, a conversational search in Maps built on Gemini. It states that it analyses information from more than 300 million places, including reviews from more than 500 million contributors. What your customers write on your profile thus becomes material for answers.":
+    "Les avis pèsent tout autant. En mars 2026, Google a lancé aux États-Unis et en Inde Ask Maps, une recherche conversationnelle dans Maps fondée sur Gemini. Il indique qu'elle analyse les informations de plus de 300 millions de lieux, dont les avis de plus de 500 millions de contributeurs. Ce que vos clients écrivent sur votre fiche devient ainsi matière à réponse.",
+  "Being cited in Google's AI answers":
+    "Être cité dans les réponses IA de Google",
+  "Being cited in Google's AI answers does not take a secret recipe. Google says so in its documentation: to appear as a link in AI Overviews or AI Mode, a page must be indexed and eligible to show in Search with a snippet. According to Google, there is no additional requirement and no special optimization to plan for.":
+    "Être cité dans les réponses IA de Google ne demande pas de recette secrète. Google l'écrit dans sa documentation : pour apparaître comme lien dans les AI Overviews ou le mode IA, une page doit être indexée et pouvoir s'afficher dans la recherche avec un extrait. Il n'y a, selon lui, aucune exigence supplémentaire ni optimisation spéciale à prévoir.",
+  "Google therefore points to the usual good practices: helpful and reliable content, crawlable pages, text backed by quality images and videos, accurate structured data. SEO helps, since Gemini draws on Google Search, but it is not enough: other people's pages that talk about you (press, reviews, comparison articles) count too.":
+    "Google renvoie donc aux bonnes pratiques habituelles : des contenus utiles et fiables, des pages explorables, du texte accompagné d'images et de vidéos de qualité, des données structurées exactes. Le SEO aide, puisque Gemini s'appuie sur la recherche Google, mais il ne suffit pas : les pages des autres qui parlent de vous (presse, avis, comparatifs) comptent aussi.",
+  "Google-Extended and the Search Console setting":
+    "Google-Extended et le réglage de la Search Console",
+  "Google-Extended is a token written into a site's robots.txt file. According to Google, it decides whether crawled content may be used to train future Gemini models and to ground the answers of the Gemini app. It has no crawler of its own, and Google states that it changes neither a site's presence in Search nor its ranking.":
+    "Google-Extended est un repère que l'on inscrit dans le fichier robots.txt d'un site. Selon Google, il décide si les contenus explorés peuvent servir à entraîner les futurs modèles Gemini et à étayer les réponses de l'application Gemini. Il n'a pas de robot à part, et Google précise qu'il ne change ni la présence d'un site dans la recherche, ni son classement.",
+  "AI Overviews and AI Mode fall under another setting. Tested from June 2026, then opened to all sites at the end of August, a Search Console control lets a site leave these features, as well as AI Overviews in Discover. A site that opts out no longer gets impressions or traffic from these answers: a decision to make with your technical teams.":
+    "Les AI Overviews et le mode IA relèvent d'un autre réglage. Testé à partir de juin 2026, puis ouvert à tous les sites fin août, un contrôle de la Search Console permet de sortir de ces fonctions, comme des AI Overviews de Discover. Un site qui s'en retire ne reçoit plus d'impressions ni de trafic de ces réponses : une décision à prendre avec vos équipes techniques.",
+  "How to find out what Gemini says about your brand":
+    "Comment savoir ce que Gemini dit de votre marque",
+  "To find out what Gemini says about your brand, you have to ask it your customers' questions, then ask the same ones in Google Search to read AI Overviews and AI Mode. Gemini can personalise its answers from past conversations and connected Google apps: so we question it without that history, like a customer discovering your category.":
+    "Pour savoir ce que Gemini dit de votre marque, il faut lui poser les questions de vos clients, puis poser les mêmes à la recherche Google pour lire les AI Overviews et le mode IA. Gemini peut personnaliser ses réponses à partir des conversations passées et des applications Google connectées : nous l'interrogeons donc sans cet historique, comme un client qui découvre votre catégorie.",
+  "Search Console offers another view. Google is rolling out data there on how pages appear in its generative AI features: impressions, and the list of pages that show up in the answers. This data says whether your site is used, not what the AI says about you, nor whom it recommends in your place. For that, you have to read the answers themselves, several times.":
+    "La Search Console apporte un autre éclairage. Google y déploie des données sur la présence des pages dans ses fonctions d'IA générative : des impressions, et la liste des pages qui apparaissent dans les réponses. Elles disent si votre site est repris, pas ce que l'IA dit de vous, ni qui elle recommande à votre place. Pour cela, il faut lire les réponses elles-mêmes, plusieurs fois.",
+  "What to do about an error in Gemini":
+    "Que faire d'une erreur dans Gemini",
+  "An error in Gemini cannot be fixed directly. The app lets you rate an answer as bad and say why, or report a legal issue, but nobody controls what an AI writes. And since Gemini draws on Google Search, an error in one often shows up in the other: you have to look at both.":
+    "Une erreur dans Gemini ne se corrige pas directement. L'application permet de noter une réponse comme mauvaise en expliquant pourquoi, ou de signaler un problème juridique, mais personne ne contrôle ce qu'écrit une IA. Et comme Gemini s'appuie sur la recherche Google, une erreur dans l'un se retrouve souvent dans l'autre : il faut regarder les deux.",
+  "So you have to trace back to the source. The links Gemini shows help, as does its double-check feature, which compares its statements with what Google Search finds. Once the faulty page is found (your site, your profile, an old article), you correct or complete it, then measure whether the answer changes in the months that follow.":
+    "Il faut donc remonter à la source. Les liens affichés par Gemini aident, tout comme sa fonction de vérification, qui confronte ses phrases à ce que trouve la recherche Google. Une fois la page fautive repérée (votre site, votre fiche, un article ancien), on la corrige ou on la complète, puis on mesure si la réponse change dans les mois qui suivent.",
+  "What Gemini tracking delivers":
+    "Ce qu'un suivi Gemini livre",
+  "Gemini tracking asks the same questions every month, several times each, in Gemini and in Google Search's AI answers. It delivers how the answers evolve, the sources cited collected and sorted, your place against your competitors and a note for communications. The same questions can be put to ChatGPT, Claude, Perplexity or Grok, to compare.":
+    "Un suivi Gemini reprend chaque mois les mêmes questions, posées plusieurs fois, dans Gemini et dans les réponses IA de la recherche Google. Il livre l'évolution des réponses, les sources citées relevées et classées, votre place face à vos concurrents et une note pour la communication. Les mêmes questions peuvent être posées à ChatGPT, Claude, Perplexity ou Grok, pour comparer.",
+  "Tracking says what to correct, and where to act; it promises no result. Licter does not produce the content: your teams or your agencies do. Nor does Gemini read the social conversation: it completes social listening, without replacing it. To start, we offer a free AI listening flash on your brand, sent within 48 hours.":
+    "Le suivi dit ce qu'il faut corriger, et où agir ; il ne promet aucun résultat. Licter ne produit pas les contenus : vos équipes ou vos agences s'en chargent. Gemini ne lit pas non plus la conversation des réseaux : il complète l'écoute sociale, sans la remplacer. Pour commencer, nous proposons un flash AI listening offert sur votre marque, envoyé sous 48 heures.",
   "Frequently asked questions about Gemini.":
     "Questions fréquentes sur Gemini.",
   "Is Licter a Gemini agency?":
@@ -6028,6 +6134,58 @@ window.LicterFR = {
     "Perplexity : les cas d'usage où il compte.",
   "The limits of Perplexity, and how we make up for them.":
     "Les limites de Perplexity, et comment nous les compensons.",
+  "PERPLEXITY, IN DETAIL":
+    "PERPLEXITY, EN DÉTAIL",
+  "Your brand in Perplexity: the sources it cites":
+    "Votre marque dans Perplexity : les sources qu'il cite",
+  "How Perplexity builds an answer":
+    "Comment Perplexity construit une réponse",
+  "Perplexity builds each answer from a web search, run at the moment the question is asked. According to its help center, it first interprets the question, then searches for articles, websites and journals, and summarises what it found. Each answer carries numbered citations that link to the original pages.":
+    "Perplexity construit chaque réponse à partir d'une recherche sur le web, faite au moment où la question est posée. Selon son centre d'aide, il interprète d'abord la question, cherche ensuite des articles, des sites et des revues, puis résume ce qu'il a trouvé. Chaque réponse porte des citations numérotées qui renvoient aux pages d'origine.",
+  "Perplexity does not rely on a single AI model. Subscribers can choose the one that writes the answer, among them its own model, Sonar, and models from OpenAI, Anthropic or Google. The conversation also keeps the context of previous questions. Two people asking the same question therefore do not necessarily get the same answer.":
+    "Perplexity ne s'appuie pas sur un seul modèle d'IA. Les abonnés peuvent choisir celui qui rédige la réponse, parmi lesquels son propre modèle, Sonar, et des modèles d'OpenAI, d'Anthropic ou de Google. La conversation garde aussi le contexte des questions précédentes. Deux personnes qui posent la même question n'obtiennent donc pas forcément la même réponse.",
+  "Why the sources Perplexity cites can be measured":
+    "Pourquoi les sources citées par Perplexity sont mesurables",
+  "The sources Perplexity cites can be measured because they are shown, numbered, next to each answer. An assistant answering from memory leaves you to guess where what it says comes from; Perplexity shows it. You can therefore record the sites cited, count how often each one comes back on your category's questions, and see which ones talk about you.":
+    "Les sources citées par Perplexity sont mesurables parce qu'elles sont affichées, numérotées, à côté de chaque réponse. Un assistant qui répond de mémoire laisse deviner d'où vient ce qu'il dit ; Perplexity le montre. On peut donc relever les sites cités, compter combien de fois chacun revient sur les questions de votre catégorie, et voir lesquels parlent de vous.",
+  "This measurement only makes sense over several tries and over time. The same question does not always give the same answer, nor the same list of sources. We therefore ask each question several times, every month, then record and sort the sources cited. A page that comes back on every try weighs more than a page that appeared only once.":
+    "Cette mesure n'a de sens que sur plusieurs essais et dans la durée. La même question ne donne pas toujours la même réponse, ni la même liste de sources. Nous posons donc chaque question plusieurs fois, chaque mois, puis nous relevons et classons les sources citées. Une page qui revient à chaque essai pèse plus qu'une page apparue une seule fois.",
+  "Which sources Perplexity puts forward":
+    "Quelles sources Perplexity met en avant",
+  "The sources Perplexity puts forward are, by its own account, recognised news outlets, academic publications and established sites. Its advanced search, Pro Search, also draws on forums and videos, and users can restrict it to certain content, such as academic publications or finance. These categories remain broad: they do not say which sites count in your market.":
+    "Les sources que Perplexity met en avant sont, selon lui, des médias reconnus, des publications académiques et des sites établis. Sa recherche avancée, Pro Search, puise aussi dans les forums et les vidéos, et l'utilisateur peut la restreindre à certains contenus, comme les publications académiques ou la finance. Ces catégories restent larges : elles ne disent pas quels sites comptent dans votre marché.",
+  "The list that matters is therefore measured on your own questions. On Perplexity, recent pages, the press and forums weigh heavily, but only a record on your category says which ones count for you. Perplexity picks its sources by its own criteria: a site missing from its answers is not, for all that, a site that is useless to your customers.":
+    "La liste utile se mesure donc sur vos propres questions. Sur Perplexity, les pages récentes, la presse et les forums pèsent lourd, mais seul un relevé sur votre catégorie dit lesquels comptent pour vous. Perplexity choisit ses sources selon ses propres critères : un site absent de ses réponses n'est pas pour autant un site inutile pour vos clients.",
+  "How to find out whether Perplexity cites your site":
+    "Comment savoir si votre site est cité par Perplexity",
+  "To find out whether Perplexity cites your site, you have to ask it your customers' questions and read the numbered sources, not just the text. Two situations differ: your brand is named in the answer, or your site is among the sources. You can be cited without being named, and named on the basis of pages written by others.":
+    "Pour savoir si votre site est cité par Perplexity, il faut lui poser les questions de vos clients et lire les sources numérotées, pas seulement le texte. Deux situations se distinguent : votre marque est nommée dans la réponse, ou votre site figure parmi les sources. On peut être cité sans être nommé, et nommé à partir de pages écrites par d'autres.",
+  "The record covers three families of questions: choice questions, such as \"which brand for this need?\", questions about your brand and comparisons with a competitor. For each one, you note the brands cited, their order and the sites given as sources. It is better to ask each question in a new thread, with no context, like a customer discovering your category.":
+    "Le relevé porte sur trois familles de questions : les questions de choix, du type « quelle marque pour ce besoin ? », les questions sur votre marque et les comparaisons avec un concurrent. Pour chacune, on note les marques citées, leur ordre et les sites en source. Mieux vaut poser chaque question dans un nouveau fil, sans contexte, comme un client qui découvre votre catégorie.",
+  "PerplexityBot and Perplexity-User: the two crawlers to know":
+    "PerplexityBot et Perplexity-User : les deux robots à connaître",
+  "PerplexityBot and Perplexity-User are the two agents through which Perplexity visits sites. PerplexityBot is used to surface and link sites in Perplexity's results; the publisher states that it does not collect content to train AI models. It is set in the robots.txt file, and Perplexity recommends allowing it for a site to appear in its results.":
+    "PerplexityBot et Perplexity-User sont les deux agents par lesquels Perplexity visite les sites. PerplexityBot sert à faire apparaître et à lier des sites dans les résultats de Perplexity ; l'éditeur indique qu'il ne collecte pas de contenus pour entraîner des modèles d'IA. Il se règle dans le fichier robots.txt, et Perplexity recommande de l'autoriser pour qu'un site apparaisse dans ses résultats.",
+  "Perplexity-User, for its part, visits a page when a user asks a question, to help answer it and cite a link. Since the visit is requested by a person, Perplexity states that this agent generally ignores robots.txt. Each setting is independent and can take up to 24 hours to apply. A web application firewall can also block these crawlers: a point to check with your technical teams.":
+    "Perplexity-User, lui, visite une page quand un utilisateur pose une question, pour l'aider à répondre et citer un lien. Comme la visite est demandée par une personne, Perplexity précise que cet agent ignore en général le robots.txt. Chaque réglage est indépendant et peut mettre jusqu'à 24 heures à s'appliquer. Un pare-feu applicatif peut aussi bloquer ces robots : un point à vérifier avec vos équipes techniques.",
+  "What your competitors have in Perplexity, and you do not":
+    "Ce que vos concurrents ont dans Perplexity, et pas vous",
+  "What your competitors have in Perplexity and you do not can be read in its sources. On a choice question, it cites a few brands and relies on specific pages for each one. By comparing the sources that name a competitor with those that name you, you see where it is present and you are absent: a comparison article, a press article, a forum discussion, a review site.":
+    "Ce que vos concurrents ont dans Perplexity et que vous n'avez pas se lit dans ses sources. Sur une question de choix, il cite quelques marques et s'appuie sur des pages précises pour chacune. En comparant les sources qui nomment un concurrent à celles qui vous nomment, on voit où il est présent et vous absent : un comparatif, un article de presse, une discussion de forum, un site d'avis.",
+  "This gap is often more useful than an overall score, because it points to real pages rather than an impression. It also shows newcomers: a brand that enters the sources from one month to the next, and the pages that brought it in. It is the list of your competitors' sources that you do not have, and it is followed over time.":
+    "Cet écart est souvent plus utile qu'un score global, parce qu'il désigne des pages réelles plutôt qu'une impression. Il montre aussi les nouveaux venus : une marque qui entre dans les sources d'un mois sur l'autre, et les pages qui l'y ont fait entrer. C'est la liste des sources de vos concurrents que vous n'avez pas, et elle se suit dans le temps.",
+  "What to do if Perplexity's answer is unfavourable to you":
+    "Que faire si la réponse de Perplexity vous est défavorable",
+  "If Perplexity's answer is unfavourable to you, the first thing to read is its list of sources. An error, a harsh judgement or outdated information usually comes from a specific page: an old article, a comparison never updated, a forum thread. Nobody can change an AI's answer directly; you can, however, act on the pages it cites.":
+    "Si la réponse de Perplexity vous est défavorable, la première chose à lire est la liste de ses sources. Une erreur, un jugement sévère ou une information datée vient en général d'une page précise : un article ancien, un comparatif jamais mis à jour, un fil de forum. Personne ne peut modifier directement la réponse d'une IA ; on peut en revanche agir sur les pages qu'elle cite.",
+  "You then need to correct or complete these sources: your site first, with clear and current information, then the press and reference pages. Since Perplexity searches on every question, a new or corrected page can be picked up as soon as it is found, without waiting for a new model. Nothing is guaranteed for all that: you act on the sources, then measure whether the answer changes.":
+    "Il faut ensuite corriger ou compléter ces sources : votre site d'abord, avec une information claire et à jour, puis la presse et les pages de référence. Comme Perplexity cherche à chaque question, une page nouvelle ou corrigée peut être reprise dès qu'elle est trouvée, sans attendre un nouveau modèle. Rien n'est garanti pour autant : on agit sur les sources, puis on mesure si la réponse change.",
+  "What Perplexity tracking delivers":
+    "Ce qu'un suivi Perplexity livre",
+  "Perplexity tracking first delivers an audit of the answers: your category's key questions, what Perplexity answers, your place against competitors and the errors to correct. The same questions are then asked again every month, with how the answers change, the sources cited and a note for communications. Licter does not produce the content; your teams or your agencies do.":
+    "Un suivi Perplexity livre d'abord un audit des réponses : les questions clés de votre catégorie, ce que répond Perplexity, votre place face aux concurrents et les erreurs à corriger. Les mêmes questions sont ensuite reposées chaque mois, avec l'évolution des réponses, les sources citées et une note pour la communication. Licter ne produit pas les contenus ; vos équipes ou vos agences s'en chargent.",
+  "Perplexity is not read on its own. We compare its answers with those of ChatGPT, Claude, Gemini and Grok on the same questions, and cross it with Google News for the press. An audit shows what the assistant answers, not how many people ask it these questions: to estimate that, it is crossed with search listening. No client data is sent to the AI.":
+    "Perplexity ne se lit pas seul. Nous comparons ses réponses à celles de ChatGPT, Claude, Gemini et Grok sur les mêmes questions, et nous le croisons avec Google Actualités pour la presse. Un audit montre ce que l'assistant répond, pas combien de personnes lui posent ces questions : pour l'estimer, on le croise avec le search listening. Aucune donnée client n'est transmise à l'IA.",
   "Frequently asked questions about Perplexity.":
     "Questions fréquentes sur Perplexity.",
   "Is Licter a Perplexity agency?":
@@ -6106,6 +6264,58 @@ window.LicterFR = {
     "Grok : les cas d'usage où il compte.",
   "The limits of Grok, and how we make up for them.":
     "Les limites de Grok, et comment nous les compensons.",
+  "GROK, IN DETAIL":
+    "GROK, EN DÉTAIL",
+  "What Grok says about your brand, and why.":
+    "Ce que Grok dit de votre marque, et pourquoi.",
+  "What is Grok, and where do its answers come from?":
+    "Qu'est-ce que Grok, et d'où viennent ses réponses ?",
+  "Grok is xAI's conversational assistant, unveiled in November 2023 and built into the X network. From the announcement, xAI highlighted its real-time access to what is posted on X. That is what sets it apart from other assistants: asked about a brand, it can read what X accounts have been saying about it for the past few hours, not only what it learned during training.":
+    "Grok est l'assistant conversationnel de xAI, présenté en novembre 2023 et intégré au réseau X. Dès l'annonce, xAI a mis en avant son accès en temps réel à ce qui se publie sur X. C'est ce qui le sépare des autres assistants : interrogé sur une marque, il peut lire ce que les comptes de X en disent depuis quelques heures, et pas seulement ce qu'il a appris pendant son entraînement.",
+  "Depending on the question, Grok decides for itself whether to search public posts on X, the web, or both. Since December 2024, it shows citations so you can go back to the source and check. For a brand, these citations are valuable: they show which accounts and which posts fed the answer, and therefore where what it says about you is decided.":
+    "Selon la question, Grok décide lui-même de chercher dans les publications publiques de X, sur le web, ou dans les deux. Depuis décembre 2024, il affiche des citations pour remonter à la source et vérifier. Pour une marque, ces citations sont précieuses : elles montrent quels comptes et quelles publications ont nourri la réponse, donc où se joue ce qu'il dit de vous.",
+  "Why Grok reacts fast to a controversy on X":
+    "Pourquoi Grok réagit vite à une polémique sur X",
+  "Grok reacts fast to a controversy on X because it reads the network where the controversy starts. X remains the network of live news: journalists, politicians and experts often react there first, and it is often there that a topic turns into an affair. The posts carrying the controversy quickly become sources for the assistant, which can pick them up within hours, well before other assistants.":
+    "Grok réagit vite à une polémique sur X parce qu'il lit le réseau où elle naît. X reste le réseau de l'actualité en direct : journalistes, politiques et experts y réagissent souvent les premiers, et c'est souvent là qu'un sujet devient une affaire. Les publications qui portent la polémique deviennent vite des sources pour l'assistant, qui peut les reprendre en quelques heures, bien avant les autres assistants.",
+  "This speed has a downside. At the height of a spike, the most visible posts are often the most clear-cut, not necessarily the most accurate. Grok can then pick up the tone of the ongoing controversy, its phrases, sometimes its shortcuts. An answer recorded at that moment describes the state of the conversation on X, not general opinion about your brand.":
+    "Cette vitesse a un revers. Au plus fort d'un pic, les publications les plus visibles sont souvent les plus tranchées, pas forcément les plus exactes. Grok peut alors reprendre le ton de la polémique en cours, ses formules, parfois ses raccourcis. Une réponse relevée à ce moment-là décrit l'état de la conversation sur X, pas l'opinion générale sur votre marque.",
+  "Grok also answers in public, in X threads":
+    "Grok répond aussi en public, dans les fils de X",
+  "Grok also answers in public, not only in a private chat window. Since March 2025, X users can mention it in a reply to a post and ask it a question; its answer appears in the thread. Many use it to ask whether a post is true. On a topic that concerns you, its answer is read by everyone following the discussion.":
+    "Grok répond aussi en public, et pas seulement dans une fenêtre de discussion privée. Depuis mars 2025, les utilisateurs de X peuvent le mentionner dans une réponse à une publication et lui poser une question ; sa réponse s'affiche dans le fil. Beaucoup s'en servent pour lui demander si une publication dit vrai. Sur un sujet qui vous concerne, sa réponse est lue par tous ceux qui suivent la discussion.",
+  "Since December 2024, a Grok button also appears on posts in the home timeline, to ask the assistant about a post. During a crisis, these answers matter as much as the posts themselves: they sum up the affair for those arriving midway. That is why we read what Grok says alongside the conversation on X, never on its own.":
+    "Depuis décembre 2024, un bouton Grok apparaît aussi sur les publications du fil d'actualité, pour interroger l'assistant sur un message. Pendant une crise, ces réponses comptent autant que les publications elles-mêmes : elles résument l'affaire pour ceux qui arrivent en cours de route. C'est pourquoi nous lisons ce que dit Grok avec la conversation de X, jamais seul.",
+  "Grok and rumours":
+    "Grok et les rumeurs",
+  "Grok and rumours are a topic of their own. xAI wrote it from the assistant's announcement: despite its access to search, the model can produce false or contradictory information. X's help centre adds that it may confidently state inaccurate information, missummarize or miss some context, and asks everyone to check for themselves what they receive.":
+    "Grok et les rumeurs forment un sujet à part. xAI l'a écrit dès l'annonce de l'assistant : malgré son accès à la recherche, le modèle peut produire des informations fausses ou contradictoires. L'aide de X ajoute qu'il peut affirmer avec assurance une information inexacte, mal résumer ou manquer de contexte, et invite chacun à vérifier par lui-même ce qu'il reçoit.",
+  "For a brand, the risk is simple to describe. A rumour started on X can be picked up by Grok while it circulates, then stay in its answers once it has died down on the network, especially if no denial is as visible as the rumour. It is one of the things we check: whether a rumour survives in Grok after the spike, and which posts keep carrying it.":
+    "Pour une marque, le risque se décrit simplement. Une rumeur lancée sur X peut être reprise par Grok tant qu'elle circule, puis rester dans ses réponses une fois retombée sur le réseau, surtout si aucun démenti n'est aussi visible qu'elle. C'est l'une des choses que nous vérifions : si une rumeur survit dans Grok après le pic, et quelles publications continuent de la porter.",
+  "How do you find out what Grok says about your brand?":
+    "Comment savoir ce que Grok dit de votre marque ?",
+  "To find out what Grok says about your brand, you have to ask it your customers' questions, and not just once. The same question does not always give the same answer, and with Grok the answer also depends on the moment: a quiet week and a day of spike on X do not give the same picture. So we ask the same questions several times, every month, and compare.":
+    "Pour savoir ce que Grok dit de votre marque, il faut lui poser les questions de vos clients, et pas une seule fois. La même question ne donne pas toujours la même réponse, et chez Grok la réponse dépend aussi du moment : une semaine calme et un jour de pic sur X ne donnent pas la même image. Nous posons donc les mêmes questions plusieurs fois, chaque mois, et nous comparons.",
+  "The record covers what comes back: the strengths and weaknesses attributed to your brand, the competitors cited and their order, the X accounts and posts put forward, the web pages cited. These sources are collected and sorted. They say whether Grok relies on the press, on your own accounts, or on a few very active voices on the network.":
+    "Le relevé porte sur ce qui revient : les qualités et les défauts attribués à votre marque, les concurrents cités et leur ordre, les comptes et les publications de X mis en avant, les pages web citées. Ces sources sont relevées et classées. Elles disent si Grok s'appuie sur la presse, sur vos propres comptes, ou sur quelques voix très actives sur le réseau.",
+  "Grok during and after a crisis":
+    "Grok pendant et après une crise",
+  "During a crisis, Grok becomes one more relay. What it answers about your brand shows how the affair is summed up, which accounts serve as a reference and which facts are kept. We record these answers alongside the conversation on X, followed as it happens with tools such as Visibrain, to see what the assistant picks up and what it leaves out.":
+    "Pendant une crise, Grok devient un relais de plus. Ce qu'il répond sur votre marque montre comment l'affaire est résumée, quels comptes servent de référence et quels faits sont retenus. Nous relevons ces réponses à côté de la conversation de X, suivie à l'instant avec des outils comme Visibrain, pour voir ce que l'assistant reprend et ce qu'il laisse de côté.",
+  "For a crisis in progress, that is the role of Vigie 360: an analyst alerts you within 15 minutes, 24/7, then a daily update follows the conversation until it dies down. Tracking Grok serves another purpose: checking what remains in its answers once things have calmed down, and whether they still cite the posts from the spike.":
+    "Pour une crise en cours, c'est le rôle de Vigie 360 : un analyste vous alerte en 15 minutes, 24 h/24, puis un point quotidien suit la conversation jusqu'à ce qu'elle retombe. Le suivi de Grok sert à autre chose : vérifier ce qui reste dans ses réponses une fois le calme revenu, et si elles citent encore les publications du pic.",
+  "What to do about a false answer from Grok?":
+    "Que faire d'une réponse fausse de Grok ?",
+  "A false answer from Grok is not corrected by writing to the assistant. You have to go back to what feeds it: its citations often show the X posts or web pages the error comes from. An old post widely shared, an account repeating outdated information, a page never updated: each cause calls for a different action.":
+    "Une réponse fausse de Grok ne se corrige pas en écrivant à l'assistant. Il faut remonter à ce qui la nourrit : ses citations montrent souvent les publications de X ou les pages web d'où vient l'erreur. Une publication ancienne très reprise, un compte qui répète une information datée, une page jamais mise à jour : chaque cause appelle une action différente.",
+  "The action then plays out on the sources: a clear statement on your accounts, an update of your pages, a reply to the accounts that matter on the topic. Licter does not produce this content; your teams or your agencies do. We then measure, question by question, whether the answer changes, without promising that it will.":
+    "L'action se joue alors sur les sources : une prise de parole claire sur vos comptes, une mise à jour de vos pages, une réponse aux comptes qui comptent sur le sujet. Licter ne produit pas ces contenus ; vos équipes ou vos agences s'en chargent. Nous mesurons ensuite, question par question, si la réponse change, sans promettre qu'elle changera.",
+  "What tracking Grok delivers, and what it does not tell":
+    "Ce qu'un suivi de Grok livre, et ce qu'il ne dit pas",
+  "Tracking Grok first delivers an audit of its answers: your category's key questions, what the assistant answers, your place against competitors and the errors to correct. It continues every month with the same questions, how the answers evolve, the sources cited and a note for communications. A comparison with ChatGPT, Claude, Gemini and Perplexity shows who cites you, and who does not.":
+    "Un suivi de Grok livre d'abord un audit des réponses : les questions clés de votre catégorie, ce que répond l'assistant, votre place face aux concurrents et les erreurs à corriger. Il se poursuit chaque mois avec les mêmes questions, l'évolution des réponses, les sources citées et une note pour la communication. Une comparaison avec ChatGPT, Claude, Gemini et Perplexity montre qui vous cite, et qui ne vous cite pas.",
+  "This tracking does not tell everything. Grok relies on X and the web, and X is only one network among others: a brand criticised elsewhere but little discussed on X can seem spared in its answers, and the reverse is true too. What Grok says does not replace what your customers say themselves: that conversation is read through social listening, on X as on the other networks.":
+    "Ce suivi ne dit pas tout. Grok s'appuie sur X et sur le web, et X n'est qu'un réseau parmi d'autres : une marque critiquée ailleurs mais peu discutée sur X peut sembler épargnée dans ses réponses, et l'inverse est vrai aussi. Ce que dit Grok ne remplace pas ce que disent vos clients eux-mêmes : cette conversation se lit avec l'écoute sociale, sur X comme sur les autres réseaux.",
   "Frequently asked questions about Grok.":
     "Questions fréquentes sur Grok.",
   "Is Licter a Grok agency?":
@@ -6176,6 +6386,22 @@ window.LicterFR = {
     "Comment nous écoutons Facebook.",
   "Facebook social listening: use cases.":
     "Social listening Facebook : les cas d'usage.",
+  "What can you listen to on Facebook?":
+    "Que peut-on écouter sur Facebook ?",
+  "On Facebook, the conversation about a brand is read in several places at once. There are page posts, but above all comment threads, where customers answer each other and swap advice. There are public groups, whose members and posts anyone can see without joining. And there are pages run by local media, neighbourhoods or associations, where a shop or a service is often discussed without the brand being there. Useful listening reads these spaces together, not only the official page.":
+    "Sur Facebook, la conversation sur une marque se lit à plusieurs endroits à la fois. Il y a les publications des pages, mais surtout les fils de commentaires, où les clients se répondent entre eux et se donnent des conseils. Il y a les groupes publics, dont les membres et les publications sont visibles par tous, sans y adhérer. Il y a enfin les pages de médias locaux, de quartiers ou d'associations, où un magasin ou un service est souvent discuté sans que la marque y soit présente. Une écoute utile lit ces espaces ensemble, pas seulement la page officielle.",
+  "What makes listening on Facebook different?":
+    "Qu'est-ce qui distingue l'écoute de Facebook ?",
+  "Facebook is a slow conversation network. A topic moves more slowly there than on X, but it lasts: a comment thread can stay active for several days, and an old post can come back when someone shares it again. The tone is direct, often personal, with detailed accounts of experience. Facebook also offers a public reference point: in Europe, Meta's Ad Library shows every ad delivered, archived for a year after its last delivery. You can therefore link a competitor's campaign to the reactions it draws in the comments.":
+    "Facebook est un réseau de conversation lente. Un sujet y avance moins vite que sur X, mais il dure : un fil de commentaires peut rester actif plusieurs jours, et une publication ancienne peut revenir quand quelqu'un la partage à nouveau. Le ton est direct, souvent personnel, avec des récits d'expérience détaillés. Facebook offre aussi un repère public : en Europe, la Bibliothèque publicitaire de Meta montre toutes les publicités diffusées, archivées un an après leur dernière diffusion. On peut ainsi relier la campagne d'un concurrent aux réactions qu'elle suscite dans les commentaires.",
+  "What can't you see on Facebook?":
+    "Qu'est-ce qu'on ne peut pas voir sur Facebook ?",
+  "Facebook keeps much of what is said there closed. Private groups only show their posts to members, and many profiles only share their posts with friends. A page can also hide or delete comments: the visible conversation is already filtered. On access, Meta shut down CrowdTangle in August 2024 in favour of the Meta Content Library, reserved for researchers at academic or not-for-profit organisations. It is not a monitoring tool for brands. Listening tools rely on their own access, and we check their coverage before every study.":
+    "Facebook garde fermée une grande partie de ce qui s'y dit. Les groupes privés ne montrent leurs publications qu'à leurs membres, et beaucoup de profils ne partagent leurs messages qu'avec leurs amis. Une page peut aussi masquer ou supprimer des commentaires : la conversation visible est déjà filtrée. Côté accès, Meta a fermé CrowdTangle en août 2024 au profit de la Meta Content Library, réservée aux chercheurs d'organismes académiques ou à but non lucratif. Ce n'est pas un outil de veille pour les marques. Les outils d'écoute passent par leurs propres accès, et nous vérifions leur couverture avant chaque étude.",
+  "FACEBOOK IN DETAIL":
+    "FACEBOOK EN DÉTAIL",
+  "What to know before listening to Facebook.":
+    "Ce qu'il faut savoir avant d'écouter Facebook.",
   "EVERY NETWORK":
     "TOUS LES RÉSEAUX",
   "The other networks we listen to.":
@@ -6238,6 +6464,22 @@ window.LicterFR = {
     "Comment nous écoutons Instagram.",
   "Instagram social listening: use cases.":
     "Social listening Instagram : les cas d'usage.",
+  "What can a brand read on Instagram?":
+    "Que peut-on lire sur Instagram pour une marque ?",
+  "Instagram mixes several formats, and each says something different about a brand. Posts and carousels show how a product is staged, reels how a format spreads and gets copied from one account to the next. Tags and mentions show who deliberately links your brand to their content. Comments, for their part, often sit under creators' posts rather than the brand's own. Useful listening therefore starts from the brand, then works back to the accounts that talk about it, where the audience speaks most freely.":
+    "Instagram mêle plusieurs formats, et chacun dit autre chose d'une marque. Les publications et les carrousels montrent comment un produit est mis en scène, les reels comment un format se diffuse et se copie d'un compte à l'autre. Les identifications et les mentions indiquent qui associe volontairement votre marque à son contenu. Les commentaires, eux, se trouvent souvent sous les publications des créateurs plutôt que sous celles de la marque. Une écoute utile part donc de la marque, puis remonte vers les comptes qui en parlent, là où le public s'exprime le plus librement.",
+  "How is listening on Instagram different?":
+    "En quoi l'écoute d'Instagram est-elle différente ?",
+  "Instagram organises the conversation around people more than topics. A product gains visibility when creators show it, and the discussion follows their audience. The tone is often more staged than elsewhere: enthusiasm is on display, while criticism tends to come through irony, comparison or a question in the comments. For a brand, the typical use is to assess a campaign with creators: who picked up the subject, what followers replied, and whether the world the brand appears in matches the one it is aiming for.":
+    "Instagram organise la conversation autour de personnes plus que de sujets. Un produit y gagne en visibilité quand des créateurs le montrent, et la discussion suit leur audience. Le ton y est souvent plus mis en scène qu'ailleurs : l'enthousiasme s'affiche, la critique passe plutôt par l'ironie, la comparaison ou une question en commentaire. Pour une marque, l'usage typique est d'évaluer une campagne avec des créateurs : qui a repris le sujet, ce que les abonnés ont répondu, et si l'univers dans lequel la marque apparaît correspond à celui qu'elle vise.",
+  "What escapes listening on Instagram?":
+    "Qu'est-ce qui échappe à l'écoute d'Instagram ?",
+  "Instagram limits what listening can see. Private accounts and messages stay closed, and stories disappear after 24 hours unless their author adds them to highlights. Official access is also restricted: Meta's hashtag search API requires approval, is limited to 30 different hashtags per rolling seven-day period for a given account, and does not cover hashtags in stories. Listening tools therefore combine several access routes, with coverage that varies. We state what is actually collected before starting.":
+    "Instagram limite ce qu'une écoute peut voir. Les comptes privés et les messages restent fermés, et les stories disparaissent au bout de 24 heures, sauf si leur auteur les met à la une. L'accès officiel est aussi encadré : l'API de recherche par hashtag de Meta demande une validation, se limite à 30 hashtags différents par période glissante de sept jours pour un même compte, et ne couvre pas les hashtags des stories. Les outils d'écoute combinent donc plusieurs accès, avec une couverture qui varie. Nous indiquons ce qui est réellement collecté avant de commencer.",
+  "INSTAGRAM IN DETAIL":
+    "INSTAGRAM EN DÉTAIL",
+  "What to know before listening to Instagram.":
+    "Ce qu'il faut savoir avant d'écouter Instagram.",
   "Social listening on Instagram: frequently asked questions.":
     "Questions fréquentes sur le social listening Instagram.",
   "Is Licter a Instagram social listening agency?":
@@ -6296,6 +6538,22 @@ window.LicterFR = {
     "Comment nous écoutons Threads.",
   "Threads social listening: use cases.":
     "Social listening Threads : les cas d'usage.",
+  "What can you read on Threads?":
+    "Que peut-on lire sur Threads ?",
+  "Threads is built around short posts, their replies and their quotes. Most of what matters happens in the replies: a brand post gets questions, criticism and comparisons there, sometimes from accounts that do not follow it. Topics, marked by a keyword, group discussions on the same theme. Threads is also connected to the fediverse: when a user turns on this sharing, their public posts can be read on services such as Mastodon. Part of the conversation therefore travels outside the app.":
+    "Threads s'organise autour de publications courtes, de leurs réponses et de leurs citations. C'est dans les réponses que se joue l'essentiel : une publication de marque y reçoit des questions, des critiques et des comparaisons, parfois de comptes qui ne la suivent pas. Les sujets, signalés par un mot-clé, regroupent les discussions sur un même thème. Threads est aussi relié au fédivers : quand un utilisateur active ce partage, ses publications publiques peuvent être lues sur des services comme Mastodon. Une partie de la conversation circule donc hors de l'application.",
+  "Should you listen to Threads differently from X?":
+    "Faut-il écouter Threads différemment de X ?",
+  "Threads is not read like X, even if the formats look alike. Part of its audience comes from Instagram, and the tone is often closer to it: more personal, less focused on breaking news. Brands sometimes take a freer voice there than on their other accounts, and the audience answers in the same register. For a brand, the typical use is to compare how the same announcement is received on X and on Threads. They are not always the same people, nor the same reactions, and the gap says something about the audience actually reached.":
+    "Threads ne se lit pas comme X, même si les formats se ressemblent. Son public vient en partie d'Instagram, et le ton s'en rapproche souvent : plus personnel, moins tourné vers l'actualité chaude. Les marques y prennent parfois une voix plus libre que sur leurs autres comptes, et le public y répond sur le même registre. Pour une marque, l'usage typique est de comparer la réception d'une même annonce sur X et sur Threads. Ce ne sont pas toujours les mêmes personnes, ni les mêmes réactions, et l'écart dit quelque chose de la cible réellement touchée.",
+  "Which Threads data can be accessed?":
+    "Quelles données de Threads sont accessibles ?",
+  "Threads is gradually opening up to tools. Meta offers a Threads API that, after approval, lets you search public posts by keyword or topic, with a limited number of queries; terms deemed sensitive return no results. Private accounts stay closed. Threads is also part of the Meta Content Library, but that access is reserved for researchers. Coverage therefore depends on the tool and its access. We measure what is actually collected before starting a study, and we say so.":
+    "Threads s'ouvre progressivement aux outils. Meta propose une API Threads qui permet, après validation, de chercher des publications publiques par mot-clé ou par sujet, avec un nombre de requêtes limité ; les mots jugés sensibles ne renvoient aucun résultat. Les comptes privés restent fermés. Threads figure aussi dans la Meta Content Library, mais cet accès est réservé aux chercheurs. La couverture dépend donc de l'outil et de ses accès. Nous mesurons ce qui est réellement collecté avant de lancer une étude, et nous le disons.",
+  "THREADS IN DETAIL":
+    "THREADS EN DÉTAIL",
+  "What to know before listening to Threads.":
+    "Ce qu'il faut savoir avant d'écouter Threads.",
   "Social listening on Threads: frequently asked questions.":
     "Questions fréquentes sur le social listening Threads.",
   "Is Licter a Threads social listening agency?":
@@ -6350,6 +6608,22 @@ window.LicterFR = {
     "Comment nous écoutons WhatsApp.",
   "WhatsApp social listening: use cases.":
     "Social listening WhatsApp : les cas d'usage.",
+  "What is public on WhatsApp?":
+    "Que trouve-t-on de public sur WhatsApp ?",
+  "WhatsApp opened a public space with channels, launched in 2023. A channel is a one-way broadcast tool: its admin posts text, photos, videos or polls, and followers receive them without being able to reply as they would in a group. For a brand, a channel reads like an official publication: what the media, public figures or competitors who run one are saying, on which topics and how often. The public's reaction is mostly read elsewhere, when this content is picked up on other networks.":
+    "WhatsApp a ouvert un espace public avec les chaînes, lancées en 2023. Une chaîne est un outil de diffusion à sens unique : son administrateur publie des textes, des photos, des vidéos ou des sondages, et les abonnés les reçoivent sans pouvoir y répondre comme dans un groupe. Pour une marque, une chaîne se lit comme une publication officielle : ce que disent les médias, les personnalités ou les concurrents qui en ont une, sur quels sujets et à quel rythme. La réaction du public, elle, se lit surtout ailleurs, quand ces contenus sont repris sur d'autres réseaux.",
+  "How do you recognise content that came from WhatsApp?":
+    "Comment reconnaître un contenu venu de WhatsApp ?",
+  "WhatsApp leaves visible traces on content that comes out of it. The app labels forwarded messages, and marks with a double arrow those that have been forwarded many times. On a screenshot posted on X or Facebook, this label often shows that a message has already circulated widely in private, with no clear author or original date. That is the typical use for a brand: spotting these screenshots early, finding their first public appearance, and measuring their spread before deciding whether to respond, and on which network.":
+    "WhatsApp laisse des traces visibles sur les contenus qui en sortent. L'application signale les messages transférés, et marque d'une double flèche ceux qui ont été transférés de nombreuses fois. Sur une capture publiée sur X ou Facebook, cette mention indique souvent qu'un message a déjà beaucoup circulé en privé, sans auteur ni date d'origine claire. Pour une marque, l'usage typique est là : repérer ces captures tôt, retrouver leur première apparition publique, et mesurer leur diffusion avant de décider s'il faut répondre, et sur quel réseau.",
+  "Why do WhatsApp conversations stay out of reach?":
+    "Pourquoi les conversations WhatsApp restent-elles inaccessibles ?",
+  "WhatsApp protects personal messages with end-to-end encryption: only the sender and recipient can read them, not even WhatsApp. Channels, designed for a wide audience, are not end-to-end encrypted by default. But the admin's phone number is not shown to followers, nor followers' numbers to others, and WhatsApp keeps channel history on its servers for 30 days at most. Listening to WhatsApp therefore sees neither groups, nor conversations, nor who follows a channel: only what channels publish, and what comes out of them.":
+    "WhatsApp protège les messages personnels par un chiffrement de bout en bout : seuls l'expéditeur et le destinataire peuvent les lire, pas même WhatsApp. Les chaînes, conçues pour un large public, ne sont pas chiffrées de bout en bout par défaut. Mais le numéro de l'administrateur n'est pas montré aux abonnés, ni celui des abonnés aux autres, et WhatsApp ne garde leur historique sur ses serveurs que 30 jours au plus. Une écoute de WhatsApp ne voit donc ni les groupes, ni les conversations, ni l'identité des abonnés : seulement ce que les chaînes publient, et ce qui en sort.",
+  "WHATSAPP IN DETAIL":
+    "WHATSAPP EN DÉTAIL",
+  "What to know before listening to WhatsApp.":
+    "Ce qu'il faut savoir avant d'écouter WhatsApp.",
   "Social listening on WhatsApp: frequently asked questions.":
     "Questions fréquentes sur le social listening WhatsApp.",
   "Is Licter a WhatsApp social listening agency?":
@@ -6404,6 +6678,22 @@ window.LicterFR = {
     "Comment nous écoutons Messenger.",
   "Messenger social listening: use cases.":
     "Social listening Messenger : les cas d'usage.",
+  "What can be analysed from Messenger?":
+    "Que peut-on analyser de Messenger ?",
+  "Messenger has no public space to listen to: what is exchanged there is private. The useful material, for a brand, is its own conversations with its customers, when it chooses to have them analysed. An exported conversation keeps its date, its sequence and often its outcome. You can read at which point of the journey the customer gets stuck, how many exchanges it takes to settle a request, and what turns a simple question into a complaint. It is a reading of customer service as it is experienced, to be completed by what customers later say in public.":
+    "Messenger n'a pas d'espace public à écouter : ce qui s'y échange est privé. La matière utile, pour une marque, ce sont ses propres conversations avec ses clients, quand elle choisit de les faire analyser. Une conversation exportée garde sa date, son déroulé et souvent son issue. On y lit à quel moment du parcours le client bloque, combien d'échanges il faut pour régler une demande, et ce qui transforme une simple question en réclamation. C'est une lecture du service client tel qu'il est vécu, à compléter par ce que les clients disent ensuite en public.",
+  "What does Messenger add that public networks do not?":
+    "Qu'apporte Messenger que les réseaux publics n'apportent pas ?",
+  "Messenger shows both sides of the exchange, which no public network does. You see the customer's question, but also the brand's answer. You can therefore judge the answer itself: its speed, its tone, its consistency from one agent to another, and the automated replies that go round in circles. For a brand, the typical use is to audit a customer service channel: spotting badly handled requests, wording that irritates, and topics where a clear answer published elsewhere would save many messages.":
+    "Messenger montre les deux côtés de l'échange, ce que ne fait aucun réseau public. On voit la question du client, mais aussi la réponse de la marque. On peut donc juger la réponse elle-même : son délai, son ton, sa cohérence d'un conseiller à l'autre, et les réponses automatiques qui tournent en rond. Pour une marque, l'usage typique est d'auditer un canal de service client : repérer les demandes mal traitées, les formulations qui agacent, et les sujets où une réponse claire publiée ailleurs éviterait des dizaines de messages.",
+  "Can Messenger conversations be listened to?":
+    "Peut-on écouter les conversations Messenger ?",
+  "Messenger encrypts personal messages and calls end to end by default, following a rollout Meta started in December 2023: nobody other than the participants, Meta included, can read them. No listening can access them, and we do not try to. What we analyse comes only from your page's conversations that you share with us, and from screenshots customers make public themselves. These exports remain partial: they say nothing about unhappy customers who never write.":
+    "Messenger chiffre de bout en bout par défaut les messages et les appels personnels, selon un déploiement lancé par Meta en décembre 2023 : personne d'autre que les participants, Meta compris, ne peut les lire. Aucune écoute ne peut donc y accéder, et nous ne le cherchons pas. Ce que nous analysons vient uniquement des conversations de votre page que vous nous confiez, et des captures que des clients rendent publiques eux-mêmes. Ces exports restent partiels : ils ne disent rien des clients mécontents qui n'écrivent jamais.",
+  "MESSENGER IN DETAIL":
+    "MESSENGER EN DÉTAIL",
+  "What to know before listening to Messenger.":
+    "Ce qu'il faut savoir avant d'écouter Messenger.",
   "Social listening on Messenger: frequently asked questions.":
     "Questions fréquentes sur le social listening Messenger.",
   "Is Licter a Messenger social listening agency?":
@@ -6466,6 +6756,22 @@ window.LicterFR = {
     "Comment nous écoutons X / Twitter.",
   "X / Twitter social listening: use cases.":
     "Social listening X / Twitter : les cas d'usage.",
+  "What can you read on X?":
+    "Que peut-on lire sur X ?",
+  "X is read through several ways of picking up a message. A repost spreads it as is, a quote adds a comment, often a critical one, and a reply opens a debate under the original message. Following these three paths shows how a topic changes meaning as it travels. X also displays Community Notes: contributors add context to a post seen as misleading, and the note becomes visible when contributors with different points of view rate it helpful. For a brand, a note can change how a controversy is read.":
+    "X se lit à travers plusieurs façons de reprendre un message. La republication le diffuse tel quel, la citation l'accompagne d'un commentaire, souvent critique, et la réponse ouvre un débat sous le message d'origine. Suivre ces trois chemins montre comment un sujet change de sens en circulant. X affiche aussi des notes de la communauté : des contributeurs ajoutent du contexte à une publication jugée trompeuse, et la note devient visible quand des contributeurs aux points de vue différents la jugent utile. Pour une marque, une note peut changer la lecture d'une polémique.",
+  "Why is volume not enough on X?":
+    "Pourquoi le volume ne suffit-il pas sur X ?",
+  "X easily gives a distorted picture of opinion, and you need to know it to listen well. A few very active accounts can produce a large share of the messages on a topic and make a controversy look bigger than it is. Automated accounts or coordinated campaigns can also inflate volume. For a brand, the useful question is therefore not how many messages, but who writes them, and whether the topic reaches the press and other networks. That is what separates passing noise from a real crisis.":
+    "X donne facilement une image déformée de l'opinion, et il faut le savoir pour bien l'écouter. Quelques comptes très actifs peuvent produire une grande partie des messages sur un sujet et faire paraître une polémique plus large qu'elle ne l'est. Des comptes automatisés ou des campagnes coordonnées peuvent aussi gonfler un volume. Pour une marque, la question utile n'est donc pas combien de messages, mais qui les écrit, et si le sujet atteint la presse et les autres réseaux. C'est ce qui sépare une agitation passagère d'une vraie crise.",
+  "What are the limits on access to X data?":
+    "Quelles sont les limites d'accès aux données de X ?",
+  "X charges for access to its data. Its API runs on pay-per-use: every post read is billed, and large volumes go through enterprise offers. Listening tools depend on this access, and their coverage of X varies from one publisher to another. Protected accounts and direct messages remain out of reach. When a post is deleted or an account is protected, X notifies developers so that collected data follows that choice. We state what is actually covered before every study.":
+    "X fait payer l'accès à ses données. Son API fonctionne au paiement à l'usage : chaque lecture de publication est facturée, et les gros volumes passent par des offres entreprise. Les outils d'écoute dépendent de ces accès, et leur couverture de X varie d'un éditeur à l'autre. Les comptes protégés et les messages privés restent hors de portée. Quand une publication est supprimée ou un compte protégé, X le signale aux développeurs pour que les données collectées suivent ce choix. Nous indiquons ce qui est réellement couvert avant chaque étude.",
+  "X / TWITTER IN DETAIL":
+    "X / TWITTER EN DÉTAIL",
+  "What to know before listening to X / Twitter.":
+    "Ce qu'il faut savoir avant d'écouter X / Twitter.",
   "Social listening on X / Twitter: frequently asked questions.":
     "Questions fréquentes sur le social listening X / Twitter.",
   "Is Licter a X / Twitter social listening agency?":
@@ -6644,6 +6950,22 @@ window.LicterFR = {
     "Comment nous écoutons YouTube.",
   "YouTube social listening: use cases.":
     "Social listening YouTube : les cas d'usage.",
+  "What can you listen to on YouTube?":
+    "Que peut-on écouter sur YouTube ?",
+  "YouTube is read at several levels. The title and description say how the creator presents the video, and the transcript what they actually claim about a product. Comments and their replies form real discussion threads, where the audience corrects, completes or contradicts the video. Shorts, being shorter, circulate the way they do on TikTok, and live streams have their own chat. These formats capture neither the same audience nor the same moment in the decision: useful listening separates them before comparing them.":
+    "YouTube se lit à plusieurs niveaux. Le titre et la description disent comment le créateur présente sa vidéo, et la transcription ce qu'il affirme vraiment sur un produit. Les commentaires et leurs réponses forment de vrais fils de discussion, où le public corrige, complète ou contredit la vidéo. Les Shorts, plus courts, circulent comme sur TikTok, et les directs ont leur propre chat. Ces formats ne captent ni le même public, ni le même moment de la décision : une écoute utile les sépare avant de les comparer.",
+  "Why does YouTube matter before a purchase?":
+    "Pourquoi YouTube compte-t-il avant un achat ?",
+  "YouTube has a long memory. A test video can keep being watched and commented on years after it was posted, because it comes up in searches when someone is hesitating over a purchase. The tone is calmer than on feed-based networks, and opinions rest on real use of the product. For a brand, the typical use is to read these reference videos before a launch or a new version: what is held against the previous model, what competitors do better, and the questions left unanswered in the comments.":
+    "YouTube a une mémoire longue. Une vidéo de test peut continuer à être vue et commentée des années après sa mise en ligne, parce qu'elle remonte dans les recherches au moment où quelqu'un hésite à acheter. Le ton y est plus posé que sur les réseaux de flux, et les avis s'appuient sur un usage réel du produit. Pour une marque, l'usage typique est de lire ces vidéos de référence avant un lancement ou une nouvelle version : ce qui est reproché au modèle précédent, ce que les concurrents font mieux, et les questions restées sans réponse dans les commentaires.",
+  "What escapes listening on YouTube?":
+    "Qu'est-ce qui échappe à l'écoute de YouTube ?",
+  "YouTube only shows what its creators make public. Private and unlisted videos escape collection, and a creator can turn off comments or hold the ones they want to review before they appear. Official access goes through YouTube's API, whose rules require stored data to be refreshed or deleted regularly, so that deletions are followed. YouTube's programme offering wider access is reserved for university researchers. Finally, automatic transcripts can get a brand or product name wrong.":
+    "YouTube ne montre que ce que ses créateurs rendent public. Les vidéos privées et non répertoriées échappent à la collecte, et un créateur peut désactiver les commentaires ou retenir ceux qu'il veut relire avant publication. L'accès officiel passe par l'API de YouTube, dont les règles imposent de rafraîchir ou de supprimer régulièrement les données stockées, pour suivre les suppressions. Le programme de YouTube qui ouvre un accès élargi est réservé aux chercheurs universitaires. Enfin, les transcriptions automatiques peuvent se tromper sur un nom de marque ou de produit.",
+  "YOUTUBE IN DETAIL":
+    "YOUTUBE EN DÉTAIL",
+  "What to know before listening to YouTube.":
+    "Ce qu'il faut savoir avant d'écouter YouTube.",
   "Social listening on YouTube: frequently asked questions.":
     "Questions fréquentes sur le social listening YouTube.",
   "Is Licter a YouTube social listening agency?":
@@ -6696,6 +7018,22 @@ window.LicterFR = {
     "Comment nous écoutons LinkedIn.",
   "LinkedIn social listening: use cases.":
     "Social listening LinkedIn : les cas d'usage.",
+  "What can you read on LinkedIn?":
+    "Que peut-on lire sur LinkedIn ?",
+  "LinkedIn gets people talking as much as companies. An executive, an employee or a candidate tells an experience in their own name there, and the story travels through their professional network. Comments are signed with the author's name and often their job title, which tells you who is reacting: peers, customers, potential hires, competitors. Articles, newsletters and events complement these posts, and company pages give the official view. Useful listening reads both, and the gap between them.":
+    "LinkedIn fait parler les personnes autant que les entreprises. Un dirigeant, un salarié ou un candidat y raconte une expérience en son nom, et ce récit circule dans son réseau professionnel. Les commentaires sont signés du nom et souvent de la fonction de leur auteur, ce qui permet de savoir qui réagit : des pairs, des clients, des recrues possibles, des concurrents. Les articles, les newsletters et les événements complètent ces publications, et les pages d'entreprise donnent le point de vue officiel. Une écoute utile lit les deux, et l'écart entre eux.",
+  "How is the LinkedIn conversation different?":
+    "En quoi la conversation LinkedIn est-elle différente ?",
+  "LinkedIn has a tone of its own: professional, signed, rarely anonymous. Criticism there is often more measured than elsewhere, because everyone speaks under their own name and in front of their colleagues. A topic moves from connection to connection, from one company or sector to another, more than through mass trends. For a brand, the typical use is to follow a topic that is sensitive for its employees or sector: a reorganisation, a public stance, a regulatory debate. You then see who carries it, with which arguments, and whether employees' voices follow the company's.":
+    "LinkedIn a un ton à part : professionnel, signé, rarement anonyme. Les critiques y sont souvent plus mesurées qu'ailleurs, parce que chacun parle sous son nom et devant ses collègues. Un sujet y avance de relation en relation, d'une entreprise ou d'un secteur à l'autre, plus que par des tendances de masse. Pour une marque, l'usage typique est de suivre un sujet sensible pour ses salariés ou son secteur : une réorganisation, une prise de position, un débat réglementaire. On voit alors qui le porte, avec quels arguments, et si la parole des salariés suit celle de l'entreprise.",
+  "Why is listening on LinkedIn partial?":
+    "Pourquoi l'écoute de LinkedIn est-elle partielle ?",
+  "LinkedIn tightly restricts automated collection. Its rules prohibit bots, browser extensions and other tools that copy its pages or profiles, and LinkedIn restricts the accounts that use them. Listening tools therefore see only part of it, depending on the access they have. Messages, connections-only posts and restricted profiles remain out of reach. A LinkedIn study may therefore rely on a selection of closely followed accounts rather than broad collection, and we always say what is missing.":
+    "LinkedIn encadre strictement la collecte automatisée. Ses règles interdisent les robots, les extensions de navigateur et les autres outils qui copient ses pages ou ses profils, et LinkedIn restreint les comptes qui les utilisent. Les outils d'écoute n'en voient donc qu'une partie, selon les accès dont ils disposent. Les messages, les publications réservées aux relations et les profils restreints restent hors de portée. Une étude LinkedIn peut donc s'appuyer sur une sélection de comptes suivis de près plutôt que sur une collecte large, et nous disons toujours ce qui manque.",
+  "LINKEDIN IN DETAIL":
+    "LINKEDIN EN DÉTAIL",
+  "What to know before listening to LinkedIn.":
+    "Ce qu'il faut savoir avant d'écouter LinkedIn.",
   "Social listening on LinkedIn: frequently asked questions.":
     "Questions fréquentes sur le social listening LinkedIn.",
   "Is Licter a LinkedIn social listening agency?":
@@ -6750,6 +7088,22 @@ window.LicterFR = {
     "Comment nous écoutons Reddit.",
   "Reddit social listening: use cases.":
     "Social listening Reddit : les cas d'usage.",
+  "What can you read on Reddit?":
+    "Que peut-on lire sur Reddit ?",
+  "Reddit is read thread by thread. A discussion starts from a question or an experience report, then branches into nested replies where arguments answer each other. Each community has its rules, its moderators and often its topic labels, which help sort discussions. For a brand, the most useful threads are often requests for advice: which product to choose, which to avoid, and why. Old threads stay available and can surface in search engines, which gives them a long life.":
+    "Reddit se lit fil par fil. Une discussion part d'une question ou d'un retour d'expérience, puis se ramifie en réponses imbriquées où les arguments se répondent. Chaque communauté a ses règles, ses modérateurs et souvent ses étiquettes de sujet, qui aident à trier les discussions. Pour une marque, les fils les plus utiles sont souvent les demandes de conseil : quel produit choisir, lequel éviter, et pourquoi. Les fils anciens restent consultables et peuvent ressortir dans les moteurs de recherche, ce qui leur donne une longue vie.",
+  "What makes Reddit different for listening?":
+    "Qu'est-ce qui rend Reddit différent pour l'écoute ?",
+  "Reddit rewards expertise and distrusts advertising. A detailed answer rises through votes, while a message that looks like promotion is often rejected by the community or removed by moderators. Pseudonymity also frees people to speak on delicate topics: health, money, work. For a brand, the typical use is to understand the real choice criteria in a category and the flaws people point out, as experienced users put them to each other. It is also a good place to test a product idea before a launch.":
+    "Reddit valorise la compétence et se méfie de la publicité. Une réponse détaillée monte grâce aux votes, alors qu'un message qui ressemble à de la promotion est souvent rejeté par la communauté ou retiré par les modérateurs. Le pseudonymat libère aussi la parole sur des sujets délicats : santé, argent, travail. Pour une marque, l'usage typique est de comprendre les vrais critères de choix d'une catégorie et les défauts qu'on lui reproche, tels que des utilisateurs avertis les formulent entre eux. C'est aussi un bon terrain pour éprouver une idée de produit avant un lancement.",
+  "What are the limits on access to Reddit data?":
+    "Quelles sont les limites d'accès aux données de Reddit ?",
+  "Reddit closely controls access to its data. Its Data API terms require a separate agreement for any commercial use, and these terms change regularly. Reddit coverage therefore depends on each tool's agreements. Private communities and messages stay closed, and a message deleted by its author or removed by moderators can no longer be read. We check coverage before every study.":
+    "Reddit contrôle de près l'accès à ses données. Ses conditions d'utilisation de l'API exigent un accord distinct pour tout usage commercial, et ces conditions évoluent régulièrement. La couverture de Reddit dépend donc des accords de chaque outil. Les communautés privées et les messages restent fermés, et un message supprimé par son auteur ou retiré par les modérateurs n'est plus lisible. Nous vérifions la couverture avant chaque étude.",
+  "REDDIT IN DETAIL":
+    "REDDIT EN DÉTAIL",
+  "What to know before listening to Reddit.":
+    "Ce qu'il faut savoir avant d'écouter Reddit.",
   "Social listening on Reddit: frequently asked questions.":
     "Questions fréquentes sur le social listening Reddit.",
   "Is Licter a Reddit social listening agency?":
@@ -6802,6 +7156,22 @@ window.LicterFR = {
     "Comment nous écoutons Snapchat.",
   "Snapchat social listening: use cases.":
     "Social listening Snapchat : les cas d'usage.",
+  "What is public on Snapchat?":
+    "Que peut-on voir de public sur Snapchat ?",
+  "Snapchat has a public side, separate from exchanges between friends. Public profiles, open to users aged 16 and over who choose to use them, show public stories and featured Snaps, and other users can subscribe to them. Snaps submitted to Spotlight are public: all users can see them, and sometimes people outside the app too. For a brand, that is where you read the creators, media and formats that speak to the youngest, with their codes and words.":
+    "Snapchat a une partie publique, distincte des échanges entre amis. Les profils publics, ouverts aux utilisateurs de 16 ans et plus qui choisissent de s'en servir, présentent des stories publiques et des Snaps mis en avant, et d'autres utilisateurs peuvent s'y abonner. Les Snaps envoyés sur Spotlight sont publics : ils peuvent être vus par tous les utilisateurs, et parfois hors de l'application. Pour une marque, c'est là que se lisent les créateurs, les médias et les formats qui s'adressent aux plus jeunes, avec leurs codes et leurs mots.",
+  "What does Snapchat really say about a young audience?":
+    "Que dit vraiment Snapchat d'une audience jeune ?",
+  "Snapchat is first a messaging app between close friends, which changes the nature of what you see in public there. What is public comes from accounts that choose to post for a wide audience: creators, media, brands. You therefore read formats, tones and topics that people like, more than spontaneous opinions about a brand. For a brand, the typical use is to spot the creators who speak to a young audience and the themes they cover, then check on TikTok and Instagram whether those signals show up elsewhere.":
+    "Snapchat est d'abord une messagerie entre proches, ce qui change la nature de ce qu'on y voit en public. Ce qui est public vient de comptes qui choisissent de publier pour un large public : créateurs, médias, marques. On y lit donc des formats, des tons et des sujets qui plaisent, plus qu'une opinion spontanée sur une marque. Pour une marque, l'usage typique est de repérer les créateurs qui parlent à une audience jeune et les thèmes qu'ils abordent, puis de vérifier sur TikTok et Instagram si ces signaux se retrouvent ailleurs.",
+  "Why does most of Snapchat stay invisible?":
+    "Pourquoi l'essentiel de Snapchat reste-t-il invisible ?",
+  "Snapchat is designed so that most messages disappear. Snaps sent between friends are deleted from the servers once all recipients have viewed them, and chats are deleted by default shortly after being read. For 16 and 17-year-olds, public stories are only recommended to their friends, their followers and people they share mutual friends with. Listening therefore sees only a small public part, and only while it is online. We never collect private exchanges.":
+    "Snapchat est conçu pour que la plupart des messages disparaissent. Les Snaps envoyés entre amis sont effacés des serveurs une fois vus par tous les destinataires, et les discussions sont supprimées par défaut peu après leur lecture. Pour les 16 et 17 ans, les stories publiques ne sont recommandées qu'à leurs amis, à leurs abonnés et aux personnes avec qui ils ont des amis en commun. Une écoute ne voit donc qu'une petite partie publique, et seulement tant qu'elle est en ligne. Nous ne collectons jamais les échanges privés.",
+  "SNAPCHAT IN DETAIL":
+    "SNAPCHAT EN DÉTAIL",
+  "What to know before listening to Snapchat.":
+    "Ce qu'il faut savoir avant d'écouter Snapchat.",
   "Social listening on Snapchat: frequently asked questions.":
     "Questions fréquentes sur le social listening Snapchat.",
   "Is Licter a Snapchat social listening agency?":
@@ -6856,6 +7226,22 @@ window.LicterFR = {
     "Comment nous écoutons Pinterest.",
   "Pinterest social listening: use cases.":
     "Social listening Pinterest : les cas d'usage.",
+  "What can a brand read on Pinterest?":
+    "Que peut-on lire sur Pinterest pour une marque ?",
+  "On Pinterest, you mostly read images and the words that go with them: a Pin's title, its description, and the name of the board it is saved to. That name is often the most telling part. \"Future house kitchen\" or \"September wedding outfits\" states the project, the deadline and the style sought. Comments are rare. The conversation is therefore read less in exchanges than in gestures: what people save, next to what, and for which project. A Pin of your product saved alongside a competitor's already tells you how you are compared.":
+    "Sur Pinterest, on lit surtout des images et les mots qui les accompagnent : le titre d'une épingle, sa description, et le nom du tableau où elle est rangée. Ce nom est souvent le plus parlant. « Cuisine de la future maison » ou « Tenues mariage septembre » dit le projet, l'échéance et le style recherché. Les commentaires y sont rares. La conversation se lit donc moins dans les échanges que dans les gestes : ce qu'on enregistre, à côté de quoi, et pour quel projet. Une épingle de votre produit rangée avec celles d'un concurrent dit déjà comment on vous compare.",
+  "How is listening on Pinterest different?":
+    "En quoi l'écoute de Pinterest est-elle différente ?",
+  "Pinterest is not read like a network of debate. People come for themselves, to prepare something, rarely to react to the news or call out a brand. The tone is calm and the network lends itself poorly to controversy. On the other hand, Pinterest publishes its own tool, Pinterest Trends: search, save and shopping trends over the last two years, by region, with an age and gender breakdown for each keyword. A brand uses it to set a seasonal calendar, or to compare interest in several styles before choosing which one to push.":
+    "Pinterest ne se lit pas comme un réseau de débat. On y vient pour soi, pour préparer quelque chose, rarement pour réagir à l'actualité ou interpeller une marque. Le ton est calme et le réseau se prête mal à la polémique. En revanche, Pinterest publie son propre outil, Pinterest Trends : les tendances de recherche, d'enregistrement et d'achat sur les deux dernières années, par région, avec une répartition par âge et par genre pour chaque mot-clé. Une marque s'en sert pour caler un calendrier saisonnier, ou pour comparer l'intérêt pour plusieurs styles avant de choisir lequel mettre en avant.",
+  "What are the limits of Pinterest data?":
+    "Quelles sont les limites des données Pinterest ?",
+  "On Pinterest, part of the activity stays invisible. Secret boards are seen only by their owner and the people they invite, and a Pin saved to a secret board does not raise its count. Individual searches are never public: Pinterest only shows aggregated trends. Finally, many Pins carry very little text. To know whether a product appears, you often have to read the image itself, with visual recognition, then check by hand what the tool thought it recognised.":
+    "Sur Pinterest, une partie de l'activité reste invisible. Les tableaux secrets ne sont vus que par leur auteur et les personnes qu'il invite, et une épingle enregistrée sur un tableau secret ne fait pas monter son compteur. Les recherches de chacun ne sont jamais publiques : Pinterest n'en montre que des tendances agrégées. Enfin, beaucoup d'épingles portent très peu de texte. Pour savoir si un produit apparaît, il faut souvent lire l'image elle-même, avec une reconnaissance visuelle, puis vérifier à la main ce que l'outil a cru reconnaître.",
+  "PINTEREST IN DETAIL":
+    "PINTEREST EN DÉTAIL",
+  "What to know before listening to Pinterest.":
+    "Ce qu'il faut savoir avant d'écouter Pinterest.",
   "Social listening on Pinterest: frequently asked questions.":
     "Questions fréquentes sur le social listening Pinterest.",
   "Is Licter a Pinterest social listening agency?":
@@ -6908,6 +7294,22 @@ window.LicterFR = {
     "Comment nous écoutons Discord.",
   "Discord social listening: use cases.":
     "Social listening Discord : les cas d'usage.",
+  "What can a brand read on Discord?":
+    "Que peut-on lire sur Discord pour une marque ?",
+  "On Discord, the conversation is split into channels: announcements, help, feedback, open discussion, sometimes a forum where each subject has its own thread. That structure is what makes reading useful. The feedback channel of a gaming server, or the technical questions channel of a tech community, gathers detailed, reasoned opinions, often written by regular members. You read what blocks people, what is missing, and what the most engaged expect next. The rest of the server gives the context: the community's tone, its rules, and who carries authority there.":
+    "Sur Discord, la conversation est découpée en salons : annonces, entraide, retours, discussions libres, parfois un forum où chaque sujet a son propre fil. C'est cette structure qui rend la lecture utile. Le salon des retours d'un serveur de jeu, ou celui des questions techniques d'une communauté tech, rassemble des avis détaillés et argumentés, souvent écrits par des membres réguliers. On y lit ce qui bloque, ce qui manque, et ce que les plus engagés attendent de la suite. Le reste du serveur donne le contexte : le ton de la communauté, ses règles, et qui y fait autorité.",
+  "How is listening on Discord different?":
+    "En quoi l'écoute de Discord est-elle différente ?",
+  "Discord does not look like a public feed. You do not run into a stranger by chance: you join a server because you share an interest, and you come back often. Exchanges are fast, full of in-jokes and references only members understand. A subject does not spread there through an algorithm; it moves from one server to another through shared members, then sometimes leaves as screenshots. For a brand, the typical use is a launch: following the first users' reactions, and spotting the members whose opinion counts for the others.":
+    "Discord ne ressemble pas à un fil public. On n'y croise pas un inconnu par hasard : on rejoint un serveur parce qu'on partage un intérêt, et on y revient souvent. Les échanges sont rapides, pleins de références internes et de blagues que seuls les membres comprennent. Un sujet ne s'y diffuse pas par un algorithme, il passe d'un serveur à l'autre par les membres communs, puis sort parfois sous forme de captures d'écran. Pour une marque, l'usage type est le lancement : suivre la réaction des premiers utilisateurs, et repérer les membres dont l'avis compte pour les autres.",
+  "What are the limits of Discord data?":
+    "Quelles sont les limites des données Discord ?",
+  "Discord has no public part in the sense of an open network. The servers visible in its directory are community servers that asked to be listed and meet its criteria. Technically, an app only receives data from the servers it has been added to, and message content is among the data Discord classes as \"privileged\": access to it must be declared, then approved by Discord beyond a certain size. That is why analysing a server goes through its administrators' consent, and never through collection behind their back.":
+    "Discord n'a pas de partie publique au sens d'un réseau ouvert. Les serveurs visibles dans son annuaire sont des serveurs communautaires qui ont demandé à y figurer et qui remplissent ses critères. Côté technique, une application ne reçoit les données que des serveurs où elle a été ajoutée, et le contenu des messages fait partie des données que Discord classe comme « privilégiées » : leur accès doit être déclaré, puis validé par Discord au-delà d'une certaine taille. C'est pourquoi l'analyse d'un serveur passe par l'accord de ses administrateurs, et jamais par une collecte à leur insu.",
+  "DISCORD IN DETAIL":
+    "DISCORD EN DÉTAIL",
+  "What to know before listening to Discord.":
+    "Ce qu'il faut savoir avant d'écouter Discord.",
   "Social listening on Discord: frequently asked questions.":
     "Questions fréquentes sur le social listening Discord.",
   "Is Licter a Discord social listening agency?":
@@ -6966,6 +7368,22 @@ window.LicterFR = {
     "Comment nous écoutons Twitch.",
   "Twitch social listening: use cases.":
     "Social listening Twitch : les cas d'usage.",
+  "What can a brand read on Twitch?":
+    "Que peut-on lire sur Twitch pour une marque ?",
+  "On Twitch, there are two materials to read. The first is the chat: very short messages, sent during the stream, often in bursts at the same moment. The second is what the streamer says, out loud, sometimes for hours: that is where a product is shown, tested, discussed. The stream's title and category complete the picture. The clips viewers cut are often the best clue: they flag the moment the audience judged worth keeping, then sharing.":
+    "Sur Twitch, il y a deux matières à lire. La première est le chat : des messages très courts, envoyés pendant le direct, souvent en rafale au même moment. La seconde est ce que dit le streamer lui-même, à l'oral, parfois pendant des heures : c'est là qu'un produit est montré, testé, commenté. Le titre du live et sa catégorie complètent le tableau. Les clips que les spectateurs découpent sont souvent le meilleur indice : ils signalent le moment que le public a jugé digne d'être gardé, puis partagé.",
+  "How is listening on Twitch different?":
+    "En quoi l'écoute de Twitch est-elle différente ?",
+  "Twitch is read in the time of the live stream. A reaction only makes sense next to what is happening on screen at the same second: a joke, an announcement, a failed demo. The chat speaks in emotes, abbreviations and codes specific to each channel, and the same emote can be ironic on one channel and sincere on another. The relationship between a streamer and their community is long and daily. For a brand, the question is often whether an integration is accepted by the community or felt as an ad break, and that is read in the chat, minute by minute.":
+    "Twitch se lit dans le temps du direct. Une réaction n'y a de sens qu'à côté de ce qui se passe à l'écran à la même seconde : une blague, une annonce, une démonstration ratée. Le chat parle en émoticônes, en abréviations et en codes propres à chaque chaîne, et une même émoticône peut être ironique sur une chaîne et sincère sur une autre. La relation entre un streamer et sa communauté est longue et quotidienne. Pour une marque, la question est souvent de savoir si une intégration est acceptée par la communauté ou vécue comme une coupure publicitaire, et cela se lit dans le chat, à la minute près.",
+  "What are the limits of Twitch data?":
+    "Quelles sont les limites des données Twitch ?",
+  "Twitch delivers its chat in real time to the apps connected to a channel. In practice, a chat that was not captured during the stream is hard to rebuild afterwards. Past broadcasts stay online only for a limited time, which depends on the channel's status, and the streamer can choose not to keep them. The streamer's speech exists only as video: it has to be transcribed before it can be searched. A Twitch study is therefore prepared before the stream, with the list of channels and dates to follow, not after the fact.":
+    "Twitch transmet son chat en temps réel aux applications connectées à une chaîne. Concrètement, un chat qui n'a pas été capté pendant le live est difficile à reconstituer ensuite. Les rediffusions ne restent en ligne que pour une durée limitée, qui dépend du statut de la chaîne, et le streamer peut choisir de ne pas les conserver. La parole du streamer, elle, n'existe qu'en vidéo : il faut la transcrire pour pouvoir la chercher. Une étude Twitch se prépare donc avant le live, avec la liste des chaînes et des dates à suivre, et pas après coup.",
+  "TWITCH IN DETAIL":
+    "TWITCH EN DÉTAIL",
+  "What to know before listening to Twitch.":
+    "Ce qu'il faut savoir avant d'écouter Twitch.",
   "Social listening on Twitch: frequently asked questions.":
     "Questions fréquentes sur le social listening Twitch.",
   "Is Licter a Twitch social listening agency?":
@@ -7020,6 +7438,22 @@ window.LicterFR = {
     "Comment nous écoutons Telegram.",
   "Telegram social listening: use cases.":
     "Social listening Telegram : les cas d'usage.",
+  "What can a brand read on Telegram?":
+    "Que peut-on lire sur Telegram pour une marque ?",
+  "On Telegram, the readable part is public channels and public groups. A channel is a broadcast feed: an administrator posts, subscribers read. Each post carries a view counter, which includes views of copies forwarded elsewhere. When the administrator has linked a discussion group to the channel, posts also get comments. You therefore read what is broadcast, the audience it reached, and what the subscribers who react say about it. Public groups, for their part, look more like a continuous forum.":
+    "Sur Telegram, la partie lisible est celle des canaux publics et des groupes publics. Un canal est un fil de diffusion : un administrateur publie, les abonnés lisent. Chaque publication y porte un compteur de vues, qui inclut les vues des copies transférées ailleurs. Quand l'administrateur a relié un groupe de discussion au canal, les publications reçoivent aussi des commentaires. On lit donc à la fois ce qui est diffusé, l'audience que cela a touchée, et ce qu'en disent les abonnés qui réagissent. Les groupes publics, eux, ressemblent davantage à un forum en continu.",
+  "How is listening on Telegram different?":
+    "En quoi l'écoute de Telegram est-elle différente ?",
+  "Telegram does not work like TikTok or X. It has no main feed driven by an algorithm: a message travels mostly because it is forwarded, from channel to channel and group to group. Following a subject on Telegram therefore means following those forwarding chains and spotting the channels that act as relays. Its weight varies a lot by country and topic. For a brand, the typical use is risk monitoring: a document leak, a scam impersonating its name, a rumour that starts there before reaching other networks.":
+    "Telegram ne fonctionne pas comme TikTok ou X. Il n'a pas de fil principal piloté par un algorithme : un message y circule surtout parce qu'il est transféré, de canal en canal et de groupe en groupe. Suivre un sujet sur Telegram, c'est donc suivre ces chaînes de transfert et repérer les canaux qui servent de relais. Son poids varie beaucoup selon les pays et les sujets. Pour une marque, l'usage type est la veille de risque : une fuite de documents, une arnaque qui usurpe son nom, une rumeur qui part de là avant d'atteindre les autres réseaux.",
+  "What are the limits of Telegram data?":
+    "Quelles sont les limites des données Telegram ?",
+  "On Telegram, the line between public and private is clear. The content of a public channel can be read on the web without an account, and it is indexed by search engines. A private channel or group, reachable only through an invite link, stays closed, like conversations between people. A new channel is in fact born private: its administrator chooses to open it. Public groups, finally, need real sorting: messages there are many, short, often off topic, and an isolated mention does not make a trend.":
+    "Sur Telegram, la frontière entre public et privé est nette. Le contenu d'un canal public peut se lire sur le web sans compte, et il est indexé par les moteurs de recherche. Un canal ou un groupe privé, accessible seulement par un lien d'invitation, reste fermé, comme les conversations entre personnes. Un nouveau canal naît d'ailleurs privé : c'est son administrateur qui choisit de l'ouvrir. Les groupes publics demandent enfin un vrai tri : les messages y sont nombreux, courts, souvent hors sujet, et une mention isolée ne fait pas une tendance.",
+  "TELEGRAM IN DETAIL":
+    "TELEGRAM EN DÉTAIL",
+  "What to know before listening to Telegram.":
+    "Ce qu'il faut savoir avant d'écouter Telegram.",
   "Social listening on Telegram: frequently asked questions.":
     "Questions fréquentes sur le social listening Telegram.",
   "Is Licter a Telegram social listening agency?":
@@ -7074,6 +7508,22 @@ window.LicterFR = {
     "Comment nous écoutons Bluesky.",
   "Bluesky social listening: use cases.":
     "Social listening Bluesky : les cas d'usage.",
+  "What can a brand read on Bluesky?":
+    "Que peut-on lire sur Bluesky pour une marque ?",
+  "On Bluesky, most of the activity is public: posts, replies, quotes, likes and follows. The format resembles X, with short posts and threads. Custom feeds are a useful feature. Anyone can create a themed feed, on a profession, a science or a sector, that others choose to follow. Spotting the ones that touch your category shows where the people who discuss it knowledgeably gather, and what they highlight.":
+    "Sur Bluesky, l'essentiel de l'activité est public : les messages, les réponses, les citations, les mentions j'aime et les abonnements. Le format ressemble à celui de X, avec des messages courts et des fils de discussion. Les fils personnalisés sont une particularité utile. N'importe qui peut créer un fil thématique, sur un métier, une science ou un secteur, que d'autres choisissent de suivre. Repérer ceux qui touchent votre catégorie permet de voir où se retrouvent les personnes qui en parlent avec compétence, et ce qu'elles mettent en avant.",
+  "How is listening on Bluesky different?":
+    "En quoi l'écoute de Bluesky est-elle différente ?",
+  "Bluesky gathers a narrower audience than X, with many journalists, researchers and committed communities, who often talk among peers. The tone is more conversational, and exchanges happen more through replies and quotes than through mass reposting. A subject travels from account to account, then rises in the themed feeds that concern it. For a brand, it is often where the reaction of its sector's experts to an announcement can be read, in their own words, before or alongside what they publish elsewhere.":
+    "Bluesky réunit un public plus resserré que X, où l'on trouve beaucoup de journalistes, de chercheurs et de communautés engagées, qui y discutent souvent entre pairs. Le ton y est plus conversationnel, et les échanges se font davantage par réponses et citations que par reprises massives. Un sujet y circule de compte en compte, puis remonte dans les fils thématiques qui le concernent. Pour une marque, c'est souvent là que se lit la réaction des experts de son secteur à une annonce, dans leurs propres mots, avant ou à côté de ce qu'ils publient ailleurs.",
+  "What are the limits of Bluesky data?":
+    "Quelles sont les limites des données Bluesky ?",
+  "Bluesky runs on an open protocol, the AT Protocol. All the network's public data, posts, likes and the follow graph, is available through a documented continuous stream that any developer can read. For listening, that is rare access. Direct messages do not go through this public protocol: Bluesky handles them separately. The real limit lies elsewhere, in the network's size and the make-up of its audience. A low volume of mentions does not mean the subject does not exist, but perhaps that it is discussed on other networks.":
+    "Bluesky repose sur un protocole ouvert, l'AT Protocol. Toutes les données publiques du réseau, messages, mentions j'aime et graphe des abonnements, y sont accessibles par un flux continu documenté, que n'importe quel développeur peut lire. Pour l'écoute, c'est un accès rare. Les messages privés, eux, ne passent pas par ce protocole public : Bluesky les gère à part. La vraie limite est ailleurs, dans la taille du réseau et la composition de son public. Un faible volume de mentions ne veut pas dire que le sujet n'existe pas, mais peut-être qu'il se discute sur d'autres réseaux.",
+  "BLUESKY IN DETAIL":
+    "BLUESKY EN DÉTAIL",
+  "What to know before listening to Bluesky.":
+    "Ce qu'il faut savoir avant d'écouter Bluesky.",
   "Social listening on Bluesky: frequently asked questions.":
     "Questions fréquentes sur le social listening Bluesky.",
   "Is Licter a Bluesky social listening agency?":
@@ -7124,6 +7574,22 @@ window.LicterFR = {
     "Comment nous écoutons VK.",
   "VK social listening: use cases.":
     "Social listening VK : les cas d'usage.",
+  "What can a brand read on VK?":
+    "Que peut-on lire sur VK pour une marque ?",
+  "On VK, the public conversation is mostly read on walls. Every page and every community has a wall, where the administrator posts and where, depending on the settings, members can post too, with comments under each post. Communities are very diverse: fans of a brand, buyers in a category, cities, neighbourhoods, deals. VK also works as a video platform and a messenger. For a brand, the most useful material is often in consumer communities, where people advise each other, and in the posts members leave on official pages' walls.":
+    "Sur VK, la conversation publique se lit surtout sur les murs. Chaque page et chaque communauté a son mur, où l'administrateur publie et où, selon les réglages, les membres peuvent publier aussi, avec des commentaires sous chaque message. Les communautés sont très variées : fans d'une marque, acheteurs d'une catégorie, villes, quartiers, bons plans. VK sert aussi de plateforme vidéo et de messagerie. Pour une marque, la matière la plus utile est souvent dans les communautés de consommateurs, où les gens se conseillent entre eux, et dans les messages laissés par les membres sur les murs des pages officielles.",
+  "How is listening on VK different?":
+    "En quoi l'écoute de VK est-elle différente ?",
+  "VK is listened to in a particular context. In Russia, access to Facebook and Instagram has been blocked since March 2022, which changes how the conversation is spread across networks. Conversely, Ukraine blocked access to VK by decree in 2017. The conversation read on VK therefore does not represent all Russian speakers, and its weight differs from one country to another. For a brand, the typical use is understanding how it is perceived in a market where its own accounts may be absent or dormant, from what consumers say without it.":
+    "VK s'écoute dans un contexte particulier. En Russie, l'accès à Facebook et à Instagram est bloqué depuis mars 2022, ce qui change la répartition de la conversation entre les réseaux. À l'inverse, l'Ukraine a bloqué l'accès à VK par décret en 2017. La conversation lue sur VK ne représente donc pas tous les russophones, et son poids diffère d'un pays à l'autre. Pour une marque, l'usage type est de comprendre comment elle est perçue sur un marché où ses propres comptes sont peut-être absents ou à l'arrêt, à partir de ce que les consommateurs disent sans elle.",
+  "What are the limits of VK data?":
+    "Quelles sont les limites des données VK ?",
+  "VK offers an official API that lets you read the walls of public pages and communities, with an access key. Closed profiles, private communities and messages stay out of reach. What the API makes possible is not necessarily available in the listening platforms on the market: their VK coverage varies from one publisher to another, and it can change. VK, finally, is only one part of the Russian-speaking web. Telegram, review sites and online media often complete the reading, and a subject absent from VK may well live elsewhere.":
+    "VK propose une API officielle qui permet de lire les murs des pages et des communautés publiques, avec une clé d'accès. Les profils fermés, les communautés privées et les messages restent hors de portée. Ce que l'API rend possible ne l'est pas forcément dans les plateformes d'écoute du marché : leur couverture de VK varie d'un éditeur à l'autre, et elle peut changer. VK n'est enfin qu'une partie du web russophone. Telegram, les sites d'avis et les médias en ligne complètent souvent la lecture, et un sujet absent de VK peut très bien vivre ailleurs.",
+  "VK IN DETAIL":
+    "VK EN DÉTAIL",
+  "What to know before listening to VK.":
+    "Ce qu'il faut savoir avant d'écouter VK.",
   "Social listening on VK: frequently asked questions.":
     "Questions fréquentes sur le social listening VK.",
   "Is Licter a VK social listening agency?":
@@ -7176,6 +7642,22 @@ window.LicterFR = {
     "Comment nous écoutons WeChat.",
   "WeChat social listening: use cases.":
     "Social listening WeChat : les cas d'usage.",
+  "What can a brand read on WeChat?":
+    "Que peut-on lire sur WeChat pour une marque ?",
+  "On WeChat, the public part is made of articles published by official accounts: brands, media, institutions, but also independent writers covering beauty, cars, finance or luxury. They are often real in-depth articles, with a point of view and a byline. Under each article, you can read the displayed comments and audience indicators. Part of these articles is also indexed by the Chinese search engine Sogou, which makes them findable outside the app. For a brand, it is the reading closest to a specialist press review.":
+    "Sur WeChat, la partie publique est faite d'articles publiés par des comptes officiels : marques, médias, institutions, mais aussi auteurs indépendants qui écrivent sur la beauté, l'automobile, la finance ou le luxe. Ce sont souvent de vrais articles de fond, avec un point de vue et une signature. Sous chaque article, on peut lire les commentaires affichés et des indicateurs d'audience. Une partie de ces articles est aussi indexée par le moteur de recherche chinois Sogou, qui permet de les retrouver hors de l'application. Pour une marque, c'est la lecture la plus proche d'une revue de presse spécialisée.",
+  "How is listening on WeChat different?":
+    "En quoi l'écoute de WeChat est-elle différente ?",
+  "WeChat is a messenger first. Most exchanges happen in private chats and groups, and that is how articles travel: shared with a friend, in a group, in one's Moments. An article does not spread through a public feed but through these shares between people who know each other. For listening, that means you see the starting point, the article, without seeing the whole path it took. The typical use for a brand is reading how Chinese media and specialist accounts tell the story of its category, its competitors and its announcements.":
+    "WeChat est d'abord une messagerie. La plupart des échanges y ont lieu dans des conversations privées et des groupes, et c'est par là que les articles circulent : on les partage à un ami, dans un groupe, dans ses Moments. Un article ne se diffuse pas par un fil public mais par ces partages entre proches. Pour l'écoute, cela veut dire qu'on voit le point de départ, l'article, sans voir tout le chemin qu'il a fait. L'usage type pour une marque est de lire comment les médias et les comptes spécialisés chinois racontent sa catégorie, ses concurrents et ses prises de parole.",
+  "What are the limits of WeChat data?":
+    "Quelles sont les limites des données WeChat ?",
+  "WeChat leaves the publishing account in control of its comments. An official account's owner can feature comments, hide them or delete them, and depending on its settings, they may have to be approved before appearing. The visible comments are therefore not necessarily all those that were written. Moments are visible only to contacts, and groups cannot be viewed from outside. Finally, collecting personal data in China is governed by the Personal Information Protection Law, in force since November 2021, including for transfers out of the country.":
+    "WeChat laisse au compte qui publie la main sur ses commentaires. Le propriétaire d'un compte officiel peut mettre des commentaires en avant, les masquer ou les supprimer, et selon ses réglages, ils peuvent devoir être validés avant d'apparaître. Les commentaires visibles ne sont donc pas forcément tous ceux qui ont été écrits. Les Moments ne sont visibles que par les contacts, et les groupes ne se consultent pas de l'extérieur. Enfin, la collecte de données personnelles en Chine est encadrée par la loi sur la protection des informations personnelles, en vigueur depuis novembre 2021, y compris pour leur transfert hors du pays.",
+  "WECHAT IN DETAIL":
+    "WECHAT EN DÉTAIL",
+  "What to know before listening to WeChat.":
+    "Ce qu'il faut savoir avant d'écouter WeChat.",
   "Social listening on WeChat: frequently asked questions.":
     "Questions fréquentes sur le social listening WeChat.",
   "Is Licter a WeChat social listening agency?":
@@ -7230,6 +7712,22 @@ window.LicterFR = {
     "Comment nous écoutons Weibo.",
   "Weibo social listening: use cases.":
     "Social listening Weibo : les cas d'usage.",
+  "What can a brand read on Weibo?":
+    "Que peut-on lire sur Weibo pour une marque ?",
+  "On Weibo, you read public posts, short or long, with images and videos, their comments and their reposts. Subjects gather under hashtags framed by two # signs, each with its own page. The ranking of the most popular searches, the \"hot search\", shows what occupies the country at a given moment. Since April 2022, Weibo also displays the province of the author of a post or comment, or their country if they post from abroad. You can therefore read the geography of a reaction, and see whether a criticism comes from one region, the whole country, or abroad.":
+    "Sur Weibo, on lit des messages publics, courts ou longs, avec images et vidéos, leurs commentaires et leurs repartages. Les sujets se regroupent sous des mots-dièse encadrés de deux signes #, qui ont chacun leur page. Le classement des recherches les plus populaires, le « hot search », montre ce qui occupe le pays à un moment donné. Depuis avril 2022, Weibo affiche aussi la province de l'auteur d'un message ou d'un commentaire, ou son pays s'il publie depuis l'étranger. On peut donc lire la géographie d'une réaction, et voir si une critique vient d'une région, de tout le pays, ou de l'étranger.",
+  "How is listening on Weibo different?":
+    "En quoi l'écoute de Weibo est-elle différente ?",
+  "Weibo is the network where China's public debate becomes visible. Celebrities, official media, influencer accounts and brands all speak in the same place, and a subject can move from a fan thread to the national ranking. Fan communities there are highly organised: they can defend a brand linked to their idol, or turn away from it en masse. For a foreign brand, the typical use is monitoring sensitive subjects: a poorly received ad, an ambassador caught in a controversy, a stance judged offensive, any of which can become a national affair.":
+    "Weibo est le réseau où le débat public chinois devient visible. Les célébrités, les médias officiels, les comptes d'influence et les marques y parlent tous au même endroit, et un sujet peut passer d'un fil de fans au classement national. Les communautés de fans y sont très organisées : elles peuvent défendre une marque liée à leur idole, ou s'en détourner en bloc. Pour une marque étrangère, l'usage type est la veille de sujets sensibles : une publicité mal reçue, un ambassadeur pris dans une polémique, une prise de position jugée offensante, qui peuvent devenir une affaire nationale.",
+  "What are the limits of Weibo data?":
+    "Quelles sont les limites des données Weibo ?",
+  "Weibo is a tightly supervised public space. Its trending ranking is not a simple reflection of volume: it is subject to regulation. In June 2020, China's internet regulator ordered Weibo to suspend updates to its trending topic rankings for a week. Posts can be removed, hashtags can disappear, comments can be closed. Reading Weibo therefore also means noting what does not appear, or no longer does, and not confusing a subject's absence from the results with an absence of conversation.":
+    "Weibo est un espace public très encadré. Le classement des tendances n'y est pas un simple reflet du volume : il est soumis à la régulation. En juin 2020, le régulateur chinois d'internet a ainsi imposé à Weibo de suspendre pendant une semaine la mise à jour de ses classements de sujets populaires. Des messages peuvent être retirés, des mots-dièse disparaître, des commentaires être fermés. Lire Weibo, c'est donc aussi noter ce qui n'apparaît pas, ou plus, et ne pas confondre l'absence d'un sujet dans les résultats avec l'absence de conversation.",
+  "WEIBO IN DETAIL":
+    "WEIBO EN DÉTAIL",
+  "What to know before listening to Weibo.":
+    "Ce qu'il faut savoir avant d'écouter Weibo.",
   "Social listening on Weibo: frequently asked questions.":
     "Questions fréquentes sur le social listening Weibo.",
   "Is Licter a Weibo social listening agency?":
@@ -7282,6 +7780,22 @@ window.LicterFR = {
     "Comment nous écoutons Douyin.",
   "Douyin social listening: use cases.":
     "Social listening Douyin : les cas d'usage.",
+  "What can a brand read on Douyin?":
+    "Que peut-on lire sur Douyin pour une marque ?",
+  "On Douyin, you read short videos, their descriptions, hashtags and comments, but also live selling streams where a creator presents products, with a purchase link. Opinions are read in the comments under demo videos, and in the live chat, where buyers ask their questions in real time: price, size, delivery, comparison with another brand. Those questions say what holds a purchase back. Douyin's popular topic rankings also give the state of the moment, and the place your category holds in it.":
+    "Sur Douyin, on lit des vidéos courtes, leurs descriptions, leurs mots-dièse et leurs commentaires, mais aussi des directs de vente où un créateur présente des produits, avec un lien d'achat. Les avis s'y lisent dans les commentaires sous les vidéos de démonstration, et dans le chat des directs, où les acheteurs posent leurs questions en temps réel : prix, taille, livraison, comparaison avec une autre marque. Ces questions disent ce qui freine l'achat. Les classements de sujets populaires de Douyin donnent en plus l'état du moment, et la place que votre catégorie y occupe.",
+  "How is listening on Douyin different?":
+    "En quoi l'écoute de Douyin est-elle différente ?",
+  "Douyin and TikTok belong to the same group, but the two apps' accounts and content are separate, and Douyin applies Chinese content rules. A trend there follows its own path, with its own creators. Commerce is far more integrated: you go from a video or a live stream to a purchase without leaving the app. The line between content and selling is therefore blurred. For a brand, the typical use is a launch in China: following which creators present the product, how it is demonstrated, and what buyers say about it once they have received it.":
+    "Douyin et TikTok appartiennent au même groupe, mais les comptes et les contenus des deux applications sont séparés, et Douyin applique les règles chinoises sur les contenus. Une tendance y suit donc son propre chemin, avec ses propres créateurs. Le commerce y est beaucoup plus intégré : on passe de la vidéo ou du direct à l'achat sans quitter l'application. La frontière entre contenu et vente y est donc floue. Pour une marque, l'usage type est le lancement en Chine : suivre quels créateurs présentent le produit, comment il est démontré, et ce que les acheteurs en disent après l'avoir reçu.",
+  "What are the limits of Douyin data?":
+    "Quelles sont les limites des données Douyin ?",
+  "Douyin is an app designed for the Chinese market: Chinese app stores offer Douyin, international stores offer TikTok. Western listening platforms cover it unevenly, and every study starts by checking what is actually collected. Live selling streams raise a separate problem: what is said there is mostly captured during the broadcast. And as with other Chinese platforms, collecting personal data of users in China falls under China's Personal Information Protection Law. We work on public content, without seeking to identify individuals.":
+    "Douyin est une application pensée pour le marché chinois : les magasins d'applications chinois proposent Douyin, les magasins internationaux proposent TikTok. Les plateformes d'écoute occidentales le couvrent de façon inégale, et chaque étude commence par vérifier ce qui est réellement collecté. Les directs de vente posent un problème à part : ce qui s'y dit se capte surtout pendant la diffusion. Et comme pour les autres plateformes chinoises, la collecte de données personnelles d'utilisateurs en Chine relève de la loi chinoise sur la protection des informations personnelles. Nous travaillons sur des contenus publics, sans chercher à identifier les personnes.",
+  "DOUYIN IN DETAIL":
+    "DOUYIN EN DÉTAIL",
+  "What to know before listening to Douyin.":
+    "Ce qu'il faut savoir avant d'écouter Douyin.",
   "Social listening on Douyin: frequently asked questions.":
     "Questions fréquentes sur le social listening Douyin.",
   "Is Licter a Douyin social listening agency?":
@@ -7332,6 +7846,22 @@ window.LicterFR = {
     "Comment nous écoutons Xiaohongshu (RED).",
   "Xiaohongshu (RED) social listening: use cases.":
     "Social listening Xiaohongshu (RED) : les cas d'usage.",
+  "What can a brand read on Xiaohongshu?":
+    "Que peut-on lire sur Xiaohongshu pour une marque ?",
+  "On Xiaohongshu, the basic unit is the note: a few photos or a short video, a catchy title, and an often long text that describes a use, compares products or gives a list of tips. Under each note, comments ask precise questions: price, size, skin type, where to buy. Replies from the author and other readers complete the review. Notes are made to be found: their title often uses the words people type into search. Reading those titles means reading how the public phrases its needs.":
+    "Sur Xiaohongshu, l'unité de base est la note : quelques photos ou une courte vidéo, un titre accrocheur, et un texte souvent long qui raconte un usage, compare des produits ou donne une liste de conseils. Sous chaque note, les commentaires posent des questions précises : le prix, la taille, le type de peau, où l'acheter. Les réponses de l'auteur et des autres lecteurs complètent l'avis. Les notes sont faites pour être retrouvées : leur titre reprend souvent les mots que les gens tapent dans la recherche. Lire ces titres, c'est lire la manière dont le public formule ses besoins.",
+  "How is listening on Xiaohongshu different?":
+    "En quoi l'écoute de Xiaohongshu est-elle différente ?",
+  "Xiaohongshu is used as a search engine as much as a social network, by a rather young, urban and mostly female audience. The tone is peer advice, detailed and practical, rarely debate. But the platform says it fights paid fake notes presented as spontaneous reviews, and has already sanctioned brands and middlemen for it. Reading Xiaohongshu therefore means telling a sincere review from disguised promotion. For a brand, the typical use is comparing, product by product, what is genuinely praised and what keeps coming back as criticism.":
+    "Xiaohongshu est utilisé comme un moteur de recherche autant que comme un réseau social, par un public plutôt jeune, urbain et majoritairement féminin. Le ton est celui du conseil entre pairs, détaillé et pratique, rarement celui du débat. Mais la plateforme dit lutter contre les fausses notes rémunérées, présentées comme des avis spontanés, et a déjà sanctionné des marques et des intermédiaires pour cela. Lire Xiaohongshu demande donc de distinguer l'avis sincère de la promotion déguisée. Pour une marque, l'usage type est de comparer, produit par produit, ce qui est vraiment loué et ce qui revient comme reproche.",
+  "What are the limits of Xiaohongshu data?":
+    "Quelles sont les limites des données Xiaohongshu ?",
+  "Xiaohongshu offers no open access comparable to Bluesky's. What you see also depends on who is looking: according to a guide published by Bellingcat, the search language and the use of an international account change the version of the platform you see, and search filters remain basic. Serious listening is therefore done in Chinese, from a Chinese user's point of view, crossing several phrasings of the same query. Messages and private accounts stay out of reach, and we only read public notes.":
+    "Xiaohongshu n'offre pas d'accès ouvert comparable à celui de Bluesky. Ce que l'on y voit dépend aussi de qui regarde : selon un guide publié par Bellingcat, la langue de recherche et l'usage d'un compte international changent la version de la plateforme que l'on voit, et les filtres de recherche restent sommaires. Une écoute sérieuse se fait donc en chinois, du point de vue d'un utilisateur chinois, en croisant plusieurs formulations d'une même requête. Les messages et les comptes privés restent hors de portée, et nous ne lisons que les notes publiques.",
+  "XIAOHONGSHU (RED) IN DETAIL":
+    "XIAOHONGSHU (RED) EN DÉTAIL",
+  "What to know before listening to Xiaohongshu (RED).":
+    "Ce qu'il faut savoir avant d'écouter Xiaohongshu (RED).",
   "Social listening on Xiaohongshu (RED): frequently asked questions.":
     "Questions fréquentes sur le social listening Xiaohongshu (RED).",
   "Is Licter a Xiaohongshu (RED) social listening agency?":
@@ -7380,6 +7910,22 @@ window.LicterFR = {
     "Comment nous écoutons Bilibili.",
   "Bilibili social listening: use cases.":
     "Social listening Bilibili : les cas d'usage.",
+  "What can a brand read on Bilibili?":
+    "Que peut-on lire sur Bilibili pour une marque ?",
+  "On Bilibili, you read videos that are often long and structured: detailed tests, comparisons, tutorials, analyses. Two layers of reactions overlap. Scrolling comments, pinned to a precise second of the video, say what triggers a reaction in the moment. Regular comments, under the video, are more reasoned and give the overall opinion. A product test is therefore read both as a whole and moment by moment: the part where the price is announced, the part where the product is taken apart, the part where the creator gives a verdict.":
+    "Sur Bilibili, on lit des vidéos souvent longues et construites : tests détaillés, comparatifs, tutoriels, analyses. Deux couches de réactions s'y superposent. Les commentaires défilants, attachés à une seconde précise de la vidéo, disent ce qui fait réagir à l'instant. Les commentaires classiques, sous la vidéo, sont plus argumentés et donnent l'avis d'ensemble. Un test de produit y est donc lu à la fois globalement et moment par moment : le passage où le prix est annoncé, celui où le produit est démonté, celui où le créateur rend son verdict.",
+  "How is listening on Bilibili different?":
+    "En quoi l'écoute de Bilibili est-elle différente ?",
+  "Bilibili presents itself as a video community for China's young generations, born around animation, comics and gaming. This community has its codes and cares about them: Bilibili long required newcomers to pass a quiz on the site's rules and culture to unlock all features, scrolling comments included. The audience quickly spots disguised advertising, and says so. For a brand, the typical use is testing a message with this demanding audience, through the creators it follows and respects.":
+    "Bilibili se présente comme une communauté vidéo pour les jeunes générations chinoises, née autour de l'animation, de la bande dessinée et du jeu vidéo. Cette communauté a ses codes et y tient : Bilibili a longtemps demandé aux nouveaux venus de réussir un questionnaire sur les règles du site et sa culture pour accéder à toutes les fonctions, dont les commentaires défilants. Le public y repère vite une publicité déguisée, et le dit. Pour une marque, l'usage type est de tester un message auprès de ce public exigeant, à travers les créateurs qu'il suit et respecte.",
+  "What are the limits of Bilibili data?":
+    "Quelles sont les limites des données Bilibili ?",
+  "Bilibili first raises a question of method. On a popular video, scrolling comments can be very numerous, very short, often repeated word for word, and they only make sense next to the image. Reading them in bulk, like a body of text, loses the essentials: they are rather read by key moments, going back to the video. Next, not every listening platform collects these scrolling comments, and that must be checked before promising an analysis. Finally, messages between members and restricted content stay closed.":
+    "Bilibili pose d'abord une question de méthode. Sur une vidéo populaire, les commentaires défilants peuvent être très nombreux, très courts, souvent répétés à l'identique, et ils n'ont de sens qu'à côté de l'image. Les lire en bloc, comme un corpus de textes, fait perdre l'essentiel : on les lit plutôt par moments clés, en revenant à la vidéo. Ensuite, toutes les plateformes d'écoute ne collectent pas ces commentaires défilants, et il faut le vérifier avant de promettre une analyse. Enfin, les messages entre membres et les contenus réservés restent fermés.",
+  "BILIBILI IN DETAIL":
+    "BILIBILI EN DÉTAIL",
+  "What to know before listening to Bilibili.":
+    "Ce qu'il faut savoir avant d'écouter Bilibili.",
   "Social listening on Bilibili: frequently asked questions.":
     "Questions fréquentes sur le social listening Bilibili.",
   "Is Licter a Bilibili social listening agency?":

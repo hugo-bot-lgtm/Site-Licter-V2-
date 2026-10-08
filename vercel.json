@@ -461,6 +461,16 @@
       "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/sic",
+      "destination": "https://socialintelligenceclub.vercel.app/sic"
+    },
+    {
+      "source": "/sic/:path*",
+      "destination": "https://socialintelligenceclub.vercel.app/sic/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/(css|js)/(.*)",

@@ -533,18 +533,52 @@ def tool_body(x):
 
 
 # the long-form "in detail" sections (DESIGN.md: one component, qa_roller)
-GUIDE = {"talkwalker": "talkwalker_guide", "tiktok": "tiktok_guide", "geo": "geo_guide", "chatgpt": "chatgpt_guide"}
+GUIDE = {"talkwalker": "talkwalker_guide", "tiktok": "tiktok_guide", "geo": "geo_guide", "chatgpt": "chatgpt_guide",
+         "claude": "claude_guide", "gemini": "gemini_guide", "perplexity": "perplexity_guide", "grok": "grok_guide"}
+
+
+# what is specific to each network (tools/net_detail_a.py, net_detail_b.py;
+# audit of 8 October 2026: the 22 network pages were thin and alike)
+def net_detail(slug, nm):
+    import html as _h
+    for mod in ("net_detail_a", "net_detail_b"):
+        f = ROOT / "tools" / (mod + ".py")
+        if not f.exists():
+            continue
+        M = importlib.import_module(mod)
+        blocks = M.NET_DETAIL.get(slug)
+        if not blocks:
+            continue
+        # this network's own "# source:" notes, between its key and the next one
+        txt = f.read_text()
+        start = txt.find('"%s": [' % slug)
+        nxt = re.search(r'\n    "[a-z-]+": \[', txt[start + 5:])
+        part = txt[start: start + 5 + nxt.start()] if nxt else txt[start:]
+        urls = []
+        for u in re.findall(r"# source: (https?://[^\s)]+)", part):
+            u = u.rstrip(".,;")
+            if u not in urls:
+                urls.append(u)
+        src = ('<p class="qa-src"><span>%s</span> %s</p>' % (t(("Sources", "Sources")), ", ".join(
+            '<a href="%s" rel="noopener" target="_blank">%s</a>' % (_h.escape(u, quote=True), _h.escape(re.sub(r"^https?://(www\.)?", "", u).split("/")[0]))
+            for u in urls))) if urls else ""
+        cards = "".join('<li class="tk-proof__c"><h3 class="tk-proof__h">%s</h3><p>%s</p></li>' % (t(h), t(p_)) for h, p_ in blocks)
+        return sec("detail", head(t(("%s EN DÉTAIL" % nm.upper(), "%s IN DETAIL" % nm.upper())),
+                                  t(("Ce qu'il faut savoir avant d'écouter %s." % nm, "What to know before listening to %s." % nm))) +
+                   '<ul class="tk-proof">%s</ul>' % cards + src)
+    return ""
 
 
 def guide(slug):
     mod = GUIDE.get(slug)
     if not mod or not (ROOT / "tools" / (mod + ".py")).exists():
         return ""
-    from components import qa_roller, authors_line
+    from components import qa_roller, authors_line, sources_line
     G = importlib.import_module(mod)
     return sec("guide", head(t(G.KICKER), t(G.TITLE)) + qa_roller(
         [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS], t(G.KICKER), t(("Lire la réponse", "Read the answer")),
-        by=authors_line(t(("Rédigé par", "Written by")), t(("et", "and")), t((", cofondateurs de Licter", ", co-founders of Licter")))))
+        by=authors_line(t(("Rédigé par", "Written by")), t(("et", "and")), t((", cofondateurs de Licter", ", co-founders of Licter")))) +
+        sources_line(G.__file__, t(("Sources", "Sources"))))
 
 
 # ------------------------------------------------------------------ network page
@@ -583,6 +617,7 @@ def net_body(n):
     out += sec("method", head(t(S["nmet_k"]), t(fmt(S["nmet_t"], NMx))) + method, band=True)
     out += sec("uses", head(t(S["uses_k2"]), t(fmt(S["nuses_t"], NMx)), t(S["uses_lead"])) + prog(n["uses"]))
     out += guide(n["slug"])
+    out += net_detail(n["slug"], n["name"])
     out += sec("networks", head(t(S["noth_k"]), t(S["noth_t"])) + nets, band=True)
     out += sec("faq", faq_block(t(fmt(S["nfaq_t"], NMx)), [(ag["q"], ag["a"])] + n["faq"]))
     return out + cta(t(ag["band"]), t(S["cta_text"]), '<span class="tk-cta__net">%s</span>' % glyph(n["glyph"]), "src-" + n["slug"])

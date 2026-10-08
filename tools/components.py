@@ -32,3 +32,24 @@ def authors_line(written, and_, role):
     on Why Licter (already translated words passed in)"""
     return ('<p class="qa-by">%s <a href="why-licter.html#antoine-khaitrine">Antoine Khaitrine</a> %s '
             '<a href="why-licter.html#adrien-krebs">Adrien Krebs</a>%s</p>') % (written, and_, role)
+
+
+def sources_line(module_file, label):
+    """the public sources a long-form section relies on: the "# source:" notes
+    of its module (every public fact there is checked and noted), shown as
+    links under the section (SEO audit of 8 October 2026)"""
+    import html, pathlib, re
+    urls = []
+    for u in re.findall(r"# source: (https?://[^\s)]+)", pathlib.Path(module_file).read_text()):
+        u = u.rstrip(".,;")
+        if u not in urls:
+            urls.append(u)
+    if not urls:
+        return ""
+    def name(u):
+        host = re.sub(r"^https?://(www\.)?", "", u).split("/")[0]
+        path = u.split(host, 1)[1].strip("/")
+        tail = path.split("/")[-1] if path else ""
+        return host + (" · " + tail[:38] if tail else "")
+    links = ", ".join('<a href="%s" rel="noopener" target="_blank">%s</a>' % (html.escape(u, quote=True), html.escape(name(u))) for u in urls)
+    return '<p class="qa-src"><span>%s</span> %s</p>' % (label, links)

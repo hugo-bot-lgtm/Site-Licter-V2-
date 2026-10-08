@@ -730,10 +730,11 @@ def listening_body(x, offers_html):
     guide = GUIDE.get(x["key"])
     if guide and (ROOT / "tools" / (guide + ".py")).exists():   # the long-form sections (SEO plan step 15, audit of October 2026)
         G = importlib.import_module(guide)
-        from components import qa_roller, authors_line
+        from components import qa_roller, authors_line, sources_line
         out += sec("guide", head(t(G.KICKER), t(G.TITLE)) + qa_roller(
             [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS], t(G.KICKER),
-            t(("Lire la réponse", "Read the answer")), by=authors_line(t(("Rédigé par", "Written by")), t(("et", "and")), t((", cofondateurs de Licter", ", co-founders of Licter")))), band=True)
+            t(("Lire la réponse", "Read the answer")), by=authors_line(t(("Rédigé par", "Written by")), t(("et", "and")), t((", cofondateurs de Licter", ", co-founders of Licter")))) +
+            sources_line(G.__file__, t(("Sources", "Sources"))), band=True)
     out += sec("", head(t(S["runs_k"]), t(S["how_runs"])) + steps + '<p class="tk-sub xe-note">%s</p>' % t(S["how_note"]), band=True)
     out += sec("", head(t(S["lim_k"]), t(S["lim_t"])) + offer_cards(x))
     out += voice(e["voice"])
