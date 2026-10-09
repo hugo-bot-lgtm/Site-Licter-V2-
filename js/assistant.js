@@ -69,6 +69,7 @@
     doneEnd: [" dans les 30 minutes.", " within 30 minutes."],
     or: ["ou", "or"],
     wa: ["Écrire à " + A.name + " sur WhatsApp", "Message " + A.name + " on WhatsApp"],
+    newTab: [" (nouvel onglet)", " (new tab)"],
     waText: ["Bonjour Antoine, je viens du site de Licter. ", "Hello Antoine, I'm coming from the Licter website. "]
   };
 
@@ -210,7 +211,7 @@
         '<p class="lx__lead" data-l="callL"></p>' +
         '<form class="lx__form" novalidate>' +
           '<label class="lx__label" for="lx-contact" data-l="field"></label>' +
-          '<input class="lx__input" id="lx-contact" type="text" inputmode="email" autocomplete="email" required aria-describedby="lx-err" />' +
+          '<input class="lx__input" id="lx-contact" name="contact" type="text" inputmode="email" autocomplete="email" required aria-describedby="lx-err" />' +
           '<p class="lx__err" id="lx-err" data-l="err" hidden></p>' +
           '<button class="btn btn--primary lx__submit" type="submit"><span data-l="callBtn"></span> <span aria-hidden="true">→</span></button>' +
           '<p class="lx__promise"><span class="lx__dot" aria-hidden="true"></span><span data-l="promise"></span></p>' +
@@ -218,16 +219,16 @@
         "</form>" +
         '<p class="lx__done" role="status" hidden></p>' +
         '<p class="lx__or"><span data-l="or"></span></p>' +
-        '<a class="lx__wa" href="#" target="_blank" rel="noopener"><i aria-hidden="true"></i><span data-l="wa"></span></a>' +
+        '<a class="lx__wa" href="#" target="_blank" rel="noopener"><i aria-hidden="true"></i><span data-l="wa"></span><span class="visually-hidden" data-l="newTab"></span></a>' +
       "</div>" +
       /* the chat */
       '<div class="lx__view lx__chat" id="lx-chat" role="tabpanel" aria-labelledby="lx-t-chat" hidden>' +
         '<div class="lx__log" role="log" aria-live="polite"></div>' +
         '<div class="lx__chips"></div>' +
-        '<a class="lx__wa lx__wa--chat" href="#" target="_blank" rel="noopener"><i aria-hidden="true"></i><span data-l="wa"></span></a>' +
+        '<a class="lx__wa lx__wa--chat" href="#" target="_blank" rel="noopener"><i aria-hidden="true"></i><span data-l="wa"></span><span class="visually-hidden" data-l="newTab"></span></a>' +
         '<form class="lx__ask">' +
           '<label class="visually-hidden" for="lx-q" data-l="placeholder"></label>' +
-          '<input class="lx__q" id="lx-q" type="text" autocomplete="off" maxlength="300" />' +
+          '<input class="lx__q" id="lx-q" name="question" type="text" autocomplete="off" maxlength="300" />' +
           '<button class="lx__send" type="submit"><span aria-hidden="true">↑</span><span class="visually-hidden" data-l="send"></span></button>' +
         "</form>" +
       "</div>" +
@@ -423,7 +424,7 @@
       root.classList.toggle("lx--wait", !past);
     };
     window.addEventListener("scroll", onHero, { passive: true });
-    onHero();
+    requestAnimationFrame(onHero);   /* next frame: no forced layout while the scripts run */
   }
   /* use-case pages, large screens: once the hero is past, the launcher keeps
      only Antoine's face, so it never sits over the content */

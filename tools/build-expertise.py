@@ -65,7 +65,7 @@ LISTENINGS = [
         "name": ("Social listening", "Social listening"),
         "short": ("Ce qui se dit sur vous, vos concurrents et votre marché.", "What is said about you, your competitors and your market."),
         "seo_title": ("Agence et cabinet de social listening à Paris | Licter", "Social listening agency and consultancy in Paris | Licter"),
-        "seo_desc": ("Agence de social listening à Paris : réseaux sociaux, presse, forums et avis, lus par un analyste, pour des marques en France et à l'international.",
+        "seo_desc": ("Agence de social listening à Paris : nous opérons les outils de social listening du marché et lisons réseaux sociaux, presse et avis, en France et ailleurs.",
                      "Social listening agency in Paris: social networks, news, forums and reviews, read by an analyst, for brands in France and abroad."),
         "h1": ("Agence de social listening à Paris : ce que les gens disent, lu par des gens.", "Social listening agency in Paris: what people say, read by people."),
         "lead": ("Agence et cabinet de social listening basés à Paris, nous travaillons pour des marques en France et à l'international. Les réseaux sociaux, la presse, les forums et les avis, collectés sur votre périmètre et lus par un analyste : volumes, sujets, tonalité, et surtout ce que ça veut dire pour vous.",
@@ -117,10 +117,7 @@ LISTENINGS = [
         "cannot": [("Ce que ces personnes pensent de vous en particulier : c'est le social listening.", "What these people think of you in particular: that is social listening.")],
         "cases": ["segmentation", "rejuvenate", "touchpoints"],
         "tools": ["soprism"], "offers": ["social-insights"],
-        "faq": [(("Qu'est-ce que la consumer intelligence ?", "What is consumer intelligence?"),
-                 ("L'étude des consommateurs d'une catégorie à partir de ce qu'ils publient, cherchent et suivent en ligne, pour répondre à une question de marché. Elle croise social listening, audience intelligence et données de recherche, et se termine par des recommandations.",
-                  "The study of a category's consumers from what they post, search for and follow online, to answer a market question. It crosses social listening, audience intelligence and search data, and ends with recommendations.")),
-                (("Audience intelligence ou social listening : quelle différence ?", "Audience intelligence or social listening: what is the difference?"),
+        "faq": [(("Audience intelligence ou social listening : quelle différence ?", "Audience intelligence or social listening: what is the difference?"),
                  ("Le social listening lit ce qui se dit sur votre marque et votre marché. L'audience intelligence, que nous appelons audience listening, décrit les gens eux-mêmes : ce qu'ils suivent, partagent et consomment, qu'ils parlent de vous ou non. L'un mesure une conversation, l'autre dessine une communauté ; les deux se croisent souvent dans une même étude.",
                   "Social listening reads what is said about your brand and your market. Audience intelligence, which we call audience listening, describes the people themselves: what they follow, share and consume, whether they talk about you or not. One measures a conversation, the other draws a community; the two often meet in the same study.")),
                 (("D'où viennent les données d'audience ?", "Where does the audience data come from?"),
@@ -164,8 +161,8 @@ LISTENINGS = [
         "seo_desc": ("Nous interrogeons les assistants IA sur votre marque et votre catégorie, comme vos clients, et lisons ce qu'ils recommandent, citent ou oublient.",
                      "We question AI assistants about your brand and your category, the way your customers do, and read what they recommend, cite or leave out."),
         "h1": ("Ce que les IA répondent quand on leur parle de vous.", "What AI answers when people ask about you."),
-        "lead": ("De plus en plus de recherches passent par un assistant IA. Nous interrogeons les principaux modèles sur votre marque et votre catégorie, comme le feraient vos clients, et lisons ce qu'ils recommandent, citent ou oublient.",
-                 "More and more searches go through an AI assistant. We question the main models about your brand and your category, the way your customers would, and read what they recommend, cite or leave out."),
+        "lead": ("De plus en plus de recherches passent par un assistant IA. Nous interrogeons les principaux modèles sur votre marque et votre catégorie, comme le feraient vos clients, et lisons ce qu'ils recommandent, citent ou oublient : votre visibilité IA et votre réputation dans leurs réponses.",
+                 "More and more searches go through an AI assistant. We question the main models about your brand and your category, the way your customers would, and read what they recommend, cite or leave out: your AI visibility, and your reputation in their answers."),
         "demo": [(("Question testée", "Prompt tested"), ("« Quelle mutuelle pour une famille ? »", "“Which health insurance for a family?”")),
                  (("Cité", "Cited"), ("Votre marque, dans 2 réponses sur 5", "Your brand, in 2 answers out of 5")),
                  (("À corriger", "To fix"), ("Un tarif de 2022 repris comme actuel", "A 2022 price quoted as current"))],
@@ -563,19 +560,19 @@ def offer_cards(x):
     """limits and complements: the limit, the platforms, the offers"""
     icon = ICON_SVG.get(x["icon"], "")
     mark = '<span class="tk-offer__net">%s</span>' % icon
-    cards = '<article class="tk-offer tk-offer--limit"><div class="tk-offer__img"><span class="tk-offer__art tk-offer__art--limit" aria-hidden="true">!</span></div><div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">!</i>%s</p><h3>%s</h3><p>%s</p></div><p class="tk-offer__foot"><span class="tk-offer__logo">%s</span><span><b>%s</b><small>%s</small></span></p></article>' % (
+    cards = '<div class="tk-offer tk-offer--limit"><div class="tk-offer__img"><span class="tk-offer__art tk-offer__art--limit" aria-hidden="true">!</span></div><div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">!</i>%s</p><h3>%s</h3><p>%s</p></div><p class="tk-offer__foot"><span class="tk-offer__logo">%s</span><span><b>%s</b><small>%s</small></span></p></div>' % (
         t(S["lim_tag"]), t(x["name"]), t(x["cannot"][0]), mark, t(x["name"]), t(S["lim_sub"]))
     for k in x["tools"]:
         f, nm, d = TOOLS[k]
-        cards += ('<article class="tk-offer tk-offer--tool"><div class="tk-offer__img"><img src="/assets/img/shots/%s.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" /></div>'
-                  '<div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">＋</i>%s</p><h3>%s</h3><p>%s</p></div>'
-                  '<a class="tk-offer__foot" href="%s"><span class="tk-offer__logo"><img src="/assets/img/tools/%s.png" alt="" width="96" height="96" loading="lazy" decoding="async" /></span><span><b>%s</b><small>%s</small></span><i aria-hidden="true">↗</i></a></article>') % (
+        cards += ('<div class="tk-offer tk-offer--tool"><div class="tk-offer__img"><img src="/assets/img/shots/%s.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" /></div>'
+                  '<div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">+</i>%s</p><h3>%s</h3><p>%s</p></div>'
+                  '<a class="tk-offer__foot" href="%s"><span class="tk-offer__logo"><img src="/assets/img/tools/%s.png" alt="" width="96" height="96" loading="lazy" decoding="async" /></span><span><b>%s</b><small>%s</small></span><i aria-hidden="true">↗</i></a></div>') % (
             k, t(S["tool_tag"]), nm, t(d), f, k, nm, t(S["see_page"]))
     for k in x["offers"]:
         o = OFFERS[k]
-        cards += ('<article class="tk-offer tk-offer--offer of-acc--%s"><div class="tk-offer__img"><img src="/assets/img/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" /></div>'
+        cards += ('<div class="tk-offer tk-offer--offer of-acc--%s"><div class="tk-offer__img"><img src="/assets/img/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" /></div>'
                   '<div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">0%d</i>%s</p><h3>%s</h3><p>%s</p></div>'
-                  '<a class="tk-offer__foot" href="%s"><span class="tk-offer__logo xe-offer-n">0%d</span><span><b>%s</b><small>%s</small></span><i aria-hidden="true">↗</i></a></article>') % (
+                  '<a class="tk-offer__foot" href="%s"><span class="tk-offer__logo xe-offer-n">0%d</span><span><b>%s</b><small>%s</small></span><i aria-hidden="true">↗</i></a></div>') % (
             O.CARD_ACCENT[k], "team/" + O.HUB_PHOTO[k], o["n"], t(S["offer_tag"]), t(o["name"]), t(o["short"]), o["file"], o["n"], t(o["name"]), t(S["see_page"]))
     return ('<div class="tk-offers"><div class="tk-offers__track" tabindex="0">%s</div>'
             '<button class="tk-offers__nav tk-offers__nav--prev" type="button" aria-label="%s">‹</button>'
@@ -738,7 +735,7 @@ def listening_body(x, offers_html):
             '<div class="tk-actions"><a class="btn btn--primary" href="#book">%s <span aria-hidden="true">→</span></a>'
             '<a class="btn btn--ghost" href="#answers">%s</a></div>' % (t(S["book"]), t(S["answers_link"])))
     feats = '<div class="tk-feats tk-feats--3">%s</div>' % "".join(
-        '<article class="tk-feat tk-feat--%d" data-reveal><span class="tk-feat__n" aria-hidden="true">0%d</span><div class="tk-feat__t"><h3>%s</h3></div>%s</article>' % (
+        '<div class="tk-feat tk-feat--%d" data-reveal><span class="tk-feat__n" aria-hidden="true">0%d</span><div class="tk-feat__t"><h3>%s</h3></div>%s</div>' % (
             k + 1, k + 1, t(h), ('<img class="tk-feat__shot" src="/assets/img/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" />' % PHOTO[x["key"]]) if k == 0 else "")
         for k, h in enumerate(x["hears"]))
     steps = '<ol class="tk-steps tk-steps--4">%s</ol>' % "".join(

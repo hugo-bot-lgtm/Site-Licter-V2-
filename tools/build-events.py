@@ -39,7 +39,7 @@ EVENTS = [
         "venue": "Musée de la Vie romantique", "address": "16 rue Chaptal, 75009 Paris",
         "h1": ("Jeux & jouets : ce que la conversation dit du secteur.", "Toys & games: what the conversation says about the sector."),
         "lead": ("Nous présentons notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
-                 "We present our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays."),
+                 "Our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays."),
         "points": [("Qui achète, et qui prescrit : parents, grands-parents, créateurs de contenu.", "Who buys, and who recommends: parents, grandparents, content creators."),
                    ("Les tendances qui montent sur TikTok et YouTube, et celles qui retombent.", "The trends rising on TikTok and YouTube, and the ones fading."),
                    ("Ce que les avis disent des prix, de la qualité et de la durabilité.", "What reviews say about price, quality and durability.")],
@@ -50,7 +50,7 @@ EVENTS = [
         "venue": "Ladurée Champs-Élysées", "address": "75 avenue des Champs-Élysées, 75008 Paris",
         "h1": ("Luxe : ce que la conversation dit des maisons.", "Luxury: what the conversation says about the houses."),
         "lead": ("Nous présentons notre étude sectorielle : comment se construit le désir d'une maison en ligne, qui le porte, et ce que les clients et les curieux disent vraiment des prix, des créations et de l'expérience.",
-                 "We present our sector study: how desire for a house is built online, who carries it, and what clients and onlookers really say about prices, creations and the experience."),
+                 "Our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience."),
         "points": [("Créateurs, ambassadeurs, clients : qui fait vraiment parler d'une maison.", "Creators, ambassadors, clients: who really gets a house talked about."),
                    ("La seconde main et la revente, dans la conversation.", "Resale and second hand, in the conversation."),
                    ("Ce que les audiences internationales disent, dans leur langue.", "What international audiences say, in their own language.")],
@@ -82,6 +82,7 @@ S = {
     "crumbs": ("Fil d'Ariane", "Breadcrumb"),
     "register": ("S'inscrire", "Register"),
     "hear_t": ("Ce que vous y entendrez", "What you will hear"),
+    "more_t": ("Nos autres études sectorielles", "Our other sector studies"),
     "practical": ("Infos pratiques", "Practical details"),
     "when": ("Quand", "When"),
     "where": ("Où", "Where"),
@@ -222,15 +223,28 @@ def event_body(e):
       </div>
     </div>
   </section>
+
+  <!-- each study links to the others: an event page was reached from the
+       events hub only (audit of 9 October 2026) -->
+  <section class="evl evl--more">
+    <div class="shell">
+      <h2 class="ev__h2">{t(S["more_t"])}</h2>
+      <ul class="evl__list">{event_rows([x for x in EVENTS if x is not e])}</ul>
+    </div>
+  </section>
 </main>'''
 
 
-def list_body():
-    rows = "".join(
+def event_rows(evs):
+    return "".join(
         '<li data-ev-date="%s"><a href="%s"><span class="evl__d"><b>%d</b>%s</span>'
         '<span class="evl__t"><small>%s</small><b>%s</b><span>%s</span></span><i aria-hidden="true">→</i></a></li>' % (
             e["date"], file(e), iso(e).day, t((ABBR[FR][iso(e).month - 1], ABBR[EN][iso(e).month - 1])),
-            t(S["kicker"]), t(e["sector"]), html.escape(e["venue"])) for e in EVENTS)
+            t(S["kicker"]), t(e["sector"]), html.escape(e["venue"])) for e in evs)
+
+
+def list_body():
+    rows = event_rows(EVENTS)
     return f'''<main id="content">
 {crumbs([(S["home"], "index.html"), (S["events"], None)])}
 

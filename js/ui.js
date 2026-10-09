@@ -81,57 +81,8 @@ window.LicterUC = (function () {
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   /* ------------------------------------------------------------------ logo
-     The source PNG carries a wide transparent margin; crop it at runtime so
-     the mark sits at its 44 x 48 box without a hand-made asset. */
-  Array.prototype.forEach.call(document.querySelectorAll(".logo"), function (wrap) {
-    var img = wrap.querySelector(".logo__img");
-    var out = wrap.querySelector(".logo__canvas");
-    if (!img || !out) return;
-
-    function run() {
-      var src = document.createElement("canvas");
-      src.width = img.naturalWidth; src.height = img.naturalHeight;
-      var sc = src.getContext("2d", { willReadFrequently: true });
-      sc.drawImage(img, 0, 0);
-      var data;
-      try { data = sc.getImageData(0, 0, src.width, src.height).data; }
-      catch (e) { return; } /* file:// without --allow-file-access: keep the img */
-
-      var minX = src.width, minY = src.height, maxX = -1, maxY = -1;
-      for (var y = 0; y < src.height; y++) {
-        for (var x = 0; x < src.width; x++) {
-          if (data[(y * src.width + x) * 4 + 3] > 12) {
-            if (x < minX) minX = x; if (x > maxX) maxX = x;
-            if (y < minY) minY = y; if (y > maxY) maxY = y;
-          }
-        }
-      }
-      if (maxX < 0) return;
-
-      var cw = maxX - minX + 1, chh = maxY - minY + 1;
-      var dpr = Math.min(2, window.devicePixelRatio || 1);
-      var box = wrap.getBoundingClientRect();
-      var bw = Math.round(box.width) || 44;
-      var bh = Math.round(box.height) || 48;
-      out.width = bw * dpr; out.height = bh * dpr;
-      out.style.width = bw + "px"; out.style.height = bh + "px";
-      var oc = out.getContext("2d");
-      oc.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var k = Math.min(bw / cw, bh / chh);
-      oc.drawImage(img, minX, minY, cw, chh,
-                   (bw - cw * k) / 2, (bh - chh * k) / 2, cw * k, chh * k);
-      wrap.classList.add("is-trimmed");
-    }
-
-    if (img.complete && img.naturalWidth) run();
-    else img.addEventListener("load", run);
-
-    var t = null;
-    window.addEventListener("resize", function () {
-      clearTimeout(t);
-      t = setTimeout(function () { if (img.naturalWidth) run(); }, 200);
-    });
-  });
+     The webp is already cropped to its ink, so the img is shown as is (the
+     old runtime canvas crop scanned every pixel on each load and resize). */
 
   /* --------------------------------------------------------- client logos
      Official marks (Wikimedia Commons / Wikipedia), cropped to their ink and
@@ -195,7 +146,9 @@ window.LicterUC = (function () {
     track.style.setProperty("--marquee-duration", (setWidth / (MARQUEE_SPEED * k)).toFixed(2) + "s");
   }
 
-  buildMarquee();
+  /* after the first frame: reading innerWidth before it forces a layout of
+     the whole page inside this script (250 ms on a slow phone) */
+  requestAnimationFrame(function () { setTimeout(buildMarquee, 0); });
 
   /* The wall on clients.html held the same sixteen names as plain text, all at
      one weight, in a boxed grid — a spreadsheet. It now takes the weight,
@@ -1485,7 +1438,28 @@ window.LicterUC = (function () {
   if (reduced.matches) return;
 
   var caption = wave.parentNode;
-  var anim = null, visible = false, running = false;
+  var anim = null, visible = false, running = false, geo = null, lastPos = null;
+
+  /* layout is read once, then again only when the wall or caption resizes,
+     not on every frame */
+  function measure() {
+    var card = wall.getBoundingClientRect();
+    var text = caption.getBoundingClientRect();
+    var perimeter = 2 * (card.width + card.height);
+    /* the caption sits on the top edge, so its span maps straight onto the
+       first stretch of the perimeter */
+    geo = {
+      perimeter: perimeter,
+      start: perimeter ? (Math.max(0, text.left - card.left) / perimeter) * 100 : 0,
+      end: perimeter ? (Math.min(card.width, text.right - card.left) / perimeter) * 100 : 0
+    };
+  }
+  if ("ResizeObserver" in window) {
+    var ro = new ResizeObserver(function () { geo = null; });
+    ro.observe(wall); ro.observe(caption);
+  } else {
+    window.addEventListener("resize", function () { geo = null; });
+  }
 
   function clock() {
     if (anim && anim.currentTime !== null) return anim.currentTime;
@@ -1500,15 +1474,9 @@ window.LicterUC = (function () {
     var dur = (anim && anim.effect && anim.effect.getTiming().duration) || 8000;
     var offset = ((clock() % dur) / dur) * 100;          /* 0–100 of the perimeter */
 
-    var card = wall.getBoundingClientRect();
-    var text = caption.getBoundingClientRect();
-    var perimeter = 2 * (card.width + card.height);
-    if (!perimeter) { requestAnimationFrame(frame); return; }
-
-    /* the caption sits on the top edge, so its span maps straight onto the
-       first stretch of the perimeter */
-    var start = (Math.max(0, text.left - card.left) / perimeter) * 100;
-    var end = (Math.min(card.width, text.right - card.left) / perimeter) * 100;
+    if (!geo) measure();
+    if (!geo.perimeter) { requestAnimationFrame(frame); return; }
+    var start = geo.start, end = geo.end;
 
     var pos;
     if (offset >= start && offset <= end) {
@@ -1517,7 +1485,7 @@ window.LicterUC = (function () {
     } else {
       pos = offset < start ? 0 : 100;                     /* parked, plain colour */
     }
-    wave.style.backgroundPosition = pos + "% center";
+    if (pos !== lastPos) { wave.style.backgroundPosition = pos + "% center"; lastPos = pos; }   /* parked most of the time */
 
     requestAnimationFrame(frame);
   }

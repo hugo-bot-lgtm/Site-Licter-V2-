@@ -71,6 +71,31 @@
       "permanent": true
     },
     {
+      "source": "/FR/index.html",
+      "destination": "/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/FR/fr",
+      "destination": "/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/FR/fr/(.*)",
+      "destination": "/fr/$1",
+      "permanent": true
+    },
+    {
+      "source": "/fr/Social-Listening",
+      "destination": "/fr/expertise/social-listening/",
+      "permanent": true
+    },
+    {
+      "source": "/fr/Social-Listening/",
+      "destination": "/fr/expertise/social-listening/",
+      "permanent": true
+    },
+    {
       "source": "/FR",
       "destination": "/fr/",
       "permanent": true
@@ -1113,6 +1138,36 @@
     {
       "source": "/pages/projets/",
       "destination": "/fr/clients/",
+      "permanent": true
+    },
+    {
+      "source": "/article/le-bad-buzz-huda-beauty-decrypte",
+      "destination": "/article-le-bad-buzz-huda-beauty-decrypte.html",
+      "permanent": true
+    },
+    {
+      "source": "/article/le-bad-buzz-huda-beauty-decrypte/",
+      "destination": "/article-le-bad-buzz-huda-beauty-decrypte.html",
+      "permanent": true
+    },
+    {
+      "source": "/article/comment-origins-associe-influence-et-technologie-pour-transformer-le-capital-risque",
+      "destination": "/article-comment-origins-associe-influence-et-technologie-pour-transformer-le-capital-risque.html",
+      "permanent": true
+    },
+    {
+      "source": "/article/comment-origins-associe-influence-et-technologie-pour-transformer-le-capital-risque/",
+      "destination": "/article-comment-origins-associe-influence-et-technologie-pour-transformer-le-capital-risque.html",
+      "permanent": true
+    },
+    {
+      "source": "/article/veille-reseaux-sociaux-entreprise",
+      "destination": "/article-veille-reseaux-sociaux-entreprise.html",
+      "permanent": true
+    },
+    {
+      "source": "/article/veille-reseaux-sociaux-entreprise/",
+      "destination": "/article-veille-reseaux-sociaux-entreprise.html",
       "permanent": true
     },
     {

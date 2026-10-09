@@ -53,9 +53,10 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 ## Le cabinet
 
 - [Pourquoi Licter](https://www.licter.com/fr/pourquoi-licter/): l'équipe et la méthode
+- [Antoine Khaitrine](https://www.licter.com/fr/pourquoi-licter/#antoine-khaitrine) et [Adrien Krebs](https://www.licter.com/fr/pourquoi-licter/#adrien-krebs): les deux cofondateurs, qui ont créé et dirigé la cellule Data & Digital Analysis de l'Élysée, tous deux au Top 50 Insider mondial de la social intelligence (SI Lab)
 - [Clients](https://www.licter.com/fr/clients/)
+- [Diagnostic](https://www.licter.com/fr/diagnostic/): audit indépendant d'un dispositif social data, en deux à trois semaines
 - [Prendre rendez-vous](https://www.licter.com/fr/rendez-vous/)
-- [Mentions légales](https://www.licter.com/fr/mentions-legales/)
 
 ## Communauté
 
@@ -84,3 +85,7 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 ## Optional
 
 - [Wikidata](https://www.wikidata.org/wiki/Q141663812)
+- [Annuaire des entreprises](https://annuaire-entreprises.data.gouv.fr/entreprise/915259394): fiche officielle de Licter SAS
+- [Événements](https://www.licter.com/fr/evenements/): études sectorielles présentées à Paris
+- [Mentions légales](https://www.licter.com/fr/mentions-legales/)
+- [Confidentialité](https://www.licter.com/fr/confidentialite/)

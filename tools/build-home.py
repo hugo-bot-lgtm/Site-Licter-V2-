@@ -59,7 +59,7 @@ def head(lang, src):
                                          "sans lien avec la ville de Leicester ni avec son club de football.",
                                          "Licter is a French social data intelligence consultancy founded in Paris in 2022; "
                                          "not related to the city of Leicester or its football club.")[lang],
-           "logo": {"@type": "ImageObject", "url": SITE + "/assets/img/logo-navy.png"}, "image": SITE + "/assets/img/og/home-fr.png",
+           "logo": {"@type": "ImageObject", "url": SITE + "/assets/img/logo-navy.png"}, "image": SITE + ("/assets/img/og/home-fr.png", "/assets/img/og/home-en.png")[lang],
            "sameAs": SAME_AS, "description": d, "foundingDate": "2022-06-30",
            "identifier": {"@type": "PropertyValue", "propertyID": "SIREN", "value": "915259394"}, "vatID": "FR67915259394",
            "address": {"@type": "PostalAddress", "streetAddress": "173 rue de Courcelles", "postalCode": "75017",

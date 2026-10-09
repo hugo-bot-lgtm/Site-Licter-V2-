@@ -140,6 +140,63 @@ TO_UPDATED = {"Publié le": "Mis à jour le", "publié le": "mis à jour le", "P
 TO_PUBLISHED = {"Mis à jour le": "Publié le", "mis à jour le": "publié le", "Updated": "Published", "updated": "published"}
 
 
+PROTECT = re.compile(r"(<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)", re.S)
+
+
+def french_spaces(s):
+    """the text between tags, never a tag, a script or a style, gets French spacing"""
+    head_end = s.find("<body")
+    head, body = (s[:head_end], s[head_end:]) if head_end > 0 else ("", s)
+    parts = PROTECT.split(body)
+    for i in range(0, len(parts), 2):      # even items are text, odd items are tags, scripts, styles
+        t = parts[i]
+        if not t.strip():
+            continue
+        t = re.sub(r"[ \u202f]([:;!?»])", "\u00a0\\1", t)
+        t = re.sub(r"«[ \u202f]", "«\u00a0", t)
+        parts[i] = t
+    return head + "".join(parts)
+
+
+# the small copies made by tools/make-variants.py, listed in each image's srcset
+# so a phone downloads the one that fits (audit of 9 October 2026); lazy images
+# only, where sizes="auto" lets the browser use the laid-out width
+VARIANT_DIRS = ("team", "team/morning", "shots", "yt", "tools", "magazine")
+IMG_TAG = re.compile(r'<img\b[^>]*>')
+_widths = {}
+
+
+def img_width(f):
+    if f not in _widths:
+        m = re.search(r"-(\d+)$", f.stem)
+        _widths[f] = int(m.group(1)) if m and f.suffix == ".webp" else Image.open(f).width
+    return _widths[f]
+
+
+def responsive_imgs(s):
+    def one(m):
+        tag = m.group(0)
+        if "srcset=" in tag or 'loading="lazy"' not in tag:
+            return tag
+        src = re.search(r'\ssrc="(/?)(assets/img/([^"?]+))"', tag)
+        if not src:
+            return tag
+        f = ROOT / src.group(2)
+        folder = str(f.parent.relative_to(ROOT / "assets" / "img"))
+        if folder not in VARIANT_DIRS or not f.exists():
+            return tag
+        base = re.sub(r"-\d+$", "", f.stem)
+        family = [x for x in f.parent.glob(base + "*") if x.suffix in (".webp", ".png") and re.fullmatch(re.escape(base) + r"(-\d+)?", x.stem)]
+        cur = img_width(f)
+        family = sorted({img_width(x): x for x in family if img_width(x) <= cur}.items())
+        if len(family) < 2:
+            return tag
+        pre = src.group(1)
+        srcset = ", ".join("%s%s %dw" % (pre, x.relative_to(ROOT).as_posix(), w) for w, x in family)
+        return tag.replace(" src=", ' srcset="%s" sizes="auto, (max-width: 720px) 90vw, 50vw" src=' % srcset, 1)
+    return IMG_TAG.sub(one, s)
+
+
 def honest_dates(rel, s, dates, today):
     """put back the date the content last changed, instead of the build date"""
     if rel.startswith("article-"):      # tools/build-blog.py dates its articles itself
@@ -191,7 +248,7 @@ FOUNDERS = [
      "award": "Top 50 Insider mondial de la social intelligence (SI Lab), 2025"},
 ]
 # by @id, with the name and profile written out: a page that cites its authors names them itself
-FOUNDER_REFS = [{"@type": "Person", "@id": f["@id"], "name": f["name"], "url": f["url"]} for f in FOUNDERS]
+FOUNDER_REFS = [{"@type": "Person", "@id": f["@id"], "name": f["name"], "url": f["url"], "sameAs": f["sameAs"]} for f in FOUNDERS]
 
 
 def founders(fr):
@@ -258,7 +315,9 @@ def structured(rel, s, fr, url):
                     "description": desc, "inLanguage": "fr" if fr else "en", "isPartOf": {"@id": SITE + "/#website"},
                     "publisher": ORG_REF, "about": {"@id": SITE + "/#org"} if kind == "AboutPage" else None,
                     "author": FOUNDER_REFS if signed else None,
-                    "dateModified": TODAY if signed else None})   # replaced by the honest date (honest_dates)
+                    # every page entity is dated, signed or not (audit of 9 October 2026);
+                    # replaced by the honest date, with datePublished (honest_dates)
+                    "dateModified": TODAY})
         add[-1] = {k: v for k, v in add[-1].items() if v is not None}
     if "BreadcrumbList" not in types and url not in (SITE + "/", SITE + "/fr/"):
         home = (SITE + "/fr/", "Accueil") if fr else (SITE + "/", "Home")
@@ -288,9 +347,10 @@ def structured(rel, s, fr, url):
                 b["@id"] = (b.get("url") or url) + "#service"; changed = True
             if not b.get("description") and desc:
                 b["description"] = desc; changed = True
-        elif b.get("@type") in ("WebPage", "CollectionPage") and (not b.get("@id") or not b.get("isPartOf") or not b.get("description")):
+        elif b.get("@type") in ("WebPage", "CollectionPage", "AboutPage") and (not b.get("@id") or not b.get("isPartOf") or not b.get("description") or not b.get("dateModified")):
             b.setdefault("@id", (b.get("url") or url) + "#webpage")
             b.setdefault("isPartOf", {"@id": SITE + "/#website"})
+            b.setdefault("dateModified", TODAY)
             if desc:
                 b.setdefault("description", desc)
             changed = True
@@ -430,6 +490,11 @@ def main():
         if 'href="/assets/fonts/AiglonProWide-Demi.woff2"' not in s:
             s = s.replace("<title>", '<link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2" as="font" type="font/woff2" crossorigin />\n'
                                      '<link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />\n<title>', 1)
+        # the arrows and check marks Raleway and Aiglon lack (1 KB): without it the
+        # browser searches every system font for them on the first layout, a
+        # 100 to 200 ms task on a slow phone (audit of 9 October 2026)
+        if "licter-marks.woff2" not in s:
+            s = s.replace("<title>", '<link rel="preload" href="/assets/fonts/licter-marks.woff2" as="font" type="font/woff2" crossorigin />\n<title>', 1)
         # the footer gets the six expertise pages and the networks hub as plain
         # links: the main menu is built by JavaScript, which AI crawlers do not run
         # (audit of 8 October 2026)
@@ -442,6 +507,8 @@ def main():
             s = re.sub(r'(<div>\s*<h3>(?:ENTREPRISE|COMPANY)</h3>)', lambda m_: col + m_.group(1), s, count=1)
             s = re.sub(r'(<li><a href="(?:/fr/outils/|/?tech-tools\.html)">[^<]*</a></li>)(\s*<li><a href="(?:/fr/clients/|/?clients\.html)">)',
                        lambda m_: m_.group(1) + ' <li><a href="%s">%s</a></li>' % (("/fr/sources/", "Sources (22 réseaux)") if fr else ("/sources.html", "Sources (22 networks)")) + m_.group(2), s, count=1)
+        if fr:      # French typography: a non-breaking space before : ; ? ! » and after «, in the visible text only
+            s = french_spaces(s)
         if fr:      # a French twin copied from an English page keeps the English label
             s = s.replace('>Sources (22 networks)</a>', '>Sources (22 réseaux)</a>')
             # the article template's table of contents, written in English (screen readers read the label)
@@ -471,6 +538,8 @@ def main():
         # the home without a redirect: /fr/ for French pages, / for English ones
         home = "/fr/" if fr else "/"
         s = re.sub(r'href="(?:/fr/|/)?index\.html(#[^"]*)?"', lambda m_: 'href="%s%s"' % (home, m_.group(1) or ""), s)
+        if not rel.startswith("socialintelligenceclub/"):
+            s = responsive_imgs(s)
         s = structured(rel, s, fr, url)
         s = honest_dates(rel, s, dates, today)
         if s != s0:

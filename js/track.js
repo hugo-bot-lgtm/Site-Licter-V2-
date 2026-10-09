@@ -103,9 +103,9 @@
     bar.setAttribute("aria-live", "polite");
     bar.setAttribute("aria-label", fr() ? "Cookies de mesure d'audience" : "Audience measurement cookies");
     bar.innerHTML = '<p class="cc__t">' + (fr()
-        ? "Nous mesurons l'audience du site avec Google Analytics, pour savoir quelles pages sont utiles. Ses cookies ne sont déposés que si vous acceptez."
-        : "We measure the site's audience with Google Analytics, to learn which pages are useful. Its cookies are set only if you accept.") +
-      ' <a href="' + priv + '">' + (fr() ? "Lire la politique de cookies" : "Read the cookie policy") + "</a></p>" +
+        ? "Mesure d'audience Google Analytics\u00a0: cookies déposés seulement si vous acceptez."
+        : "Google Analytics audience measurement: cookies are set only if you accept.") +
+      ' <a href="' + priv + '">' + (fr() ? "Politique de cookies" : "Cookie policy") + "</a></p>" +
       '<div class="cc__b"><button class="cc__no" type="button">' + (fr() ? "Refuser" : "Decline") + '</button>' +
       '<button class="cc__yes" type="button">' + (fr() ? "Accepter" : "Accept") + "</button></div>";
     bar.querySelector(".cc__no").addEventListener("click", function () { decide("denied"); });

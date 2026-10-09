@@ -322,7 +322,7 @@ def write(file, main):
 # a complete short title for the <title> of long articles: no title cut
 # mid-sentence with "…" (audit of 7 October 2026)
 SEO_TITLE = {
-    "Analyser les succès publicitaires en moins d'une heure ? Spotlight #1 - Licter X Petit Bateau": "Analyser une campagne en moins d'une heure : Petit Bateau",
+    "Analyser les succès publicitaires en moins d'une heure ? Spotlight #1 : Licter x Petit Bateau": "Analyser une campagne en moins d'une heure : Petit Bateau",
     "Comment Axa analyse les données du web et de social listening pour sa gestion de crise ?": "Comment AXA lit la donnée sociale pour gérer une crise",
     "Comment conquérir le marché de la cosmétique de luxe grâce au social listening ?": "Conquérir la cosmétique de luxe grâce au social listening",
     "Comment créer une \"Social Listening Squad\" pour doubler l'adoption de votre outil ?": "Créer une Social Listening Squad pour adopter son outil",
@@ -366,13 +366,15 @@ def title_tag(x):
 REWRITTEN = {f: "2026-10-07" for f in ("article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html",
                                       "article-licter-lvmh.html", "article-licter-meltwater.html",
                                       "article-licter-talkwalker-podcast.html", "article-licter-visibrain-podcast.html")}
+REWRITTEN["article-le-bad-buzz-huda-beauty-decrypte.html"] = "2026-10-09"   # written up from its slides (audit of 9 October 2026)
 
 
 def article_page(x):
     """the whole page, from tools/article-shell.html"""
     fr = x.get("lang") == "fr"
     page = (ROOT / "tools" / "article-shell.html").read_text().split("\n", 1)[1]
-    desc = x["lead"] if len(x["lead"]) <= 160 else x["lead"][:157].rsplit(" ", 1)[0].rstrip(" ,:;") + "…"
+    # a description written for search results where the lead is too short or too long for one
+    desc = x.get("desc") or (x["lead"] if len(x["lead"]) <= 160 else x["lead"][:157].rsplit(" ", 1)[0].rstrip(" ,:;") + "…")
     page = page.replace("<!--TITLE-->", E(title_tag(x) + " | Licter")).replace("<!--DESC-->", E(desc)).replace("<!--MAIN-->", article_main(x))
     if fr:
         page = page.replace("<!--HTML-->", '<html lang="fr" data-i18n-static data-alt-fr="/%s" data-alt-en="/blog.html">' % x["file"])

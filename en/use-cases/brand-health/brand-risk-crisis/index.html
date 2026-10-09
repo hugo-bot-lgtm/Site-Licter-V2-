@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/licter-marks.woff2" as="font" type="font/woff2" crossorigin />
 <title>Detect brand risks and prevent crises | Licter</title>
 <meta name="description" content="Catch weak signals early, while they are still containable: a rumour, a boycott call, a supplier controversy. Alerts within 15 minutes." />
 <link rel="canonical" href="https://www.licter.com/en/use-cases/brand-health/brand-risk-crisis/" />
@@ -27,7 +28,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="/css/t-uc.min.css?v=20261351" />
+<link rel="stylesheet" href="/css/t-uc.min.css?v=20261352" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.licter.com/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://www.licter.com/en/use-cases/"}, {"@type": "ListItem", "position": 3, "name": "Brand health", "item": "https://www.licter.com/en/use-cases/brand-health/"}, {"@type": "ListItem", "position": 4, "name": "Identify and mitigate brand risks", "item": "https://www.licter.com/en/use-cases/brand-health/brand-risk-crisis/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Identify and mitigate brand risks", "description": "Catch weak signals early, while they are still containable: a rumour, a boycott call, a supplier controversy. Alerts within 15 minutes.", "serviceType": "Brand health", "provider": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "areaServed": ["France", "Worldwide"], "inLanguage": "en", "url": "https://www.licter.com/en/use-cases/brand-health/brand-risk-crisis/", "@id": "https://www.licter.com/en/use-cases/brand-health/brand-risk-crisis/#service"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who receives the alerts?", "acceptedAnswer": {"@type": "Answer", "text": "Whoever you decide, on the channel you decide, following the protocol agreed before launch."}}, {"@type": "Question", "name": "How do you avoid false alarms?", "acceptedAnswer": {"@type": "Answer", "text": "An analyst qualifies every signal before alerting. Thresholds are editorial, not just volumes."}}, {"@type": "Question", "name": "Do you support us during the crisis?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: continuous reading, regular check-ins with your teams and a review at the end."}}]}</script>
@@ -45,7 +46,7 @@
   <header class="hero__top shell" data-reveal>
       <div class="hero__start">
         <a class="logo" href="/" aria-label="Licter home" data-dim>
-          <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+          
           <img class="logo__img" src="/assets/img/logo-navy.webp" alt="Licter" width="44" height="48" />
         </a>
       </div>
@@ -132,7 +133,7 @@
       <div class="ucv-dlv__copy">
         <p class="ucr__label">What you receive</p>
         <h2 class="ucp__h2">Alert sheet</h2>
-        <p class="ucv-p">We map your sector&#x27;s own risks with you, then set alert thresholds with an editor, not an algorithm. Every signal is qualified by an analyst before it reaches you: who carries it, with what influence, how fast it spreads.</p>
+        <p class="ucv-p">We map your sector&#x27;s own risks with you, then an analyst sets the alert thresholds with you, not an algorithm. Every signal is qualified by an analyst before it reaches you: who carries it, with what influence, how fast it spreads.</p>
         <ul class="ucr__ticks"><li>15-minute alerts, 20+ languages, with an escalation protocol.</li><li>The risk map of your sector.</li><li>A recommended response for each alert.</li><li>A review after each episode.</li></ul>
         <a class="ucp__textlink ucv-dlv__real" href="#offre">Get a real case of this kind <span aria-hidden="true">↓</span></a>
       </div>
@@ -142,7 +143,7 @@
   <section class="ucp ucv-how">
     <div class="shell">
       <h2 class="ucp__h2">How it runs</h2>
-      <ol class="ucv-time"><li><span class="ucv-day">Day 0</span><b>Framing</b><p>We map your sector&#x27;s risks and your escalation protocol with you.</p></li><li><span class="ucv-day">Day 3</span><b>Collection</b><p>Monitoring runs 24/7, with thresholds set by an editor, not an algorithm.</p></li><li><span class="ucv-day">Day 7</span><b>Analysis</b><p>An analyst qualifies each signal: reach, carriers, speed.</p></li><li><span class="ucv-day">Day 10</span><b>Decision</b><p>You are alerted within 15 minutes, with a recommended response.</p></li></ol>
+      <ol class="ucv-time"><li><span class="ucv-day">Day 0</span><b>Framing</b><p>We map your sector&#x27;s risks and your escalation protocol with you.</p></li><li><span class="ucv-day">Day 3</span><b>Collection</b><p>Monitoring runs 24/7, with thresholds set by an analyst, not by an algorithm.</p></li><li><span class="ucv-day">Day 7</span><b>Analysis</b><p>An analyst qualifies each signal: reach, carriers, speed.</p></li><li><span class="ucv-day">Day 10</span><b>Decision</b><p>You are alerted within 15 minutes, with a recommended response.</p></li></ol>
       <p class="ucv-note">Indicative timings for a first read; continuous monitoring starts as soon as framing is done.</p>
       <div class="ucv-src"><p class="ucr__label">What we read</p><ul><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span><span>Niche communities</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="6" r="1.8"/><circle cx="19" cy="7" r="1.8"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="18" cy="17.5" r="1.8"/><path d="M6.4 7.2 10 10.3M17.4 8.3 14 10.5M7.7 17 10.4 13.9M16.6 16.3 13.8 13.6"/></svg></span><span>Social networks</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 8 4-8 4-8-4z"/><path d="m4.5 12.2 7.5 3.8 7.5-3.8"/><path d="m4.5 16.4 7.5 3.8 7.5-3.8"/></svg></span><span>Press</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5v-5a5.5 5.5 0 0 1 11 0v5l1.5 2H5z"/><path d="M10 19.8a2.2 2.2 0 0 0 4 0"/></svg></span><span>More than twenty languages</span></li></ul></div>
     </div>
@@ -152,7 +153,7 @@
       <h2 class="ucp__h2">They talk about it, and a typical case</h2>
       <div class="ucv-proof__grid">
         <a class="ucv-video" href="https://www.youtube.com/watch?v=NwA84KwnDKU" target="_blank" rel="noopener">
-          <span class="ucv-video__shot"><img src="/assets/img/yt/NwA84KwnDKU.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">53:14</span></span>
+          <span class="ucv-video__shot"><img srcset="/assets/img/yt/NwA84KwnDKU-240.webp 240w, /assets/img/yt/NwA84KwnDKU.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/NwA84KwnDKU.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">53:14</span></span>
           <span class="ucv-video__q">“Consumption is an act of activism.”</span>
           <span class="ucv-video__who"><b>Kantar</b> · G. Lefloch</span>
         </a>
@@ -242,7 +243,7 @@
   <div class="site-foot__in shell">
     <div class="site-foot__brand">
       <a class="logo" href="/" aria-label="Licter home">
-        <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+        
         <img class="logo__img" src="/assets/img/logo-navy.webp" alt="Licter" width="44" height="48" />
       </a>
       <p>The Social Data Intelligence consultancy. We turn what people post, search
@@ -298,8 +299,8 @@
   </div>
 </footer>
 
-<script src="/js/min/i18n.js?v=20261351" defer></script>
-<script src="/js/min/ui.js?v=20261351" defer></script>
-<script src="/js/min/home.js?v=20261351" defer></script>
+<script src="/js/min/i18n.js?v=20261352" defer></script>
+<script src="/js/min/ui.js?v=20261352" defer></script>
+<script src="/js/min/home.js?v=20261352" defer></script>
 </body>
 </html>

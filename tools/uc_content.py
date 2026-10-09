@@ -413,7 +413,7 @@ CASES = [
     ],
     "steps": [
       ("On cartographie avec vous les risques de votre secteur et votre protocole d'escalade.", "We map your sector's risks and your escalation protocol with you."),
-      ("La veille tourne 24 h/24, avec des seuils fixés par un éditeur, pas un algorithme.", "Monitoring runs 24/7, with thresholds set by an editor, not an algorithm."),
+      ("La veille tourne 24 h/24, avec des seuils fixés par un analyste, pas par un algorithme.", "Monitoring runs 24/7, with thresholds set by an analyst, not by an algorithm."),
       ("Un analyste qualifie chaque signal : portée, porteurs, vitesse.", "An analyst qualifies each signal: reach, carriers, speed."),
       ("Vous êtes alerté en 15 minutes, avec une recommandation de réponse.", "You are alerted within 15 minutes, with a recommended response."),
     ],
@@ -799,8 +799,8 @@ EXTRA = {
     "voice": "loreal", "articles": ["article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html", "article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html"],
   },
   "brand-risk": {
-    "approach": ("Nous cartographions avec vous les risques propres à votre secteur, puis nous fixons des seuils d'alerte avec un éditeur, pas un algorithme. Chaque signal est qualifié par un analyste avant de vous être envoyé : qui le porte, avec quelle influence, à quelle vitesse il se propage.",
-                 "We map your sector's own risks with you, then set alert thresholds with an editor, not an algorithm. Every signal is qualified by an analyst before it reaches you: who carries it, with what influence, how fast it spreads."),
+    "approach": ("Nous cartographions avec vous les risques propres à votre secteur, puis un analyste fixe avec vous les seuils d'alerte, pas un algorithme. Chaque signal est qualifié par un analyste avant de vous être envoyé : qui le porte, avec quelle influence, à quelle vitesse il se propage.",
+                 "We map your sector's own risks with you, then an analyst sets the alert thresholds with you, not an algorithm. Every signal is qualified by an analyst before it reaches you: who carries it, with what influence, how fast it spreads."),
     "roi": [(("Des crises évitées", "Crises avoided"), ("Un signal traité quand il est encore maîtrisable coûte moins qu'une crise.", "A signal handled while still containable costs less than a crisis.")),
             (("Une alerte en 15 minutes", "Alerted within 15 minutes"), ("Dans plus de vingt langues, avec un protocole d'escalade défini à l'avance.", "In more than twenty languages, with an escalation protocol set in advance.")),
             (("Chaque alerte qualifiée", "Every alert qualified"), ("Un analyste lit chaque alerte avant qu'elle ne dérange vos équipes.", "An analyst reads every alert before it disturbs your teams."))],

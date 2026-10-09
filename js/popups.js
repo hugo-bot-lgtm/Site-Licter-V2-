@@ -250,7 +250,9 @@
     var heroWait = function () { dock.classList.toggle("is-waiting", hero.getBoundingClientRect().bottom > window.innerHeight * 0.4); };
     window.addEventListener("scroll", heroWait, { passive: true });
     window.addEventListener("resize", heroWait);
-    heroWait();
+    /* measured on the next frame, not while the page's scripts run (a forced layout) */
+    dock.classList.add("is-waiting");
+    requestAnimationFrame(heroWait);
   }
   /* nor over the footer or the booking form at the end of a page */
   if ("IntersectionObserver" in window) {

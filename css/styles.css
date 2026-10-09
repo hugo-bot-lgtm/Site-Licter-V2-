@@ -28,6 +28,15 @@
   size-adjust: 127.6%; ascent-override: 78.8%; descent-override: 19.5%; line-gap-override: 9.8%;
 }
 
+/* arrows and marks the two fonts lack, subset from DejaVu Sans (licence in
+   assets/fonts/LICENSE-licter-marks.txt): the browser then never searches the
+   system fonts for them */
+@font-face {
+  font-family: "Licter Marks"; src: url("../assets/fonts/licter-marks.woff2") format("woff2");
+  font-weight: 100 900; font-display: swap;
+  unicode-range: U+202F, U+2190-2193, U+2197-2198, U+21BB, U+25B6, U+25CF, U+2713, U+2715, U+2726, U+275A;
+}
+
 @font-face {
   font-family: "Aiglon Pro Wide";
   src: url("../assets/fonts/AiglonProWide-Demi.woff2") format("woff2"),
@@ -86,8 +95,8 @@
   --field-h: 48px;
   --field-w: 460px;
   --btn-w: 159px;
-  --title-font: "Aiglon Pro Wide", "Outfit", system-ui, sans-serif;
-  --body-font: "Josefin Sans", system-ui, -apple-system, sans-serif;
+  --title-font: "Aiglon Pro Wide", "Licter Marks", "Outfit", system-ui, sans-serif;
+  --body-font: "Josefin Sans", "Licter Marks", system-ui, -apple-system, sans-serif;
 
   color-scheme: light;
 }
@@ -191,11 +200,7 @@ main { position: relative; z-index: 1; }
 }
 
 .logo { display: block; width: 44px; height: 48px; flex: 0 0 auto; }
-.logo__canvas { display: none; width: 44px; height: 48px; }
 .logo__img { display: block; width: 44px; height: 48px; object-fit: contain; }
-/* once js has cropped the transparent margin off the source file */
-.logo.is-trimmed .logo__canvas { display: block; }
-.logo.is-trimmed .logo__img { display: none; }
 
 .nav {
   position: relative;
@@ -4262,8 +4267,8 @@ textarea.fld__input { resize: vertical; min-height: 84px; }
   --amber-deep: #C98B22;
   /* was a dark gold for small accent text; accents are blue now */
   --amber-ink:  #2C3566;
-  --body-font: "Raleway", "Raleway Fallback", system-ui, -apple-system, sans-serif;
-  --title-font: "Aiglon Pro Wide", "Aiglon Fallback", system-ui, sans-serif;
+  --body-font: "Raleway", "Licter Marks", "Raleway Fallback", system-ui, -apple-system, sans-serif;
+  --title-font: "Aiglon Pro Wide", "Licter Marks", "Aiglon Fallback", system-ui, sans-serif;
 }
 /* Raleway draws old-style figures by default: numbers line up in text and tables */
 body { font-feature-settings: "lnum" 1; }
@@ -4474,7 +4479,7 @@ html[data-theme="dark"] .fld__error, html[data-theme="dark"] .signup__error { co
 html[data-theme="dark"] .fld__input[aria-invalid="true"], html[data-theme="dark"] .signup__input[aria-invalid="true"] { border-color: #F2A99E; }
 
 /* the logo: white on dark (charte: "blanc sur fond foncé") */
-html[data-theme="dark"] .logo__canvas, html[data-theme="dark"] .logo__img,
+html[data-theme="dark"] .logo__img,
 html[data-theme="dark"] .stickybar__logo img { filter: brightness(0) invert(1); }
 
 /* client marks: white silhouettes, full white on hover */
@@ -7119,7 +7124,7 @@ html[data-theme="dark"] .lx__msg--you { background: #FCF6EF; color: #13162D; }
 .lx__wa:focus-visible { outline: 2px solid #EAA93D; outline-offset: 3px; }
 .lx__wa i { width: 20px; height: 20px; flex: none; background: currentColor;
   -webkit-mask: url(/assets/img/networks/whatsapp.svg) center / contain no-repeat; mask: url(/assets/img/networks/whatsapp.svg) center / contain no-repeat; }
-.lx__wa--chat { margin: 0 16px 10px; min-height: 40px; font-size: 13px; }
+.lx__wa--chat { margin: 0 16px 10px; min-height: 44px; font-size: 13px; }
 .lx__chips[hidden] { display: none; }
 .lx__chip { height: 32px; padding: 0 12px; border: 0; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); background: transparent; color: var(--ink); font: 600 12.5px/1 var(--body-font); cursor: pointer; }
 .lx__chip:hover { background: rgba(var(--ink-rgb), .06); }
@@ -7320,6 +7325,8 @@ html[data-theme="dark"] .ev__done a { color: #EAA93D; }
 
 .evl__list { margin: clamp(28px, 3vw, 44px) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .evl__list li { border-bottom: 1px solid var(--line); }
+.evl--more { padding: 0 0 clamp(48px, 6vw, 88px); }
+.evl--more .evl__list { margin-top: 18px; }
 .evl__list a { display: grid; grid-template-columns: 72px minmax(0, 1fr) 24px; gap: 20px; align-items: center; padding: 20px 0; color: var(--ink); transition: padding-left .25s cubic-bezier(.16, 1, .3, 1); }
 .evl__list a:hover { padding-left: 8px; }
 .evl__d { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 18px; background: var(--navy); color: #FCF6EF; font: 700 11px/1 var(--body-font); letter-spacing: 1px; text-transform: uppercase; }
@@ -9325,6 +9332,7 @@ html[data-theme="dark"] .wl-figs { background: #0C0F24; }
 .wl-fig--b b, .wl-fig--d b { color: #EAA93D; }
 .wl-fig span { max-width: 26ch; font: 500 15px/1.5 var(--body-font); color: rgba(252, 246, 239, .76); }
 .wl-fig a { color: inherit; border-bottom: 1px solid rgba(234, 169, 61, .6); }
+.wl-fig .wl-fig__src { display: block; width: fit-content; margin-top: 6px; font-size: 12px; opacity: .75; }
 
 /* 5. what makes the difference: rows, and the photo that follows the pointer */
 .wl-rows { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
@@ -10570,17 +10578,18 @@ html[lang="fr"] .xp-line > span::after { content: "\00a0:"; }
 @keyframes cc-in { from { opacity: 0; transform: translateY(12px); } }
 /* large screens: one line, low, so it covers no call to action */
 @media (min-width: 900px) {
-  .cc { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 22px; width: min(820px, calc(100vw - 40px)); padding: 14px 16px 14px 22px; }
+  .cc { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 18px; width: auto; max-width: min(760px, calc(100vw - 40px)); bottom: 12px; padding: 8px 10px 8px 18px; }
+  .cc__b button { min-height: 40px; }
   .cc__t { font-size: 13.5px; }
   .cc__b { grid-template-columns: auto auto; }
   .cc__b button { min-width: 116px; }
 }
 @media (max-width: 720px) {
   /* while the banner is open, the page can scroll its last lines above it */
-  html.cc-open body { padding-bottom: 170px; }
+  html.cc-open body { padding-bottom: 130px; }
   /* compact on a phone: it hides less of the page under it */
-  .cc { left: 8px; right: 8px; bottom: 8px; width: auto; gap: 10px; padding: 12px 14px; border-radius: 14px; }
-  .cc__t { font-size: 13px; line-height: 1.45; }
+  .cc { left: 8px; right: 8px; bottom: 8px; width: auto; gap: 8px; padding: 10px 12px; border-radius: 14px; }
+  .cc__t { font-size: 12.5px; line-height: 1.4; }
   .cc__b { gap: 8px; }
   .cc-open .lx__launch { opacity: 0; pointer-events: none; }
 }
@@ -10608,3 +10617,5 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 /* expertise heroes on a phone: the free flash read is offered on the first screen, the form itself comes further down */
 .xe-lmh__jump { display: none; }
 @media (max-width: 720px) { .xe-lmh__jump { display: inline-flex; align-self: flex-start; margin: 4px 0 14px; } }
+/* large screens: the page can scroll its last lines above the open banner too */
+@media (min-width: 900px) { html.cc-open body { padding-bottom: 72px; } }

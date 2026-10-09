@@ -126,8 +126,7 @@ NETWORKS = [
      "access": ("Les publications publiques des pages et des profils, et leurs commentaires, selon ce que permettent les outils.", "Public posts from pages and profiles, and their comments, as far as the tools allow."),
      "limits": ("LinkedIn limite fortement la collecte automatisée : la couverture est partielle, et nous le disons avant de commencer. Les messages et les profils restreints : jamais.", "LinkedIn strongly limits automated collection: coverage is partial, and we say so before starting. Messages and restricted profiles: never."),
      "uses": ["leader-advocacy", "messaging", "reputation"],
-     "faq": [(("Pouvez-vous mesurer l'impact de nos dirigeants sur LinkedIn ?", "Can you measure our executives' impact on LinkedIn?"), ("Oui, sur leurs publications publiques : portée, réactions, qui les reprend, et comparaison avec vos concurrents.", "Yes, on their public posts: reach, reactions, who picks them up, and comparison with your competitors.")),
-             (("Pourquoi la couverture est-elle partielle ?", "Why is coverage partial?"), ("Parce que LinkedIn restreint l'accès à ses données. Nous combinons les sources disponibles et indiquons ce qui manque.", "Because LinkedIn restricts access to its data. We combine the available sources and state what is missing."))]},
+     "faq": [(("Pouvez-vous mesurer l'impact de nos dirigeants sur LinkedIn ?", "Can you measure our executives' impact on LinkedIn?"), ("Oui, sur leurs publications publiques : portée, réactions, qui les reprend, et comparaison avec vos concurrents.", "Yes, on their public posts: reach, reactions, who picks them up, and comparison with your competitors."))]},
 
     {"slug": "reddit", "tools": ["youscan", "radarly"], "name": "Reddit", "glyph": "reddit",
      "tag": ("les avis sans filtre", "unfiltered opinions"),

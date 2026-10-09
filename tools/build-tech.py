@@ -76,6 +76,7 @@ S.update({
     "net_kick": ("D'OÙ VIENNENT LES DONNÉES", "WHERE THE DATA COMES FROM"),
     "what_k": ("%s EN BREF", "%s AT A GLANCE"),
     "what_t": ("Qu'est-ce que %s ?", "What is %s?"),
+    "what_t2": ("%s en bref.", "%s at a glance."),
     "feat_k": ("CE QU'IL PERMET", "WHAT IT DOES"),
     "feat_t": ("Ce que %s permet d'analyser.", "What %s lets you analyse."),
     "ag_t": ("Pourquoi passer par une agence %s ?", "Why work with a %s agency?"),
@@ -263,7 +264,7 @@ def feats(items, slug=None):
     out = ""
     for i, (ti, tx) in enumerate(items):
         shot_ = ('<img class="tk-feat__shot" src="/assets/img/shots/%s.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" />' % slug) if i == 0 and slug else ""
-        out += '<article class="tk-feat tk-feat--%d" data-reveal><span class="tk-feat__n" aria-hidden="true">0%d</span><div class="tk-feat__t"><h3>%s</h3><p>%s</p></div>%s</article>' % (
+        out += '<div class="tk-feat tk-feat--%d" data-reveal><span class="tk-feat__n" aria-hidden="true">0%d</span><div class="tk-feat__t"><h3>%s</h3><p>%s</p></div>%s</div>' % (
             i + 1, i + 1, t(ti), t(tx), shot_)
     return '<div class="tk-feats tk-feats--%d">%s</div>' % (len(items), out)
 
@@ -320,9 +321,9 @@ def conn(items):
     cards, dots = "", ""
     n = len(items)
     for i, (ti, bullets) in enumerate(items):
-        cards += ('<article class="tk-conn__card%s" data-i="%d"><div class="tk-conn__body"><span class="tk-conn__k">0%d / 0%d</span><h3>%s</h3><ul>%s</ul></div>'
+        cards += ('<div class="tk-conn__card%s" data-i="%d"><div class="tk-conn__body"><span class="tk-conn__k">0%d / 0%d</span><h3>%s</h3><ul>%s</ul></div>'
                   '<div class="tk-conn__photo"><img src="/assets/img/team/%s.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" />'
-                  '<span class="tk-conn__vt" aria-hidden="true">%s</span></div></article>') % (
+                  '<span class="tk-conn__vt" aria-hidden="true">%s</span></div></div>') % (
             " is-on" if i == 0 else "", i, i + 1, n, t(ti), "".join("<li>%s</li>" % t(b) for b in bullets), DEL_PHOTO[i % len(DEL_PHOTO)], t(ti))
         dots += '<button class="tk-conn__dot%s" type="button" aria-label="%s" data-i="%d"><i></i></button>' % (" is-on" if i == 0 else "", a((ti[FR], ti[EN])), i)
     return '<div class="tk-conn" data-auto="6500"><div class="tk-conn__stage">%s</div><div class="tk-conn__dots">%s</div></div>' % (cards, dots)
@@ -335,8 +336,8 @@ def offers(cards):
         img = c.get("img") or '<span class="tk-offer__art tk-offer__art--%s" aria-hidden="true">%s</span>' % (c["kind"], c.get("art", ""))
         foot = ('<a class="tk-offer__foot" href="%s"><span class="tk-offer__logo">%s</span><span><b>%s</b><small>%s</small></span><i aria-hidden="true">↗</i></a>' % (
             c["href"], c["logo"], c["foot"], c["foot_sub"])) if c.get("href") else ('<p class="tk-offer__foot"><span class="tk-offer__logo">%s</span><span><b>%s</b><small>%s</small></span></p>' % (c["logo"], c["foot"], c["foot_sub"]))
-        out += ('<article class="tk-offer tk-offer--%s"><div class="tk-offer__img">%s</div><div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">%s</i>%s</p>'
-                '<h3>%s</h3><p>%s</p></div>%s</article>') % (c["kind"], img, c["icon"], c["tag"], c["title"], c["text"], foot)
+        out += ('<div class="tk-offer tk-offer--%s"><div class="tk-offer__img">%s</div><div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">%s</i>%s</p>'
+                '<h3>%s</h3><p>%s</p></div>%s</div>') % (c["kind"], img, c["icon"], c["tag"], c["title"], c["text"], foot)
     return ('<div class="tk-offers"><div class="tk-offers__track" tabindex="0">%s</div>'
             '<button class="tk-offers__nav tk-offers__nav--prev" type="button" aria-label="%s">‹</button>'
             '<button class="tk-offers__nav tk-offers__nav--next" type="button" aria-label="%s">›</button></div>') % (
@@ -346,7 +347,7 @@ def offers(cards):
 def tool_offer(slug, tag):
     x = TOOL[slug]; nm = (x.get("fr_name", x["name"]), x["name"])
     return {"kind": "tool", "img": '<img src="/assets/img/shots/%s.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" />' % slug,
-            "icon": "＋", "tag": t(tag), "title": t(nm), "text": t(x["features"][0][1]),
+            "icon": "+", "tag": t(tag), "title": t(nm), "text": t(x["features"][0][1]),
             "href": "tech-%s.html" % slug, "logo": logo(slug), "foot": t(nm), "foot_sub": t(("Voir la page", "See the page"))}
 
 
@@ -389,8 +390,8 @@ def crumbs(name, net=False):
 
 SOURCES_NAME = ("Sources", "Sources")
 SOURCES = {"title": ("Sources du social listening : les 22 réseaux que nous écoutons | Licter", "Social listening sources: the 22 networks we listen to | Licter"),
-           "desc": ("Les 22 réseaux d'où viennent nos données : ce qu'on peut y lire, ce qui reste privé, et les plateformes qui les couvrent. TikTok, Instagram, X, LinkedIn, Reddit…",
-                    "The 22 networks our data comes from: what can be read there, what stays private, and the platforms that cover them. TikTok, Instagram, X, LinkedIn, Reddit…")}
+           "desc": ("Les 22 réseaux d'où viennent nos données : ce qu'on peut y lire, ce qui reste privé, et les plateformes qui les couvrent, de TikTok à Reddit.",
+                    "The 22 networks our data comes from: what can be read there, what stays private, and the platforms that cover them, from TikTok to Reddit.")}
 
 
 def sources_body():
@@ -515,7 +516,7 @@ def tool_body(x):
     out = '<main id="content" class="tk tk--tool" style="--brand:%s">\n' % TOOL_STYLE[x["slug"]]
     out += hero(copy, art)
     out += sec("what", '<div class="tk-split">%s%s</div>' % (
-        '<div>%s<p class="tk-prose" data-reveal>%s</p>%s</div>' % (head(t(fmt(S["what_k"], NM)), t(fmt(S["what_t"], nm))), t(x["what"]),
+        '<div>%s<p class="tk-prose" data-reveal>%s</p>%s</div>' % (head(t(fmt(S["what_k"], NM)), (lambda z: z[:1].upper() + z[1:])(t(fmt(S["what_t2"] if guide_asks_what(x["slug"]) else S["what_t"], nm)))), t(x["what"]),
                                                                    xp(x["slug"])), sheet))
     out += proof(x["slug"])
     if x["slug"] in AI.ENGINE:      # what sets this assistant apart (SEO audit, October 2026)
@@ -533,6 +534,15 @@ def tool_body(x):
 
 
 # the long-form "in detail" sections (DESIGN.md: one component, qa_roller)
+def guide_asks_what(slug):
+    """the page's long-form section already opens on "What is X?": the intro does not ask it twice"""
+    mod = GUIDE.get(slug)
+    if not mod:
+        return False
+    G = importlib.import_module(mod)
+    return bool(G.BLOCKS) and G.BLOCKS[0][0][0].startswith("Qu'est-ce que")
+
+
 GUIDE = {"talkwalker": "talkwalker_guide", "tiktok": "tiktok_guide", "geo": "geo_guide", "chatgpt": "chatgpt_guide",
          "claude": "claude_guide", "gemini": "gemini_guide", "perplexity": "perplexity_guide", "grok": "grok_guide"}
 

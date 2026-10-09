@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preload" href="/assets/fonts/AiglonProWide-Demi.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/Raleway-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/licter-marks.woff2" as="font" type="font/woff2" crossorigin />
 <title>Politique de confidentialité | Licter</title>
 <meta name="description" content="Comment Licter traite les données personnelles laissées sur ce site : ce que nous collectons, pourquoi, combien de temps, et vos droits." />
 <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
@@ -17,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="/css/t-base.min.css?v=20261351" />
+<link rel="stylesheet" href="/css/t-base.min.css?v=20261352" />
 <link rel="canonical" href="https://www.licter.com/fr/confidentialite/" />
 <link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/confidentialite/" />
 <link rel="alternate" hreflang="en" href="https://www.licter.com/privacy.html" />
@@ -26,7 +27,7 @@
 <meta property="og:image" content="https://www.licter.com/assets/img/og/p-fr-confidentialite.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<script type="application/ld+json" data-seo>{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://www.licter.com/fr/confidentialite/#webpage", "url": "https://www.licter.com/fr/confidentialite/", "name": "Politique de confidentialité | Licter", "description": "Comment Licter traite les données personnelles laissées sur ce site : ce que nous collectons, pourquoi, combien de temps, et vos droits.", "inLanguage": "fr", "isPartOf": {"@id": "https://www.licter.com/#website"}, "publisher": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": {"@type": "ImageObject", "url": "https://www.licter.com/assets/img/logo-navy.png"}}}</script>
+<script type="application/ld+json" data-seo>{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://www.licter.com/fr/confidentialite/#webpage", "url": "https://www.licter.com/fr/confidentialite/", "name": "Politique de confidentialité | Licter", "description": "Comment Licter traite les données personnelles laissées sur ce site : ce que nous collectons, pourquoi, combien de temps, et vos droits.", "inLanguage": "fr", "isPartOf": {"@id": "https://www.licter.com/#website"}, "publisher": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": {"@type": "ImageObject", "url": "https://www.licter.com/assets/img/logo-navy.png"}}, "datePublished": "2026-10-08", "dateModified": "2026-10-08"}</script>
 <script type="application/ld+json" data-seo>{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.licter.com/fr/"}, {"@type": "ListItem", "position": 2, "name": "Politique de confidentialité", "item": "https://www.licter.com/fr/confidentialite/"}]}</script>
 <script type="application/ld+json" data-seo>{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://www.licter.com/#website", "name": "Licter", "url": "https://www.licter.com/", "inLanguage": ["fr", "en"], "publisher": {"@id": "https://www.licter.com/#org"}}</script>
 </head>
@@ -42,7 +43,7 @@
   <header class="hero__top shell" data-reveal>
       <div class="hero__start">
         <a class="logo" href="/fr/" aria-label="Licter home" data-dim>
-          <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+          
           <img class="logo__img" src="/assets/img/logo-navy.webp" alt="Licter" width="44" height="48" />
         </a>
       </div>
@@ -99,7 +100,7 @@
           <h2 class="legal__h">Ce que nous collectons</h2>
           <p>Uniquement ce que vous saisissez dans un formulaire : votre e-mail professionnel ou votre téléphone et, selon le formulaire, votre nom, votre entreprise, votre secteur, votre marque, la question à laquelle vous voulez répondre ou vos réponses au diagnostic.</p>
           <p>Notre hébergeur conserve aussi, pour une courte durée et pour des raisons de sécurité, des journaux techniques (adresse IP, navigateur, pages demandées).</p>
-          <p>Si vous acceptez les cookies de mesure d'audience, Google Analytics enregistre aussi l'usage du site : pages vues, clics sur nos boutons, formulaires envoyés et score du diagnostic, sans votre nom ni votre e-mail. Voir la section <a href="#cookies">Cookies</a> plus bas.</p>
+          <p>Si vous acceptez les cookies de mesure d'audience, Google Analytics enregistre aussi l'usage du site : pages vues, clics sur nos boutons, formulaires envoyés et score du diagnostic, sans votre nom ni votre e-mail. Voir la section <a href="#cookies">Cookies</a> plus bas.</p>
         </section>
         <section class="legal__sec" id="why">
           <h2 class="legal__h">Pourquoi</h2>
@@ -116,7 +117,7 @@
         </section>
         <section class="legal__sec" id="club">
           <h2 class="legal__h">Le Social Intelligence Club</h2>
-          <p>Les formulaires des pages du Social Intelligence Club collectent votre e-mail professionnel et, selon le formulaire, vos prénom et nom, votre société, votre fonction, votre profil et ce que vous attendez du club. Ils sont reçus par l'équipe Licter et suivent les règles de cette page : utilisés uniquement pour traiter votre demande (adhésion au club, replay, étude) et vous tenir informé des activités du club, conservés trois ans après notre dernier échange, et couverts par les mêmes droits.</p>
+          <p>Les formulaires des pages du Social Intelligence Club collectent votre e-mail professionnel et, selon le formulaire, vos prénom et nom, votre société, votre fonction, votre profil et ce que vous attendez du club. Ils sont reçus par l'équipe Licter et suivent les règles de cette page : utilisés uniquement pour traiter votre demande (adhésion au club, replay, étude) et vous tenir informé des activités du club, conservés trois ans après notre dernier échange, et couverts par les mêmes droits.</p>
         </section>
         <section class="legal__sec" id="rights">
           <h2 class="legal__h">Vos droits</h2>
@@ -125,7 +126,7 @@
         <section class="legal__sec" id="cookies">
           <h2 class="legal__h">Cookies</h2>
           <p>Ce site mesure son audience avec Google Analytics 4 (pages vues, temps passé, utilisation de nos formulaires et boutons), uniquement si vous l'acceptez dans le bandeau affiché à votre première visite. Google Analytics dépose alors les cookies _ga et _ga_FMNYXB14XW, conservés 13 mois au plus.</p>
-          <p>Si vous refusez, rien n'est chargé depuis Google et aucun cookie n'est déposé. Votre choix est conservé six mois ; vous pouvez le modifier à tout moment avec le lien « Cookies » en bas de chaque page.</p>
+          <p>Si vous refusez, rien n'est chargé depuis Google et aucun cookie n'est déposé. Votre choix est conservé six mois ; vous pouvez le modifier à tout moment avec le lien « Cookies » en bas de chaque page.</p>
           <p>Les données sont traitées par Google Ireland Limited. Une partie peut être transférée aux États-Unis, dans le cadre du Data Privacy Framework UE-États-Unis. Ce site ne dépose aucun cookie publicitaire.</p>
           <p>Votre thème, votre langue, votre choix sur les cookies et les fenêtres que vous avez fermées sont mémorisés dans votre navigateur uniquement et ne nous sont jamais envoyés.</p>
           <p>Les vidéos d'entretien sont lues depuis youtube-nocookie.com, et seulement quand vous les lancez.</p>
@@ -163,7 +164,7 @@
   <div class="site-foot__in shell">
     <div class="site-foot__brand">
       <a class="logo" href="/fr/" aria-label="Licter home">
-        <canvas class="logo__canvas" width="44" height="48" aria-hidden="true"></canvas>
+        
         <img class="logo__img" src="/assets/img/logo-navy.webp" alt="Licter" width="44" height="48" />
       </a>
       <p>Le cabinet de conseil en Social Data Intelligence. Nous transformons ce que les gens publient, cherchent et demandent à l'IA en décisions.</p>
@@ -218,8 +219,8 @@
   </div>
 </footer>
 
-<script src="/js/min/fr-core.js?v=20261351" defer></script>
-<script src="/js/min/i18n.js?v=20261351" defer></script>
-<script src="/js/min/ui.js?v=20261351" defer></script>
+<script src="/js/min/fr-core.js?v=20261352" defer></script>
+<script src="/js/min/i18n.js?v=20261352" defer></script>
+<script src="/js/min/ui.js?v=20261352" defer></script>
 </body>
 </html>

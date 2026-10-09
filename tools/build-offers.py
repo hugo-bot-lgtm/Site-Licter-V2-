@@ -149,7 +149,7 @@ OFFERS = [
         "short": ("Alerté en 15 minutes, 24 h/24.", "Alerted in 15 minutes, 24/7."),
         "seo_title": ("Vigie 360 : veille de crise et e-réputation, alertes 24 h/24 | Licter",
                       "Vigie 360: 24/7 monitoring, alerts within 15 minutes | Licter"),
-        "seo_desc": ("Veille de crise et d'e-réputation sur les réseaux sociaux et la presse, 24 h/24 : votre marque, vos dirigeants et vos marchés, lus par un analyste avant de vous alerter.",
+        "seo_desc": ("Veille de crise et d'e-réputation sur les réseaux sociaux et la presse, 24 h/24 : marque, dirigeants et marchés, lus par un analyste avant toute alerte.",
                      "Continuous monitoring of your brand, your executives and your markets in over twenty languages, read by an analyst before it alerts you."),
         "h1": ("Nous vous alertons en 15 minutes, 24 h/24.", "We alert you in 15 minutes, 24/7."),
         "lead": ("Une veille de crise et d'e-réputation, sur les réseaux sociaux et la presse : votre marque, vos dirigeants et vos marchés, dans plus de vingt langues, pour prévenir et gérer les crises. Une personne lit le signal avant qu'il ne vous parvienne : une alerte veut dire qu'il s'est passé quelque chose, pas qu'un mot-clé s'est déclenché.",
@@ -383,7 +383,7 @@ FR_PATH = {"offers.html": "/fr/offres/", "offer-social-insights.html": "/fr/offr
            "offer-vigie-360.html": "/fr/offres/vigie-360/", "offer-slaas.html": "/fr/offres/social-listening-as-a-service/",
            "offer-nox.html": "/fr/offres/nox/"}
 HUB_SEO = {"title": ("Nos offres : études, veille 24/7, outil IA | Licter", "Our offers: studies, 24/7 monitoring, an AI tool | Licter"),
-           "desc": ("Quatre façons de travailler avec Licter : études social data à la demande, veille et alertes 24/7, reprise de votre plateforme, outil de veille assisté par l'IA.",
+           "desc": ("Quatre façons de travailler avec Licter : études social data à la demande, veille et alertes 24/7, reprise de votre plateforme, veille assistée par l'IA.",
                     "Four ways to work with Licter: social data studies on demand, 24/7 monitoring and alerts, a takeover of your platform, an AI-assisted monitoring tool.")}
 # Per offer: the magnet, the deliverable shown, and two buying questions.
 # MOCK: the buying answers (start, ownership) are to be validated by Licter.
