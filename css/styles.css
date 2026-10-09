@@ -9512,6 +9512,8 @@ html[data-theme="dark"] .cl-cell img { filter: grayscale(1) brightness(0) invert
 .cl-cell:hover .cl-cell__s { opacity: 1; transform: none; color: #5F6370; }
 .cl-cell:hover .cl-cell__n { color: #5F6370; }
 .cl-cell.is-dim { opacity: .18; }
+/* dark mode: on the light hover ground, the logo comes back in its own colours (the white version vanished) */
+html[data-theme="dark"] .cl-cell:hover img, html[data-theme="dark"] .cl-cell.is-box:hover img { filter: none; opacity: 1; }
 
 /* interviews: an index of speakers, one quote on stage */
 .cl-v { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(28px, 4vw, 64px); align-items: start; }
@@ -9643,6 +9645,7 @@ html[data-theme="dark"] .cl-cell__cta { color: #EAA93D; }
 .cl-cell--you a:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: -3px; }
 @media (max-width: 720px) { .cl-cell img { max-height: 48px; } }
 @media (max-width: 720px) { .cl-cell__s { display: none; } .cl-cell img { max-height: 44px; max-width: 70%; } }
+@media (max-width: 720px) { .cl-cell--you a { padding: 8px; text-align: center; gap: 4px; } .cl-cell--you b { font-size: 14px; } .cl-cell__cta { font-size: 11px; } }
 
 /* =========================================================================
    Expertise (tools/build-expertise.py): six channels of listening.

@@ -178,8 +178,7 @@ window.LicterFR = {
     "Finance & services",
   "Institutions, culture & media":
     "Institutions, culture & médias",
-  "+ 30 others":
-    "+ 30 autres",
+  "+ 40 others": "+ 40 autres",
   "Luxury, consumer goods, retail, finance, institutions.":
     "Luxe, grande consommation, distribution, finance, institutions.",
   "A shared panel serves very different mandates. That is why the list runs from luxury and FMCG to retail, telecoms, finance, public institutions and broadcasters.":
