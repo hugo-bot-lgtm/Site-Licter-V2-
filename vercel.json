@@ -51,6 +51,11 @@
       "permanent": true
     },
     {
+      "source": "/FR/(.*)",
+      "destination": "/fr/$1",
+      "permanent": true
+    },
+    {
       "source": "/home",
       "destination": "/fr/",
       "permanent": true
