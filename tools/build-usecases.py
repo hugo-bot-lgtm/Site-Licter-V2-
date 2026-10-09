@@ -1069,7 +1069,7 @@ def main():
             ld = [breadcrumb_ld([(a, b or case_path(c, lang)) for a, b in items]),
                   {"@context": "https://schema.org", "@type": "Service", "name": typo(c["name"][lang], lang),
                    "description": typo(c["meta"][lang], lang), "serviceType": FAM[c["family"]]["name"][lang],
-                   "provider": ORG, "areaServed": "FR", "inLanguage": LANGS[lang], "url": SITE + case_path(c, lang)},
+                   "provider": ORG, "areaServed": ["France", "Worldwide"], "inLanguage": LANGS[lang], "url": SITE + case_path(c, lang)},
                   faq_ld(c["faq"], lang)]
             write(case_path(c, lang), page(lang, case_path(c, lang), case_path(c, 1 - lang), c["seo_title"][lang], c["meta"][lang], body, ld, og_type="article", og_image=c["family"]))
         urls.append((case_path(c, FR), case_path(c, EN)))

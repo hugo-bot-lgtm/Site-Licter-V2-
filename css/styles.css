@@ -7548,7 +7548,9 @@ section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); 
   .lx__tabs { margin: 10px 12px 0; }
   .lx__log { padding: 14px 12px 8px; overscroll-behavior: contain; }
   .lx__msg { max-width: 92%; }
-  .lx__chips { flex-wrap: nowrap; overflow-x: auto; padding: 4px 12px 10px; scrollbar-width: none; }
+  .lx__chips { flex-wrap: nowrap; overflow-x: auto; padding: 4px 12px 10px; scrollbar-width: none;
+    /* the row scrolls sideways: its right edge fades, so the cut chip reads as "more" */
+    -webkit-mask-image: linear-gradient(to right, #000 82%, transparent); mask-image: linear-gradient(to right, #000 82%, transparent); }
   .lx__chips::-webkit-scrollbar { display: none; }
   .lx__chip { flex: none; height: 36px; }
   .lx__ask { padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px)); }
@@ -9452,6 +9454,8 @@ html[data-theme="dark"] .wl-end { background: radial-gradient(90% 120% at 0% 100
 .wl-hero { grid-template-columns: minmax(0, 1fr); }
 .wl-hero .shell { width: min(100%, var(--maxw)); }
 .wl-fig b { font-size: clamp(40px, 4.2vw, 72px); }
+/* "5,66 Md" is the longest figure: one step smaller, so it stays in its column */
+.wl-fig--c b { font-size: clamp(34px, 3.4vw, 58px); }
 
 /* =========================================================================
    Clients (clients.html): an editorial page, the register of an annual
@@ -10572,6 +10576,8 @@ html[lang="fr"] .xp-line > span::after { content: "\00a0:"; }
   .cc__b button { min-width: 116px; }
 }
 @media (max-width: 720px) {
+  /* while the banner is open, the page can scroll its last lines above it */
+  html.cc-open body { padding-bottom: 170px; }
   /* compact on a phone: it hides less of the page under it */
   .cc { left: 8px; right: 8px; bottom: 8px; width: auto; gap: 10px; padding: 12px 14px; border-radius: 14px; }
   .cc__t { font-size: 13px; line-height: 1.45; }
@@ -10599,3 +10605,6 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 .qa-src a { color: var(--text-2); text-decoration: underline; text-decoration-color: rgba(var(--ink-rgb), .3); text-underline-offset: 3px; }
 .qa-src a:hover { color: var(--ink); }
 .tk-proof__h { margin: 0; font: 600 clamp(18px, 1.4vw, 21px)/1.3 var(--title-font); color: var(--ink); }
+/* expertise heroes on a phone: the free flash read is offered on the first screen, the form itself comes further down */
+.xe-lmh__jump { display: none; }
+@media (max-width: 720px) { .xe-lmh__jump { display: inline-flex; align-self: flex-start; margin: 4px 0 14px; } }

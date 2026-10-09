@@ -85,6 +85,9 @@ LISTENINGS = [
                 (("Quelle différence avec un outil de veille ?", "How is it different from a monitoring tool?"),
                  ("L'outil collecte. Nous choisissons les sources, écartons le bruit et lisons le résultat, pour vous dire ce qu'il faut en faire.",
                   "The tool collects. We pick the sources, remove the noise and read the result, to tell you what to do with it.")),
+                (("Quels outils de social listening utilisez-vous ?", "Which social listening tools do you use?"),
+                 ("Les plateformes du marché, dont Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly et YouScan, parmi 19 outils d'écoute, de recherche et d'IA. Nous choisissons l'outil de social listening selon la question et lisons le résultat : vous n'avez besoin d'aucune licence.",
+                  "The platforms on the market, including Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly and YouScan, among 19 listening, search and AI tools. We pick the social listening tool by the question and read the result: you need no licence of your own.")),
                 (("Êtes-vous une agence de social listening en France ?", "Are you a social listening agency in France?"),
                  ("Oui : Licter est une agence et un cabinet de social listening basé à Paris. Nous travaillons pour des marques françaises et internationales, en France et sur les autres marchés, dans plus de vingt langues.",
                   "Yes: Licter is a social listening agency and consultancy based in Paris. We work for French and international brands, in France and in other markets, in more than twenty languages.")),
@@ -114,7 +117,10 @@ LISTENINGS = [
         "cannot": [("Ce que ces personnes pensent de vous en particulier : c'est le social listening.", "What these people think of you in particular: that is social listening.")],
         "cases": ["segmentation", "rejuvenate", "touchpoints"],
         "tools": ["soprism"], "offers": ["social-insights"],
-        "faq": [(("Audience intelligence ou social listening : quelle différence ?", "Audience intelligence or social listening: what is the difference?"),
+        "faq": [(("Qu'est-ce que la consumer intelligence ?", "What is consumer intelligence?"),
+                 ("L'étude des consommateurs d'une catégorie à partir de ce qu'ils publient, cherchent et suivent en ligne, pour répondre à une question de marché. Elle croise social listening, audience intelligence et données de recherche, et se termine par des recommandations.",
+                  "The study of a category's consumers from what they post, search for and follow online, to answer a market question. It crosses social listening, audience intelligence and search data, and ends with recommendations.")),
+                (("Audience intelligence ou social listening : quelle différence ?", "Audience intelligence or social listening: what is the difference?"),
                  ("Le social listening lit ce qui se dit sur votre marque et votre marché. L'audience intelligence, que nous appelons audience listening, décrit les gens eux-mêmes : ce qu'ils suivent, partagent et consomment, qu'ils parlent de vous ou non. L'un mesure une conversation, l'autre dessine une communauté ; les deux se croisent souvent dans une même étude.",
                   "Social listening reads what is said about your brand and your market. Audience intelligence, which we call audience listening, describes the people themselves: what they follow, share and consume, whether they talk about you or not. One measures a conversation, the other draws a community; the two often meet in the same study.")),
                 (("D'où viennent les données d'audience ?", "Where does the audience data come from?"),
@@ -154,7 +160,7 @@ LISTENINGS = [
         "key": "ai", "file": "expertise-ai-listening.html", "icon": "ai",
         "name": ("AI listening", "AI listening"),
         "short": ("Ce que les IA génératives disent de votre marque.", "What generative AI says about your brand."),
-        "seo_title": ("AI listening : ce que les IA disent de votre marque | Licter", "AI listening: what AI says about your brand | Licter"),
+        "seo_title": ("AI listening et visibilité IA : ce que les IA disent de vous | Licter", "AI listening and AI visibility: what AI says about you | Licter"),
         "seo_desc": ("Nous interrogeons les assistants IA sur votre marque et votre catégorie, comme vos clients, et lisons ce qu'ils recommandent, citent ou oublient.",
                      "We question AI assistants about your brand and your category, the way your customers do, and read what they recommend, cite or leave out."),
         "h1": ("Ce que les IA répondent quand on leur parle de vous.", "What AI answers when people ask about you."),
@@ -686,6 +692,7 @@ def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, 
         <h1 class="xe-lmh__h1"><span class="xe-lmh__kick">{kick}</span><span class="xe-lmh__l">{t((lines[0][0], lines[1][0]))}</span><span class="xe-lmh__l xe-lmh__l--c">{t((lines[0][1], lines[1][1]))}</span></h1>
         <p class="xe-lmh__lead">{t(lead)}</p>
         <ul class="xe-lmh__pills"><li>{t(S["lm_free"])}</li><li>{t(S["lm_yours"])}</li><li>{t(S["lm_48"])}</li></ul>
+        <a class="btn btn--primary xe-lmh__jump" href="#offre">{t(S["lm_btn"])} <span aria-hidden="true">↓</span></a>
         <a class="xe-lmh__call" href="#book">{t(S["lm_call"])} <span aria-hidden="true">→</span></a>
       </div>
       <div class="xe-lm" id="offre">

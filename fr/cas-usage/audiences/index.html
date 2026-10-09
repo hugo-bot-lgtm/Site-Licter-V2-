@@ -26,11 +26,12 @@
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
-<script src="/js/min/theme.js?v=20261350"></script>
-<link rel="stylesheet" href="/css/t-uc.min.css?v=20261350" />
+<script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
+<link rel="stylesheet" href="/css/t-uc.min.css?v=20261351" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.licter.com/fr/"}, {"@type": "ListItem", "position": 2, "name": "Cas d'usage", "item": "https://www.licter.com/fr/cas-usage/"}, {"@type": "ListItem", "position": 3, "name": "Audiences", "item": "https://www.licter.com/fr/cas-usage/audiences/"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "D'où viennent les données d'audience ?", "acceptedAnswer": {"@type": "Answer", "text": "D'un panel comportemental de plus de 2,7 milliards de personnes, croisé avec la conversation publique et la recherche. Les données sont agrégées : nous lisons des communautés, pas des individus."}}, {"@type": "Question", "name": "Combien de critères pour décrire une audience ?", "acceptedAnswer": {"@type": "Answer", "text": "Plus de 7 000 critères comportementaux : centres d'intérêt, régime média, affinités de marque, sociodémographie."}}, {"@type": "Question", "name": "Est-ce compatible avec le RGPD ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous travaillons sur des données publiques ou agrégées et anonymisées, sans suivi d'individus."}}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Connaître ses audiences par le comportement observé | Licter", "url": "https://www.licter.com/fr/cas-usage/audiences/", "inLanguage": "fr", "datePublished": "2026-10-08", "dateModified": "2026-10-08", "author": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "publisher": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "D'où viennent les données d'audience ?", "acceptedAnswer": {"@type": "Answer", "text": "D'un panel comportemental tiré des réseaux sociaux (5,66 milliards d'utilisateurs actifs, 68,7 % de la population mondiale), croisé avec la conversation publique et la recherche. Les données sont agrégées : nous lisons des communautés, pas des individus."}}, {"@type": "Question", "name": "Combien de critères pour décrire une audience ?", "acceptedAnswer": {"@type": "Answer", "text": "Plus de 7 000 critères comportementaux : centres d'intérêt, régime média, affinités de marque, sociodémographie."}}, {"@type": "Question", "name": "Est-ce compatible avec le RGPD ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous travaillons sur des données publiques ou agrégées et anonymisées, sans suivi d'individus."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Connaître ses audiences par le comportement observé | Licter", "url": "https://www.licter.com/fr/cas-usage/audiences/", "inLanguage": "fr", "datePublished": "2026-10-08", "dateModified": "2026-10-08", "author": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "publisher": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "@id": "https://www.licter.com/fr/cas-usage/audiences/#webpage", "isPartOf": {"@id": "https://www.licter.com/#website"}, "description": "Segmenter vos cibles, rajeunir votre audience, comprendre les attentes à chaque étape : vos audiences lues dans ce qu'elles font, pas ce qu'elles déclarent."}</script>
+<script type="application/ld+json" data-seo>{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://www.licter.com/#website", "name": "Licter", "url": "https://www.licter.com/", "inLanguage": ["fr", "en"], "publisher": {"@id": "https://www.licter.com/#org"}}</script>
 </head>
 <body class="ucx ucp-page">
 <a class="skip-link" href="#content">Aller au contenu</a>
@@ -90,7 +91,7 @@
       <div class="ucp__hero-main">
         <p class="ucp__kicker"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span><span>03 · Audiences</span></p>
         <h1 class="ucp__title ucp__title--long">Remplacez l&#x27;atelier persona par le comportement observé.</h1>
-        <p class="ucp__lead">Les préférences déclarées et le comportement réel coïncident rarement. Le panel montre ce que les gens font, suivent, achètent et disent quand personne ne leur pose de question : un panel de plus de 2,7 milliards de personnes, lu par des analystes.</p>
+        <p class="ucp__lead">Les préférences déclarées et le comportement réel coïncident rarement. Le panel montre ce que les gens font, suivent, achètent et disent quand personne ne leur pose de question : un panel tiré des réseaux sociaux, où 5,66 milliards d&#x27;utilisateurs actifs publient, lu par des analystes.</p>
           <div class="page__actions">
             <a class="btn btn--primary" href="#book">Parler à un consultant <span aria-hidden="true">→</span></a>
           </div>
@@ -187,7 +188,7 @@
     <div class="shell ucp__cols ucp__cols--faq">
       <div>
         <h2 class="ucp__h2">Questions fréquentes</h2>
-        <div class="faq"><details><summary>D&#x27;où viennent les données d&#x27;audience ?</summary><p>D&#x27;un panel comportemental de plus de 2,7 milliards de personnes, croisé avec la conversation publique et la recherche. Les données sont agrégées : nous lisons des communautés, pas des individus.</p></details><details><summary>Combien de critères pour décrire une audience ?</summary><p>Plus de 7 000 critères comportementaux : centres d&#x27;intérêt, régime média, affinités de marque, sociodémographie.</p></details><details><summary>Est-ce compatible avec le RGPD ?</summary><p>Oui. Nous travaillons sur des données publiques ou agrégées et anonymisées, sans suivi d&#x27;individus.</p></details></div>
+        <div class="faq"><details><summary>D&#x27;où viennent les données d&#x27;audience ?</summary><p>D&#x27;un panel comportemental tiré des réseaux sociaux (5,66 milliards d&#x27;utilisateurs actifs, 68,7 % de la population mondiale), croisé avec la conversation publique et la recherche. Les données sont agrégées : nous lisons des communautés, pas des individus.</p></details><details><summary>Combien de critères pour décrire une audience ?</summary><p>Plus de 7 000 critères comportementaux : centres d&#x27;intérêt, régime média, affinités de marque, sociodémographie.</p></details><details><summary>Est-ce compatible avec le RGPD ?</summary><p>Oui. Nous travaillons sur des données publiques ou agrégées et anonymisées, sans suivi d&#x27;individus.</p></details></div>
         <div class="ucp__faq-arts"><h2 class="ucp__h2 ucp__h2--sub">Articles liés</h2>
         <ul class="ucp__arts-l"><li><a class="ucp__art-l" href="/article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html"><span>Le blog</span>Conquérir la cosmétique de luxe grâce au social listening <span aria-hidden="true">→</span></a></li><li><a class="ucp__art-l" href="/article-comment-orange-analyse-tiktok-grace-au-social-listening.html"><span>Le blog</span>Comment Orange analyse TikTok grâce au social listening <span aria-hidden="true">→</span></a></li><li><a class="ucp__art-l" href="/article-gp-explorer-3-squeezie-bat-les-records-daudience.html"><span>Le blog</span>GP Explorer 3 : Squeezie bat les records d&#x27;audience <span aria-hidden="true">→</span></a></li></ul></div>
       </div>
@@ -266,7 +267,7 @@
     <div>
       <h3>COMMENCER</h3>
       <ul>
-        <li><a href="/fr/guide/">Le guide gratuit</a></li>
+        <li><a href="/fr/guide/">Le guide des 12 questions</a></li>
         <li><a href="/fr/diagnostic/">Demander un diagnostic</a></li>
         <li><a href="/fr/rendez-vous/">Prendre rendez-vous</a></li>
       </ul>
@@ -290,9 +291,9 @@
   </div>
 </footer>
 
-<script src="/js/min/fr-core.js?v=20261350" defer></script>
-<script src="/js/min/i18n.js?v=20261350" defer></script>
-<script src="/js/min/ui.js?v=20261350" defer></script>
-<script src="/js/min/home.js?v=20261350" defer></script>
+<script src="/js/min/fr-core.js?v=20261351" defer></script>
+<script src="/js/min/i18n.js?v=20261351" defer></script>
+<script src="/js/min/ui.js?v=20261351" defer></script>
+<script src="/js/min/home.js?v=20261351" defer></script>
 </body>
 </html>

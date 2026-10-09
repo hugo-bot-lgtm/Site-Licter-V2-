@@ -122,8 +122,8 @@ window.LicterFR = {
     "Écouter",
   "Read":
     "Lire",
-  "Licter was founded in 2022 by Antoine Khaitrine and Adrien Krebs, who led the Data & Digital Analysis cell at the Élysée. They left with a conviction: French organisations were years behind on audience intelligence, monitoring and social listening. The gap was one of method, not of data.":
-    "Licter a été fondé en 2022 par Antoine Khaitrine et Adrien Krebs, qui dirigeaient la cellule Data & Digital Analysis de l'Élysée. Ils en sont partis avec une conviction : les organisations françaises avaient plusieurs années de retard en audience intelligence, en veille et en social listening. Un retard de méthode, pas de données.",
+  "Licter was founded in 2022 by Antoine Khaitrine and Adrien Krebs, who created and led the Data & Digital Analysis cell at the Élysée. They left with a conviction: French organisations were years behind on audience intelligence, monitoring and social listening. The gap was one of method, not of data.":
+    "Licter a été fondé en 2022 par Antoine Khaitrine et Adrien Krebs, qui ont créé et dirigé la cellule Data & Digital Analysis de l'Élysée. Ils en sont partis avec une conviction : les organisations françaises avaient plusieurs années de retard en audience intelligence, en veille et en social listening. Un retard de méthode, pas de données.",
   "Antoine Khaitrine & Adrien Krebs":
     "Antoine Khaitrine & Adrien Krebs",
   "Antoine Khaitrine and Adrien Krebs, the founders of Licter":
@@ -201,8 +201,8 @@ window.LicterFR = {
     "Depuis 2022",
   "See who":
     "Voir qui",
-  "Consumer groups, retailers, banks, institutions and media. Different mandates, one source: the behaviour of 2.7 billion people.":
-    "Groupes de grande consommation, distributeurs, banques, institutions et médias. Des missions différentes, une même source : le comportement de 2,7 milliards de personnes.",
+  "Consumer groups, retailers, banks, institutions and media. Different mandates, one source: the behaviour of 5.66 billion active social media users.":
+    "Groupes de grande consommation, distributeurs, banques, institutions et médias. Des missions différentes, une même source : le comportement de 5,66 milliards d'utilisateurs actifs des réseaux sociaux.",
   "A shared panel serves very different mandates. That is why the list runs from luxury and FMCG to public institutions and broadcasters.":
     "Un même panel sert des missions très différentes. C'est pourquoi la liste va du luxe et de la grande consommation aux institutions publiques et aux médias.",
   "All":
@@ -707,14 +707,31 @@ window.LicterFR = {
   "A dashboard decides nothing. Without someone reading it regularly and turning it into decisions, a licence is little used.": "Un tableau de bord ne décide rien. Sans quelqu'un pour le lire régulièrement et en tirer des décisions, une licence sert peu.",
   "Add the users, the history, the AI modules and the time your team will spend. That total is what to compare with a service.": "Ajoutez les utilisateurs, l'historique, les modules d'IA et le temps que votre équipe y passera. C'est ce total qu'il faut comparer à une prestation.",
   "GET THE GUIDE": "RECEVOIR LE GUIDE",
+  "active social media users, 68.7% of the world": "utilisateurs actifs des réseaux sociaux, 68,7 % de la population mondiale",
+  "active social media users · 68.7% of the world": "utilisateurs actifs des réseaux sociaux · 68,7 % de la population mondiale",
   "instead.": "à la place.",
   "Your question": "Votre question",
+  "Your question (optional)": "Votre question (facultatif)",
   "The question you are trying to answer, and the decision it will inform...": "La question à laquelle vous cherchez à répondre, et la décision qu'elle doit éclairer...",
+  "Optional: the question you are trying to answer, and the decision it will inform...": "Facultatif : la question à laquelle vous cherchez à répondre, et la décision qu'elle doit éclairer...",
   "SEND MY QUESTION": "ENVOYER MA QUESTION",
   "updated": "mis à jour le",
   "published": "publié le",
-  "Created and led the Data & Digital Analysis cell of the French Presidency at the Élysée, from 2019 to 2021. EDHEC graduate, visiting lecturer at Sciences Po. Top 50 Insider worldwide in social intelligence (SI Lab) in 2024.": "A créé et dirigé la cellule Data & Analyse numérique de la Présidence de la République, à l'Élysée, de 2019 à 2021. Diplômé de l'EDHEC, intervenant à Sciences Po. Top 50 Insider mondial de la social intelligence (SI Lab) en 2024.",
-  "Built the Élysée's Data & Digital Analysis cell with Antoine, within the Presidency's communication team. EDHEC graduate, teaches at Sciences Po, Albert School and EM Normandie. Top 50 Insider worldwide in social intelligence (SI Lab) in 2025.": "A développé avec Antoine la cellule Data & Analyse numérique de l'Élysée, au sein de la communication de la Présidence. Diplômé de l'EDHEC, enseigne à Sciences Po, à l'Albert School et à l'EM Normandie. Top 50 Insider mondial de la social intelligence (SI Lab) en 2025.",
+  "Created and led the Data & Digital Analysis cell of the French Presidency at the Élysée, from 2019 to 2021. EDHEC graduate, visiting lecturer at Sciences Po. Top 50 Insider worldwide in social intelligence (SI Lab) in 2024.": "A créé et dirigé la cellule Data & Digital Analysis de la Présidence de la République, à l'Élysée, de 2019 à 2021. Diplômé de l'EDHEC, intervenant à Sciences Po. Top 50 Insider mondial de la social intelligence (SI Lab) en 2024.",
+  "Created and led the Élysée's Data & Digital Analysis cell with Antoine, within the Presidency's communication team. EDHEC graduate, teaches at Sciences Po, Albert School and EM Normandie. Top 50 Insider worldwide in social intelligence (SI Lab) in 2025.": "A créé et dirigé avec Antoine la cellule Data & Digital Analysis de l'Élysée, au sein de la communication de la Présidence. Diplômé de l'EDHEC, enseigne à Sciences Po, à l'Albert School et à l'EM Normandie. Top 50 Insider mondial de la social intelligence (SI Lab) en 2025.",
+  "Frequently asked questions about social listening tools.": "Questions fréquentes sur les outils de social listening.",
+  "To go further:": "Pour aller plus loin :",
+  "our social listening agency": "notre agence de social listening",
+  "the social media monitoring guide": "le guide de la veille réseaux sociaux",
+  "Which social listening tool should you choose?": "Quel outil de social listening choisir ?",
+  "Buy a licence or work with a social listening agency?": "Acheter une licence ou passer par une agence de social listening ?",
+  "Does Licter sell social listening tools?": "Licter vend-elle des outils de social listening ?",
+  "How much does a social listening tool cost?": "Combien coûte un outil de social listening ?",
+  "The one that answers your question. A crisis calls for real-time alerts, an audience study for a behavioural panel, a campaign for long history and image recognition. We run 19 tools and pick them by the question, never the other way round.": "Celui qui répond à votre question. Une crise demande des alertes en temps réel, une étude d'audience un panel comportemental, une campagne de l'historique et de la reconnaissance d'image. Nous opérons 19 outils et les choisissons selon la question, jamais l'inverse.",
+  "A licence makes sense if someone in your team can write the queries and read the results every week. Otherwise, an agency runs the tool for you and delivers the reading: you pay for the answer, not for the access.": "Une licence a du sens si quelqu'un dans votre équipe peut écrire les requêtes et lire les résultats chaque semaine. Sinon, une agence opère l'outil pour vous et livre la lecture : vous payez la réponse, pas l'accès.",
+  "No. Licter is an independent consultancy: we publish no tool, we run the platforms on the market for our clients and choose them by the question.": "Non. Licter est un cabinet indépendant : nous n'éditons aucun outil, nous opérons les plateformes du marché pour nos clients et les choisissons selon la question.",
+  "It depends on the publisher, the number of users, the history and the modules. When we run the tool for you, the whole service is on quotation, licence included.": "Cela dépend de l'éditeur, du nombre d'utilisateurs, de l'historique et des modules. Quand nous opérons l'outil pour vous, l'ensemble est sur devis, licence comprise.",
+  "Leave your email or phone number. A consultant from our social listening agency calls you back within 30 minutes on weekdays, tells you which sources we would use, and runs them for you if you wish.": "Laissez votre e-mail ou votre téléphone. Un consultant de notre agence de social listening vous rappelle dans les 30 minutes en semaine, vous dit quelles sources nous utiliserions, et les opère pour vous si vous le souhaitez.",
   "Who is responsible": "Responsable du traitement",
   "Licter SAS, 173 rue de Courcelles, 75017 Paris, France. Contact:": "Licter SAS, 173 rue de Courcelles, 75017 Paris. Contact :",
   "What we collect": "Ce que nous collectons",
@@ -851,7 +868,7 @@ window.LicterFR = {
   "Social Insights": "Social Insights", "Vigie 360 — 24/7 monitoring": "Vigie 360 — veille 24/7",
   "Social Listening as a Service": "Social Listening as a Service",
   "Why Licter": "Pourquoi Licter", "Tech & tools": "Techno & outils", "Clients": "Clients", "Blog": "Blog",
-  "The free guide": "Le guide gratuit", "Request a diagnostic": "Demander un diagnostic",
+  "The 12-question guide": "Le guide des 12 questions", "Request a diagnostic": "Demander un diagnostic",
   "The Social Data Intelligence consultancy. We turn data from the world's largest panel — social media, search, generative AI — into decisions.":
     "Le cabinet de conseil en Social Data Intelligence. Nous transformons la donnée du plus grand panel du monde — réseaux sociaux, recherche, IA générative — en décisions.",
   "© 2026 Licter — Social Data Intelligence": "© 2026 Licter — Social Data Intelligence",
@@ -970,7 +987,7 @@ window.LicterFR = {
   "Interests, passions, brand affinities, media relationships": "Centres d'intérêt, passions, affinités de marque, relations aux médias",
   "What they buy": "Ce qu'ils achètent",
   "They do buy the category, twice as often as their parents, but from two competitors with smaller formats.": "Ils achètent bien la catégorie, deux fois plus que leurs parents, mais chez deux concurrents aux formats plus petits.",
-  "Behaviour of more than 2.7 billion people, nobody recruited": "Le comportement de plus de 2,7 milliards de personnes, sans recrutement",
+  "Behaviour of 5.66 billion active social media users, nobody recruited": "Le comportement de 5,66 milliards d'utilisateurs actifs des réseaux sociaux, sans recrutement",
   "What they think of you": "Ce qu'ils pensent de vous",
   "Their searches combine the category with “small”, “single portion” and “recyclable”. Your range answers none of the three.": "Leurs recherches associent la catégorie à « petit », « portion individuelle » et « recyclable ». Votre gamme ne répond à aucun des trois.",
   "Google and Amazon queries, before the purchase and after the problem": "Les requêtes Google et Amazon, avant l'achat et après le problème",
@@ -992,7 +1009,7 @@ window.LicterFR = {
   "Five platforms, 22 networks, search, press and generative AI.": "Cinq plateformes, 22 réseaux, la recherche, la presse et l'IA générative.",
   "Qualify": "Qualifier",
   "Our algorithms profile users on their interactions, behaviour and content consumption.": "Nos algorithmes profilent les utilisateurs selon leurs interactions, leur comportement et leurs contenus.",
-  "2.7 bn": "2,7 Md",
+  "5.66 bn": "5,66 Md",
   "users profiled daily · 7,000+ criteria": "utilisateurs profilés chaque jour · 7 000+ critères",
   "Decide": "Décider",
   "An analyst reads it, in the language of the market, and tells you what to do.": "Un analyste le lit, dans la langue du marché, et vous dit quoi faire.",
@@ -2043,8 +2060,8 @@ window.LicterFR = {
     "Méthodes, lectures de marché et, de temps en temps, une correction. Écrit par les consultants qui ont mené l'analyse, pas par une équipe de contenu.",
   "Tell us the decision you have to make. We come back with the read we would run, the sources we would use, and what it takes.":
     "Dites-nous la décision que vous devez prendre. Nous revenons avec la lecture que nous mènerions, les sources que nous utiliserions, et ce qu'il faut pour cela.",
-  "Behavioural data on roughly three billion consumers — the largest panel in the world, and nobody had to be recruited into it.":
-    "Des données comportementales sur environ trois milliards de consommateurs — le plus grand panel du monde, et personne n'a eu à y être recruté.",
+  "Behavioural data from social networks, where 5.66 billion active users post, and nobody had to be recruited.":
+    "Des données comportementales tirées des réseaux sociaux, où publient 5,66 milliards d'utilisateurs actifs, sans recruter personne.",
   "Brand health is not a quarterly survey. It is a continuous signal, and it is already public — the work is to read it in time.":
     "La santé de marque n'est pas une étude trimestrielle. C'est un signal continu, et il est déjà public — le travail consiste à le lire à temps.",
   "Object and scene detection go beyond the mark itself. The perimeter is defined with you, with samples, before the first read.":
@@ -2075,8 +2092,8 @@ window.LicterFR = {
     "Lisez ce qu'un lancement, un sponsoring ou une prise de parole a réellement déplacé : volume, portée, tonalité, et quelles audiences ont changé de position.",
   "Proprietary algorithms profile the audiences; analysts read them against your market, in the language that market actually speaks.":
     "Des algorithmes propriétaires profilent les audiences ; des analystes les lisent face à votre marché, dans la langue que ce marché parle réellement.",
-  "Consumer groups, retailers, banks, institutions and media. Different mandates, one source — the behaviour of 2.7 billion people.":
-    "Groupes de grande consommation, distributeurs, banques, institutions et médias. Des mandats différents, une seule source — le comportement de 2,7 milliards de personnes.",
+  "Consumer groups, retailers, banks, institutions and media. Different mandates, one source — the behaviour of 5.66 billion active social media users.":
+    "Groupes de grande consommation, distributeurs, banques, institutions et médias. Des mandats différents, une seule source — le comportement de 5,66 milliards d'utilisateurs actifs des réseaux sociaux.",
   "A sample is reviewed by hand at setup, and the perimeter is tightened until precision is acceptable. No model is right out of the box.":
     "Un échantillon est relu à la main au paramétrage, et le périmètre est resserré jusqu'à ce que la précision soit acceptable. Aucun modèle n'est juste dès la sortie de la boîte.",
   "Vigie 360 is our monitoring offer; Visibrain is one of the platforms behind it. You buy the service and the protocol, not the software.":
@@ -2089,8 +2106,8 @@ window.LicterFR = {
     "Les mêmes cinq outils servent une cinquantaine d'organisations ici. Ce qui change d'une à l'autre, c'est la question, et qui en lit le résultat.",
   "You already know what you published. The question is what it moved, in whose mind, and whether the voices carrying it were the right ones.":
     "Vous savez déjà ce que vous avez publié. La question est ce que cela a déplacé, dans quel esprit, et si les voix qui l'ont portée étaient les bonnes.",
-  "Four families of questions, twelve concrete use cases, one source: the behaviour of 2.7 billion people, observed rather than declared.":
-    "Quatre familles de questions, douze cas d'usage concrets, une seule source : le comportement de 2,7 milliards de personnes, observé plutôt que déclaré.",
+  "Four families of questions, twelve concrete use cases, one source: the behaviour of 5.66 billion active social media users, observed rather than declared.":
+    "Quatre familles de questions, douze cas d'usage concrets, une seule source : le comportement de 5,66 milliards d'utilisateurs actifs des réseaux sociaux, observé plutôt que déclaré.",
   "A growing share of brand discovery now happens inside an assistant's answer. What it says about you is measurable, and increasingly decisive.":
     "Une part croissante de la découverte de marque se joue désormais dans la réponse d'un assistant. Ce qu'il dit de vous est mesurable, et de plus en plus décisif.",
   "No. It reads behaviour that already exists — nobody is recruited, nobody answers a questionnaire, and there is no declaration bias to correct.":
@@ -2127,8 +2144,8 @@ window.LicterFR = {
     "L'écoute par mots-clés rate tout ce qui est montré plutôt qu'écrit — et sur TikTok, Instagram ou Pinterest, c'est la majorité de ce qui concerne une marque.",
   "By the time a trend is legible enough to put in a deck, the decision it should have informed has usually been taken. That gap is organisational, not technical.":
     "Quand une tendance devient assez lisible pour figurer dans un deck, la décision qu'elle aurait dû éclairer a généralement déjà été prise. Cet écart est organisationnel, pas technique.",
-  "Three billion people already publish what they like, follow, buy and reject. We profile that behaviour daily instead of asking a thousand people to declare it.":
-    "Trois milliards de personnes publient déjà ce qu'elles aiment, suivent, achètent et rejettent. Nous profilons ce comportement chaque jour au lieu de demander à mille personnes de le déclarer.",
+  "5.66 billion active users, 68.7% of the world's population, already publish on social networks what they like, follow, buy and reject. We profile that behaviour daily instead of asking a thousand people to declare it.":
+    "5,66 milliards d'utilisateurs actifs peuplent les réseaux sociaux, soit 68,7 % de la population mondiale, et publient déjà ce qu'ils aiment, suivent, achètent et rejettent. Nous profilons ce comportement chaque jour au lieu de demander à mille personnes de le déclarer.",
   "It is strongest where the product is shown — retail, FMCG, luxury, food. For a B2B service, the other three platforms usually answer better, and we will say so.":
     "Il est le plus fort là où le produit est montré — retail, grande consommation, luxe, alimentaire. Pour un service B2B, les trois autres outils répondent généralement mieux, et nous le dirons.",
   "Most organisations already pay for listening tools and read almost nothing from them. Two to three weeks to know exactly where you stand, and what to fix first.":
@@ -2141,14 +2158,14 @@ window.LicterFR = {
     "L'essentiel de ce qu'on appelle signal faible n'est qu'un petit nombre. Voici la différence entre une conversation qui annonce un basculement et une qui en a seulement l'air.",
   "Listening suites are very good at three things and structurally bad at two others. Knowing which is which is most of what separates a useful setup from an expensive one.":
     "Les suites d'écoute sont très bonnes sur trois choses et structurellement mauvaises sur deux autres. Savoir lesquelles fait l'essentiel de la différence entre un dispositif utile et un dispositif coûteux.",
-  "Most brand questions are still answered by asking a thousand people what they think. Twelve of them are better answered by watching what 2.7 billion people already do.":
-    "La plupart des questions de marque trouvent encore leur réponse en demandant à mille personnes ce qu'elles pensent. Douze d'entre elles trouvent une meilleure réponse en regardant ce que 2,7 milliards de personnes font déjà.",
+  "Most brand questions are still answered by asking a thousand people what they think. Twelve of them are better answered by watching what 5.66 billion social media users already do.":
+    "La plupart des questions de marque trouvent encore leur réponse en demandant à mille personnes ce qu'elles pensent. Douze d'entre elles trouvent une meilleure réponse en regardant ce que 5,66 milliards d'utilisateurs des réseaux sociaux font déjà.",
   "The strongest consumer insight is usually the one where somebody’s stated preference and their observable behaviour come apart. Finding those gaps is a method, not luck.":
     "Le meilleur insight consommateur est généralement celui où la préférence déclarée et le comportement observable se séparent. Trouver ces écarts relève d'une méthode, pas de la chance.",
   "Each platform carries a different register of the same market: short-form culture, community reaction, public debate, professional discourse, long-form review, local groups.":
     "Chaque plateforme porte un registre différent du même marché : culture du format court, réaction communautaire, débat public, discours professionnel, avis long, groupes locaux.",
-  "We profile 2.7 billion users daily on their interactions, behaviour and content consumption. The platforms collect; our algorithms qualify; consultants decide what is signal.":
-    "Nous profilons 2,7 milliards d'utilisateurs chaque jour sur leurs interactions, leur comportement et leur consommation de contenu. Les outils collectent ; nos algorithmes qualifient ; les consultants décident de ce qui est du signal.",
+  "Our algorithms profile users on their interactions, behaviour and content consumption, across networks where 5.66 billion active users post. The platforms collect; our algorithms qualify; consultants decide what is signal.":
+    "Nos algorithmes profilent les utilisateurs sur leurs interactions, leur comportement et leur consommation de contenu, sur des réseaux où publient 5,66 milliards d'utilisateurs actifs. Les outils collectent ; nos algorithmes qualifient ; les consultants décident de ce qui est du signal.",
   "That sentence is our founders'. It is also the whole method: the largest consumer panel in the world already exists, it publishes every day, and almost nobody reads it properly.":
     "Cette phrase est celle de nos fondateurs. C'est aussi toute la méthode : le plus grand panel consommateur du monde existe déjà, il publie chaque jour, et presque personne ne le lit correctement.",
   "The broadest listening suite on the market, operated by consultants: coverage across markets and languages, and an analysis that arrives as an answer rather than as a dashboard.":
@@ -2177,9 +2194,9 @@ window.LicterFR = {
     "Veille continue de votre marque, de vos dirigeants et de vos marchés, dans plus de vingt langues. Un humain lit le signal avant qu'il ne vous parvienne : une alerte signifie qu'il s'est passé quelque chose — pas qu'un mot-clé s'est déclenché.",
   "No. We work with the leading platforms and our own algorithms; the licence is ours, not a prerequisite for you. If you already pay for one and under-use it, that is exactly what Social Listening as a Service is for.":
     "Non. Nous travaillons avec les meilleurs outils du marché et nos propres algorithmes ; la licence est la nôtre, pas un prérequis pour vous. Si vous en payez déjà une et la sous-exploitez, c'est exactement à cela que sert le Social Listening as a Service.",
-  "Social listening is one of four layers. On its own it tells you what is being said. We add audience intelligence (who is behind the accounts), a behavioural panel of more than 2.7 billion people, and search listening. Most questions need at least two.":
-    "Le social listening est l'un des quatre calques. Seul, il vous dit ce qui se dit. Nous y ajoutons l'audience intelligence (qui se trouve derrière les comptes), un panel comportemental de plus de 2,7 milliards de personnes, et le search listening. La plupart des questions en demandent au moins deux.",
-  "Licter was founded in 2022 by Antoine Khaitrine and Adrien Krebs, who led the Data & Digital Analysis cell at the Élysée. They left with a conviction: French organisations were several years behind their American and British counterparts on audience intelligence, monitoring and social listening — and the gap was a method gap, not a data gap.":
+  "Social listening is one of four layers. On its own it tells you what is being said. We add audience intelligence (who is behind the accounts), a behavioural panel drawn from social networks (5.66 billion active users, 68.7% of the world's population), and search listening. Most questions need at least two.":
+    "Le social listening est l'un des quatre calques. Seul, il vous dit ce qui se dit. Nous y ajoutons l'audience intelligence (qui se trouve derrière les comptes), un panel comportemental tiré des réseaux sociaux (5,66 milliards d'utilisateurs actifs, 68,7 % de la population mondiale), et le search listening. La plupart des questions en demandent au moins deux.",
+  "Licter was founded in 2022 by Antoine Khaitrine and Adrien Krebs, who created and led the Data & Digital Analysis cell at the Élysée. They left with a conviction: French organisations were several years behind their American and British counterparts on audience intelligence, monitoring and social listening — and the gap was a method gap, not a data gap.":
     "Licter a été fondé en 2022 par Antoine Khaitrine et Adrien Krebs, qui dirigeaient la cellule Data & Analyse digitale de l'Élysée. Ils en sont partis avec une conviction : les organisations françaises avaient plusieurs années de retard sur leurs homologues américaines et britanniques en audience intelligence, veille et social listening — et ce retard tenait à la méthode, pas à la donnée.",
 
   /* ---- corps de texte des pages internes ----
@@ -3120,6 +3137,8 @@ window.LicterFR = {
     "Sur votre marque",
   "Within 48 h":
     "Sous 48 h",
+  "Get my free flash read":
+    "Recevoir mon flash offert",
   "Or talk to a consultant":
     "Ou parler à un consultant",
   "FREE FLASH READ":
@@ -3128,8 +3147,6 @@ window.LicterFR = {
     "Votre marque",
   "Work email":
     "E-mail professionnel",
-  "Get my free flash read":
-    "Recevoir mon flash offert",
   "Noted. A consultant sends you your flash read within 48 hours.":
     "C'est noté. Un consultant vous envoie votre flash sous 48 h.",
   "Prepared and read by a consultant, not a robot.":
@@ -3292,6 +3309,10 @@ window.LicterFR = {
     "Quelle différence avec un outil de veille ?",
   "The tool collects. We pick the sources, remove the noise and read the result, to tell you what to do with it.":
     "L'outil collecte. Nous choisissons les sources, écartons le bruit et lisons le résultat, pour vous dire ce qu'il faut en faire.",
+  "Which social listening tools do you use?":
+    "Quels outils de social listening utilisez-vous ?",
+  "The platforms on the market, including Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly and YouScan, among 19 listening, search and AI tools. We pick the social listening tool by the question and read the result: you need no licence of your own.":
+    "Les plateformes du marché, dont Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly et YouScan, parmi 19 outils d'écoute, de recherche et d'IA. Nous choisissons l'outil de social listening selon la question et lisons le résultat : vous n'avez besoin d'aucune licence.",
   "Are you a social listening agency in France?":
     "Êtes-vous une agence de social listening en France ?",
   "Yes: Licter is a social listening agency and consultancy based in Paris. We work for French and international brands, in France and in other markets, in more than twenty languages.":
@@ -3396,8 +3417,8 @@ window.LicterFR = {
     "Le social listening, lui, lit ce que les gens disent d'une marque ou d'un sujet. Les deux se complètent : l'un dit ce qu'on pense de vous, l'autre qui sont les gens et ce qu'ils aiment. Une même étude les croise souvent, par exemple pour savoir ce qu'une communauté repérée dans le panel dit de votre catégorie, et avec quels mots.",
   "What data does an audience study use?":
     "Quelles données utilise une étude d'audience ?",
-  "The base is a behavioural panel: more than 2.7 billion people described by more than 7,000 criteria, including interests, media diet, brand affinities and sociodemographics. This data is aggregated and anonymous: we read groups, never a person. It describes what people already do, with no questionnaire, and so with no declaration bias.":
-    "Le socle, c'est un panel comportemental : plus de 2,7 milliards de personnes décrites par plus de 7 000 critères, dont les centres d'intérêt, le régime média, les affinités de marque et la sociodémographie. Ces données sont agrégées et anonymes : on lit des groupes, jamais une personne. Elles décrivent ce que les gens font déjà, sans questionnaire, donc sans biais de déclaration.",
+  "The base is a behavioural panel drawn from social networks, where 5.66 billion active users post (68.7% of the world's population), described by more than 7,000 criteria, including interests, media diet, brand affinities and sociodemographics. This data is aggregated and anonymous: we read groups, never a person. It describes what people already do, with no questionnaire, and so with no declaration bias.":
+    "Le socle, c'est un panel comportemental tiré des réseaux sociaux, où 5,66 milliards d'utilisateurs actifs publient (68,7 % de la population mondiale), décrits par plus de 7 000 critères, dont les centres d'intérêt, le régime média, les affinités de marque et la sociodémographie. Ces données sont agrégées et anonymes : on lit des groupes, jamais une personne. Elles décrivent ce que les gens font déjà, sans questionnaire, donc sans biais de déclaration.",
   "On top of this base come the public conversation, to know who talks about you and your category, and search, to know what each community looks for. Your own data, such as a customer file or an existing study, can be crossed in if you wish, but it is not needed for a first segmentation.":
     "À ce socle s'ajoutent la conversation publique, pour savoir qui parle de vous et de votre catégorie, et la recherche, pour savoir ce que chaque communauté cherche. Vos propres données, comme un fichier clients ou une étude existante, peuvent être croisées si vous le souhaitez, mais elles ne sont pas nécessaires pour une première segmentation.",
   "How do you segment an audience from its behaviour?":
@@ -3444,6 +3465,8 @@ window.LicterFR = {
     "Ce que ces personnes pensent de vous en particulier : c'est le social listening.",
   "Audiences, in detail":
     "Les audiences, en détail",
+  "The study of a category's consumers from what they post, search for and follow online, to answer a market question. It crosses social listening, audience intelligence and search data, and ends with recommendations.":
+    "L'étude des consommateurs d'une catégorie à partir de ce qu'ils publient, cherchent et suivent en ligne, pour répondre à une question de marché. Elle croise social listening, audience intelligence et données de recherche, et se termine par des recommandations.",
   "Audience intelligence or social listening: what is the difference?":
     "Audience intelligence ou social listening : quelle différence ?",
   "Social listening reads what is said about your brand and your market. Audience intelligence, which we call audience listening, describes the people themselves: what they follow, share and consume, whether they talk about you or not. One measures a conversation, the other draws a community; the two often meet in the same study.":
@@ -3600,6 +3623,8 @@ window.LicterFR = {
     "L'AI listening consiste à interroger les assistants d'intelligence artificielle comme le feraient vos clients, puis à lire ce qu'ils répondent sur votre marque et votre catégorie : les marques qu'ils recommandent, les faits qu'ils citent, les sources qu'ils mettent en lien, et ce qu'ils oublient.",
   "It is a form of listening, like social or search listening: instead of a conversation between people, you read the summary a model draws from it. For many searches, that summary is now the first thing a customer reads.":
     "C'est une écoute, au même titre que le social listening ou le search listening : on ne lit plus une conversation entre des personnes, mais la synthèse qu'un modèle en tire. Pour beaucoup de recherches, cette synthèse est désormais la première chose qu'un client lit.",
+  "It is also called AI visibility, or visibility in generative AI: the place a brand holds in assistants' answers, measured question by question.":
+    "On parle aussi de visibilité IA, ou de visibilité dans les IA génératives : la place qu'occupe une marque dans les réponses des assistants, mesurée question par question.",
   "AI listening and GEO: what is the difference?":
     "AI listening et GEO : quelle différence ?",
   "AI listening measures and reads. GEO, for Generative Engine Optimization, acts: it tries to improve a brand's place in those answers by working on the sources the models use. The first is the starting point and the yardstick of the second: without a regular reading, you know neither where you start nor whether what you change works.":
@@ -3906,8 +3931,8 @@ window.LicterFR = {
     "Audience et consumer intelligence : qui sont vos audiences | Licter",
   "Influence listening: the voices that actually carry | Licter":
     "Influence listening : les voix qui portent vraiment | Licter",
-  "AI listening: what AI says about your brand | Licter":
-    "AI listening : ce que les IA disent de votre marque | Licter",
+  "AI listening and AI visibility: what AI says about you | Licter":
+    "AI listening et visibilité IA : ce que les IA disent de vous | Licter",
   "Live listening: the conversation in real time | Licter":
     "Live listening : la conversation en temps réel | Licter",
   "Search listening: what people really search for | Licter":
@@ -5552,7 +5577,7 @@ window.LicterFR = {
   "What GEO allows is to act on the sources that feed the answers, then measure the effect on the same question panel. Nor does it replace social listening: an AI does not read the whole social conversation. And it does not say how many people ask these questions; for that, you need search listening.":
     "Ce que le GEO permet, c'est d'agir sur les sources qui nourrissent les réponses, puis de mesurer l'effet sur le même panel de questions. Il ne remplace pas non plus l'écoute sociale : une IA ne lit pas toute la conversation des réseaux. Et il ne dit pas combien de personnes posent ces questions ; pour cela, il faut le search listening.",
   "How long before you see an effect?":
-    "Combien de temps pour voir un effet ?",
+    "Combien de temps avant de voir un effet ?",
   "The time a GEO effect takes depends on the reservoir the AI uses. When it searches the web, like Perplexity or ChatGPT with search, a new or corrected page can be picked up as soon as it is found. When it answers from memory, nothing moves before a new model comes out, and nobody knows that date in advance.":
     "Le délai d'un effet GEO dépend du réservoir que l'IA utilise. Quand elle cherche sur le web, comme Perplexity ou ChatGPT avec la recherche, une page nouvelle ou corrigée peut être reprise dès qu'elle est trouvée. Quand elle répond de mémoire, rien ne bouge avant la sortie d'un nouveau modèle, dont personne ne connaît la date à l'avance.",
   "That is why we start from a first measure, then follow the same panel every month or every quarter. Since answers vary from one try to the next, only a series of comparable measures tells whether a change is real. A one-week gap on a single question proves nothing.":
@@ -5577,6 +5602,16 @@ window.LicterFR = {
     "Produisez-vous les contenus ?",
   "No: we measure, explain and recommend; production stays with your teams or agencies.":
     "Non : nous mesurons, expliquons et recommandons ; la production reste à vos équipes ou à vos agences.",
+  "How much does a GEO audit cost?":
+    "Combien coûte un audit GEO ?",
+  "On quotation: the price depends on the number of brands, questions, AI assistants and markets followed, and on how often we measure. After a first thirty-minute call, we send a costed proposal.":
+    "Sur devis : le prix dépend du nombre de marques, de questions, d'assistants IA et de marchés suivis, et du rythme des mesures. Après un premier échange de trente minutes, nous envoyons une proposition chiffrée.",
+  "How do you measure a brand's AI visibility?":
+    "Comment mesurez-vous la visibilité IA d'une marque ?",
+  "We put your customers' questions to each assistant, several times, and record the brand's presence, rank, tone, the accuracy of the facts and the sources cited. The same measure, repeated every month or quarter, shows what changes.":
+    "Nous posons les questions de vos clients à chaque assistant, plusieurs fois, et relevons la présence de la marque, son rang, le ton, l'exactitude des faits et les sources citées. La même mesure, répétée chaque mois ou chaque trimestre, montre ce qui change.",
+  "For assistants that search online, a corrected source can count as soon as it is re-indexed, within weeks. For what comes from training data, you have to wait for the next model versions: it takes longer, and it is not guaranteed.":
+    "Pour les assistants qui cherchent en ligne, une source corrigée peut compter dès qu'elle est réindexée, en quelques semaines. Pour ce qui vient des données d'entraînement, il faut attendre les versions suivantes des modèles : c'est plus long, et ce n'est pas garanti.",
   "Looking for a GEO agency?":
     "Vous cherchez une agence GEO ?",
   "META ADS MONITORING,":
@@ -7024,7 +7059,7 @@ window.LicterFR = {
   "YOUTUBE SOCIAL LISTENING,":
     "SOCIAL LISTENING YOUTUBE,",
   "LONG VIDEO AND ITS COMMENTS.":
-    "LA VIDÉO LONGUE ET SES COMMENTAIRES.",
+    "VIDÉO LONGUE ET COMMENTAIRES.",
   "YouTube is the network of tests, tutorials and detailed reviews. Comments are many and argued: a goldmine to understand a product as its users see it.":
     "YouTube est le réseau des tests, des tutoriels et des avis détaillés. Les commentaires y sont nombreux et argumentés : une mine pour comprendre un produit vu par ceux qui l'utilisent.",
   "YouTube official site":
@@ -7579,8 +7614,8 @@ window.LicterFR = {
     "Vous cherchez une agence social listening Telegram ?",
   "BLUESKY SOCIAL LISTENING,":
     "SOCIAL LISTENING BLUESKY,",
-  "THE NEW OPEN CONVERSATION.":
-    "LA NOUVELLE CONVERSATION OUVERTE.",
+  "THE OPEN CONVERSATION.":
+    "LA CONVERSATION OUVERTE.",
   "Bluesky has welcomed part of the journalists, researchers and communities who left X. Its protocol is open: public posts are cleanly accessible.":
     "Bluesky a accueilli une partie des journalistes, chercheurs et communautés partis de X. Son protocole est ouvert : les publications publiques y sont accessibles proprement.",
   "Bluesky official site":
@@ -7922,7 +7957,7 @@ window.LicterFR = {
   "XIAOHONGSHU (RED) SOCIAL LISTENING,":
     "SOCIAL LISTENING XIAOHONGSHU (RED),",
   "REVIEWS AND LIFESTYLE IN CHINA.":
-    "LES AVIS ET LE LIFESTYLE EN CHINE.",
+    "AVIS ET LIFESTYLE EN CHINE.",
   "Xiaohongshu, or RED, is the network where Chinese consumers share their reviews, purchases and recommendations, in beauty, fashion, travel and food especially.":
     "Xiaohongshu, ou RED, est le réseau où les consommateurs chinois partagent leurs avis, leurs achats et leurs recommandations, en beauté, mode, voyage et alimentation surtout.",
   "Xiaohongshu (RED) official site":
@@ -8070,7 +8105,7 @@ window.LicterFR = {
   "where trends are born":
     "là où naissent les tendances",
   "long video and its comments":
-    "la vidéo longue et ses commentaires",
+    "vidéo longue et commentaires",
   "the professional voice":
     "la parole professionnelle",
   "unfiltered opinions":
@@ -8083,8 +8118,8 @@ window.LicterFR = {
     "les communautés de passionnés",
   "live streams and their chat":
     "le live et son chat",
-  "the new open conversation":
-    "la nouvelle conversation ouverte",
+  "the open conversation":
+    "la conversation ouverte",
   "the Russian-speaking network":
     "le réseau russophone",
   "the Chinese ecosystem":
@@ -8094,7 +8129,7 @@ window.LicterFR = {
   "video trends in China":
     "les tendances vidéo en Chine",
   "reviews and lifestyle in China":
-    "les avis et le lifestyle en Chine",
+    "avis et lifestyle en Chine",
   "youth culture in China":
     "la culture jeune en Chine",
   "THE 22 NETWORKS":
@@ -8212,7 +8247,7 @@ window.LicterFR = {
   "TikTok social listening: the trends, sounds and codes where the young talk about brands, read before they explode.":
     "Social listening TikTok : les tendances, les sons et les codes où les plus jeunes parlent des marques, lus avant qu'ils explosent.",
   "YouTube social listening agency: long video and its comments | Licter":
-    "Agence social listening YouTube : la vidéo longue et ses commentaires | Licter",
+    "Agence social listening YouTube : vidéo longue et commentaires | Licter",
   "YouTube social listening: tests, tutorials and detailed reviews, and reasoned comments that explain a product.":
     "Social listening YouTube : tests, tutoriels et avis détaillés, et des commentaires argumentés qui expliquent un produit.",
   "LinkedIn social listening agency: the professional voice | Licter":
@@ -8243,8 +8278,8 @@ window.LicterFR = {
     "Agence social listening Telegram : les canaux publics | Licter",
   "Telegram social listening: public channels followed by thousands, useful on some countries and topics.":
     "Social listening Telegram : les canaux publics suivis par des milliers d'abonnés, utiles sur certains pays et sujets.",
-  "Bluesky social listening agency: the new open conversation | Licter":
-    "Agence social listening Bluesky : la nouvelle conversation ouverte | Licter",
+  "Bluesky social listening agency: the open conversation | Licter":
+    "Agence social listening Bluesky : la conversation ouverte | Licter",
   "Bluesky social listening: the open network where journalists, researchers and communities who left X gather.":
     "Social listening Bluesky : le réseau ouvert où journalistes, chercheurs et communautés partis de X se retrouvent.",
   "VK social listening agency: the Russian-speaking network | Licter":
@@ -8264,7 +8299,7 @@ window.LicterFR = {
   "Douyin social listening: China's TikTok, its creators, built-in commerce and the trends born there.":
     "Social listening Douyin : le TikTok chinois, ses créateurs, son commerce intégré et les tendances qui y naissent.",
   "Xiaohongshu (RED) social listening agency: reviews and lifestyle in China | Licter":
-    "Agence social listening Xiaohongshu (RED) : les avis et le lifestyle en Chine | Licter",
+    "Agence social listening Xiaohongshu (RED) : avis et lifestyle en Chine | Licter",
   "Xiaohongshu (RED) social listening: Chinese consumers' reviews and recommendations in beauty, fashion and travel.":
     "Social listening Xiaohongshu (RED) : les avis et recommandations des consommateurs chinois en beauté, mode et voyage.",
   "Bilibili social listening agency: youth culture in China | Licter":

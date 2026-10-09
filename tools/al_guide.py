@@ -7,7 +7,7 @@ or a consultancy adds. Each block is (heading, [paragraphs]), every string a
 (French, English) pair. Same structure as tools/sl_guide.py.
 
 Licter facts come from the site's own files: the behavioural panel (about
-more than 2.7 billion people, over 7,000 criteria, per Audiense, which acquired SOPRISM) and the affinity, penetration and
+over 7,000 criteria per Audiense, which acquired SOPRISM; the social media population, 5.66 billion active users, per Kepios / DataReportal Digital 2026) and the affinity, penetration and
 opportunity scores from tools/uc_content.py; the HP case from
 tools/build-offers.py; the SoPrism limits and the "19 tools" from
 tools/tools_data.py and fr/outils/soprism/; the Charles Besson quote from
@@ -45,8 +45,8 @@ BLOCKS = [
          "Social listening reads what people say about a brand or a subject. The two complement each other: one says what people think of you, the other who they are and what they like. A single study often crosses them, for example to learn what a community found in the panel says about your category, and in which words."),
     ]),
     (("Quelles données utilise une étude d'audience ?", "What data does an audience study use?"), [
-        ("Le socle, c'est un panel comportemental : plus de 2,7 milliards de personnes décrites par plus de 7 000 critères, dont les centres d'intérêt, le régime média, les affinités de marque et la sociodémographie. Ces données sont agrégées et anonymes : on lit des groupes, jamais une personne. Elles décrivent ce que les gens font déjà, sans questionnaire, donc sans biais de déclaration.",
-         "The base is a behavioural panel: more than 2.7 billion people described by more than 7,000 criteria, including interests, media diet, brand affinities and sociodemographics. This data is aggregated and anonymous: we read groups, never a person. It describes what people already do, with no questionnaire, and so with no declaration bias."),
+        ("Le socle, c'est un panel comportemental tiré des réseaux sociaux, où 5,66 milliards d'utilisateurs actifs publient (68,7 % de la population mondiale), décrits par plus de 7 000 critères, dont les centres d'intérêt, le régime média, les affinités de marque et la sociodémographie. Ces données sont agrégées et anonymes : on lit des groupes, jamais une personne. Elles décrivent ce que les gens font déjà, sans questionnaire, donc sans biais de déclaration.",
+         "The base is a behavioural panel drawn from social networks, where 5.66 billion active users post (68.7% of the world's population), described by more than 7,000 criteria, including interests, media diet, brand affinities and sociodemographics. This data is aggregated and anonymous: we read groups, never a person. It describes what people already do, with no questionnaire, and so with no declaration bias."),
         ("À ce socle s'ajoutent la conversation publique, pour savoir qui parle de vous et de votre catégorie, et la recherche, pour savoir ce que chaque communauté cherche. Vos propres données, comme un fichier clients ou une étude existante, peuvent être croisées si vous le souhaitez, mais elles ne sont pas nécessaires pour une première segmentation.",
          "On top of this base come the public conversation, to know who talks about you and your category, and search, to know what each community looks for. Your own data, such as a customer file or an existing study, can be crossed in if you wish, but it is not needed for a first segmentation."),
     ]),
@@ -96,3 +96,4 @@ BLOCKS = [
 # source: https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2
 # source: https://www.cnil.fr/fr/les-bases-legales/interet-legitime
 # source: https://www.cnil.fr/fr/recommandations-reutilisateurs-donnees-internet
+# source: https://datareportal.com/reports/digital-2026-two-in-three-people-use-social-media

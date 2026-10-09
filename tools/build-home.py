@@ -25,15 +25,17 @@ FR, EN = 0, 1
 
 SEO = {
     # one positioning sentence everywhere (title, description, schema, why-licter, LinkedIn)
-    "title": ("Cabinet de conseil en social data intelligence | Licter",
-              "Social data intelligence consultancy | Licter"),
+    # the brand first: "licter" is otherwise read as a typo of "leicester"
+    "title": ("Licter : cabinet de conseil en social data intelligence à Paris",
+              "Licter: social data intelligence consultancy in Paris"),
     "desc": ("Licter est un cabinet de conseil en social data intelligence fondé à Paris en 2022 : social listening, audiences et veille, lus par des consultants.",
              "Licter is a social data intelligence consultancy founded in Paris in 2022: social listening, audiences and monitoring, read by consultants."),
     "og_alt": ("Licter, cabinet de conseil en social data intelligence", "Licter, the social data intelligence consultancy"),
 }
 PATH = ("/fr/", "/")
 SAME_AS = ["https://www.linkedin.com/company/licter/", "https://www.instagram.com/licter_listening/",
-           "https://www.youtube.com/@audience_first", "https://www.wikidata.org/wiki/Q141663812"]
+           "https://www.youtube.com/@audience_first", "https://www.wikidata.org/wiki/Q141663812",
+           "https://annuaire-entreprises.data.gouv.fr/entreprise/915259394", "https://www.sortlist.co.uk/agency/licter"]
 
 
 def faq(src, lang):
@@ -52,6 +54,11 @@ def head(lang, src):
     t, d = U.typo(SEO["title"][lang], lang), U.typo(SEO["desc"][lang], lang)
     # the legal details are those of the official registry (legal.html)
     org = {"@type": "Organization", "@id": SITE + "/#org", "name": "Licter", "legalName": "Licter SAS", "url": SITE + "/",
+           "alternateName": ["Licter SAS", "licter.com", "Licter Paris", "Licter social listening"],
+           "disambiguatingDescription": ("Licter est un cabinet de conseil français en social data intelligence, fondé à Paris en 2022 ; "
+                                         "sans lien avec la ville de Leicester ni avec son club de football.",
+                                         "Licter is a French social data intelligence consultancy founded in Paris in 2022; "
+                                         "not related to the city of Leicester or its football club.")[lang],
            "logo": {"@type": "ImageObject", "url": SITE + "/assets/img/logo-navy.png"}, "image": SITE + "/assets/img/og/home-fr.png",
            "sameAs": SAME_AS, "description": d, "foundingDate": "2022-06-30",
            "identifier": {"@type": "PropertyValue", "propertyID": "SIREN", "value": "915259394"}, "vatID": "FR67915259394",
@@ -69,7 +76,7 @@ def head(lang, src):
            "areaServed": ["France", "Worldwide"]}
     ld = [
         {"@context": "https://schema.org", **org},
-        {"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "name": "Licter", "url": SITE + "/",
+        {"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "name": "Licter", "alternateName": "licter.com", "url": SITE + "/",
          "inLanguage": ["fr", "en"], "publisher": {"@id": SITE + "/#org"}},
         {"@context": "https://schema.org", "@type": "WebPage", "name": t, "description": d, "url": SITE + PATH[lang],
          "inLanguage": U.LANGS[lang], "isPartOf": {"@id": SITE + "/#website"}, "about": {"@id": SITE + "/#org"},

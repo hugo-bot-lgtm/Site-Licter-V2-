@@ -104,7 +104,7 @@ NETWORKS = [
              (("Repérez-vous les tendances avant qu'elles n'explosent ?", "Do you spot trends before they explode?"), ("C'est l'objectif : nous suivons la vitesse des sujets, pas seulement leur volume.", "That is the point: we follow how fast topics move, not only their volume."))]},
 
     {"slug": "youtube", "tools": ["visibrain", "youscan", "social-blade", "google-trends"], "name": "YouTube", "glyph": "youtube",
-     "tag": ("la vidéo longue et ses commentaires", "long video and its comments"),
+     "tag": ("vidéo longue et commentaires", "long video and its comments"),
      "lead": ("YouTube est le réseau des tests, des tutoriels et des avis détaillés. Les commentaires y sont nombreux et argumentés : une mine pour comprendre un produit vu par ceux qui l'utilisent.",
               "YouTube is the network of tests, tutorials and detailed reviews. Comments are many and argued: a goldmine to understand a product as its users see it."),
      "reads": [(("Les tests et les avis", "Tests and reviews"), ("Ce que les créateurs disent de vos produits et de ceux de vos concurrents.", "What creators say about your products and your competitors'.")),
@@ -208,7 +208,7 @@ NETWORKS = [
              (("Lisez-vous les groupes privés ?", "Do you read private groups?"), ("Non, seulement ce qui est public.", "No, only what is public."))]},
 
     {"slug": "bluesky", "tools": ["visibrain"], "name": "Bluesky", "glyph": "bluesky",
-     "tag": ("la nouvelle conversation ouverte", "the new open conversation"),
+     "tag": ("la conversation ouverte", "the open conversation"),
      "lead": ("Bluesky a accueilli une partie des journalistes, chercheurs et communautés partis de X. Son protocole est ouvert : les publications publiques y sont accessibles proprement.",
               "Bluesky has welcomed part of the journalists, researchers and communities who left X. Its protocol is open: public posts are cleanly accessible."),
      "reads": [(("Les publications publiques", "Public posts"), ("Les réactions sur votre marque et votre secteur.", "Reactions to your brand and your sector.")),
@@ -273,7 +273,7 @@ NETWORKS = [
              (("Lisez-vous les vidéos en chinois ?", "Do you read videos in Chinese?"), ("Oui, nos consultants travaillent en mandarin, à partir des descriptions, des commentaires et des transcriptions.", "Yes, our consultants work in Mandarin, from descriptions, comments and transcripts."))]},
 
     {"slug": "xiaohongshu", "tools": [], "name": "Xiaohongshu (RED)", "glyph": "xiaohongshu",
-     "tag": ("les avis et le lifestyle en Chine", "reviews and lifestyle in China"),
+     "tag": ("avis et lifestyle en Chine", "reviews and lifestyle in China"),
      "lead": ("Xiaohongshu, ou RED, est le réseau où les consommateurs chinois partagent leurs avis, leurs achats et leurs recommandations, en beauté, mode, voyage et alimentation surtout.",
               "Xiaohongshu, or RED, is the network where Chinese consumers share their reviews, purchases and recommendations, in beauty, fashion, travel and food especially."),
      "reads": [(("Les notes et avis", "Notes and reviews"), ("Les retours d'expérience détaillés sur vos produits.", "Detailed experience reports on your products.")),

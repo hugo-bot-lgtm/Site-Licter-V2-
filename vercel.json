@@ -6,6 +6,16 @@
       "permanent": true
     },
     {
+      "source": "/sic/:p(rejoindre|replay)",
+      "destination": "/socialintelligenceclub/:p/",
+      "permanent": true
+    },
+    {
+      "source": "/sic/:p(rejoindre|replay)/",
+      "destination": "/socialintelligenceclub/:p/",
+      "permanent": true
+    },
+    {
       "source": "/sic/(.*)",
       "destination": "/socialintelligenceclub/$1",
       "permanent": true
@@ -26,6 +36,11 @@
       "permanent": true
     },
     {
+      "source": "/fr/socialintelligenceclub/:p(rejoindre|replay)",
+      "destination": "/socialintelligenceclub/:p/",
+      "permanent": true
+    },
+    {
       "source": "/fr/socialintelligenceclub/(.*)",
       "destination": "/socialintelligenceclub/$1",
       "permanent": true
@@ -41,6 +56,16 @@
       "permanent": true
     },
     {
+      "source": "/index.html/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases.html/",
+      "destination": "/fr/cas-usage/",
+      "permanent": true
+    },
+    {
       "source": "/:file([^/]+\\.html)/",
       "destination": "/:file",
       "permanent": true
@@ -48,6 +73,11 @@
     {
       "source": "/FR",
       "destination": "/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/FR/:path((?:[^./]+/)*[^./]+)",
+      "destination": "/fr/:path/",
       "permanent": true
     },
     {
@@ -83,6 +113,11 @@
     {
       "source": "/:p(socialintelligenceclub|socialintelligenceclub/rejoindre|socialintelligenceclub/replay)",
       "destination": "/:p/",
+      "permanent": true
+    },
+    {
+      "source": "/Social-Listening/",
+      "destination": "/fr/expertise/social-listening/",
       "permanent": true
     },
     {

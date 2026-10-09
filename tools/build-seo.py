@@ -151,6 +151,8 @@ def honest_dates(rel, s, dates, today):
     bare = WORD.sub(lambda m_: TO_UPDATED.get(m_.group(1), m_.group(1)) + m_.group(2), bare)   # the wording is not content
     bare = re.sub(r'"datePublished": "%s", ' % PUBLISHED, "", bare)                                # added below
     bare = re.sub(r"\?v=\d+", "", bare)
+    # the theme script, fetched or written into the page (tools/build-js.py), is not content
+    bare = re.sub(r'<script data-inline="theme">.*?</script>|<script src="[^"]*theme\.js[^"]*"></script>', "", bare, flags=re.S)
     h = hashlib.md5(bare.encode()).hexdigest()
     rec = dates.get(rel)
     if not rec or rec["hash"] != h:
@@ -271,6 +273,29 @@ def structured(rel, s, fr, url):
         items.append((url, ARTS[rel]["title"].replace("\u00a0", " ") if rel in ARTS else name))
         add.append({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": html.unescape(n), "item": u} for i, (u, n) in enumerate(items)]})
+    # every Service gets an identifier and, if it has none, the page's own description;
+    # a page entity without identity gets its @id, its site and its description
+    for m in list(LD.finditer(s)):
+        try:
+            b = json.loads(m.group(1))
+        except ValueError:
+            continue
+        if not isinstance(b, dict):
+            continue
+        changed = False
+        if b.get("@type") == "Service":
+            if not b.get("@id"):
+                b["@id"] = (b.get("url") or url) + "#service"; changed = True
+            if not b.get("description") and desc:
+                b["description"] = desc; changed = True
+        elif b.get("@type") in ("WebPage", "CollectionPage") and (not b.get("@id") or not b.get("isPartOf") or not b.get("description")):
+            b.setdefault("@id", (b.get("url") or url) + "#webpage")
+            b.setdefault("isPartOf", {"@id": SITE + "/#website"})
+            if desc:
+                b.setdefault("description", desc)
+            changed = True
+        if changed:
+            s = s.replace(m.group(0), '<script type="application/ld+json">%s</script>' % json.dumps(b, ensure_ascii=False), 1)
     for m in list(LD.finditer(s)):
         try:
             b = json.loads(m.group(1))
@@ -284,6 +309,8 @@ def structured(rel, s, fr, url):
             b["mainEntityOfPage"] = {"@id": url + "#webpage"}
             b["publisher"] = ORG_REF
             for a in (b.get("author") if isinstance(b.get("author"), list) else [b.get("author") or {}]):
+                if a.get("@type") == "Person" and a.get("name") == "Mina Cantone":
+                    a["url"] = SITE + "/fr/pourquoi-licter/#team"
                 if a.get("@type") == "Person" and AUTHORS.get(a.get("name")):
                     a["sameAs"] = AUTHORS[a["name"]]
                     ref = next((f["@id"] for f in FOUNDERS if f["name"] == a.get("name")), None)
@@ -338,8 +365,8 @@ def main():
         # titles: "| Licter", never a dash
         s = re.sub(r"(<title>[^<]*?)\s+[—–]\s+Licter</title>", r"\1 | Licter</title>", s)
         s = re.sub(r'(<meta (?:property="og:title"|name="twitter:title") content="[^"]*?)\s+[—–]\s+Licter"', r'\1 | Licter"', s)
-        # a title longer than 65 characters drops the brand: the subject is what shows in results
-        s = re.sub(r"<title>([^<]*?) \| Licter</title>", lambda m_: "<title>%s</title>" % m_.group(1) if len(html.unescape(m_.group(1))) > 56 else m_.group(0), s)
+        # the brand in every title, even a long one: "licter" alone is otherwise read as "leicester"
+        s = re.sub(r"<title>([^<]*)</title>", lambda m_: m_.group(0) if "Licter" in m_.group(1) else "<title>%s | Licter</title>" % m_.group(1), s, count=1)
         # description: 160 characters at most
         def desc(m_):
             d = html.unescape(m_.group(2))
@@ -459,7 +486,9 @@ def main():
                 dates[rel] = {"hash": h, "date": today}
     DATES.write_text(json.dumps(dates, indent=0, sort_keys=True))
     # the sitemap gets the date each page last changed
-    by_url = {SITE + url_of(ROOT / r): d["date"] for r, d in dates.items() if (ROOT / r).exists()}
+    # same rule as the pages: launch-day content is dated the day it was published
+    shown_date = lambda r, d: d if r.startswith("article-") or d > LAUNCH_END else PUBLISHED
+    by_url = {SITE + url_of(ROOT / r): shown_date(r, d["date"]) for r, d in dates.items() if (ROOT / r).exists()}
     sm = ROOT / "sitemap.xml"
     if sm.exists():
         x = re.sub(r"\s*<lastmod>[^<]*</lastmod>", "", sm.read_text())

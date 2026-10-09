@@ -20,11 +20,11 @@
 <link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/search-listening/" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
-<script src="js/min/theme.js?v=20261350"></script>
-<link rel="stylesheet" href="css/t-xp.min.css?v=20261350" />
+<script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
+<link rel="stylesheet" href="css/t-xp.min.css?v=20261351" />
 <meta property="og:url" content="https://www.licter.com/expertise-search-listening.html" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.licter.com/"}, {"@type": "ListItem", "position": 2, "name": "Expertise", "item": "https://www.licter.com/expertise.html"}, {"@type": "ListItem", "position": 3, "name": "Search listening", "item": "https://www.licter.com/expertise-search-listening.html"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Search listening", "description": "Searches on Google, YouTube and Amazon say what people want to know: we read them to spot unmet needs.", "provider": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "url": "https://www.licter.com/expertise-search-listening.html", "areaServed": ["France", "Worldwide"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Search listening", "description": "Searches on Google, YouTube and Amazon say what people want to know: we read them to spot unmet needs.", "provider": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "url": "https://www.licter.com/expertise-search-listening.html", "areaServed": ["France", "Worldwide"], "@id": "https://www.licter.com/expertise-search-listening.html#service"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which search data do you use?", "acceptedAnswer": {"@type": "Answer", "text": "Search volumes and phrasings on Google, YouTube and Amazon, aggregated and anonymous, on the markets and languages of your perimeter."}}, {"@type": "Question", "name": "Is this SEO?", "acceptedAnswer": {"@type": "Answer", "text": "No, even if your SEO teams use it. We read searches to understand needs, not to rank pages."}}, {"@type": "Question", "name": "On which markets?", "acceptedAnswer": {"@type": "Answer", "text": "All those in your perimeter, in their own language: we read local phrasings, not translations."}}, {"@type": "Question", "name": "How long for a first read?", "acceptedAnswer": {"@type": "Answer", "text": "About a week after framing."}}, {"@type": "Question", "name": "How much does a search listening study cost?", "acceptedAnswer": {"@type": "Answer", "text": "On quotation: the price depends on the scope (brands, markets, languages, sources), the duration and how often you receive deliverables. After a first thirty-minute call, we send a costed proposal."}}]}</script>
 <meta property="og:image" content="https://www.licter.com/assets/img/og/p-expertise-search-listening.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -92,6 +92,7 @@
         <h1 class="xe-lmh__h1"><span class="xe-lmh__kick">Search listening</span><span class="xe-lmh__l">What people</span><span class="xe-lmh__l xe-lmh__l--c">really search for.</span></h1>
         <p class="xe-lmh__lead">Searches on Google, YouTube and Amazon say what people really want to know, before the purchase and after the problem. We read them to spot unmet needs and unanswered questions.</p>
         <ul class="xe-lmh__pills"><li>Free</li><li>On your brand</li><li>Within 48 h</li></ul>
+        <a class="btn btn--primary xe-lmh__jump" href="#offre">Get my free flash read <span aria-hidden="true">↓</span></a>
         <a class="xe-lmh__call" href="#book">Or talk to a consultant <span aria-hidden="true">→</span></a>
       </div>
       <div class="xe-lm" id="offre">
@@ -252,7 +253,7 @@
     <div>
       <h3>GET STARTED</h3>
       <ul>
-        <li><a href="guide.html">The free guide</a></li>
+        <li><a href="guide.html">The 12-question guide</a></li>
         <li><a href="diagnostic.html">Request a diagnostic</a></li>
         <li><a href="book-a-meeting.html">Book a meeting</a></li>
       </ul>
@@ -276,7 +277,7 @@
   </div>
 </footer>
 
-<script src="js/min/i18n.js?v=20261350" defer></script>
-<script src="js/min/ui.js?v=20261350" defer></script>
+<script src="js/min/i18n.js?v=20261351" defer></script>
+<script src="js/min/ui.js?v=20261351" defer></script>
 </body>
 </html>

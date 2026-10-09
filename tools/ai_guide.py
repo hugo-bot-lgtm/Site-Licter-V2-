@@ -20,6 +20,8 @@ BLOCKS = [
          "AI listening means questioning AI assistants the way your customers would, then reading what they answer about your brand and your category: the brands they recommend, the facts they quote, the sources they link to, and what they leave out."),
         ("C'est une écoute, au même titre que le social listening ou le search listening : on ne lit plus une conversation entre des personnes, mais la synthèse qu'un modèle en tire. Pour beaucoup de recherches, cette synthèse est désormais la première chose qu'un client lit.",
          "It is a form of listening, like social or search listening: instead of a conversation between people, you read the summary a model draws from it. For many searches, that summary is now the first thing a customer reads."),
+        ("On parle aussi de visibilité IA, ou de visibilité dans les IA génératives : la place qu'occupe une marque dans les réponses des assistants, mesurée question par question.",
+         "It is also called AI visibility, or visibility in generative AI: the place a brand holds in assistants' answers, measured question by question."),
     ]),
     (("AI listening et GEO : quelle différence ?", "AI listening and GEO: what is the difference?"), [
         ("L'AI listening mesure et lit. Le GEO, pour Generative Engine Optimization, agit : il cherche à améliorer la place d'une marque dans ces réponses, en travaillant les sources que les modèles utilisent. Le premier sert de point de départ et de mesure au second : sans lecture régulière, on ne sait ni où l'on part ni si ce que l'on change fonctionne.",

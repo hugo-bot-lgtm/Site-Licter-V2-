@@ -15,8 +15,8 @@
 <meta property="og:description" content="Ce que surveiller, avec quelles sources, quels outils et quelle méthode : comment mettre en place une veille des réseaux sociaux qui serve vraiment à décider." />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
-<script src="js/min/theme.js?v=20261350"></script>
-<link rel="stylesheet" href="css/t-art.min.css?v=20261350" />
+<script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
+<link rel="stylesheet" href="css/t-art.min.css?v=20261351" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Veille réseaux sociaux en entreprise : le guide complet", "description": "Ce que surveiller, avec quelles sources, quels outils et quelle méthode : comment mettre en place une veille des réseaux sociaux qui serve vraiment à décider.", "datePublished": "2026-10-07", "dateModified": "2026-10-07", "inLanguage": "fr", "author": [{"@type": "Person", "name": "Antoine Khaitrine", "url": "https://www.licter.com/fr/pourquoi-licter/#antoine-khaitrine", "sameAs": ["https://www.linkedin.com/in/antoine-khaitrine/", "https://www.thesilab.com/insider-50/antoine-khaitrine"], "@id": "https://www.licter.com/fr/pourquoi-licter/#antoine-khaitrine"}, {"@type": "Person", "name": "Adrien Krebs", "url": "https://www.licter.com/fr/pourquoi-licter/#adrien-krebs", "sameAs": ["https://www.linkedin.com/in/adrien-krebs/", "https://www.thesilab.com/insider-50/adrien-krebs"], "@id": "https://www.licter.com/fr/pourquoi-licter/#adrien-krebs"}], "publisher": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": {"@type": "ImageObject", "url": "https://www.licter.com/assets/img/logo-navy.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.licter.com/article-veille-reseaux-sociaux-entreprise.html"}, "image": ["https://www.licter.com/assets/img/og/p-article-veille-reseaux-sociaux-entreprise.jpg"]}</script>
 <link rel="canonical" href="https://www.licter.com/article-veille-reseaux-sociaux-entreprise.html" />
 <link rel="alternate" hreflang="fr" href="https://www.licter.com/article-veille-reseaux-sociaux-entreprise.html" />
@@ -30,8 +30,8 @@
 <body>
 <a class="skip-link" href="#content">Aller au contenu</a>
 
-<aside class="banner banner--event" aria-label="Next event"><a class="banner__a" href="/fr/evenements/jeux-jouets/">
-  <i class="banner__tag">Next event</i> <b>Sector study · Toys &amp; games</b> <span>Friday 16 October · Musée de la Vie romantique</span> <u>Register <span aria-hidden="true">→</span></u>
+<aside class="banner banner--event" aria-label="Prochain événement"><a class="banner__a" href="/fr/evenements/jeux-jouets/">
+  <i class="banner__tag">Prochain événement</i> <b>Étude sectorielle · Jeux &amp; jouets</b> <span>Vendredi 16 octobre · Musée de la Vie romantique</span> <u>M'inscrire <span aria-hidden="true">→</span></u>
 </a></aside>
 
 
@@ -98,7 +98,7 @@
     <div class="shell bl-body">
       <aside class="bl-toc" aria-label="Dans cet article">
         <p class="bl-k">DANS CET ARTICLE</p>
-        <ol><li><a href="#veille-des-r-seaux-sociaux-de-quoi-parle-t-on">Veille des réseaux sociaux : de quoi parle-t-on ?</a></li><li><a href="#pourquoi-une-entreprise-a-besoin-d-une-veille-des-r-seaux-sociaux">Pourquoi une entreprise a besoin d'une veille des réseaux sociaux</a></li><li><a href="#les-cinq-types-de-veille-conna-tre">Les cinq types de veille à connaître</a></li><li><a href="#quelles-sources-surveiller">Quelles sources surveiller</a></li><li><a href="#la-m-thode-en-six-tapes">La méthode, en six étapes</a></li><li><a href="#les-outils-de-veille-des-r-seaux-sociaux">Les outils de veille des réseaux sociaux</a></li><li><a href="#faire-en-interne-ou-confier-sa-veille-un-cabinet">Faire en interne ou confier sa veille à un cabinet ?</a></li><li><a href="#les-indicateurs-qui-comptent">Les indicateurs qui comptent</a></li><li><a href="#veille-et-rgpd-ce-qui-est-permis">Veille et RGPD : ce qui est permis</a></li><li><a href="#les-erreurs-les-plus-fr-quentes">Les erreurs les plus fréquentes</a></li><li><a href="#ce-que-doit-contenir-une-note-de-veille">Ce que doit contenir une note de veille</a></li><li><a href="#par-o-commencer">Par où commencer</a></li><li><a href="#questions-fr-quentes">Questions fréquentes</a></li></ol>
+        <ol><li><a href="#veille-des-r-seaux-sociaux-de-quoi-parle-t-on">Veille des réseaux sociaux : de quoi parle-t-on ?</a></li><li><a href="#pourquoi-une-entreprise-a-besoin-d-une-veille-des-r-seaux-sociaux">Pourquoi une entreprise a besoin d'une veille des réseaux sociaux</a></li><li><a href="#les-cinq-types-de-veille-conna-tre">Les cinq types de veille à connaître</a></li><li><a href="#quelles-sources-surveiller">Quelles sources surveiller</a></li><li><a href="#la-m-thode-en-six-tapes">La méthode, en six étapes</a></li><li><a href="#les-outils-de-veille-des-r-seaux-sociaux">Les outils de veille des réseaux sociaux</a></li><li><a href="#faire-en-interne-ou-confier-sa-veille-un-cabinet">Faire en interne ou confier sa veille à un cabinet ?</a></li><li><a href="#les-indicateurs-qui-comptent">Les indicateurs qui comptent</a></li><li><a href="#veille-et-rgpd-ce-qui-est-permis">Veille et RGPD : ce qui est permis</a></li><li><a href="#les-erreurs-les-plus-fr-quentes">Les erreurs les plus fréquentes</a></li><li><a href="#ce-que-doit-contenir-une-note-de-veille">Ce que doit contenir une note de veille</a></li><li><a href="#par-o-commencer">Par où commencer</a></li><li><a href="#questions-fr-quentes">Questions fréquentes</a></li><li><a href="#mettre-en-place-votre-veille">Mettre en place votre veille</a></li></ol>
         <button class="bl-copy" type="button" data-copied="Link copied">Copier le lien</button>
       </aside>
       <div class="prose bl-prose" lang="fr"><p class="bl-dek">Ce que surveiller, avec quelles sources, quels outils et quelle méthode : le guide pour mettre en place une veille des réseaux sociaux qui serve vraiment à décider.</p>
@@ -142,7 +142,7 @@
 <li><strong>TikTok et <a href="/fr/sources/instagram/">Instagram</a></strong> sont ceux de l'image, des créateurs et des plus jeunes : un produit y est montré, testé, détourné.</li>
 <li><strong>Facebook</strong> reste le réseau des groupes et des communautés locales, avec un public plus âgé.</li>
 <li><strong><a href="/fr/sources/linkedin/">LinkedIn</a></strong> pèse sur la marque employeur et la réputation des dirigeants.</li>
-<li><strong><a href="/fr/sources/youtube/">YouTube</a> et Reddit</strong> concentrent les avis détaillés et les discussions longues.</li>
+<li><strong>YouTube et Reddit</strong> concentrent les avis détaillés et les discussions longues.</li>
 <li><strong>La presse en ligne et les blogs</strong> comptent toujours : le passage d'un sujet des réseaux vers la presse est souvent le signal le plus important.</li>
 </ul>
 <p>Pour une marque internationale, la veille doit aussi lire les réseaux propres à certains pays (Weibo, Douyin ou WeChat en Chine, VK dans le monde russophone), et les lire dans leur langue. Nous détaillons ce que chaque plateforme permet de collecter, et ce qui reste privé, dans nos <a href="/fr/sources/">22 pages réseaux</a>.</p>
@@ -220,7 +220,9 @@
 <h3>Peut-on surveiller les messageries comme WhatsApp ?</h3>
 <p>Seulement leur partie publique, comme les chaînes ouvertes. Les conversations privées ne sont pas accessibles, et ne doivent pas l'être.</p>
 <h3>Faut-il une veille 24 h/24 ?</h3>
-<p>Pour la gestion de crise, oui : une crise ne prévient pas, et elle démarre souvent le soir ou le week-end. Pour une veille de tendances ou concurrentielle, un rythme hebdomadaire suffit généralement.</p></div>
+<p>Pour la gestion de crise, oui : une crise ne prévient pas, et elle démarre souvent le soir ou le week-end. Pour une veille de tendances ou concurrentielle, un rythme hebdomadaire suffit généralement.</p>
+<h2 id="mettre-en-place-votre-veille">Mettre en place votre veille</h2>
+<p>Licter installe et opère des veilles des réseaux sociaux pour des marques, des dirigeants et des marchés, lues par un analyste avant chaque alerte. Pour une veille de crise et d'<a href="/fr/cas-usage/sante-de-marque/e-reputation-image-de-marque/">e-réputation</a> 24 h/24, voyez <a href="/fr/offres/vigie-360/">Vigie 360</a>. Pour cadrer la vôtre, <a href="/fr/rendez-vous/">prenez trente minutes avec un consultant</a>.</p></div>
     </div>
   </article>
   <div class="shell bl-after">
@@ -309,7 +311,7 @@
     <div>
       <h3>COMMENCER</h3>
       <ul>
-        <li><a href="/fr/guide/">Le guide gratuit</a></li>
+        <li><a href="/fr/guide/">Le guide des 12 questions</a></li>
         <li><a href="/fr/diagnostic/">Demander un diagnostic</a></li>
         <li><a href="/fr/rendez-vous/">Prendre rendez-vous</a></li>
       </ul>
@@ -333,8 +335,8 @@
   </div>
 </footer>
 
-<script src="js/min/fr-core.js?v=20261350" defer></script>
-<script src="js/min/i18n.js?v=20261350" defer></script>
-<script src="js/min/ui.js?v=20261350" defer></script>
+<script src="js/min/fr-core.js?v=20261351" defer></script>
+<script src="js/min/i18n.js?v=20261351" defer></script>
+<script src="js/min/ui.js?v=20261351" defer></script>
 </body>
 </html>

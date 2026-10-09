@@ -824,7 +824,7 @@ def ld(o, lang=EN):
             {"@type": "ListItem", "position": 2, "name": "Offres" if fr else "Offers", "item": SITE + (FR_PATH["offers.html"] if fr else "/offers.html")},
             {"@type": "ListItem", "position": 3, "name": o["name"][lang], "item": url}]},
         {"@context": "https://schema.org", "@type": "Service", "name": o["name"][lang], "description": U.typo(o["seo_desc"][lang], lang),
-         "provider": U.ORG, "url": url, "areaServed": "Worldwide"},
+         "provider": U.ORG, "url": url, "areaServed": ["France", "Worldwide"]},
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": U.typo(q[lang], lang), "acceptedAnswer": {"@type": "Answer", "text": U.typo(r[lang], lang)}} for q, r in o["faq"]]},
     ]

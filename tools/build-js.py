@@ -46,6 +46,18 @@ def main():
         if s2 != s:
             p.write_text(s2)
             n += 1
+    # js/theme.js is tiny and must run before the first paint: written into each
+    # page instead of fetched (one render-blocking request less on mobile)
+    theme = (OUT / "theme.js").read_text().strip()
+    tag = re.compile(r'<script src="(?:/|\.\./)*js/(?:min/)?theme\.js(?:\?v=\d+)?"></script>|<script data-inline="theme">.*?</script>', re.S)
+    inline = '<script data-inline="theme">%s</script>' % theme
+    for p in ROOT.rglob("*.html"):
+        if {"node_modules", "tools", "shots"} & set(p.parts):
+            continue
+        s = p.read_text()
+        s2 = tag.sub(lambda m: inline, s, count=1)
+        if s2 != s:
+            p.write_text(s2)
     print("js/min: %d KB -> %d KB, %d pages pointed at it" % (before // 1024, after // 1024, n))
 
 

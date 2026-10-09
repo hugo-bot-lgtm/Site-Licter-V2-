@@ -16,8 +16,8 @@
 <meta property="og:description" content="Un diagnostic indépendant de votre dispositif social data : audit, score de maturité sur six dimensions, gains rapides et feuille de route en deux à trois…" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
-<script src="/js/min/theme.js?v=20261350"></script>
-<link rel="stylesheet" href="/css/t-base.min.css?v=20261350" />
+<script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
+<link rel="stylesheet" href="/css/t-base.min.css?v=20261351" />
 <link rel="canonical" href="https://www.licter.com/fr/diagnostic/" />
 <link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/diagnostic/" />
 <link rel="alternate" hreflang="en" href="https://www.licter.com/diagnostic.html" />
@@ -203,10 +203,10 @@
       <section class="cta" data-reveal>
         <h2 class="cta__title">Pas certain que le diagnostic soit ce qu'il vous faut ?</h2>
         <p class="cta__text">Envoyez-nous la question que vous cherchez à résoudre. Si une seule étude suffit, nous vous le dirons.</p>
-        <label class="visually-hidden" for="q-dg">Votre question</label>
-        <textarea class="cta__q" id="q-dg" name="question" rows="3" maxlength="1500"
-                  placeholder="La question à laquelle vous cherchez à répondre, et la décision qu&#x27;elle doit éclairer..."></textarea>
-        <form class="signup" data-q="q-dg" novalidate>
+        <label class="visually-hidden" for="q-dg">Votre question (facultatif)</label>
+        <textarea class="cta__q" id="q-dg" name="question" form="dg-question" rows="3" maxlength="1500"
+                  placeholder="Facultatif : la question à laquelle vous cherchez à répondre, et la décision qu&#x27;elle doit éclairer..."></textarea>
+        <form class="signup" id="dg-question" data-q="q-dg" novalidate>
           <label class="visually-hidden" for="email-dg">Votre e-mail professionnel</label>
           <input class="signup__input" id="email-dg" name="email" type="email"
                  placeholder="Votre e-mail professionnel..." autocomplete="email" required />
@@ -285,7 +285,7 @@
     <div>
       <h3>COMMENCER</h3>
       <ul>
-        <li><a href="/fr/guide/">Le guide gratuit</a></li>
+        <li><a href="/fr/guide/">Le guide des 12 questions</a></li>
         <li><a href="/fr/diagnostic/">Demander un diagnostic</a></li>
         <li><a href="/fr/rendez-vous/">Prendre rendez-vous</a></li>
       </ul>
@@ -309,8 +309,8 @@
   </div>
 </footer>
 
-<script src="/js/min/fr-core.js?v=20261350" defer></script>
-<script src="/js/min/i18n.js?v=20261350" defer></script>
-<script src="/js/min/ui.js?v=20261350" defer></script>
+<script src="/js/min/fr-core.js?v=20261351" defer></script>
+<script src="/js/min/i18n.js?v=20261351" defer></script>
+<script src="/js/min/ui.js?v=20261351" defer></script>
 </body>
 </html>

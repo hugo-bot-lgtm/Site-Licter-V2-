@@ -21,7 +21,7 @@ def qa_roller(cards, label, more, rows=2, by=""):
         if not lane:
             continue
         items = "".join(('<article class="qa-card"><h3>%s</h3><div class="qa-card__a">%s</div>'
-             '<button class="qa-card__more" type="button">%s<span class="visually-hidden"> : </span><span class="visually-hidden">%s</span> <span aria-hidden="true">→</span></button></article>')
+             '<button class="qa-card__more" type="button">%s<span class="visually-hidden"> : </span><span class="visually-hidden">%s</span> <span aria-hidden="true">→</span></button></article>')
             % (q, "".join("<p>%s</p>" % x for x in a), more, q) for q, a in lane)
         out.append('<div class="qa-roller__row" data-dir="%s"><div class="qa-roller__track">%s</div></div>' % ("right" if n % 2 else "left", items))
     return by + '<div class="qa-roller" role="region" aria-label="%s">%s</div>' % (label, "".join(out))
@@ -54,10 +54,19 @@ def sources_line(module_file, label):
             urls.append(u)
     if not urls:
         return ""
+    # a readable label: the note written next to the source when there is one,
+    # otherwise the page name without its numeric id and hyphens
+    notes = {}
+    for u_, n_ in re.findall(r"# source: (https?://[^\s)]+)\s*\(([^)]*)\)", pathlib.Path(module_file).read_text()):
+        notes.setdefault(u_.rstrip(".,;"), n_)
     def name(u):
         host = re.sub(r"^https?://(www\.)?", "", u).split("/")[0]
+        note = re.split(r"[:;,]| \(|\d{1,2} \w+ 20\d\d", notes.get(u, ""))[0].strip(" \"'")
+        if 4 <= len(note) <= 60:
+            return host + " · " + note
         path = u.split(host, 1)[1].strip("/")
-        tail = path.split("/")[-1] if path else ""
-        return host + (" · " + tail[:38] if tail else "")
+        tail = re.sub(r"^\d+[-_]?", "", path.split("/")[-1] if path else "")
+        tail = re.sub(r"\.(html?|pdf)$", "", tail).replace("-", " ").replace("_", " ").strip()
+        return host + (" · " + (tail[:40].rsplit(" ", 1)[0] if len(tail) > 40 else tail) if tail else "")
     links = ", ".join('<a href="%s" rel="noopener" target="_blank">%s</a>' % (html.escape(u, quote=True), html.escape(name(u))) for u in urls)
     return '<p class="qa-src"><span>%s</span> %s</p>' % (label, links)

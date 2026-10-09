@@ -7,7 +7,7 @@ Edit the text here, then rebuild the pages:
 
 MOCK: drafted from the site's own copy. Every figure used here already
 appears elsewhere on the site (20+ languages, 15-minute alerts, 5,000+
-behavioural criteria, a panel of more than 2.7 billion people); the
+behavioural criteria, a panel drawn from social networks, 5.66 billion active users per DataReportal Digital 2026); the
 examples are illustrative. To be validated by Licter before going live.
 
 Each text is a pair (fr, en). French typography (non-breaking spaces before
@@ -94,15 +94,15 @@ FAMILIES = [
              "Segment your targets, reach younger audiences, understand expectations at every touchpoint: your audiences read in what they do, not what they declare."),
     "h1": ("Remplacez l'atelier persona par le comportement observé.",
            "Replace the persona workshop with observed behaviour."),
-    "intro": ("Les préférences déclarées et le comportement réel coïncident rarement. Le panel montre ce que les gens font, suivent, achètent et disent quand personne ne leur pose de question : un panel de plus de 2,7 milliards de personnes, lu par des analystes.",
-              "Declared preferences and actual behaviour rarely match. The panel shows what people do, follow, buy and say when no one is asking them a question: a panel of more than 2.7 billion people, read by analysts."),
+    "intro": ("Les préférences déclarées et le comportement réel coïncident rarement. Le panel montre ce que les gens font, suivent, achètent et disent quand personne ne leur pose de question : un panel tiré des réseaux sociaux, où 5,66 milliards d'utilisateurs actifs publient, lu par des analystes.",
+              "Declared preferences and actual behaviour rarely match. The panel shows what people do, follow, buy and say when no one is asking them a question: a panel drawn from social networks, where 5.66 billion active users post, read by analysts."),
     "why": ("Un persona construit en atelier reflète ce que l'équipe croit savoir. Nous partons de ce que vos clients font réellement, et nous faisons apparaître les communautés que le brief n'avait pas vues, souvent là où se trouve l'opportunité.",
             "A persona built in a workshop reflects what the team believes. We start from what your customers actually do, and bring out the communities the brief had not seen, which is often where the opportunity is."),
     "video": ("moW2HYtTor8", "51:29", ("L'advocacy est en train de dépasser l'influence.", "Advocacy is overtaking influence."), "L'Oréal", "C. Besson"),
     "faq": [
       (("D'où viennent les données d'audience ?", "Where does the audience data come from?"),
-       ("D'un panel comportemental de plus de 2,7 milliards de personnes, croisé avec la conversation publique et la recherche. Les données sont agrégées : nous lisons des communautés, pas des individus.",
-        "From a behavioural panel of more than 2.7 billion people, crossed with the public conversation and search. The data is aggregated: we read communities, not individuals.")),
+       ("D'un panel comportemental tiré des réseaux sociaux (5,66 milliards d'utilisateurs actifs, 68,7 % de la population mondiale), croisé avec la conversation publique et la recherche. Les données sont agrégées : nous lisons des communautés, pas des individus.",
+        "From a behavioural panel drawn from social networks (5.66 billion active users, 68.7% of the world's population), crossed with the public conversation and search. The data is aggregated: we read communities, not individuals.")),
       (("Combien de critères pour décrire une audience ?", "How many criteria describe an audience?"),
        ("Plus de 7 000 critères comportementaux : centres d'intérêt, régime média, affinités de marque, sociodémographie.",
         "More than 7,000 behavioural criteria: interests, media diet, brand affinities, sociodemographics.")),
@@ -454,7 +454,7 @@ CASES = [
       ("Quelle communauté représente la plus grosse opportunité ?", "Which community is the biggest opportunity?"),
     ],
     "sources": [
-      (("Panel comportemental", "Behavioural panel"), ("Plus de 2,7 milliards de personnes, plus de 7 000 critères.", "More than 2.7 billion people, more than 7,000 criteria.")),
+      (("Panel comportemental", "Behavioural panel"), ("Tiré des réseaux sociaux, où 5,66 milliards d'utilisateurs actifs publient ; plus de 7 000 critères.", "Drawn from social networks, where 5.66 billion active users post; more than 7,000 criteria.")),
       (("Réseaux sociaux", "Social networks"), ("Qui parle de vous et de votre catégorie.", "Who talks about you and your category.")),
       (("Recherche", "Search"), ("Ce que chaque communauté cherche.", "What each community searches for.")),
       (("Affinités de marque", "Brand affinities"), ("Les marques et médias qu'elles suivent aussi.", "The brands and media they also follow.")),
