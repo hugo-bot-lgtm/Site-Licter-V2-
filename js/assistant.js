@@ -31,6 +31,8 @@
 
   /* ------------------------------------------------------------ the agent */
   var A = { name: "Antoine", full: "Antoine Khaitrine", img: "/assets/img/team/founder-antoine-160.webp" };
+  /* Antoine's WhatsApp: the link opens a conversation with him, a first line already written */
+  var WA = "33636406600";
 
   var UC = function (fam) { return fr() ? "/fr/cas-usage/" + (fam ? fam + "/" : "") : "/en/use-cases/" + (fam ? { "sante-de-marque": "brand-health", "tendances-innovation": "trends-innovation" }[fam] || fam : "") + (fam ? "/" : ""); };
 
@@ -64,7 +66,10 @@
     err: ["Indiquez un e-mail professionnel ou un numéro de téléphone.", "Enter a work email or a phone number."],
     doneMail: ["C'est noté. Un consultant vous écrit à ", "Noted. A consultant writes to you at "],
     donePhone: ["C'est noté. Un consultant vous appelle au ", "Noted. A consultant calls you on "],
-    doneEnd: [" dans les 30 minutes.", " within 30 minutes."]
+    doneEnd: [" dans les 30 minutes.", " within 30 minutes."],
+    or: ["ou", "or"],
+    wa: ["Écrire à " + A.name + " sur WhatsApp", "Message " + A.name + " on WhatsApp"],
+    waText: ["Bonjour Antoine, je viens du site de Licter. ", "Hello Antoine, I'm coming from the Licter website. "]
   };
 
   /* ------------------------------------------------------- what he knows
@@ -212,11 +217,14 @@
           '<p class="lx__consent"><span data-l="consent"></span> <a href="' + ((document.documentElement.lang || "fr").slice(0, 2) === "fr" ? "/fr/confidentialite/" : "/privacy.html") + '" data-l="privacy"></a>.</p>' +
         "</form>" +
         '<p class="lx__done" role="status" hidden></p>' +
+        '<p class="lx__or"><span data-l="or"></span></p>' +
+        '<a class="lx__wa" href="#" target="_blank" rel="noopener"><i aria-hidden="true"></i><span data-l="wa"></span></a>' +
       "</div>" +
       /* the chat */
       '<div class="lx__view lx__chat" id="lx-chat" role="tabpanel" aria-labelledby="lx-t-chat" hidden>' +
         '<div class="lx__log" role="log" aria-live="polite"></div>' +
         '<div class="lx__chips"></div>' +
+        '<a class="lx__wa lx__wa--chat" href="#" target="_blank" rel="noopener"><i aria-hidden="true"></i><span data-l="wa"></span></a>' +
         '<form class="lx__ask">' +
           '<label class="visually-hidden" for="lx-q" data-l="placeholder"></label>' +
           '<input class="lx__q" id="lx-q" type="text" autocomplete="off" maxlength="300" />' +
@@ -232,12 +240,20 @@
   var views = { call: root.querySelector(".lx__call"), chat: root.querySelector(".lx__chat") };
   var history = [];   /* what was said, to redraw it in the other language */
 
+  root.addEventListener("click", function (e) {
+    var w = e.target.closest && e.target.closest(".lx__wa");
+    if (w && window.LicterTrack) window.LicterTrack("whatsapp_click", { tab: w.classList.contains("lx__wa--chat") ? "chat" : "call" });
+  });
+
   function paint() {
     Array.prototype.forEach.call(root.querySelectorAll("[data-l]"), function (el) { el.textContent = T(L[el.getAttribute("data-l")]); });
     launch.setAttribute("aria-label", T(L.open));
     panel.setAttribute("aria-label", T(L.region));
     root.querySelector(".lx__input").setAttribute("placeholder", T(L.ph));
     root.querySelector(".lx__q").setAttribute("placeholder", T(L.placeholder));
+    Array.prototype.forEach.call(root.querySelectorAll(".lx__wa"), function (w) {
+      w.setAttribute("href", "https://wa.me/" + WA + "?text=" + encodeURIComponent(T(L.waText)));
+    });
     chips.innerHTML = CHIPS.map(function (c) { return '<button type="button" class="lx__chip" data-q="' + c[1] + '">' + esc(T(c[0])) + "</button>"; }).join("");
     redraw();
   }
