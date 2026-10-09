@@ -85,6 +85,8 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 ## Optional
 
 - [Wikidata](https://www.wikidata.org/wiki/Q141663812)
+- [LinkedIn](https://www.linkedin.com/company/licter/): la page entreprise de Licter
+- [YouTube, Audience First](https://www.youtube.com/@audience_first): les entretiens du podcast de Licter
 - [Annuaire des entreprises](https://annuaire-entreprises.data.gouv.fr/entreprise/915259394): fiche officielle de Licter SAS
 - [Événements](https://www.licter.com/fr/evenements/): études sectorielles présentées à Paris
 - [Mentions légales](https://www.licter.com/fr/mentions-legales/)

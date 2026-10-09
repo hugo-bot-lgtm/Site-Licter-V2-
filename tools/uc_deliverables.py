@@ -49,7 +49,7 @@ SYMPTOMS = {
     ],
     "segmentation": [
         (("Des cibles décrites par l'âge et le sexe", "Targets described by age and gender"), ("Des communautés décrites par ce qu'elles font", "Communities described by what they do")),
-        (("Des personas sortis d'un atelier", "Personas from a workshop"), ("Des profils bâtis sur 5 000+ critères", "Profiles built on 5,000+ criteria")),
+        (("Des personas sortis d'un atelier", "Personas from a workshop"), ("Des profils bâtis sur 7 000+ critères", "Profiles built on 7,000+ criteria")),
         (("Un plan média calé sur le brief", "A media plan set by the brief"), ("La communauté où l'opportunité est la plus forte", "The community with the strongest opportunity")),
     ],
     "rejuvenate": [
@@ -123,7 +123,7 @@ META = {
                    ("Twitch, X, Reddit, YouTube · suivi 24/7", "Twitch, X, Reddit, YouTube · 24/7 monitoring"), "1 / 1"),
     "segmentation": (("Segmentation d'audience", "Audience segmentation"), ("Marque alimentaire", "Food brand"),
                      ("Les trois communautés à prioriser", "The three communities to prioritise"),
-                     ("Panel comportemental · 1,2 M de profils · 5 000+ critères", "Behavioural panel · 1.2M profiles · 5,000+ criteria"), "7 / 19"),
+                     ("Panel comportemental · 1,2 M de profils · 7 000+ critères", "Behavioural panel · 1.2M profiles · 7,000+ criteria"), "7 / 19"),
     "rejuvenate": (("Étude Gen Z", "Gen Z study"), ("Maison de maroquinerie", "Leather goods house"),
                    ("Votre base actuelle face à la génération visée", "Your current base against the target generation"),
                    ("Panel comportemental, TikTok, Instagram · 18-25 ans", "Behavioural panel, TikTok, Instagram · 18 to 25"), "5 / 18"),

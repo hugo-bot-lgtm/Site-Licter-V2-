@@ -13,7 +13,16 @@ INTENT = {
 }
 
 AG_T = ("Pourquoi confier ce suivi à un cabinet ?", "Why hand this tracking to a consultancy?")
-AG_LEAD_BY = {}   # per-page intro of the "why a consultancy" block, when the generic one does not fit
+AG_LEAD_BY = {   # per-page intro of the "why a consultancy" block, when the generic one does not fit
+    # GEO is a practice, not a tool: the tool template's "GEO provides data" contradicted the page (audit of 9 October 2026)
+    "geo": ("Le GEO ne s'achète pas comme un logiciel. Une agence GEO comme Licter mesure d'abord ce que les IA répondent, puis agit sur les sources qu'elles lisent : voici comment nous procédons.",
+            "GEO is not bought like software. A GEO agency like Licter first measures what AI assistants answer, then acts on the sources they read: here is how we go about it."),
+}
+# the headings of the "on its own / with Licter" block, where "X on its own" does not fit
+VS_HEAD = {"geo": (("Le GEO fait en interne", "GEO done in-house"), ("Le GEO avec Licter", "GEO with Licter"))}
+# the closing call to action, where "if another tool answers it better" does not fit
+CTA_TEXT = {"geo": ("Envoyez-nous la question. Si une autre approche y répond mieux, nous vous le dirons.",
+                    "Send us the question. If another approach answers it better, we will tell you.")}
 AG_LEAD = ("%s est ouvert à tous. Ce que nous apportons, c'est la méthode, la lecture et le croisement avec vos autres sources : voici comment nous procédons.",
            "%s is open to everyone. What we bring is the method, the reading and the cross-check with your other sources: here is how we go about it.")
 FAQ_Q = {"meta-ads": ("Licter fait-elle de la veille sur la bibliothèque publicitaire Meta ?", "Does Licter monitor the Meta Ad Library?")}
@@ -40,6 +49,16 @@ VS = {
                   ("Une note pour vos arbitrages", "A note for your decisions")],
                  ("Vous voyez ce que vos concurrents poussent, et ce que cela vous dit.", "You see what your competitors push, and what it tells you.")),
 }
+
+VS["geo"] = ([("Des réponses d'IA vérifiées au hasard, une fois", "AI answers checked at random, once"),
+               ("Des contenus réécrits sans savoir ce que lisent les modèles", "Content rewritten without knowing what the models read"),
+               ("Aucune mesure avant ni après", "No measure before or after"),
+               ("Des sources erronées qui restent en ligne", "Wrong sources left online")],
+              [("Les mêmes questions posées à chaque modèle, plusieurs fois", "The same questions put to each model, several times"),
+               ("Les sources citées par les IA, relevées une à une", "The sources the assistants cite, collected one by one"),
+               ("Une première mesure, puis un suivi mensuel ou trimestriel", "A first measure, then monthly or quarterly tracking"),
+               ("Un plan : les sources à corriger ou à nourrir", "A plan: the sources to correct or to feed")],
+              ("Vous savez ce que les IA disent de vous, et quoi changer.", "You know what AI says about you, and what to change."))
 
 HEAD = (("COMMENT %s RÉPOND", "HOW %s ANSWERS"), ("Ce qui fait la réponse de %s.", "What shapes %s's answer."))
 

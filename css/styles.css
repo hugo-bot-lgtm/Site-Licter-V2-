@@ -4590,7 +4590,7 @@ html[lang="fr"] .founders__quote p:first-child::before { content: "\00AB\00A0"; 
 .hmethod__nav { display: flex; gap: 8px; flex: none; }
 .hmethod__arrow {
   display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%;
-  border: 1px solid var(--field-br); background: transparent; color: var(--ink); font-size: 18px; cursor: pointer;
+  border: 1px solid var(--field-br); background: transparent; color: var(--ink); font-size: 18px; font-family: var(--body-font); cursor: pointer;
   transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 }
 .hmethod__arrow:hover:not(:disabled) { background: var(--navy); border-color: var(--navy); color: var(--cream); }
@@ -6331,8 +6331,9 @@ html[data-theme="dark"] .ucn__sheet { box-shadow: 0 34px 70px -34px rgba(0, 0, 0
 .ucv-sym { max-width: 980px; }
 .ucv-sym__head, .ucv-sym li { display: grid; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr); gap: 12px; align-items: baseline; }
 .ucv-sym__head { margin: 0 0 6px; font: 700 11px/1.2 var(--body-font); letter-spacing: 1.3px; text-transform: uppercase; color: var(--text-2); }
-.ucv-sym__head span:last-child { grid-column: 3; color: var(--amber-ink); }
-html[data-theme="dark"] .ucv-sym__head span:last-child { color: var(--amber); }
+.ucv-sym__head p { margin: 0; }
+.ucv-sym__head > :last-child { grid-column: 3; color: var(--amber-ink); }
+html[data-theme="dark"] .ucv-sym__head > :last-child { color: var(--amber); }
 .ucv-sym ul { margin: 0; padding: 0; list-style: none; }
 .ucv-sym li { padding: 14px 0; border-top: 1px solid var(--line); }
 .ucv-sym__now { font: 500 16px/1.45 var(--body-font); color: var(--text-2); text-decoration: line-through; text-decoration-color: rgba(var(--ink-rgb), .25); }
@@ -7074,10 +7075,10 @@ body:has(.ucp-bar.is-shown) .lx__launch { bottom: 84px; }
 .lx__who b { font: 600 16px/1.25 var(--title-font); }
 .lx__who small { font: 500 12.5px/1.35 var(--body-font); color: rgba(252, 246, 239, .8); }
 .lx__who .lx__bot { margin-top: 2px; font-size: 11px; letter-spacing: .3px; color: #EAA93D; }
-.lx__close { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 50%; background: rgba(252, 246, 239, .12); color: #FCF6EF; font-size: 22px; line-height: 1; cursor: pointer; }
+.lx__close { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(252, 246, 239, .12); color: #FCF6EF; font-size: 22px; line-height: 1; cursor: pointer; }
 .lx__close:hover { background: rgba(252, 246, 239, .22); }
 .lx__tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 12px 14px 0; padding: 4px; border-radius: 999px; background: rgba(var(--ink-rgb), .06); }
-.lx__tab { height: 38px; border: 0; border-radius: 999px; background: transparent; color: var(--text-2); font: 700 13.5px/1 var(--body-font); cursor: pointer; }
+.lx__tab { height: 44px; border: 0; border-radius: 999px; background: transparent; color: var(--text-2); font: 700 13.5px/1 var(--body-font); cursor: pointer; }
 .lx__tab[aria-selected="true"] { background: var(--card-bg); color: var(--ink); box-shadow: 0 2px 10px -4px rgba(19, 22, 45, .35); }
 .lx__view { flex: 1; min-height: 0; display: flex; flex-direction: column; }
 .lx__view[hidden] { display: none; }
@@ -7551,7 +7552,7 @@ section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); 
   .lx__head { padding: calc(10px + env(safe-area-inset-top, 0px)) 12px 10px 14px; }
   .lx__head .lx__face { width: 38px; height: 38px; }
   .lx__who small:not(.lx__bot) { display: none; }
-  .lx__close { width: 40px; height: 40px; }
+  .lx__close { width: 44px; height: 44px; }
   .lx__tabs { margin: 10px 12px 0; }
   .lx__log { padding: 14px 12px 8px; overscroll-behavior: contain; }
   .lx__msg { max-width: 92%; }
@@ -7559,7 +7560,7 @@ section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); 
     /* the row scrolls sideways: its right edge fades, so the cut chip reads as "more" */
     -webkit-mask-image: linear-gradient(to right, #000 82%, transparent); mask-image: linear-gradient(to right, #000 82%, transparent); }
   .lx__chips::-webkit-scrollbar { display: none; }
-  .lx__chip { flex: none; height: 36px; }
+  .lx__chip { flex: none; height: 44px; }
   .lx__ask { padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px)); }
   .lx__q, .lx__input { font-size: 16px; }
   .lx__call { padding: 20px 18px calc(20px + env(safe-area-inset-bottom, 0px)); }
@@ -10575,6 +10576,9 @@ html[lang="fr"] .xp-line > span::after { content: "\00a0:"; }
 .cc__b button:hover { background: var(--ink); color: var(--bg); }
 .cc__b button:focus-visible, .cc-manage:focus-visible { outline: 2px solid #EAA93D; outline-offset: 3px; }
 .cc-manage { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+/* small text links get a 44 px tap area without moving the text (audit of 9 October 2026) */
+.cc-manage, .wl-founder__in { position: relative; }
+.cc-manage::after, .wl-founder__in::after { content: ""; position: absolute; inset: -14px -6px; }
 @keyframes cc-in { from { opacity: 0; transform: translateY(12px); } }
 /* large screens: one line, low, so it covers no call to action */
 @media (min-width: 900px) {
@@ -10617,5 +10621,16 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 /* expertise heroes on a phone: the free flash read is offered on the first screen, the form itself comes further down */
 .xe-lmh__jump { display: none; }
 @media (max-width: 720px) { .xe-lmh__jump { display: inline-flex; align-self: flex-start; margin: 4px 0 14px; } }
+/* while the cookie banner is open, a phone's first screen keeps both actions
+   in view: they come before the three badges (audit of 9 October 2026) */
+@media (max-width: 720px) {
+  .xe-lmh__copy { display: flex; flex-direction: column; align-items: flex-start; }
+  .xe-lmh__jump { order: 1; margin: 22px 0 0; }
+  .xe-lmh__call { order: 2; margin-top: 16px; }
+  .xe-lmh__pills { order: 3; margin-top: 22px; }
+}
+/* large screens: the copy starts at the top of the hero instead of being
+   centred on the taller card, so its links clear the cookie banner */
+@media (min-width: 961px) { .xe-lmh { padding-top: 16px; } .xe-lmh__copy { align-self: start; } .xe-lm { margin-top: 44px; } }
 /* large screens: the page can scroll its last lines above the open banner too */
 @media (min-width: 900px) { html.cc-open body { padding-bottom: 72px; } }

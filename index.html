@@ -38,7 +38,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="css/t-home.min.css?v=20261352" />
+<link rel="stylesheet" href="css/t-home.min.css?v=20261353" />
 </head>
 <body class="home">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -127,7 +127,7 @@
       <div class="wall" id="wall">
         <span class="wall__beam" id="wall-beam" aria-hidden="true"></span>
         <p class="wall__caption">
-          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span>160+ projects since 2022</span></span>
+          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span> 160+ projects since 2022</span></span>
         </p>
         <div class="marquee" id="marquee">
           <div class="marquee__track" id="marquee-track"><!-- filled by js/ui.js --></div>
@@ -155,9 +155,9 @@
     <div class="shell">
     <ol class="ucc__track">
         <li class="ucc__card" id="fam-communication">
-          <img src="/assets/img/team/morning/work-three-800.webp" srcset="/assets/img/team/morning/work-three-800.webp 800w, /assets/img/team/morning/work-three-1600.webp 1600w" sizes="(max-width: 640px) 82vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />
+          <img src="/assets/img/team/morning/work-three-800.webp" srcset="/assets/img/team/morning/work-three-480.webp 480w, /assets/img/team/morning/work-three-640.webp 640w, /assets/img/team/morning/work-three-800.webp 800w, /assets/img/team/morning/work-three-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />
           <div class="ucc__top">
-            <p class="ucc__k"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="6" r="1.8"/><circle cx="19" cy="7" r="1.8"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="18" cy="17.5" r="1.8"/><path d="M6.4 7.2 10 10.3M17.4 8.3 14 10.5M7.7 17 10.4 13.9M16.6 16.3 13.8 13.6"/></svg></span><span>01 · Communication</span></p>
+            <p class="ucc__k"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="6" r="1.8"/><circle cx="19" cy="7" r="1.8"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="18" cy="17.5" r="1.8"/><path d="M6.4 7.2 10 10.3M17.4 8.3 14 10.5M7.7 17 10.4 13.9M16.6 16.3 13.8 13.6"/></svg></span> <span>01 · Communication</span></p>
             <h3 class="ucc__t"><a href="/en/use-cases/communication/">Make every campaign, event and spokesperson measurable.</a></h3>
           </div>
           <div class="ucc__foot">
@@ -166,9 +166,9 @@
           </div>
         </li>
         <li class="ucc__card" id="fam-brand">
-          <img src="/assets/img/team/morning/work-table-800.webp" srcset="/assets/img/team/morning/work-table-800.webp 800w, /assets/img/team/morning/work-table-1600.webp 1600w" sizes="(max-width: 640px) 82vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />
+          <img src="/assets/img/team/morning/work-table-800.webp" srcset="/assets/img/team/morning/work-table-480.webp 480w, /assets/img/team/morning/work-table-640.webp 640w, /assets/img/team/morning/work-table-800.webp 800w, /assets/img/team/morning/work-table-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />
           <div class="ucc__top">
-            <p class="ucc__k"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19.5 6v6.1c0 4-3.1 7-7.5 8.4-4.4-1.4-7.5-4.4-7.5-8.4V6z"/><path d="m9.2 12 2 2 3.6-3.8"/></svg></span><span>02 · Brand health</span></p>
+            <p class="ucc__k"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19.5 6v6.1c0 4-3.1 7-7.5 8.4-4.4-1.4-7.5-4.4-7.5-8.4V6z"/><path d="m9.2 12 2 2 3.6-3.8"/></svg></span> <span>02 · Brand health</span></p>
             <h3 class="ucc__t"><a href="/en/use-cases/brand-health/">Know what the market says about you, before it becomes a problem.</a></h3>
           </div>
           <div class="ucc__foot">
@@ -177,9 +177,9 @@
           </div>
         </li>
         <li class="ucc__card" id="fam-audiences">
-          <img src="/assets/img/team/morning/work-sofa-800.webp" srcset="/assets/img/team/morning/work-sofa-800.webp 800w, /assets/img/team/morning/work-sofa-1600.webp 1600w" sizes="(max-width: 640px) 82vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />
+          <img src="/assets/img/team/morning/work-sofa-800.webp" srcset="/assets/img/team/morning/work-sofa-480.webp 480w, /assets/img/team/morning/work-sofa-640.webp 640w, /assets/img/team/morning/work-sofa-800.webp 800w, /assets/img/team/morning/work-sofa-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />
           <div class="ucc__top">
-            <p class="ucc__k"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span><span>03 · Audiences</span></p>
+            <p class="ucc__k"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span> <span>03 · Audiences</span></p>
             <h3 class="ucc__t"><a href="/en/use-cases/audiences/">Replace the persona workshop with observed behaviour.</a></h3>
           </div>
           <div class="ucc__foot">
@@ -188,9 +188,9 @@
           </div>
         </li>
         <li class="ucc__card" id="fam-trends">
-          <img src="/assets/img/team/morning/work-laptop-800.webp" srcset="/assets/img/team/morning/work-laptop-800.webp 800w, /assets/img/team/morning/work-laptop-1600.webp 1600w" sizes="(max-width: 640px) 82vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />
+          <img src="/assets/img/team/morning/work-laptop-800.webp" srcset="/assets/img/team/morning/work-laptop-480.webp 480w, /assets/img/team/morning/work-laptop-640.webp 640w, /assets/img/team/morning/work-laptop-800.webp 800w, /assets/img/team/morning/work-laptop-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />
           <div class="ucc__top">
-            <p class="ucc__k"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 16.5 9 11l3.5 3.5L20.5 6"/><path d="M15.5 6h5v5"/></svg></span><span>04 · Trends &amp; innovation</span></p>
+            <p class="ucc__k"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 16.5 9 11l3.5 3.5L20.5 6"/><path d="M15.5 6h5v5"/></svg></span> <span>04 · Trends &amp; innovation</span></p>
             <h3 class="ucc__t"><a href="/en/use-cases/trends-innovation/">Decide what to build on evidence, not conviction.</a></h3>
           </div>
           <div class="ucc__foot">
@@ -277,8 +277,8 @@
         <h2 class="xs__title" id="cmp-t">Why not just a tool?</h2>
         <p class="xs__lead">Because a tool counts and an AI summarises, but it takes people to understand. At Licter, every reading is done by someone who speaks the market&#x27;s language and knows your brand.</p>
         <div class="cmp__vs">
-          <p class="cmp__head" aria-hidden="true"><span>A tool alone</span><span>Our team</span></p>
-          <ul class="cmp__rows"><li><span class="cmp__them"><span class="visually-hidden">A tool alone: </span>Counts the mentions.</span><span class="cmp__us"><span class="visually-hidden">Our team: </span>Reads them, in the language of the market.</span></li><li><span class="cmp__them"><span class="visually-hidden">A tool alone: </span>Summarises what is said.</span><span class="cmp__us"><span class="visually-hidden">Our team: </span>Tells you what it changes for you.</span></li><li><span class="cmp__them"><span class="visually-hidden">A tool alone: </span>Waits for someone to open the dashboard.</span><span class="cmp__us"><span class="visually-hidden">Our team: </span>Calls you when it matters.</span></li><li><span class="cmp__them"><span class="visually-hidden">A tool alone: </span>Renews every year.</span><span class="cmp__us"><span class="visually-hidden">Our team: </span>Learns your brand, one question after another.</span></li></ul>
+          <p class="cmp__head" aria-hidden="true"><span>A tool alone</span> <span>Our team</span></p>
+          <ul class="cmp__rows"><li><span class="cmp__them"><span class="visually-hidden">A tool alone: </span> Counts the mentions.</span> <span class="cmp__us"><span class="visually-hidden">Our team: </span> Reads them, in the language of the market.</span></li><li><span class="cmp__them"><span class="visually-hidden">A tool alone: </span> Summarises what is said.</span> <span class="cmp__us"><span class="visually-hidden">Our team: </span> Tells you what it changes for you.</span></li><li><span class="cmp__them"><span class="visually-hidden">A tool alone: </span> Waits for someone to open the dashboard.</span> <span class="cmp__us"><span class="visually-hidden">Our team: </span> Calls you when it matters.</span></li><li><span class="cmp__them"><span class="visually-hidden">A tool alone: </span> Renews every year.</span> <span class="cmp__us"><span class="visually-hidden">Our team: </span> Learns your brand, one question after another.</span></li></ul>
         </div>
         <p class="cmp__foot">We use the best tools and AI to collect and sort. People do the reading, and decide with you.</p>
       </div>
@@ -325,14 +325,14 @@
         </div>
       </div>
       <ol class="hsteps" aria-label="The four steps">
-        <li><button class="hstep is-on" type="button" data-i="0" aria-controls="mstep-1"><span class="hstep__n">1</span><span class="hstep__name">Framing</span></button></li>
-        <li><button class="hstep" type="button" data-i="1" aria-controls="mstep-2"><span class="hstep__n">2</span><span class="hstep__name">Collection</span></button></li>
-        <li><button class="hstep" type="button" data-i="2" aria-controls="mstep-3"><span class="hstep__n">3</span><span class="hstep__name">Analysis</span></button></li>
-        <li><button class="hstep" type="button" data-i="3" aria-controls="mstep-4"><span class="hstep__n">4</span><span class="hstep__name">Decision</span></button></li>
+        <li><button class="hstep is-on" type="button" data-i="0" aria-controls="mstep-1"><span class="hstep__n">1</span> <span class="hstep__name">Framing</span></button></li>
+        <li><button class="hstep" type="button" data-i="1" aria-controls="mstep-2"><span class="hstep__n">2</span> <span class="hstep__name">Collection</span></button></li>
+        <li><button class="hstep" type="button" data-i="2" aria-controls="mstep-3"><span class="hstep__n">3</span> <span class="hstep__name">Analysis</span></button></li>
+        <li><button class="hstep" type="button" data-i="3" aria-controls="mstep-4"><span class="hstep__n">4</span> <span class="hstep__name">Decision</span></button></li>
       </ol>
       <div class="htrack" tabindex="0" aria-label="The four steps, one card each">
         <article class="mstep" id="mstep-1" style="--i:0">
-          <figure class="mstep__img"><img src="assets/img/team/morning/work-table-800.webp" srcset="assets/img/team/morning/work-table-640.webp 640w, assets/img/team/morning/work-table-800.webp 800w, assets/img/team/morning/work-table-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="Two Licter consultants framing a question at a table, a laptop between them" width="1080" height="1616" loading="lazy" decoding="async" /></figure>
+          <figure class="mstep__img"><img src="assets/img/team/morning/work-table-800.webp" srcset="assets/img/team/morning/work-table-480.webp 480w, assets/img/team/morning/work-table-640.webp 640w, assets/img/team/morning/work-table-800.webp 800w, assets/img/team/morning/work-table-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="Two Licter consultants framing a question at a table, a laptop between them" width="1080" height="1616" loading="lazy" decoding="async" /></figure>
           <div class="mstep__body">
             <p class="mstep__n">1 / 4</p>
             <h3 class="step__name">Framing</h3>
@@ -342,7 +342,7 @@
           </div>
         </article>
         <article class="mstep" id="mstep-2" style="--i:1">
-          <figure class="mstep__img"><img src="assets/img/team/morning/work-sofa-800.webp" srcset="assets/img/team/morning/work-sofa-640.webp 640w, assets/img/team/morning/work-sofa-800.webp 800w, assets/img/team/morning/work-sofa-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="Two Licter consultants going through a collection on a laptop, on a sofa" width="1080" height="1616" loading="lazy" decoding="async" /></figure>
+          <figure class="mstep__img"><img src="assets/img/team/morning/work-sofa-800.webp" srcset="assets/img/team/morning/work-sofa-480.webp 480w, assets/img/team/morning/work-sofa-640.webp 640w, assets/img/team/morning/work-sofa-800.webp 800w, assets/img/team/morning/work-sofa-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="Two Licter consultants going through a collection on a laptop, on a sofa" width="1080" height="1616" loading="lazy" decoding="async" /></figure>
           <div class="mstep__body">
             <p class="mstep__n">2 / 4</p>
             <h3 class="step__name">Collection</h3>
@@ -352,7 +352,7 @@
           </div>
         </article>
         <article class="mstep" id="mstep-3" style="--i:2">
-          <figure class="mstep__img"><img src="assets/img/team/morning/work-three-800.webp" srcset="assets/img/team/morning/work-three-640.webp 640w, assets/img/team/morning/work-three-800.webp 800w, assets/img/team/morning/work-three-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="Three Licter consultants reading an analysis together on a laptop" width="1080" height="1616" loading="lazy" decoding="async" /></figure>
+          <figure class="mstep__img"><img src="assets/img/team/morning/work-three-800.webp" srcset="assets/img/team/morning/work-three-480.webp 480w, assets/img/team/morning/work-three-640.webp 640w, assets/img/team/morning/work-three-800.webp 800w, assets/img/team/morning/work-three-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="Three Licter consultants reading an analysis together on a laptop" width="1080" height="1616" loading="lazy" decoding="async" /></figure>
           <div class="mstep__body">
             <p class="mstep__n">3 / 4</p>
             <h3 class="step__name">Analysis</h3>
@@ -362,7 +362,7 @@
           </div>
         </article>
         <article class="mstep" id="mstep-4" style="--i:3">
-          <figure class="mstep__img"><img src="assets/img/team/morning/work-standing-800.webp" srcset="assets/img/team/morning/work-standing-640.webp 640w, assets/img/team/morning/work-standing-800.webp 800w, assets/img/team/morning/work-standing-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="Three Licter consultants standing in the office, ready to present" width="1616" height="1080" loading="lazy" decoding="async" /></figure>
+          <figure class="mstep__img"><img src="assets/img/team/morning/work-standing-800.webp" srcset="assets/img/team/morning/work-standing-480.webp 480w, assets/img/team/morning/work-standing-640.webp 640w, assets/img/team/morning/work-standing-800.webp 800w, assets/img/team/morning/work-standing-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="Three Licter consultants standing in the office, ready to present" width="1616" height="1080" loading="lazy" decoding="async" /></figure>
           <div class="mstep__body">
             <p class="mstep__n">4 / 4</p>
             <h3 class="step__name">Decision</h3>
@@ -397,8 +397,8 @@
           <p>Licter is that method. Every question is framed by a consultant and every answer is read by one, not left to a dashboard default.</p>
         </blockquote>
         <ul class="founders__sign">
-          <li><img src="assets/img/team/founder-adrien-160.webp" alt="" width="320" height="320" loading="lazy" decoding="async" /><span><b>Adrien Krebs</b>Co-founder</span></li>
-          <li><img src="assets/img/team/founder-antoine-160.webp" alt="" width="320" height="320" loading="lazy" decoding="async" /><span><b>Antoine Khaitrine</b>Co-founder</span></li>
+          <li><img src="assets/img/team/founder-adrien-160.webp" alt="" width="320" height="320" loading="lazy" decoding="async" /><span><b>Adrien Krebs</b> Co-founder</span></li>
+          <li><img src="assets/img/team/founder-antoine-160.webp" alt="" width="320" height="320" loading="lazy" decoding="async" /><span><b>Antoine Khaitrine</b> Co-founder</span></li>
         </ul>
       </div>
     </div>
@@ -446,7 +446,7 @@
         <div class="qz__meter">
           <div class="qz__gauge" aria-hidden="true">
             <svg viewBox="0 0 120 120"><circle class="qz__track" cx="60" cy="60" r="52" /><circle class="qz__fill" id="quiz-fill" cx="60" cy="60" r="52" /></svg>
-            <span class="qz__n"><b id="quiz-gauge">0</b><small>/ 12</small></span>
+            <span class="qz__n"><b id="quiz-gauge">0</b> <small>/ 12</small></span>
           </div>
           <ol class="qsteps qz__steps" id="quiz-steps" aria-hidden="true"></ol>
         </div>
@@ -472,14 +472,14 @@
             </div>
             <p class="fld__error" id="book-contact-error" hidden>Enter a work email or a phone number.</p>
           </div>
-          <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span>A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
+          <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span> A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
           <p class="consent">We use your contact details only to call you back. <a href="privacy.html">Privacy policy</a>.</p>
         </form>
         <p class="book__done" id="book-done" role="status" hidden></p>
         <ul class="book__proof">
-          <li><b>50+</b><span>organisations served</span></li>
-          <li><b>160+</b><span>projects since 2022</span></li>
-          <li><b>20+</b><span>languages monitored</span></li>
+          <li><b>50+</b> <span>organisations served</span></li>
+          <li><b>160+</b> <span>projects since 2022</span></li>
+          <li><b>20+</b> <span>languages monitored</span></li>
         </ul>
       </div>
       <div class="book__faq" id="faq">
@@ -577,6 +577,7 @@
         <li><a href="tech-tools.html">Social listening tools</a></li> <li><a href="/sources.html">Sources (22 networks)</a></li>
         <li><a href="clients.html">Clients</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="/events.html">Events</a></li>
         <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>
       </ul>
     </div>
@@ -586,9 +587,9 @@
     <span>© 2026 Licter, Social Data Intelligence · <a href="legal.html">Legal notice</a> · <a href="privacy.html">Privacy</a></span>
   </div>
 </footer>
-<script src="js/min/i18n.js?v=20261352" defer></script>
-<script src="js/min/ui.js?v=20261352" defer></script>
-<script src="js/min/voices.js?v=20261352" defer></script>
+<script src="js/min/i18n.js?v=20261353" defer></script>
+<script src="js/min/ui.js?v=20261353" defer></script>
+<script src="js/min/voices.js?v=20261353" defer></script>
 <!-- the live demo and its community map only run above 720 px: a phone never
      downloads them (it does not show the demo), unless the window widens -->
 <script>
@@ -596,7 +597,7 @@
   var done = false, mq = window.matchMedia ? window.matchMedia("(min-width: 721px)") : null;
   function load() {
     if (done) return; done = true;
-    ["/js/min/communities.js?v=20261352", "/js/min/usecases.js?v=20261352"].forEach(function (src) {
+    ["/js/min/communities.js?v=20261353", "/js/min/usecases.js?v=20261353"].forEach(function (src) {
       var s = document.createElement("script"); s.src = src; s.async = false; document.body.appendChild(s);
     });
   }
@@ -608,6 +609,6 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 })();
 </script>
-<script src="js/min/home.js?v=20261352" defer></script>
+<script src="js/min/home.js?v=20261353" defer></script>
 </body>
 </html>

@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="/css/t-base.min.css?v=20261352" />
+<link rel="stylesheet" href="/css/t-base.min.css?v=20261353" />
 
 <link rel="canonical" href="https://www.licter.com/fr/evenements/" />
 <link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/" />
@@ -93,7 +93,7 @@
       <p class="xh__kick">Événements</p>
       <h1 class="xh__title">Nos études sectorielles, présentées en personne.</h1>
       <p class="xh__lead">Nous présentons ce que la conversation dit d'un secteur, avec les marques qui y travaillent. Sur inscription, à Paris.</p>
-      <ul class="evl__list"><li data-ev-date="2026-10-16"><a href="/fr/evenements/jeux-jouets/"><span class="evl__d"><b>16</b>oct.</span><span class="evl__t"><small>Étude sectorielle</small><b>Jeux &amp; jouets</b><span>Musée de la Vie romantique</span></span><i aria-hidden="true">→</i></a></li><li data-ev-date="2026-11-03"><a href="/fr/evenements/luxe/"><span class="evl__d"><b>3</b>nov.</span><span class="evl__t"><small>Étude sectorielle</small><b>Luxe</b><span>Ladurée Champs-Élysées</span></span><i aria-hidden="true">→</i></a></li><li data-ev-date="2026-11-19"><a href="/fr/evenements/alimentation/"><span class="evl__d"><b>19</b>nov.</span><span class="evl__t"><small>Étude sectorielle</small><b>Food</b><span>Madame Rêve</span></span><i aria-hidden="true">→</i></a></li></ul>
+      <ul class="evl__list"><li data-ev-date="2026-10-16"><a href="/fr/evenements/jeux-jouets/"><span class="evl__d"><b>16</b> oct.</span> <span class="evl__t"><small>Étude sectorielle</small> <b>Jeux &amp; jouets</b> <span>Musée de la Vie romantique</span></span> <i aria-hidden="true">→</i></a></li><li data-ev-date="2026-11-03"><a href="/fr/evenements/luxe/"><span class="evl__d"><b>3</b> nov.</span> <span class="evl__t"><small>Étude sectorielle</small> <b>Luxe</b> <span>Ladurée Champs-Élysées</span></span> <i aria-hidden="true">→</i></a></li><li data-ev-date="2026-11-19"><a href="/fr/evenements/alimentation/"><span class="evl__d"><b>19</b> nov.</span> <span class="evl__t"><small>Étude sectorielle</small> <b>Food</b> <span>Madame Rêve</span></span> <i aria-hidden="true">→</i></a></li></ul>
     </div>
   </section>
 </main>
@@ -146,6 +146,7 @@
         <li><a href="/fr/outils/">Outils de social listening</a></li> <li><a href="/fr/sources/">Sources (22 réseaux)</a></li>
         <li><a href="/fr/clients/">Clients</a></li>
         <li><a href="/fr/blog/">Blog</a></li>
+        <li><a href="/fr/evenements/">Événements</a></li>
         <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>
       </ul>
     </div>
@@ -157,8 +158,8 @@
   </div>
 </footer>
 
-<script src="/js/min/fr-core.js?v=20261352" defer></script>
-<script src="/js/min/i18n.js?v=20261352" defer></script>
-<script src="/js/min/ui.js?v=20261352" defer></script>
+<script src="/js/min/fr-core.js?v=20261353" defer></script>
+<script src="/js/min/i18n.js?v=20261353" defer></script>
+<script src="/js/min/ui.js?v=20261353" defer></script>
 </body>
 </html>

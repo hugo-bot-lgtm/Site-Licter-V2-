@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="css/t-of.min.css?v=20261352" />
+<link rel="stylesheet" href="css/t-of.min.css?v=20261353" />
 <meta property="og:url" content="https://www.licter.com/offer-slaas.html" />
 <meta property="og:image" content="https://www.licter.com/assets/img/og/p-offer-slaas.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -106,12 +106,12 @@
         <figure class="xo__demo" aria-label="Your platform before and after">
             <figcaption>Your platform, after three months <span>Illustrative example</span></figcaption>
             <ul class="xo-ba">
-              <li><span>Dashboards actually used</span><b class="b">3 / 27</b><b class="a">19 / 27</b></li>
-              <li><span>Teams reading the data</span><b class="b">1</b><b class="a">5</b></li>
-              <li><span>Analyses per month</span><b class="b">0</b><b class="a">6</b></li>
-              <li><span>Decisions it informed</span><b class="b">?</b><b class="a">Tracked</b></li>
+              <li><span>Dashboards actually used</span> <b class="b">3 / 27</b> <b class="a">19 / 27</b></li>
+              <li><span>Teams reading the data</span> <b class="b">1</b> <b class="a">5</b></li>
+              <li><span>Analyses per month</span> <b class="b">0</b> <b class="a">6</b></li>
+              <li><span>Decisions it informed</span> <b class="b">?</b> <b class="a">Tracked</b></li>
             </ul>
-            <p class="xo-ba__legend"><i class="b"></i>Before <i class="a"></i>After</p>
+            <p class="xo-ba__legend"><i class="b"></i> Before <i class="a"></i> After</p>
           </figure>
       </div>
     </div>
@@ -120,7 +120,7 @@
       <div class="wall" id="wall">
         <span class="wall__beam" id="wall-beam" aria-hidden="true"></span>
         <p class="wall__caption">
-          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span>160+ projects since 2022</span></span>
+          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span> 160+ projects since 2022</span></span>
         </p>
         <div class="marquee" id="marquee">
           <div class="marquee__track" id="marquee-track"><!-- filled by js/ui.js --></div>
@@ -139,7 +139,7 @@
       </div>
       <div class="of-fit__no">
         <p class="of-fit__k">Not the right fit if</p>
-        <ul><li><a href="offer-social-insights.html"><span>You have no platform and do not want one: that is Social Insights.</span><i aria-hidden="true">→</i></a></li><li><a href="offer-vigie-360.html"><span>You need alerts day and night: that is Vigie 360.</span><i aria-hidden="true">→</i></a></li></ul>
+        <ul><li><a href="offer-social-insights.html"><span>You have no platform and do not want one: that is Social Insights.</span> <i aria-hidden="true">→</i></a></li><li><a href="offer-vigie-360.html"><span>You need alerts day and night: that is Vigie 360.</span> <i aria-hidden="true">→</i></a></li></ul>
       </div>
       </div>
     </div>
@@ -149,10 +149,10 @@
     <div class="shell of-get__grid">
       <div>
         <div class="xs__head"><h2 class="xs__title">What you receive</h2><p class="xs__lead">The detail of the offer, and a sample deliverable as it reaches you.</p></div>
-        <ol class="of-get__list"><li><span class="of-get__n">01</span><b>An audit of your setup</b><p>Queries, taxonomy, dashboards and usage, reviewed against the questions your teams actually ask.</p></li><li><span class="of-get__n">02</span><b>A rebuilt taxonomy</b><p>Topics, brands and products tagged the way your business talks about them.</p></li><li><span class="of-get__n">03</span><b>Dashboards people use</b><p>Fewer of them, each built for one team and one decision.</p></li><li><span class="of-get__n">04</span><b>Recurring analyses</b><p>The weekly and monthly reads produced by our analysts, inside your platform.</p></li><li><span class="of-get__n">05</span><b>Team training</b><p>Short sessions, by role, so each team reads its own data.</p></li></ol>
+        <ol class="of-get__list"><li><span class="of-get__n">01</span> <b>An audit of your setup</b> <p>Queries, taxonomy, dashboards and usage, reviewed against the questions your teams actually ask.</p></li><li><span class="of-get__n">02</span> <b>A rebuilt taxonomy</b> <p>Topics, brands and products tagged the way your business talks about them.</p></li><li><span class="of-get__n">03</span> <b>Dashboards people use</b> <p>Fewer of them, each built for one team and one decision.</p></li><li><span class="of-get__n">04</span> <b>Recurring analyses</b> <p>The weekly and monthly reads produced by our analysts, inside your platform.</p></li><li><span class="of-get__n">05</span> <b>Team training</b> <p>Short sessions, by role, so each team reads its own data.</p></li></ol>
       </div>
       <figure class="of-get__doc">
-        <figure class="dlv dlv--campaign-impact"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Campaign review</b><small>Food brand · October 2026</small></span><span class="dlv__tag">Illustrative data</span></div><figcaption class="dlv__head"><b>Before / after read</b><small>Posts per day, 7 days before and after launch</small></figcaption><div class="dlv__body"><div class="dlv-kpis"><span><small>Before</small><b>805</b><i>posts/day</i></span><span><small>After</small><b>2 062</b><i>posts/day</i></span><span class="hi"><small>Uplift</small><b>+156 %</b><i>vs before</i></span><span><small>Carried by</small><b>46 %</b><i>creators</i></span></div><svg class="dlv-chart" viewBox="0 0 560 210" role="img" aria-label="Posts per day, before and after the launch"><line class="gl" x1="44" x2="548" y1="184.0" y2="184.0"/><text class="ax" x="38" y="188.0" text-anchor="end">0</text><line class="gl" x1="44" x2="548" y1="135.4" y2="135.4"/><text class="ax" x="38" y="139.4" text-anchor="end">1,000</text><line class="gl" x1="44" x2="548" y1="86.9" y2="86.9"/><text class="ax" x="38" y="90.9" text-anchor="end">2,000</text><line class="gl" x1="44" x2="548" y1="38.3" y2="38.3"/><text class="ax" x="38" y="42.3" text-anchor="end">3,000</text><rect class="after" x="296.0" y="14" width="252.0" height="170"/><line class="launch" x1="296.0" x2="296.0" y1="14" y2="184.0"/><text class="lbl lbl--launch" x="290.0" y="26" text-anchor="end">Launch</text><path class="area" d="M44.0 146.1 L82.8 144.2 L121.5 147.1 L160.3 144.9 L199.1 145.6 L237.8 143.2 L276.6 144.7 L315.4 32.5 L354.2 63.5 L392.9 86.4 L431.7 79.1 L470.5 84.4 L509.2 91.2 L548.0 88.8 L548.0 184.0 L44.0 184.0 Z"/><path class="cat" d="M44.0 131.5 L82.8 130.6 L121.5 132.5 L160.3 131.1 L199.1 130.1 L237.8 132.0 L276.6 130.6 L315.4 126.7 L354.2 128.1 L392.9 129.6 L431.7 129.1 L470.5 130.6 L509.2 131.1 L548.0 130.1"/><path class="brand" d="M44.0 146.1 L82.8 144.2 L121.5 147.1 L160.3 144.9 L199.1 145.6 L237.8 143.2 L276.6 144.7 L315.4 32.5 L354.2 63.5 L392.9 86.4 L431.7 79.1 L470.5 84.4 L509.2 91.2 L548.0 88.8"/><circle class="pk" cx="315.4" cy="32.5" r="5"/><text class="lbl" x="325.4" y="36.5">Creator video · 1.2M views</text><text class="ax" x="44.0" y="204" text-anchor="middle">D-7</text><text class="ax" x="121.5" y="204" text-anchor="middle">D-5</text><text class="ax" x="199.1" y="204" text-anchor="middle">D-3</text><text class="ax" x="276.6" y="204" text-anchor="middle">D-1</text><text class="ax" x="354.2" y="204" text-anchor="middle">D+1</text><text class="ax" x="431.7" y="204" text-anchor="middle">D+3</text><text class="ax" x="509.2" y="204" text-anchor="middle">D+5</text></svg><p class="dlv-legend"><i class="sw sw--brand"></i>Your brand <i class="sw sw--cat"></i>Category average</p></div><div class="dlv__foot"><span>Source: Social media, press, forums · 48,300 posts</span><span>Licter · p. 4 / 16</span></div></figure>
+        <figure class="dlv dlv--campaign-impact"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Campaign review</b> <small>Food brand · October 2026</small></span> <span class="dlv__tag">Illustrative data</span></div><figcaption class="dlv__head"><b>Before / after read</b> <small>Posts per day, 7 days before and after launch</small></figcaption><div class="dlv__body"><div class="dlv-kpis"><span><small>Before</small> <b>805</b> <i>posts/day</i></span> <span><small>After</small> <b>2 062</b> <i>posts/day</i></span> <span class="hi"><small>Uplift</small> <b>+156 %</b> <i>vs before</i></span> <span><small>Carried by</small> <b>46 %</b> <i>creators</i></span></div><svg class="dlv-chart" viewBox="0 0 560 210" role="img" aria-label="Posts per day, before and after the launch"><line class="gl" x1="44" x2="548" y1="184.0" y2="184.0"/><text class="ax" x="38" y="188.0" text-anchor="end">0</text><line class="gl" x1="44" x2="548" y1="135.4" y2="135.4"/><text class="ax" x="38" y="139.4" text-anchor="end">1,000</text><line class="gl" x1="44" x2="548" y1="86.9" y2="86.9"/><text class="ax" x="38" y="90.9" text-anchor="end">2,000</text><line class="gl" x1="44" x2="548" y1="38.3" y2="38.3"/><text class="ax" x="38" y="42.3" text-anchor="end">3,000</text><rect class="after" x="296.0" y="14" width="252.0" height="170"/><line class="launch" x1="296.0" x2="296.0" y1="14" y2="184.0"/><text class="lbl lbl--launch" x="290.0" y="26" text-anchor="end">Launch</text><path class="area" d="M44.0 146.1 L82.8 144.2 L121.5 147.1 L160.3 144.9 L199.1 145.6 L237.8 143.2 L276.6 144.7 L315.4 32.5 L354.2 63.5 L392.9 86.4 L431.7 79.1 L470.5 84.4 L509.2 91.2 L548.0 88.8 L548.0 184.0 L44.0 184.0 Z"/><path class="cat" d="M44.0 131.5 L82.8 130.6 L121.5 132.5 L160.3 131.1 L199.1 130.1 L237.8 132.0 L276.6 130.6 L315.4 126.7 L354.2 128.1 L392.9 129.6 L431.7 129.1 L470.5 130.6 L509.2 131.1 L548.0 130.1"/><path class="brand" d="M44.0 146.1 L82.8 144.2 L121.5 147.1 L160.3 144.9 L199.1 145.6 L237.8 143.2 L276.6 144.7 L315.4 32.5 L354.2 63.5 L392.9 86.4 L431.7 79.1 L470.5 84.4 L509.2 91.2 L548.0 88.8"/><circle class="pk" cx="315.4" cy="32.5" r="5"/><text class="lbl" x="325.4" y="36.5">Creator video · 1.2M views</text><text class="ax" x="44.0" y="204" text-anchor="middle">D-7</text><text class="ax" x="121.5" y="204" text-anchor="middle">D-5</text><text class="ax" x="199.1" y="204" text-anchor="middle">D-3</text><text class="ax" x="276.6" y="204" text-anchor="middle">D-1</text><text class="ax" x="354.2" y="204" text-anchor="middle">D+1</text><text class="ax" x="431.7" y="204" text-anchor="middle">D+3</text><text class="ax" x="509.2" y="204" text-anchor="middle">D+5</text></svg><p class="dlv-legend"><i class="sw sw--brand"></i> Your brand <i class="sw sw--cat"></i> Category average</p></div><div class="dlv__foot"><span>Source: Social media, press, forums · 48,300 posts</span> <span>Licter · p. 4 / 16</span></div></figure>
         <figcaption><a class="xh__link" href="/en/use-cases/communication/measure-campaign-impact/" data-fr="/fr/cas-usage/communication/mesurer-impact-campagne/">See the use case <span aria-hidden="true">→</span></a></figcaption>
       </figure>
     </div>
@@ -161,14 +161,14 @@
   <section class="of-steps">
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">How it runs</h2></div>
-      <ol class="ucv-time"><li><span class="ucv-day">Weeks 1 and 2</span><b>Audit</b><p>We review the setup and test it against your questions.</p></li><li><span class="ucv-day">Weeks 3 to 6</span><b>Rebuild</b><p>Taxonomy and dashboards reworked, one team at a time.</p></li><li><span class="ucv-day">From month 2</span><b>Delivery</b><p>Recurring analyses delivered inside your platform.</p></li><li><span class="ucv-day">Each quarter</span><b>Review</b><p>Usage is measured, and the setup adjusted.</p></li></ol>
+      <ol class="ucv-time"><li><span class="ucv-day">Weeks 1 and 2</span> <b>Audit</b> <p>We review the setup and test it against your questions.</p></li><li><span class="ucv-day">Weeks 3 to 6</span> <b>Rebuild</b> <p>Taxonomy and dashboards reworked, one team at a time.</p></li><li><span class="ucv-day">From month 2</span> <b>Delivery</b> <p>Recurring analyses delivered inside your platform.</p></li><li><span class="ucv-day">Each quarter</span> <b>Review</b> <p>Usage is measured, and the setup adjusted.</p></li></ol>
       <p class="ucv-note">Indicative timings, adjusted with you at framing.</p>
     </div>
   </section>
 
   <section class="of-quote">
     <div class="shell">
-      <a class="reel ucf__voice" href="https://www.youtube.com/watch?v=z3EkLWjQXMQ" target="_blank" rel="noopener"><span class="reel__shot"><img srcset="/assets/img/yt/z3EkLWjQXMQ-240.webp 240w, /assets/img/yt/z3EkLWjQXMQ.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/z3EkLWjQXMQ.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">56:29</span></span><span class="ucf__voice-k">In their words</span><span class="reel__quote">“The social room revolutionised the way we work.”</span><span class="reel__meta"><b class="reel__brand">SNCF</b> <em class="reel__who">M. Fleurbaey</em></span></a>
+      <a class="reel ucf__voice" href="https://www.youtube.com/watch?v=z3EkLWjQXMQ" target="_blank" rel="noopener"><span class="reel__shot"><img srcset="/assets/img/yt/z3EkLWjQXMQ-240.webp 240w, /assets/img/yt/z3EkLWjQXMQ.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/z3EkLWjQXMQ.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span> <span class="reel__time">56:29</span></span> <span class="ucf__voice-k">In their words</span> <span class="reel__quote">“The social room revolutionised the way we work.”</span> <span class="reel__meta"><b class="reel__brand">SNCF</b> <em class="reel__who">M. Fleurbaey</em></span></a>
     </div>
   </section>
   <section class="ucp ucp--cta" id="offre">
@@ -181,8 +181,8 @@
         </div>
         <form class="ucp-lead" data-case="of-slaas" novalidate>
           <div class="ucp-lead__row">
-            <label class="ucp-lead__f"><span>Work email</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
-            <label class="ucp-lead__f"><span>Your sector</span><select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
+            <label class="ucp-lead__f"><span>Work email</span> <input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
+            <label class="ucp-lead__f"><span>Your sector</span> <select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
           </div>
           <button class="btn btn--primary" type="submit">Get the sample <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Enter a valid work email.</p>
@@ -205,8 +205,8 @@
   <section class="of-next">
     <div class="shell">
       <div class="of-next__head"><h2 class="xs__title">The other offers</h2><a class="xh__link" href="offers.html#compare">Compare the offers <span aria-hidden="true">→</span></a></div>
-      <ul class="of-next__list"><li class="of-next__card of-acc--si"><a href="offer-social-insights.html"><span class="of-next__n">01</span><b>Social Insights</b><span>Studies on demand, read by experts.</span><i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--vig"><a href="offer-vigie-360.html"><span class="of-next__n">02</span><b>Vigie 360</b><span>Alerted in 15 minutes, 24/7.</span><i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--nox"><a href="offer-nox.html"><span class="of-next__n">04</span><b>Nox</b><span>AI-assisted monitoring.</span><i aria-hidden="true">→</i></a></li></ul>
-      <div class="of-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <ul class="of-next__list"><li class="of-next__card of-acc--si"><a href="offer-social-insights.html"><span class="of-next__n">01</span> <b>Social Insights</b> <span>Studies on demand, read by experts.</span> <i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--vig"><a href="offer-vigie-360.html"><span class="of-next__n">02</span> <b>Vigie 360</b> <span>Alerted in 15 minutes, 24/7.</span> <i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--nox"><a href="offer-nox.html"><span class="of-next__n">04</span> <b>Nox</b> <span>AI-assisted monitoring.</span> <i aria-hidden="true">→</i></a></li></ul>
+      <div class="of-dots" aria-hidden="true"><i></i> <i></i> <i></i></div>
     </div>
   </section>
 
@@ -226,16 +226,16 @@
               </div>
               <p class="fld__error" id="book-contact-error" hidden>Enter a work email or a phone number.</p>
             </div>
-            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span>A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
+            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span> A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
             <p class="consent">We use your contact details only to call you back. <a href="privacy.html">Privacy policy</a>.</p>
           </form>
           <p class="book__done" id="book-done" role="status" hidden></p>
           <p class="ucf__diag">Already running social listening? <a href="diagnostic.html">Request a diagnostic instead →</a></p>
         </div>
         <ul class="book__proof book__proof--side">
-          <li><b>50+</b><span>organisations served</span></li>
-          <li><b>160+</b><span>projects since 2022</span></li>
-          <li><b>20+</b><span>languages monitored</span></li>
+          <li><b>50+</b> <span>organisations served</span></li>
+          <li><b>160+</b> <span>projects since 2022</span></li>
+          <li><b>20+</b> <span>languages monitored</span></li>
         </ul>
       </div>
     </div>
@@ -297,6 +297,7 @@
         <li><a href="tech-tools.html">Social listening tools</a></li> <li><a href="/sources.html">Sources (22 networks)</a></li>
         <li><a href="clients.html">Clients</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="/events.html">Events</a></li>
         <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>
       </ul>
     </div>
@@ -308,7 +309,7 @@
   </div>
 </footer>
 
-<script src="js/min/i18n.js?v=20261352" defer></script>
-<script src="js/min/ui.js?v=20261352" defer></script>
+<script src="js/min/i18n.js?v=20261353" defer></script>
+<script src="js/min/ui.js?v=20261353" defer></script>
 </body>
 </html>

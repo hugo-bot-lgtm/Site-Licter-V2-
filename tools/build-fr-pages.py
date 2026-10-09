@@ -24,7 +24,7 @@ spec.loader.exec_module(U)
 
 HEAD = {
     "why-licter.html": ("Pourquoi Licter | Cabinet de conseil en social data intelligence",
-                        "Cabinet de conseil en social data intelligence fondé en 2022 à Paris par les créateurs de la cellule data de l'Élysée. 50+ clients, 160+ projets."),
+                        "Cabinet de conseil en social data intelligence fondé en 2022 à Paris par les créateurs de la cellule Data & Digital Analysis de l'Élysée. 50+ clients."),
     "clients.html": ("Nos clients | Licter, social data intelligence",
                      "Plus de 50 organisations lisent leur marché avec Licter, dont L'Oréal, Decathlon, Danone, HP, La Poste, Société Générale et l'UNESCO."),
     "blog.html": ("Blog : social listening, audiences et prospective | Licter",

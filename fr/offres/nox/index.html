@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="/css/t-of.min.css?v=20261352" />
+<link rel="stylesheet" href="/css/t-of.min.css?v=20261353" />
 <meta property="og:url" content="https://www.licter.com/fr/offres/nox/" />
 <meta property="og:image" content="https://www.licter.com/assets/img/og/p-fr-offres-nox.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -110,7 +110,7 @@
               <p class="xo-nox__k">Aujourd'hui en trois lignes</p>
               <ul class="xo-nox__brief"><li>On parle deux fois plus de la nouvelle gamme, portée par deux créateurs culinaires.</li><li>Les retards de livraison reviennent dans les avis, surtout en Espagne.</li><li>La baisse de prix d'un concurrent circule beaucoup ; peu de comparaisons avec vous pour l'instant.</li></ul>
               <p class="xo-nox__k">Sujets</p>
-              <ul class="xo-nox__topics"><li><b>Nouvelle gamme</b><span>1 284 posts</span><i class="up">+112 %</i></li><li class="flag"><b>Retards de livraison</b><span>356 posts</span><i class="up">+48 %</i><em>Inhabituel</em></li><li><b>Baisse de prix concurrente</b><span>902 posts</span><i class="new">Nouveau</i></li><li><b>Service client</b><span>211 posts</span><i class="down">−9 %</i></li></ul>
+              <ul class="xo-nox__topics"><li><b>Nouvelle gamme</b> <span>1 284 posts</span> <i class="up">+112 %</i></li><li class="flag"><b>Retards de livraison</b> <span>356 posts</span> <i class="up">+48 %</i> <em>Inhabituel</em></li><li><b>Baisse de prix concurrente</b> <span>902 posts</span> <i class="new">Nouveau</i></li><li><b>Service client</b> <span>211 posts</span> <i class="down">−9 %</i></li></ul>
               <p class="xo-nox__foot">Signalé par Nox · vérifié par un analyste</p>
             </div>
           </figure>
@@ -121,7 +121,7 @@
       <div class="wall" id="wall">
         <span class="wall__beam" id="wall-beam" aria-hidden="true"></span>
         <p class="wall__caption">
-          <span class="wall__wave" id="wall-wave">La confiance de 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span>160+ projets depuis 2022</span></span>
+          <span class="wall__wave" id="wall-wave">La confiance de 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span> 160+ projets depuis 2022</span></span>
         </p>
         <div class="marquee" id="marquee">
           <div class="marquee__track" id="marquee-track"><!-- filled by js/ui.js --></div>
@@ -140,7 +140,7 @@
       </div>
       <div class="of-fit__no">
         <p class="of-fit__k">Pas le bon choix si</p>
-        <ul><li><a href="/fr/offres/social-insights/"><span>Vous avez besoin d'une étude complète avec une recommandation : c'est Social Insights.</span><i aria-hidden="true">→</i></a></li><li><a href="/fr/offres/vigie-360/"><span>Vous avez besoin qu'une personne vous appelle quand une crise démarre : c'est Vigie 360.</span><i aria-hidden="true">→</i></a></li></ul>
+        <ul><li><a href="/fr/offres/social-insights/"><span>Vous avez besoin d'une étude complète avec une recommandation : c'est Social Insights.</span> <i aria-hidden="true">→</i></a></li><li><a href="/fr/offres/vigie-360/"><span>Vous avez besoin qu'une personne vous appelle quand une crise démarre : c'est Vigie 360.</span> <i aria-hidden="true">→</i></a></li></ul>
       </div>
       </div>
     </div>
@@ -150,10 +150,10 @@
     <div class="shell of-get__grid">
       <div>
         <div class="xs__head"><h2 class="xs__title">Ce que vous recevez</h2><p class="xs__lead">Le détail de l'offre, et un exemple de livrable tel qu'il arrive chez vous.</p></div>
-        <ol class="of-get__list"><li><span class="of-get__n">01</span><b>Des sujets regroupés</b><p>Les publications sont regroupées par sujet automatiquement : vous voyez de quoi on parle, pas une liste de mentions.</p></li><li><span class="of-get__n">02</span><b>Un brief chaque matin</b><p>Ce qui a changé en quelques lignes, avec les publications derrière chaque point.</p></li><li><span class="of-get__n">03</span><b>L'inhabituel signalé</b><p>Un sujet qui grossit plus vite que d'habitude, une nouvelle voix, un changement de ton : Nox le pointe.</p></li><li><span class="of-get__n">04</span><b>Configuré par nos analystes</b><p>Nous fixons le périmètre, vérifions les sujets et corrigeons le modèle avec vous, pour tenir le bruit à l'écart.</p></li><li><span class="of-get__n">05</span><b>Un analyste en relais</b><p>Quand Nox signale un sujet que vous voulez faire lire pour de bon, un analyste le reprend.</p></li></ol>
+        <ol class="of-get__list"><li><span class="of-get__n">01</span> <b>Des sujets regroupés</b> <p>Les publications sont regroupées par sujet automatiquement : vous voyez de quoi on parle, pas une liste de mentions.</p></li><li><span class="of-get__n">02</span> <b>Un brief chaque matin</b> <p>Ce qui a changé en quelques lignes, avec les publications derrière chaque point.</p></li><li><span class="of-get__n">03</span> <b>L'inhabituel signalé</b> <p>Un sujet qui grossit plus vite que d'habitude, une nouvelle voix, un changement de ton : Nox le pointe.</p></li><li><span class="of-get__n">04</span> <b>Configuré par nos analystes</b> <p>Nous fixons le périmètre, vérifions les sujets et corrigeons le modèle avec vous, pour tenir le bruit à l'écart.</p></li><li><span class="of-get__n">05</span> <b>Un analyste en relais</b> <p>Quand Nox signale un sujet que vous voulez faire lire pour de bon, un analyste le reprend.</p></li></ol>
       </div>
       <figure class="of-get__doc">
-        <figure class="dlv dlv--reputation"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Bulletin e-réputation</b><small>Maison de luxe · Octobre 2026</small></span><span class="dlv__tag">Données illustratives</span></div><figcaption class="dlv__head"><b>Bulletin mensuel</b><small>Synthèse du mois</small></figcaption><div class="dlv__body"><div class="dlv-score"><span><small>Sentiment positif</small><b>49</b><i class="down">−3 pts</i></span><span><small>Mentions</small><b>64 900</b><i>ce mois</i></span><span><small>Langues</small><b>21</b><i>lues par des natifs</i></span></div><div class="dlv-bull"><div><p class="k">Sentiment positif, 6 mois (%)</p><div class="dlv-cols"><span class=""><em>62</em><i style="height:80%"></i><small>mai</small></span><span class=""><em>64</em><i style="height:83%"></i><small>juin</small></span><span class=""><em>61</em><i style="height:79%"></i><small>juil.</small></span><span class=""><em>58</em><i style="height:75%"></i><small>août</small></span><span class=""><em>52</em><i style="height:67%"></i><small>sept.</small></span><span class="now"><em>49</em><i style="height:63%"></i><small>oct.</small></span></div></div><div><p class="k">Sujets qui montent</p><ul class="dlv-list"><li><span>Accueil en boutique</span><svg class="dlv-spark" viewBox="-1 0 50 16" aria-hidden="true"><polyline points="0.0,14.0 9.6,13.1 19.2,14.0 28.8,12.3 38.4,8.9 48.0,2.0"/></svg><b class="down">+38 %</b></li><li><span>Hausse de prix</span><svg class="dlv-spark" viewBox="-1 0 50 16" aria-hidden="true"><polyline points="0.0,10.3 9.6,8.8 19.2,10.3 28.8,7.2 38.4,7.2 48.0,5.7"/></svg><b class="flat">+12 %</b></li><li><span>Savoir-faire</span><svg class="dlv-spark" viewBox="-1 0 50 16" aria-hidden="true"><polyline points="0.0,10.5 9.6,10.5 19.2,8.8 28.8,8.8 38.4,7.2 48.0,5.5"/></svg><b class="up">+9 %</b></li></ul><p class="dlv-alert"><b>Alerte · il y a 15 min</b>« Accueil en boutique » rompt la tendance à Paris et Milan.</p></div></div></div><div class="dlv__foot"><span>Source : Réseaux, avis, presse · 21 langues · 64 900 mentions</span><span>Licter · p. 1 / 8</span></div></figure>
+        <figure class="dlv dlv--reputation"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Bulletin e-réputation</b> <small>Maison de luxe · Octobre 2026</small></span> <span class="dlv__tag">Données illustratives</span></div><figcaption class="dlv__head"><b>Bulletin mensuel</b> <small>Synthèse du mois</small></figcaption><div class="dlv__body"><div class="dlv-score"><span><small>Sentiment positif</small> <b>49</b> <i class="down">−3 pts</i></span> <span><small>Mentions</small> <b>64 900</b> <i>ce mois</i></span> <span><small>Langues</small> <b>21</b> <i>lues par des natifs</i></span></div><div class="dlv-bull"><div><p class="k">Sentiment positif, 6 mois (%)</p><div class="dlv-cols"><span class=""><em>62</em> <i style="height:80%"></i> <small>mai</small></span> <span class=""><em>64</em> <i style="height:83%"></i> <small>juin</small></span> <span class=""><em>61</em> <i style="height:79%"></i> <small>juil.</small></span> <span class=""><em>58</em> <i style="height:75%"></i> <small>août</small></span> <span class=""><em>52</em> <i style="height:67%"></i> <small>sept.</small></span> <span class="now"><em>49</em> <i style="height:63%"></i> <small>oct.</small></span></div></div><div><p class="k">Sujets qui montent</p><ul class="dlv-list"><li><span>Accueil en boutique</span><svg class="dlv-spark" viewBox="-1 0 50 16" aria-hidden="true"><polyline points="0.0,14.0 9.6,13.1 19.2,14.0 28.8,12.3 38.4,8.9 48.0,2.0"/></svg><b class="down">+38 %</b></li><li><span>Hausse de prix</span><svg class="dlv-spark" viewBox="-1 0 50 16" aria-hidden="true"><polyline points="0.0,10.3 9.6,8.8 19.2,10.3 28.8,7.2 38.4,7.2 48.0,5.7"/></svg><b class="flat">+12 %</b></li><li><span>Savoir-faire</span><svg class="dlv-spark" viewBox="-1 0 50 16" aria-hidden="true"><polyline points="0.0,10.5 9.6,10.5 19.2,8.8 28.8,8.8 38.4,7.2 48.0,5.5"/></svg><b class="up">+9 %</b></li></ul><p class="dlv-alert"><b>Alerte · il y a 15 min</b>« Accueil en boutique » rompt la tendance à Paris et Milan.</p></div></div></div><div class="dlv__foot"><span>Source : Réseaux, avis, presse · 21 langues · 64 900 mentions</span> <span>Licter · p. 1 / 8</span></div></figure>
         <figcaption><a class="xh__link" href="/fr/cas-usage/sante-de-marque/e-reputation-image-de-marque/" data-en="/en/use-cases/brand-health/brand-reputation-monitoring/">Voir le cas d'usage <span aria-hidden="true">→</span></a></figcaption>
       </figure>
     </div>
@@ -162,14 +162,14 @@
   <section class="of-steps">
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">Comment ça se passe</h2></div>
-      <ol class="ucv-time"><li><span class="ucv-day">Semaine 1</span><b>Paramétrage</b><p>Nous fixons le périmètre avec vous : marques, sujets, sources et langues.</p></li><li><span class="ucv-day">Semaine 2</span><b>Réglage</b><p>Nos analystes vérifient ce que Nox regroupe et signale, et le corrigent.</p></li><li><span class="ucv-day">Chaque jour</span><b>Brief</b><p>Votre équipe reçoit le brief et explore les sujets dans Nox.</p></li><li><span class="ucv-day">Chaque mois</span><b>Revue</b><p>Nous revoyons ce qui a été signalé, et ajustons le périmètre.</p></li></ol>
+      <ol class="ucv-time"><li><span class="ucv-day">Semaine 1</span> <b>Paramétrage</b> <p>Nous fixons le périmètre avec vous : marques, sujets, sources et langues.</p></li><li><span class="ucv-day">Semaine 2</span> <b>Réglage</b> <p>Nos analystes vérifient ce que Nox regroupe et signale, et le corrigent.</p></li><li><span class="ucv-day">Chaque jour</span> <b>Brief</b> <p>Votre équipe reçoit le brief et explore les sujets dans Nox.</p></li><li><span class="ucv-day">Chaque mois</span> <b>Revue</b> <p>Nous revoyons ce qui a été signalé, et ajustons le périmètre.</p></li></ol>
       <p class="ucv-note">Durées indicatives, ajustées avec vous au cadrage.</p>
     </div>
   </section>
 
   <section class="of-quote">
     <div class="shell">
-      <a class="reel ucf__voice" href="https://www.youtube.com/watch?v=UElJ_Pdd0wo" target="_blank" rel="noopener"><span class="reel__shot"><img srcset="/assets/img/yt/UElJ_Pdd0wo-240.webp 240w, /assets/img/yt/UElJ_Pdd0wo.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/UElJ_Pdd0wo.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">58:39</span></span><span class="ucf__voice-k">Dans leurs mots</span><span class="reel__quote">« Toutes les tendances viennent de TikTok. »</span><span class="reel__meta"><b class="reel__brand">Orange</b> <em class="reel__who">B. Hoang</em></span></a>
+      <a class="reel ucf__voice" href="https://www.youtube.com/watch?v=UElJ_Pdd0wo" target="_blank" rel="noopener"><span class="reel__shot"><img srcset="/assets/img/yt/UElJ_Pdd0wo-240.webp 240w, /assets/img/yt/UElJ_Pdd0wo.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/UElJ_Pdd0wo.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span> <span class="reel__time">58:39</span></span> <span class="ucf__voice-k">Dans leurs mots</span> <span class="reel__quote">« Toutes les tendances viennent de TikTok. »</span> <span class="reel__meta"><b class="reel__brand">Orange</b> <em class="reel__who">B. Hoang</em></span></a>
     </div>
   </section>
   <section class="ucp ucp--cta" id="offre">
@@ -182,8 +182,8 @@
         </div>
         <form class="ucp-lead" data-case="of-nox" novalidate>
           <div class="ucp-lead__row">
-            <label class="ucp-lead__f"><span>E-mail professionnel</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="nom@entreprise.com" required /></label>
-            <label class="ucp-lead__f"><span>Votre secteur</span><select class="fld__input" name="sector" required><option value="" disabled selected>Choisir…</option><option>Agroalimentaire</option><option>Luxe &amp; mode</option><option>Beauté</option><option>Jouets &amp; jeux vidéo</option><option>Automobile &amp; mobilité</option><option>Banque &amp; assurance</option><option>Distribution</option><option>Secteur public</option><option>Autre</option></select></label>
+            <label class="ucp-lead__f"><span>E-mail professionnel</span> <input class="fld__input" name="email" type="email" autocomplete="email" placeholder="nom@entreprise.com" required /></label>
+            <label class="ucp-lead__f"><span>Votre secteur</span> <select class="fld__input" name="sector" required><option value="" disabled selected>Choisir…</option><option>Agroalimentaire</option><option>Luxe &amp; mode</option><option>Beauté</option><option>Jouets &amp; jeux vidéo</option><option>Automobile &amp; mobilité</option><option>Banque &amp; assurance</option><option>Distribution</option><option>Secteur public</option><option>Autre</option></select></label>
           </div>
           <button class="btn btn--primary" type="submit">Recevoir l'exemple <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Indiquez un e-mail professionnel valide.</p>
@@ -206,8 +206,8 @@
   <section class="of-next">
     <div class="shell">
       <div class="of-next__head"><h2 class="xs__title">Les autres offres</h2><a class="xh__link" href="/fr/offres/#compare">Comparer les offres <span aria-hidden="true">→</span></a></div>
-      <ul class="of-next__list"><li class="of-next__card of-acc--si"><a href="/fr/offres/social-insights/"><span class="of-next__n">01</span><b>Social Insights</b><span>Des études à la demande, lues par des experts.</span><i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--vig"><a href="/fr/offres/vigie-360/"><span class="of-next__n">02</span><b>Vigie 360</b><span>Alerté en 15 minutes, 24 h/24.</span><i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--sla"><a href="/fr/offres/social-listening-as-a-service/"><span class="of-next__n">03</span><b>Social Listening as a Service</b><span>Votre plateforme, enfin utilisée.</span><i aria-hidden="true">→</i></a></li></ul>
-      <div class="of-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <ul class="of-next__list"><li class="of-next__card of-acc--si"><a href="/fr/offres/social-insights/"><span class="of-next__n">01</span> <b>Social Insights</b> <span>Des études à la demande, lues par des experts.</span> <i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--vig"><a href="/fr/offres/vigie-360/"><span class="of-next__n">02</span> <b>Vigie 360</b> <span>Alerté en 15 minutes, 24 h/24.</span> <i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--sla"><a href="/fr/offres/social-listening-as-a-service/"><span class="of-next__n">03</span> <b>Social Listening as a Service</b> <span>Votre plateforme, enfin utilisée.</span> <i aria-hidden="true">→</i></a></li></ul>
+      <div class="of-dots" aria-hidden="true"><i></i> <i></i> <i></i></div>
     </div>
   </section>
 
@@ -227,16 +227,16 @@
               </div>
               <p class="fld__error" id="book-contact-error" hidden>Saisissez un e-mail professionnel ou un numéro de téléphone.</p>
             </div>
-            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span>Un consultant, pas un commercial. En semaine, de 9 h à 19 h.</p>
+            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span> Un consultant, pas un commercial. En semaine, de 9 h à 19 h.</p>
             <p class="consent">Vos coordonnées servent uniquement à vous rappeler. <a href="/fr/confidentialite/">Politique de confidentialité</a>.</p>
           </form>
           <p class="book__done" id="book-done" role="status" hidden></p>
           <p class="ucf__diag">Vous faites déjà du social listening ? <a href="/fr/diagnostic/">Demandez plutôt un diagnostic →</a></p>
         </div>
         <ul class="book__proof book__proof--side">
-          <li><b>50+</b><span>organisations accompagnées</span></li>
-          <li><b>160+</b><span>projets depuis 2022</span></li>
-          <li><b>20+</b><span>langues suivies</span></li>
+          <li><b>50+</b> <span>organisations accompagnées</span></li>
+          <li><b>160+</b> <span>projets depuis 2022</span></li>
+          <li><b>20+</b> <span>langues suivies</span></li>
         </ul>
       </div>
     </div>
@@ -297,6 +297,7 @@
         <li><a href="/fr/outils/">Outils de social listening</a></li> <li><a href="/fr/sources/">Sources (22 réseaux)</a></li>
         <li><a href="/fr/clients/">Clients</a></li>
         <li><a href="/fr/blog/">Blog</a></li>
+        <li><a href="/fr/evenements/">Événements</a></li>
         <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>
       </ul>
     </div>
@@ -308,8 +309,8 @@
   </div>
 </footer>
 
-<script src="/js/min/fr-core.js?v=20261352" defer></script>
-<script src="/js/min/i18n.js?v=20261352" defer></script>
-<script src="/js/min/ui.js?v=20261352" defer></script>
+<script src="/js/min/fr-core.js?v=20261353" defer></script>
+<script src="/js/min/i18n.js?v=20261353" defer></script>
+<script src="/js/min/ui.js?v=20261353" defer></script>
 </body>
 </html>

@@ -383,7 +383,7 @@ def article_page(x):
     else:
         page = page.replace("<!--HTML-->", '<html lang="en">')
     # the article itself, for search engines
-    ld = {"@context": "https://schema.org", "@type": "Article", "headline": html.unescape(x["title"]), "description": html.unescape(x["lead"]),
+    ld = {"@context": "https://schema.org", "@type": "Article", "headline": html.unescape(x["title"]), "description": html.unescape(x.get("desc") or x["lead"]),
           "datePublished": "%04d-%02d-%02d" % (x["key"][0], x["key"][1] + 1, x["key"][2]),
           "dateModified": REWRITTEN.get(x["file"], "%04d-%02d-%02d" % (x["key"][0], x["key"][1] + 1, x["key"][2])), "inLanguage": "fr" if fr else "en",
           "author": author_ld(x, fr),

@@ -127,7 +127,7 @@ def shorten(t, n):
 
 
 DM = re.compile(r'("dateModified": ")(\d{4}-\d{2}-\d{2})(")')
-BYLINE = re.compile(r'(<time datetime=")(\d{4}-\d{2}-\d{2})(">)([^<]*)(</time>)')
+BYLINE = re.compile(r'(<(?:time |span class="by-date" data-)datetime=")(\d{4}-\d{2}-\d{2})(">)([^<]*)(</(?:time|span)>)')
 
 
 # the new site went live on 8 October 2026, and every page was written for it
@@ -135,7 +135,7 @@ BYLINE = re.compile(r'(<time datetime=")(\d{4}-\d{2}-\d{2})(">)([^<]*)(</time>)'
 # work), its byline says when it was published, not "updated" (audit of 9
 # October: the same "updated" date on every page read as invented)
 PUBLISHED, LAUNCH_END = "2026-10-08", "2026-10-09"
-WORD = re.compile(r'(Mis à jour le|mis à jour le|Updated|updated|Publié le|publié le|Published|published)((?:</span>)?\s*<time datetime=")')
+WORD = re.compile(r'(Mis à jour le|mis à jour le|Updated|updated|Publié le|publié le|Published|published)((?:</span>)?\s*<(?:time |span class="by-date" data-)datetime=")')
 TO_UPDATED = {"Publié le": "Mis à jour le", "publié le": "mis à jour le", "Published": "Updated", "published": "updated"}
 TO_PUBLISHED = {"Mis à jour le": "Publié le", "mis à jour le": "publié le", "Updated": "Published", "updated": "published"}
 
@@ -143,18 +143,41 @@ TO_PUBLISHED = {"Mis à jour le": "Publié le", "mis à jour le": "publié le", 
 PROTECT = re.compile(r"(<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)", re.S)
 
 
+RAW = re.compile(r"(<script\b.*?</script>|<style\b.*?</style>|<svg\b.*?</svg>|<textarea\b.*?</textarea>|<pre\b.*?</pre>)", re.S)
+GAP_BR = re.compile(r"(<br\s*/?>)(?=[^\s])")
+GAP_TAGS = re.compile(r"(</(?:span|b|strong|small|em|i|time|a|label|abbr|cite|code|button|q)>)(?=<(?!/|sup\b|sub\b|br\b|wbr\b))")
+GAP_TEXT = re.compile(r"(</(?:span|b|strong|small|em|i|time)>)(?=[A-ZÀ-ÖØ-Ý0-9])")
+
+
+def word_gaps(s):
+    """a space between two inline elements that sit side by side, so a text
+    extractor (search engines, AI assistants) does not glue their words, as
+    in "à ParisCe que les gens disent" (audit of 9 October 2026). Between
+    blocks, flex and grid items the space is not rendered."""
+    head_end = s.find("<body")
+    head, body = (s[:head_end], s[head_end:]) if head_end > 0 else ("", s)
+    parts = RAW.split(body)
+    for i in range(0, len(parts), 2):      # even items are markup and text, odd ones raw blocks kept as they are
+        parts[i] = GAP_TEXT.sub(r"\1 ", GAP_TAGS.sub(r"\1 ", GAP_BR.sub(r"\1 ", parts[i])))
+    return head + "".join(parts)
+
+
 def french_spaces(s):
     """the text between tags, never a tag, a script or a style, gets French spacing"""
     head_end = s.find("<body")
     head, body = (s[:head_end], s[head_end:]) if head_end > 0 else ("", s)
-    parts = PROTECT.split(body)
-    for i in range(0, len(parts), 2):      # even items are text, odd items are tags, scripts, styles
-        t = parts[i]
-        if not t.strip():
-            continue
+    def fix(t):
         t = re.sub(r"[ \u202f]([:;!?»])", "\u00a0\\1", t)
-        t = re.sub(r"«[ \u202f]", "«\u00a0", t)
-        parts[i] = t
+        return re.sub(r"«[ \u202f]", "«\u00a0", t)
+    parts = PROTECT.split(body)
+    for i in range(len(parts)):
+        t = parts[i]
+        if i % 2 == 0:                     # text between tags
+            if t.strip():
+                parts[i] = fix(t)
+        elif t.startswith("<") and not t.startswith(("<script", "<style")):
+            # what screen readers and image search read: alt, aria-label, title, placeholder
+            parts[i] = re.sub(r'((?:alt|aria-label|title|placeholder)=")([^"]*)(")', lambda m_: m_.group(1) + fix(m_.group(2)) + m_.group(3), t)
     return head + "".join(parts)
 
 
@@ -507,17 +530,25 @@ def main():
             s = re.sub(r'(<div>\s*<h3>(?:ENTREPRISE|COMPANY)</h3>)', lambda m_: col + m_.group(1), s, count=1)
             s = re.sub(r'(<li><a href="(?:/fr/outils/|/?tech-tools\.html)">[^<]*</a></li>)(\s*<li><a href="(?:/fr/clients/|/?clients\.html)">)',
                        lambda m_: m_.group(1) + ' <li><a href="%s">%s</a></li>' % (("/fr/sources/", "Sources (22 réseaux)") if fr else ("/sources.html", "Sources (22 networks)")) + m_.group(2), s, count=1)
+        s = word_gaps(s)
         if fr:      # French typography: a non-breaking space before : ; ? ! » and after «, in the visible text only
             s = french_spaces(s)
         if fr:      # a French twin copied from an English page keeps the English label
             s = s.replace('>Sources (22 networks)</a>', '>Sources (22 réseaux)</a>')
             # the article template's table of contents, written in English (screen readers read the label)
             s = (s.replace('aria-label="In this piece"', 'aria-label="Dans cet article"').replace('>IN THIS PIECE<', '>DANS CET ARTICLE<')
-                  .replace('data-copied="Link copied">Copy the link<', 'data-copied="Lien copié">Copier le lien<'))
+                  .replace('data-copied="Link copied">Copy the link<', 'data-copied="Lien copié">Copier le lien<')
+                  .replace('data-copied="Link copied"', 'data-copied="Lien copié"'))
         # the tools hub is linked with the words it ranks for
         s = s.replace('<li><a href="tech-tools.html">Tech &amp; tools</a></li>', '<li><a href="tech-tools.html">Social listening tools</a></li>')
         s = s.replace('<li><a href="/fr/outils/">Techno &amp; outils</a></li>', '<li><a href="/fr/outils/">Outils de social listening</a></li>')
         s = s.replace('<li><a href="/tech-tools.html">Tech &amp; tools</a></li>', '<li><a href="/tech-tools.html">Social listening tools</a></li>')
+        # the events hub in the footer: the sector studies were reached from the hub only (audit of 9 October 2026)
+        foot_at = s.rfind("<footer")
+        ev_href = "/fr/evenements/" if fr else "/events.html"
+        if foot_at > 0 and ('href="%s"' % ev_href) not in s[foot_at:] and 'href="events.html"' not in s[foot_at:]:
+            s = s[:foot_at] + re.sub(r'(<li><a href="(?:/fr/blog/|/?blog\.html)">[^<]*</a></li>)',
+                                     lambda m_: m_.group(1) + '\n        <li><a href="%s">%s</a></li>' % (ev_href, "Événements" if fr else "Events"), s[foot_at:], count=1)
         # the Social Intelligence Club, served by this site, reached from every page
         foot_at = s.rfind("<footer")
         if foot_at > 0 and "/socialintelligenceclub/" not in s[foot_at:]:

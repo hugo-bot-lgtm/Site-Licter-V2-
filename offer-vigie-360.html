@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="css/t-of.min.css?v=20261352" />
+<link rel="stylesheet" href="css/t-of.min.css?v=20261353" />
 <meta property="og:url" content="https://www.licter.com/offer-vigie-360.html" />
 <meta property="og:image" content="https://www.licter.com/assets/img/og/p-offer-vigie-360.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -106,9 +106,9 @@
         <figure class="xo__demo" aria-label="The Vigie 360 alert feed">
             <figcaption>Alert feed <span>Illustrative example</span></figcaption>
             <ul class="xo-feed">
-              <li class="l2"><span class="t">14:32</span><b>Server crashes on launch weekend</b><small>Level 2 · 3 streamers · × 4 in 6 h · FR, EN, ES</small><em>Recommended: a daily update on fixes</em></li>
-              <li class="l1"><span class="t">09:15</span><b>CEO quoted in an industry podcast</b><small>Level 1 · positive · 12 relays</small><em>No action, worth sharing internally</em></li>
-              <li class="l0"><span class="t">Yesterday</span><b>Keyword spike on "recall"</b><small>Qualified by the analyst: a competitor's product</small><em>Not sent: not about you</em></li>
+              <li class="l2"><span class="t">14:32</span> <b>Server crashes on launch weekend</b> <small>Level 2 · 3 streamers · × 4 in 6 h · FR, EN, ES</small> <em>Recommended: a daily update on fixes</em></li>
+              <li class="l1"><span class="t">09:15</span> <b>CEO quoted in an industry podcast</b> <small>Level 1 · positive · 12 relays</small> <em>No action, worth sharing internally</em></li>
+              <li class="l0"><span class="t">Yesterday</span> <b>Keyword spike on "recall"</b> <small>Qualified by the analyst: a competitor's product</small> <em>Not sent: not about you</em></li>
             </ul>
           </figure>
       </div>
@@ -118,7 +118,7 @@
       <div class="wall" id="wall">
         <span class="wall__beam" id="wall-beam" aria-hidden="true"></span>
         <p class="wall__caption">
-          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span>160+ projects since 2022</span></span>
+          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span> 160+ projects since 2022</span></span>
         </p>
         <div class="marquee" id="marquee">
           <div class="marquee__track" id="marquee-track"><!-- filled by js/ui.js --></div>
@@ -143,7 +143,7 @@
       </div>
       <div class="of-fit__no">
         <p class="of-fit__k">Not the right fit if</p>
-        <ul><li><a href="offer-social-insights.html"><span>You need a study to decide, not an alert: that is Social Insights.</span><i aria-hidden="true">→</i></a></li><li><a href="offer-nox.html"><span>You want to follow the conversation at your own pace: that is Nox.</span><i aria-hidden="true">→</i></a></li></ul>
+        <ul><li><a href="offer-social-insights.html"><span>You need a study to decide, not an alert: that is Social Insights.</span> <i aria-hidden="true">→</i></a></li><li><a href="offer-nox.html"><span>You want to follow the conversation at your own pace: that is Nox.</span> <i aria-hidden="true">→</i></a></li></ul>
       </div>
       </div>
     </div>
@@ -153,10 +153,10 @@
     <div class="shell of-get__grid">
       <div>
         <div class="xs__head"><h2 class="xs__title">What you receive</h2><p class="xs__lead">The detail of the offer, and a sample deliverable as it reaches you.</p></div>
-        <ol class="of-get__list"><li><span class="of-get__n">01</span><b>A tailored perimeter</b><p>Brand, executives, products, competitors and sensitive topics, set with you and reviewed every quarter.</p></li><li><span class="of-get__n">02</span><b>Alerts read by an analyst</b><p>Every signal is qualified before it reaches you: its level, its reach, and what to do.</p></li><li><span class="of-get__n">03</span><b>Three alert levels</b><p>From a signal to watch to a crisis in progress, each with its own channel and delay.</p></li><li><span class="of-get__n">04</span><b>Crisis follow-up</b><p>When it escalates, a daily update on how the conversation evolves, until it settles.</p></li><li><span class="of-get__n">05</span><b>A monthly review</b><p>What was flagged, what was not and why, and the perimeter adjusted accordingly.</p></li></ol>
+        <ol class="of-get__list"><li><span class="of-get__n">01</span> <b>A tailored perimeter</b> <p>Brand, executives, products, competitors and sensitive topics, set with you and reviewed every quarter.</p></li><li><span class="of-get__n">02</span> <b>Alerts read by an analyst</b> <p>Every signal is qualified before it reaches you: its level, its reach, and what to do.</p></li><li><span class="of-get__n">03</span> <b>Three alert levels</b> <p>From a signal to watch to a crisis in progress, each with its own channel and delay.</p></li><li><span class="of-get__n">04</span> <b>Crisis follow-up</b> <p>When it escalates, a daily update on how the conversation evolves, until it settles.</p></li><li><span class="of-get__n">05</span> <b>A monthly review</b> <p>What was flagged, what was not and why, and the perimeter adjusted accordingly.</p></li></ol>
       </div>
       <figure class="of-get__doc">
-        <figure class="dlv dlv--brand-risk"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Vigie 360 alert</b><small>Video game publisher · October 2026</small></span><span class="dlv__tag">Illustrative data</span></div><figcaption class="dlv__head"><b>Alert sheet</b><small>Sent to the communications team</small></figcaption><div class="dlv__body"><div class="dlv-alertcard"><p class="mail"><b>Licter Vigie</b> · to: communications team</p><p class="lvl"><span class="dots"><i class="on"></i><i class="on"></i><i></i></span>Level 2 of 3 · handle today</p><p class="subj">Server crashes on launch weekend</p><svg class="dlv-alertcurve" viewBox="0 0 548 98" role="img" aria-label="Mentions per hour, 8am to 2pm"><line class="gl" x1="0" x2="548" y1="66" y2="66"/><polyline class="ln" points="24.0,53.6 107.3,52.5 190.7,53.1 274.0,51.5 357.3,44.2 440.7,26.6 524.0,12.1"/><circle class="pk" cx="524" cy="12.1" r="5"/><text class="v" x="466" y="14" text-anchor="end">520 mentions/h</text><text class="ax" x="24.0" y="92" text-anchor="middle">8am</text><text class="ax" x="107.3" y="92" text-anchor="middle">9am</text><text class="ax" x="190.7" y="92" text-anchor="middle">10am</text><text class="ax" x="274.0" y="92" text-anchor="middle">11am</text><text class="ax" x="357.3" y="92" text-anchor="middle">12pm</text><text class="ax" x="440.7" y="92" text-anchor="middle">1pm</text><text class="ax" x="524.0" y="92" text-anchor="middle">2pm</text></svg><dl><dt>Carried by</dt><dd>3 streamers (1.2M followers combined)</dd><dt>Speed</dt><dd>× 4 in 6 hours</dd><dt>Languages</dt><dd>French, English, Spanish</dd><dt>Tone</dt><dd>anger at the servers, not the game</dd></dl><p class="reco"><b>Recommended response</b>A daily update on fixes, no crisis communication.</p><p class="ts">Sent at 2:32 pm · qualified by the analyst on duty</p></div></div><div class="dlv__foot"><span>Source: Twitch, X, Reddit, YouTube · 24/7 monitoring</span><span>Licter · p. 1 / 1</span></div></figure>
+        <figure class="dlv dlv--brand-risk"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Vigie 360 alert</b> <small>Video game publisher · October 2026</small></span> <span class="dlv__tag">Illustrative data</span></div><figcaption class="dlv__head"><b>Alert sheet</b> <small>Sent to the communications team</small></figcaption><div class="dlv__body"><div class="dlv-alertcard"><p class="mail"><b>Licter Vigie</b> · to: communications team</p><p class="lvl"><span class="dots"><i class="on"></i> <i class="on"></i> <i></i></span> Level 2 of 3 · handle today</p><p class="subj">Server crashes on launch weekend</p><svg class="dlv-alertcurve" viewBox="0 0 548 98" role="img" aria-label="Mentions per hour, 8am to 2pm"><line class="gl" x1="0" x2="548" y1="66" y2="66"/><polyline class="ln" points="24.0,53.6 107.3,52.5 190.7,53.1 274.0,51.5 357.3,44.2 440.7,26.6 524.0,12.1"/><circle class="pk" cx="524" cy="12.1" r="5"/><text class="v" x="466" y="14" text-anchor="end">520 mentions/h</text><text class="ax" x="24.0" y="92" text-anchor="middle">8am</text><text class="ax" x="107.3" y="92" text-anchor="middle">9am</text><text class="ax" x="190.7" y="92" text-anchor="middle">10am</text><text class="ax" x="274.0" y="92" text-anchor="middle">11am</text><text class="ax" x="357.3" y="92" text-anchor="middle">12pm</text><text class="ax" x="440.7" y="92" text-anchor="middle">1pm</text><text class="ax" x="524.0" y="92" text-anchor="middle">2pm</text></svg><dl><dt>Carried by</dt><dd>3 streamers (1.2M followers combined)</dd><dt>Speed</dt><dd>× 4 in 6 hours</dd><dt>Languages</dt><dd>French, English, Spanish</dd><dt>Tone</dt><dd>anger at the servers, not the game</dd></dl><p class="reco"><b>Recommended response</b> A daily update on fixes, no crisis communication.</p><p class="ts">Sent at 2:32 pm · qualified by the analyst on duty</p></div></div><div class="dlv__foot"><span>Source: Twitch, X, Reddit, YouTube · 24/7 monitoring</span> <span>Licter · p. 1 / 1</span></div></figure>
         <figcaption><a class="xh__link" href="/en/use-cases/brand-health/brand-risk-crisis/" data-fr="/fr/cas-usage/sante-de-marque/risques-de-marque-crise/">See the use case <span aria-hidden="true">→</span></a></figcaption>
       </figure>
     </div>
@@ -165,14 +165,14 @@
   <section class="of-steps">
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">How it runs</h2></div>
-      <ol class="ucv-time"><li><span class="ucv-day">Week 1</span><b>Perimeter</b><p>We set what to watch, who to alert and through which channel.</p></li><li><span class="ucv-day">Week 2</span><b>Calibration</b><p>Test alerts to set the thresholds with you.</p></li><li><span class="ucv-day">Then, 24/7</span><b>Monitoring</b><p>Analysts read the signal day and night, and alert you within 15 minutes.</p></li><li><span class="ucv-day">Each month</span><b>Review</b><p>What happened, what was flagged, and what changes.</p></li></ol>
+      <ol class="ucv-time"><li><span class="ucv-day">Week 1</span> <b>Perimeter</b> <p>We set what to watch, who to alert and through which channel.</p></li><li><span class="ucv-day">Week 2</span> <b>Calibration</b> <p>Test alerts to set the thresholds with you.</p></li><li><span class="ucv-day">Then, 24/7</span> <b>Monitoring</b> <p>Analysts read the signal day and night, and alert you within 15 minutes.</p></li><li><span class="ucv-day">Each month</span> <b>Review</b> <p>What happened, what was flagged, and what changes.</p></li></ol>
       <p class="ucv-note">Indicative timings, adjusted with you at framing.</p>
     </div>
   </section>
 
   <section class="of-quote">
     <div class="shell">
-      <a class="reel ucf__voice" href="https://www.youtube.com/watch?v=0HfWWSB0v78" target="_blank" rel="noopener"><span class="reel__shot"><img srcset="/assets/img/yt/0HfWWSB0v78-240.webp 240w, /assets/img/yt/0HfWWSB0v78.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/0HfWWSB0v78.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">54:27</span></span><span class="ucf__voice-k">In their words</span><span class="reel__quote">“A reputation is destroyed in seconds.”</span><span class="reel__meta"><b class="reel__brand">AXA</b> <em class="reel__who">Z. Gebran</em></span></a>
+      <a class="reel ucf__voice" href="https://www.youtube.com/watch?v=0HfWWSB0v78" target="_blank" rel="noopener"><span class="reel__shot"><img srcset="/assets/img/yt/0HfWWSB0v78-240.webp 240w, /assets/img/yt/0HfWWSB0v78.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/0HfWWSB0v78.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span> <span class="reel__time">54:27</span></span> <span class="ucf__voice-k">In their words</span> <span class="reel__quote">“A reputation is destroyed in seconds.”</span> <span class="reel__meta"><b class="reel__brand">AXA</b> <em class="reel__who">Z. Gebran</em></span></a>
     </div>
   </section>
   <section class="ucp ucp--cta" id="offre">
@@ -185,8 +185,8 @@
         </div>
         <form class="ucp-lead" data-case="of-vigie" novalidate>
           <div class="ucp-lead__row">
-            <label class="ucp-lead__f"><span>Work email</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
-            <label class="ucp-lead__f"><span>Your sector</span><select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
+            <label class="ucp-lead__f"><span>Work email</span> <input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
+            <label class="ucp-lead__f"><span>Your sector</span> <select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
           </div>
           <button class="btn btn--primary" type="submit">Get the sample <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Enter a valid work email.</p>
@@ -209,8 +209,8 @@
   <section class="of-next">
     <div class="shell">
       <div class="of-next__head"><h2 class="xs__title">The other offers</h2><a class="xh__link" href="offers.html#compare">Compare the offers <span aria-hidden="true">→</span></a></div>
-      <ul class="of-next__list"><li class="of-next__card of-acc--si"><a href="offer-social-insights.html"><span class="of-next__n">01</span><b>Social Insights</b><span>Studies on demand, read by experts.</span><i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--sla"><a href="offer-slaas.html"><span class="of-next__n">03</span><b>Social Listening as a Service</b><span>Your platform, finally used.</span><i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--nox"><a href="offer-nox.html"><span class="of-next__n">04</span><b>Nox</b><span>AI-assisted monitoring.</span><i aria-hidden="true">→</i></a></li></ul>
-      <div class="of-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <ul class="of-next__list"><li class="of-next__card of-acc--si"><a href="offer-social-insights.html"><span class="of-next__n">01</span> <b>Social Insights</b> <span>Studies on demand, read by experts.</span> <i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--sla"><a href="offer-slaas.html"><span class="of-next__n">03</span> <b>Social Listening as a Service</b> <span>Your platform, finally used.</span> <i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--nox"><a href="offer-nox.html"><span class="of-next__n">04</span> <b>Nox</b> <span>AI-assisted monitoring.</span> <i aria-hidden="true">→</i></a></li></ul>
+      <div class="of-dots" aria-hidden="true"><i></i> <i></i> <i></i></div>
     </div>
   </section>
 
@@ -230,16 +230,16 @@
               </div>
               <p class="fld__error" id="book-contact-error" hidden>Enter a work email or a phone number.</p>
             </div>
-            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span>A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
+            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span> A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
             <p class="consent">We use your contact details only to call you back. <a href="privacy.html">Privacy policy</a>.</p>
           </form>
           <p class="book__done" id="book-done" role="status" hidden></p>
           <p class="ucf__diag">Already running social listening? <a href="diagnostic.html">Request a diagnostic instead →</a></p>
         </div>
         <ul class="book__proof book__proof--side">
-          <li><b>50+</b><span>organisations served</span></li>
-          <li><b>160+</b><span>projects since 2022</span></li>
-          <li><b>20+</b><span>languages monitored</span></li>
+          <li><b>50+</b> <span>organisations served</span></li>
+          <li><b>160+</b> <span>projects since 2022</span></li>
+          <li><b>20+</b> <span>languages monitored</span></li>
         </ul>
       </div>
     </div>
@@ -301,6 +301,7 @@
         <li><a href="tech-tools.html">Social listening tools</a></li> <li><a href="/sources.html">Sources (22 networks)</a></li>
         <li><a href="clients.html">Clients</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="/events.html">Events</a></li>
         <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>
       </ul>
     </div>
@@ -312,7 +313,7 @@
   </div>
 </footer>
 
-<script src="js/min/i18n.js?v=20261352" defer></script>
-<script src="js/min/ui.js?v=20261352" defer></script>
+<script src="js/min/i18n.js?v=20261353" defer></script>
+<script src="js/min/ui.js?v=20261353" defer></script>
 </body>
 </html>

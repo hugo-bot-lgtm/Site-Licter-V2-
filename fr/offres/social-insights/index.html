@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="/css/t-of.min.css?v=20261352" />
+<link rel="stylesheet" href="/css/t-of.min.css?v=20261353" />
 <meta property="og:url" content="https://www.licter.com/fr/offres/social-insights/" />
 <meta property="og:image" content="https://www.licter.com/assets/img/og/p-fr-offres-social-insights.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -107,10 +107,10 @@
         <figure class="xo__demo" aria-label="Un mois avec Social Insights">
             <figcaption>Un mois avec Social Insights <span>Exemple illustratif</span></figcaption>
             <ol class="xo-cal">
-              <li><span class="w">Semaine 1</span><b>Lecture de campagne</b><small>Lancement de printemps, avant / après</small><i class="ok">Livré</i></li>
-              <li><span class="w">Semaine 2</span><b>Benchmark concurrentiel</b><small>Part de voix, 4 marques</small><i class="ok">Livré</i></li>
-              <li><span class="w">Semaine 3</span><b>Étude d'audience</b><small>Qui achète la nouvelle gamme</small><i class="ok">Livré</i></li>
-              <li><span class="w">Semaine 4</span><b>Note mensuelle</b><small>Présentée au comité de direction</small><i class="now">En cours</i></li>
+              <li><span class="w">Semaine 1</span> <b>Lecture de campagne</b> <small>Lancement de printemps, avant / après</small> <i class="ok">Livré</i></li>
+              <li><span class="w">Semaine 2</span> <b>Benchmark concurrentiel</b> <small>Part de voix, 4 marques</small> <i class="ok">Livré</i></li>
+              <li><span class="w">Semaine 3</span> <b>Étude d'audience</b> <small>Qui achète la nouvelle gamme</small> <i class="ok">Livré</i></li>
+              <li><span class="w">Semaine 4</span> <b>Note mensuelle</b> <small>Présentée au comité de direction</small> <i class="now">En cours</i></li>
             </ol>
             <p class="xo-cal__foot"><b>4 études</b> ce mois-ci · <b>même prix</b> que le mois précédent</p>
           </figure>
@@ -121,7 +121,7 @@
       <div class="wall" id="wall">
         <span class="wall__beam" id="wall-beam" aria-hidden="true"></span>
         <p class="wall__caption">
-          <span class="wall__wave" id="wall-wave">La confiance de 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span>160+ projets depuis 2022</span></span>
+          <span class="wall__wave" id="wall-wave">La confiance de 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span> 160+ projets depuis 2022</span></span>
         </p>
         <div class="marquee" id="marquee">
           <div class="marquee__track" id="marquee-track"><!-- filled by js/ui.js --></div>
@@ -146,7 +146,7 @@
       </div>
       <div class="of-fit__no">
         <p class="of-fit__k">Pas le bon choix si</p>
-        <ul><li><a href="/fr/offres/vigie-360/"><span>Vous devez être alerté dès que quelque chose casse : c'est Vigie 360.</span><i aria-hidden="true">→</i></a></li><li><a href="/fr/offres/social-listening-as-a-service/"><span>Vous payez déjà une plateforme et voulez qu'elle serve : c'est Social Listening as a Service.</span><i aria-hidden="true">→</i></a></li></ul>
+        <ul><li><a href="/fr/offres/vigie-360/"><span>Vous devez être alerté dès que quelque chose casse : c'est Vigie 360.</span> <i aria-hidden="true">→</i></a></li><li><a href="/fr/offres/social-listening-as-a-service/"><span>Vous payez déjà une plateforme et voulez qu'elle serve : c'est Social Listening as a Service.</span> <i aria-hidden="true">→</i></a></li></ul>
       </div>
       </div>
     </div>
@@ -156,10 +156,10 @@
     <div class="shell of-get__grid">
       <div>
         <div class="xs__head"><h2 class="xs__title">Ce que vous recevez</h2><p class="xs__lead">Le détail de l'offre, et un exemple de livrable tel qu'il arrive chez vous.</p></div>
-        <ol class="of-get__list"><li><span class="of-get__n">01</span><b>Des études à la demande</b><p>Lectures de campagne, benchmarks concurrents, études d'audience, veilles de tendances : selon les questions du trimestre.</p></li><li><span class="of-get__n">02</span><b>Un consultant dédié</b><p>La même personne cadre chaque question avec vous, et connaît votre marque, votre marché et votre historique.</p></li><li><span class="of-get__n">03</span><b>Quatre couches de signal</b><p>Ce que les gens publient, qui ils sont, ce qu'ils font et ce qu'ils recherchent, choisies question par question.</p></li><li><span class="of-get__n">04</span><b>Une restitution, pas un deck</b><p>Chaque étude se termine par une recommandation présentée à ceux qui décident.</p></li><li><span class="of-get__n">05</span><b>Une note mensuelle</b><p>Ce qui a bougé sur votre marché dans le mois, en une page, pour le comité de direction.</p></li></ol>
+        <ol class="of-get__list"><li><span class="of-get__n">01</span> <b>Des études à la demande</b> <p>Lectures de campagne, benchmarks concurrents, études d'audience, veilles de tendances : selon les questions du trimestre.</p></li><li><span class="of-get__n">02</span> <b>Un consultant dédié</b> <p>La même personne cadre chaque question avec vous, et connaît votre marque, votre marché et votre historique.</p></li><li><span class="of-get__n">03</span> <b>Quatre couches de signal</b> <p>Ce que les gens publient, qui ils sont, ce qu'ils font et ce qu'ils recherchent, choisies question par question.</p></li><li><span class="of-get__n">04</span> <b>Une restitution, pas un deck</b> <p>Chaque étude se termine par une recommandation présentée à ceux qui décident.</p></li><li><span class="of-get__n">05</span> <b>Une note mensuelle</b> <p>Ce qui a bougé sur votre marché dans le mois, en une page, pour le comité de direction.</p></li></ol>
       </div>
       <figure class="of-get__doc">
-        <figure class="dlv dlv--segmentation"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Segmentation d&#x27;audience</b><small>Marque alimentaire · Octobre 2026</small></span><span class="dlv__tag">Données illustratives</span></div><figcaption class="dlv__head"><b>Cartes des communautés</b><small>Les trois communautés à prioriser</small></figcaption><div class="dlv__body"><p class="k">Composition de votre audience</p><div class="dlv-split"><i class="c2" style="width:41%" title="Parents pragmatiques"></i><i class="c1" style="width:19%" title="Abonnés créateurs food"></i><i class="c3" style="width:16%" title="Sportifs"></i><i class="c4" style="width:24%" title="Autres"></i></div><div class="dlv-split__leg"><span><i class="c2"></i>Parents pragmatiques 41 %</span><span><i class="c1"></i>Abonnés créateurs food 19 %</span><span><i class="c3"></i>Sportifs 16 %</span><span><i class="c4"></i>Autres 24 %</span></div><div class="dlv-personas"><div class="dlv-persona top"><b>Abonnés des créateurs food</b><small>19 % de l&#x27;audience</small><p><span>Affinité</span><span class="dlv-bar"><i style="width:74%"></i></span><em>74</em></p><p><span>Opportunité</span><span class="dlv-bar dlv-bar--hi"><i style="width:86%"></i></span><em>86</em></p><div class="chips"><span>TikTok</span><span>Instagram</span></div></div><div class="dlv-persona"><b>Parents pragmatiques</b><small>41 % de l&#x27;audience</small><p><span>Affinité</span><span class="dlv-bar"><i style="width:78%"></i></span><em>78</em></p><p><span>Opportunité</span><span class="dlv-bar dlv-bar--hi"><i style="width:52%"></i></span><em>52</em></p><div class="chips"><span>Facebook</span><span>Recherche</span></div></div><div class="dlv-persona"><b>Sportifs</b><small>16 % de l&#x27;audience</small><p><span>Affinité</span><span class="dlv-bar"><i style="width:57%"></i></span><em>57</em></p><p><span>Opportunité</span><span class="dlv-bar dlv-bar--hi"><i style="width:69%"></i></span><em>69</em></p><div class="chips"><span>YouTube</span><span>Strava</span></div></div></div></div><div class="dlv__foot"><span>Source : Panel comportemental · 1,2 M de profils · 5 000+ critères</span><span>Licter · p. 7 / 19</span></div></figure>
+        <figure class="dlv dlv--segmentation"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Segmentation d&#x27;audience</b> <small>Marque alimentaire · Octobre 2026</small></span> <span class="dlv__tag">Données illustratives</span></div><figcaption class="dlv__head"><b>Cartes des communautés</b> <small>Les trois communautés à prioriser</small></figcaption><div class="dlv__body"><p class="k">Composition de votre audience</p><div class="dlv-split"><i class="c2" style="width:41%" title="Parents pragmatiques"></i> <i class="c1" style="width:19%" title="Abonnés créateurs food"></i> <i class="c3" style="width:16%" title="Sportifs"></i> <i class="c4" style="width:24%" title="Autres"></i></div><div class="dlv-split__leg"><span><i class="c2"></i> Parents pragmatiques 41 %</span> <span><i class="c1"></i> Abonnés créateurs food 19 %</span> <span><i class="c3"></i> Sportifs 16 %</span> <span><i class="c4"></i> Autres 24 %</span></div><div class="dlv-personas"><div class="dlv-persona top"><b>Abonnés des créateurs food</b> <small>19 % de l&#x27;audience</small> <p><span>Affinité</span> <span class="dlv-bar"><i style="width:74%"></i></span> <em>74</em></p><p><span>Opportunité</span> <span class="dlv-bar dlv-bar--hi"><i style="width:86%"></i></span> <em>86</em></p><div class="chips"><span>TikTok</span> <span>Instagram</span></div></div><div class="dlv-persona"><b>Parents pragmatiques</b> <small>41 % de l&#x27;audience</small> <p><span>Affinité</span> <span class="dlv-bar"><i style="width:78%"></i></span> <em>78</em></p><p><span>Opportunité</span> <span class="dlv-bar dlv-bar--hi"><i style="width:52%"></i></span> <em>52</em></p><div class="chips"><span>Facebook</span> <span>Recherche</span></div></div><div class="dlv-persona"><b>Sportifs</b> <small>16 % de l&#x27;audience</small> <p><span>Affinité</span> <span class="dlv-bar"><i style="width:57%"></i></span> <em>57</em></p><p><span>Opportunité</span> <span class="dlv-bar dlv-bar--hi"><i style="width:69%"></i></span> <em>69</em></p><div class="chips"><span>YouTube</span> <span>Strava</span></div></div></div></div><div class="dlv__foot"><span>Source : Panel comportemental · 1,2 M de profils · 7 000+ critères</span> <span>Licter · p. 7 / 19</span></div></figure>
         <figcaption><a class="xh__link" href="/fr/cas-usage/audiences/segmentation-cibles/" data-en="/en/use-cases/audiences/audience-segmentation/">Voir le cas d'usage <span aria-hidden="true">→</span></a></figcaption>
       </figure>
     </div>
@@ -168,14 +168,14 @@
   <section class="of-steps">
     <div class="shell">
       <div class="xs__head"><h2 class="xs__title">Comment ça se passe</h2></div>
-      <ol class="ucv-time"><li><span class="ucv-day">Semaine 1</span><b>Cadrage</b><p>Nous listons avec vous les questions du trimestre, classées selon la décision qu'elles nourrissent.</p></li><li><span class="ucv-day">En continu</span><b>Études</b><p>Chaque question devient une étude, livrée en une dizaine de jours.</p></li><li><span class="ucv-day">À chaque étude</span><b>Restitution</b><p>Un consultant présente la réponse, et ce qu'il faut en faire.</p></li><li><span class="ucv-day">Chaque mois</span><b>Note mensuelle</b><p>Une page sur ce qui a bougé, pour le comité de direction.</p></li></ol>
+      <ol class="ucv-time"><li><span class="ucv-day">Semaine 1</span> <b>Cadrage</b> <p>Nous listons avec vous les questions du trimestre, classées selon la décision qu'elles nourrissent.</p></li><li><span class="ucv-day">En continu</span> <b>Études</b> <p>Chaque question devient une étude, livrée en une dizaine de jours.</p></li><li><span class="ucv-day">À chaque étude</span> <b>Restitution</b> <p>Un consultant présente la réponse, et ce qu'il faut en faire.</p></li><li><span class="ucv-day">Chaque mois</span> <b>Note mensuelle</b> <p>Une page sur ce qui a bougé, pour le comité de direction.</p></li></ol>
       <p class="ucv-note">Durées indicatives, ajustées avec vous au cadrage.</p>
     </div>
   </section>
 
   <section class="of-quote">
     <div class="shell">
-      <a class="reel ucf__voice" href="https://www.youtube.com/watch?v=cnwA-t0Vqk4" target="_blank" rel="noopener"><span class="reel__shot"><img srcset="/assets/img/yt/cnwA-t0Vqk4-240.webp 240w, /assets/img/yt/cnwA-t0Vqk4.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/cnwA-t0Vqk4.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">1:00:32</span></span><span class="ucf__voice-k">Dans leurs mots</span><span class="reel__quote">« Le social listening aide à comprendre ce qui se dit sur nous. »</span><span class="reel__meta"><b class="reel__brand">Dassault Systèmes</b> <em class="reel__who">Jean-Stéphane Bou</em></span></a>
+      <a class="reel ucf__voice" href="https://www.youtube.com/watch?v=cnwA-t0Vqk4" target="_blank" rel="noopener"><span class="reel__shot"><img srcset="/assets/img/yt/cnwA-t0Vqk4-240.webp 240w, /assets/img/yt/cnwA-t0Vqk4.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/cnwA-t0Vqk4.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span> <span class="reel__time">1:00:32</span></span> <span class="ucf__voice-k">Dans leurs mots</span> <span class="reel__quote">« Le social listening aide à comprendre ce qui se dit sur nous. »</span> <span class="reel__meta"><b class="reel__brand">Dassault Systèmes</b> <em class="reel__who">Jean-Stéphane Bou</em></span></a>
     </div>
   </section>
   <section class="ucp ucp--cta" id="offre">
@@ -188,8 +188,8 @@
         </div>
         <form class="ucp-lead" data-case="of-social-insights" novalidate>
           <div class="ucp-lead__row">
-            <label class="ucp-lead__f"><span>E-mail professionnel</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="nom@entreprise.com" required /></label>
-            <label class="ucp-lead__f"><span>Votre secteur</span><select class="fld__input" name="sector" required><option value="" disabled selected>Choisir…</option><option>Agroalimentaire</option><option>Luxe &amp; mode</option><option>Beauté</option><option>Jouets &amp; jeux vidéo</option><option>Automobile &amp; mobilité</option><option>Banque &amp; assurance</option><option>Distribution</option><option>Secteur public</option><option>Autre</option></select></label>
+            <label class="ucp-lead__f"><span>E-mail professionnel</span> <input class="fld__input" name="email" type="email" autocomplete="email" placeholder="nom@entreprise.com" required /></label>
+            <label class="ucp-lead__f"><span>Votre secteur</span> <select class="fld__input" name="sector" required><option value="" disabled selected>Choisir…</option><option>Agroalimentaire</option><option>Luxe &amp; mode</option><option>Beauté</option><option>Jouets &amp; jeux vidéo</option><option>Automobile &amp; mobilité</option><option>Banque &amp; assurance</option><option>Distribution</option><option>Secteur public</option><option>Autre</option></select></label>
           </div>
           <button class="btn btn--primary" type="submit">Recevoir l'exemple <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Indiquez un e-mail professionnel valide.</p>
@@ -212,8 +212,8 @@
   <section class="of-next">
     <div class="shell">
       <div class="of-next__head"><h2 class="xs__title">Les autres offres</h2><a class="xh__link" href="/fr/offres/#compare">Comparer les offres <span aria-hidden="true">→</span></a></div>
-      <ul class="of-next__list"><li class="of-next__card of-acc--vig"><a href="/fr/offres/vigie-360/"><span class="of-next__n">02</span><b>Vigie 360</b><span>Alerté en 15 minutes, 24 h/24.</span><i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--sla"><a href="/fr/offres/social-listening-as-a-service/"><span class="of-next__n">03</span><b>Social Listening as a Service</b><span>Votre plateforme, enfin utilisée.</span><i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--nox"><a href="/fr/offres/nox/"><span class="of-next__n">04</span><b>Nox</b><span>La veille assistée par l'IA.</span><i aria-hidden="true">→</i></a></li></ul>
-      <div class="of-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <ul class="of-next__list"><li class="of-next__card of-acc--vig"><a href="/fr/offres/vigie-360/"><span class="of-next__n">02</span> <b>Vigie 360</b> <span>Alerté en 15 minutes, 24 h/24.</span> <i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--sla"><a href="/fr/offres/social-listening-as-a-service/"><span class="of-next__n">03</span> <b>Social Listening as a Service</b> <span>Votre plateforme, enfin utilisée.</span> <i aria-hidden="true">→</i></a></li><li class="of-next__card of-acc--nox"><a href="/fr/offres/nox/"><span class="of-next__n">04</span> <b>Nox</b> <span>La veille assistée par l'IA.</span> <i aria-hidden="true">→</i></a></li></ul>
+      <div class="of-dots" aria-hidden="true"><i></i> <i></i> <i></i></div>
     </div>
   </section>
 
@@ -233,16 +233,16 @@
               </div>
               <p class="fld__error" id="book-contact-error" hidden>Saisissez un e-mail professionnel ou un numéro de téléphone.</p>
             </div>
-            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span>Un consultant, pas un commercial. En semaine, de 9 h à 19 h.</p>
+            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span> Un consultant, pas un commercial. En semaine, de 9 h à 19 h.</p>
             <p class="consent">Vos coordonnées servent uniquement à vous rappeler. <a href="/fr/confidentialite/">Politique de confidentialité</a>.</p>
           </form>
           <p class="book__done" id="book-done" role="status" hidden></p>
           <p class="ucf__diag">Vous faites déjà du social listening ? <a href="/fr/diagnostic/">Demandez plutôt un diagnostic →</a></p>
         </div>
         <ul class="book__proof book__proof--side">
-          <li><b>50+</b><span>organisations accompagnées</span></li>
-          <li><b>160+</b><span>projets depuis 2022</span></li>
-          <li><b>20+</b><span>langues suivies</span></li>
+          <li><b>50+</b> <span>organisations accompagnées</span></li>
+          <li><b>160+</b> <span>projets depuis 2022</span></li>
+          <li><b>20+</b> <span>langues suivies</span></li>
         </ul>
       </div>
     </div>
@@ -303,6 +303,7 @@
         <li><a href="/fr/outils/">Outils de social listening</a></li> <li><a href="/fr/sources/">Sources (22 réseaux)</a></li>
         <li><a href="/fr/clients/">Clients</a></li>
         <li><a href="/fr/blog/">Blog</a></li>
+        <li><a href="/fr/evenements/">Événements</a></li>
         <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>
       </ul>
     </div>
@@ -314,8 +315,8 @@
   </div>
 </footer>
 
-<script src="/js/min/fr-core.js?v=20261352" defer></script>
-<script src="/js/min/i18n.js?v=20261352" defer></script>
-<script src="/js/min/ui.js?v=20261352" defer></script>
+<script src="/js/min/fr-core.js?v=20261353" defer></script>
+<script src="/js/min/i18n.js?v=20261353" defer></script>
+<script src="/js/min/ui.js?v=20261353" defer></script>
 </body>
 </html>

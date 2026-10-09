@@ -363,8 +363,23 @@ HUB_FAQ = [
 PRICE = {"audience": ("une étude d'audience", "an audience study"), "influence": ("une étude d'influence", "an influence study"),
          "ai": ("un audit de ce que disent les IA", "an audit of what AI says"), "live": ("une veille en direct", "live monitoring"),
          "search": ("une étude de search listening", "a search listening study")}
+# what the client receives, as on the social listening page (audit of 9 October 2026: only one expertise said it)
+RECEIVE = {
+    "audience": ("Un profil d'audience présenté par le consultant qui l'a construit, environ dix jours après le cadrage : les communautés qui comptent, leurs centres d'intérêt, les marques et les médias qu'elles suivent, et celles à prioriser.",
+                 "An audience profile presented by the consultant who built it, about ten days after framing: the communities that matter, their interests, the brands and media they follow, and which to prioritise."),
+    "influence": ("Une shortlist classée et argumentée, environ huit jours après le cadrage : qui porte vraiment la conversation de votre catégorie, le recouvrement avec votre audience et les risques repérés, prête à transmettre à votre agence.",
+                  "A ranked, argued shortlist, about eight days after framing: who really carries your category's conversation, the overlap with your audience and the risks spotted, ready to hand to your agency."),
+    "ai": ("Un audit des réponses des IA, environ une semaine après le cadrage : ce que chaque modèle recommande, cite ou déforme sur vos questions, votre part de réponse face à vos concurrents, et le plan des sources à corriger ou à nourrir.",
+           "An audit of AI answers, about a week after framing: what each model recommends, cites or gets wrong on your questions, your share of answers against your competitors, and the plan of sources to correct or to feed."),
+    "live": ("Des alertes qualifiées par un analyste en 15 minutes, nuits et week-ends compris, puis un bilan chaque semaine : ce qui a bougé, qui le porte, et ce qu'il faut surveiller ensuite.",
+             "Alerts qualified by an analyst within 15 minutes, nights and weekends included, then a review every week: what moved, who carries it, and what to watch next."),
+    "search": ("Une étude des recherches présentée par le consultant, environ une semaine après le cadrage : les questions et les besoins qui montent sur Google, YouTube et Amazon, ceux qui restent sans réponse, et ce qu'il faut lancer.",
+               "A search study presented by the consultant, about a week after framing: the questions and needs rising on Google, YouTube and Amazon, the ones left unanswered, and what to launch."),
+}
 for _x in LISTENINGS:
     _x["faq"] = _x["faq"] + EXTRA[_x["key"]]["faq"]
+    if _x["key"] in RECEIVE:
+        _x["faq"] = _x["faq"] + [(("Que recevez-vous à la fin ?", "What do you receive at the end?"), RECEIVE[_x["key"]])]
     if _x["key"] in PRICE:      # the same answer as the social listening page: on quotation, no figure
         fr_, en_ = PRICE[_x["key"]]
         _x["faq"] = _x["faq"] + [(("Combien coûte %s ?" % fr_, "How much does %s cost?" % en_),

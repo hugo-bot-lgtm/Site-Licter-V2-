@@ -233,7 +233,7 @@ def shot(slug, name, mark):
         cap = '<figcaption>%s <span>%s</span></figcaption>' % (t(label), SHOT_SRC[slug])
         bar = '<div class="tk-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>%s</span></div>' % SHOT_SRC[slug]
     return ('<figure class="tk-shot">%s<img src="/assets/img/shots/%s.webp" alt="%s" width="1200" height="750" decoding="async" fetchpriority="high" />%s</figure>'
-            '<div class="tk-tile">%s</div>') % (bar, slug, html.escape(t((("Site officiel de %s" % name), ("%s official site" % name)))), cap, mark)
+            '<div class="tk-tile">%s</div>') % (bar, slug, html.escape(t(("L'article de recherche fondateur du GEO (arXiv)", "The founding GEO research paper (arXiv)") if slug == "geo" else (("Site officiel de %s" % name), ("%s official site" % name)))), cap, mark)
 
 
 def glyph(name, cls="tk-glyph"):
@@ -289,8 +289,8 @@ def versus(slug, nm):
             '<span class="tk-vs__mid" aria-hidden="true">VS</span>'
             '<div class="tk-vs__col tk-vs__col--licter" data-reveal><p class="tk-vs__k"><span class="tk-vs__logo">%s</span><img class="tk-vs__licter" src="/assets/img/logo-navy.webp" alt="" width="22" height="24" />%s</p><ul>%s</ul>'
             '<p class="tk-vs__out">%s</p></div></div>') % (
-        logo(slug), t(fmt(("%s seul", "%s on its own"), nm)), alone,
-        logo(slug), t(fmt(("%s avec Licter", "%s with Licter"), nm)), licter,
+        logo(slug), t(AI.VS_HEAD[slug][0]) if slug in AI.VS_HEAD else t(fmt(("%s seul", "%s on its own"), nm)), alone,
+        logo(slug), t(AI.VS_HEAD[slug][1]) if slug in AI.VS_HEAD else t(fmt(("%s avec Licter", "%s with Licter"), nm)), licter,
         t(vo))
 
 
@@ -529,7 +529,7 @@ def tool_body(x):
     out += sec("limits", head(t(S["lim_k"]), t(fmt(S["lim_t"], nm))) + lims, band=True)
     out += guide(x["slug"])
     out += sec("faq", faq_block(t(fmt(S["faq_t2"], nm)), [(ag["q"], ag["a"])] + x["faq"]))
-    return out + cta(t(ag["band"]), t(S["cta_text"]), logo(x["slug"], alt=""), x["slug"])
+    return out + cta(t(ag["band"]), t(AI.CTA_TEXT.get(x["slug"], S["cta_text"])), logo(x["slug"], alt=""), x["slug"])
 
 
 

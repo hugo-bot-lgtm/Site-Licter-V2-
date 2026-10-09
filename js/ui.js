@@ -2293,7 +2293,12 @@ window.LicterUC = (function () {
   var cursor = root.querySelector(".wl-cursor"), img = cursor && cursor.querySelector("img");
   if (cursor && window.matchMedia("(hover: hover)").matches && !still) {
     var x = 0, y = 0, cx = 0, cy = 0, raf = null;
-    function loop() { cx += (x - cx) * .18; cy += (y - cy) * .18; cursor.style.left = cx + "px"; cursor.style.top = cy + "px"; raf = requestAnimationFrame(loop); }
+    function loop() {
+      cx += (x - cx) * .18; cy += (y - cy) * .18; cursor.style.left = cx + "px"; cursor.style.top = cy + "px";
+      /* stops once the photo has settled and the pointer left the rows */
+      if (!cursor.classList.contains("is-on") && Math.abs(x - cx) < .5 && Math.abs(y - cy) < .5) { raf = null; return; }
+      raf = requestAnimationFrame(loop);
+    }
     root.querySelectorAll(".wl-row").forEach(function (row) {
       row.addEventListener("mouseenter", function () { img.src = row.getAttribute("data-img"); cursor.classList.add("is-on"); if (!raf) loop(); });
       row.addEventListener("mouseleave", function () { cursor.classList.remove("is-on"); });
@@ -2341,8 +2346,10 @@ window.LicterUC = (function () {
   "use strict";
   var input = document.getElementById("fl-brand"), out = document.querySelector(".xe-cover__brand");
   if (!input || !out) return;
-  var empty = out.getAttribute("data-empty");
+  /* the text shown before the first keystroke, in the page's language (data-empty is English) */
+  var empty = null;
   input.addEventListener("input", function () {
+    if (empty === null) empty = out.textContent || out.getAttribute("data-empty");
     var v = input.value.trim().slice(0, 28);
     out.textContent = v || empty;
     out.classList.toggle("is-set", !!v);

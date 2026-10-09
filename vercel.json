@@ -71,6 +71,81 @@
       "permanent": true
     },
     {
+      "source": "/Blog",
+      "destination": "/fr/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/Blog/",
+      "destination": "/fr/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/Clients",
+      "destination": "/fr/clients/",
+      "permanent": true
+    },
+    {
+      "source": "/Clients/",
+      "destination": "/fr/clients/",
+      "permanent": true
+    },
+    {
+      "source": "/About",
+      "destination": "/fr/pourquoi-licter/",
+      "permanent": true
+    },
+    {
+      "source": "/About/",
+      "destination": "/fr/pourquoi-licter/",
+      "permanent": true
+    },
+    {
+      "source": "/Contact",
+      "destination": "/fr/rendez-vous/",
+      "permanent": true
+    },
+    {
+      "source": "/Contact/",
+      "destination": "/fr/rendez-vous/",
+      "permanent": true
+    },
+    {
+      "source": "/Services",
+      "destination": "/fr/offres/",
+      "permanent": true
+    },
+    {
+      "source": "/Services/",
+      "destination": "/fr/offres/",
+      "permanent": true
+    },
+    {
+      "source": "/Vision",
+      "destination": "/fr/pourquoi-licter/",
+      "permanent": true
+    },
+    {
+      "source": "/Vision/",
+      "destination": "/fr/pourquoi-licter/",
+      "permanent": true
+    },
+    {
+      "source": "/Home",
+      "destination": "/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/Home/",
+      "destination": "/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/Article/:slug*",
+      "destination": "/article/:slug*",
+      "permanent": true
+    },
+    {
       "source": "/FR/index.html",
       "destination": "/fr/",
       "permanent": true

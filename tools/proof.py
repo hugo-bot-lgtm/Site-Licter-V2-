@@ -14,7 +14,10 @@ PROOF = {
           "More than 185,000 tweets at peak audience, 95% positive or neutral mentions: our analysis of Squeezie's event, run with Visibrain."), GP),
         (("Le bad buzz Huda Beauty", "The Huda Beauty backlash"),
          ("Avec Visibrain, nous avons suivi le boycott sur TikTok, Instagram et X, dans 51 langues, jusqu'au record de 26,1 millions de vues en une journée.",
-          "With Visibrain, we followed the boycott on TikTok, Instagram and X, in 51 languages, up to a record of 26.1 million views in a day."), HUDA)],
+          "With Visibrain, we followed the boycott on TikTok, Instagram and X, in 51 languages, up to a record of 26.1 million views in a day."), HUDA),
+        (("Visibrain, vu par son cofondateur", "Visibrain, by its co-founder"),
+         ("Dans notre podcast Audience First, Jean-Christophe Gatuingt, cofondateur de Visibrain, parle de l'effet d'Elon Musk sur le métier, du rôle de l'IA dans le social listening et de la lecture de TikTok.",
+          "In our Audience First podcast, Jean-Christophe Gatuingt, co-founder of Visibrain, talks about Elon Musk's effect on the trade, the role of AI in social listening and how to read TikTok."), "article-licter-visibrain-podcast.html")],
     "talkwalker": [
         (("Talkwalker, vu de l'intérieur", "Talkwalker, from the inside"),
          ("Dans notre podcast Audience First, Charlotte Clemens, qui a ouvert le bureau parisien de Talkwalker, explique comment les marques utilisent la plateforme, et pourquoi l'humain reste nécessaire.",

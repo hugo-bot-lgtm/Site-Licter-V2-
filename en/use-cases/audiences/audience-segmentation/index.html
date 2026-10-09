@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="/css/t-uc.min.css?v=20261352" />
+<link rel="stylesheet" href="/css/t-uc.min.css?v=20261353" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.licter.com/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://www.licter.com/en/use-cases/"}, {"@type": "ListItem", "position": 3, "name": "Audiences", "item": "https://www.licter.com/en/use-cases/audiences/"}, {"@type": "ListItem", "position": 4, "name": "Segment your target profiles", "item": "https://www.licter.com/en/use-cases/audiences/audience-segmentation/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Segment your target profiles", "description": "Profile who actually buys, visits and talks about you: sociodemographics, interests, media diet, brand affinities. More than 7,000 criteria.", "serviceType": "Audiences", "provider": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "areaServed": ["France", "Worldwide"], "inLanguage": "en", "url": "https://www.licter.com/en/use-cases/audiences/audience-segmentation/", "@id": "https://www.licter.com/en/use-cases/audiences/audience-segmentation/#service"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do we need to share our customer data?", "acceptedAnswer": {"@type": "Answer", "text": "No. We can cross them if you wish, but the panel is enough for a first segmentation."}}, {"@type": "Question", "name": "How many segments on average?", "acceptedAnswer": {"@type": "Answer", "text": "Usually five to eight communities, distinct enough to act on."}}, {"@type": "Question", "name": "Can you segment a foreign market?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with analysts who speak the language and know the market."}}]}</script>
@@ -90,7 +90,7 @@
   <nav class="crumbs shell" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/en/use-cases/">Use cases</a></li><li><a href="/en/use-cases/audiences/">Audiences</a></li><li aria-current="page">Segment your target profiles</li></ol></nav>
   <section class="ucr-hero ucv-hero">
     <div class="shell">
-      <p class="ucp__kicker"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span><a href="/en/use-cases/audiences/">Audiences</a><span class="ucp__kicker-n">01 / 03</span></p>
+      <p class="ucp__kicker"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span> <a href="/en/use-cases/audiences/">Audiences</a> <span class="ucp__kicker-n">01 / 03</span></p>
       <div class="ucv-hero__row">
         <div>
           <h1 class="ucr__title ucr__title--long">Segment your target profiles from what they actually do.</h1>
@@ -99,7 +99,7 @@
             <a class="btn btn--primary" href="#book">Talk to a consultant <span aria-hidden="true">→</span></a>
             <a class="ucp__textlink" href="#livrable">See a possible deliverable <span aria-hidden="true">↓</span></a>
           </div>
-        <p class="ucp__byline">By the Licter analysis team · Published <time datetime="2026-10-08">8 October 2026</time></p>
+        <p class="ucp__byline">By the Licter analysis team · Published <span class="by-date" data-datetime="2026-10-08">8 October 2026</span></p>
         </div>
         <div class="ucr-hero__get">
           <p class="ucr__label">What you get</p>
@@ -111,7 +111,7 @@
       <div class="wall" id="wall">
         <span class="wall__beam" id="wall-beam" aria-hidden="true"></span>
         <p class="wall__caption">
-          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span>160+ projects since 2022</span></span>
+          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span> 160+ projects since 2022</span></span>
         </p>
         <div class="marquee" id="marquee">
           <div class="marquee__track" id="marquee-track"><!-- filled by js/ui.js --></div>
@@ -123,8 +123,8 @@
       <p class="ucr__label">The question we get</p>
       <h2 class="ucv-quote">“Who really are our customers, beyond age and gender?”</h2>
       <div class="ucv-sym">
-        <p class="ucv-sym__head"><span>Today, you see</span><span>What is missing</span></p>
-        <ul><li><span class="ucv-sym__now">Targets described by age and gender</span><span class="ucv-sym__arr" aria-hidden="true">→</span><span class="ucv-sym__miss">Communities described by what they do</span></li><li><span class="ucv-sym__now">Personas from a workshop</span><span class="ucv-sym__arr" aria-hidden="true">→</span><span class="ucv-sym__miss">Profiles built on 5,000+ criteria</span></li><li><span class="ucv-sym__now">A media plan set by the brief</span><span class="ucv-sym__arr" aria-hidden="true">→</span><span class="ucv-sym__miss">The community with the strongest opportunity</span></li></ul>
+        <div class="ucv-sym__head"><p>Today, you see</p><p>What is missing</p></div>
+        <ul><li><span class="ucv-sym__now">Targets described by age and gender</span> <span class="ucv-sym__arr" aria-hidden="true">→</span> <span class="ucv-sym__miss">Communities described by what they do</span></li><li><span class="ucv-sym__now">Personas from a workshop</span> <span class="ucv-sym__arr" aria-hidden="true">→</span> <span class="ucv-sym__miss">Profiles built on 7,000+ criteria</span></li><li><span class="ucv-sym__now">A media plan set by the brief</span> <span class="ucv-sym__arr" aria-hidden="true">→</span> <span class="ucv-sym__miss">The community with the strongest opportunity</span></li></ul>
       </div>
     </div>
   </section>
@@ -137,15 +137,15 @@
         <ul class="ucr__ticks"><li>Precise personas built on 7,000+ behavioural criteria.</li><li>The map of your audience&#x27;s communities.</li><li>Affinity, penetration and opportunity scores.</li><li>The media plan that follows.</li></ul>
         <a class="ucp__textlink ucv-dlv__real" href="#offre">Get a real case of this kind <span aria-hidden="true">↓</span></a>
       </div>
-      <figure class="dlv dlv--segmentation"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Audience segmentation</b><small>Food brand · October 2026</small></span><span class="dlv__tag">Illustrative data</span></div><figcaption class="dlv__head"><b>Community cards</b><small>The three communities to prioritise</small></figcaption><div class="dlv__body"><p class="k">Your audience, by community</p><div class="dlv-split"><i class="c2" style="width:41%" title="Pragmatic parents"></i><i class="c1" style="width:19%" title="Food creators&#x27; followers"></i><i class="c3" style="width:16%" title="Sport fans"></i><i class="c4" style="width:24%" title="Others"></i></div><div class="dlv-split__leg"><span><i class="c2"></i>Pragmatic parents 41 %</span><span><i class="c1"></i>Food creators&#x27; followers 19 %</span><span><i class="c3"></i>Sport fans 16 %</span><span><i class="c4"></i>Others 24 %</span></div><div class="dlv-personas"><div class="dlv-persona top"><b>Food creators&#x27; followers</b><small>19 % of the audience</small><p><span>Affinity</span><span class="dlv-bar"><i style="width:74%"></i></span><em>74</em></p><p><span>Opportunity</span><span class="dlv-bar dlv-bar--hi"><i style="width:86%"></i></span><em>86</em></p><div class="chips"><span>TikTok</span><span>Instagram</span></div></div><div class="dlv-persona"><b>Pragmatic parents</b><small>41 % of the audience</small><p><span>Affinity</span><span class="dlv-bar"><i style="width:78%"></i></span><em>78</em></p><p><span>Opportunity</span><span class="dlv-bar dlv-bar--hi"><i style="width:52%"></i></span><em>52</em></p><div class="chips"><span>Facebook</span><span>Search</span></div></div><div class="dlv-persona"><b>Sport fans</b><small>16 % of the audience</small><p><span>Affinity</span><span class="dlv-bar"><i style="width:57%"></i></span><em>57</em></p><p><span>Opportunity</span><span class="dlv-bar dlv-bar--hi"><i style="width:69%"></i></span><em>69</em></p><div class="chips"><span>YouTube</span><span>Strava</span></div></div></div></div><div class="dlv__foot"><span>Source: Behavioural panel · 1.2M profiles · 5,000+ criteria</span><span>Licter · p. 7 / 19</span></div></figure>
+      <figure class="dlv dlv--segmentation"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Audience segmentation</b> <small>Food brand · October 2026</small></span> <span class="dlv__tag">Illustrative data</span></div><figcaption class="dlv__head"><b>Community cards</b> <small>The three communities to prioritise</small></figcaption><div class="dlv__body"><p class="k">Your audience, by community</p><div class="dlv-split"><i class="c2" style="width:41%" title="Pragmatic parents"></i> <i class="c1" style="width:19%" title="Food creators&#x27; followers"></i> <i class="c3" style="width:16%" title="Sport fans"></i> <i class="c4" style="width:24%" title="Others"></i></div><div class="dlv-split__leg"><span><i class="c2"></i> Pragmatic parents 41 %</span> <span><i class="c1"></i> Food creators&#x27; followers 19 %</span> <span><i class="c3"></i> Sport fans 16 %</span> <span><i class="c4"></i> Others 24 %</span></div><div class="dlv-personas"><div class="dlv-persona top"><b>Food creators&#x27; followers</b> <small>19 % of the audience</small> <p><span>Affinity</span> <span class="dlv-bar"><i style="width:74%"></i></span> <em>74</em></p><p><span>Opportunity</span> <span class="dlv-bar dlv-bar--hi"><i style="width:86%"></i></span> <em>86</em></p><div class="chips"><span>TikTok</span> <span>Instagram</span></div></div><div class="dlv-persona"><b>Pragmatic parents</b> <small>41 % of the audience</small> <p><span>Affinity</span> <span class="dlv-bar"><i style="width:78%"></i></span> <em>78</em></p><p><span>Opportunity</span> <span class="dlv-bar dlv-bar--hi"><i style="width:52%"></i></span> <em>52</em></p><div class="chips"><span>Facebook</span> <span>Search</span></div></div><div class="dlv-persona"><b>Sport fans</b> <small>16 % of the audience</small> <p><span>Affinity</span> <span class="dlv-bar"><i style="width:57%"></i></span> <em>57</em></p><p><span>Opportunity</span> <span class="dlv-bar dlv-bar--hi"><i style="width:69%"></i></span> <em>69</em></p><div class="chips"><span>YouTube</span> <span>Strava</span></div></div></div></div><div class="dlv__foot"><span>Source: Behavioural panel · 1.2M profiles · 7,000+ criteria</span> <span>Licter · p. 7 / 19</span></div></figure>
     </div>
   </section>
   <section class="ucp ucv-how">
     <div class="shell">
       <h2 class="ucp__h2">How it runs</h2>
-      <ol class="ucv-time"><li><span class="ucv-day">Day 0</span><b>Framing</b><p>We start from your brief and current targets.</p></li><li><span class="ucv-day">Day 3</span><b>Collection</b><p>We identify the communities that really make up your audience.</p></li><li><span class="ucv-day">Day 7</span><b>Analysis</b><p>An analyst measures each one&#x27;s affinity, penetration and opportunity.</p></li><li><span class="ucv-day">Day 10</span><b>Decision</b><p>We recommend which communities to prioritise and how to reach them.</p></li></ol>
+      <ol class="ucv-time"><li><span class="ucv-day">Day 0</span> <b>Framing</b> <p>We start from your brief and current targets.</p></li><li><span class="ucv-day">Day 3</span> <b>Collection</b> <p>We identify the communities that really make up your audience.</p></li><li><span class="ucv-day">Day 7</span> <b>Analysis</b> <p>An analyst measures each one&#x27;s affinity, penetration and opportunity.</p></li><li><span class="ucv-day">Day 10</span> <b>Decision</b> <p>We recommend which communities to prioritise and how to reach them.</p></li></ol>
       <p class="ucv-note">Indicative timings for a first read; continuous monitoring starts as soon as framing is done.</p>
-      <div class="ucv-src"><p class="ucr__label">What we read</p><ul><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span><span>Behavioural panel</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="6" r="1.8"/><circle cx="19" cy="7" r="1.8"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="18" cy="17.5" r="1.8"/><path d="M6.4 7.2 10 10.3M17.4 8.3 14 10.5M7.7 17 10.4 13.9M16.6 16.3 13.8 13.6"/></svg></span><span>Social networks</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m15.5 15.5 4 4"/></svg></span><span>Search</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span><span>Brand affinities</span></li></ul></div>
+      <div class="ucv-src"><p class="ucr__label">What we read</p><ul><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span> <span>Behavioural panel</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="6" r="1.8"/><circle cx="19" cy="7" r="1.8"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="18" cy="17.5" r="1.8"/><path d="M6.4 7.2 10 10.3M17.4 8.3 14 10.5M7.7 17 10.4 13.9M16.6 16.3 13.8 13.6"/></svg></span> <span>Social networks</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m15.5 15.5 4 4"/></svg></span> <span>Search</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span> <span>Brand affinities</span></li></ul></div>
     </div>
   </section>
   <section class="ucp ucv-proof" id="cas">
@@ -153,7 +153,7 @@
       <h2 class="ucp__h2">They talk about it, and a typical case</h2>
       <div class="ucv-proof__grid">
         <a class="ucv-video" href="https://www.youtube.com/watch?v=JSI5LBi8K-g" target="_blank" rel="noopener">
-          <span class="ucv-video__shot"><img srcset="/assets/img/yt/JSI5LBi8K-g-240.webp 240w, /assets/img/yt/JSI5LBi8K-g.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/JSI5LBi8K-g.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">51:52</span></span>
+          <span class="ucv-video__shot"><img srcset="/assets/img/yt/JSI5LBi8K-g-240.webp 240w, /assets/img/yt/JSI5LBi8K-g.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/JSI5LBi8K-g.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span> <span class="reel__time">51:52</span></span>
           <span class="ucv-video__q">“Social listening for the largest city in France.”</span>
           <span class="ucv-video__who"><b>Ville de Paris</b> · B. Tailly &amp; F. Lootvoet</span>
         </a>
@@ -161,11 +161,11 @@
           <p class="ucr-case__tag">Typical case · illustrative figures</p>
           <p class="ucv-case__ctx">A food brand targets students.</p>
           <p class="ucv-case__found">The segmentation shows food creators&#x27; followers love the brand but barely buy it: opportunity 86 out of 100, against 31 for students.</p>
-          <p class="ucv-case__reco"><span>Our recommendation</span>Shift the media plan.</p>
+          <p class="ucv-case__reco"><span>Our recommendation</span> Shift the media plan.</p>
           <p class="ucv-case__real">The real figures of a comparable engagement, anonymised: <a href="#offre">get a real case&nbsp;<span aria-hidden="true">→</span></a></p>
         </article>
       </div>
-      <ul class="ucv-roi"><li><b>A media plan that hits</b><span>Budget goes to the communities with the strongest opportunity.</span></li><li><b>Overlooked targets found</b><span>The communities the brief had missed come to light.</span></li><li><b>Personas that last</b><span>Built on more than 7,000 criteria, they update with the data.</span></li></ul>
+      <ul class="ucv-roi"><li><b>A media plan that hits</b> <span>Budget goes to the communities with the strongest opportunity.</span></li><li><b>Overlooked targets found</b> <span>The communities the brief had missed come to light.</span></li><li><b>Personas that last</b> <span>Built on more than 7,000 criteria, they update with the data.</span></li></ul>
     </div>
   </section>
   <section class="ucp ucp--cta ucr-offer" id="offre">
@@ -178,8 +178,8 @@
         </div>
         <form class="ucp-lead" data-case="segmentation" novalidate>
           <div class="ucp-lead__row">
-            <label class="ucp-lead__f"><span>Work email</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
-            <label class="ucp-lead__f"><span>Your sector</span><select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
+            <label class="ucp-lead__f"><span>Work email</span> <input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
+            <label class="ucp-lead__f"><span>Your sector</span> <select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
           </div>
           <button class="btn btn--primary" type="submit">Get the case <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Enter a work email, like name@company.com.</p>
@@ -197,7 +197,7 @@
         <h2 class="ucp__h2">Frequently asked questions</h2>
         <div class="faq"><details><summary>Do we need to share our customer data?</summary><p>No. We can cross them if you wish, but the panel is enough for a first segmentation.</p></details><details><summary>How many segments on average?</summary><p>Usually five to eight communities, distinct enough to act on.</p></details><details><summary>Can you segment a foreign market?</summary><p>Yes, with analysts who speak the language and know the market.</p></details></div>
         <div class="ucp__faq-arts"><h2 class="ucp__h2 ucp__h2--sub">Related articles</h2>
-        <ul class="ucp__arts-l"><li><a class="ucp__art-l" href="/article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html"><span>The blog</span>Winning luxury cosmetics with social listening <span aria-hidden="true">→</span></a></li><li><a class="ucp__art-l" href="/article-comment-orange-analyse-tiktok-grace-au-social-listening.html"><span>The blog</span>How Orange reads TikTok with social listening <span aria-hidden="true">→</span></a></li></ul></div>
+        <ul class="ucp__arts-l"><li><a class="ucp__art-l" href="/article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html"><span>The blog</span> Winning luxury cosmetics with social listening <span aria-hidden="true">→</span></a></li><li><a class="ucp__art-l" href="/article-comment-orange-analyse-tiktok-grace-au-social-listening.html"><span>The blog</span> How Orange reads TikTok with social listening <span aria-hidden="true">→</span></a></li></ul></div>
       </div>
       <aside class="ucp__related" aria-labelledby="rel-segmentation">
         <h2 class="ucp__h2" id="rel-segmentation">In the same family</h2>
@@ -221,13 +221,13 @@
               </div>
               <p class="fld__error" id="book-contact-error" hidden>Enter a work email or a phone number.</p>
             </div>
-            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span>A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
+            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span> A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
             <p class="consent">We use your contact details only to call you back. <a href="/privacy.html">Privacy policy</a>.</p>
           </form>
           <p class="book__done" id="book-done" role="status" hidden></p>
           <p class="ucf__diag">Already running social listening? <a href="/diagnostic.html">Request a diagnostic instead →</a></p>
         </div>
-        <ul class="book__proof book__proof--side"><li><b>50+</b><span>organisations served</span></li><li><b>160+</b><span>projects since 2022</span></li><li><b>20+</b><span>languages monitored</span></li></ul>
+        <ul class="book__proof book__proof--side"><li><b>50+</b> <span>organisations served</span></li><li><b>160+</b> <span>projects since 2022</span></li><li><b>20+</b> <span>languages monitored</span></li></ul>
       </div>
     </div>
   </section>
@@ -288,6 +288,7 @@
         <li><a href="/tech-tools.html">Social listening tools</a></li> <li><a href="/sources.html">Sources (22 networks)</a></li>
         <li><a href="/clients.html">Clients</a></li>
         <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/events.html">Events</a></li>
         <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>
       </ul>
     </div>
@@ -299,8 +300,8 @@
   </div>
 </footer>
 
-<script src="/js/min/i18n.js?v=20261352" defer></script>
-<script src="/js/min/ui.js?v=20261352" defer></script>
-<script src="/js/min/home.js?v=20261352" defer></script>
+<script src="/js/min/i18n.js?v=20261353" defer></script>
+<script src="/js/min/ui.js?v=20261353" defer></script>
+<script src="/js/min/home.js?v=20261353" defer></script>
 </body>
 </html>

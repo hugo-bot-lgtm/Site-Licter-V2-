@@ -36,10 +36,69 @@ def authors_line(written, and_, role):
     fr = not written.startswith("Written")
     mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
     label = "%d %s %d" % (d.day, mois[d.month - 1], d.year) if fr else "%d %s" % (d.day, d.strftime("%B %Y"))
-    when = ('<span class="qa-by__when"> · <span>%s</span> <time datetime="%s">%s</time></span>'
+    # a span, not a <time>: text extractors (trafilatura) drop <time> with its text,
+    # which left "publié le" without a date (audit of 9 October 2026)
+    when = ('<span class="qa-by__when"> · <span>%s</span> <span class="by-date" data-datetime="%s">%s</span></span>'
             % ("mis à jour le" if fr else "updated", d.isoformat(), label))
     return ('<p class="qa-by">%s <a href="why-licter.html#antoine-khaitrine">Antoine Khaitrine</a> %s '
             '<a href="why-licter.html#adrien-krebs">Adrien Krebs</a>%s%s</p>') % (written, and_, role, when)
+
+
+# the title of each source document, shown instead of its address (audit of 9 October 2026)
+SOURCE_TITLE = {
+    "https://blog.google/intl/fr-fr/nouveautes-produits/explorez-obtenez-des-reponses/recherche-ia-apercus-mode/": "Google · Aperçus IA et Mode IA",
+    "https://developers.google.com/search/docs/appearance/ai-features": "Google Search Central · Fonctionnalités d'IA",
+    "https://claude.com/blog/web-search": "Anthropic · Claude can now search the web",
+    "https://docs.perplexity.ai/docs/resources/perplexity-crawlers": "Perplexity · Perplexity crawlers",
+    "https://developers.openai.com/api/docs/bots": "OpenAI · Overview of OpenAI crawlers",
+    "https://arxiv.org/abs/2311.09735": "arXiv · GEO: Generative Engine Optimization (2023)",
+    "https://arxiv.org/html/2311.09735v3": "arXiv · GEO-bench, version 3",
+    "https://arxiv.org/abs/2005.14165": "arXiv · Language Models are Few-Shot Learners (GPT-3)",
+    "https://tech.eu/2022/12/05/audiense/": "Tech.eu · Audiense acquires SoPrism (2022)",
+    "https://help.audiense.com/knowledge/audiense-data-sources": "Audiense · Data sources",
+    "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2": "CNIL · RGPD, chapitre II : les principes",
+    "https://www.cnil.fr/fr/les-bases-legales/interet-legitime": "CNIL · L'intérêt légitime",
+    "https://www.cnil.fr/fr/recommandations-reutilisateurs-donnees-internet": "CNIL · Recommandations aux réutilisateurs de données publiées sur internet",
+    "https://datareportal.com/reports/digital-2026-two-in-three-people-use-social-media": "DataReportal · Digital 2026",
+    "https://help.openai.com/en/articles/8590148-memory-faq": "OpenAI · Memory FAQ",
+    "https://techcrunch.com/snippet/2932195/openai-brings-search-to-all-users/": "TechCrunch · OpenAI brings search to all users",
+    "https://seroundtable.com/chatgpt-search-open-38588.html": "Search Engine Roundtable · ChatGPT search open to all (2024)",
+    "https://help.openai.com/en/articles/9237897-chatgpt-search": "OpenAI · ChatGPT search",
+    "https://help.openai.com/en/articles/12627856-publishers-and-developers-faq": "OpenAI · Publishers and developers FAQ",
+    "https://claude.com/blog/memory": "Anthropic · Memory in Claude",
+    "https://support.claude.com/en/articles/10684626-enable-and-use-web-search": "Anthropic · Enable and use web search",
+    "https://www.anthropic.com/transparency": "Anthropic · Transparency hub",
+    "https://privacy.claude.com/en/articles/7996885-how-do-you-use-personal-data-in-model-training": "Anthropic · Personal data in model training",
+    "https://platform.claude.com/docs/en/about-claude/models/overview": "Anthropic · Models overview",
+    "https://www.anthropic.com/constitution": "Anthropic · Claude's constitution",
+    "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations": "Anthropic · Reduce hallucinations",
+    "https://www.anthropic.com/news/the-anthropic-economic-index": "Anthropic · The Anthropic Economic Index",
+    "https://claude.com/blog/claude-for-enterprise": "Anthropic · Claude for Enterprise (2024)",
+    "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler": "Anthropic · Does Anthropic crawl data from the web?",
+    "https://support.google.com/gemini/answer/13695044": "Google Gemini Help · Public information Gemini uses",
+    "https://support.google.com/gemini/answer/14143489": "Google Gemini Help · Sources and double-check",
+    "https://support.google.com/business/answer/7091": "Google Business Profile Help · Local ranking",
+    "https://blog.google/products-and-platforms/products/maps/ask-maps-immersive-navigation/": "Google · Ask Maps and immersive navigation",
+    "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers": "Google Search Central · Google's common crawlers",
+    "https://blog.google/products-and-platforms/products/search/new-controls-website-owners/": "Google · New controls for website owners",
+    "https://gemini.google/overview/personalization/": "Google · Gemini personalization",
+    "https://support.google.com/gemini/answer/13275746": "Google Gemini Help · Rate and report responses",
+    "https://fr.wikipedia.org/wiki/Wikipédia:Conflit_d'intérêts": "Wikipédia · Conflit d'intérêts",
+    "https://x.ai/news/grok": "xAI · Announcing Grok (2023)",
+    "https://help.x.com/en/using-x/about-grok": "X · About Grok",
+    "https://x.ai/news/grok-1212": "xAI · Grok update (December 2024)",
+    "https://techcrunch.com/2025/03/07/x-now-lets-you-query-grok-by-mentioning-it-in-replies": "TechCrunch · Query Grok by mentioning it in replies (2025)",
+    "https://tech.yahoo.com/articles/ask-grok-supposed-x-better-182752572.html": "Business Insider · Asking Grok on X (2025)",
+    "https://www.perplexity.ai/help-center/en/articles/10352895-how-does-perplexity-work": "Perplexity · How does Perplexity work?",
+    "https://www.perplexity.ai/help-center/en/articles/10352903-what-is-pro-search": "Perplexity · What is Pro Search?",
+    "https://www.perplexity.ai/help-center/en/articles/10352155-what-is-perplexity": "Perplexity · What is Perplexity?",
+    "https://www.talkwalker.com/press-release/hootsuite": "Talkwalker · Hootsuite acquires Talkwalker",
+    "https://talkwalker.com/products/bluesilkai": "Talkwalker · Blue Silk AI",
+    "https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you": "TikTok · How TikTok recommends videos #ForYou",
+    "https://ads.tiktok.com/help/article/how-to-use-trends": "TikTok · How to use Trends",
+    "https://developers.tiktok.com/products/research-api/": "TikTok · Research API",
+    "https://newsroom.tiktok.com/en-eu/compliance-digital-services-act-eu": "TikTok · Digital Services Act compliance",
+}
 
 
 def sources_line(module_file, label):
@@ -60,6 +119,8 @@ def sources_line(module_file, label):
     for u_, n_ in re.findall(r"# source: (https?://[^\s)]+)\s*\(([^)]*)\)", pathlib.Path(module_file).read_text()):
         notes.setdefault(u_.rstrip(".,;"), n_)
     def name(u):
+        if u in SOURCE_TITLE:
+            return SOURCE_TITLE[u]
         host = re.sub(r"^https?://(www\.)?", "", u).split("/")[0]
         note = re.split(r"[:;,]| \(|\d{1,2} \w+ 20\d\d", notes.get(u, ""))[0].strip(" \"'")
         if 4 <= len(note) <= 60:

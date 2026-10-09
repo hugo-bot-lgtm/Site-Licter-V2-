@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="/css/t-uc.min.css?v=20261352" />
+<link rel="stylesheet" href="/css/t-uc.min.css?v=20261353" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.licter.com/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://www.licter.com/en/use-cases/"}, {"@type": "ListItem", "position": 3, "name": "Brand health", "item": "https://www.licter.com/en/use-cases/brand-health/"}, {"@type": "ListItem", "position": 4, "name": "Develop your brand messaging", "item": "https://www.licter.com/en/use-cases/brand-health/brand-messaging/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Develop your brand messaging", "description": "See which words, claims and proofs your audiences actually repeat, and which ones never leave your presentations.", "serviceType": "Brand health", "provider": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "areaServed": ["France", "Worldwide"], "inLanguage": "en", "url": "https://www.licter.com/en/use-cases/brand-health/brand-messaging/", "@id": "https://www.licter.com/en/use-cases/brand-health/brand-messaging/#service"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you work with our agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: we give them the material, they write. It is often the best pairing."}}, {"@type": "Question", "name": "Can a message be tested before launch?", "acceptedAnswer": {"@type": "Answer", "text": "We can measure its chances: do its words and proofs match those already travelling?"}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "A few days for a first read, two to three weeks for a full piece of work."}}]}</script>
@@ -90,7 +90,7 @@
   <nav class="crumbs shell" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/en/use-cases/">Use cases</a></li><li><a href="/en/use-cases/brand-health/">Brand health</a></li><li aria-current="page">Develop your brand messaging</li></ol></nav>
   <section class="ucr-hero ucv-hero">
     <div class="shell">
-      <p class="ucp__kicker"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19.5 6v6.1c0 4-3.1 7-7.5 8.4-4.4-1.4-7.5-4.4-7.5-8.4V6z"/><path d="m9.2 12 2 2 3.6-3.8"/></svg></span><a href="/en/use-cases/brand-health/">Brand health</a><span class="ucp__kicker-n">02 / 03</span></p>
+      <p class="ucp__kicker"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19.5 6v6.1c0 4-3.1 7-7.5 8.4-4.4-1.4-7.5-4.4-7.5-8.4V6z"/><path d="m9.2 12 2 2 3.6-3.8"/></svg></span> <a href="/en/use-cases/brand-health/">Brand health</a> <span class="ucp__kicker-n">02 / 03</span></p>
       <div class="ucv-hero__row">
         <div>
           <h1 class="ucr__title">Build your brand messaging in your customers&#x27; words.</h1>
@@ -99,7 +99,7 @@
             <a class="btn btn--primary" href="#book">Talk to a consultant <span aria-hidden="true">→</span></a>
             <a class="ucp__textlink" href="#livrable">See a possible deliverable <span aria-hidden="true">↓</span></a>
           </div>
-        <p class="ucp__byline">By the Licter analysis team · Published <time datetime="2026-10-08">8 October 2026</time></p>
+        <p class="ucp__byline">By the Licter analysis team · Published <span class="by-date" data-datetime="2026-10-08">8 October 2026</span></p>
         </div>
         <div class="ucr-hero__get">
           <p class="ucr__label">What you get</p>
@@ -111,7 +111,7 @@
       <div class="wall" id="wall">
         <span class="wall__beam" id="wall-beam" aria-hidden="true"></span>
         <p class="wall__caption">
-          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span>160+ projects since 2022</span></span>
+          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span> 160+ projects since 2022</span></span>
         </p>
         <div class="marquee" id="marquee">
           <div class="marquee__track" id="marquee-track"><!-- filled by js/ui.js --></div>
@@ -123,8 +123,8 @@
       <p class="ucr__label">The question we get</p>
       <h2 class="ucv-quote">“Which words do our customers use to talk about us?”</h2>
       <div class="ucv-sym">
-        <p class="ucv-sym__head"><span>Today, you see</span><span>What is missing</span></p>
-        <ul><li><span class="ucv-sym__now">A brand platform written internally</span><span class="ucv-sym__arr" aria-hidden="true">→</span><span class="ucv-sym__miss">The words your customers actually use</span></li><li><span class="ucv-sym__now">Claims repeated in every campaign</span><span class="ucv-sym__arr" aria-hidden="true">→</span><span class="ucv-sym__miss">Which ones get repeated, and which do not land</span></li><li><span class="ucv-sym__now">Expensive message tests</span><span class="ucv-sym__arr" aria-hidden="true">→</span><span class="ucv-sym__miss">A grid based on the real conversation</span></li></ul>
+        <div class="ucv-sym__head"><p>Today, you see</p><p>What is missing</p></div>
+        <ul><li><span class="ucv-sym__now">A brand platform written internally</span> <span class="ucv-sym__arr" aria-hidden="true">→</span> <span class="ucv-sym__miss">The words your customers actually use</span></li><li><span class="ucv-sym__now">Claims repeated in every campaign</span> <span class="ucv-sym__arr" aria-hidden="true">→</span> <span class="ucv-sym__miss">Which ones get repeated, and which do not land</span></li><li><span class="ucv-sym__now">Expensive message tests</span> <span class="ucv-sym__arr" aria-hidden="true">→</span> <span class="ucv-sym__miss">A grid based on the real conversation</span></li></ul>
       </div>
     </div>
   </section>
@@ -137,15 +137,15 @@
         <ul class="ucr__ticks"><li>The vocabulary your market uses, ranked by traction.</li><li>The claims that get repeated and those that do not land.</li><li>The proofs that make a message credible.</li><li>A grid to test your next messages.</li></ul>
         <a class="ucp__textlink ucv-dlv__real" href="#offre">Get a real case of this kind <span aria-hidden="true">↓</span></a>
       </div>
-      <figure class="dlv dlv--messaging"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Messaging platform</b><small>Car maker · October 2026</small></span><span class="dlv__tag">Illustrative data</span></div><figcaption class="dlv__head"><b>Brand lexicon</b><small>The words your public picks up, and those it ignores</small></figcaption><div class="dlv__body"><div class="dlv-2col"><div><p class="k ok">Adopt</p><ul class="dlv-lex"><li><span>silence</span><span class="dlv-bar"><i style="width:92%"></i></span><em>92</em></li><li><span>boot space</span><span class="dlv-bar"><i style="width:78%"></i></span><em>78</em></li><li><span>running cost</span><span class="dlv-bar"><i style="width:71%"></i></span><em>71</em></li><li><span>comfort</span><span class="dlv-bar"><i style="width:64%"></i></span><em>64</em></li></ul></div><div><p class="k ko">Drop</p><ul class="dlv-lex"><li><span>0 to 62 mph</span><span class="dlv-bar dlv-bar--ko"><i style="width:14%"></i></span><em>14</em></li><li><span>disruptive</span><span class="dlv-bar dlv-bar--ko"><i style="width:9%"></i></span><em>9</em></li><li><span>premium</span><span class="dlv-bar dlv-bar--ko"><i style="width:11%"></i></span><em>11</em></li><li><span>connected</span><span class="dlv-bar dlv-bar--ko"><i style="width:18%"></i></span><em>18</em></li></ul></div></div><p class="dlv-legend">Traction: share of conversations that pick up the word, out of 100.</p></div><div class="dlv__foot"><span>Source: Forums, reviews, social · 12 months · 210,000 posts</span><span>Licter · p. 9 / 24</span></div></figure>
+      <figure class="dlv dlv--messaging"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Messaging platform</b> <small>Car maker · October 2026</small></span> <span class="dlv__tag">Illustrative data</span></div><figcaption class="dlv__head"><b>Brand lexicon</b> <small>The words your public picks up, and those it ignores</small></figcaption><div class="dlv__body"><div class="dlv-2col"><div><p class="k ok">Adopt</p><ul class="dlv-lex"><li><span>silence</span> <span class="dlv-bar"><i style="width:92%"></i></span> <em>92</em></li><li><span>boot space</span> <span class="dlv-bar"><i style="width:78%"></i></span> <em>78</em></li><li><span>running cost</span> <span class="dlv-bar"><i style="width:71%"></i></span> <em>71</em></li><li><span>comfort</span> <span class="dlv-bar"><i style="width:64%"></i></span> <em>64</em></li></ul></div><div><p class="k ko">Drop</p><ul class="dlv-lex"><li><span>0 to 62 mph</span> <span class="dlv-bar dlv-bar--ko"><i style="width:14%"></i></span> <em>14</em></li><li><span>disruptive</span> <span class="dlv-bar dlv-bar--ko"><i style="width:9%"></i></span> <em>9</em></li><li><span>premium</span> <span class="dlv-bar dlv-bar--ko"><i style="width:11%"></i></span> <em>11</em></li><li><span>connected</span> <span class="dlv-bar dlv-bar--ko"><i style="width:18%"></i></span> <em>18</em></li></ul></div></div><p class="dlv-legend">Traction: share of conversations that pick up the word, out of 100.</p></div><div class="dlv__foot"><span>Source: Forums, reviews, social · 12 months · 210,000 posts</span> <span>Licter · p. 9 / 24</span></div></figure>
     </div>
   </section>
   <section class="ucp ucv-how">
     <div class="shell">
       <h2 class="ucp__h2">How it runs</h2>
-      <ol class="ucv-time"><li><span class="ucv-day">Day 0</span><b>Framing</b><p>We start from your brand platform and current messages.</p></li><li><span class="ucv-day">Day 3</span><b>Collection</b><p>We collect the conversation of your category and competitors.</p></li><li><span class="ucv-day">Day 7</span><b>Analysis</b><p>An analyst ranks words and proofs by traction.</p></li><li><span class="ucv-day">Day 10</span><b>Decision</b><p>We propose a vocabulary to adopt, and one to drop.</p></li></ol>
+      <ol class="ucv-time"><li><span class="ucv-day">Day 0</span> <b>Framing</b> <p>We start from your brand platform and current messages.</p></li><li><span class="ucv-day">Day 3</span> <b>Collection</b> <p>We collect the conversation of your category and competitors.</p></li><li><span class="ucv-day">Day 7</span> <b>Analysis</b> <p>An analyst ranks words and proofs by traction.</p></li><li><span class="ucv-day">Day 10</span> <b>Decision</b> <p>We propose a vocabulary to adopt, and one to drop.</p></li></ol>
       <p class="ucv-note">Indicative timings for a first read; continuous monitoring starts as soon as framing is done.</p>
-      <div class="ucv-src"><p class="ucr__label">What we read</p><ul><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="17" cy="7.5" r="2"/><path d="M8.6 9.4 10.5 13M13.9 13.7 15.7 9.3M9 8.2l6-.6"/></svg></span><span>Customer conversation</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m15.5 15.5 4 4"/></svg></span><span>Search</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5h16"/><path d="M6.5 16V9.5M11 16V5.5M15.5 16v-8M20 16v-4"/></svg></span><span>Competitors</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.6 8 18 9.6 13.6 11.2 12 15.6 10.4 11.2 6 9.6 10.4 8z"/><path d="M17.5 15.5 18.3 17.7 20.5 18.5 18.3 19.3 17.5 21.5 16.7 19.3 14.5 18.5 16.7 17.7z"/></svg></span><span>Generative AI</span></li></ul></div>
+      <div class="ucv-src"><p class="ucr__label">What we read</p><ul><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="17" cy="7.5" r="2"/><path d="M8.6 9.4 10.5 13M13.9 13.7 15.7 9.3M9 8.2l6-.6"/></svg></span> <span>Customer conversation</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m15.5 15.5 4 4"/></svg></span> <span>Search</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5h16"/><path d="M6.5 16V9.5M11 16V5.5M15.5 16v-8M20 16v-4"/></svg></span> <span>Competitors</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.6 8 18 9.6 13.6 11.2 12 15.6 10.4 11.2 6 9.6 10.4 8z"/><path d="M17.5 15.5 18.3 17.7 20.5 18.5 18.3 19.3 17.5 21.5 16.7 19.3 14.5 18.5 16.7 17.7z"/></svg></span> <span>Generative AI</span></li></ul></div>
     </div>
   </section>
   <section class="ucp ucv-proof" id="cas">
@@ -153,7 +153,7 @@
       <h2 class="ucp__h2">They talk about it, and a typical case</h2>
       <div class="ucv-proof__grid">
         <a class="ucv-video" href="https://www.youtube.com/watch?v=moW2HYtTor8" target="_blank" rel="noopener">
-          <span class="ucv-video__shot"><img srcset="/assets/img/yt/moW2HYtTor8-240.webp 240w, /assets/img/yt/moW2HYtTor8.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/moW2HYtTor8.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">51:29</span></span>
+          <span class="ucv-video__shot"><img srcset="/assets/img/yt/moW2HYtTor8-240.webp 240w, /assets/img/yt/moW2HYtTor8.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/moW2HYtTor8.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span> <span class="reel__time">51:29</span></span>
           <span class="ucv-video__q">“Advocacy is overtaking influence.”</span>
           <span class="ucv-video__who"><b>L&#x27;Oréal</b> · C. Besson</span>
         </a>
@@ -161,11 +161,11 @@
           <p class="ucr-case__tag">Typical case · illustrative figures</p>
           <p class="ucv-case__ctx">A carmaker highlights its EV&#x27;s acceleration.</p>
           <p class="ucv-case__found">Its customers mostly talk about silence, boot space and running costs.</p>
-          <p class="ucv-case__reco"><span>Our recommendation</span>Rewrite the family messaging around those three words.</p>
+          <p class="ucv-case__reco"><span>Our recommendation</span> Rewrite the family messaging around those three words.</p>
           <p class="ucv-case__real">The real figures of a comparable engagement, anonymised: <a href="#offre">get a real case&nbsp;<span aria-hidden="true">→</span></a></p>
         </article>
       </div>
-      <ul class="ucv-roi"><li><b>Messages that land</b><span>Your messaging uses the words your customers already use.</span></li><li><b>Fewer rounds with the agency</b><span>A brief built on evidence, not hunches.</span></li><li><b>Ground your competitors do not hold</b><span>The unclaimed claims of your category show up clearly.</span></li></ul>
+      <ul class="ucv-roi"><li><b>Messages that land</b> <span>Your messaging uses the words your customers already use.</span></li><li><b>Fewer rounds with the agency</b> <span>A brief built on evidence, not hunches.</span></li><li><b>Ground your competitors do not hold</b> <span>The unclaimed claims of your category show up clearly.</span></li></ul>
     </div>
   </section>
   <section class="ucp ucp--cta ucr-offer" id="offre">
@@ -178,8 +178,8 @@
         </div>
         <form class="ucp-lead" data-case="messaging" novalidate>
           <div class="ucp-lead__row">
-            <label class="ucp-lead__f"><span>Work email</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
-            <label class="ucp-lead__f"><span>Your sector</span><select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
+            <label class="ucp-lead__f"><span>Work email</span> <input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
+            <label class="ucp-lead__f"><span>Your sector</span> <select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
           </div>
           <button class="btn btn--primary" type="submit">Get the case <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Enter a work email, like name@company.com.</p>
@@ -197,7 +197,7 @@
         <h2 class="ucp__h2">Frequently asked questions</h2>
         <div class="faq"><details><summary>Do you work with our agency?</summary><p>Yes: we give them the material, they write. It is often the best pairing.</p></details><details><summary>Can a message be tested before launch?</summary><p>We can measure its chances: do its words and proofs match those already travelling?</p></details><details><summary>How long does it take?</summary><p>A few days for a first read, two to three weeks for a full piece of work.</p></details></div>
         <div class="ucp__faq-arts"><h2 class="ucp__h2 ucp__h2--sub">Related articles</h2>
-        <ul class="ucp__arts-l"><li><a class="ucp__art-l" href="/article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html"><span>The blog</span>How L&#x27;Oréal captures the voice of the consumer <span aria-hidden="true">→</span></a></li><li><a class="ucp__art-l" href="/article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html"><span>The blog</span>Winning luxury cosmetics with social listening <span aria-hidden="true">→</span></a></li></ul></div>
+        <ul class="ucp__arts-l"><li><a class="ucp__art-l" href="/article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html"><span>The blog</span> How L&#x27;Oréal captures the voice of the consumer <span aria-hidden="true">→</span></a></li><li><a class="ucp__art-l" href="/article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html"><span>The blog</span> Winning luxury cosmetics with social listening <span aria-hidden="true">→</span></a></li></ul></div>
       </div>
       <aside class="ucp__related" aria-labelledby="rel-messaging">
         <h2 class="ucp__h2" id="rel-messaging">In the same family</h2>
@@ -221,13 +221,13 @@
               </div>
               <p class="fld__error" id="book-contact-error" hidden>Enter a work email or a phone number.</p>
             </div>
-            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span>A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
+            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span> A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
             <p class="consent">We use your contact details only to call you back. <a href="/privacy.html">Privacy policy</a>.</p>
           </form>
           <p class="book__done" id="book-done" role="status" hidden></p>
           <p class="ucf__diag">Already running social listening? <a href="/diagnostic.html">Request a diagnostic instead →</a></p>
         </div>
-        <ul class="book__proof book__proof--side"><li><b>50+</b><span>organisations served</span></li><li><b>160+</b><span>projects since 2022</span></li><li><b>20+</b><span>languages monitored</span></li></ul>
+        <ul class="book__proof book__proof--side"><li><b>50+</b> <span>organisations served</span></li><li><b>160+</b> <span>projects since 2022</span></li><li><b>20+</b> <span>languages monitored</span></li></ul>
       </div>
     </div>
   </section>
@@ -288,6 +288,7 @@
         <li><a href="/tech-tools.html">Social listening tools</a></li> <li><a href="/sources.html">Sources (22 networks)</a></li>
         <li><a href="/clients.html">Clients</a></li>
         <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/events.html">Events</a></li>
         <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>
       </ul>
     </div>
@@ -299,8 +300,8 @@
   </div>
 </footer>
 
-<script src="/js/min/i18n.js?v=20261352" defer></script>
-<script src="/js/min/ui.js?v=20261352" defer></script>
-<script src="/js/min/home.js?v=20261352" defer></script>
+<script src="/js/min/i18n.js?v=20261353" defer></script>
+<script src="/js/min/ui.js?v=20261353" defer></script>
+<script src="/js/min/home.js?v=20261353" defer></script>
 </body>
 </html>

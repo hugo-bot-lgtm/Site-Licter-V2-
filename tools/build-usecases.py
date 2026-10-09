@@ -471,7 +471,7 @@ def byline(lang):
     d = ("%d %s %d" % (TODAY.day, MONTHS_FR[TODAY.month - 1], TODAY.year)) if lang == FR else TODAY.strftime("%-d %B %Y")
     by = ("Par l'équipe d'analyse Licter", "By the Licter analysis team")[lang]
     up = ("Mis à jour le", "Updated")[lang]
-    return '\n        <p class="ucp__byline">%s · %s <time datetime="%s">%s</time></p>' % (esc(by), up, TODAY.isoformat(), d)
+    return '\n        <p class="ucp__byline">%s · %s <span class="by-date" data-datetime="%s">%s</span></p>' % (esc(by), up, TODAY.isoformat(), d)
 
 
 def hero(kicker_html, h1, intro, lang, aside="", actions=True, extra="", after=""):
@@ -569,7 +569,7 @@ def case_body(c, lang):
                '      <p class="ucr__label">%s</p>\n'
                '      <h2 class="ucv-quote">%s</h2>\n'
                '      <div class="ucv-sym">\n'
-               '        <p class="ucv-sym__head"><span>%s</span><span>%s</span></p>\n'
+               '        <div class="ucv-sym__head"><p>%s</p><p>%s</p></div>\n'
                '        <ul>%s</ul>\n'
                '      </div>\n'
                '    </div>\n'
@@ -737,7 +737,7 @@ def families(lang):
         photo = HUB_PHOTO[f["key"]]
         fams.append(
             '        <li class="ucc__card" id="fam-%s">\n'
-            '          <img src="/assets/img/team/morning/%s-800.webp" srcset="/assets/img/team/morning/%s-800.webp 800w, /assets/img/team/morning/%s-1600.webp 1600w" sizes="(max-width: 640px) 82vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />\n'
+            '          <img src="/assets/img/team/morning/%s-800.webp" srcset="/assets/img/team/morning/%s-480.webp 480w, /assets/img/team/morning/%s-640.webp 640w, /assets/img/team/morning/%s-800.webp 800w, /assets/img/team/morning/%s-1600.webp 1600w" sizes="(max-width: 860px) 86vw, 420px" alt="" width="800" height="1197" loading="lazy" decoding="async" />\n'
             '          <div class="ucc__top">\n'
             '            <p class="ucc__k">%s<span>0%d · %s</span></p>\n'
             '            <h3 class="ucc__t"><a href="%s">%s</a></h3>\n'
@@ -746,7 +746,7 @@ def families(lang):
             '            <ul class="ucc__cases">%s</ul>\n'
             '            <a class="ucc__all" href="%s">%s <span aria-hidden="true">→</span></a>\n'
             '          </div>\n'
-            '        </li>' % (f["key"], photo, photo, photo, icon(FAM_ICON[f["key"]]), i + 1, T(f["name"], lang),
+            '        </li>' % (f["key"], photo, photo, photo, photo, photo, icon(FAM_ICON[f["key"]]), i + 1, T(f["name"], lang),
                             fam_path(f, lang), T(f["h1"], lang), links,
                             fam_path(f, lang), esc(typo(L["family_all"][lang] % f["name"][lang], lang))))
     carousel = ('  <section class="ucp ucc" aria-labelledby="ucc-t">\n'
@@ -1080,7 +1080,14 @@ def main():
     for name in root_pages:
         if name == "index.html" or name.startswith(("expertise", "tech-", "source-", "sources.html")) or name in OFFER_FR or name in PAGE_FR:
             continue   # the home and the expertise pages go in with their French twins, below
-        entries.append("  <url><loc>%s</loc></url>" % (SITE + "/" + name))
+        # the language links the page declares in its head (the articles: fr and
+        # x-default), repeated here so the sitemap and the pages agree (audit of 9 October 2026)
+        alts = re.findall(r'<link rel="alternate" hreflang="([a-zA-Z-]+)" href="([^"]+)"', (ROOT / name).read_text())
+        if alts:
+            entries.append("  <url><loc>%s</loc>\n%s\n  </url>" % (SITE + "/" + name, "\n".join(
+                '    <xhtml:link rel="alternate" hreflang="%s" href="%s" />' % (h, u) for h, u in alts)))
+        else:
+            entries.append("  <url><loc>%s</loc></url>" % (SITE + "/" + name))
     # the Social Intelligence Club, served by this site (French only); its replay
     # page is reached from an e-mail and stays out
     for p in ("/socialintelligenceclub/", "/socialintelligenceclub/rejoindre/"):

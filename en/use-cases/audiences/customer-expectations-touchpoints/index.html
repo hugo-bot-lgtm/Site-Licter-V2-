@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="/css/t-uc.min.css?v=20261352" />
+<link rel="stylesheet" href="/css/t-uc.min.css?v=20261353" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.licter.com/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://www.licter.com/en/use-cases/"}, {"@type": "ListItem", "position": 3, "name": "Audiences", "item": "https://www.licter.com/en/use-cases/audiences/"}, {"@type": "ListItem", "position": 4, "name": "Understand expectations at every touchpoint", "item": "https://www.licter.com/en/use-cases/audiences/customer-expectations-touchpoints/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Understand expectations at every touchpoint", "description": "Map what people expect before, during and after purchase, and where the experience breaks down, ranked by how often they surface.", "serviceType": "Audiences", "provider": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "areaServed": ["France", "Worldwide"], "inLanguage": "en", "url": "https://www.licter.com/en/use-cases/audiences/customer-expectations-touchpoints/", "@id": "https://www.licter.com/en/use-cases/audiences/customer-expectations-touchpoints/#service"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it useful for an e-commerce site?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and also for stores, services and hybrid journeys."}}, {"@type": "Question", "name": "Does it replace satisfaction surveys?", "acceptedAnswer": {"@type": "Answer", "text": "No, it complements them: the survey measures, the conversation explains."}}, {"@type": "Question", "name": "Can progress be tracked over time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with a regular read of the same steps."}}]}</script>
@@ -90,7 +90,7 @@
   <nav class="crumbs shell" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/en/use-cases/">Use cases</a></li><li><a href="/en/use-cases/audiences/">Audiences</a></li><li aria-current="page">Understand expectations at every touchpoint</li></ol></nav>
   <section class="ucr-hero ucv-hero">
     <div class="shell">
-      <p class="ucp__kicker"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span><a href="/en/use-cases/audiences/">Audiences</a><span class="ucp__kicker-n">03 / 03</span></p>
+      <p class="ucp__kicker"><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10.5" r="2.2"/><path d="M15.2 19a4.4 4.4 0 0 1 5.3-4.2"/></svg></span> <a href="/en/use-cases/audiences/">Audiences</a> <span class="ucp__kicker-n">03 / 03</span></p>
       <div class="ucv-hero__row">
         <div>
           <h1 class="ucr__title ucr__title--long">Understand what your customers expect at every touchpoint.</h1>
@@ -99,7 +99,7 @@
             <a class="btn btn--primary" href="#book">Talk to a consultant <span aria-hidden="true">→</span></a>
             <a class="ucp__textlink" href="#livrable">See a possible deliverable <span aria-hidden="true">↓</span></a>
           </div>
-        <p class="ucp__byline">By the Licter analysis team · Published <time datetime="2026-10-08">8 October 2026</time></p>
+        <p class="ucp__byline">By the Licter analysis team · Published <span class="by-date" data-datetime="2026-10-08">8 October 2026</span></p>
         </div>
         <div class="ucr-hero__get">
           <p class="ucr__label">What you get</p>
@@ -111,7 +111,7 @@
       <div class="wall" id="wall">
         <span class="wall__beam" id="wall-beam" aria-hidden="true"></span>
         <p class="wall__caption">
-          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span>160+ projects since 2022</span></span>
+          <span class="wall__wave" id="wall-wave">Trusted by 50+ organisations<span class="wall__tail"><span class="wall__sep"> · </span> 160+ projects since 2022</span></span>
         </p>
         <div class="marquee" id="marquee">
           <div class="marquee__track" id="marquee-track"><!-- filled by js/ui.js --></div>
@@ -123,8 +123,8 @@
       <p class="ucr__label">The question we get</p>
       <h2 class="ucv-quote">“What do our customers expect at each step of the journey?”</h2>
       <div class="ucv-sym">
-        <p class="ucv-sym__head"><span>Today, you see</span><span>What is missing</span></p>
-        <ul><li><span class="ucv-sym__now">An overall satisfaction score</span><span class="ucv-sym__arr" aria-hidden="true">→</span><span class="ucv-sym__miss">The step of the journey where it breaks</span></li><li><span class="ucv-sym__now">Complaints handled one by one</span><span class="ucv-sym__arr" aria-hidden="true">→</span><span class="ucv-sym__miss">Irritants ranked by frequency</span></li><li><span class="ucv-sym__now">Projects started on instinct</span><span class="ucv-sym__arr" aria-hidden="true">→</span><span class="ucv-sym__miss">What to fix first</span></li></ul>
+        <div class="ucv-sym__head"><p>Today, you see</p><p>What is missing</p></div>
+        <ul><li><span class="ucv-sym__now">An overall satisfaction score</span> <span class="ucv-sym__arr" aria-hidden="true">→</span> <span class="ucv-sym__miss">The step of the journey where it breaks</span></li><li><span class="ucv-sym__now">Complaints handled one by one</span> <span class="ucv-sym__arr" aria-hidden="true">→</span> <span class="ucv-sym__miss">Irritants ranked by frequency</span></li><li><span class="ucv-sym__now">Projects started on instinct</span> <span class="ucv-sym__arr" aria-hidden="true">→</span> <span class="ucv-sym__miss">What to fix first</span></li></ul>
       </div>
     </div>
   </section>
@@ -137,15 +137,15 @@
         <ul class="ucr__ticks"><li>Expectations and friction points, ordered by how often they surface.</li><li>The journey map as your customers see it.</li><li>The comparison with your competitors, step by step.</li><li>The three irritants to fix first.</li></ul>
         <a class="ucp__textlink ucv-dlv__real" href="#offre">Get a real case of this kind <span aria-hidden="true">↓</span></a>
       </div>
-      <figure class="dlv dlv--touchpoints"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Customer journey</b><small>E-commerce retailer · October 2026</small></span><span class="dlv__tag">Illustrative data</span></div><figcaption class="dlv__head"><b>Journey map</b><small>Satisfaction and top irritant, step by step</small></figcaption><div class="dlv__body"><svg class="dlv-journeycurve" viewBox="0 0 560 78" role="img" aria-label="Satisfaction at each step"><line class="gl" x1="44" x2="550" y1="40" y2="40"/><text class="ax" x="0" y="44">50 %</text><polyline class="ln" points="80.0,20.8 190.0,24.4 300.0,27.4 410.0,49.6 520.0,29.2"/><circle class="pt" cx="80.0" cy="20.8" r="5"/><text class="v" x="80.0" y="10.8" text-anchor="middle">82 %</text><circle class="pt" cx="190.0" cy="24.4" r="5"/><text class="v" x="190.0" y="14.4" text-anchor="middle">76 %</text><circle class="pt" cx="300.0" cy="27.4" r="5"/><text class="v" x="300.0" y="17.4" text-anchor="middle">71 %</text><circle class="pk" cx="410.0" cy="49.6" r="5"/><text class="v" x="410.0" y="39.6" text-anchor="middle">34 %</text><circle class="pt" cx="520.0" cy="29.2" r="5"/><text class="v" x="520.0" y="19.2" text-anchor="middle">68 %</text></svg><ol class="dlv-journey"><li class=""><span class="dot" style="--v:82"></span><b>Discovery</b><small>82 % satisfied</small><p>ads repeated too often <em>6 %</em></p></li><li class=""><span class="dot" style="--v:76"></span><b>Choice</b><small>76 % satisfied</small><p>unclear pack sizes <em>9 %</em></p></li><li class=""><span class="dot" style="--v:71"></span><b>Purchase</b><small>71 % satisfied</small><p>shipping fees <em>11 %</em></p></li><li class="worst"><span class="dot" style="--v:34"></span><b>Delivery</b><small>34 % satisfied</small><p>late or damaged parcels <em>62 %</em></p></li><li class=""><span class="dot" style="--v:68"></span><b>After-sales</b><small>68 % satisfied</small><p>slow refunds <em>12 %</em></p></li></ol><p class="dlv-callout">62% of negative posts are about delivery: that is where to act.</p></div><div class="dlv__foot"><span>Source: Reviews, social, public support · 6 months · 31,800 verbatims</span><span>Licter · p. 4 / 14</span></div></figure>
+      <figure class="dlv dlv--touchpoints"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Customer journey</b> <small>E-commerce retailer · October 2026</small></span> <span class="dlv__tag">Illustrative data</span></div><figcaption class="dlv__head"><b>Journey map</b> <small>Satisfaction and top irritant, step by step</small></figcaption><div class="dlv__body"><svg class="dlv-journeycurve" viewBox="0 0 560 78" role="img" aria-label="Satisfaction at each step"><line class="gl" x1="44" x2="550" y1="40" y2="40"/><text class="ax" x="0" y="44">50 %</text><polyline class="ln" points="80.0,20.8 190.0,24.4 300.0,27.4 410.0,49.6 520.0,29.2"/><circle class="pt" cx="80.0" cy="20.8" r="5"/><text class="v" x="80.0" y="10.8" text-anchor="middle">82 %</text><circle class="pt" cx="190.0" cy="24.4" r="5"/><text class="v" x="190.0" y="14.4" text-anchor="middle">76 %</text><circle class="pt" cx="300.0" cy="27.4" r="5"/><text class="v" x="300.0" y="17.4" text-anchor="middle">71 %</text><circle class="pk" cx="410.0" cy="49.6" r="5"/><text class="v" x="410.0" y="39.6" text-anchor="middle">34 %</text><circle class="pt" cx="520.0" cy="29.2" r="5"/><text class="v" x="520.0" y="19.2" text-anchor="middle">68 %</text></svg><ol class="dlv-journey"><li class=""><span class="dot" style="--v:82"></span> <b>Discovery</b> <small>82 % satisfied</small> <p>ads repeated too often <em>6 %</em></p></li><li class=""><span class="dot" style="--v:76"></span> <b>Choice</b> <small>76 % satisfied</small> <p>unclear pack sizes <em>9 %</em></p></li><li class=""><span class="dot" style="--v:71"></span> <b>Purchase</b> <small>71 % satisfied</small> <p>shipping fees <em>11 %</em></p></li><li class="worst"><span class="dot" style="--v:34"></span> <b>Delivery</b> <small>34 % satisfied</small> <p>late or damaged parcels <em>62 %</em></p></li><li class=""><span class="dot" style="--v:68"></span> <b>After-sales</b> <small>68 % satisfied</small> <p>slow refunds <em>12 %</em></p></li></ol><p class="dlv-callout">62% of negative posts are about delivery: that is where to act.</p></div><div class="dlv__foot"><span>Source: Reviews, social, public support · 6 months · 31,800 verbatims</span> <span>Licter · p. 4 / 14</span></div></figure>
     </div>
   </section>
   <section class="ucp ucv-how">
     <div class="shell">
       <h2 class="ucp__h2">How it runs</h2>
-      <ol class="ucv-time"><li><span class="ucv-day">Day 0</span><b>Framing</b><p>We split the customer journey into steps with you.</p></li><li><span class="ucv-day">Day 3</span><b>Collection</b><p>We collect what is said about each step, for you and your competitors.</p></li><li><span class="ucv-day">Day 7</span><b>Analysis</b><p>An analyst ranks expectations and irritants by frequency.</p></li><li><span class="ucv-day">Day 10</span><b>Decision</b><p>We hand you the priorities: what to fix first, and what it brings.</p></li></ol>
+      <ol class="ucv-time"><li><span class="ucv-day">Day 0</span> <b>Framing</b> <p>We split the customer journey into steps with you.</p></li><li><span class="ucv-day">Day 3</span> <b>Collection</b> <p>We collect what is said about each step, for you and your competitors.</p></li><li><span class="ucv-day">Day 7</span> <b>Analysis</b> <p>An analyst ranks expectations and irritants by frequency.</p></li><li><span class="ucv-day">Day 10</span> <b>Decision</b> <p>We hand you the priorities: what to fix first, and what it brings.</p></li></ol>
       <p class="ucv-note">Indicative timings for a first read; continuous monitoring starts as soon as framing is done.</p>
-      <div class="ucv-src"><p class="ucr__label">What we read</p><ul><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="17" cy="7.5" r="2"/><path d="M8.6 9.4 10.5 13M13.9 13.7 15.7 9.3M9 8.2l6-.6"/></svg></span><span>Customer reviews</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="6" r="1.8"/><circle cx="19" cy="7" r="1.8"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="18" cy="17.5" r="1.8"/><path d="M6.4 7.2 10 10.3M17.4 8.3 14 10.5M7.7 17 10.4 13.9M16.6 16.3 13.8 13.6"/></svg></span><span>Social networks</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="17" cy="7.5" r="2"/><path d="M8.6 9.4 10.5 13M13.9 13.7 15.7 9.3M9 8.2l6-.6"/></svg></span><span>Forums</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m15.5 15.5 4 4"/></svg></span><span>Search</span></li></ul></div>
+      <div class="ucv-src"><p class="ucr__label">What we read</p><ul><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="17" cy="7.5" r="2"/><path d="M8.6 9.4 10.5 13M13.9 13.7 15.7 9.3M9 8.2l6-.6"/></svg></span> <span>Customer reviews</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="6" r="1.8"/><circle cx="19" cy="7" r="1.8"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="18" cy="17.5" r="1.8"/><path d="M6.4 7.2 10 10.3M17.4 8.3 14 10.5M7.7 17 10.4 13.9M16.6 16.3 13.8 13.6"/></svg></span> <span>Social networks</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="17" cy="7.5" r="2"/><path d="M8.6 9.4 10.5 13M13.9 13.7 15.7 9.3M9 8.2l6-.6"/></svg></span> <span>Forums</span></li><li><span class="ucp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m15.5 15.5 4 4"/></svg></span> <span>Search</span></li></ul></div>
     </div>
   </section>
   <section class="ucp ucv-proof" id="cas">
@@ -153,7 +153,7 @@
       <h2 class="ucp__h2">They talk about it, and a typical case</h2>
       <div class="ucv-proof__grid">
         <a class="ucv-video" href="https://www.youtube.com/watch?v=EOkpQ_v-3kw" target="_blank" rel="noopener">
-          <span class="ucv-video__shot"><img srcset="/assets/img/yt/EOkpQ_v-3kw-240.webp 240w, /assets/img/yt/EOkpQ_v-3kw.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/EOkpQ_v-3kw.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span><span class="reel__time">45:24</span></span>
+          <span class="ucv-video__shot"><img srcset="/assets/img/yt/EOkpQ_v-3kw-240.webp 240w, /assets/img/yt/EOkpQ_v-3kw.webp 480w" sizes="auto, (max-width: 720px) 90vw, 50vw" src="/assets/img/yt/EOkpQ_v-3kw.webp" width="480" height="360" alt="" loading="lazy" decoding="async" /><span class="reel__play" aria-hidden="true"></span> <span class="reel__time">45:24</span></span>
           <span class="ucv-video__q">“The best money: your customers&#x27; money.”</span>
           <span class="ucv-video__who"><b>France Digitale</b> · A. Labarrière</span>
         </a>
@@ -161,11 +161,11 @@
           <p class="ucr-case__tag">Typical case · illustrative figures</p>
           <p class="ucv-case__ctx">A food brand sold online sees its reviews drop.</p>
           <p class="ucv-case__found">62% of negative posts are about late or damaged parcels; the product is still praised.</p>
-          <p class="ucv-case__reco"><span>Our recommendation</span>Change carrier and say so publicly.</p>
+          <p class="ucv-case__reco"><span>Our recommendation</span> Change carrier and say so publicly.</p>
           <p class="ucv-case__real">The real figures of a comparable engagement, anonymised: <a href="#offre">get a real case&nbsp;<span aria-hidden="true">→</span></a></p>
         </article>
       </div>
-      <ul class="ucv-roi"><li><b>Fewer customers lost</b><span>You fix first the irritants that make people leave.</span></li><li><b>Fewer complaints</b><span>Recurring problems are dealt with at the source.</span></li><li><b>Well-aimed investment</b><span>Each step of the journey is prioritised by what it brings.</span></li></ul>
+      <ul class="ucv-roi"><li><b>Fewer customers lost</b> <span>You fix first the irritants that make people leave.</span></li><li><b>Fewer complaints</b> <span>Recurring problems are dealt with at the source.</span></li><li><b>Well-aimed investment</b> <span>Each step of the journey is prioritised by what it brings.</span></li></ul>
     </div>
   </section>
   <section class="ucp ucp--cta ucr-offer" id="offre">
@@ -178,8 +178,8 @@
         </div>
         <form class="ucp-lead" data-case="touchpoints" novalidate>
           <div class="ucp-lead__row">
-            <label class="ucp-lead__f"><span>Work email</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
-            <label class="ucp-lead__f"><span>Your sector</span><select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
+            <label class="ucp-lead__f"><span>Work email</span> <input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
+            <label class="ucp-lead__f"><span>Your sector</span> <select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
           </div>
           <button class="btn btn--primary" type="submit">Get the case <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Enter a work email, like name@company.com.</p>
@@ -197,7 +197,7 @@
         <h2 class="ucp__h2">Frequently asked questions</h2>
         <div class="faq"><details><summary>Is it useful for an e-commerce site?</summary><p>Yes, and also for stores, services and hybrid journeys.</p></details><details><summary>Does it replace satisfaction surveys?</summary><p>No, it complements them: the survey measures, the conversation explains.</p></details><details><summary>Can progress be tracked over time?</summary><p>Yes, with a regular read of the same steps.</p></details></div>
         <div class="ucp__faq-arts"><h2 class="ucp__h2 ucp__h2--sub">Related articles</h2>
-        <ul class="ucp__arts-l"><li><a class="ucp__art-l" href="/article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html"><span>The blog</span>How L&#x27;Oréal captures the voice of the consumer <span aria-hidden="true">→</span></a></li><li><a class="ucp__art-l" href="/article-la-consommation-devient-un-acte-militant-les-insights-de-kantar-sur-les-tendances-dachat.html"><span>The blog</span>Consumption becomes activism, with Kantar <span aria-hidden="true">→</span></a></li></ul></div>
+        <ul class="ucp__arts-l"><li><a class="ucp__art-l" href="/article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html"><span>The blog</span> How L&#x27;Oréal captures the voice of the consumer <span aria-hidden="true">→</span></a></li><li><a class="ucp__art-l" href="/article-la-consommation-devient-un-acte-militant-les-insights-de-kantar-sur-les-tendances-dachat.html"><span>The blog</span> Consumption becomes activism, with Kantar <span aria-hidden="true">→</span></a></li></ul></div>
       </div>
       <aside class="ucp__related" aria-labelledby="rel-touchpoints">
         <h2 class="ucp__h2" id="rel-touchpoints">In the same family</h2>
@@ -221,13 +221,13 @@
               </div>
               <p class="fld__error" id="book-contact-error" hidden>Enter a work email or a phone number.</p>
             </div>
-            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span>A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
+            <p class="callback__promise"><span class="callback__dot" aria-hidden="true"></span> A consultant, not a sales team. Weekdays, 9am to 7pm.</p>
             <p class="consent">We use your contact details only to call you back. <a href="/privacy.html">Privacy policy</a>.</p>
           </form>
           <p class="book__done" id="book-done" role="status" hidden></p>
           <p class="ucf__diag">Already running social listening? <a href="/diagnostic.html">Request a diagnostic instead →</a></p>
         </div>
-        <ul class="book__proof book__proof--side"><li><b>50+</b><span>organisations served</span></li><li><b>160+</b><span>projects since 2022</span></li><li><b>20+</b><span>languages monitored</span></li></ul>
+        <ul class="book__proof book__proof--side"><li><b>50+</b> <span>organisations served</span></li><li><b>160+</b> <span>projects since 2022</span></li><li><b>20+</b> <span>languages monitored</span></li></ul>
       </div>
     </div>
   </section>
@@ -288,6 +288,7 @@
         <li><a href="/tech-tools.html">Social listening tools</a></li> <li><a href="/sources.html">Sources (22 networks)</a></li>
         <li><a href="/clients.html">Clients</a></li>
         <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/events.html">Events</a></li>
         <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>
       </ul>
     </div>
@@ -299,8 +300,8 @@
   </div>
 </footer>
 
-<script src="/js/min/i18n.js?v=20261352" defer></script>
-<script src="/js/min/ui.js?v=20261352" defer></script>
-<script src="/js/min/home.js?v=20261352" defer></script>
+<script src="/js/min/i18n.js?v=20261353" defer></script>
+<script src="/js/min/ui.js?v=20261353" defer></script>
+<script src="/js/min/home.js?v=20261353" defer></script>
 </body>
 </html>
