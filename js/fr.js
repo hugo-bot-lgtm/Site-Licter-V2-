@@ -724,6 +724,8 @@ window.LicterFR = {
   "To go further:": "Pour aller plus loin :",
   "our social listening agency": "notre agence de social listening",
   "the social media monitoring guide": "le guide de la veille réseaux sociaux",
+  "What is a social listening tool?": "Qu'est-ce qu'un outil de social listening ?",
+  "A platform that collects public posts from social networks, forums, review sites and the press, filters them with keyword queries and turns them into indicators: volume, tone, topics, reach. It shows what is said; reading it and deciding what to do with it remains human work.": "Une plateforme qui collecte les publications publiques des réseaux sociaux, des forums, des sites d'avis et de la presse, les filtre par des requêtes de mots-clés et les transforme en indicateurs : volume, tonalité, sujets, portée. Elle montre ce qui se dit ; le lire et décider quoi en faire reste un travail humain.",
   "Which social listening tool should you choose?": "Quel outil de social listening choisir ?",
   "Social listening tool or social listening software: is there a difference?": "Outil ou logiciel de social listening : quelle différence ?",
   "No, the words mean the same thing: a platform that collects public posts, news and reviews and turns them into dashboards. What makes the difference is who writes the queries and reads the results. Software alone gives you data; an analyst gives you a decision.": "Aucune, les deux mots désignent la même chose : une plateforme qui collecte les publications publiques, la presse et les avis, et en fait des tableaux de bord. Ce qui fait la différence, c'est qui écrit les requêtes et lit les résultats. Un logiciel seul vous donne des données ; un analyste vous donne une décision.",
@@ -3164,6 +3166,24 @@ window.LicterFR = {
     "C'est noté. Un consultant vous envoie votre flash sous 48 h.",
   "Prepared and read by a consultant, not a robot.":
     "Préparé et lu par un consultant, pas par un robot.",
+  "DEFINITION":
+    "DÉFINITION",
+  "Social listening at a glance.":
+    "Le social listening en bref.",
+  "Social listening is the analysis of what people say publicly online about a brand, a product, a competitor or a topic: social networks, forums, review sites and the press. It is used to understand a perception, spot what is changing and decide what to do about it.":
+    "Le social listening est l'analyse de ce que les gens disent publiquement en ligne d'une marque, d'un produit, d'un concurrent ou d'un sujet : réseaux sociaux, forums, sites d'avis et presse. Il sert à comprendre une perception, repérer ce qui change et décider quoi en faire.",
+  "What it reads:":
+    "Ce qu'il lit :",
+  "public conversations, in more than twenty languages, over a chosen period.":
+    "les conversations publiques, dans plus de vingt langues, sur une période choisie.",
+  "What it measures:":
+    "Ce qu'il mesure :",
+  "volume, share of voice, tone, topics and the voices that carry.":
+    "le volume, la part de voix, la tonalité, les sujets et les voix qui portent.",
+  "What it enables:":
+    "Ce qu'il permet :",
+  "anticipating a crisis, measuring a campaign, understanding a market before launching a product there.":
+    "anticiper une crise, mesurer une campagne, comprendre un marché avant d'y lancer un produit.",
   "WHAT IT PICKS UP":
     "CE QU'ELLE ENTEND",
   "What Social listening lets you hear.":

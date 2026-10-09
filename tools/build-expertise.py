@@ -765,6 +765,14 @@ def listening_body(x, offers_html):
     kick_name = t(("Agence de social listening à Paris", "Social listening agency in Paris")) if x["key"] == "social" else t(x["name"])
     out += lm_hero(kick_name if x["key"] == "social" else '%s<!--glossk:%s-->' % (kick_name, x["key"]), H1L[x["key"]], x["lead"], "xp-" + x["key"],
                    t((S["lm_t"][0] % x["name"][0], S["lm_t"][1] % x["name"][1])), col, icon, t(x["name"]), logos(), flash_key=x["key"])
+    if x["key"] == "social":    # a short, visible definition near the top: what search engines quote for "social listening" (9 October 2026)
+        out += sec("definition", head(t(("DÉFINITION", "DEFINITION")), t(("Le social listening en bref.", "Social listening at a glance.")), t((
+            "Le social listening est l'analyse de ce que les gens disent publiquement en ligne d'une marque, d'un produit, d'un concurrent ou d'un sujet : réseaux sociaux, forums, sites d'avis et presse. Il sert à comprendre une perception, repérer ce qui change et décider quoi en faire.",
+            "Social listening is the analysis of what people say publicly online about a brand, a product, a competitor or a topic: social networks, forums, review sites and the press. It is used to understand a perception, spot what is changing and decide what to do about it."))) +
+            '<ul class="xe-def">%s</ul>' % "".join('<li><b>%s</b> %s</li>' % (t(a), t(b)) for a, b in [
+                (("Ce qu'il lit :", "What it reads:"), ("les conversations publiques, dans plus de vingt langues, sur une période choisie.", "public conversations, in more than twenty languages, over a chosen period.")),
+                (("Ce qu'il mesure :", "What it measures:"), ("le volume, la part de voix, la tonalité, les sujets et les voix qui portent.", "volume, share of voice, tone, topics and the voices that carry.")),
+                (("Ce qu'il permet :", "What it enables:"), ("anticiper une crise, mesurer une campagne, comprendre un marché avant d'y lancer un produit.", "anticipating a crisis, measuring a campaign, understanding a market before launching a product there."))]))
     art_fr = ("l'" if nm[FR][0].lower() in "aeiou" else "le ") + nm[FR][0].lower() + nm[FR][1:] if not nm[FR].startswith("AI") else "l'" + nm[FR]
     out += sec("", head(t(S["hears_k"]), t((S["hears_t"][0] % art_fr, S["hears_t"][1] % nm[EN]))) + feats, band=True)
     out += sec("answers", head(t(S["answers_k"]), t(S["answers_t"]), t(S["answers_lead"])) + prog(x["cases"]))
