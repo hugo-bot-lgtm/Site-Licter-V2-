@@ -133,7 +133,7 @@ SHORT = {
     "perplexity": ("votre marque dans le moteur de réponses", "your brand in the answer engine"),
     "grok": ("ce que l'IA de X dit de vous", "what X's AI says about you"),
 }
-HUB = {"title": ("Outils de social listening : les plateformes que nous opérons | Licter", "Social listening tools: the platforms we run | Licter"),
+HUB = {"title": ("Outils et logiciels de social listening : ceux que nous opérons | Licter", "Social listening tools and software: the ones we run | Licter"),
        "desc": ("Les plateformes d'écoute que Licter opère, les outils de recherche, de presse et d'IA qui les complètent, et les 22 réseaux d'où viennent les données.",
                 "The listening platforms Licter runs, the search, press and AI tools around them, and the 22 networks the data comes from.")}
 

@@ -26,9 +26,10 @@ FR, EN = 0, 1
 SEO = {
     # one positioning sentence everywhere (title, description, schema, why-licter, LinkedIn)
     # the brand first: "licter" is otherwise read as a typo of "leicester"
-    "title": ("Licter : cabinet de conseil en social data intelligence à Paris",
+    # "e-réputation": the old site ranked 4th on "agence social data intelligence et e-réputation" (Search Console, 2025-2026)
+    "title": ("Licter : social data intelligence, social listening et e-réputation à Paris",
               "Licter: social data intelligence consultancy in Paris"),
-    "desc": ("Licter est un cabinet de conseil en social data intelligence fondé à Paris en 2022 : social listening, audiences et veille, lus par des consultants.",
+    "desc": ("Licter, cabinet de social data intelligence fondé à Paris en 2022 : social listening, e-réputation, audiences et veille, lus par des consultants.",
              "Licter is a social data intelligence consultancy founded in Paris in 2022: social listening, audiences and monitoring, read by consultants."),
     "og_alt": ("Licter, cabinet de conseil en social data intelligence", "Licter, the social data intelligence consultancy"),
 }

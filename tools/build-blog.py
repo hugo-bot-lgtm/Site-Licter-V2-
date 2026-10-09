@@ -213,6 +213,11 @@ def slugify(s):
 # mention of each term, at most four per article, one per destination,
 # commercial pages first
 TERMS = [
+    # the pages Licter wants to rank first, linked first (search priorities of 9 October 2026)
+    ("social listening", "/fr/expertise/social-listening/"),
+    ("veille des réseaux sociaux", "/article-veille-reseaux-sociaux-entreprise.html"), ("veille réseaux sociaux", "/article-veille-reseaux-sociaux-entreprise.html"),
+    ("outils de social listening", "/fr/outils/"), ("outil de social listening", "/fr/outils/"),
+    ("consumer intelligence", "/fr/expertise/audience-listening/"),
     ("gestion de crise", "/fr/offres/vigie-360/"), ("Social Listening Squad", "/fr/offres/social-listening-as-a-service/"),
     ("consumer insights", "/fr/offres/social-insights/"), ("audience intelligence", "/fr/expertise/audience-listening/"),
     ("e-réputation", "/fr/cas-usage/sante-de-marque/e-reputation-image-de-marque/"),
@@ -222,17 +227,17 @@ TERMS = [
     ("YouTube", "/fr/sources/youtube/"), ("Twitch", "/fr/sources/twitch/"), ("Bluesky", "/fr/sources/bluesky/"), ("Threads", "/fr/sources/threads/"),
     ("influenceurs", "/fr/expertise/influence-listening/"), ("influence", "/fr/expertise/influence-listening/"),
     ("intelligence artificielle", "/fr/expertise/ai-listening/"), ("veille", "/fr/expertise/live-listening/"),
-    ("social listening", "/fr/expertise/social-listening/"), ("campagne", "/fr/cas-usage/communication/mesurer-impact-campagne/"),
+    ("campagne", "/fr/cas-usage/communication/mesurer-impact-campagne/"),
     ("crise", "/fr/cas-usage/sante-de-marque/risques-de-marque-crise/"),
     ("tendances", "/fr/cas-usage/tendances-innovation/"), ("consommateurs", "/fr/cas-usage/audiences/"),
     ("marques", "/fr/cas-usage/sante-de-marque/"),
 ]
 
 
-def linkify(prose, cap=4):
+def linkify(prose, cap=4, own=None):
     from bs4 import BeautifulSoup, NavigableString
     soup = BeautifulSoup(prose, "html.parser")
-    used = {a.get("href") for a in soup.find_all("a")}
+    used = {a.get("href") for a in soup.find_all("a")} | {own}      # never a link to the article itself
     n = 0
     for term, url in TERMS:
         if n >= cap or url in used:
@@ -261,7 +266,7 @@ def article_main(x):
         vid = re.search(r'<figure class="bl-video">.*?</figure>', src, re.S)
         src = PQ.PROSE[x["file"]].replace("%(video)s", vid.group(0) if vid else "")
     src += PQ.EXTRA.get(x["file"], "")
-    prose, toc = (linkify(src) if fr else src), []
+    prose, toc = (linkify(src, own="/" + x["file"]) if fr else src), []
     def h2(m):
         sid = slugify(m.group(1)); toc.append((sid, m.group(1)))
         return '<h2 id="%s">%s</h2>' % (sid, m.group(1))
@@ -328,8 +333,8 @@ SEO_TITLE = {
     "Comment créer une \"Social Listening Squad\" pour doubler l'adoption de votre outil ?": "Créer une Social Listening Squad pour adopter son outil",
     "Comment France Digitale juge l'efficacité de ses actions de communication ?": "Comment France Digitale mesure sa communication",
     "Comment L'Oréal utilise le social listening pour capter la voix du consommateur ?": "Comment L'Oréal capte la voix du consommateur",
-    "Comment Origins associe influence et technologie pour transformer le capital-risque ?": "Origins : influence et technologie dans le capital-risque",
-    "Départs de X : quels réseaux sociaux peuvent rivaliser avec la plateforme d\u2019Elon Musk ?": "Départs de X : quels réseaux pour prendre le relais ?",
+    "Comment Origins associe influence et technologie pour transformer le capital-risque ?": "Salomon Aiach (Origins) : influence, technologie et capital-risque",
+    "Départs de X : quels réseaux sociaux peuvent rivaliser avec la plateforme d\u2019Elon Musk ?": "Alternative à X : quels réseaux pour prendre le relais ?",
     "La consommation devient un acte militant : les insights de Kantar sur les tendances d\u2019achat": "La consommation, un acte militant : les insights Kantar",
     "Comment Meltwater exploite les données social listening pour ses clients luxe ?": "Comment Meltwater lit le social listening pour le luxe",
     "Comment Talkwalker utilise le social listening pour comprendre ce que vos consommateurs pensent de vous ?": "Talkwalker : ce que vos consommateurs pensent de vous",

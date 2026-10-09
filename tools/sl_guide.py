@@ -5,7 +5,7 @@ adds. Each block is (heading, [paragraphs]), every string a (French, English)
 pair. Read by tools/build-expertise.py."""
 
 KICKER = ("LE SOCIAL LISTENING, EN DÉTAIL", "SOCIAL LISTENING, IN DETAIL")
-TITLE = ("Tout ce qu'il faut savoir avant de lancer une étude.", "What to know before you start a study.")
+TITLE = ("Le social listening : définition, méthode, indicateurs et exemples.", "Social listening: definition, method, metrics and examples.")
 
 BLOCKS = [
     (("Qu'est-ce que le social listening ?", "What is social listening?"), [
@@ -26,6 +26,12 @@ BLOCKS = [
         ("Les tendances d'un marché, enfin : les sujets qui accélèrent, les attentes mal couvertes, les signaux faibles qui annoncent un basculement. Dans chaque cas, la valeur n'est pas dans le tableau de bord, mais dans la décision qu'il permet de prendre et de défendre.",
          "And a market's trends: the subjects gaining speed, the expectations nobody covers well, the weak signals that announce a shift. In each case, the value is not in the dashboard, but in the decision it lets you make and defend."),
     ]),
+    (("Pourquoi faire du social listening ?", "Why do social listening?"), [
+        ("Parce que la conversation sur votre marque existe déjà, que vous l'écoutiez ou non. 5,66 milliards d'utilisateurs actifs peuplent les réseaux sociaux, soit 68,7 % de la population mondiale (DataReportal, Digital 2026). Vos clients y comparent, recommandent, se plaignent et posent des questions, sans que personne ne les interroge.",
+         "Because the conversation about your brand already exists, whether you listen or not. 5.66 billion active users are on social media, 68.7% of the world's population (DataReportal, Digital 2026). Your customers compare, recommend, complain and ask questions there, without anyone asking them."),
+        ("Le social listening donne accès à cette parole spontanée, plus rapide qu'une étude et moins orientée qu'un questionnaire. Il sert à anticiper une crise, à mesurer une campagne, à comprendre un marché avant d'y lancer un produit, et à suivre ses concurrents sur leurs propres terrains.",
+         "Social listening gives access to that spontaneous voice, faster than a survey and less steered than a questionnaire. It helps anticipate a crisis, measure a campaign, understand a market before launching a product there, and follow competitors on their own ground."),
+    ]),
     (("D'où viennent les données", "Where the data comes from"), [
         ("Des publications publiques : X, TikTok, Instagram, Facebook, YouTube, LinkedIn, Reddit, et une quinzaine d'autres réseaux selon les pays et les sujets, dont Weibo, Douyin ou VK pour les marchés où ils comptent. S'y ajoutent les forums, les sites d'avis, les blogs et la presse en ligne, parce qu'un sujet circule constamment de l'un à l'autre.",
          "From public posts: X, TikTok, Instagram, Facebook, YouTube, LinkedIn, Reddit, and some fifteen other networks depending on countries and subjects, including Weibo, Douyin or VK in the markets where they matter. Add forums, review sites, blogs and online press, because a subject keeps travelling from one to the other."),
@@ -37,6 +43,18 @@ BLOCKS = [
          "It all starts with the question: the decision the study must inform, and what would count as an answer. Then come the perimeter and the queries: brands, products, competitors, markets, languages, and Boolean queries tested to rule out homonyms and noise. It is the most underestimated part, and everything else depends on it."),
         ("Puis la collecte et le nettoyage, sur les sources adaptées. Puis la lecture : un analyste qui parle la langue du marché qualifie les publications, relie les signaux et vérifie ce que l'outil a classé. Enfin la restitution : une recommandation présentée aux équipes concernées, avec ce qui la fonde et ce qu'il faudra suivre ensuite.",
          "Then collection and cleaning, on the right sources. Then the reading: an analyst who speaks the market's language qualifies the posts, connects the signals and checks what the tool has classified. Finally the readout: a recommendation presented to the teams concerned, with what supports it and what to follow next."),
+    ]),
+    (("Quels indicateurs suivre en social listening ?", "Which social listening metrics should you track?"), [
+        ("Le volume de mentions et son évolution, d'abord, pour savoir si l'on parle plus ou moins de vous. La part de voix, ensuite : votre place dans la conversation de la catégorie face à vos concurrents. La tonalité, positive, neutre ou négative, à condition d'être relue par un analyste. La portée, c'est-à-dire le nombre de personnes potentiellement exposées.",
+         "Mention volume and how it changes, first, to know whether people talk about you more or less. Share of voice, next: your place in the category's conversation against your competitors. Tone, positive, neutral or negative, provided an analyst checks it. Reach, meaning the number of people potentially exposed."),
+        ("Les indicateurs les plus utiles sont souvent qualitatifs : les sujets qui montent, les irritants qui reviennent, les mots employés par les clients, et les voix qui portent vraiment la conversation. Un bon tableau de suivi en garde peu, mais les relie chacun à une décision.",
+         "The most useful metrics are often qualitative: the subjects gaining ground, the recurring irritants, the words customers use, and the voices that really carry the conversation. A good tracking sheet keeps few of them, but ties each one to a decision."),
+    ]),
+    (("Le social listening, réseau par réseau", "Social listening, network by network"), [
+        ("Chaque réseau raconte autre chose. TikTok et Instagram montrent les usages, les tendances et la façon dont un produit est mis en scène. X et Threads portent l'actualité et les polémiques. LinkedIn dit ce que pensent les professionnels et les dirigeants. YouTube garde les avis longs et les tutoriels, Reddit et les forums les questions précises et les comparaisons entre utilisateurs.",
+         "Each network tells a different story. TikTok and Instagram show uses, trends and how a product is staged. X and Threads carry news and controversy. LinkedIn says what professionals and executives think. YouTube keeps long reviews and tutorials, Reddit and forums the precise questions and comparisons between users."),
+        ("Une étude de social listening choisit donc ses réseaux selon la question, pas par habitude, et précise ce que chacun permet réellement de lire, ce qui reste privé et ce que les plateformes donnent accès. Nos pages consacrées aux 22 réseaux détaillent ces règles une à une.",
+         "A social listening study therefore picks its networks according to the question, not out of habit, and states what each one really lets you read, what stays private and what the platforms give access to. Our pages on the 22 networks detail these rules one by one."),
     ]),
     (("Outils de social listening : pourquoi un outil ne suffit pas", "Social listening tools: why a tool is not enough"), [
         ("Le marché compte de nombreuses plateformes de social listening : Talkwalker, Brandwatch, Sprinklr, Radarly, YouScan, Visibrain, entre autres, chacune avec ses points forts. Certaines excellent dans l'historique long, d'autres dans le temps réel, l'image ou les audiences. Aucune ne couvre tout, et la plupart des questions se règlent en croisant deux outils.",
@@ -77,3 +95,4 @@ BLOCKS = [
          "Licter is a social data intelligence consultancy based in Paris, working for brands in France and abroad: we run the market's platforms without being their publisher, and we pick the tool by the question. If you already have a licence, we can take it over and make it work. A first read comes about a week after scoping."),
     ]),
 ]
+# source: https://datareportal.com/reports/digital-2026-two-in-three-people-use-social-media (5.66 billion active social media user identities, 68.7% of the world population)

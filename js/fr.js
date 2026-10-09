@@ -725,6 +725,8 @@ window.LicterFR = {
   "our social listening agency": "notre agence de social listening",
   "the social media monitoring guide": "le guide de la veille réseaux sociaux",
   "Which social listening tool should you choose?": "Quel outil de social listening choisir ?",
+  "Social listening tool or social listening software: is there a difference?": "Outil ou logiciel de social listening : quelle différence ?",
+  "No, the words mean the same thing: a platform that collects public posts, news and reviews and turns them into dashboards. What makes the difference is who writes the queries and reads the results. Software alone gives you data; an analyst gives you a decision.": "Aucune, les deux mots désignent la même chose : une plateforme qui collecte les publications publiques, la presse et les avis, et en fait des tableaux de bord. Ce qui fait la différence, c'est qui écrit les requêtes et lit les résultats. Un logiciel seul vous donne des données ; un analyste vous donne une décision.",
   "Buy a licence or work with a social listening agency?": "Acheter une licence ou passer par une agence de social listening ?",
   "Does Licter sell social listening tools?": "Licter vend-elle des outils de social listening ?",
   "How much does a social listening tool cost?": "Combien coûte un outil de social listening ?",
@@ -2831,6 +2833,14 @@ window.LicterFR = {
     "Quelles langues couvrez-vous ?",
   "More than twenty, including English, Spanish, Chinese, Arabic and Hindi.":
     "Plus de vingt, dont l'anglais, l'espagnol, le chinois, l'arabe et l'hindi.",
+  "Social media monitoring, media monitoring: what does Vigie 360 cover?":
+    "Veille social media, veille médias : que couvre Vigie 360 ?",
+  "All media monitoring in one service: social networks (X, TikTok, Instagram, LinkedIn, Facebook, YouTube, Reddit and others), forums, review sites, blogs and the online press. Social media monitoring and press monitoring are read together, because a subject keeps moving from one to the other.":
+    "Toute la veille médias en un seul service : les réseaux sociaux (X, TikTok, Instagram, LinkedIn, Facebook, YouTube, Reddit et d'autres), les forums, les sites d'avis, les blogs et la presse en ligne. La veille social media, ou veille des médias sociaux, et la veille médiatique de la presse sont lues ensemble, parce qu'un sujet passe constamment de l'une à l'autre.",
+  "Brand monitoring or crisis monitoring: what is the difference?":
+    "Veille de marque ou veille de crise : quelle différence ?",
+  "Brand monitoring follows day to day what is said about you and your competitors, to spot the subjects gaining ground. Crisis monitoring watches for the signal that can escalate, and sends an alert within 15 minutes, day and night. Vigie 360 does both, with the same analysts.":
+    "La veille de marque suit au quotidien ce qui se dit de vous et de vos concurrents, pour repérer les sujets qui montent. La veille de crise guette le signal qui peut dégénérer, et déclenche une alerte en 15 minutes, jour et nuit. Vigie 360 fait les deux, avec les mêmes analystes.",
   "Can Vigie 360 cover our executives?":
     "Vigie 360 peut-elle couvrir nos dirigeants ?",
   "Yes. Executives are often the first exposed; we follow their mentions with the same alert levels as the brand.":
@@ -3072,7 +3082,7 @@ window.LicterFR = {
   "Social Insights: social data studies on demand | Licter":
     "Social Insights : études social data à la demande | Licter",
   "Vigie 360: 24/7 monitoring, alerts within 15 minutes | Licter":
-    "Vigie 360 : veille de crise et e-réputation, alertes 24 h/24 | Licter",
+    "Vigie 360 : veille médias sociaux, presse et crise 24 h/24 | Licter",
   "Social Listening as a Service: make your platform useful | Licter":
     "Social Listening as a Service : faire servir votre plateforme | Licter",
   "Nox: the AI-assisted monitoring tool | Licter":
@@ -3178,8 +3188,8 @@ window.LicterFR = {
     "À lire",
   "SOCIAL LISTENING, IN DETAIL":
     "LE SOCIAL LISTENING, EN DÉTAIL",
-  "What to know before you start a study.":
-    "Tout ce qu'il faut savoir avant de lancer une étude.",
+  "Social listening: definition, method, metrics and examples.":
+    "Le social listening : définition, méthode, indicateurs et exemples.",
   "What is social listening?":
     "Qu'est-ce que le social listening ?",
   "Social listening means collecting and analysing what people publish online about a brand, a product, a competitor or a subject: social networks, forums, review sites, blogs and online press. The goal is not to count mentions, but to understand a perception and decide what to do about it.":
@@ -3198,6 +3208,12 @@ window.LicterFR = {
     "La réputation d'une marque : ce qui se dit d'elle, sur quels sujets, avec quelle tonalité, et comment cela évolue face aux concurrents. Une campagne : ce qu'elle a changé dans la conversation, audience par audience, et ce qui a vraiment porté. Un produit : ce que les clients aiment, ce qui les irrite, et le vocabulaire qu'ils emploient pour en parler.",
   "And a market's trends: the subjects gaining speed, the expectations nobody covers well, the weak signals that announce a shift. In each case, the value is not in the dashboard, but in the decision it lets you make and defend.":
     "Les tendances d'un marché, enfin : les sujets qui accélèrent, les attentes mal couvertes, les signaux faibles qui annoncent un basculement. Dans chaque cas, la valeur n'est pas dans le tableau de bord, mais dans la décision qu'il permet de prendre et de défendre.",
+  "Why do social listening?":
+    "Pourquoi faire du social listening ?",
+  "Because the conversation about your brand already exists, whether you listen or not. 5.66 billion active users are on social media, 68.7% of the world's population (DataReportal, Digital 2026). Your customers compare, recommend, complain and ask questions there, without anyone asking them.":
+    "Parce que la conversation sur votre marque existe déjà, que vous l'écoutiez ou non. 5,66 milliards d'utilisateurs actifs peuplent les réseaux sociaux, soit 68,7 % de la population mondiale (DataReportal, Digital 2026). Vos clients y comparent, recommandent, se plaignent et posent des questions, sans que personne ne les interroge.",
+  "Social listening gives access to that spontaneous voice, faster than a survey and less steered than a questionnaire. It helps anticipate a crisis, measure a campaign, understand a market before launching a product there, and follow competitors on their own ground.":
+    "Le social listening donne accès à cette parole spontanée, plus rapide qu'une étude et moins orientée qu'un questionnaire. Il sert à anticiper une crise, à mesurer une campagne, à comprendre un marché avant d'y lancer un produit, et à suivre ses concurrents sur leurs propres terrains.",
   "Where the data comes from":
     "D'où viennent les données",
   "From public posts: X, TikTok, Instagram, Facebook, YouTube, LinkedIn, Reddit, and some fifteen other networks depending on countries and subjects, including Weibo, Douyin or VK in the markets where they matter. Add forums, review sites, blogs and online press, because a subject keeps travelling from one to the other.":
@@ -3210,6 +3226,18 @@ window.LicterFR = {
     "Tout commence par la question : la décision que l'étude doit éclairer, et ce qui compterait comme une réponse. Viennent ensuite le périmètre et les requêtes : marques, produits, concurrents, marchés, langues, et des requêtes booléennes testées pour écarter les homonymes et le bruit. C'est le travail le plus sous-estimé, et celui dont dépend tout le reste.",
   "Then collection and cleaning, on the right sources. Then the reading: an analyst who speaks the market's language qualifies the posts, connects the signals and checks what the tool has classified. Finally the readout: a recommendation presented to the teams concerned, with what supports it and what to follow next.":
     "Puis la collecte et le nettoyage, sur les sources adaptées. Puis la lecture : un analyste qui parle la langue du marché qualifie les publications, relie les signaux et vérifie ce que l'outil a classé. Enfin la restitution : une recommandation présentée aux équipes concernées, avec ce qui la fonde et ce qu'il faudra suivre ensuite.",
+  "Which social listening metrics should you track?":
+    "Quels indicateurs suivre en social listening ?",
+  "Mention volume and how it changes, first, to know whether people talk about you more or less. Share of voice, next: your place in the category's conversation against your competitors. Tone, positive, neutral or negative, provided an analyst checks it. Reach, meaning the number of people potentially exposed.":
+    "Le volume de mentions et son évolution, d'abord, pour savoir si l'on parle plus ou moins de vous. La part de voix, ensuite : votre place dans la conversation de la catégorie face à vos concurrents. La tonalité, positive, neutre ou négative, à condition d'être relue par un analyste. La portée, c'est-à-dire le nombre de personnes potentiellement exposées.",
+  "The most useful metrics are often qualitative: the subjects gaining ground, the recurring irritants, the words customers use, and the voices that really carry the conversation. A good tracking sheet keeps few of them, but ties each one to a decision.":
+    "Les indicateurs les plus utiles sont souvent qualitatifs : les sujets qui montent, les irritants qui reviennent, les mots employés par les clients, et les voix qui portent vraiment la conversation. Un bon tableau de suivi en garde peu, mais les relie chacun à une décision.",
+  "Social listening, network by network":
+    "Le social listening, réseau par réseau",
+  "Each network tells a different story. TikTok and Instagram show uses, trends and how a product is staged. X and Threads carry news and controversy. LinkedIn says what professionals and executives think. YouTube keeps long reviews and tutorials, Reddit and forums the precise questions and comparisons between users.":
+    "Chaque réseau raconte autre chose. TikTok et Instagram montrent les usages, les tendances et la façon dont un produit est mis en scène. X et Threads portent l'actualité et les polémiques. LinkedIn dit ce que pensent les professionnels et les dirigeants. YouTube garde les avis longs et les tutoriels, Reddit et les forums les questions précises et les comparaisons entre utilisateurs.",
+  "A social listening study therefore picks its networks according to the question, not out of habit, and states what each one really lets you read, what stays private and what the platforms give access to. Our pages on the 22 networks detail these rules one by one.":
+    "Une étude de social listening choisit donc ses réseaux selon la question, pas par habitude, et précise ce que chacun permet réellement de lire, ce qui reste privé et ce que les plateformes donnent accès. Nos pages consacrées aux 22 réseaux détaillent ces règles une à une.",
   "Social listening tools: why a tool is not enough":
     "Outils de social listening : pourquoi un outil ne suffit pas",
   "The market counts many social listening platforms: Talkwalker, Brandwatch, Sprinklr, Radarly, YouScan, Visibrain, among others, each with its strengths. Some excel at long history, others at real time, images or audiences. None covers everything, and most questions are answered by crossing two tools.":
@@ -3410,6 +3438,12 @@ window.LicterFR = {
     "La consumer intelligence désigne l'étude des consommateurs d'une catégorie à partir de leurs traces en ligne : ce qu'ils disent des produits, ce qu'ils recherchent, les marques et les médias qu'ils suivent. Elle croise le plus souvent social listening, audience intelligence et données de recherche, pour répondre à une question de marché plutôt qu'à une question de marque. Les consumer insights en sont le résultat : ce que l'on retient de cette lecture pour décider.",
   "It differs from a declared market study: nobody is asked anything, we observe what real consumers do and say, continuously. At Licter, a consumer intelligence study starts from a question, for example why a category is losing customers or what a target expects from a product, picks the sources that answer it, and ends with recommendations.":
     "Elle se distingue d'une étude de marché déclarative : personne n'est interrogé, on observe ce que des consommateurs réels font et disent, en continu. Chez Licter, une étude de consumer intelligence part d'une question, par exemple pourquoi une catégorie perd des clients ou ce qu'une cible attend d'un produit, choisit les sources qui y répondent, et se termine par des recommandations.",
+  "Consumer intelligence and customer intelligence: what is the difference?":
+    "Consumer intelligence et customer intelligence : quelle différence ?",
+  "The two terms overlap. Customer intelligence usually starts from your own customers and your data: purchases, customer service, CRM. Consumer intelligence looks wider: all the consumers in a category, customers or not, from what they post, follow and search for online.":
+    "Les deux termes se recoupent. La customer intelligence part le plus souvent de vos propres clients et de vos données : achats, service client, CRM. La consumer intelligence regarde plus large : tous les consommateurs d'une catégorie, clients ou non, à partir de ce qu'ils publient, suivent et recherchent en ligne.",
+  "In practice, the best studies cross the two: your data says who buys, the conversation and the audiences say why, and what those who do not buy yet are doing. That cross-reading is what we build with you, never working on individual profiles.":
+    "En pratique, les meilleures études croisent les deux : vos données disent qui achète, la conversation et les audiences disent pourquoi, et ce que font ceux qui n'achètent pas encore. C'est ce croisement que nous construisons avec vous, sans jamais travailler sur des profils individuels.",
   "Audience intelligence and personas: what is the difference?":
     "Audience intelligence et persona : quelle différence ?",
   "A classic persona is often born in a workshop: a few interviews, sales data, and what the team believes it knows about its customers. It describes a typical person, with an age, a job and assumed motivations. Useful to align a team, it remains declarative, and it ages fast, because nobody tests it against data.":
@@ -3560,6 +3594,10 @@ window.LicterFR = {
     "L'effet d'une campagne sur vos ventes : il faut le croiser avec d'autres données.",
   "What appears in the image":
     "Ce qui apparaît dans l'image",
+  "How do you choose the right influencers?":
+    "Comment choisir les bons influenceurs ?",
+  "Not by follower count. We look at who really talks about your category, the overlap between their audience and yours, real engagement and past stances. The result is an argued shortlist of influencers, risks included.":
+    "Pas au nombre d'abonnés. Nous regardons qui parle vraiment de votre catégorie, le recouvrement entre son audience et la vôtre, l'engagement réel et ses prises de position passées. Le résultat est une shortlist d'influenceurs argumentée, risques compris.",
   "Do you work with influencer agencies?":
     "Travaillez-vous avec des agences d'influence ?",
   "Yes, often upstream: we give them a read, argued shortlist, and they handle the relationship and the production.":
@@ -3944,12 +3982,12 @@ window.LicterFR = {
     "Mon flash offert",
   "Chat with Antoine":
     "Discuter avec Antoine",
-  "Social listening agency and consultancy in Paris | Licter":
-    "Agence et cabinet de social listening à Paris | Licter",
-  "Audience and consumer intelligence: who your audiences are | Licter":
-    "Audience et consumer intelligence : qui sont vos audiences | Licter",
+  "Social listening: definition, method and agency in Paris | Licter":
+    "Social listening : définition, méthode et agence à Paris | Licter",
+  "Audience, consumer and customer intelligence: your customers | Licter":
+    "Audience, consumer et customer intelligence : vos clients | Licter",
   "Influence listening: the voices that actually carry | Licter":
-    "Influence listening : les voix qui portent vraiment | Licter",
+    "Influence listening : influenceurs et voix qui portent vraiment | Licter",
   "AI listening and AI visibility: what AI says about you | Licter":
     "AI listening et visibilité IA : ce que les IA disent de vous | Licter",
   "Live listening: the conversation in real time | Licter":
@@ -8353,8 +8391,8 @@ window.LicterFR = {
     "Sources du social listening : les 22 réseaux que nous écoutons | Licter",
   "The 22 networks our data comes from: what can be read there, what stays private, and the platforms that cover them, from TikTok to Reddit.":
     "Les 22 réseaux d'où viennent nos données : ce qu'on peut y lire, ce qui reste privé, et les plateformes qui les couvrent, de TikTok à Reddit.",
-  "Social listening tools: the platforms we run | Licter":
-    "Outils de social listening : les plateformes que nous opérons | Licter",
+  "Social listening tools and software: the ones we run | Licter":
+    "Outils et logiciels de social listening : ceux que nous opérons | Licter",
   "The listening platforms Licter runs, the search, press and AI tools around them, and the 22 networks the data comes from.":
     "Les plateformes d'écoute que Licter opère, les outils de recherche, de presse et d'IA qui les complètent, et les 22 réseaux d'où viennent les données.",
   /* ---- end tech pages ---- */
