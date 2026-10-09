@@ -26,7 +26,7 @@ HEAD = {
     "why-licter.html": ("Pourquoi Licter | Cabinet de conseil en social data intelligence",
                         "Licter est un cabinet de conseil en social data intelligence fondé à Paris en 2022 par les responsables de la cellule data de l'Élysée. 50+ clients, 160+ projets."),
     "clients.html": ("Nos clients | Licter, social data intelligence",
-                     "Plus de 50 organisations lisent leur marché avec Licter : Chanel, LVMH, L'Oréal, Danone, Unilever, Renault, Orange, Société Générale, l'UNESCO…"),
+                     "Plus de 50 organisations lisent leur marché avec Licter : L'Oréal, Decathlon, Danone, HP, La Poste, Société Générale, l'UNESCO…"),
     "blog.html": ("Blog : social listening, audiences et prospective | Licter",
                   "Social listening, veille, consumer insights et influence : ce que nos consultants apprennent en mission, et nos entretiens avec L'Oréal, AXA, LVMH ou Kantar."),
     "guide.html": ("Les 12 questions auxquelles répond la social data | Licter",

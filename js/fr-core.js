@@ -43,6 +43,7 @@ window.LicterFR = {
 "List": "Liste",
 "pieces": "articles",
 "6 October 2026": "6 octobre 2026",
+"9 October 2026": "9 octobre 2026",
 "16 October 2026": "16 octobre 2026",
 "3 November 2026": "3 novembre 2026",
 "9 November 2026": "9 novembre 2026",
