@@ -149,6 +149,7 @@ def honest_dates(rel, s, dates, today):
         return s
     bare = BYLINE.sub(r"\1\3\5", DM.sub(r"\1\3", s))
     bare = WORD.sub(lambda m_: TO_UPDATED.get(m_.group(1), m_.group(1)) + m_.group(2), bare)   # the wording is not content
+    bare = re.sub(r'"datePublished": "%s", ' % PUBLISHED, "", bare)                                # added below
     bare = re.sub(r"\?v=\d+", "", bare)
     h = hashlib.md5(bare.encode()).hexdigest()
     rec = dates.get(rel)
@@ -159,9 +160,12 @@ def honest_dates(rel, s, dates, today):
     y, m, d = (int(x) for x in rec["date"].split("-"))
     def label(fr_):
         return "%d %s %d" % (d, MOIS[m - 1], y) if fr_ else "%d %s %d" % (d, MONTHS[m - 1], y)
-    s = DM.sub(lambda m_: m_.group(1) + rec["date"] + m_.group(3), s)
     launch = rec["date"] <= LAUNCH_END
     shown = PUBLISHED if launch else rec["date"]
+    # the markup says the same as the page: published on launch day, modified
+    # only once the content really changed
+    s = DM.sub(lambda m_: m_.group(1) + shown + m_.group(3), s)
+    s = re.sub(r'(?<!"datePublished": "\d{4}-\d{2}-\d{2}", )("dateModified": ")', '"datePublished": "%s", \\1' % PUBLISHED, s) if '"datePublished"' not in s else s
     y, m, d = (int(x) for x in shown.split("-"))
     s = WORD.sub(lambda m_: (TO_PUBLISHED if launch else TO_UPDATED).get(m_.group(1), m_.group(1)) + m_.group(2), s)
     return BYLINE.sub(lambda m_: m_.group(1) + shown + m_.group(3) + label(not re.search(r"[A-Z][a-z]+ \d{4}$", m_.group(4))) + m_.group(5), s)
@@ -289,6 +293,11 @@ def structured(rel, s, fr, url):
             s = s.replace(m.group(0), '<script type="application/ld+json">%s</script>' % json.dumps(b, ensure_ascii=False), 1)
     if rel in ABOUT:
         add.extend(dict({"@context": "https://schema.org"}, **f) for f in founders(fr))
+    # a page that points to #website gets its definition, so the reference resolves on the page itself
+    refs_site = '"@id": "%s/#website"' % SITE in s or any((SITE + "/#website") in json.dumps(x) for x in add)
+    if refs_site and '"@type": "WebSite"' not in s:
+        add.append({"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "name": "Licter",
+                    "url": SITE + "/", "inLanguage": ["fr", "en"], "publisher": {"@id": SITE + "/#org"}})
     if add:
         s = s.replace("</head>", "".join('<script type="application/ld+json" data-seo>%s</script>\n' % json.dumps(x, ensure_ascii=False) for x in add) + "</head>", 1)
     return s
@@ -408,6 +417,13 @@ def main():
                        lambda m_: m_.group(1) + ' <li><a href="%s">%s</a></li>' % (("/fr/sources/", "Sources (22 réseaux)") if fr else ("/sources.html", "Sources (22 networks)")) + m_.group(2), s, count=1)
         if fr:      # a French twin copied from an English page keeps the English label
             s = s.replace('>Sources (22 networks)</a>', '>Sources (22 réseaux)</a>')
+            # the article template's table of contents, written in English (screen readers read the label)
+            s = (s.replace('aria-label="In this piece"', 'aria-label="Dans cet article"').replace('>IN THIS PIECE<', '>DANS CET ARTICLE<')
+                  .replace('data-copied="Link copied">Copy the link<', 'data-copied="Lien copié">Copier le lien<'))
+        # the tools hub is linked with the words it ranks for
+        s = s.replace('<li><a href="tech-tools.html">Tech &amp; tools</a></li>', '<li><a href="tech-tools.html">Social listening tools</a></li>')
+        s = s.replace('<li><a href="/fr/outils/">Techno &amp; outils</a></li>', '<li><a href="/fr/outils/">Outils de social listening</a></li>')
+        s = s.replace('<li><a href="/tech-tools.html">Tech &amp; tools</a></li>', '<li><a href="/tech-tools.html">Social listening tools</a></li>')
         # the Social Intelligence Club, served by this site, reached from every page
         foot_at = s.rfind("<footer")
         if foot_at > 0 and "/socialintelligenceclub/" not in s[foot_at:]:
@@ -433,6 +449,14 @@ def main():
         if s != s0:
             p.write_text(s)
             done += 1
+    # the Social Intelligence Club's pages are written by hand: their date is
+    # the day their content last changed, kept the same way
+    for rel in ("socialintelligenceclub/index.html", "socialintelligenceclub/rejoindre/index.html"):
+        f = ROOT / rel
+        if f.exists():
+            h = hashlib.md5(re.sub(r"\?v=\d+", "", f.read_text()).encode()).hexdigest()
+            if dates.get(rel, {}).get("hash") != h:
+                dates[rel] = {"hash": h, "date": today}
     DATES.write_text(json.dumps(dates, indent=0, sort_keys=True))
     # the sitemap gets the date each page last changed
     by_url = {SITE + url_of(ROOT / r): d["date"] for r, d in dates.items() if (ROOT / r).exists()}

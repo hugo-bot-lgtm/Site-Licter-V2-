@@ -7,9 +7,9 @@ or a consultancy adds. Each block is (heading, [paragraphs]), every string a
 (French, English) pair. Same structure as tools/sl_guide.py.
 
 Licter facts come from the site's own files: the behavioural panel (about
-three billion consumers, 5,000+ criteria) and the affinity, penetration and
+more than 2.7 billion people, over 7,000 criteria, per Audiense, which acquired SOPRISM) and the affinity, penetration and
 opportunity scores from tools/uc_content.py; the HP case from
-tools/build-offers.py; the SoPrism limits and the "about fifteen tools" from
+tools/build-offers.py; the SoPrism limits and the "19 tools" from
 tools/tools_data.py and fr/outils/soprism/; the Charles Besson quote from
 article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html.
 Generic scenarios are marked "par exemple" and are not Licter cases."""
@@ -45,8 +45,8 @@ BLOCKS = [
          "Social listening reads what people say about a brand or a subject. The two complement each other: one says what people think of you, the other who they are and what they like. A single study often crosses them, for example to learn what a community found in the panel says about your category, and in which words."),
     ]),
     (("Quelles données utilise une étude d'audience ?", "What data does an audience study use?"), [
-        ("Le socle, c'est un panel comportemental : environ trois milliards de consommateurs décrits par plus de 5 000 critères, dont les centres d'intérêt, le régime média, les affinités de marque et la sociodémographie. Ces données sont agrégées et anonymes : on lit des groupes, jamais une personne. Elles décrivent ce que les gens font déjà, sans questionnaire, donc sans biais de déclaration.",
-         "The base is a behavioural panel: about three billion consumers described by more than 5,000 criteria, including interests, media diet, brand affinities and sociodemographics. This data is aggregated and anonymous: we read groups, never a person. It describes what people already do, with no questionnaire, and so with no declaration bias."),
+        ("Le socle, c'est un panel comportemental : plus de 2,7 milliards de personnes décrites par plus de 7 000 critères, dont les centres d'intérêt, le régime média, les affinités de marque et la sociodémographie. Ces données sont agrégées et anonymes : on lit des groupes, jamais une personne. Elles décrivent ce que les gens font déjà, sans questionnaire, donc sans biais de déclaration.",
+         "The base is a behavioural panel: more than 2.7 billion people described by more than 7,000 criteria, including interests, media diet, brand affinities and sociodemographics. This data is aggregated and anonymous: we read groups, never a person. It describes what people already do, with no questionnaire, and so with no declaration bias."),
         ("À ce socle s'ajoutent la conversation publique, pour savoir qui parle de vous et de votre catégorie, et la recherche, pour savoir ce que chaque communauté cherche. Vos propres données, comme un fichier clients ou une étude existante, peuvent être croisées si vous le souhaitez, mais elles ne sont pas nécessaires pour une première segmentation.",
          "On top of this base come the public conversation, to know who talks about you and your category, and search, to know what each community looks for. Your own data, such as a customer file or an existing study, can be crossed in if you wish, but it is not needed for a first segmentation."),
     ]),
@@ -88,7 +88,11 @@ BLOCKS = [
     (("Agence ou cabinet d'audience intelligence : ce que vous achetez", "Audience intelligence agency or consultancy: what you buy"), [
         ("Avec une agence ou un cabinet d'audience intelligence, vous n'achetez pas un accès à un outil de profilage, mais une réponse à une question de marketing. Le choix des sources, la définition des audiences à comparer, la lecture des communautés et la recommandation sont pris en charge par des consultants, qui lisent eux-mêmes ce qu'ils ont configuré.",
          "With an audience intelligence agency or consultancy, you do not buy access to a profiling tool, but an answer to a marketing question. The choice of sources, the definition of the audiences to compare, the reading of the communities and the recommendation are handled by consultants, who read for themselves what they have set up."),
-        ("Licter est un cabinet indépendant de social data intelligence : nous opérons SoPrism et une quinzaine d'autres outils sans en être l'éditeur, et nous choisissons la source selon la question. Pour un marché étranger, la lecture est confiée à des analystes qui parlent la langue et connaissent le marché. Le plus simple pour commencer : le flash Audience listening offert sur votre marque.",
-         "Licter is an independent social data intelligence consultancy: we run SoPrism and about fifteen other tools without being their publisher, and we pick the source by the question. For a foreign market, the reading goes to analysts who speak the language and know the market. The simplest way to start: the free Audience listening flash on your brand."),
+        ("Licter est un cabinet indépendant de social data intelligence : nous opérons SoPrism et 18 autres outils sans en être l'éditeur, et nous choisissons la source selon la question. Pour un marché étranger, la lecture est confiée à des analystes qui parlent la langue et connaissent le marché. Le plus simple pour commencer : le flash Audience listening offert sur votre marque.",
+         "Licter is an independent social data intelligence consultancy: we run SoPrism and 18 other tools without being their publisher, and we pick the source by the question. For a foreign market, the reading goes to analysts who speak the language and know the market. The simplest way to start: the free Audience listening flash on your brand."),
     ]),
 ]
+# source: https://help.audiense.com/knowledge/audiense-data-sources
+# source: https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2
+# source: https://www.cnil.fr/fr/les-bases-legales/interet-legitime
+# source: https://www.cnil.fr/fr/recommandations-reutilisateurs-donnees-internet

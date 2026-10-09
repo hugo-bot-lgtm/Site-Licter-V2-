@@ -119,7 +119,15 @@
   var base = null;      /* outliers and the links between communities */
   var signals = [];
 
-  function build() {
+  /* the first build is spread over several short tasks (one community each),
+     so the page never freezes while the map is drawn; a rebuild (resize,
+     theme) stays in one go */
+  function build(done) {
+    var parts = buildParts();
+    if (!done) { while (parts.next()) {} return; }
+    (function step() { if (!alive) return; if (parts.next()) setTimeout(step, 0); else done(); })();
+  }
+  function buildParts() {
     seed = 20260929;
     LIGHT = isLight();
     W = Math.max(1, host.clientWidth);
@@ -134,7 +142,9 @@
     /* smaller frames get fewer accounts, not smaller dots */
     var density = Math.max(0.45, Math.min(1, (W * H) / (640 * 480)));
 
-    layers = COMMUNITIES.map(function (c) {
+    var density_ = density, queue = COMMUNITIES.slice(), stage = 0;
+    layers = [];
+    function makeLayer(c) {
       var hx = c.x * W, hy = c.y * H, R = c.r * S * 1.25;
       var pad = R * 0.35;
       var size = Math.ceil((R + pad) * 2);
@@ -189,7 +199,8 @@
 
       return { c: c, off: off, size: size, hx: hx, hy: hy, ox: ox, oy: oy, R: R, nodes: nodes,
                phase: rnd() * Math.PI * 2, glow: 0 };
-    });
+    }
+    function finish() {
 
     /* base layer: grey outlier constellations, and faint links between
        communities so the map reads as one network */
@@ -254,8 +265,14 @@
 
     /* signals: a bright point running down a link to its hub */
     signals = [];
-    var count = Math.round(180 * density);
+    var count = Math.round(180 * density_);
     for (var s = 0; s < count; s++) signals.push(newSignal(true));
+    }
+    return { next: function () {
+      if (queue.length) { layers.push(makeLayer(queue.shift())); return true; }
+      if (!stage) { stage = 1; finish(); }
+      return false;
+    } };
   }
 
   function newSignal(anywhere) {
@@ -330,6 +347,7 @@
   var running = false, last = 0;
 
   function draw(now) {
+    if (!base) return;      /* still being built */
     var t = now / 1000;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.globalCompositeOperation = "source-over";
@@ -405,17 +423,22 @@
     requestAnimationFrame(loop);
   }
   function start() {
-    if (running || reduced.matches) return;
+    if (running || reduced.matches || !ready) return;
     running = true; last = 0;
     requestAnimationFrame(loop);
   }
   function stop() { running = false; }
 
+  var ready = false;
   function init() {
-    bornAt = performance.now();
-    build();
-    draw(performance.now());
-    if (!reduced.matches) start();
+    build(function () {
+      ready = true;
+      /* a community picked while the map was being built */
+      if (labelBox) Array.prototype.forEach.call(labelBox.children, function (el, k) { el.classList.toggle("is-on", k === focusIndex()); });
+      bornAt = performance.now();
+      draw(performance.now());
+      if (!reduced.matches) start();
+    });
   }
 
   /* only while visible */
@@ -432,7 +455,7 @@
 
   if (window.MutationObserver) {
     var mo = new MutationObserver(function () {
-      if (isLight() === LIGHT) return;
+      if (!ready || isLight() === LIGHT) return;
       setHover(-1); build(); draw(performance.now());
     });
     mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
@@ -444,7 +467,7 @@
   function rebuild() {
     clearTimeout(t0);
     t0 = setTimeout(function () {
-      if (Math.max(1, host.clientWidth) === W && Math.max(1, host.clientHeight) === H) return;
+      if (!ready || (Math.max(1, host.clientWidth) === W && Math.max(1, host.clientHeight) === H)) return;
       setHover(-1); build(); draw(performance.now());
     }, 150);
   }

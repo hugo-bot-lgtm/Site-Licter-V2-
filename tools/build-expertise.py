@@ -22,7 +22,7 @@ U, C = O.U, O.C
 FR, EN = 0, 1
 SITE = O.SITE
 t, a = O.t, O.a
-GUIDE = {"social": "sl_guide", "audience": "al_guide"}   # expertise key -> tools/<module>.py, a qa_roller section
+GUIDE = {"social": "sl_guide", "audience": "al_guide", "ai": "ai_guide"}   # expertise key -> tools/<module>.py, a qa_roller section
 
 S = {
     "home": ("Accueil", "Home"),
@@ -64,12 +64,12 @@ LISTENINGS = [
         "key": "social", "file": "expertise-social-listening.html", "icon": "chart",
         "name": ("Social listening", "Social listening"),
         "short": ("Ce qui se dit sur vous, vos concurrents et votre marché.", "What is said about you, your competitors and your market."),
-        "seo_title": ("Agence et cabinet de social listening | Licter", "Social listening agency and consultancy | Licter"),
+        "seo_title": ("Agence et cabinet de social listening à Paris | Licter", "Social listening agency and consultancy in Paris | Licter"),
         "seo_desc": ("Agence de social listening à Paris : réseaux sociaux, presse, forums et avis, lus par un analyste, pour des marques en France et à l'international.",
                      "Social listening agency in Paris: social networks, news, forums and reviews, read by an analyst, for brands in France and abroad."),
-        "h1": ("Ce que les gens disent, lu par des gens.", "What people say, read by people."),
-        "lead": ("Les réseaux sociaux, la presse, les forums et les avis, collectés sur votre périmètre et lus par un analyste : volumes, sujets, tonalité, et surtout ce que ça veut dire pour vous.",
-                 "Social networks, news, forums and reviews, collected on your perimeter and read by an analyst: volumes, topics, tone, and above all what it means for you."),
+        "h1": ("Agence de social listening à Paris : ce que les gens disent, lu par des gens.", "Social listening agency in Paris: what people say, read by people."),
+        "lead": ("Agence et cabinet de social listening basés à Paris, nous travaillons pour des marques en France et à l'international. Les réseaux sociaux, la presse, les forums et les avis, collectés sur votre périmètre et lus par un analyste : volumes, sujets, tonalité, et surtout ce que ça veut dire pour vous.",
+                 "A social listening agency and consultancy based in Paris, working for brands in France and abroad. Social networks, news, forums and reviews, collected on your perimeter and read by an analyst: volumes, topics, tone, and above all what it means for you."),
         "demo": [(("Sujet en hausse", "Rising topic"), ("« Autonomie en hiver », +64 % en 30 jours", "“Winter range”, +64% in 30 days")),
                  (("Tonalité", "Tone"), ("Négative sur le prix, positive sur le design", "Negative on price, positive on design")),
                  (("Qui le porte", "Who carries it"), ("Deux forums spécialisés, puis la presse auto", "Two specialist forums, then the motoring press"))],
@@ -85,6 +85,12 @@ LISTENINGS = [
                 (("Quelle différence avec un outil de veille ?", "How is it different from a monitoring tool?"),
                  ("L'outil collecte. Nous choisissons les sources, écartons le bruit et lisons le résultat, pour vous dire ce qu'il faut en faire.",
                   "The tool collects. We pick the sources, remove the noise and read the result, to tell you what to do with it.")),
+                (("Êtes-vous une agence de social listening en France ?", "Are you a social listening agency in France?"),
+                 ("Oui : Licter est une agence et un cabinet de social listening basé à Paris. Nous travaillons pour des marques françaises et internationales, en France et sur les autres marchés, dans plus de vingt langues.",
+                  "Yes: Licter is a social listening agency and consultancy based in Paris. We work for French and international brands, in France and in other markets, in more than twenty languages.")),
+                (("Que recevez-vous à la fin d'une étude ?", "What do you receive at the end of a study?"),
+                 ("Une restitution par le consultant qui a lu les données, environ une semaine après le cadrage : les sujets, la tonalité et qui les porte, une synthèse écrite, et ce qu'il faut en faire. Pour une veille continue, des alertes lues par un analyste et une revue régulière.",
+                  "A readout by the consultant who read the data, about a week after framing: the topics, the tone and who carries them, a written summary, and what to do with it. For continuous monitoring, alerts read by an analyst and a regular review.")),
                 (("Combien coûte une étude de social listening ?", "How much does a social listening study cost?"),
                  ("Sur devis : le prix dépend du périmètre (marques, marchés, langues, sources), de la durée et du rythme des livrables. Après un premier échange de trente minutes, nous envoyons une proposition chiffrée.",
                   "On quotation: the price depends on the scope (brands, markets, languages, sources), the duration and how often you receive deliverables. After a first thirty-minute call, we send a costed proposal."))],
@@ -273,7 +279,8 @@ EXTRA = {
                   (("J+7", "Day 7"), ("Analyse", "Analysis"), ("Affinités, médias et recoupements, lus par un analyste.", "Affinities, media and overlaps, read by an analyst.")),
                   (("J+10", "Day 10"), ("Restitution", "Readout"), ("Les communautés à prioriser, et comment les toucher.", "The communities to prioritise, and how to reach them."))],
         "faq": [(("Est-ce conforme au RGPD ?", "Is it GDPR-compliant?"),
-                 ("Oui : uniquement des données publiques, agrégées en communautés, jamais de profils individuels.", "Yes: public data only, aggregated into communities, never individual profiles.")),
+                 ("Oui, sur la base de l'intérêt légitime (article 6.1.f du RGPD). Publiques ne veut pas dire libres : la CNIL rappelle que ces données restent personnelles. Nous n'utilisons donc que des données publiques, agrégées en communautés, jamais de profils individuels, et seulement ce qui sert la question posée.",
+                  "Yes, on the basis of legitimate interest (GDPR Article 6(1)(f)). Public does not mean free to use: the CNIL points out that such data remains personal. So we only use public data, aggregated into communities, never individual profiles, and only what the question needs.")),
                 (("Que fait-on des résultats ?", "What do we do with the results?"),
                  ("Un plan média, des messages et des créateurs par communauté : la restitution se termine par des recommandations.",
                   "A media plan, messages and creators for each community: the readout ends with recommendations."))],
@@ -350,8 +357,16 @@ HUB_FAQ = [
     (("Combien de temps pour une première réponse ?", "How long for a first answer?"),
      ("Une à deux semaines selon les écoutes, 48 heures pour une veille en direct.", "One to two weeks depending on the listening, 48 hours for live monitoring.")),
 ]
+PRICE = {"audience": ("une étude d'audience", "an audience study"), "influence": ("une étude d'influence", "an influence study"),
+         "ai": ("un audit de ce que disent les IA", "an audit of what AI says"), "live": ("une veille en direct", "live monitoring"),
+         "search": ("une étude de search listening", "a search listening study")}
 for _x in LISTENINGS:
     _x["faq"] = _x["faq"] + EXTRA[_x["key"]]["faq"]
+    if _x["key"] in PRICE:      # the same answer as the social listening page: on quotation, no figure
+        fr_, en_ = PRICE[_x["key"]]
+        _x["faq"] = _x["faq"] + [(("Combien coûte %s ?" % fr_, "How much does %s cost?" % en_),
+                                  ("Sur devis : le prix dépend du périmètre (marques, marchés, langues, sources), de la durée et du rythme des livrables. Après un premier échange de trente minutes, nous envoyons une proposition chiffrée.",
+                                   "On quotation: the price depends on the scope (brands, markets, languages, sources), the duration and how often you receive deliverables. After a first thirty-minute call, we send a costed proposal."))]
 
 S.update({
     "how_runs": ("Comment ça se passe", "How it runs"),
@@ -724,7 +739,9 @@ def listening_body(x, offers_html):
     nm = x["name"]
     out = '<main id="content" class="tk tk--net xe-tk" style="--brand:%s;--brand-ink:#13162D;--brand-2:%s">\n' % (col, col)
     out += '%s\n' % tk_crumbs([(("Accueil", "Home"), "index.html"), (S["expertise"], "expertise.html"), (x["name"], None)]).replace('class="tk-crumbs"', 'class="tk-crumbs shell"')
-    out += lm_hero('%s<!--glossk:%s-->' % (t(x["name"]), x["key"]), H1L[x["key"]], x["lead"], "xp-" + x["key"],
+    # the social listening page answers "agence social listening Paris / France": its H1 says so
+    kick_name = t(("Agence de social listening à Paris", "Social listening agency in Paris")) if x["key"] == "social" else t(x["name"])
+    out += lm_hero(kick_name if x["key"] == "social" else '%s<!--glossk:%s-->' % (kick_name, x["key"]), H1L[x["key"]], x["lead"], "xp-" + x["key"],
                    t((S["lm_t"][0] % x["name"][0], S["lm_t"][1] % x["name"][1])), col, icon, t(x["name"]), logos(), flash_key=x["key"])
     art_fr = ("l'" if nm[FR][0].lower() in "aeiou" else "le ") + nm[FR][0].lower() + nm[FR][1:] if not nm[FR].startswith("AI") else "l'" + nm[FR]
     out += sec("", head(t(S["hears_k"]), t((S["hears_t"][0] % art_fr, S["hears_t"][1] % nm[EN]))) + feats, band=True)
@@ -792,7 +809,7 @@ def ld(file, name, desc, crumbs_, faq=None, lang=EN):
     url = SITE + FR_PATH[file] if lang == FR else "%s/%s" % (SITE, file)
     out = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": n, "item": SITE + (("/fr/" if f == "" else FR_PATH.get(f, "/" + f)) if lang == FR else "/" + f)} for i, (n, f) in enumerate(crumbs_)]},
-        {"@context": "https://schema.org", "@type": "Service", "name": name, "description": desc, "provider": U.ORG, "url": url, "areaServed": "Worldwide"}]
+        {"@context": "https://schema.org", "@type": "Service", "name": name, "description": desc, "provider": U.ORG, "url": url, "areaServed": ["France", "Worldwide"]}]
     if faq:
         out.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": U.typo(q[lang], lang), "acceptedAnswer": {"@type": "Answer", "text": U.typo(r[lang], lang)}} for q, r in faq]})

@@ -34,7 +34,7 @@ t, a = O.t, O.a
 
 S = {
     "kick": ("TECHNO & OUTILS", "TECH & TOOLS"),
-    "all": ("Voir tous nos outils", "See all our tools"),
+    "all": ("Voir tous nos outils de social listening", "See all our social listening tools"),
     "book": ("Prendre rendez-vous", "Book a meeting"),
     "steps_k": ("NOTRE APPROCHE EN TROIS ÉTAPES", "OUR APPROACH IN THREE STEPS"),
     "steps_t": ("Comment nous l'utilisons.", "How we put it to work."),
@@ -57,8 +57,8 @@ S = {
     "act_k": ("PASSER À L'ACTION", "TIME TO ACT"),
     "diag": ("Demander un diagnostic", "Request a diagnostic"),
     "expert": ("Parler à un consultant", "Talk to a consultant"),
-    "cta_text": ("Envoyez-nous la question. Si un autre outil y répond mieux, nous vous le dirons : nous en utilisons une quinzaine.",
-                 "Send us the question. If another tool answers it better, we will tell you: we use about fifteen."),
+    "cta_text": ("Envoyez-nous la question. Si un autre outil y répond mieux, nous vous le dirons : nous en utilisons 19.",
+                 "Send us the question. If another tool answers it better, we will tell you: we use 19."),
 }
 
 FAMILY = {f["key"]: f for f in C.FAMILIES}
@@ -382,7 +382,7 @@ def tool_chips(slugs):
 
 
 def crumbs(name, net=False):
-    mid = ('sources.html', t(SOURCES_NAME)) if net else ('tech-tools.html', t(("Techno & outils", "Tech & tools")))
+    mid = ('sources.html', t(SOURCES_NAME)) if net else ('tech-tools.html', t(("Outils de social listening", "Social listening tools")))
     return ('<nav class="tk-crumbs" aria-label="%s"><ol><li><a href="index.html">%s</a></li><li><a href="%s">%s</a></li>'
             '<li aria-current="page">%s</li></ol></nav>') % (a(("Fil d'Ariane", "Breadcrumb")), t(("Accueil", "Home")), mid[0], mid[1], name)
 
@@ -395,7 +395,7 @@ SOURCES = {"title": ("Sources du social listening : les 22 réseaux que nous éc
 
 def sources_body():
     """the hub of the network pages"""
-    copy = (crumbs(t(SOURCES_NAME)).replace('<li><a href="sources.html">%s</a></li>' % t(SOURCES_NAME), '<li><a href="tech-tools.html">%s</a></li>' % t(("Techno & outils", "Tech & tools"))) +
+    copy = (crumbs(t(SOURCES_NAME)).replace('<li><a href="sources.html">%s</a></li>' % t(SOURCES_NAME), '<li><a href="tech-tools.html">%s</a></li>' % t(("Outils de social listening", "Social listening tools"))) +
             '<p class="tk-kick">%s</p>' % t(("D'OÙ VIENNENT LES DONNÉES", "WHERE THE DATA COMES FROM")) +
             '<h1 class="%s">%s<br><span>%s</span></h1>' % (h1_cls("22 RÉSEAUX,", "LUS PAR NOS ANALYSTES."), t(("22 RÉSEAUX,", "22 NETWORKS,")), t(("LUS PAR NOS ANALYSTES.", "READ BY OUR ANALYSTS."))) +
             '<p class="tk-lead">%s</p>' % t(("Chaque réseau a son public, ses formats et ses limites de collecte. Voici ce que nous y lisons, ce qui reste privé, et les plateformes qui le couvrent.",
@@ -644,13 +644,21 @@ def ld(body, lang, name, url, file):
     """breadcrumb and FAQ, read from the page itself"""
     fr = lang == FR
     crumbs = [("Accueil" if fr else "Home", O.SITE + ("/fr/" if fr else "/")),
-              ("Techno & outils" if fr else "Tech & tools", O.SITE + ("/fr/outils/" if fr else "/tech-tools.html"))]
+              ("Outils de social listening" if fr else "Social listening tools", O.SITE + ("/fr/outils/" if fr else "/tech-tools.html"))]
     if file.startswith("source-"):
         crumbs[1] = ("Sources", O.SITE + ("/fr/sources/" if fr else "/sources.html"))
     if file != "tech-tools.html":
         crumbs.append((name, url))
     out = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(crumbs)]}]
+    # the GEO and AI assistant pages describe a service Licter delivers, not a tool it licenses
+    slug = file[len("tech-"):-len(".html")] if file.startswith("tech-") else ""
+    if slug in ("geo", "chatgpt", "claude", "gemini", "perplexity", "grok"):
+        what = ("Audit de visibilité dans les réponses des IA" if fr else "Visibility audit in AI answers") if slug == "geo" else \
+               (("Audit de ce que %s dit de votre marque" if fr else "Audit of what %s says about your brand") % name.split(" ")[-1])
+        out.append({"@context": "https://schema.org", "@type": "Service", "name": what, "serviceType": "Generative Engine Optimization",
+                    "provider": {"@id": O.SITE + "/#org"}, "areaServed": ["France", "Worldwide"], "url": url,
+                    "inLanguage": "fr" if fr else "en"})
     qa = re.findall(r"<summary>(.*?)</summary>\s*<p>(.*?)</p>", body, re.S)
     if qa:
         clean = lambda x: html.unescape(re.sub(r"<[^>]+>", "", re.sub(r"\s+", " ", x))).strip()

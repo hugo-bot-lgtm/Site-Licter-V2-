@@ -97,682 +97,690 @@
 },
 "blog.html": {
 "date": "2026-10-09",
-"hash": "3311233443df16aa8b90ee885d207a20"
+"hash": "4bb7b9e0deb24b3cff31e29a54403333"
 },
 "book-a-meeting.html": {
 "date": "2026-10-09",
-"hash": "44a15fa58031503fef005b26871dbe3f"
+"hash": "f2d41f708a6f3c87eddc5ef5d11291ef"
 },
 "clients.html": {
 "date": "2026-10-09",
-"hash": "94c6ce93b255313900f92d7e9804a8c5"
+"hash": "ca43accc84ee39dfc301c5380a48a215"
 },
 "diagnostic.html": {
 "date": "2026-10-09",
-"hash": "91e9def1f7975d529db4976ee50b74a5"
+"hash": "f722f77a816266d2706b3c4b6e6a6f3a"
 },
 "en/use-cases/audiences/audience-segmentation/index.html": {
 "date": "2026-10-09",
-"hash": "001a2027fc538daa56f66aac14af8014"
+"hash": "c492c786b817ad66e848616e242ab05f"
 },
 "en/use-cases/audiences/customer-expectations-touchpoints/index.html": {
 "date": "2026-10-09",
-"hash": "5aa2f914350e37fd42d2a737015e4dab"
+"hash": "3347b1c193d89b498102a8092ed344e1"
 },
 "en/use-cases/audiences/index.html": {
 "date": "2026-10-09",
-"hash": "b5f2dbb3c2b2cc07c8c547601162fc28"
+"hash": "634185b485a441efd2d7177e449fc27b"
 },
 "en/use-cases/audiences/reach-younger-audiences/index.html": {
 "date": "2026-10-09",
-"hash": "96f81e7455a28c0c693eedacfadc27b6"
+"hash": "fb4bc521f404582ad78f7db6b46b6c69"
 },
 "en/use-cases/brand-health/brand-messaging/index.html": {
 "date": "2026-10-09",
-"hash": "baca3ec85b04f0db129cb6da8a8d32bc"
+"hash": "92dc3b2c995dc5cdc78ebd79dc269f7d"
 },
 "en/use-cases/brand-health/brand-reputation-monitoring/index.html": {
 "date": "2026-10-09",
-"hash": "8449a990f44170307b2f0e886292c28a"
+"hash": "02299fa9362ce55dbc29a032886e8861"
 },
 "en/use-cases/brand-health/brand-risk-crisis/index.html": {
 "date": "2026-10-09",
-"hash": "82c48e4c280f60422238dbd1bad5d999"
+"hash": "3e7bf44c44291d504fbd8e3fe8f41a1d"
 },
 "en/use-cases/brand-health/index.html": {
 "date": "2026-10-09",
-"hash": "e54091c6fdc3a2323a789f77c8cd94a3"
+"hash": "48facb17c53af9876be142ae9764554d"
 },
 "en/use-cases/communication/find-brand-ambassadors/index.html": {
 "date": "2026-10-09",
-"hash": "ac372229b38009fbb8cd58d52a4ba6ee"
+"hash": "a14cab98f79043e9cca70419a7db490f"
 },
 "en/use-cases/communication/index.html": {
 "date": "2026-10-09",
-"hash": "f62bcb4345dce48a0a46050034fbeed7"
+"hash": "2588e3438fcfc6d4afc60c69f678c9a6"
 },
 "en/use-cases/communication/leader-advocacy/index.html": {
 "date": "2026-10-09",
-"hash": "0aa9e4ef0b809dbd57c3fe25c7e8effe"
+"hash": "17865e0466d9230917ead4fb5a60d866"
 },
 "en/use-cases/communication/measure-campaign-impact/index.html": {
 "date": "2026-10-09",
-"hash": "63384871e28829f31a2c8cf88430344d"
+"hash": "a872a3f521f6cb4f5bfecbc22da6b178"
 },
 "en/use-cases/index.html": {
 "date": "2026-10-09",
-"hash": "d065e2bb5190fdfd3f7a3873326b0b61"
+"hash": "a100625bb29ed34f530069a03916b4b2"
 },
 "en/use-cases/trends-innovation/index.html": {
 "date": "2026-10-09",
-"hash": "1b840c6bf30a44118dbd4ed49e66c481"
+"hash": "1feeedf40ea04414f6d70abe209ffb1c"
 },
 "en/use-cases/trends-innovation/market-opportunities/index.html": {
 "date": "2026-10-09",
-"hash": "a704cc032161524e0f382b0673e3225e"
+"hash": "9d7d881beb9aa6a4fd11a9cf50987225"
 },
 "en/use-cases/trends-innovation/product-testing/index.html": {
 "date": "2026-10-09",
-"hash": "567528412e431176fc34a61079b23c1c"
+"hash": "b4d97a31ed691e3c38b562a1c93fb345"
 },
 "en/use-cases/trends-innovation/stakeholder-trend-mapping/index.html": {
 "date": "2026-10-09",
-"hash": "49bc7f87ec47c832bb510445dbefc1f3"
+"hash": "c61277280cdab12d3920d7d9141df93e"
 },
 "event-food.html": {
 "date": "2026-10-09",
-"hash": "2a782fb496d898e0c7ffa8a56ac19da3"
+"hash": "057f203a77b0e53266151d4e0978ad11"
 },
 "event-luxury.html": {
 "date": "2026-10-09",
-"hash": "f0191ca7dfea24f7276955a9e889f753"
+"hash": "6ec1166c21e0b08c80b6a7dd44683ea3"
 },
 "event-toys-games.html": {
 "date": "2026-10-09",
-"hash": "f17e4f09d8e4f9c4baf3e2212b3f222b"
+"hash": "e95b421a96bfdf840f6b670ed741ae21"
 },
 "events.html": {
 "date": "2026-10-09",
-"hash": "4f395a4e675ec672a55185be96eebd7b"
+"hash": "47da026d9b55d24fad23d0490698e3df"
 },
 "expertise-ai-listening.html": {
 "date": "2026-10-09",
-"hash": "3a5f2d6b8cf6a96141b84351367914a8"
+"hash": "edf7ffc4b82c2a028a6b32f4427e2216"
 },
 "expertise-audience-listening.html": {
 "date": "2026-10-09",
-"hash": "8d5e4629dd99fb9cb36ca01b6641cd7c"
+"hash": "3e747485d74611cee3a9f0c64c043cd6"
 },
 "expertise-influence-listening.html": {
 "date": "2026-10-09",
-"hash": "830ab5a3791ca5878dd459322616c089"
+"hash": "be4998a5927f8bc4d603b6779c19a359"
 },
 "expertise-live-listening.html": {
 "date": "2026-10-09",
-"hash": "48fe43fa685baff2d7770b770b193ef9"
+"hash": "51f074cbd1a40a7661841c74181ccb76"
 },
 "expertise-search-listening.html": {
 "date": "2026-10-09",
-"hash": "4fd4d0078bda8828fd58c6fbbbf83ef2"
+"hash": "5286b55e22fc376fdbf6232599bc90cb"
 },
 "expertise-social-listening.html": {
 "date": "2026-10-09",
-"hash": "0cdc28b5004ba8a4d132fe0b2cf2ab8a"
+"hash": "21086742a76d8b99c2309ab21ee16fb2"
 },
 "expertise.html": {
 "date": "2026-10-09",
-"hash": "270fc9c81642f3e77776b5fa19c3f2bb"
+"hash": "669a98f896873a2f7a25a47ae9982a9c"
 },
 "fr/blog/index.html": {
 "date": "2026-10-09",
-"hash": "7f2188bbc9ab0126c96b861a9d8c8d04"
+"hash": "418748ba12fa55f23bb6c3fbbd2ee4fa"
 },
 "fr/cas-usage/audiences/index.html": {
 "date": "2026-10-09",
-"hash": "e95b3659b566146db079f20e730750bf"
+"hash": "166f3eb826bceb4ada1067c6caf6bdf9"
 },
 "fr/cas-usage/audiences/parcours-client-attentes/index.html": {
 "date": "2026-10-09",
-"hash": "1eb873a9b2f6041160823e4fda8de21d"
+"hash": "dec7f5cb7cf7c141c532beb767e3d0ae"
 },
 "fr/cas-usage/audiences/rajeunir-audience/index.html": {
 "date": "2026-10-09",
-"hash": "4cc947bdf9e22838d24ff63632353125"
+"hash": "7d87c148e20eee60a4988488f8099cf0"
 },
 "fr/cas-usage/audiences/segmentation-cibles/index.html": {
 "date": "2026-10-09",
-"hash": "300f510416fe28f940b429d001c01582"
+"hash": "2d827cbdb05036d267d11c00eb96d8c4"
 },
 "fr/cas-usage/communication/identifier-ambassadeurs/index.html": {
 "date": "2026-10-09",
-"hash": "06325505812d4e1ee676ceb89ab2c76e"
+"hash": "b0b497149d5891063e14dd53268f9401"
 },
 "fr/cas-usage/communication/index.html": {
 "date": "2026-10-09",
-"hash": "827beaf57342cea598752b32236f2af9"
+"hash": "b6eabd00ccb61a2b7747f5bbd2ae086b"
 },
 "fr/cas-usage/communication/mesurer-impact-campagne/index.html": {
 "date": "2026-10-09",
-"hash": "6e15c6a9a4bd07275eaf72800124c1fc"
+"hash": "c5de88142ce227fe7ba5ec6753be85f9"
 },
 "fr/cas-usage/communication/prise-de-parole-dirigeants/index.html": {
 "date": "2026-10-09",
-"hash": "f079f513fc6f443ef8f9315d6ae748cd"
+"hash": "c3b618a424c9339c3cc61a2d5c26da9c"
 },
 "fr/cas-usage/index.html": {
 "date": "2026-10-09",
-"hash": "d62c912ec786c98d317c54918abf3536"
+"hash": "1150a633ff57a74a4b6af6af93ec0c05"
 },
 "fr/cas-usage/sante-de-marque/discours-de-marque/index.html": {
 "date": "2026-10-09",
-"hash": "7aca1b46a165cb178481d64f8aaad5f4"
+"hash": "a7c3ff9d23279c251f7e3ac5855b4a01"
 },
 "fr/cas-usage/sante-de-marque/e-reputation-image-de-marque/index.html": {
 "date": "2026-10-09",
-"hash": "a7b241e2dfd908df795728b4d0ff82f6"
+"hash": "974e0bc555c5e6ce8a1f99759d8b8ec7"
 },
 "fr/cas-usage/sante-de-marque/index.html": {
 "date": "2026-10-09",
-"hash": "b7685d300b91906ad457bcae34125789"
+"hash": "6b8f4b11369e7fcba516f91cae7393de"
 },
 "fr/cas-usage/sante-de-marque/risques-de-marque-crise/index.html": {
 "date": "2026-10-09",
-"hash": "ddc74bced3042c453f0ca4d89fc6b8c4"
+"hash": "a71348a8df5d5fd32d0a358071f4a7fb"
 },
 "fr/cas-usage/tendances-innovation/analyse-marche-opportunites/index.html": {
 "date": "2026-10-09",
-"hash": "9324228b3249e20138c87dfe45a9fcc8"
+"hash": "948dd4e8b2c48b6fde9366529d0f538e"
 },
 "fr/cas-usage/tendances-innovation/cartographie-parties-prenantes-tendances/index.html": {
 "date": "2026-10-09",
-"hash": "007625797cfe406fbbcc65cc07db5fbb"
+"hash": "cccc7e4cbfd6373ad87784cca3adc04e"
 },
 "fr/cas-usage/tendances-innovation/index.html": {
 "date": "2026-10-09",
-"hash": "d0f03e81e85260ef8d05e89c656a160a"
+"hash": "d098dd1e9937d5f86c75121a59582357"
 },
 "fr/cas-usage/tendances-innovation/tester-evaluer-produits/index.html": {
 "date": "2026-10-09",
-"hash": "afac686e7bf14500672661f249b51475"
+"hash": "11504166c1fedf64249185be8ce47f58"
 },
 "fr/clients/index.html": {
 "date": "2026-10-09",
-"hash": "bca2d4d1983aae1618dd0b5387c7309f"
+"hash": "750298a012eb8423582809c3ab47fb26"
 },
 "fr/confidentialite/index.html": {
 "date": "2026-10-09",
-"hash": "ad4948b3dc4a16bbe932cd81c5d41d66"
+"hash": "10eda289c28795c1e2badd6fc07d913a"
 },
 "fr/diagnostic/index.html": {
 "date": "2026-10-09",
-"hash": "6ad32c00727f5f7d8087d6f68f5e44a4"
+"hash": "d448a74a8b7bae9f4dff19ec7c5045cc"
 },
 "fr/evenements/alimentation/index.html": {
 "date": "2026-10-09",
-"hash": "cbd918030ebc79289b25ceb900c19273"
+"hash": "b3ea4bdcfb5faf6f3c85df311f42ef4f"
 },
 "fr/evenements/index.html": {
 "date": "2026-10-09",
-"hash": "04c6551af891920bed2fcb95aa4ec072"
+"hash": "76db8bf42adf5dc3387385fd5302bc78"
 },
 "fr/evenements/jeux-jouets/index.html": {
 "date": "2026-10-09",
-"hash": "36b6f36206f8802f60e91089bfa76b24"
+"hash": "dba628679483d07dd108fa2c7a287e24"
 },
 "fr/evenements/luxe/index.html": {
 "date": "2026-10-09",
-"hash": "ad55077b0967d89c36957e6dcea53d57"
+"hash": "f59c74cc5451e5a10f720e6796c78aa1"
 },
 "fr/expertise/ai-listening/index.html": {
 "date": "2026-10-09",
-"hash": "13749dfb2936b2ca0fee6b1e1c0c04fa"
+"hash": "2b28480ca78e04b2b309c093a6129f27"
 },
 "fr/expertise/audience-listening/index.html": {
 "date": "2026-10-09",
-"hash": "5d330809e7024d8e1f203c1ffd46aa1e"
+"hash": "aa61de019a416244e751fae1f9bf2ea9"
 },
 "fr/expertise/index.html": {
 "date": "2026-10-09",
-"hash": "442e32c66812b752e46e1c35d79f6bd2"
+"hash": "3759a0527064261c5fa4136c65323164"
 },
 "fr/expertise/influence-listening/index.html": {
 "date": "2026-10-09",
-"hash": "b2b649ca66d2bad41dd8f196fadd76d3"
+"hash": "3ddac6ebb22e1f523f4c700086f0b11e"
 },
 "fr/expertise/live-listening/index.html": {
 "date": "2026-10-09",
-"hash": "c6a9778554dda6b663636fa747a30d7f"
+"hash": "585dd9afe71aa3f32a748d6680b5d4cb"
 },
 "fr/expertise/search-listening/index.html": {
 "date": "2026-10-09",
-"hash": "b86d19cd425ae5d5654d34753d7c8335"
+"hash": "36199b08d958e1ce8393dca77543babb"
 },
 "fr/expertise/social-listening/index.html": {
 "date": "2026-10-09",
-"hash": "2641fffcb728cd589afe4f19d4132286"
+"hash": "16cbd3d47a7c906a5e829f14ed0e0a3f"
 },
 "fr/guide/index.html": {
 "date": "2026-10-09",
-"hash": "fcafa6c55ac5e69be400a5b46c57c81e"
+"hash": "a76b6e21846de8330ca91a262c069bca"
 },
 "fr/index.html": {
 "date": "2026-10-09",
-"hash": "44e30fbdc3d8dedbdf289424d7d7b305"
+"hash": "8ccaf59a6e6fcd42672551f96cdd0338"
 },
 "fr/mentions-legales/index.html": {
 "date": "2026-10-09",
-"hash": "65b0e90b5707a7f688eb0e6ce8b13652"
+"hash": "b6064b75e6e79a54fb2ca60c73800cce"
 },
 "fr/offres/index.html": {
 "date": "2026-10-09",
-"hash": "00320624940e6249a2dc2fd52ba99528"
+"hash": "7624603e603507dd8ae0fe8a7a32ae73"
 },
 "fr/offres/nox/index.html": {
 "date": "2026-10-09",
-"hash": "3e0cc89a331c9c9b97f45b7691f0b378"
+"hash": "516333b65e2b0fe21b80a1436a06055f"
 },
 "fr/offres/social-insights/index.html": {
 "date": "2026-10-09",
-"hash": "cd55ed0300bb526a5547e2dceefbfb9e"
+"hash": "705f49c3b406c1a8356ccb5017e37a06"
 },
 "fr/offres/social-listening-as-a-service/index.html": {
 "date": "2026-10-09",
-"hash": "9fe79e9fab9bf328d2e1b46caa5bbfb0"
+"hash": "f82742cbd19321bf5d4de6285bf0b004"
 },
 "fr/offres/vigie-360/index.html": {
 "date": "2026-10-09",
-"hash": "64cf873ec7ea558a619f5f2d18eada97"
+"hash": "d396800428fcc60a7525041b323f50cb"
 },
 "fr/outils/answerthepublic/index.html": {
 "date": "2026-10-09",
-"hash": "8f256fcbb707a0296c75ac2e45fc6780"
+"hash": "20fbdd63e35f76cdeeadabbd59b0c1af"
 },
 "fr/outils/brandwatch/index.html": {
 "date": "2026-10-09",
-"hash": "f719c7b8266c7dcc1f03b05c3c839fe5"
+"hash": "56be86bbaed270285120caeb5722517d"
 },
 "fr/outils/chatgpt/index.html": {
 "date": "2026-10-09",
-"hash": "29ee63822a46f108970e1a18fefdd31c"
+"hash": "5d266c2e4f52a13e92f2e8cf7d998081"
 },
 "fr/outils/claude/index.html": {
 "date": "2026-10-09",
-"hash": "12ff859deb4cdf546fb7b70a4fbd5009"
+"hash": "4f0a5f576a44a0a7024f5c2ffb417d47"
 },
 "fr/outils/gemini/index.html": {
 "date": "2026-10-09",
-"hash": "6bbc86601082e70381a96ea6095a9bc1"
+"hash": "5c7e3786db6e9cb214a0608a6bec5e18"
 },
 "fr/outils/geo/index.html": {
 "date": "2026-10-09",
-"hash": "67c9ad7f7ec9096b9f2cdf98a76d5cbf"
+"hash": "7044865d8716cad4c6227a56ea0022c3"
 },
 "fr/outils/google-actualites/index.html": {
 "date": "2026-10-09",
-"hash": "494788f19364b1f7c689f99c988bdb09"
+"hash": "8ee15985034f5d9fabbf03a14de860a8"
 },
 "fr/outils/google-trends/index.html": {
 "date": "2026-10-09",
-"hash": "2f88a06f479fe227b54883098fe3e392"
+"hash": "dfa9cc902ad93f828a7f68f16c765292"
 },
 "fr/outils/grok/index.html": {
 "date": "2026-10-09",
-"hash": "ccdbbd11149ea17239f8d3229f8d063e"
+"hash": "0da674dd0a449838186418cc143bf32a"
 },
 "fr/outils/index.html": {
 "date": "2026-10-09",
-"hash": "4ed8768d1c2c391f792b87d67dce36a8"
+"hash": "a8ca434509a0d16193e38275335cba82"
 },
 "fr/outils/meta-ads/index.html": {
 "date": "2026-10-09",
-"hash": "a1895f30212b25e7ddee10700965fa69"
+"hash": "b9978e2e0778470d1f8051e543b92437"
 },
 "fr/outils/perplexity/index.html": {
 "date": "2026-10-09",
-"hash": "05aa1bbf646c91deed9c7d875a36dd4d"
+"hash": "d90812bfd5f2fa8283509dd6bb786f64"
 },
 "fr/outils/radarly/index.html": {
 "date": "2026-10-09",
-"hash": "d1d3ea0cb3db7c5a5c752a90b7a2dc95"
+"hash": "2e0a6a2e2273bba2162c43a5295a63d3"
 },
 "fr/outils/semrush/index.html": {
 "date": "2026-10-09",
-"hash": "ec5cd6013d53ea9be8473cf9e0d527d7"
+"hash": "1f70298beaf602cdfb5c54ba7bc9b2a2"
 },
 "fr/outils/social-blade/index.html": {
 "date": "2026-10-09",
-"hash": "066837a464b858f2065b36fb15b11806"
+"hash": "8f3cc3dab8786c64bf23477a29d3c4fe"
 },
 "fr/outils/soprism/index.html": {
 "date": "2026-10-09",
-"hash": "d28288837e53e0ee9a0e83ac0896b21b"
+"hash": "c2d31682711fd74cc8983eb4c7ef0a87"
 },
 "fr/outils/sprinklr/index.html": {
 "date": "2026-10-09",
-"hash": "25d8eeb35a9a59236411190501a82147"
+"hash": "eb6bf37125dbf4f5855af3fb03b075b6"
 },
 "fr/outils/talkwalker/index.html": {
 "date": "2026-10-09",
-"hash": "1229b53330ab191226e4869f773ad5af"
+"hash": "7af9354f089e96fd4357f1a4381430ab"
 },
 "fr/outils/visibrain/index.html": {
 "date": "2026-10-09",
-"hash": "99114482161eaf5a84af5e25e3e8456d"
+"hash": "76d4fdfc90f351eb4edeaf3f2e70e1ea"
 },
 "fr/outils/youscan/index.html": {
 "date": "2026-10-09",
-"hash": "37138833c8dfce7f81665be99ca6d1eb"
+"hash": "276213b992a9b11c2cf6c83a1af40692"
 },
 "fr/pourquoi-licter/index.html": {
 "date": "2026-10-09",
-"hash": "0abcb5aeb1f9b98bde791b1e284e14a1"
+"hash": "af1c5d4af96c2af31d4cd4c0d5bfc31c"
 },
 "fr/rendez-vous/index.html": {
 "date": "2026-10-09",
-"hash": "00070846e7f033cf314450e0b433bb80"
+"hash": "9be602b960e6ab211577f2128ea542d0"
 },
 "fr/sources/bilibili/index.html": {
 "date": "2026-10-09",
-"hash": "aea2ae45444a46eab0595cdc0d5a12d2"
+"hash": "b3189fdd78c905dab6458e54b0d889b9"
 },
 "fr/sources/bluesky/index.html": {
 "date": "2026-10-09",
-"hash": "70eff4bf1f7ff748ba62d9f79b1dd245"
+"hash": "b5139870fddbb2dda2280bc34b478c76"
 },
 "fr/sources/discord/index.html": {
 "date": "2026-10-09",
-"hash": "b79a3df13210e6c8860911cbc8f016a1"
+"hash": "0cffc3e073a5af953ddd4839939f8f18"
 },
 "fr/sources/douyin/index.html": {
 "date": "2026-10-09",
-"hash": "b288761820ea0d440da4acad37a73c97"
+"hash": "5859a7a6d0e12ee6f2515021bce9305d"
 },
 "fr/sources/facebook/index.html": {
 "date": "2026-10-09",
-"hash": "3d5add35896fa7079cbdf3806b16686f"
+"hash": "c89251000ce161c0a4bc499814687f9c"
 },
 "fr/sources/index.html": {
 "date": "2026-10-09",
-"hash": "cdcbe7b0a08a84037466d21929801f3c"
+"hash": "8b64f64e919f8761deefbf1fc89b7c87"
 },
 "fr/sources/instagram/index.html": {
 "date": "2026-10-09",
-"hash": "cd5a266ed20b3f27579d5cae1297b81f"
+"hash": "956a86381fdc9ad9002d8be9cdd83d0a"
 },
 "fr/sources/linkedin/index.html": {
 "date": "2026-10-09",
-"hash": "7ad45501235ca2dc61fbd97646f37fae"
+"hash": "86b9c0a17c75a0514336c2798e02d190"
 },
 "fr/sources/messenger/index.html": {
 "date": "2026-10-09",
-"hash": "c921f584fdc79ba089cf6e6b79cb55af"
+"hash": "8eabb9e1bec6c38538e729aeb22123c7"
 },
 "fr/sources/pinterest/index.html": {
 "date": "2026-10-09",
-"hash": "f972f86eb7561e2ef0f8845cc9bb8079"
+"hash": "44f1130645e4459738bdc0bd9534b3f4"
 },
 "fr/sources/reddit/index.html": {
 "date": "2026-10-09",
-"hash": "bc25c617df6b3ec33f0abf94a70f298b"
+"hash": "dfb2d6db920b0d14abff500e77caf03d"
 },
 "fr/sources/snapchat/index.html": {
 "date": "2026-10-09",
-"hash": "6e396a8c592280da87668c95de80be99"
+"hash": "1e76d49fb1780d0a8466ffb01c5889d7"
 },
 "fr/sources/telegram/index.html": {
 "date": "2026-10-09",
-"hash": "81a996c229b6bb407b0f10a5fcd791f1"
+"hash": "ffeb185408b3829193ddfa92142605f8"
 },
 "fr/sources/threads/index.html": {
 "date": "2026-10-09",
-"hash": "6177ae6abfa804117366facf75d4aafe"
+"hash": "899bbd43628232fc718d4006b279fcf2"
 },
 "fr/sources/tiktok/index.html": {
 "date": "2026-10-09",
-"hash": "34a694f80852f9d7ac289883ef88ea6c"
+"hash": "5dd096fbc7d884ac7506c42b39035172"
 },
 "fr/sources/twitch/index.html": {
 "date": "2026-10-09",
-"hash": "34b68b6a1330daa1296460fa5eb26169"
+"hash": "8ba5f6e7b47f0055e026255b9bda7790"
 },
 "fr/sources/vk/index.html": {
 "date": "2026-10-09",
-"hash": "8edbb5687871ac540b1547b49e4cf6c3"
+"hash": "cbb9f772efb0fc7fef5d13a555a8868a"
 },
 "fr/sources/wechat/index.html": {
 "date": "2026-10-09",
-"hash": "7fa758cb130e5cf2306820b46e0520e0"
+"hash": "70ee148766d80d7176d8cde4fc3f1ded"
 },
 "fr/sources/weibo/index.html": {
 "date": "2026-10-09",
-"hash": "a04209ad75901b154d28d68484178fed"
+"hash": "11df7c7271c91cd94818bf39c94a7e64"
 },
 "fr/sources/whatsapp/index.html": {
 "date": "2026-10-09",
-"hash": "2136c9755da0b3517bda2f21234feed1"
+"hash": "2347d65901bfd9bf4181080384c1f713"
 },
 "fr/sources/x-twitter/index.html": {
 "date": "2026-10-09",
-"hash": "31f2706623292526311407a7e905eb16"
+"hash": "b5b3f02ea7f75f1caf0abd2ccd313d99"
 },
 "fr/sources/xiaohongshu/index.html": {
 "date": "2026-10-09",
-"hash": "4f783aa06d22e0e9ea01103e9aabcc97"
+"hash": "7b8650310c7ab0e1e2d01f89ec75ef51"
 },
 "fr/sources/youtube/index.html": {
 "date": "2026-10-09",
-"hash": "6ea1d2b2aff9fb1b45f12585300ac62c"
+"hash": "cb0e362149c77cdf9aa5a2cab329206d"
 },
 "guide.html": {
 "date": "2026-10-09",
-"hash": "3e88dbfd74089f3725fc3d3dc186137b"
+"hash": "db32faaf7e1dbb100ec871fd72fe8958"
 },
 "index.html": {
 "date": "2026-10-09",
-"hash": "40b65fa941e8fa723b353984d21f34a7"
+"hash": "9400232c70e6eed50f51c9e6c3858577"
 },
 "legal.html": {
 "date": "2026-10-09",
-"hash": "b66aa7eefb1e686b24eb7242aac85bbd"
+"hash": "a518792f71508fd829a8c7a0c8a861c7"
 },
 "offer-nox.html": {
 "date": "2026-10-09",
-"hash": "bd4b633d9c621e35892bb88b5d654bfe"
+"hash": "ed62dbfc34ec4d3b478fd50ab573c842"
 },
 "offer-slaas.html": {
 "date": "2026-10-09",
-"hash": "1272e13bf374ae63f61bd7b55da88511"
+"hash": "15e1724c8b705963203171159fed64a2"
 },
 "offer-social-insights.html": {
 "date": "2026-10-09",
-"hash": "5deb1f506d5014d4a8052e72130fa620"
+"hash": "74e9b939d0e728f58b2999ff21cc39aa"
 },
 "offer-vigie-360.html": {
 "date": "2026-10-09",
-"hash": "3af3999d68dfa616019cf9a38d81c301"
+"hash": "34788bf1dcd61339236c83dd686d49e5"
 },
 "offers.html": {
 "date": "2026-10-09",
-"hash": "84cbd0a48538bd8a6b26568435d4227d"
+"hash": "d1bd8cf774bd94bd9f4da179a41eba04"
 },
 "privacy.html": {
 "date": "2026-10-09",
-"hash": "6336994abb6e4fef844233cd83d058c1"
+"hash": "493c0131e804453767f499723b11d4f5"
+},
+"socialintelligenceclub/index.html": {
+"date": "2026-10-09",
+"hash": "c631ff4248a85ca407dea43bfb440191"
+},
+"socialintelligenceclub/rejoindre/index.html": {
+"date": "2026-10-09",
+"hash": "2a1c0db034b7d02ee7359285ccc7d5e4"
 },
 "source-bilibili.html": {
 "date": "2026-10-09",
-"hash": "b02836da7560a22963b1b709394149a0"
+"hash": "e0501da07212f34fb167c4347815b594"
 },
 "source-bluesky.html": {
 "date": "2026-10-09",
-"hash": "658edd320e1a0008414e9f4fc3c7f32c"
+"hash": "70f7f42f2769083bd36f3a7b653d4ff2"
 },
 "source-discord.html": {
 "date": "2026-10-09",
-"hash": "0db8616c01a1dc000c24fce283b0da6a"
+"hash": "8ef189d73bb6c20b03d28bdc71ec20ae"
 },
 "source-douyin.html": {
 "date": "2026-10-09",
-"hash": "c5f6b24729605f9a91973956be0d5bbd"
+"hash": "794faf266541d5df3888c4db86d935da"
 },
 "source-facebook.html": {
 "date": "2026-10-09",
-"hash": "0a51aa8ccfdd5abe612e78a80e10a798"
+"hash": "ab3a453f934ed36d60542c1cae6d6882"
 },
 "source-instagram.html": {
 "date": "2026-10-09",
-"hash": "01a394d8bdc644546ca0cf7814d3f02e"
+"hash": "fd59337654fbfd07579291829babe694"
 },
 "source-linkedin.html": {
 "date": "2026-10-09",
-"hash": "4fce4232671e81debf371146034ca5d7"
+"hash": "1e2188534139c6845eadeee263aa8af9"
 },
 "source-messenger.html": {
 "date": "2026-10-09",
-"hash": "41ce550154a97a23e3e9246348784d44"
+"hash": "e1d0c597d14ce4b92d47a58cae6ca372"
 },
 "source-pinterest.html": {
 "date": "2026-10-09",
-"hash": "0866fd43425755866344023e66695120"
+"hash": "d26005deb8d47487da7023690661c72f"
 },
 "source-reddit.html": {
 "date": "2026-10-09",
-"hash": "85d1ff3fca2d02ef0bdd00370f27b5ee"
+"hash": "a2277c1ebaa708356497569ade9aba22"
 },
 "source-snapchat.html": {
 "date": "2026-10-09",
-"hash": "28b47e06a22da06a2a817ec4c88a8d03"
+"hash": "8db252318a05633dbcc98c94a767d7e7"
 },
 "source-telegram.html": {
 "date": "2026-10-09",
-"hash": "308c49dcdda90aa6564ba7c3188517bd"
+"hash": "d119f40a0098cbfbe319f5f2e740c2a3"
 },
 "source-threads.html": {
 "date": "2026-10-09",
-"hash": "b52e3867d7b71fc43c400563770e1bbb"
+"hash": "f29d7cde624a15bc2a73616615b37ad9"
 },
 "source-tiktok.html": {
 "date": "2026-10-09",
-"hash": "4e9ebba4e2811fa1fdb93e0885982891"
+"hash": "809869c6e5fd20d9233be3f5874fd80d"
 },
 "source-twitch.html": {
 "date": "2026-10-09",
-"hash": "ac1ca48da035c7df1371c486d0383a5f"
+"hash": "f6d2b1107ce80fbd80786aa8245030f3"
 },
 "source-vk.html": {
 "date": "2026-10-09",
-"hash": "c76c4404349310cf44ed3f5d596f036b"
+"hash": "c618d032e616c432e4d677a9a949fd02"
 },
 "source-wechat.html": {
 "date": "2026-10-09",
-"hash": "eef0f979862528d43dc3e8d6979093c5"
+"hash": "ec6f92d402e266dc6feca15eec8731b0"
 },
 "source-weibo.html": {
 "date": "2026-10-09",
-"hash": "4a1840a6c8594a4121b1e522116ff5cb"
+"hash": "176f0fc7e9f5a97ca26eeec8c9b90483"
 },
 "source-whatsapp.html": {
 "date": "2026-10-09",
-"hash": "a457874b23fbe813801d032d902fb13d"
+"hash": "8eb377e53784ab16ef7406ccd7bf40ae"
 },
 "source-x-twitter.html": {
 "date": "2026-10-09",
-"hash": "a0e9a48de86500ca379d71807cc8c173"
+"hash": "15db1b531d5b87368e0ebb055b62e411"
 },
 "source-xiaohongshu.html": {
 "date": "2026-10-09",
-"hash": "7c0176f1c90b6da219badc97378281a3"
+"hash": "fcf01e3a400b6129ee6fffba0e676b1b"
 },
 "source-youtube.html": {
 "date": "2026-10-09",
-"hash": "971ad5e47a6dcb7070aa54a5249a98a2"
+"hash": "076cda01e95fe3ec362de7e0cfaaa3db"
 },
 "sources.html": {
 "date": "2026-10-09",
-"hash": "c612ddc3d580093d804eebb2fa23ec5e"
+"hash": "6a5524f830dc8967c7966b75c3543647"
 },
 "tech-answerthepublic.html": {
 "date": "2026-10-09",
-"hash": "45c6af083fa4a3debbcb16ed204e0d12"
+"hash": "7839eb70362cb360853f5614f5a285ce"
 },
 "tech-brandwatch.html": {
 "date": "2026-10-09",
-"hash": "8a14cd712deb8f809c5f8206df712772"
+"hash": "dca947df45d813c1b5ddd9b14e03b8e3"
 },
 "tech-chatgpt.html": {
 "date": "2026-10-09",
-"hash": "85c8f7e8e697753a593e68d870b285c9"
+"hash": "ed0bd8f968f5af03415361262e31c047"
 },
 "tech-claude.html": {
 "date": "2026-10-09",
-"hash": "2ef6a5135d0bcd3583474a7765fe45fe"
+"hash": "343eb5fcf66ff2efef57bad0012046a1"
 },
 "tech-gemini.html": {
 "date": "2026-10-09",
-"hash": "7e500fd905ab0544c21cf7896442e838"
+"hash": "e7c23276714e53bbe2bd9f90d1d42274"
 },
 "tech-geo.html": {
 "date": "2026-10-09",
-"hash": "4255a7638395b4871baa2c06c87da836"
+"hash": "cbac744f13f6c536b14d7b586cdbb664"
 },
 "tech-google-news.html": {
 "date": "2026-10-09",
-"hash": "2f2d540d06d8be0d9c3ef9f1d2bc6951"
+"hash": "0911e6eea31cb501005cc7b61fe43797"
 },
 "tech-google-trends.html": {
 "date": "2026-10-09",
-"hash": "45ce59d54c0cb6620f2d19808e1e60bd"
+"hash": "17a34fb7505cf0d4145a07bbec42d7cd"
 },
 "tech-grok.html": {
 "date": "2026-10-09",
-"hash": "383e5b02e71f445e68832f82cc8a0388"
+"hash": "6db73a411bf17d38025b14415c58f4f5"
 },
 "tech-meta-ads.html": {
 "date": "2026-10-09",
-"hash": "d82687e7ab592603b95ac214980942ec"
+"hash": "91457ccc844fc58df1343f3ef43d7308"
 },
 "tech-perplexity.html": {
 "date": "2026-10-09",
-"hash": "ea65d62e20f07d98a4c6a24c9695d791"
+"hash": "d57e8ff4081ccb629723a9ee92b125a3"
 },
 "tech-radarly.html": {
 "date": "2026-10-09",
-"hash": "15cf43d3b127cc16afc00f14cfb5153f"
+"hash": "b891e9fffd67acad49edb564be4c4f9b"
 },
 "tech-semrush.html": {
 "date": "2026-10-09",
-"hash": "c9b72bf00ce9c32feaf05ae4339b4821"
+"hash": "f16fa0956678a76369b7f59a490c5174"
 },
 "tech-social-blade.html": {
 "date": "2026-10-09",
-"hash": "46a812cf0c97c6aa7865df7244717255"
+"hash": "17862f63a9ed43b8265b30624c65570b"
 },
 "tech-soprism.html": {
 "date": "2026-10-09",
-"hash": "bcb7d087e9f49174564835b06144961e"
+"hash": "a5e9c3410e3eb72154319cee5fd96a2a"
 },
 "tech-sprinklr.html": {
 "date": "2026-10-09",
-"hash": "70e595fccdee55db282524afd4989aa6"
+"hash": "8a87db0a83bbd480913bb97f1cdcacbe"
 },
 "tech-talkwalker.html": {
 "date": "2026-10-09",
-"hash": "680eb30a7903daf8f6a2df111273e3ee"
+"hash": "113bb7d8dc956a151208179c9c1c8e85"
 },
 "tech-tools.html": {
 "date": "2026-10-09",
-"hash": "11f797ac4c3283af4ee106879757394c"
+"hash": "77a6104651434cebcfa538a9c5023758"
 },
 "tech-visibrain.html": {
 "date": "2026-10-09",
-"hash": "8d978fc370ec4aeb7d6366b63ccccd00"
+"hash": "bcad6117d58d805a5ed1da6dc3d0baf5"
 },
 "tech-youscan.html": {
 "date": "2026-10-09",
-"hash": "377c350b523d5dbb6d268dd60219356f"
+"hash": "10449136733f143a36c50e7bfe126e70"
 },
 "why-licter.html": {
 "date": "2026-10-09",
-"hash": "4aec66bcb100366b30867e295796ee4a"
+"hash": "66508d4cda2e7556688b39188b82921d"
 }
 }

@@ -48,6 +48,7 @@ window.LicterFR = {
 "9 November 2026": "9 novembre 2026",
 "19 November 2026": "19 novembre 2026",
 "privacy policy": "politique de confidentialité",
+"Your question": "Votre question",
 "below.": "plus bas.",
 "Why": "Pourquoi",
 "Cookies": "Cookies",

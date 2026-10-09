@@ -7,7 +7,7 @@ Edit the text here, then rebuild the pages:
 
 MOCK: drafted from the site's own copy. Every figure used here already
 appears elsewhere on the site (20+ languages, 15-minute alerts, 5,000+
-behavioural criteria, a panel of about three billion consumers); the
+behavioural criteria, a panel of more than 2.7 billion people); the
 examples are illustrative. To be validated by Licter before going live.
 
 Each text is a pair (fr, en). French typography (non-breaking spaces before
@@ -94,18 +94,18 @@ FAMILIES = [
              "Segment your targets, reach younger audiences, understand expectations at every touchpoint: your audiences read in what they do, not what they declare."),
     "h1": ("Remplacez l'atelier persona par le comportement observé.",
            "Replace the persona workshop with observed behaviour."),
-    "intro": ("Les préférences déclarées et le comportement réel coïncident rarement. Le panel montre ce que les gens font, suivent, achètent et disent quand personne ne leur pose de question : un panel d'environ trois milliards de consommateurs, lu par des analystes.",
-              "Declared preferences and actual behaviour rarely match. The panel shows what people do, follow, buy and say when no one is asking them a question: a panel of about three billion consumers, read by analysts."),
+    "intro": ("Les préférences déclarées et le comportement réel coïncident rarement. Le panel montre ce que les gens font, suivent, achètent et disent quand personne ne leur pose de question : un panel de plus de 2,7 milliards de personnes, lu par des analystes.",
+              "Declared preferences and actual behaviour rarely match. The panel shows what people do, follow, buy and say when no one is asking them a question: a panel of more than 2.7 billion people, read by analysts."),
     "why": ("Un persona construit en atelier reflète ce que l'équipe croit savoir. Nous partons de ce que vos clients font réellement, et nous faisons apparaître les communautés que le brief n'avait pas vues, souvent là où se trouve l'opportunité.",
             "A persona built in a workshop reflects what the team believes. We start from what your customers actually do, and bring out the communities the brief had not seen, which is often where the opportunity is."),
     "video": ("moW2HYtTor8", "51:29", ("L'advocacy est en train de dépasser l'influence.", "Advocacy is overtaking influence."), "L'Oréal", "C. Besson"),
     "faq": [
       (("D'où viennent les données d'audience ?", "Where does the audience data come from?"),
-       ("D'un panel comportemental d'environ trois milliards de consommateurs, croisé avec la conversation publique et la recherche. Les données sont agrégées : nous lisons des communautés, pas des individus.",
-        "From a behavioural panel of about three billion consumers, crossed with the public conversation and search. The data is aggregated: we read communities, not individuals.")),
+       ("D'un panel comportemental de plus de 2,7 milliards de personnes, croisé avec la conversation publique et la recherche. Les données sont agrégées : nous lisons des communautés, pas des individus.",
+        "From a behavioural panel of more than 2.7 billion people, crossed with the public conversation and search. The data is aggregated: we read communities, not individuals.")),
       (("Combien de critères pour décrire une audience ?", "How many criteria describe an audience?"),
-       ("Plus de 5 000 critères comportementaux : centres d'intérêt, régime média, affinités de marque, sociodémographie.",
-        "More than 5,000 behavioural criteria: interests, media diet, brand affinities, sociodemographics.")),
+       ("Plus de 7 000 critères comportementaux : centres d'intérêt, régime média, affinités de marque, sociodémographie.",
+        "More than 7,000 behavioural criteria: interests, media diet, brand affinities, sociodemographics.")),
       (("Est-ce compatible avec le RGPD ?", "Is it GDPR compliant?"),
        ("Oui. Nous travaillons sur des données publiques ou agrégées et anonymisées, sans suivi d'individus.",
         "Yes. We work on public or aggregated, anonymised data, with no tracking of individuals.")),
@@ -441,8 +441,8 @@ CASES = [
     "name": ("Segmenter vos profils cibles", "Segment your target profiles"),
     "seo_title": ("Segmentation d'audience par le comportement réel | Licter",
                   "Audience segmentation from real behaviour | Licter"),
-    "meta": ("Profilez qui achète, visite et parle réellement de vous : sociodémographie, centres d'intérêt, régime média, affinités de marque. Plus de 5 000 critères.",
-             "Profile who actually buys, visits and talks about you: sociodemographics, interests, media diet, brand affinities. More than 5,000 criteria."),
+    "meta": ("Profilez qui achète, visite et parle réellement de vous : sociodémographie, centres d'intérêt, régime média, affinités de marque. Plus de 7 000 critères.",
+             "Profile who actually buys, visits and talks about you: sociodemographics, interests, media diet, brand affinities. More than 7,000 criteria."),
     "h1": ("Segmenter vos profils cibles à partir de ce qu'ils font vraiment.",
            "Segment your target profiles from what they actually do."),
     "intro": ("Une segmentation déclarative dit ce que les gens pensent d'eux-mêmes. Nous partons de leur comportement : ce qu'ils suivent, achètent, recherchent et partagent. Le résultat, ce sont des communautés réelles, avec leur taille, leurs attentes et leurs médias.",
@@ -454,7 +454,7 @@ CASES = [
       ("Quelle communauté représente la plus grosse opportunité ?", "Which community is the biggest opportunity?"),
     ],
     "sources": [
-      (("Panel comportemental", "Behavioural panel"), ("Environ trois milliards de consommateurs, plus de 5 000 critères.", "About three billion consumers, more than 5,000 criteria.")),
+      (("Panel comportemental", "Behavioural panel"), ("Plus de 2,7 milliards de personnes, plus de 7 000 critères.", "More than 2.7 billion people, more than 7,000 criteria.")),
       (("Réseaux sociaux", "Social networks"), ("Qui parle de vous et de votre catégorie.", "Who talks about you and your category.")),
       (("Recherche", "Search"), ("Ce que chaque communauté cherche.", "What each community searches for.")),
       (("Affinités de marque", "Brand affinities"), ("Les marques et médias qu'elles suivent aussi.", "The brands and media they also follow.")),
@@ -466,7 +466,7 @@ CASES = [
       ("On vous recommande les communautés à prioriser et comment les toucher.", "We recommend which communities to prioritise and how to reach them."),
     ],
     "deliverables": [
-      ("Des personas précis bâtis sur plus de 5 000 critères comportementaux.", "Precise personas built on 5,000+ behavioural criteria."),
+      ("Des personas précis bâtis sur plus de 7 000 critères comportementaux.", "Precise personas built on 7,000+ behavioural criteria."),
       ("La carte des communautés de votre audience.", "The map of your audience's communities."),
       ("Les scores d'affinité, de pénétration et d'opportunité.", "Affinity, penetration and opportunity scores."),
       ("Le plan média qui en découle.", "The media plan that follows."),
@@ -811,7 +811,7 @@ EXTRA = {
                  "We start from what your customers do, not what they declare. The behavioural panel reveals the communities that really make up your audience; for each one we measure affinity, penetration and opportunity, and turn them into media plan priorities."),
     "roi": [(("Un plan média qui vise juste", "A media plan that hits"), ("Le budget va aux communautés où l'opportunité est la plus forte.", "Budget goes to the communities with the strongest opportunity.")),
             (("Des cibles oubliées retrouvées", "Overlooked targets found"), ("Les communautés que le brief n'avait pas vues apparaissent.", "The communities the brief had missed come to light.")),
-            (("Des personas qui durent", "Personas that last"), ("Bâtis sur plus de 5 000 critères, ils se mettent à jour avec les données.", "Built on more than 5,000 criteria, they update with the data."))],
+            (("Des personas qui durent", "Personas that last"), ("Bâtis sur plus de 7 000 critères, ils se mettent à jour avec les données.", "Built on more than 7,000 criteria, they update with the data."))],
     "voice": "paris", "articles": ["article-comment-conquerir-le-marche-de-la-cosmetique-de-luxe-grace-au-social-listening.html", "article-comment-orange-analyse-tiktok-grace-au-social-listening.html"],
   },
   "rejuvenate": {

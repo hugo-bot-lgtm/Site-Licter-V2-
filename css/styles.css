@@ -1459,6 +1459,12 @@ a.card:hover, .card--hover:hover {
 }
 .cta__text { margin: 14px 0 0; max-width: 560px; font: 400 15px/1.6 var(--body-font); color: var(--text-2); }
 .cta .signup { margin-top: 26px; }
+/* the diagnostic page: a question above the email */
+.cta__q { display: block; width: min(var(--field-w), 100%); min-height: 96px; margin-top: 26px; padding: 12px 16px; resize: vertical;
+  background: var(--field-bg); border: 1px solid var(--field-br); border-radius: 8px; font: 400 14px/1.5 var(--body-font); color: var(--ink); outline: none; }
+.cta__q::placeholder { color: var(--text-3); }
+.cta__q:focus { border-color: var(--amber-deep); }
+.cta .cta__q + .signup { margin-top: 10px; }
 .cta .signup__note { margin-top: 14px; }
 
 /* ---------- site footer ---------- */
@@ -1578,7 +1584,8 @@ a.card:hover, .card--hover:hover {
 .site-foot a { font: 400 14px/1.4 var(--body-font); color: var(--ink); }
 .site-foot a:hover { color: var(--amber-ink); }
 /* on a touch screen, each footer link is a full-height target (44 px) */
-@media (pointer: coarse) { .site-foot ul { gap: 0; } .site-foot li a { display: inline-flex; align-items: center; min-height: 44px; } }
+@media (pointer: coarse) { .site-foot ul { gap: 0; } .site-foot li a { display: inline-flex; align-items: center; min-height: 44px; }
+  .consent a, .site-foot__legal a { display: inline-block; padding: 12px 0; margin: -12px 0; } }
 .site-foot__legal {
   display: flex;
   flex-wrap: wrap;
@@ -7121,6 +7128,14 @@ html[data-theme="dark"] .lx__send { background: #FCF6EF; color: #13162D; }
    launcher keeps to its face where the two would meet */
 html.lx-open .banner--float { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s ease, visibility 0s linear .2s; }
 @media (max-width: 1280px) { .lx__launch { padding: 5px; } .lx__launch-t { display: none; } }
+/* large screens too: only Antoine's face, so the launcher never covers a line
+   of the page; the words come back on hover or keyboard focus */
+@media (min-width: 1281px) {
+  .lx__launch { padding: 5px; }
+  .lx__launch-t { display: none; }
+  .lx__launch:hover, .lx__launch:focus-visible { padding: 6px 18px 6px 6px; }
+  .lx__launch:hover .lx__launch-t, .lx__launch:focus-visible .lx__launch-t { display: inline; }
+}
 
 /* ===== Home team, reduced: Anushka, the founders' word, everyone's face in a row ===== */
 .team2 { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(28px, 5vw, 80px); align-items: center; }

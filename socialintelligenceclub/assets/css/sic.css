@@ -470,3 +470,6 @@ html:has(dialog[open]){overflow:hidden}
   .hcard,.hcard__num,.js .road .road__item{transition:none}
   .js .road .road__item{opacity:1;transform:none}
 }
+
+/* touch screens: every footer link is a 44 px target */
+@media (pointer: coarse){.foot__list{gap:0}.foot__list a{display:inline-flex;align-items:center;min-height:44px}.foot__bottom a{display:inline-flex;align-items:center;min-height:44px}}

@@ -36,6 +36,46 @@
       "permanent": true
     },
     {
+      "source": "/socialintelligenceclub/:p(rejoindre|replay)/index.html",
+      "destination": "/socialintelligenceclub/:p/",
+      "permanent": true
+    },
+    {
+      "source": "/:file([^/]+\\.html)/",
+      "destination": "/:file",
+      "permanent": true
+    },
+    {
+      "source": "/FR",
+      "destination": "/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/formation/video",
+      "destination": "/fr/offres/",
+      "permanent": true
+    },
+    {
+      "source": "/formation/video/",
+      "destination": "/fr/offres/",
+      "permanent": true
+    },
+    {
+      "source": "/Social-Listening",
+      "destination": "/fr/expertise/social-listening/",
+      "permanent": true
+    },
+    {
       "source": "/:p(socialintelligenceclub|socialintelligenceclub/rejoindre|socialintelligenceclub/replay)",
       "destination": "/:p/",
       "permanent": true

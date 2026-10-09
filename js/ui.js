@@ -140,45 +140,45 @@ window.LicterUC = (function () {
      display its logo. Sources: assets/img/clients/SOURCES.md */
   /* every client, once (list validated by Licter, October 2026) */
   var CLIENTS = [
-    { name: "CHANEL", src: "/assets/img/clients/chanel.png", w: 121, h: 19, label: "Chanel" },
-    { name: "LVMH", src: "/assets/img/clients/lvmh.png", w: 120, h: 19, label: "LVMH" },
-    { name: "KERING", src: "/assets/img/clients/kering.png", w:  83, h: 28, label: "Kering" },
+    { name: "CHANEL", src: "/assets/img/clients/chanel.webp", w: 121, h: 19, label: "Chanel" },
+    { name: "LVMH", src: "/assets/img/clients/lvmh.webp", w: 120, h: 19, label: "LVMH" },
+    { name: "KERING", src: "/assets/img/clients/kering.webp", w:  83, h: 28, label: "Kering" },
     { name: "L'ORÉAL", src: "/assets/img/clients/loreal.svg", w: 110, h: 21, label: "L'Oréal" },
-    { name: "COTY", src: "/assets/img/clients/coty.png", w:  79, h: 29, label: "Coty" },
-    { name: "INTERPARFUMS", src: "/assets/img/clients/interparfums.png", w: 130, h: 15, label: "Interparfums" },
+    { name: "COTY", src: "/assets/img/clients/coty.webp", w:  79, h: 29, label: "Coty" },
+    { name: "INTERPARFUMS", src: "/assets/img/clients/interparfums.webp", w: 130, h: 15, label: "Interparfums" },
     { name: "SISLEY", src: "/assets/img/clients/sisley.svg", w: 168, h: 12, label: "Sisley" },
-    { name: "LACOSTE", src: "/assets/img/clients/lacoste.png", w: 124, h: 19, label: "Lacoste" },
+    { name: "LACOSTE", src: "/assets/img/clients/lacoste.webp", w: 124, h: 19, label: "Lacoste" },
     { name: "CELIO", src: "/assets/img/clients/celio.svg", w:  84, h: 27, label: "Celio" },
     { name: "GALERIES LAFAYETTE", src: "/assets/img/clients/galerieslafayette.svg", w:  66, h: 35, label: "Galeries Lafayette" },
-    { name: "DANONE", src: "/assets/img/clients/danone.png", w:  41, h: 46, label: "Danone" },
-    { name: "UNILEVER", src: "/assets/img/clients/unilever.png", w:  42, h: 46, label: "Unilever" },
-    { name: "FLEURY MICHON", src: "/assets/img/clients/fleurymichon.png", w:  92, h: 25, label: "Fleury Michon", box: true },
-    { name: "OPELLA", src: "/assets/img/clients/opella.png", w:  91, h: 25, label: "Opella" },
-    { name: "MAYOLY", src: "/assets/img/clients/mayoly.png", w: 106, h: 22, label: "Mayoly" },
-    { name: "LEGO", src: "/assets/img/clients/lego.png", w:  46, h: 46, label: "LEGO", box: true },
-    { name: "BANDAI", src: "/assets/img/clients/bandai.png", w:  47, h: 46, label: "Bandai", box: true },
-    { name: "ASMODEE", src: "/assets/img/clients/asmodee.png", w:  44, h: 46, label: "Asmodee" },
+    { name: "DANONE", src: "/assets/img/clients/danone.webp", w:  41, h: 46, label: "Danone" },
+    { name: "UNILEVER", src: "/assets/img/clients/unilever.webp", w:  42, h: 46, label: "Unilever" },
+    { name: "FLEURY MICHON", src: "/assets/img/clients/fleurymichon.webp", w:  92, h: 25, label: "Fleury Michon", box: true },
+    { name: "OPELLA", src: "/assets/img/clients/opella.webp", w:  91, h: 25, label: "Opella" },
+    { name: "MAYOLY", src: "/assets/img/clients/mayoly.webp", w: 106, h: 22, label: "Mayoly" },
+    { name: "LEGO", src: "/assets/img/clients/lego.webp", w:  46, h: 46, label: "LEGO", box: true },
+    { name: "BANDAI", src: "/assets/img/clients/bandai.webp", w:  47, h: 46, label: "Bandai", box: true },
+    { name: "ASMODEE", src: "/assets/img/clients/asmodee.webp", w:  44, h: 46, label: "Asmodee" },
     { name: "DECATHLON", src: "/assets/img/clients/decathlon.svg", w: 119, h: 19, label: "Decathlon" },
-    { name: "NORAUTO", src: "/assets/img/clients/norauto.png", w: 117, h: 20, label: "Norauto", box: true },
-    { name: "RENAULT GROUP", src: "/assets/img/clients/renault.png", w:  71, h: 32, label: "Renault Group" },
+    { name: "NORAUTO", src: "/assets/img/clients/norauto.webp", w: 117, h: 20, label: "Norauto", box: true },
+    { name: "RENAULT GROUP", src: "/assets/img/clients/renault.webp", w:  71, h: 32, label: "Renault Group" },
     { name: "HP", src: "/assets/img/clients/hp.svg", w:  46, h: 46, label: "HP" },
-    { name: "DASSAULT SYSTÈMES", src: "/assets/img/clients/dassault.png", w:  87, h: 26, label: "Dassault Systèmes" },
-    { name: "LEBONCOIN", src: "/assets/img/clients/leboncoin.png", w: 114, h: 20, label: "leboncoin" },
-    { name: "DELIVEROO", src: "/assets/img/clients/deliveroo.png", w:  93, h: 25, label: "Deliveroo" },
-    { name: "ORANGE", src: "/assets/img/clients/orange.png", w:  46, h: 46, label: "Orange", box: true },
+    { name: "DASSAULT SYSTÈMES", src: "/assets/img/clients/dassault.webp", w:  87, h: 26, label: "Dassault Systèmes" },
+    { name: "LEBONCOIN", src: "/assets/img/clients/leboncoin.webp", w: 114, h: 20, label: "leboncoin" },
+    { name: "DELIVEROO", src: "/assets/img/clients/deliveroo.webp", w:  93, h: 25, label: "Deliveroo" },
+    { name: "ORANGE", src: "/assets/img/clients/orange.webp", w:  46, h: 46, label: "Orange", box: true },
     { name: "BOUYGUES TELECOM", src: "/assets/img/clients/bouygues.svg", w:  85, h: 27, label: "Bouygues Telecom" },
     { name: "SOCIÉTÉ GÉNÉRALE", src: "/assets/img/clients/societegenerale.svg", w:  98, h: 23, label: "Société Générale" },
-    { name: "AG2R LA MONDIALE", src: "/assets/img/clients/ag2r.png", w:  79, h: 29, label: "AG2R La Mondiale" },
-    { name: "IBANFIRST", src: "/assets/img/clients/ibanfirst.png", w:  88, h: 26, label: "iBanFirst" },
+    { name: "AG2R LA MONDIALE", src: "/assets/img/clients/ag2r.webp", w:  79, h: 29, label: "AG2R La Mondiale" },
+    { name: "IBANFIRST", src: "/assets/img/clients/ibanfirst.webp", w:  88, h: 26, label: "iBanFirst" },
     { name: "PMU", src: "/assets/img/clients/pmu.svg", w:  77, h: 30, label: "PMU" },
     { name: "LA POSTE", src: "/assets/img/clients/laposte.svg", w: 120, h: 19, label: "La Poste" },
     { name: "STUDI", src: "/assets/img/clients/studi.svg", w:  80, h: 29, label: "Studi" },
-    { name: "PUBLICIS GROUPE", src: "/assets/img/clients/publicis.png", w:  49, h: 46, label: "Publicis Groupe" },
+    { name: "PUBLICIS GROUPE", src: "/assets/img/clients/publicis.webp", w:  49, h: 46, label: "Publicis Groupe" },
     { name: "UNESCO", src: "/assets/img/clients/unesco.svg", w:  55, h: 42, label: "UNESCO" },
     { name: "MARINE NATIONALE", src: "/assets/img/clients/marine.svg", w:  31, h: 46, label: "Marine nationale" },
-    { name: "FRANCE TÉLÉVISIONS", src: "/assets/img/clients/francetv.png", w: 115, h: 20, label: "France Télévisions" },
+    { name: "FRANCE TÉLÉVISIONS", src: "/assets/img/clients/francetv.webp", w: 115, h: 20, label: "France Télévisions" },
     { name: "TV5 MONDE", src: "/assets/img/clients/tv5monde.svg", w:  83, h: 28, label: "TV5 Monde" },
-    { name: "BIOPARC DE DOUÉ LA FONTAINE", src: "/assets/img/clients/bioparc.png", w:  64, h: 36, label: "Bioparc de Doué La Fontaine" }
+    { name: "BIOPARC DE DOUÉ LA FONTAINE", src: "/assets/img/clients/bioparc.webp", w:  64, h: 36, label: "Bioparc de Doué La Fontaine" }
   ];
   var GAP = 44;
   /* px per second the logo band travels. It ran at 126, which reads as a
@@ -1355,6 +1355,7 @@ window.LicterUC = (function () {
         if (!ok && !msg) {
           msg = document.createElement("p");
           msg.className = "fld__error"; msg.id = id;
+          msg.setAttribute("role", "alert");
           f.insertAdjacentElement("afterend", msg);
           f.setAttribute("aria-describedby", id);
           f.addEventListener("input", function () { msg.hidden = true; f.setAttribute("aria-invalid", "false"); });
@@ -1401,7 +1402,12 @@ window.LicterUC = (function () {
       error.hidden = ok;
       if (!ok) { field.focus(); return; }
       var sact = form.getAttribute("data-act") || (form.classList.contains("nl__form") ? "newsletter" : form.classList.contains("guide__form") ? "guide" : "callback");
-      if (window.LicterSend) window.LicterSend(sact, (sact === "callback" ? "Bandeau de fin de page : " : "") + window.LicterSend.where(form), { "E-mail": field.value.trim() });
+      /* a question written next to the form (data-q) goes with the email */
+      var qBox = form.getAttribute("data-q") && document.getElementById(form.getAttribute("data-q"));
+      var sent = { "E-mail": field.value.trim() };
+      if (qBox && qBox.value.trim()) sent["Question"] = qBox.value.trim();
+      if (window.LicterSend) window.LicterSend(sact, (sact === "callback" ? "Bandeau de fin de page : " : "") + window.LicterSend.where(form), sent);
+      if (qBox) qBox.value = "";
       if (window.LicterLead) window.LicterLead.set(field.value.trim());
       if (window.LicterTrack) window.LicterTrack("form_submit", { form: form.classList.contains("nl__form") ? "newsletter" : "signup" });
       if (note) note.classList.add("is-visible");

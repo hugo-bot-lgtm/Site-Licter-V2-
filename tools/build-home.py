@@ -63,7 +63,10 @@ def head(lang, src):
                        {"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#antoine-khaitrine", "name": "Antoine Khaitrine", "jobTitle": ("Cofondateur", "Co-founder")[lang],
                         "sameAs": ["https://www.linkedin.com/in/antoine-khaitrine/", "https://www.thesilab.com/insider-50/antoine-khaitrine"]}],
            "knowsLanguage": ["fr", "en", "zh", "es", "hi", "yue", "ar"],
-           "areaServed": "Worldwide"}
+           "knowsAbout": ["Social listening", "Social data intelligence", "Audience intelligence", "Consumer intelligence",
+                          "Influence marketing", "Crisis monitoring", "E-reputation", "Search listening",
+                          "Generative Engine Optimization", "Brand monitoring"],
+           "areaServed": ["France", "Worldwide"]}
     ld = [
         {"@context": "https://schema.org", **org},
         {"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "name": "Licter", "url": SITE + "/",

@@ -78,7 +78,7 @@
 
   function faces() {
     return ["anushka", "aymeric", "elsa"].map(function (n) {
-      return '<img src="/assets/img/team/morning/' + n + '-face-160.webp" alt="" width="48" height="48" loading="lazy" decoding="async" />';
+      return '<img src="/assets/img/team/morning/' + n + '-face-96.webp" alt="" width="48" height="48" loading="lazy" decoding="async" />';
     }).join("");
   }
 
