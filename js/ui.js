@@ -1299,7 +1299,7 @@ window.LicterUC = (function () {
       });
       if (firstBad) { firstBad.focus(); return; }
       var fid = form.id || "";
-      if (window.LicterSend) window.LicterSend(fid === "book-form" ? "meeting" : fid === "diag-form" ? "diagnostic" : fid === "guide-form" ? "guide" : /^flash-/.test(fid) ? "flash" : "meeting",
+      if (window.LicterSend) window.LicterSend(fid === "book-form" ? "meeting" : fid === "diag-form" ? "diagnostic" : fid === "guide-form" ? "guide" : /^call-/.test(fid) ? "callback" : "meeting",
         window.LicterSend.where(form), form);
       if (window.LicterTrack) window.LicterTrack("form_submit", { form: (form.id || "form").replace(/-form$/, "") });
       form.classList.add("is-sent");
@@ -2341,7 +2341,7 @@ window.LicterUC = (function () {
   });
 })();
 
-/* expertise hero: the cover of the flash read takes the brand as it is typed */
+/* expertise hero: the study cover takes the brand as it is typed */
 (function () {
   "use strict";
   var input = document.getElementById("fl-brand"), out = document.querySelector(".xe-cover__brand");

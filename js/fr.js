@@ -4764,8 +4764,8 @@ window.LicterFR = {
     "Agence ou cabinet GEO : ce que vous achetez",
   "With a GEO agency or consultancy, you do not buy software, but a method and a reading. The choice of questions, engines and competitors, the repeated measures, the record of sources and the recommendation are taken care of. Your teams receive a list of priorities, not a dashboard to run.":
     "Avec une agence ou un cabinet GEO, vous n'achetez pas un logiciel, mais une méthode et une lecture. Le choix des questions, des moteurs et des concurrents, la répétition des mesures, le relevé des sources et la recommandation sont pris en charge. Vos équipes reçoivent une liste de priorités, pas un tableau de bord à faire tourner.",
-  "Licter is an independent consultancy, with no tie to the AI publishers. We measure, explain and recommend; content production stays with your teams or agencies, with whom we make the link. To start, we offer a free AI listening flash on your brand, sent within 48 hours and read by a consultant.":
-    "Licter est un cabinet indépendant, sans lien avec les éditeurs des IA. Nous mesurons, expliquons et recommandons ; la production des contenus reste à vos équipes ou à vos agences, avec qui nous faisons le lien. Pour commencer, nous proposons un flash AI listening offert sur votre marque, envoyé sous 48 heures et lu par un consultant.",
+  "Licter is an independent consultancy, with no tie to the AI publishers. We measure, explain and recommend; content production stays with your teams or agencies, with whom we make the link. To start, a first thirty-minute call with a consultant is enough to frame the question.":
+    "Licter est un cabinet indépendant, sans lien avec les éditeurs des IA. Nous mesurons, expliquons et recommandons ; la production des contenus reste à vos équipes ou à vos agences, avec qui nous faisons le lien. Pour commencer, un premier échange de trente minutes avec un consultant suffit à cadrer la question.",
   "Five questions to ask a GEO agency":
     "Cinq questions à poser à une agence GEO",
   "How do you measure our visibility before acting? Without a starting measure, no result can be shown. On which questions and which models? They should be your customers' questions, put to the assistants they use, and several times, since answers vary.":
@@ -5374,8 +5374,8 @@ window.LicterFR = {
     "Ce qu'un suivi Gemini livre",
   "Gemini tracking asks the same questions every month, several times each, in Gemini and in Google Search's AI answers. It delivers how the answers evolve, the sources cited collected and sorted, your place against your competitors and a note for communications. The same questions can be put to ChatGPT, Claude, Perplexity or Grok, to compare.":
     "Un suivi Gemini reprend chaque mois les mêmes questions, posées plusieurs fois, dans Gemini et dans les réponses IA de la recherche Google. Il livre l'évolution des réponses, les sources citées relevées et classées, votre place face à vos concurrents et une note pour la communication. Les mêmes questions peuvent être posées à ChatGPT, Claude, Perplexity ou Grok, pour comparer.",
-  "Tracking says what to correct, and where to act; it promises no result. Licter does not produce the content: your teams or your agencies do. Nor does Gemini read the social conversation: it completes social listening, without replacing it. To start, we offer a free AI listening flash on your brand, sent within 48 hours.":
-    "Le suivi dit ce qu'il faut corriger, et où agir ; il ne promet aucun résultat. Licter ne produit pas les contenus : vos équipes ou vos agences s'en chargent. Gemini ne lit pas non plus la conversation des réseaux : il complète l'écoute sociale, sans la remplacer. Pour commencer, nous proposons un flash AI listening offert sur votre marque, envoyé sous 48 heures.",
+  "Tracking says what to correct, and where to act; it promises no result. Licter does not produce the content: your teams or your agencies do. Nor does Gemini read the social conversation: it completes social listening, without replacing it. To start, a first thirty-minute call with a consultant is enough to frame the question.":
+    "Le suivi dit ce qu'il faut corriger, et où agir ; il ne promet aucun résultat. Licter ne produit pas les contenus : vos équipes ou vos agences s'en chargent. Gemini ne lit pas non plus la conversation des réseaux : il complète l'écoute sociale, sans la remplacer. Pour commencer, un premier échange de trente minutes avec un consultant suffit à cadrer la question.",
   "Frequently asked questions about Gemini.":
     "Questions fréquentes sur Gemini.",
   "Is Licter a Gemini agency?":
@@ -7533,38 +7533,30 @@ window.LicterFR = {
     "Une synthèse, et ce qu'il faut en faire.",
   "Social listening agency in Paris":
     "Agence de social listening à Paris",
-  "Your brand's Social listening flash read, free.":
-    "Le flash Social listening de votre marque, offert.",
-  "The 3 topics rising around your brand":
-    "Les 3 sujets qui montent autour de votre marque",
-  "Their tone, topic by topic":
-    "Leur tonalité, sujet par sujet",
-  "What to watch next":
-    "Ce qu'il faut surveiller ensuite",
+  "Thirty minutes with a consultant, on your brand.":
+    "Trente minutes avec un consultant, sur votre marque.",
+  "A consultant calls you back within 30 minutes on weekdays":
+    "Un consultant vous rappelle sous 30 minutes, en semaine",
+  "Your question framed, with the right sources and tools":
+    "Votre question cadrée, avec les sources et les outils adaptés",
+  "A costed proposal after the call":
+    "Une proposition chiffrée après l'échange",
   "What people say,":
     "Ce que les gens disent,",
   "read by people.":
     "lu par des gens.",
-  "Free":
-    "Gratuit",
-  "On your brand":
-    "Sur votre marque",
-  "Within 48 h":
-    "Sous 48 h",
-  "Get my free flash read":
-    "Recevoir mon flash offert",
-  "Or talk to a consultant":
-    "Ou parler à un consultant",
-  "FREE FLASH READ":
-    "FLASH OFFERT",
+  "Get a call back from a consultant":
+    "Être rappelé par un consultant",
+  "Or book a meeting":
+    "Ou prendre rendez-vous",
   "Your brand":
     "Votre marque",
   "Work email":
     "E-mail professionnel",
-  "Noted. A consultant sends you your flash read within 48 hours.":
-    "C'est noté. Un consultant vous envoie votre flash sous 48 h.",
-  "Prepared and read by a consultant, not a robot.":
-    "Préparé et lu par un consultant, pas par un robot.",
+  "Noted. A consultant gets back to you within 30 minutes on weekdays.":
+    "C'est noté. Un consultant vous recontacte dans les 30 minutes, en semaine.",
+  "A consultant, not a sales team.":
+    "Un consultant, pas un commercial.",
   "DEFINITION":
     "DÉFINITION",
   "Social listening at a glance.":
@@ -7817,14 +7809,6 @@ window.LicterFR = {
     "J+10",
   "The communities to prioritise, and how to reach them.":
     "Les communautés à prioriser, et comment les toucher.",
-  "Your brand's Audience listening flash read, free.":
-    "Le flash Audience listening de votre marque, offert.",
-  "The 3 communities following your brand":
-    "Les 3 communautés qui suivent votre marque",
-  "What they care about":
-    "Ce qui les passionne",
-  "Where to reach them":
-    "Où les toucher",
   "Who your audiences":
     "Qui sont vraiment",
   "really are.":
@@ -7919,8 +7903,8 @@ window.LicterFR = {
     "Agence ou cabinet d'audience intelligence : ce que vous achetez",
   "With an audience intelligence agency or consultancy, you do not buy access to a profiling tool, but an answer to a marketing question. The choice of sources, the definition of the audiences to compare, the reading of the communities and the recommendation are handled by consultants, who read for themselves what they have set up.":
     "Avec une agence ou un cabinet d'audience intelligence, vous n'achetez pas un accès à un outil de profilage, mais une réponse à une question de marketing. Le choix des sources, la définition des audiences à comparer, la lecture des communautés et la recommandation sont pris en charge par des consultants, qui lisent eux-mêmes ce qu'ils ont configuré.",
-  "Licter is an independent social data intelligence consultancy: we run SoPrism and 18 other tools without being their publisher, and we pick the source by the question. For a foreign market, the reading goes to analysts who speak the language and know the market. The simplest way to start: the free Audience listening flash on your brand.":
-    "Licter est un cabinet indépendant de social data intelligence : nous opérons SoPrism et 18 autres outils sans en être l'éditeur, et nous choisissons la source selon la question. Pour un marché étranger, la lecture est confiée à des analystes qui parlent la langue et connaissent le marché. Le plus simple pour commencer : le flash Audience listening offert sur votre marque.",
+  "Licter is an independent social data intelligence consultancy: we run SoPrism and 18 other tools without being their publisher, and we pick the source by the question. For a foreign market, the reading goes to analysts who speak the language and know the market. The simplest way to start: a thirty-minute call with a consultant.":
+    "Licter est un cabinet indépendant de social data intelligence : nous opérons SoPrism et 18 autres outils sans en être l'éditeur, et nous choisissons la source selon la question. Pour un marché étranger, la lecture est confiée à des analystes qui parlent la langue et connaissent le marché. Le plus simple pour commencer : un échange de trente minutes avec un consultant.",
   "AUDIENCE INTELLIGENCE, IN DETAIL":
     "L'AUDIENCE INTELLIGENCE, EN DÉTAIL",
   "Read the answer":
@@ -7987,14 +7971,6 @@ window.LicterFR = {
     "Shortlist",
   "A ranked, argued list, ready for the agency.":
     "Une liste classée et argumentée, prête pour l'agence.",
-  "Your brand's Influence listening flash read, free.":
-    "Le flash Influence listening de votre marque, offert.",
-  "The 5 voices that carry in your category":
-    "Les 5 voix qui portent dans votre catégorie",
-  "Their overlap with your audience":
-    "Leur recouvrement avec votre audience",
-  "The risks to check":
-    "Les risques à vérifier",
   "The voices that carry,":
     "Les voix qui portent,",
   "not the most followed.":
@@ -8065,14 +8041,6 @@ window.LicterFR = {
     "Plan",
   "The sources to correct or to feed.":
     "Les sources à corriger ou à nourrir.",
-  "Your brand's AI listening flash read, free.":
-    "Le flash AI listening de votre marque, offert.",
-  "What ChatGPT, Gemini and Perplexity say about you":
-    "Ce que ChatGPT, Gemini et Perplexity disent de vous",
-  "The competitors they recommend":
-    "Les concurrents qu'ils recommandent",
-  "The sources they cite":
-    "Les sources qu'ils citent",
   "What AI":
     "Ce que les IA",
   "says about you.":
@@ -8199,14 +8167,6 @@ window.LicterFR = {
     "Bilan",
   "What moved, and what to watch next.":
     "Ce qui a bougé, et ce qu'il faut surveiller ensuite.",
-  "Your brand's Live listening flash read, free.":
-    "Le flash Live listening de votre marque, offert.",
-  "What moved your brand in 30 days":
-    "Ce qui a fait bouger votre marque en 30 jours",
-  "Who carried it":
-    "Qui l'a porté",
-  "The signals to watch":
-    "Les signaux à surveiller",
   "What happens,":
     "Ce qui se passe,",
   "while it happens.":
@@ -8259,14 +8219,6 @@ window.LicterFR = {
     "Les questions, les problèmes et les besoins qui montent.",
   "The unmet needs, and what to launch.":
     "Les besoins non couverts, et ce qu'il faut lancer.",
-  "Your brand's Search listening flash read, free.":
-    "Le flash Search listening de votre marque, offert.",
-  "The 10 questions your market types most":
-    "Les 10 questions que votre marché tape le plus",
-  "The rising needs":
-    "Les besoins qui montent",
-  "The ones nobody answers":
-    "Ceux auxquels personne ne répond",
   "What people":
     "Ce que les gens",
   "really search for.":
@@ -8361,16 +8313,8 @@ window.LicterFR = {
     "Voir les 12 cas d'usage",
   "Social intelligence":
     "Social intelligence",
-  "Your brand's flash read, free.":
-    "Le flash de votre marque, offert.",
   "The six listenings":
     "Les six écoutes",
-  "What is said about your brand":
-    "Ce qui se dit de votre marque",
-  "What AI answers about it":
-    "Ce que les IA en répondent",
-  "What your market searches for":
-    "Ce que votre marché cherche",
   "Six ways":
     "Six façons",
   "of listening to a market.":
@@ -8401,8 +8345,6 @@ window.LicterFR = {
     "Quelle question voulez-vous écouter ?",
   "IN OUR OFFERS":
     "DANS NOS OFFRES",
-  "My free flash":
-    "Mon flash offert",
   "Chat with Antoine":
     "Discuter avec Antoine",
   "Social listening: definition, method and agency in Paris | Licter":

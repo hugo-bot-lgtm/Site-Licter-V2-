@@ -409,7 +409,7 @@ S.update({
     "magnet_done": ("C'est noté. Un consultant vous envoie un exemple sous 48 h.", "Noted. A consultant sends you a sample within 48 hours."),
     "magnet_alt": ("Plutôt lire d'abord ?", "Rather read first?"),
     "magnet_alt_link": ("Le guide des 12 questions", "The guide to the 12 questions"),
-    "bar_offer": ("Mon flash offert", "My free flash"),
+    "bar_offer": ("Être rappelé", "Call me back"),
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
     "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
     "hub_faq_t": ("Questions fréquentes", "Frequently asked questions"),
@@ -628,32 +628,28 @@ H1L = {"social": (("Ce que les gens disent,", "lu par des gens."), ("What people
        "search": (("Ce que les gens", "cherchent vraiment."), ("What people", "really search for.")),
        "hub": (("Six façons", "d'écouter un marché."), ("Six ways", "of listening to a market."))}
 S.update({
-    "lm_k": ("FLASH OFFERT", "FREE FLASH READ"),
+    # no free "flash" read exists (owner, 12 October 2026): the hero offers the real first step, thirty minutes with a consultant
+    "lm_k": ("ÉTUDE", "STUDY"),
     "lm_brand_ph": ("Votre marque", "Your brand"),
     "lm_yours": ("Sur votre marque", "On your brand"),
-    "lm_btn": ("Recevoir mon flash offert", "Get my free flash read"),
-    "lm_done": ("C'est noté. Un consultant vous envoie votre flash sous 48 h.", "Noted. A consultant sends you your flash read within 48 hours."),
+    "lm_btn": ("Être rappelé par un consultant", "Get a call back from a consultant"),
+    "lm_submit": ("Me faire rappeler", "Call me back"),
+    "lm_done": ("C'est noté. Un consultant vous recontacte dans les 30 minutes, en semaine.", "Noted. A consultant gets back to you within 30 minutes on weekdays."),
     "lm_anon": ("Anonymisé · dans votre secteur", "Anonymised · in your sector"),
-    "lm_t": ("Le flash %s de votre marque, offert.", "Your brand's %s flash read, free."),
-    "lm_t_hub": ("Le flash de votre marque, offert.", "Your brand's flash read, free."),
+    "lm_t": ("Trente minutes avec un consultant, sur votre marque.", "Thirty minutes with a consultant, on your brand."),
+    "lm_t_hub": ("Trente minutes avec un consultant, sur votre marque.", "Thirty minutes with a consultant, on your brand."),
     "lm_free": ("Gratuit", "Free"), "lm_anon2": ("Anonymisé", "Anonymised"), "lm_48": ("Sous 48 h", "Within 48 h"),
-    "lm_from": ("Préparé et lu par un consultant, pas par un robot.", "Prepared and read by a consultant, not a robot."),
-    "lm_call": ("Ou parler à un consultant", "Or talk to a consultant"),
+    "lm_from": ("Un consultant, pas un commercial.", "A consultant, not a sales team."),
+    "lm_call": ("Ou prendre rendez-vous", "Or book a meeting"),
     "lm_six": ("Les six écoutes", "The six listenings"),
 })
 
 
-# What the flash contains, per listening: what a consultant reads on the
-# visitor's own brand, offered. MOCK: to be validated by Licter (A-FAIRE.md).
-FLASH = {
-    "social": [("Les 3 sujets qui montent autour de votre marque", "The 3 topics rising around your brand"), ("Leur tonalité, sujet par sujet", "Their tone, topic by topic"), ("Ce qu'il faut surveiller ensuite", "What to watch next")],
-    "audience": [("Les 3 communautés qui suivent votre marque", "The 3 communities following your brand"), ("Ce qui les passionne", "What they care about"), ("Où les toucher", "Where to reach them")],
-    "influence": [("Les 5 voix qui portent dans votre catégorie", "The 5 voices that carry in your category"), ("Leur recouvrement avec votre audience", "Their overlap with your audience"), ("Les risques à vérifier", "The risks to check")],
-    "ai": [("Ce que ChatGPT, Gemini et Perplexity disent de vous", "What ChatGPT, Gemini and Perplexity say about you"), ("Les concurrents qu'ils recommandent", "The competitors they recommend"), ("Les sources qu'ils citent", "The sources they cite")],
-    "live": [("Ce qui a fait bouger votre marque en 30 jours", "What moved your brand in 30 days"), ("Qui l'a porté", "Who carried it"), ("Les signaux à surveiller", "The signals to watch")],
-    "search": [("Les 10 questions que votre marché tape le plus", "The 10 questions your market types most"), ("Les besoins qui montent", "The rising needs"), ("Ceux auxquels personne ne répond", "The ones nobody answers")],
-    "hub": [("Ce qui se dit de votre marque", "What is said about your brand"), ("Ce que les IA en répondent", "What AI answers about it"), ("Ce que votre marché cherche", "What your market searches for")],
-}
+# What the hero card promises: the first call with a consultant, as on the home (no free "flash" read exists)
+FLASH = {k: [("Un consultant vous rappelle sous 30 minutes, en semaine", "A consultant calls you back within 30 minutes on weekdays"),
+             ("Votre question cadrée, avec les sources et les outils adaptés", "Your question framed, with the right sources and tools"),
+             ("Une proposition chiffrée après l'échange", "A costed proposal after the call")]
+         for k in ("social", "audience", "influence", "ai", "live", "search", "hub")}
 
 
 # articles and hubs each expertise page sends readers to (SEO audit, internal links)
@@ -695,7 +691,7 @@ def reads(key):
 
 
 def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, bands=None, flash_key="hub"):
-    """the hero offers a free flash read of the visitor's own brand"""
+    """the hero offers thirty minutes with a consultant on the visitor's own brand"""
     items = "".join("<li>%s</li>" % t(it) for it in FLASH[flash_key])
     faces = "".join('<img src="/assets/img/team/%s-160.webp" alt="" width="160" height="160" />' % f for f in ("founder-antoine", "headshot-1", "headshot-2"))
     def fld(id_, lab, typ, auto, ph):
@@ -706,28 +702,16 @@ def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, 
       <div class="xe-lmh__copy">
         <h1 class="xe-lmh__h1"><span class="xe-lmh__kick">{kick}</span><span class="xe-lmh__l">{t((lines[0][0], lines[1][0]))}</span><span class="xe-lmh__l xe-lmh__l--c">{t((lines[0][1], lines[1][1]))}</span></h1>
         <p class="xe-lmh__lead">{t(lead)}</p>
-        <ul class="xe-lmh__pills"><li>{t(S["lm_free"])}</li><li>{t(S["lm_yours"])}</li><li>{t(S["lm_48"])}</li></ul>
         <a class="btn btn--primary xe-lmh__jump" href="#offre">{t(S["lm_btn"])} <span aria-hidden="true">↓</span></a>
         <a class="xe-lmh__call" href="#book">{t(S["lm_call"])} <span aria-hidden="true">→</span></a>
       </div>
       <div class="xe-lm" id="offre">
-        <div class="xe-cover" aria-hidden="true">
-          <span class="xe-cover__sheet xe-cover__sheet--3"></span><span class="xe-cover__sheet xe-cover__sheet--2"></span>
-          <span class="xe-cover__sheet xe-cover__sheet--1">
-            <span class="xe-cover__band"></span>
-            <span class="xe-cover__top"><img src="/assets/img/logo-navy.webp" alt="" width="44" height="48" /><small>{t(S["lm_k"])}</small></span>
-            <span class="xe-cover__ico">{icon}</span>
-            <b class="xe-cover__brand" data-empty="{a(S["lm_brand_ph"])}">{t(S["lm_brand_ph"])}</b>
-            <small class="xe-cover__anon">{cover_name}</small>
-          </span>
-        </div>
         <div class="xe-lm__body">
-          <!-- MOCK: sends nothing yet (js/ui.js, .form); wire to the CRM with the brand and the listening. -->
           <p class="xe-lm__t">{title}</p>
           <ul class="xe-lm__items">{items}</ul>
-          <form class="form xe-gform" id="flash-{key}-form" novalidate>
+          <form class="form xe-gform" id="call-{key}-form" novalidate>
             <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-email", ("E-mail professionnel", "Work email"), "email", "email", "camille@company.com")}</div>
-            <button class="form__submit" type="submit">{t(S["lm_btn"])} <span aria-hidden="true">→</span></button>
+            <button class="form__submit" type="submit">{t(S["lm_submit"])} <span aria-hidden="true">→</span></button>
             <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>{t(S["lm_done"])}</span></p>
           </form>
           <p class="consent">{t(S["magnet_consent"])} <a href="privacy.html">{t(S["privacy"])}</a>.</p>
@@ -764,7 +748,7 @@ def listening_body(x, offers_html):
     # the social listening page answers "agence social listening Paris / France": its H1 says so
     kick_name = t(("Agence de social listening à Paris", "Social listening agency in Paris")) if x["key"] == "social" else t(x["name"])
     out += lm_hero(kick_name if x["key"] == "social" else '%s<!--glossk:%s-->' % (kick_name, x["key"]), H1L[x["key"]], x["lead"], "xp-" + x["key"],
-                   t((S["lm_t"][0] % x["name"][0], S["lm_t"][1] % x["name"][1])), col, icon, t(x["name"]), logos(), flash_key=x["key"])
+                   t(S["lm_t"]), col, icon, t(x["name"]), logos(), flash_key=x["key"])
     if x["key"] == "social":    # a short, visible definition near the top: what search engines quote for "social listening" (9 October 2026)
         out += sec("definition", head(t(("DÉFINITION", "DEFINITION")), t(("Le social listening en bref.", "Social listening at a glance.")), t((
             "Le social listening est l'analyse de ce que les gens disent publiquement en ligne d'une marque, d'un produit, d'un concurrent ou d'un sujet : réseaux sociaux, forums, sites d'avis et presse. Il sert à comprendre une perception, repérer ce qui change et décider quoi en faire.",

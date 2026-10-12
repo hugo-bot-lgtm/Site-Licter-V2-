@@ -9969,7 +9969,7 @@ html[data-theme="light"] .xe-lmh__l--c, html:not([data-theme]) .xe-lmh__l--c { c
 .xe-lmh .clients { margin-top: clamp(30px, 4vw, 56px); }
 @media (max-width: 960px) {
   .xe-lmh__grid { grid-template-columns: minmax(0, 1fr); }
-  .xe-lm { margin-top: 70px; }
+  .xe-lm { margin-top: 36px; }
 }
 @media (max-width: 720px) {
   .xe-lmh__l { font-size: clamp(32px, 9.6vw, 44px); }
@@ -10631,7 +10631,7 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 }
 /* large screens: the copy starts at the top of the hero instead of being
    centred on the taller card, so its links clear the cookie banner */
-@media (min-width: 961px) { .xe-lmh { padding-top: 16px; } .xe-lmh__copy { align-self: start; } .xe-lm { margin-top: 44px; } }
+@media (min-width: 961px) { .xe-lmh { padding-top: 16px; } .xe-lmh__copy { align-self: start; } .xe-lm { margin-top: 24px; } }
 /* large screens: the page can scroll its last lines above the open banner too */
 @media (min-width: 900px) { html.cc-open body { padding-bottom: 72px; } }
 
@@ -10666,3 +10666,6 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 @media (max-width: 720px) { .cc-open .lx__launch { visibility: hidden; } }
 .lx__cta-call { min-height: 44px; }
 @media (min-width: 721px) { .lx__chip { height: 36px; } .lx__close { width: 44px; height: 44px; } }
+
+/* the hero card without its cover illustration (removed 12 October 2026): a little more air at the top */
+.xe-lm { padding-top: 30px; }
