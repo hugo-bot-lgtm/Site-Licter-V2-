@@ -79,6 +79,14 @@ SOURCE_TITLE = {
     "https://arxiv.org/abs/2005.14165": "arXiv · Language Models are Few-Shot Learners (GPT-3)",
     "https://tech.eu/2022/12/05/audiense/": "Tech.eu · Audiense acquires SoPrism (2022)",
     "https://help.audiense.com/knowledge/audiense-data-sources": "Audiense · Data sources",
+    "https://www.cnil.fr": "CNIL · site officiel",
+    "https://research.youtube.com/": "YouTube Researcher Program",
+    "https://weixin.sogou.com/": "Sogou · recherche WeChat",
+    "https://help.instagram.com/1729008150678239/": "Aide Instagram · Centre d'aide",
+    "https://faq.whatsapp.com/1053543185312573": "WhatsApp · centre d'aide",
+    "https://www.sixthtone.com/news/1005795": "Sixth Tone · Weibo",
+    "https://support.google.com/youtube/answer/9483359?hl=en": "Aide YouTube · Google",
+    "https://ir.bilibili.com/": "Bilibili · relations investisseurs",
     "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2": "CNIL · RGPD, chapitre II\u00a0: les principes",
     "https://www.cnil.fr/fr/les-bases-legales/interet-legitime": "CNIL · L'intérêt légitime",
     "https://www.cnil.fr/fr/recommandations-reutilisateurs-donnees-internet": "CNIL · Recommandations aux réutilisateurs de données publiées sur internet",
@@ -124,6 +132,27 @@ SOURCE_TITLE = {
 }
 
 
+def source_label(u, note=""):
+    """a readable label for a source link: its title when known, the note written
+    next to it, otherwise the host and the page name (audit of 12 October 2026:
+    bare domain names said nothing about the document)"""
+    import re
+    if u in SOURCE_TITLE:
+        return SOURCE_TITLE[u]
+    host = re.sub(r"^https?://(www\.)?", "", u).split("/")[0]
+    note = re.split(r"[:;,]| \(|\d{1,2} \w+ 20\d\d", note)[0].strip(" \"'")
+    if 4 <= len(note) <= 60:
+        return host + " · " + note
+    path = u.split(host, 1)[1].split("?")[0].strip("/")
+    parts = [x for x in path.split("/") if x and not re.fullmatch(r"[a-z]{2}(-[a-z]{2})?|\d+|hc|articles?|docs?|answer|news|blog|about", x)]
+    tail = re.sub(r"^\d{1,2}-\d{1,2}-\d{4}-|^\d+[-_]?", "", parts[-1] if parts else "")
+    tail = re.sub(r"\.(html?|pdf)$", "", tail).replace("-", " ").replace("_", " ").strip()
+    tail = re.sub(r"^\d{1,2} \d{1,2} \d{4} ", "", tail)
+    if re.fullmatch(r"[\d ]*", tail):
+        tail = ""
+    return host + (" · " + (tail[:40].rsplit(" ", 1)[0] if len(tail) > 40 else tail) if tail else "")
+
+
 def sources_line(module_file, label):
     """the public sources a long-form section relies on: the "# source:" notes
     of its module (every public fact there is checked and noted), shown as
@@ -141,16 +170,6 @@ def sources_line(module_file, label):
     notes = {}
     for u_, n_ in re.findall(r"# source: (https?://[^\s)]+)\s*\(([^)]*)\)", pathlib.Path(module_file).read_text()):
         notes.setdefault(u_.rstrip(".,;"), n_)
-    def name(u):
-        if u in SOURCE_TITLE:
-            return SOURCE_TITLE[u]
-        host = re.sub(r"^https?://(www\.)?", "", u).split("/")[0]
-        note = re.split(r"[:;,]| \(|\d{1,2} \w+ 20\d\d", notes.get(u, ""))[0].strip(" \"'")
-        if 4 <= len(note) <= 60:
-            return host + " · " + note
-        path = u.split(host, 1)[1].strip("/")
-        tail = re.sub(r"^\d+[-_]?", "", path.split("/")[-1] if path else "")
-        tail = re.sub(r"\.(html?|pdf)$", "", tail).replace("-", " ").replace("_", " ").strip()
-        return host + (" · " + (tail[:40].rsplit(" ", 1)[0] if len(tail) > 40 else tail) if tail else "")
+    name = lambda u: source_label(u, notes.get(u, ""))
     links = ", ".join('<a href="%s" rel="noopener" target="_blank">%s</a>' % (html.escape(u, quote=True), html.escape(name(u))) for u in urls)
     return '<p class="qa-src"><span>%s</span> %s</p>' % (label, links)

@@ -357,7 +357,7 @@ window.LicterFR = {
 "Topics": "Sujets",
 "FOUR WAYS TO WORK WITH US": "QUATRE FAÇONS DE TRAVAILLER AVEC NOUS",
 "AI-assisted monitoring, tuned by our analysts.": "La veille assistée par l'IA, réglée par nos analystes.",
-"A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm": "Un consultant vous rappelle sous 30 minutes, en semaine de 9 h à 19 h",
+"A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm": "Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h",
 "Get a call back from a consultant": "Être rappelé par un consultant",
 "A consultant, not a sales team.": "Un consultant, pas un commercial.",
 "Tone": "Tonalité",

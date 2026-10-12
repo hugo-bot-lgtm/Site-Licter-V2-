@@ -886,7 +886,7 @@ window.LicterFR = {
     "Licter est le cabinet de conseil en Social Data Intelligence. Nous transformons la donnée du plus grand panel du monde – réseaux sociaux, recherche, IA générative – en décisions.",
   "Your work email...": "Votre e-mail professionnel...", "Your work email": "Votre e-mail professionnel",
   "BOOK A MEETING": "PRENDRE RENDEZ-VOUS",
-  "NOTED, A CONSULTANT GETS BACK TO YOU WITHIN 30 MINUTES, ON WEEKDAYS FROM 9AM TO 7PM": "BIEN REÇU, UN CONSULTANT VOUS RECONTACTE SOUS 30 MINUTES, EN SEMAINE DE 9 H À 19 H",
+  "NOTED, A CONSULTANT GETS BACK TO YOU WITHIN 30 MINUTES, ON WEEKDAYS FROM 9AM TO 7PM": "BIEN REÇU, UN CONSULTANT VOUS RECONTACTE DANS LES 30 MINUTES, EN SEMAINE DE 9 H À 19 H",
   "NOTED, ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ, UN E-MAIL À LA PROCHAINE PUBLICATION",
   "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
   "Skip to content": "Aller au contenu",
@@ -999,7 +999,7 @@ window.LicterFR = {
   "How loud the topic is in public": "À quel point le sujet est public",
   "Our read, all four together": "Notre lecture, les quatre ensemble",
   "It is not an image problem, it is a format problem: launch a single-portion, recyclable range, and speak through the creators they already follow.": "Ce n'est pas un problème d'image, c'est un problème de format : lancer une gamme en portions individuelles et recyclable, et parler par les créateurs qu'ils suivent déjà.",
-  "No platform covers everything, and none of them reads itself. We run seven, with the search, press and AI tools around them, and pick what fits the question.": "Aucune plateforme ne couvre tout, et aucune ne se lit toute seule. Nous en exploitons sept, avec les outils de recherche, de presse et d'IA qui les entourent, et choisissons ce qui répond à la question.",
+  "No platform covers everything, and none of them reads itself. We run seven (Talkwalker, Visibrain, YouScan, SoPrism, Radarly, Brandwatch and Sprinklr), with the search, press and AI tools around them, and pick what fits the question.": "Aucune plateforme ne couvre tout, et aucune ne se lit toute seule. Nous en exploitons sept (Talkwalker, Visibrain, YouScan, SoPrism, Radarly, Brandwatch et Sprinklr), avec les outils de recherche, de presse et d'IA qui les entourent, et choisissons ce qui répond à la question.",
   "The broadest coverage on the market: volume, topics and sentiment across languages, read over long periods.": "La couverture la plus large du marché : volumes, sujets et sentiment dans toutes les langues, lus sur de longues périodes.",
   "Best for": "Idéal pour",
   "Brand health over time": "La santé de marque dans la durée",
@@ -1364,8 +1364,8 @@ window.LicterFR = {
   "Request my diagnostic →": "Demander mon diagnostic →",
   "Book the call →": "Réserver l'appel →",
   "100% free · sent by email immediately · no sequence afterwards": "100 % gratuit · envoi immédiat par e-mail · aucune séquence ensuite",
-  "No commitment · Reply within 30 minutes, on weekdays from 9am to 7pm · Independent of any follow-up project": "Sans engagement · réponse sous 30 minutes, en semaine de 9 h à 19 h · indépendant de toute suite",
-  "Reply within 30 minutes, on weekdays from 9am to 7pm · No commitment": "Réponse sous 30 minutes, en semaine de 9 h à 19 h · sans engagement",
+  "No commitment · Reply within 30 minutes, on weekdays from 9am to 7pm · Independent of any follow-up project": "Sans engagement · réponse dans les 30 minutes, en semaine de 9 h à 19 h · indépendant de toute suite",
+  "Reply within 30 minutes, on weekdays from 9am to 7pm · No commitment": "Réponse dans les 30 minutes, en semaine de 9 h à 19 h · sans engagement",
   "Guide sent. Check your inbox, and your spam folder: it happens.": "Guide envoyé. Vérifiez votre boîte de réception, et vos spams : ça arrive.",
   "Request received. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, to book the scoping call.":
     "Demande reçue. Un consultant revient vers vous dans les 30 minutes, en semaine de 9 h à 19 h, pour caler l'appel de cadrage.",
@@ -3134,7 +3134,7 @@ window.LicterFR = {
   "What is social listening?":
     "Qu'est-ce que le social listening ?",
   "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm":
-    "Un consultant vous rappelle sous 30 minutes, en semaine de 9 h à 19 h",
+    "Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h",
   "Your question framed, with the right sources and tools":
     "Votre question cadrée, avec les sources et les outils adaptés",
   "A costed proposal after the call":
@@ -3189,6 +3189,8 @@ window.LicterFR = {
     "« Quels mots nos clients utilisent-ils pour parler de nous ? »",
   "“Did our campaign change the way people talk about us?”":
     "« Notre campagne a-t-elle changé la façon dont on parle de nous ? »",
+  "The interviews":
+    "Les entretiens",
   "Social media monitoring for companies: the guide":
     "Veille des réseaux sociaux en entreprise : le guide",
   "The 22 networks we listen to":
@@ -3233,8 +3235,8 @@ window.LicterFR = {
     "Puis la collecte et le nettoyage, sur les sources adaptées. Puis la lecture : un analyste qui parle la langue du marché qualifie les publications, relie les signaux et vérifie ce que l'outil a classé. Enfin la restitution : une recommandation présentée aux équipes concernées, avec ce qui la fonde et ce qu'il faudra suivre ensuite.",
   "Which social listening metrics should you track?":
     "Quels indicateurs suivre en social listening ?",
-  "Mention volume and how it changes, first, to know whether people talk about you more or less. Share of voice, next: your place in the category's conversation against your competitors. Tone, positive, neutral or negative, provided an analyst checks it. Reach, meaning the number of people potentially exposed.":
-    "Le volume de mentions et son évolution, d'abord, pour savoir si l'on parle plus ou moins de vous. La part de voix, ensuite : votre place dans la conversation de la catégorie face à vos concurrents. La tonalité, positive, neutre ou négative, à condition d'être relue par un analyste. La portée, c'est-à-dire le nombre de personnes potentiellement exposées.",
+  "A social listening tracker rests on a few metrics: first those that measure the conversation, then those that qualify it. Tone, in particular, is only worth something once an analyst has checked it.":
+    "Un suivi de social listening repose sur quelques indicateurs : d'abord ceux qui mesurent la conversation, puis ceux qui la qualifient. La tonalité, en particulier, n'a de valeur que relue par un analyste.",
   "The most useful metrics are often qualitative: the subjects gaining ground, the recurring irritants, the words customers use, and the voices that really carry the conversation. A good tracking sheet keeps few of them, but ties each one to a decision.":
     "Les indicateurs les plus utiles sont souvent qualitatifs : les sujets qui montent, les irritants qui reviennent, les mots employés par les clients, et les voix qui portent vraiment la conversation. Un bon tableau de suivi en garde peu, mais les relie chacun à une décision.",
   "Social listening, network by network":
@@ -3281,6 +3283,8 @@ window.LicterFR = {
     "Avec une agence ou un cabinet de social listening, vous n'achetez pas un accès à un logiciel, mais une réponse. Le choix des outils, l'écriture des requêtes, la lecture dans la langue du marché et la recommandation sont pris en charge. Vos équipes gardent leur temps pour la décision.",
   "Licter is a social data intelligence consultancy based in Paris, working for brands in France and abroad: we run the market's platforms without being their publisher, and we pick the tool by the question. If you already have a licence, we can take it over and make it work. A first read comes about a week after scoping.":
     "Licter est un cabinet de conseil en social data intelligence basé à Paris, qui travaille pour des marques en France et à l'international : nous opérons les plateformes du marché sans en être l'éditeur, et nous choisissons l'outil selon la question. Si vous avez déjà une licence, nous pouvons la reprendre et la faire servir. Une première lecture arrive environ une semaine après le cadrage.",
+  "The six metrics to track":
+    "Les six indicateurs à suivre",
   "Metric":
     "Indicateur",
   "What it tells you":

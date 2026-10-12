@@ -613,7 +613,7 @@ S.update({
 
 
 # What the hero card promises: the first call with a consultant, as on the home (no free "flash" read exists)
-FLASH = {k: [("Un consultant vous rappelle sous 30 minutes, en semaine de 9 h à 19 h", "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm"),
+FLASH = {k: [("Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h", "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm"),
              ("Votre question cadrée, avec les sources et les outils adaptés", "Your question framed, with the right sources and tools"),
              ("Une proposition chiffrée après l'échange", "A costed proposal after the call")]
          for k in ("social", "audience", "influence", "ai", "live", "search", "hub")}
@@ -646,12 +646,20 @@ TOOLS_OF = {"ai": [("tech-geo.html", "GEO"), ("tech-chatgpt.html", "ChatGPT"), (
                    ("tech-gemini.html", "Gemini"), ("tech-perplexity.html", "Perplexity"), ("tech-grok.html", "Grok")]}
 
 
+# the practitioners the social listening guide quotes, interviewed in full (audits of 9 and 12 October 2026)
+INTERVIEWS = {"social": [("article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html", "L'Oréal"),
+                         ("article-licter-talkwalker-podcast.html", "Talkwalker"), ("article-licter-visibrain-podcast.html", "Visibrain"),
+                         ("article-licter-meltwater.html", "Meltwater")]}
+
+
 def reads(key):
     items = READS.get(key)
     if not items:
         return ""
     tools_line = ('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Les outils", "The tools")), ", ".join(
         '<a href="%s">%s</a>' % (h, n) for h, n in TOOLS_OF[key]))) if key in TOOLS_OF else ""
+    tools_line += ('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Les entretiens", "The interviews")), ", ".join(
+        '<a href="%s">%s</a>' % (h, n) for h, n in INTERVIEWS[key]))) if key in INTERVIEWS else ""
     links = ", ".join(('<a href="/fr/cas-usage/audiences/" data-en="/en/use-cases/audiences/">%s</a>' % t(l)) if h == "use-cases.html"
                       else '<a href="%s">%s</a>' % (h, t(l)) for h, l in items)
     return sec("", '<p class="xp-line"><span>%s</span> %s</p>' % (t(("À lire", "Further reading")), links) + tools_line)
@@ -738,7 +746,7 @@ def listening_body(x, offers_html):
         cards = [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS]
         if x["key"] == "social" and getattr(G, "TABLE", None):     # the indicators block also as a table, after its first paragraph
             q, (h1_, h2_), rows = G.TABLE
-            table = ('<table class="lg__t"><thead><tr><th scope="col">%s</th><th scope="col">%s</th></tr></thead><tbody>%s</tbody></table>' % (
+            table = ('<table class="lg__t"><caption class="visually-hidden">%s</caption><thead>' % t(G.TABLE_CAPTION) + '<tr><th scope="col">%s</th><th scope="col">%s</th></tr></thead><tbody>%s</tbody></table>' % (
                 t(h1_), t(h2_), "".join('<tr><th scope="row">%s</th><td>%s</td></tr>' % (t(k), t(v)) for k, v in rows)))
             for i, (h, ps) in enumerate(G.BLOCKS):
                 if h[0] == q:

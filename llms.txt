@@ -12,7 +12,7 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 - [Vigie 360](https://www.licter.com/fr/offres/vigie-360/): veille des médias sociaux et de la presse 24 h/24, e-réputation et gestion de crise, lue par un analyste
 - [Social Listening as a Service](https://www.licter.com/fr/offres/social-listening-as-a-service/): reprise d'une plateforme d'écoute sous-utilisée : taxonomie, tableaux de bord, analyses et formation des équipes
 - [Nox](https://www.licter.com/fr/offres/nox/): la conversation sur votre marque lue en continu, regroupée par sujets, avec ce qui a changé et ce qui sort de l'ordinaire
-- [Toutes les offres](https://www.licter.com/fr/offres/)
+- [Toutes les offres](https://www.licter.com/fr/offres/): Social Insights, Vigie 360, Social Listening as a Service et Nox, sur devis
 
 ## Expertises
 
@@ -25,7 +25,7 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 
 ## Cas d'usage
 
-- [Tous les cas d'usage](https://www.licter.com/fr/cas-usage/)
+- [Tous les cas d'usage](https://www.licter.com/fr/cas-usage/): douze cas d'usage de la social data, en quatre familles (communication, santé de marque, audiences, tendances)
 - [Santé de marque](https://www.licter.com/fr/cas-usage/sante-de-marque/): e-réputation, discours de marque, risques et crises
 - [Communication](https://www.licter.com/fr/cas-usage/communication/): impact des campagnes, prises de parole des dirigeants, ambassadeurs
 - [Audiences](https://www.licter.com/fr/cas-usage/audiences/): segmentation, rajeunissement, parcours client
@@ -34,7 +34,7 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 ## Guides
 
 - [Le guide des 12 questions](https://www.licter.com/fr/guide/): les 12 questions auxquelles la social data répond mieux qu'une étude
-- [Veille réseaux sociaux en entreprise : le guide](https://www.licter.com/article-veille-reseaux-sociaux-entreprise.html)
+- [Veille réseaux sociaux en entreprise : le guide](https://www.licter.com/article-veille-reseaux-sociaux-entreprise.html): quoi surveiller, avec quelles sources, quels outils et quelle méthode
 - [Blog](https://www.licter.com/fr/blog/): analyses publiées et entretiens du podcast Audience First
 
 ## Plateformes et sources
@@ -54,14 +54,14 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 
 - [Pourquoi Licter](https://www.licter.com/fr/pourquoi-licter/): l'équipe et la méthode
 - [Antoine Khaitrine](https://www.licter.com/fr/pourquoi-licter/#antoine-khaitrine) et [Adrien Krebs](https://www.licter.com/fr/pourquoi-licter/#adrien-krebs): les deux cofondateurs, qui ont créé et dirigé la cellule Data & Digital Analysis de l'Élysée, tous deux au Top 50 Insider mondial de la social intelligence (SI Lab)
-- [Clients](https://www.licter.com/fr/clients/)
+- [Clients](https://www.licter.com/fr/clients/): les organisations accompagnées et leurs missions
 - [Diagnostic](https://www.licter.com/fr/diagnostic/): audit indépendant d'un dispositif social data, en deux à trois semaines
-- [Prendre rendez-vous](https://www.licter.com/fr/rendez-vous/)
+- [Prendre rendez-vous](https://www.licter.com/fr/rendez-vous/): un échange avec un consultant, rappel dans les 30 minutes en semaine de 9 h à 19 h
 
 ## Communauté
 
 - [Social Intelligence Club](https://www.licter.com/socialintelligenceclub/): le collectif professionnel de la social intelligence (annonceurs, agences, éditeurs d'outils, consultants et chercheurs)
-- [Rejoindre le club](https://www.licter.com/socialintelligenceclub/rejoindre/)
+- [Rejoindre le club](https://www.licter.com/socialintelligenceclub/rejoindre/): la demande d'adhésion au club
 
 ## English
 
@@ -84,10 +84,10 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 
 ## Optional
 
-- [Wikidata](https://www.wikidata.org/wiki/Q141663812)
+- [Wikidata](https://www.wikidata.org/wiki/Q141663812): la fiche Wikidata de Licter
 - [LinkedIn](https://www.linkedin.com/company/licter/): la page entreprise de Licter
 - [YouTube, Audience First](https://www.youtube.com/@audience_first): les entretiens du podcast de Licter
 - [Annuaire des entreprises](https://annuaire-entreprises.data.gouv.fr/entreprise/915259394): fiche officielle de Licter SAS
 - [Événements](https://www.licter.com/fr/evenements/): études sectorielles présentées à Paris
-- [Mentions légales](https://www.licter.com/fr/mentions-legales/)
-- [Confidentialité](https://www.licter.com/fr/confidentialite/)
+- [Mentions légales](https://www.licter.com/fr/mentions-legales/): l'éditeur du site et son hébergeur
+- [Confidentialité](https://www.licter.com/fr/confidentialite/): les données collectées, pourquoi, et vos droits

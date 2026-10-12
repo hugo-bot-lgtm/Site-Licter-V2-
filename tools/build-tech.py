@@ -571,6 +571,7 @@ GUIDE = {"talkwalker": "talkwalker_guide", "tiktok": "tiktok_guide", "geo": "geo
 # audit of 8 October 2026: the 22 network pages were thin and alike)
 def net_detail(slug, nm):
     import html as _h
+    from components import source_label
     for mod in ("net_detail_a", "net_detail_b"):
         f = ROOT / "tools" / (mod + ".py")
         if not f.exists():
@@ -590,7 +591,7 @@ def net_detail(slug, nm):
             if u not in urls:
                 urls.append(u)
         src = ('<p class="qa-src"><span>%s</span> %s</p>' % (t(("Sources", "Sources")), ", ".join(
-            '<a href="%s" rel="noopener" target="_blank">%s</a>' % (_h.escape(u, quote=True), _h.escape(re.sub(r"^https?://(www\.)?", "", u).split("/")[0]))
+            '<a href="%s" rel="noopener" target="_blank">%s</a>' % (_h.escape(u, quote=True), _h.escape(source_label(u)))
             for u in urls))) if urls else ""
         cards = "".join('<li class="tk-proof__c"><h3 class="tk-proof__h">%s</h3><p>%s</p></li>' % (t(h), t(p_)) for h, p_ in blocks)
         return sec("detail", head(t(("%s EN DÉTAIL" % nm.upper(), "%s IN DETAIL" % nm.upper())),

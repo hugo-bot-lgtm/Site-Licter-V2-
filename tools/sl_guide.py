@@ -45,8 +45,8 @@ BLOCKS = [
          "Then collection and cleaning, on the right sources. Then the reading: an analyst who speaks the market's language qualifies the posts, connects the signals and checks what the tool has classified. Finally the readout: a recommendation presented to the teams concerned, with what supports it and what to follow next."),
     ]),
     (("Quels indicateurs suivre en social listening ?", "Which social listening metrics should you track?"), [
-        ("Le volume de mentions et son évolution, d'abord, pour savoir si l'on parle plus ou moins de vous. La part de voix, ensuite : votre place dans la conversation de la catégorie face à vos concurrents. La tonalité, positive, neutre ou négative, à condition d'être relue par un analyste. La portée, c'est-à-dire le nombre de personnes potentiellement exposées.",
-         "Mention volume and how it changes, first, to know whether people talk about you more or less. Share of voice, next: your place in the category's conversation against your competitors. Tone, positive, neutral or negative, provided an analyst checks it. Reach, meaning the number of people potentially exposed."),
+        ("Un suivi de social listening repose sur quelques indicateurs : d'abord ceux qui mesurent la conversation, puis ceux qui la qualifient. La tonalité, en particulier, n'a de valeur que relue par un analyste.",
+         "A social listening tracker rests on a few metrics: first those that measure the conversation, then those that qualify it. Tone, in particular, is only worth something once an analyst has checked it."),
         ("Les indicateurs les plus utiles sont souvent qualitatifs : les sujets qui montent, les irritants qui reviennent, les mots employés par les clients, et les voix qui portent vraiment la conversation. Un bon tableau de suivi en garde peu, mais les relie chacun à une décision.",
          "The most useful metrics are often qualitative: the subjects gaining ground, the recurring irritants, the words customers use, and the voices that really carry the conversation. A good tracking sheet keeps few of them, but ties each one to a decision."),
     ]),
@@ -100,6 +100,7 @@ BLOCKS = [
 
 # the indicators block also reads as a table (audit of 12 October 2026): the same
 # indicators as its first paragraph, one line each, nothing added
+TABLE_CAPTION = ("Les six indicateurs à suivre", "The six metrics to track")
 TABLE = ("Quels indicateurs suivre en social listening ?",
          (("Indicateur", "Metric"), ("Ce qu'il dit", "What it tells you")),
          [(("Volume de mentions", "Volume of mentions"), ("Si l'on parle plus ou moins de vous, et quand.", "Whether people talk about you more or less, and when.")),

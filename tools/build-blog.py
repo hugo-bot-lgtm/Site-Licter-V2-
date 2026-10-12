@@ -119,8 +119,8 @@ def meta(x, fr=False):
 def card(x, big=False, fr=False):
     # text only: the picture belongs to the article page
     return ('<li class="bl-card%s" data-t="%s"><a href="%s"><span class="bl-card__body"><span class="bl-card__top"><span class="bl-tag">%s</span>%s</span>'
-            '<b class="bl-card__t">%s</b><span class="bl-card__d">%s</span><span class="bl-card__go">Read the piece <i aria-hidden="true">→</i></span></span></a></li>') % (
-        " bl-card--big" if big else "", x["t"], x["file"], x["tname"], meta(x, fr), E(x["title"]), E(x["lead"]))
+            '<b class="bl-card__t"%s>%s</b><span class="bl-card__d"%s>%s</span><span class="bl-card__go">Read the piece <i aria-hidden="true">→</i></span></span></a></li>') % (
+        " bl-card--big" if big else "", x["t"], x["file"], x["tname"], meta(x, fr), FRL(x, fr), E(x["title"]), FRL(x, fr), E(x["lead"]))
 
 
 def mag_block(id_):
@@ -136,13 +136,18 @@ def mag_block(id_):
 
 
 # ------------------------------------------------------------------ the blog page
+def FRL(x, fr=False):
+    """a French article listed on an English page says its language (audit of 12 October 2026)"""
+    return ' lang="fr"' if x.get("lang") == "fr" and not fr else ""
+
+
 def row(x):
     """one line of the index: date, thread, title and lead, an arrow"""
     d, m, y = x["date"].split()
     return ('<li class="bl-row" data-t="%s"><a href="%s"><span class="bl-row__date"><b>%s</b><span>%s %s</span></span>'
-            '<span class="bl-row__main"><span class="bl-tag">%s</span><b class="bl-row__t">%s</b><span class="bl-row__d">%s</span></span>'
+            '<span class="bl-row__main"><span class="bl-tag">%s</span><b class="bl-row__t"%s>%s</b><span class="bl-row__d"%s>%s</span></span>'
             '<span class="bl-row__side"><span>%s</span><i aria-hidden="true">→</i></span></a></li>') % (
-        x["t"], x["file"], d, m, y, x["tname"], E(x["title"]), E(x["lead"]), x["read"])
+        x["t"], x["file"], d, m, y, x["tname"], FRL(x), E(x["title"]), FRL(x), E(x["lead"]), x["read"])
 
 
 def blog_main():
@@ -341,7 +346,7 @@ SEO_TITLE = {
     "Comment Meltwater exploite les données social listening pour ses clients luxe ?": "Comment Meltwater lit le social listening pour le luxe",
     "Comment Talkwalker utilise le social listening pour comprendre ce que vos consommateurs pensent de vous ?": "Talkwalker : ce que vos consommateurs pensent de vous",
     "Comment Visibrain s'est positionné comme pionnier en social listening ?": "Visibrain, pionnier du social listening : entretien",
-    "Social Listening et Politique : Comment capter la voix des citoyens ?": "Social listening et politique : capter la voix des citoyens",
+    "Social listening et politique : comment capter la voix des citoyens ?": "Social listening et politique : capter la voix des citoyens",
 }
 
 
