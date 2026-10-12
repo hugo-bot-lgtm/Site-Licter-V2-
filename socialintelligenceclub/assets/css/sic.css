@@ -56,6 +56,8 @@ button{font:inherit;color:inherit}
 
 .link{font:600 14px/1.3 var(--body-font);color:var(--ink);border-bottom:1.5px solid rgba(var(--amber-rgb),.8);padding-bottom:2px;transition:color .15s ease,border-color .15s ease}
 .link:hover{color:var(--accent);border-bottom-color:var(--accent)}
+/* a full-height touch target around the underlined text */
+.link{position:relative}.link::after{content:"";position:absolute;inset:-12px -4px}
 
 /* ---------- bandeau événement (identique licter.com) ---------- */
 .banner{position:sticky;top:0;z-index:40;display:block;padding:11px var(--gutter);background:var(--band);color:var(--ink);text-align:center;font:700 12px/1.3 var(--body-font);letter-spacing:.8px;box-shadow:inset 0 -1px 0 var(--line),0 12px 28px -22px rgba(var(--shadow),.35);transition:background-color .15s ease}

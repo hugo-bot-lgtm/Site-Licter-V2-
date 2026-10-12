@@ -392,32 +392,33 @@ FR_PATH = {"offers.html": "/fr/offres/", "offer-social-insights.html": "/fr/offr
 HUB_SEO = {"title": ("Nos offres : études, veille 24/7, outil IA | Licter", "Our offers: studies, 24/7 monitoring, an AI tool | Licter"),
            "desc": ("Quatre façons de travailler avec Licter : études social data à la demande, veille et alertes 24/7, reprise de votre plateforme, veille assistée par l'IA.",
                     "Four ways to work with Licter: social data studies on demand, 24/7 monitoring and alerts, a takeover of your platform, an AI-assisted monitoring tool.")}
-# Per offer: the magnet, the deliverable shown, and two buying questions.
+# Per offer: the quote request, the deliverable shown, and two buying questions.
+# No free sample exists (owner, 12 October 2026): the form asks for a quote, as prices are on quotation.
 # MOCK: the buying answers (start, ownership) are to be validated by Licter.
 MORE = {
     "social-insights": {
-        "magnet": ("Recevez un exemple d'étude Social Insights, dans votre secteur.", "Get a sample Social Insights study, in your sector."),
+        "magnet": ("Demandez un devis Social Insights pour votre marque.", "Ask for a Social Insights quote for your brand."),
         "dlv": "segmentation",
         "faq": [(("Comment démarre-t-on ?", "How do we start?"),
                  ("Par un échange de cadrage, puis la liste des questions du trimestre, classées avec vous la première semaine.",
                   "With a framing call, then the list of the quarter's questions, ranked with you in the first week."))],
     },
     "vigie": {
-        "magnet": ("Recevez un exemple d'alerte et de revue mensuelle Vigie 360.", "Get a sample Vigie 360 alert and monthly review."),
+        "magnet": ("Demandez un devis Vigie\u00a0360 pour votre marque.", "Ask for a Vigie\u00a0360 quote for your brand."),
         "dlv": "brand-risk",
         "faq": [(("En combien de temps êtes-vous opérationnels ?", "How fast are you up and running?"),
                  ("Le périmètre et les contacts d'alerte sont fixés la première semaine, les seuils réglés avec des alertes de test la deuxième.",
                   "The perimeter and alert contacts are set in the first week, the thresholds tuned with test alerts in the second."))],
     },
     "slaas": {
-        "magnet": ("Recevez un exemple de reporting repris, dans votre secteur.", "Get a sample reworked reporting, in your sector."),
+        "magnet": ("Demandez un devis pour la reprise de votre plateforme.", "Ask for a quote to take over your platform."),
         "dlv": "campaign-impact",
         "faq": [(("Comment démarre-t-on ?", "How do we start?"),
                  ("Par un audit de deux semaines de votre configuration actuelle, confrontée à vos questions.",
                   "With a two-week audit of your current setup, tested against your questions."))],
     },
     "nox": {
-        "magnet": ("Recevez un exemple de brief Nox, dans votre secteur.", "Get a sample Nox brief, in your sector."),
+        "magnet": ("Demandez un devis Nox pour votre marque.", "Ask for a Nox quote for your brand."),
         "dlv": "reputation",
         "faq": [(("Comment démarre-t-on ?", "How do we start?"),
                  ("Le périmètre est configuré la première semaine, puis réglé par nos analystes la deuxième.",
@@ -488,32 +489,29 @@ S.update({
     "price_link": ("Demander un devis", "Ask for a quote"),
     "hub_magnet_k": ("Avant d'en parler", "Before we talk"),
     "hub_magnet_t": ("Demandez un devis pour votre périmètre.", "Ask for a quote for your perimeter."),
-    "hub_magnet_d": ("Un consultant revient vers vous sous 48 h pour cadrer le périmètre et vous envoyer un devis, sans relance commerciale.",
-                     "A consultant gets back to you within 48 hours to frame the perimeter and send you a quote, with no sales follow-up."),
+    "hub_magnet_d": ("Un consultant vous recontacte dans les 30 minutes, en semaine de 9 h à 19 h, pour cadrer le périmètre, puis vous envoie un devis. Sans relance commerciale.",
+                     "A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, to frame the perimeter, then sends you a quote. No sales follow-up."),
     "hub_magnet_btn": ("Demander un devis", "Ask for a quote"),
     "magnet_k": ("Et chez vous ?", "And for you?"),
-    "magnet_d": ("Anonymisé, envoyé par un consultant sous 48 h : ce que vous recevriez vraiment.", "Anonymised, sent by a consultant within 48 hours: what you would actually receive."),
-    "magnet_btn": ("Recevoir l'exemple", "Get the sample"),
-    "magnet_email": ("E-mail professionnel", "Work email"),
+            "magnet_email": ("E-mail professionnel", "Work email"),
     "magnet_sector": ("Votre secteur", "Your sector"),
     "magnet_pick": ("Choisir…", "Choose…"),
     "magnet_err": ("Indiquez un e-mail professionnel valide.", "Enter a valid work email."),
     "magnet_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
     "magnet_consent": ("Votre e-mail sert uniquement à vous répondre.", "We use your email only to reply to you."),
     "privacy": ("Politique de confidentialité", "Privacy policy"),
-    "magnet_done": ("C'est noté. Un consultant vous envoie un exemple sous 48 h.", "Noted. A consultant sends you a sample within 48 hours."),
-    "hub_magnet_done": ("C'est noté. Un consultant revient vers vous sous 48 h.", "Noted. A consultant gets back to you within 48 hours."),
+        "hub_magnet_done": ("C'est noté. Un consultant vous recontacte dans les 30 minutes, en semaine de 9 h à 19 h.", "Noted. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm."),
     "magnet_alt": ("Plutôt comparer d'abord ?", "Rather compare first?"),
     "magnet_alt_link": ("Les quatre offres côte à côte", "The four offers side by side"),
     "dlv_t": ("Ce que vous recevez", "What you receive"),
     "dlv_link": ("Voir le cas d'usage", "See the use case"),
-    "get_lead": ("Le détail de l'offre, et un exemple de livrable tel qu'il arrive chez vous.",
-                 "The detail of the offer, and a sample deliverable as it reaches you."),
-    "bar_offer": ("Recevoir un exemple", "Get a sample"),
+    "get_lead": ("Le détail de l'offre, et un livrable type, tel qu'il arrive chez vous.",
+                 "The detail of the offer, and a typical deliverable, as it reaches you."),
+    "bar_offer": ("Demander un devis", "Ask for a quote"),
     "bar_price": ("Demander un devis", "Ask for a quote"),
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
     "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
-    "diag3": ("Le diagnostic en 3 minutes", "The 3-minute diagnostic"),
+    "diag3": ("Le test de maturité en 3 minutes", "The 3-minute maturity test"),
     "home": ("Accueil", "Home"),
 })
 
@@ -533,7 +531,7 @@ def magnet(key, title, done, btn, alt=True):
             '          <p class="consent">%s <a href="privacy.html">%s</a>.</p>\n        </form>\n%s'
             '        <p class="ucp-lead__done" role="status" hidden>%s</p>\n      </div>\n    </div>\n  </section>') % (
         t(S["hub_magnet_k"] if key == "of-prices" else S["magnet_k"]), title,
-        t(S["hub_magnet_d"] if key == "of-prices" else S["magnet_d"]), key, t(S["magnet_email"]), t(S["magnet_sector"]), opts, btn,
+        t(S["hub_magnet_d"]), key, t(S["magnet_email"]), t(S["magnet_sector"]), opts, btn,
         t(S["magnet_err"]), t(S["magnet_pick_err"]), t(S["magnet_consent"]), t(S["privacy"]), alt_html, done)
 
 
@@ -795,7 +793,7 @@ def body(o, offers_html):
     </div>
   </section>
 
-{magnet("of-" + o["key"], t(MORE[o["key"]]["magnet"]), t(S["magnet_done"]), t(S["magnet_btn"]))}
+{magnet("of-" + o["key"], t(MORE[o["key"]]["magnet"]), t(S["hub_magnet_done"]), t(S["hub_magnet_btn"]))}
 
   <section class="of-faq">
     <div class="shell">
@@ -1061,7 +1059,7 @@ def main():
     # every string is in the dictionary now: write both languages
     U.DICT.update(U.fr_dict())
     U.DICT.update(NEW)
-    U.DICT.setdefault("The 3-minute diagnostic", U.typo(S["diag3"][FR], FR))
+    U.DICT.setdefault("The 3-minute maturity test", U.typo(S["diag3"][FR], FR))
     for o, (out, ld_en) in pages:
         (ROOT / o["file"]).write_text(to_en(out))
         to_fr(out, o["file"], o["seo_title"], o["seo_desc"], ld_en, ld(o, FR))

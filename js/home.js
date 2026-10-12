@@ -433,7 +433,7 @@
 
   function label() {
     if (more) more.querySelector("summary").textContent = T("Read the founders' word", "Lire le mot des fondateurs");
-    if (opener) opener.querySelector("span").textContent = T("Start the diagnostic", "Commencer le diagnostic");
+    if (opener) opener.querySelector("span").textContent = T("Start the test", "Commencer le test");
   }
   function park(el) { homes.push([el, el.parentNode, el.nextSibling]); }
 

@@ -370,8 +370,7 @@ def page(lang, path, alt_path, title, meta, body, ld, og_type="website", og_imag
 
 <div class="ucp-bar" aria-hidden="true" hidden>
   <button class="ucp-bar__chat" type="button" tabindex="-1" aria-label="{T(L["bar_chat"], lang)}"><img src="/assets/img/team/founder-antoine-160.webp" alt="" width="44" height="44" /><i aria-hidden="true"></i></button>
-  <a class="btn btn--primary" href="#offre" tabindex="-1">{T(L["bar_offer"], lang)}</a>
-  <a class="btn btn--ghost" href="#book" tabindex="-1">{T(L["bar_call"], lang)}</a>
+  <a class="btn btn--primary" href="#book" tabindex="-1">{T(L["bar_call"], lang)}</a>
 </div>
 
 {shared(FOOTER, lang)}
@@ -430,7 +429,7 @@ VERSUS = [
 ]
 
 # the offer behind each case (audit of 7 October 2026: no use case linked to an offer)
-CASE_OFFER = {"leader-advocacy": "vigie-360", "brand-risk": "vigie-360", "reputation": "nox"}
+CASE_OFFER = {"leader-advocacy": "vigie-360", "brand-risk": "vigie-360", "reputation": "vigie-360"}   # 24/7 alerting is Vigie 360 (audit of 12 October 2026)
 OFFER_LABEL = {"vigie-360": "Vigie 360", "social-insights": "Social Insights", "nox": "Nox", "slaas": "Social Listening as a Service"}
 
 
@@ -447,8 +446,8 @@ L.update({
     "found": ("Ce que la conversation a montré", "What the conversation showed"),
     "reco": ("Notre recommandation", "Our recommendation"),
     "illus": ("Cas type · chiffres illustratifs", "Typical case · illustrative figures"),
-    "real_bridge": ("Les vrais chiffres d'une mission comparable, anonymisés\u00a0:", "The real figures of a comparable engagement, anonymised:"),
-    "real_bridge_link": ("recevoir un cas réel", "get a real case"),
+    "real_bridge": ("Ce que cette lecture donnerait chez vous\u00a0:", "What this reading would give for you:"),
+    "real_bridge_link": ("en parler avec un consultant", "talk it through with a consultant"),
     "presented": ("Présenté par le consultant qui a mené l'analyse.", "Presented by the consultant who ran the analysis."),
     "see_q": ("Voir les questions", "See the questions"),
     "jump": ("Aller à une famille", "Go to a family"),
@@ -471,7 +470,7 @@ def byline(lang):
     d = ("%d %s %d" % (TODAY.day, MONTHS_FR[TODAY.month - 1], TODAY.year)) if lang == FR else TODAY.strftime("%-d %B %Y")
     by = ("Par l'équipe d'analyse Licter", "By the Licter analysis team")[lang]
     up = ("Mis à jour le", "Updated")[lang]
-    return '\n        <p class="ucp__byline">%s · %s <span class="by-date" data-datetime="%s">%s</span></p>' % (esc(by), up, TODAY.isoformat(), d)
+    return '\n        <p class="ucp__signed">%s · %s <span class="by-date" data-datetime="%s">%s</span></p>' % (esc(by), up, TODAY.isoformat(), d)
 
 
 def hero(kicker_html, h1, intro, lang, aside="", actions=True, extra="", after=""):
@@ -583,7 +582,7 @@ def case_body(c, lang):
            '        <h2 class="ucp__h2">%s</h2>\n'
            '        <p class="ucv-p">%s</p>\n'
            '        <ul class="ucr__ticks">%s</ul>\n'
-           '        <a class="ucp__textlink ucv-dlv__real" href="#offre">%s <span aria-hidden="true">↓</span></a>\n'
+           '        <a class="ucp__textlink ucv-dlv__real" href="#book">%s <span aria-hidden="true">↓</span></a>\n'
            '      </div>\n'
            '      %s\n'
            '    </div>\n'
@@ -624,7 +623,7 @@ def case_body(c, lang):
              '          <p class="ucv-case__ctx">%s</p>\n'
              '          <p class="ucv-case__found">%s</p>\n'
              '          <p class="ucv-case__reco"><span>%s</span>%s</p>\n'
-             '          <p class="ucv-case__real">%s <a href="#offre">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
+             '          <p class="ucv-case__real">%s <a href="#book">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
              '        </div>\n'
              '      </div>\n'
              '      <ul class="ucv-roi">%s</ul>\n'
@@ -643,7 +642,6 @@ def case_body(c, lang):
         dlv,
         how,
         proof,
-        cta(c, lang).replace('class="ucp ucp--cta"', 'class="ucp ucp--cta ucr-offer"', 1),
         faq_block(c["faq"], lang, further(lang, "rel-" + c["key"], T(L["same"], lang), rel + offer_li(c["key"], lang) + up_li(f, lang) + "".join(
             '<li class="ucp__up-li"><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (xp_href(k, lang), esc(("Notre expertise %s", "Our %s expertise")[lang] % XP_NAME[k]))
             for k in XP_OF.get(c["key"], [])), x["articles"])),
@@ -654,7 +652,7 @@ def case_body(c, lang):
 L.update({
     "contents": ("Dans cette page", "On this page"),
     "see_dlv": ("Voir un livrable possible", "See a possible deliverable"),
-    "dlv_real": ("Recevoir un cas réel de ce type", "Get a real case of this kind"),
+    "dlv_real": ("En parler avec un consultant", "Talk it through with a consultant"),
     "problem_k": ("La question qu'on nous pose", "The question we get"),
     "now": ("Aujourd'hui, vous voyez", "Today, you see"),
     "missing": ("Ce qui vous manque", "What is missing"),
@@ -680,7 +678,6 @@ def family_body(f, lang):
         hero(kicker, T(f["h1"], lang), T(f["intro"], lang), lang, aside),
         wheel(f, cases, lang),
         client_block(next((x for x in cases if C.VOICES[C.EXTRA[x["key"]]["voice"]][0] != f["video"][0]), cases[0]), lang),
-        cta({"key": f["key"]}, lang),
         faq_block(f["faq"], lang, further(lang, "rel-" + f["key"], T(L["others"], lang), others,
                                           list(dict.fromkeys(a for x in cases for a in C.EXTRA[x["key"]]["articles"]))[:3], ico=True)),
         book(lang),
@@ -771,12 +768,11 @@ def hub_body(lang):
     return "\n".join([
         crumbs(items, lang),
         hero('<span>%s</span>' % T(C.HUB["kicker"], lang), T(C.HUB["h1"], lang), T(C.HUB["intro"], lang), lang,
-             aside=bubbles(lang), actions=True, extra='\n            <a class="ucp__textlink" href="#offre">%s <span aria-hidden="true">↓</span></a>' % T(L["bar_offer"], lang)),
+             aside=bubbles(lang), actions=True),
         carousel,
         compare(lang, C.COMPARE_HUB),
         section('      <h2 class="ucp__h2">%s</h2>\n      <div class="ucp__voices">\n%s\n      </div>' % (
             T(L["hub_voices"], lang), "\n".join(reel(C.VOICES[k], lang) for k in ("kantar", "seb", "dassault")))),
-        cta({"key": "hub"}, lang).replace(T(L["cta_t"], lang), T(L["hub_offer_t"], lang), 1),
         faq_block(C.HUB_FAQ, lang, related("hub-more", T(L["by_family"], lang), "".join(
             '<li><a href="%s">%s <span aria-hidden="true">→</span></a></li>' % (fam_path(f, lang), T(f["name"], lang)) for f in C.FAMILIES))),
         book(lang),
@@ -870,24 +866,9 @@ L.update({
     "read_article": ("Lire l'article", "Read the article"),
     "blog_k": ("Le blog", "The blog"),
     "voice_more": ("Ils en parlent", "They talk about it"),
-    "cta_k": ("Et chez vous ?", "And for you?"),
-    "cta_t": ("Recevez un cas réel de ce type, dans votre secteur.", "Get a real case of this kind, in your sector."),
-    "cta_d": ("Anonymisé, envoyé par un consultant sous 48 h. Pour voir concrètement ce que la lecture donne chez une entreprise comme la vôtre.",
-              "Anonymised, sent by a consultant within 48 hours. To see what the read actually gives for a company like yours."),
-    "cta_email": ("E-mail professionnel", "Work email"),
-    "cta_sector": ("Votre secteur", "Your sector"),
-    "cta_btn": ("Recevoir le cas", "Get the case"),
-    "cta_err": ("Saisissez un e-mail professionnel, par exemple nom@entreprise.com.", "Enter a work email, like name@company.com."),
-    "cta_done": ("C'est noté. Un consultant vous envoie un cas réel sous 48 h.", "Noted. A consultant sends you a real case within 48 hours."),
-    "cta_consent": ("Votre e-mail sert uniquement à vous répondre.", "We use your email only to reply to you."),
     "privacy": ("Politique de confidentialité", "Privacy policy"),
-    "cta_pick": ("Choisir…", "Choose…"),
-    "cta_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
-    "bar_offer": ("Recevoir un cas réel", "Get a real case"),
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
     "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
-    "cta_alt": ("Plutôt lire d'abord ?", "Rather read first?"),
-    "cta_alt_link": ("Le guide des 12 questions", "The guide to the 12 questions"),
     "note_lead": ("Un tableau de bord s'arrête au chiffre. Voici ce que nous remettons à la place : une note, écrite et présentée par le consultant qui a lu la conversation.",
                   "A dashboard stops at the number. Here is what we hand over instead: a note, written and presented by the consultant who read the conversation."),
     "note_stop": ("… et après ?", "… and then?"),
@@ -904,7 +885,6 @@ L.update({
     "up": ("en hausse", "up"),
     "down": ("en baisse", "down"),
     "hub_voices": ("Leurs questions, et ce qu'ils en ont fait", "Their questions, and what they did with them"),
-    "hub_offer_t": ("Recevez un cas réel, dans votre secteur.", "Get a real case, in your sector."),
 })
 
 SECTORS = [("Agroalimentaire", "Food & drink"), ("Luxe & mode", "Luxury & fashion"), ("Beauté", "Beauty"),
@@ -913,35 +893,6 @@ SECTORS = [("Agroalimentaire", "Food & drink"), ("Luxe & mode", "Luxury & fashio
            ("Autre", "Other")]
 
 
-def cta(c, lang):
-    opts = '<option value="" disabled selected>%s</option>' % T(L["cta_pick"], lang) + "".join('<option>%s</option>' % T(s, lang) for s in SECTORS)
-    return ('  <!-- MOCK: sends nothing yet (js/home.js, .ucp-lead); wire to the CRM with the case and the sector. -->\n'
-            '  <section class="ucp ucp--cta" id="offre">\n'
-            '    <div class="shell">\n'
-            '      <div class="ucp__cta">\n'
-            '        <div class="ucp__cta-copy">\n'
-            '          <p class="ucp__cta-k">%s</p>\n'
-            '          <h2 class="ucp__cta-t">%s</h2>\n'
-            '          <p class="ucp__cta-d">%s</p>\n'
-            '        </div>\n'
-            '        <form class="ucp-lead" data-case="%s" novalidate>\n'
-            '          <div class="ucp-lead__row">\n'
-            '            <label class="ucp-lead__f"><span>%s</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="%s" required /></label>\n'
-            '            <label class="ucp-lead__f"><span>%s</span><select class="fld__input" name="sector" required>%s</select></label>\n'
-            '          </div>\n'
-            '          <button class="btn btn--primary" type="submit">%s <span aria-hidden="true">→</span></button>\n'
-            '          <p class="fld__error" hidden>%s</p>\n'
-            '          <p class="fld__error ucp-lead__sector-err" hidden>%s</p>\n'
-            '          <p class="consent">%s <a href="/privacy.html">%s</a>.</p>\n'
-            '        </form>\n'
-            '        <p class="ucp-lead__alt">%s <a href="/guide.html">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
-            '        <p class="ucp-lead__done" role="status" hidden>%s</p>\n'
-            '      </div>\n'
-            '    </div>\n'
-            '  </section>') % (T(L["cta_k"], lang), T(L["cta_t"], lang), T(L["cta_d"], lang), c["key"],
-                               T(L["cta_email"], lang), "nom@entreprise.com" if lang == FR else "name@company.com",
-                               T(L["cta_sector"], lang), opts, T(L["cta_btn"], lang), T(L["cta_err"], lang), T(L["cta_pick_err"], lang),
-                               T(L["cta_consent"], lang), T(L["privacy"], lang), T(L["cta_alt"], lang), T(L["cta_alt_link"], lang), T(L["cta_done"], lang))
 
 
 def articles_block(keys, lang):
@@ -987,7 +938,7 @@ def case_extras(c, lang):
             '            <div><p class="ucp__case-h">%s</p><p>%s</p></div>\n'
             '            <div class="ucp__case-reco"><p class="ucp__case-h">%s</p><p>%s</p></div>\n'
             '          </div>\n'
-            '          <p class="ucv-case__real">%s <a href="#offre">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
+            '          <p class="ucv-case__real">%s <a href="#book">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
             '        </div>\n'
             '%s\n'
             '      </div>') % (T(L["client"], lang), T(L["illus"], lang), T(L["context"], lang), esc(typo(ctx, lang)),

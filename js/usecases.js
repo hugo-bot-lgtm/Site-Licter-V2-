@@ -537,12 +537,9 @@
           '<div class="mps" id="' + PX + 'uv-posts"></div>' +
           '<div class="lf__answer" id="' + PX + 'uv-answer" aria-live="polite"><p class="lf__reading">' + t("Reading", "Lecture en cours") +
             '<span class="lf__dots"><i></i><i></i><i></i></span></p></div>' +
-          '<div class="lf__get" id="' + PX + 'uv-get"></div>' +
           (window.LicterUC && FULL[current] ? '<a class="lf__more" href="' + window.LicterUC(FULL[current]) + '">' + t("See the full use case", "Voir le cas d'usage complet") + ' <span aria-hidden="true">→</span></a>' : "") +
-        (opts.lead === false
-          /* the home asks for one thing only: a consultant, the one action of the page */
-          ? '<a class="btn btn--primary lf__cta" href="#book">' + t("Talk to a consultant", "Parler à un consultant") + ' <span aria-hidden="true">→</span></a>'
-          : '<a class="lf__book" href="#book">' + t("Or talk to a consultant", "Ou parler à un consultant") + ' <span aria-hidden="true">→</span></a>') +
+        /* one action only: a consultant (no real case is sent, owner, 12 October 2026) */
+        '<a class="btn btn--primary lf__cta" href="#book">' + t("Talk to a consultant", "Parler à un consultant") + ' <span aria-hidden="true">→</span></a>' +
         "</aside>";
     }
 
@@ -555,56 +552,6 @@
     /* The side panel: two posts rotate; the count and our read follow the
        visual. A visual calls progress(k), k from 0 to 1; at 1 our read lands. */
     var gen = 0, answered = false, total = 0;
-    var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, sentCases = {};
-
-    /* The offer once the read has landed: the full case of the sector on
-       screen, by email. The lead arrives with its sector and its question. */
-    function renderGet() {
-      var el = $("uv-get");
-      if (!el || opts.lead === false) return;
-      var key = current + ":" + SECTORS[sector].key, name = L(SECTORS[sector].name).toLowerCase();
-      var known = window.LicterLead ? window.LicterLead.get() : "";
-      if (sentCases[key]) {
-        el.innerHTML = '<p class="lf__sent">' + t("Noted. A consultant sends you a real " + name + " case within 48 hours.", "C'est noté. Un consultant vous envoie un cas réel du secteur " + name + " sous 48 h.") + "</p>";
-        return;
-      }
-      function done(email) {
-        if (window.LicterSend) window.LicterSend("real_case", "Démo de l'accueil · " + current + " · " + SECTORS[sector].key, { "E-mail": email });
-        if (window.LicterLead) window.LicterLead.set(email);
-        if (window.LicterTrack) window.LicterTrack("form_submit", { form: "real_case_demo", topic: current, sector: SECTORS[sector].key });
-        sentCases[key] = true;
-        renderGet();
-        var msg = el.querySelector(".lf__sent");
-        if (msg) { msg.setAttribute("tabindex", "-1"); msg.focus({ preventScroll: true }); }
-      }
-      /* the title is a label when there is a field, a plain line when not */
-      function head(label) {
-        var title = t("Get a real case", "Recevez un cas réel") + " · " + esc(L(SECTORS[sector].name));
-        return (label ? '<label class="lf__k" for="' + PX + 'uv-email">' + title + "</label>" : '<p class="lf__k">' + title + "</p>") +
-          '<p class="lf__sub">' + t("Anonymised, sent by a consultant within 48 hours.", "Anonymisé, envoyé par un consultant sous 48 h.") + "</p>";
-      }
-      /* already known: one click, no field to fill again */
-      if (known && EMAIL.test(known)) {
-        el.innerHTML = head(false) + '<button class="btn btn--primary lf__one" type="button">' + t("Send it to ", "L'envoyer à ") + esc(known) + "</button>";
-        el.querySelector(".lf__one").addEventListener("click", function () { done(known); });
-        return;
-      }
-      el.innerHTML =
-        '<form class="lf__form" novalidate>' + head(true) +
-          '<div class="lf__row"><input class="fld__input" id="' + PX + 'uv-email" type="email" autocomplete="email" placeholder="' + t("name@company.com", "nom@entreprise.com") + '" required />' +
-          '<button class="btn btn--primary" type="submit">' + t("Send", "Recevoir") + "</button></div>" +
-          '<p class="fld__error" hidden>' + t("Enter a work email, like name@company.com.", "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.") + "</p>" +
-        "</form>";
-      el.querySelector("form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        var field = el.querySelector(".fld__input"), err = el.querySelector(".fld__error"), ok = EMAIL.test(field.value.trim());
-        field.setAttribute("aria-invalid", ok ? "false" : "true");
-        err.hidden = ok;
-        if (!ok) { field.focus(); return; }
-        done(field.value.trim());
-      });
-    }
-
     function runSide() {
       var posts = data().posts, postsEl = $("uv-posts"), i = 0;
       function show() {
@@ -629,9 +576,6 @@
           '<p class="ins__head">' + esc(L(ins.head)) + "</p>" +
           '<ul class="ins__facts">' + ins.facts.map(function (f) { return "<li>" + esc(L(f)) + "</li>"; }).join("") + "</ul>" +
           '<p class="ins__reco"><span>' + t("We recommend", "Notre recommandation") + "</span>" + esc(L(ins.reco)) + "</p>";
-        renderGet();
-        var get = $("uv-get");
-        if (get) { get.classList.remove("is-in"); void get.offsetWidth; get.classList.add("is-in"); }
       }
     }
     /* runs fn(k) from 0 to 1 over ms, frame by frame, until the case changes */
@@ -1244,7 +1188,7 @@
   var homeStage = document.getElementById("cases-panel");
   var tabs = Array.prototype.slice.call(document.querySelectorAll(".lf__topic[data-topic]"));
   if (homeStage && tabs.length) {
-    var home = Stage(homeStage, { prefix: "", topics: tabs, closable: true, lead: false });
+    var home = Stage(homeStage, { prefix: "", topics: tabs, closable: true });
     tabs.forEach(function (b, i) {
       b.addEventListener("click", function () { built = false; home.select(b.dataset.topic); });
       b.addEventListener("keydown", function (e) {

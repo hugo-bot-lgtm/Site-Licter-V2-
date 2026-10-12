@@ -315,7 +315,7 @@ def article_main(x):
 %s
     </div>
   </section>
-</main>''' % (E(x["title"]), x["tname"], E(x["title"]), E(x["lead"]), x["avatar"], byline(x, fr), meta(x, fr), art(x["slug"], x["t"], 900, 640), note,
+</main>''' % (E(x["title"]), x["tname"], E(x["title"]), E(x["lead"]), x["avatar"], byline(x, fr), meta(x, fr) + updated(x, fr), art(x["slug"], x["t"], 900, 640), note,
               toc_html, ' lang="fr"' if fr else "", prose, x["uc"].replace('class="uc-links"', 'class="uc-links bl-uc"'), "".join(card(y, fr=fr) for y in more), mag_block(x["slug"][:10]))
 
 
@@ -366,14 +366,28 @@ def author_ld(x, fr):
 
 def title_tag(x):
     t = html.unescape(x["title"])
-    return SEO_TITLE.get(re.sub(r"[\u00a0\u202f]", " ", t), t)
+    t = SEO_TITLE.get(re.sub(r"[\u00a0\u202f]", " ", t), t)
+    # French titles keep their non-breaking space before : ; ? ! » (audit of 12 October 2026)
+    return re.sub(r" ([:;?!»])", "\u00a0\\1", t) if x.get("lang") == "fr" else t
 
 
 # articles substantially rewritten since publication, and when
 REWRITTEN = {f: "2026-10-07" for f in ("article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html",
                                       "article-licter-lvmh.html", "article-licter-meltwater.html",
                                       "article-licter-talkwalker-podcast.html", "article-licter-visibrain-podcast.html")}
-REWRITTEN["article-le-bad-buzz-huda-beauty-decrypte.html"] = "2026-10-09"   # written up from its slides (audit of 9 October 2026)
+REWRITTEN["article-le-bad-buzz-huda-beauty-decrypte.html"] = "2026-10-12"   # written up from its slides (audits of 9 and 12 October 2026)
+REWRITTEN["article-veille-reseaux-sociaux-entreprise.html"] = "2026-10-12"   # a new introduction (audits of 9 and 12 October 2026)
+REWRITTEN["article-departs-de-x-quels-reseaux-sociaux-peuvent-rivaliser-avec-la-plateforme-delon-musk.html"] = "2026-10-12"   # retitled and restructured
+
+
+def updated(x, fr):
+    """a rewritten article says so next to its date, as the markup does (audit of 12 October 2026)"""
+    d = REWRITTEN.get(x["file"])
+    if not d:
+        return ""
+    y, m, dd = (int(v) for v in d.split("-"))
+    when = "%s %s %d" % ("1er" if dd == 1 else dd, MOIS[m - 1], y) if fr else "%d %s %d" % (dd, MONTHS[m - 1], y)
+    return ' <span class="bl-upd">%s %s</span>' % ("mis à jour le" if fr else "updated", when)
 
 
 def article_page(x):

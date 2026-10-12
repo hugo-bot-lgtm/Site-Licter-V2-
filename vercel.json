@@ -572,12 +572,12 @@
     },
     {
       "source": "/topic/podcast",
-      "destination": "/fr/blog/",
+      "destination": "/fr/#voices",
       "permanent": true
     },
     {
       "source": "/topic/podcast/",
-      "destination": "/fr/blog/",
+      "destination": "/fr/#voices",
       "permanent": true
     },
     {

@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="/css/t-uc.min.css?v=20261357" />
+<link rel="stylesheet" href="/css/t-uc.min.css?v=20261358" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.licter.com/fr/"}, {"@type": "ListItem", "position": 2, "name": "Cas d'usage", "item": "https://www.licter.com/fr/cas-usage/"}, {"@type": "ListItem", "position": 3, "name": "Communication", "item": "https://www.licter.com/fr/cas-usage/communication/"}, {"@type": "ListItem", "position": 4, "name": "Optimiser la prise de parole de vos dirigeants", "item": "https://www.licter.com/fr/cas-usage/communication/prise-de-parole-dirigeants/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Optimiser la prise de parole de vos dirigeants", "description": "Comment vos dirigeants sont entendus face à leurs pairs, sur quels sujets leur voix retient l'attention, et où elle ajoute du bruit.", "serviceType": "Communication", "provider": {"@type": "Organization", "@id": "https://www.licter.com/#org", "name": "Licter", "url": "https://www.licter.com/", "logo": "https://www.licter.com/assets/img/logo-navy.png"}, "areaServed": ["France", "Worldwide"], "inLanguage": "fr", "url": "https://www.licter.com/fr/cas-usage/communication/prise-de-parole-dirigeants/", "@id": "https://www.licter.com/fr/cas-usage/communication/prise-de-parole-dirigeants/#service"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Travaillez-vous avec les équipes de communication du dirigeant ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui : nous leur donnons une lecture et des recommandations, elles gardent la main sur les messages."}}, {"@type": "Question", "name": "Peut-on suivre plusieurs porte-parole ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, jusqu'à tout un comité de direction, avec la même méthode."}}, {"@type": "Question", "name": "Est-ce utile en période de crise ?", "acceptedAnswer": {"@type": "Answer", "text": "C'est justement là que savoir sur quoi le dirigeant est attendu évite les faux pas."}}]}</script>
@@ -99,7 +99,7 @@
             <a class="btn btn--primary" href="#book">Parler à un consultant <span aria-hidden="true">→</span></a>
             <a class="ucp__textlink" href="#livrable">Voir un livrable possible <span aria-hidden="true">↓</span></a>
           </div>
-        <p class="ucp__byline">Par l&#x27;équipe d&#x27;analyse Licter · Mis à jour le <span class="by-date" data-datetime="2026-10-12">12 octobre 2026</span></p>
+        <p class="ucp__signed">Par l&#x27;équipe d&#x27;analyse Licter · Mis à jour le <span class="by-date" data-datetime="2026-10-12">12 octobre 2026</span></p>
         </div>
         <div class="ucr-hero__get">
           <p class="ucr__label">Ce que vous obtenez</p>
@@ -135,7 +135,7 @@
         <h2 class="ucp__h2">Carte de part de voix</h2>
         <p class="ucv-p">Nous partons des sujets sur lesquels votre dirigeant est légitime, pas de ceux sur lesquels il aimerait l&#x27;être. Nous mesurons sa part de voix sujet par sujet face à un panel de pairs choisi avec vous, et nous regardons qui relaie ses messages. Le résultat est un plan de prise de parole, pas un classement.</p>
         <ul class="ucr__ticks"><li>La part de voix par porte-parole, sujet par sujet, face à un panel de pairs.</li><li>La carte des sujets où la parole est attendue, et de ceux à éviter.</li><li>Les relais qui amplifient ses messages.</li><li>Un plan de prise de parole sur six mois.</li></ul>
-        <a class="ucp__textlink ucv-dlv__real" href="#offre">Recevoir un cas réel de ce type <span aria-hidden="true">↓</span></a>
+        <a class="ucp__textlink ucv-dlv__real" href="#book">En parler avec un consultant <span aria-hidden="true">↓</span></a>
       </div>
       <figure class="dlv dlv--leader-advocacy"><div class="dlv__top" aria-hidden="true"><img class="dlv__logo" src="/assets/img/logo-navy.webp" alt="" width="44" height="48" loading="lazy" decoding="async" /><span class="dlv__doc"><b>Étude de prise de parole</b> <small>Groupe industriel · Octobre 2026</small></span> <span class="dlv__tag">Données illustratives</span></div><figcaption class="dlv__head"><b>Carte de part de voix</b> <small>Part de voix par thème, 90 jours</small></figcaption><div class="dlv__body"><table class="dlv-heat"><thead><tr><th><span class="visually-hidden">Porte-parole</span></th><th scope="col">Innovation</th><th scope="col">Emploi</th><th scope="col">Industrie en région</th><th scope="col">Climat</th><th scope="col">Résultats</th></tr></thead><tbody><tr class="you"><th scope="row">Votre PDG</th><td><span class="hm" style="--v:0.26">9 %</span></td><td><span class="hm" style="--v:0.91">31 %</span></td><td><span class="hm" style="--v:0.82">28 %</span></td><td><span class="hm" style="--v:0.18">6 %</span></td><td><span class="hm" style="--v:0.35">12 %</span></td></tr><tr><th scope="row">Pair A</th><td><span class="hm" style="--v:1.00">34 %</span></td><td><span class="hm" style="--v:0.24">8 %</span></td><td><span class="hm" style="--v:0.12">4 %</span></td><td><span class="hm" style="--v:0.65">22 %</span></td><td><span class="hm" style="--v:0.53">18 %</span></td></tr><tr><th scope="row">Pair B</th><td><span class="hm" style="--v:0.85">29 %</span></td><td><span class="hm" style="--v:0.18">6 %</span></td><td><span class="hm" style="--v:0.09">3 %</span></td><td><span class="hm" style="--v:0.53">18 %</span></td><td><span class="hm" style="--v:0.74">25 %</span></td></tr><tr><th scope="row">Pair C</th><td><span class="hm" style="--v:0.65">22 %</span></td><td><span class="hm" style="--v:0.29">10 %</span></td><td><span class="hm" style="--v:0.06">2 %</span></td><td><span class="hm" style="--v:0.88">30 %</span></td><td><span class="hm" style="--v:0.41">14 %</span></td></tr></tbody></table><p class="dlv-callout">Votre PDG est attendu sur l&#x27;emploi et l&#x27;industrie en région, là où ses pairs sont absents.</p></div><div class="dlv__foot"><span>Source : LinkedIn, X, presse · 12 400 prises de parole</span> <span>Licter · p. 6 / 22</span></div></figure>
     </div>
@@ -162,33 +162,10 @@
           <p class="ucv-case__ctx">Un PDG publie chaque semaine sur l&#x27;innovation, sans écho.</p>
           <p class="ucv-case__found">La lecture montre que son audience l&#x27;attend sur l&#x27;emploi et l&#x27;industrie en région, où ses pairs sont absents.</p>
           <p class="ucv-case__reco"><span>Notre recommandation</span> Recentrer ses prises de parole sur ces deux sujets.</p>
-          <p class="ucv-case__real">Les vrais chiffres d&#x27;une mission comparable, anonymisés : <a href="#offre">recevoir un cas réel&nbsp;<span aria-hidden="true">→</span></a></p>
+          <p class="ucv-case__real">Ce que cette lecture donnerait chez vous : <a href="#book">en parler avec un consultant&nbsp;<span aria-hidden="true">→</span></a></p>
         </div>
       </div>
       <ul class="ucv-roi"><li><b>Moins de prises de parole perdues</b> <span>Le dirigeant parle là où il est attendu, et plus là où il ajoute du bruit.</span></li><li><b>Une visibilité qui profite à la marque</b> <span>Ses sujets et ceux de l&#x27;entreprise se renforcent au lieu de se disperser.</span></li><li><b>Des faux pas évités</b> <span>Savoir sur quoi il est attendu protège aussi en période sensible.</span></li></ul>
-    </div>
-  </section>
-  <section class="ucp ucp--cta ucr-offer" id="offre">
-    <div class="shell">
-      <div class="ucp__cta">
-        <div class="ucp__cta-copy">
-          <p class="ucp__cta-k">Et chez vous ?</p>
-          <h2 class="ucp__cta-t">Recevez un cas réel de ce type, dans votre secteur.</h2>
-          <p class="ucp__cta-d">Anonymisé, envoyé par un consultant sous 48 h. Pour voir concrètement ce que la lecture donne chez une entreprise comme la vôtre.</p>
-        </div>
-        <form class="ucp-lead" data-case="leader-advocacy" novalidate>
-          <div class="ucp-lead__row">
-            <label class="ucp-lead__f"><span>E-mail professionnel</span> <input class="fld__input" name="email" type="email" autocomplete="email" placeholder="nom@entreprise.com" required /></label>
-            <label class="ucp-lead__f"><span>Votre secteur</span> <select class="fld__input" name="sector" required><option value="" disabled selected>Choisir…</option><option>Agroalimentaire</option><option>Luxe &amp; mode</option><option>Beauté</option><option>Jouets &amp; jeux vidéo</option><option>Automobile &amp; mobilité</option><option>Banque &amp; assurance</option><option>Distribution</option><option>Secteur public</option><option>Autre</option></select></label>
-          </div>
-          <button class="btn btn--primary" type="submit">Recevoir le cas <span aria-hidden="true">→</span></button>
-          <p class="fld__error" hidden>Saisissez un e-mail professionnel, par exemple nom@entreprise.com.</p>
-          <p class="fld__error ucp-lead__sector-err" hidden>Choisissez votre secteur.</p>
-          <p class="consent">Votre e-mail sert uniquement à vous répondre. <a href="/fr/confidentialite/">Politique de confidentialité</a>.</p>
-        </form>
-        <p class="ucp-lead__alt">Plutôt lire d&#x27;abord ? <a href="/fr/guide/">Le guide des 12 questions&nbsp;<span aria-hidden="true">→</span></a></p>
-        <p class="ucp-lead__done" role="status" hidden>C&#x27;est noté. Un consultant vous envoie un cas réel sous 48 h.</p>
-      </div>
     </div>
   </section>
   <section class="ucp">
@@ -235,8 +212,7 @@
 
 <div class="ucp-bar" aria-hidden="true" hidden>
   <button class="ucp-bar__chat" type="button" tabindex="-1" aria-label="Discuter avec Antoine"><img src="/assets/img/team/founder-antoine-160.webp" alt="" width="44" height="44" /><i aria-hidden="true"></i></button>
-  <a class="btn btn--primary" href="#offre" tabindex="-1">Recevoir un cas réel</a>
-  <a class="btn btn--ghost" href="#book" tabindex="-1">Parler à un consultant</a>
+  <a class="btn btn--primary" href="#book" tabindex="-1">Parler à un consultant</a>
 </div>
 
 <footer class="site-foot">
@@ -299,9 +275,9 @@
   </div>
 </footer>
 
-<script src="/js/min/fr-core.js?v=20261357" defer></script>
-<script src="/js/min/i18n.js?v=20261357" defer></script>
-<script src="/js/min/ui.js?v=20261357" defer></script>
-<script src="/js/min/home.js?v=20261357" defer></script>
+<script src="/js/min/fr-core.js?v=20261358" defer></script>
+<script src="/js/min/i18n.js?v=20261358" defer></script>
+<script src="/js/min/ui.js?v=20261358" defer></script>
+<script src="/js/min/home.js?v=20261358" defer></script>
 </body>
 </html>

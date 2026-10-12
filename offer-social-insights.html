@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="css/t-of.min.css?v=20261357" />
+<link rel="stylesheet" href="css/t-of.min.css?v=20261358" />
 <meta property="og:url" content="https://www.licter.com/offer-social-insights.html" />
 <meta property="og:image" content="https://www.licter.com/assets/img/og/p-offer-social-insights.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -154,7 +154,7 @@
   <section class="of-get" id="included">
     <div class="shell of-get__grid">
       <div>
-        <div class="xs__head"><h2 class="xs__title">What you receive</h2><p class="xs__lead">The detail of the offer, and a sample deliverable as it reaches you.</p></div>
+        <div class="xs__head"><h2 class="xs__title">What you receive</h2><p class="xs__lead">The detail of the offer, and a typical deliverable, as it reaches you.</p></div>
         <ol class="of-get__list"><li><span class="of-get__n">01</span> <b>Studies on demand</b> <p>Campaign reads, competitor benchmarks, audience studies, trend scans: driven by the questions of the quarter.</p></li><li><span class="of-get__n">02</span> <b>A dedicated consultant</b> <p>The same person frames every question with you, and knows your brand, your market and your history.</p></li><li><span class="of-get__n">03</span> <b>Four layers of signal</b> <p>What people post, who they are, what they do and what they search for, chosen question by question.</p></li><li><span class="of-get__n">04</span> <b>A readout, not a deck</b> <p>Each study ends with a recommendation presented to the people who decide.</p></li><li><span class="of-get__n">05</span> <b>A monthly note</b> <p>What moved in your market this month, on one page, for the executive team.</p></li></ol>
       </div>
       <figure class="of-get__doc">
@@ -182,21 +182,21 @@
       <div class="ucp__cta">
         <div class="ucp__cta-copy">
           <p class="ucp__cta-k">And for you?</p>
-          <h2 class="ucp__cta-t">Get a sample Social Insights study, in your sector.</h2>
-          <p class="ucp__cta-d">Anonymised, sent by a consultant within 48 hours: what you would actually receive.</p>
+          <h2 class="ucp__cta-t">Ask for a Social Insights quote for your brand.</h2>
+          <p class="ucp__cta-d">A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, to frame the perimeter, then sends you a quote. No sales follow-up.</p>
         </div>
         <form class="ucp-lead" data-case="of-social-insights" novalidate>
           <div class="ucp-lead__row">
             <label class="ucp-lead__f"><span>Work email</span> <input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>
             <label class="ucp-lead__f"><span>Your sector</span> <select class="fld__input" name="sector" required><option value="" disabled selected>Choose…</option><option>Food &amp; drink</option><option>Luxury &amp; fashion</option><option>Beauty</option><option>Toys &amp; video games</option><option>Automotive &amp; mobility</option><option>Banking &amp; insurance</option><option>Retail</option><option>Public sector</option><option>Other</option></select></label>
           </div>
-          <button class="btn btn--primary" type="submit">Get the sample <span aria-hidden="true">→</span></button>
+          <button class="btn btn--primary" type="submit">Ask for a quote <span aria-hidden="true">→</span></button>
           <p class="fld__error" hidden>Enter a valid work email.</p>
           <p class="fld__error ucp-lead__sector-err" hidden>Choose your sector.</p>
           <p class="consent">We use your email only to reply to you. <a href="privacy.html">Privacy policy</a>.</p>
         </form>
         <p class="ucp-lead__alt">Rather compare first? <a href="offers.html#compare">The four offers side by side&nbsp;<span aria-hidden="true">→</span></a></p>
-        <p class="ucp-lead__done" role="status" hidden>Noted. A consultant sends you a sample within 48 hours.</p>
+        <p class="ucp-lead__done" role="status" hidden>Noted. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm.</p>
       </div>
     </div>
   </section>
@@ -250,7 +250,7 @@
 
 <div class="ucp-bar" aria-hidden="true" hidden>
   <button class="ucp-bar__chat" type="button" tabindex="-1" aria-label="Chat with Antoine"><img src="/assets/img/team/founder-antoine-160.webp" alt="" width="44" height="44" /><i aria-hidden="true"></i></button>
-  <a class="btn btn--primary" href="#offre" tabindex="-1">Get a sample</a>
+  <a class="btn btn--primary" href="#offre" tabindex="-1">Ask for a quote</a>
   <a class="btn btn--ghost" href="#book" tabindex="-1">Talk to a consultant</a>
 </div>
 
@@ -315,7 +315,7 @@
   </div>
 </footer>
 
-<script src="js/min/i18n.js?v=20261357" defer></script>
-<script src="js/min/ui.js?v=20261357" defer></script>
+<script src="js/min/i18n.js?v=20261358" defer></script>
+<script src="js/min/ui.js?v=20261358" defer></script>
 </body>
 </html>

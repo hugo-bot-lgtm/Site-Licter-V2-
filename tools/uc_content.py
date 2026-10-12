@@ -306,8 +306,8 @@ CASES = [
              "Track image, sentiment and the subjects attached to your name, continuously and across markets, with 24/7 alerting on the breaks."),
     "h1": ("Surveiller l'image et la réputation de votre marque, en continu.",
            "Monitor your brand image and reputation, continuously."),
-    "intro": ("Votre réputation se joue tous les jours, sur des plateformes et dans des langues que vos équipes ne peuvent pas toutes suivre. Nous lisons en continu ce qui se dit de vous, les sujets qui s'attachent à votre nom et la façon dont ils évoluent face à vos concurrents.",
-              "Your reputation plays out every day, on platforms and in languages your teams cannot all follow. We continuously read what is said about you, the subjects that attach to your name and how they move against your competitors."),
+    "intro": ("L'e-réputation, c'est l'image de votre marque telle qu'elle se dit en ligne : sur les réseaux sociaux, les sites d'avis, les forums et la presse. Votre réputation se joue tous les jours, sur des plateformes et dans des langues que vos équipes ne peuvent pas toutes suivre. Nous lisons en continu ce qui se dit de vous, les sujets qui s'attachent à votre nom et la façon dont ils évoluent face à vos concurrents.",
+              "Online reputation is your brand's image as people express it online: on social networks, review sites, forums and the press. Your reputation plays out every day, on platforms and in languages your teams cannot all follow. We continuously read what is said about you, the subjects that attach to your name and how they move against your competitors."),
     "questions": [
       ("Que dit-on de nous, et est-ce que ça change ?", "What is being said about us, and is it changing?"),
       ("Quels sujets s'attachent à notre nom, en bien et en mal ?", "Which subjects attach to our name, good and bad?"),
@@ -755,6 +755,7 @@ ARTICLES = {  # the articles of the blog (tools/blog_articles.json), as linked f
     "article-licter-lvmh.html": ("Comment LVMH mêle leader advocacy et social listening", "How LVMH combines leader advocacy and social listening"),
     "article-shein-vs-bhv-dissection-d-une-crise-digitale-a-travers-la-social-data-intelligence.html": ("Shein vs BHV : dissection d'une crise digitale", "Shein vs BHV: anatomy of a digital crisis"),
     "article-social-listening-et-politique-comment-capter-la-voix-des-citoyens.html": ("Social listening et politique : capter la voix des citoyens", "Social listening and politics: hearing citizens"),
+    "article-veille-reseaux-sociaux-entreprise.html": ("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide"),
     "article-veiller-lactivite-digitale-autour-de-votre-marque.html": ("Veiller l'activité digitale autour de votre marque", "Monitoring the digital activity around your brand"),
 }
 
@@ -791,7 +792,7 @@ EXTRA = {
     "roi": [(("Des problèmes vus à temps", "Problems seen in time"), ("Une alerte 24 h/24 quand un sujet change, avant qu'il ne coûte.", "A 24/7 alert when a subject shifts, before it costs you.")),
             (("Moins de temps passé à surveiller", "Less time spent watching"), ("Vos équipes lisent une note mensuelle au lieu de trier des mentions.", "Your teams read a monthly note instead of sorting mentions.")),
             (("Un tarif à votre mesure", "A price set to your scope"), ("Le tarif dépend des marques, des marchés et des langues suivis, rien d'autre.", "The price depends on the brands, markets and languages covered, nothing else."))],
-    "voice": "sncf", "articles": ["article-veiller-lactivite-digitale-autour-de-votre-marque.html", "article-identifier-les-breaking-news-de-votre-secteur-comment-rester-informe-en-temps-reel.html"],
+    "voice": "sncf", "articles": ["article-veille-reseaux-sociaux-entreprise.html", "article-veiller-lactivite-digitale-autour-de-votre-marque.html"],
   },
   "messaging": {
     "approach": ("Nous confrontons votre plateforme de marque à la conversation réelle de votre catégorie. Nous classons les mots, les promesses et les preuves par traction, chez vous et chez vos concurrents, pour voir lesquels circulent et lesquels restent dans vos présentations.",

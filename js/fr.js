@@ -201,8 +201,8 @@ window.LicterFR = {
     "Depuis 2022",
   "See who":
     "Voir qui",
-  "Consumer groups, retailers, banks, institutions and media. Different mandates, one source: the behaviour of 5.66 billion active social media users (":
-    "Groupes de grande consommation, distributeurs, banques, institutions et médias. Des missions différentes, une même source : le comportement de 5,66 milliards d'utilisateurs actifs des réseaux sociaux (",
+  "Consumer groups, retailers, banks, institutions and media. Different mandates, one source: social networks, where 5.66 billion active users post (":
+    "Groupes de grande consommation, distributeurs, banques, institutions et médias. Des missions différentes, une même source : les réseaux sociaux, où 5,66 milliards d'utilisateurs actifs publient (",
   "A shared panel serves very different mandates. That is why the list runs from luxury and FMCG to public institutions and broadcasters.":
     "Un même panel sert des missions très différentes. C'est pourquoi la liste va du luxe et de la grande consommation aux institutions publiques et aux médias.",
   "All":
@@ -822,7 +822,7 @@ window.LicterFR = {
   "Every episode of": "Chaque épisode du podcast", "is on": "est sur",
   "one conversation a week with the people who read the conversation.":
     "une conversation par semaine avec celles et ceux qui lisent la conversation.",
-  "the channel": "la cha\u00eene", "Audience First": "Audience First",
+  "the channel": "la cha\u00eene", "our YouTube channel": "notre cha\u00eene YouTube", "Audience First": "Audience First",
   "Get the next one": "Recevoir le prochain",
   "NOTED, THE NEXT EPISODE LANDS IN YOUR INBOX": "C'EST NOTÉ, LE PROCHAIN ÉPISODE ARRIVE DANS VOTRE BOÎTE",
   "One email when it is out. No sequence.": "Un email à sa sortie. Pas de séquence.",
@@ -886,7 +886,7 @@ window.LicterFR = {
     "Licter est le cabinet de conseil en Social Data Intelligence. Nous transformons la donnée du plus grand panel du monde – réseaux sociaux, recherche, IA générative – en décisions.",
   "Your work email...": "Votre e-mail professionnel...", "Your work email": "Votre e-mail professionnel",
   "BOOK A MEETING": "PRENDRE RENDEZ-VOUS",
-  "NOTED, WE GET BACK TO YOU WITHIN 24 HOURS": "BIEN REÇU, NOUS REVENONS VERS VOUS SOUS 24 H",
+  "NOTED, A CONSULTANT GETS BACK TO YOU WITHIN 30 MINUTES ON WEEKDAYS": "BIEN REÇU, UN CONSULTANT VOUS RECONTACTE SOUS 30 MINUTES EN SEMAINE",
   "NOTED, ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ, UN E-MAIL À LA PROCHAINE PUBLICATION",
   "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
   "Skip to content": "Aller au contenu",
@@ -1041,6 +1041,7 @@ window.LicterFR = {
   "Portrait of a Licter consultant in a red jacket": "Portrait d'un membre de l'équipe Licter en veste rouge",
   "Two Licter consultants setting up a collection plan on a laptop": "Deux membres de l'équipe Licter préparent un plan de collecte sur un ordinateur",
   "The diagnostic needs JavaScript.": "Le diagnostic a besoin de JavaScript.",
+  "The maturity test needs JavaScript.": "Le test de maturité a besoin de JavaScript.",
   "Related use cases": "Cas d'usage liés",
   "Free guide": "Guide gratuit",
   "Explore the live case": "Explorer le cas en direct",
@@ -1113,7 +1114,7 @@ window.LicterFR = {
   "applies this method to six areas of expertise:": "applique cette méthode à six expertises :",
   "audiences": "audiences",
   "e.g. we are relaunching a range next spring and we do not know which audience to aim at.": "Par exemple : nous relançons une gamme au printemps et ne savons pas quelle audience viser.",
-  "camille@company.com": "camille@entreprise.com",
+  "camille@company.com": "camille@entreprise.com", "name@company.com": "nom@entreprise.com",
   "Antoine Khaitrine, co-founder · SI Lab since 2024": "Antoine Khaitrine, cofondateur · SI Lab depuis 2024",
   "Six listenings behind these steps:": "Six écoutes derrière ces étapes :",
   "audience intelligence": "audience intelligence",
@@ -1126,6 +1127,7 @@ window.LicterFR = {
   "Live · 2 h": "Live · 2 h",
   "Or start from your question": "Ou partez de votre question",
   "Free diagnostic": "Diagnostic gratuit",
+  "Free maturity test": "Test de maturité gratuit",
   "Talk to a consultant": "Parler à un consultant",
   "A consultant calls you back within 30 minutes on weekdays, not a sales team.": "Un consultant vous rappelle dans les 30 minutes en semaine, pas un commercial.",
   "Framing comes first: tell us the decision, we tell you what to read.": "Le cadrage d'abord : dites-nous la décision, nous vous disons quoi lire.",
@@ -1151,6 +1153,7 @@ window.LicterFR = {
   "Social intelligence providers · SI Lab 2024": "Acteurs de la social intelligence · SI Lab 2024",
   "Hover a community": "Survolez une communauté",
   "Or take the 3-minute diagnostic": "Ou faites le diagnostic en 3 minutes",
+  "Or take the 3-minute maturity test": "Ou faites le test de maturité en 3 minutes",
   "Start from your question": "Partez de votre question",
   "Each one opens an example of what we would answer.": "Chacune ouvre un exemple de ce que nous y répondrions.",
   "Top 50 worldwide, SI Lab 2024 · trusted by 50+ organisations": "Top 50 mondial, SI Lab 2024 · la confiance de 50+ organisations",
@@ -1361,13 +1364,13 @@ window.LicterFR = {
   "Request my diagnostic →": "Demander mon diagnostic →",
   "Book the call →": "Réserver l'appel →",
   "100% free · sent by email immediately · no sequence afterwards": "100 % gratuit · envoi immédiat par e-mail · aucune séquence ensuite",
-  "No commitment · Reply within 24 hours · Independent of any follow-up project": "Sans engagement · réponse sous 24 h · indépendant de toute suite",
-  "Reply within 24 hours · 30 minutes · No commitment": "Réponse sous 24 h · 30 minutes · sans engagement",
+  "No commitment · Reply within 30 minutes on weekdays · Independent of any follow-up project": "Sans engagement · réponse sous 30 minutes en semaine · indépendant de toute suite",
+  "Reply within 30 minutes on weekdays · No commitment": "Réponse sous 30 minutes en semaine · sans engagement",
   "Guide sent. Check your inbox, and your spam folder: it happens.": "Guide envoyé. Vérifiez votre boîte de réception, et vos spams : ça arrive.",
-  "Request received. A consultant comes back to you within 24 hours to book the scoping call.":
-    "Demande reçue. Un consultant revient vers vous sous 24 h pour caler l'appel de cadrage.",
+  "Request received. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, to book the scoping call.":
+    "Demande reçue. Un consultant revient vers vous dans les 30 minutes, en semaine de 9 h à 19 h, pour caler l'appel de cadrage.",
   "A Licter consultant on the sofa, looking up from a conversation": "Un membre de l'équipe Licter sur le canapé, entre deux échanges",
-  "Booked. We come back within 24 hours with two or three slots.": "C'est noté. Nous revenons sous 24 h avec deux ou trois créneaux.",
+  "Noted. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, with two or three slots.": "C'est noté. Un consultant revient vers vous dans les 30 minutes, en semaine de 9 h à 19 h, avec deux ou trois créneaux.",
   "Story · 2 h": "Story · 2 h", "Reel · 14 min": "Reel · 14 min",
   "Story · 47 min": "Story · 47 min", "Reel · 1 h": "Reel · 1 h",
   "Post · 3 h": "Post · 3 h", "Story · 22 min": "Story · 22 min",
@@ -2451,8 +2454,8 @@ window.LicterFR = {
     "Nox",
   "I am not sure where my listening stands.":
     "Je ne sais pas où en est mon écoute.",
-  "The 3-minute diagnostic":
-    "Le diagnostic en 3 minutes",
+  "The 3-minute maturity test":
+    "Le test de maturité en 3 minutes",
   "Studies on demand":
     "Des études à la demande",
   "A dedicated consultant":
@@ -2599,8 +2602,8 @@ window.LicterFR = {
     "Ils en parlent",
   "Ask for a quote for your perimeter.":
     "Demandez un devis pour votre périmètre.",
-  "Noted. A consultant gets back to you within 48 hours.":
-    "C'est noté. Un consultant revient vers vous sous 48 h.",
+  "Noted. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm.":
+    "C'est noté. Un consultant vous recontacte dans les 30 minutes, en semaine de 9 h à 19 h.",
   "Choose…":
     "Choisir…",
   "Food & drink":
@@ -2623,8 +2626,8 @@ window.LicterFR = {
     "Autre",
   "Before we talk":
     "Avant d'en parler",
-  "A consultant gets back to you within 48 hours to frame the perimeter and send you a quote, with no sales follow-up.":
-    "Un consultant revient vers vous sous 48 h pour cadrer le périmètre et vous envoyer un devis, sans relance commerciale.",
+  "A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, to frame the perimeter, then sends you a quote. No sales follow-up.":
+    "Un consultant vous recontacte dans les 30 minutes, en semaine de 9 h à 19 h, pour cadrer le périmètre, puis vous envoie un devis. Sans relance commerciale.",
   "Work email":
     "E-mail professionnel",
   "Your sector":
@@ -2753,34 +2756,26 @@ window.LicterFR = {
     "Est-ce pour vous ?",
   "Not the right fit if":
     "Pas le bon choix si",
-  "The detail of the offer, and a sample deliverable as it reaches you.":
-    "Le détail de l'offre, et un exemple de livrable tel qu'il arrive chez vous.",
+  "The detail of the offer, and a typical deliverable, as it reaches you.":
+    "Le détail de l'offre, et un livrable type, tel qu'il arrive chez vous.",
   "See the use case":
     "Voir le cas d'usage",
   "How it runs":
     "Comment ça se passe",
   "Indicative timings, adjusted with you at framing.":
     "Durées indicatives, ajustées avec vous au cadrage.",
-  "Get a sample Social Insights study, in your sector.":
-    "Recevez un exemple d'étude Social Insights, dans votre secteur.",
-  "Noted. A consultant sends you a sample within 48 hours.":
-    "C'est noté. Un consultant vous envoie un exemple sous 48 h.",
-  "Get the sample":
-    "Recevoir l'exemple",
+  "Ask for a Social Insights quote for your brand.":
+    "Demandez un devis Social Insights pour votre marque.",
   "Rather compare first?":
     "Plutôt comparer d'abord ?",
   "The four offers side by side":
     "Les quatre offres côte à côte",
   "And for you?":
     "Et chez vous ?",
-  "Anonymised, sent by a consultant within 48 hours: what you would actually receive.":
-    "Anonymisé, envoyé par un consultant sous 48 h : ce que vous recevriez vraiment.",
   "The other offers":
     "Les autres offres",
   "What would you ask first?":
     "Quelle serait votre première question ?",
-  "Get a sample":
-    "Recevoir un exemple",
   "Your brand, your executives or your products are exposed to fast-moving subjects.":
     "Votre marque, vos dirigeants ou vos produits sont exposés à des sujets qui vont vite.",
   "You have already learnt about a crisis from the press, or from your CEO.":
@@ -2873,8 +2868,8 @@ window.LicterFR = {
     "5 langues",
   "Alert within 15 min":
     "Alerte en moins de 15 min",
-  "Get a sample Vigie 360 alert and monthly review.":
-    "Recevez un exemple d'alerte et de revue mensuelle Vigie 360.",
+  "Ask for a Vigie 360 quote for your brand.":
+    "Demandez un devis Vigie 360 pour votre marque.",
   "What should we be watching for you?":
     "Que devrions-nous surveiller pour vous ?",
   "You pay for a listening platform that few people open.":
@@ -2943,8 +2938,8 @@ window.LicterFR = {
     "Par un audit de deux semaines de votre configuration actuelle, confrontée à vos questions.",
   "How much does Social Listening as a Service cost?":
     "Combien coûte Social Listening as a Service ?",
-  "Get a sample reworked reporting, in your sector.":
-    "Recevez un exemple de reporting repris, dans votre secteur.",
+  "Ask for a quote to take over your platform.":
+    "Demandez un devis pour la reprise de votre plateforme.",
   "Which platform are you paying for?":
     "Pour quelle plateforme payez-vous ?",
   "You want to follow your brand day to day, without reading every post.":
@@ -3051,8 +3046,8 @@ window.LicterFR = {
     "Sujets",
   "Flagged by Nox · checked by an analyst":
     "Signalé par Nox · vérifié par un analyste",
-  "Get a sample Nox brief, in your sector.":
-    "Recevez un exemple de brief Nox, dans votre secteur.",
+  "Ask for a Nox quote for your brand.":
+    "Demandez un devis Nox pour votre marque.",
   "Want to see what Nox would surface for you?":
     "Envie de voir ce que Nox ferait remonter pour vous ?",
   "Four offers. See what each one delivers.":
@@ -3092,6 +3087,877 @@ window.LicterFR = {
   "Our offers: studies, 24/7 monitoring, an AI tool | Licter":
     "Nos offres : études, veille 24/7, outil IA | Licter",
   /* ---- end offer pages ---- */
+
+  /* ---- expertise pages (tools/build-expertise.py) ---- */
+  "Home":
+    "Accueil",
+  "Expertise":
+    "Expertise",
+  "Breadcrumb":
+    "Fil d'Ariane",
+  "of 6":
+    "sur 6",
+  "Social listening agency in Paris: what people say, read by people.":
+    "Agence de social listening à Paris : ce que les gens disent, lu par des gens.",
+  "A social listening agency and consultancy based in Paris, working for brands in France and abroad. Social networks, news, forums and reviews, collected on your perimeter and read by an analyst: volumes, topics, tone, and above all what it means for you.":
+    "Agence et cabinet de social listening basés à Paris, nous travaillons pour des marques en France et à l'international. Les réseaux sociaux, la presse, les forums et les avis, collectés sur votre périmètre et lus par un analyste : volumes, sujets, tonalité, et surtout ce que ça veut dire pour vous.",
+  "The questions it answers":
+    "Les questions auxquelles il répond",
+  "The topics rising, and the ones fading":
+    "Les sujets qui montent, et ceux qui retombent",
+  "The tone, topic by topic, not on average":
+    "La tonalité, sujet par sujet, pas en moyenne",
+  "How a conversation travels, and who carries it":
+    "Comment une conversation circule, et qui la porte",
+  "Day 0":
+    "J0",
+  "The perimeter, the markets, the languages and the sources.":
+    "Le périmètre, les marchés, les langues et les sources.",
+  "Day 2":
+    "J+2",
+  "Queries set up, the noise removed.":
+    "Les requêtes paramétrées, le bruit écarté.",
+  "Day 5":
+    "J+5",
+  "An analyst reads the topics, the tone and who carries them.":
+    "Un analyste lit les sujets, la tonalité et qui les porte.",
+  "Day 7":
+    "J+7",
+  "Readout":
+    "Restitution",
+  "A summary, and what to do with it.":
+    "Une synthèse, et ce qu'il faut en faire.",
+  "Social listening agency in Paris":
+    "Agence de social listening à Paris",
+  "A call with a consultant, on your brand.":
+    "Un échange avec un consultant, sur votre marque.",
+  "What is social listening?":
+    "Qu'est-ce que le social listening ?",
+  "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm":
+    "Un consultant vous rappelle sous 30 minutes, en semaine de 9 h à 19 h",
+  "Your question framed, with the right sources and tools":
+    "Votre question cadrée, avec les sources et les outils adaptés",
+  "A costed proposal after the call":
+    "Une proposition chiffrée après l'échange",
+  "What people say,":
+    "Ce que les gens disent,",
+  "read by people.":
+    "lu par des gens.",
+  "Get a call back from a consultant":
+    "Être rappelé par un consultant",
+  "Or book a meeting":
+    "Ou prendre rendez-vous",
+  "Your brand":
+    "Votre marque",
+  "Noted. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm.":
+    "C'est noté. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h.",
+  "We use your details only to call you back.":
+    "Vos coordonnées servent uniquement à vous rappeler.",
+  "A consultant, not a sales team.":
+    "Un consultant, pas un commercial.",
+  "DEFINITION":
+    "DÉFINITION",
+  "Social listening at a glance.":
+    "Le social listening en bref.",
+  "Social listening is the analysis of what people say publicly online about a brand, a product, a competitor or a topic: social networks, forums, review sites and the press. It is used to understand a perception, spot what is changing and decide what to do about it.":
+    "Le social listening est l'analyse de ce que les gens disent publiquement en ligne d'une marque, d'un produit, d'un concurrent ou d'un sujet : réseaux sociaux, forums, sites d'avis et presse. Il sert à comprendre une perception, repérer ce qui change et décider quoi en faire.",
+  "What it reads:":
+    "Ce qu'il lit :",
+  "public conversations, in more than twenty languages, over a chosen period.":
+    "les conversations publiques, dans plus de vingt langues, sur une période choisie.",
+  "What it measures:":
+    "Ce qu'il mesure :",
+  "volume, share of voice, tone, topics and the voices that carry.":
+    "le volume, la part de voix, la tonalité, les sujets et les voix qui portent.",
+  "What it delivers:":
+    "Ce qu'il livre :",
+  "a reading checked by an analyst, and a recommendation rather than a dashboard.":
+    "une lecture qualifiée par un analyste, et une recommandation plutôt qu'un tableau de bord.",
+  "Read the full social listening guide":
+    "Lire le guide complet du social listening",
+  "WHAT IT PICKS UP":
+    "CE QU'IL ENTEND",
+  "What Social listening lets you hear.":
+    "Ce que le social listening permet d'entendre.",
+  "Each question leads to the use case where this listening makes the difference.":
+    "Chaque question mène au cas d'usage où cette écoute fait la différence.",
+  "“What is being said about us, and is it changing?”":
+    "« Que dit-on de nous, et est-ce que ça change ? »",
+  "See the use case":
+    "Voir le cas d'usage",
+  "“Which words do our customers use to talk about us?”":
+    "« Quels mots nos clients utilisent-ils pour parler de nous ? »",
+  "“Did our campaign change the way people talk about us?”":
+    "« Notre campagne a-t-elle changé la façon dont on parle de nous ? »",
+  "Social media monitoring for companies: the guide":
+    "Veille des réseaux sociaux en entreprise : le guide",
+  "The 22 networks we listen to":
+    "Les 22 réseaux que nous écoutons",
+  "Doubling your social listening impact in 6 months":
+    "Doubler l'impact de votre social listening en 6 mois",
+  "Further reading":
+    "À lire",
+  "Social listening is the analysis of public online conversations to understand what people think of a brand, a product or a topic, and why. It is also called social media listening. In practice, a study starts from a question about a brand, a product, a competitor or a topic, gathers the public posts that discuss it on social networks, forums, review sites, blogs and the online press, then reads them. The goal is not to count mentions, but to understand a perception and decide what to do about it.":
+    "Le social listening est l'analyse des conversations publiques en ligne pour comprendre ce que les gens pensent d'une marque, d'un produit ou d'un sujet, et pourquoi. On l'appelle aussi écoute sociale ou social media listening. Concrètement, une étude part d'une question sur une marque, un produit, un concurrent ou un sujet, rassemble les publications publiques qui en parlent sur les réseaux sociaux, les forums, les sites d'avis, les blogs et la presse en ligne, puis les lit. L'objectif n'est pas de compter des mentions, mais de comprendre une perception et de décider quoi en faire.",
+  "Where a classic survey asks a few hundred people, social listening observes what thousands say spontaneously, without being asked. That is its strength: observed behaviour rather than a declared answer. It is also its limit: it only reads what is public, and only what people choose to say.":
+    "Là où une étude classique interroge quelques centaines de personnes, le social listening observe ce que des milliers de personnes disent spontanément, sans qu'on leur ait posé la question. C'est sa force : un comportement observé plutôt qu'une réponse déclarée. C'est aussi sa limite : on n'y lit que ce qui est public, et seulement ce que les gens choisissent de dire.",
+  "Social listening, monitoring, tracking: the differences":
+    "Social listening, veille, monitoring : les différences",
+  "Social media monitoring signals what happens: a mention, a spike, a crisis taking off. It serves to react, often in real time. Social listening goes further: it analyses the conversation over time to explain why it moves, who carries it and what it says about a market.":
+    "Le social media monitoring, ou veille, signale ce qui se passe : une mention, un pic, une crise qui démarre. Il sert à réagir, souvent en temps réel. Le social listening va plus loin : il analyse la conversation dans la durée pour expliquer pourquoi elle bouge, qui la porte et ce qu'elle dit d'un marché.",
+  "Both use the same data and the same platforms. The difference lies in the question asked and in the reading. Monitoring answers \"did something happen?\"; a social listening study answers \"what should we conclude, and what should we decide?\". For monitoring and crisis management, see our guide to social media monitoring and our Vigie 360 offer.":
+    "Les deux utilisent les mêmes données et les mêmes plateformes. La différence tient à la question posée et au travail de lecture. Une veille répond à « s'est-il passé quelque chose ? » ; une étude de social listening répond à « que faut-il en conclure, et que décider ? ». Pour la veille et la gestion de crise, voir notre guide de la veille des réseaux sociaux et notre offre Vigie 360.",
+  "What social listening helps you decide":
+    "Ce que le social listening permet de décider",
+  "A brand's reputation: what is said about it, on which subjects, in which tone, and how that evolves against competitors. A campaign: what it changed in the conversation, audience by audience, and what really carried it. A product: what customers like, what irritates them, and the words they use to talk about it.":
+    "La réputation d'une marque : ce qui se dit d'elle, sur quels sujets, avec quelle tonalité, et comment cela évolue face aux concurrents. Une campagne : ce qu'elle a changé dans la conversation, audience par audience, et ce qui a vraiment porté. Un produit : ce que les clients aiment, ce qui les irrite, et le vocabulaire qu'ils emploient pour en parler.",
+  "And a market's trends: the subjects gaining speed, the expectations nobody covers well, the weak signals that announce a shift. In each case, the value is not in the dashboard, but in the decision it lets you make and defend.":
+    "Les tendances d'un marché, enfin : les sujets qui accélèrent, les attentes mal couvertes, les signaux faibles qui annoncent un basculement. Dans chaque cas, la valeur n'est pas dans le tableau de bord, mais dans la décision qu'il permet de prendre et de défendre.",
+  "Why do social listening?":
+    "Pourquoi faire du social listening ?",
+  "Because the conversation about your brand already exists, whether you listen or not. 5.66 billion active users are on social media, 68.7% of the world's population (DataReportal, Digital 2026). Your customers compare, recommend, complain and ask questions there, without anyone asking them.":
+    "Parce que la conversation sur votre marque existe déjà, que vous l'écoutiez ou non. 5,66 milliards d'utilisateurs actifs peuplent les réseaux sociaux, soit 68,7 % de la population mondiale (DataReportal, Digital 2026). Vos clients y comparent, recommandent, se plaignent et posent des questions, sans que personne ne les interroge.",
+  "Social listening gives access to that spontaneous voice, faster than a survey and less steered than a questionnaire. It helps anticipate a crisis, measure a campaign, understand a market before launching a product there, and follow competitors on their own ground.":
+    "Le social listening donne accès à cette parole spontanée, plus rapide qu'une étude et moins orientée qu'un questionnaire. Il sert à anticiper une crise, à mesurer une campagne, à comprendre un marché avant d'y lancer un produit, et à suivre ses concurrents sur leurs propres terrains.",
+  "Where the data comes from":
+    "D'où viennent les données",
+  "From public posts: X, TikTok, Instagram, Facebook, YouTube, LinkedIn, Reddit, and some fifteen other networks depending on countries and subjects, including Weibo, Douyin or VK in the markets where they matter. Add forums, review sites, blogs and online press, because a subject keeps travelling from one to the other.":
+    "Des publications publiques : X, TikTok, Instagram, Facebook, YouTube, LinkedIn, Reddit, et une quinzaine d'autres réseaux selon les pays et les sujets, dont Weibo, Douyin ou VK pour les marchés où ils comptent. S'y ajoutent les forums, les sites d'avis, les blogs et la presse en ligne, parce qu'un sujet circule constamment de l'un à l'autre.",
+  "Private messaging, closed accounts and private groups remain out of reach. Coverage also varies by network, as each one regulates access to its data: before every study, we check what is really covered for the question asked. Our network pages detail what each platform lets us read.":
+    "Les messageries privées, les comptes fermés et les groupes privés restent hors de portée. La couverture varie aussi selon les réseaux, qui encadrent l'accès à leurs données : avant chaque étude, nous vérifions ce qui est réellement couvert pour la question posée. Nos pages réseaux détaillent ce que chaque plateforme permet de lire.",
+  "The method, in five steps":
+    "La méthode, en cinq temps",
+  "It all starts with the question: the decision the study must inform, and what would count as an answer. Then come the perimeter and the queries: brands, products, competitors, markets, languages, and Boolean queries tested to rule out homonyms and noise. It is the most underestimated part, and everything else depends on it.":
+    "Tout commence par la question : la décision que l'étude doit éclairer, et ce qui compterait comme une réponse. Viennent ensuite le périmètre et les requêtes : marques, produits, concurrents, marchés, langues, et des requêtes booléennes testées pour écarter les homonymes et le bruit. C'est le travail le plus sous-estimé, et celui dont dépend tout le reste.",
+  "Then collection and cleaning, on the right sources. Then the reading: an analyst who speaks the market's language qualifies the posts, connects the signals and checks what the tool has classified. Finally the readout: a recommendation presented to the teams concerned, with what supports it and what to follow next.":
+    "Puis la collecte et le nettoyage, sur les sources adaptées. Puis la lecture : un analyste qui parle la langue du marché qualifie les publications, relie les signaux et vérifie ce que l'outil a classé. Enfin la restitution : une recommandation présentée aux équipes concernées, avec ce qui la fonde et ce qu'il faudra suivre ensuite.",
+  "Which social listening metrics should you track?":
+    "Quels indicateurs suivre en social listening ?",
+  "Mention volume and how it changes, first, to know whether people talk about you more or less. Share of voice, next: your place in the category's conversation against your competitors. Tone, positive, neutral or negative, provided an analyst checks it. Reach, meaning the number of people potentially exposed.":
+    "Le volume de mentions et son évolution, d'abord, pour savoir si l'on parle plus ou moins de vous. La part de voix, ensuite : votre place dans la conversation de la catégorie face à vos concurrents. La tonalité, positive, neutre ou négative, à condition d'être relue par un analyste. La portée, c'est-à-dire le nombre de personnes potentiellement exposées.",
+  "The most useful metrics are often qualitative: the subjects gaining ground, the recurring irritants, the words customers use, and the voices that really carry the conversation. A good tracking sheet keeps few of them, but ties each one to a decision.":
+    "Les indicateurs les plus utiles sont souvent qualitatifs : les sujets qui montent, les irritants qui reviennent, les mots employés par les clients, et les voix qui portent vraiment la conversation. Un bon tableau de suivi en garde peu, mais les relie chacun à une décision.",
+  "Social listening, network by network":
+    "Le social listening, réseau par réseau",
+  "Each network tells a different story. TikTok and Instagram show uses, trends and how a product is staged. X and Threads carry news and controversy. LinkedIn says what professionals and executives think. YouTube keeps long reviews and tutorials, Reddit and forums the precise questions and comparisons between users.":
+    "Chaque réseau raconte autre chose. TikTok et Instagram montrent les usages, les tendances et la façon dont un produit est mis en scène. X et Threads portent l'actualité et les polémiques. LinkedIn dit ce que pensent les professionnels et les dirigeants. YouTube garde les avis longs et les tutoriels, Reddit et les forums les questions précises et les comparaisons entre utilisateurs.",
+  "A social listening study therefore picks its networks according to the question, not out of habit, and states what each one really lets you read, what stays private and what the platforms give access to. Our pages on the 22 networks detail these rules one by one.":
+    "Une étude de social listening choisit donc ses réseaux selon la question, pas par habitude, et précise ce que chacun permet réellement de lire, ce qui reste privé et ce à quoi les plateformes donnent accès. Nos pages consacrées aux 22 réseaux détaillent ces règles une à une.",
+  "Social listening tools: why a tool is not enough":
+    "Outils de social listening : pourquoi un outil ne suffit pas",
+  "The market counts many social listening platforms: Talkwalker, Brandwatch, Sprinklr, Radarly, YouScan, Visibrain, among others, each with its strengths. Some excel at long history, others at real time, images or audiences. None covers everything, and most questions are answered by crossing two tools.":
+    "Le marché compte de nombreuses plateformes de social listening : Talkwalker, Brandwatch, Sprinklr, Radarly, YouScan, Visibrain, entre autres, chacune avec ses points forts. Certaines excellent dans l'historique long, d'autres dans le temps réel, l'image ou les audiences. Aucune ne couvre tout, et la plupart des questions se règlent en croisant deux outils.",
+  "Above all, a tool collects and sorts; it does not decide. Badly written queries bring back noise, automatic sentiment misfiles what it misreads, and a volume spike never says why it exists. That is why so many licences stay underused: the software is there, but nobody has the time to make it speak.":
+    "Surtout, un outil collecte et classe ; il ne décide pas. Les requêtes mal écrites ramènent du bruit, le sentiment automatique classe mal ce qu'il comprend mal, et un pic de volume ne dit jamais pourquoi il existe. C'est pourquoi tant de licences restent sous-utilisées : le logiciel est là, mais personne n'a le temps de le faire parler.",
+  "Real examples":
+    "Des exemples concrets",
+  "During GP Explorer 3, Squeezie's event, we read with Visibrain more than 185,000 tweets posted at peak audience: 95% of mentions were positive or neutral, and the conversation outgrew comparable digital events. Our analysis details what the event changed for partner brands.":
+    "Lors du GP Explorer 3, l'événement de Squeezie, nous avons lu avec Visibrain plus de 185 000 tweets publiés au pic d'audience : 95 % des mentions étaient positives ou neutres, et la conversation a dépassé celle des grands événements numériques comparables. Notre analyse détaille ce que l'événement a changé pour les marques partenaires.",
+  "During the Huda Beauty boycott, we followed the crisis on TikTok, Instagram and X, in 51 languages: a record 26.1 million TikTok views in a day, carried mostly by micro-influencers, for a subject that, once read, was not really a brand crisis.":
+    "Pendant le boycott de Huda Beauty, nous avons suivi la crise sur TikTok, Instagram et X, dans 51 langues : un record de 26,1 millions de vues sur TikTok en une journée, porté surtout par des micro-influenceurs, pour un sujet qui, à la lecture, n'était pas vraiment une crise de marque.",
+  "For La Poste, we measured for a year how well its marketing actions worked, in positioning and in engagement of the audiences targeted. For HP, we crossed panel and social data on more than 5,000 criteria to segment consumer niches and feed product strategy.":
+    "Pour La Poste, nous avons mesuré pendant un an l'efficacité de ses actions marketing, en positionnement et en engagement des publics visés. Pour HP, nous avons croisé données de panel et social data sur plus de 5 000 critères pour segmenter des niches de consommateurs et nourrir la stratégie produit.",
+  "What practitioners say":
+    "Ce qu'en disent les praticiens",
+  "Charles Besson, head of global social listening at L'Oréal, sums up its place next to surveys this way: it comes on top of them and adds things traditional studies cannot always see. Charlotte Clemens, who opened Talkwalker's Paris office, likewise sets the spontaneous opinion of social media against the declared opinion of research institutes: they are complementary.":
+    "Charles Besson, à la tête du social listening monde chez L'Oréal, résume ainsi sa place face aux études : « ça va venir en plus de ça, ça va venir ajouter des choses qu'on peut pas forcément voir par des études traditionnelles ». Charlotte Clemens, qui a ouvert le bureau parisien de Talkwalker, oppose de la même façon l'opinion spontanée des réseaux à l'opinion déclarée des instituts : « on est complémentaire ».",
+  "All of them insist on the human part. For Jean-Christophe Gatuingt, co-founder of Visibrain, social networks are just one signal among others, in the service of a fuller method; for Nathalie Litvine, at Meltwater, artificial intelligence is precious, but you still need a brain to do something with it. Their full interviews are on our blog.":
+    "Tous insistent sur la part humaine. Pour Jean-Christophe Gatuingt, cofondateur de Visibrain, les réseaux sociaux sont « juste un signal parmi d'autres au service d'une méthodologie plus complète » ; pour Nathalie Litvine, chez Meltwater, l'intelligence artificielle est précieuse, mais « il faut avoir un cerveau aussi pour ensuite en faire quelque chose ». Leurs entretiens complets sont sur notre blog.",
+  "The limits to know":
+    "Les limites à connaître",
+  "Social listening does not represent a population: it says what those who speak up think, not everyone. It only reads what is public. It depends on the words chosen, and a product can be called something other than its name, especially from one country to another. Automatic sentiment gets irony wrong, and some languages are handled less well than others.":
+    "Le social listening n'est pas représentatif d'une population : il dit ce que pensent ceux qui s'expriment, pas tout le monde. Il ne lit que le public. Il dépend des mots choisis, et un produit peut être désigné autrement que par son nom, surtout d'un pays à l'autre. Le sentiment automatique se trompe sur l'ironie, et certaines langues sont moins bien traitées que d'autres.",
+  "Finally, there is not a conversation about everything. A good study says so plainly, rather than making too-small volumes speak. That is why, before starting, we check that the conversation exists for the question asked, and why we often cross social listening with search, audiences or survey data.":
+    "Enfin, il n'y a pas de conversation sur tout. Une bonne étude le dit clairement, plutôt que de faire parler des volumes trop faibles. C'est pourquoi nous vérifions, avant de commencer, que la conversation existe pour la question posée, et que nous croisons souvent le social listening avec la recherche, les audiences ou des données d'étude.",
+  "Social listening in France":
+    "Le social listening en France",
+  "In France, social listening sits within the GDPR: public content is still personal data, and the CNIL expects collection to be limited to what serves the purpose. In practice, a serious study works on trends and aggregated communities, never on individual profiles.":
+    "En France, le social listening s'inscrit dans le cadre du RGPD : les contenus publics restent des données personnelles, et la CNIL attend une collecte limitée à ce qui sert l'objectif. En pratique, une étude sérieuse travaille sur des tendances et des communautés agrégées, jamais sur des profils individuels.",
+  "French conversation also has its own traits: irony, slang or verlan, which a social listening tool's automatic sentiment reads poorly, and its own places, for example the large general forums, customer reviews or the regional press. That is why the reading is done in the market's language, by an analyst. Licter, a social listening agency in Paris, reads the conversation in France and in more than twenty languages for brands that also follow international markets.":
+    "La conversation française a aussi ses particularités : l'ironie, l'argot ou le verlan, que le sentiment automatique d'un outil de social listening lit mal, et des lieux propres, par exemple les grands forums généralistes, les avis clients ou la presse régionale. C'est pourquoi la lecture se fait dans la langue du marché, par un analyste. Licter, agence de social listening à Paris, lit la conversation en France et dans plus de vingt langues pour les marques qui suivent aussi l'international.",
+  "Social listening agency or consultancy: what you buy":
+    "Agence ou cabinet de social listening : ce que vous achetez",
+  "With a social listening agency or consultancy, you do not buy access to software, but an answer. The choice of tools, the writing of queries, the reading in the market's language and the recommendation are taken care of. Your teams keep their time for the decision.":
+    "Avec une agence ou un cabinet de social listening, vous n'achetez pas un accès à un logiciel, mais une réponse. Le choix des outils, l'écriture des requêtes, la lecture dans la langue du marché et la recommandation sont pris en charge. Vos équipes gardent leur temps pour la décision.",
+  "Licter is a social data intelligence consultancy based in Paris, working for brands in France and abroad: we run the market's platforms without being their publisher, and we pick the tool by the question. If you already have a licence, we can take it over and make it work. A first read comes about a week after scoping.":
+    "Licter est un cabinet de conseil en social data intelligence basé à Paris, qui travaille pour des marques en France et à l'international : nous opérons les plateformes du marché sans en être l'éditeur, et nous choisissons l'outil selon la question. Si vous avez déjà une licence, nous pouvons la reprendre et la faire servir. Une première lecture arrive environ une semaine après le cadrage.",
+  "Written by":
+    "Rédigé par",
+  "and":
+    "et",
+  ", co-founders of Licter":
+    ", cofondateurs de Licter",
+  "Contents":
+    "Sommaire",
+  "SOCIAL LISTENING, IN DETAIL":
+    "LE SOCIAL LISTENING, EN DÉTAIL",
+  "Social listening: definition, method, metrics and examples.":
+    "Le social listening : définition, méthode, indicateurs et exemples.",
+  "Sources":
+    "Sources",
+  "METHOD":
+    "MÉTHODE",
+  "How it runs":
+    "Comment ça se passe",
+  "Indicative timings for a first read.":
+    "Durées indicatives pour une première lecture.",
+  "LIMITS AND COMPLEMENTS":
+    "LIMITES ET COMPLÉMENTS",
+  "Its limits, and what completes it.":
+    "Ses limites, et ce qui le complète.",
+  "Its limit":
+    "Sa limite",
+  "Who these people are beyond their post: that is audience listening.":
+    "Qui sont ces gens au-delà de leur publication : c'est l'audience listening.",
+  "What it cannot say on its own":
+    "Ce qu'il ne dit pas seul",
+  "The platform":
+    "La plateforme",
+  "Broad coverage, over time":
+    "Couverture large, sur la durée",
+  "See the page":
+    "Voir la page",
+  "Real time and the media":
+    "Le temps réel et les médias",
+  "In the offer":
+    "Dans l'offre",
+  "Previous":
+    "Écoute précédente",
+  "Next":
+    "Écoute suivante",
+  "IN THEIR WORDS":
+    "DANS LEURS MOTS",
+  "They talk about it.":
+    "Ils en parlent.",
+  "In their words":
+    "Dans leurs mots",
+  "EVERY WAY OF LISTENING":
+    "TOUTES LES ÉCOUTES",
+  "The five other ways of listening.":
+    "Les cinq autres écoutes.",
+  "Audience listening":
+    "Audience listening",
+  "Influence listening":
+    "Influence listening",
+  "AI listening":
+    "AI listening",
+  "Live listening":
+    "Live listening",
+  "All our expertise":
+    "Toute notre expertise",
+  "Frequently asked questions":
+    "Questions fréquentes",
+  "Which sources do you read?":
+    "Quelles sources lisez-vous ?",
+  "Social networks, online news, forums, blogs and reviews, in more than twenty languages, depending on the perimeter set with you.":
+    "Les réseaux sociaux, la presse en ligne, les forums, les blogs et les avis, dans plus de vingt langues, selon le périmètre fixé avec vous.",
+  "How is it different from a monitoring tool?":
+    "Quelle différence avec un outil de veille ?",
+  "The tool collects. We pick the sources, remove the noise and read the result, to tell you what to do with it.":
+    "L'outil collecte. Nous choisissons les sources, écartons le bruit et lisons le résultat, pour vous dire ce qu'il faut en faire.",
+  "Which social listening tools do you use?":
+    "Quels outils de social listening utilisez-vous ?",
+  "The platforms on the market, including Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly and YouScan, among 19 listening, search and AI tools. We pick the social listening tool by the question and read the result: you need no licence of your own.":
+    "Les plateformes du marché, dont Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly et YouScan, parmi 19 outils d'écoute, de recherche et d'IA. Nous choisissons l'outil de social listening selon la question et lisons le résultat : vous n'avez besoin d'aucune licence.",
+  "Are you a social listening agency in France?":
+    "Êtes-vous une agence de social listening en France ?",
+  "Yes: Licter is a social listening agency and consultancy based in Paris. We work for French and international brands, in France and in other markets, in more than twenty languages.":
+    "Oui : Licter est une agence et un cabinet de social listening basé à Paris. Nous travaillons pour des marques françaises et internationales, en France et sur les autres marchés, dans plus de vingt langues.",
+  "What do you receive at the end of a study?":
+    "Que recevez-vous à la fin d'une étude ?",
+  "A readout by the consultant who read the data: the topics, the tone and who carries them, a written summary, and what to do with it. For continuous monitoring, alerts read by an analyst and a regular review.":
+    "Une restitution par le consultant qui a lu les données : les sujets, la tonalité et qui les porte, une synthèse écrite, et ce qu'il faut en faire. Pour une veille continue, des alertes lues par un analyste et une revue régulière.",
+  "How much does a social listening study cost?":
+    "Combien coûte une étude de social listening ?",
+  "On quotation: the price depends on the scope (brands, markets, languages, sources), the duration and how often you receive deliverables. After a first thirty-minute call, we send a costed proposal.":
+    "Sur devis : le prix dépend du périmètre (marques, marchés, langues, sources), de la durée et du rythme des livrables. Après un premier échange de trente minutes, nous envoyons une proposition chiffrée.",
+  "How long before a first read?":
+    "Combien de temps avant une première lecture ?",
+  "About a week after framing, faster for an urgent topic.":
+    "Environ une semaine après le cadrage, plus vite pour un sujet urgent.",
+  "Do we need a monitoring tool already?":
+    "Faut-il déjà avoir un outil de veille ?",
+  "No. We work with our own platforms. If you have one, we can also take it over and make it speak.":
+    "Non. Nous travaillons avec nos plateformes. Si vous en avez une, nous pouvons aussi la reprendre et la faire parler.",
+  "Let's talk about what is said about you.":
+    "Parlons de ce qui se dit sur vous.",
+  "Audience intelligence: who your audiences really are, beyond age and gender.":
+    "Audience intelligence : qui sont vraiment vos audiences, au-delà de l'âge et du sexe.",
+  "We profile communities from what they follow, share and consume: interests, brand affinities, media. Enough to replace a declared persona with observed behaviour.":
+    "Nous profilons les communautés à partir de ce qu'elles suivent, partagent et consomment : centres d'intérêt, affinités de marque, médias. De quoi remplacer un persona déclaratif par un comportement observé.",
+  "A community's interests and passions":
+    "Les centres d'intérêt et les passions d'une communauté",
+  "The brands and media it follows":
+    "Les marques et les médias qu'elle suit",
+  "The overlaps between communities":
+    "Les recoupements entre communautés",
+  "The audiences to profile, and the decision to inform.":
+    "Les audiences à profiler, et la décision à éclairer.",
+  "Day 3":
+    "J+3",
+  "Profiling":
+    "Profilage",
+  "The behavioural panel brings out the communities.":
+    "Le panel comportemental fait apparaître les communautés.",
+  "Affinities, media and overlaps, read by an analyst.":
+    "Affinités, médias et recoupements, lus par un analyste.",
+  "Day 10":
+    "J+10",
+  "The communities to prioritise, and how to reach them.":
+    "Les communautés à prioriser, et comment les toucher.",
+  "Who your audiences":
+    "Qui sont vraiment",
+  "really are.":
+    "vos audiences.",
+  "What Audience listening lets you hear.":
+    "Ce que l'audience listening permet d'entendre.",
+  "“Who really are our customers, beyond age and gender?”":
+    "« Qui sont vraiment nos clients, au-delà de l'âge et du sexe ? »",
+  "“What matters to 18 to 30 year olds in our category?”":
+    "« Qu'est-ce qui compte pour les 18-30 ans dans notre catégorie ? »",
+  "“What do our customers expect at each step of the journey?”":
+    "« Qu'attendent nos clients à chaque étape du parcours ? »",
+  "Our audience use cases":
+    "Nos cas d'usage audiences",
+  "How Orange reads TikTok":
+    "Comment Orange analyse TikTok",
+  "Winning luxury cosmetics":
+    "Conquérir la cosmétique de luxe",
+  "What is audience intelligence?":
+    "Qu'est-ce que l'audience intelligence ?",
+  "Audience intelligence means describing a public from what it does online: the accounts it follows, the content it shares, the brands and media it consumes, the subjects it searches for. The result is not an average, but a map of communities, each with its size, its passions and its channels.":
+    "L'audience intelligence, ou intelligence des audiences, consiste à décrire un public à partir de ce qu'il fait en ligne : les comptes qu'il suit, les contenus qu'il partage, les marques et les médias qu'il consomme, les sujets qu'il recherche. Le résultat n'est pas une moyenne, mais une carte de communautés, chacune avec sa taille, ses passions et ses canaux.",
+  "The term covers what is also called audience analysis or a social media audience study. It is also one of the building blocks of consumer intelligence, when the study looks at the consumers of a category. At Licter, we call it audience listening, one of our six listenings. The starting question stays the same: who really are the people you want to reach, beyond what you think you know about them, and where can you find them?":
+    "Le terme recouvre ce qu'on appelle aussi analyse d'audience ou étude d'audience sur les réseaux sociaux. C'est aussi l'une des briques de la consumer intelligence, quand l'étude porte sur les consommateurs d'une catégorie. Chez Licter, nous parlons d'audience listening, l'une de nos six écoutes. La question de départ reste la même : qui sont vraiment les gens que vous voulez toucher, au-delà de ce que vous croyez savoir d'eux, et où les trouver ?",
+  "Audience intelligence and personas: what is the difference?":
+    "Audience intelligence et persona : quelle différence ?",
+  "A classic persona is often born in a workshop: a few interviews, sales data, and what the team believes it knows about its customers. It describes a typical person, with an age, a job and assumed motivations. Useful to align a team, it remains declarative, and it ages fast, because nobody tests it against data.":
+    "Un persona classique naît souvent en atelier : quelques entretiens, des données de vente, et ce que l'équipe croit savoir de ses clients. Il décrit une personne type, avec un âge, un métier et des motivations supposées. Utile pour aligner une équipe, il reste déclaratif, et il vieillit vite, parce que personne ne le confronte aux données.",
+  "Audience intelligence works the other way round: from observed behaviour to the portrait. It does not look for a typical customer, but for the real groups that make up an audience, and what sets them apart. For example, one public can bring together busy parents, cooking enthusiasts and sports fans, who do not expect the same thing. Personas come out of it, but built on measured criteria.":
+    "L'audience intelligence part dans l'autre sens : du comportement observé vers le portrait. Elle ne cherche pas une cliente type, mais les groupes réels qui composent une audience, et ce qui les distingue. Par exemple, un même public peut réunir des parents pressés, des passionnés de cuisine et des sportifs, qui n'attendent pas la même chose. Des personas en sortent, mais bâtis sur des critères mesurés.",
+  "Charles Besson, head of global social listening at L'Oréal, puts it his own way in our Audience First podcast: advocacy is overtaking influence. For a brand, that means looking for communities with several interests, and the advocates who drive them, rather than a target defined by a single criterion.":
+    "Charles Besson, à la tête du social listening monde chez L'Oréal, le dit à sa façon dans notre podcast Audience First : « l'advocacy est en train de dépasser l'influence ». Pour une marque, cela revient à chercher des communautés aux centres d'intérêt multiples, et les ambassadeurs qui les animent, plutôt qu'une cible définie par un seul critère.",
+  "What is consumer intelligence?":
+    "Qu'est-ce que la consumer intelligence ?",
+  "Consumer intelligence means studying the consumers of a category from what they leave online: what they say about products, what they search for, the brands and media they follow. It usually crosses social listening, audience intelligence and search data, to answer a market question rather than a brand question. Consumer insights are its output: what you keep from that reading to make a decision.":
+    "La consumer intelligence désigne l'étude des consommateurs d'une catégorie à partir de leurs traces en ligne : ce qu'ils disent des produits, ce qu'ils recherchent, les marques et les médias qu'ils suivent. Elle croise le plus souvent social listening, audience intelligence et données de recherche, pour répondre à une question de marché plutôt qu'à une question de marque. Les consumer insights en sont le résultat : ce que l'on retient de cette lecture pour décider.",
+  "It differs from a declared market study: nobody is asked anything, we observe what real consumers do and say, continuously. At Licter, a consumer intelligence study starts from a question, for example why a category is losing customers or what a target expects from a product, picks the sources that answer it, and ends with recommendations.":
+    "Elle se distingue d'une étude de marché déclarative : personne n'est interrogé, on observe ce que des consommateurs réels font et disent, en continu. Chez Licter, une étude de consumer intelligence part d'une question, par exemple pourquoi une catégorie perd des clients ou ce qu'une cible attend d'un produit, choisit les sources qui y répondent, et se termine par des recommandations.",
+  "Consumer intelligence and customer intelligence: what is the difference?":
+    "Consumer intelligence et customer intelligence : quelle différence ?",
+  "The two terms overlap. Customer intelligence usually starts from your own customers and your data: purchases, customer service, CRM. Consumer intelligence looks at the whole category, customers or not.":
+    "Les deux termes se recoupent. La customer intelligence part le plus souvent de vos propres clients et de vos données : achats, service client, CRM. La consumer intelligence, elle, regarde toute la catégorie, clients ou non.",
+  "In practice, the best studies cross the two: your data says who buys, the conversation and the audiences say why, and what those who do not buy yet are doing. That cross-reading is what we build with you, never working on individual profiles.":
+    "En pratique, les meilleures études croisent les deux : vos données disent qui achète, la conversation et les audiences disent pourquoi, et ce que font ceux qui n'achètent pas encore. C'est ce croisement que nous construisons avec vous, sans jamais travailler sur des profils individuels.",
+  "Audience analysis, audience measurement, social listening: what sets them apart":
+    "Analyse d'audience, mesure d'audience, social listening : ce qui les distingue",
+  "Audience measurement counts: how many people watched a programme, visited a site or follow an account. The native analytics of social networks belong here: they describe your own followers, with some data on age, gender and location. Audience analysis answers another question: who are these people, and what do they do away from you?":
+    "La mesure d'audience compte : combien de personnes ont vu une émission, visité un site ou suivent un compte. Les statistiques natives des réseaux sociaux en font partie : elles décrivent vos propres abonnés, avec quelques données d'âge, de sexe et de lieu. L'analyse d'audience répond à une autre question : qui sont ces gens, et que font-ils ailleurs que chez vous ?",
+  "Social listening reads what people say about a brand or a subject. The two complement each other: one says what people think of you, the other who they are and what they like. A single study often crosses them, for example to learn what a community found in the panel says about your category, and in which words.":
+    "Le social listening, lui, lit ce que les gens disent d'une marque ou d'un sujet. Les deux se complètent : l'un dit ce qu'on pense de vous, l'autre qui sont les gens et ce qu'ils aiment. Une même étude les croise souvent, par exemple pour savoir ce qu'une communauté repérée dans le panel dit de votre catégorie, et avec quels mots.",
+  "What data does an audience study use?":
+    "Quelles données utilise une étude d'audience ?",
+  "The base is a behavioural panel drawn from social networks, where 5.66 billion active users post (68.7% of the world's population), described by more than 7,000 criteria, including interests, media diet, brand affinities and sociodemographics. This data is aggregated and anonymous: we read groups, never a person. It describes what people already do, with no questionnaire, and so with no declaration bias.":
+    "Le socle, c'est un panel comportemental tiré des réseaux sociaux, où 5,66 milliards d'utilisateurs actifs publient (68,7 % de la population mondiale), décrits par plus de 7 000 critères, dont les centres d'intérêt, le régime média, les affinités de marque et la sociodémographie. Ces données sont agrégées et anonymes : on lit des groupes, jamais une personne. Elles décrivent ce que les gens font déjà, sans questionnaire, donc sans biais de déclaration.",
+  "On top of this base come the public conversation, to know who talks about you and your category, and search, to know what each community looks for. Your own data, such as a customer file or an existing study, can be crossed in if you wish, but it is not needed for a first segmentation.":
+    "À ce socle s'ajoutent la conversation publique, pour savoir qui parle de vous et de votre catégorie, et la recherche, pour savoir ce que chaque communauté cherche. Vos propres données, comme un fichier clients ou une étude existante, peuvent être croisées si vous le souhaitez, mais elles ne sont pas nécessaires pour une première segmentation.",
+  "How do you segment an audience from its behaviour?":
+    "Comment segmenter une audience à partir de son comportement ?",
+  "We start from a reference audience: your customers, your brand's followers, a competitor's, or a population such as a country's 18 to 30 year-olds. The panel brings out the groups that make it up, from what they follow and consume together. We usually get five to eight communities, distinct enough to act on each one.":
+    "On part d'une audience de référence : vos clients, les abonnés de votre marque, ceux d'un concurrent, ou une population comme les 18-30 ans d'un pays. Le panel fait apparaître les groupes qui la composent, à partir de ce qu'ils suivent et consomment ensemble. On obtient en général cinq à huit communautés, assez distinctes pour qu'on puisse agir sur chacune.",
+  "Each community is then measured. Affinity says how much it likes your brand or your category. Penetration says what share of it you already reach. Opportunity brings the two together: a community that likes you but that you barely reach is often where the budget pays most. The use case Segment your target profiles shows a deliverable of this kind.":
+    "Chaque communauté est ensuite mesurée. L'affinité dit à quel point elle aime votre marque ou votre catégorie. La pénétration dit quelle part d'entre elle vous touchez déjà. L'opportunité rapproche les deux : une communauté qui vous aime mais que vous touchez peu est souvent celle où le budget rapporte le plus. Le cas d'usage Segmenter vos profils cibles montre un livrable de ce type.",
+  "An analyst then reads these groups, names them and checks that they make sense for the market. An algorithm groups; it does not understand why. For example, a community of \"sports fans\" can hide weekend joggers and triathletes, who buy nothing the same way and do not talk on the same networks.":
+    "Un analyste lit ensuite ces groupes, les nomme et vérifie qu'ils ont un sens pour le marché. Un algorithme regroupe, il ne comprend pas pourquoi. Par exemple, une communauté de « sportifs » peut cacher des coureurs du dimanche et des triathlètes, qui n'achètent rien de la même façon et ne se parlent pas sur les mêmes réseaux.",
+  "Which tools for audience analysis?":
+    "Quels outils pour l'analyse d'audience ?",
+  "Several families of tools exist side by side. The networks' native analytics describe your followers, platform by platform. Audience analysis tools, such as SoPrism, bought in 2022 by Audiense, profile any audience from aggregated data: interests, affinities, geography. Social listening platforms, finally, describe the people who talk about a subject.":
+    "Plusieurs familles d'outils coexistent. Les statistiques natives des réseaux décrivent vos abonnés, plateforme par plateforme. Les outils d'analyse d'audience, comme SoPrism, racheté en 2022 par Audiense, profilent n'importe quelle audience à partir de données agrégées : centres d'intérêt, affinités, géographie. Les plateformes de social listening, enfin, décrivent ceux qui parlent d'un sujet.",
+  "None is enough alone. SoPrism reads Facebook and Instagram, not the other networks, and it says who people are, not what they say. So we cross it with a listening platform such as Talkwalker, with Social Blade to follow followers and views, or with Meta Ads to see competitors' running ads. Our SoPrism page details these limits.":
+    "Aucun ne suffit seul. SoPrism lit Facebook et Instagram, pas les autres réseaux, et il dit qui sont les gens, pas ce qu'ils disent. Nous le croisons donc avec une plateforme d'écoute comme Talkwalker, avec Social Blade pour suivre abonnés et vues, ou avec Meta Ads pour voir les publicités en cours des concurrents. Notre page SoPrism détaille ces limites.",
+  "What audience intelligence helps you decide":
+    "Ce que l'audience intelligence permet de décider",
+  "First, where to put the budget. A segmentation can show that the brief's target is not where the opportunity is strongest, and that an overlooked community already likes the brand without buying it. The choice of platforms, formats and creators follows: a creator is picked for the audience they really reach, not for their follower count.":
+    "D'abord, où mettre le budget. Une segmentation peut montrer que la cible du brief n'est pas celle où l'opportunité est la plus forte, et qu'une communauté oubliée aime déjà la marque sans l'acheter. Le choix des plateformes, des formats et des créateurs suit : on retient un créateur pour l'audience qu'il touche réellement, pas pour son nombre d'abonnés.",
+  "Then, how to win a new public. The use case Rejuvenate your audiences compares the target generation with the current base, subject by subject and platform by platform, to find the bridges between the two. Comparing your audiences with a competitor's shows in the same way what they reach and you do not, and the angles to go after those publics.":
+    "Ensuite, comment gagner un public nouveau. Le cas d'usage Rajeunir vos audiences compare la génération visée à la base actuelle, sujet par sujet et plateforme par plateforme, pour trouver les ponts entre les deux. Comparer vos audiences à celles d'un concurrent montre de la même façon ce qu'il touche et pas vous, et les angles pour aller chercher ces publics.",
+  "Audience intelligence also feeds product strategy. For HP, in the United States, we built over six months a hybrid segmentation, crossing panel and social data on more than 5,000 criteria, completed with user stories, to segment consumer niches and strengthen product strategy from existing studies.":
+    "L'audience intelligence nourrit aussi la stratégie produit. Pour HP, aux États-Unis, nous avons construit pendant six mois une segmentation hybride, croisant données de panel et données des réseaux sociaux sur plus de 5 000 critères, complétée de user stories, pour segmenter des niches de consommateurs et renforcer la stratégie produit à partir d'études existantes.",
+  "One-off study or ongoing tracking?":
+    "Étude ponctuelle ou suivi dans le temps ?",
+  "A first study answers a precise question: who makes up our audience, where the opportunity lies, how to reach a new generation. A first read takes about ten days, from scoping to readout; a full gap analysis between two audiences takes more like two to three weeks.":
+    "Une première étude répond à une question précise : qui compose notre audience, où se trouve l'opportunité, comment toucher une nouvelle génération. Une première lecture prend une dizaine de jours, du cadrage à la restitution ; une analyse d'écart complète entre deux audiences demande plutôt deux à trois semaines.",
+  "But an audience moves: new creators emerge, one platform takes another's place, a community shifts. Reading the same communities again at regular intervals shows whether a media plan really changed anything. In our Social Insights offer, audience studies alternate with campaign reads and benchmarks, driven by the questions of the quarter.":
+    "Mais une audience bouge : de nouveaux créateurs émergent, une plateforme prend la place d'une autre, une communauté se déplace. Relire régulièrement les mêmes communautés montre si un plan média a vraiment changé quelque chose. Dans notre offre Social Insights, les études d'audience alternent avec les lectures de campagne et les benchmarks, selon les questions du trimestre.",
+  "The limits of audience intelligence":
+    "Les limites de l'audience intelligence",
+  "An audience study describes digital behaviour. It reads publics that are active online better than those that are not, and some sources cover only part of the networks: a tool built on Meta's data sees neither TikTok nor Twitch. It says who people are and what they like, not why they buy or give up buying.":
+    "Une étude d'audience décrit des comportements numériques. Elle lit mieux les publics actifs en ligne que ceux qui le sont peu, et certaines sources ne couvrent qu'une partie des réseaux : un outil fondé sur les données de Meta ne voit ni TikTok ni Twitch. Elle dit qui sont les gens et ce qu'ils aiment, pas pourquoi ils achètent ou renoncent à acheter.",
+  "It works on groups, never on individuals: that protects privacy, and it is a limit for anyone who would want to target one specific person. Finally, a statistical grouping without a reading remains a table. That is why we cross audience intelligence with social listening, search or your existing studies.":
+    "Elle travaille sur des groupes, jamais sur des individus : c'est une garantie pour la vie privée, et une limite pour qui voudrait viser une personne précise. Enfin, un regroupement statistique sans lecture reste un tableau. C'est pourquoi nous croisons l'audience intelligence avec le social listening, la recherche ou vos études existantes.",
+  "Audience intelligence agency or consultancy: what you buy":
+    "Agence ou cabinet d'audience intelligence : ce que vous achetez",
+  "With an audience intelligence agency or consultancy, you do not buy access to a profiling tool, but an answer to a marketing question. The choice of sources, the definition of the audiences to compare, the reading of the communities and the recommendation are handled by consultants, who read for themselves what they have set up.":
+    "Avec une agence ou un cabinet d'audience intelligence, vous n'achetez pas un accès à un outil de profilage, mais une réponse à une question de marketing. Le choix des sources, la définition des audiences à comparer, la lecture des communautés et la recommandation sont pris en charge par des consultants, qui lisent eux-mêmes ce qu'ils ont configuré.",
+  "Licter is an independent social data intelligence consultancy: we run SoPrism and 18 other tools without being their publisher, and we pick the source by the question. For a foreign market, the reading goes to analysts who speak the language and know the market. The simplest way to start: a thirty-minute call with a consultant.":
+    "Licter est un cabinet indépendant de social data intelligence : nous opérons SoPrism et 18 autres outils sans en être l'éditeur, et nous choisissons la source selon la question. Pour un marché étranger, la lecture est confiée à des analystes qui parlent la langue et connaissent le marché. Le plus simple pour commencer : un échange de trente minutes avec un consultant.",
+  "AUDIENCE INTELLIGENCE, IN DETAIL":
+    "L'AUDIENCE INTELLIGENCE, EN DÉTAIL",
+  "Read the answer":
+    "Lire la réponse",
+  "What to know before you start an audience study.":
+    "Tout ce qu'il faut savoir avant de lancer une étude d'audience.",
+  "What these people think of you in particular: that is social listening.":
+    "Ce que ces personnes pensent de vous en particulier : c'est le social listening.",
+  "Audiences, in detail":
+    "Les audiences, en détail",
+  "Audience intelligence or social listening: what is the difference?":
+    "Audience intelligence ou social listening : quelle différence ?",
+  "Social listening reads what is said about your brand and your market. Audience intelligence, which we call audience listening, describes the people themselves: what they follow, share and consume, whether they talk about you or not. One measures a conversation, the other draws a community; the two often meet in the same study.":
+    "Le social listening lit ce qui se dit sur votre marque et votre marché. L'audience intelligence, que nous appelons audience listening, décrit les gens eux-mêmes : ce qu'ils suivent, partagent et consomment, qu'ils parlent de vous ou non. L'un mesure une conversation, l'autre dessine une communauté ; les deux se croisent souvent dans une même étude.",
+  "Where does the audience data come from?":
+    "D'où viennent les données d'audience ?",
+  "From public interactions: accounts followed, content shared, engagement. We work on aggregated communities, never on individuals.":
+    "Des interactions publiques : comptes suivis, contenus partagés, engagements. Nous travaillons sur des communautés agrégées, jamais sur des individus.",
+  "Can we compare our audiences with a competitor's?":
+    "Peut-on comparer nos audiences à celles d'un concurrent ?",
+  "Yes, and it is often the most telling: what sets your communities apart from theirs, and the ones they reach and you do not.":
+    "Oui, et c'est souvent le plus parlant : ce qui distingue vos communautés des siennes, et celles qu'il touche et pas vous.",
+  "Is it GDPR-compliant?":
+    "Est-ce conforme au RGPD ?",
+  "Yes, on the basis of legitimate interest (GDPR Article 6(1)(f)). Public does not mean free to use: the CNIL points out that such data remains personal. So we only use public data, aggregated into communities, never individual profiles, and only what the question needs.":
+    "Oui, sur la base de l'intérêt légitime (article 6.1.f du RGPD). Publiques ne veut pas dire libres : la CNIL rappelle que ces données restent personnelles. Nous n'utilisons donc que des données publiques, agrégées en communautés, jamais de profils individuels, et seulement ce qui sert la question posée.",
+  "What do we do with the results?":
+    "Que fait-on des résultats ?",
+  "A media plan, messages and creators for each community: the readout ends with recommendations.":
+    "Un plan média, des messages et des créateurs par communauté : la restitution se termine par des recommandations.",
+  "What do you receive at the end?":
+    "Que recevez-vous à la fin ?",
+  "An audience profile presented by the consultant who built it, about ten days after framing: the communities that matter, their interests, the brands and media they follow, and which to prioritise.":
+    "Un profil d'audience présenté par le consultant qui l'a construit, environ dix jours après le cadrage : les communautés qui comptent, leurs centres d'intérêt, les marques et les médias qu'elles suivent, et celles à prioriser.",
+  "How much does an audience study cost?":
+    "Combien coûte une étude d'audience ?",
+  "Let's talk about your audiences.":
+    "Parlons de vos audiences.",
+  "The voices that carry, not the ones with the most followers.":
+    "Les voix qui portent, pas celles qui ont le plus d'abonnés.",
+  "Creators, experts, journalists, executives: we identify who really shapes your category's conversation, measure the overlap with your audience and flag the risks before a partnership.":
+    "Créateurs, experts, journalistes, dirigeants : nous identifions qui influence vraiment la conversation de votre catégorie, mesurons le recouvrement avec votre audience et signalons les risques avant un partenariat.",
+  "Who starts a topic, and who relays it":
+    "Qui lance un sujet, et qui le relaie",
+  "The overlap between their audience and yours":
+    "Le recouvrement entre leur audience et la vôtre",
+  "Past stances, and the risks":
+    "Les prises de position passées, et les risques",
+  "The category, the goal and the target audiences.":
+    "La catégorie, l'objectif et les audiences visées.",
+  "Mapping":
+    "Repérage",
+  "Who starts topics, and who relays them.":
+    "Qui lance les sujets, et qui les relaie.",
+  "Day 6":
+    "J+6",
+  "Vetting":
+    "Vérification",
+  "Audience overlap, past stances, risks.":
+    "Recouvrement d'audience, prises de position, risques.",
+  "Day 8":
+    "J+8",
+  "Shortlist":
+    "Shortlist",
+  "A ranked, argued list, ready for the agency.":
+    "Une liste classée et argumentée, prête pour l'agence.",
+  "The voices that carry,":
+    "Les voix qui portent,",
+  "not the most followed.":
+    "pas les plus suivies.",
+  "What Influence listening lets you hear.":
+    "Ce que l'influence listening permet d'entendre.",
+  "“Which creators already speak to our customers, or to the ones we want?”":
+    "« Quels créateurs parlent déjà à nos clients, ou à ceux qu'on veut ? »",
+  "“On which subjects is our leader credible to the public?”":
+    "« Sur quels sujets notre dirigeant est-il légitime aux yeux du public ? »",
+  "“Who really shapes our category?”":
+    "« Qui façonne vraiment notre catégorie ? »",
+  "LVMH: leader advocacy and social listening":
+    "LVMH : leader advocacy et social listening",
+  "GP Explorer 3: Squeezie breaks audience records":
+    "GP Explorer 3 : Squeezie bat les records d'audience",
+  "Origins: influence and venture capital":
+    "Origins : influence et capital-risque",
+  "A campaign's effect on your sales: it has to be crossed with other data.":
+    "L'effet d'une campagne sur vos ventes : il faut le croiser avec d'autres données.",
+  "What appears in the image":
+    "Ce qui apparaît dans l'image",
+  "How do you choose the right influencers?":
+    "Comment choisir les bons influenceurs ?",
+  "Not by follower count. We look at who really talks about your category, the overlap between their audience and yours, real engagement and past stances. The result is an argued shortlist of influencers, risks included.":
+    "Pas au nombre d'abonnés. Nous regardons qui parle vraiment de votre catégorie, le recouvrement entre son audience et la vôtre, l'engagement réel et ses prises de position passées. Le résultat est une shortlist d'influenceurs argumentée, risques compris.",
+  "Do you work with influencer agencies?":
+    "Travaillez-vous avec des agences d'influence ?",
+  "Yes, often upstream: we give them a read, argued shortlist, and they handle the relationship and the production.":
+    "Oui, souvent en amont : nous leur donnons une liste lue et argumentée, elles gèrent la relation et la production.",
+  "Can you measure a partnership's effect?":
+    "Peut-on mesurer l'effet d'un partenariat ?",
+  "Yes, on the conversation: what it moved, with which audiences, compared with the period before.":
+    "Oui, sur la conversation : ce qu'il a déplacé, auprès de quelles audiences, comparé à la période précédente.",
+  "How do you spot the risks?":
+    "Comment repérez-vous les risques ?",
+  "We go through past public stances and controversies, and flag them before any contract.":
+    "Nous relisons les prises de position publiques passées et les controverses, et les signalons avant tout contrat.",
+  "Do you need big accounts to be effective?":
+    "Faut-il de gros comptes pour être efficace ?",
+  "No. The overlap with your audience matters more than the follower count: mid-sized accounts often carry better.":
+    "Non. Le recouvrement avec votre audience compte plus que le nombre d'abonnés : les comptes moyens portent souvent mieux.",
+  "A ranked, argued shortlist, about eight days after framing: who really carries your category's conversation, the overlap with your audience and the risks spotted, ready to hand to your agency.":
+    "Une shortlist classée et argumentée, environ huit jours après le cadrage : qui porte vraiment la conversation de votre catégorie, le recouvrement avec votre audience et les risques repérés, prête à transmettre à votre agence.",
+  "How much does an influence study cost?":
+    "Combien coûte une étude d'influence ?",
+  "Let's talk about the voices that matter to you.":
+    "Parlons des voix qui comptent pour vous.",
+  "What AI answers when people ask about you.":
+    "Ce que les IA répondent quand on leur parle de vous.",
+  "More and more searches go through an AI assistant. We question the main models about your brand and your category, the way your customers would, and read what they recommend, cite or leave out: your AI visibility, and your reputation in their answers.":
+    "De plus en plus de recherches passent par un assistant IA. Nous interrogeons les principaux modèles sur votre marque et votre catégorie, comme le feraient vos clients, et lisons ce qu'ils recommandent, citent ou oublient : votre visibilité IA et votre réputation dans leurs réponses.",
+  "The brands recommended in your category":
+    "Les marques recommandées dans votre catégorie",
+  "The sources the models cite":
+    "Les sources que les modèles citent",
+  "Mistakes or outdated facts about you":
+    "Les erreurs ou les informations datées sur vous",
+  "The questions your customers ask, and the models to question.":
+    "Les questions que posent vos clients, et les modèles à interroger.",
+  "Prompting":
+    "Interrogation",
+  "The same questions, put to each model.":
+    "Les mêmes questions, posées à chaque modèle.",
+  "What they recommend, cite, leave out or get wrong.":
+    "Ce qu'ils recommandent, citent, oublient ou déforment.",
+  "Plan":
+    "Plan",
+  "The sources to correct or to feed.":
+    "Les sources à corriger ou à nourrir.",
+  "What AI":
+    "Ce que les IA",
+  "says about you.":
+    "disent de vous.",
+  "What AI listening lets you hear.":
+    "Ce que l'AI listening permet d'entendre.",
+  "“How big is the conversation in this market, really?”":
+    "« Quelle est la taille réelle de la conversation sur ce marché ? »",
+  "The tools":
+    "Les outils",
+  "L'Oréal: what AI changes in social listening":
+    "L'Oréal : ce que l'IA change au social listening",
+  "Social listening and politics":
+    "Social listening et politique",
+  "What is AI listening?":
+    "Qu'est-ce que l'AI listening ?",
+  "AI listening means questioning AI assistants the way your customers would, then reading what they answer about your brand and your category: the brands they recommend, the facts they quote, the sources they link to, and what they leave out.":
+    "L'AI listening consiste à interroger les assistants d'intelligence artificielle comme le feraient vos clients, puis à lire ce qu'ils répondent sur votre marque et votre catégorie : les marques qu'ils recommandent, les faits qu'ils citent, les sources qu'ils mettent en lien, et ce qu'ils oublient.",
+  "It is a form of listening, like social or search listening: instead of a conversation between people, you read the summary a model draws from it. For many searches, that summary is now the first thing a customer reads.":
+    "C'est une écoute, au même titre que le social listening ou le search listening : on ne lit plus une conversation entre des personnes, mais la synthèse qu'un modèle en tire. Pour beaucoup de recherches, cette synthèse est désormais la première chose qu'un client lit.",
+  "It is also called AI visibility, or visibility in generative AI: the place a brand holds in assistants' answers, measured question by question.":
+    "On parle aussi de visibilité IA, ou de visibilité dans les IA génératives : la place qu'occupe une marque dans les réponses des assistants, mesurée question par question.",
+  "AI listening and GEO: what is the difference?":
+    "AI listening et GEO : quelle différence ?",
+  "AI listening measures and reads. GEO, for Generative Engine Optimization, acts: it tries to improve a brand's place in those answers by working on the sources the models use. The first is the starting point and the yardstick of the second: without a regular reading, you know neither where you start nor whether what you change works.":
+    "L'AI listening mesure et lit. Le GEO, pour Generative Engine Optimization, agit : il cherche à améliorer la place d'une marque dans ces réponses, en travaillant les sources que les modèles utilisent. Le premier sert de point de départ et de mesure au second : sans lecture régulière, on ne sait ni où l'on part ni si ce que l'on change fonctionne.",
+  "Which AI assistants should you listen to?":
+    "Quelles IA écouter ?",
+  "The ones your customers use for the question that matters to you. In practice: ChatGPT, the AI-generated answers in Google (AI Overviews and AI Mode, built on Gemini), Gemini itself, Claude, Perplexity and Grok. Each has its own sources and its own way of answering, which is why a brand can be cited by one and ignored by another.":
+    "Celles que vos clients utilisent pour la question qui vous intéresse. En pratique : ChatGPT, les réponses générées par l'IA dans Google (Aperçus IA et Mode IA, fondés sur Gemini), Gemini lui-même, Claude, Perplexity et Grok. Chacun a ses propres sources et sa propre façon de répondre, ce qui explique qu'une marque puisse être citée par l'un et ignorée par l'autre.",
+  "Several of these assistants now search the web before answering and cite their sources: ChatGPT with its search, Claude since 2025, Perplexity by design, and Google for its AI Overviews. What they say therefore also depends on what the web says about you today, not only on their training data.":
+    "Plusieurs de ces assistants cherchent désormais sur le web avant de répondre et citent leurs sources : ChatGPT avec sa recherche, Claude depuis 2025, Perplexity par construction, et Google pour ses Aperçus IA. Ce qu'ils disent dépend donc aussi de ce que le web dit de vous aujourd'hui, pas seulement de leurs données d'entraînement.",
+  "Which questions should you ask AI?":
+    "Quelles questions poser aux IA ?",
+  "Your customers' questions, not your marketing team's. There are three families: choice questions, for example \"which health insurance for a family?\", where the assistant recommends brands; questions about the brand itself, its price, its products, its reputation; and comparisons with a named competitor.":
+    "Les questions de vos clients, pas celles de votre service marketing. On en distingue trois familles : les questions de choix, par exemple « quelle mutuelle pour une famille ? », où l'assistant recommande des marques ; les questions sur la marque elle-même, son prix, ses produits, sa réputation ; et les comparaisons avec un concurrent nommé.",
+  "Choice questions matter most: that is where a brand wins or loses a recommendation without anyone having searched for it by name. The same question is asked several times, and to each model, because answers vary from one time to the next.":
+    "Ce sont les questions de choix qui comptent le plus : c'est là qu'une marque gagne ou perd une recommandation sans que personne ne l'ait cherchée par son nom. Une même question est posée plusieurs fois, et à chaque modèle, parce que les réponses varient d'une fois sur l'autre.",
+  "What should you measure?":
+    "Que mesurer ?",
+  "Five things, question by question. Presence: is the brand cited, and in how many answers? That is its share of answers. Rank: does it appear first or at the end of a list? Tone: is what is said favourable, neutral or critical? Accuracy: are the facts right and current? Sources: which pages does the assistant link to back its answer?":
+    "Cinq choses, question par question. La présence : la marque est-elle citée, et dans combien de réponses ? C'est sa part de réponse. Le rang : apparaît-elle en premier ou en fin de liste ? Le ton : ce qui en est dit est-il favorable, neutre ou critique ? L'exactitude : les faits sont-ils justes et à jour ? Les sources : quelles pages l'assistant met-il en lien pour appuyer sa réponse ?",
+  "Mistakes are often the most useful finding. For example, a 2022 price quoted as current, or a discontinued range presented as available: the fix goes through the sources the model consults, not through the model itself.":
+    "Les erreurs sont souvent l'enseignement le plus utile. Par exemple, un tarif de 2022 repris comme actuel, ou une gamme arrêtée présentée comme disponible : la correction passe par les sources que le modèle consulte, pas par le modèle lui-même.",
+  "Where do the answers come from?":
+    "D'où viennent les réponses ?",
+  "From two places. First, the model's training data, frozen at a date, which is why an assistant can describe a brand as it was two years ago. Then, for assistants that search online, the pages they consult at the moment of answering. At Google, a page must be indexed and able to appear with a snippet to serve as a link in AI Overviews.":
+    "De deux endroits. D'abord des données d'entraînement du modèle, figées à une date, qui expliquent qu'un assistant puisse décrire une marque telle qu'elle était il y a deux ans. Ensuite, pour les assistants qui cherchent en ligne, des pages qu'ils consultent au moment de répondre. Chez Google, une page doit être indexée et pouvoir apparaître avec un extrait pour servir de lien dans les Aperçus IA.",
+  "These assistants' crawlers are set separately: at OpenAI, the one that feeds ChatGPT search and the one that collects for training are independent. A site that blocks the first does not appear in ChatGPT search answers. Checking these settings is part of the listening.":
+    "Les robots de ces assistants se règlent séparément : chez OpenAI, celui qui alimente la recherche de ChatGPT et celui qui collecte pour l'entraînement sont indépendants. Un site qui bloque le premier n'apparaît pas dans les réponses de recherche de ChatGPT. Vérifier ces réglages fait partie de l'écoute.",
+  "The limits of AI listening":
+    "Les limites de l'AI listening",
+  "Answers are not stable: they change from one session to another, from one model version to the next, and sometimes with the user's history. A single measure says little; it is asking the same questions again, over time, that gives a reliable trend.":
+    "Les réponses ne sont pas stables : elles changent d'une session à l'autre, d'une version de modèle à la suivante, et parfois selon l'historique de l'utilisateur. Une mesure isolée ne dit donc pas grand-chose ; c'est la répétition des mêmes questions, dans le temps, qui donne une tendance fiable.",
+  "AI listening does not say how many people ask these questions either. For volume, it has to be crossed with search listening, which reads what people search for on Google, YouTube and Amazon.":
+    "L'AI listening ne dit pas non plus combien de personnes posent ces questions. Pour le volume, il faut le croiser avec le search listening, qui lit ce que les gens cherchent sur Google, YouTube et Amazon.",
+  "How Licter runs an AI listening study":
+    "Comment Licter mène une étude d'AI listening",
+  "The framing sets the questions your customers ask and the models to question. The same questions are then put to each model, several times, and an analyst reads the answers: what they recommend, cite, leave out or get wrong. The readout ends with a plan: the sources to correct or to feed.":
+    "Le cadrage fixe les questions que posent vos clients et les modèles à interroger. Les mêmes questions sont ensuite posées à chaque modèle, plusieurs fois, puis un analyste lit les réponses : ce qu'elles recommandent, citent, oublient ou déforment. La restitution se termine par un plan : les sources à corriger ou à nourrir.",
+  "After a first measure, we start again every month or quarter with the same questions, so the results can be compared. Licter is an independent consultancy: we publish no assistant and do not sell visibility in their answers.":
+    "Après une première mesure, nous recommençons chaque mois ou chaque trimestre avec les mêmes questions, pour que les résultats se comparent. Licter est un cabinet indépendant : nous n'éditons aucun assistant et ne vendons pas de visibilité dans leurs réponses.",
+  "AI LISTENING, IN DETAIL":
+    "L'AI LISTENING, EN DÉTAIL",
+  "What to know before you listen to what AI says about you.":
+    "Ce qu'il faut savoir avant d'écouter ce que les IA disent de vous.",
+  "How many people ask these questions: that is search listening.":
+    "Combien de personnes posent ces questions : c'est le search listening.",
+  "Nox":
+    "Nox",
+  "AI-assisted monitoring.":
+    "La veille assistée par l'IA.",
+  "Which models do you question?":
+    "Quels modèles interrogez-vous ?",
+  "The assistants your customers use most, set with you, always with the same questions so the change can be followed over time.":
+    "Les assistants les plus utilisés par vos clients, définis avec vous, toujours avec les mêmes questions pour suivre l'évolution dans le temps.",
+  "Can you influence what AI answers?":
+    "Peut-on influencer ce que répondent les IA ?",
+  "Indirectly: the models rely on public sources. We identify the ones they cite, and what should be corrected or added there.":
+    "Indirectement : les modèles s'appuient sur des sources publiques. Nous identifions celles qu'ils citent, et ce qu'il faudrait y corriger ou y ajouter.",
+  "How often do you measure?":
+    "À quelle fréquence mesurez-vous ?",
+  "A first measure, then every month or quarter, with the same questions so it can be compared.":
+    "Une première mesure, puis chaque mois ou chaque trimestre, avec les mêmes questions pour comparer.",
+  "Is it different from SEO?":
+    "Est-ce différent du SEO ?",
+  "Yes. AI assistants do not rank pages, they synthesise sources. We read those syntheses, and the sources feeding them.":
+    "Oui. Les assistants IA ne classent pas des pages, ils synthétisent des sources. Nous lisons ces synthèses, et les sources qui les nourrissent.",
+  "An audit of AI answers, about a week after framing: what each model recommends, cites or gets wrong on your questions, your share of answers against your competitors, and the plan of sources to correct or to feed.":
+    "Un audit des réponses des IA, environ une semaine après le cadrage : ce que chaque modèle recommande, cite ou déforme sur vos questions, votre part de réponse face à vos concurrents, et le plan des sources à corriger ou à nourrir.",
+  "How much does an audit of what AI says cost?":
+    "Combien coûte un audit de ce que disent les IA ?",
+  "Let's talk about what AI says about you.":
+    "Parlons de ce que les IA disent de vous.",
+  "Knowing what happens while it happens.":
+    "Savoir ce qui se passe pendant que ça se passe.",
+  "Event, launch, crisis: we follow the conversation live, 24/7, and an analyst alerts you within 15 minutes when something really moves.":
+    "Événement, lancement, crise : nous suivons la conversation en direct, 24 h/24, et un analyste vous alerte en 15 minutes quand quelque chose bouge vraiment.",
+  "Volume spikes, and what causes them":
+    "Les pics de volume, et ce qui les cause",
+  "The voices that tip a topic":
+    "Les voix qui font basculer un sujet",
+  "The jump from a social network to the press":
+    "Le passage d'un réseau social à la presse",
+  "48 h":
+    "48 h",
+  "Set-up":
+    "Paramétrage",
+  "The queries, the thresholds and the people to alert.":
+    "Les requêtes, les seuils et les personnes à alerter.",
+  "24/7":
+    "24/7",
+  "Watch":
+    "Veille",
+  "The conversation followed continuously, nights and weekends included.":
+    "La conversation suivie en continu, nuits et week-ends compris.",
+  "Alert":
+    "Alerte",
+  "An analyst qualifies the signal before alerting you.":
+    "Un analyste qualifie le signal avant de vous prévenir.",
+  "Weekly":
+    "Hebdo",
+  "Review":
+    "Bilan",
+  "What moved, and what to watch next.":
+    "Ce qui a bougé, et ce qu'il faut surveiller ensuite.",
+  "What happens,":
+    "Ce qui se passe,",
+  "while it happens.":
+    "pendant que ça se passe.",
+  "What Live listening lets you hear.":
+    "Ce que le live listening permet d'entendre.",
+  "“Which subjects could become a crisis for us?”":
+    "« Quels sujets pourraient devenir une crise pour nous ? »",
+  "Spotting your sector's breaking news":
+    "Identifier les breaking news de votre secteur",
+  "Shein vs BHV: anatomy of a digital crisis":
+    "Shein vs BHV : dissection d'une crise digitale",
+  "Why your image shifts over a year: that is a study, not an alert.":
+    "Pourquoi votre image évolue sur un an : c'est une étude, pas une alerte.",
+  "Do you cover nights and weekends?":
+    "Couvrez-vous les nuits et les week-ends ?",
+  "Yes: that is often when topics start.":
+    "Oui : c'est souvent là que les sujets démarrent.",
+  "Can you cover a one-off event?":
+    "Peut-on suivre un événement ponctuel ?",
+  "Yes. A trade show, a launch or a speech can be followed live over the period, with a debrief at the end.":
+    "Oui. Un salon, un lancement ou une prise de parole peuvent être suivis en direct sur la période, avec un bilan à la fin.",
+  "How fast can you be up and running?":
+    "En combien de temps êtes-vous opérationnels ?",
+  "48 hours to set up the queries, thresholds and alert contacts.":
+    "48 heures pour paramétrer les requêtes, les seuils et les contacts d'alerte.",
+  "The people you name, by email or messaging, with the analyst's qualification and a recommendation.":
+    "Les personnes que vous désignez, par e-mail ou messagerie, avec la qualification de l'analyste et une recommandation.",
+  "Alerts qualified by an analyst within 15 minutes, nights and weekends included, then a review every week: what moved, who carries it, and what to watch next.":
+    "Des alertes qualifiées par un analyste en 15 minutes, nuits et week-ends compris, puis un bilan chaque semaine : ce qui a bougé, qui le porte, et ce qu'il faut surveiller ensuite.",
+  "How much does live monitoring cost?":
+    "Combien coûte une veille en direct ?",
+  "Let's talk about your real-time monitoring.":
+    "Parlons de votre veille en temps réel.",
+  "What people search for when nobody is watching.":
+    "Ce que les gens cherchent quand personne ne les regarde.",
+  "Searches on Google, YouTube and Amazon say what people really want to know, before the purchase and after the problem. We read them to spot unmet needs and unanswered questions.":
+    "Les recherches sur Google, YouTube et Amazon disent ce que les gens veulent vraiment savoir, avant l'achat et après le problème. Nous les lisons pour repérer les besoins non couverts et les questions sans réponse.",
+  "The questions asked before buying":
+    "Les questions posées avant l'achat",
+  "The problems met afterwards":
+    "Les problèmes rencontrés après",
+  "The needs rising, season after season":
+    "Les besoins qui montent, saison après saison",
+  "The markets, the languages and the products to read.":
+    "Les marchés, les langues et les produits à lire.",
+  "Searches on Google, YouTube and Amazon.":
+    "Les recherches sur Google, YouTube et Amazon.",
+  "The questions, the problems and the rising needs.":
+    "Les questions, les problèmes et les besoins qui montent.",
+  "The unmet needs, and what to launch.":
+    "Les besoins non couverts, et ce qu'il faut lancer.",
+  "What people":
+    "Ce que les gens",
+  "really search for.":
+    "cherchent vraiment.",
+  "What Search listening lets you hear.":
+    "Ce que le search listening permet d'entendre.",
+  "“What do our customers really love about our products?”":
+    "« Qu'est-ce que nos clients aiment vraiment dans nos produits ? »",
+  "Consumption becomes activism, with Kantar":
+    "La consommation devient un acte militant, avec Kantar",
+  "The 7 changes in monitoring in 2024":
+    "Les 7 changements de la veille en 2024",
+  "The tone of the public debate: that is social listening.":
+    "Le ton du débat public : c'est le social listening.",
+  "Which search data do you use?":
+    "Quelles données de recherche utilisez-vous ?",
+  "Search volumes and phrasings on Google, YouTube and Amazon, aggregated and anonymous, on the markets and languages of your perimeter.":
+    "Les volumes et les formulations de recherche sur Google, YouTube et Amazon, agrégés et anonymes, sur les marchés et les langues de votre périmètre.",
+  "Is this SEO?":
+    "Est-ce du SEO ?",
+  "No, even if your SEO teams use it. We read searches to understand needs, not to rank pages.":
+    "Non, même si vos équipes SEO s'en servent. Nous lisons les recherches pour comprendre les besoins, pas pour positionner des pages.",
+  "On which markets?":
+    "Sur quels marchés ?",
+  "All those in your perimeter, in their own language: we read local phrasings, not translations.":
+    "Tous ceux de votre périmètre, dans leur langue : nous lisons les formulations locales, pas des traductions.",
+  "How long for a first read?":
+    "Combien de temps pour une première lecture ?",
+  "About a week after framing.":
+    "Environ une semaine après le cadrage.",
+  "A search study presented by the consultant, about a week after framing: the questions and needs rising on Google, YouTube and Amazon, the ones left unanswered, and what to launch.":
+    "Une étude des recherches présentée par le consultant, environ une semaine après le cadrage : les questions et les besoins qui montent sur Google, YouTube et Amazon, ceux qui restent sans réponse, et ce qu'il faut lancer.",
+  "How much does a search listening study cost?":
+    "Combien coûte une étude de search listening ?",
+  "Let's talk about what your customers search for.":
+    "Parlons de ce que vos clients cherchent.",
+  "SOCIAL INTELLIGENCE":
+    "SOCIAL INTELLIGENCE",
+  "Social intelligence, six ways of listening.":
+    "La social intelligence, six façons d'écouter.",
+  "Each question calls for its own way of listening: what people say, who they are, who influences them, what they ask AI, what happens live, what they search for. We combine them, and an analyst reads the whole.":
+    "Chaque question demande sa façon d'écouter : ce que les gens disent, qui ils sont, qui les influence, ce qu'ils demandent à l'IA, ce qui se passe en direct, ce qu'ils cherchent. Nous les combinons, et un analyste lit l'ensemble.",
+  "Six ways of listening":
+    "Six façons d'écouter",
+  "The Licter team at work":
+    "L'équipe Licter au travail",
+  "What is said about you, your competitors and your market.":
+    "Ce qui se dit sur vous, vos concurrents et votre marché.",
+  "Discover Social listening":
+    "Découvrir Social listening",
+  "Who the people talking about you really are.":
+    "Qui sont vraiment les gens qui parlent de vous.",
+  "Discover Audience listening":
+    "Découvrir Audience listening",
+  "The voices that actually carry in your category.":
+    "Les voix qui portent vraiment dans votre catégorie.",
+  "Discover Influence listening":
+    "Découvrir Influence listening",
+  "What generative AI says about your brand.":
+    "Ce que les IA génératives disent de votre marque.",
+  "Discover AI listening":
+    "Découvrir AI listening",
+  "The conversation in real time, an alert within 15 minutes.":
+    "La conversation en temps réel, une alerte en 15 minutes.",
+  "Discover Live listening":
+    "Découvrir Live listening",
+  "What people search for on Google, YouTube and Amazon.":
+    "Ce que les gens cherchent sur Google, YouTube et Amazon.",
+  "Discover Search listening":
+    "Découvrir Search listening",
+  "SIX WAYS OF LISTENING":
+    "SIX FAÇONS D'ÉCOUTER",
+  "Each one answers part of the question. Open the one that concerns you.":
+    "Chaque écoute répond à une partie de la question. Ouvrez celle qui vous concerne.",
+  "Little talk about it, and mostly about the price.":
+    "On en parle peu, et surtout du prix.",
+  "The people talking about it are not the intended target.":
+    "Ceux qui en parlent ne sont pas la cible visée.",
+  "No voice in the category has picked it up yet.":
+    "Aucune voix de la catégorie ne l'a encore reprise.",
+  "Searches are about a format the range does not have.":
+    "Les recherches portent sur un format que la gamme n'a pas.",
+  "AI assistants recommend two competitors.":
+    "Les assistants IA recommandent deux concurrents.",
+  "“Why is our new range not taking off?”":
+    "« Pourquoi notre nouvelle gamme ne décolle pas ? »",
+  "Our read":
+    "Notre lecture",
+  "A format and relay problem, not an awareness one: launch the format people search for, and hand it to the voices the target already follows.":
+    "Un problème de format et de relais, pas de notoriété : lancer le format recherché, et le confier aux voix que la cible suit déjà.",
+  "See the 12 use cases":
+    "Voir les 12 cas d'usage",
+  "Social intelligence":
+    "Social intelligence",
+  "The six listenings":
+    "Les six écoutes",
+  "Six ways":
+    "Six façons",
+  "of listening to a market.":
+    "d'écouter un marché.",
+  "EXAMPLE":
+    "EXEMPLE",
+  "One question, several ways of listening":
+    "Une question, plusieurs écoutes",
+  "“Consumption is an act of activism.”":
+    "« La consommation est un acte militant. »",
+  "Which way of listening should we pick?":
+    "Quelle écoute choisir ?",
+  "The one your question calls for. We often combine them, and the first conversation is there to decide it.":
+    "Celle que demande votre question. Nous les combinons souvent, et le premier échange sert justement à le déterminer.",
+  "Do we need to buy a tool or a licence?":
+    "Faut-il acheter un outil ou une licence ?",
+  "No. Our consultants use our platforms: you receive the read, not a licence to run.":
+    "Non. Nos consultants utilisent nos plateformes : vous recevez la lecture, pas une licence à faire tourner.",
+  "In which languages?":
+    "Dans quelles langues ?",
+  "More than twenty, read by analysts who speak them.":
+    "Plus de vingt, lues par des analystes qui les parlent.",
+  "How long for a first answer?":
+    "Combien de temps pour une première réponse ?",
+  "One to two weeks depending on the listening, 48 hours for live monitoring.":
+    "Une à deux semaines selon les écoutes, 48 heures pour une veille en direct.",
+  "Which question do you want to listen to?":
+    "Quelle question voulez-vous écouter ?",
+  "IN OUR OFFERS":
+    "DANS NOS OFFRES",
+  "Chat with Antoine":
+    "Discuter avec Antoine",
+  "Social listening: definition, method and agency in Paris | Licter":
+    "Social listening : définition, méthode et agence à Paris | Licter",
+  "Audience, consumer and customer intelligence: your customers | Licter":
+    "Audience, consumer et customer intelligence : vos clients | Licter",
+  "Influence listening: the voices that actually carry | Licter":
+    "Influence listening : influenceurs et voix qui portent vraiment | Licter",
+  "AI listening and AI visibility: what AI says about you | Licter":
+    "AI listening et visibilité IA : ce que les IA disent de vous | Licter",
+  "Live listening: the conversation in real time | Licter":
+    "Live listening : la conversation en temps réel | Licter",
+  "Search listening: what people really search for | Licter":
+    "Search listening : ce que les gens cherchent vraiment | Licter",
+  "Expertise: social intelligence, six ways of listening | Licter":
+    "Expertise : la social intelligence, six façons d'écouter | Licter",
+  /* ---- end expertise pages ---- */
 
   /* ---- tech pages (tools/build-tech.py) ---- */
   "Talkwalker":
@@ -3232,8 +4098,8 @@ window.LicterFR = {
     "AGENCE TALKWALKER",
   "Why work with a Talkwalker agency?":
     "Pourquoi passer par une agence Talkwalker ?",
-  "Talkwalker provides data. A Talkwalker agency like Licter turns it into a decision: here is how we use it.":
-    "Talkwalker fournit des données. Une agence Talkwalker comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Talkwalker provides data: mentions, volumes, dashboards. A Talkwalker agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Talkwalker fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Talkwalker comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "A tool to learn and to run":
     "Un outil à apprendre et à faire tourner",
   "Queries set once, never reviewed":
@@ -3448,8 +4314,8 @@ window.LicterFR = {
     "AGENCE VISIBRAIN",
   "Why work with a Visibrain agency?":
     "Pourquoi passer par une agence Visibrain ?",
-  "Visibrain provides data. A Visibrain agency like Licter turns it into a decision: here is how we use it.":
-    "Visibrain fournit des données. Une agence Visibrain comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Visibrain provides data: mentions, volumes, dashboards. A Visibrain agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Visibrain fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Visibrain comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Visibrain on its own":
     "Visibrain seul",
   "Visibrain with Licter":
@@ -3554,8 +4420,8 @@ window.LicterFR = {
     "AGENCE YOUSCAN",
   "Why work with a YouScan agency?":
     "Pourquoi passer par une agence YouScan ?",
-  "YouScan provides data. A YouScan agency like Licter turns it into a decision: here is how we use it.":
-    "YouScan fournit des données. Une agence YouScan comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "YouScan provides data: mentions, volumes, dashboards. A YouScan agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "YouScan fournit des données : des mentions, des volumes, des tableaux de bord. Une agence YouScan comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "YouScan on its own":
     "YouScan seul",
   "YouScan with Licter":
@@ -3664,8 +4530,8 @@ window.LicterFR = {
     "AGENCE SOPRISM",
   "Why work with a SoPrism agency?":
     "Pourquoi passer par une agence SoPrism ?",
-  "SoPrism provides data. A SoPrism agency like Licter turns it into a decision: here is how we use it.":
-    "SoPrism fournit des données. Une agence SoPrism comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "SoPrism provides data: mentions, volumes, dashboards. A SoPrism agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "SoPrism fournit des données : des mentions, des volumes, des tableaux de bord. Une agence SoPrism comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "SoPrism on its own":
     "SoPrism seul",
   "SoPrism with Licter":
@@ -3768,8 +4634,8 @@ window.LicterFR = {
     "AGENCE RADARLY",
   "Why work with a Radarly agency?":
     "Pourquoi passer par une agence Radarly ?",
-  "Radarly provides data. A Radarly agency like Licter turns it into a decision: here is how we use it.":
-    "Radarly fournit des données. Une agence Radarly comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Radarly provides data: mentions, volumes, dashboards. A Radarly agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Radarly fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Radarly comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Radarly on its own":
     "Radarly seul",
   "Radarly with Licter":
@@ -3876,8 +4742,8 @@ window.LicterFR = {
     "AGENCE BRANDWATCH",
   "Why work with a Brandwatch agency?":
     "Pourquoi passer par une agence Brandwatch ?",
-  "Brandwatch provides data. A Brandwatch agency like Licter turns it into a decision: here is how we use it.":
-    "Brandwatch fournit des données. Une agence Brandwatch comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Brandwatch provides data: mentions, volumes, dashboards. A Brandwatch agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Brandwatch fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Brandwatch comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Brandwatch on its own":
     "Brandwatch seul",
   "Brandwatch with Licter":
@@ -3992,8 +4858,8 @@ window.LicterFR = {
     "AGENCE SPRINKLR",
   "Why work with a Sprinklr agency?":
     "Pourquoi passer par une agence Sprinklr ?",
-  "Sprinklr provides data. A Sprinklr agency like Licter turns it into a decision: here is how we use it.":
-    "Sprinklr fournit des données. Une agence Sprinklr comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Sprinklr provides data: mentions, volumes, dashboards. A Sprinklr agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Sprinklr fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Sprinklr comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Sprinklr on its own":
     "Sprinklr seul",
   "Sprinklr with Licter":
@@ -4114,8 +4980,8 @@ window.LicterFR = {
     "AGENCE SEMRUSH",
   "Why work with a Semrush agency?":
     "Pourquoi passer par une agence Semrush ?",
-  "Semrush provides data. A Semrush agency like Licter turns it into a decision: here is how we use it.":
-    "Semrush fournit des données. Une agence Semrush comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Semrush provides data: mentions, volumes, dashboards. A Semrush agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Semrush fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Semrush comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Semrush on its own":
     "Semrush seul",
   "Semrush with Licter":
@@ -4226,8 +5092,8 @@ window.LicterFR = {
     "AGENCE GOOGLE TRENDS",
   "Why work with a Google Trends agency?":
     "Pourquoi passer par une agence Google Trends ?",
-  "Google Trends provides data. A Google Trends agency like Licter turns it into a decision: here is how we use it.":
-    "Google Trends fournit des données. Une agence Google Trends comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Google Trends provides data: mentions, volumes, dashboards. A Google Trends agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Google Trends fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Google Trends comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Google Trends on its own":
     "Google Trends seul",
   "Google Trends with Licter":
@@ -4336,8 +5202,8 @@ window.LicterFR = {
     "AGENCE ANSWERTHEPUBLIC",
   "Why work with a AnswerThePublic agency?":
     "Pourquoi passer par une agence AnswerThePublic ?",
-  "AnswerThePublic provides data. A AnswerThePublic agency like Licter turns it into a decision: here is how we use it.":
-    "AnswerThePublic fournit des données. Une agence AnswerThePublic comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "AnswerThePublic provides data: mentions, volumes, dashboards. A AnswerThePublic agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "AnswerThePublic fournit des données : des mentions, des volumes, des tableaux de bord. Une agence AnswerThePublic comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "AnswerThePublic on its own":
     "AnswerThePublic seul",
   "AnswerThePublic with Licter":
@@ -4434,8 +5300,8 @@ window.LicterFR = {
     "COMMENT CHATGPT RÉPOND",
   "What shapes ChatGPT's answer.":
     "Ce qui fait la réponse de ChatGPT.",
-  "Where its answers come from":
-    "D'où viennent ses réponses",
+  "Where do its answers come from?":
+    "D'où viennent ses réponses ?",
   "Without search, ChatGPT answers from its training data, frozen at a date. With web search, open to all its users since late 2024, it reads pages live and cites its links.":
     "Sans recherche, ChatGPT répond depuis ses données d'entraînement, arrêtées à une date. Avec la recherche web, ouverte à tous ses utilisateurs depuis fin 2024, il lit des pages en direct et cite ses liens.",
   "What sets it apart":
@@ -4466,8 +5332,8 @@ window.LicterFR = {
     "AGENCE CHATGPT",
   "Why work with a ChatGPT agency?":
     "Pourquoi passer par une agence ChatGPT ?",
-  "ChatGPT provides data. A ChatGPT agency like Licter turns it into a decision: here is how we use it.":
-    "ChatGPT fournit des données. Une agence ChatGPT comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "ChatGPT provides data: mentions, volumes, dashboards. A ChatGPT agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "ChatGPT fournit des données : des mentions, des volumes, des tableaux de bord. Une agence ChatGPT comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "A question asked once, by one person":
     "Une question posée une fois, par une seule personne",
   "Answers that change from one try to the next":
@@ -4996,8 +5862,8 @@ window.LicterFR = {
     "AGENCE GOOGLE ACTUALITÉS",
   "Why work with a Google News agency?":
     "Pourquoi passer par une agence Google Actualités ?",
-  "Google News provides data. A Google News agency like Licter turns it into a decision: here is how we use it.":
-    "Google Actualités fournit des données. Une agence Google Actualités comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Google News provides data: mentions, volumes, dashboards. A Google News agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Google Actualités fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Google Actualités comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Google News on its own":
     "Google Actualités seul",
   "Google News with Licter":
@@ -5102,8 +5968,8 @@ window.LicterFR = {
     "AGENCE SOCIAL BLADE",
   "Why work with a Social Blade agency?":
     "Pourquoi passer par une agence Social Blade ?",
-  "Social Blade provides data. A Social Blade agency like Licter turns it into a decision: here is how we use it.":
-    "Social Blade fournit des données. Une agence Social Blade comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Social Blade provides data: mentions, volumes, dashboards. A Social Blade agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Social Blade fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Social Blade comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Social Blade on its own":
     "Social Blade seul",
   "Social Blade with Licter":
@@ -5190,8 +6056,8 @@ window.LicterFR = {
     "AGENCE CLAUDE",
   "Why work with a Claude agency?":
     "Pourquoi passer par une agence Claude ?",
-  "Claude provides data. A Claude agency like Licter turns it into a decision: here is how we use it.":
-    "Claude fournit des données. Une agence Claude comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Claude provides data: mentions, volumes, dashboards. A Claude agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Claude fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Claude comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Claude on its own":
     "Claude seul",
   "Claude with Licter":
@@ -5312,8 +6178,8 @@ window.LicterFR = {
     "AGENCE GEMINI",
   "Why work with a Gemini agency?":
     "Pourquoi passer par une agence Gemini ?",
-  "Gemini provides data. A Gemini agency like Licter turns it into a decision: here is how we use it.":
-    "Gemini fournit des données. Une agence Gemini comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Gemini provides data: mentions, volumes, dashboards. A Gemini agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Gemini fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Gemini comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Gemini on its own":
     "Gemini seul",
   "Gemini with Licter":
@@ -5444,8 +6310,8 @@ window.LicterFR = {
     "AGENCE PERPLEXITY",
   "Why work with a Perplexity agency?":
     "Pourquoi passer par une agence Perplexity ?",
-  "Perplexity provides data. A Perplexity agency like Licter turns it into a decision: here is how we use it.":
-    "Perplexity fournit des données. Une agence Perplexity comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Perplexity provides data: mentions, volumes, dashboards. A Perplexity agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Perplexity fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Perplexity comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Perplexity on its own":
     "Perplexity seul",
   "Perplexity with Licter":
@@ -5574,8 +6440,8 @@ window.LicterFR = {
     "AGENCE GROK",
   "Why work with a Grok agency?":
     "Pourquoi passer par une agence Grok ?",
-  "Grok provides data. A Grok agency like Licter turns it into a decision: here is how we use it.":
-    "Grok fournit des données. Une agence Grok comme Licter en tire une décision : voici comment nous l'utilisons.",
+  "Grok provides data: mentions, volumes, dashboards. A Grok agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Grok fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Grok comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Grok on its own":
     "Grok seul",
   "Grok with Licter":
@@ -7491,875 +8357,4 @@ window.LicterFR = {
   "The listening platforms Licter runs, the search, press and AI tools around them, and the 22 networks the data comes from.":
     "Les plateformes d'écoute que Licter opère, les outils de recherche, de presse et d'IA qui les complètent, et les 22 réseaux d'où viennent les données.",
   /* ---- end tech pages ---- */
-
-  /* ---- expertise pages (tools/build-expertise.py) ---- */
-  "Home":
-    "Accueil",
-  "Expertise":
-    "Expertise",
-  "Breadcrumb":
-    "Fil d'Ariane",
-  "of 6":
-    "sur 6",
-  "Social listening agency in Paris: what people say, read by people.":
-    "Agence de social listening à Paris : ce que les gens disent, lu par des gens.",
-  "A social listening agency and consultancy based in Paris, working for brands in France and abroad. Social networks, news, forums and reviews, collected on your perimeter and read by an analyst: volumes, topics, tone, and above all what it means for you.":
-    "Agence et cabinet de social listening basés à Paris, nous travaillons pour des marques en France et à l'international. Les réseaux sociaux, la presse, les forums et les avis, collectés sur votre périmètre et lus par un analyste : volumes, sujets, tonalité, et surtout ce que ça veut dire pour vous.",
-  "The questions it answers":
-    "Les questions auxquelles elle répond",
-  "The topics rising, and the ones fading":
-    "Les sujets qui montent, et ceux qui retombent",
-  "The tone, topic by topic, not on average":
-    "La tonalité, sujet par sujet, pas en moyenne",
-  "How a conversation travels, and who carries it":
-    "Comment une conversation circule, et qui la porte",
-  "Day 0":
-    "J0",
-  "The perimeter, the markets, the languages and the sources.":
-    "Le périmètre, les marchés, les langues et les sources.",
-  "Day 2":
-    "J+2",
-  "Queries set up, the noise removed.":
-    "Les requêtes paramétrées, le bruit écarté.",
-  "Day 5":
-    "J+5",
-  "An analyst reads the topics, the tone and who carries them.":
-    "Un analyste lit les sujets, la tonalité et qui les porte.",
-  "Day 7":
-    "J+7",
-  "Readout":
-    "Restitution",
-  "A summary, and what to do with it.":
-    "Une synthèse, et ce qu'il faut en faire.",
-  "Social listening agency in Paris":
-    "Agence de social listening à Paris",
-  "Thirty minutes with a consultant, on your brand.":
-    "Trente minutes avec un consultant, sur votre marque.",
-  "A consultant calls you back within 30 minutes on weekdays":
-    "Un consultant vous rappelle sous 30 minutes, en semaine",
-  "Your question framed, with the right sources and tools":
-    "Votre question cadrée, avec les sources et les outils adaptés",
-  "A costed proposal after the call":
-    "Une proposition chiffrée après l'échange",
-  "What people say,":
-    "Ce que les gens disent,",
-  "read by people.":
-    "lu par des gens.",
-  "Get a call back from a consultant":
-    "Être rappelé par un consultant",
-  "Or book a meeting":
-    "Ou prendre rendez-vous",
-  "Your brand":
-    "Votre marque",
-  "Work email":
-    "E-mail professionnel",
-  "Noted. A consultant gets back to you within 30 minutes on weekdays.":
-    "C'est noté. Un consultant vous recontacte dans les 30 minutes, en semaine.",
-  "A consultant, not a sales team.":
-    "Un consultant, pas un commercial.",
-  "DEFINITION":
-    "DÉFINITION",
-  "Social listening at a glance.":
-    "Le social listening en bref.",
-  "Social listening is the analysis of what people say publicly online about a brand, a product, a competitor or a topic: social networks, forums, review sites and the press. It is used to understand a perception, spot what is changing and decide what to do about it.":
-    "Le social listening est l'analyse de ce que les gens disent publiquement en ligne d'une marque, d'un produit, d'un concurrent ou d'un sujet : réseaux sociaux, forums, sites d'avis et presse. Il sert à comprendre une perception, repérer ce qui change et décider quoi en faire.",
-  "What it reads:":
-    "Ce qu'il lit :",
-  "public conversations, in more than twenty languages, over a chosen period.":
-    "les conversations publiques, dans plus de vingt langues, sur une période choisie.",
-  "What it measures:":
-    "Ce qu'il mesure :",
-  "volume, share of voice, tone, topics and the voices that carry.":
-    "le volume, la part de voix, la tonalité, les sujets et les voix qui portent.",
-  "What it delivers:":
-    "Ce qu'il livre :",
-  "a reading checked by an analyst, and a recommendation rather than a dashboard.":
-    "une lecture qualifiée par un analyste, et une recommandation plutôt qu'un tableau de bord.",
-  "Read the full social listening guide":
-    "Lire le guide complet du social listening",
-  "WHAT IT PICKS UP":
-    "CE QU'ELLE ENTEND",
-  "What Social listening lets you hear.":
-    "Ce que le social listening permet d'entendre.",
-  "Each question leads to the use case where this listening makes the difference.":
-    "Chaque question mène au cas d'usage où cette écoute fait la différence.",
-  "“What is being said about us, and is it changing?”":
-    "« Que dit-on de nous, et est-ce que ça change ? »",
-  "See the use case":
-    "Voir le cas d'usage",
-  "“Which words do our customers use to talk about us?”":
-    "« Quels mots nos clients utilisent-ils pour parler de nous ? »",
-  "“Did our campaign change the way people talk about us?”":
-    "« Notre campagne a-t-elle changé la façon dont on parle de nous ? »",
-  "Social media monitoring for companies: the guide":
-    "Veille des réseaux sociaux en entreprise : le guide",
-  "The 22 networks we listen to":
-    "Les 22 réseaux que nous écoutons",
-  "Doubling your social listening impact in 6 months":
-    "Doubler l'impact de votre social listening en 6 mois",
-  "Further reading":
-    "À lire",
-  "What is social listening?":
-    "Qu'est-ce que le social listening ?",
-  "It is also called social media listening. In practice, a study starts from a question about a brand, a product, a competitor or a topic, gathers the public posts that discuss it on social networks, forums, review sites, blogs and the online press, then reads them. The goal is not to count mentions, but to understand a perception and decide what to do about it.":
-    "On l'appelle aussi écoute sociale ou social media listening. Concrètement, une étude part d'une question sur une marque, un produit, un concurrent ou un sujet, rassemble les publications publiques qui en parlent sur les réseaux sociaux, les forums, les sites d'avis, les blogs et la presse en ligne, puis les lit. L'objectif n'est pas de compter des mentions, mais de comprendre une perception et de décider quoi en faire.",
-  "Where a classic survey asks a few hundred people, social listening observes what thousands say spontaneously, without being asked. That is its strength: observed behaviour rather than a declared answer. It is also its limit: it only reads what is public, and only what people choose to say.":
-    "Là où une étude classique interroge quelques centaines de personnes, le social listening observe ce que des milliers de personnes disent spontanément, sans qu'on leur ait posé la question. C'est sa force : un comportement observé plutôt qu'une réponse déclarée. C'est aussi sa limite : on n'y lit que ce qui est public, et seulement ce que les gens choisissent de dire.",
-  "Social listening, monitoring, tracking: the differences":
-    "Social listening, veille, monitoring : les différences",
-  "Social media monitoring signals what happens: a mention, a spike, a crisis taking off. It serves to react, often in real time. Social listening goes further: it analyses the conversation over time to explain why it moves, who carries it and what it says about a market.":
-    "Le social media monitoring, ou veille, signale ce qui se passe : une mention, un pic, une crise qui démarre. Il sert à réagir, souvent en temps réel. Le social listening va plus loin : il analyse la conversation dans la durée pour expliquer pourquoi elle bouge, qui la porte et ce qu'elle dit d'un marché.",
-  "Both use the same data and the same platforms. The difference lies in the question asked and in the reading. Monitoring answers \"did something happen?\"; a social listening study answers \"what should we conclude, and what should we decide?\". For monitoring and crisis management, see our guide to social media monitoring and our Vigie 360 offer.":
-    "Les deux utilisent les mêmes données et les mêmes plateformes. La différence tient à la question posée et au travail de lecture. Une veille répond à « s'est-il passé quelque chose ? » ; une étude de social listening répond à « que faut-il en conclure, et que décider ? ». Pour la veille et la gestion de crise, voir notre guide de la veille des réseaux sociaux et notre offre Vigie 360.",
-  "What social listening helps you decide":
-    "Ce que le social listening permet de décider",
-  "A brand's reputation: what is said about it, on which subjects, in which tone, and how that evolves against competitors. A campaign: what it changed in the conversation, audience by audience, and what really carried it. A product: what customers like, what irritates them, and the words they use to talk about it.":
-    "La réputation d'une marque : ce qui se dit d'elle, sur quels sujets, avec quelle tonalité, et comment cela évolue face aux concurrents. Une campagne : ce qu'elle a changé dans la conversation, audience par audience, et ce qui a vraiment porté. Un produit : ce que les clients aiment, ce qui les irrite, et le vocabulaire qu'ils emploient pour en parler.",
-  "And a market's trends: the subjects gaining speed, the expectations nobody covers well, the weak signals that announce a shift. In each case, the value is not in the dashboard, but in the decision it lets you make and defend.":
-    "Les tendances d'un marché, enfin : les sujets qui accélèrent, les attentes mal couvertes, les signaux faibles qui annoncent un basculement. Dans chaque cas, la valeur n'est pas dans le tableau de bord, mais dans la décision qu'il permet de prendre et de défendre.",
-  "Why do social listening?":
-    "Pourquoi faire du social listening ?",
-  "Because the conversation about your brand already exists, whether you listen or not. 5.66 billion active users are on social media, 68.7% of the world's population (DataReportal, Digital 2026). Your customers compare, recommend, complain and ask questions there, without anyone asking them.":
-    "Parce que la conversation sur votre marque existe déjà, que vous l'écoutiez ou non. 5,66 milliards d'utilisateurs actifs peuplent les réseaux sociaux, soit 68,7 % de la population mondiale (DataReportal, Digital 2026). Vos clients y comparent, recommandent, se plaignent et posent des questions, sans que personne ne les interroge.",
-  "Social listening gives access to that spontaneous voice, faster than a survey and less steered than a questionnaire. It helps anticipate a crisis, measure a campaign, understand a market before launching a product there, and follow competitors on their own ground.":
-    "Le social listening donne accès à cette parole spontanée, plus rapide qu'une étude et moins orientée qu'un questionnaire. Il sert à anticiper une crise, à mesurer une campagne, à comprendre un marché avant d'y lancer un produit, et à suivre ses concurrents sur leurs propres terrains.",
-  "Where the data comes from":
-    "D'où viennent les données",
-  "From public posts: X, TikTok, Instagram, Facebook, YouTube, LinkedIn, Reddit, and some fifteen other networks depending on countries and subjects, including Weibo, Douyin or VK in the markets where they matter. Add forums, review sites, blogs and online press, because a subject keeps travelling from one to the other.":
-    "Des publications publiques : X, TikTok, Instagram, Facebook, YouTube, LinkedIn, Reddit, et une quinzaine d'autres réseaux selon les pays et les sujets, dont Weibo, Douyin ou VK pour les marchés où ils comptent. S'y ajoutent les forums, les sites d'avis, les blogs et la presse en ligne, parce qu'un sujet circule constamment de l'un à l'autre.",
-  "Private messaging, closed accounts and private groups remain out of reach. Coverage also varies by network, as each one regulates access to its data: before every study, we check what is really covered for the question asked. Our network pages detail what each platform lets us read.":
-    "Les messageries privées, les comptes fermés et les groupes privés restent hors de portée. La couverture varie aussi selon les réseaux, qui encadrent l'accès à leurs données : avant chaque étude, nous vérifions ce qui est réellement couvert pour la question posée. Nos pages réseaux détaillent ce que chaque plateforme permet de lire.",
-  "The method, in five steps":
-    "La méthode, en cinq temps",
-  "It all starts with the question: the decision the study must inform, and what would count as an answer. Then come the perimeter and the queries: brands, products, competitors, markets, languages, and Boolean queries tested to rule out homonyms and noise. It is the most underestimated part, and everything else depends on it.":
-    "Tout commence par la question : la décision que l'étude doit éclairer, et ce qui compterait comme une réponse. Viennent ensuite le périmètre et les requêtes : marques, produits, concurrents, marchés, langues, et des requêtes booléennes testées pour écarter les homonymes et le bruit. C'est le travail le plus sous-estimé, et celui dont dépend tout le reste.",
-  "Then collection and cleaning, on the right sources. Then the reading: an analyst who speaks the market's language qualifies the posts, connects the signals and checks what the tool has classified. Finally the readout: a recommendation presented to the teams concerned, with what supports it and what to follow next.":
-    "Puis la collecte et le nettoyage, sur les sources adaptées. Puis la lecture : un analyste qui parle la langue du marché qualifie les publications, relie les signaux et vérifie ce que l'outil a classé. Enfin la restitution : une recommandation présentée aux équipes concernées, avec ce qui la fonde et ce qu'il faudra suivre ensuite.",
-  "Which social listening metrics should you track?":
-    "Quels indicateurs suivre en social listening ?",
-  "Mention volume and how it changes, first, to know whether people talk about you more or less. Share of voice, next: your place in the category's conversation against your competitors. Tone, positive, neutral or negative, provided an analyst checks it. Reach, meaning the number of people potentially exposed.":
-    "Le volume de mentions et son évolution, d'abord, pour savoir si l'on parle plus ou moins de vous. La part de voix, ensuite : votre place dans la conversation de la catégorie face à vos concurrents. La tonalité, positive, neutre ou négative, à condition d'être relue par un analyste. La portée, c'est-à-dire le nombre de personnes potentiellement exposées.",
-  "The most useful metrics are often qualitative: the subjects gaining ground, the recurring irritants, the words customers use, and the voices that really carry the conversation. A good tracking sheet keeps few of them, but ties each one to a decision.":
-    "Les indicateurs les plus utiles sont souvent qualitatifs : les sujets qui montent, les irritants qui reviennent, les mots employés par les clients, et les voix qui portent vraiment la conversation. Un bon tableau de suivi en garde peu, mais les relie chacun à une décision.",
-  "Social listening, network by network":
-    "Le social listening, réseau par réseau",
-  "Each network tells a different story. TikTok and Instagram show uses, trends and how a product is staged. X and Threads carry news and controversy. LinkedIn says what professionals and executives think. YouTube keeps long reviews and tutorials, Reddit and forums the precise questions and comparisons between users.":
-    "Chaque réseau raconte autre chose. TikTok et Instagram montrent les usages, les tendances et la façon dont un produit est mis en scène. X et Threads portent l'actualité et les polémiques. LinkedIn dit ce que pensent les professionnels et les dirigeants. YouTube garde les avis longs et les tutoriels, Reddit et les forums les questions précises et les comparaisons entre utilisateurs.",
-  "A social listening study therefore picks its networks according to the question, not out of habit, and states what each one really lets you read, what stays private and what the platforms give access to. Our pages on the 22 networks detail these rules one by one.":
-    "Une étude de social listening choisit donc ses réseaux selon la question, pas par habitude, et précise ce que chacun permet réellement de lire, ce qui reste privé et ce à quoi les plateformes donnent accès. Nos pages consacrées aux 22 réseaux détaillent ces règles une à une.",
-  "Social listening tools: why a tool is not enough":
-    "Outils de social listening : pourquoi un outil ne suffit pas",
-  "The market counts many social listening platforms: Talkwalker, Brandwatch, Sprinklr, Radarly, YouScan, Visibrain, among others, each with its strengths. Some excel at long history, others at real time, images or audiences. None covers everything, and most questions are answered by crossing two tools.":
-    "Le marché compte de nombreuses plateformes de social listening : Talkwalker, Brandwatch, Sprinklr, Radarly, YouScan, Visibrain, entre autres, chacune avec ses points forts. Certaines excellent dans l'historique long, d'autres dans le temps réel, l'image ou les audiences. Aucune ne couvre tout, et la plupart des questions se règlent en croisant deux outils.",
-  "Above all, a tool collects and sorts; it does not decide. Automatic sentiment gets irony wrong, badly written queries bring back noise, and a volume spike never says why it exists. That is why so many licences stay underused: the software is there, but nobody has the time to make it speak.":
-    "Surtout, un outil collecte et classe ; il ne décide pas. Le sentiment automatique se trompe sur l'ironie, les requêtes mal écrites ramènent du bruit, et un pic de volume ne dit jamais pourquoi il existe. C'est pourquoi tant de licences restent sous-utilisées : le logiciel est là, mais personne n'a le temps de le faire parler.",
-  "Real examples":
-    "Des exemples concrets",
-  "During GP Explorer 3, Squeezie's event, we read with Visibrain more than 185,000 tweets posted at peak audience: 95% of mentions were positive or neutral, and the conversation outgrew comparable digital events. Our analysis details what the event changed for partner brands.":
-    "Lors du GP Explorer 3, l'événement de Squeezie, nous avons lu avec Visibrain plus de 185 000 tweets publiés au pic d'audience : 95 % des mentions étaient positives ou neutres, et la conversation a dépassé celle des grands événements numériques comparables. Notre analyse détaille ce que l'événement a changé pour les marques partenaires.",
-  "During the Huda Beauty boycott, we followed the crisis on TikTok, Instagram and X, in 51 languages: a record 26.1 million TikTok views in a day, carried mostly by micro-influencers, for a subject that, once read, was not really a brand crisis.":
-    "Pendant le boycott de Huda Beauty, nous avons suivi la crise sur TikTok, Instagram et X, dans 51 langues : un record de 26,1 millions de vues sur TikTok en une journée, porté surtout par des micro-influenceurs, pour un sujet qui, à la lecture, n'était pas vraiment une crise de marque.",
-  "For La Poste, we measured for a year how well its marketing actions worked, in positioning and in engagement of the audiences targeted. For HP, we crossed panel and social data on more than 5,000 criteria to segment consumer niches and feed product strategy.":
-    "Pour La Poste, nous avons mesuré pendant un an l'efficacité de ses actions marketing, en positionnement et en engagement des publics visés. Pour HP, nous avons croisé données de panel et social data sur plus de 5 000 critères pour segmenter des niches de consommateurs et nourrir la stratégie produit.",
-  "What practitioners say":
-    "Ce qu'en disent les praticiens",
-  "Charles Besson, head of global social listening at L'Oréal, sums up its place next to surveys this way: it comes on top of them and adds things traditional studies cannot always see. Charlotte Clemens, who opened Talkwalker's Paris office, likewise sets the spontaneous opinion of social media against the declared opinion of research institutes: they are complementary.":
-    "Charles Besson, à la tête du social listening monde chez L'Oréal, résume ainsi sa place face aux études : « ça va venir en plus de ça, ça va venir ajouter des choses qu'on peut pas forcément voir par des études traditionnelles ». Charlotte Clemens, qui a ouvert le bureau parisien de Talkwalker, oppose de la même façon l'opinion spontanée des réseaux à l'opinion déclarée des instituts : « on est complémentaire ».",
-  "All of them insist on the human part. For Jean-Christophe Gatuingt, co-founder of Visibrain, social networks are just one signal among others, in the service of a fuller method; for Nathalie Litvine, at Meltwater, artificial intelligence is precious, but you still need a brain to do something with it. Their full interviews are on our blog.":
-    "Tous insistent sur la part humaine. Pour Jean-Christophe Gatuingt, cofondateur de Visibrain, les réseaux sociaux sont « juste un signal parmi d'autres au service d'une méthodologie plus complète » ; pour Nathalie Litvine, chez Meltwater, l'intelligence artificielle est précieuse, mais « il faut avoir un cerveau aussi pour ensuite en faire quelque chose ». Leurs entretiens complets sont sur notre blog.",
-  "The limits to know":
-    "Les limites à connaître",
-  "Social listening does not represent a population: it says what those who speak up think, not everyone. It only reads what is public. It depends on the words chosen, and a product can be called something other than its name, especially from one country to another. Automatic sentiment gets irony wrong, and some languages are handled less well than others.":
-    "Le social listening n'est pas représentatif d'une population : il dit ce que pensent ceux qui s'expriment, pas tout le monde. Il ne lit que le public. Il dépend des mots choisis, et un produit peut être désigné autrement que par son nom, surtout d'un pays à l'autre. Le sentiment automatique se trompe sur l'ironie, et certaines langues sont moins bien traitées que d'autres.",
-  "Finally, there is not a conversation about everything. A good study says so plainly, rather than making too-small volumes speak. That is why, before starting, we check that the conversation exists for the question asked, and why we often cross social listening with search, audiences or survey data.":
-    "Enfin, il n'y a pas de conversation sur tout. Une bonne étude le dit clairement, plutôt que de faire parler des volumes trop faibles. C'est pourquoi nous vérifions, avant de commencer, que la conversation existe pour la question posée, et que nous croisons souvent le social listening avec la recherche, les audiences ou des données d'étude.",
-  "Social listening in France":
-    "Le social listening en France",
-  "In France, social listening sits within the GDPR: public content is still personal data, and the CNIL expects collection to be limited to what serves the purpose. In practice, a serious study works on trends and aggregated communities, never on individual profiles.":
-    "En France, le social listening s'inscrit dans le cadre du RGPD : les contenus publics restent des données personnelles, et la CNIL attend une collecte limitée à ce qui sert l'objectif. En pratique, une étude sérieuse travaille sur des tendances et des communautés agrégées, jamais sur des profils individuels.",
-  "French conversation also has its own traits: irony, slang or verlan, which a social listening tool's automatic sentiment reads poorly, and its own places, for example the large general forums, customer reviews or the regional press. That is why the reading is done in the market's language, by an analyst. Licter, a social listening agency in Paris, reads the conversation in France and in more than twenty languages for brands that also follow international markets.":
-    "La conversation française a aussi ses particularités : l'ironie, l'argot ou le verlan, que le sentiment automatique d'un outil de social listening lit mal, et des lieux propres, par exemple les grands forums généralistes, les avis clients ou la presse régionale. C'est pourquoi la lecture se fait dans la langue du marché, par un analyste. Licter, agence de social listening à Paris, lit la conversation en France et dans plus de vingt langues pour les marques qui suivent aussi l'international.",
-  "Social listening agency or consultancy: what you buy":
-    "Agence ou cabinet de social listening : ce que vous achetez",
-  "With a social listening agency or consultancy, you do not buy access to software, but an answer. The choice of tools, the writing of queries, the reading in the market's language and the recommendation are taken care of. Your teams keep their time for the decision.":
-    "Avec une agence ou un cabinet de social listening, vous n'achetez pas un accès à un logiciel, mais une réponse. Le choix des outils, l'écriture des requêtes, la lecture dans la langue du marché et la recommandation sont pris en charge. Vos équipes gardent leur temps pour la décision.",
-  "Licter is a social data intelligence consultancy based in Paris, working for brands in France and abroad: we run the market's platforms without being their publisher, and we pick the tool by the question. If you already have a licence, we can take it over and make it work. A first read comes about a week after scoping.":
-    "Licter est un cabinet de conseil en social data intelligence basé à Paris, qui travaille pour des marques en France et à l'international : nous opérons les plateformes du marché sans en être l'éditeur, et nous choisissons l'outil selon la question. Si vous avez déjà une licence, nous pouvons la reprendre et la faire servir. Une première lecture arrive environ une semaine après le cadrage.",
-  "Written by":
-    "Rédigé par",
-  "and":
-    "et",
-  ", co-founders of Licter":
-    ", cofondateurs de Licter",
-  "Contents":
-    "Sommaire",
-  "SOCIAL LISTENING, IN DETAIL":
-    "LE SOCIAL LISTENING, EN DÉTAIL",
-  "Social listening: definition, method, metrics and examples.":
-    "Le social listening : définition, méthode, indicateurs et exemples.",
-  "Sources":
-    "Sources",
-  "METHOD":
-    "MÉTHODE",
-  "How it runs":
-    "Comment ça se passe",
-  "Indicative timings for a first read.":
-    "Durées indicatives pour une première lecture.",
-  "LIMITS AND COMPLEMENTS":
-    "LIMITES ET COMPLÉMENTS",
-  "Its limits, and what completes it.":
-    "Ses limites, et ce qui la complète.",
-  "Its limit":
-    "Sa limite",
-  "Who these people are beyond their post: that is audience listening.":
-    "Qui sont ces gens au-delà de leur publication : c'est l'audience listening.",
-  "What it cannot say on its own":
-    "Ce qu'elle ne dit pas seule",
-  "The platform":
-    "La plateforme",
-  "Broad coverage, over time":
-    "Couverture large, sur la durée",
-  "See the page":
-    "Voir la page",
-  "Real time and the media":
-    "Le temps réel et les médias",
-  "In the offer":
-    "Dans l'offre",
-  "Previous":
-    "Écoute précédente",
-  "Next":
-    "Écoute suivante",
-  "IN THEIR WORDS":
-    "DANS LEURS MOTS",
-  "They talk about it.":
-    "Ils en parlent.",
-  "In their words":
-    "Dans leurs mots",
-  "EVERY WAY OF LISTENING":
-    "TOUTES LES ÉCOUTES",
-  "The five other ways of listening.":
-    "Les cinq autres écoutes.",
-  "Audience listening":
-    "Audience listening",
-  "Influence listening":
-    "Influence listening",
-  "AI listening":
-    "AI listening",
-  "Live listening":
-    "Live listening",
-  "All our expertise":
-    "Toute notre expertise",
-  "Frequently asked questions":
-    "Questions fréquentes",
-  "Which sources do you read?":
-    "Quelles sources lisez-vous ?",
-  "Social networks, online news, forums, blogs and reviews, in more than twenty languages, depending on the perimeter set with you.":
-    "Les réseaux sociaux, la presse en ligne, les forums, les blogs et les avis, dans plus de vingt langues, selon le périmètre fixé avec vous.",
-  "How is it different from a monitoring tool?":
-    "Quelle différence avec un outil de veille ?",
-  "The tool collects. We pick the sources, remove the noise and read the result, to tell you what to do with it.":
-    "L'outil collecte. Nous choisissons les sources, écartons le bruit et lisons le résultat, pour vous dire ce qu'il faut en faire.",
-  "Which social listening tools do you use?":
-    "Quels outils de social listening utilisez-vous ?",
-  "The platforms on the market, including Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly and YouScan, among 19 listening, search and AI tools. We pick the social listening tool by the question and read the result: you need no licence of your own.":
-    "Les plateformes du marché, dont Talkwalker, Brandwatch, Sprinklr, Visibrain, Radarly et YouScan, parmi 19 outils d'écoute, de recherche et d'IA. Nous choisissons l'outil de social listening selon la question et lisons le résultat : vous n'avez besoin d'aucune licence.",
-  "Are you a social listening agency in France?":
-    "Êtes-vous une agence de social listening en France ?",
-  "Yes: Licter is a social listening agency and consultancy based in Paris. We work for French and international brands, in France and in other markets, in more than twenty languages.":
-    "Oui : Licter est une agence et un cabinet de social listening basé à Paris. Nous travaillons pour des marques françaises et internationales, en France et sur les autres marchés, dans plus de vingt langues.",
-  "What do you receive at the end of a study?":
-    "Que recevez-vous à la fin d'une étude ?",
-  "A readout by the consultant who read the data, about a week after framing: the topics, the tone and who carries them, a written summary, and what to do with it. For continuous monitoring, alerts read by an analyst and a regular review.":
-    "Une restitution par le consultant qui a lu les données, environ une semaine après le cadrage : les sujets, la tonalité et qui les porte, une synthèse écrite, et ce qu'il faut en faire. Pour une veille continue, des alertes lues par un analyste et une revue régulière.",
-  "How much does a social listening study cost?":
-    "Combien coûte une étude de social listening ?",
-  "On quotation: the price depends on the scope (brands, markets, languages, sources), the duration and how often you receive deliverables. After a first thirty-minute call, we send a costed proposal.":
-    "Sur devis : le prix dépend du périmètre (marques, marchés, langues, sources), de la durée et du rythme des livrables. Après un premier échange de trente minutes, nous envoyons une proposition chiffrée.",
-  "How long before a first read?":
-    "Combien de temps avant une première lecture ?",
-  "About a week after framing, faster for an urgent topic.":
-    "Environ une semaine après le cadrage, plus vite pour un sujet urgent.",
-  "Do we need a monitoring tool already?":
-    "Faut-il déjà avoir un outil de veille ?",
-  "No. We work with our own platforms. If you have one, we can also take it over and make it speak.":
-    "Non. Nous travaillons avec nos plateformes. Si vous en avez une, nous pouvons aussi la reprendre et la faire parler.",
-  "Let's talk about what is said about you.":
-    "Parlons de ce qui se dit sur vous.",
-  "Audience intelligence: who your audiences really are, beyond age and gender.":
-    "Audience intelligence : qui sont vraiment vos audiences, au-delà de l'âge et du sexe.",
-  "We profile communities from what they follow, share and consume: interests, brand affinities, media. Enough to replace a declared persona with observed behaviour.":
-    "Nous profilons les communautés à partir de ce qu'elles suivent, partagent et consomment : centres d'intérêt, affinités de marque, médias. De quoi remplacer un persona déclaratif par un comportement observé.",
-  "A community's interests and passions":
-    "Les centres d'intérêt et les passions d'une communauté",
-  "The brands and media it follows":
-    "Les marques et les médias qu'elle suit",
-  "The overlaps between communities":
-    "Les recoupements entre communautés",
-  "The audiences to profile, and the decision to inform.":
-    "Les audiences à profiler, et la décision à éclairer.",
-  "Day 3":
-    "J+3",
-  "Profiling":
-    "Profilage",
-  "The behavioural panel brings out the communities.":
-    "Le panel comportemental fait apparaître les communautés.",
-  "Affinities, media and overlaps, read by an analyst.":
-    "Affinités, médias et recoupements, lus par un analyste.",
-  "Day 10":
-    "J+10",
-  "The communities to prioritise, and how to reach them.":
-    "Les communautés à prioriser, et comment les toucher.",
-  "Who your audiences":
-    "Qui sont vraiment",
-  "really are.":
-    "vos audiences.",
-  "What Audience listening lets you hear.":
-    "Ce que l'audience listening permet d'entendre.",
-  "“Who really are our customers, beyond age and gender?”":
-    "« Qui sont vraiment nos clients, au-delà de l'âge et du sexe ? »",
-  "“What matters to 18 to 30 year olds in our category?”":
-    "« Qu'est-ce qui compte pour les 18-30 ans dans notre catégorie ? »",
-  "“What do our customers expect at each step of the journey?”":
-    "« Qu'attendent nos clients à chaque étape du parcours ? »",
-  "Our audience use cases":
-    "Nos cas d'usage audiences",
-  "How Orange reads TikTok":
-    "Comment Orange analyse TikTok",
-  "Winning luxury cosmetics":
-    "Conquérir la cosmétique de luxe",
-  "What is audience intelligence?":
-    "Qu'est-ce que l'audience intelligence ?",
-  "Audience intelligence means describing a public from what it does online: the accounts it follows, the content it shares, the brands and media it consumes, the subjects it searches for. The result is not an average, but a map of communities, each with its size, its passions and its channels.":
-    "L'audience intelligence, ou intelligence des audiences, consiste à décrire un public à partir de ce qu'il fait en ligne : les comptes qu'il suit, les contenus qu'il partage, les marques et les médias qu'il consomme, les sujets qu'il recherche. Le résultat n'est pas une moyenne, mais une carte de communautés, chacune avec sa taille, ses passions et ses canaux.",
-  "The term covers what is also called audience analysis, a social media audience study, or consumer intelligence when the study looks at the consumers of a category. At Licter, we call it audience listening, one of our six listenings. The starting question stays the same: who really are the people you want to reach, beyond what you think you know about them, and where can you find them?":
-    "Le terme recouvre ce qu'on appelle aussi analyse d'audience, étude d'audience sur les réseaux sociaux ou consumer intelligence, quand l'étude porte sur les consommateurs d'une catégorie. Chez Licter, nous parlons d'audience listening, l'une de nos six écoutes. La question de départ reste la même : qui sont vraiment les gens que vous voulez toucher, au-delà de ce que vous croyez savoir d'eux, et où les trouver ?",
-  "What is consumer intelligence?":
-    "Qu'est-ce que la consumer intelligence ?",
-  "Consumer intelligence means studying the consumers of a category from what they leave online: what they say about products, what they search for, the brands and media they follow. It usually crosses social listening, audience intelligence and search data, to answer a market question rather than a brand question. Consumer insights are its output: what you keep from that reading to make a decision.":
-    "La consumer intelligence désigne l'étude des consommateurs d'une catégorie à partir de leurs traces en ligne : ce qu'ils disent des produits, ce qu'ils recherchent, les marques et les médias qu'ils suivent. Elle croise le plus souvent social listening, audience intelligence et données de recherche, pour répondre à une question de marché plutôt qu'à une question de marque. Les consumer insights en sont le résultat : ce que l'on retient de cette lecture pour décider.",
-  "It differs from a declared market study: nobody is asked anything, we observe what real consumers do and say, continuously. At Licter, a consumer intelligence study starts from a question, for example why a category is losing customers or what a target expects from a product, picks the sources that answer it, and ends with recommendations.":
-    "Elle se distingue d'une étude de marché déclarative : personne n'est interrogé, on observe ce que des consommateurs réels font et disent, en continu. Chez Licter, une étude de consumer intelligence part d'une question, par exemple pourquoi une catégorie perd des clients ou ce qu'une cible attend d'un produit, choisit les sources qui y répondent, et se termine par des recommandations.",
-  "Consumer intelligence and customer intelligence: what is the difference?":
-    "Consumer intelligence et customer intelligence : quelle différence ?",
-  "The two terms overlap. Customer intelligence usually starts from your own customers and your data: purchases, customer service, CRM. Consumer intelligence looks at the whole category, customers or not.":
-    "Les deux termes se recoupent. La customer intelligence part le plus souvent de vos propres clients et de vos données : achats, service client, CRM. La consumer intelligence, elle, regarde toute la catégorie, clients ou non.",
-  "In practice, the best studies cross the two: your data says who buys, the conversation and the audiences say why, and what those who do not buy yet are doing. That cross-reading is what we build with you, never working on individual profiles.":
-    "En pratique, les meilleures études croisent les deux : vos données disent qui achète, la conversation et les audiences disent pourquoi, et ce que font ceux qui n'achètent pas encore. C'est ce croisement que nous construisons avec vous, sans jamais travailler sur des profils individuels.",
-  "Audience intelligence and personas: what is the difference?":
-    "Audience intelligence et persona : quelle différence ?",
-  "A classic persona is often born in a workshop: a few interviews, sales data, and what the team believes it knows about its customers. It describes a typical person, with an age, a job and assumed motivations. Useful to align a team, it remains declarative, and it ages fast, because nobody tests it against data.":
-    "Un persona classique naît souvent en atelier : quelques entretiens, des données de vente, et ce que l'équipe croit savoir de ses clients. Il décrit une personne type, avec un âge, un métier et des motivations supposées. Utile pour aligner une équipe, il reste déclaratif, et il vieillit vite, parce que personne ne le confronte aux données.",
-  "Audience intelligence works the other way round: from observed behaviour to the portrait. It does not look for a typical customer, but for the real groups that make up an audience, and what sets them apart. For example, one public can bring together busy parents, cooking enthusiasts and sports fans, who do not expect the same thing. Personas come out of it, but built on measured criteria.":
-    "L'audience intelligence part dans l'autre sens : du comportement observé vers le portrait. Elle ne cherche pas une cliente type, mais les groupes réels qui composent une audience, et ce qui les distingue. Par exemple, un même public peut réunir des parents pressés, des passionnés de cuisine et des sportifs, qui n'attendent pas la même chose. Des personas en sortent, mais bâtis sur des critères mesurés.",
-  "Charles Besson, head of global social listening at L'Oréal, puts it his own way in our Audience First podcast: advocacy is overtaking influence. For a brand, that means looking for communities with several interests, and the advocates who drive them, rather than a target defined by a single criterion.":
-    "Charles Besson, à la tête du social listening monde chez L'Oréal, le dit à sa façon dans notre podcast Audience First : « l'advocacy est en train de dépasser l'influence ». Pour une marque, cela revient à chercher des communautés aux centres d'intérêt multiples, et les ambassadeurs qui les animent, plutôt qu'une cible définie par un seul critère.",
-  "Audience analysis, audience measurement, social listening: what sets them apart":
-    "Analyse d'audience, mesure d'audience, social listening : ce qui les distingue",
-  "Audience measurement counts: how many people watched a programme, visited a site or follow an account. The native analytics of social networks belong here: they describe your own followers, with some data on age, gender and location. Audience analysis answers another question: who are these people, and what do they do away from you?":
-    "La mesure d'audience compte : combien de personnes ont vu une émission, visité un site ou suivent un compte. Les statistiques natives des réseaux sociaux en font partie : elles décrivent vos propres abonnés, avec quelques données d'âge, de sexe et de lieu. L'analyse d'audience répond à une autre question : qui sont ces gens, et que font-ils ailleurs que chez vous ?",
-  "Social listening reads what people say about a brand or a subject. The two complement each other: one says what people think of you, the other who they are and what they like. A single study often crosses them, for example to learn what a community found in the panel says about your category, and in which words.":
-    "Le social listening, lui, lit ce que les gens disent d'une marque ou d'un sujet. Les deux se complètent : l'un dit ce qu'on pense de vous, l'autre qui sont les gens et ce qu'ils aiment. Une même étude les croise souvent, par exemple pour savoir ce qu'une communauté repérée dans le panel dit de votre catégorie, et avec quels mots.",
-  "What data does an audience study use?":
-    "Quelles données utilise une étude d'audience ?",
-  "The base is a behavioural panel drawn from social networks, where 5.66 billion active users post (68.7% of the world's population), described by more than 7,000 criteria, including interests, media diet, brand affinities and sociodemographics. This data is aggregated and anonymous: we read groups, never a person. It describes what people already do, with no questionnaire, and so with no declaration bias.":
-    "Le socle, c'est un panel comportemental tiré des réseaux sociaux, où 5,66 milliards d'utilisateurs actifs publient (68,7 % de la population mondiale), décrits par plus de 7 000 critères, dont les centres d'intérêt, le régime média, les affinités de marque et la sociodémographie. Ces données sont agrégées et anonymes : on lit des groupes, jamais une personne. Elles décrivent ce que les gens font déjà, sans questionnaire, donc sans biais de déclaration.",
-  "On top of this base come the public conversation, to know who talks about you and your category, and search, to know what each community looks for. Your own data, such as a customer file or an existing study, can be crossed in if you wish, but it is not needed for a first segmentation.":
-    "À ce socle s'ajoutent la conversation publique, pour savoir qui parle de vous et de votre catégorie, et la recherche, pour savoir ce que chaque communauté cherche. Vos propres données, comme un fichier clients ou une étude existante, peuvent être croisées si vous le souhaitez, mais elles ne sont pas nécessaires pour une première segmentation.",
-  "How do you segment an audience from its behaviour?":
-    "Comment segmenter une audience à partir de son comportement ?",
-  "We start from a reference audience: your customers, your brand's followers, a competitor's, or a population such as a country's 18 to 30 year-olds. The panel brings out the groups that make it up, from what they follow and consume together. We usually get five to eight communities, distinct enough to act on each one.":
-    "On part d'une audience de référence : vos clients, les abonnés de votre marque, ceux d'un concurrent, ou une population comme les 18-30 ans d'un pays. Le panel fait apparaître les groupes qui la composent, à partir de ce qu'ils suivent et consomment ensemble. On obtient en général cinq à huit communautés, assez distinctes pour qu'on puisse agir sur chacune.",
-  "Each community is then measured. Affinity says how much it likes your brand or your category. Penetration says what share of it you already reach. Opportunity brings the two together: a community that likes you but that you barely reach is often where the budget pays most. The use case Segment your target profiles shows a deliverable of this kind.":
-    "Chaque communauté est ensuite mesurée. L'affinité dit à quel point elle aime votre marque ou votre catégorie. La pénétration dit quelle part d'entre elle vous touchez déjà. L'opportunité rapproche les deux : une communauté qui vous aime mais que vous touchez peu est souvent celle où le budget rapporte le plus. Le cas d'usage Segmenter vos profils cibles montre un livrable de ce type.",
-  "An analyst then reads these groups, names them and checks that they make sense for the market. An algorithm groups; it does not understand why. For example, a community of \"sports fans\" can hide weekend joggers and triathletes, who buy nothing the same way and do not talk on the same networks.":
-    "Un analyste lit ensuite ces groupes, les nomme et vérifie qu'ils ont un sens pour le marché. Un algorithme regroupe, il ne comprend pas pourquoi. Par exemple, une communauté de « sportifs » peut cacher des coureurs du dimanche et des triathlètes, qui n'achètent rien de la même façon et ne se parlent pas sur les mêmes réseaux.",
-  "Which tools for audience analysis?":
-    "Quels outils pour l'analyse d'audience ?",
-  "Several families of tools exist side by side. The networks' native analytics describe your followers, platform by platform. Audience analysis tools, such as SoPrism, bought in 2022 by Audiense, profile any audience from aggregated data: interests, affinities, geography. Social listening platforms, finally, describe the people who talk about a subject.":
-    "Plusieurs familles d'outils coexistent. Les statistiques natives des réseaux décrivent vos abonnés, plateforme par plateforme. Les outils d'analyse d'audience, comme SoPrism, racheté en 2022 par Audiense, profilent n'importe quelle audience à partir de données agrégées : centres d'intérêt, affinités, géographie. Les plateformes de social listening, enfin, décrivent ceux qui parlent d'un sujet.",
-  "None is enough alone. SoPrism reads Facebook and Instagram, not the other networks, and it says who people are, not what they say. So we cross it with a listening platform such as Talkwalker, with Social Blade to follow followers and views, or with Meta Ads to see competitors' running ads. Our SoPrism page details these limits.":
-    "Aucun ne suffit seul. SoPrism lit Facebook et Instagram, pas les autres réseaux, et il dit qui sont les gens, pas ce qu'ils disent. Nous le croisons donc avec une plateforme d'écoute comme Talkwalker, avec Social Blade pour suivre abonnés et vues, ou avec Meta Ads pour voir les publicités en cours des concurrents. Notre page SoPrism détaille ces limites.",
-  "What audience intelligence helps you decide":
-    "Ce que l'audience intelligence permet de décider",
-  "First, where to put the budget. A segmentation can show that the brief's target is not where the opportunity is strongest, and that an overlooked community already likes the brand without buying it. The choice of platforms, formats and creators follows: a creator is picked for the audience they really reach, not for their follower count.":
-    "D'abord, où mettre le budget. Une segmentation peut montrer que la cible du brief n'est pas celle où l'opportunité est la plus forte, et qu'une communauté oubliée aime déjà la marque sans l'acheter. Le choix des plateformes, des formats et des créateurs suit : on retient un créateur pour l'audience qu'il touche réellement, pas pour son nombre d'abonnés.",
-  "Then, how to win a new public. The use case Rejuvenate your audiences compares the target generation with the current base, subject by subject and platform by platform, to find the bridges between the two. Comparing your audiences with a competitor's shows in the same way what they reach and you do not, and the angles to go after those publics.":
-    "Ensuite, comment gagner un public nouveau. Le cas d'usage Rajeunir vos audiences compare la génération visée à la base actuelle, sujet par sujet et plateforme par plateforme, pour trouver les ponts entre les deux. Comparer vos audiences à celles d'un concurrent montre de la même façon ce qu'il touche et pas vous, et les angles pour aller chercher ces publics.",
-  "Audience intelligence also feeds product strategy. For HP, in the United States, we built over six months a hybrid segmentation, crossing panel and social data on more than 5,000 criteria, completed with user stories, to segment consumer niches and strengthen product strategy from existing studies.":
-    "L'audience intelligence nourrit aussi la stratégie produit. Pour HP, aux États-Unis, nous avons construit pendant six mois une segmentation hybride, croisant données de panel et données des réseaux sociaux sur plus de 5 000 critères, complétée de user stories, pour segmenter des niches de consommateurs et renforcer la stratégie produit à partir d'études existantes.",
-  "One-off study or ongoing tracking?":
-    "Étude ponctuelle ou suivi dans le temps ?",
-  "A first study answers a precise question: who makes up our audience, where the opportunity lies, how to reach a new generation. A first read takes about ten days, from scoping to readout; a full gap analysis between two audiences takes more like two to three weeks.":
-    "Une première étude répond à une question précise : qui compose notre audience, où se trouve l'opportunité, comment toucher une nouvelle génération. Une première lecture prend une dizaine de jours, du cadrage à la restitution ; une analyse d'écart complète entre deux audiences demande plutôt deux à trois semaines.",
-  "But an audience moves: new creators emerge, one platform takes another's place, a community shifts. Reading the same communities again at regular intervals shows whether a media plan really changed anything. In our Social Insights offer, audience studies alternate with campaign reads and benchmarks, driven by the questions of the quarter.":
-    "Mais une audience bouge : de nouveaux créateurs émergent, une plateforme prend la place d'une autre, une communauté se déplace. Relire régulièrement les mêmes communautés montre si un plan média a vraiment changé quelque chose. Dans notre offre Social Insights, les études d'audience alternent avec les lectures de campagne et les benchmarks, selon les questions du trimestre.",
-  "The limits of audience intelligence":
-    "Les limites de l'audience intelligence",
-  "An audience study describes digital behaviour. It reads publics that are active online better than those that are not, and some sources cover only part of the networks: a tool built on Meta's data sees neither TikTok nor Twitch. It says who people are and what they like, not why they buy or give up buying.":
-    "Une étude d'audience décrit des comportements numériques. Elle lit mieux les publics actifs en ligne que ceux qui le sont peu, et certaines sources ne couvrent qu'une partie des réseaux : un outil fondé sur les données de Meta ne voit ni TikTok ni Twitch. Elle dit qui sont les gens et ce qu'ils aiment, pas pourquoi ils achètent ou renoncent à acheter.",
-  "It works on groups, never on individuals: that protects privacy, and it is a limit for anyone who would want to target one specific person. Finally, a statistical grouping without a reading remains a table. That is why we cross audience intelligence with social listening, search or your existing studies.":
-    "Elle travaille sur des groupes, jamais sur des individus : c'est une garantie pour la vie privée, et une limite pour qui voudrait viser une personne précise. Enfin, un regroupement statistique sans lecture reste un tableau. C'est pourquoi nous croisons l'audience intelligence avec le social listening, la recherche ou vos études existantes.",
-  "Audience intelligence agency or consultancy: what you buy":
-    "Agence ou cabinet d'audience intelligence : ce que vous achetez",
-  "With an audience intelligence agency or consultancy, you do not buy access to a profiling tool, but an answer to a marketing question. The choice of sources, the definition of the audiences to compare, the reading of the communities and the recommendation are handled by consultants, who read for themselves what they have set up.":
-    "Avec une agence ou un cabinet d'audience intelligence, vous n'achetez pas un accès à un outil de profilage, mais une réponse à une question de marketing. Le choix des sources, la définition des audiences à comparer, la lecture des communautés et la recommandation sont pris en charge par des consultants, qui lisent eux-mêmes ce qu'ils ont configuré.",
-  "Licter is an independent social data intelligence consultancy: we run SoPrism and 18 other tools without being their publisher, and we pick the source by the question. For a foreign market, the reading goes to analysts who speak the language and know the market. The simplest way to start: a thirty-minute call with a consultant.":
-    "Licter est un cabinet indépendant de social data intelligence : nous opérons SoPrism et 18 autres outils sans en être l'éditeur, et nous choisissons la source selon la question. Pour un marché étranger, la lecture est confiée à des analystes qui parlent la langue et connaissent le marché. Le plus simple pour commencer : un échange de trente minutes avec un consultant.",
-  "AUDIENCE INTELLIGENCE, IN DETAIL":
-    "L'AUDIENCE INTELLIGENCE, EN DÉTAIL",
-  "Read the answer":
-    "Lire la réponse",
-  "What to know before you start an audience study.":
-    "Tout ce qu'il faut savoir avant de lancer une étude d'audience.",
-  "What these people think of you in particular: that is social listening.":
-    "Ce que ces personnes pensent de vous en particulier : c'est le social listening.",
-  "Audiences, in detail":
-    "Les audiences, en détail",
-  "Audience intelligence or social listening: what is the difference?":
-    "Audience intelligence ou social listening : quelle différence ?",
-  "Social listening reads what is said about your brand and your market. Audience intelligence, which we call audience listening, describes the people themselves: what they follow, share and consume, whether they talk about you or not. One measures a conversation, the other draws a community; the two often meet in the same study.":
-    "Le social listening lit ce qui se dit sur votre marque et votre marché. L'audience intelligence, que nous appelons audience listening, décrit les gens eux-mêmes : ce qu'ils suivent, partagent et consomment, qu'ils parlent de vous ou non. L'un mesure une conversation, l'autre dessine une communauté ; les deux se croisent souvent dans une même étude.",
-  "Where does the audience data come from?":
-    "D'où viennent les données d'audience ?",
-  "From public interactions: accounts followed, content shared, engagement. We work on aggregated communities, never on individuals.":
-    "Des interactions publiques : comptes suivis, contenus partagés, engagements. Nous travaillons sur des communautés agrégées, jamais sur des individus.",
-  "Can we compare our audiences with a competitor's?":
-    "Peut-on comparer nos audiences à celles d'un concurrent ?",
-  "Yes, and it is often the most telling: what sets your communities apart from theirs, and the ones they reach and you do not.":
-    "Oui, et c'est souvent le plus parlant : ce qui distingue vos communautés des siennes, et celles qu'il touche et pas vous.",
-  "Is it GDPR-compliant?":
-    "Est-ce conforme au RGPD ?",
-  "Yes, on the basis of legitimate interest (GDPR Article 6(1)(f)). Public does not mean free to use: the CNIL points out that such data remains personal. So we only use public data, aggregated into communities, never individual profiles, and only what the question needs.":
-    "Oui, sur la base de l'intérêt légitime (article 6.1.f du RGPD). Publiques ne veut pas dire libres : la CNIL rappelle que ces données restent personnelles. Nous n'utilisons donc que des données publiques, agrégées en communautés, jamais de profils individuels, et seulement ce qui sert la question posée.",
-  "What do we do with the results?":
-    "Que fait-on des résultats ?",
-  "A media plan, messages and creators for each community: the readout ends with recommendations.":
-    "Un plan média, des messages et des créateurs par communauté : la restitution se termine par des recommandations.",
-  "What do you receive at the end?":
-    "Que recevez-vous à la fin ?",
-  "An audience profile presented by the consultant who built it, about ten days after framing: the communities that matter, their interests, the brands and media they follow, and which to prioritise.":
-    "Un profil d'audience présenté par le consultant qui l'a construit, environ dix jours après le cadrage : les communautés qui comptent, leurs centres d'intérêt, les marques et les médias qu'elles suivent, et celles à prioriser.",
-  "How much does an audience study cost?":
-    "Combien coûte une étude d'audience ?",
-  "Let's talk about your audiences.":
-    "Parlons de vos audiences.",
-  "The voices that carry, not the ones with the most followers.":
-    "Les voix qui portent, pas celles qui ont le plus d'abonnés.",
-  "Creators, experts, journalists, executives: we identify who really shapes your category's conversation, measure the overlap with your audience and flag the risks before a partnership.":
-    "Créateurs, experts, journalistes, dirigeants : nous identifions qui influence vraiment la conversation de votre catégorie, mesurons le recouvrement avec votre audience et signalons les risques avant un partenariat.",
-  "Who starts a topic, and who relays it":
-    "Qui lance un sujet, et qui le relaie",
-  "The overlap between their audience and yours":
-    "Le recouvrement entre leur audience et la vôtre",
-  "Past stances, and the risks":
-    "Les prises de position passées, et les risques",
-  "The category, the goal and the target audiences.":
-    "La catégorie, l'objectif et les audiences visées.",
-  "Mapping":
-    "Repérage",
-  "Who starts topics, and who relays them.":
-    "Qui lance les sujets, et qui les relaie.",
-  "Day 6":
-    "J+6",
-  "Vetting":
-    "Vérification",
-  "Audience overlap, past stances, risks.":
-    "Recouvrement d'audience, prises de position, risques.",
-  "Day 8":
-    "J+8",
-  "Shortlist":
-    "Shortlist",
-  "A ranked, argued list, ready for the agency.":
-    "Une liste classée et argumentée, prête pour l'agence.",
-  "The voices that carry,":
-    "Les voix qui portent,",
-  "not the most followed.":
-    "pas les plus suivies.",
-  "What Influence listening lets you hear.":
-    "Ce que l'influence listening permet d'entendre.",
-  "“Which creators already speak to our customers, or to the ones we want?”":
-    "« Quels créateurs parlent déjà à nos clients, ou à ceux qu'on veut ? »",
-  "“On which subjects is our leader credible to the public?”":
-    "« Sur quels sujets notre dirigeant est-il légitime aux yeux du public ? »",
-  "“Who really shapes our category?”":
-    "« Qui façonne vraiment notre catégorie ? »",
-  "LVMH: leader advocacy and social listening":
-    "LVMH : leader advocacy et social listening",
-  "GP Explorer 3: Squeezie breaks audience records":
-    "GP Explorer 3 : Squeezie bat les records d'audience",
-  "Origins: influence and venture capital":
-    "Origins : influence et capital-risque",
-  "A campaign's effect on your sales: it has to be crossed with other data.":
-    "L'effet d'une campagne sur vos ventes : il faut le croiser avec d'autres données.",
-  "What appears in the image":
-    "Ce qui apparaît dans l'image",
-  "How do you choose the right influencers?":
-    "Comment choisir les bons influenceurs ?",
-  "Not by follower count. We look at who really talks about your category, the overlap between their audience and yours, real engagement and past stances. The result is an argued shortlist of influencers, risks included.":
-    "Pas au nombre d'abonnés. Nous regardons qui parle vraiment de votre catégorie, le recouvrement entre son audience et la vôtre, l'engagement réel et ses prises de position passées. Le résultat est une shortlist d'influenceurs argumentée, risques compris.",
-  "Do you work with influencer agencies?":
-    "Travaillez-vous avec des agences d'influence ?",
-  "Yes, often upstream: we give them a read, argued shortlist, and they handle the relationship and the production.":
-    "Oui, souvent en amont : nous leur donnons une liste lue et argumentée, elles gèrent la relation et la production.",
-  "Can you measure a partnership's effect?":
-    "Peut-on mesurer l'effet d'un partenariat ?",
-  "Yes, on the conversation: what it moved, with which audiences, compared with the period before.":
-    "Oui, sur la conversation : ce qu'il a déplacé, auprès de quelles audiences, comparé à la période précédente.",
-  "How do you spot the risks?":
-    "Comment repérez-vous les risques ?",
-  "We go through past public stances and controversies, and flag them before any contract.":
-    "Nous relisons les prises de position publiques passées et les controverses, et les signalons avant tout contrat.",
-  "Do you need big accounts to be effective?":
-    "Faut-il de gros comptes pour être efficace ?",
-  "No. The overlap with your audience matters more than the follower count: mid-sized accounts often carry better.":
-    "Non. Le recouvrement avec votre audience compte plus que le nombre d'abonnés : les comptes moyens portent souvent mieux.",
-  "A ranked, argued shortlist, about eight days after framing: who really carries your category's conversation, the overlap with your audience and the risks spotted, ready to hand to your agency.":
-    "Une shortlist classée et argumentée, environ huit jours après le cadrage : qui porte vraiment la conversation de votre catégorie, le recouvrement avec votre audience et les risques repérés, prête à transmettre à votre agence.",
-  "How much does an influence study cost?":
-    "Combien coûte une étude d'influence ?",
-  "Let's talk about the voices that matter to you.":
-    "Parlons des voix qui comptent pour vous.",
-  "What AI answers when people ask about you.":
-    "Ce que les IA répondent quand on leur parle de vous.",
-  "More and more searches go through an AI assistant. We question the main models about your brand and your category, the way your customers would, and read what they recommend, cite or leave out: your AI visibility, and your reputation in their answers.":
-    "De plus en plus de recherches passent par un assistant IA. Nous interrogeons les principaux modèles sur votre marque et votre catégorie, comme le feraient vos clients, et lisons ce qu'ils recommandent, citent ou oublient : votre visibilité IA et votre réputation dans leurs réponses.",
-  "The brands recommended in your category":
-    "Les marques recommandées dans votre catégorie",
-  "The sources the models cite":
-    "Les sources que les modèles citent",
-  "Mistakes or outdated facts about you":
-    "Les erreurs ou les informations datées sur vous",
-  "The questions your customers ask, and the models to question.":
-    "Les questions que posent vos clients, et les modèles à interroger.",
-  "Prompting":
-    "Interrogation",
-  "The same questions, put to each model.":
-    "Les mêmes questions, posées à chaque modèle.",
-  "What they recommend, cite, leave out or get wrong.":
-    "Ce qu'ils recommandent, citent, oublient ou déforment.",
-  "Plan":
-    "Plan",
-  "The sources to correct or to feed.":
-    "Les sources à corriger ou à nourrir.",
-  "What AI":
-    "Ce que les IA",
-  "says about you.":
-    "disent de vous.",
-  "What AI listening lets you hear.":
-    "Ce que l'AI listening permet d'entendre.",
-  "“How big is the conversation in this market, really?”":
-    "« Quelle est la taille réelle de la conversation sur ce marché ? »",
-  "The tools":
-    "Les outils",
-  "L'Oréal: what AI changes in social listening":
-    "L'Oréal : ce que l'IA change au social listening",
-  "Social listening and politics":
-    "Social listening et politique",
-  "What is AI listening?":
-    "Qu'est-ce que l'AI listening ?",
-  "AI listening means questioning AI assistants the way your customers would, then reading what they answer about your brand and your category: the brands they recommend, the facts they quote, the sources they link to, and what they leave out.":
-    "L'AI listening consiste à interroger les assistants d'intelligence artificielle comme le feraient vos clients, puis à lire ce qu'ils répondent sur votre marque et votre catégorie : les marques qu'ils recommandent, les faits qu'ils citent, les sources qu'ils mettent en lien, et ce qu'ils oublient.",
-  "It is a form of listening, like social or search listening: instead of a conversation between people, you read the summary a model draws from it. For many searches, that summary is now the first thing a customer reads.":
-    "C'est une écoute, au même titre que le social listening ou le search listening : on ne lit plus une conversation entre des personnes, mais la synthèse qu'un modèle en tire. Pour beaucoup de recherches, cette synthèse est désormais la première chose qu'un client lit.",
-  "It is also called AI visibility, or visibility in generative AI: the place a brand holds in assistants' answers, measured question by question.":
-    "On parle aussi de visibilité IA, ou de visibilité dans les IA génératives : la place qu'occupe une marque dans les réponses des assistants, mesurée question par question.",
-  "AI listening and GEO: what is the difference?":
-    "AI listening et GEO : quelle différence ?",
-  "AI listening measures and reads. GEO, for Generative Engine Optimization, acts: it tries to improve a brand's place in those answers by working on the sources the models use. The first is the starting point and the yardstick of the second: without a regular reading, you know neither where you start nor whether what you change works.":
-    "L'AI listening mesure et lit. Le GEO, pour Generative Engine Optimization, agit : il cherche à améliorer la place d'une marque dans ces réponses, en travaillant les sources que les modèles utilisent. Le premier sert de point de départ et de mesure au second : sans lecture régulière, on ne sait ni où l'on part ni si ce que l'on change fonctionne.",
-  "Which AI assistants should you listen to?":
-    "Quelles IA écouter ?",
-  "The ones your customers use for the question that matters to you. In practice: ChatGPT, the AI-generated answers in Google (AI Overviews and AI Mode, built on Gemini), Gemini itself, Claude, Perplexity and Grok. Each has its own sources and its own way of answering, which is why a brand can be cited by one and ignored by another.":
-    "Celles que vos clients utilisent pour la question qui vous intéresse. En pratique : ChatGPT, les réponses générées par l'IA dans Google (Aperçus IA et Mode IA, fondés sur Gemini), Gemini lui-même, Claude, Perplexity et Grok. Chacun a ses propres sources et sa propre façon de répondre, ce qui explique qu'une marque puisse être citée par l'un et ignorée par l'autre.",
-  "Several of these assistants now search the web before answering and cite their sources: ChatGPT with its search, Claude since 2025, Perplexity by design, and Google for its AI Overviews. What they say therefore also depends on what the web says about you today, not only on their training data.":
-    "Plusieurs de ces assistants cherchent désormais sur le web avant de répondre et citent leurs sources : ChatGPT avec sa recherche, Claude depuis 2025, Perplexity par construction, et Google pour ses Aperçus IA. Ce qu'ils disent dépend donc aussi de ce que le web dit de vous aujourd'hui, pas seulement de leurs données d'entraînement.",
-  "Which questions should you ask AI?":
-    "Quelles questions poser aux IA ?",
-  "Your customers' questions, not your marketing team's. There are three families: choice questions, for example \"which health insurance for a family?\", where the assistant recommends brands; questions about the brand itself, its price, its products, its reputation; and comparisons with a named competitor.":
-    "Les questions de vos clients, pas celles de votre service marketing. On en distingue trois familles : les questions de choix, par exemple « quelle mutuelle pour une famille ? », où l'assistant recommande des marques ; les questions sur la marque elle-même, son prix, ses produits, sa réputation ; et les comparaisons avec un concurrent nommé.",
-  "Choice questions matter most: that is where a brand wins or loses a recommendation without anyone having searched for it by name. The same question is asked several times, and to each model, because answers vary from one time to the next.":
-    "Ce sont les questions de choix qui comptent le plus : c'est là qu'une marque gagne ou perd une recommandation sans que personne ne l'ait cherchée par son nom. Une même question est posée plusieurs fois, et à chaque modèle, parce que les réponses varient d'une fois sur l'autre.",
-  "What should you measure?":
-    "Que mesurer ?",
-  "Five things, question by question. Presence: is the brand cited, and in how many answers? That is its share of answers. Rank: does it appear first or at the end of a list? Tone: is what is said favourable, neutral or critical? Accuracy: are the facts right and current? Sources: which pages does the assistant link to back its answer?":
-    "Cinq choses, question par question. La présence : la marque est-elle citée, et dans combien de réponses ? C'est sa part de réponse. Le rang : apparaît-elle en premier ou en fin de liste ? Le ton : ce qui en est dit est-il favorable, neutre ou critique ? L'exactitude : les faits sont-ils justes et à jour ? Les sources : quelles pages l'assistant met-il en lien pour appuyer sa réponse ?",
-  "Mistakes are often the most useful finding. For example, a 2022 price quoted as current, or a discontinued range presented as available: the fix goes through the sources the model consults, not through the model itself.":
-    "Les erreurs sont souvent l'enseignement le plus utile. Par exemple, un tarif de 2022 repris comme actuel, ou une gamme arrêtée présentée comme disponible : la correction passe par les sources que le modèle consulte, pas par le modèle lui-même.",
-  "Where do the answers come from?":
-    "D'où viennent les réponses ?",
-  "From two places. First, the model's training data, frozen at a date, which is why an assistant can describe a brand as it was two years ago. Then, for assistants that search online, the pages they consult at the moment of answering. At Google, a page must be indexed and able to appear with a snippet to serve as a link in AI Overviews.":
-    "De deux endroits. D'abord des données d'entraînement du modèle, figées à une date, qui expliquent qu'un assistant puisse décrire une marque telle qu'elle était il y a deux ans. Ensuite, pour les assistants qui cherchent en ligne, des pages qu'ils consultent au moment de répondre. Chez Google, une page doit être indexée et pouvoir apparaître avec un extrait pour servir de lien dans les Aperçus IA.",
-  "These assistants' crawlers are set separately: at OpenAI, the one that feeds ChatGPT search and the one that collects for training are independent. A site that blocks the first does not appear in ChatGPT search answers. Checking these settings is part of the listening.":
-    "Les robots de ces assistants se règlent séparément : chez OpenAI, celui qui alimente la recherche de ChatGPT et celui qui collecte pour l'entraînement sont indépendants. Un site qui bloque le premier n'apparaît pas dans les réponses de recherche de ChatGPT. Vérifier ces réglages fait partie de l'écoute.",
-  "The limits of AI listening":
-    "Les limites de l'AI listening",
-  "Answers are not stable: they change from one session to another, from one model version to the next, and sometimes with the user's history. A single measure says little; it is asking the same questions again, over time, that gives a reliable trend.":
-    "Les réponses ne sont pas stables : elles changent d'une session à l'autre, d'une version de modèle à la suivante, et parfois selon l'historique de l'utilisateur. Une mesure isolée ne dit donc pas grand-chose ; c'est la répétition des mêmes questions, dans le temps, qui donne une tendance fiable.",
-  "AI listening does not say how many people ask these questions either. For volume, it has to be crossed with search listening, which reads what people search for on Google, YouTube and Amazon.":
-    "L'AI listening ne dit pas non plus combien de personnes posent ces questions. Pour le volume, il faut le croiser avec le search listening, qui lit ce que les gens cherchent sur Google, YouTube et Amazon.",
-  "How Licter runs an AI listening study":
-    "Comment Licter mène une étude d'AI listening",
-  "The framing sets the questions your customers ask and the models to question. The same questions are then put to each model, several times, and an analyst reads the answers: what they recommend, cite, leave out or get wrong. The readout ends with a plan: the sources to correct or to feed.":
-    "Le cadrage fixe les questions que posent vos clients et les modèles à interroger. Les mêmes questions sont ensuite posées à chaque modèle, plusieurs fois, puis un analyste lit les réponses : ce qu'elles recommandent, citent, oublient ou déforment. La restitution se termine par un plan : les sources à corriger ou à nourrir.",
-  "After a first measure, we start again every month or quarter with the same questions, so the results can be compared. Licter is an independent consultancy: we publish no assistant and do not sell visibility in their answers.":
-    "Après une première mesure, nous recommençons chaque mois ou chaque trimestre avec les mêmes questions, pour que les résultats se comparent. Licter est un cabinet indépendant : nous n'éditons aucun assistant et ne vendons pas de visibilité dans leurs réponses.",
-  "AI LISTENING, IN DETAIL":
-    "L'AI LISTENING, EN DÉTAIL",
-  "What to know before you listen to what AI says about you.":
-    "Ce qu'il faut savoir avant d'écouter ce que les IA disent de vous.",
-  "How many people ask these questions: that is search listening.":
-    "Combien de personnes posent ces questions : c'est le search listening.",
-  "Nox":
-    "Nox",
-  "AI-assisted monitoring.":
-    "La veille assistée par l'IA.",
-  "Which models do you question?":
-    "Quels modèles interrogez-vous ?",
-  "The assistants your customers use most, set with you, always with the same questions so the change can be followed over time.":
-    "Les assistants les plus utilisés par vos clients, définis avec vous, toujours avec les mêmes questions pour suivre l'évolution dans le temps.",
-  "Can you influence what AI answers?":
-    "Peut-on influencer ce que répondent les IA ?",
-  "Indirectly: the models rely on public sources. We identify the ones they cite, and what should be corrected or added there.":
-    "Indirectement : les modèles s'appuient sur des sources publiques. Nous identifions celles qu'ils citent, et ce qu'il faudrait y corriger ou y ajouter.",
-  "How often do you measure?":
-    "À quelle fréquence mesurez-vous ?",
-  "A first measure, then every month or quarter, with the same questions so it can be compared.":
-    "Une première mesure, puis chaque mois ou chaque trimestre, avec les mêmes questions pour comparer.",
-  "Is it different from SEO?":
-    "Est-ce différent du SEO ?",
-  "Yes. AI assistants do not rank pages, they synthesise sources. We read those syntheses, and the sources feeding them.":
-    "Oui. Les assistants IA ne classent pas des pages, ils synthétisent des sources. Nous lisons ces synthèses, et les sources qui les nourrissent.",
-  "An audit of AI answers, about a week after framing: what each model recommends, cites or gets wrong on your questions, your share of answers against your competitors, and the plan of sources to correct or to feed.":
-    "Un audit des réponses des IA, environ une semaine après le cadrage : ce que chaque modèle recommande, cite ou déforme sur vos questions, votre part de réponse face à vos concurrents, et le plan des sources à corriger ou à nourrir.",
-  "How much does an audit of what AI says cost?":
-    "Combien coûte un audit de ce que disent les IA ?",
-  "Let's talk about what AI says about you.":
-    "Parlons de ce que les IA disent de vous.",
-  "Knowing what happens while it happens.":
-    "Savoir ce qui se passe pendant que ça se passe.",
-  "Event, launch, crisis: we follow the conversation live, 24/7, and an analyst alerts you within 15 minutes when something really moves.":
-    "Événement, lancement, crise : nous suivons la conversation en direct, 24 h/24, et un analyste vous alerte en 15 minutes quand quelque chose bouge vraiment.",
-  "Volume spikes, and what causes them":
-    "Les pics de volume, et ce qui les cause",
-  "The voices that tip a topic":
-    "Les voix qui font basculer un sujet",
-  "The jump from a social network to the press":
-    "Le passage d'un réseau social à la presse",
-  "48 h":
-    "48 h",
-  "Set-up":
-    "Paramétrage",
-  "The queries, the thresholds and the people to alert.":
-    "Les requêtes, les seuils et les personnes à alerter.",
-  "24/7":
-    "24/7",
-  "Watch":
-    "Veille",
-  "The conversation followed continuously, nights and weekends included.":
-    "La conversation suivie en continu, nuits et week-ends compris.",
-  "Alert":
-    "Alerte",
-  "An analyst qualifies the signal before alerting you.":
-    "Un analyste qualifie le signal avant de vous prévenir.",
-  "Weekly":
-    "Hebdo",
-  "Review":
-    "Bilan",
-  "What moved, and what to watch next.":
-    "Ce qui a bougé, et ce qu'il faut surveiller ensuite.",
-  "What happens,":
-    "Ce qui se passe,",
-  "while it happens.":
-    "pendant que ça se passe.",
-  "What Live listening lets you hear.":
-    "Ce que le live listening permet d'entendre.",
-  "“Which subjects could become a crisis for us?”":
-    "« Quels sujets pourraient devenir une crise pour nous ? »",
-  "Spotting your sector's breaking news":
-    "Identifier les breaking news de votre secteur",
-  "Shein vs BHV: anatomy of a digital crisis":
-    "Shein vs BHV : dissection d'une crise digitale",
-  "Why your image shifts over a year: that is a study, not an alert.":
-    "Pourquoi votre image évolue sur un an : c'est une étude, pas une alerte.",
-  "Do you cover nights and weekends?":
-    "Couvrez-vous les nuits et les week-ends ?",
-  "Yes: that is often when topics start.":
-    "Oui : c'est souvent là que les sujets démarrent.",
-  "Can you cover a one-off event?":
-    "Peut-on suivre un événement ponctuel ?",
-  "Yes. A trade show, a launch or a speech can be followed live over the period, with a debrief at the end.":
-    "Oui. Un salon, un lancement ou une prise de parole peuvent être suivis en direct sur la période, avec un bilan à la fin.",
-  "How fast can you be up and running?":
-    "En combien de temps êtes-vous opérationnels ?",
-  "48 hours to set up the queries, thresholds and alert contacts.":
-    "48 heures pour paramétrer les requêtes, les seuils et les contacts d'alerte.",
-  "The people you name, by email or messaging, with the analyst's qualification and a recommendation.":
-    "Les personnes que vous désignez, par e-mail ou messagerie, avec la qualification de l'analyste et une recommandation.",
-  "Alerts qualified by an analyst within 15 minutes, nights and weekends included, then a review every week: what moved, who carries it, and what to watch next.":
-    "Des alertes qualifiées par un analyste en 15 minutes, nuits et week-ends compris, puis un bilan chaque semaine : ce qui a bougé, qui le porte, et ce qu'il faut surveiller ensuite.",
-  "How much does live monitoring cost?":
-    "Combien coûte une veille en direct ?",
-  "Let's talk about your real-time monitoring.":
-    "Parlons de votre veille en temps réel.",
-  "What people search for when nobody is watching.":
-    "Ce que les gens cherchent quand personne ne les regarde.",
-  "Searches on Google, YouTube and Amazon say what people really want to know, before the purchase and after the problem. We read them to spot unmet needs and unanswered questions.":
-    "Les recherches sur Google, YouTube et Amazon disent ce que les gens veulent vraiment savoir, avant l'achat et après le problème. Nous les lisons pour repérer les besoins non couverts et les questions sans réponse.",
-  "The questions asked before buying":
-    "Les questions posées avant l'achat",
-  "The problems met afterwards":
-    "Les problèmes rencontrés après",
-  "The needs rising, season after season":
-    "Les besoins qui montent, saison après saison",
-  "The markets, the languages and the products to read.":
-    "Les marchés, les langues et les produits à lire.",
-  "Searches on Google, YouTube and Amazon.":
-    "Les recherches sur Google, YouTube et Amazon.",
-  "The questions, the problems and the rising needs.":
-    "Les questions, les problèmes et les besoins qui montent.",
-  "The unmet needs, and what to launch.":
-    "Les besoins non couverts, et ce qu'il faut lancer.",
-  "What people":
-    "Ce que les gens",
-  "really search for.":
-    "cherchent vraiment.",
-  "What Search listening lets you hear.":
-    "Ce que le search listening permet d'entendre.",
-  "“What do our customers really love about our products?”":
-    "« Qu'est-ce que nos clients aiment vraiment dans nos produits ? »",
-  "Consumption becomes activism, with Kantar":
-    "La consommation devient un acte militant, avec Kantar",
-  "The 7 changes in monitoring in 2024":
-    "Les 7 changements de la veille en 2024",
-  "The tone of the public debate: that is social listening.":
-    "Le ton du débat public : c'est le social listening.",
-  "Which search data do you use?":
-    "Quelles données de recherche utilisez-vous ?",
-  "Search volumes and phrasings on Google, YouTube and Amazon, aggregated and anonymous, on the markets and languages of your perimeter.":
-    "Les volumes et les formulations de recherche sur Google, YouTube et Amazon, agrégés et anonymes, sur les marchés et les langues de votre périmètre.",
-  "Is this SEO?":
-    "Est-ce du SEO ?",
-  "No, even if your SEO teams use it. We read searches to understand needs, not to rank pages.":
-    "Non, même si vos équipes SEO s'en servent. Nous lisons les recherches pour comprendre les besoins, pas pour positionner des pages.",
-  "On which markets?":
-    "Sur quels marchés ?",
-  "All those in your perimeter, in their own language: we read local phrasings, not translations.":
-    "Tous ceux de votre périmètre, dans leur langue : nous lisons les formulations locales, pas des traductions.",
-  "How long for a first read?":
-    "Combien de temps pour une première lecture ?",
-  "About a week after framing.":
-    "Environ une semaine après le cadrage.",
-  "A search study presented by the consultant, about a week after framing: the questions and needs rising on Google, YouTube and Amazon, the ones left unanswered, and what to launch.":
-    "Une étude des recherches présentée par le consultant, environ une semaine après le cadrage : les questions et les besoins qui montent sur Google, YouTube et Amazon, ceux qui restent sans réponse, et ce qu'il faut lancer.",
-  "How much does a search listening study cost?":
-    "Combien coûte une étude de search listening ?",
-  "Let's talk about what your customers search for.":
-    "Parlons de ce que vos clients cherchent.",
-  "SOCIAL INTELLIGENCE":
-    "SOCIAL INTELLIGENCE",
-  "Social intelligence, six ways of listening.":
-    "La social intelligence, six façons d'écouter.",
-  "Each question calls for its own way of listening: what people say, who they are, who influences them, what they ask AI, what happens live, what they search for. We combine them, and an analyst reads the whole.":
-    "Chaque question demande sa façon d'écouter : ce que les gens disent, qui ils sont, qui les influence, ce qu'ils demandent à l'IA, ce qui se passe en direct, ce qu'ils cherchent. Nous les combinons, et un analyste lit l'ensemble.",
-  "Six ways of listening":
-    "Six façons d'écouter",
-  "The Licter team at work":
-    "L'équipe Licter au travail",
-  "What is said about you, your competitors and your market.":
-    "Ce qui se dit sur vous, vos concurrents et votre marché.",
-  "Discover Social listening":
-    "Découvrir Social listening",
-  "Who the people talking about you really are.":
-    "Qui sont vraiment les gens qui parlent de vous.",
-  "Discover Audience listening":
-    "Découvrir Audience listening",
-  "The voices that actually carry in your category.":
-    "Les voix qui portent vraiment dans votre catégorie.",
-  "Discover Influence listening":
-    "Découvrir Influence listening",
-  "What generative AI says about your brand.":
-    "Ce que les IA génératives disent de votre marque.",
-  "Discover AI listening":
-    "Découvrir AI listening",
-  "The conversation in real time, an alert within 15 minutes.":
-    "La conversation en temps réel, une alerte en 15 minutes.",
-  "Discover Live listening":
-    "Découvrir Live listening",
-  "What people search for on Google, YouTube and Amazon.":
-    "Ce que les gens cherchent sur Google, YouTube et Amazon.",
-  "Discover Search listening":
-    "Découvrir Search listening",
-  "SIX WAYS OF LISTENING":
-    "SIX FAÇONS D'ÉCOUTER",
-  "Each one answers part of the question. Open the one that concerns you.":
-    "Chaque écoute répond à une partie de la question. Ouvrez celle qui vous concerne.",
-  "Little talk about it, and mostly about the price.":
-    "On en parle peu, et surtout du prix.",
-  "The people talking about it are not the intended target.":
-    "Ceux qui en parlent ne sont pas la cible visée.",
-  "No voice in the category has picked it up yet.":
-    "Aucune voix de la catégorie ne l'a encore reprise.",
-  "Searches are about a format the range does not have.":
-    "Les recherches portent sur un format que la gamme n'a pas.",
-  "AI assistants recommend two competitors.":
-    "Les assistants IA recommandent deux concurrents.",
-  "“Why is our new range not taking off?”":
-    "« Pourquoi notre nouvelle gamme ne décolle pas ? »",
-  "Our read":
-    "Notre lecture",
-  "A format and relay problem, not an awareness one: launch the format people search for, and hand it to the voices the target already follows.":
-    "Un problème de format et de relais, pas de notoriété : lancer le format recherché, et le confier aux voix que la cible suit déjà.",
-  "See the 12 use cases":
-    "Voir les 12 cas d'usage",
-  "Social intelligence":
-    "Social intelligence",
-  "The six listenings":
-    "Les six écoutes",
-  "Six ways":
-    "Six façons",
-  "of listening to a market.":
-    "d'écouter un marché.",
-  "EXAMPLE":
-    "EXEMPLE",
-  "One question, several ways of listening":
-    "Une question, plusieurs écoutes",
-  "“Consumption is an act of activism.”":
-    "« La consommation est un acte militant. »",
-  "Which way of listening should we pick?":
-    "Quelle écoute choisir ?",
-  "The one your question calls for. We often combine them, and the first conversation is there to decide it.":
-    "Celle que demande votre question. Nous les combinons souvent, et le premier échange sert justement à le déterminer.",
-  "Do we need to buy a tool or a licence?":
-    "Faut-il acheter un outil ou une licence ?",
-  "No. Our consultants use our platforms: you receive the read, not a licence to run.":
-    "Non. Nos consultants utilisent nos plateformes : vous recevez la lecture, pas une licence à faire tourner.",
-  "In which languages?":
-    "Dans quelles langues ?",
-  "More than twenty, read by analysts who speak them.":
-    "Plus de vingt, lues par des analystes qui les parlent.",
-  "How long for a first answer?":
-    "Combien de temps pour une première réponse ?",
-  "One to two weeks depending on the listening, 48 hours for live monitoring.":
-    "Une à deux semaines selon les écoutes, 48 heures pour une veille en direct.",
-  "Which question do you want to listen to?":
-    "Quelle question voulez-vous écouter ?",
-  "IN OUR OFFERS":
-    "DANS NOS OFFRES",
-  "Chat with Antoine":
-    "Discuter avec Antoine",
-  "Social listening: definition, method and agency in Paris | Licter":
-    "Social listening : définition, méthode et agence à Paris | Licter",
-  "Audience, consumer and customer intelligence: your customers | Licter":
-    "Audience, consumer et customer intelligence : vos clients | Licter",
-  "Influence listening: the voices that actually carry | Licter":
-    "Influence listening : influenceurs et voix qui portent vraiment | Licter",
-  "AI listening and AI visibility: what AI says about you | Licter":
-    "AI listening et visibilité IA : ce que les IA disent de vous | Licter",
-  "Live listening: the conversation in real time | Licter":
-    "Live listening : la conversation en temps réel | Licter",
-  "Search listening: what people really search for | Licter":
-    "Search listening : ce que les gens cherchent vraiment | Licter",
-  "Expertise: social intelligence, six ways of listening | Licter":
-    "Expertise : la social intelligence, six façons d'écouter | Licter",
-  /* ---- end expertise pages ---- */
 };

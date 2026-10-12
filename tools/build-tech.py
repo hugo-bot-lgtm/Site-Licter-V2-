@@ -80,8 +80,8 @@ S.update({
     "feat_k": ("CE QU'IL PERMET", "WHAT IT DOES"),
     "feat_t": ("Ce que %s permet d'analyser.", "What %s lets you analyse."),
     "ag_t": ("Pourquoi passer par une agence %s ?", "Why work with a %s agency?"),
-    "ag_lead": ("%s fournit des données. Une agence %s comme Licter en tire une décision : voici comment nous l'utilisons.",
-                "%s provides data. A %s agency like Licter turns it into a decision: here is how we use it."),
+    "ag_lead": ("%s fournit des données : des mentions, des volumes, des tableaux de bord. Une agence %s comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+                "%s provides data: mentions, volumes, dashboards. A %s agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it."),
     "del_k": ("CE QUE NOUS LIVRONS", "WHAT WE DELIVER"),
     "del_t": ("Ce que nous livrons avec %s.", "What we deliver with %s."),
     "uses_k2": ("CAS D'USAGE", "USE CASES"),
@@ -449,7 +449,7 @@ def cta(band, sub, mark, slug):
             <button class="signup__btn" type="submit">BOOK A MEETING</button>
           </form>
           <p class="consent">We use your email only to reply to you. <a href="privacy.html">Privacy policy</a>.</p>
-          <p class="signup__note" role="status"><span class="signup__check" aria-hidden="true">✓</span> NOTED, WE GET BACK TO YOU WITHIN 24 HOURS</p>
+          <p class="signup__note" role="status"><span class="signup__check" aria-hidden="true">✓</span> NOTED, A CONSULTANT GETS BACK TO YOU WITHIN 30 MINUTES ON WEEKDAYS</p>
         </div>
       </div>
     </div>

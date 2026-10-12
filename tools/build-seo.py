@@ -221,6 +221,25 @@ def responsive_imgs(s):
     return IMG_TAG.sub(one, s)
 
 
+def content_hash(s):
+    """what a reader reads: the title, the description and the words of the
+    main content. The menu, the chat, the footer, the markup, the images and
+    the spacing are not content: a change there (a new menu entry, a WebP
+    logo, a non-breaking space) does not make the page "updated" (audit of 12
+    October 2026: 158 pages dated the 12th, many for their menu alone)."""
+    s = BYLINE.sub(r"\1\3\5", s)
+    s = WORD.sub(lambda m_: TO_UPDATED.get(m_.group(1), m_.group(1)) + m_.group(2), s)   # the wording is not content
+    title = re.search(r"<title>(.*?)</title>", s, re.S)
+    desc = re.search(r'<meta name="description" content="([^"]*)"', s)
+    m = re.search(r"<main\b.*?</main>", s, re.S) or re.search(r"<body\b.*?</body>", s, re.S)
+    body = RAW.sub(" ", m.group(0) if m else s)
+    # the messages a form shows once sent are not content either
+    body = re.sub(r'<(p|div)\b[^>]*role="status"[^>]*>.*?</\1>', " ", body, flags=re.S)
+    text = re.sub(r"<[^>]+>", " ", body)
+    words = " ".join([title.group(1) if title else "", desc.group(1) if desc else "", html.unescape(text)])
+    return hashlib.md5(re.sub(r"[\s\u00a0\u202f]+", " ", words).strip().encode()).hexdigest()
+
+
 def honest_dates(rel, s, dates, today):
     """put back the date the content last changed, instead of the build date"""
     if rel.startswith("article-"):      # tools/build-blog.py dates its articles itself
@@ -228,13 +247,7 @@ def honest_dates(rel, s, dates, today):
         if m:
             dates[rel] = {"hash": "", "date": m.group(1)}
         return s
-    bare = BYLINE.sub(r"\1\3\5", DM.sub(r"\1\3", s))
-    bare = WORD.sub(lambda m_: TO_UPDATED.get(m_.group(1), m_.group(1)) + m_.group(2), bare)   # the wording is not content
-    bare = re.sub(r'"datePublished": "%s", ' % PUBLISHED, "", bare)                                # added below
-    bare = re.sub(r"\?v=\d+", "", bare)
-    # the theme script, fetched or written into the page (tools/build-js.py), is not content
-    bare = re.sub(r'<script data-inline="theme">.*?</script>|<script src="[^"]*theme\.js[^"]*"></script>', "", bare, flags=re.S)
-    h = hashlib.md5(bare.encode()).hexdigest()
+    h = content_hash(s)
     rec = dates.get(rel)
     if not rec or rec["hash"] != h:
         rec = dates[rel] = {"hash": h, "date": today}
@@ -588,7 +601,7 @@ def main():
     for rel in ("socialintelligenceclub/index.html", "socialintelligenceclub/rejoindre/index.html"):
         f = ROOT / rel
         if f.exists():
-            h = hashlib.md5(re.sub(r"\?v=\d+", "", f.read_text()).encode()).hexdigest()
+            h = content_hash(f.read_text())
             if dates.get(rel, {}).get("hash") != h:
                 dates[rel] = {"hash": h, "date": today}
     DATES.write_text(json.dumps(dates, indent=0, sort_keys=True))

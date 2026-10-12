@@ -143,9 +143,10 @@
           "We work on public data and aggregated communities, never on an individual's profile. Your own data stays yours."],
       go: [["Lire la politique de confidentialité", "Read the privacy policy"], ((document.documentElement.lang || "fr").slice(0, 2) === "fr" ? "/fr/confidentialite/" : "/privacy.html")] },
     { k: ["diagnostic", "audit", "evaluer", "evaluation", "score", "assess", "maturite"],
-      a: ["Le diagnostic gratuit fait le point sur votre écoute en six questions, trois minutes : votre score tout de suite, la lecture complète par e-mail.",
-          "The free diagnostic takes stock of your listening in six questions, three minutes: your score at once, the full readout by email."],
-      go: [["Faire le diagnostic", "Take the diagnostic"], "/diagnostic.html"] },
+      /* two things: the free maturity test on the home, and the diagnostic, a paid audit (audit of 12 October 2026) */
+      a: ["Deux possibilités. Le test de maturité gratuit, sur l'accueil : six questions, trois minutes, votre score tout de suite. Et le diagnostic, un audit de votre dispositif d'écoute en deux à trois semaines, avec une feuille de route.",
+          "Two options. The free maturity test, on the home page: six questions, three minutes, your score at once. And the diagnostic, an audit of your listening setup in two to three weeks, with a roadmap."],
+      go: [["Voir le diagnostic", "See the diagnostic"], ((document.documentElement.lang || "fr").slice(0, 2) === "fr" ? "/fr/diagnostic/" : "/diagnostic.html")] },
     { k: ["qui etes", "equipe", "fondateur", "fondateurs", "licter", "cabinet", "team", "founder", "founders", "about", "who are you", "histoire"],
       a: ["Licter est un cabinet de conseil en social data intelligence, fondé en 2022 par Adrien Krebs et Antoine Khaitrine. Une équipe d'analystes et de consultants qui lit pour vous ce que les gens publient, recherchent et demandent à l'IA.",
           "Licter is a social data intelligence consultancy, founded in 2022 by Adrien Krebs and Antoine Khaitrine. A team of analysts and consultants who read for you what people post, search and ask AI."],

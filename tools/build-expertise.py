@@ -29,13 +29,13 @@ S = {
     "expertise": ("Expertise", "Expertise"),
     "kicker": ("SOCIAL INTELLIGENCE", "SOCIAL INTELLIGENCE"),
     "book": ("Parler à un consultant", "Talk to a consultant"),
-    "answers_link": ("Les questions auxquelles elle répond", "The questions it answers"),
+    "answers_link": ("Les questions auxquelles il répond", "The questions it answers"),
     "demo_cap": ("Un exemple de ce qu'elle entend", "An example of what it picks up"),
     "illus": ("Exemple illustratif", "Illustrative example"),
     "limits_t": ("Ce qu'elle entend, et ses limites", "What it picks up, and its limits"),
     "hears": ("Ce qu'elle entend", "What it picks up"),
     "cannot": ("Ce qu'elle ne vous dira pas", "What it cannot tell you on its own"),
-    "answers_t": ("Les questions auxquelles elle répond", "The questions it answers"),
+    "answers_t": ("Les questions auxquelles il répond", "The questions it answers"),
     "how_t": ("Avec quoi, et dans quelle offre", "With what, and in which offer"),
     "tools_k": ("Les plateformes", "The platforms"),
     "offers_k": ("Les offres qui l'incluent", "The offers that include it"),
@@ -92,8 +92,8 @@ LISTENINGS = [
                  ("Oui : Licter est une agence et un cabinet de social listening basé à Paris. Nous travaillons pour des marques françaises et internationales, en France et sur les autres marchés, dans plus de vingt langues.",
                   "Yes: Licter is a social listening agency and consultancy based in Paris. We work for French and international brands, in France and in other markets, in more than twenty languages.")),
                 (("Que recevez-vous à la fin d'une étude ?", "What do you receive at the end of a study?"),
-                 ("Une restitution par le consultant qui a lu les données, environ une semaine après le cadrage : les sujets, la tonalité et qui les porte, une synthèse écrite, et ce qu'il faut en faire. Pour une veille continue, des alertes lues par un analyste et une revue régulière.",
-                  "A readout by the consultant who read the data, about a week after framing: the topics, the tone and who carries them, a written summary, and what to do with it. For continuous monitoring, alerts read by an analyst and a regular review.")),
+                 ("Une restitution par le consultant qui a lu les données : les sujets, la tonalité et qui les porte, une synthèse écrite, et ce qu'il faut en faire. Pour une veille continue, des alertes lues par un analyste et une revue régulière.",
+                  "A readout by the consultant who read the data: the topics, the tone and who carries them, a written summary, and what to do with it. For continuous monitoring, alerts read by an analyst and a regular review.")),
                 (("Combien coûte une étude de social listening ?", "How much does a social listening study cost?"),
                  ("Sur devis : le prix dépend du périmètre (marques, marchés, langues, sources), de la durée et du rythme des livrables. Après un premier échange de trente minutes, nous envoyons une proposition chiffrée.",
                   "On quotation: the price depends on the scope (brands, markets, languages, sources), the duration and how often you receive deliverables. After a first thirty-minute call, we send a costed proposal."))],
@@ -394,21 +394,8 @@ S.update({
     "how_note": ("Durées indicatives pour une première lecture.", "Indicative timings for a first read."),
     "proof_k": ("Dans leurs mots", "In their words"),
     "proof_t": ("Ils en parlent", "They talk about it"),
-    "magnet_k": ("Et chez vous ?", "And for you?"),
-    "magnet_t": ("Recevez un exemple de livrable %s, dans votre secteur.", "Get a sample %s deliverable, in your sector."),
-    "magnet_t_hub": ("Recevez un exemple de livrable, dans votre secteur.", "Get a sample deliverable, in your sector."),
-    "magnet_d": ("Anonymisé, envoyé par un consultant sous 48 h : ce que vous recevriez vraiment.", "Anonymised, sent by a consultant within 48 hours: what you would actually receive."),
-    "magnet_email": ("E-mail professionnel", "Work email"),
-    "magnet_sector": ("Votre secteur", "Your sector"),
-    "magnet_pick": ("Choisir…", "Choose…"),
-    "magnet_btn": ("Recevoir l'exemple", "Get the sample"),
-    "magnet_err": ("Indiquez un e-mail professionnel valide.", "Enter a valid work email."),
-    "magnet_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
-    "magnet_consent": ("Votre e-mail sert uniquement à vous répondre.", "We use your email only to reply to you."),
+    "magnet_consent": ("Vos coordonnées servent uniquement à vous rappeler.", "We use your details only to call you back."),
     "privacy": ("Politique de confidentialité", "Privacy policy"),
-    "magnet_done": ("C'est noté. Un consultant vous envoie un exemple sous 48 h.", "Noted. A consultant sends you a sample within 48 hours."),
-    "magnet_alt": ("Plutôt lire d'abord ?", "Rather read first?"),
-    "magnet_alt_link": ("Le guide des 12 questions", "The guide to the 12 questions"),
     "bar_offer": ("Être rappelé", "Call me back"),
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
     "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
@@ -465,21 +452,6 @@ def proof_block(x, voice=None):
             '      </a>\n    </div>\n  </section>') % (vid, vid, time, t(S["proof_k"]), t(q), html.escape(brand), html.escape(who))
 
 
-def magnet_block(key, title):
-    opts = '<option value="" disabled selected>%s</option>' % t(S["magnet_pick"]) + "".join('<option>%s</option>' % t(x) for x in U.SECTORS)
-    return ('  <!-- MOCK: sends nothing yet (js/ui.js, .ucp-lead); wire to the CRM with the listening and the sector. -->\n'
-            '  <section class="ucp ucp--cta" id="offre">\n    <div class="shell">\n      <div class="ucp__cta">\n'
-            '        <div class="ucp__cta-copy">\n          <p class="ucp__cta-k">%s</p>\n          <h2 class="ucp__cta-t">%s</h2>\n          <p class="ucp__cta-d">%s</p>\n        </div>\n'
-            '        <form class="ucp-lead" data-case="%s" novalidate>\n          <div class="ucp-lead__row">\n'
-            '            <label class="ucp-lead__f"><span>%s</span><input class="fld__input" name="email" type="email" autocomplete="email" placeholder="name@company.com" required /></label>\n'
-            '            <label class="ucp-lead__f"><span>%s</span><select class="fld__input" name="sector" required>%s</select></label>\n'
-            '          </div>\n          <button class="btn btn--primary" type="submit">%s <span aria-hidden="true">→</span></button>\n'
-            '          <p class="fld__error" hidden>%s</p>\n          <p class="fld__error ucp-lead__sector-err" hidden>%s</p>\n'
-            '          <p class="consent">%s <a href="privacy.html">%s</a>.</p>\n        </form>\n'
-            '        <p class="ucp-lead__alt">%s <a href="guide.html">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
-            '        <p class="ucp-lead__done" role="status" hidden>%s</p>\n      </div>\n    </div>\n  </section>') % (
-        t(S["magnet_k"]), title, t(S["magnet_d"]), key, t(S["magnet_email"]), t(S["magnet_sector"]), opts, t(S["magnet_btn"]),
-        t(S["magnet_err"]), t(S["magnet_pick_err"]), t(S["magnet_consent"]), t(S["privacy"]), t(S["magnet_alt"]), t(S["magnet_alt_link"]), t(S["magnet_done"]))
 
 
 def bar():
@@ -512,15 +484,15 @@ UC_PHOTO = {"communication": "working-session-1200", "brand": "client-conversati
 
 S.update({
     "of6": ("sur 6", "of 6"),
-    "hears_k": ("CE QU'ELLE ENTEND", "WHAT IT PICKS UP"),
+    "hears_k": ("CE QU'IL ENTEND", "WHAT IT PICKS UP"),
     "hears_t": ("Ce que %s permet d'entendre.", "What %s lets you hear."),
     "answers_k": ("CAS D'USAGE", "USE CASES"),
     "answers_lead": ("Chaque question mène au cas d'usage où cette écoute fait la différence.", "Each question leads to the use case where this listening makes the difference."),
     "runs_k": ("MÉTHODE", "METHOD"),
     "lim_k": ("LIMITES ET COMPLÉMENTS", "LIMITS AND COMPLEMENTS"),
-    "lim_t": ("Ses limites, et ce qui la complète.", "Its limits, and what completes it."),
+    "lim_t": ("Ses limites, et ce qui le complète.", "Its limits, and what completes it."),
     "lim_tag": ("Sa limite", "Its limit"),
-    "lim_sub": ("Ce qu'elle ne dit pas seule", "What it cannot say on its own"),
+    "lim_sub": ("Ce qu'il ne dit pas seul", "What it cannot say on its own"),
     "tool_tag": ("La plateforme", "The platform"),
     "offer_tag": ("Dans l'offre", "In the offer"),
     "see_page": ("Voir la page", "See the page"),
@@ -629,16 +601,11 @@ H1L = {"social": (("Ce que les gens disent,", "lu par des gens."), ("What people
        "hub": (("Six façons", "d'écouter un marché."), ("Six ways", "of listening to a market."))}
 S.update({
     # no free "flash" read exists (owner, 12 October 2026): the hero offers the real first step, thirty minutes with a consultant
-    "lm_k": ("ÉTUDE", "STUDY"),
-    "lm_brand_ph": ("Votre marque", "Your brand"),
-    "lm_yours": ("Sur votre marque", "On your brand"),
     "lm_btn": ("Être rappelé par un consultant", "Get a call back from a consultant"),
     "lm_submit": ("Me faire rappeler", "Call me back"),
-    "lm_done": ("C'est noté. Un consultant vous recontacte dans les 30 minutes, en semaine.", "Noted. A consultant gets back to you within 30 minutes on weekdays."),
-    "lm_anon": ("Anonymisé · dans votre secteur", "Anonymised · in your sector"),
-    "lm_t": ("Trente minutes avec un consultant, sur votre marque.", "Thirty minutes with a consultant, on your brand."),
-    "lm_t_hub": ("Trente minutes avec un consultant, sur votre marque.", "Thirty minutes with a consultant, on your brand."),
-    "lm_free": ("Gratuit", "Free"), "lm_anon2": ("Anonymisé", "Anonymised"), "lm_48": ("Sous 48 h", "Within 48 h"),
+    "lm_done": ("C'est noté. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h.", "Noted. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm."),
+    "lm_t": ("Un échange avec un consultant, sur votre marque.", "A call with a consultant, on your brand."),
+    "lm_t_hub": ("Un échange avec un consultant, sur votre marque.", "A call with a consultant, on your brand."),
     "lm_from": ("Un consultant, pas un commercial.", "A consultant, not a sales team."),
     "lm_call": ("Ou prendre rendez-vous", "Or book a meeting"),
     "lm_six": ("Les six écoutes", "The six listenings"),
@@ -646,7 +613,7 @@ S.update({
 
 
 # What the hero card promises: the first call with a consultant, as on the home (no free "flash" read exists)
-FLASH = {k: [("Un consultant vous rappelle sous 30 minutes, en semaine", "A consultant calls you back within 30 minutes on weekdays"),
+FLASH = {k: [("Un consultant vous rappelle sous 30 minutes, en semaine de 9 h à 19 h", "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm"),
              ("Votre question cadrée, avec les sources et les outils adaptés", "Your question framed, with the right sources and tools"),
              ("Une proposition chiffrée après l'échange", "A costed proposal after the call")]
          for k in ("social", "audience", "influence", "ai", "live", "search", "hub")}
@@ -690,27 +657,27 @@ def reads(key):
     return sec("", '<p class="xp-line"><span>%s</span> %s</p>' % (t(("À lire", "Further reading")), links) + tools_line)
 
 
-def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, bands=None, flash_key="hub"):
+def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, bands=None, flash_key="hub", def_link=""):
     """the hero offers thirty minutes with a consultant on the visitor's own brand"""
     items = "".join("<li>%s</li>" % t(it) for it in FLASH[flash_key])
     faces = "".join('<img src="/assets/img/team/%s-160.webp" alt="" width="160" height="160" />' % f for f in ("founder-antoine", "headshot-1", "headshot-2"))
-    def fld(id_, lab, typ, auto, ph):
-        return ('<div class="form__field"><label for="%s">%s</label><input id="%s" name="%s" type="%s" autocomplete="%s" placeholder="%s" required /></div>') % (
-            id_, t(lab), id_, id_, typ, auto, ph)
+    def fld(id_, lab, typ, auto, ph, extra=""):
+        return ('<div class="form__field"><label for="%s">%s</label><input id="%s" name="%s" type="%s"%s autocomplete="%s" placeholder="%s" required /></div>') % (
+            id_, t(lab), id_, id_, typ, extra, auto, ph)
     return f'''  <section class="xe-lmh">
     <div class="shell xe-lmh__grid">
       <div class="xe-lmh__copy">
         <h1 class="xe-lmh__h1"><span class="xe-lmh__kick">{kick}</span><span class="xe-lmh__l">{t((lines[0][0], lines[1][0]))}</span><span class="xe-lmh__l xe-lmh__l--c">{t((lines[0][1], lines[1][1]))}</span></h1>
         <p class="xe-lmh__lead">{t(lead)}</p>
         <a class="btn btn--primary xe-lmh__jump" href="#offre">{t(S["lm_btn"])} <span aria-hidden="true">↓</span></a>
-        <a class="xe-lmh__call" href="#book">{t(S["lm_call"])} <span aria-hidden="true">→</span></a>
+        <a class="xe-lmh__call" href="#book">{t(S["lm_call"])} <span aria-hidden="true">→</span></a>{def_link}
       </div>
       <div class="xe-lm" id="offre">
         <div class="xe-lm__body">
           <p class="xe-lm__t">{title}</p>
           <ul class="xe-lm__items">{items}</ul>
           <form class="form xe-gform" id="call-{key}-form" novalidate>
-            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-email", ("E-mail professionnel", "Work email"), "email", "email", "camille@company.com")}</div>
+            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-contact", ("E-mail ou téléphone", "Email or phone"), "text", "email", "name@company.com", ' inputmode="email" data-contact')}</div>
             <button class="form__submit" type="submit">{t(S["lm_submit"])} <span aria-hidden="true">→</span></button>
             <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>{t(S["lm_done"])}</span></p>
           </form>
@@ -748,7 +715,9 @@ def listening_body(x, offers_html):
     # the social listening page answers "agence social listening Paris / France": its H1 says so
     kick_name = t(("Agence de social listening à Paris", "Social listening agency in Paris")) if x["key"] == "social" else t(x["name"])
     out += lm_hero(kick_name if x["key"] == "social" else '%s<!--glossk:%s-->' % (kick_name, x["key"]), H1L[x["key"]], x["lead"], "xp-" + x["key"],
-                   t(S["lm_t"]), col, icon, t(x["name"]), logos(), flash_key=x["key"])
+                   t(S["lm_t"]), col, icon, t(x["name"]), logos(), flash_key=x["key"],
+                   # the definition is what most searches for "social listening" want: reachable from the first screen (audit of 12 October 2026)
+                   def_link=('\n        <a class="xe-lmh__call xe-lmh__def" href="#definition">%s <span aria-hidden="true">↓</span></a>' % t(("Qu'est-ce que le social listening ?", "What is social listening?"))) if x["key"] == "social" else "")
     if x["key"] == "social":    # a short, visible definition near the top: what search engines quote for "social listening" (9 October 2026)
         out += sec("definition", head(t(("DÉFINITION", "DEFINITION")), t(("Le social listening en bref.", "Social listening at a glance.")), t((
             "Le social listening est l'analyse de ce que les gens disent publiquement en ligne d'une marque, d'un produit, d'un concurrent ou d'un sujet : réseaux sociaux, forums, sites d'avis et presse. Il sert à comprendre une perception, repérer ce qui change et décider quoi en faire.",
@@ -856,7 +825,7 @@ def write(file, seo_title, seo_desc, body, ld_tags, offers_html, ld_fr=""):
     D = U.D if hasattr(U, "D") else __import__("uc_deliverables")
     def per_lang(html_, lang):
         html_ = re.sub(r"<!--gloss:(\w+)-->", lambda m: '<span class="xe-gloss">, %s</span>' % GLOSS[m.group(1)] if lang == FR else "", html_)
-        html_ = re.sub(r"<!--glossk:(\w+)-->", lambda m: '<span class="xe-gloss">· %s</span>' % GLOSS[m.group(1)] if lang == FR else "", html_)
+        html_ = re.sub(r"<!--glossk:(\w+)-->", lambda m: '<span class="xe-gloss"><span class="xe-gloss__dot">·</span> %s</span>' % GLOSS[m.group(1)] if lang == FR else "", html_)
         return re.sub(r"<!--dlv:([\w-]+)-->", lambda m: D.render(m.group(1), lang, U.esc, U.typo), html_)
     # 1. English: static, links to the use cases in English, no dictionary
     page_en, page = per_lang(page, EN), page

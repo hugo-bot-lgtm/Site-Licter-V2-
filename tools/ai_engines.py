@@ -64,7 +64,7 @@ HEAD = (("COMMENT %s RÉPOND", "HOW %s ANSWERS"), ("Ce qui fait la réponse de %
 
 ENGINE = {
     "chatgpt": [
-        (("D'où viennent ses réponses", "Where its answers come from"),
+        (("D'où viennent ses réponses ?", "Where do its answers come from?"),
          ("Sans recherche, ChatGPT répond depuis ses données d'entraînement, arrêtées à une date. Avec la recherche web, ouverte à tous ses utilisateurs depuis fin 2024, il lit des pages en direct et cite ses liens.",
           "Without search, ChatGPT answers from its training data, frozen at a date. With web search, open to all its users since late 2024, it reads pages live and cites its links.")),
         (("Ce qui le distingue", "What sets it apart"),
@@ -74,7 +74,7 @@ ENGINE = {
          ("Nous posons chaque question avec et sans recherche web. L'écart entre les deux montre ce qui est daté dans sa mémoire, et quelles pages il va lire aujourd'hui pour se corriger.",
           "We ask each question with and without web search. The gap between the two shows what is outdated in its memory, and which pages it reads today to correct itself."))],
     "claude": [
-        (("D'où viennent ses réponses", "Where its answers come from"),
+        (("D'où viennent ses réponses ?", "Where do its answers come from?"),
          ("Claude, l'assistant d'Anthropic, répond d'abord depuis ses données d'entraînement. Depuis 2025, il peut aussi chercher sur le web ; il cite alors les pages qu'il a lues.",
           "Claude, Anthropic's assistant, answers first from its training data. Since 2025 it can also search the web; it then cites the pages it read.")),
         (("Ce qui le distingue", "What sets it apart"),
@@ -84,7 +84,7 @@ ENGINE = {
          ("Si Claude connaît votre marque sans chercher, et ce qu'il en dit quand il cherche. Une absence se traite par la documentation publique : site, presse, pages de référence.",
           "Whether Claude knows your brand without searching, and what it says when it searches. An absence is fixed through public documentation: your site, the press, reference pages."))],
     "gemini": [
-        (("D'où viennent ses réponses", "Where its answers come from"),
+        (("D'où viennent ses réponses ?", "Where do its answers come from?"),
          ("Gemini est l'IA de Google. Il s'appuie sur la recherche Google, la même famille de modèles que les réponses générées en haut des résultats (AI Overviews et mode IA).",
           "Gemini is Google's AI. It relies on Google Search, the same family of models as the generated answers at the top of results (AI Overviews and AI Mode).")),
         (("Ce qui le distingue", "What sets it apart"),
@@ -94,7 +94,7 @@ ENGINE = {
          ("Nous comparons Gemini et les réponses IA de la recherche Google sur les mêmes questions, puis nous remontons aux pages et aux fiches qui les nourrissent.",
           "We compare Gemini and Google Search's AI answers on the same questions, then trace back to the pages and listings that feed them."))],
     "perplexity": [
-        (("D'où viennent ses réponses", "Where its answers come from"),
+        (("D'où viennent ses réponses ?", "Where do its answers come from?"),
          ("Perplexity cherche sur le web à chaque question et affiche ses sources, numérotées, à côté de la réponse. Il se présente comme un moteur de réponses plus que comme un assistant.",
           "Perplexity searches the web for every question and shows its sources, numbered, next to the answer. It presents itself as an answer engine more than an assistant.")),
         (("Ce qui le distingue", "What sets it apart"),
@@ -104,7 +104,7 @@ ENGINE = {
          ("La liste des sites cités sur les questions de votre marché, la part qui parle de vous, et les sources de vos concurrents que vous n'avez pas.",
           "The list of sites cited on your market's questions, the share that talks about you, and the sources your competitors have and you do not."))],
     "grok": [
-        (("D'où viennent ses réponses", "Where its answers come from"),
+        (("D'où viennent ses réponses ?", "Where do its answers come from?"),
          ("Grok est l'IA de xAI, intégrée à X. Il lit les publications publiques de X en temps réel, en plus du web.",
           "Grok is xAI's AI, built into X. It reads public posts on X in real time, as well as the web.")),
         (("Ce qui le distingue", "What sets it apart"),

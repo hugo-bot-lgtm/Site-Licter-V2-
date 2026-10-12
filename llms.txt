@@ -66,21 +66,21 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 ## English
 
 - [Home](https://www.licter.com/): Licter, social data intelligence consultancy in Paris
-- [Offers](https://www.licter.com/offers.html)
-- [Social listening](https://www.licter.com/expertise-social-listening.html)
-- [Audience and consumer intelligence](https://www.licter.com/expertise-audience-listening.html)
-- [Use cases](https://www.licter.com/en/use-cases/)
-- [Social listening tools](https://www.licter.com/tech-tools.html)
-- [GEO](https://www.licter.com/tech-geo.html)
-- [Nox](https://www.licter.com/offer-nox.html)
-- [AI listening](https://www.licter.com/expertise-ai-listening.html)
-- [Your brand in ChatGPT](https://www.licter.com/tech-chatgpt.html)
-- [Your brand in Claude](https://www.licter.com/tech-claude.html)
-- [Your brand in Gemini](https://www.licter.com/tech-gemini.html)
-- [Your brand in Perplexity](https://www.licter.com/tech-perplexity.html)
-- [Your brand in Grok](https://www.licter.com/tech-grok.html)
-- [Why Licter](https://www.licter.com/why-licter.html)
-- [Book a meeting](https://www.licter.com/book-a-meeting.html)
+- [Offers](https://www.licter.com/offers.html): four ways to work with Licter: studies on demand, 24/7 monitoring, a platform takeover, an AI-assisted monitoring tool; prices on quotation
+- [Social listening](https://www.licter.com/expertise-social-listening.html): social listening agency in Paris: definition, method, metrics and how a study runs
+- [Audience and consumer intelligence](https://www.licter.com/expertise-audience-listening.html): audience, consumer and customer intelligence, read from observed behaviour
+- [Use cases](https://www.licter.com/en/use-cases/): 12 social data use cases: campaigns, reputation, audiences, trends
+- [Social listening tools](https://www.licter.com/tech-tools.html): the listening platforms Licter runs, the search, press and AI tools around them, and the 22 networks
+- [GEO](https://www.licter.com/tech-geo.html): GEO: your visibility in AI assistants' answers, measured then improved
+- [Nox](https://www.licter.com/offer-nox.html): AI-assisted monitoring of your brand, read by analysts
+- [AI listening](https://www.licter.com/expertise-ai-listening.html): what AI assistants recommend, cite or leave out about your brand
+- [Your brand in ChatGPT](https://www.licter.com/tech-chatgpt.html): what ChatGPT answers about your brand, competitors and category
+- [Your brand in Claude](https://www.licter.com/tech-claude.html): what Claude says about your brand, and its sources
+- [Your brand in Gemini](https://www.licter.com/tech-gemini.html): what Gemini says about your brand, and its sources
+- [Your brand in Perplexity](https://www.licter.com/tech-perplexity.html): what Perplexity says about your brand, and the sources it cites
+- [Your brand in Grok](https://www.licter.com/tech-grok.html): what Grok says about your brand, and its sources
+- [Why Licter](https://www.licter.com/why-licter.html): the founders, the team and how Licter works
+- [Book a meeting](https://www.licter.com/book-a-meeting.html): thirty minutes with a consultant, a callback within 30 minutes on weekdays
 
 ## Optional
 

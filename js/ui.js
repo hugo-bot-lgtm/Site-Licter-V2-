@@ -1275,8 +1275,10 @@ window.LicterUC = (function () {
       var frp = (document.documentElement.lang || "fr").slice(0, 2) === "fr";
       Array.prototype.forEach.call(fields, function (f) {
         var v = f.value.trim();
-        var ok = f.type === "email"
-          ? /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)
+        /* data-contact: an email or a phone number, as the callback asks */
+        var mail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+        var ok = f.type === "email" ? mail
+          : f.hasAttribute("data-contact") ? mail || /^\+?\d{9,15}$/.test(v.replace(/[\s.()-]/g, ""))
           : v.length > 1;
         f.setAttribute("aria-invalid", ok ? "false" : "true");
         /* a message in words, tied to the field, not only a red border */
@@ -1290,7 +1292,9 @@ window.LicterUC = (function () {
           f.addEventListener("input", function () { msg.hidden = true; f.setAttribute("aria-invalid", "false"); });
         }
         if (msg) {
-          msg.textContent = f.type === "email"
+          msg.textContent = f.hasAttribute("data-contact")
+            ? (frp ? "Indiquez un e-mail professionnel ou un numéro de téléphone." : "Enter a work email or a phone number.")
+            : f.type === "email"
             ? (frp ? "Indiquez un e-mail professionnel valide." : "Enter a valid work email.")
             : (frp ? "Ce champ est à remplir." : "This field is required.");
           msg.hidden = ok;
@@ -1682,8 +1686,8 @@ window.LicterUC = (function () {
 })();
 
 /* =========================================================================
-   Use-case and expertise pages: "get a real case" / "an example" (email + sector). MOCK: nothing is sent;
-   wire to the CRM with the case (data-case) and the sector.
+   Offer pages: the quote request (email + sector). No free sample or real case is
+   sent (owner, 12 October 2026): every one of these forms asks for a quote.
    ========================================================================= */
 (function () {
   var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -1718,11 +1722,10 @@ window.LicterUC = (function () {
         sector.focus();
         return;
       }
-      var dc = form.dataset.case || "";
-      if (window.LicterSend) window.LicterSend(dc === "of-prices" ? "quote" : /^of-/.test(dc) ? "offer_example" : "real_case",
+      if (window.LicterSend) window.LicterSend("quote",
         window.LicterSend.where(form), form);
       if (window.LicterLead) window.LicterLead.set(v);
-      if (window.LicterTrack) window.LicterTrack("form_submit", { form: "real_case", "case": form.dataset.case, sector: form.sector.value });
+      if (window.LicterTrack) window.LicterTrack("form_submit", { form: "quote", "case": form.dataset.case, sector: form.sector.value });
       form.hidden = true;
       done.hidden = false;
       done.setAttribute("tabindex", "-1");
@@ -1742,7 +1745,8 @@ window.LicterUC = (function () {
   if (!hero) return;
   var zones = [document.getElementById("offre"), document.getElementById("book"), document.querySelector(".site-foot")].filter(Boolean);
   var pastHero = false, inZone = {};
-  if (!document.getElementById("offre")) bar.querySelector('a[href="#offre"]').remove();
+  var offreLink = bar.querySelector('a[href="#offre"]');
+  if (offreLink && !document.getElementById("offre")) offreLink.remove();
   /* Antoine rides in the bar: the floating launcher steps aside on these pages */
   var chatBtn = bar.querySelector(".ucp-bar__chat");
   if (chatBtn) chatBtn.addEventListener("click", function () { if (window.LicterChat) window.LicterChat.open(); });
@@ -2341,21 +2345,6 @@ window.LicterUC = (function () {
   });
 })();
 
-/* expertise hero: the study cover takes the brand as it is typed */
-(function () {
-  "use strict";
-  var input = document.getElementById("fl-brand"), out = document.querySelector(".xe-cover__brand");
-  if (!input || !out) return;
-  /* the text shown before the first keystroke, in the page's language (data-empty is English) */
-  var empty = null;
-  input.addEventListener("input", function () {
-    if (empty === null) empty = out.textContent || out.getAttribute("data-empty");
-    var v = input.value.trim().slice(0, 28);
-    out.textContent = v || empty;
-    out.classList.toggle("is-set", !!v);
-  });
-})();
-
 /* =========================================================================
    Blog (.bl): thread filters, reading progress, the table of contents that
    follows the reading, and the copy-link button.
@@ -2586,4 +2575,11 @@ window.LicterUC = (function () {
       if (visible) requestAnimationFrame(frame); else running = false;
     }
   });
+})();
+
+/* the guide's contents fold on a phone: fourteen entries stood before the
+   first paragraph (audit of 12 October 2026); open on larger screens */
+(function () {
+  var d = document.querySelector(".lg__toc-d");
+  if (d && window.matchMedia && window.matchMedia("(max-width: 960px)").matches) d.open = false;
 })();

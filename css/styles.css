@@ -1242,6 +1242,8 @@ main { position: relative; z-index: 1; }
   position: relative;
   padding: clamp(96px, 13vh, 150px) 0 clamp(64px, 8vh, 96px);
 }
+/* a phone: the title comes up under the menu, not a third of a screen lower (audit of 12 October 2026) */
+@media (max-width: 720px) { .page { padding-top: 40px; } }
 /* The sheet is drawn on this box, so it has to span the whole column like a
    section does — otherwise the two sheets end at different x and the join
    reads as a staircase. The text is constrained on the children instead. */
@@ -5688,7 +5690,7 @@ html[data-theme="dark"] .ucp__block--get { background: var(--surface); box-shado
 .ucp__related { padding: 20px 22px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface, #fff); }
 .ucp__related .ucp__h2 { font-size: 19px; }
 .ucp__related ul { display: grid; gap: 4px; margin: 0 0 14px; padding: 0; list-style: none; }
-.ucp__related a { display: block; padding: 8px 0; font: 600 14.5px/1.4 var(--body-font); color: var(--ink); border-bottom: 1px solid var(--line); }
+.ucp__related a { display: block; padding: 12px 0; font: 600 14.5px/1.4 var(--body-font); color: var(--ink); border-bottom: 1px solid var(--line); }
 .ucp__related a:hover { color: var(--amber-ink); }
 .ucp__up { display: inline-block; margin-top: 4px; font: 600 14px/1.4 var(--body-font); color: var(--ink); border-bottom: 1px solid rgba(var(--amber-rgb), .7); }
 
@@ -6016,7 +6018,7 @@ html[data-theme="dark"] .ucp__roi { background: var(--surface); box-shadow: inse
 .lf__more + .lf__book { margin-top: 0; }
 /* use-case pages: titles without an orphan word, a byline, the index interviews */
 .ucp__title { max-width: 21ch; text-wrap: balance; }
-.ucp__byline { margin: 18px 0 0; font: 500 12.5px/1.4 var(--body-font); color: var(--text-2); }
+.ucp__signed { margin: 18px 0 0; font: 500 12.5px/1.4 var(--body-font); color: var(--text-2); }
 .ucp__voices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .ucp__voices .reel__who, .tk .reel__who { color: var(--text-2); }
 @media (max-width: 900px) { .ucp__voices { grid-template-columns: minmax(0, 1fr); } }
@@ -6036,7 +6038,7 @@ html[data-theme="dark"] .ucp__roi { background: var(--surface); box-shadow: inse
   margin-top: clamp(24px, 3vw, 40px); padding-top: clamp(22px, 2.6vw, 32px); border-top: 1px solid var(--line); }
 .ucr__lead { margin: 0; max-width: 58ch; font: 500 clamp(16px, 1.2vw, 18px)/1.65 var(--body-font); color: var(--text-2); }
 .ucr-hero .page__actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 24px; }
-.ucr-hero .ucp__byline { margin-top: 18px; }
+.ucr-hero .ucp__signed { margin-top: 18px; }
 .ucr-hero__get { padding-left: clamp(18px, 2vw, 28px); border-left: 2px solid var(--amber); }
 .ucr__ticks { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .ucr__ticks li { position: relative; padding-left: 26px; font: 500 15.5px/1.5 var(--body-font); color: var(--ink); }
@@ -7127,7 +7129,7 @@ html[data-theme="dark"] .lx__msg--you { background: #FCF6EF; color: #13162D; }
   -webkit-mask: url(/assets/img/networks/whatsapp.svg) center / contain no-repeat; mask: url(/assets/img/networks/whatsapp.svg) center / contain no-repeat; }
 .lx__wa--chat { margin: 0 16px 10px; min-height: 44px; font-size: 13px; }
 .lx__chips[hidden] { display: none; }
-.lx__chip { height: 32px; padding: 0 12px; border: 0; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); background: transparent; color: var(--ink); font: 600 12.5px/1 var(--body-font); cursor: pointer; }
+.lx__chip { height: 40px; padding: 0 12px; border: 0; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); background: transparent; color: var(--ink); font: 600 12.5px/1 var(--body-font); cursor: pointer; }
 .lx__chip:hover { background: rgba(var(--ink-rgb), .06); }
 .lx__ask { display: flex; gap: 8px; padding: 10px 14px 14px; border-top: 1px solid var(--line); }
 .lx__q { flex: 1; min-width: 0; height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--field-br); background: var(--field-bg); color: var(--ink); font: 500 14.5px/1 var(--body-font); }
@@ -8558,7 +8560,8 @@ html[data-theme="dark"] .flow__n { background: var(--amber); color: #13162D; box
 .tk-hero::before { content: ""; position: absolute; right: -12%; top: -10%; width: 62vw; max-width: 900px; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--brand) 22%, transparent), transparent 62%); pointer-events: none; }
 .tk-hero__grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(36px, 5vw, 84px); align-items: center; }
 .tk-crumbs ol { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 clamp(22px, 3vw, 34px); padding: 0; list-style: none; font: 500 13px/1.4 var(--body-font); color: var(--text-2); }
-.tk-crumbs li + li::before { content: "/"; margin-right: 6px; opacity: .5; }
+/* the separator ends a line rather than starting the next one */
+.tk-crumbs li:not(:last-child)::after { content: "/"; margin-left: 6px; opacity: .5; }
 .tk-crumbs a { color: var(--text-2); text-decoration: none; }
 .tk-crumbs a:hover { color: var(--ink); text-decoration: underline; }
 .tk-crumbs [aria-current] { color: var(--ink); }
@@ -9872,6 +9875,7 @@ html[data-theme="dark"] .xe-ex__read span { color: #EAA93D; }
 .xe-tk .tk-feat--1 { min-height: 300px; }
 .xe-note { margin-top: 18px; font-size: 14px; }
 .xe-all { display: inline-block; margin-top: 26px; font: 600 15px/1.3 var(--body-font); color: var(--ink); border-bottom: 2px solid var(--brand); padding-bottom: 2px; }
+.xe-tk .xe-gloss__dot { display: none; }
 .xe-tk .xe-gloss { display: block; margin-top: 10px; font: 600 15px/1.3 var(--body-font); letter-spacing: 0; color: var(--text-2); }
 .xe-tk .ucc__t .xe-gloss { display: none; }
 /* hub hero: the team, and the six listenings as tiles */
@@ -9934,6 +9938,7 @@ html[data-theme="light"] .xe-lmh__l--c, html:not([data-theme]) .xe-lmh__l--c { c
 .xe-lmh__pills li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: var(--card-bg); box-shadow: inset 0 0 0 1px var(--line); font: 600 13.5px/1 var(--body-font); color: var(--ink); }
 .xe-lmh__pills li::before { content: "✓"; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #2FA36B; color: #fff; font-size: 10px; font-weight: 700; }
 .xe-lmh__call { display: inline-block; margin-top: 24px; font: 600 15px/1.3 var(--body-font); color: var(--ink); border-bottom: 2px solid var(--c); padding-bottom: 2px; }
+.xe-lmh__def { display: table; margin-top: 16px; }
 
 /* the magnet card */
 .xe-lm { position: relative; padding: 20px; border-radius: 32px; background: #0E1126; color: #FCF6EF; box-shadow: 0 0 0 1px rgba(252, 246, 239, .08), 0 60px 100px -50px color-mix(in srgb, var(--c) 70%, #000); scroll-margin-top: 110px; }
@@ -10132,6 +10137,7 @@ html[data-theme="dark"] .bl-mag { background: radial-gradient(110% 140% at 0% 0%
 .bl-by img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
 .bl-by > span { display: flex; flex-direction: column; gap: 4px; }
 .bl-by b { font: 700 14.5px/1.2 var(--body-font); color: var(--ink); }
+.bl-upd { font: 600 12.5px/1.2 var(--body-font); letter-spacing: .4px; color: var(--text-2); }
 .bl-ah__art { aspect-ratio: 9 / 6.4; overflow: hidden; border-radius: 30px; box-shadow: 0 50px 90px -50px rgba(0, 0, 0, .7); }
 .bl-body { display: grid; grid-template-columns: 230px minmax(0, 720px); gap: clamp(30px, 6vw, 110px); justify-content: center; align-items: start; padding-bottom: clamp(40px, 5vw, 70px); }
 .bl-toc { position: sticky; top: 110px; }
@@ -10370,6 +10376,7 @@ html[data-theme="dark"] .bl-v.is-on { background: #FCF6EF; color: #13162D; }
   /* expertise: the kicker and its gloss on two lines, not two columns */
   .xe-lmh__kick { flex-wrap: wrap; row-gap: 4px; }
   .xe-lmh__kick .xe-gloss { flex-basis: 100%; margin: 0 0 0 42px; }
+  .xe-lmh__kick .xe-gloss__dot { display: none; }
   .xe-cover { height: 150px; margin-top: -54px; }
   /* bento: compact cards, the number small in the corner */
   .tk-feat { min-height: 0 !important; padding: 20px 20px 22px; }
@@ -10618,7 +10625,7 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 .qa-src a { color: var(--text-2); text-decoration: underline; text-decoration-color: rgba(var(--ink-rgb), .3); text-underline-offset: 3px; }
 .qa-src a:hover { color: var(--ink); }
 .tk-proof__h { margin: 0; font: 600 clamp(18px, 1.4vw, 21px)/1.3 var(--title-font); color: var(--ink); }
-/* expertise heroes on a phone: the free flash read is offered on the first screen, the form itself comes further down */
+/* expertise heroes on a phone: the callback is offered on the first screen, the form itself comes further down */
 .xe-lmh__jump { display: none; }
 @media (max-width: 720px) { .xe-lmh__jump { display: inline-flex; align-self: flex-start; margin: 4px 0 14px; } }
 /* while the cookie banner is open, a phone's first screen keeps both actions
@@ -10627,6 +10634,7 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
   .xe-lmh__copy { display: flex; flex-direction: column; align-items: flex-start; }
   .xe-lmh__jump { order: 1; margin: 22px 0 0; }
   .xe-lmh__call { order: 2; margin-top: 16px; }
+  .xe-lmh__def { margin-top: 6px; }
   .xe-lmh__pills { order: 3; margin-top: 22px; }
 }
 /* large screens: the copy starts at the top of the hero instead of being
@@ -10648,15 +10656,27 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 .lg__toc ol { margin: 0; padding: 0 0 0 18px; display: grid; gap: 8px; font: 500 13.5px/1.4 var(--body-font); }
 .lg__toc a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
 .lg__toc a:hover, .lg__toc a:focus-visible { border-bottom-color: var(--c, #EAA93D); }
+.lg__toc-d > summary { list-style: none; pointer-events: none; }
+.lg__toc-d > summary::-webkit-details-marker { display: none; }
+.lg__toc-k span { letter-spacing: .4px; }
 .lg__body { max-width: 72ch; }
 .lg__b { padding: 0 0 clamp(22px, 2.4vw, 32px); scroll-margin-top: 96px; }
 .lg__b + .lg__b { padding-top: clamp(22px, 2.4vw, 32px); border-top: 1px solid var(--line); }
 .lg__b h3 { margin: 0 0 10px; font: 700 clamp(19px, 1.6vw, 23px)/1.3 var(--title-font); color: var(--ink); }
 .lg__b p { margin: 0 0 12px; font: 500 16px/1.7 var(--body-font); color: var(--text-2); }
 .xe-def__more { display: inline-block; margin-top: 18px; font: 600 15px/1.3 var(--body-font); color: var(--ink); border-bottom: 2px solid var(--c, #EAA93D); padding-bottom: 2px; }
+.xe-def__more { position: relative; }
+.xe-def__more::after { content: ""; position: absolute; inset: -11px -4px; }
 @media (max-width: 960px) {
   .lg { grid-template-columns: minmax(0, 1fr); }
   .lg__toc { position: static; }
+  /* on a phone the contents fold, and each entry is a full-height target */
+  .lg__toc-d > summary { display: flex; align-items: center; gap: 6px; min-height: 44px; margin: -8px 0; pointer-events: auto; cursor: pointer; }
+  .lg__toc-d > summary::after { content: "+"; margin-left: auto; font: 600 20px/1 var(--body-font); color: var(--ink); }
+  .lg__toc-d[open] > summary::after { content: "\2212"; }
+  .lg__toc-d[open] > summary { margin-bottom: 4px; }
+  .lg__toc ol { gap: 0; }
+  .lg__toc a { display: block; padding: 11px 0; }
 }
 
 /* a closed chat is really gone: no keyboard stop, nothing an agent could fill and send

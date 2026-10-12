@@ -28,8 +28,9 @@ def guide_article(cards, toc_label, by=""):
     toc = "".join('<li><a href="#%s">%s</a></li>' % (i, q) for i, (q, _) in zip(ids, cards))
     body = "".join('<section class="lg__b" id="%s"><h3>%s</h3>%s</section>' % (i, q, "".join("<p>%s</p>" % x for x in a))
                    for i, (q, a) in zip(ids, cards))
-    return (by + '<div class="lg"><nav class="lg__toc" aria-label="%s"><p class="lg__toc-k">%s</p><ol>%s</ol></nav>'
-            '<div class="lg__body">%s</div></div>') % (toc_label, toc_label, toc, body)
+    # the contents fold on a phone (js/ui.js closes them there): 14 entries stood before the text
+    return (by + '<div class="lg"><nav class="lg__toc" aria-label="%s"><details class="lg__toc-d" open><summary class="lg__toc-k">%s <span>(%d)</span></summary><ol>%s</ol></details></nav>'
+            '<div class="lg__body">%s</div></div>') % (toc_label, toc_label, len(cards), toc, body)
 
 
 def qa_roller(cards, label, more, rows=2, by=""):

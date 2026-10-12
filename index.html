@@ -38,7 +38,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="css/t-home.min.css?v=20261357" />
+<link rel="stylesheet" href="css/t-home.min.css?v=20261358" />
 </head>
 <body class="home">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -48,7 +48,7 @@
 </a></aside>
 
 <main id="content">
-  <!-- ==================== SCREEN 1 — HERO ==================== -->
+  <!-- ==================== SCREEN 1: HERO ==================== -->
   <section class="hero" id="hero">
     <header class="hero__top shell" data-reveal>
       <div class="hero__start">
@@ -114,7 +114,7 @@
 
           <div class="hero__actions" data-reveal>
             <a class="btn btn--primary" href="#book">Talk to a consultant <span aria-hidden="true">→</span></a>
-            <a class="hero__link" href="#diagnostic">Or take the 3-minute diagnostic</a>
+            <a class="hero__link" href="#diagnostic">Or take the 3-minute maturity test</a>
           </div>
         </div>
 
@@ -255,7 +255,7 @@
     </div>
     <div class="reels__foot" data-reveal>
       <p class="reels__note">Every episode of <em>Audience First</em> is on
-         <a href="https://www.youtube.com/@audience_first" target="_blank" rel="noopener">the channel <span aria-hidden="true">&#8599;</span></a>.
+         <a href="https://www.youtube.com/@audience_first" target="_blank" rel="noopener">our YouTube channel <span aria-hidden="true">&#8599;</span></a>.
          One conversation a week with the people who read the conversation.</p>
     </div>
     <div class="cta-row" data-reveal>
@@ -286,7 +286,7 @@
   </section>
   <!-- /home-compare -->
 
-  <!-- ==================== SCREEN 2 — USE CASES ==================== -->
+  <!-- ==================== SCREEN 2: USE CASES ==================== -->
   <section class="cases" id="use-cases">
     <!-- generated light field: no image file, just gradients + grain -->
     <div class="field" aria-hidden="true"><span class="field__grain"></span></div>
@@ -432,7 +432,7 @@
   <section class="block shell" id="diagnostic">
     <div class="quiz qz" id="quiz" data-mock>
       <div class="qz__side">
-        <p class="qz__kick">Free diagnostic</p>
+        <p class="qz__kick">Free maturity test</p>
         <div class="quiz__intro">
           <h2 class="block__title">Where does your listening stand?</h2>
           <p class="block__lead">Six questions, three minutes. Your score now, the full readout by email.</p>
@@ -452,7 +452,7 @@
         </div>
       </div>
       <div class="quiz__stage qz__stage" id="quiz-stage" aria-live="polite">
-        <noscript><p>The diagnostic needs JavaScript. <a href="diagnostic.html">Request a diagnostic</a> instead.</p></noscript>
+        <noscript><p>The maturity test needs JavaScript. <a href="diagnostic.html">Request a diagnostic</a> instead.</p></noscript>
       </div>
     </div>
   </section>
@@ -588,9 +588,9 @@
     <span>© 2026 Licter, Social Data Intelligence · <a href="legal.html">Legal notice</a> · <a href="privacy.html">Privacy</a></span>
   </div>
 </footer>
-<script src="js/min/i18n.js?v=20261357" defer></script>
-<script src="js/min/ui.js?v=20261357" defer></script>
-<script src="js/min/voices.js?v=20261357" defer></script>
+<script src="js/min/i18n.js?v=20261358" defer></script>
+<script src="js/min/ui.js?v=20261358" defer></script>
+<script src="js/min/voices.js?v=20261358" defer></script>
 <!-- the live demo and its community map only run above 720 px: a phone never
      downloads them (it does not show the demo), unless the window widens -->
 <script>
@@ -598,7 +598,7 @@
   var done = false, mq = window.matchMedia ? window.matchMedia("(min-width: 721px)") : null;
   function load() {
     if (done) return; done = true;
-    ["/js/min/communities.js?v=20261357", "/js/min/usecases.js?v=20261357"].forEach(function (src) {
+    ["/js/min/communities.js?v=20261358", "/js/min/usecases.js?v=20261358"].forEach(function (src) {
       var s = document.createElement("script"); s.src = src; s.async = false; document.body.appendChild(s);
     });
   }
@@ -610,6 +610,6 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 })();
 </script>
-<script src="js/min/home.js?v=20261357" defer></script>
+<script src="js/min/home.js?v=20261358" defer></script>
 </body>
 </html>
