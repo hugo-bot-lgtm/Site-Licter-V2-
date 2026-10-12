@@ -355,6 +355,7 @@
     if (window.LicterTrack) window.LicterTrack("chat_open", { tab: tab, auto: !!quiet });
     show(tab);
     panel.hidden = false;
+    void panel.offsetWidth;   /* laid out before it slides in (the closed panel is display: none) */
     requestAnimationFrame(function () { root.classList.add("is-open"); html.classList.add("lx-open"); });
     launch.setAttribute("aria-expanded", "true");
     session("lx-shown", "1");

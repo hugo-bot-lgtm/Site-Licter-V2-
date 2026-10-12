@@ -10,6 +10,28 @@ simply scroll by hand.
 """
 
 
+def slug(text):
+    """an anchor from a heading: lower case, ascii, hyphens"""
+    import re, unicodedata
+    t = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", t).strip("-")[:60]
+
+
+def guide_article(cards, toc_label, by=""):
+    """the long-form section as a readable article (audit of 12 October 2026: on
+    a page that competes for a definition query, the roller showed a quarter of
+    each answer): a table of contents, then every question with its full answer"""
+    import html as _h, re
+    # numbered anchors: text extractors (trafilatura) drop any element whose id
+    # contains "social", taken for share buttons, which hid half the guide
+    ids = ["guide-%d" % (k + 1) for k in range(len(cards))]
+    toc = "".join('<li><a href="#%s">%s</a></li>' % (i, q) for i, (q, _) in zip(ids, cards))
+    body = "".join('<section class="lg__b" id="%s"><h3>%s</h3>%s</section>' % (i, q, "".join("<p>%s</p>" % x for x in a))
+                   for i, (q, a) in zip(ids, cards))
+    return (by + '<div class="lg"><nav class="lg__toc" aria-label="%s"><p class="lg__toc-k">%s</p><ol>%s</ol></nav>'
+            '<div class="lg__body">%s</div></div>') % (toc_label, toc_label, toc, body)
+
+
 def qa_roller(cards, label, more, rows=2, by=""):
     """cards: [(question_html, [paragraph_html, ...])], already translated;
     one card per question, all its paragraphs in it"""

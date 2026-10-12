@@ -201,7 +201,7 @@ OFFERS = [
                 (("Quelles langues couvrez-vous ?", "Which languages do you cover?"),
                  ("Plus de vingt, dont l'anglais, l'espagnol, le chinois, l'arabe et l'hindi.",
                   "More than twenty, including English, Spanish, Chinese, Arabic and Hindi.")),
-                (("Veille social media, veille médias : que couvre Vigie 360 ?", "Social media monitoring, media monitoring: what does Vigie 360 cover?"),
+                (("Quels médias Vigie 360 surveille-t-elle ?", "Which media does Vigie 360 monitor?"),
                  ("Toute la veille médias en un seul service : les réseaux sociaux (X, TikTok, Instagram, LinkedIn, Facebook, YouTube, Reddit et d'autres), les forums, les sites d'avis, les blogs et la presse en ligne. La veille social media, ou veille des médias sociaux, et la veille médiatique de la presse sont lues ensemble, parce qu'un sujet passe constamment de l'une à l'autre.",
                   "All media monitoring in one service: social networks (X, TikTok, Instagram, LinkedIn, Facebook, YouTube, Reddit and others), forums, review sites, blogs and the online press. Social media monitoring and press monitoring are read together, because a subject keeps moving from one to the other.")),
                 (("Veille de marque ou veille de crise : quelle différence ?", "Brand monitoring or crisis monitoring: what is the difference?"),

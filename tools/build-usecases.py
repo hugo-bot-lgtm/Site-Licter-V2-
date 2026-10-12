@@ -619,13 +619,13 @@ def case_body(c, lang):
              '          <span class="ucv-video__q">%s</span>\n'
              '          <span class="ucv-video__who"><b>%s</b> · %s</span>\n'
              '        </a>\n'
-             '        <article class="ucv-case">\n'
+             '        <div class="ucv-case">\n'
              '          <p class="ucr-case__tag">%s</p>\n'
              '          <p class="ucv-case__ctx">%s</p>\n'
              '          <p class="ucv-case__found">%s</p>\n'
              '          <p class="ucv-case__reco"><span>%s</span>%s</p>\n'
              '          <p class="ucv-case__real">%s <a href="#offre">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
-             '        </article>\n'
+             '        </div>\n'
              '      </div>\n'
              '      <ul class="ucv-roi">%s</ul>\n'
              '    </div>\n'
@@ -980,7 +980,7 @@ def case_extras(c, lang):
     sit_rec = split_example(rest)
     case = ('      <h2 class="ucp__h2">%s</h2>\n'
             '      <div class="ucp__client">\n'
-            '        <article class="ucp__case">\n'
+            '        <div class="ucp__case">\n'
             '          <p class="ucp__case-k">%s</p>\n'
             '          <p class="ucp__case-h">%s</p><p class="ucp__case-ctx">%s</p>\n'
             '          <div class="ucp__case-cols">\n'
@@ -988,7 +988,7 @@ def case_extras(c, lang):
             '            <div class="ucp__case-reco"><p class="ucp__case-h">%s</p><p>%s</p></div>\n'
             '          </div>\n'
             '          <p class="ucv-case__real">%s <a href="#offre">%s&nbsp;<span aria-hidden="true">→</span></a></p>\n'
-            '        </article>\n'
+            '        </div>\n'
             '%s\n'
             '      </div>') % (T(L["client"], lang), T(L["illus"], lang), T(L["context"], lang), esc(typo(ctx, lang)),
                               T(L["found"], lang), esc(typo(sit_rec[0], lang)), T(L["reco"], lang), esc(typo(sit_rec[1], lang)),

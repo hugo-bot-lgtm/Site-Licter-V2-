@@ -336,7 +336,7 @@ SEO_TITLE = {
     "Comment France Digitale juge l'efficacité de ses actions de communication ?": "Comment France Digitale mesure sa communication",
     "Comment L'Oréal utilise le social listening pour capter la voix du consommateur ?": "Comment L'Oréal capte la voix du consommateur",
     "Comment Origins associe influence et technologie pour transformer le capital-risque ?": "Salomon Aiach (Origins) : influence, technologie et capital-risque",
-    "Départs de X : quels réseaux sociaux peuvent rivaliser avec la plateforme d\u2019Elon Musk ?": "Alternative à X : quels réseaux pour prendre le relais ?",
+    "Alternative à X : quels réseaux sociaux peuvent rivaliser avec la plateforme d\u2019Elon Musk ?": "Alternative à X : quels réseaux pour prendre le relais ?",
     "La consommation devient un acte militant : les insights de Kantar sur les tendances d\u2019achat": "La consommation, un acte militant : les insights Kantar",
     "Comment Meltwater exploite les données social listening pour ses clients luxe ?": "Comment Meltwater lit le social listening pour le luxe",
     "Comment Talkwalker utilise le social listening pour comprendre ce que vos consommateurs pensent de vous ?": "Talkwalker : ce que vos consommateurs pensent de vous",

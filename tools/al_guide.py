@@ -31,8 +31,8 @@ BLOCKS = [
          "It differs from a declared market study: nobody is asked anything, we observe what real consumers do and say, continuously. At Licter, a consumer intelligence study starts from a question, for example why a category is losing customers or what a target expects from a product, picks the sources that answer it, and ends with recommendations."),
     ]),
     (("Consumer intelligence et customer intelligence : quelle différence ?", "Consumer intelligence and customer intelligence: what is the difference?"), [
-        ("Les deux termes se recoupent. La customer intelligence part le plus souvent de vos propres clients et de vos données : achats, service client, CRM. La consumer intelligence regarde plus large : tous les consommateurs d'une catégorie, clients ou non, à partir de ce qu'ils publient, suivent et recherchent en ligne.",
-         "The two terms overlap. Customer intelligence usually starts from your own customers and your data: purchases, customer service, CRM. Consumer intelligence looks wider: all the consumers in a category, customers or not, from what they post, follow and search for online."),
+        ("Les deux termes se recoupent. La customer intelligence part le plus souvent de vos propres clients et de vos données : achats, service client, CRM. La consumer intelligence, elle, regarde toute la catégorie, clients ou non.",
+         "The two terms overlap. Customer intelligence usually starts from your own customers and your data: purchases, customer service, CRM. Consumer intelligence looks at the whole category, customers or not."),
         ("En pratique, les meilleures études croisent les deux : vos données disent qui achète, la conversation et les audiences disent pourquoi, et ce que font ceux qui n'achètent pas encore. C'est ce croisement que nous construisons avec vous, sans jamais travailler sur des profils individuels.",
          "In practice, the best studies cross the two: your data says who buys, the conversation and the audiences say why, and what those who do not buy yet are doing. That cross-reading is what we build with you, never working on individual profiles."),
     ]),

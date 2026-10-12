@@ -10640,3 +10640,29 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 .xe-def li { padding: 18px 20px; border-radius: 18px; background: var(--card-bg); box-shadow: inset 0 0 0 1px var(--line); font: 500 15px/1.55 var(--body-font); color: var(--text-2); }
 .xe-def b { display: block; margin-bottom: 4px; font: 700 13px/1.3 var(--body-font); letter-spacing: .4px; color: var(--ink); }
 @media (max-width: 860px) { .xe-def { grid-template-columns: minmax(0, 1fr); } }
+
+/* the social listening guide as an article: contents on the left, full answers on the right */
+.lg { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: start; margin-top: clamp(18px, 2vw, 28px); }
+.lg__toc { position: sticky; top: 96px; padding: 18px 20px; border-radius: 18px; background: var(--card-bg); box-shadow: inset 0 0 0 1px var(--line); }
+.lg__toc-k { margin: 0 0 10px; font: 700 11px/1.3 var(--body-font); letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-2); }
+.lg__toc ol { margin: 0; padding: 0 0 0 18px; display: grid; gap: 8px; font: 500 13.5px/1.4 var(--body-font); }
+.lg__toc a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+.lg__toc a:hover, .lg__toc a:focus-visible { border-bottom-color: var(--c, #EAA93D); }
+.lg__body { max-width: 72ch; }
+.lg__b { padding: 0 0 clamp(22px, 2.4vw, 32px); scroll-margin-top: 96px; }
+.lg__b + .lg__b { padding-top: clamp(22px, 2.4vw, 32px); border-top: 1px solid var(--line); }
+.lg__b h3 { margin: 0 0 10px; font: 700 clamp(19px, 1.6vw, 23px)/1.3 var(--title-font); color: var(--ink); }
+.lg__b p { margin: 0 0 12px; font: 500 16px/1.7 var(--body-font); color: var(--text-2); }
+.xe-def__more { display: inline-block; margin-top: 18px; font: 600 15px/1.3 var(--body-font); color: var(--ink); border-bottom: 2px solid var(--c, #EAA93D); padding-bottom: 2px; }
+@media (max-width: 960px) {
+  .lg { grid-template-columns: minmax(0, 1fr); }
+  .lg__toc { position: static; }
+}
+
+/* a closed chat is really gone: no keyboard stop, nothing an agent could fill and send
+   (audit of 12 October 2026), and a launcher faded out is not focusable either */
+.lx__panel[hidden] { display: none; }
+.lx.lx--wait .lx__launch, .lx--tuck .lx__launch { visibility: hidden; transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s; }
+@media (max-width: 720px) { .cc-open .lx__launch { visibility: hidden; } }
+.lx__cta-call { min-height: 44px; }
+@media (min-width: 721px) { .lx__chip { height: 36px; } .lx__close { width: 44px; height: 44px; } }

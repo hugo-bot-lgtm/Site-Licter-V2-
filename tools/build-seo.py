@@ -167,6 +167,7 @@ def french_spaces(s):
     head_end = s.find("<body")
     head, body = (s[:head_end], s[head_end:]) if head_end > 0 else ("", s)
     def fix(t):
+        t = re.sub(r"(?<=\d) (?=\d{3}(?!\d))", "\u202f", t)      # thousands: "7 000" never splits across two lines
         t = re.sub(r"[ \u202f]([:;!?»])", "\u00a0\\1", t)
         return re.sub(r"«[ \u202f]", "«\u00a0", t)
     parts = PROTECT.split(body)
@@ -370,6 +371,12 @@ def structured(rel, s, fr, url):
                 b["@id"] = (b.get("url") or url) + "#service"; changed = True
             if not b.get("description") and desc:
                 b["description"] = desc; changed = True
+        if b.get("@type") in ("WebPage", "CollectionPage", "AboutPage") and b.get("url") == url and b.get("name") and b["name"] != title:
+            b["name"] = title; changed = True      # the page entity follows a renamed title (audit of 12 October 2026)
+        if b.get("@type") in ("WebPage", "CollectionPage", "AboutPage") and b.get("url") == url and desc and b.get("description") and b["description"] != desc:
+            b["description"] = desc; changed = True
+        if b.get("@type") == "Service":
+            pass
         elif b.get("@type") in ("WebPage", "CollectionPage", "AboutPage") and (not b.get("@id") or not b.get("isPartOf") or not b.get("description") or not b.get("dateModified")):
             b.setdefault("@id", (b.get("url") or url) + "#webpage")
             b.setdefault("isPartOf", {"@id": SITE + "/#website"})

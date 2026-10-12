@@ -584,7 +584,7 @@ def offer_cards(x):
         f, nm, d = TOOLS[k]
         cards += ('<div class="tk-offer tk-offer--tool"><div class="tk-offer__img"><img src="/assets/img/shots/%s.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" /></div>'
                   '<div class="tk-offer__body"><p class="tk-offer__tag"><i aria-hidden="true">+</i>%s</p><h3>%s</h3><p>%s</p></div>'
-                  '<a class="tk-offer__foot" href="%s"><span class="tk-offer__logo"><img src="/assets/img/tools/%s.png" alt="" width="96" height="96" loading="lazy" decoding="async" /></span><span><b>%s</b><small>%s</small></span><i aria-hidden="true">↗</i></a></div>') % (
+                  '<a class="tk-offer__foot" href="%s"><span class="tk-offer__logo"><img src="/assets/img/tools/%s-96.webp" alt="" width="96" height="96" loading="lazy" decoding="async" /></span><span><b>%s</b><small>%s</small></span><i aria-hidden="true">↗</i></a></div>') % (
             k, t(S["tool_tag"]), nm, t(d), f, k, nm, t(S["see_page"]))
     for k in x["offers"]:
         o = OFFERS[k]
@@ -772,7 +772,8 @@ def listening_body(x, offers_html):
             '<ul class="xe-def">%s</ul>' % "".join('<li><b>%s</b> %s</li>' % (t(a), t(b)) for a, b in [
                 (("Ce qu'il lit :", "What it reads:"), ("les conversations publiques, dans plus de vingt langues, sur une période choisie.", "public conversations, in more than twenty languages, over a chosen period.")),
                 (("Ce qu'il mesure :", "What it measures:"), ("le volume, la part de voix, la tonalité, les sujets et les voix qui portent.", "volume, share of voice, tone, topics and the voices that carry.")),
-                (("Ce qu'il permet :", "What it enables:"), ("anticiper une crise, mesurer une campagne, comprendre un marché avant d'y lancer un produit.", "anticipating a crisis, measuring a campaign, understanding a market before launching a product there."))]))
+                (("Ce qu'il livre :", "What it delivers:"), ("une lecture qualifiée par un analyste, et une recommandation plutôt qu'un tableau de bord.", "a reading checked by an analyst, and a recommendation rather than a dashboard."))]) +
+            '<a class="xe-def__more" href="#guide">%s <span aria-hidden="true">↓</span></a>' % t(("Lire le guide complet du social listening", "Read the full social listening guide")))
     art_fr = ("l'" if nm[FR][0].lower() in "aeiou" else "le ") + nm[FR][0].lower() + nm[FR][1:] if not nm[FR].startswith("AI") else "l'" + nm[FR]
     out += sec("", head(t(S["hears_k"]), t((S["hears_t"][0] % art_fr, S["hears_t"][1] % nm[EN]))) + feats, band=True)
     out += sec("answers", head(t(S["answers_k"]), t(S["answers_t"]), t(S["answers_lead"])) + prog(x["cases"]))
@@ -780,11 +781,13 @@ def listening_body(x, offers_html):
     guide = GUIDE.get(x["key"])
     if guide and (ROOT / "tools" / (guide + ".py")).exists():   # the long-form sections (SEO plan step 15, audit of October 2026)
         G = importlib.import_module(guide)
-        from components import qa_roller, authors_line, sources_line
-        out += sec("guide", head(t(G.KICKER), t(G.TITLE)) + qa_roller(
-            [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS], t(G.KICKER),
-            t(("Lire la réponse", "Read the answer")), by=authors_line(t(("Rédigé par", "Written by")), t(("et", "and")), t((", cofondateurs de Licter", ", co-founders of Licter")))) +
-            sources_line(G.__file__, t(("Sources", "Sources"))), band=True)
+        from components import qa_roller, guide_article, authors_line, sources_line
+        cards = [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS]
+        by = authors_line(t(("Rédigé par", "Written by")), t(("et", "and")), t((", cofondateurs de Licter", ", co-founders of Licter")))
+        # the social listening page competes for "social listening", a definition query: its guide reads as an article
+        body = (guide_article(cards, t(("Sommaire", "Contents")), by=by) if x["key"] == "social"
+                else qa_roller(cards, t(G.KICKER), t(("Lire la réponse", "Read the answer")), by=by))
+        out += sec("guide", head(t(G.KICKER), t(G.TITLE)) + body + sources_line(G.__file__, t(("Sources", "Sources"))), band=True)
     out += sec("", head(t(S["runs_k"]), t(S["how_runs"])) + steps + '<p class="tk-sub xe-note">%s</p>' % t(S["how_note"]), band=True)
     out += sec("", head(t(S["lim_k"]), t(S["lim_t"])) + offer_cards(x))
     out += voice(e["voice"])

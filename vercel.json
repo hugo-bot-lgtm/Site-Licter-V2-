@@ -141,6 +141,11 @@
       "permanent": true
     },
     {
+      "source": "/Article/:slug*/",
+      "destination": "/article/:slug*",
+      "permanent": true
+    },
+    {
       "source": "/Article/:slug*",
       "destination": "/article/:slug*",
       "permanent": true

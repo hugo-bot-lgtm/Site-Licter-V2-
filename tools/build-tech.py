@@ -244,8 +244,8 @@ def logo(slug, size="", alt=""):
     """a tool's logo: its picture, or for GEO the engines it measures"""
     if slug == "geo":
         return '<span class="tk-logo-geo%s" role="img" aria-label="%s">%s</span>' % (size, html.escape(alt or "GEO"), "".join(
-            '<img src="/assets/img/tools/%s.png" alt="" width="48" height="48" loading="lazy" decoding="async" />' % e for e in GEO_ENGINES))
-    return '<img src="/assets/img/tools/%s.png" alt="%s" width="96" height="96" loading="lazy" decoding="async" />' % (slug, html.escape(alt))
+            '<img src="/assets/img/tools/%s-96.webp" alt="" width="48" height="48" loading="lazy" decoding="async" />' % e for e in GEO_ENGINES))
+    return '<img src="/assets/img/tools/%s-96.webp" alt="%s" width="96" height="96" loading="lazy" decoding="async" />' % (slug, html.escape(alt))
 
 
 # ------------------------------------------------------------------ blocks
@@ -497,6 +497,20 @@ def proof(slug):
                '<ul class="tk-proof">%s</ul>' % cards)
 
 
+# GEO is a practice, not a tool: its headings are written for it (audit of 12 October 2026)
+HEAD_BY = {"geo": {"feat_t": ("Ce que mesure le GEO.", "What GEO measures."),
+                   "del_t": ("Ce que nous livrons en GEO.", "What we deliver in GEO."),
+                   "uses_t2": ("Le GEO : les cas d'usage où il compte.", "GEO: the use cases where it counts."),
+                   "lim_t": ("Les limites du GEO, et comment nous les compensons.", "The limits of GEO, and how we make up for them."),
+                   "faq_t2": ("Questions fréquentes sur le GEO.", "Frequently asked questions about GEO.")}}
+
+
+def hd(slug, key, nm):
+    """a section heading, the page's own wording where the template's does not fit"""
+    own = HEAD_BY.get(slug, {}).get(key)
+    return t(own) if own else t(fmt(S[key], nm))
+
+
 def tool_body(x):
     name = x["name"]; fn = x.get("fr_name", name); nm = (fn, name); NM = (fn.upper(), name.upper())
     ag = agency(x["slug"], name, x.get("fr_name"))
@@ -522,13 +536,13 @@ def tool_body(x):
     if x["slug"] in AI.ENGINE:      # what sets this assistant apart (SEO audit, October 2026)
         out += sec("engine", head(t(fmt(AI.HEAD[0], NM)), t(fmt(AI.HEAD[1], nm))) +
                    '<ul class="tk-proof">%s</ul>' % "".join('<li class="tk-proof__c"><b>%s</b><p>%s</p></li>' % (t(a), t(b)) for a, b in AI.ENGINE[x["slug"]]))
-    out += sec("features", head(t(S["feat_k"]), t(fmt(S["feat_t"], nm))) + feats(x["features"], x["slug"]), band=True)
+    out += sec("features", head(t(S["feat_k"]), hd(x["slug"], "feat_t", nm)) + feats(x["features"], x["slug"]), band=True)
     out += sec("agency", head(t(ag["kick"]), t(AI.AG_T) if x["slug"] in AI.INTENT else t(fmt(S["ag_t"], nm)), t(AI.AG_LEAD_BY[x["slug"]]) if x["slug"] in AI.AG_LEAD_BY else t(fmt(AI.AG_LEAD, nm)) if x["slug"] in AI.INTENT else t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
-    out += sec("deliverables", head(t(S["del_k"]), t(fmt(S["del_t"], nm))) + dels, band=True)
-    out += sec("uses", head(t(S["uses_k2"]), t(fmt(S["uses_t2"], nm)), t(S["uses_lead"])) + prog(x["uses"]))
-    out += sec("limits", head(t(S["lim_k"]), t(fmt(S["lim_t"], nm))) + lims, band=True)
+    out += sec("deliverables", head(t(S["del_k"]), hd(x["slug"], "del_t", nm)) + dels, band=True)
+    out += sec("uses", head(t(S["uses_k2"]), hd(x["slug"], "uses_t2", nm), t(S["uses_lead"])) + prog(x["uses"]))
+    out += sec("limits", head(t(S["lim_k"]), hd(x["slug"], "lim_t", nm)) + lims, band=True)
     out += guide(x["slug"])
-    out += sec("faq", faq_block(t(fmt(S["faq_t2"], nm)), [(ag["q"], ag["a"])] + x["faq"]))
+    out += sec("faq", faq_block(hd(x["slug"], "faq_t2", nm), [(ag["q"], ag["a"])] + x["faq"]))
     return out + cta(t(ag["band"]), t(AI.CTA_TEXT.get(x["slug"], S["cta_text"])), logo(x["slug"], alt=""), x["slug"])
 
 

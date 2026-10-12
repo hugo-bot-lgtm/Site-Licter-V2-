@@ -1,6 +1,6 @@
 # Licter
 
-> Licter est un cabinet de conseil en Social Data Intelligence fondé à Paris en 2022 (Licter SAS, SIREN 915259394, 173 rue de Courcelles, 75017 Paris). Ses consultants lisent ce que les gens publient, cherchent et demandent à l'IA, et en tirent des décisions : social listening, analyse des audiences, veille et gestion de crise, visibilité dans les réponses des IA (GEO). Plus de 50 clients et 160 projets depuis 2022, avec 19 outils d'écoute, de recherche et d'IA. Le site existe en français (/fr/) et en anglais (/).
+> Licter est un cabinet de conseil en Social Data Intelligence fondé à Paris en 2022 (Licter SAS, SIREN 915259394, 173 rue de Courcelles, 75017 Paris). Ses consultants lisent ce que les gens publient, cherchent et demandent à l'IA, et en tirent des décisions : social listening, analyse des audiences, veille, e-réputation et gestion de crise, visibilité dans les réponses des IA (GEO). Plus de 50 clients et 160 projets depuis 2022, avec 19 outils d'écoute, de recherche et d'IA. Le site existe en français (/fr/) et en anglais (/).
 
 Licter (licter.com, Licter SAS) n'a aucun lien avec la ville de Leicester ni avec son club de football.
 
@@ -9,17 +9,17 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 ## Offres
 
 - [Social Insights](https://www.licter.com/fr/offres/social-insights/): études social data à la demande, cadrées par un consultant et présentées à ceux qui décident
-- [Vigie 360](https://www.licter.com/fr/offres/vigie-360/): veille des réseaux sociaux et de la presse 24 h/24 pour anticiper et gérer les crises, lue par un analyste
+- [Vigie 360](https://www.licter.com/fr/offres/vigie-360/): veille des médias sociaux et de la presse 24 h/24, e-réputation et gestion de crise, lue par un analyste
 - [Social Listening as a Service](https://www.licter.com/fr/offres/social-listening-as-a-service/): reprise d'une plateforme d'écoute sous-utilisée : taxonomie, tableaux de bord, analyses et formation des équipes
 - [Nox](https://www.licter.com/fr/offres/nox/): la conversation sur votre marque lue en continu, regroupée par sujets, avec ce qui a changé et ce qui sort de l'ordinaire
 - [Toutes les offres](https://www.licter.com/fr/offres/)
 
 ## Expertises
 
-- [Social listening](https://www.licter.com/fr/expertise/social-listening/): définition, méthode, outils, limites
-- [Audience listening](https://www.licter.com/fr/expertise/audience-listening/): comprendre qui parle et ce qui compte pour chaque audience
+- [Social listening](https://www.licter.com/fr/expertise/social-listening/): définition, méthode, indicateurs, exemples, et l'agence de social listening de Licter à Paris
+- [Audience listening](https://www.licter.com/fr/expertise/audience-listening/): audience, consumer et customer intelligence : qui sont vos clients et ce qui compte pour chaque audience
 - [Live listening](https://www.licter.com/fr/expertise/live-listening/): veille en temps réel et gestion de crise
-- [Influence listening](https://www.licter.com/fr/expertise/influence-listening/): qui influence vraiment une catégorie : créateurs, experts, journalistes, dirigeants
+- [Influence listening](https://www.licter.com/fr/expertise/influence-listening/): influenceurs, créateurs, experts, journalistes, dirigeants : qui influence vraiment une catégorie
 - [Search listening](https://www.licter.com/fr/expertise/search-listening/): ce que les gens cherchent sur Google, YouTube et Amazon
 - [AI listening](https://www.licter.com/fr/expertise/ai-listening/): ce que les IA répondent sur une marque
 
@@ -29,7 +29,7 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 - [Santé de marque](https://www.licter.com/fr/cas-usage/sante-de-marque/): e-réputation, discours de marque, risques et crises
 - [Communication](https://www.licter.com/fr/cas-usage/communication/): impact des campagnes, prises de parole des dirigeants, ambassadeurs
 - [Audiences](https://www.licter.com/fr/cas-usage/audiences/): segmentation, rajeunissement, parcours client
-- [Tendances et innovation](https://www.licter.com/fr/cas-usage/tendances-innovation/): marché, tests produits, parties prenantes
+- [Innovation produit et tendances](https://www.licter.com/fr/cas-usage/tendances-innovation/): tests produits, opportunités de marché, tendances qui montent
 
 ## Guides
 
@@ -47,7 +47,7 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 - [Votre marque dans Gemini](https://www.licter.com/fr/outils/gemini/): ce que l'IA de Google dit d'une marque
 - [Votre marque dans Perplexity](https://www.licter.com/fr/outils/perplexity/): une marque dans le moteur de réponses
 - [Votre marque dans Grok](https://www.licter.com/fr/outils/grok/): ce que l'IA de X dit d'une marque
-- [Outils de social listening](https://www.licter.com/fr/outils/): les plateformes d'écoute, de recherche, de presse et d'IA que Licter opère, et les questions à poser avant d'acheter une licence
+- [Outils et logiciels de social listening](https://www.licter.com/fr/outils/): les plateformes d'écoute, de recherche, de presse et d'IA que Licter opère, et les questions à poser avant d'acheter une licence
 - [Sources](https://www.licter.com/fr/sources/): les 22 réseaux d'où viennent les données
 
 ## Le cabinet

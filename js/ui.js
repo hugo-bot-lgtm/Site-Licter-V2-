@@ -877,37 +877,37 @@ window.LicterUC = (function () {
     tech: {
       label: "THE PLATFORMS WE RUN",
       items: [
-        { letter: "T", logo: "/assets/img/tools/talkwalker.png", name: "Talkwalker", href: "/tech-talkwalker.html",
+        { letter: "T", logo: "/assets/img/tools/talkwalker-96.webp", name: "Talkwalker", href: "/tech-talkwalker.html",
           desc: "Broad listening and analytics, across markets and languages." },
-        { letter: "V", logo: "/assets/img/tools/visibrain.png", name: "Visibrain", href: "/tech-visibrain.html",
+        { letter: "V", logo: "/assets/img/tools/visibrain-96.webp", name: "Visibrain", href: "/tech-visibrain.html",
           desc: "Real-time monitoring, and the media conversation as it breaks." },
-        { letter: "Y", logo: "/assets/img/tools/youscan.png", name: "YouScan", href: "/tech-youscan.html",
+        { letter: "Y", logo: "/assets/img/tools/youscan-96.webp", name: "YouScan", href: "/tech-youscan.html",
           desc: "Visual listening: what appears in the image, not only in the text." },
-        { letter: "S", logo: "/assets/img/tools/soprism.png", name: "SoPrism", href: "/tech-soprism.html",
+        { letter: "S", logo: "/assets/img/tools/soprism-96.webp", name: "SoPrism", href: "/tech-soprism.html",
           desc: "Audience intelligence: who the communities are, in detail." },
-        { letter: "R", logo: "/assets/img/tools/radarly.png", name: "Radarly", href: "/tech-radarly.html",
+        { letter: "R", logo: "/assets/img/tools/radarly-96.webp", name: "Radarly", href: "/tech-radarly.html",
           desc: "Social listening and conversation analysis, over time." },
-        { letter: "B", logo: "/assets/img/tools/brandwatch.png", name: "Brandwatch", href: "/tech-brandwatch.html",
+        { letter: "B", logo: "/assets/img/tools/brandwatch-96.webp", name: "Brandwatch", href: "/tech-brandwatch.html",
           desc: "Consumer research in depth: years of conversation, fine audiences." },
-        { letter: "S", logo: "/assets/img/tools/sprinklr.png", name: "Sprinklr", href: "/tech-sprinklr.html",
+        { letter: "S", logo: "/assets/img/tools/sprinklr-96.webp", name: "Sprinklr", href: "/tech-sprinklr.html",
           desc: "The customer voice at group scale: listening, reviews and care." }
       ],
       /* the tools around the platforms, picked question by question */
       extra: {
         label: "AND, DEPENDING ON THE QUESTION",
         items: [
-          { letter: "S", logo: "/assets/img/tools/semrush.png", name: "Semrush", desc: "Search and SEO", href: "/tech-semrush.html" },
-          { letter: "G", logo: "/assets/img/tools/google-trends.png", name: "Google Trends", desc: "Search interest", href: "/tech-google-trends.html" },
-          { letter: "A", logo: "/assets/img/tools/answerthepublic.png", name: "AnswerThePublic", desc: "The questions people ask", href: "/tech-answerthepublic.html" },
-          { letter: "C", logo: "/assets/img/tools/chatgpt.png", name: "ChatGPT", desc: "What AI answers", href: "/tech-chatgpt.html" },
-          { letter: "C", logo: "/assets/img/tools/claude.png", name: "Claude", desc: "What Claude says about you", href: "/tech-claude.html" },
-          { letter: "G", logo: "/assets/img/tools/gemini.png", name: "Gemini", desc: "Google's AI", href: "/tech-gemini.html" },
-          { letter: "P", logo: "/assets/img/tools/perplexity.png", name: "Perplexity", desc: "The answer engine", href: "/tech-perplexity.html" },
-          { letter: "G", logo: "/assets/img/tools/grok.png", name: "Grok", desc: "X's AI", href: "/tech-grok.html" },
+          { letter: "S", logo: "/assets/img/tools/semrush-96.webp", name: "Semrush", desc: "Search and SEO", href: "/tech-semrush.html" },
+          { letter: "G", logo: "/assets/img/tools/google-trends-96.webp", name: "Google Trends", desc: "Search interest", href: "/tech-google-trends.html" },
+          { letter: "A", logo: "/assets/img/tools/answerthepublic-96.webp", name: "AnswerThePublic", desc: "The questions people ask", href: "/tech-answerthepublic.html" },
+          { letter: "C", logo: "/assets/img/tools/chatgpt-96.webp", name: "ChatGPT", desc: "What AI answers", href: "/tech-chatgpt.html" },
+          { letter: "C", logo: "/assets/img/tools/claude-96.webp", name: "Claude", desc: "What Claude says about you", href: "/tech-claude.html" },
+          { letter: "G", logo: "/assets/img/tools/gemini-96.webp", name: "Gemini", desc: "Google's AI", href: "/tech-gemini.html" },
+          { letter: "P", logo: "/assets/img/tools/perplexity-96.webp", name: "Perplexity", desc: "The answer engine", href: "/tech-perplexity.html" },
+          { letter: "G", logo: "/assets/img/tools/grok-96.webp", name: "Grok", desc: "X's AI", href: "/tech-grok.html" },
           { glyph: "googlegemini", name: "GEO", desc: "Visibility in AI engines", href: "/tech-geo.html" },
-          { letter: "M", logo: "/assets/img/tools/meta-ads.png", name: "Meta Ads", desc: "The Meta Ad Library", href: "/tech-meta-ads.html" },
-          { letter: "G", logo: "/assets/img/tools/google-news.png", name: "Google News", desc: "Press coverage", href: "/tech-google-news.html" },
-          { letter: "S", logo: "/assets/img/tools/social-blade.png", name: "Social Blade", desc: "Account and creator growth", href: "/tech-social-blade.html" }
+          { letter: "M", logo: "/assets/img/tools/meta-ads-96.webp", name: "Meta Ads", desc: "The Meta Ad Library", href: "/tech-meta-ads.html" },
+          { letter: "G", logo: "/assets/img/tools/google-news-96.webp", name: "Google News", desc: "Press coverage", href: "/tech-google-news.html" },
+          { letter: "S", logo: "/assets/img/tools/social-blade-96.webp", name: "Social Blade", desc: "Account and creator growth", href: "/tech-social-blade.html" }
         ]
       },
       aside: {
