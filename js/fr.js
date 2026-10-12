@@ -2868,7 +2868,7 @@ window.LicterFR = {
     "5 langues",
   "Alert within 15 min":
     "Alerte en moins de 15 min",
-  "Ask for a Vigie 360 quote for your brand.":
+  "Ask for a Vigie 360 quote for your brand.":
     "Demandez un devis Vigie 360 pour votre marque.",
   "What should we be watching for you?":
     "Que devrions-nous surveiller pour vous ?",

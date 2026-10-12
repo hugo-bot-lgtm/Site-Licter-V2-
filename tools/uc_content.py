@@ -306,8 +306,8 @@ CASES = [
              "Track image, sentiment and the subjects attached to your name, continuously and across markets, with 24/7 alerting on the breaks."),
     "h1": ("Surveiller l'image et la réputation de votre marque, en continu.",
            "Monitor your brand image and reputation, continuously."),
-    "intro": ("L'e-réputation, c'est l'image de votre marque telle qu'elle se dit en ligne : sur les réseaux sociaux, les sites d'avis, les forums et la presse. Votre réputation se joue tous les jours, sur des plateformes et dans des langues que vos équipes ne peuvent pas toutes suivre. Nous lisons en continu ce qui se dit de vous, les sujets qui s'attachent à votre nom et la façon dont ils évoluent face à vos concurrents.",
-              "Online reputation is your brand's image as people express it online: on social networks, review sites, forums and the press. Your reputation plays out every day, on platforms and in languages your teams cannot all follow. We continuously read what is said about you, the subjects that attach to your name and how they move against your competitors."),
+    "intro": ("Votre réputation se joue tous les jours, sur des plateformes et dans des langues que vos équipes ne peuvent pas toutes suivre. Nous lisons en continu ce qui se dit de vous, les sujets qui s'attachent à votre nom et la façon dont ils évoluent face à vos concurrents.",
+              "Your reputation plays out every day, on platforms and in languages your teams cannot all follow. We continuously read what is said about you, the subjects that attach to your name and how they move against your competitors."),
     "questions": [
       ("Que dit-on de nous, et est-ce que ça change ?", "What is being said about us, and is it changing?"),
       ("Quels sujets s'attachent à notre nom, en bien et en mal ?", "Which subjects attach to our name, good and bad?"),
@@ -334,7 +334,8 @@ CASES = [
     ],
     "example": ("Exemple illustratif : une maison de maroquinerie voit ses mentions négatives monter. La lecture montre que les hausses de prix sont acceptées, mais que l'accueil en boutique concentre 38 % des critiques. Recommandation : former les équipes boutique avant la prochaine hausse.",
                 "Illustrative example: a leather goods house sees negative mentions rise. The read shows price increases are accepted, but the in-store welcome accounts for 38% of the criticism. Recommendation: train boutique teams before the next increase."),
-    "faq": [
+    "faq": [(("Qu'est-ce que l'e-réputation ?", "What is online reputation?"), ("L'e-réputation, c'est l'image de votre marque telle qu'elle se dit en ligne : sur les réseaux sociaux, les sites d'avis, les forums et la presse. La surveiller, c'est lire en continu ce qui se dit de vous, repérer les sujets qui s'attachent à votre nom et être alerté quand l'un d'eux change de tendance.", "Online reputation is your brand's image as people express it online: on social networks, review sites, forums and the press. Monitoring it means reading what is said about you continuously, spotting the subjects that attach to your name and being alerted when one of them breaks the trend.")),
+            
       (("En quoi est-ce différent d'un outil de veille ?", "How is this different from a monitoring tool?"),
        ("L'outil collecte ; nos analystes lisent, qualifient et vous disent quoi faire. Vous recevez une décision, pas un export.", "The tool collects; our analysts read, qualify and tell you what to do. You get a decision, not an export.")),
       (("Couvrez-vous plusieurs pays ?", "Do you cover several countries?"),

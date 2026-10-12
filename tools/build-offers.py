@@ -404,7 +404,7 @@ MORE = {
                   "With a framing call, then the list of the quarter's questions, ranked with you in the first week."))],
     },
     "vigie": {
-        "magnet": ("Demandez un devis Vigie\u00a0360 pour votre marque.", "Ask for a Vigie\u00a0360 quote for your brand."),
+        "magnet": ("Demandez un devis Vigie\u00a0360 pour votre marque.", "Ask for a Vigie 360 quote for your brand."),
         "dlv": "brand-risk",
         "faq": [(("En combien de temps êtes-vous opérationnels ?", "How fast are you up and running?"),
                  ("Le périmètre et les contacts d'alerte sont fixés la première semaine, les seuils réglés avec des alertes de test la deuxième.",
