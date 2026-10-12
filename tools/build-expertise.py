@@ -736,6 +736,13 @@ def listening_body(x, offers_html):
         G = importlib.import_module(guide)
         from components import qa_roller, guide_article, authors_line, sources_line
         cards = [(t(h), [t(p_) for p_ in ps]) for h, ps in G.BLOCKS]
+        if x["key"] == "social" and getattr(G, "TABLE", None):     # the indicators block also as a table, after its first paragraph
+            q, (h1_, h2_), rows = G.TABLE
+            table = ('<table class="lg__t"><thead><tr><th scope="col">%s</th><th scope="col">%s</th></tr></thead><tbody>%s</tbody></table>' % (
+                t(h1_), t(h2_), "".join('<tr><th scope="row">%s</th><td>%s</td></tr>' % (t(k), t(v)) for k, v in rows)))
+            for i, (h, ps) in enumerate(G.BLOCKS):
+                if h[0] == q:
+                    cards[i][1].insert(1, table)
         by = authors_line(t(("Rédigé par", "Written by")), t(("et", "and")), t((", cofondateurs de Licter", ", co-founders of Licter")))
         # the social listening page competes for "social listening", a definition query: its guide reads as an article
         body = (guide_article(cards, t(("Sommaire", "Contents")), by=by) if x["key"] == "social"

@@ -112,8 +112,8 @@ def fr_date(x):
 
 def meta(x, fr=False):
     if fr:
-        return '<span class="bl-meta"><span>%s</span><span>%s</span></span>' % (fr_date(x), x["read"].replace("min read", "min de lecture"))
-    return '<span class="bl-meta"><span>%s</span><span>%s</span></span>' % (x["date"], x["read"])
+        return '<span class="bl-facts"><span>%s</span><span>%s</span></span>' % (fr_date(x), x["read"].replace("min read", "min de lecture"))
+    return '<span class="bl-facts"><span>%s</span><span>%s</span></span>' % (x["date"], x["read"])
 
 
 def card(x, big=False, fr=False):

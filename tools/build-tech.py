@@ -80,8 +80,11 @@ S.update({
     "feat_k": ("CE QU'IL PERMET", "WHAT IT DOES"),
     "feat_t": ("Ce que %s permet d'analyser.", "What %s lets you analyse."),
     "ag_t": ("Pourquoi passer par une agence %s ?", "Why work with a %s agency?"),
-    "ag_lead": ("%s fournit des données : des mentions, des volumes, des tableaux de bord. Une agence %s comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
-                "%s provides data: mentions, volumes, dashboards. A %s agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it."),
+    "ag_lead": ("%s fournit la matière. Une agence %s comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+                "%s provides the raw material. A %s agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it."),
+    # an AI assistant is questioned, not operated
+    "ag_lead_ai": ("%s répond à vos clients. Une agence %s comme Licter l'interroge comme eux, fait lire ses réponses par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous travaillons.",
+                   "%s answers your customers. A %s agency like Licter questions it the way they do, has an analyst read its answers and turns them into a decision, presented to those who decide. Here is how we work."),
     "del_k": ("CE QUE NOUS LIVRONS", "WHAT WE DELIVER"),
     "del_t": ("Ce que nous livrons avec %s.", "What we deliver with %s."),
     "uses_k2": ("CAS D'USAGE", "USE CASES"),
@@ -449,7 +452,7 @@ def cta(band, sub, mark, slug):
             <button class="signup__btn" type="submit">BOOK A MEETING</button>
           </form>
           <p class="consent">We use your email only to reply to you. <a href="privacy.html">Privacy policy</a>.</p>
-          <p class="signup__note" role="status"><span class="signup__check" aria-hidden="true">✓</span> NOTED, A CONSULTANT GETS BACK TO YOU WITHIN 30 MINUTES ON WEEKDAYS</p>
+          <p class="signup__note" role="status"><span class="signup__check" aria-hidden="true">✓</span> NOTED, A CONSULTANT GETS BACK TO YOU WITHIN 30 MINUTES, ON WEEKDAYS FROM 9AM TO 7PM</p>
         </div>
       </div>
     </div>
@@ -519,7 +522,10 @@ def tool_body(x):
             '<h1 class="%s">%s<br><span>%s</span></h1>' % (h1_cls(l1[0], l1[1], l2[0], l2[1]), t(l1), t(l2)) +
             '<p class="tk-lead">%s</p>' % t(x["lead"]) +
             '<div class="tk-actions"><a class="btn btn--primary" href="book-a-meeting.html">%s <span aria-hidden="true">→</span></a>'
-            '<a class="btn btn--ghost" href="tech-tools.html">%s</a></div>' % (t(S["book"]), t(S["all"])))
+            '<a class="btn btn--ghost" href="%s">%s</a></div>' % (t(S["book"]), *(
+                # GEO and the AI assistants belong with AI listening, not with the listening platforms (audit of 12 October 2026)
+                ("expertise-ai-listening.html", t(("Notre expertise AI listening", "Our AI listening expertise"))) if x["slug"] == "geo" or x["slug"] in AI.ENGINE
+                else ("tech-tools.html", t(S["all"])))))
     art = shot(x["slug"], name, logo(x["slug"], alt=name)) + '<div class="tk-badge"><i>✓</i><span>%s</span></div>' % t(("Lu par un consultant Licter", "Read by a Licter consultant"))
     sheet = ('<aside class="tk-sheet" data-reveal><div class="tk-sheet__top"><span class="tk-sheet__logo">%s</span><b>%s</b></div><dl>%s</dl></aside>' % (
         logo(x["slug"], alt=name), html.escape(name), "".join('<div><dt>%s</dt><dd>%s</dd></div>' % (t(k), t(v)) for k, v in x["facts"])))
@@ -537,7 +543,7 @@ def tool_body(x):
         out += sec("engine", head(t(fmt(AI.HEAD[0], NM)), t(fmt(AI.HEAD[1], nm))) +
                    '<ul class="tk-proof">%s</ul>' % "".join('<li class="tk-proof__c"><b>%s</b><p>%s</p></li>' % (t(a), t(b)) for a, b in AI.ENGINE[x["slug"]]))
     out += sec("features", head(t(S["feat_k"]), hd(x["slug"], "feat_t", nm)) + feats(x["features"], x["slug"]), band=True)
-    out += sec("agency", head(t(ag["kick"]), t(AI.AG_T) if x["slug"] in AI.INTENT else t(fmt(S["ag_t"], nm)), t(AI.AG_LEAD_BY[x["slug"]]) if x["slug"] in AI.AG_LEAD_BY else t(fmt(AI.AG_LEAD, nm)) if x["slug"] in AI.INTENT else t(fmt(S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
+    out += sec("agency", head(t(ag["kick"]), t(AI.AG_T) if x["slug"] in AI.INTENT else t(fmt(S["ag_t"], nm)), t(AI.AG_LEAD_BY[x["slug"]]) if x["slug"] in AI.AG_LEAD_BY else t(fmt(AI.AG_LEAD, nm)) if x["slug"] in AI.INTENT else t(fmt(S["ag_lead_ai"] if x["slug"] in AI.ENGINE else S["ag_lead"], nm, nm))) + versus(x["slug"], nm) + steps())
     out += sec("deliverables", head(t(S["del_k"]), hd(x["slug"], "del_t", nm)) + dels, band=True)
     out += sec("uses", head(t(S["uses_k2"]), hd(x["slug"], "uses_t2", nm), t(S["uses_lead"])) + prog(x["uses"]))
     out += sec("limits", head(t(S["lim_k"]), hd(x["slug"], "lim_t", nm)) + lims, band=True)
@@ -741,6 +747,8 @@ def main():
         b0, b1 = src.index("<body"), src.index("</body>")
         en = re.sub(r"<!--ld-->", lambda m: ld(src[b0:b1], EN, name, "%s/%s" % (O.SITE, f), f), src, count=1)
         to_fr(src, f, fr_url, title, desc, name)
+        # "a AnswerThePublic agency": English takes "an" before a name that starts with a vowel (audit of 12 October 2026)
+        en = re.sub(r"\b([Aa]) (?=[AEIOU][A-Za-z]*[a-z][A-Za-z]* agency\b)", lambda m: m.group(1) + "n ", en)
         (ROOT / f).write_text(O.per_lang(en, EN))
     print("%d tool and network pages written in English and French, %d strings in js/fr.js" % (len(pages), len(O.NEW)))
 

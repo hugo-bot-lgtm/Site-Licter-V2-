@@ -223,8 +223,8 @@ L = {  # interface words of these pages
 
 BOOK = {
     "h2": ("Laquelle de ces questions est la vôtre ?", "Which of these questions is yours?"),
-    "lead": ("Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine pour en parler.",
-             "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays to talk it through."),
+    "lead": ("Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, pour en parler.",
+             "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, to talk it through."),
     "label": ("E-mail ou téléphone", "Email or phone"),
     "ph": ("nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"),
     "btn": ("Me faire rappeler", "Call me back"),

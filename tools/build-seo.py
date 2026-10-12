@@ -576,9 +576,9 @@ def main():
                                      r'\1\n        <li><a href="/socialintelligenceclub/">Social Intelligence Club</a></li>', s[foot_at:], count=1)
         # the footer: who we are and how to reach us, and an award stated as the founder's
         foot_fr = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
-                   "50+ clients · 160+ projets · Antoine Khaitrine (2024) et Adrien Krebs (2025), Top 50 Insider mondial (SI Lab)")
+                   "50+ clients · 160+ projets · Antoine\u00a0Khaitrine\u00a0(2024) et Adrien\u00a0Krebs\u00a0(2025), Top 50 Insider mondial (SI Lab)")
         foot_en = ("Licter SAS · 173 rue de Courcelles, 75017 Paris · <a href=\"mailto:contact@licter.com\">contact@licter.com</a> · "
-                   "50+ clients · 160+ projects · Antoine Khaitrine (2024) and Adrien Krebs (2025), Top 50 Insider worldwide (SI Lab)")
+                   "50+ clients · 160+ projects · Antoine\u00a0Khaitrine\u00a0(2024) and Adrien\u00a0Krebs\u00a0(2025), Top 50 Insider worldwide (SI Lab)")
         s = re.sub(r'<span>(?:Licter SAS ·.*?|50\+ clients · 160\+ (?:projects|projets) · Top 50 Insider[^<]*)</span>(?=\s*</div>\s*</footer>)',
                    "<span>%s</span>" % (foot_fr if fr else foot_en), s, flags=re.S)
         # French pages link to French pages in their HTML, not through a script

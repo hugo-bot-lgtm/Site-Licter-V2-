@@ -96,3 +96,15 @@ BLOCKS = [
     ]),
 ]
 # source: https://datareportal.com/reports/digital-2026-two-in-three-people-use-social-media (5.66 billion active social media user identities, 68.7% of the world population)
+
+
+# the indicators block also reads as a table (audit of 12 October 2026): the same
+# indicators as its first paragraph, one line each, nothing added
+TABLE = ("Quels indicateurs suivre en social listening ?",
+         (("Indicateur", "Metric"), ("Ce qu'il dit", "What it tells you")),
+         [(("Volume de mentions", "Volume of mentions"), ("Si l'on parle plus ou moins de vous, et quand.", "Whether people talk about you more or less, and when.")),
+          (("Part de voix", "Share of voice"), ("Votre place dans la conversation de la catégorie, face à vos concurrents.", "Your place in the category's conversation, against your competitors.")),
+          (("Tonalité", "Tone"), ("Positive, neutre ou négative, relue par un analyste.", "Positive, neutral or negative, checked by an analyst.")),
+          (("Portée", "Reach"), ("Le nombre de personnes potentiellement exposées.", "The number of people potentially exposed.")),
+          (("Sujets et irritants", "Topics and pain points"), ("Ce qui monte, et ce qui revient dans la conversation.", "What is rising, and what keeps coming back.")),
+          (("Voix qui portent", "Voices that carry"), ("Les comptes qui font vraiment la conversation.", "The accounts that really drive the conversation."))])

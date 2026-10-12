@@ -42,8 +42,8 @@
     callBadge1: ["Réponse sous 30 min", "Reply within 30 min"],
     callBadge2: ["160+ projets depuis 2022", "160+ projects since 2022"],
     callImgAlt: ["Trois consultantes Licter dans les bureaux", "Three Licter consultants in the office"],
-    callT: ["Trente minutes avec un consultant.", "Thirty minutes with a consultant."],
-    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine.", "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays."],
+    callT: ["Un échange avec un consultant.", "A call with a consultant."],
+    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h.", "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm."],
     callF: ["E-mail ou téléphone", "Email or phone"],
     callP: ["nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"],
     callB: ["Me faire rappeler", "Call me back"],
@@ -191,7 +191,7 @@
       var kind = EMAIL.test(v) ? "email" : (/^\+?\d{9,15}$/.test(v.replace(/[\s.()-]/g, "")) ? "phone" : null);
       if (!kind) bad = i;
       else {
-        if (window.LicterSend) window.LicterSend("callback", "Popup « Trente minutes avec un consultant »", { "E-mail ou téléphone": v });
+        if (window.LicterSend) window.LicterSend("callback", "Popup « Un échange avec un consultant »", { "E-mail ou téléphone": v });
         if (kind === "email" && window.LicterLead) window.LicterLead.set(v);
         sent.call = { v: v, k: kind };
       }

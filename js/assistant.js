@@ -54,9 +54,9 @@
     typing: [A.name + " écrit…", A.name + " is typing…"],
     callCta: ["Être rappelé par un consultant", "Get a call back from a consultant"],
     /* the callback: the same words as the home */
-    callT: ["Trente minutes avec un consultant.", "Thirty minutes with a consultant."],
-    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine.",
-            "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays."],
+    callT: ["Un échange avec un consultant.", "A call with a consultant."],
+    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h.",
+            "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm."],
     field: ["E-mail ou téléphone", "Email or phone"],
     ph: ["nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"],
     callBtn: ["Me faire rappeler", "Call me back"],
@@ -155,16 +155,16 @@
       a: ["Les conditions dépendent de l'offre et du périmètre : un consultant vous les précise dès le premier échange.",
           "Terms depend on the offer and the scope: a consultant sets them out with you in the first call."] },
     { k: ["rendez-vous", "rdv", "appel", "appeler", "rappel", "rappeler", "contact", "contacter", "parler", "telephone", "joindre", "meeting", "call", "talk", "demo", "phone"],
-      a: ["Avec plaisir. Laissez votre e-mail ou votre téléphone : un consultant vous rappelle dans les 30 minutes en semaine, pas un commercial.",
-          "With pleasure. Leave your email or phone number: a consultant calls you back within 30 minutes on weekdays, not a salesperson."],
+      a: ["Avec plaisir. Laissez votre e-mail ou votre téléphone : un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, pas un commercial.",
+          "With pleasure. Leave your email or phone number: a consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, not a salesperson."],
       go: [["Choisir un créneau", "Pick a slot"], "/book-a-meeting.html"] },
     { k: ["merci", "thanks", "thank you", "super", "parfait", "top", "genial", "great"],
       a: ["Avec plaisir. Si vous voulez aller plus loin sur votre cas précis, le plus efficace reste une demi-heure avec un consultant.",
           "My pleasure. To go further on your own case, the most useful is still half an hour with a consultant."] }
   ];
   var FALLBACK = {
-    a: ["Bonne question, et je préfère ne pas vous y répondre à moitié. Le plus simple : un consultant vous rappelle dans les 30 minutes en semaine, et vous aurez une réponse précise.",
-        "Good question, and I would rather not half-answer it. The simplest: a consultant calls you back within 30 minutes on weekdays, and you get a precise answer."],
+    a: ["Bonne question, et je préfère ne pas vous y répondre à moitié. Le plus simple : un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, et vous aurez une réponse précise.",
+        "Good question, and I would rather not half-answer it. The simplest: a consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, and you get a precise answer."],
     go: [["Prendre rendez-vous", "Book a meeting"], "/book-a-meeting.html"]
   };
   var CHIPS = [

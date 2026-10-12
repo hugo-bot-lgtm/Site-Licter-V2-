@@ -736,7 +736,7 @@ window.LicterFR = {
   "A licence makes sense if someone in your team can write the queries and read the results every week. Otherwise, an agency runs the tool for you and delivers the reading: you pay for the answer, not for the access.": "Une licence a du sens si quelqu'un dans votre équipe peut écrire les requêtes et lire les résultats chaque semaine. Sinon, une agence opère l'outil pour vous et livre la lecture : vous payez la réponse, pas l'accès.",
   "No. Licter is an independent consultancy: we publish no tool, we run the platforms on the market for our clients and choose them by the question.": "Non. Licter est un cabinet indépendant : nous n'éditons aucun outil, nous opérons les plateformes du marché pour nos clients et les choisissons selon la question.",
   "It depends on the publisher, the number of users, the history and the modules. When we run the tool for you, the whole service is on quotation, licence included.": "Cela dépend de l'éditeur, du nombre d'utilisateurs, de l'historique et des modules. Quand nous opérons l'outil pour vous, l'ensemble est sur devis, licence comprise.",
-  "Leave your email or phone number. A consultant from our social listening agency calls you back within 30 minutes on weekdays, tells you which sources we would use, and runs them for you if you wish.": "Laissez votre e-mail ou votre téléphone. Un consultant de notre agence de social listening vous rappelle dans les 30 minutes en semaine, vous dit quelles sources nous utiliserions, et les opère pour vous si vous le souhaitez.",
+  "Leave your email or phone number. A consultant from our social listening agency calls you back within 30 minutes, on weekdays from 9am to 7pm, tells you which sources we would use, and runs them for you if you wish.": "Laissez votre e-mail ou votre téléphone. Un consultant de notre agence de social listening vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, vous dit quelles sources nous utiliserions, et les opère pour vous si vous le souhaitez.",
   "Who is responsible": "Responsable du traitement",
   "Licter SAS, 173 rue de Courcelles, 75017 Paris, France. Contact:": "Licter SAS, 173 rue de Courcelles, 75017 Paris. Contact :",
   "What we collect": "Ce que nous collectons",
@@ -745,7 +745,7 @@ window.LicterFR = {
   "If you accept the audience measurement cookies, Google Analytics also records how the site is used: pages viewed, clicks on our buttons, forms sent and the score of the diagnostic, without your name or your email. See": "Si vous acceptez les cookies de mesure d'audience, Google Analytics enregistre aussi l'usage du site : pages vues, clics sur nos boutons, formulaires envoyés et score du diagnostic, sans votre nom ni votre e-mail. Voir la section",
   "below.": "plus bas.",
   "Why": "Pourquoi",
-  "To reply to you, send you what you asked for (a guide, an example, a magazine, a meeting invitation, a callback) and, if you subscribed, our newsletter. Legal basis: your consent, and our legitimate interest in answering a request you made.": "Pour vous répondre, vous envoyer ce que vous avez demandé (un guide, un exemple, un magazine, une invitation, un rappel) et, si vous vous êtes abonné, notre lettre d'information. Base légale : votre consentement, et notre intérêt légitime à répondre à une demande que vous avez faite.",
+  "To reply to you, send you what you asked for (a guide, a quote, a magazine, a meeting invitation, a callback) and, if you subscribed, our newsletter. Legal basis: your consent, and our legitimate interest in answering a request you made.": "Pour vous répondre, vous envoyer ce que vous avez demandé (un guide, un devis, un magazine, une invitation, un rappel) et, si vous vous êtes abonné, notre lettre d'information. Base légale : votre consentement, et notre intérêt légitime à répondre à une demande que vous avez faite.",
   "Who sees it": "Qui y a accès",
   "The Licter team only, and the providers that run the site and our email and client relationship tools, who process it on our behalf. We do not sell or rent your data.": "L'équipe Licter uniquement, et les prestataires qui font fonctionner le site et nos outils d'e-mail et de relation client, pour notre compte. Nous ne vendons ni ne louons vos données.",
   "Some of these providers, starting with our host, are based in the United States; transfers are covered by the European Commission's standard contractual clauses or the EU-US Data Privacy Framework.": "Certains de ces prestataires, à commencer par notre hébergeur, sont établis aux États-Unis : les transferts sont encadrés par les clauses contractuelles types de la Commission européenne ou par le Data Privacy Framework UE-États-Unis.",
@@ -886,7 +886,7 @@ window.LicterFR = {
     "Licter est le cabinet de conseil en Social Data Intelligence. Nous transformons la donnée du plus grand panel du monde – réseaux sociaux, recherche, IA générative – en décisions.",
   "Your work email...": "Votre e-mail professionnel...", "Your work email": "Votre e-mail professionnel",
   "BOOK A MEETING": "PRENDRE RENDEZ-VOUS",
-  "NOTED, A CONSULTANT GETS BACK TO YOU WITHIN 30 MINUTES ON WEEKDAYS": "BIEN REÇU, UN CONSULTANT VOUS RECONTACTE SOUS 30 MINUTES EN SEMAINE",
+  "NOTED, A CONSULTANT GETS BACK TO YOU WITHIN 30 MINUTES, ON WEEKDAYS FROM 9AM TO 7PM": "BIEN REÇU, UN CONSULTANT VOUS RECONTACTE SOUS 30 MINUTES, EN SEMAINE DE 9 H À 19 H",
   "NOTED, ONE EMAIL WHEN THE NEXT PIECE IS OUT": "C'EST NOTÉ, UN E-MAIL À LA PROCHAINE PUBLICATION",
   "Enter a work email, like name@company.com.": "Saisissez un e-mail professionnel, par exemple nom@entreprise.com.",
   "Skip to content": "Aller au contenu",
@@ -963,7 +963,7 @@ window.LicterFR = {
   "Four layers of signal, filtered by consultants, not by a dashboard default.": "Quatre calques de signal, filtrés par des consultants, pas par le réglage par défaut d'un tableau de bord.",
   "Analysts read the audiences against your market, in its own language.": "Des analystes lisent les audiences au regard de votre marché, dans sa langue.",
   "A readout presented to the people who decide, and alerts when something moves.": "Une restitution présentée à celles et ceux qui décident, et des alertes quand quelque chose bouge.",
-  "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays and tells you which model fits.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine et vous dit quel modèle vous convient.",
+  "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, and tells you which model fits.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, et vous dit quel modèle vous convient.",
   "The three offers": "Les trois offres",
   "The Vigie 360 alert feed": "Le flux d'alertes Vigie 360",
   "Your platform before and after": "Votre plateforme avant et après",
@@ -1018,7 +1018,7 @@ window.LicterFR = {
   "users profiled daily · 7,000+ criteria": "utilisateurs profilés chaque jour · 7 000+ critères",
   "Decide": "Décider",
   "An analyst reads it, in the language of the market, and tells you what to do.": "Un analyste le lit, dans la langue du marché, et vous dit quoi faire.",
-  "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays and tells you which sources we would use, and what they cannot tell you.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine et vous dit quelles sources nous utiliserions, et ce qu'elles ne peuvent pas vous dire.",
+  "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, and tells you which sources we would use, and what they cannot tell you.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, et vous dit quelles sources nous utiliserions, et ce qu'elles ne peuvent pas vous dire.",
   "The four layers": "Les quatre calques",
   "The whole Licter team in the office, standing and seated around a coffee table": "Toute l'équipe Licter au bureau, debout et assise autour d'une table basse",
   "A Licter consultant in an armchair, an open laptop in hand": "Un membre de l'équipe Licter dans un fauteuil, un ordinateur ouvert à la main",
@@ -1054,7 +1054,7 @@ window.LicterFR = {
   "In their own words": "Dans leurs mots",
   "Your sector is not one of these four?": "Votre secteur n'est pas l'un de ces quatre ?",
   "Tell us your question": "Dites-nous votre question",
-  "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays to talk it through.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine pour en parler.",
+  "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, to talk it through.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, pour en parler.",
   "Find the creators and public voices whose audience genuinely overlaps yours, not the ones with the largest follower count.": "Trouvez les créateurs et les voix publiques dont l'audience recoupe vraiment la vôtre, pas ceux qui ont le plus d'abonnés.",
   "Brand health is not a quarterly survey. It is a continuous signal, already public: the work is to read it in time.": "La santé de marque n'est pas une étude trimestrielle. C'est un signal continu, déjà public : le travail consiste à le lire à temps.",
   "See which words, claims and proofs your audiences actually repeat, and which ones never leave your presentations.": "Voyez quels mots, promesses et preuves vos audiences reprennent vraiment, et lesquels ne quittent jamais vos présentations.",
@@ -1070,7 +1070,7 @@ window.LicterFR = {
   "A word from the founders": "Un mot des fondateurs",
   /* ---- home: the quiz promise ---- */
   "A consultant, not a sales team. Weekdays, 9am to 7pm.": "Un consultant, pas un commercial. En semaine, de 9\u00a0h à 19\u00a0h.",
-  "A consultant calls you back within 30 minutes on weekdays, not a sales team.": "Un consultant vous rappelle dans les 30\u00a0minutes en semaine, pas un commercial.",
+  "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, not a sales team.": "Un consultant vous rappelle dans les 30\u00a0minutes en semaine, pas un commercial.",
   "Company name": "Nom de l'entreprise",
   "Rather read first?": "Plutôt lire d'abord\u00a0?",
   "The guide to the 12 questions": "Le guide des 12 questions",
@@ -1088,7 +1088,7 @@ window.LicterFR = {
   "(opens the SI Lab website)": "(ouvre le site de SI Lab)",
   "50+ clients · 160+ projects · Top 50 Insider worldwide, SI Lab since 2024": "50+ clients · 160+ projets · Top 50 Insider mondial, SI Lab depuis 2024",
   "Insider worldwide, SI Lab since 2024": "Insider mondial, SI Lab depuis 2024",
-  "Leave your email or phone number. A consultant calls you back within 30 minutes on weekdays.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes en semaine.",
+  "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h.",
   "Email or phone": "E-mail ou téléphone",
   "name@company.com or 06 12 34 56 78": "nom@entreprise.com ou 06 12 34 56 78",
   "Call me back": "Me faire rappeler",
@@ -1129,7 +1129,7 @@ window.LicterFR = {
   "Free diagnostic": "Diagnostic gratuit",
   "Free maturity test": "Test de maturité gratuit",
   "Talk to a consultant": "Parler à un consultant",
-  "A consultant calls you back within 30 minutes on weekdays, not a sales team.": "Un consultant vous rappelle dans les 30 minutes en semaine, pas un commercial.",
+  "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, not a sales team.": "Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, pas un commercial.",
   "Framing comes first: tell us the decision, we tell you what to read.": "Le cadrage d'abord : dites-nous la décision, nous vous disons quoi lire.",
   "Half an hour with a consultant is enough to frame a first question around a decision.": "Une demi-heure avec un consultant suffit pour cadrer une première question autour d'une décision.",
   "Pick a question and watch the conversation come in. We read it, sort it, and tell you what it means.": "Choisissez une question et regardez la conversation arriver. Nous la lisons, la classons, et vous disons ce qu'elle signifie.",
@@ -1269,7 +1269,7 @@ window.LicterFR = {
   "Twelve questions social data answers better than a survey.": "Douze questions auxquelles la social data répond mieux qu'une étude.",
   "Three are open below. Leave your email and the other nine open here, with the full guide sent to you.": "Trois sont ouvertes ci-dessous. Laissez votre e-mail : les neuf autres s'ouvrent ici, et le guide complet vous est envoyé.",
   "NOTED, THE GUIDE IS ON ITS WAY": "C'EST NOTÉ, LE GUIDE ARRIVE",
-  "Thirty minutes with a consultant.": "Trente minutes avec un consultant.",
+  "Thirty minutes with a consultant.": "Trente minutes avec un consultant.", "A call with a consultant.": "Un échange avec un consultant.",
   "Pick a slot. You describe the decision, we tell you what the data can settle.": "Choisissez un créneau. Vous décrivez la décision, nous vous disons ce que la donnée peut trancher.",
   "The decision you are facing": "La décision à prendre",
   "(optional)": "(facultatif)",
@@ -1364,8 +1364,8 @@ window.LicterFR = {
   "Request my diagnostic →": "Demander mon diagnostic →",
   "Book the call →": "Réserver l'appel →",
   "100% free · sent by email immediately · no sequence afterwards": "100 % gratuit · envoi immédiat par e-mail · aucune séquence ensuite",
-  "No commitment · Reply within 30 minutes on weekdays · Independent of any follow-up project": "Sans engagement · réponse sous 30 minutes en semaine · indépendant de toute suite",
-  "Reply within 30 minutes on weekdays · No commitment": "Réponse sous 30 minutes en semaine · sans engagement",
+  "No commitment · Reply within 30 minutes, on weekdays from 9am to 7pm · Independent of any follow-up project": "Sans engagement · réponse sous 30 minutes, en semaine de 9 h à 19 h · indépendant de toute suite",
+  "Reply within 30 minutes, on weekdays from 9am to 7pm · No commitment": "Réponse sous 30 minutes, en semaine de 9 h à 19 h · sans engagement",
   "Guide sent. Check your inbox, and your spam folder: it happens.": "Guide envoyé. Vérifiez votre boîte de réception, et vos spams : ça arrive.",
   "Request received. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, to book the scoping call.":
     "Demande reçue. Un consultant revient vers vous dans les 30 minutes, en semaine de 9 h à 19 h, pour caler l'appel de cadrage.",
@@ -3281,6 +3281,32 @@ window.LicterFR = {
     "Avec une agence ou un cabinet de social listening, vous n'achetez pas un accès à un logiciel, mais une réponse. Le choix des outils, l'écriture des requêtes, la lecture dans la langue du marché et la recommandation sont pris en charge. Vos équipes gardent leur temps pour la décision.",
   "Licter is a social data intelligence consultancy based in Paris, working for brands in France and abroad: we run the market's platforms without being their publisher, and we pick the tool by the question. If you already have a licence, we can take it over and make it work. A first read comes about a week after scoping.":
     "Licter est un cabinet de conseil en social data intelligence basé à Paris, qui travaille pour des marques en France et à l'international : nous opérons les plateformes du marché sans en être l'éditeur, et nous choisissons l'outil selon la question. Si vous avez déjà une licence, nous pouvons la reprendre et la faire servir. Une première lecture arrive environ une semaine après le cadrage.",
+  "Metric":
+    "Indicateur",
+  "What it tells you":
+    "Ce qu'il dit",
+  "Volume of mentions":
+    "Volume de mentions",
+  "Whether people talk about you more or less, and when.":
+    "Si l'on parle plus ou moins de vous, et quand.",
+  "Your place in the category's conversation, against your competitors.":
+    "Votre place dans la conversation de la catégorie, face à vos concurrents.",
+  "Tone":
+    "Tonalité",
+  "Positive, neutral or negative, checked by an analyst.":
+    "Positive, neutre ou négative, relue par un analyste.",
+  "Reach":
+    "Portée",
+  "The number of people potentially exposed.":
+    "Le nombre de personnes potentiellement exposées.",
+  "Topics and pain points":
+    "Sujets et irritants",
+  "What is rising, and what keeps coming back.":
+    "Ce qui monte, et ce qui revient dans la conversation.",
+  "Voices that carry":
+    "Voix qui portent",
+  "The accounts that really drive the conversation.":
+    "Les comptes qui font vraiment la conversation.",
   "Written by":
     "Rédigé par",
   "and":
@@ -4098,8 +4124,8 @@ window.LicterFR = {
     "AGENCE TALKWALKER",
   "Why work with a Talkwalker agency?":
     "Pourquoi passer par une agence Talkwalker ?",
-  "Talkwalker provides data: mentions, volumes, dashboards. A Talkwalker agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Talkwalker fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Talkwalker comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Talkwalker provides the raw material. A Talkwalker agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Talkwalker fournit la matière. Une agence Talkwalker comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "A tool to learn and to run":
     "Un outil à apprendre et à faire tourner",
   "Queries set once, never reviewed":
@@ -4314,8 +4340,8 @@ window.LicterFR = {
     "AGENCE VISIBRAIN",
   "Why work with a Visibrain agency?":
     "Pourquoi passer par une agence Visibrain ?",
-  "Visibrain provides data: mentions, volumes, dashboards. A Visibrain agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Visibrain fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Visibrain comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Visibrain provides the raw material. A Visibrain agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Visibrain fournit la matière. Une agence Visibrain comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Visibrain on its own":
     "Visibrain seul",
   "Visibrain with Licter":
@@ -4420,8 +4446,8 @@ window.LicterFR = {
     "AGENCE YOUSCAN",
   "Why work with a YouScan agency?":
     "Pourquoi passer par une agence YouScan ?",
-  "YouScan provides data: mentions, volumes, dashboards. A YouScan agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "YouScan fournit des données : des mentions, des volumes, des tableaux de bord. Une agence YouScan comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "YouScan provides the raw material. A YouScan agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "YouScan fournit la matière. Une agence YouScan comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "YouScan on its own":
     "YouScan seul",
   "YouScan with Licter":
@@ -4530,8 +4556,8 @@ window.LicterFR = {
     "AGENCE SOPRISM",
   "Why work with a SoPrism agency?":
     "Pourquoi passer par une agence SoPrism ?",
-  "SoPrism provides data: mentions, volumes, dashboards. A SoPrism agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "SoPrism fournit des données : des mentions, des volumes, des tableaux de bord. Une agence SoPrism comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "SoPrism provides the raw material. A SoPrism agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "SoPrism fournit la matière. Une agence SoPrism comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "SoPrism on its own":
     "SoPrism seul",
   "SoPrism with Licter":
@@ -4634,8 +4660,8 @@ window.LicterFR = {
     "AGENCE RADARLY",
   "Why work with a Radarly agency?":
     "Pourquoi passer par une agence Radarly ?",
-  "Radarly provides data: mentions, volumes, dashboards. A Radarly agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Radarly fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Radarly comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Radarly provides the raw material. A Radarly agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Radarly fournit la matière. Une agence Radarly comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Radarly on its own":
     "Radarly seul",
   "Radarly with Licter":
@@ -4742,8 +4768,8 @@ window.LicterFR = {
     "AGENCE BRANDWATCH",
   "Why work with a Brandwatch agency?":
     "Pourquoi passer par une agence Brandwatch ?",
-  "Brandwatch provides data: mentions, volumes, dashboards. A Brandwatch agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Brandwatch fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Brandwatch comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Brandwatch provides the raw material. A Brandwatch agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Brandwatch fournit la matière. Une agence Brandwatch comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Brandwatch on its own":
     "Brandwatch seul",
   "Brandwatch with Licter":
@@ -4858,8 +4884,8 @@ window.LicterFR = {
     "AGENCE SPRINKLR",
   "Why work with a Sprinklr agency?":
     "Pourquoi passer par une agence Sprinklr ?",
-  "Sprinklr provides data: mentions, volumes, dashboards. A Sprinklr agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Sprinklr fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Sprinklr comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Sprinklr provides the raw material. A Sprinklr agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Sprinklr fournit la matière. Une agence Sprinklr comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Sprinklr on its own":
     "Sprinklr seul",
   "Sprinklr with Licter":
@@ -4980,8 +5006,8 @@ window.LicterFR = {
     "AGENCE SEMRUSH",
   "Why work with a Semrush agency?":
     "Pourquoi passer par une agence Semrush ?",
-  "Semrush provides data: mentions, volumes, dashboards. A Semrush agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Semrush fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Semrush comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Semrush provides the raw material. A Semrush agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Semrush fournit la matière. Une agence Semrush comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Semrush on its own":
     "Semrush seul",
   "Semrush with Licter":
@@ -5092,8 +5118,8 @@ window.LicterFR = {
     "AGENCE GOOGLE TRENDS",
   "Why work with a Google Trends agency?":
     "Pourquoi passer par une agence Google Trends ?",
-  "Google Trends provides data: mentions, volumes, dashboards. A Google Trends agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Google Trends fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Google Trends comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Google Trends provides the raw material. A Google Trends agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Google Trends fournit la matière. Une agence Google Trends comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Google Trends on its own":
     "Google Trends seul",
   "Google Trends with Licter":
@@ -5202,8 +5228,8 @@ window.LicterFR = {
     "AGENCE ANSWERTHEPUBLIC",
   "Why work with a AnswerThePublic agency?":
     "Pourquoi passer par une agence AnswerThePublic ?",
-  "AnswerThePublic provides data: mentions, volumes, dashboards. A AnswerThePublic agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "AnswerThePublic fournit des données : des mentions, des volumes, des tableaux de bord. Une agence AnswerThePublic comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "AnswerThePublic provides the raw material. A AnswerThePublic agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "AnswerThePublic fournit la matière. Une agence AnswerThePublic comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "AnswerThePublic on its own":
     "AnswerThePublic seul",
   "AnswerThePublic with Licter":
@@ -5236,6 +5262,8 @@ window.LicterFR = {
     "CE QUE L'IA DIT DE VOUS.",
   "More and more people ask an AI rather than a search engine. We read what ChatGPT answers about your brand and your category, and where it gets it from.":
     "De plus en plus de gens posent leurs questions à une IA plutôt qu'à un moteur de recherche. Nous lisons ce que ChatGPT répond sur votre marque et votre catégorie, et d'où il le tient.",
+  "Our AI listening expertise":
+    "Notre expertise AI listening",
   "ChatGPT official site":
     "Site officiel de ChatGPT",
   "OpenAI":
@@ -5332,8 +5360,8 @@ window.LicterFR = {
     "AGENCE CHATGPT",
   "Why work with a ChatGPT agency?":
     "Pourquoi passer par une agence ChatGPT ?",
-  "ChatGPT provides data: mentions, volumes, dashboards. A ChatGPT agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "ChatGPT fournit des données : des mentions, des volumes, des tableaux de bord. Une agence ChatGPT comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "ChatGPT answers your customers. A ChatGPT agency like Licter questions it the way they do, has an analyst read its answers and turns them into a decision, presented to those who decide. Here is how we work.":
+    "ChatGPT répond à vos clients. Une agence ChatGPT comme Licter l'interroge comme eux, fait lire ses réponses par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous travaillons.",
   "A question asked once, by one person":
     "Une question posée une fois, par une seule personne",
   "Answers that change from one try to the next":
@@ -5862,8 +5890,8 @@ window.LicterFR = {
     "AGENCE GOOGLE ACTUALITÉS",
   "Why work with a Google News agency?":
     "Pourquoi passer par une agence Google Actualités ?",
-  "Google News provides data: mentions, volumes, dashboards. A Google News agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Google Actualités fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Google Actualités comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Google News provides the raw material. A Google News agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Google Actualités fournit la matière. Une agence Google Actualités comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Google News on its own":
     "Google Actualités seul",
   "Google News with Licter":
@@ -5968,8 +5996,8 @@ window.LicterFR = {
     "AGENCE SOCIAL BLADE",
   "Why work with a Social Blade agency?":
     "Pourquoi passer par une agence Social Blade ?",
-  "Social Blade provides data: mentions, volumes, dashboards. A Social Blade agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Social Blade fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Social Blade comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Social Blade provides the raw material. A Social Blade agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
+    "Social Blade fournit la matière. Une agence Social Blade comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
   "Social Blade on its own":
     "Social Blade seul",
   "Social Blade with Licter":
@@ -6056,8 +6084,8 @@ window.LicterFR = {
     "AGENCE CLAUDE",
   "Why work with a Claude agency?":
     "Pourquoi passer par une agence Claude ?",
-  "Claude provides data: mentions, volumes, dashboards. A Claude agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Claude fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Claude comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Claude answers your customers. A Claude agency like Licter questions it the way they do, has an analyst read its answers and turns them into a decision, presented to those who decide. Here is how we work.":
+    "Claude répond à vos clients. Une agence Claude comme Licter l'interroge comme eux, fait lire ses réponses par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous travaillons.",
   "Claude on its own":
     "Claude seul",
   "Claude with Licter":
@@ -6178,8 +6206,8 @@ window.LicterFR = {
     "AGENCE GEMINI",
   "Why work with a Gemini agency?":
     "Pourquoi passer par une agence Gemini ?",
-  "Gemini provides data: mentions, volumes, dashboards. A Gemini agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Gemini fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Gemini comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Gemini answers your customers. A Gemini agency like Licter questions it the way they do, has an analyst read its answers and turns them into a decision, presented to those who decide. Here is how we work.":
+    "Gemini répond à vos clients. Une agence Gemini comme Licter l'interroge comme eux, fait lire ses réponses par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous travaillons.",
   "Gemini on its own":
     "Gemini seul",
   "Gemini with Licter":
@@ -6310,8 +6338,8 @@ window.LicterFR = {
     "AGENCE PERPLEXITY",
   "Why work with a Perplexity agency?":
     "Pourquoi passer par une agence Perplexity ?",
-  "Perplexity provides data: mentions, volumes, dashboards. A Perplexity agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Perplexity fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Perplexity comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Perplexity answers your customers. A Perplexity agency like Licter questions it the way they do, has an analyst read its answers and turns them into a decision, presented to those who decide. Here is how we work.":
+    "Perplexity répond à vos clients. Une agence Perplexity comme Licter l'interroge comme eux, fait lire ses réponses par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous travaillons.",
   "Perplexity on its own":
     "Perplexity seul",
   "Perplexity with Licter":
@@ -6440,8 +6468,8 @@ window.LicterFR = {
     "AGENCE GROK",
   "Why work with a Grok agency?":
     "Pourquoi passer par une agence Grok ?",
-  "Grok provides data: mentions, volumes, dashboards. A Grok agency like Licter runs it for you, has an analyst read what it brings back and turns it into a decision, presented to those who decide. Here is how we use it.":
-    "Grok fournit des données : des mentions, des volumes, des tableaux de bord. Une agence Grok comme Licter l'opère pour vous, fait lire ce qu'il ramène par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous l'utilisons.",
+  "Grok answers your customers. A Grok agency like Licter questions it the way they do, has an analyst read its answers and turns them into a decision, presented to those who decide. Here is how we work.":
+    "Grok répond à vos clients. Une agence Grok comme Licter l'interroge comme eux, fait lire ses réponses par un analyste et en tire une décision, présentée à ceux qui décident. Voici comment nous travaillons.",
   "Grok on its own":
     "Grok seul",
   "Grok with Licter":

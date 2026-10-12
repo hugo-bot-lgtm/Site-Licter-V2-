@@ -26,7 +26,7 @@ def guide_article(cards, toc_label, by=""):
     # contains "social", taken for share buttons, which hid half the guide
     ids = ["guide-%d" % (k + 1) for k in range(len(cards))]
     toc = "".join('<li><a href="#%s">%s</a></li>' % (i, q) for i, (q, _) in zip(ids, cards))
-    body = "".join('<section class="lg__b" id="%s"><h3>%s</h3>%s</section>' % (i, q, "".join("<p>%s</p>" % x for x in a))
+    body = "".join('<section class="lg__b" id="%s"><h3>%s</h3>%s</section>' % (i, q, "".join(x if x.startswith("<table") else "<p>%s</p>" % x for x in a))
                    for i, (q, a) in zip(ids, cards))
     # the contents fold on a phone (js/ui.js closes them there): 14 entries stood before the text
     return (by + '<div class="lg"><nav class="lg__toc" aria-label="%s"><details class="lg__toc-d" open><summary class="lg__toc-k">%s <span>(%d)</span></summary><ol>%s</ol></details></nav>'
@@ -79,7 +79,7 @@ SOURCE_TITLE = {
     "https://arxiv.org/abs/2005.14165": "arXiv · Language Models are Few-Shot Learners (GPT-3)",
     "https://tech.eu/2022/12/05/audiense/": "Tech.eu · Audiense acquires SoPrism (2022)",
     "https://help.audiense.com/knowledge/audiense-data-sources": "Audiense · Data sources",
-    "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2": "CNIL · RGPD, chapitre II : les principes",
+    "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2": "CNIL · RGPD, chapitre II\u00a0: les principes",
     "https://www.cnil.fr/fr/les-bases-legales/interet-legitime": "CNIL · L'intérêt légitime",
     "https://www.cnil.fr/fr/recommandations-reutilisateurs-donnees-internet": "CNIL · Recommandations aux réutilisateurs de données publiées sur internet",
     "https://datareportal.com/reports/digital-2026-two-in-three-people-use-social-media": "DataReportal · Digital 2026",
