@@ -44,7 +44,7 @@
     bot: ["Assistant automatique, en son nom", "Automatic assistant, in his name"],
     close: ["Fermer", "Close"],
     tabChat: ["Discuter", "Chat"],
-    tabCall: ["Être rappelé", "Call me back"],
+    tabCall: ["Être contacté", "Get contacted"],
     region: ["Échanger avec Licter", "Talk to Licter"],
     hello: ["Bonjour, je suis " + A.name + ", cofondateur de Licter. Posez-moi vos questions sur nos offres, nos méthodes, nos délais ou nos tarifs.",
             "Hello, I am " + A.name + ", co-founder of Licter. Ask me about our offers, our methods, our timings or our pricing."],
@@ -52,16 +52,16 @@
     send: ["Envoyer", "Send"],
     you: ["Vous", "You"],
     typing: [A.name + " écrit…", A.name + " is typing…"],
-    callCta: ["Être rappelé par un consultant", "Get a call back from a consultant"],
+    callCta: ["Être contacté par un consultant", "Get contacted by a consultant"],
     /* the callback: the same words as the home */
     callT: ["Un échange avec un consultant.", "A call with a consultant."],
-    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h.",
-            "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm."],
+    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h.",
+            "Leave your email or phone number. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm."],
     field: ["E-mail ou téléphone", "Email or phone"],
     ph: ["nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"],
-    callBtn: ["Me faire rappeler", "Call me back"],
+    callBtn: ["Être contacté", "Contact me"],
     promise: ["Un consultant, pas un commercial. En semaine, de 9\u00a0h à 19\u00a0h.", "A consultant, not a sales team. Weekdays, 9am to 7pm."],
-    consent: ["Vos coordonnées servent uniquement à vous rappeler.", "We use your contact details only to call you back."],
+    consent: ["Vos coordonnées servent uniquement à vous contacter.", "We use your contact details only to contact you."],
     privacy: ["Politique de confidentialité", "Privacy policy"],
     err: ["Indiquez un e-mail professionnel ou un numéro de téléphone.", "Enter a work email or a phone number."],
     doneMail: ["C'est noté. Un consultant vous écrit à ", "Noted. A consultant writes to you at "],
@@ -155,16 +155,16 @@
       a: ["Les conditions dépendent de l'offre et du périmètre : un consultant vous les précise dès le premier échange.",
           "Terms depend on the offer and the scope: a consultant sets them out with you in the first call."] },
     { k: ["rendez-vous", "rdv", "appel", "appeler", "rappel", "rappeler", "contact", "contacter", "parler", "telephone", "joindre", "meeting", "call", "talk", "demo", "phone"],
-      a: ["Avec plaisir. Laissez votre e-mail ou votre téléphone : un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, pas un commercial.",
-          "With pleasure. Leave your email or phone number: a consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, not a salesperson."],
+      a: ["Avec plaisir. Laissez votre e-mail ou votre téléphone : un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, pas un commercial.",
+          "With pleasure. Leave your email or phone number: a consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, not a salesperson."],
       go: [["Choisir un créneau", "Pick a slot"], "/book-a-meeting.html"] },
     { k: ["merci", "thanks", "thank you", "super", "parfait", "top", "genial", "great"],
       a: ["Avec plaisir. Si vous voulez aller plus loin sur votre cas précis, le plus efficace reste une demi-heure avec un consultant.",
           "My pleasure. To go further on your own case, the most useful is still half an hour with a consultant."] }
   ];
   var FALLBACK = {
-    a: ["Bonne question, et je préfère ne pas vous y répondre à moitié. Le plus simple : un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, et vous aurez une réponse précise.",
-        "Good question, and I would rather not half-answer it. The simplest: a consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, and you get a precise answer."],
+    a: ["Bonne question, et je préfère ne pas vous y répondre à moitié. Le plus simple : un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, et vous aurez une réponse précise.",
+        "Good question, and I would rather not half-answer it. The simplest: a consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, and you get a precise answer."],
     go: [["Prendre rendez-vous", "Book a meeting"], "/book-a-meeting.html"]
   };
   var CHIPS = [
@@ -317,7 +317,7 @@
     input.setAttribute("aria-invalid", k ? "false" : "true");
     err.hidden = !!k;
     if (!k) { input.focus(); return; }
-    if (window.LicterSend) window.LicterSend("callback", "Chat d'Antoine, onglet « Être rappelé »", { "E-mail ou téléphone": v });
+    if (window.LicterSend) window.LicterSend("callback", "Chat d'Antoine, onglet « Être contacté »", { "E-mail ou téléphone": v });
     if (k === "email" && window.LicterLead) window.LicterLead.set(v);
     sent = { v: v, k: k };
     form.hidden = true;
