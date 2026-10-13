@@ -682,9 +682,9 @@ def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, 
     <div class="shell xe-lmh__grid">
       <div class="xe-lmh__copy">
         <h1 class="xe-lmh__h1"><span class="xe-lmh__kick">{kick}</span><span class="xe-lmh__l">{t((lines[0][0], lines[1][0]))}</span><span class="xe-lmh__l xe-lmh__l--c">{t((lines[0][1], lines[1][1]))}</span></h1>
-        <p class="xe-lmh__lead">{t(lead)}</p>
+        <p class="xe-lmh__lead">{t(lead)}{def_link}</p>
         <a class="btn btn--primary xe-lmh__jump" href="#offre">{t(S["lm_btn"])} <span aria-hidden="true">↓</span></a>
-        <a class="xe-lmh__call" href="#book">{t(S["lm_call"])} <span aria-hidden="true">→</span></a>{def_link}
+        <a class="xe-lmh__call" href="#book">{t(S["lm_call"])} <span aria-hidden="true">→</span></a>
       </div>
       <div class="xe-lm" id="offre">
         <div class="xe-lm__body">
@@ -731,7 +731,8 @@ def listening_body(x, offers_html):
     out += lm_hero(kick_name if x["key"] == "social" else '%s<!--glossk:%s-->' % (kick_name, x["key"]), H1L[x["key"]], x["lead"], "xp-" + x["key"],
                    t(S["lm_t"]), col, icon, t(x["name"]), logos(), flash_key=x["key"],
                    # the definition is what most searches for "social listening" want: reachable from the first screen (audit of 12 October 2026)
-                   def_link=('\n        <a class="xe-lmh__call xe-lmh__def" href="#definition">%s <span aria-hidden="true">↓</span></a>' % t(("Qu'est-ce que le social listening ?", "What is social listening?"))) if x["key"] == "social" else "")
+                   # inside the lead: first in reading order, and one line less above the cookie banner on phones (audit of 13 October 2026)
+                   def_link=(' <a class="xe-lmh__def" href="#definition">%s <span aria-hidden="true">↓</span></a>' % t(("Qu'est-ce que le social listening ?", "What is social listening?"))) if x["key"] == "social" else "")
     if x["key"] == "social":    # a short, visible definition near the top: what search engines quote for "social listening" (9 October 2026)
         out += sec("definition", head(t(("DÉFINITION", "DEFINITION")), t(("Le social listening en bref.", "Social listening at a glance.")), t((
             "Le social listening est l'analyse de ce que les gens disent publiquement en ligne d'une marque, d'un produit, d'un concurrent ou d'un sujet : réseaux sociaux, forums, sites d'avis et presse. Il sert à comprendre une perception, repérer ce qui change et décider quoi en faire.",

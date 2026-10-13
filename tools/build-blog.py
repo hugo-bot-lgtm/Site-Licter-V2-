@@ -337,7 +337,7 @@ SEO_TITLE = {
     "Analyser les succès publicitaires en moins d'une heure ? Spotlight #1 : Licter x Petit Bateau": "Analyser une campagne en moins d'une heure : Petit Bateau",
     "Comment Axa analyse les données du web et de social listening pour sa gestion de crise ?": "Comment AXA lit la donnée sociale pour gérer une crise",
     "Comment conquérir le marché de la cosmétique de luxe grâce au social listening ?": "Conquérir la cosmétique de luxe grâce au social listening",
-    "Comment créer une \"Social Listening Squad\" pour doubler l'adoption de votre outil ?": "Créer une Social Listening Squad pour adopter son outil",
+    "Comment créer une « Social Listening Squad » pour doubler l’adoption de votre outil ?": "Créer une Social Listening Squad pour adopter son outil",
     "Comment France Digitale juge l'efficacité de ses actions de communication ?": "Comment France Digitale mesure sa communication",
     "Comment L'Oréal utilise le social listening pour capter la voix du consommateur ?": "Comment L'Oréal capte la voix du consommateur",
     "Comment Origins associe influence et technologie pour transformer le capital-risque ?": "Salomon Aiach (Origins) : influence, technologie et capital-risque",
@@ -383,6 +383,10 @@ REWRITTEN = {f: "2026-10-07" for f in ("article-comment-loreal-utilise-le-social
 REWRITTEN["article-le-bad-buzz-huda-beauty-decrypte.html"] = "2026-10-12"   # written up from its slides (audits of 9 and 12 October 2026)
 REWRITTEN["article-veille-reseaux-sociaux-entreprise.html"] = "2026-10-12"   # a new introduction (audits of 9 and 12 October 2026)
 REWRITTEN["article-departs-de-x-quels-reseaux-sociaux-peuvent-rivaliser-avec-la-plateforme-delon-musk.html"] = "2026-10-12"   # retitled and restructured
+for _f in ("article-comment-doubler-limpact-de-votre-strategie-social-listening-en-6-mois.html",   # Licter as a consultancy, the callback sentence
+           "article-identifier-les-breaking-news-de-votre-secteur-comment-rester-informe-en-temps-reel.html",
+           "article-social-listening-et-politique-comment-capter-la-voix-des-citoyens.html"):   # retitled (audit of 13 October 2026)
+    REWRITTEN[_f] = "2026-10-13"
 
 
 def updated(x, fr):

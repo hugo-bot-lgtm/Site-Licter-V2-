@@ -228,5 +228,9 @@ def sources_line(module_file, label):
     for u_, n_ in re.findall(r"# source: (https?://[^\s)]+)\s*\(([^)]*)\)", pathlib.Path(module_file).read_text()):
         notes.setdefault(u_.rstrip(".,;"), n_)
     name = lambda u: source_label(u, notes.get(u, ""))
-    links = comma_join(['<a href="%s" rel="noopener" target="_blank">%s</a>' % (html.escape(u, quote=True), html.escape(name(u))) for u in urls])
+    # an English document title keeps its language, also on French pages (audit of 13 October 2026)
+    def lang_of(u):
+        lab = SOURCE_TITLE.get(u, "")
+        return ' lang="en"' if lab and not re.search(r"[àâçéèêëîïôûùÿœ]|Wikipédia|CNIL|DataReportal", lab) else ""
+    links = comma_join(['<a href="%s" rel="noopener" target="_blank"%s>%s</a>' % (html.escape(u, quote=True), lang_of(u), html.escape(name(u))) for u in urls])
     return '<p class="qa-src"><span>%s</span> %s</p>' % (label, links)

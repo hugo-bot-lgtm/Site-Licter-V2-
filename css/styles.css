@@ -9939,7 +9939,7 @@ html[data-theme="light"] .xe-lmh__l--c, html:not([data-theme]) .xe-lmh__l--c { c
 .xe-lmh__pills li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: var(--card-bg); box-shadow: inset 0 0 0 1px var(--line); font: 600 13.5px/1 var(--body-font); color: var(--ink); }
 .xe-lmh__pills li::before { content: "✓"; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #2FA36B; color: #fff; font-size: 10px; font-weight: 700; }
 .xe-lmh__call { display: inline-block; margin-top: 24px; font: 600 15px/1.3 var(--body-font); color: var(--ink); border-bottom: 2px solid var(--c); padding-bottom: 2px; }
-.xe-lmh__def { display: table; margin-top: 16px; }
+.xe-lmh__def { color: var(--ink); font-weight: 600; white-space: nowrap; text-decoration: underline; text-decoration-color: var(--c, #EAA93D); text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
 /* the magnet card */
 .xe-lm { position: relative; padding: 20px; border-radius: 32px; background: #0E1126; color: #FCF6EF; box-shadow: 0 0 0 1px rgba(252, 246, 239, .08), 0 60px 100px -50px color-mix(in srgb, var(--c) 70%, #000); scroll-margin-top: 110px; }
@@ -10519,8 +10519,9 @@ html[lang="fr"] .xp-line > span:not(.xp-i)::after { content: "\00a0:"; }
 .of-real .xs__kick { margin: 0 0 12px; font: 700 12px/1.2 var(--body-font); letter-spacing: 1.6px; text-transform: uppercase; color: var(--amber-ink, var(--amber)); }
 @media (max-width: 720px) {
   /* "Related expertise", "Further reading" and the crisis line: 44px tap targets */
-  .xp-line a { display: inline-flex; align-items: center; min-height: 44px; }
-  .xp-line { line-height: 1.4; }
+  /* a tall tap area without spreading the lines apart: the padding does not change the line box (audit of 13 October 2026) */
+  .xp-line { line-height: 2; }
+  .xp-line a { padding: 9px 0; }
 }
 
 /* =========================================================
@@ -10639,8 +10640,6 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
   .xe-lmh__copy { display: flex; flex-direction: column; align-items: flex-start; }
   .xe-lmh__jump { order: 1; margin: 22px 0 0; }
   .xe-lmh__call { order: 2; margin-top: 16px; }
-  /* the definition link right under the lead, above the buttons: the cookie banner covered it lower down (audit of 13 October 2026) */
-  .xe-lmh__def { order: 0; margin-top: 14px; }
   .xe-lmh__pills { order: 3; margin-top: 22px; }
 }
 /* large screens: the copy starts at the top of the hero instead of being
