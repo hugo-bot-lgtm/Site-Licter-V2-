@@ -235,7 +235,11 @@ def shot(slug, name, mark):
         label = ("L'article de recherche fondateur", "The founding research paper") if slug == "geo" else ("Capture du site officiel", "Official site, captured")
         cap = '<figcaption>%s <span>%s</span></figcaption>' % (t(label), SHOT_SRC[slug])
         bar = '<div class="tk-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>%s</span></div>' % SHOT_SRC[slug]
-    return ('<figure class="tk-shot">%s<img src="/assets/img/shots/%s.webp" alt="%s" width="1200" height="750" decoding="async" fetchpriority="high" />%s</figure>'
+    # a phone gets the 480 px capture: the 1200 px one cost about 500 ms of LCP on network pages (audit of 13 October 2026)
+    sizes_ = [w for w in (480, 800) if (ROOT / "assets" / "img" / "shots" / ("%s-%d.webp" % (slug, w))).exists()]
+    srcset = (' srcset="%s, /assets/img/shots/%s.webp 1200w" sizes="(max-width: 720px) 92vw, 45vw"' % (
+        ", ".join("/assets/img/shots/%s-%d.webp %dw" % (slug, w, w) for w in sizes_), slug)) if sizes_ else ""
+    return ('<figure class="tk-shot">%s<img' + srcset + ' src="/assets/img/shots/%s.webp" alt="%s" width="1200" height="750" decoding="async" fetchpriority="high" />%s</figure>'
             '<div class="tk-tile">%s</div>') % (bar, slug, html.escape(t(("L'article de recherche fondateur du GEO (arXiv)", "The founding GEO research paper (arXiv)") if slug == "geo" else (("Site officiel de %s" % name), ("%s official site" % name)))), cap, mark)
 
 
@@ -473,18 +477,19 @@ TOOL_SLUGS = {x["slug"] for x in TOOLS}
 
 def xp(slug, keys=None):
     """the expertise pages a tool or a network serves (French added by to_fr)"""
+    from components import comma_join
     keys = keys or O.U.XP_OF.get(slug, [])
     lab = t(("Expertise associée", "Related expertise"))
     guide = ('<p class="xp-line"><span>%s</span> <a href="/article-veille-reseaux-sociaux-entreprise.html">%s</a></p>' % (
         t(("À lire", "Further reading")), t(("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if slug in ("visibrain", "google-news", "talkwalker") else ""
     offers = OFFER_OF.get(slug, ["vigie-360", "social-insights"])
-    off = '<p class="xp-line"><span>%s</span> %s</p>' % (t(("Offre associée", "Related offer")), ", ".join(
-        '<a href="offer-%s.html">%s</a>' % (k, OFFER_NAME[k]) for k in offers))
+    off = '<p class="xp-line"><span>%s</span> %s</p>' % (t(("Offre associée", "Related offer")), comma_join([
+        '<a href="offer-%s.html">%s</a>' % (k, OFFER_NAME[k]) for k in offers]))
     others = ""
     if slug in TOOL_SLUGS:
-        others = '<p class="xp-line"><span>%s</span> %s</p>' % (t(("Les autres outils", "The other tools")), ", ".join(
-            '<a href="tech-%s.html">%s</a>' % (x["slug"], html.escape(x["name"])) for x in TOOLS if x["slug"] != slug))
-    exp = '<p class="xp-line"><span>%s</span> %s</p>' % (lab, ", ".join('<a href="expertise-%s.html">%s</a>' % (k, O.U.XP_NAME[k]) for k in keys)) if keys else ""
+        others = '<p class="xp-line"><span>%s</span> %s</p>' % (t(("Les autres outils", "The other tools")), comma_join([
+            '<a href="tech-%s.html">%s</a>' % (x["slug"], html.escape(x["name"])) for x in TOOLS if x["slug"] != slug]))
+    exp = '<p class="xp-line"><span>%s</span> %s</p>' % (lab, comma_join(['<a href="expertise-%s.html">%s</a>' % (k, O.U.XP_NAME[k]) for k in keys])) if keys else ""
     return exp + off + guide + others
 
 
@@ -571,7 +576,7 @@ GUIDE = {"talkwalker": "talkwalker_guide", "tiktok": "tiktok_guide", "geo": "geo
 # audit of 8 October 2026: the 22 network pages were thin and alike)
 def net_detail(slug, nm):
     import html as _h
-    from components import source_label
+    from components import source_label, comma_join
     for mod in ("net_detail_a", "net_detail_b"):
         f = ROOT / "tools" / (mod + ".py")
         if not f.exists():
@@ -590,9 +595,9 @@ def net_detail(slug, nm):
             u = u.rstrip(".,;")
             if u not in urls:
                 urls.append(u)
-        src = ('<p class="qa-src"><span>%s</span> %s</p>' % (t(("Sources", "Sources")), ", ".join(
-            '<a href="%s" rel="noopener" target="_blank">%s</a>' % (_h.escape(u, quote=True), _h.escape(source_label(u)))
-            for u in urls))) if urls else ""
+        src = ('<p class="qa-src"><span>%s</span> %s</p>' % (t(("Sources", "Sources")), comma_join([
+            '<a href="%s" rel="noopener" target="_blank">%s</a>' % (_h.escape(u, quote=True), t((source_label(u, lang=0), source_label(u, lang=1))))
+            for u in urls]))) if urls else ""
         cards = "".join('<li class="tk-proof__c"><h3 class="tk-proof__h">%s</h3><p>%s</p></li>' % (t(h), t(p_)) for h, p_ in blocks)
         return sec("detail", head(t(("%s EN DÉTAIL" % nm.upper(), "%s IN DETAIL" % nm.upper())),
                                   t(("Ce qu'il faut savoir avant d'écouter %s." % nm, "What to know before listening to %s." % nm))) +

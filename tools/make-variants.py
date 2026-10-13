@@ -13,7 +13,7 @@ from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 IMG = ROOT / "assets" / "img"
 # folder, width of the copy, files it is made from
-JOBS = [("team", 480, "*.webp"), ("team/morning", 480, "*.webp"), ("shots", 480, "*.webp"),
+JOBS = [("team", 480, "*.webp"), ("team/morning", 480, "*.webp"), ("shots", 480, "*.webp"), ("shots", 800, "*.webp"),
         ("yt", 240, "*.webp"), ("tools", 96, "*.png"), ("magazine", 260, "*.webp")]
 SIZED = re.compile(r"^(.*)-(\d+)$")
 

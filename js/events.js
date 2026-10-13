@@ -52,7 +52,7 @@
       "hrefFr": "/fr/evenements/alimentation/",
       "date": "2026-11-19",
       "k": [
-        "Étude sectorielle · Food",
+        "Étude sectorielle · Alimentation",
         "Sector study · Food"
       ],
       "d": [

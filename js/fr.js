@@ -1114,7 +1114,7 @@ window.LicterFR = {
   "applies this method to six areas of expertise:": "applique cette méthode à six expertises :",
   "audiences": "audiences",
   "e.g. we are relaunching a range next spring and we do not know which audience to aim at.": "Par exemple : nous relançons une gamme au printemps et ne savons pas quelle audience viser.",
-  "camille@company.com": "camille@entreprise.com", "name@company.com": "nom@entreprise.com",
+  "camille@company.com": "camille@entreprise.com", "name@company.com": "nom@entreprise.com", "Email or phone number": "E-mail ou numéro de téléphone",
   "Antoine Khaitrine, co-founder · SI Lab since 2024": "Antoine Khaitrine, cofondateur · SI Lab depuis 2024",
   "Six listenings behind these steps:": "Six écoutes derrière ces étapes :",
   "audience intelligence": "audience intelligence",
@@ -2400,7 +2400,7 @@ window.LicterFR = {
   "Luxury":
     "Luxe",
   "Food":
-    "Food",
+    "Alimentation",
   "Creators, ambassadors, clients: who really gets a house talked about.":
     "Créateurs, ambassadeurs, clients : qui fait vraiment parler d'une maison.",
   "Resale and second hand, in the conversation.":
@@ -2422,11 +2422,15 @@ window.LicterFR = {
   "The unmet needs that searches reveal.":
     "Les besoins non couverts que révèlent les recherches.",
   "Food: what the conversation says about what we eat.":
-    "Food : ce que la conversation dit de nos assiettes.",
+    "Alimentation : ce que la conversation dit de nos assiettes.",
   "We present our sector study: what consumers post, search and ask AI about what they eat, and the expectations brands can still take up.":
     "Nous présentons notre étude sectorielle : ce que les consommateurs publient, recherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes que les marques peuvent encore saisir.",
   "Thursday 19 November 2026":
     "Jeudi 19 novembre 2026",
+  "Coming up:":
+    "Au programme :",
+  "Toys & games, Friday 16 October 2026, Musée de la Vie romantique; Luxury, Tuesday 3 November 2026, Ladurée Champs-Élysées; Food, Thursday 19 November 2026, Madame Rêve.":
+    "Jeux & jouets, vendredi 16 octobre 2026, Musée de la Vie romantique ; Luxe, mardi 3 novembre 2026, Ladurée Champs-Élysées ; Alimentation, jeudi 19 novembre 2026, Madame Rêve.",
   "Our sector studies, presented in person.":
     "Nos études sectorielles, présentées en personne.",
   "We present what the conversation says about a sector, with the brands that work in it. On registration, in Paris.":
@@ -6606,6 +6610,14 @@ window.LicterFR = {
     "Comment nous écoutons Facebook.",
   "Facebook social listening: use cases.":
     "Social listening Facebook : les cas d'usage.",
+  "Meta · Facebook Groups privacy settings (2019)":
+    "Meta · Confidentialité des groupes Facebook (2019)",
+  "Meta · Transparency and the Digital Services Act (2023)":
+    "Meta · Transparence et Digital Services Act (2023)",
+  "Meta · Meta Content Library for research":
+    "Meta · Meta Content Library pour la recherche",
+  "OPB · Meta shuts down CrowdTangle (2024)":
+    "OPB · Meta ferme CrowdTangle (2024)",
   "What can you listen to on Facebook?":
     "Que peut-on écouter sur Facebook ?",
   "On Facebook, the conversation about a brand is read in several places at once. There are page posts, but above all comment threads, where customers answer each other and swap advice. There are public groups, whose members and posts anyone can see without joining. And there are pages run by local media, neighbourhoods or associations, where a shop or a service is often discussed without the brand being there. Useful listening reads these spaces together, not only the official page.":
@@ -6684,6 +6696,10 @@ window.LicterFR = {
     "Comment nous écoutons Instagram.",
   "Instagram social listening: use cases.":
     "Social listening Instagram : les cas d'usage.",
+  "Instagram · Help Center":
+    "Instagram · Centre d'aide",
+  "Meta · Instagram API hashtag search":
+    "Meta · Recherche par hashtag de l'API Instagram",
   "What can a brand read on Instagram?":
     "Que peut-on lire sur Instagram pour une marque ?",
   "Instagram mixes several formats, and each says something different about a brand. Posts and carousels show how a product is staged, reels how a format spreads and gets copied from one account to the next. Tags and mentions show who deliberately links your brand to their content. Comments, for their part, often sit under creators' posts rather than the brand's own. Useful listening therefore starts from the brand, then works back to the accounts that talk about it, where the audience speaks most freely.":
@@ -6758,6 +6774,12 @@ window.LicterFR = {
     "Comment nous écoutons Threads.",
   "Threads social listening: use cases.":
     "Social listening Threads : les cas d'usage.",
+  "TechCrunch · Threads and the open social web (2024)":
+    "TechCrunch · Threads et le web social ouvert (2024)",
+  "Meta · Threads API keyword search":
+    "Meta · Recherche par mot-clé de l'API Threads",
+  "Meta · Content Library":
+    "Meta · Content Library",
   "What can you read on Threads?":
     "Que peut-on lire sur Threads ?",
   "Threads is built around short posts, their replies and their quotes. Most of what matters happens in the replies: a brand post gets questions, criticism and comparisons there, sometimes from accounts that do not follow it. Topics, marked by a keyword, group discussions on the same theme. Threads is also connected to the fediverse: when a user turns on this sharing, their public posts can be read on services such as Mastodon. Part of the conversation therefore travels outside the app.":
@@ -6828,6 +6850,12 @@ window.LicterFR = {
     "Comment nous écoutons WhatsApp.",
   "WhatsApp social listening: use cases.":
     "Social listening WhatsApp : les cas d'usage.",
+  "WhatsApp · Introducing Channels":
+    "WhatsApp · Lancement des chaînes",
+  "WhatsApp · Help Center":
+    "WhatsApp · Centre d'aide",
+  "WhatsApp · Privacy policy":
+    "WhatsApp · Politique de confidentialité",
   "What is public on WhatsApp?":
     "Que trouve-t-on de public sur WhatsApp ?",
   "WhatsApp opened a public space with channels, launched in 2023. A channel is a one-way broadcast tool: its admin posts text, photos, videos or polls, and followers receive them without being able to reply as they would in a group. For a brand, a channel reads like an official publication: what the media, public figures or competitors who run one are saying, on which topics and how often. The public's reaction is mostly read elsewhere, when this content is picked up on other networks.":
@@ -6898,6 +6926,8 @@ window.LicterFR = {
     "Comment nous écoutons Messenger.",
   "Messenger social listening: use cases.":
     "Social listening Messenger : les cas d'usage.",
+  "Meta · End-to-end encryption on Messenger (2023)":
+    "Meta · Chiffrement de bout en bout sur Messenger (2023)",
   "What can be analysed from Messenger?":
     "Que peut-on analyser de Messenger ?",
   "Messenger has no public space to listen to: what is exchanged there is private. The useful material, for a brand, is its own conversations with its customers, when it chooses to have them analysed. An exported conversation keeps its date, its sequence and often its outcome. You can read at which point of the journey the customer gets stuck, how many exchanges it takes to settle a request, and what turns a simple question into a complaint. It is a reading of customer service as it is experienced, to be completed by what customers later say in public.":
@@ -6976,6 +7006,12 @@ window.LicterFR = {
     "Comment nous écoutons X / Twitter.",
   "X / Twitter social listening: use cases.":
     "Social listening X / Twitter : les cas d'usage.",
+  "X · Community Notes":
+    "X · Notes de la communauté",
+  "X · API pricing":
+    "X · Tarifs de l'API",
+  "X · Honoring user intent in the API":
+    "X · Respect des suppressions dans l'API",
   "What can you read on X?":
     "Que peut-on lire sur X ?",
   "X is read through several ways of picking up a message. A repost spreads it as is, a quote adds a comment, often a critical one, and a reply opens a debate under the original message. Following these three paths shows how a topic changes meaning as it travels. X also displays Community Notes: contributors add context to a post seen as misleading, and the note becomes visible when contributors with different points of view rate it helpful. For a brand, a note can change how a controversy is read.":
@@ -7170,6 +7206,12 @@ window.LicterFR = {
     "Comment nous écoutons YouTube.",
   "YouTube social listening: use cases.":
     "Social listening YouTube : les cas d'usage.",
+  "YouTube Help · Google":
+    "Aide YouTube · Google",
+  "YouTube · Developer policies":
+    "YouTube · Règles pour les développeurs",
+  "YouTube · Researcher Program":
+    "YouTube · Programme pour les chercheurs",
   "What can you listen to on YouTube?":
     "Que peut-on écouter sur YouTube ?",
   "YouTube is read at several levels. The title and description say how the creator presents the video, and the transcript what they actually claim about a product. Comments and their replies form real discussion threads, where the audience corrects, completes or contradicts the video. Shorts, being shorter, circulate the way they do on TikTok, and live streams have their own chat. These formats capture neither the same audience nor the same moment in the decision: useful listening separates them before comparing them.":
@@ -7238,6 +7280,8 @@ window.LicterFR = {
     "Comment nous écoutons LinkedIn.",
   "LinkedIn social listening: use cases.":
     "Social listening LinkedIn : les cas d'usage.",
+  "LinkedIn · Help Center":
+    "LinkedIn · Centre d'aide",
   "What can you read on LinkedIn?":
     "Que peut-on lire sur LinkedIn ?",
   "LinkedIn gets people talking as much as companies. An executive, an employee or a candidate tells an experience in their own name there, and the story travels through their professional network. Comments are signed with the author's name and often their job title, which tells you who is reacting: peers, customers, potential hires, competitors. Articles, newsletters and events complement these posts, and company pages give the official view. Useful listening reads both, and the gap between them.":
@@ -7304,6 +7348,8 @@ window.LicterFR = {
     "Comment nous écoutons Reddit.",
   "Reddit social listening: use cases.":
     "Social listening Reddit : les cas d'usage.",
+  "Reddit · Data API terms":
+    "Reddit · Conditions de l'API de données",
   "What can you read on Reddit?":
     "Que peut-on lire sur Reddit ?",
   "Reddit is read thread by thread. A discussion starts from a question or an experience report, then branches into nested replies where arguments answer each other. Each community has its rules, its moderators and often its topic labels, which help sort discussions. For a brand, the most useful threads are often requests for advice: which product to choose, which to avoid, and why. Old threads stay available and can surface in search engines, which gives them a long life.":
@@ -7372,6 +7418,14 @@ window.LicterFR = {
     "Comment nous écoutons Snapchat.",
   "Snapchat social listening: use cases.":
     "Social listening Snapchat : les cas d'usage.",
+  "Snapchat · Public Profile":
+    "Snapchat · Le profil public",
+  "Snap · Spotlight terms":
+    "Snap · Conditions de Spotlight",
+  "Snapchat · When Snaps and Chats are deleted":
+    "Snapchat · Suppression des Snaps et des chats",
+  "Snapchat · Public Story and Friends Story":
+    "Snapchat · Story publique et Story amis",
   "What is public on Snapchat?":
     "Que peut-on voir de public sur Snapchat ?",
   "Snapchat has a public side, separate from exchanges between friends. Public profiles, open to users aged 16 and over who choose to use them, show public stories and featured Snaps, and other users can subscribe to them. Snaps submitted to Spotlight are public: all users can see them, and sometimes people outside the app too. For a brand, that is where you read the creators, media and formats that speak to the youngest, with their codes and words.":
@@ -7442,6 +7496,10 @@ window.LicterFR = {
     "Comment nous écoutons Pinterest.",
   "Pinterest social listening: use cases.":
     "Social listening Pinterest : les cas d'usage.",
+  "Pinterest · Pinterest Trends":
+    "Pinterest · Pinterest Trends",
+  "Pinterest · Secret boards":
+    "Pinterest · Tableaux secrets",
   "What can a brand read on Pinterest?":
     "Que peut-on lire sur Pinterest pour une marque ?",
   "On Pinterest, you mostly read images and the words that go with them: a Pin's title, its description, and the name of the board it is saved to. That name is often the most telling part. \"Future house kitchen\" or \"September wedding outfits\" states the project, the deadline and the style sought. Comments are rare. The conversation is therefore read less in exchanges than in gestures: what people save, next to what, and for which project. A Pin of your product saved alongside a competitor's already tells you how you are compared.":
@@ -7510,6 +7568,10 @@ window.LicterFR = {
     "Comment nous écoutons Discord.",
   "Discord social listening: use cases.":
     "Social listening Discord : les cas d'usage.",
+  "Discord · Server Discovery":
+    "Discord · Découverte des serveurs",
+  "Discord · Message access in the API":
+    "Discord · Accès aux messages par l'API",
   "What can a brand read on Discord?":
     "Que peut-on lire sur Discord pour une marque ?",
   "On Discord, the conversation is split into channels: announcements, help, feedback, open discussion, sometimes a forum where each subject has its own thread. That structure is what makes reading useful. The feedback channel of a gaming server, or the technical questions channel of a tech community, gathers detailed, reasoned opinions, often written by regular members. You read what blocks people, what is missing, and what the most engaged expect next. The rest of the server gives the context: the community's tone, its rules, and who carries authority there.":
@@ -7584,6 +7646,10 @@ window.LicterFR = {
     "Comment nous écoutons Twitch.",
   "Twitch social listening: use cases.":
     "Social listening Twitch : les cas d'usage.",
+  "Twitch · Chat documentation":
+    "Twitch · Documentation du chat",
+  "PC Gamer · Twitch limits video storage":
+    "PC Gamer · Twitch limite la conservation des vidéos",
   "What can a brand read on Twitch?":
     "Que peut-on lire sur Twitch pour une marque ?",
   "On Twitch, there are two materials to read. The first is the chat: very short messages, sent during the stream, often in bursts at the same moment. The second is what the streamer says, out loud, sometimes for hours: that is where a product is shown, tested, discussed. The stream's title and category complete the picture. The clips viewers cut are often the best clue: they flag the moment the audience judged worth keeping, then sharing.":
@@ -7654,6 +7720,10 @@ window.LicterFR = {
     "Comment nous écoutons Telegram.",
   "Telegram social listening: use cases.":
     "Social listening Telegram : les cas d'usage.",
+  "Telegram · Channels":
+    "Telegram · Les canaux",
+  "Telegram · Channels API":
+    "Telegram · API des canaux",
   "What can a brand read on Telegram?":
     "Que peut-on lire sur Telegram pour une marque ?",
   "On Telegram, the readable part is public channels and public groups. A channel is a broadcast feed: an administrator posts, subscribers read. Each post carries a view counter, which includes views of copies forwarded elsewhere. When the administrator has linked a discussion group to the channel, posts also get comments. You therefore read what is broadcast, the audience it reached, and what the subscribers who react say about it. Public groups, for their part, look more like a continuous forum.":
@@ -7724,6 +7794,14 @@ window.LicterFR = {
     "Comment nous écoutons Bluesky.",
   "Bluesky social listening: use cases.":
     "Social listening Bluesky : les cas d'usage.",
+  "Bluesky · AT Protocol services":
+    "Bluesky · Services du protocole AT",
+  "Bluesky · Custom feeds (2023)":
+    "Bluesky · Fils personnalisés (2023)",
+  "Bluesky · Direct messages (2024)":
+    "Bluesky · Messages privés (2024)",
+  "Anderegg · Digging into Bluesky DMs (2024)":
+    "Anderegg · Les messages privés de Bluesky (2024)",
   "What can a brand read on Bluesky?":
     "Que peut-on lire sur Bluesky pour une marque ?",
   "On Bluesky, most of the activity is public: posts, replies, quotes, likes and follows. The format resembles X, with short posts and threads. Custom feeds are a useful feature. Anyone can create a themed feed, on a profession, a science or a sector, that others choose to follow. Spotting the ones that touch your category shows where the people who discuss it knowledgeably gather, and what they highlight.":
@@ -7790,6 +7868,12 @@ window.LicterFR = {
     "Comment nous écoutons VK.",
   "VK social listening: use cases.":
     "Social listening VK : les cas d'usage.",
+  "VK · wall.get API":
+    "VK · API wall.get",
+  "OPB · Russia blocks Instagram (2022)":
+    "OPB · La Russie bloque Instagram (2022)",
+  "Human Rights Watch · Ukraine bans Russian web companies (2017)":
+    "Human Rights Watch · L'Ukraine bloque des services russes (2017)",
   "What can a brand read on VK?":
     "Que peut-on lire sur VK pour une marque ?",
   "On VK, the public conversation is mostly read on walls. Every page and every community has a wall, where the administrator posts and where, depending on the settings, members can post too, with comments under each post. Communities are very diverse: fans of a brand, buyers in a category, cities, neighbourhoods, deals. VK also works as a video platform and a messenger. For a brand, the most useful material is often in consumer communities, where people advise each other, and in the posts members leave on official pages' walls.":
@@ -7858,6 +7942,14 @@ window.LicterFR = {
     "Comment nous écoutons WeChat.",
   "WeChat social listening: use cases.":
     "Social listening WeChat : les cas d'usage.",
+  "Sogou · WeChat search":
+    "Sogou · Recherche WeChat",
+  "WalktheChat · WeChat comments":
+    "WalktheChat · Les commentaires sur WeChat",
+  "WeChat · Comments API":
+    "WeChat · API des commentaires",
+  "Jones Day · China's personal information law (2021)":
+    "Jones Day · La loi chinoise sur les données personnelles (2021)",
   "What can a brand read on WeChat?":
     "Que peut-on lire sur WeChat pour une marque ?",
   "On WeChat, the public part is made of articles published by official accounts: brands, media, institutions, but also independent writers covering beauty, cars, finance or luxury. They are often real in-depth articles, with a point of view and a byline. Under each article, you can read the displayed comments and audience indicators. Part of these articles is also indexed by the Chinese search engine Sogou, which makes them findable outside the app. For a brand, it is the reading closest to a specialist press review.":
@@ -7928,6 +8020,10 @@ window.LicterFR = {
     "Comment nous écoutons Weibo.",
   "Weibo social listening: use cases.":
     "Social listening Weibo : les cas d'usage.",
+  "CNN · Weibo shows user locations (2022)":
+    "CNN · Weibo affiche la localisation des utilisateurs (2022)",
+  "Sixth Tone · Weibo":
+    "Sixth Tone · Weibo",
   "What can a brand read on Weibo?":
     "Que peut-on lire sur Weibo pour une marque ?",
   "On Weibo, you read public posts, short or long, with images and videos, their comments and their reposts. Subjects gather under hashtags framed by two # signs, each with its own page. The ranking of the most popular searches, the \"hot search\", shows what occupies the country at a given moment. Since April 2022, Weibo also displays the province of the author of a post or comment, or their country if they post from abroad. You can therefore read the geography of a reaction, and see whether a criticism comes from one region, the whole country, or abroad.":
@@ -7996,6 +8092,8 @@ window.LicterFR = {
     "Comment nous écoutons Douyin.",
   "Douyin social listening: use cases.":
     "Social listening Douyin : les cas d'usage.",
+  "What's on Weibo · Douyin and TikTok":
+    "What's on Weibo · Douyin et TikTok",
   "What can a brand read on Douyin?":
     "Que peut-on lire sur Douyin pour une marque ?",
   "On Douyin, you read short videos, their descriptions, hashtags and comments, but also live selling streams where a creator presents products, with a purchase link. Opinions are read in the comments under demo videos, and in the live chat, where buyers ask their questions in real time: price, size, delivery, comparison with another brand. Those questions say what holds a purchase back. Douyin's popular topic rankings also give the state of the moment, and the place your category holds in it.":
@@ -8062,6 +8160,12 @@ window.LicterFR = {
     "Comment nous écoutons Xiaohongshu (RED).",
   "Xiaohongshu (RED) social listening: use cases.":
     "Social listening Xiaohongshu (RED) : les cas d'usage.",
+  "Jing Daily · Xiaohongshu search volume doubles (2024)":
+    "Jing Daily · Le volume de recherche de Xiaohongshu double (2024)",
+  "KrASIA · Xiaohongshu sues fake promotion brokers":
+    "KrASIA · Xiaohongshu contre les faux contenus promotionnels",
+  "Bellingcat · Xiaohongshu open-source guide (2026)":
+    "Bellingcat · Guide d'enquête sur Xiaohongshu (2026)",
   "What can a brand read on Xiaohongshu?":
     "Que peut-on lire sur Xiaohongshu pour une marque ?",
   "On Xiaohongshu, the basic unit is the note: a few photos or a short video, a catchy title, and an often long text that describes a use, compares products or gives a list of tips. Under each note, comments ask precise questions: price, size, skin type, where to buy. Replies from the author and other readers complete the review. Notes are made to be found: their title often uses the words people type into search. Reading those titles means reading how the public phrases its needs.":
@@ -8126,6 +8230,10 @@ window.LicterFR = {
     "Comment nous écoutons Bilibili.",
   "Bilibili social listening: use cases.":
     "Social listening Bilibili : les cas d'usage.",
+  "Bilibili · Investor relations":
+    "Bilibili · Relations investisseurs",
+  "Goldthread · Bilibili's membership exam":
+    "Goldthread · L'examen d'entrée de Bilibili",
   "What can a brand read on Bilibili?":
     "Que peut-on lire sur Bilibili pour une marque ?",
   "On Bilibili, you read videos that are often long and structured: detailed tests, comparisons, tutorials, analyses. Two layers of reactions overlap. Scrolling comments, pinned to a precise second of the video, say what triggers a reaction in the moment. Regular comments, under the video, are more reasoned and give the overall opinion. A product test is therefore read both as a whole and moment by moment: the part where the price is announced, the part where the product is taken apart, the part where the creator gives a verdict.":

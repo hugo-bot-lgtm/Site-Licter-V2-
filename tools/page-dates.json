@@ -96,8 +96,8 @@
 "hash": ""
 },
 "blog.html": {
-"date": "2026-10-12",
-"hash": "d48aecd5aaed083001b03f3a01786f0d"
+"date": "2026-10-13",
+"hash": "818e19f7bed224332837913e13e53ded"
 },
 "book-a-meeting.html": {
 "date": "2026-10-12",
@@ -192,8 +192,8 @@
 "hash": "f96b85380d90e049674480d6551bf554"
 },
 "events.html": {
-"date": "2026-10-06",
-"hash": "bf2b1116a596943fce177a330ea22ebc"
+"date": "2026-10-13",
+"hash": "f941e877f620473f8fd5a92a08abfb6f"
 },
 "expertise-ai-listening.html": {
 "date": "2026-10-12",
@@ -224,8 +224,8 @@
 "hash": "b403bc0f7436280ccef0ff3c3a4728d1"
 },
 "fr/blog/index.html": {
-"date": "2026-10-12",
-"hash": "859b7cd7ce8f77bd857f14b12afe4205"
+"date": "2026-10-13",
+"hash": "9b9be9650cc0b3e723fd50c517337497"
 },
 "fr/cas-usage/audiences/index.html": {
 "date": "2026-10-12",
@@ -308,20 +308,20 @@
 "hash": "2800f8fdbb42a48cef680d11c3d5e782"
 },
 "fr/evenements/alimentation/index.html": {
-"date": "2026-10-09",
-"hash": "d09fa156b6134cc82c67825b675819fc"
+"date": "2026-10-13",
+"hash": "24ddd5cc6a8618514ea080455fe274b0"
 },
 "fr/evenements/index.html": {
-"date": "2026-10-07",
-"hash": "07aeee216046de8791d71aa6245477d6"
+"date": "2026-10-13",
+"hash": "5b7ef81e09e63d7747a043ef7bffda6f"
 },
 "fr/evenements/jeux-jouets/index.html": {
-"date": "2026-10-09",
-"hash": "fdcd45de277fefd7edb74670f12c391b"
+"date": "2026-10-13",
+"hash": "5f698ef51025943d09fa2e2f5fb5cb94"
 },
 "fr/evenements/luxe/index.html": {
-"date": "2026-10-09",
-"hash": "e9c702f2816e71187b912a301270c8c5"
+"date": "2026-10-13",
+"hash": "a395384479fce218924fcbeb8178e7bb"
 },
 "fr/expertise/ai-listening/index.html": {
 "date": "2026-10-12",
@@ -472,96 +472,96 @@
 "hash": "7983fa3e7f457a395a8f3204266a2bf2"
 },
 "fr/sources/bilibili/index.html": {
-"date": "2026-10-12",
-"hash": "4b9631acdb66525ce8438b109ad60c40"
+"date": "2026-10-13",
+"hash": "3bb3a98b99b1e1c26f9343091df1419b"
 },
 "fr/sources/bluesky/index.html": {
-"date": "2026-10-12",
-"hash": "da4a7716a6bb6bcf64cb8f1d124228f5"
+"date": "2026-10-13",
+"hash": "289ea3c7df7dbf26d38a06ca941842e5"
 },
 "fr/sources/discord/index.html": {
-"date": "2026-10-12",
-"hash": "b4f7e5d6be5273bbbfe1f38c688cc596"
+"date": "2026-10-13",
+"hash": "3d0ddd696209c3efbe178debf64c62a4"
 },
 "fr/sources/douyin/index.html": {
-"date": "2026-10-12",
-"hash": "e11b9ecf3d18d98f13ab8af016df58f8"
+"date": "2026-10-13",
+"hash": "1fcd57ce55ff96bf318f07e92d44132d"
 },
 "fr/sources/facebook/index.html": {
-"date": "2026-10-12",
-"hash": "f6d388c248bedad8c14ff821ffd52633"
+"date": "2026-10-13",
+"hash": "2b5ce360d5755d73aecf5676a5b4b8f6"
 },
 "fr/sources/index.html": {
 "date": "2026-10-09",
 "hash": "42612b756ec8b26457d63511ebafc265"
 },
 "fr/sources/instagram/index.html": {
-"date": "2026-10-12",
-"hash": "1e3b26c4565cbb231884752307f96c7f"
+"date": "2026-10-13",
+"hash": "4bf5cf7c929aeb60728744a467f1bdab"
 },
 "fr/sources/linkedin/index.html": {
-"date": "2026-10-12",
-"hash": "00436f19763cc78a15b2bf41e8f7ac32"
+"date": "2026-10-13",
+"hash": "8f4d7aada6de929b8d9eeec0ed95f933"
 },
 "fr/sources/messenger/index.html": {
-"date": "2026-10-12",
-"hash": "07e749d0c1663dd06cd060c8f08a0e95"
+"date": "2026-10-13",
+"hash": "8db4d3d02bdf92f08df4c925b5d34585"
 },
 "fr/sources/pinterest/index.html": {
-"date": "2026-10-12",
-"hash": "a043cc8bbc848db5dfabf64feeac47b4"
+"date": "2026-10-13",
+"hash": "3c2d8f46939da9d42e4d085a074dc78c"
 },
 "fr/sources/reddit/index.html": {
-"date": "2026-10-12",
-"hash": "ce36058bd7cc0f423530de5a070c1da0"
+"date": "2026-10-13",
+"hash": "14eda9b7919def802c2d0fae2eb1dbf9"
 },
 "fr/sources/snapchat/index.html": {
-"date": "2026-10-12",
-"hash": "5e0dd570b497145aa6742f1117b7b21b"
+"date": "2026-10-13",
+"hash": "f542b8acab46ea0eb2cc9b2ba3e41dbd"
 },
 "fr/sources/telegram/index.html": {
-"date": "2026-10-12",
-"hash": "f402d3be498f3707601f265aac5f9fca"
+"date": "2026-10-13",
+"hash": "b1cfddaeee957077df77fc3c6b90bbfb"
 },
 "fr/sources/threads/index.html": {
-"date": "2026-10-12",
-"hash": "9fb783fda23f6ca09a7175f63bd8bc2b"
+"date": "2026-10-13",
+"hash": "f4b6762c46671b348aa80745b6a1defd"
 },
 "fr/sources/tiktok/index.html": {
 "date": "2026-10-09",
 "hash": "31637eee66d40b1bf4ffccfdc147ac01"
 },
 "fr/sources/twitch/index.html": {
-"date": "2026-10-12",
-"hash": "8849d6ec7751b29762965a503bce2c1f"
+"date": "2026-10-13",
+"hash": "19b0510e2c3c7b2d13aba942e2aee9af"
 },
 "fr/sources/vk/index.html": {
-"date": "2026-10-12",
-"hash": "502759706053104aa5ec428fd8d666ac"
+"date": "2026-10-13",
+"hash": "0ce5e320fb6b850614b9f0812ac069ec"
 },
 "fr/sources/wechat/index.html": {
-"date": "2026-10-12",
-"hash": "4d0e49467c55e1607b62c6817259f3b1"
+"date": "2026-10-13",
+"hash": "7ec8c8fb025841cd04183852b29e4cf3"
 },
 "fr/sources/weibo/index.html": {
-"date": "2026-10-12",
-"hash": "2a9bc67688f81ec823b5e34cd06c09d6"
+"date": "2026-10-13",
+"hash": "c0caac8613fbe8ecee49617631519612"
 },
 "fr/sources/whatsapp/index.html": {
-"date": "2026-10-12",
-"hash": "313194037e9e3a8b63067fe6d51d302e"
+"date": "2026-10-13",
+"hash": "c2887c26cb5ff877bb4dc5f4808ffb74"
 },
 "fr/sources/x-twitter/index.html": {
-"date": "2026-10-12",
-"hash": "9846a4a4056902729efd68be12c3b492"
+"date": "2026-10-13",
+"hash": "c7115174c0c3d5a080b614f1b4372dc4"
 },
 "fr/sources/xiaohongshu/index.html": {
-"date": "2026-10-12",
-"hash": "bef54ea77ea28bb525bb4ea2ef9c9832"
+"date": "2026-10-13",
+"hash": "b71a33b4dbda47374d1fa78aca849220"
 },
 "fr/sources/youtube/index.html": {
-"date": "2026-10-12",
-"hash": "f588822d300bf4a491f57a19ffacf190"
+"date": "2026-10-13",
+"hash": "bd3d5610084df267249ecbdc94238e63"
 },
 "guide.html": {
 "date": "2026-10-09",
@@ -608,92 +608,92 @@
 "hash": "84c17dcaebd257bfa70859d6b837aae2"
 },
 "source-bilibili.html": {
-"date": "2026-10-12",
-"hash": "8a72cb3dcaa7088e750d278ea725994e"
+"date": "2026-10-13",
+"hash": "fc64af6d3b21de8b36baa182ec704729"
 },
 "source-bluesky.html": {
-"date": "2026-10-12",
-"hash": "acc31a498c1632c1fd48260da4e8758c"
+"date": "2026-10-13",
+"hash": "387fb01b73333d27206194aa20109240"
 },
 "source-discord.html": {
-"date": "2026-10-12",
-"hash": "131f1321d0c0eeb2b13c7d093e2b34ce"
+"date": "2026-10-13",
+"hash": "7d55239f618ff294d87718205fd7483b"
 },
 "source-douyin.html": {
-"date": "2026-10-12",
-"hash": "4a1b55bc0061fbf287b0b48a43902aa3"
+"date": "2026-10-13",
+"hash": "532fa8c17867a3ef0234e685bd3035d8"
 },
 "source-facebook.html": {
-"date": "2026-10-12",
-"hash": "97fc7fbaef3543592a2ebc8f02c9b19f"
+"date": "2026-10-13",
+"hash": "c383733d125d0a5b5984fe78044beb67"
 },
 "source-instagram.html": {
-"date": "2026-10-12",
-"hash": "64f5c67baf6656cd5e1c9dd0cfd8d78e"
+"date": "2026-10-13",
+"hash": "a0f6f43d924aac13b26959c51ab892ce"
 },
 "source-linkedin.html": {
-"date": "2026-10-12",
-"hash": "3482ac3b69040db894df15e71f653bc9"
+"date": "2026-10-13",
+"hash": "80f2a0968690b033b5ebb109bffc522a"
 },
 "source-messenger.html": {
-"date": "2026-10-12",
-"hash": "b318bfcd3821b72a0377b28cc6fa1b64"
+"date": "2026-10-13",
+"hash": "04ba05d4cd0898dbb251f296ccc589aa"
 },
 "source-pinterest.html": {
-"date": "2026-10-12",
-"hash": "eb26e4c2f24d133610ba421968b0d121"
+"date": "2026-10-13",
+"hash": "e2a22f1890a3af9ce4f4bff1024e59da"
 },
 "source-reddit.html": {
-"date": "2026-10-12",
-"hash": "3d31aa8c3c7c028f9b77b714bf155c4c"
+"date": "2026-10-13",
+"hash": "9fa370c522b81a37685ae99fb10d6b40"
 },
 "source-snapchat.html": {
-"date": "2026-10-12",
-"hash": "5c9cf0ce1d6d1944fe0041b5b32501cb"
+"date": "2026-10-13",
+"hash": "f8fbf2ce10480b4a61d3df73a4a99f40"
 },
 "source-telegram.html": {
-"date": "2026-10-12",
-"hash": "36193acbc4835288c4aab8194f897852"
+"date": "2026-10-13",
+"hash": "7485246990b02fff5bac45816770a501"
 },
 "source-threads.html": {
-"date": "2026-10-12",
-"hash": "ed8c1f895f68a16a9c58fb8f304420e4"
+"date": "2026-10-13",
+"hash": "15be829a590544e20db82c759010b2d2"
 },
 "source-tiktok.html": {
 "date": "2026-10-09",
 "hash": "3799dda59beeb08a9747b6b3aedf2142"
 },
 "source-twitch.html": {
-"date": "2026-10-12",
-"hash": "799fd131a753cadbc112068d4dec1de7"
+"date": "2026-10-13",
+"hash": "b68c50947ddd4fd3043d846029b34180"
 },
 "source-vk.html": {
-"date": "2026-10-12",
-"hash": "3302de6135c219b85670161223c705c5"
+"date": "2026-10-13",
+"hash": "4a012af5ed570da0d43bba9e88d3f07d"
 },
 "source-wechat.html": {
-"date": "2026-10-12",
-"hash": "33b3f3fbb36f396dcad9d7a8a057fa38"
+"date": "2026-10-13",
+"hash": "d48f5c6d77ac61828c16f19c5c81cb50"
 },
 "source-weibo.html": {
-"date": "2026-10-12",
-"hash": "70f937463fad445167d4aa702a60555a"
+"date": "2026-10-13",
+"hash": "05e189349f8d99eba47549d5523f7fdc"
 },
 "source-whatsapp.html": {
-"date": "2026-10-12",
-"hash": "3ca9c2aca4e356d130d2f75a54fa7692"
+"date": "2026-10-13",
+"hash": "f2caf4782c03b63def12ea4b50538fd3"
 },
 "source-x-twitter.html": {
-"date": "2026-10-12",
-"hash": "3abc1ce67f695861afe15d5cf520906d"
+"date": "2026-10-13",
+"hash": "a468ee0424c4361160e12a557bfb8453"
 },
 "source-xiaohongshu.html": {
-"date": "2026-10-12",
-"hash": "4ba56dc8742824bebdc842c40a027700"
+"date": "2026-10-13",
+"hash": "a3e8d13bfe966648b7f4b2c961a5224b"
 },
 "source-youtube.html": {
-"date": "2026-10-12",
-"hash": "1e74815a78f0859c0af59ae356d4dae2"
+"date": "2026-10-13",
+"hash": "8845fa40bcd50d4ecdf6544d3020d08d"
 },
 "sources.html": {
 "date": "2026-10-09",

@@ -80,13 +80,6 @@ SOURCE_TITLE = {
     "https://tech.eu/2022/12/05/audiense/": "Tech.eu · Audiense acquires SoPrism (2022)",
     "https://help.audiense.com/knowledge/audiense-data-sources": "Audiense · Data sources",
     "https://www.cnil.fr": "CNIL · site officiel",
-    "https://research.youtube.com/": "YouTube Researcher Program",
-    "https://weixin.sogou.com/": "Sogou · recherche WeChat",
-    "https://help.instagram.com/1729008150678239/": "Aide Instagram · Centre d'aide",
-    "https://faq.whatsapp.com/1053543185312573": "WhatsApp · centre d'aide",
-    "https://www.sixthtone.com/news/1005795": "Sixth Tone · Weibo",
-    "https://support.google.com/youtube/answer/9483359?hl=en": "Aide YouTube · Google",
-    "https://ir.bilibili.com/": "Bilibili · relations investisseurs",
     "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2": "CNIL · RGPD, chapitre II\u00a0: les principes",
     "https://www.cnil.fr/fr/les-bases-legales/interet-legitime": "CNIL · L'intérêt légitime",
     "https://www.cnil.fr/fr/recommandations-reutilisateurs-donnees-internet": "CNIL · Recommandations aux réutilisateurs de données publiées sur internet",
@@ -132,11 +125,75 @@ SOURCE_TITLE = {
 }
 
 
-def source_label(u, note=""):
+# network page sources, in the page's language (audit of 13 October 2026: labels cut from the address read badly)
+SOURCE_PAIR = {
+    'https://abc17news.com/money/cnn-social-media-technology/2022/04/28/chinas-weibo-shows-user-locations-to-combat-bad-behavior/': ('CNN · Weibo affiche la localisation des utilisateurs (2022)', 'CNN · Weibo shows user locations (2022)'),
+    'https://about.fb.com/news/2019/08/groups-privacy-settings/': ('Meta · Confidentialité des groupes Facebook (2019)', 'Meta · Facebook Groups privacy settings (2019)'),
+    'https://about.fb.com/news/2023/08/new-features-and-additional-transparency-measures-as-the-digital-services-act-comes-into-effect/': ('Meta · Transparence et Digital Services Act (2023)', 'Meta · Transparency and the Digital Services Act (2023)'),
+    'https://about.fb.com/news/2023/12/default-end-to-end-encryption-on-messenger/': ('Meta · Chiffrement de bout en bout sur Messenger (2023)', 'Meta · End-to-end encryption on Messenger (2023)'),
+    'https://anderegg.ca/2024/05/23/digging-into-bluesky-dms': ('Anderegg · Les messages privés de Bluesky (2024)', 'Anderegg · Digging into Bluesky DMs (2024)'),
+    'https://blog.whatsapp.com/introducing-whatsapp-channels-a-private-way-to-follow-what-matters': ('WhatsApp · Lancement des chaînes', 'WhatsApp · Introducing Channels'),
+    'https://bsky.network/docs/protocol-services': ('Bluesky · Services du protocole AT', 'Bluesky · AT Protocol services'),
+    'https://bsky.social/about/blog/05-22-2024-direct-messages': ('Bluesky · Messages privés (2024)', 'Bluesky · Direct messages (2024)'),
+    'https://bsky.social/about/blog/7-27-2023-custom-feeds': ('Bluesky · Fils personnalisés (2023)', 'Bluesky · Custom feeds (2023)'),
+    'https://core.telegram.org/api/channel': ('Telegram · API des canaux', 'Telegram · Channels API'),
+    'https://dev.twitch.tv/docs/chat/': ('Twitch · Documentation du chat', 'Twitch · Chat documentation'),
+    'https://dev.vk.ru/en/wall.get': ('VK · API wall.get', 'VK · wall.get API'),
+    'https://developer.x.com/en/docs/x-api/compliance/streams/integrate/honoring-user-intent': ("X · Respect des suppressions dans l'API", 'X · Honoring user intent in the API'),
+    'https://developers.facebook.com/docs/content-library-and-api/content-library': ('Meta · Content Library', 'Meta · Content Library'),
+    'https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-facebook-login/hashtag-search': ("Meta · Recherche par hashtag de l'API Instagram", 'Meta · Instagram API hashtag search'),
+    'https://developers.facebook.com/documentation/threads/keyword-search': ("Meta · Recherche par mot-clé de l'API Threads", 'Meta · Threads API keyword search'),
+    'https://developers.google.com/youtube/terms/developer-policies': ('YouTube · Règles pour les développeurs', 'YouTube · Developer policies'),
+    'https://developers.weixin.qq.com/doc/service/en/api/leaving/api_listcomment': ('WeChat · API des commentaires', 'WeChat · Comments API'),
+    'https://docs.discord.com/developers/gateway/you-might-not-need-a-privileged-intent': ("Discord · Accès aux messages par l'API", 'Discord · Message access in the API'),
+    'https://docs.x.com/x-api/getting-started/pricing': ("X · Tarifs de l'API", 'X · API pricing'),
+    'https://faq.whatsapp.com/1053543185312573': ("WhatsApp · Centre d'aide", 'WhatsApp · Help Center'),
+    'https://help.instagram.com/1729008150678239/': ("Instagram · Centre d'aide", 'Instagram · Help Center'),
+    'https://help.pinterest.com/business/article/pinterest-trends': ('Pinterest · Pinterest Trends', 'Pinterest · Pinterest Trends'),
+    'https://help.pinterest.com/en/articles/secret-boards': ('Pinterest · Tableaux secrets', 'Pinterest · Secret boards'),
+    'https://help.snapchat.com/hc/en-us/articles/7012334940948-When-does-Snapchat-delete-Snaps-and-Chats': ('Snapchat · Suppression des Snaps et des chats', 'Snapchat · When Snaps and Chats are deleted'),
+    'https://help.snapchat.com/hc/en-us/articles/7012338216468-What-s-the-difference-between-posting-to-My-Story-Public-and-My-Story-Friends': ('Snapchat · Story publique et Story amis', 'Snapchat · Public Story and Friends Story'),
+    'https://help.snapchat.com/hc/en-us/articles/7012347065876-What-is-a-Public-Profile-on-Snapchat': ('Snapchat · Le profil public', 'Snapchat · Public Profile'),
+    'https://help.x.com/en/using-x/community-notes': ('X · Notes de la communauté', 'X · Community Notes'),
+    'https://ir.bilibili.com/': ('Bilibili · Relations investisseurs', 'Bilibili · Investor relations'),
+    'https://jingdaily.com/intels/2024-12/16/xiaohongshu-search-volume-doubles-baidu-s-lead-shrinks': ('Jing Daily · Le volume de recherche de Xiaohongshu double (2024)', 'Jing Daily · Xiaohongshu search volume doubles (2024)'),
+    'https://kr-asia.com/xiaohongshu-sues-ghostwriter-brokers-over-fraudulent-promotional-content': ('KrASIA · Xiaohongshu contre les faux contenus promotionnels', 'KrASIA · Xiaohongshu sues fake promotion brokers'),
+    'https://redditinc.com/policies/data-api-terms': ("Reddit · Conditions de l'API de données", 'Reddit · Data API terms'),
+    'https://research.youtube.com/': ('YouTube · Programme pour les chercheurs', 'YouTube · Researcher Program'),
+    'https://support.discord.com/hc/en-us/articles/360030843331-Enabling-Server-Discovery': ('Discord · Découverte des serveurs', 'Discord · Server Discovery'),
+    'https://support.google.com/youtube/answer/9483359?hl=en': ('Aide YouTube · Google', 'YouTube Help · Google'),
+    'https://techcrunch.com/2024/09/12/threads-makes-it-easier-to-evangelize-the-open-social-web-with-a-new-direct-link-feature': ('TechCrunch · Threads et le web social ouvert (2024)', 'TechCrunch · Threads and the open social web (2024)'),
+    'https://telegram.org/tour/channels': ('Telegram · Les canaux', 'Telegram · Channels'),
+    'https://transparency.meta.com/en-gb/researchtools/meta-content-library/': ('Meta · Meta Content Library pour la recherche', 'Meta · Meta Content Library for research'),
+    'https://walkthechat.com/new-wechat-comments-function-subscription-accounts/': ('WalktheChat · Les commentaires sur WeChat', 'WalktheChat · WeChat comments'),
+    'https://weixin.sogou.com/': ('Sogou · Recherche WeChat', 'Sogou · WeChat search'),
+    'https://www.bellingcat.com/resources/2026/04/20/xiaohongshu-rednote-open-source-guide/': ("Bellingcat · Guide d'enquête sur Xiaohongshu (2026)", 'Bellingcat · Xiaohongshu open-source guide (2026)'),
+    'https://www.goldthread2.com/culture/gain-full-access-these-videos-you-must-pass-exam-100-very-niche-questions/article/2157030': ("Goldthread · L'examen d'entrée de Bilibili", "Goldthread · Bilibili's membership exam"),
+    'https://www.hrw.org/news/2017/05/16/ukraine-revoke-ban-dozens-russian-web-companies': ("Human Rights Watch · L'Ukraine bloque des services russes (2017)", 'Human Rights Watch · Ukraine bans Russian web companies (2017)'),
+    'https://www.jonesday.com/en/insights/2021/09/highlights-of-chinas-new-personal-information-protection-law': ('Jones Day · La loi chinoise sur les données personnelles (2021)', "Jones Day · China's personal information law (2021)"),
+    'https://www.linkedin.com/help/linkedin/answer/a1341387': ("LinkedIn · Centre d'aide", 'LinkedIn · Help Center'),
+    'https://www.opb.org/article/2022/03/11/russia-widens-social-media-crackdown-by-blocking-instagram/': ('OPB · La Russie bloque Instagram (2022)', 'OPB · Russia blocks Instagram (2022)'),
+    'https://www.opb.org/article/2024/08/14/meta-shutters-tool-used-to-fight-disinformation-despite-outcry': ('OPB · Meta ferme CrowdTangle (2024)', 'OPB · Meta shuts down CrowdTangle (2024)'),
+    'https://www.pcgamer.com/twitch-eliminates-save-forever-option-as-it-moves-to-improve-video-on-demand-service/': ('PC Gamer · Twitch limite la conservation des vidéos', 'PC Gamer · Twitch limits video storage'),
+    'https://www.sixthtone.com/news/1005795': ('Sixth Tone · Weibo', 'Sixth Tone · Weibo'),
+    'https://www.snap.com/terms/spotlight-terms': ('Snap · Conditions de Spotlight', 'Snap · Spotlight terms'),
+    'https://www.whatsapp.com/privacy': ('WhatsApp · Politique de confidentialité', 'WhatsApp · Privacy policy'),
+    'https://www.whatsonweibo.com/are-douyin-and-tiktok-the-same/': ("What's on Weibo · Douyin et TikTok", "What's on Weibo · Douyin and TikTok"),
+}
+
+def comma_join(links):
+    """links separated by commas, each comma kept with its link: when the links
+    are boxes, a line could otherwise start with a lone comma (audit of 13 October 2026)"""
+    return " ".join('<span class="xp-i">%s%s</span>' % (l, "," if k < len(links) - 1 else "") for k, l in enumerate(links))
+
+
+def source_label(u, note="", lang=1):
     """a readable label for a source link: its title when known, the note written
     next to it, otherwise the host and the page name (audit of 12 October 2026:
     bare domain names said nothing about the document)"""
     import re
+    if u in SOURCE_PAIR:
+        return SOURCE_PAIR[u][lang]
     if u in SOURCE_TITLE:
         return SOURCE_TITLE[u]
     host = re.sub(r"^https?://(www\.)?", "", u).split("/")[0]
@@ -171,5 +228,5 @@ def sources_line(module_file, label):
     for u_, n_ in re.findall(r"# source: (https?://[^\s)]+)\s*\(([^)]*)\)", pathlib.Path(module_file).read_text()):
         notes.setdefault(u_.rstrip(".,;"), n_)
     name = lambda u: source_label(u, notes.get(u, ""))
-    links = ", ".join('<a href="%s" rel="noopener" target="_blank">%s</a>' % (html.escape(u, quote=True), html.escape(name(u))) for u in urls)
+    links = comma_join(['<a href="%s" rel="noopener" target="_blank">%s</a>' % (html.escape(u, quote=True), html.escape(name(u))) for u in urls])
     return '<p class="qa-src"><span>%s</span> %s</p>' % (label, links)

@@ -158,8 +158,13 @@
       var ox = size / 2, oy = size / 2;       /* hub, in the layer */
       var nodes = [];
       var n = Math.round(c.n * density);
+      var i = 0;
 
-      for (var i = 0; i < n; i++) {
+      /* the links go in chunks: on a slow machine one community in a single
+         task took 100 to 150 ms (audit of 13 October 2026) */
+      return function () {
+      if (i < n) {
+      for (var end = Math.min(n, i + 120); i < end; i++) {
         /* denser near the hub, a soft ragged rim */
         var d = R * (0.08 + 0.92 * Math.pow(rnd(), 0.75)) * (0.92 + rnd() * 0.2);
         var a = rnd() * Math.PI * 2;
@@ -178,6 +183,8 @@
         o.moveTo(ox, oy);
         o.quadraticCurveTo(cv.cx, cv.cy, nx, ny);
         o.stroke();
+      }
+      return null;
       }
       /* the accounts */
       for (var k = 0; k < nodes.length; k++) {
@@ -199,14 +206,16 @@
 
       return { c: c, off: off, size: size, hx: hx, hy: hy, ox: ox, oy: oy, R: R, nodes: nodes,
                phase: rnd() * Math.PI * 2, glow: 0 };
+      };
     }
+    var b;
     function finish() {
 
     /* base layer: grey outlier constellations, and faint links between
        communities so the map reads as one network */
     base = document.createElement("canvas");
     base.width = canvas.width; base.height = canvas.height;
-    var b = base.getContext("2d");
+    b = base.getContext("2d");
     b.scale(dpr, dpr);
     b.globalCompositeOperation = BLEND();
     OUTLIERS.forEach(function (g) {
@@ -227,6 +236,8 @@
       b.fillStyle = LIGHT ? "rgba(19,22,45,0.85)" : "rgba(255,255,255,0.9)";
       b.beginPath(); b.arc(cx, cy, 1.6, 0, Math.PI * 2); b.fill();
     });
+    }
+    function finishLinks() {
     for (var i = 0; i < layers.length; i++) {
       for (var j = i + 1; j < layers.length; j++) {
         var A = layers[i], B = layers[j];
@@ -246,6 +257,8 @@
       }
     }
 
+    }
+    function finishLabels() {
     /* names beside the hubs, as text so they stay crisp and translatable */
     if (labelBox) {
       labelBox.innerHTML = "";
@@ -268,9 +281,13 @@
     var count = Math.round(180 * density_);
     for (var s = 0; s < count; s++) signals.push(newSignal(true));
     }
+    var current = null;
     return { next: function () {
-      if (queue.length) { layers.push(makeLayer(queue.shift())); return true; }
-      if (!stage) { stage = 1; finish(); }
+      if (current) { var L = current(); if (L) { layers.push(L); current = null; } return true; }
+      if (queue.length) { current = makeLayer(queue.shift()); return true; }
+      if (stage === 0) { stage = 1; finish(); return true; }
+      if (stage === 1) { stage = 2; finishLinks(); return true; }
+      if (stage === 2) { stage = 3; finishLabels(); }
       return false;
     } };
   }

@@ -112,7 +112,7 @@ def xp_href(k, lang=None):
 def xp_line(keys, lang=None, label=None):
     """one line: the expertise pages behind this page"""
     lab = label or ("Expertise associée", "Related expertise")[lang if lang is not None else EN]
-    links = ", ".join('<a href="%s">%s</a>' % (xp_href(k, lang), XP_NAME[k]) for k in keys)
+    links = __import__("components").comma_join(['<a href="%s">%s</a>' % (xp_href(k, lang), XP_NAME[k]) for k in keys])
     return '<p class="xp-line"><span>%s</span> %s</p>' % (lab, links)
 
 

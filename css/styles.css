@@ -10466,11 +10466,13 @@ html[lang] .lang-note--fr:not([hidden]) { display: block; }
 
 /* "Related expertise: …" under a tool, a network or an offer (SEO plan, step 8) */
 .xp-line { margin: 18px 0 0; font: 500 14.5px/1.6 var(--body-font); color: var(--text-2); }
-.xp-line > span { font-weight: 700; color: var(--ink); }
-.xp-line > span::after { content: ":"; }
-html[lang="fr"] .xp-line > span::after { content: "\00a0:"; }
+.xp-line > span:not(.xp-i) { font-weight: 700; color: var(--ink); }
+.xp-line > span:not(.xp-i)::after { content: ":"; }
+html[lang="fr"] .xp-line > span:not(.xp-i)::after { content: "\00a0:"; }
 .xp-line a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--amber); text-underline-offset: 3px; }
 .xp-line a:hover { color: var(--amber-ink, var(--amber)); }
+.xp-i { white-space: nowrap; }
+.evl__agenda { margin: 22px 0 0; font: 500 14.5px/1.6 var(--body-font); color: var(--text-2); max-width: 70ch; }
 
 /* the Sources hub: every network, with what it is good for (SEO plan, step 10) */
 .tk-nets--hub { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
@@ -10622,9 +10624,11 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 
 /* the public sources of a long-form section, under its cards */
 .qa-src { margin: 18px 0 0; font: 500 12.5px/1.7 var(--body-font); color: var(--text-2); }
-.qa-src span { margin-right: 6px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; font-size: 11.5px; }
+.qa-src > span:not(.xp-i) { margin-right: 6px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; font-size: 11.5px; }
 .qa-src a { color: var(--text-2); text-decoration: underline; text-decoration-color: rgba(var(--ink-rgb), .3); text-underline-offset: 3px; }
 .qa-src a:hover { color: var(--ink); }
+/* each source moves to the next line whole, never split after its "·" (audit of 13 October 2026); a label longer than the line still wraps */
+.qa-src a { display: inline-block; max-width: 100%; white-space: normal; }
 .tk-proof__h { margin: 0; font: 600 clamp(18px, 1.4vw, 21px)/1.3 var(--title-font); color: var(--ink); }
 /* expertise heroes on a phone: the callback is offered on the first screen, the form itself comes further down */
 .xe-lmh__jump { display: none; }
@@ -10635,7 +10639,8 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
   .xe-lmh__copy { display: flex; flex-direction: column; align-items: flex-start; }
   .xe-lmh__jump { order: 1; margin: 22px 0 0; }
   .xe-lmh__call { order: 2; margin-top: 16px; }
-  .xe-lmh__def { margin-top: 6px; }
+  /* the definition link right under the lead, above the buttons: the cookie banner covered it lower down (audit of 13 October 2026) */
+  .xe-lmh__def { order: 0; margin-top: 14px; }
   .xe-lmh__pills { order: 3; margin-top: 22px; }
 }
 /* large screens: the copy starts at the top of the hero instead of being

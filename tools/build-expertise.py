@@ -652,16 +652,22 @@ INTERVIEWS = {"social": [("article-comment-loreal-utilise-le-social-listening-po
                          ("article-licter-meltwater.html", "Meltwater")]}
 
 
+def xp_join(links):
+    """links in a line, each comma kept with its link: on a phone the links are
+    44 px blocks and a line could start with a lone comma (audit of 13 October 2026)"""
+    return " ".join('<span class="xp-i">%s%s</span>' % (l, "," if k < len(links) - 1 else "") for k, l in enumerate(links))
+
+
 def reads(key):
     items = READS.get(key)
     if not items:
         return ""
-    tools_line = ('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Les outils", "The tools")), ", ".join(
-        '<a href="%s">%s</a>' % (h, n) for h, n in TOOLS_OF[key]))) if key in TOOLS_OF else ""
-    tools_line += ('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Les entretiens", "The interviews")), ", ".join(
-        '<a href="%s">%s</a>' % (h, n) for h, n in INTERVIEWS[key]))) if key in INTERVIEWS else ""
-    links = ", ".join(('<a href="/fr/cas-usage/audiences/" data-en="/en/use-cases/audiences/">%s</a>' % t(l)) if h == "use-cases.html"
-                      else '<a href="%s">%s</a>' % (h, t(l)) for h, l in items)
+    tools_line = ('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Les outils", "The tools")), xp_join([
+        '<a href="%s">%s</a>' % (h, n) for h, n in TOOLS_OF[key]]))) if key in TOOLS_OF else ""
+    tools_line += ('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Les entretiens", "The interviews")), xp_join([
+        '<a href="%s">%s</a>' % (h, n) for h, n in INTERVIEWS[key]]))) if key in INTERVIEWS else ""
+    links = xp_join([('<a href="/fr/cas-usage/audiences/" data-en="/en/use-cases/audiences/">%s</a>' % t(l)) if h == "use-cases.html"
+                     else '<a href="%s">%s</a>' % (h, t(l)) for h, l in items])
     return sec("", '<p class="xp-line"><span>%s</span> %s</p>' % (t(("À lire", "Further reading")), links) + tools_line)
 
 
@@ -685,7 +691,7 @@ def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, 
           <p class="xe-lm__t">{title}</p>
           <ul class="xe-lm__items">{items}</ul>
           <form class="form xe-gform" id="call-{key}-form" novalidate>
-            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-contact", ("E-mail ou téléphone", "Email or phone"), "text", "email", "name@company.com", ' inputmode="email" data-contact')}</div>
+            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-contact", ("E-mail ou téléphone", "Email or phone"), "text", "email", "Email or phone number", ' inputmode="email" data-contact')}</div>
             <button class="form__submit" type="submit">{t(S["lm_submit"])} <span aria-hidden="true">→</span></button>
             <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>{t(S["lm_done"])}</span></p>
           </form>

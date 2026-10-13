@@ -57,9 +57,9 @@ EVENTS = [
     },
     {
         "slug": "food", "date": "2026-11-19",
-        "sector": ("Food", "Food"),
+        "sector": ("Alimentation", "Food"),
         "venue": "Madame Rêve", "address": "48 rue du Louvre, 75001 Paris",
-        "h1": ("Food : ce que la conversation dit de nos assiettes.", "Food: what the conversation says about what we eat."),
+        "h1": ("Alimentation : ce que la conversation dit de nos assiettes.", "Food: what the conversation says about what we eat."),
         "lead": ("Nous présentons notre étude sectorielle : ce que les consommateurs publient, recherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes que les marques peuvent encore saisir.",
                  "We present our sector study: what consumers post, search and ask AI about what they eat, and the expectations brands can still take up."),
         "points": [("Les recettes et les créateurs qui font vendre.", "The recipes and creators that drive sales."),
@@ -245,6 +245,14 @@ def event_rows(evs):
 
 def list_body():
     rows = event_rows(EVENTS)
+    # the dates in a sentence as well: a list of links alone was dropped by text
+    # extractors, the page read as 26 words (audit of 13 October 2026)
+    up = [e for e in EVENTS if iso(e) >= datetime.date.today()]
+    def say(lang):
+        items = ["%s, %s, %s" % (e["sector"][lang], (long_date(e, lang)[0].lower() + long_date(e, lang)[1:]) if lang == FR else long_date(e, lang), e["venue"]) for e in up]
+        return ((" ; " if lang == FR else "; ").join(items) + ".") if items else ""
+    # two text nodes: the French twin is made by translating each node (tools/build-fr-pages.py)
+    agenda = ('\n      <p class="evl__agenda"><b>%s</b> <span>%s</span></p>' % (t(("Au programme :", "Coming up:")), t((say(FR), say(EN))))) if up else ""
     return f'''<main id="content">
 {crumbs([(S["home"], "index.html"), (S["events"], None)])}
 
@@ -253,7 +261,7 @@ def list_body():
       <p class="xh__kick">{t(S["events"])}</p>
       <h1 class="xh__title">{t(S["list_h1"])}</h1>
       <p class="xh__lead">{t(S["list_lead"])}</p>
-      <ul class="evl__list">{rows}</ul>
+      <ul class="evl__list">{rows}</ul>{agenda}
     </div>
   </section>
 </main>'''
