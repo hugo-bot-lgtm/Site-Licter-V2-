@@ -1,7 +1,7 @@
 /* =========================================================================
    The sales drawer: a panel that slides in from the right, with two tabs.
 
-   - "Call me back": the callback of the home, one field, email or phone.
+   - "Contact me": the callback of the home, one field, email or phone.
    - "Chat": Antoine Khaitrine, co-founder, answers questions about Licter.
      Every answer ends on a call to action. It is labelled as an automatic
      assistant: it speaks in his name, it is not him typing.

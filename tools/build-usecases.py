@@ -223,14 +223,14 @@ L = {  # interface words of these pages
 
 BOOK = {
     "h2": ("Laquelle de ces questions est la vôtre ?", "Which of these questions is yours?"),
-    "lead": ("Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, pour en parler.",
-             "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, to talk it through."),
+    "lead": ("Laissez votre e-mail ou votre téléphone. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, pour en parler.",
+             "Leave your email or phone number. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, to talk it through."),
     "label": ("E-mail ou téléphone", "Email or phone"),
     "ph": ("nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"),
-    "btn": ("Me faire rappeler", "Call me back"),
+    "btn": ("Être contacté", "Contact me"),
     "err": ("Saisissez un e-mail professionnel ou un numéro de téléphone.", "Enter a work email or a phone number."),
     "promise": ("Un consultant, pas un commercial. En semaine, de 9\u00a0h à 19\u00a0h.", "A consultant, not a sales team. Weekdays, 9am to 7pm."),
-    "consent": ("Vos coordonnées servent uniquement à vous rappeler.", "We use your contact details only to call you back."),
+    "consent": ("Vos coordonnées servent uniquement à vous contacter.", "We use your contact details only to contact you."),
     "privacy": ("Politique de confidentialité", "Privacy policy"),
     "diag": ("Vous faites déjà du social listening ?", "Already running social listening?"),
     "diag_link": ("Demandez plutôt un diagnostic", "Request a diagnostic instead"),

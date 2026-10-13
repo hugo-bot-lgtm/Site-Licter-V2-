@@ -394,9 +394,9 @@ S.update({
     "how_note": ("Durées indicatives pour une première lecture.", "Indicative timings for a first read."),
     "proof_k": ("Dans leurs mots", "In their words"),
     "proof_t": ("Ils en parlent", "They talk about it"),
-    "magnet_consent": ("Vos coordonnées servent uniquement à vous rappeler.", "We use your details only to call you back."),
+    "magnet_consent": ("Vos coordonnées servent uniquement à vous contacter.", "We use your details only to contact you."),
     "privacy": ("Politique de confidentialité", "Privacy policy"),
-    "bar_offer": ("Être rappelé", "Call me back"),
+    "bar_offer": ("Être contacté", "Contact me"),
     "bar_call": ("Parler à un consultant", "Talk to a consultant"),
     "bar_chat": ("Discuter avec Antoine", "Chat with Antoine"),
     "hub_faq_t": ("Questions fréquentes", "Frequently asked questions"),
@@ -601,9 +601,9 @@ H1L = {"social": (("Ce que les gens disent,", "lu par des gens."), ("What people
        "hub": (("Six façons", "d'écouter un marché."), ("Six ways", "of listening to a market."))}
 S.update({
     # no free "flash" read exists (owner, 12 October 2026): the hero offers the real first step, thirty minutes with a consultant
-    "lm_btn": ("Être rappelé par un consultant", "Get a call back from a consultant"),
-    "lm_submit": ("Me faire rappeler", "Call me back"),
-    "lm_done": ("C'est noté. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h.", "Noted. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm."),
+    "lm_btn": ("Être contacté par un consultant", "Get contacted by a consultant"),
+    "lm_submit": ("Être contacté", "Contact me"),
+    "lm_done": ("C'est noté. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h.", "Noted. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm."),
     "lm_t": ("Un échange avec un consultant, sur votre marque.", "A call with a consultant, on your brand."),
     "lm_t_hub": ("Un échange avec un consultant, sur votre marque.", "A call with a consultant, on your brand."),
     "lm_from": ("Un consultant, pas un commercial.", "A consultant, not a sales team."),
@@ -613,7 +613,7 @@ S.update({
 
 
 # What the hero card promises: the first call with a consultant, as on the home (no free "flash" read exists)
-FLASH = {k: [("Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h", "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm"),
+FLASH = {k: [("Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h", "A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm"),
              ("Votre question cadrée, avec les sources et les outils adaptés", "Your question framed, with the right sources and tools"),
              ("Une proposition chiffrée après l'échange", "A costed proposal after the call")]
          for k in ("social", "audience", "influence", "ai", "live", "search", "hub")}
@@ -691,7 +691,7 @@ def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, 
           <p class="xe-lm__t">{title}</p>
           <ul class="xe-lm__items">{items}</ul>
           <form class="form xe-gform" id="call-{key}-form" novalidate>
-            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-contact", ("E-mail ou téléphone", "Email or phone"), "text", "email", "Email or phone number", ' inputmode="email" data-contact')}</div>
+            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-contact", ("E-mail ou téléphone", "Email or phone"), "text", "email", "Email or phone", ' inputmode="email" data-contact')}</div>
             <button class="form__submit" type="submit">{t(S["lm_submit"])} <span aria-hidden="true">→</span></button>
             <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>{t(S["lm_done"])}</span></p>
           </form>

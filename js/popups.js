@@ -38,17 +38,17 @@
     close: ["Fermer", "Close"],
     privacy: ["Politique de confidentialité", "Privacy policy"],
     /* the callback: the words of the home */
-    callK: ["Être rappelé", "Call me back"],
+    callK: ["Être contacté", "Contact me"],
     callBadge1: ["Réponse sous 30 min", "Reply within 30 min"],
     callBadge2: ["160+ projets depuis 2022", "160+ projects since 2022"],
     callImgAlt: ["Trois consultantes Licter dans les bureaux", "Three Licter consultants in the office"],
     callT: ["Un échange avec un consultant.", "A call with a consultant."],
-    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h.", "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm."],
+    callL: ["Laissez votre e-mail ou votre téléphone. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h.", "Leave your email or phone number. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm."],
     callF: ["E-mail ou téléphone", "Email or phone"],
     callP: ["nom@entreprise.com ou 06 12 34 56 78", "name@company.com or 06 12 34 56 78"],
-    callB: ["Me faire rappeler", "Call me back"],
+    callB: ["Être contacté", "Contact me"],
     callPr: ["Un consultant, pas un commercial. En semaine, de 9\u00a0h à 19\u00a0h.", "A consultant, not a sales team. Weekdays, 9am to 7pm."],
-    callC: ["Vos coordonnées servent uniquement à vous rappeler.", "We use your contact details only to call you back."],
+    callC: ["Vos coordonnées servent uniquement à vous contacter.", "We use your contact details only to contact you."],
     callE: ["Indiquez un e-mail professionnel ou un numéro de téléphone.", "Enter a work email or a phone number."],
     callOkM: ["C'est noté. Un consultant vous écrit à ", "Noted. A consultant writes to you at "],
     callOkP: ["C'est noté. Un consultant vous appelle au ", "Noted. A consultant calls you on "],
@@ -241,7 +241,7 @@
       }
       return '<button type="button" class="ppd__b ppd__b--' + k + '" data-open="' + k + '">' +
         '<span class="ppd__i" aria-hidden="true">' + ICON_CALL + "</span>" +
-        esc(fr() ? "Être rappelé" : "Call me back") + "</button>";
+        esc(fr() ? "Être contacté" : "Contact me") + "</button>";
     }).join("");
   }
   /* never over the home's hero: the dock waits until it has scrolled by */

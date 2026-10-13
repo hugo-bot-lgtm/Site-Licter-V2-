@@ -736,7 +736,7 @@ window.LicterFR = {
   "A licence makes sense if someone in your team can write the queries and read the results every week. Otherwise, an agency runs the tool for you and delivers the reading: you pay for the answer, not for the access.": "Une licence a du sens si quelqu'un dans votre équipe peut écrire les requêtes et lire les résultats chaque semaine. Sinon, une agence opère l'outil pour vous et livre la lecture : vous payez la réponse, pas l'accès.",
   "No. Licter is an independent consultancy: we publish no tool, we run the platforms on the market for our clients and choose them by the question.": "Non. Licter est un cabinet indépendant : nous n'éditons aucun outil, nous opérons les plateformes du marché pour nos clients et les choisissons selon la question.",
   "It depends on the publisher, the number of users, the history and the modules. When we run the tool for you, the whole service is on quotation, licence included.": "Cela dépend de l'éditeur, du nombre d'utilisateurs, de l'historique et des modules. Quand nous opérons l'outil pour vous, l'ensemble est sur devis, licence comprise.",
-  "Leave your email or phone number. A consultant from our social listening agency calls you back within 30 minutes, on weekdays from 9am to 7pm, tells you which sources we would use, and runs them for you if you wish.": "Laissez votre e-mail ou votre téléphone. Un consultant de notre agence de social listening vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, vous dit quelles sources nous utiliserions, et les opère pour vous si vous le souhaitez.",
+  "Leave your email or phone number. A consultant from our social listening agency contacts you within 30 minutes, on weekdays from 9am to 7pm, tells you which sources we would use, and runs them for you if you wish.": "Laissez votre e-mail ou votre téléphone. Un consultant de notre agence de social listening vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, vous dit quelles sources nous utiliserions, et les opère pour vous si vous le souhaitez.",
   "Who is responsible": "Responsable du traitement",
   "Licter SAS, 173 rue de Courcelles, 75017 Paris, France. Contact:": "Licter SAS, 173 rue de Courcelles, 75017 Paris. Contact :",
   "What we collect": "Ce que nous collectons",
@@ -964,7 +964,7 @@ window.LicterFR = {
   "Four layers of signal, filtered by consultants, not by a dashboard default.": "Quatre calques de signal, filtrés par des consultants, pas par le réglage par défaut d'un tableau de bord.",
   "Analysts read the audiences against your market, in its own language.": "Des analystes lisent les audiences au regard de votre marché, dans sa langue.",
   "A readout presented to the people who decide, and alerts when something moves.": "Une restitution présentée à celles et ceux qui décident, et des alertes quand quelque chose bouge.",
-  "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, and tells you which model fits.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, et vous dit quel modèle vous convient.",
+  "Leave your email or phone number. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, and tells you which model fits.": "Laissez votre e-mail ou votre téléphone. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, et vous dit quel modèle vous convient.",
   "The three offers": "Les trois offres",
   "The Vigie 360 alert feed": "Le flux d'alertes Vigie 360",
   "Your platform before and after": "Votre plateforme avant et après",
@@ -1019,7 +1019,7 @@ window.LicterFR = {
   "users profiled daily · 7,000+ criteria": "utilisateurs profilés chaque jour · 7 000+ critères",
   "Decide": "Décider",
   "An analyst reads it, in the language of the market, and tells you what to do.": "Un analyste le lit, dans la langue du marché, et vous dit quoi faire.",
-  "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, and tells you which sources we would use, and what they cannot tell you.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, et vous dit quelles sources nous utiliserions, et ce qu'elles ne peuvent pas vous dire.",
+  "Leave your email or phone number. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, and tells you which sources we would use, and what they cannot tell you.": "Laissez votre e-mail ou votre téléphone. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, et vous dit quelles sources nous utiliserions, et ce qu'elles ne peuvent pas vous dire.",
   "The four layers": "Les quatre calques",
   "The whole Licter team in the office, standing and seated around a coffee table": "Toute l'équipe Licter au bureau, debout et assise autour d'une table basse",
   "A Licter consultant in an armchair, an open laptop in hand": "Un membre de l'équipe Licter dans un fauteuil, un ordinateur ouvert à la main",
@@ -1055,7 +1055,7 @@ window.LicterFR = {
   "In their own words": "Dans leurs mots",
   "Your sector is not one of these four?": "Votre secteur n'est pas l'un de ces quatre ?",
   "Tell us your question": "Dites-nous votre question",
-  "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, to talk it through.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, pour en parler.",
+  "Leave your email or phone number. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, to talk it through.": "Laissez votre e-mail ou votre téléphone. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, pour en parler.",
   "Find the creators and public voices whose audience genuinely overlaps yours, not the ones with the largest follower count.": "Trouvez les créateurs et les voix publiques dont l'audience recoupe vraiment la vôtre, pas ceux qui ont le plus d'abonnés.",
   "Brand health is not a quarterly survey. It is a continuous signal, already public: the work is to read it in time.": "La santé de marque n'est pas une étude trimestrielle. C'est un signal continu, déjà public : le travail consiste à le lire à temps.",
   "See which words, claims and proofs your audiences actually repeat, and which ones never leave your presentations.": "Voyez quels mots, promesses et preuves vos audiences reprennent vraiment, et lesquels ne quittent jamais vos présentations.",
@@ -1071,7 +1071,7 @@ window.LicterFR = {
   "A word from the founders": "Un mot des fondateurs",
   /* ---- home: the quiz promise ---- */
   "A consultant, not a sales team. Weekdays, 9am to 7pm.": "Un consultant, pas un commercial. En semaine, de 9\u00a0h à 19\u00a0h.",
-  "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, not a sales team.": "Un consultant vous rappelle dans les 30\u00a0minutes en semaine, pas un commercial.",
+  "A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, not a sales team.": "Un consultant vous rappelle dans les 30\u00a0minutes en semaine, pas un commercial.",
   "Company name": "Nom de l'entreprise",
   "Rather read first?": "Plutôt lire d'abord\u00a0?",
   "The guide to the 12 questions": "Le guide des 12 questions",
@@ -1089,12 +1089,12 @@ window.LicterFR = {
   "(opens the SI Lab website)": "(ouvre le site de SI Lab)",
   "50+ clients · 160+ projects · Top 50 Insider worldwide, SI Lab since 2024": "50+ clients · 160+ projets · Top 50 Insider mondial, SI Lab depuis 2024",
   "Insider worldwide, SI Lab since 2024": "Insider mondial, SI Lab depuis 2024",
-  "Leave your email or phone number. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm.": "Laissez votre e-mail ou votre téléphone. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h.",
+  "Leave your email or phone number. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm.": "Laissez votre e-mail ou votre téléphone. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h.",
   "Email or phone": "E-mail ou téléphone",
   "name@company.com or 06 12 34 56 78": "nom@entreprise.com ou 06 12 34 56 78",
-  "Call me back": "Me faire rappeler",
+  "Contact me": "Être contacté",
   "Enter a work email or a phone number.": "Saisissez un e-mail professionnel ou un numéro de téléphone.",
-  "We use your contact details only to call you back.": "Vos coordonnées servent uniquement à vous rappeler.",
+  "We use your contact details only to contact you.": "Vos coordonnées servent uniquement à vous contacter.",
   "Previous step": "Étape précédente",
   "Next step": "Étape suivante",
   "The four steps, one card each": "Les quatre étapes, une carte chacune",
@@ -1130,7 +1130,7 @@ window.LicterFR = {
   "Free diagnostic": "Diagnostic gratuit",
   "Free maturity test": "Test de maturité gratuit",
   "Talk to a consultant": "Parler à un consultant",
-  "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm, not a sales team.": "Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h, pas un commercial.",
+  "A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, not a sales team.": "Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, pas un commercial.",
   "Framing comes first: tell us the decision, we tell you what to read.": "Le cadrage d'abord : dites-nous la décision, nous vous disons quoi lire.",
   "Half an hour with a consultant is enough to frame a first question around a decision.": "Une demi-heure avec un consultant suffit pour cadrer une première question autour d'une décision.",
   "Pick a question and watch the conversation come in. We read it, sort it, and tell you what it means.": "Choisissez une question et regardez la conversation arriver. Nous la lisons, la classons, et vous disons ce qu'elle signifie.",
@@ -3138,8 +3138,8 @@ window.LicterFR = {
     "Un échange avec un consultant, sur votre marque.",
   "What is social listening?":
     "Qu'est-ce que le social listening ?",
-  "A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm":
-    "Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h",
+  "A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm":
+    "Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h",
   "Your question framed, with the right sources and tools":
     "Votre question cadrée, avec les sources et les outils adaptés",
   "A costed proposal after the call":
@@ -3148,16 +3148,16 @@ window.LicterFR = {
     "Ce que les gens disent,",
   "read by people.":
     "lu par des gens.",
-  "Get a call back from a consultant":
-    "Être rappelé par un consultant",
+  "Get contacted by a consultant":
+    "Être contacté par un consultant",
   "Or book a meeting":
     "Ou prendre rendez-vous",
   "Your brand":
     "Votre marque",
-  "Noted. A consultant calls you back within 30 minutes, on weekdays from 9am to 7pm.":
-    "C'est noté. Un consultant vous rappelle dans les 30 minutes, en semaine de 9 h à 19 h.",
-  "We use your details only to call you back.":
-    "Vos coordonnées servent uniquement à vous rappeler.",
+  "Noted. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm.":
+    "C'est noté. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h.",
+  "We use your details only to contact you.":
+    "Vos coordonnées servent uniquement à vous contacter.",
   "A consultant, not a sales team.":
     "Un consultant, pas un commercial.",
   "DEFINITION":

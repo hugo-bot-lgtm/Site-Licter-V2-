@@ -80,7 +80,7 @@ S = {
     "illus": ("Exemple illustratif", "Illustrative example"),
     "crumbs": ("Fil d'Ariane", "Breadcrumb"),
     "contact": ("E-mail ou téléphone", "Email or phone"),
-    "call": ("Rappelez-moi", "Call me back"),
+    "call": ("Rappelez-moi", "Contact me"),
 }
 
 OFFERS = [
