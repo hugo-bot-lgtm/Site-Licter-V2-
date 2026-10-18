@@ -9,13 +9,9 @@
    Body (JSON): { action, detail, title, page, lang, fields: { label: value } }
    The Social Intelligence Club has its own forms and does not use this.
    ========================================================================= */
+/* every form goes to Anaïs only (owner decision, 18 October 2026) */
 const TEAM = [
   "anais.bremand@licter.com",
-  "antoine.khaitrine@licter.com",
-  "victor.phouangsavath@licter.com",
-  "adrien.krebs@licter.com",
-  "balqis.sekkai@licter.com",
-  "elsa.wallet@licter.com",
 ];
 /* LEAD_TO (Vercel env, comma separated) narrows the list during a test; only team addresses are kept */
 const TO = (process.env.LEAD_TO || "").split(",").map((s) => s.trim().toLowerCase()).filter((s) => TEAM.includes(s));
