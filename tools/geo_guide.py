@@ -80,7 +80,8 @@ BLOCKS = [
          "Licter is an independent consultancy, with no tie to the AI publishers. We measure, explain and recommend; content production stays with your teams or agencies, with whom we make the link. To start, a first thirty-minute call with a consultant is enough to frame the question."),
     ]),
     # neutral on purpose: no agency named or ranked (owner rule); the questions any buyer can ask (audit of 9 October 2026)
-    (("Cinq questions à poser à une agence GEO", "Five questions to ask a GEO agency"), [
+    # the search "agence geo" shows buying guides: the heading says it, with no agency named (SXO audit of 19 October 2026)
+    (("Comment choisir une agence GEO : cinq questions à poser", "How to choose a GEO agency: five questions to ask"), [
         ("Comment mesurez-vous notre visibilité avant d'agir ? Sans mesure de départ, aucun résultat ne pourra être démontré. Sur quelles questions et quels modèles ? Ce doivent être les questions de vos clients, posées aux assistants qu'ils utilisent, et plusieurs fois, puisque les réponses varient.",
          "How do you measure our visibility before acting? Without a starting measure, no result can be shown. On which questions and which models? They should be your customers' questions, put to the assistants they use, and several times, since answers vary."),
         ("Comment repérez-vous les sources que les IA citent ? C'est là que se joue l'essentiel du travail. Que livrez-vous, et à quel rythme ? Une liste de priorités vaut mieux qu'un tableau de bord. Enfin, comment saurons-nous si cela fonctionne ? Méfiez-vous d'une promesse de place garantie : aucun acteur ne contrôle les réponses d'un modèle.",

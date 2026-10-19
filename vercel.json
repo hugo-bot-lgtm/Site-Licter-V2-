@@ -592,22 +592,22 @@
     },
     {
       "source": "/topic/audience-intelligence",
-      "destination": "/fr/blog/",
+      "destination": "/fr/expertise/audience-listening/",
       "permanent": true
     },
     {
       "source": "/topic/audience-intelligence/",
-      "destination": "/fr/blog/",
+      "destination": "/fr/expertise/audience-listening/",
       "permanent": true
     },
     {
       "source": "/topic/social-listening",
-      "destination": "/fr/blog/",
+      "destination": "/fr/expertise/social-listening/",
       "permanent": true
     },
     {
       "source": "/topic/social-listening/",
-      "destination": "/fr/blog/",
+      "destination": "/fr/expertise/social-listening/",
       "permanent": true
     },
     {

@@ -82,6 +82,10 @@ S = {
     "crumbs": ("Fil d'Ariane", "Breadcrumb"),
     "register": ("S'inscrire", "Register"),
     "hear_t": ("Ce que vous y entendrez", "What you will hear"),
+    "heard_t": ("Au programme de l'étude", "The study's programme"),
+    "over_v": ("Événement terminé", "Event over"),
+    "kicker_past": ("Étude sectorielle · a eu lieu", "Sector study · took place"),
+    "closed_t": ("Inscriptions closes", "Registration closed"),
     "more_t": ("Nos autres études sectorielles", "Our other sector studies"),
     "practical": ("Infos pratiques", "Practical details"),
     "when": ("Quand", "When"),
@@ -130,6 +134,13 @@ def file(e):
     return "event-%s.html" % e["slug"]
 
 
+def past(e, today=None):
+    """the event's day is over: the page is written in its past state, so the
+    HTML read by search engines and AI never announces it as upcoming (the
+    browser script did it alone until 19 October 2026)"""
+    return iso(e) < (today or datetime.date.today())
+
+
 def next_event(today=None):
     today = today or datetime.date.today()
     return next((e for e in EVENTS if iso(e) >= today), None)
@@ -153,7 +164,8 @@ BANNER = re.compile(r'<aside class="banner(?: banner--event)?"[^>]*>.*?</aside>'
 def set_banners(e):
     tag = banner_html(e)
     n = 0
-    for p in sorted(ROOT.glob("*.html")) + [ROOT / "tools" / "article-shell.html"]:
+    # the shells too: the tool and network pages kept a past event (audit of 19 October 2026)
+    for p in sorted(ROOT.glob("*.html")) + [ROOT / "tools" / "article-shell.html", ROOT / "tools" / "tech-shell.html"]:
         if p.name in ("use-cases.html",):
             continue
         s = p.read_text()
@@ -180,29 +192,29 @@ def maps(e):
     return "https://www.google.com/maps/search/?api=1&query=" + html.escape((e["venue"] + ", " + e["address"]).replace(" ", "+"))
 
 
+def past_card(e):
+    nxt = next_event()
+    # two elements: the French twin translates text node by text node
+    more = ('<a href="%s"><span>%s</span> <b>%s</b> <span aria-hidden="true">→</span></a>' % (
+        file(nxt), t(("Voir le prochain :", "See the next one:")), t((S["kicker"][FR] + " · " + nxt["sector"][FR], S["kicker"][EN] + " · " + nxt["sector"][EN])))) if nxt else ""
+    return '<p class="ev__done is-past"><span>%s</span> %s</p>' % (t(("Cet événement a eu lieu.", "This event has taken place.")), more)
+
+
 def event_body(e):
     pts = "".join("<li>%s</li>" % t(p) for p in e["points"])
     when = (long_date(e, FR), long_date(e, EN))
-    return f'''<main id="content">
-{crumbs([(S["home"], "index.html"), (S["events"], "events.html"), (e["sector"], None)])}
-
-  <!-- MOCK: the form sends nothing yet (js/events.js); wire it to the CRM. -->
-  <section class="xh ev" data-ev-date="{e["date"]}">
-    <div class="shell ev__grid">
-      <div class="ev__copy">
-        <p class="xh__kick"><span>{t(S["kicker"])}</span> · <span>{t(e["sector"])}</span></p>
-        <h1 class="xh__title">{t(e["h1"])}</h1>
-        <p class="xh__lead">{t(e["lead"])}</p>
-        <dl class="ev__facts">
-          <div><dt>{t(S["when"])}</dt><dd>{t(when)}</dd></div>
-          <div><dt>{t(S["where"])}</dt><dd>{html.escape(e["venue"])}<small>{html.escape(e["address"])} · <a href="{maps(e)}" target="_blank" rel="noopener">{t(S["map"])} <span aria-hidden="true">↗</span></a></small></dd></div>
-          <div><dt>{t(S["time"])}</dt><dd>{t(S["time_v"])}</dd></div>
-          <div><dt>{t(S["entry"])}</dt><dd>{t(S["entry_v"])}</dd></div>
-        </dl>
-        <h2 class="ev__h2">{t(S["hear_t"])}</h2>
-        <ul class="ev__points">{pts}</ul>
-      </div>
-      <div class="ev__card" id="register">
+    gone = past(e)
+    entry = t(S["over_v"] if gone else S["entry_v"])
+    hear = S["heard_t"] if gone else S["hear_t"]
+    hour = "" if gone else '\n          <div><dt>%s</dt><dd>%s</dd></div>' % (t(S["time"]), t(S["time_v"]))
+    if gone:
+        card = """      <div class="ev__card" id="register">
+        <h2 class="ev__h2">%s</h2>
+        <p class="ev__date"><span>%s</span> · %s</p>
+        %s
+      </div>""" % (t(S["closed_t"]), t(when), html.escape(e["venue"]), past_card(e))
+    else:
+        card = f'''      <div class="ev__card" id="register">
         <h2 class="ev__h2">{t(S["form_t"])}</h2>
         <p class="ev__date"><span>{t(when)}</span> · {html.escape(e["venue"])}</p>
         <form class="ev__form" novalidate>
@@ -220,7 +232,26 @@ def event_body(e):
           <p class="consent">{t(S["consent"])} <a href="privacy.html">{t(S["privacy"])}</a>.</p>
         </form>
         <p class="ev__done" role="status" hidden></p>
+      </div>'''
+    return f'''<main id="content">
+{crumbs([(S["home"], "index.html"), (S["events"], "events.html"), (e["sector"], None)])}
+
+  <!-- MOCK: the form sends nothing yet (js/events.js); wire it to the CRM. -->
+  <section class="xh ev" data-ev-date="{e["date"]}">
+    <div class="shell ev__grid">
+      <div class="ev__copy">
+        <p class="xh__kick"><span>{t(S["kicker"])}</span> · <span>{t(e["sector"])}</span></p>
+        <h1 class="xh__title">{t(e["h1"])}</h1>
+        <p class="xh__lead">{t(e["lead"])}</p>
+        <dl class="ev__facts">
+          <div><dt>{t(S["when"])}</dt><dd>{t(when)}</dd></div>
+          <div><dt>{t(S["where"])}</dt><dd>{html.escape(e["venue"])}<small>{html.escape(e["address"])} · <a href="{maps(e)}" target="_blank" rel="noopener">{t(S["map"])} <span aria-hidden="true">↗</span></a></small></dd></div>{hour}
+          <div><dt>{t(S["entry"])}</dt><dd>{entry}</dd></div>
+        </dl>
+        <h2 class="ev__h2">{t(hear)}</h2>
+        <ul class="ev__points">{pts}</ul>
       </div>
+{card}
     </div>
   </section>
 
@@ -237,14 +268,15 @@ def event_body(e):
 
 def event_rows(evs):
     return "".join(
-        '<li data-ev-date="%s"><a href="%s"><span class="evl__d"><b>%d</b>%s</span>'
+        '<li data-ev-date="%s"%s><a href="%s"><span class="evl__d"><b>%d</b>%s</span>'
         '<span class="evl__t"><small>%s</small><b>%s</b><span>%s</span></span><i aria-hidden="true">→</i></a></li>' % (
-            e["date"], file(e), iso(e).day, t((ABBR[FR][iso(e).month - 1], ABBR[EN][iso(e).month - 1])),
-            t(S["kicker"]), t(e["sector"]), html.escape(e["venue"])) for e in evs)
+            e["date"], ' class="is-past"' if past(e) else "", file(e), iso(e).day, t((ABBR[FR][iso(e).month - 1], ABBR[EN][iso(e).month - 1])),
+            t(S["kicker_past"] if past(e) else S["kicker"]), t(e["sector"]), html.escape(e["venue"])) for e in evs)
 
 
 def list_body():
-    rows = event_rows(EVENTS)
+    # what is coming first, then what has taken place
+    rows = event_rows([e for e in EVENTS if not past(e)] + [e for e in EVENTS if past(e)])
     # the dates in a sentence as well: a list of links alone was dropped by text
     # extractors, the page read as 26 words (audit of 13 October 2026)
     up = [e for e in EVENTS if iso(e) >= datetime.date.today()]
@@ -324,7 +356,7 @@ def main():
         title = "%s · %s : %s | Licter" % (S["kicker"][EN], e["sector"][EN], long_date(e, EN))
         write(file(e), title.replace(" :", ":"), e["lead"][EN], event_body(e), [ld_event(e)], offers_html)
     write("events.html", "Events: our sector studies, in person | Licter", S["list_lead"][EN], list_body(), [], offers_html)
-    for k in ("all", "upcoming"):
+    for k in ("all", "upcoming", "time", "time_v", "entry_v", "hear_t", "heard_t", "form_t", "closed_t", "kicker_past", "over_v"):
         t(S[k])
     t(("Cet événement a eu lieu.", "This event has taken place."))
     t(("Voir le prochain", "See the next one"))

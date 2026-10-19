@@ -9,13 +9,13 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
 <meta name="theme-color" content="#13162D" />
 <script data-inline="theme">!function(){"use strict";var e="licter-theme",t=document.documentElement,r=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;function n(){try{return localStorage.getItem(e)}catch(e){return null}}function a(){var e=n();return"dark"===e||"light"===e?e:"dark"}function o(e){t.setAttribute("data-theme",e);var r=document.querySelector('meta[name="theme-color"]');r&&r.setAttribute("content","dark"===e?"#13162D":"#FCF6EF");var n=document.querySelector(".theme__btn");if(n){var a="dark"===e;n.setAttribute("aria-pressed",a?"true":"false");var o="fr"===t.lang;n.setAttribute("aria-label",a?o?"Passer en mode clair":"Switch to light mode":o?"Passer en mode sombre":"Switch to dark mode")}}o(a());var i=null;try{i=localStorage.getItem("licter-lang")}catch(e){}function c(){var r=document.querySelector(".hero__end")||document.querySelector(".hero__top");if(r&&!r.querySelector(".theme__btn")){var n=document.createElement("button");n.type="button",n.className="theme__btn",n.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>',n.addEventListener("click",function(){var r="dark"===a()?"light":"dark";try{localStorage.setItem(e,r)}catch(e){}t.classList.add("theme-switching"),o(r),setTimeout(function(){t.classList.remove("theme-switching")},400)}),r.insertBefore(n,r.firstChild),o(a()),window.MutationObserver&&new MutationObserver(function(){o(a())}).observe(t,{attributes:!0,attributeFilter:["lang"]})}}"en"===i||t.hasAttribute("data-i18n-static")||(t.classList.add("i18n-pending"),setTimeout(function(){t.classList.remove("i18n-pending")},2500)),r&&r.addEventListener&&r.addEventListener("change",function(){n()||o(a())}),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",c):c();try{var d=+localStorage.getItem("licter-banner-off");d&&d>Date.now()&&t.classList.add("banner-off")}catch(e){}}();</script>
-<link rel="stylesheet" href="/css/t-base.min.css?v=20261364" />
+<link rel="stylesheet" href="/css/t-base.min.css?v=20261365" />
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
 
-<aside class="banner banner--event" aria-label="Next event"><a class="banner__a" href="/event-toys-games.html">
-  <i class="banner__tag">Next event</i> <b>Sector study · Toys &amp; games</b> <span>Friday 16 October · Musée de la Vie romantique</span> <u>Register <span aria-hidden="true">→</span></u>
+<aside class="banner banner--event" aria-label="Next event"><a class="banner__a" href="/event-luxury.html">
+  <i class="banner__tag">Next event</i> <b>Sector study · Luxury</b> <span>Tuesday 3 November · Ladurée Champs-Élysées</span> <u>Register <span aria-hidden="true">→</span></u>
 </a></aside>
 
 
@@ -134,7 +134,7 @@
         <li><a href="/fr/cas-usage/communication/" data-en="/en/use-cases/communication/">Communication</a></li>
         <li><a href="/fr/cas-usage/sante-de-marque/" data-en="/en/use-cases/brand-health/">Brand health</a></li>
         <li><a href="/fr/cas-usage/audiences/" data-en="/en/use-cases/audiences/">Audiences</a></li>
-        <li><a href="/fr/cas-usage/tendances-innovation/" data-en="/en/use-cases/trends-innovation/">Trends &amp; innovation</a></li>
+        <li><a href="/fr/cas-usage/tendances-innovation/" data-en="/en/use-cases/trends-innovation/">Product innovation &amp; trends</a></li>
       </ul>
     </div>
     <div>
@@ -163,8 +163,8 @@
   </div>
 </footer>
 
-<script src="/js/min/fr.js?v=20261364" defer></script>
-<script src="/js/min/i18n.js?v=20261364" defer></script>
-<script src="/js/min/ui.js?v=20261364" defer></script>
+<script src="/js/min/fr.js?v=20261365" defer></script>
+<script src="/js/min/i18n.js?v=20261365" defer></script>
+<script src="/js/min/ui.js?v=20261365" defer></script>
 </body>
 </html>

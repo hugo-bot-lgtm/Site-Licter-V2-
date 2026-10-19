@@ -38,7 +38,7 @@ HEAD = {
     "events.html": ("Événements : nos études sectorielles en présentiel | Licter",
                     "Nous présentons ce que la conversation dit d'un secteur, avec les marques qui y travaillent. Sur inscription, à Paris."),
     "event-toys-games.html": ("Étude sectorielle Jeux & jouets, 16 octobre 2026 | Licter",
-                              "Notre étude sectorielle : ce que parents, enfants et collectionneurs publient, cherchent et demandent à l'IA sur les jeux et jouets. À Paris, sur inscription."),
+                              "Notre étude sur ce que parents, enfants et collectionneurs publient, cherchent et demandent à l'IA sur les jeux et jouets, présentée le 16 octobre 2026."),
     "event-luxury.html": ("Étude sectorielle Luxe, 3 novembre 2026 | Licter",
                           "Notre étude sectorielle : comment le désir d'une maison se construit en ligne, qui le porte, ce qu'en disent clients et curieux. À Paris, sur inscription."),
     "event-food.html": ("Étude sectorielle Alimentation, 19 novembre 2026 | Licter",

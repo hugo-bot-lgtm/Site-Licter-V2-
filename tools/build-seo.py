@@ -145,7 +145,8 @@ PROTECT = re.compile(r"(<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)", re.
 
 RAW = re.compile(r"(<script\b.*?</script>|<style\b.*?</style>|<svg\b.*?</svg>|<textarea\b.*?</textarea>|<pre\b.*?</pre>)", re.S)
 GAP_BR = re.compile(r"(<br\s*/?>)(?=[^\s])")
-GAP_TAGS = re.compile(r"(</(?:span|b|strong|small|em|i|time|a|label|abbr|cite|code|button|q)>)(?=<(?!/|sup\b|sub\b|br\b|wbr\b))")
+# never before an element that opens on a comma or a full stop ("webinaire , où", audit of 19 October 2026)
+GAP_TAGS = re.compile(r"(</(?:span|b|strong|small|em|i|time|a|label|abbr|cite|code|button|q)>)(?=<(?!/|sup\b|sub\b|br\b|wbr\b)[^>]*>(?![,.)]))")
 GAP_TEXT = re.compile(r"(</(?:span|b|strong|small|em|i|time)>)(?=[A-ZÀ-ÖØ-Ý0-9])")
 
 
@@ -169,6 +170,7 @@ def french_spaces(s):
     def fix(t):
         t = re.sub(r"(?<=\d) (?=\d{3}(?!\d))", "\u202f", t)      # thousands: "7 000" never splits across two lines
         t = re.sub(r"[ \u202f]([:;!?»])", "\u00a0\\1", t)
+        t = re.sub(r"(?<=\d) (?=%)", "\u00a0", t)               # "68,7 %": the sign never starts a line
         return re.sub(r"«[ \u202f]", "«\u00a0", t)
     parts = PROTECT.split(body)
     for i in range(len(parts)):
@@ -278,11 +280,13 @@ FOUNDERS = [
     {"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#antoine-khaitrine", "name": "Antoine Khaitrine",
      "jobTitle": "Cofondateur", "worksFor": {"@id": SITE + "/#org"}, "image": SITE + "/assets/img/team/founder-antoine-160.webp",
      "url": SITE + "/fr/pourquoi-licter/#antoine-khaitrine", "sameAs": AUTHORS["Antoine Khaitrine"],
-     "award": "Top 50 Insider mondial de la social intelligence (SI Lab), 2024"},
+     "award": "Top 50 Insider mondial de la social intelligence (SI Lab), 2024",
+     "description": "Cofondateur de Licter. A créé et dirigé la cellule Data & Digital Analysis de la Présidence de la République à l'Élysée, de 2019 à 2021. Diplômé de l'EDHEC, intervenant à Sciences Po."},
     {"@type": "Person", "@id": SITE + "/fr/pourquoi-licter/#adrien-krebs", "name": "Adrien Krebs",
      "jobTitle": "Cofondateur", "worksFor": {"@id": SITE + "/#org"}, "image": SITE + "/assets/img/team/founder-adrien-160.webp",
      "url": SITE + "/fr/pourquoi-licter/#adrien-krebs", "sameAs": AUTHORS["Adrien Krebs"],
-     "award": "Top 50 Insider mondial de la social intelligence (SI Lab), 2025"},
+     "award": "Top 50 Insider mondial de la social intelligence (SI Lab), 2025",
+     "description": "Cofondateur de Licter. A créé et dirigé avec Antoine Khaitrine la cellule Data & Digital Analysis de l'Élysée, au sein du pôle communication de la Présidence. Diplômé de l'EDHEC, enseigne à Sciences Po, à l'Albert School et à l'EM Normandie."},
 ]
 # by @id, with the name and profile written out: a page that cites its authors names them itself
 FOUNDER_REFS = [{"@type": "Person", "@id": f["@id"], "name": f["name"], "url": f["url"], "sameAs": f["sameAs"]} for f in FOUNDERS]

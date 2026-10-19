@@ -102,7 +102,7 @@
           (sent.call ? '<p class="pp__done" role="status">' + esc(T(sent.call.k === "phone" ? C.callOkP : C.callOkM)) + "<b>" + esc(sent.call.v) + "</b>" + esc(hours().when(fr())) + ".</p>" :
           '<form class="pp__form" novalidate data-form="call">' +
             '<label class="fld__label" for="pp-contact">' + esc(T(C.callF)) + "</label>" +
-            '<input class="fld__input" id="pp-contact" name="contact" type="text" inputmode="email" autocomplete="email" placeholder="' + esc(T(C.callP)) + '" required />' +
+            '<input class="fld__input" id="pp-contact" name="contact" type="text" autocomplete="email" placeholder="' + esc(T(C.callP)) + '" required />' +
             '<button class="btn btn--primary pp__wide" type="submit">' + esc(T(C.callB)) + ' <span aria-hidden="true">→</span></button>' +
             '<p class="fld__error" hidden>' + esc(T(C.callE)) + "</p>" +
             '<p class="pp__promise"><span class="pp__dot" aria-hidden="true"></span>' + esc(T(C.callPr)) + "</p>" +

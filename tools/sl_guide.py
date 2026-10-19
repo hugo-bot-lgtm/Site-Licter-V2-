@@ -17,8 +17,8 @@ BLOCKS = [
     (("Social listening, veille, monitoring : les différences", "Social listening, monitoring, tracking: the differences"), [
         ("Le social media monitoring, ou veille, signale ce qui se passe : une mention, un pic, une crise qui démarre. Il sert à réagir, souvent en temps réel. Le social listening va plus loin : il analyse la conversation dans la durée pour expliquer pourquoi elle bouge, qui la porte et ce qu'elle dit d'un marché.",
          "Social media monitoring signals what happens: a mention, a spike, a crisis taking off. It serves to react, often in real time. Social listening goes further: it analyses the conversation over time to explain why it moves, who carries it and what it says about a market."),
-        ("Les deux utilisent les mêmes données et les mêmes plateformes. La différence tient à la question posée et au travail de lecture. Une veille répond à « s'est-il passé quelque chose ? » ; une étude de social listening répond à « que faut-il en conclure, et que décider ? ». Pour la veille et la gestion de crise, voir notre guide de la veille des réseaux sociaux et notre offre Vigie 360.",
-         "Both use the same data and the same platforms. The difference lies in the question asked and in the reading. Monitoring answers \"did something happen?\"; a social listening study answers \"what should we conclude, and what should we decide?\". For monitoring and crisis management, see our guide to social media monitoring and our Vigie 360 offer."),
+        ("Les deux utilisent les mêmes données et les mêmes plateformes. La différence tient à la question posée et au travail de lecture. Une veille répond à « s'est-il passé quelque chose ? » ; une étude de social listening répond à « que faut-il en conclure, et que décider ? ».",
+         "Both use the same data and the same platforms. The difference lies in the question asked and in the reading. Monitoring answers \"did something happen?\"; a social listening study answers \"what should we conclude, and what should we decide?\"."),
     ]),
     (("Ce que le social listening permet de décider", "What social listening helps you decide"), [
         ("La réputation d'une marque : ce qui se dit d'elle, sur quels sujets, avec quelle tonalité, et comment cela évolue face aux concurrents. Une campagne : ce qu'elle a changé dans la conversation, audience par audience, et ce qui a vraiment porté. Un produit : ce que les clients aiment, ce qui les irrite, et le vocabulaire qu'ils emploient pour en parler.",
@@ -73,8 +73,8 @@ BLOCKS = [
     (("Ce qu'en disent les praticiens", "What practitioners say"), [
         ("Charles Besson, à la tête du social listening monde chez L'Oréal, résume ainsi sa place face aux études : « ça va venir en plus de ça, ça va venir ajouter des choses qu'on peut pas forcément voir par des études traditionnelles ». Charlotte Clemens, qui a ouvert le bureau parisien de Talkwalker, oppose de la même façon l'opinion spontanée des réseaux à l'opinion déclarée des instituts : « on est complémentaire ».",
          "Charles Besson, head of global social listening at L'Oréal, sums up its place next to surveys this way: it comes on top of them and adds things traditional studies cannot always see. Charlotte Clemens, who opened Talkwalker's Paris office, likewise sets the spontaneous opinion of social media against the declared opinion of research institutes: they are complementary."),
-        ("Tous insistent sur la part humaine. Pour Jean-Christophe Gatuingt, cofondateur de Visibrain, les réseaux sociaux sont « juste un signal parmi d'autres au service d'une méthodologie plus complète » ; pour Nathalie Litvine, chez Meltwater, l'intelligence artificielle est précieuse, mais « il faut avoir un cerveau aussi pour ensuite en faire quelque chose ». Leurs entretiens complets sont sur notre blog.",
-         "All of them insist on the human part. For Jean-Christophe Gatuingt, co-founder of Visibrain, social networks are just one signal among others, in the service of a fuller method; for Nathalie Litvine, at Meltwater, artificial intelligence is precious, but you still need a brain to do something with it. Their full interviews are on our blog."),
+        ("Tous insistent sur la part humaine. Pour Jean-Christophe Gatuingt, cofondateur de Visibrain, les réseaux sociaux sont « juste un signal parmi d'autres au service d'une méthodologie plus complète » ; pour Nathalie Litvine, chez Meltwater, l'intelligence artificielle est précieuse, mais « il faut avoir un cerveau aussi pour ensuite en faire quelque chose ».",
+         "All of them insist on the human part. For Jean-Christophe Gatuingt, co-founder of Visibrain, social networks are just one signal among others, in the service of a fuller method; for Nathalie Litvine, at Meltwater, artificial intelligence is precious, but you still need a brain to do something with it."),
     ]),
     (("Les limites à connaître", "The limits to know"), [
         ("Le social listening n'est pas représentatif d'une population : il dit ce que pensent ceux qui s'expriment, pas tout le monde. Il ne lit que le public. Il dépend des mots choisis, et un produit peut être désigné autrement que par son nom, surtout d'un pays à l'autre. Le sentiment automatique se trompe sur l'ironie, et certaines langues sont moins bien traitées que d'autres.",
@@ -100,6 +100,32 @@ BLOCKS = [
 
 # the indicators block also reads as a table (audit of 12 October 2026): the same
 # indicators as its first paragraph, one line each, nothing added
+# sentences with links, added at the end of a paragraph: (heading FR, paragraph index) -> pieces.
+# Each piece is translated on its own, a link is (FR, EN, href, href EN or None),
+# a plain string is glued as it is (SXO audit of 19 October 2026: anchors with the
+# exact searches, "veille réseaux sociaux" and "innovation produit")
+LINKED = {
+    ("Social listening, veille, monitoring : les différences", 1): [
+        ("Pour la veille et la gestion de crise, voir notre guide de", "For monitoring and crisis management, see our guide to"),
+        ("veille réseaux sociaux", "social media monitoring", "/article-veille-reseaux-sociaux-entreprise.html", None),
+        ("et notre offre", "and our offer"),
+        ("Vigie 360", "Vigie 360", "offer-vigie-360.html", None), ".",
+    ],
+    # the four interviews named in the text: extractors kept the sentence without them (audit of 19 October 2026)
+    ("Ce qu'en disent les praticiens", 1): [
+        ("Leurs entretiens complets sont sur notre blog :", "Their full interviews are on our blog:"),
+        ("L'Oréal", "L'Oréal", "/article-comment-loreal-utilise-le-social-listening-pour-capter-la-voix-du-consommateur.html", None), ",",
+        ("Talkwalker", "Talkwalker", "/article-licter-talkwalker-podcast.html", None), ",",
+        ("Visibrain", "Visibrain", "/article-licter-visibrain-podcast.html", None),
+        ("et", "and"),
+        ("Meltwater", "Meltwater", "/article-licter-meltwater.html", None), ".",
+    ],
+    ("Ce que le social listening permet de décider", 1): [
+        ("Sur les tendances et le lancement de nouveaux produits, voir nos cas d'usage en", "On trends and new product launches, see our use cases in"),
+        ("innovation produit", "product innovation", "/fr/cas-usage/tendances-innovation/", "/en/use-cases/trends-innovation/"), ".",
+    ],
+}
+
 TABLE_CAPTION = ("Les six indicateurs à suivre", "The six metrics to track")
 TABLE = ("Quels indicateurs suivre en social listening ?",
          (("Indicateur", "Metric"), ("Ce qu'il dit", "What it tells you")),

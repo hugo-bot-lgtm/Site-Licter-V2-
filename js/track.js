@@ -102,10 +102,13 @@
     bar.setAttribute("role", "dialog");
     bar.setAttribute("aria-live", "polite");
     bar.setAttribute("aria-label", fr() ? "Cookies de mesure d'audience" : "Audience measurement cookies");
-    bar.innerHTML = '<p class="cc__t">' + (fr()
+    /* a phone shows the short sentence, on one row with the buttons: the long
+       one covered the first screen's actions on a 360 px phone (audit of 19 October 2026) */
+    bar.innerHTML = '<p class="cc__t"><span class="cc__long">' + (fr()
         ? "Mesure d'audience Google Analytics\u00a0: cookies déposés seulement si vous acceptez."
         : "Google Analytics audience measurement: cookies are set only if you accept.") +
-      ' <a href="' + priv + '">' + (fr() ? "Politique de cookies" : "Cookie policy") + "</a></p>" +
+      '</span><span class="cc__short">' + (fr() ? "Cookies d'audience, seulement si vous acceptez." : "Audience cookies, only if you accept.") + "</span>" +
+      ' <a href="' + priv + '"><span class="cc__long">' + (fr() ? "Politique de cookies" : "Cookie policy") + '</span><span class="cc__short">' + (fr() ? "Détails" : "Details") + "</span></a></p>" +
       '<div class="cc__b"><button class="cc__no" type="button">' + (fr() ? "Refuser" : "Decline") + '</button>' +
       '<button class="cc__yes" type="button">' + (fr() ? "Accepter" : "Accept") + "</button></div>";
     bar.querySelector(".cc__no").addEventListener("click", function () { decide("denied"); });

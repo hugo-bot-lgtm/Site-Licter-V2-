@@ -806,7 +806,7 @@ window.LicterUC = (function () {
           desc: "Image, messaging and the risks worth catching early." },
         { icon: "audiences", name: "Audiences", href: LicterUC("audiences"),
           desc: "Segmentation, rejuvenation, expectations at every touchpoint." },
-        { icon: "trends", name: "Trends & innovation", href: LicterUC("trends"),
+        { icon: "trends", name: "Product innovation & trends", href: LicterUC("trends"),
           desc: "Product verdicts, market opportunities, emerging topics." }
       ],
       aside: {
@@ -1837,7 +1837,7 @@ window.LicterUC = (function () {
   var logo = head.querySelector(".logo");
   bar.innerHTML =
     '<div class="stickybar__in shell">' +
-      '<a class="stickybar__logo" href="' + (logo ? logo.getAttribute("href") : "/index.html") + '" tabindex="-1" aria-label="Licter home">' +
+      '<a class="stickybar__logo" href="' + (logo ? logo.getAttribute("href") : "/index.html") + '" tabindex="-1" aria-label="' + (document.documentElement.lang === "fr" ? "Licter, accueil" : "Licter home") + '">' +
         '<img src="' + (document.querySelector(".logo__img") || {}).getAttribute("src") + '" alt="" width="36" height="40" /></a>' +
       '<a class="btn btn--primary stickybar__cta" href="' + ctaHref + '" tabindex="-1">' +
         (document.body.classList.contains("home") ? "Talk to a consultant" : "Book a meeting") + ' <span aria-hidden="true">→</span></a>' +

@@ -745,7 +745,7 @@ window.LicterFR = {
   "If you accept the audience measurement cookies, Google Analytics also records how the site is used: pages viewed, clicks on our buttons, forms sent and the score of the diagnostic, without your name or your email. See": "Si vous acceptez les cookies de mesure d'audience, Google Analytics enregistre aussi l'usage du site : pages vues, clics sur nos boutons, formulaires envoyés et score du diagnostic, sans votre nom ni votre e-mail. Voir la section",
   "below.": "plus bas.",
   "Why": "Pourquoi",
-  "To reply to you, send you what you asked for (a guide, a quote, a magazine, a meeting invitation, a callback) and, if you subscribed, our newsletter. Legal basis: your consent, and our legitimate interest in answering a request you made.": "Pour vous répondre, vous envoyer ce que vous avez demandé (un guide, un devis, un magazine, une invitation, un rappel) et, si vous vous êtes abonné, notre lettre d'information. Base légale : votre consentement, et notre intérêt légitime à répondre à une demande que vous avez faite.",
+  "To reply to you, send you what you asked for (a guide, a quote, a magazine, a meeting invitation, contact from a consultant) and, if you subscribed, our newsletter. Legal basis: your consent, and our legitimate interest in answering a request you made.": "Pour vous répondre, vous envoyer ce que vous avez demandé (un guide, un devis, un magazine, une invitation, la prise de contact d'un consultant) et, si vous vous êtes abonné, notre lettre d'information. Base légale : votre consentement, et notre intérêt légitime à répondre à une demande que vous avez faite.",
   "Who sees it": "Qui y a accès",
   "The Licter team only, and the providers that run the site and our email and client relationship tools, who process it on our behalf. We do not sell or rent your data.": "L'équipe Licter uniquement, et les prestataires qui font fonctionner le site et nos outils d'e-mail et de relation client, pour notre compte. Nous ne vendons ni ne louons vos données.",
   "Some of these providers, starting with our host, are based in the United States; transfers are covered by the European Commission's standard contractual clauses or the EU-US Data Privacy Framework.": "Certains de ces prestataires, à commencer par notre hébergeur, sont établis aux États-Unis : les transferts sont encadrés par les clauses contractuelles types de la Commission européenne ou par le Data Privacy Framework UE-États-Unis.",
@@ -843,10 +843,12 @@ window.LicterFR = {
   "the 12 questions social data answers better than a survey": "les 12 questions auxquelles la social data répond mieux qu'une étude",
   "USE CASES": "CAS D'USAGE", "OFFERS": "OFFRES", "WHY LICTER": "POURQUOI LICTER",
   "TECH & TOOLS": "TECHNO & OUTILS", "CLIENTS": "CLIENTS", "BLOG": "BLOG",
-  "Licter — home": "Licter — accueil", "Main": "Principal", "Language": "Langue",
+  "Licter home": "Licter, accueil", "Licter on LinkedIn": "Licter sur LinkedIn", "Licter on Instagram": "Licter sur Instagram",
+  "Audience First on YouTube": "Audience First sur YouTube",
+  "For your place in AI answers, see our": "Pour votre place dans les réponses des IA, voir notre", "GEO agency": "agence GEO", "Main": "Principal", "Language": "Langue",
   "FOUR FAMILIES OF QUESTIONS": "QUATRE FAMILLES DE QUESTIONS",
   "Communication": "Communication", "Brand health": "Santé de marque",
-  "Audiences": "Audiences", "Trends & innovation": "Tendances & innovation",
+  "Audiences": "Audiences", "Trends & innovation": "Tendances & innovation", "Product innovation & trends": "Innovation produit et tendances",
   "Campaign impact, leader advocacy, the right ambassadors.": "Impact des campagnes, prise de parole des dirigeants, bons ambassadeurs.",
   "Image, messaging and the risks worth catching early.": "Image, discours, et les risques qu'il vaut mieux voir tôt.",
   "Segmentation, rejuvenation, expectations at every touchpoint.": "Segmentation, rajeunissement, attentes à chaque point de contact.",
@@ -1368,10 +1370,10 @@ window.LicterFR = {
   "No commitment · Reply within 30 minutes, on weekdays from 9am to 7pm · Independent of any follow-up project": "Sans engagement · réponse dans les 30 minutes, en semaine de 9 h à 19 h · indépendant de toute suite",
   "Reply within 30 minutes, on weekdays from 9am to 7pm · No commitment": "Réponse dans les 30 minutes, en semaine de 9 h à 19 h · sans engagement",
   "Guide sent. Check your inbox, and your spam folder: it happens.": "Guide envoyé. Vérifiez votre boîte de réception, et vos spams : ça arrive.",
-  "Request received. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, to book the scoping call.":
-    "Demande reçue. Un consultant revient vers vous dans les 30 minutes, en semaine de 9 h à 19 h, pour caler l'appel de cadrage.",
+  "Request received. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, to book the scoping call.":
+    "Demande reçue. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, pour caler l'appel de cadrage.",
   "A Licter consultant on the sofa, looking up from a conversation": "Un membre de l'équipe Licter sur le canapé, entre deux échanges",
-  "Noted. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, with two or three slots.": "C'est noté. Un consultant revient vers vous dans les 30 minutes, en semaine de 9 h à 19 h, avec deux ou trois créneaux.",
+  "Noted. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, with two or three slots.": "C'est noté. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, avec deux ou trois créneaux.",
   "Story · 2 h": "Story · 2 h", "Reel · 14 min": "Reel · 14 min",
   "Story · 47 min": "Story · 47 min", "Reel · 1 h": "Reel · 1 h",
   "Post · 3 h": "Post · 3 h", "Story · 22 min": "Story · 22 min",
@@ -1525,6 +1527,7 @@ window.LicterFR = {
   "See the four layers": "Voir les quatre calques",
   "THE NEXT GENERATION": "LA GÉNÉRATION SUIVANTE",
   "TRENDS & INNOVATION": "TENDANCES & INNOVATION",
+  "PRODUCT INNOVATION & TRENDS": "INNOVATION PRODUIT ET TENDANCES",
   "VISIBRAIN SOLUTIONS": "CE QUE NOUS FAISONS AVEC VISIBRAIN",
   "WHAT THEY COME WITH": "AVEC QUOI ILS ARRIVENT",
   "WHAT WE WRITE ABOUT": "CE SUR QUOI NOUS ÉCRIVONS",
@@ -2334,10 +2337,10 @@ window.LicterFR = {
   /* ---- event pages (tools/build-events.py) ---- */
   "Next event":
     "Prochain événement",
-  "Sector study · Toys & games":
-    "Étude sectorielle · Jeux & jouets",
-  "Friday 16 October · Musée de la Vie romantique":
-    "Vendredi 16 octobre · Musée de la Vie romantique",
+  "Sector study · Luxury":
+    "Étude sectorielle · Luxe",
+  "Tuesday 3 November · Ladurée Champs-Élysées":
+    "Mardi 3 novembre · Ladurée Champs-Élysées",
   "Register":
     "M'inscrire",
   "Who buys, and who recommends: parents, grandparents, content creators.":
@@ -2346,6 +2349,16 @@ window.LicterFR = {
     "Les tendances qui montent sur TikTok et YouTube, et celles qui retombent.",
   "What reviews say about price, quality and durability.":
     "Ce que les avis disent des prix, de la qualité et de la durabilité.",
+  "Event over":
+    "Événement terminé",
+  "Registration closed":
+    "Inscriptions closes",
+  "Friday 16 October 2026":
+    "Vendredi 16 octobre 2026",
+  "See the next one:":
+    "Voir le prochain :",
+  "This event has taken place.":
+    "Cet événement a eu lieu.",
   "Home":
     "Accueil",
   "Events":
@@ -2362,38 +2375,14 @@ window.LicterFR = {
     "Nous présentons notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
   "When":
     "Quand",
-  "Friday 16 October 2026":
-    "Vendredi 16 octobre 2026",
   "Where":
     "Où",
   "See the map":
     "Voir le plan",
-  "Time":
-    "Horaire",
-  "Given in the confirmation email":
-    "Précisé dans l'e-mail de confirmation",
   "Entry":
     "Entrée",
-  "On registration, limited seats":
-    "Sur inscription, places limitées",
-  "What you will hear":
-    "Ce que vous y entendrez",
-  "Registration":
-    "Inscription",
-  "First name":
-    "Prénom",
-  "Last name":
-    "Nom",
-  "Company":
-    "Société",
-  "Work email":
-    "E-mail professionnel",
-  "Fill in all four fields, with a valid email.":
-    "Remplissez les quatre champs, avec un e-mail valide.",
-  "Registration is subject to confirmation and availability. Your seat is not guaranteed until we confirm it by email.":
-    "Inscription sous réserve de confirmation et de places disponibles. Votre place n'est pas garantie avant notre confirmation par e-mail.",
-  "We use your details only to manage your registration.":
-    "Vos coordonnées servent uniquement à gérer votre inscription.",
+  "The study's programme":
+    "Au programme de l'étude",
   "Our other sector studies":
     "Nos autres études sectorielles",
   "Nov":
@@ -2408,30 +2397,56 @@ window.LicterFR = {
     "La seconde main et la revente, dans la conversation.",
   "What international audiences say, in their own language.":
     "Ce que les audiences internationales disent, dans leur langue.",
+  "On registration, limited seats":
+    "Sur inscription, places limitées",
+  "Time":
+    "Horaire",
+  "Given in the confirmation email":
+    "Précisé dans l'e-mail de confirmation",
+  "Registration":
+    "Inscription",
+  "Tuesday 3 November 2026":
+    "Mardi 3 novembre 2026",
+  "First name":
+    "Prénom",
+  "Last name":
+    "Nom",
+  "Company":
+    "Société",
+  "Work email":
+    "E-mail professionnel",
+  "Fill in all four fields, with a valid email.":
+    "Remplissez les quatre champs, avec un e-mail valide.",
+  "Registration is subject to confirmation and availability. Your seat is not guaranteed until we confirm it by email.":
+    "Inscription sous réserve de confirmation et de places disponibles. Votre place n'est pas garantie avant notre confirmation par e-mail.",
+  "We use your details only to manage your registration.":
+    "Vos coordonnées servent uniquement à gérer votre inscription.",
   "Luxury: what the conversation says about the houses.":
     "Luxe : ce que la conversation dit des maisons.",
   "Our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience.":
     "Nous présentons notre étude sectorielle : comment se construit le désir d'une maison en ligne, qui le porte, et ce que les clients et les curieux disent vraiment des prix, des créations et de l'expérience.",
-  "Tuesday 3 November 2026":
-    "Mardi 3 novembre 2026",
+  "What you will hear":
+    "Ce que vous y entendrez",
   "Oct":
     "oct.",
+  "Sector study · took place":
+    "Étude sectorielle · a eu lieu",
   "The recipes and creators that drive sales.":
     "Les recettes et les créateurs qui font vendre.",
   "Price, health, origin: what really weighs in the choice.":
     "Prix, santé, origine : ce qui pèse vraiment dans le choix.",
   "The unmet needs that searches reveal.":
     "Les besoins non couverts que révèlent les recherches.",
+  "Thursday 19 November 2026":
+    "Jeudi 19 novembre 2026",
   "Food: what the conversation says about what we eat.":
     "Alimentation : ce que la conversation dit de nos assiettes.",
   "We present our sector study: what consumers post, search and ask AI about what they eat, and the expectations brands can still take up.":
     "Nous présentons notre étude sectorielle : ce que les consommateurs publient, recherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes que les marques peuvent encore saisir.",
-  "Thursday 19 November 2026":
-    "Jeudi 19 novembre 2026",
   "Coming up:":
     "Au programme :",
-  "Toys & games, Friday 16 October 2026, Musée de la Vie romantique; Luxury, Tuesday 3 November 2026, Ladurée Champs-Élysées; Food, Thursday 19 November 2026, Madame Rêve.":
-    "Jeux & jouets, vendredi 16 octobre 2026, Musée de la Vie romantique ; Luxe, mardi 3 novembre 2026, Ladurée Champs-Élysées ; Alimentation, jeudi 19 novembre 2026, Madame Rêve.",
+  "Luxury, Tuesday 3 November 2026, Ladurée Champs-Élysées; Food, Thursday 19 November 2026, Madame Rêve.":
+    "Luxe, mardi 3 novembre 2026, Ladurée Champs-Élysées ; Alimentation, jeudi 19 novembre 2026, Madame Rêve.",
   "Our sector studies, presented in person.":
     "Nos études sectorielles, présentées en personne.",
   "We present what the conversation says about a sector, with the brands that work in it. On registration, in Paris.":
@@ -2440,8 +2455,6 @@ window.LicterFR = {
     "Tous les événements",
   "Upcoming":
     "À venir",
-  "This event has taken place.":
-    "Cet événement a eu lieu.",
   "See the next one":
     "Voir le prochain",
   /* ---- end event pages ---- */
@@ -2607,8 +2620,8 @@ window.LicterFR = {
     "Ils en parlent",
   "Ask for a quote for your perimeter.":
     "Demandez un devis pour votre périmètre.",
-  "Noted. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm.":
-    "C'est noté. Un consultant vous recontacte dans les 30 minutes, en semaine de 9 h à 19 h.",
+  "Noted. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm.":
+    "C'est noté. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h.",
   "Choose…":
     "Choisir…",
   "Food & drink":
@@ -2631,8 +2644,8 @@ window.LicterFR = {
     "Autre",
   "Before we talk":
     "Avant d'en parler",
-  "A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, to frame the perimeter, then sends you a quote. No sales follow-up.":
-    "Un consultant vous recontacte dans les 30 minutes, en semaine de 9 h à 19 h, pour cadrer le périmètre, puis vous envoie un devis. Sans relance commerciale.",
+  "A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, to frame the perimeter, then sends you a quote. No sales follow-up.":
+    "Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, pour cadrer le périmètre, puis vous envoie un devis. Sans relance commerciale.",
   "Work email":
     "E-mail professionnel",
   "Your sector":
@@ -2858,7 +2871,7 @@ window.LicterFR = {
   "Further reading":
     "À lire",
   "Social media monitoring for companies: the guide (in French)":
-    "Veille des réseaux sociaux en entreprise : le guide",
+    "Veille réseaux sociaux en entreprise : le guide",
   "Crisis under way? Call us":
     "Crise en cours ? Appelez-nous",
   "Luxury · 2024 · client under NDA":
@@ -3136,8 +3149,8 @@ window.LicterFR = {
     "Agence de social listening à Paris",
   "A call with a consultant, on your brand.":
     "Un échange avec un consultant, sur votre marque.",
-  "What is social listening?":
-    "Qu'est-ce que le social listening ?",
+  "Social listening, defined":
+    "Définition du social listening",
   "A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm":
     "Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h",
   "Your question framed, with the right sources and tools":
@@ -3197,13 +3210,15 @@ window.LicterFR = {
   "The interviews":
     "Les entretiens",
   "Social media monitoring for companies: the guide":
-    "Veille des réseaux sociaux en entreprise : le guide",
+    "Veille réseaux sociaux en entreprise : le guide",
   "The 22 networks we listen to":
     "Les 22 réseaux que nous écoutons",
   "Doubling your social listening impact in 6 months":
     "Doubler l'impact de votre social listening en 6 mois",
   "Further reading":
     "À lire",
+  "What is social listening?":
+    "Qu'est-ce que le social listening ?",
   "Social listening is the analysis of public online conversations to understand what people think of a brand, a product or a topic, and why. It is also called social media listening. In practice, a study starts from a question about a brand, a product, a competitor or a topic, gathers the public posts that discuss it on social networks, forums, review sites, blogs and the online press, then reads them. The goal is not to count mentions, but to understand a perception and decide what to do about it.":
     "Le social listening est l'analyse des conversations publiques en ligne pour comprendre ce que les gens pensent d'une marque, d'un produit ou d'un sujet, et pourquoi. On l'appelle aussi écoute sociale ou social media listening. Concrètement, une étude part d'une question sur une marque, un produit, un concurrent ou un sujet, rassemble les publications publiques qui en parlent sur les réseaux sociaux, les forums, les sites d'avis, les blogs et la presse en ligne, puis les lit. L'objectif n'est pas de compter des mentions, mais de comprendre une perception et de décider quoi en faire.",
   "Where a classic survey asks a few hundred people, social listening observes what thousands say spontaneously, without being asked. That is its strength: observed behaviour rather than a declared answer. It is also its limit: it only reads what is public, and only what people choose to say.":
@@ -3212,8 +3227,8 @@ window.LicterFR = {
     "Social listening, veille, monitoring : les différences",
   "Social media monitoring signals what happens: a mention, a spike, a crisis taking off. It serves to react, often in real time. Social listening goes further: it analyses the conversation over time to explain why it moves, who carries it and what it says about a market.":
     "Le social media monitoring, ou veille, signale ce qui se passe : une mention, un pic, une crise qui démarre. Il sert à réagir, souvent en temps réel. Le social listening va plus loin : il analyse la conversation dans la durée pour expliquer pourquoi elle bouge, qui la porte et ce qu'elle dit d'un marché.",
-  "Both use the same data and the same platforms. The difference lies in the question asked and in the reading. Monitoring answers \"did something happen?\"; a social listening study answers \"what should we conclude, and what should we decide?\". For monitoring and crisis management, see our guide to social media monitoring and our Vigie 360 offer.":
-    "Les deux utilisent les mêmes données et les mêmes plateformes. La différence tient à la question posée et au travail de lecture. Une veille répond à « s'est-il passé quelque chose ? » ; une étude de social listening répond à « que faut-il en conclure, et que décider ? ». Pour la veille et la gestion de crise, voir notre guide de la veille des réseaux sociaux et notre offre Vigie 360.",
+  "Both use the same data and the same platforms. The difference lies in the question asked and in the reading. Monitoring answers \"did something happen?\"; a social listening study answers \"what should we conclude, and what should we decide?\".":
+    "Les deux utilisent les mêmes données et les mêmes plateformes. La différence tient à la question posée et au travail de lecture. Une veille répond à « s'est-il passé quelque chose ? » ; une étude de social listening répond à « que faut-il en conclure, et que décider ? ».",
   "What social listening helps you decide":
     "Ce que le social listening permet de décider",
   "A brand's reputation: what is said about it, on which subjects, in which tone, and how that evolves against competitors. A campaign: what it changed in the conversation, audience by audience, and what really carried it. A product: what customers like, what irritates them, and the words they use to talk about it.":
@@ -3268,8 +3283,8 @@ window.LicterFR = {
     "Ce qu'en disent les praticiens",
   "Charles Besson, head of global social listening at L'Oréal, sums up its place next to surveys this way: it comes on top of them and adds things traditional studies cannot always see. Charlotte Clemens, who opened Talkwalker's Paris office, likewise sets the spontaneous opinion of social media against the declared opinion of research institutes: they are complementary.":
     "Charles Besson, à la tête du social listening monde chez L'Oréal, résume ainsi sa place face aux études : « ça va venir en plus de ça, ça va venir ajouter des choses qu'on peut pas forcément voir par des études traditionnelles ». Charlotte Clemens, qui a ouvert le bureau parisien de Talkwalker, oppose de la même façon l'opinion spontanée des réseaux à l'opinion déclarée des instituts : « on est complémentaire ».",
-  "All of them insist on the human part. For Jean-Christophe Gatuingt, co-founder of Visibrain, social networks are just one signal among others, in the service of a fuller method; for Nathalie Litvine, at Meltwater, artificial intelligence is precious, but you still need a brain to do something with it. Their full interviews are on our blog.":
-    "Tous insistent sur la part humaine. Pour Jean-Christophe Gatuingt, cofondateur de Visibrain, les réseaux sociaux sont « juste un signal parmi d'autres au service d'une méthodologie plus complète » ; pour Nathalie Litvine, chez Meltwater, l'intelligence artificielle est précieuse, mais « il faut avoir un cerveau aussi pour ensuite en faire quelque chose ». Leurs entretiens complets sont sur notre blog.",
+  "All of them insist on the human part. For Jean-Christophe Gatuingt, co-founder of Visibrain, social networks are just one signal among others, in the service of a fuller method; for Nathalie Litvine, at Meltwater, artificial intelligence is precious, but you still need a brain to do something with it.":
+    "Tous insistent sur la part humaine. Pour Jean-Christophe Gatuingt, cofondateur de Visibrain, les réseaux sociaux sont « juste un signal parmi d'autres au service d'une méthodologie plus complète » ; pour Nathalie Litvine, chez Meltwater, l'intelligence artificielle est précieuse, mais « il faut avoir un cerveau aussi pour ensuite en faire quelque chose ».",
   "The limits to know":
     "Les limites à connaître",
   "Social listening does not represent a population: it says what those who speak up think, not everyone. It only reads what is public. It depends on the words chosen, and a product can be called something other than its name, especially from one country to another. Automatic sentiment gets irony wrong, and some languages are handled less well than others.":
@@ -3316,10 +3331,30 @@ window.LicterFR = {
     "Voix qui portent",
   "The accounts that really drive the conversation.":
     "Les comptes qui font vraiment la conversation.",
-  "Written by":
-    "Rédigé par",
+  "For monitoring and crisis management, see our guide to":
+    "Pour la veille et la gestion de crise, voir notre guide de",
+  "social media monitoring":
+    "veille réseaux sociaux",
+  "and our offer":
+    "et notre offre",
+  "Their full interviews are on our blog:":
+    "Leurs entretiens complets sont sur notre blog :",
+  "L'Oréal":
+    "L'Oréal",
+  "Talkwalker":
+    "Talkwalker",
+  "Visibrain":
+    "Visibrain",
   "and":
     "et",
+  "Meltwater":
+    "Meltwater",
+  "On trends and new product launches, see our use cases in":
+    "Sur les tendances et le lancement de nouveaux produits, voir nos cas d'usage en",
+  "product innovation":
+    "innovation produit",
+  "Written by":
+    "Rédigé par",
   ", co-founders of Licter":
     ", cofondateurs de Licter",
   "Contents":
@@ -4096,7 +4131,7 @@ window.LicterFR = {
   "Further reading":
     "À lire",
   "Social media monitoring for companies: the guide (in French)":
-    "Veille des réseaux sociaux en entreprise : le guide",
+    "Veille réseaux sociaux en entreprise : le guide",
   "Related offer":
     "Offre associée",
   "The other tools":
@@ -5669,8 +5704,8 @@ window.LicterFR = {
     "Avec une agence ou un cabinet GEO, vous n'achetez pas un logiciel, mais une méthode et une lecture. Le choix des questions, des moteurs et des concurrents, la répétition des mesures, le relevé des sources et la recommandation sont pris en charge. Vos équipes reçoivent une liste de priorités, pas un tableau de bord à faire tourner.",
   "Licter is an independent consultancy, with no tie to the AI publishers. We measure, explain and recommend; content production stays with your teams or agencies, with whom we make the link. To start, a first thirty-minute call with a consultant is enough to frame the question.":
     "Licter est un cabinet indépendant, sans lien avec les éditeurs des IA. Nous mesurons, expliquons et recommandons ; la production des contenus reste à vos équipes ou à vos agences, avec qui nous faisons le lien. Pour commencer, un premier échange de trente minutes avec un consultant suffit à cadrer la question.",
-  "Five questions to ask a GEO agency":
-    "Cinq questions à poser à une agence GEO",
+  "How to choose a GEO agency: five questions to ask":
+    "Comment choisir une agence GEO : cinq questions à poser",
   "How do you measure our visibility before acting? Without a starting measure, no result can be shown. On which questions and which models? They should be your customers' questions, put to the assistants they use, and several times, since answers vary.":
     "Comment mesurez-vous notre visibilité avant d'agir ? Sans mesure de départ, aucun résultat ne pourra être démontré. Sur quelles questions et quels modèles ? Ce doivent être les questions de vos clients, posées aux assistants qu'ils utilisent, et plusieurs fois, puisque les réponses varient.",
   "How do you identify the sources the assistants cite? That is where most of the work happens. What do you deliver, and how often? A list of priorities is worth more than a dashboard. Finally, how will we know it works? Beware of a guaranteed position: nobody controls a model's answers.":

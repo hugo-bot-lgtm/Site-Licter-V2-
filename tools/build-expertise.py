@@ -621,10 +621,10 @@ FLASH = {k: [("Un consultant vous contacte dans les 30 minutes, en semaine de 9 
 
 # articles and hubs each expertise page sends readers to (SEO audit, internal links)
 READS = {
-    "social": [("article-veille-reseaux-sociaux-entreprise.html", ("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide")),
+    "social": [("article-veille-reseaux-sociaux-entreprise.html", ("Veille réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide")),
                ("sources.html", ("Les 22 réseaux que nous écoutons", "The 22 networks we listen to")),
                ("article-comment-doubler-limpact-de-votre-strategie-social-listening-en-6-mois.html", ("Doubler l'impact de votre social listening en 6 mois", "Doubling your social listening impact in 6 months"))],
-    "live": [("article-veille-reseaux-sociaux-entreprise.html", ("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide")),
+    "live": [("article-veille-reseaux-sociaux-entreprise.html", ("Veille réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide")),
              ("article-identifier-les-breaking-news-de-votre-secteur-comment-rester-informe-en-temps-reel.html", ("Identifier les breaking news de votre secteur", "Spotting your sector's breaking news")),
              ("article-shein-vs-bhv-dissection-d-une-crise-digitale-a-travers-la-social-data-intelligence.html", ("Shein vs BHV : dissection d'une crise digitale", "Shein vs BHV: anatomy of a digital crisis"))],
     "audience": [("use-cases.html", ("Nos cas d'usage audiences", "Our audience use cases")),
@@ -691,7 +691,7 @@ def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, 
           <p class="xe-lm__t">{title}</p>
           <ul class="xe-lm__items">{items}</ul>
           <form class="form xe-gform" id="call-{key}-form" novalidate>
-            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-contact", ("E-mail ou téléphone", "Email or phone"), "text", "email", "Email or phone", ' inputmode="email" data-contact')}</div>
+            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-contact", ("E-mail ou téléphone", "Email or phone"), "text", "email", "Email or phone", ' data-contact')}</div>
             <button class="form__submit" type="submit">{t(S["lm_submit"])} <span aria-hidden="true">→</span></button>
             <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>{t(S["lm_done"])}</span></p>
           </form>
@@ -732,7 +732,7 @@ def listening_body(x, offers_html):
                    t(S["lm_t"]), col, icon, t(x["name"]), logos(), flash_key=x["key"],
                    # the definition is what most searches for "social listening" want: reachable from the first screen (audit of 12 October 2026)
                    # inside the lead: first in reading order, and one line less above the cookie banner on phones (audit of 13 October 2026)
-                   def_link=(' <a class="xe-lmh__def" href="#definition">%s <span aria-hidden="true">↓</span></a>' % t(("Qu'est-ce que le social listening ?", "What is social listening?"))) if x["key"] == "social" else "")
+                   def_link=(' <a class="xe-lmh__def" href="#definition">%s <span aria-hidden="true">↓</span></a>' % t(("Définition du social listening", "Social listening, defined"))) if x["key"] == "social" else "")
     if x["key"] == "social":    # a short, visible definition near the top: what search engines quote for "social listening" (9 October 2026)
         out += sec("definition", head(t(("DÉFINITION", "DEFINITION")), t(("Le social listening en bref.", "Social listening at a glance.")), t((
             "Le social listening est l'analyse de ce que les gens disent publiquement en ligne d'une marque, d'un produit, d'un concurrent ou d'un sujet : réseaux sociaux, forums, sites d'avis et presse. Il sert à comprendre une perception, repérer ce qui change et décider quoi en faire.",
@@ -758,6 +758,17 @@ def listening_body(x, offers_html):
             for i, (h, ps) in enumerate(G.BLOCKS):
                 if h[0] == q:
                     cards[i][1].insert(1, table)
+        for (hq, k), pieces in getattr(G, "LINKED", {}).items():
+            out_ = ""
+            for pc in pieces:
+                if isinstance(pc, str):
+                    out_ += pc
+                elif len(pc) == 4:
+                    out_ += ' <a href="%s"%s>%s</a>' % (pc[2], ' data-en="%s"' % pc[3] if pc[3] else "", t(pc[:2]))
+                else:      # its own element: the French page translates text node by text node
+                    out_ += " <span>%s</span>" % t(pc)
+            i = next(i for i, (h, _) in enumerate(G.BLOCKS) if h[0] == hq)
+            cards[i][1][k] += out_
         by = authors_line(t(("Rédigé par", "Written by")), t(("et", "and")), t((", cofondateurs de Licter", ", co-founders of Licter")))
         # the social listening page competes for "social listening", a definition query: its guide reads as an article
         body = (guide_article(cards, t(("Sommaire", "Contents")), by=by) if x["key"] == "social"
@@ -795,8 +806,11 @@ def hub_body(offers_html):
            '<ol class="ucc__track">%s</ol></div>') % (head(t(S["six_k"]), t(S["list_t"]), t(S["six_lead"])), a(("Écoute précédente", "Previous")), a(("Écoute suivante", "Next")), cards)
     ex = "".join('<li style="--c:%s"><a href="%s"><b>%s</b></a><span>%s</span></li>' % (CHANNEL[k], LIST[k]["file"], t(LIST[k]["name"]), t(v)) for k, v in HUB["ex"])
     exb = ('<div class="xe-ex__grid"><p class="xe-ex__q">%s</p><ul class="xe-ex__list">%s</ul><p class="xe-ex__read"><span>%s</span>%s</p></div>'
+           # the GEO page, linked with the words people search (SXO audit of 19 October 2026)
+           '<p class="tk-sub xe-note"><span>%s</span> <a href="tech-geo.html">%s</a>.</p>'
            '<a class="xe-all" href="/fr/cas-usage/" data-en="/en/use-cases/">%s <span aria-hidden="true">→</span></a>') % (
-        t(HUB["ex_q"]), ex, t(HUB["ex_read_k"]), t(HUB["ex_read"]), t(S["all_cases"]))
+        t(HUB["ex_q"]), ex, t(HUB["ex_read_k"]), t(HUB["ex_read"]),
+        t(("Pour votre place dans les réponses des IA, voir notre", "For your place in AI answers, see our")), t(("agence GEO", "GEO agency")), t(S["all_cases"]))
     out = '<main id="content" class="tk tk--tool xe-tk xe-tk--hub" style="--brand:#EAA93D">\n'
     out += '%s\n' % tk_crumbs([(("Accueil", "Home"), "index.html"), (S["expertise"], None)]).replace('class="tk-crumbs"', 'class="tk-crumbs shell"')
     out += lm_hero(t(("Social intelligence", "Social intelligence")), H1L["hub"], HUB["lead"], "xp-hub", t(S["lm_t_hub"]), "#EAA93D",

@@ -114,7 +114,7 @@ FAMILIES = [
   {
     "key": "trends",
     "slug": ("tendances-innovation", "trends-innovation"),
-    "name": ("Tendances & innovation", "Trends & innovation"),
+    "name": ("Innovation produit et tendances", "Product innovation & trends"),
     "seo_title": ("Innovation produit et tendances : tester, repérer, décider | Licter",
                   "Spot trends and test products with social data | Licter"),
     "meta": ("Innovation produit : tester vos produits, repérer les opportunités de marché et les tendances qui montent, pour lancer sur des preuves, pas des convictions.",
@@ -127,6 +127,10 @@ FAMILIES = [
             "A trend spotted in an annual survey is already known to everyone. We follow topics month after month, tell what is really rising from what is just noise, and tell you what to build, what to watch and what to stop."),
     "video": ("UElJ_Pdd0wo", "58:39", ("Toutes les tendances viennent de TikTok.", "Every trend comes from TikTok."), "Orange", "B. Hoang"),
     "faq": [
+      # a definition first: the search "innovation produit" asks for one (SXO audit of 19 October 2026)
+      (("Qu'est-ce que l'innovation produit ?", "What is product innovation?"),
+       ("L'innovation produit, c'est créer un nouveau produit ou améliorer un produit existant pour mieux répondre à un besoin. Elle part de ce que vivent les clients : leurs usages, leurs irritants, les besoins que personne ne couvre, que la conversation d'un marché dit souvent en premier.",
+        "Product innovation is creating a new product, or improving an existing one, to answer a need better. It starts from what customers live through: their uses, their irritants, the needs nobody covers, which the conversation of a market often says first.")),
       (("Comment la social data nourrit-elle l'innovation produit ?", "How does social data feed product innovation?"),
        ("Elle dit ce que les clients font vraiment de vos produits et de ceux des concurrents : les usages détournés, les irritants qui reviennent, les besoins que personne ne couvre. L'innovation produit part alors de preuves observées, avant même le premier prototype, puis de la réaction réelle au lancement.",
         "It shows what customers really do with your products and your competitors': the workarounds, the recurring irritants, the needs nobody covers. Product innovation then starts from observed evidence, before the first prototype, and then from the real reaction at launch.")),
@@ -304,8 +308,9 @@ CASES = [
                   "Brand reputation monitoring, read by analysts | Licter"),
     "meta": ("Suivez l'image, la tonalité et les sujets attachés à votre nom, en continu et sur tous vos marchés, avec une alerte 24 h/24 sur les ruptures.",
              "Track image, sentiment and the subjects attached to your name, continuously and across markets, with 24/7 alerting on the breaks."),
-    "h1": ("Surveiller l'image et la réputation de votre marque, en continu.",
-           "Monitor your brand image and reputation, continuously."),
+    # the term people search opens the title (SXO audit of 19 October 2026)
+    "h1": ("E-réputation : surveiller l'image de votre marque, en continu.",
+           "Brand reputation: monitor your brand image, continuously."),
     "intro": ("Votre réputation se joue tous les jours, sur des plateformes et dans des langues que vos équipes ne peuvent pas toutes suivre. Nous lisons en continu ce qui se dit de vous, les sujets qui s'attachent à votre nom et la façon dont ils évoluent face à vos concurrents.",
               "Your reputation plays out every day, on platforms and in languages your teams cannot all follow. We continuously read what is said about you, the subjects that attach to your name and how they move against your competitors."),
     "questions": [
@@ -756,7 +761,7 @@ ARTICLES = {  # the articles of the blog (tools/blog_articles.json), as linked f
     "article-licter-lvmh.html": ("Comment LVMH mêle leader advocacy et social listening", "How LVMH combines leader advocacy and social listening"),
     "article-shein-vs-bhv-dissection-d-une-crise-digitale-a-travers-la-social-data-intelligence.html": ("Shein vs BHV : dissection d'une crise digitale", "Shein vs BHV: anatomy of a digital crisis"),
     "article-social-listening-et-politique-comment-capter-la-voix-des-citoyens.html": ("Social listening et politique : capter la voix des citoyens", "Social listening and politics: hearing citizens"),
-    "article-veille-reseaux-sociaux-entreprise.html": ("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide"),
+    "article-veille-reseaux-sociaux-entreprise.html": ("Veille réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide"),
     "article-veiller-lactivite-digitale-autour-de-votre-marque.html": ("Veiller l'activité digitale autour de votre marque", "Monitoring the digital activity around your brand"),
 }
 

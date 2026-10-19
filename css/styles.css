@@ -7933,7 +7933,8 @@ section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); 
   /* a family page on a phone: one video, the one beside the case */
   .ucp__hero-voice { display: none; }
 }
-@media (max-width: 374px) { .ucp-bar { grid-template-columns: 38px minmax(0, 1fr) minmax(0, 1fr); padding-inline: 8px; } .ucp-bar__chat { width: 38px; height: 38px; } .ucp-bar .btn { font-size: 12px; padding: 0 4px; } }
+/* Antoine stays a 44 px target on a 360 px phone (audit of 19 October 2026) */
+@media (max-width: 374px) { .ucp-bar { grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1fr); gap: 6px; padding-inline: 8px; } .ucp-bar__chat { width: 44px; height: 44px; } .ucp-bar .btn { font-size: 12px; padding: 0 4px; } }
 
 /* =========================================================
    Deliverable mock-ups, as real Licter report pages:
@@ -10581,6 +10582,11 @@ html[lang="fr"] .xp-line > span:not(.xp-i)::after { content: "\00a0:"; }
   box-shadow: 0 24px 60px -24px rgba(0, 0, 0, .55); animation: cc-in .3s cubic-bezier(.16, 1, .3, 1); }
 .cc__t { margin: 0; font: 500 14px/1.55 var(--body-font); color: var(--text-2); }
 .cc__t a { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: #EAA93D; text-underline-offset: 3px; }
+.cc__short { display: none; }
+@media (max-width: 720px) { .cc__long { display: none; } .cc__short { display: inline; } }
+/* the policy link: a 44 px tap area without moving the text */
+.cc__t a { position: relative; }
+.cc__t a::after { content: ""; position: absolute; inset: -14px -6px; }
 .cc__b { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .cc__b button { min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--ink); background: transparent; color: var(--ink);
   font: 700 13px/1 var(--body-font); letter-spacing: .4px; cursor: pointer; transition: background .2s, color .2s; }
@@ -10601,11 +10607,13 @@ html[lang="fr"] .xp-line > span:not(.xp-i)::after { content: "\00a0:"; }
 }
 @media (max-width: 720px) {
   /* while the banner is open, the page can scroll its last lines above it */
-  html.cc-open body { padding-bottom: 130px; }
+  html.cc-open body { padding-bottom: 84px; }
   /* compact on a phone: it hides less of the page under it */
-  .cc { left: 8px; right: 8px; bottom: 8px; width: auto; gap: 8px; padding: 10px 12px; border-radius: 14px; }
-  .cc__t { font-size: 12.5px; line-height: 1.4; }
-  .cc__b { gap: 8px; }
+  /* one row: a short sentence, then the two buttons (audit of 19 October 2026) */
+  .cc { left: 8px; right: 8px; bottom: 8px; width: auto; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 8px 8px 8px 12px; border-radius: 14px; }
+  .cc__t { font-size: 12.5px; line-height: 1.35; }
+  .cc__b { grid-template-columns: auto auto; gap: 6px; }
+  .cc__b button { padding: 0 13px; }
   .cc-open .lx__launch { opacity: 0; pointer-events: none; }
 }
 @media (prefers-reduced-motion: reduce) { .cc { animation: none; } }
@@ -10700,3 +10708,16 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 
 /* the hero card without its cover illustration (removed 12 October 2026): a little more air at the top */
 .xe-lm { padding-top: 30px; }
+
+/* a 360 px phone: the expertise hero is a little tighter, so its two actions
+   stay above the open cookie banner (audit of 19 October 2026) */
+@media (max-width: 380px) {
+  .xe-lmh__lead { margin-top: 16px; font-size: 15px; line-height: 1.55; }
+  .xe-lmh__jump { margin-top: 16px; }
+  .xe-lmh__call { margin-top: 10px; }
+}
+
+/* small links of the first screens: a 44 px tap area without moving the text (audit of 19 October 2026) */
+.xe-lmh__def, .crumbs a, .site-foot__legal a { position: relative; }
+.xe-lmh__def::after, .crumbs a::after { content: ""; position: absolute; inset: -12px -4px; }
+.site-foot__legal a::after { content: ""; position: absolute; inset: -14px -6px; }

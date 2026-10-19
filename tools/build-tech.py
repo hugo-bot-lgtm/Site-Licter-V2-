@@ -481,7 +481,7 @@ def xp(slug, keys=None):
     keys = keys or O.U.XP_OF.get(slug, [])
     lab = t(("Expertise associée", "Related expertise"))
     guide = ('<p class="xp-line"><span>%s</span> <a href="/article-veille-reseaux-sociaux-entreprise.html">%s</a></p>' % (
-        t(("À lire", "Further reading")), t(("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if slug in ("visibrain", "google-news", "talkwalker") else ""
+        t(("À lire", "Further reading")), t(("Veille réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if slug in ("visibrain", "google-news", "talkwalker") else ""
     offers = OFFER_OF.get(slug, ["vigie-360", "social-insights"])
     off = '<p class="xp-line"><span>%s</span> %s</p>' % (t(("Offre associée", "Related offer")), comma_join([
         '<a href="offer-%s.html">%s</a>' % (k, OFFER_NAME[k]) for k in offers]))

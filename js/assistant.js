@@ -212,7 +212,7 @@
         '<p class="lx__lead" data-l="callL"></p>' +
         '<form class="lx__form" novalidate>' +
           '<label class="lx__label" for="lx-contact" data-l="field"></label>' +
-          '<input class="lx__input" id="lx-contact" name="contact" type="text" inputmode="email" autocomplete="email" required aria-describedby="lx-err" />' +
+          '<input class="lx__input" id="lx-contact" name="contact" type="text" autocomplete="email" required aria-describedby="lx-err" />' +
           '<p class="lx__err" id="lx-err" data-l="err" hidden></p>' +
           '<button class="btn btn--primary lx__submit" type="submit"><span data-l="callBtn"></span> <span aria-hidden="true">→</span></button>' +
           '<p class="lx__promise"><span class="lx__dot" aria-hidden="true"></span><span data-l="promise"></span></p>' +

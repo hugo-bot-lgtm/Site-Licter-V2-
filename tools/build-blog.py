@@ -120,7 +120,7 @@ def card(x, big=False, fr=False):
     # text only: the picture belongs to the article page
     return ('<li class="bl-card%s" data-t="%s"><a href="%s"><span class="bl-card__body"><span class="bl-card__top"><span class="bl-tag">%s</span>%s</span>'
             '<b class="bl-card__t"%s>%s</b><span class="bl-card__d"%s>%s</span><span class="bl-card__go">Read the piece <i aria-hidden="true">→</i></span></span></a></li>') % (
-        " bl-card--big" if big else "", x["t"], x["file"], x["tname"], meta(x, fr), FRL(x, fr), E(x["title"]), FRL(x, fr), E(x["lead"]))
+        " bl-card--big" if big else "", x["t"], x["file"], x["tname"], meta(x, fr), FRL(x, fr), E(FRT(x, x["title"])), FRL(x, fr), E(FRT(x, x["lead"])))
 
 
 def mag_block(id_):
@@ -136,6 +136,15 @@ def mag_block(id_):
 
 
 # ------------------------------------------------------------------ the blog page
+def FRT(x, text):
+    """French spacing on the title and lead of a French article, on an English
+    page too (/blog.html: "webinaire : comment", audit of 19 October 2026)"""
+    if x.get("lang") != "fr":
+        return text
+    text = re.sub(r"[ \u202f]([:;!?»%])", "\u00a0\\1", text)
+    return re.sub(r"«[ \u202f]", "«\u00a0", text)
+
+
 def FRL(x, fr=False):
     """a French article listed on an English page says its language (audit of 12 October 2026)"""
     return ' lang="fr"' if x.get("lang") == "fr" and not fr else ""
@@ -147,7 +156,7 @@ def row(x):
     return ('<li class="bl-row" data-t="%s"><a href="%s"><span class="bl-row__date"><b>%s</b><span>%s %s</span></span>'
             '<span class="bl-row__main"><span class="bl-tag">%s</span><b class="bl-row__t"%s>%s</b><span class="bl-row__d"%s>%s</span></span>'
             '<span class="bl-row__side"><span>%s</span><i aria-hidden="true">→</i></span></a></li>') % (
-        x["t"], x["file"], d, m, y, x["tname"], FRL(x), E(x["title"]), FRL(x), E(x["lead"]), x["read"])
+        x["t"], x["file"], d, m, y, x["tname"], FRL(x), E(FRT(x, x["title"])), FRL(x), E(FRT(x, x["lead"])), x["read"])
 
 
 def blog_main():
@@ -382,7 +391,7 @@ REWRITTEN = {f: "2026-10-07" for f in ("article-comment-loreal-utilise-le-social
                                       "article-licter-talkwalker-podcast.html", "article-licter-visibrain-podcast.html")}
 REWRITTEN["article-le-bad-buzz-huda-beauty-decrypte.html"] = "2026-10-12"   # written up from its slides (audits of 9 and 12 October 2026)
 REWRITTEN["article-veille-reseaux-sociaux-entreprise.html"] = "2026-10-12"   # a new introduction (audits of 9 and 12 October 2026)
-REWRITTEN["article-departs-de-x-quels-reseaux-sociaux-peuvent-rivaliser-avec-la-plateforme-delon-musk.html"] = "2026-10-12"   # retitled and restructured
+REWRITTEN["article-departs-de-x-quels-reseaux-sociaux-peuvent-rivaliser-avec-la-plateforme-delon-musk.html"] = "2026-10-19"   # retitled and restructured; one section per network (SXO audit of 19 October 2026)
 for _f in ("article-comment-doubler-limpact-de-votre-strategie-social-listening-en-6-mois.html",   # Licter as a consultancy, the callback sentence
            "article-identifier-les-breaking-news-de-votre-secteur-comment-rester-informe-en-temps-reel.html",
            "article-social-listening-et-politique-comment-capter-la-voix-des-citoyens.html"):   # retitled (audit of 13 October 2026)

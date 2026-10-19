@@ -253,7 +253,7 @@ def book(lang):
             <div class="fld">
               <label class="fld__label" for="book-contact">{T(b["label"], lang)}</label>
               <div class="callback__row">
-                <input class="fld__input" id="book-contact" name="contact" type="text" inputmode="email" autocomplete="email" placeholder="{T(b["ph"], lang)}" required />
+                <input class="fld__input" id="book-contact" name="contact" type="text" autocomplete="email" placeholder="{T(b["ph"], lang)}" required />
                 <button class="btn btn--primary" type="submit">{T(b["btn"], lang)} <span aria-hidden="true">→</span></button>
               </div>
               <p class="fld__error" id="book-contact-error" hidden>{T(b["err"], lang)}</p>

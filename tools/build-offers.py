@@ -489,8 +489,8 @@ S.update({
     "price_link": ("Demander un devis", "Ask for a quote"),
     "hub_magnet_k": ("Avant d'en parler", "Before we talk"),
     "hub_magnet_t": ("Demandez un devis pour votre périmètre.", "Ask for a quote for your perimeter."),
-    "hub_magnet_d": ("Un consultant vous recontacte dans les 30 minutes, en semaine de 9 h à 19 h, pour cadrer le périmètre, puis vous envoie un devis. Sans relance commerciale.",
-                     "A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm, to frame the perimeter, then sends you a quote. No sales follow-up."),
+    "hub_magnet_d": ("Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h, pour cadrer le périmètre, puis vous envoie un devis. Sans relance commerciale.",
+                     "A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm, to frame the perimeter, then sends you a quote. No sales follow-up."),
     "hub_magnet_btn": ("Demander un devis", "Ask for a quote"),
     "magnet_k": ("Et chez vous ?", "And for you?"),
             "magnet_email": ("E-mail professionnel", "Work email"),
@@ -500,7 +500,7 @@ S.update({
     "magnet_pick_err": ("Choisissez votre secteur.", "Choose your sector."),
     "magnet_consent": ("Votre e-mail sert uniquement à vous répondre.", "We use your email only to reply to you."),
     "privacy": ("Politique de confidentialité", "Privacy policy"),
-        "hub_magnet_done": ("C'est noté. Un consultant vous recontacte dans les 30 minutes, en semaine de 9 h à 19 h.", "Noted. A consultant gets back to you within 30 minutes, on weekdays from 9am to 7pm."),
+        "hub_magnet_done": ("C'est noté. Un consultant vous contacte dans les 30 minutes, en semaine de 9 h à 19 h.", "Noted. A consultant contacts you within 30 minutes, on weekdays from 9am to 7pm."),
     "magnet_alt": ("Plutôt comparer d'abord ?", "Rather compare first?"),
     "magnet_alt_link": ("Les quatre offres côte à côte", "The four offers side by side"),
     "dlv_t": ("Ce que vous recevez", "What you receive"),
@@ -700,7 +700,7 @@ def xp_line(key):
     """the expertise pages behind an offer (French added by to_fr)"""
     keys = U.XP_OF.get(key, [])
     guide = ('<p class="xp-line"><span>%s</span> <a href="/article-veille-reseaux-sociaux-entreprise.html">%s</a></p>' % (
-        t(("À lire", "Further reading")), t(("Veille des réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if key in ("vigie", "nox") else ""
+        t(("À lire", "Further reading")), t(("Veille réseaux sociaux en entreprise : le guide", "Social media monitoring for companies: the guide (in French)")))) if key in ("vigie", "nox") else ""
     return (('<p class="xp-line"><span>%s</span> %s</p>' % (t(("Expertise associée", "Related expertise")), __import__("components").comma_join([
         '<a href="expertise-%s.html">%s</a>' % (k, U.XP_NAME[k]) for k in keys]))) if keys else "") + guide
 
@@ -864,8 +864,10 @@ def hub_ld(lang):
             {"@type": "ListItem", "position": 1, "name": "Accueil" if fr else "Home", "item": SITE + ("/fr/" if fr else "/")},
             {"@type": "ListItem", "position": 2, "name": "Offres" if fr else "Offers", "item": url}]},
         {"@context": "https://schema.org", "@type": "ItemList", "name": HUB_SEO["title"][lang], "itemListElement": [
-            {"@type": "ListItem", "position": i + 1, "item": {"@type": "Service", "name": o["name"][lang], "description": U.typo(o["seo_desc"][lang], lang),
-             "provider": U.ORG, "url": SITE + (FR_PATH[o["file"]] if fr else "/" + o["file"])}} for i, o in enumerate(OFFERS)]},
+            # each service by the @id of its own page, the provider by the site's (audit of 19 October 2026)
+            {"@type": "ListItem", "position": i + 1, "item": {"@type": "Service", "@id": SITE + (FR_PATH[o["file"]] if fr else "/" + o["file"]) + "#service",
+             "name": o["name"][lang], "description": U.typo(o["seo_desc"][lang], lang),
+             "provider": {"@id": SITE + "/#org"}, "url": SITE + (FR_PATH[o["file"]] if fr else "/" + o["file"])}} for i, o in enumerate(OFFERS)]},
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": U.typo(q[lang], lang), "acceptedAnswer": {"@type": "Answer", "text": U.typo(r[lang], lang)}} for q, r in HUB_FAQ]},
     ]

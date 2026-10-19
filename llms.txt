@@ -56,7 +56,7 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 - [Antoine Khaitrine](https://www.licter.com/fr/pourquoi-licter/#antoine-khaitrine) et [Adrien Krebs](https://www.licter.com/fr/pourquoi-licter/#adrien-krebs): les deux cofondateurs, qui ont créé et dirigé la cellule Data & Digital Analysis de l'Élysée, tous deux au Top 50 Insider mondial de la social intelligence (SI Lab)
 - [Clients](https://www.licter.com/fr/clients/): les organisations accompagnées et leurs missions
 - [Diagnostic](https://www.licter.com/fr/diagnostic/): audit indépendant d'un dispositif social data, en deux à trois semaines
-- [Prendre rendez-vous](https://www.licter.com/fr/rendez-vous/): un échange avec un consultant, rappel dans les 30 minutes en semaine de 9 h à 19 h
+- [Prendre rendez-vous](https://www.licter.com/fr/rendez-vous/): un rendez-vous avec un consultant, qui vous contacte dans les 30 minutes, en semaine de 9 h à 19 h
 
 ## Communauté
 
@@ -80,7 +80,7 @@ Licter est un cabinet, pas un éditeur de plateforme d'écoute : il opère les p
 - [Your brand in Perplexity](https://www.licter.com/tech-perplexity.html): what Perplexity says about your brand, and the sources it cites
 - [Your brand in Grok](https://www.licter.com/tech-grok.html): what Grok says about your brand, and its sources
 - [Why Licter](https://www.licter.com/why-licter.html): the founders, the team and how Licter works
-- [Book a meeting](https://www.licter.com/book-a-meeting.html): thirty minutes with a consultant, a callback within 30 minutes on weekdays
+- [Book a meeting](https://www.licter.com/book-a-meeting.html): a meeting with a consultant, who contacts you within 30 minutes, on weekdays, 9am to 7pm
 
 ## Optional
 
