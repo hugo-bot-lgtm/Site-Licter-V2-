@@ -681,7 +681,7 @@ def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, 
     return f'''  <section class="xe-lmh">
     <div class="shell xe-lmh__grid">
       <div class="xe-lmh__copy">
-        <h1 class="xe-lmh__h1"><span class="xe-lmh__kick">{kick}</span><span class="xe-lmh__l">{t((lines[0][0], lines[1][0]))}</span><span class="xe-lmh__l xe-lmh__l--c">{t((lines[0][1], lines[1][1]))}</span></h1>
+        <h1 class="xe-lmh__h1"><span class="xe-lmh__kick">{kick}</span><span class="visually-hidden">. </span><span class="xe-lmh__l">{t((lines[0][0], lines[1][0]))}</span><span class="xe-lmh__l xe-lmh__l--c">{t((lines[0][1], lines[1][1]))}</span></h1>
         <p class="xe-lmh__lead">{t(lead)}{def_link}</p>
         <a class="btn btn--primary xe-lmh__jump" href="#offre">{t(S["lm_btn"])} <span aria-hidden="true">↓</span></a>
         <a class="xe-lmh__call" href="#book">{t(S["lm_call"])} <span aria-hidden="true">→</span></a>
@@ -691,7 +691,7 @@ def lm_hero(kick, lines, lead, key, title, color, icon, cover_name, logos_html, 
           <p class="xe-lm__t">{title}</p>
           <ul class="xe-lm__items">{items}</ul>
           <form class="form xe-gform" id="call-{key}-form" novalidate>
-            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-contact", ("E-mail ou téléphone", "Email or phone"), "text", "email", "Email or phone", ' data-contact')}</div>
+            <div class="form__row">{fld("fl-brand", ("Votre marque", "Your brand"), "text", "organization", "E.g. Danone")}{fld("fl-contact", ("E-mail ou téléphone", "Email or phone"), "text", "email", "E.g. name@brand.com", ' data-contact')}</div>
             <button class="form__submit" type="submit">{t(S["lm_submit"])} <span aria-hidden="true">→</span></button>
             <p class="form__done" role="status"><span aria-hidden="true">✓</span><span>{t(S["lm_done"])}</span></p>
           </form>

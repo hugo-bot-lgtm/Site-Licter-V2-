@@ -40,6 +40,8 @@ EVENTS = [
         "h1": ("Jeux & jouets : ce que la conversation dit du secteur.", "Toys & games: what the conversation says about the sector."),
         "lead": ("Nous présentons notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
                  "Our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays."),
+        "lead_past": ("Nous avons présenté notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
+                      "We presented our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays."),
         "points": [("Qui achète, et qui prescrit : parents, grands-parents, créateurs de contenu.", "Who buys, and who recommends: parents, grandparents, content creators."),
                    ("Les tendances qui montent sur TikTok et YouTube, et celles qui retombent.", "The trends rising on TikTok and YouTube, and the ones fading."),
                    ("Ce que les avis disent des prix, de la qualité et de la durabilité.", "What reviews say about price, quality and durability.")],
@@ -51,6 +53,8 @@ EVENTS = [
         "h1": ("Luxe : ce que la conversation dit des maisons.", "Luxury: what the conversation says about the houses."),
         "lead": ("Nous présentons notre étude sectorielle : comment se construit le désir d'une maison en ligne, qui le porte, et ce que les clients et les curieux disent vraiment des prix, des créations et de l'expérience.",
                  "Our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience."),
+        "lead_past": ("Nous avons présenté notre étude sectorielle : comment se construit le désir d'une maison en ligne, qui le porte, et ce que les clients et les curieux disent vraiment des prix, des créations et de l'expérience.",
+                      "We presented our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience."),
         "points": [("Créateurs, ambassadeurs, clients : qui fait vraiment parler d'une maison.", "Creators, ambassadors, clients: who really gets a house talked about."),
                    ("La seconde main et la revente, dans la conversation.", "Resale and second hand, in the conversation."),
                    ("Ce que les audiences internationales disent, dans leur langue.", "What international audiences say, in their own language.")],
@@ -62,6 +66,8 @@ EVENTS = [
         "h1": ("Alimentation : ce que la conversation dit de nos assiettes.", "Food: what the conversation says about what we eat."),
         "lead": ("Nous présentons notre étude sectorielle : ce que les consommateurs publient, recherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes que les marques peuvent encore saisir.",
                  "We present our sector study: what consumers post, search and ask AI about what they eat, and the expectations brands can still take up."),
+        "lead_past": ("Nous avons présenté notre étude sectorielle : ce que les consommateurs publient, recherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes que les marques pouvaient encore saisir.",
+                      "We presented our sector study: what consumers post, search and ask AI about what they eat, and the expectations brands could still take up."),
         "points": [("Les recettes et les créateurs qui font vendre.", "The recipes and creators that drive sales."),
                    ("Prix, santé, origine : ce qui pèse vraiment dans le choix.", "Price, health, origin: what really weighs in the choice."),
                    ("Les besoins non couverts que révèlent les recherches.", "The unmet needs that searches reveal.")],
@@ -242,7 +248,7 @@ def event_body(e):
       <div class="ev__copy">
         <p class="xh__kick"><span>{t(S["kicker"])}</span> · <span>{t(e["sector"])}</span></p>
         <h1 class="xh__title">{t(e["h1"])}</h1>
-        <p class="xh__lead">{t(e["lead"])}</p>
+        <p class="xh__lead">{t(e["lead_past"] if gone else e["lead"])}</p>
         <dl class="ev__facts">
           <div><dt>{t(S["when"])}</dt><dd>{t(when)}</dd></div>
           <div><dt>{t(S["where"])}</dt><dd>{html.escape(e["venue"])}<small>{html.escape(e["address"])} · <a href="{maps(e)}" target="_blank" rel="noopener">{t(S["map"])} <span aria-hidden="true">↗</span></a></small></dd></div>{hour}
@@ -356,6 +362,8 @@ def main():
         title = "%s · %s : %s | Licter" % (S["kicker"][EN], e["sector"][EN], long_date(e, EN))
         write(file(e), title.replace(" :", ":"), e["lead"][EN], event_body(e), [ld_event(e)], offers_html)
     write("events.html", "Events: our sector studies, in person | Licter", S["list_lead"][EN], list_body(), [], offers_html)
+    for e in EVENTS:      # both tenses in js/fr.js, whatever the date of the build
+        t(e["lead"]); t(e["lead_past"])
     for k in ("all", "upcoming", "time", "time_v", "entry_v", "hear_t", "heard_t", "form_t", "closed_t", "kicker_past", "over_v"):
         t(S[k])
     t(("Cet événement a eu lieu.", "This event has taken place."))

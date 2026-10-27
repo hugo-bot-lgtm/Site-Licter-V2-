@@ -242,6 +242,7 @@ window.LicterFR = {
   "Innovation use cases":
     "Cas d'usage Innovation",
   "E.g. Danone": "Ex. : Danone",
+  "E.g. name@brand.com": "Ex. : nom@marque.com",
   "Blog seismograph": "Le sismographe du blog",
   "One spike per piece, height = reading time": "Un pic par article, hauteur = temps de lecture",
   "Our pieces on a timeline": "Nos articles sur une frise",
@@ -2371,8 +2372,8 @@ window.LicterFR = {
     "Étude sectorielle",
   "Toys & games: what the conversation says about the sector.":
     "Jeux & jouets : ce que la conversation dit du secteur.",
-  "Our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays.":
-    "Nous présentons notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
+  "We presented our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays.":
+    "Nous avons présenté notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
   "When":
     "Quand",
   "Where":
@@ -2451,6 +2452,12 @@ window.LicterFR = {
     "Nos études sectorielles, présentées en personne.",
   "We present what the conversation says about a sector, with the brands that work in it. On registration, in Paris.":
     "Nous présentons ce que la conversation dit d'un secteur, avec les marques qui y travaillent. Sur inscription, à Paris.",
+  "Our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays.":
+    "Nous présentons notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
+  "We presented our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience.":
+    "Nous avons présenté notre étude sectorielle : comment se construit le désir d'une maison en ligne, qui le porte, et ce que les clients et les curieux disent vraiment des prix, des créations et de l'expérience.",
+  "We presented our sector study: what consumers post, search and ask AI about what they eat, and the expectations brands could still take up.":
+    "Nous avons présenté notre étude sectorielle : ce que les consommateurs publient, recherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes que les marques pouvaient encore saisir.",
   "All events":
     "Tous les événements",
   "Upcoming":

@@ -96,8 +96,8 @@
 "hash": ""
 },
 "blog.html": {
-"date": "2026-10-13",
-"hash": "0bd434bf04d4a87fb6bd9b562227e32e"
+"date": "2026-10-27",
+"hash": "01631cf69d345f1a3e86938aa739a478"
 },
 "book-a-meeting.html": {
 "date": "2026-10-12",
@@ -164,8 +164,8 @@
 "hash": "c7af92c3e800515c48a1b871b36a1036"
 },
 "en/use-cases/trends-innovation/index.html": {
-"date": "2026-10-19",
-"hash": "c1b438bd1df7477c5d394b8b1adb9c18"
+"date": "2026-10-27",
+"hash": "5f7f1c933a4b34366d801629b17a595e"
 },
 "en/use-cases/trends-innovation/market-opportunities/index.html": {
 "date": "2026-10-19",
@@ -188,8 +188,8 @@
 "hash": "a313572548243de016adeb24a5ceaec7"
 },
 "event-toys-games.html": {
-"date": "2026-10-19",
-"hash": "62f3c87c247b9e9ddc2cdac0aa36f2e5"
+"date": "2026-10-27",
+"hash": "81070f5ec90f77987c07bfc05921e66b"
 },
 "events.html": {
 "date": "2026-10-19",
@@ -197,35 +197,35 @@
 },
 "expertise-ai-listening.html": {
 "date": "2026-10-19",
-"hash": "179cc371b2cea7e1772ac07140761387"
+"hash": "540ad4db2c9fc88395cde5e9629ca7c3"
 },
 "expertise-audience-listening.html": {
 "date": "2026-10-13",
-"hash": "e6fd344e60aae8e33ff1bf871303b70d"
+"hash": "408fc5423d888a47ab5f0f3cb8d68172"
 },
 "expertise-influence-listening.html": {
 "date": "2026-10-19",
-"hash": "6c2147eda9355e803fc67c9e40efa37e"
+"hash": "53c9f25fece3f479d198191d57b815b3"
 },
 "expertise-live-listening.html": {
 "date": "2026-10-13",
-"hash": "cd06f2f8f3b82dac8cf3d55d75b41822"
+"hash": "5f1da1d69f44b900b90040731d12b697"
 },
 "expertise-search-listening.html": {
 "date": "2026-10-19",
-"hash": "01e9f5cd4c41fff07527779a89f1fedf"
+"hash": "3cc387ebd8a8dac50e23de51353fa473"
 },
 "expertise-social-listening.html": {
 "date": "2026-10-19",
-"hash": "f8388787c3596a26d707281eeed63b22"
+"hash": "c6b7d95177bfd7321ac7447e4afe1ac4"
 },
 "expertise.html": {
 "date": "2026-10-19",
-"hash": "46a8966d5da4474f38a016c87fb6bb57"
+"hash": "d9750ef86892ce7c98e92b7736ce4003"
 },
 "fr/blog/index.html": {
-"date": "2026-10-13",
-"hash": "03065d283984b18c6c11b91a0b1ae75b"
+"date": "2026-10-27",
+"hash": "b54d3b297ba766439700371ebe26ea1b"
 },
 "fr/cas-usage/audiences/index.html": {
 "date": "2026-10-19",
@@ -288,8 +288,8 @@
 "hash": "0771f8ee2c621852d170d3e39ba84097"
 },
 "fr/cas-usage/tendances-innovation/index.html": {
-"date": "2026-10-19",
-"hash": "ad70c9c648cfd4c9aca58fe8ea54df71"
+"date": "2026-10-27",
+"hash": "7483b37a63002830e8fa06fad2fe9c9a"
 },
 "fr/cas-usage/tendances-innovation/tester-evaluer-produits/index.html": {
 "date": "2026-10-19",
@@ -316,8 +316,8 @@
 "hash": "4ecd9a1653d76518d9326dc27b2d30f2"
 },
 "fr/evenements/jeux-jouets/index.html": {
-"date": "2026-10-19",
-"hash": "e0d847317df3a0649c97a80f6efe9c29"
+"date": "2026-10-27",
+"hash": "4749c50ec3a27b6df9f27f16f0345860"
 },
 "fr/evenements/luxe/index.html": {
 "date": "2026-10-19",
@@ -325,31 +325,31 @@
 },
 "fr/expertise/ai-listening/index.html": {
 "date": "2026-10-19",
-"hash": "90a8988d3c800f3f133ba64b48c78bcd"
+"hash": "ff289c3370f859a10d87ab1c6b494d6e"
 },
 "fr/expertise/audience-listening/index.html": {
 "date": "2026-10-13",
-"hash": "b664720765289109cad0107d24842cb6"
+"hash": "00ba540d78a4e8452d2db21787e28e81"
 },
 "fr/expertise/index.html": {
 "date": "2026-10-19",
-"hash": "89d47726ae60536aefc082335e81aa6b"
+"hash": "c096aad18d81b7d2f851e5ed04035da7"
 },
 "fr/expertise/influence-listening/index.html": {
 "date": "2026-10-19",
-"hash": "655666285cc8e326ea220906f2e09760"
+"hash": "04567e59c0aa8fcd32eaae1cf9a33171"
 },
 "fr/expertise/live-listening/index.html": {
 "date": "2026-10-19",
-"hash": "c04c840dbe83bf1873a69b986250d8a8"
+"hash": "b905f667cd755ac7c42630b8abb97c6e"
 },
 "fr/expertise/search-listening/index.html": {
 "date": "2026-10-19",
-"hash": "07a6bc4db5b2f6c106accd58f94e6000"
+"hash": "b46f3c58e13a822ec1e765451fd94494"
 },
 "fr/expertise/social-listening/index.html": {
 "date": "2026-10-19",
-"hash": "8958eb22d3a0fae0fa6b12a49ea510a3"
+"hash": "fb9858f71cf3dc16770e70c86772ae61"
 },
 "fr/guide/index.html": {
 "date": "2026-10-09",

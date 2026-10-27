@@ -867,7 +867,8 @@ def hub_ld(lang):
             # each service by the @id of its own page, the provider by the site's (audit of 19 October 2026)
             {"@type": "ListItem", "position": i + 1, "item": {"@type": "Service", "@id": SITE + (FR_PATH[o["file"]] if fr else "/" + o["file"]) + "#service",
              "name": o["name"][lang], "description": U.typo(o["seo_desc"][lang], lang),
-             "provider": {"@id": SITE + "/#org"}, "url": SITE + (FR_PATH[o["file"]] if fr else "/" + o["file"])}} for i, o in enumerate(OFFERS)]},
+             "provider": {"@id": SITE + "/#org"}, "areaServed": ["France", "Worldwide"],
+             "url": SITE + (FR_PATH[o["file"]] if fr else "/" + o["file"])}} for i, o in enumerate(OFFERS)]},
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": U.typo(q[lang], lang), "acceptedAnswer": {"@type": "Answer", "text": U.typo(r[lang], lang)}} for q, r in HUB_FAQ]},
     ]

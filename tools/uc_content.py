@@ -121,8 +121,9 @@ FAMILIES = [
              "Test your products, spot market opportunities, map the trends on the rise: decide what to build on evidence, not conviction."),
     "h1": ("Innovation produit : décidez quoi construire sur des preuves, pas sur des convictions.",
            "Product innovation: decide what to build on evidence, not conviction."),
-    "intro": ("Toute décision produit est un pari sur ce que les gens voudront. La conversation d'un marché le dit généralement en premier : les besoins mal couverts, les irritants des produits existants, les sujets qui montent avant d'arriver dans les études.",
-              "Every product decision is a bet on what people will want. The conversation of a market usually says it first: the needs nobody covers well, the irritants of existing products, the topics rising before they reach the surveys."),
+    # the definition first: the search "innovation produit" asks for one (SXO audit of 27 October 2026)
+    "intro": ("L'innovation produit, c'est créer ou améliorer un produit pour mieux répondre à un besoin. Toute décision produit est un pari sur ce que les gens voudront. La conversation d'un marché le dit généralement en premier : les besoins mal couverts, les irritants des produits existants, les sujets qui montent avant d'arriver dans les études.",
+              "Product innovation is creating or improving a product to answer a need better. Every product decision is a bet on what people will want. The conversation of a market usually says it first: the needs nobody covers well, the irritants of existing products, the topics rising before they reach the surveys."),
     "why": ("Une tendance repérée dans une étude annuelle est déjà connue de tous. Nous suivons l'évolution des sujets mois après mois, nous distinguons ce qui monte vraiment de ce qui fait du bruit, et nous vous disons quoi lancer, quoi surveiller et quoi arrêter.",
             "A trend spotted in an annual survey is already known to everyone. We follow topics month after month, tell what is really rising from what is just noise, and tell you what to build, what to watch and what to stop."),
     "video": ("UElJ_Pdd0wo", "58:39", ("Toutes les tendances viennent de TikTok.", "Every trend comes from TikTok."), "Orange", "B. Hoang"),

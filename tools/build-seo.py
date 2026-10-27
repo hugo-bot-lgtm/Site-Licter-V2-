@@ -171,6 +171,7 @@ def french_spaces(s):
         t = re.sub(r"(?<=\d) (?=\d{3}(?!\d))", "\u202f", t)      # thousands: "7 000" never splits across two lines
         t = re.sub(r"[ \u202f]([:;!?»])", "\u00a0\\1", t)
         t = re.sub(r"(?<=\d) (?=%)", "\u00a0", t)               # "68,7 %": the sign never starts a line
+        t = re.sub(r"(?<=\d) (?=(?:h|min|Mo|Go|Ko)\b|€)", "\u00a0", t)   # "9 h", "24 h", "50 €": the unit stays with its number (audit of 27 October 2026)
         return re.sub(r"«[ \u202f]", "«\u00a0", t)
     parts = PROTECT.split(body)
     for i in range(len(parts)):

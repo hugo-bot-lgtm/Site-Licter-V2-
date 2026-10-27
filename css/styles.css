@@ -7926,8 +7926,9 @@ section[id], .block[id] { scroll-margin-top: calc(var(--banner-h, 0px) + 20px); 
 .lx.lx--compact .lx__launch-t { display: none; }
 @media (max-width: 720px) {
   /* the bar's two labels on one line each */
-  .ucp-bar { grid-template-columns: 42px minmax(0, 1fr) minmax(0, 1fr); gap: 6px; padding-inline: 10px; }
-  .ucp-bar__chat { width: 42px; height: 42px; }
+  /* Antoine stays a 44 px target (audit of 27 October 2026) */
+  .ucp-bar { grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1fr); gap: 6px; padding-inline: 10px; }
+  .ucp-bar__chat { width: 44px; height: 44px; }
   .ucp-bar .btn { padding: 0 6px; font-size: 12.5px; letter-spacing: 0; white-space: nowrap; }
   .ucp-bar .btn span[aria-hidden] { display: none; }
   /* a family page on a phone: one video, the one beside the case */
@@ -10712,9 +10713,14 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 /* a 360 px phone: the expertise hero is a little tighter, so its two actions
    stay above the open cookie banner (audit of 19 October 2026) */
 @media (max-width: 380px) {
-  .xe-lmh__lead { margin-top: 16px; font-size: 15px; line-height: 1.55; }
-  .xe-lmh__jump { margin-top: 16px; }
+  .xe-lmh__lead { margin-top: 12px; font-size: 15px; line-height: 1.55; }
+  .xe-lmh__jump { margin-top: 12px; }
   .xe-lmh__call { margin-top: 10px; }
+  /* the secondary links clear the open banner too (audit of 27 October 2026) */
+  .site-head { padding-top: 24px; }
+  .xe-lmh { padding-top: 12px; }
+  .home .hero__main > .award { margin-bottom: 24px; }
+  .home .hero__main .hero__desc { margin-top: 16px; }
 }
 
 /* small links of the first screens: a 44 px tap area without moving the text (audit of 19 October 2026) */
