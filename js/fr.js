@@ -2452,24 +2452,24 @@ window.LicterFR = {
     "Nos études sectorielles, présentées en personne.",
   "We present what the conversation says about a sector, with the brands that work in it. On registration, in Paris.":
     "Nous présentons ce que la conversation dit d'un secteur, avec les marques qui y travaillent. Sur inscription, à Paris.",
-  "The Luxury Social Club: the circle of social intelligence experts.":
-    "Le Luxury Social Club : le cercle des experts de la social intelligence.",
+  "The Luxury Social Club: the free club for luxury communication teams.":
+    "Le Luxury Social Club : le club gratuit des équipes communication du luxe.",
   "Request to join":
     "Demander à rejoindre",
   "Who for":
     "Pour qui",
-  "Social intelligence and data experts":
-    "Les experts de la social intelligence et de la data",
-  "Brands, agencies, tool makers, consultants, researchers":
-    "Marques, agences, éditeurs d'outils, conseil, recherche",
+  "The communication teams of luxury houses":
+    "Les équipes communication des maisons de luxe",
+  "The people who shape their identity":
+    "Celles et ceux qui font leur identité",
   "Format":
     "Format",
-  "Small groups":
-    "En petit comité",
-  "Peer conversations, no sales pitch":
-    "Des échanges entre pairs, sans pitch commercial",
-  "On request":
-    "Sur demande",
+  "A space for exchange and an event every quarter":
+    "Un espace d'échange et un événement par trimestre",
+  "Among peers, no sales pitch":
+    "Entre pairs, sans pitch commercial",
+  "Free, on request":
+    "Gratuite, sur demande",
   "Every profile is read by the club's team":
     "Chaque profil est relu par l'équipe du club",
   "Next meeting":
@@ -2488,8 +2488,8 @@ window.LicterFR = {
     "Ce qui marche et ce qui ne marche pas : des retours d'expérience sans langue de bois.",
   "A network of peers":
     "Un réseau de pairs",
-  "The people who do social intelligence, at brands, agencies, tool makers and research labs.":
-    "Ceux qui font la social intelligence, côté marques, agences, outils et recherche.",
+  "The communication teams of luxury houses, among themselves.":
+    "Les équipes communication des maisons de luxe, entre elles.",
   "A head start":
     "Une longueur d'avance",
   "The topics that matter, discussed before they are everywhere.":
@@ -2498,8 +2498,8 @@ window.LicterFR = {
     "Des échanges sans filtre",
   "Between experts, in confidence, far from sales demos.":
     "Entre experts, en confiance, loin des démonstrations commerciales.",
-  "Advertiser or brand":
-    "Annonceur ou marque",
+  "Luxury house or brand":
+    "Maison de luxe ou marque",
   "Communication or marketing agency":
     "Agence de communication ou de marketing",
   "Social listening platform or tool maker":
@@ -2512,18 +2512,18 @@ window.LicterFR = {
     "Étudiant ou professionnel en reconversion",
   "Luxury Social Club":
     "Luxury Social Club",
-  "What is said here is not on LinkedIn yet.":
-    "Ce qui se dit ici n'est pas encore sur LinkedIn.",
-  "The Luxury Social Club brings together social intelligence and data experts. AI, tools, methods, weak signals: we discuss where the field is going before it turns into conference slides.":
-    "Le Luxury Social Club réunit les experts de la social intelligence et de la data. IA, outils, méthodes, signaux faibles : on y parle des avancées du métier avant qu'elles ne deviennent des slides de conférence.",
+  "What is said here is not public yet.":
+    "Ce qui se dit ici n'est pas encore public.",
+  "The Luxury Social Club brings together the communication teams of luxury houses, the people who shape their identity. Free of charge, it offers a space for exchange between peers and an event every quarter. AI, social data, weak signals: we discuss what shapes a house's image before everyone else does.":
+    "Le Luxury Social Club réunit les équipes communication des maisons de luxe, celles et ceux qui font leur identité. Gratuit, il ouvre un espace d'échange entre pairs et un événement chaque trimestre. IA, social data, signaux faibles : on y parle de ce qui fait l'image d'une maison avant que tout le monde en parle.",
   "What gets discussed":
     "Ce qu'on s'y dit",
   "Why join":
     "Pourquoi le rejoindre",
   "Membership request":
     "Demande d'adhésion",
-  "Luxury Social Club · Membership subject to approval":
-    "Luxury Social Club · Adhésion sur validation",
+  "Luxury Social Club · Free, membership subject to approval":
+    "Luxury Social Club · Gratuit, adhésion sur validation",
   "Job title":
     "Fonction",
   "You are":
@@ -2538,10 +2538,10 @@ window.LicterFR = {
     "Chaque demande est relue par l'équipe du club. Nous vous répondons par e-mail.",
   "We use your details only to handle your membership request.":
     "Vos coordonnées servent uniquement à traiter votre demande d'adhésion.",
-  "Luxury Social Club: the circle of social intelligence experts | Licter":
-    "Luxury Social Club : le cercle des experts de la social intelligence | Licter",
-  "The club of social intelligence and data experts: AI, tools, methods and weak signals, discussed among peers. Entry on request.":
-    "Le club des experts de la social intelligence et de la data : IA, outils, méthodes et signaux faibles, discutés entre pairs. Entrée sur demande.",
+  "Luxury Social Club: the free club for luxury communication teams | Licter":
+    "Luxury Social Club : le club gratuit des équipes communication du luxe | Licter",
+  "Free, on request: a space for exchange and an event every quarter for the communication teams of luxury houses.":
+    "Gratuit, sur demande : un espace d'échange et un événement chaque trimestre pour les équipes communication des maisons de luxe.",
   "Our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays.":
     "Nous présentons notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
   "We presented our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience.":
