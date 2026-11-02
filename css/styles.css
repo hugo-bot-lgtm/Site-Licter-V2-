@@ -10727,3 +10727,10 @@ html[data-theme="dark"] .award__rank, .award__rank { color: transparent; }
 .xe-lmh__def, .crumbs a, .site-foot__legal a { position: relative; }
 .xe-lmh__def::after, .crumbs a::after { content: ""; position: absolute; inset: -12px -4px; }
 .site-foot__legal a::after { content: ""; position: absolute; inset: -14px -6px; }
+
+/* the Luxury Social Club page: the event layout, its reasons as titled lines */
+.lsc__why b { display: block; margin-bottom: 2px; font-weight: 700; color: var(--ink); }
+.evl__club { margin-top: 14px; }
+.evl__club a { font-weight: 700; color: var(--amber-ink); white-space: nowrap; }
+html[data-theme="dark"] .evl__club a { color: #EAA93D; }
+select.fld__input { appearance: auto; }

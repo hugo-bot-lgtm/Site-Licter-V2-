@@ -192,8 +192,8 @@
 "hash": "81070f5ec90f77987c07bfc05921e66b"
 },
 "events.html": {
-"date": "2026-10-19",
-"hash": "3b0fb1bdafd35e8a8dcbb0088992b400"
+"date": "2026-11-02",
+"hash": "bfed6bb6dadca7c5af47a18da4ab2af6"
 },
 "expertise-ai-listening.html": {
 "date": "2026-10-19",
@@ -312,8 +312,8 @@
 "hash": "804f592825c618b45ba00c166b5b2ad0"
 },
 "fr/evenements/index.html": {
-"date": "2026-10-19",
-"hash": "4ecd9a1653d76518d9326dc27b2d30f2"
+"date": "2026-11-02",
+"hash": "c0e7d8c978dcc3d7dc9d676dd66f6e56"
 },
 "fr/evenements/jeux-jouets/index.html": {
 "date": "2026-10-27",
@@ -358,6 +358,10 @@
 "fr/index.html": {
 "date": "2026-10-19",
 "hash": "5560b7a297e1214818e95e63cdbc3890"
+},
+"fr/luxury-social-club/index.html": {
+"date": "2026-11-02",
+"hash": "4c41809e02bd037800bbf292983d29af"
 },
 "fr/mentions-legales/index.html": {
 "date": "2026-10-07",
@@ -574,6 +578,10 @@
 "legal.html": {
 "date": "2026-10-09",
 "hash": "c465737e01103b8f539d63949f631a14"
+},
+"luxury-social-club.html": {
+"date": "2026-11-02",
+"hash": "bef77a743529844c70936c95aa38b78b"
 },
 "offer-nox.html": {
 "date": "2026-10-19",

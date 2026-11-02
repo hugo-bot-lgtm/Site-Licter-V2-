@@ -43,7 +43,7 @@ ARTS = {a["file"]: a for a in json.loads((ROOT / "tools/blog_articles.json").rea
 _spec = __import__("importlib.util").util.spec_from_file_location("ucb_seo", ROOT / "tools" / "build-usecases.py")
 U = __import__("importlib.util").util.module_from_spec(_spec)
 _spec.loader.exec_module(U)
-TWIN = re.compile(r'href="/?((?:why-licter|clients|blog|guide|diagnostic|book-a-meeting|events|event-[a-z-]+|legal|privacy|sources|offers'
+TWIN = re.compile(r'href="/?((?:why-licter|clients|blog|guide|diagnostic|book-a-meeting|events|event-[a-z-]+|luxury-social-club|legal|privacy|sources|offers'
                   r'|offer-[a-z0-9-]+|expertise(?:-[a-z]+-listening)?|tech-[a-z0-9-]+|source-[a-z0-9-]+)\.html)(#[^"]*)?"')
 
 

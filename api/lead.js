@@ -16,6 +16,8 @@ const TEAM = [
 /* LEAD_TO (Vercel env, comma separated) narrows the list during a test; only team addresses are kept */
 const TO = (process.env.LEAD_TO || "").split(",").map((s) => s.trim().toLowerCase()).filter((s) => TEAM.includes(s));
 if (!TO.length) TO.push(...TEAM);
+/* the Luxury Social Club's requests also go to Victor (owner request, 2 November 2026) */
+const EXTRA = { club: ["victor.phouangsavath@licter.com"] };
 const FROM = "Site Licter <website@contact.licter.com>";
 
 /* per action: what the visitor asked for, and what the team does next */
@@ -31,6 +33,7 @@ const ACTIONS = {
   guide: ["Demande de guide", "Envoyer le guide."],
   magazine: ["Demande du magazine", "Envoyer Audience First, le magazine."],
   event: ["Inscription à un événement", "Confirmer l'inscription et envoyer les informations pratiques."],
+  club: ["Demande d'adhésion au Luxury Social Club", "Relire la demande, puis confirmer l'adhésion par e-mail."],
   newsletter: ["Inscription à la newsletter", "Ajouter l'adresse à la liste de la newsletter."],
 };
 
@@ -185,7 +188,7 @@ module.exports = async function handler(req, res) {
     const r = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: "Bearer " + key, "Content-Type": "application/json" },
-      body: JSON.stringify({ from: FROM, to: TO, subject: subject, html: html, text: text, reply_to: email || undefined }),
+      body: JSON.stringify({ from: FROM, to: process.env.LEAD_TO ? TO : TO.concat(EXTRA[action] || []), subject: subject, html: html, text: text, reply_to: email || undefined }),
     });
     if (!r.ok) {
       console.error("resend", r.status, await r.text());

@@ -178,12 +178,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/event-toys-games.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/jeux-jouets/" />
   </url>
-  <url><loc>https://www.licter.com/fr/evenements/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://www.licter.com/fr/evenements/</loc><lastmod>2026-11-02</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/events.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/" />
   </url>
-  <url><loc>https://www.licter.com/events.html</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://www.licter.com/events.html</loc><lastmod>2026-11-02</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/events.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/" />
@@ -277,6 +277,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/mentions-legales/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/legal.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/mentions-legales/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/luxury-social-club/</loc><lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/luxury-social-club/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/luxury-social-club.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/luxury-social-club/" />
+  </url>
+  <url><loc>https://www.licter.com/luxury-social-club.html</loc><lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/luxury-social-club/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/luxury-social-club.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/luxury-social-club/" />
   </url>
   <url><loc>https://www.licter.com/fr/offres/nox/</loc><lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/offres/nox/" />

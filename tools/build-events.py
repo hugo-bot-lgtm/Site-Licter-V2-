@@ -110,6 +110,7 @@ S = {
     "reserve": ("Inscription sous réserve de confirmation et de places disponibles. Votre place n'est pas garantie avant notre confirmation par e-mail.",
                 "Registration is subject to confirmation and availability. Your seat is not guaranteed until we confirm it by email."),
     "consent": ("Vos coordonnées servent uniquement à gérer votre inscription.", "We use your details only to manage your registration."),
+    "consent_club": ("Vos coordonnées servent uniquement à traiter votre demande d'adhésion.", "We use your details only to handle your membership request."),
     "privacy": ("Politique de confidentialité", "Privacy policy"),
     "err": ("Remplissez les quatre champs, avec un e-mail valide.", "Fill in all four fields, with a valid email."),
     "list_h1": ("Nos études sectorielles, présentées en personne.", "Our sector studies, presented in person."),
@@ -300,6 +301,7 @@ def list_body():
       <h1 class="xh__title">{t(S["list_h1"])}</h1>
       <p class="xh__lead">{t(S["list_lead"])}</p>
       <ul class="evl__list">{rows}</ul>{agenda}
+      <p class="evl__agenda evl__club"><b>{t(CLUB["hub"])}</b> <a href="{CLUB["file"]}">{t(CLUB["hub_link"])} <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 </main>'''
@@ -319,6 +321,103 @@ def postal(a):
     street, rest = a.split(", ", 1)
     code, city = rest.split(" ", 1)
     return {"@type": "PostalAddress", "streetAddress": street, "postalCode": code, "addressLocality": city, "addressCountry": "FR"}
+
+
+# ------------------------------------------------------------------ the Luxury Social Club
+# The club's page and its membership form (owner request, 2 November 2026): the
+# event page's layout, the Social Intelligence Club's fields. Requests leave as
+# action "club" (js/events.js, api/lead.js), to Anaïs and Victor.
+CLUB = {
+    "file": "luxury-social-club.html",
+    "kicker": ("Luxury Social Club", "Luxury Social Club"),
+    "h1": ("Ce qui se dit ici n'est pas encore sur LinkedIn.", "What is said here is not on LinkedIn yet."),
+    "lead": ("Le Luxury Social Club réunit les experts de la social intelligence et de la data. IA, outils, méthodes, signaux faibles : on y parle des avancées du métier avant qu'elles ne deviennent des slides de conférence.",
+             "The Luxury Social Club brings together social intelligence and data experts. AI, tools, methods, weak signals: we discuss where the field is going before it turns into conference slides."),
+    "facts": [(("Pour qui", "Who for"), ("Les experts de la social intelligence et de la data", "Social intelligence and data experts"),
+               ("Marques, agences, éditeurs d'outils, conseil, recherche", "Brands, agencies, tool makers, consultants, researchers")),
+              (("Format", "Format"), ("En petit comité", "Small groups"), ("Des échanges entre pairs, sans pitch commercial", "Peer conversations, no sales pitch")),
+              (("Entrée", "Entry"), ("Sur demande", "On request"), ("Chaque profil est relu par l'équipe du club", "Every profile is read by the club's team")),
+              (("Prochaine rencontre", "Next meeting"), ("Annoncée aux membres", "Announced to members"), ("Par e-mail, une fois l'adhésion validée", "By email, once membership is confirmed"))],
+    "hear_t": ("Ce qu'on s'y dit", "What gets discussed"),
+    "points": [("Les IA qui changent vraiment la lecture des réseaux, et celles qui font surtout du bruit.", "The AI that really changes how social media is read, and the AI that mostly makes noise."),
+               ("Les méthodes que les meilleures équipes gardent pour elles.", "The methods the best teams keep to themselves."),
+               ("Les signaux faibles qui annoncent la prochaine crise, ou la prochaine tendance.", "The weak signals that announce the next crisis, or the next trend."),
+               ("Ce qui marche et ce qui ne marche pas : des retours d'expérience sans langue de bois.", "What works and what does not: field experience, no spin.")],
+    "why_t": ("Pourquoi le rejoindre", "Why join"),
+    "why": [(("Un réseau de pairs", "A network of peers"), ("Ceux qui font la social intelligence, côté marques, agences, outils et recherche.", "The people who do social intelligence, at brands, agencies, tool makers and research labs.")),
+            (("Une longueur d'avance", "A head start"), ("Les sujets qui comptent, discutés avant d'être partout.", "The topics that matter, discussed before they are everywhere.")),
+            (("Des échanges sans filtre", "Unfiltered conversations"), ("Entre experts, en confiance, loin des démonstrations commerciales.", "Between experts, in confidence, far from sales demos."))],
+    "form_t": ("Demande d'adhésion", "Membership request"),
+    "form_sub": ("Luxury Social Club · Adhésion sur validation", "Luxury Social Club · Membership subject to approval"),
+    "fields": [("first", ("Prénom", "First name"), "given-name"), ("last", ("Nom", "Last name"), "family-name"),
+               ("company", ("Société", "Company"), "organization"), ("role", ("Fonction", "Job title"), "organization-title")],
+    "profile": ("Vous êtes", "You are"),
+    "profile_ph": ("Choisissez votre profil", "Choose your profile"),
+    "profiles": [("Annonceur ou marque", "Advertiser or brand"), ("Agence de communication ou de marketing", "Communication or marketing agency"),
+                 ("Plateforme ou éditeur d'outil de social listening", "Social listening platform or tool maker"), ("Cabinet de conseil ou freelance", "Consultancy or freelance"),
+                 ("Université ou institut de recherche", "University or research institute"), ("Étudiant ou professionnel en reconversion", "Student or career changer")],
+    "email": ("E-mail professionnel", "Work email"),
+    "expect": ("Ce que vous attendez du club (facultatif)", "What you expect from the club (optional)"),
+    "err": ("Remplissez tous les champs obligatoires, avec un e-mail valide.", "Fill in all required fields, with a valid email."),
+    "reserve": ("Chaque demande est relue par l'équipe du club. Nous vous répondons par e-mail.", "Every request is read by the club's team. We reply by email."),
+    "submit": ("Demander à rejoindre", "Request to join"),
+    "consent": ("Vos coordonnées servent uniquement à traiter votre demande d'adhésion.", "We use your details only to handle your membership request."),
+    "title": ("Luxury Social Club : le cercle des experts de la social intelligence | Licter", "Luxury Social Club: the circle of social intelligence experts | Licter"),
+    "desc": ("Le club des experts de la social intelligence et de la data : IA, outils, méthodes et signaux faibles, discutés entre pairs. Entrée sur demande.",
+             "The club of social intelligence and data experts: AI, tools, methods and weak signals, discussed among peers. Entry on request."),
+    "hub": ("Le Luxury Social Club : le cercle des experts de la social intelligence.", "The Luxury Social Club: the circle of social intelligence experts."),
+    "hub_link": ("Demander à rejoindre", "Request to join"),
+}
+
+
+def club_body():
+    c = CLUB
+    facts = "".join('<div><dt>%s</dt><dd>%s<small>%s</small></dd></div>' % (t(k), t(v), t(n)) for k, v, n in c["facts"])
+    pts = "".join("<li>%s</li>" % t(x) for x in c["points"])
+    why = "".join('<li><b>%s</b> <span>%s</span></li>' % (t(h), t(x)) for h, x in c["why"])
+    def fld(name, lab, auto):
+        return ('<div><label class="fld__label" for="lsc-%s">%s</label><input class="fld__input" id="lsc-%s" name="%s" type="text" autocomplete="%s" required /></div>' % (
+            name, t(lab), name, name, auto))
+    f = c["fields"]
+    opts = "".join('<option>%s</option>' % t(o) for o in c["profiles"])
+    return f'''<main id="content">
+{crumbs([(S["home"], "index.html"), (S["events"], "events.html"), (c["kicker"], None)])}
+
+  <section class="xh ev lsc">
+    <div class="shell ev__grid">
+      <div class="ev__copy">
+        <p class="xh__kick"><span>{t(c["kicker"])}</span></p>
+        <h1 class="xh__title">{t(c["h1"])}</h1>
+        <p class="xh__lead">{t(c["lead"])}</p>
+        <a class="btn btn--primary xe-lmh__jump" href="#rejoindre">{t(c["submit"])} <span aria-hidden="true">↓</span></a>
+        <dl class="ev__facts">{facts}</dl>
+        <h2 class="ev__h2">{t(c["hear_t"])}</h2>
+        <ul class="ev__points">{pts}</ul>
+        <h2 class="ev__h2">{t(c["why_t"])}</h2>
+        <ul class="ev__points lsc__why">{why}</ul>
+      </div>
+      <div class="ev__card" id="rejoindre">
+        <h2 class="ev__h2">{t(c["form_t"])}</h2>
+        <p class="ev__date"><span>{t(c["form_sub"])}</span></p>
+        <form class="ev__form" data-club novalidate>
+          <div class="ev__row">{fld(*f[0])}{fld(*f[1])}</div>
+          <div class="ev__row">{fld(*f[2])}{fld(*f[3])}</div>
+          <label class="fld__label" for="lsc-profile">{t(c["profile"])}</label>
+          <select class="fld__input" id="lsc-profile" name="profile" required><option value="">{t(c["profile_ph"])}</option>{opts}</select>
+          <label class="fld__label" for="lsc-email">{t(c["email"])}</label>
+          <input class="fld__input" id="lsc-email" name="email" type="email" autocomplete="email" required />
+          <label class="fld__label" for="lsc-expect">{t(c["expect"])}</label>
+          <textarea class="fld__input" id="lsc-expect" name="expect" rows="3"></textarea>
+          <p class="fld__error" id="lsc-err" role="alert" hidden>{t(c["err"])}</p>
+          <p class="ev__reserve">{t(c["reserve"])}</p>
+          <button class="btn btn--primary ev__submit" type="submit">{t(c["submit"])} <span aria-hidden="true">→</span></button>
+          <p class="consent">{t(S["consent_club"])} <a href="privacy.html">{t(S["privacy"])}</a>.</p>
+        </form>
+        <p class="ev__done" role="status" hidden></p>
+      </div>
+    </div>
+  </section>
+</main>'''
 
 
 def write(name, title, desc, body, ld, offers_html):
@@ -362,6 +461,9 @@ def main():
         title = "%s · %s : %s | Licter" % (S["kicker"][EN], e["sector"][EN], long_date(e, EN))
         write(file(e), title.replace(" :", ":"), e["lead"][EN], event_body(e), [ld_event(e)], offers_html)
     write("events.html", "Events: our sector studies, in person | Licter", S["list_lead"][EN], list_body(), [], offers_html)
+    write(CLUB["file"], CLUB["title"][EN], CLUB["desc"][EN], club_body(), [], offers_html)
+    for k in ("title", "desc"):          # the French head comes from tools/build-fr-pages.py; the strings stay registered
+        t(CLUB[k])
     for e in EVENTS:      # both tenses in js/fr.js, whatever the date of the build
         t(e["lead"]); t(e["lead_past"])
     for k in ("all", "upcoming", "time", "time_v", "entry_v", "hear_t", "heard_t", "form_t", "closed_t", "kicker_past", "over_v"):

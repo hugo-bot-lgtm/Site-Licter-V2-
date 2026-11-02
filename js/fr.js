@@ -2452,6 +2452,96 @@ window.LicterFR = {
     "Nos études sectorielles, présentées en personne.",
   "We present what the conversation says about a sector, with the brands that work in it. On registration, in Paris.":
     "Nous présentons ce que la conversation dit d'un secteur, avec les marques qui y travaillent. Sur inscription, à Paris.",
+  "The Luxury Social Club: the circle of social intelligence experts.":
+    "Le Luxury Social Club : le cercle des experts de la social intelligence.",
+  "Request to join":
+    "Demander à rejoindre",
+  "Who for":
+    "Pour qui",
+  "Social intelligence and data experts":
+    "Les experts de la social intelligence et de la data",
+  "Brands, agencies, tool makers, consultants, researchers":
+    "Marques, agences, éditeurs d'outils, conseil, recherche",
+  "Format":
+    "Format",
+  "Small groups":
+    "En petit comité",
+  "Peer conversations, no sales pitch":
+    "Des échanges entre pairs, sans pitch commercial",
+  "On request":
+    "Sur demande",
+  "Every profile is read by the club's team":
+    "Chaque profil est relu par l'équipe du club",
+  "Next meeting":
+    "Prochaine rencontre",
+  "Announced to members":
+    "Annoncée aux membres",
+  "By email, once membership is confirmed":
+    "Par e-mail, une fois l'adhésion validée",
+  "The AI that really changes how social media is read, and the AI that mostly makes noise.":
+    "Les IA qui changent vraiment la lecture des réseaux, et celles qui font surtout du bruit.",
+  "The methods the best teams keep to themselves.":
+    "Les méthodes que les meilleures équipes gardent pour elles.",
+  "The weak signals that announce the next crisis, or the next trend.":
+    "Les signaux faibles qui annoncent la prochaine crise, ou la prochaine tendance.",
+  "What works and what does not: field experience, no spin.":
+    "Ce qui marche et ce qui ne marche pas : des retours d'expérience sans langue de bois.",
+  "A network of peers":
+    "Un réseau de pairs",
+  "The people who do social intelligence, at brands, agencies, tool makers and research labs.":
+    "Ceux qui font la social intelligence, côté marques, agences, outils et recherche.",
+  "A head start":
+    "Une longueur d'avance",
+  "The topics that matter, discussed before they are everywhere.":
+    "Les sujets qui comptent, discutés avant d'être partout.",
+  "Unfiltered conversations":
+    "Des échanges sans filtre",
+  "Between experts, in confidence, far from sales demos.":
+    "Entre experts, en confiance, loin des démonstrations commerciales.",
+  "Advertiser or brand":
+    "Annonceur ou marque",
+  "Communication or marketing agency":
+    "Agence de communication ou de marketing",
+  "Social listening platform or tool maker":
+    "Plateforme ou éditeur d'outil de social listening",
+  "Consultancy or freelance":
+    "Cabinet de conseil ou freelance",
+  "University or research institute":
+    "Université ou institut de recherche",
+  "Student or career changer":
+    "Étudiant ou professionnel en reconversion",
+  "Luxury Social Club":
+    "Luxury Social Club",
+  "What is said here is not on LinkedIn yet.":
+    "Ce qui se dit ici n'est pas encore sur LinkedIn.",
+  "The Luxury Social Club brings together social intelligence and data experts. AI, tools, methods, weak signals: we discuss where the field is going before it turns into conference slides.":
+    "Le Luxury Social Club réunit les experts de la social intelligence et de la data. IA, outils, méthodes, signaux faibles : on y parle des avancées du métier avant qu'elles ne deviennent des slides de conférence.",
+  "What gets discussed":
+    "Ce qu'on s'y dit",
+  "Why join":
+    "Pourquoi le rejoindre",
+  "Membership request":
+    "Demande d'adhésion",
+  "Luxury Social Club · Membership subject to approval":
+    "Luxury Social Club · Adhésion sur validation",
+  "Job title":
+    "Fonction",
+  "You are":
+    "Vous êtes",
+  "Choose your profile":
+    "Choisissez votre profil",
+  "What you expect from the club (optional)":
+    "Ce que vous attendez du club (facultatif)",
+  "Fill in all required fields, with a valid email.":
+    "Remplissez tous les champs obligatoires, avec un e-mail valide.",
+  "Every request is read by the club's team. We reply by email.":
+    "Chaque demande est relue par l'équipe du club. Nous vous répondons par e-mail.",
+  "We use your details only to handle your membership request.":
+    "Vos coordonnées servent uniquement à traiter votre demande d'adhésion.",
+  "Luxury Social Club: the circle of social intelligence experts | Licter":
+    "Luxury Social Club : le cercle des experts de la social intelligence | Licter",
+  "The club of social intelligence and data experts: AI, tools, methods and weak signals, discussed among peers. Entry on request.":
+    "Le club des experts de la social intelligence et de la data : IA, outils, méthodes et signaux faibles, discutés entre pairs. Entrée sur demande.",
   "Our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays.":
     "Nous présentons notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
   "We presented our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience.":

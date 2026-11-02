@@ -338,6 +338,8 @@ window.LicterFR = {
 "Work email": "E-mail professionnel",
 "Oct": "oct.",
 "Thursday 19 November 2026": "Jeudi 19 novembre 2026",
+"Format": "Format",
+"Luxury Social Club": "Luxury Social Club",
 "See the next one": "Voir le prochain",
 "Nox": "Nox",
 "Studies on demand": "Des études à la demande",

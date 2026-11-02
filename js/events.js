@@ -120,7 +120,7 @@
 
   /* ------------------------------------------------------ an event page */
   var page = document.querySelector("[data-ev-date]");
-  var form = document.querySelector(".ev__form"), done = document.querySelector(".ev__done");
+  var form = document.querySelector(".ev__form:not([data-club])"), done = document.querySelector(".ev__done");
   var sent = null;
   function paintPage() {
     if (!page || !form) return;
@@ -162,6 +162,40 @@
       paintPage();
       done.setAttribute("tabindex", "-1");
       done.focus();
+    });
+  }
+
+  /* ------------------------------------- the Luxury Social Club's form
+     sent as "club" (api/lead.js: to Anaïs and Victor); the page thanks the
+     visitor, the team reads the request and answers by e-mail */
+  var club = document.querySelector(".ev__form[data-club]");
+  if (club) {
+    var CLUB_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    var cdone = club.parentNode.querySelector(".ev__done");
+    var cmail = club.querySelector('[name="email"]');
+    if (window.LicterLead && !cmail.value) cmail.value = window.LicterLead.get() || "";
+    club.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var bad = null;
+      Array.prototype.forEach.call(club.querySelectorAll("[required]"), function (i) {
+        var v = i.value.trim();
+        var ok = i.name === "email" ? CLUB_EMAIL.test(v) : !!v;
+        i.setAttribute("aria-invalid", ok ? "false" : "true");
+        if (!ok && !bad) bad = i;
+      });
+      document.getElementById("lsc-err").hidden = !bad;
+      if (bad) { bad.focus(); return; }
+      var first = club.querySelector('[name="first"]').value.trim(), mail = cmail.value.trim();
+      if (window.LicterSend) window.LicterSend("club", "Luxury Social Club", club);
+      if (window.LicterLead) window.LicterLead.set(mail);
+      if (window.LicterTrack) window.LicterTrack("form_submit", { form: "club" });
+      club.hidden = true;
+      cdone.hidden = false;
+      cdone.innerHTML = fr()
+        ? "Merci, <b>" + esc(first) + "</b>. Votre demande d\u2019adhésion au Luxury Social Club est bien reçue. Nous la relisons et vous répondons par e-mail à <b>" + esc(mail) + "</b>."
+        : "Thank you, <b>" + esc(first) + "</b>. Your request to join the Luxury Social Club is in. We will read it and reply by email to <b>" + esc(mail) + "</b>.";
+      cdone.setAttribute("tabindex", "-1");
+      cdone.focus();
     });
   }
 
