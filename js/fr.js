@@ -2338,10 +2338,10 @@ window.LicterFR = {
   /* ---- event pages (tools/build-events.py) ---- */
   "Next event":
     "Prochain événement",
-  "Sector study · Luxury":
-    "Étude sectorielle · Luxe",
-  "Tuesday 3 November · Ladurée Champs-Élysées":
-    "Mardi 3 novembre · Ladurée Champs-Élysées",
+  "Sector study · Food":
+    "Étude sectorielle · Alimentation",
+  "Thursday 19 November · Madame Rêve":
+    "Jeudi 19 novembre · Madame Rêve",
   "Register":
     "M'inscrire",
   "Who buys, and who recommends: parents, grandparents, content creators.":
@@ -2388,6 +2388,8 @@ window.LicterFR = {
     "Nos autres études sectorielles",
   "Nov":
     "nov.",
+  "Sector study · took place":
+    "Étude sectorielle · a eu lieu",
   "Luxury":
     "Luxe",
   "Food":
@@ -2398,6 +2400,20 @@ window.LicterFR = {
     "La seconde main et la revente, dans la conversation.",
   "What international audiences say, in their own language.":
     "Ce que les audiences internationales disent, dans leur langue.",
+  "Tuesday 3 November 2026":
+    "Mardi 3 novembre 2026",
+  "Luxury: what the conversation says about the houses.":
+    "Luxe : ce que la conversation dit des maisons.",
+  "We presented our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience.":
+    "Nous avons présenté notre étude sectorielle : comment se construit le désir d'une maison en ligne, qui le porte, et ce que les clients et les curieux disent vraiment des prix, des créations et de l'expérience.",
+  "Oct":
+    "oct.",
+  "The recipes and creators that drive sales.":
+    "Les recettes et les créateurs qui font vendre.",
+  "Price, health, origin: what really weighs in the choice.":
+    "Prix, santé, origine : ce qui pèse vraiment dans le choix.",
+  "The unmet needs that searches reveal.":
+    "Les besoins non couverts que révèlent les recherches.",
   "On registration, limited seats":
     "Sur inscription, places limitées",
   "Time":
@@ -2406,8 +2422,8 @@ window.LicterFR = {
     "Précisé dans l'e-mail de confirmation",
   "Registration":
     "Inscription",
-  "Tuesday 3 November 2026":
-    "Mardi 3 novembre 2026",
+  "Thursday 19 November 2026":
+    "Jeudi 19 novembre 2026",
   "First name":
     "Prénom",
   "Last name":
@@ -2422,40 +2438,26 @@ window.LicterFR = {
     "Inscription sous réserve de confirmation et de places disponibles. Votre place n'est pas garantie avant notre confirmation par e-mail.",
   "We use your details only to manage your registration.":
     "Vos coordonnées servent uniquement à gérer votre inscription.",
-  "Luxury: what the conversation says about the houses.":
-    "Luxe : ce que la conversation dit des maisons.",
-  "Our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience.":
-    "Nous présentons notre étude sectorielle : comment se construit le désir d'une maison en ligne, qui le porte, et ce que les clients et les curieux disent vraiment des prix, des créations et de l'expérience.",
-  "What you will hear":
-    "Ce que vous y entendrez",
-  "Oct":
-    "oct.",
-  "Sector study · took place":
-    "Étude sectorielle · a eu lieu",
-  "The recipes and creators that drive sales.":
-    "Les recettes et les créateurs qui font vendre.",
-  "Price, health, origin: what really weighs in the choice.":
-    "Prix, santé, origine : ce qui pèse vraiment dans le choix.",
-  "The unmet needs that searches reveal.":
-    "Les besoins non couverts que révèlent les recherches.",
-  "Thursday 19 November 2026":
-    "Jeudi 19 novembre 2026",
   "Food: what the conversation says about what we eat.":
     "Alimentation : ce que la conversation dit de nos assiettes.",
   "We present our sector study: what consumers post, search and ask AI about what they eat, and the expectations brands can still take up.":
     "Nous présentons notre étude sectorielle : ce que les consommateurs publient, recherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes que les marques peuvent encore saisir.",
+  "What you will hear":
+    "Ce que vous y entendrez",
   "Coming up:":
     "Au programme :",
-  "Luxury, Tuesday 3 November 2026, Ladurée Champs-Élysées; Food, Thursday 19 November 2026, Madame Rêve.":
-    "Luxe, mardi 3 novembre 2026, Ladurée Champs-Élysées ; Alimentation, jeudi 19 novembre 2026, Madame Rêve.",
-  "Our sector studies, presented in person.":
-    "Nos études sectorielles, présentées en personne.",
-  "We present what the conversation says about a sector, with the brands that work in it. On registration, in Paris.":
-    "Nous présentons ce que la conversation dit d'un secteur, avec les marques qui y travaillent. Sur inscription, à Paris.",
+  "Food, Thursday 19 November 2026, Madame Rêve.":
+    "Alimentation, jeudi 19 novembre 2026, Madame Rêve.",
   "The Luxury Social Club: the free club for luxury communication teams.":
     "Le Luxury Social Club : le club gratuit des équipes communication du luxe.",
   "Request to join":
     "Demander à rejoindre",
+  "The Food Social Club: the free club for food brand communication teams.":
+    "Le Food Social Club : le club gratuit des équipes communication de l'alimentation.",
+  "Our sector studies, presented in person.":
+    "Nos études sectorielles, présentées en personne.",
+  "We present what the conversation says about a sector, with the brands that work in it. On registration, in Paris.":
+    "Nous présentons ce que la conversation dit d'un secteur, avec les marques qui y travaillent. Sur inscription, à Paris.",
   "Who for":
     "Pour qui",
   "The communication teams of luxury houses":
@@ -2542,10 +2544,36 @@ window.LicterFR = {
     "Luxury Social Club : le club gratuit des équipes communication du luxe | Licter",
   "Free, on request: a space for exchange and an event every quarter for the communication teams of luxury houses.":
     "Gratuit, sur demande : un espace d'échange et un événement chaque trimestre pour les équipes communication des maisons de luxe.",
+  "The communication teams of food brands":
+    "Les équipes communication des marques alimentaires",
+  "The people who shape their image":
+    "Celles et ceux qui font leur image",
+  "What consumers really say about what they eat: price, health, origin, recipes.":
+    "Ce que les consommateurs disent vraiment de ce qu'ils mangent : prix, santé, origine, recettes.",
+  "The weak signals that announce the next product crisis, or the next trend.":
+    "Les signaux faibles qui annoncent la prochaine crise produit, ou la prochaine tendance.",
+  "The communication teams of food brands, among themselves.":
+    "Les équipes communication des marques alimentaires, entre elles.",
+  "Food or beverage brand":
+    "Marque alimentaire ou de boissons",
+  "Retail or food service":
+    "Distribution ou restauration",
+  "Food Social Club":
+    "Food Social Club",
+  "What is said here is not on the shelves yet.":
+    "Ce qui se dit ici n'est pas encore dans les rayons.",
+  "The Food Social Club brings together the communication teams of food brands, the people who shape their image. Free of charge, it offers a space for exchange between peers and an event every quarter. AI, social data, weak signals: we discuss what consumers post, search for and ask AI about what they eat, before everyone else does.":
+    "Le Food Social Club réunit les équipes communication des marques alimentaires, celles et ceux qui font leur image. Gratuit, il ouvre un espace d'échange entre pairs et un événement chaque trimestre. IA, social data, signaux faibles : on y parle de ce que les consommateurs publient, cherchent et demandent à l'IA sur ce qu'ils mangent, avant que tout le monde en parle.",
+  "Food Social Club · Free, membership subject to approval":
+    "Food Social Club · Gratuit, adhésion sur validation",
+  "Food Social Club: the free club for food brand communication teams | Licter":
+    "Food Social Club : le club gratuit des équipes communication de l'alimentation | Licter",
+  "Free, on request: a space for exchange and an event every quarter for the communication teams of food brands.":
+    "Gratuit, sur demande : un espace d'échange et un événement chaque trimestre pour les équipes communication des marques alimentaires.",
   "Our sector study: what parents, children and collectors post, search and ask AI about toys and games, and what brands can make of it before the holidays.":
     "Nous présentons notre étude sectorielle : ce que parents, enfants et collectionneurs publient, recherchent et demandent à l'IA sur les jeux et les jouets, et ce que les marques peuvent en tirer avant les fêtes.",
-  "We presented our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience.":
-    "Nous avons présenté notre étude sectorielle : comment se construit le désir d'une maison en ligne, qui le porte, et ce que les clients et les curieux disent vraiment des prix, des créations et de l'expérience.",
+  "Our sector study: how desire for a house is built online, who carries it, and what clients and onlookers say about prices, creations and experience.":
+    "Nous présentons notre étude sectorielle : comment se construit le désir d'une maison en ligne, qui le porte, et ce que les clients et les curieux disent vraiment des prix, des créations et de l'expérience.",
   "We presented our sector study: what consumers post, search and ask AI about what they eat, and the expectations brands could still take up.":
     "Nous avons présenté notre étude sectorielle : ce que les consommateurs publient, recherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes que les marques pouvaient encore saisir.",
   "All events":

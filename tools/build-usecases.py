@@ -76,7 +76,8 @@ PAGE_FR = {"why-licter.html": "/fr/pourquoi-licter/", "clients.html": "/fr/clien
            "diagnostic.html": "/fr/diagnostic/", "book-a-meeting.html": "/fr/rendez-vous/", "events.html": "/fr/evenements/",
            "event-toys-games.html": "/fr/evenements/jeux-jouets/", "event-luxury.html": "/fr/evenements/luxe/",
            "event-food.html": "/fr/evenements/alimentation/", "legal.html": "/fr/mentions-legales/", "privacy.html": "/fr/confidentialite/",
-           "luxury-social-club.html": "/fr/luxury-social-club/"}
+           "luxury-social-club.html": "/fr/luxury-social-club/",
+           "food-social-club.html": "/fr/food-social-club/"}
 
 
 # the six expertise pages, linked from the pages that use them (plan SEO, step 8)
@@ -138,7 +139,7 @@ def expertise_fr(name):
 def translate(fragment):
     """The same walk as js/i18n.js: text nodes and a few attributes; and the
     links to the expertise pages, which have French twins."""
-    fragment = re.sub(r'href="/?(expertise(?:-[a-z]+-listening)?\.html|offers\.html|offer-[a-z0-9-]+\.html|tech-[a-z0-9-]+\.html|source-[a-z0-9-]+\.html|sources\.html|why-licter\.html|clients\.html|blog\.html|guide\.html|diagnostic\.html|book-a-meeting\.html|events\.html|event-[a-z-]+\.html|luxury-social-club\.html|legal\.html|privacy\.html)(#[^"]*)?"', lambda m: 'href="%s%s"' % (expertise_fr(m.group(1)), m.group(2) or ""), fragment)
+    fragment = re.sub(r'href="/?(expertise(?:-[a-z]+-listening)?\.html|offers\.html|offer-[a-z0-9-]+\.html|tech-[a-z0-9-]+\.html|source-[a-z0-9-]+\.html|sources\.html|why-licter\.html|clients\.html|blog\.html|guide\.html|diagnostic\.html|book-a-meeting\.html|events\.html|event-[a-z-]+\.html|(?:luxury|food)-social-club\.html|legal\.html|privacy\.html)(#[^"]*)?"', lambda m: 'href="%s%s"' % (expertise_fr(m.group(1)), m.group(2) or ""), fragment)
     def text(m):
         raw = m.group(1)
         key = re.sub(r"\s+", " ", html.unescape(raw)).strip()

@@ -45,6 +45,8 @@ HEAD = {
                         "Notre étude sectorielle : ce que les consommateurs publient, cherchent et demandent à l'IA sur ce qu'ils mangent, et les attentes à saisir pour les marques."),
     "luxury-social-club.html": ("Luxury Social Club : le club gratuit des équipes communication du luxe | Licter",
                                 "Gratuit, sur demande : un espace d'échange et un événement chaque trimestre pour les équipes communication des maisons de luxe."),
+    "food-social-club.html": ("Food Social Club : le club gratuit des équipes communication de l'alimentation | Licter",
+                              "Gratuit, sur demande : un espace d'échange et un événement chaque trimestre pour les équipes communication des marques alimentaires."),
     "legal.html": ("Mentions légales | Licter",
                    "Mentions légales du site Licter : éditeur (Licter SAS, RCS Paris 915 259 394), hébergeur, conditions d'utilisation et propriété intellectuelle."),
     "privacy.html": ("Politique de confidentialité | Licter",

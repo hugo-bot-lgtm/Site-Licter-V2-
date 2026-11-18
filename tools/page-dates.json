@@ -180,20 +180,20 @@
 "hash": "56403d6fcf473b38ece17581a5a500a1"
 },
 "event-food.html": {
-"date": "2026-10-19",
-"hash": "1ca79ba199efed83197dfe363437b284"
+"date": "2026-11-18",
+"hash": "dd17bdf498cb9e4e2ff87b814974b31f"
 },
 "event-luxury.html": {
-"date": "2026-10-19",
-"hash": "a313572548243de016adeb24a5ceaec7"
+"date": "2026-11-18",
+"hash": "f323d850877adb74655fa566587695ba"
 },
 "event-toys-games.html": {
-"date": "2026-10-27",
-"hash": "81070f5ec90f77987c07bfc05921e66b"
+"date": "2026-11-18",
+"hash": "5df4321941e499bf9ca50d8594af5b3c"
 },
 "events.html": {
-"date": "2026-11-02",
-"hash": "8d0230ac1fd05ef0756e254a0bd6182e"
+"date": "2026-11-18",
+"hash": "c17d6ab929a407fd09f74395481f6239"
 },
 "expertise-ai-listening.html": {
 "date": "2026-10-19",
@@ -222,6 +222,10 @@
 "expertise.html": {
 "date": "2026-10-19",
 "hash": "d9750ef86892ce7c98e92b7736ce4003"
+},
+"food-social-club.html": {
+"date": "2026-11-18",
+"hash": "dbe259da3f18aa39dd6d3e8fe66f8206"
 },
 "fr/blog/index.html": {
 "date": "2026-10-27",
@@ -308,20 +312,20 @@
 "hash": "2800f8fdbb42a48cef680d11c3d5e782"
 },
 "fr/evenements/alimentation/index.html": {
-"date": "2026-10-19",
-"hash": "804f592825c618b45ba00c166b5b2ad0"
+"date": "2026-11-18",
+"hash": "738d7e4f005a6117fbb1ec8540075af3"
 },
 "fr/evenements/index.html": {
-"date": "2026-11-02",
-"hash": "248b37a6310ccb2afb1e146c30c46aa2"
+"date": "2026-11-18",
+"hash": "c144504105a5cec4dfc87a64cbac7de8"
 },
 "fr/evenements/jeux-jouets/index.html": {
-"date": "2026-10-27",
-"hash": "4749c50ec3a27b6df9f27f16f0345860"
+"date": "2026-11-18",
+"hash": "5a8fcc43bbe6b10988734d0f518b46d1"
 },
 "fr/evenements/luxe/index.html": {
-"date": "2026-10-19",
-"hash": "6866879eec5709e13e6e721e70b9210f"
+"date": "2026-11-18",
+"hash": "b6c2d517b36104b0d3c510310e8ef44e"
 },
 "fr/expertise/ai-listening/index.html": {
 "date": "2026-10-19",
@@ -350,6 +354,10 @@
 "fr/expertise/social-listening/index.html": {
 "date": "2026-10-19",
 "hash": "fb9858f71cf3dc16770e70c86772ae61"
+},
+"fr/food-social-club/index.html": {
+"date": "2026-11-18",
+"hash": "892f8192f00cb8b598141202e483da11"
 },
 "fr/guide/index.html": {
 "date": "2026-10-09",

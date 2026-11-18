@@ -165,14 +165,16 @@
     });
   }
 
-  /* ------------------------------------- the Luxury Social Club's form
-     sent as "club" (api/lead.js: to Anaïs and Victor); the page thanks the
+  /* ------------------------------------- a social club's form (Luxury, Food)
+     sent as "club" with the club's name, from data-club (api/lead.js: to
+     Anaïs and Victor); the page thanks the
      visitor, the team reads the request and answers by e-mail */
   var club = document.querySelector(".ev__form[data-club]");
   if (club) {
     var CLUB_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     var cdone = club.parentNode.querySelector(".ev__done");
     var cmail = club.querySelector('[name="email"]');
+    var cname = club.getAttribute("data-club") || "Luxury Social Club";
     if (window.LicterLead && !cmail.value) cmail.value = window.LicterLead.get() || "";
     club.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -186,14 +188,14 @@
       document.getElementById("lsc-err").hidden = !bad;
       if (bad) { bad.focus(); return; }
       var first = club.querySelector('[name="first"]').value.trim(), mail = cmail.value.trim();
-      if (window.LicterSend) window.LicterSend("club", "Luxury Social Club", club);
+      if (window.LicterSend) window.LicterSend("club", cname, club);
       if (window.LicterLead) window.LicterLead.set(mail);
       if (window.LicterTrack) window.LicterTrack("form_submit", { form: "club" });
       club.hidden = true;
       cdone.hidden = false;
       cdone.innerHTML = fr()
-        ? "Merci, <b>" + esc(first) + "</b>. Votre demande d\u2019adhésion au Luxury Social Club est bien reçue. Nous la relisons et vous répondons par e-mail à <b>" + esc(mail) + "</b>."
-        : "Thank you, <b>" + esc(first) + "</b>. Your request to join the Luxury Social Club is in. We will read it and reply by email to <b>" + esc(mail) + "</b>.";
+        ? "Merci, <b>" + esc(first) + "</b>. Votre demande d\u2019adhésion au " + esc(cname) + " est bien reçue. Nous la relisons et vous répondons par e-mail à <b>" + esc(mail) + "</b>."
+        : "Thank you, <b>" + esc(first) + "</b>. Your request to join the " + esc(cname) + " is in. We will read it and reply by email to <b>" + esc(mail) + "</b>.";
       cdone.setAttribute("tabindex", "-1");
       cdone.focus();
     });

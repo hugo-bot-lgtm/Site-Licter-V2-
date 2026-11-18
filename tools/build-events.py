@@ -292,6 +292,8 @@ def list_body():
         return ((" ; " if lang == FR else "; ").join(items) + ".") if items else ""
     # two text nodes: the French twin is made by translating each node (tools/build-fr-pages.py)
     agenda = ('\n      <p class="evl__agenda"><b>%s</b> <span>%s</span></p>' % (t(("Au programme :", "Coming up:")), t((say(FR), say(EN))))) if up else ""
+    clubs = "".join('\n      <p class="evl__agenda evl__club"><b>%s</b> <a href="%s">%s <span aria-hidden="true">→</span></a></p>' % (
+        t(c["hub"]), c["file"], t(c["hub_link"])) for c in CLUBS)
     return f'''<main id="content">
 {crumbs([(S["home"], "index.html"), (S["events"], None)])}
 
@@ -300,8 +302,7 @@ def list_body():
       <p class="xh__kick">{t(S["events"])}</p>
       <h1 class="xh__title">{t(S["list_h1"])}</h1>
       <p class="xh__lead">{t(S["list_lead"])}</p>
-      <ul class="evl__list">{rows}</ul>{agenda}
-      <p class="evl__agenda evl__club"><b>{t(CLUB["hub"])}</b> <a href="{CLUB["file"]}">{t(CLUB["hub_link"])} <span aria-hidden="true">→</span></a></p>
+      <ul class="evl__list">{rows}</ul>{agenda}{clubs}
     </div>
   </section>
 </main>'''
@@ -323,11 +324,12 @@ def postal(a):
     return {"@type": "PostalAddress", "streetAddress": street, "postalCode": code, "addressLocality": city, "addressCountry": "FR"}
 
 
-# ------------------------------------------------------------------ the Luxury Social Club
-# The club's page and its membership form (owner request, 2 November 2026): the
-# event page's layout, the Social Intelligence Club's fields. Requests leave as
-# action "club" (js/events.js, api/lead.js), to Anaïs and Victor.
-CLUB = {
+# ------------------------------------------------------------------ the social clubs
+# Each club has its page and its membership form: the event page's layout, the
+# Social Intelligence Club's fields. Luxury Social Club (owner request, 2 November
+# 2026), Food Social Club (18 November 2026). Requests leave as action "club"
+# with the club's name (js/events.js, api/lead.js), to Anaïs and Victor.
+CLUB_LUX = {
     "file": "luxury-social-club.html",
     "kicker": ("Luxury Social Club", "Luxury Social Club"),
     "h1": ("Ce qui se dit ici n'est pas encore public.", "What is said here is not public yet."),
@@ -370,8 +372,31 @@ CLUB = {
 }
 
 
-def club_body():
-    c = CLUB
+CLUB_FOOD = dict(CLUB_LUX, **{
+    "file": "food-social-club.html",
+    "kicker": ("Food Social Club", "Food Social Club"),
+    "h1": ("Ce qui se dit ici n'est pas encore dans les rayons.", "What is said here is not on the shelves yet."),
+    "lead": ("Le Food Social Club réunit les équipes communication des marques alimentaires, celles et ceux qui font leur image. Gratuit, il ouvre un espace d'échange entre pairs et un événement chaque trimestre. IA, social data, signaux faibles : on y parle de ce que les consommateurs publient, cherchent et demandent à l'IA sur ce qu'ils mangent, avant que tout le monde en parle.",
+             "The Food Social Club brings together the communication teams of food brands, the people who shape their image. Free of charge, it offers a space for exchange between peers and an event every quarter. AI, social data, weak signals: we discuss what consumers post, search for and ask AI about what they eat, before everyone else does."),
+    "facts": [(("Pour qui", "Who for"), ("Les équipes communication des marques alimentaires", "The communication teams of food brands"),
+               ("Celles et ceux qui font leur image", "The people who shape their image"))] + CLUB_LUX["facts"][1:],
+    "points": [CLUB_LUX["points"][0],
+               ("Ce que les consommateurs disent vraiment de ce qu'ils mangent : prix, santé, origine, recettes.", "What consumers really say about what they eat: price, health, origin, recipes."),
+               ("Les signaux faibles qui annoncent la prochaine crise produit, ou la prochaine tendance.", "The weak signals that announce the next product crisis, or the next trend."),
+               CLUB_LUX["points"][3]],
+    "why": [(("Un réseau de pairs", "A network of peers"), ("Les équipes communication des marques alimentaires, entre elles.", "The communication teams of food brands, among themselves."))] + CLUB_LUX["why"][1:],
+    "form_sub": ("Food Social Club · Gratuit, adhésion sur validation", "Food Social Club · Free, membership subject to approval"),
+    "profiles": [("Marque alimentaire ou de boissons", "Food or beverage brand"), ("Distribution ou restauration", "Retail or food service")] + CLUB_LUX["profiles"][1:],
+    "title": ("Food Social Club : le club gratuit des équipes communication de l'alimentation | Licter", "Food Social Club: the free club for food brand communication teams | Licter"),
+    "desc": ("Gratuit, sur demande : un espace d'échange et un événement chaque trimestre pour les équipes communication des marques alimentaires.",
+             "Free, on request: a space for exchange and an event every quarter for the communication teams of food brands."),
+    "hub": ("Le Food Social Club : le club gratuit des équipes communication de l'alimentation.", "The Food Social Club: the free club for food brand communication teams."),
+})
+
+CLUBS = [CLUB_LUX, CLUB_FOOD]
+
+
+def club_body(c):
     facts = "".join('<div><dt>%s</dt><dd>%s<small>%s</small></dd></div>' % (t(k), t(v), t(n)) for k, v, n in c["facts"])
     pts = "".join("<li>%s</li>" % t(x) for x in c["points"])
     why = "".join('<li><b>%s</b> <span>%s</span></li>' % (t(h), t(x)) for h, x in c["why"])
@@ -399,7 +424,7 @@ def club_body():
       <div class="ev__card" id="rejoindre">
         <h2 class="ev__h2">{t(c["form_t"])}</h2>
         <p class="ev__date"><span>{t(c["form_sub"])}</span></p>
-        <form class="ev__form" data-club novalidate>
+        <form class="ev__form" data-club="{c["kicker"][EN]}" novalidate>
           <div class="ev__row">{fld(*f[0])}{fld(*f[1])}</div>
           <div class="ev__row">{fld(*f[2])}{fld(*f[3])}</div>
           <label class="fld__label" for="lsc-profile">{t(c["profile"])}</label>
@@ -461,9 +486,10 @@ def main():
         title = "%s · %s : %s | Licter" % (S["kicker"][EN], e["sector"][EN], long_date(e, EN))
         write(file(e), title.replace(" :", ":"), e["lead"][EN], event_body(e), [ld_event(e)], offers_html)
     write("events.html", "Events: our sector studies, in person | Licter", S["list_lead"][EN], list_body(), [], offers_html)
-    write(CLUB["file"], CLUB["title"][EN], CLUB["desc"][EN], club_body(), [], offers_html)
-    for k in ("title", "desc"):          # the French head comes from tools/build-fr-pages.py; the strings stay registered
-        t(CLUB[k])
+    for c in CLUBS:
+        write(c["file"], c["title"][EN], c["desc"][EN], club_body(c), [], offers_html)
+        for k in ("title", "desc"):      # the French head comes from tools/build-fr-pages.py; the strings stay registered
+            t(c[k])
     for e in EVENTS:      # both tenses in js/fr.js, whatever the date of the build
         t(e["lead"]); t(e["lead_past"])
     for k in ("all", "upcoming", "time", "time_v", "entry_v", "hear_t", "heard_t", "form_t", "closed_t", "kicker_past", "over_v"):

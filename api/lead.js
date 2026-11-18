@@ -16,7 +16,7 @@ const TEAM = [
 /* LEAD_TO (Vercel env, comma separated) narrows the list during a test; only team addresses are kept */
 const TO = (process.env.LEAD_TO || "").split(",").map((s) => s.trim().toLowerCase()).filter((s) => TEAM.includes(s));
 if (!TO.length) TO.push(...TEAM);
-/* the Luxury Social Club's requests also go to Victor (owner request, 2 November 2026) */
+/* the social clubs' requests (Luxury, Food) also go to Victor (owner request, 2 and 18 November 2026) */
 const EXTRA = { club: ["victor.phouangsavath@licter.com"] };
 const FROM = "Site Licter <website@contact.licter.com>";
 
@@ -33,7 +33,7 @@ const ACTIONS = {
   guide: ["Demande de guide", "Envoyer le guide."],
   magazine: ["Demande du magazine", "Envoyer Audience First, le magazine."],
   event: ["Inscription à un événement", "Confirmer l'inscription et envoyer les informations pratiques."],
-  club: ["Demande d'adhésion au Luxury Social Club", "Relire la demande, puis confirmer l'adhésion par e-mail."],
+  club: ["Demande d'adhésion à un club", "Relire la demande, puis confirmer l'adhésion par e-mail."],
   newsletter: ["Inscription à la newsletter", "Ajouter l'adresse à la liste de la newsletter."],
 };
 
@@ -89,7 +89,7 @@ module.exports = async function handler(req, res) {
 
   const action = String(body.action || "");
   if (!ACTIONS[action]) return res.status(400).json({ ok: false });
-  const [what, todo] = ACTIONS[action];
+  let [what, todo] = ACTIONS[action];
   const raw = body.fields && typeof body.fields === "object" ? body.fields : {};
   const fields = Object.keys(raw).slice(0, 15).map((k) => [label(clip(k, 80)), clip(raw[k], 2000)]).filter(([k, v]) => k && v);
 
@@ -119,6 +119,8 @@ module.exports = async function handler(req, res) {
   const who = name ? name + (company ? ", " + company : "") : company ? company + " · " + (email || phone) : email || phone;
   /* what it was about, when the page or the event says it */
   const about = action === "event" ? detail.split(" · ").map((x) => x.replace(/\s*:.*$/, "").replace(/\.$/, "")).join(" · ") : /^(offer_example|real_case)$/.test(action) ? title.replace(/\s*:.*$/, "") : "";
+  /* a club names itself: "Demande d'adhésion au Food Social Club" */
+  if (action === "club" && /^[A-Z][a-z]+ Social Club$/.test(detail)) what = "Demande d'adhésion au " + detail;
   const subject = clip([what, clip(about, 60), who].filter(Boolean).join(" · "), 200);
   const tel = phone ? phone.replace(/[^\d+]/g, "").replace(/^0(\d{9})$/, "+33$1") : "";
   const reply = email

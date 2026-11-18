@@ -148,42 +148,42 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/diagnostic.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/diagnostic/" />
   </url>
-  <url><loc>https://www.licter.com/fr/evenements/alimentation/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://www.licter.com/fr/evenements/alimentation/</loc><lastmod>2026-11-18</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/alimentation/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/event-food.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/alimentation/" />
   </url>
-  <url><loc>https://www.licter.com/event-food.html</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://www.licter.com/event-food.html</loc><lastmod>2026-11-18</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/alimentation/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/event-food.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/alimentation/" />
   </url>
-  <url><loc>https://www.licter.com/fr/evenements/luxe/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://www.licter.com/fr/evenements/luxe/</loc><lastmod>2026-11-18</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/luxe/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/event-luxury.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/luxe/" />
   </url>
-  <url><loc>https://www.licter.com/event-luxury.html</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://www.licter.com/event-luxury.html</loc><lastmod>2026-11-18</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/luxe/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/event-luxury.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/luxe/" />
   </url>
-  <url><loc>https://www.licter.com/fr/evenements/jeux-jouets/</loc><lastmod>2026-10-27</lastmod>
+  <url><loc>https://www.licter.com/fr/evenements/jeux-jouets/</loc><lastmod>2026-11-18</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/jeux-jouets/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/event-toys-games.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/jeux-jouets/" />
   </url>
-  <url><loc>https://www.licter.com/event-toys-games.html</loc><lastmod>2026-10-27</lastmod>
+  <url><loc>https://www.licter.com/event-toys-games.html</loc><lastmod>2026-11-18</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/jeux-jouets/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/event-toys-games.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/jeux-jouets/" />
   </url>
-  <url><loc>https://www.licter.com/fr/evenements/</loc><lastmod>2026-11-02</lastmod>
+  <url><loc>https://www.licter.com/fr/evenements/</loc><lastmod>2026-11-18</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/events.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/" />
   </url>
-  <url><loc>https://www.licter.com/events.html</loc><lastmod>2026-11-02</lastmod>
+  <url><loc>https://www.licter.com/events.html</loc><lastmod>2026-11-18</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/evenements/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/events.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/evenements/" />
@@ -257,6 +257,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/expertise/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/expertise.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/expertise/" />
+  </url>
+  <url><loc>https://www.licter.com/fr/food-social-club/</loc><lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/food-social-club/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/food-social-club.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/food-social-club/" />
+  </url>
+  <url><loc>https://www.licter.com/food-social-club.html</loc><lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/food-social-club/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.licter.com/food-social-club.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.licter.com/fr/food-social-club/" />
   </url>
   <url><loc>https://www.licter.com/fr/guide/</loc><lastmod>2026-10-08</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.licter.com/fr/guide/" />
