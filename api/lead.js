@@ -16,8 +16,8 @@ const TEAM = [
 /* LEAD_TO (Vercel env, comma separated) narrows the list during a test; only team addresses are kept */
 const TO = (process.env.LEAD_TO || "").split(",").map((s) => s.trim().toLowerCase()).filter((s) => TEAM.includes(s));
 if (!TO.length) TO.push(...TEAM);
-/* the social clubs' requests (Luxury, Food) also go to Victor (owner request, 2 and 18 November 2026) */
-const EXTRA = { club: ["victor.phouangsavath@licter.com"] };
+/* the social clubs' requests (Luxury, Food) also go to Victor and Evan (owner requests, 2, 18 and 20 November 2026) */
+const EXTRA = { club: ["victor.phouangsavath@licter.com", "evan.beost@licter.com"] };
 const FROM = "Site Licter <website@contact.licter.com>";
 
 /* per action: what the visitor asked for, and what the team does next */
